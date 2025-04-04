@@ -30,7 +30,6 @@ namespace Amazon.CodeArtifact
     /// <summary>
     /// Configuration for accessing Amazon CodeArtifact service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCodeArtifactConfig : ClientConfig
     {
         private static readonly string UserAgentString =

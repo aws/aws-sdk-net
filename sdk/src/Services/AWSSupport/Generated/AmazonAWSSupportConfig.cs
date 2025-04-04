@@ -30,7 +30,6 @@ namespace Amazon.AWSSupport
     /// <summary>
     /// Configuration for accessing Amazon AWSSupport service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonAWSSupportConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -318,7 +318,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<CreateDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInferenceScheduler
@@ -380,7 +379,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<CreateInferenceSchedulerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLabel
@@ -438,7 +436,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<CreateLabelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLabelGroup
@@ -492,7 +489,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<CreateLabelGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateModel
@@ -565,7 +561,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<CreateModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRetrainingScheduler
@@ -620,7 +615,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<CreateRetrainingSchedulerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataset
@@ -679,7 +673,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<DeleteDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInferenceScheduler
@@ -735,7 +728,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<DeleteInferenceSchedulerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLabel
@@ -790,7 +782,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<DeleteLabelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLabelGroup
@@ -845,7 +836,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<DeleteLabelGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteModel
@@ -902,7 +892,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<DeleteModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -957,7 +946,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRetrainingScheduler
@@ -1013,7 +1001,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<DeleteRetrainingSchedulerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataIngestionJob
@@ -1065,7 +1052,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<DescribeDataIngestionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataset
@@ -1117,7 +1103,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<DescribeDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInferenceScheduler
@@ -1169,7 +1154,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<DescribeInferenceSchedulerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLabel
@@ -1220,7 +1204,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<DescribeLabelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLabelGroup
@@ -1271,7 +1254,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<DescribeLabelGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeModel
@@ -1324,7 +1306,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<DescribeModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeModelVersion
@@ -1375,7 +1356,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<DescribeModelVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeResourcePolicy
@@ -1426,7 +1406,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<DescribeResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRetrainingScheduler
@@ -1478,7 +1457,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<DescribeRetrainingSchedulerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportDataset
@@ -1536,7 +1514,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<ImportDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportModelVersion
@@ -1594,7 +1571,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<ImportModelVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataIngestionJobs
@@ -1642,7 +1618,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<ListDataIngestionJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatasets
@@ -1689,7 +1664,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<ListDatasetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInferenceEvents
@@ -1740,7 +1714,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<ListInferenceEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInferenceExecutions
@@ -1792,7 +1765,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<ListInferenceExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInferenceSchedulers
@@ -1839,7 +1811,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<ListInferenceSchedulersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLabelGroups
@@ -1886,7 +1857,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<ListLabelGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLabels
@@ -1933,7 +1903,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<ListLabelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListModels
@@ -1981,7 +1950,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<ListModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListModelVersions
@@ -2034,7 +2002,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<ListModelVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRetrainingSchedulers
@@ -2082,7 +2049,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<ListRetrainingSchedulersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSensorStatistics
@@ -2135,7 +2101,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<ListSensorStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2186,7 +2151,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -2244,7 +2208,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDataIngestionJob
@@ -2302,7 +2265,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<StartDataIngestionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartInferenceScheduler
@@ -2357,7 +2319,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<StartInferenceSchedulerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartRetrainingScheduler
@@ -2412,7 +2373,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<StartRetrainingSchedulerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopInferenceScheduler
@@ -2467,7 +2427,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<StopInferenceSchedulerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopRetrainingScheduler
@@ -2522,7 +2481,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<StopRetrainingSchedulerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2580,7 +2538,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2631,7 +2588,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateActiveModelVersion
@@ -2686,7 +2642,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<UpdateActiveModelVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInferenceScheduler
@@ -2741,7 +2696,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<UpdateInferenceSchedulerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLabelGroup
@@ -2796,7 +2750,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<UpdateLabelGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateModel
@@ -2851,7 +2804,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<UpdateModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRetrainingScheduler
@@ -2906,7 +2858,6 @@ namespace Amazon.LookoutEquipment
 
             return InvokeAsync<UpdateRetrainingSchedulerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

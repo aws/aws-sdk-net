@@ -314,7 +314,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<CreateAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBackendEnvironment
@@ -371,7 +370,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<CreateBackendEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBranch
@@ -423,7 +421,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<CreateBranchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDeployment
@@ -477,7 +474,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<CreateDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDomainAssociation
@@ -530,7 +526,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<CreateDomainAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWebhook
@@ -582,7 +577,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<CreateWebhookResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApp
@@ -631,7 +625,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<DeleteAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBackendEnvironment
@@ -688,7 +681,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<DeleteBackendEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBranch
@@ -737,7 +729,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<DeleteBranchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDomainAssociation
@@ -786,7 +777,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<DeleteDomainAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteJob
@@ -835,7 +825,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<DeleteJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWebhook
@@ -884,7 +873,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<DeleteWebhookResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateAccessLogs
@@ -930,7 +918,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<GenerateAccessLogsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApp
@@ -976,7 +963,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<GetAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetArtifactUrl
@@ -1025,7 +1011,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<GetArtifactUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBackendEnvironment
@@ -1079,7 +1064,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<GetBackendEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBranch
@@ -1125,7 +1109,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<GetBranchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDomainAssociation
@@ -1171,7 +1154,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<GetDomainAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJob
@@ -1220,7 +1202,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<GetJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWebhook
@@ -1269,7 +1250,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<GetWebhookResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApps
@@ -1312,7 +1292,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<ListAppsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListArtifacts
@@ -1370,7 +1349,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<ListArtifactsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBackendEnvironments
@@ -1421,7 +1399,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<ListBackendEnvironmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBranches
@@ -1464,7 +1441,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<ListBranchesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomainAssociations
@@ -1507,7 +1483,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<ListDomainAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobs
@@ -1553,7 +1528,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1596,7 +1570,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWebhooks
@@ -1642,7 +1615,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<ListWebhooksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDeployment
@@ -1699,7 +1671,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<StartDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartJob
@@ -1748,7 +1719,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<StartJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopJob
@@ -1797,7 +1767,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<StopJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1840,7 +1809,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1883,7 +1851,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApp
@@ -1929,7 +1896,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<UpdateAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBranch
@@ -1978,7 +1944,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<UpdateBranchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDomainAssociation
@@ -2027,7 +1992,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<UpdateDomainAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWebhook
@@ -2076,7 +2040,6 @@ namespace Amazon.Amplify
 
             return InvokeAsync<UpdateWebhookResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

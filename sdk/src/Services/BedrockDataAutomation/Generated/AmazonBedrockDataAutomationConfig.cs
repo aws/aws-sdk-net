@@ -30,7 +30,6 @@ namespace Amazon.BedrockDataAutomation
     /// <summary>
     /// Configuration for accessing Amazon BedrockDataAutomation service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonBedrockDataAutomationConfig : ClientConfig
     {
         private static readonly string UserAgentString =

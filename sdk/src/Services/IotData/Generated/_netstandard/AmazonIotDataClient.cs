@@ -191,7 +191,6 @@ namespace Amazon.IotData
 
             return InvokeAsync<DeleteThingShadowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRetainedMessage
@@ -262,7 +261,6 @@ namespace Amazon.IotData
 
             return InvokeAsync<GetRetainedMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetThingShadow
@@ -331,7 +329,6 @@ namespace Amazon.IotData
 
             return InvokeAsync<GetThingShadowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNamedShadowsForThing
@@ -392,7 +389,6 @@ namespace Amazon.IotData
 
             return InvokeAsync<ListNamedShadowsForThingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRetainedMessages
@@ -466,7 +462,6 @@ namespace Amazon.IotData
 
             return InvokeAsync<ListRetainedMessagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Publish
@@ -531,7 +526,6 @@ namespace Amazon.IotData
 
             return InvokeAsync<PublishResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateThingShadow
@@ -603,7 +597,6 @@ namespace Amazon.IotData
 
             return InvokeAsync<UpdateThingShadowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

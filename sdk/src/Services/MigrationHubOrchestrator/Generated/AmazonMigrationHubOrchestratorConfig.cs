@@ -30,7 +30,6 @@ namespace Amazon.MigrationHubOrchestrator
     /// <summary>
     /// Configuration for accessing Amazon MigrationHubOrchestrator service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMigrationHubOrchestratorConfig : ClientConfig
     {
         private static readonly string UserAgentString =

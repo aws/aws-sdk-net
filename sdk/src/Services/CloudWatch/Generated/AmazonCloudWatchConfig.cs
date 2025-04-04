@@ -30,7 +30,6 @@ namespace Amazon.CloudWatch
     /// <summary>
     /// Configuration for accessing Amazon CloudWatch service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCloudWatchConfig : ClientConfig
     {
         private static readonly string UserAgentString =

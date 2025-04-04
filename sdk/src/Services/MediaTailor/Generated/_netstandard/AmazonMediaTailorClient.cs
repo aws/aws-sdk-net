@@ -307,7 +307,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<ConfigureLogsForChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConfigureLogsForPlaybackConfiguration
@@ -341,7 +340,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<ConfigureLogsForPlaybackConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateChannel
@@ -376,7 +374,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<CreateChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLiveSource
@@ -410,7 +407,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<CreateLiveSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePrefetchSchedule
@@ -447,7 +443,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<CreatePrefetchScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProgram
@@ -482,7 +477,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<CreateProgramResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSourceLocation
@@ -518,7 +512,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<CreateSourceLocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVodSource
@@ -552,7 +545,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<CreateVodSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteChannel
@@ -587,7 +579,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<DeleteChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteChannelPolicy
@@ -621,7 +612,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<DeleteChannelPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLiveSource
@@ -655,7 +645,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<DeleteLiveSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePlaybackConfiguration
@@ -691,7 +680,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<DeletePlaybackConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePrefetchSchedule
@@ -728,7 +716,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<DeletePrefetchScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProgram
@@ -763,7 +750,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<DeleteProgramResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSourceLocation
@@ -799,7 +785,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<DeleteSourceLocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVodSource
@@ -833,7 +818,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<DeleteVodSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeChannel
@@ -868,7 +852,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<DescribeChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLiveSource
@@ -902,7 +885,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<DescribeLiveSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProgram
@@ -937,7 +919,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<DescribeProgramResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSourceLocation
@@ -973,7 +954,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<DescribeSourceLocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVodSource
@@ -1008,7 +988,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<DescribeVodSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetChannelPolicy
@@ -1043,7 +1022,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<GetChannelPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetChannelSchedule
@@ -1077,7 +1055,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<GetChannelScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPlaybackConfiguration
@@ -1113,7 +1090,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<GetPlaybackConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPrefetchSchedule
@@ -1150,7 +1126,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<GetPrefetchScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAlerts
@@ -1184,7 +1159,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<ListAlertsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChannels
@@ -1219,7 +1193,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<ListChannelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLiveSources
@@ -1254,7 +1227,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<ListLiveSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPlaybackConfigurations
@@ -1290,7 +1262,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<ListPlaybackConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPrefetchSchedules
@@ -1324,7 +1295,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<ListPrefetchSchedulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSourceLocations
@@ -1359,7 +1329,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<ListSourceLocationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1399,7 +1368,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVodSources
@@ -1434,7 +1402,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<ListVodSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutChannelPolicy
@@ -1469,7 +1436,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<PutChannelPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutPlaybackConfiguration
@@ -1505,7 +1471,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<PutPlaybackConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartChannel
@@ -1540,7 +1505,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<StartChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopChannel
@@ -1575,7 +1539,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<StopChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1615,7 +1578,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1652,7 +1614,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateChannel
@@ -1687,7 +1648,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<UpdateChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLiveSource
@@ -1721,7 +1681,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<UpdateLiveSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProgram
@@ -1755,7 +1714,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<UpdateProgramResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSourceLocation
@@ -1791,7 +1749,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<UpdateSourceLocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVodSource
@@ -1825,7 +1782,6 @@ namespace Amazon.MediaTailor
 
             return InvokeAsync<UpdateVodSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

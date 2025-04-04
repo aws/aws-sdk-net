@@ -30,7 +30,6 @@ namespace Amazon.GeoPlaces
     /// <summary>
     /// Configuration for accessing Amazon GeoPlaces service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonGeoPlacesConfig : ClientConfig
     {
         private static readonly string UserAgentString =

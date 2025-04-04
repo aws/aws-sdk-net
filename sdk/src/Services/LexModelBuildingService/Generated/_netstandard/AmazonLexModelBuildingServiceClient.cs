@@ -336,7 +336,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<CreateBotVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIntentVersion
@@ -408,7 +407,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<CreateIntentVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSlotTypeVersion
@@ -480,7 +478,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<CreateSlotTypeVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBot
@@ -573,7 +570,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<DeleteBotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBotAlias
@@ -654,7 +650,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<DeleteBotAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBotChannelAssociation
@@ -710,7 +705,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<DeleteBotChannelAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBotVersion
@@ -787,7 +781,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<DeleteBotVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIntent
@@ -878,7 +871,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<DeleteIntentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIntentVersion
@@ -955,7 +947,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<DeleteIntentVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSlotType
@@ -1046,7 +1037,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<DeleteSlotTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSlotTypeVersion
@@ -1123,7 +1113,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<DeleteSlotTypeVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUtterances
@@ -1189,7 +1178,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<DeleteUtterancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBot
@@ -1242,7 +1230,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<GetBotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBotAlias
@@ -1295,7 +1282,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<GetBotAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBotAliases
@@ -1344,7 +1330,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<GetBotAliasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBotChannelAssociation
@@ -1397,7 +1382,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<GetBotChannelAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBotChannelAssociations
@@ -1447,7 +1431,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<GetBotChannelAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBots
@@ -1509,7 +1492,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<GetBotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBotVersions
@@ -1573,7 +1555,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<GetBotVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBuiltinIntent
@@ -1625,7 +1606,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<GetBuiltinIntentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBuiltinIntents
@@ -1674,7 +1654,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<GetBuiltinIntentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBuiltinSlotTypes
@@ -1728,7 +1707,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<GetBuiltinSlotTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExport
@@ -1775,7 +1753,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<GetExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetImport
@@ -1822,7 +1799,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<GetImportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIntent
@@ -1875,7 +1851,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<GetIntentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIntents
@@ -1937,7 +1912,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<GetIntentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIntentVersions
@@ -2002,7 +1976,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<GetIntentVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMigration
@@ -2051,7 +2024,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<GetMigrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMigrations
@@ -2095,7 +2067,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<GetMigrationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSlotType
@@ -2148,7 +2119,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<GetSlotTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSlotTypes
@@ -2210,7 +2180,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<GetSlotTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSlotTypeVersions
@@ -2275,7 +2244,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<GetSlotTypeVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUtterancesView
@@ -2352,7 +2320,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<GetUtterancesViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2400,7 +2367,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBot
@@ -2471,7 +2437,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<PutBotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBotAlias
@@ -2529,7 +2494,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<PutBotAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutIntent
@@ -2650,7 +2614,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<PutIntentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutSlotType
@@ -2721,7 +2684,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<PutSlotTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartImport
@@ -2765,7 +2727,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<StartImportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMigration
@@ -2823,7 +2784,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<StartMigrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2874,7 +2834,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2924,7 +2883,6 @@ namespace Amazon.LexModelBuildingService
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

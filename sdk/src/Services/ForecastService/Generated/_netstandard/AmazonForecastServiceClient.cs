@@ -369,7 +369,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<CreateAutoPredictorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataset
@@ -458,7 +457,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<CreateDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDatasetGroup
@@ -531,7 +529,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<CreateDatasetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDatasetImportJob
@@ -617,7 +614,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<CreateDatasetImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateExplainability
@@ -800,7 +796,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<CreateExplainabilityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateExplainabilityExport
@@ -866,7 +861,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<CreateExplainabilityExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateForecast
@@ -954,7 +948,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<CreateForecastResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateForecastExportJob
@@ -1038,7 +1031,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<CreateForecastExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMonitor
@@ -1092,7 +1084,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<CreateMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePredictor
@@ -1230,7 +1221,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<CreatePredictorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePredictorBacktestExportJob
@@ -1309,7 +1299,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<CreatePredictorBacktestExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWhatIfAnalysis
@@ -1391,7 +1380,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<CreateWhatIfAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWhatIfForecast
@@ -1444,7 +1432,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<CreateWhatIfForecastResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWhatIfForecastExport
@@ -1529,7 +1516,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<CreateWhatIfForecastExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataset
@@ -1585,7 +1571,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DeleteDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDatasetGroup
@@ -1638,7 +1623,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DeleteDatasetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDatasetImportJob
@@ -1686,7 +1670,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DeleteDatasetImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteExplainability
@@ -1737,7 +1720,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DeleteExplainabilityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteExplainabilityExport
@@ -1782,7 +1764,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DeleteExplainabilityExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteForecast
@@ -1835,7 +1816,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DeleteForecastResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteForecastExportJob
@@ -1882,7 +1862,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DeleteForecastExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMonitor
@@ -1928,7 +1907,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DeleteMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePredictor
@@ -1975,7 +1953,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DeletePredictorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePredictorBacktestExportJob
@@ -2020,7 +1997,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DeletePredictorBacktestExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourceTree
@@ -2100,7 +2076,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DeleteResourceTreeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWhatIfAnalysis
@@ -2152,7 +2127,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DeleteWhatIfAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWhatIfForecast
@@ -2205,7 +2179,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DeleteWhatIfForecastResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWhatIfForecastExport
@@ -2253,7 +2226,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DeleteWhatIfForecastExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAutoPredictor
@@ -2295,7 +2267,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DescribeAutoPredictorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataset
@@ -2357,7 +2328,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DescribeDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDatasetGroup
@@ -2423,7 +2393,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DescribeDatasetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDatasetImportJob
@@ -2497,7 +2466,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DescribeDatasetImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeExplainability
@@ -2540,7 +2508,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DescribeExplainabilityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeExplainabilityExport
@@ -2583,7 +2550,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DescribeExplainabilityExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeForecast
@@ -2652,7 +2618,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DescribeForecastResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeForecastExportJob
@@ -2717,7 +2682,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DescribeForecastExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMonitor
@@ -2790,7 +2754,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DescribeMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePredictor
@@ -2870,7 +2833,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DescribePredictorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePredictorBacktestExportJob
@@ -2936,7 +2898,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DescribePredictorBacktestExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWhatIfAnalysis
@@ -3001,7 +2962,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DescribeWhatIfAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWhatIfForecast
@@ -3066,7 +3026,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DescribeWhatIfForecastResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWhatIfForecastExport
@@ -3132,7 +3091,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<DescribeWhatIfForecastExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccuracyMetrics
@@ -3203,7 +3161,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<GetAccuracyMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatasetGroups
@@ -3244,7 +3201,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<ListDatasetGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatasetImportJobs
@@ -3290,7 +3246,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<ListDatasetImportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatasets
@@ -3331,7 +3286,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<ListDatasetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExplainabilities
@@ -3380,7 +3334,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<ListExplainabilitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExplainabilityExports
@@ -3429,7 +3382,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<ListExplainabilityExportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListForecastExportJobs
@@ -3474,7 +3426,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<ListForecastExportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListForecasts
@@ -3519,7 +3470,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<ListForecastsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMonitorEvaluations
@@ -3572,7 +3522,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<ListMonitorEvaluationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMonitors
@@ -3616,7 +3565,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<ListMonitorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPredictorBacktestExportJobs
@@ -3665,7 +3613,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<ListPredictorBacktestExportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPredictors
@@ -3715,7 +3662,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<ListPredictorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3757,7 +3703,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWhatIfAnalyses
@@ -3801,7 +3746,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<ListWhatIfAnalysesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWhatIfForecastExports
@@ -3846,7 +3790,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<ListWhatIfForecastExportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWhatIfForecasts
@@ -3890,7 +3833,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<ListWhatIfForecastsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResumeResource
@@ -3938,7 +3880,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<ResumeResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopResource
@@ -4023,7 +3964,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<StopResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -4071,7 +4011,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -4113,7 +4052,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDatasetGroup
@@ -4166,7 +4104,6 @@ namespace Amazon.ForecastService
 
             return InvokeAsync<UpdateDatasetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -312,7 +312,6 @@ namespace Amazon.MediaPackage
 
             return InvokeAsync<ConfigureLogsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateChannel
@@ -364,7 +363,6 @@ namespace Amazon.MediaPackage
 
             return InvokeAsync<CreateChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateHarvestJob
@@ -416,7 +414,6 @@ namespace Amazon.MediaPackage
 
             return InvokeAsync<CreateHarvestJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOriginEndpoint
@@ -468,7 +465,6 @@ namespace Amazon.MediaPackage
 
             return InvokeAsync<CreateOriginEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteChannel
@@ -520,7 +516,6 @@ namespace Amazon.MediaPackage
 
             return InvokeAsync<DeleteChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOriginEndpoint
@@ -572,7 +567,6 @@ namespace Amazon.MediaPackage
 
             return InvokeAsync<DeleteOriginEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeChannel
@@ -624,7 +618,6 @@ namespace Amazon.MediaPackage
 
             return InvokeAsync<DescribeChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeHarvestJob
@@ -676,7 +669,6 @@ namespace Amazon.MediaPackage
 
             return InvokeAsync<DescribeHarvestJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOriginEndpoint
@@ -728,7 +720,6 @@ namespace Amazon.MediaPackage
 
             return InvokeAsync<DescribeOriginEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChannels
@@ -780,7 +771,6 @@ namespace Amazon.MediaPackage
 
             return InvokeAsync<ListChannelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHarvestJobs
@@ -832,7 +822,6 @@ namespace Amazon.MediaPackage
 
             return InvokeAsync<ListHarvestJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOriginEndpoints
@@ -884,7 +873,6 @@ namespace Amazon.MediaPackage
 
             return InvokeAsync<ListOriginEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -918,7 +906,6 @@ namespace Amazon.MediaPackage
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RotateChannelCredentials
@@ -973,7 +960,6 @@ namespace Amazon.MediaPackage
 
             return InvokeAsync<RotateChannelCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RotateIngestEndpointCredentials
@@ -1026,7 +1012,6 @@ namespace Amazon.MediaPackage
 
             return InvokeAsync<RotateIngestEndpointCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1060,7 +1045,6 @@ namespace Amazon.MediaPackage
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1094,7 +1078,6 @@ namespace Amazon.MediaPackage
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateChannel
@@ -1146,7 +1129,6 @@ namespace Amazon.MediaPackage
 
             return InvokeAsync<UpdateChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateOriginEndpoint
@@ -1198,7 +1180,6 @@ namespace Amazon.MediaPackage
 
             return InvokeAsync<UpdateOriginEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

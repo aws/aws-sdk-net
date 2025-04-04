@@ -447,7 +447,6 @@ namespace Amazon.SecurityToken
 
             return InvokeAsync<AssumeRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssumeRoleWithSAML
@@ -691,7 +690,6 @@ namespace Amazon.SecurityToken
 
             return InvokeAsync<AssumeRoleWithSAMLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssumeRoleWithWebIdentity
@@ -941,7 +939,6 @@ namespace Amazon.SecurityToken
 
             return InvokeAsync<AssumeRoleWithWebIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssumeRoot
@@ -1004,7 +1001,6 @@ namespace Amazon.SecurityToken
 
             return InvokeAsync<AssumeRootResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DecodeAuthorizationMessage
@@ -1094,7 +1090,6 @@ namespace Amazon.SecurityToken
 
             return InvokeAsync<DecodeAuthorizationMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccessKeyInfo
@@ -1155,7 +1150,6 @@ namespace Amazon.SecurityToken
 
             return InvokeAsync<GetAccessKeyInfoResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCallerIdentity
@@ -1201,7 +1195,6 @@ namespace Amazon.SecurityToken
 
             return InvokeAsync<GetCallerIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFederationToken
@@ -1386,7 +1379,6 @@ namespace Amazon.SecurityToken
 
             return InvokeAsync<GetFederationTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSessionToken
@@ -1601,7 +1593,6 @@ namespace Amazon.SecurityToken
 
             return InvokeAsync<GetSessionTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

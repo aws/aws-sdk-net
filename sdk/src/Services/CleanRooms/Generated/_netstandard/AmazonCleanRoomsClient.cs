@@ -330,7 +330,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<BatchGetCollaborationAnalysisTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetSchema
@@ -379,7 +378,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<BatchGetSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetSchemaAnalysisRule
@@ -428,7 +426,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<BatchGetSchemaAnalysisRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAnalysisTemplate
@@ -483,7 +480,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<CreateAnalysisTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCollaboration
@@ -532,7 +528,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<CreateCollaborationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfiguredAudienceModelAssociation
@@ -587,7 +582,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<CreateConfiguredAudienceModelAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfiguredTable
@@ -642,7 +636,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<CreateConfiguredTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfiguredTableAnalysisRule
@@ -698,7 +691,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<CreateConfiguredTableAnalysisRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfiguredTableAssociation
@@ -754,7 +746,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<CreateConfiguredTableAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfiguredTableAssociationAnalysisRule
@@ -806,7 +797,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<CreateConfiguredTableAssociationAnalysisRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIdMappingTable
@@ -861,7 +851,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<CreateIdMappingTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIdNamespaceAssociation
@@ -916,7 +905,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<CreateIdNamespaceAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMembership
@@ -971,7 +959,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<CreateMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePrivacyBudgetTemplate
@@ -1026,7 +1013,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<CreatePrivacyBudgetTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAnalysisTemplate
@@ -1075,7 +1061,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<DeleteAnalysisTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCollaboration
@@ -1121,7 +1106,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<DeleteCollaborationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfiguredAudienceModelAssociation
@@ -1170,7 +1154,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<DeleteConfiguredAudienceModelAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfiguredTable
@@ -1222,7 +1205,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<DeleteConfiguredTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfiguredTableAnalysisRule
@@ -1274,7 +1256,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<DeleteConfiguredTableAnalysisRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfiguredTableAssociation
@@ -1326,7 +1307,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<DeleteConfiguredTableAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfiguredTableAssociationAnalysisRule
@@ -1378,7 +1358,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<DeleteConfiguredTableAssociationAnalysisRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIdMappingTable
@@ -1427,7 +1406,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<DeleteIdMappingTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIdNamespaceAssociation
@@ -1476,7 +1454,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<DeleteIdNamespaceAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMember
@@ -1530,7 +1507,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<DeleteMemberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMembership
@@ -1582,7 +1558,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<DeleteMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePrivacyBudgetTemplate
@@ -1631,7 +1606,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<DeletePrivacyBudgetTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAnalysisTemplate
@@ -1680,7 +1654,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<GetAnalysisTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCollaboration
@@ -1726,7 +1699,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<GetCollaborationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCollaborationAnalysisTemplate
@@ -1775,7 +1747,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<GetCollaborationAnalysisTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCollaborationConfiguredAudienceModelAssociation
@@ -1824,7 +1795,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<GetCollaborationConfiguredAudienceModelAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCollaborationIdNamespaceAssociation
@@ -1873,7 +1843,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<GetCollaborationIdNamespaceAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCollaborationPrivacyBudgetTemplate
@@ -1922,7 +1891,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<GetCollaborationPrivacyBudgetTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfiguredAudienceModelAssociation
@@ -1971,7 +1939,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<GetConfiguredAudienceModelAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfiguredTable
@@ -2020,7 +1987,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<GetConfiguredTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfiguredTableAnalysisRule
@@ -2069,7 +2035,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<GetConfiguredTableAnalysisRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfiguredTableAssociation
@@ -2118,7 +2083,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<GetConfiguredTableAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfiguredTableAssociationAnalysisRule
@@ -2167,7 +2131,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<GetConfiguredTableAssociationAnalysisRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIdMappingTable
@@ -2216,7 +2179,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<GetIdMappingTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIdNamespaceAssociation
@@ -2265,7 +2227,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<GetIdNamespaceAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMembership
@@ -2314,7 +2275,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<GetMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPrivacyBudgetTemplate
@@ -2363,7 +2323,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<GetPrivacyBudgetTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProtectedJob
@@ -2412,7 +2371,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<GetProtectedJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProtectedQuery
@@ -2461,7 +2419,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<GetProtectedQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSchema
@@ -2510,7 +2467,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<GetSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSchemaAnalysisRule
@@ -2559,7 +2515,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<GetSchemaAnalysisRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAnalysisTemplates
@@ -2608,7 +2563,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<ListAnalysisTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCollaborationAnalysisTemplates
@@ -2657,7 +2611,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<ListCollaborationAnalysisTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCollaborationConfiguredAudienceModelAssociations
@@ -2706,7 +2659,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<ListCollaborationConfiguredAudienceModelAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCollaborationIdNamespaceAssociations
@@ -2755,7 +2707,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<ListCollaborationIdNamespaceAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCollaborationPrivacyBudgets
@@ -2806,7 +2757,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<ListCollaborationPrivacyBudgetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCollaborationPrivacyBudgetTemplates
@@ -2855,7 +2805,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<ListCollaborationPrivacyBudgetTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCollaborations
@@ -2901,7 +2850,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<ListCollaborationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfiguredAudienceModelAssociations
@@ -2950,7 +2898,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<ListConfiguredAudienceModelAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfiguredTableAssociations
@@ -2999,7 +2946,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<ListConfiguredTableAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfiguredTables
@@ -3045,7 +2991,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<ListConfiguredTablesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIdMappingTables
@@ -3094,7 +3039,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<ListIdMappingTablesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIdNamespaceAssociations
@@ -3143,7 +3087,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<ListIdNamespaceAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMembers
@@ -3192,7 +3135,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<ListMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMemberships
@@ -3238,7 +3180,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<ListMembershipsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPrivacyBudgets
@@ -3287,7 +3228,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<ListPrivacyBudgetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPrivacyBudgetTemplates
@@ -3336,7 +3276,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<ListPrivacyBudgetTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProtectedJobs
@@ -3385,7 +3324,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<ListProtectedJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProtectedQueries
@@ -3434,7 +3372,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<ListProtectedQueriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSchemas
@@ -3483,7 +3420,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<ListSchemasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3523,7 +3459,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PopulateIdMappingTable
@@ -3578,7 +3513,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<PopulateIdMappingTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PreviewPrivacyImpact
@@ -3628,7 +3562,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<PreviewPrivacyImpactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartProtectedJob
@@ -3680,7 +3613,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<StartProtectedJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartProtectedQuery
@@ -3732,7 +3664,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<StartProtectedQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3772,7 +3703,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3812,7 +3742,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAnalysisTemplate
@@ -3861,7 +3790,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<UpdateAnalysisTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCollaboration
@@ -3907,7 +3835,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<UpdateCollaborationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfiguredAudienceModelAssociation
@@ -3956,7 +3883,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<UpdateConfiguredAudienceModelAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfiguredTable
@@ -4008,7 +3934,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<UpdateConfiguredTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfiguredTableAnalysisRule
@@ -4060,7 +3985,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<UpdateConfiguredTableAnalysisRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfiguredTableAssociation
@@ -4112,7 +4036,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<UpdateConfiguredTableAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfiguredTableAssociationAnalysisRule
@@ -4164,7 +4087,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<UpdateConfiguredTableAssociationAnalysisRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIdMappingTable
@@ -4213,7 +4135,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<UpdateIdMappingTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIdNamespaceAssociation
@@ -4262,7 +4183,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<UpdateIdNamespaceAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMembership
@@ -4314,7 +4234,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<UpdateMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePrivacyBudgetTemplate
@@ -4366,7 +4285,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<UpdatePrivacyBudgetTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProtectedJob
@@ -4418,7 +4336,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<UpdateProtectedJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProtectedQuery
@@ -4470,7 +4387,6 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<UpdateProtectedQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -329,7 +329,6 @@ namespace Amazon.DAX
 
             return InvokeAsync<CreateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateParameterGroup
@@ -382,7 +381,6 @@ namespace Amazon.DAX
 
             return InvokeAsync<CreateParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSubnetGroup
@@ -433,7 +431,6 @@ namespace Amazon.DAX
 
             return InvokeAsync<CreateSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DecreaseReplicationFactor
@@ -492,7 +489,6 @@ namespace Amazon.DAX
 
             return InvokeAsync<DecreaseReplicationFactorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCluster
@@ -544,7 +540,6 @@ namespace Amazon.DAX
 
             return InvokeAsync<DeleteClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteParameterGroup
@@ -594,7 +589,6 @@ namespace Amazon.DAX
 
             return InvokeAsync<DeleteParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSubnetGroup
@@ -643,7 +637,6 @@ namespace Amazon.DAX
 
             return InvokeAsync<DeleteSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClusters
@@ -712,7 +705,6 @@ namespace Amazon.DAX
 
             return InvokeAsync<DescribeClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDefaultParameters
@@ -755,7 +747,6 @@ namespace Amazon.DAX
 
             return InvokeAsync<DescribeDefaultParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEvents
@@ -806,7 +797,6 @@ namespace Amazon.DAX
 
             return InvokeAsync<DescribeEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeParameterGroups
@@ -853,7 +843,6 @@ namespace Amazon.DAX
 
             return InvokeAsync<DescribeParameterGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeParameters
@@ -899,7 +888,6 @@ namespace Amazon.DAX
 
             return InvokeAsync<DescribeParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSubnetGroups
@@ -940,7 +928,6 @@ namespace Amazon.DAX
 
             return InvokeAsync<DescribeSubnetGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  IncreaseReplicationFactor
@@ -1002,7 +989,6 @@ namespace Amazon.DAX
 
             return InvokeAsync<IncreaseReplicationFactorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTags
@@ -1055,7 +1041,6 @@ namespace Amazon.DAX
 
             return InvokeAsync<ListTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RebootNode
@@ -1115,7 +1100,6 @@ namespace Amazon.DAX
 
             return InvokeAsync<RebootNodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1171,7 +1155,6 @@ namespace Amazon.DAX
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1227,7 +1210,6 @@ namespace Amazon.DAX
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCluster
@@ -1283,7 +1265,6 @@ namespace Amazon.DAX
 
             return InvokeAsync<UpdateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateParameterGroup
@@ -1333,7 +1314,6 @@ namespace Amazon.DAX
 
             return InvokeAsync<UpdateParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSubnetGroup
@@ -1383,7 +1363,6 @@ namespace Amazon.DAX
 
             return InvokeAsync<UpdateSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

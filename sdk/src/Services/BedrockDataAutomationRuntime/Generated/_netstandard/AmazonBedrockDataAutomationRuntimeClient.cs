@@ -291,7 +291,6 @@ namespace Amazon.BedrockDataAutomationRuntime
 
             return InvokeAsync<GetDataAutomationStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InvokeDataAutomationAsync
@@ -340,7 +339,6 @@ namespace Amazon.BedrockDataAutomationRuntime
 
             return InvokeAsync<InvokeDataAutomationAsyncResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -389,7 +387,6 @@ namespace Amazon.BedrockDataAutomationRuntime
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -441,7 +438,6 @@ namespace Amazon.BedrockDataAutomationRuntime
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -490,7 +486,6 @@ namespace Amazon.BedrockDataAutomationRuntime
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

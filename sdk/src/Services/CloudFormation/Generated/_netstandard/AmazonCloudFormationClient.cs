@@ -329,7 +329,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ActivateOrganizationsAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ActivateType
@@ -374,7 +373,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ActivateTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDescribeTypeConfigurations
@@ -422,7 +420,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<BatchDescribeTypeConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelUpdateStack
@@ -466,7 +463,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<CancelUpdateStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ContinueUpdateRollback
@@ -518,7 +514,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ContinueUpdateRollbackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateChangeSet
@@ -598,7 +593,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<CreateChangeSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGeneratedTemplate
@@ -651,7 +645,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<CreateGeneratedTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStack
@@ -714,7 +707,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<CreateStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStackInstances
@@ -777,7 +769,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<CreateStackInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStackRefactor
@@ -812,7 +803,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<CreateStackRefactorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStackSet
@@ -861,7 +851,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<CreateStackSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeactivateOrganizationsAccess
@@ -903,7 +892,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DeactivateOrganizationsAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeactivateType
@@ -951,7 +939,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DeactivateTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteChangeSet
@@ -1003,7 +990,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DeleteChangeSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGeneratedTemplate
@@ -1045,7 +1031,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DeleteGeneratedTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStack
@@ -1090,7 +1075,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DeleteStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStackInstances
@@ -1142,7 +1126,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DeleteStackInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStackSet
@@ -1185,7 +1168,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DeleteStackSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterType
@@ -1245,7 +1227,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DeregisterTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountLimits
@@ -1282,7 +1263,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DescribeAccountLimitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeChangeSet
@@ -1322,7 +1302,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DescribeChangeSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeChangeSetHooks
@@ -1361,7 +1340,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DescribeChangeSetHooksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGeneratedTemplate
@@ -1401,7 +1379,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DescribeGeneratedTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOrganizationsAccess
@@ -1444,7 +1421,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DescribeOrganizationsAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePublisher
@@ -1503,7 +1479,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DescribePublisherResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeResourceScan
@@ -1540,7 +1515,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DescribeResourceScanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStackDriftDetectionStatus
@@ -1589,7 +1563,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DescribeStackDriftDetectionStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStackEvents
@@ -1632,7 +1605,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DescribeStackEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStackInstance
@@ -1678,7 +1650,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DescribeStackInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStackRefactor
@@ -1715,7 +1686,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DescribeStackRefactorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStackResource
@@ -1755,7 +1725,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DescribeStackResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStackResourceDrifts
@@ -1806,7 +1775,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DescribeStackResourceDriftsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStackResources
@@ -1868,7 +1836,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DescribeStackResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStacks
@@ -1939,7 +1906,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DescribeStacksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStackSet
@@ -1976,7 +1942,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DescribeStackSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStackSetOperation
@@ -2016,7 +1981,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DescribeStackSetOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeType
@@ -2063,7 +2027,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DescribeTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTypeRegistration
@@ -2112,7 +2075,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DescribeTypeRegistrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectStackDrift
@@ -2179,7 +2141,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DetectStackDriftResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectStackResourceDrift
@@ -2231,7 +2192,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DetectStackResourceDriftResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectStackSetDrift
@@ -2315,7 +2275,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<DetectStackSetDriftResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EstimateTemplateCost
@@ -2351,7 +2310,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<EstimateTemplateCostResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteChangeSet
@@ -2419,7 +2377,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ExecuteChangeSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteStackRefactor
@@ -2453,7 +2410,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ExecuteStackRefactorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGeneratedTemplate
@@ -2493,7 +2449,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<GetGeneratedTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStackPolicy
@@ -2528,7 +2483,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<GetStackPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTemplate
@@ -2578,7 +2532,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<GetTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTemplateSummary
@@ -2629,7 +2582,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<GetTemplateSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportStacksToStackSet
@@ -2696,7 +2648,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ImportStacksToStackSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChangeSets
@@ -2732,7 +2683,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ListChangeSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExports
@@ -2775,7 +2725,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ListExportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGeneratedTemplates
@@ -2809,7 +2758,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ListGeneratedTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHookResults
@@ -2847,7 +2795,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ListHookResultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImports
@@ -2889,7 +2836,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ListImportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceScanRelatedResources
@@ -2931,7 +2877,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ListResourceScanRelatedResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceScanResources
@@ -2975,7 +2920,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ListResourceScanResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceScans
@@ -3010,7 +2954,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ListResourceScansResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStackInstanceResourceDrifts
@@ -3061,7 +3004,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ListStackInstanceResourceDriftsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStackInstances
@@ -3100,7 +3042,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ListStackInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStackRefactorActions
@@ -3135,7 +3076,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ListStackRefactorActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStackRefactors
@@ -3169,7 +3109,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ListStackRefactorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStackResources
@@ -3209,7 +3148,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ListStackResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStacks
@@ -3268,7 +3206,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ListStacksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStackSetAutoDeploymentTargets
@@ -3305,7 +3242,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ListStackSetAutoDeploymentTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStackSetOperationResults
@@ -3345,7 +3281,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ListStackSetOperationResultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStackSetOperations
@@ -3382,7 +3317,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ListStackSetOperationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStackSets
@@ -3436,7 +3370,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ListStackSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTypeRegistrations
@@ -3473,7 +3406,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ListTypeRegistrationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTypes
@@ -3510,7 +3442,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ListTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTypeVersions
@@ -3547,7 +3478,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ListTypeVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PublishType
@@ -3597,7 +3527,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<PublishTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RecordHandlerProgress
@@ -3645,7 +3574,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<RecordHandlerProgressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterPublisher
@@ -3692,7 +3620,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<RegisterPublisherResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterType
@@ -3770,7 +3697,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<RegisterTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RollbackStack
@@ -3842,7 +3768,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<RollbackStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetStackPolicy
@@ -3876,7 +3801,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<SetStackPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetTypeConfiguration
@@ -3935,7 +3859,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<SetTypeConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetTypeDefaultVersion
@@ -3976,7 +3899,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<SetTypeDefaultVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SignalResource
@@ -4015,7 +3937,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<SignalResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartResourceScan
@@ -4073,7 +3994,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<StartResourceScanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopStackSetOperation
@@ -4118,7 +4038,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<StopStackSetOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestType
@@ -4197,7 +4116,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<TestTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGeneratedTemplate
@@ -4249,7 +4167,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<UpdateGeneratedTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStack
@@ -4305,7 +4222,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<UpdateStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStackInstances
@@ -4383,7 +4299,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<UpdateStackInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStackSet
@@ -4446,7 +4361,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<UpdateStackSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTerminationProtection
@@ -4490,7 +4404,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<UpdateTerminationProtectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ValidateTemplate
@@ -4547,7 +4460,6 @@ namespace Amazon.CloudFormation
 
             return InvokeAsync<ValidateTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

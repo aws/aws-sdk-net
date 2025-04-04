@@ -312,7 +312,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<CancelExportTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelImportTask
@@ -361,7 +360,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<CancelImportTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelQuery
@@ -410,7 +408,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<CancelQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGraph
@@ -459,7 +456,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<CreateGraphResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGraphSnapshot
@@ -511,7 +507,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<CreateGraphSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGraphUsingImportTask
@@ -568,7 +563,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<CreateGraphUsingImportTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePrivateGraphEndpoint
@@ -627,7 +621,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<CreatePrivateGraphEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGraph
@@ -676,7 +669,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<DeleteGraphResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGraphSnapshot
@@ -725,7 +717,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<DeleteGraphSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePrivateGraphEndpoint
@@ -774,7 +765,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<DeletePrivateGraphEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteQuery
@@ -846,7 +836,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<ExecuteQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExportTask
@@ -892,7 +881,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<GetExportTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGraph
@@ -938,7 +926,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<GetGraphResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGraphSnapshot
@@ -984,7 +971,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<GetGraphSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGraphSummary
@@ -1033,7 +1019,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<GetGraphSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetImportTask
@@ -1079,7 +1064,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<GetImportTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPrivateGraphEndpoint
@@ -1125,7 +1109,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<GetPrivateGraphEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQuery
@@ -1182,7 +1165,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<GetQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExportTasks
@@ -1228,7 +1210,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<ListExportTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGraphs
@@ -1271,7 +1252,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<ListGraphsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGraphSnapshots
@@ -1317,7 +1297,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<ListGraphSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImportTasks
@@ -1363,7 +1342,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<ListImportTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPrivateGraphEndpoints
@@ -1409,7 +1387,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<ListPrivateGraphEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQueries
@@ -1455,7 +1432,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<ListQueriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1501,7 +1477,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetGraph
@@ -1550,7 +1525,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<ResetGraphResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreGraphFromSnapshot
@@ -1602,7 +1576,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<RestoreGraphFromSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartExportTask
@@ -1652,7 +1625,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<StartExportTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartImportTask
@@ -1702,7 +1674,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<StartImportTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1748,7 +1719,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1794,7 +1764,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGraph
@@ -1843,7 +1812,6 @@ namespace Amazon.NeptuneGraph
 
             return InvokeAsync<UpdateGraphResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.MWAA
     /// <summary>
     /// Configuration for accessing Amazon MWAA service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMWAAConfig : ClientConfig
     {
         private static readonly string UserAgentString =

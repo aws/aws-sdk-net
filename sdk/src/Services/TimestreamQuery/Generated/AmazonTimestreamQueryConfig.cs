@@ -30,7 +30,6 @@ namespace Amazon.TimestreamQuery
     /// <summary>
     /// Configuration for accessing Amazon TimestreamQuery service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonTimestreamQueryConfig : ClientConfig
     {
         private static readonly string UserAgentString =

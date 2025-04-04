@@ -30,7 +30,6 @@ namespace Amazon.LocationService
     /// <summary>
     /// Configuration for accessing Amazon LocationService service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonLocationServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

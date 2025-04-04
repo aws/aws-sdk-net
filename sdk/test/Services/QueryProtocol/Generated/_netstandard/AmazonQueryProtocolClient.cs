@@ -274,7 +274,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<DatetimeOffsetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EmptyInputAndEmptyOutput
@@ -314,7 +313,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<EmptyInputAndEmptyOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EndpointOperation
@@ -348,7 +346,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<EndpointOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EndpointWithHostLabelOperation
@@ -382,7 +379,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<EndpointWithHostLabelOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FlattenedXmlMap
@@ -416,7 +412,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<FlattenedXmlMapResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FlattenedXmlMapWithXmlName
@@ -450,7 +445,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<FlattenedXmlMapWithXmlNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FlattenedXmlMapWithXmlNamespace
@@ -484,7 +478,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<FlattenedXmlMapWithXmlNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FractionalSeconds
@@ -518,7 +511,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<FractionalSecondsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GreetingWithErrors
@@ -564,7 +556,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<GreetingWithErrorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HostWithPathOperation
@@ -598,7 +589,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<HostWithPathOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  IgnoresWrappingXmlName
@@ -638,7 +628,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<IgnoresWrappingXmlNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NoInputAndNoOutput
@@ -678,7 +667,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<NoInputAndNoOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NoInputAndOutput
@@ -718,7 +706,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<NoInputAndOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutWithContentEncoding
@@ -752,7 +739,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<PutWithContentEncodingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryIdempotencyTokenAutoFill
@@ -786,7 +772,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<QueryIdempotencyTokenAutoFillResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryLists
@@ -820,7 +805,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<QueryListsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryMaps
@@ -854,7 +838,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<QueryMapsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryTimestamps
@@ -892,7 +875,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<QueryTimestampsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RecursiveXmlShapes
@@ -926,7 +908,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<RecursiveXmlShapesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SimpleInputParams
@@ -960,7 +941,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<SimpleInputParamsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SimpleScalarXmlProperties
@@ -994,7 +974,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<SimpleScalarXmlPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlBlobs
@@ -1028,7 +1007,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<XmlBlobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlEmptyBlobs
@@ -1062,7 +1040,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<XmlEmptyBlobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlEmptyLists
@@ -1096,7 +1073,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<XmlEmptyListsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlEmptyMaps
@@ -1130,7 +1106,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<XmlEmptyMapsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlEnums
@@ -1164,7 +1139,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<XmlEnumsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlIntEnums
@@ -1198,7 +1172,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<XmlIntEnumsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlLists
@@ -1236,7 +1209,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<XmlListsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlMaps
@@ -1270,7 +1242,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<XmlMapsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlMapsXmlName
@@ -1304,7 +1275,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<XmlMapsXmlNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlNamespaces
@@ -1338,7 +1308,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<XmlNamespacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlTimestamps
@@ -1373,7 +1342,6 @@ namespace Amazon.QueryProtocol
 
             return InvokeAsync<XmlTimestampsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
     }

@@ -345,7 +345,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<ApplyArchiveRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelPolicyGeneration
@@ -391,7 +390,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<CancelPolicyGenerationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CheckAccessNotGranted
@@ -443,7 +441,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<CheckAccessNotGrantedResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CheckNoNewAccess
@@ -505,7 +502,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<CheckNoNewAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CheckNoPublicAccess
@@ -558,7 +554,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<CheckNoPublicAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAccessPreview
@@ -614,7 +609,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<CreateAccessPreviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAnalyzer
@@ -666,7 +660,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<CreateAnalyzerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateArchiveRule
@@ -728,7 +721,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<CreateArchiveRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAnalyzer
@@ -779,7 +771,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<DeleteAnalyzerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteArchiveRule
@@ -828,7 +819,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<DeleteArchiveRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateFindingRecommendation
@@ -874,7 +864,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<GenerateFindingRecommendationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccessPreview
@@ -923,7 +912,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<GetAccessPreviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAnalyzedResource
@@ -972,7 +960,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<GetAnalyzedResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAnalyzer
@@ -1021,7 +1008,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<GetAnalyzerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetArchiveRule
@@ -1076,7 +1062,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<GetArchiveRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFinding
@@ -1128,7 +1113,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<GetFindingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFindingRecommendation
@@ -1177,7 +1161,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<GetFindingRecommendationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFindingsStatistics
@@ -1227,7 +1210,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<GetFindingsStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFindingV2
@@ -1279,7 +1261,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<GetFindingV2Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGeneratedPolicy
@@ -1325,7 +1306,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<GetGeneratedPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccessPreviewFindings
@@ -1377,7 +1357,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<ListAccessPreviewFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccessPreviews
@@ -1426,7 +1405,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<ListAccessPreviewsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAnalyzedResources
@@ -1476,7 +1454,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<ListAnalyzedResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAnalyzers
@@ -1522,7 +1499,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<ListAnalyzersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListArchiveRules
@@ -1568,7 +1544,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<ListArchiveRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFindings
@@ -1627,7 +1602,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<ListFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFindingsV2
@@ -1686,7 +1660,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<ListFindingsV2Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPolicyGenerations
@@ -1732,7 +1705,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<ListPolicyGenerationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1781,7 +1753,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartPolicyGeneration
@@ -1833,7 +1804,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<StartPolicyGenerationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartResourceScan
@@ -1882,7 +1852,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<StartResourceScanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1931,7 +1900,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1980,7 +1948,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAnalyzer
@@ -2032,7 +1999,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<UpdateAnalyzerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateArchiveRule
@@ -2081,7 +2047,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<UpdateArchiveRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFindings
@@ -2130,7 +2095,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<UpdateFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ValidatePolicy
@@ -2178,7 +2142,6 @@ namespace Amazon.AccessAnalyzer
 
             return InvokeAsync<ValidatePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

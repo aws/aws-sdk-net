@@ -327,7 +327,6 @@ namespace Amazon.ElasticTranscoder
 
             return InvokeAsync<CancelJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateJob
@@ -390,7 +389,6 @@ namespace Amazon.ElasticTranscoder
 
             return InvokeAsync<CreateJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePipeline
@@ -445,7 +443,6 @@ namespace Amazon.ElasticTranscoder
 
             return InvokeAsync<CreatePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePreset
@@ -515,7 +512,6 @@ namespace Amazon.ElasticTranscoder
 
             return InvokeAsync<CreatePresetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePipeline
@@ -577,7 +573,6 @@ namespace Amazon.ElasticTranscoder
 
             return InvokeAsync<DeletePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePreset
@@ -634,7 +629,6 @@ namespace Amazon.ElasticTranscoder
 
             return InvokeAsync<DeletePresetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobsByPipeline
@@ -691,7 +685,6 @@ namespace Amazon.ElasticTranscoder
 
             return InvokeAsync<ListJobsByPipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobsByStatus
@@ -743,7 +736,6 @@ namespace Amazon.ElasticTranscoder
 
             return InvokeAsync<ListJobsByStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPipelines
@@ -824,7 +816,6 @@ namespace Amazon.ElasticTranscoder
 
             return InvokeAsync<ListPipelinesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPresets
@@ -905,7 +896,6 @@ namespace Amazon.ElasticTranscoder
 
             return InvokeAsync<ListPresetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReadJob
@@ -956,7 +946,6 @@ namespace Amazon.ElasticTranscoder
 
             return InvokeAsync<ReadJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReadPipeline
@@ -1007,7 +996,6 @@ namespace Amazon.ElasticTranscoder
 
             return InvokeAsync<ReadPipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReadPreset
@@ -1058,7 +1046,6 @@ namespace Amazon.ElasticTranscoder
 
             return InvokeAsync<ReadPresetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestRole
@@ -1120,7 +1107,6 @@ namespace Amazon.ElasticTranscoder
 
             return InvokeAsync<TestRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePipeline
@@ -1183,7 +1169,6 @@ namespace Amazon.ElasticTranscoder
 
             return InvokeAsync<UpdatePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePipelineNotifications
@@ -1245,7 +1230,6 @@ namespace Amazon.ElasticTranscoder
 
             return InvokeAsync<UpdatePipelineNotificationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePipelineStatus
@@ -1309,7 +1293,6 @@ namespace Amazon.ElasticTranscoder
 
             return InvokeAsync<UpdatePipelineStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

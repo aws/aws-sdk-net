@@ -297,7 +297,6 @@ namespace Amazon.IoTEventsData
 
             return InvokeAsync<BatchAcknowledgeAlarmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteDetector
@@ -346,7 +345,6 @@ namespace Amazon.IoTEventsData
 
             return InvokeAsync<BatchDeleteDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDisableAlarm
@@ -393,7 +391,6 @@ namespace Amazon.IoTEventsData
 
             return InvokeAsync<BatchDisableAlarmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchEnableAlarm
@@ -440,7 +437,6 @@ namespace Amazon.IoTEventsData
 
             return InvokeAsync<BatchEnableAlarmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchPutMessage
@@ -490,7 +486,6 @@ namespace Amazon.IoTEventsData
 
             return InvokeAsync<BatchPutMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchResetAlarm
@@ -537,7 +532,6 @@ namespace Amazon.IoTEventsData
 
             return InvokeAsync<BatchResetAlarmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchSnoozeAlarm
@@ -584,7 +578,6 @@ namespace Amazon.IoTEventsData
 
             return InvokeAsync<BatchSnoozeAlarmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchUpdateDetector
@@ -631,7 +624,6 @@ namespace Amazon.IoTEventsData
 
             return InvokeAsync<BatchUpdateDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAlarm
@@ -680,7 +672,6 @@ namespace Amazon.IoTEventsData
 
             return InvokeAsync<DescribeAlarmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDetector
@@ -729,7 +720,6 @@ namespace Amazon.IoTEventsData
 
             return InvokeAsync<DescribeDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAlarms
@@ -779,7 +769,6 @@ namespace Amazon.IoTEventsData
 
             return InvokeAsync<ListAlarmsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDetectors
@@ -828,7 +817,6 @@ namespace Amazon.IoTEventsData
 
             return InvokeAsync<ListDetectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

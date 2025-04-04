@@ -30,7 +30,6 @@ namespace Amazon.KendraRanking
     /// <summary>
     /// Configuration for accessing Amazon KendraRanking service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonKendraRankingConfig : ClientConfig
     {
         private static readonly string UserAgentString =

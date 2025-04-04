@@ -555,7 +555,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<AcknowledgeJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AcknowledgeThirdPartyJob
@@ -635,7 +634,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<AcknowledgeThirdPartyJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCustomActionType
@@ -686,7 +684,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<CreateCustomActionTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePipeline
@@ -816,7 +813,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<CreatePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCustomActionType
@@ -866,7 +862,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<DeleteCustomActionTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePipeline
@@ -930,7 +925,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<DeletePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWebhook
@@ -973,7 +967,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<DeleteWebhookResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterWebhookWithThirdParty
@@ -1015,7 +1008,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<DeregisterWebhookWithThirdPartyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableStageTransition
@@ -1058,7 +1050,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<DisableStageTransitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableStageTransition
@@ -1101,7 +1092,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<EnableStageTransitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetActionType
@@ -1143,7 +1133,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<GetActionTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJobDetails
@@ -1225,7 +1214,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<GetJobDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPipeline
@@ -1330,7 +1318,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<GetPipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPipelineExecution
@@ -1375,7 +1362,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<GetPipelineExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPipelineState
@@ -1453,7 +1439,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<GetPipelineStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetThirdPartyJobDetails
@@ -1549,7 +1534,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<GetThirdPartyJobDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListActionExecutions
@@ -1597,7 +1581,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<ListActionExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListActionTypes
@@ -1686,7 +1669,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<ListActionTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPipelineExecutions
@@ -1738,7 +1720,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<ListPipelineExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPipelines
@@ -1802,7 +1783,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<ListPipelinesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRuleExecutions
@@ -1851,7 +1831,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<ListRuleExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRuleTypes
@@ -1895,7 +1874,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<ListRuleTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1942,7 +1920,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWebhooks
@@ -1991,7 +1968,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<ListWebhooksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  OverrideStageCondition
@@ -2051,7 +2027,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<OverrideStageConditionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PollForJobs
@@ -2103,7 +2078,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<PollForJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PollForThirdPartyJobs
@@ -2152,7 +2126,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<PollForThirdPartyJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutActionRevision
@@ -2201,7 +2174,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<PutActionRevisionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutApprovalResult
@@ -2254,7 +2226,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<PutApprovalResultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutJobFailureResult
@@ -2328,7 +2299,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<PutJobFailureResultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutJobSuccessResult
@@ -2375,7 +2345,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<PutJobSuccessResultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutThirdPartyJobFailureResult
@@ -2457,7 +2426,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<PutThirdPartyJobFailureResultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutThirdPartyJobSuccessResult
@@ -2504,7 +2472,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<PutThirdPartyJobSuccessResultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutWebhook
@@ -2585,7 +2552,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<PutWebhookResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterWebhookWithThirdParty
@@ -2626,7 +2592,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<RegisterWebhookWithThirdPartyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RetryStageExecution
@@ -2691,7 +2656,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<RetryStageExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RollbackStage
@@ -2751,7 +2715,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<RollbackStageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartPipelineExecution
@@ -2831,7 +2794,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<StartPipelineExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopPipelineExecution
@@ -2889,7 +2851,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<StopPipelineExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2942,7 +2903,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2991,7 +2951,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateActionType
@@ -3036,7 +2995,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<UpdateActionTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePipeline
@@ -3132,7 +3090,6 @@ namespace Amazon.CodePipeline
 
             return InvokeAsync<UpdatePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -376,7 +376,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<AssociatePhoneNumberWithUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateSigninDelegateGroupsWithAccount
@@ -431,7 +430,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<AssociateSigninDelegateGroupsWithAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchCreateRoomMembership
@@ -488,7 +486,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<BatchCreateRoomMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeletePhoneNumber
@@ -550,7 +547,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<BatchDeletePhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchSuspendUser
@@ -625,7 +621,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<BatchSuspendUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchUnsuspendUser
@@ -691,7 +686,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<BatchUnsuspendUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchUpdatePhoneNumber
@@ -760,7 +754,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<BatchUpdatePhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchUpdateUser
@@ -817,7 +810,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<BatchUpdateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAccount
@@ -875,7 +867,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<CreateAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBot
@@ -933,7 +924,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<CreateBotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMeetingDialOut
@@ -1005,7 +995,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<CreateMeetingDialOutResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePhoneNumberOrder
@@ -1065,7 +1054,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<CreatePhoneNumberOrderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRoom
@@ -1123,7 +1111,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<CreateRoomResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRoomMembership
@@ -1187,7 +1174,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<CreateRoomMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUser
@@ -1246,7 +1232,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<CreateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccount
@@ -1322,7 +1307,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<DeleteAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventsConfiguration
@@ -1374,7 +1358,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<DeleteEventsConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePhoneNumber
@@ -1437,7 +1420,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<DeletePhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRoom
@@ -1492,7 +1474,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<DeleteRoomResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRoomMembership
@@ -1547,7 +1528,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<DeleteRoomMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociatePhoneNumberFromUser
@@ -1603,7 +1583,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<DisassociatePhoneNumberFromUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateSigninDelegateGroupsFromAccount
@@ -1659,7 +1638,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<DisassociateSigninDelegateGroupsFromAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccount
@@ -1715,7 +1693,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<GetAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccountSettings
@@ -1772,7 +1749,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<GetAccountSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBot
@@ -1828,7 +1804,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<GetBotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEventsConfiguration
@@ -1884,7 +1859,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<GetEventsConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGlobalSettings
@@ -1937,7 +1911,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<GetGlobalSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPhoneNumber
@@ -1993,7 +1966,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<GetPhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPhoneNumberOrder
@@ -2049,7 +2021,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<GetPhoneNumberOrderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPhoneNumberSettings
@@ -2102,7 +2073,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<GetPhoneNumberSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRetentionSettings
@@ -2159,7 +2129,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<GetRetentionSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRoom
@@ -2215,7 +2184,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<GetRoomResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUser
@@ -2277,7 +2245,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<GetUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUserSettings
@@ -2333,7 +2300,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<GetUserSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InviteUsers
@@ -2390,7 +2356,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<InviteUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccounts
@@ -2447,7 +2412,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<ListAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBots
@@ -2503,7 +2467,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<ListBotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPhoneNumberOrders
@@ -2555,7 +2518,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<ListPhoneNumberOrdersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPhoneNumbers
@@ -2611,7 +2573,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<ListPhoneNumbersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRoomMemberships
@@ -2667,7 +2628,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<ListRoomMembershipsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRooms
@@ -2724,7 +2684,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<ListRoomsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSupportedPhoneNumberCountries
@@ -2779,7 +2738,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<ListSupportedPhoneNumberCountriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUsers
@@ -2835,7 +2793,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<ListUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  LogoutUser
@@ -2890,7 +2847,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<LogoutUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEventsConfiguration
@@ -2947,7 +2903,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<PutEventsConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRetentionSettings
@@ -3018,7 +2973,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<PutRetentionSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RedactConversationMessage
@@ -3073,7 +3027,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<RedactConversationMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RedactRoomMessage
@@ -3128,7 +3081,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<RedactRoomMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegenerateSecurityToken
@@ -3183,7 +3135,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<RegenerateSecurityTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetPersonalPIN
@@ -3239,7 +3190,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<ResetPersonalPINResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestorePhoneNumber
@@ -3297,7 +3247,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<RestorePhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchAvailablePhoneNumbers
@@ -3355,7 +3304,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<SearchAvailablePhoneNumbersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccount
@@ -3411,7 +3359,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<UpdateAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccountSettings
@@ -3473,7 +3420,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<UpdateAccountSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBot
@@ -3529,7 +3475,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<UpdateBotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGlobalSettings
@@ -3582,7 +3527,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<UpdateGlobalSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePhoneNumber
@@ -3655,7 +3599,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<UpdatePhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePhoneNumberSettings
@@ -3709,7 +3652,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<UpdatePhoneNumberSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRoom
@@ -3765,7 +3707,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<UpdateRoomResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRoomMembership
@@ -3823,7 +3764,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<UpdateRoomMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUser
@@ -3879,7 +3819,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<UpdateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUserSettings
@@ -3934,7 +3873,6 @@ namespace Amazon.Chime
 
             return InvokeAsync<UpdateUserSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

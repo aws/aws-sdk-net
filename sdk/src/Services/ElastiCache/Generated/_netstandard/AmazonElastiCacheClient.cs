@@ -384,7 +384,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<AddTagsToResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AuthorizeCacheSecurityGroupIngress
@@ -444,7 +443,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<AuthorizeCacheSecurityGroupIngressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchApplyUpdateAction
@@ -486,7 +484,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<BatchApplyUpdateActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchStopUpdateAction
@@ -528,7 +525,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<BatchStopUpdateActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CompleteMigration
@@ -571,7 +567,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<CompleteMigrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyServerlessCacheSnapshot
@@ -636,7 +631,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<CopyServerlessCacheSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopySnapshot
@@ -799,7 +793,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<CopySnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCacheCluster
@@ -890,7 +883,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<CreateCacheClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCacheParameterGroup
@@ -966,7 +958,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<CreateCacheParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCacheSecurityGroup
@@ -1026,7 +1017,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<CreateCacheSecurityGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCacheSubnetGroup
@@ -1092,7 +1082,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<CreateCacheSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGlobalReplicationGroup
@@ -1156,7 +1145,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<CreateGlobalReplicationGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateReplicationGroup
@@ -1307,7 +1295,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<CreateReplicationGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateServerlessCache
@@ -1376,7 +1363,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<CreateServerlessCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateServerlessCacheSnapshot
@@ -1439,7 +1425,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<CreateServerlessCacheSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSnapshot
@@ -1526,7 +1511,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<CreateSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUser
@@ -1585,7 +1569,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<CreateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUserGroup
@@ -1647,7 +1630,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<CreateUserGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DecreaseNodeGroupsInGlobalReplicationGroup
@@ -1693,7 +1675,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DecreaseNodeGroupsInGlobalReplicationGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DecreaseReplicaCount
@@ -1771,7 +1752,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DecreaseReplicaCountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCacheCluster
@@ -1878,7 +1858,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DeleteCacheClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCacheParameterGroup
@@ -1928,7 +1907,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DeleteCacheParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCacheSecurityGroup
@@ -1981,7 +1959,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DeleteCacheSecurityGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCacheSubnetGroup
@@ -2028,7 +2005,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DeleteCacheSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGlobalReplicationGroup
@@ -2094,7 +2070,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DeleteGlobalReplicationGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReplicationGroup
@@ -2183,7 +2158,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DeleteReplicationGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServerlessCache
@@ -2246,7 +2220,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DeleteServerlessCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServerlessCacheSnapshot
@@ -2295,7 +2268,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DeleteServerlessCacheSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSnapshot
@@ -2349,7 +2321,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DeleteSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUser
@@ -2401,7 +2372,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUserGroup
@@ -2450,7 +2420,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DeleteUserGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCacheClusters
@@ -2583,7 +2552,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DescribeCacheClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCacheEngineVersions
@@ -2636,7 +2604,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DescribeCacheEngineVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCacheParameterGroups
@@ -2711,7 +2678,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DescribeCacheParameterGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCacheParameters
@@ -2755,7 +2721,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DescribeCacheParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCacheSecurityGroups
@@ -2832,7 +2797,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DescribeCacheSecurityGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCacheSubnetGroups
@@ -2895,7 +2859,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DescribeCacheSubnetGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEngineDefaultParameters
@@ -2936,7 +2899,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DescribeEngineDefaultParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEvents
@@ -3017,7 +2979,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DescribeEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGlobalReplicationGroups
@@ -3061,7 +3022,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DescribeGlobalReplicationGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReplicationGroups
@@ -3146,7 +3106,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DescribeReplicationGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReservedCacheNodes
@@ -3219,7 +3178,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DescribeReservedCacheNodesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReservedCacheNodesOfferings
@@ -3290,7 +3248,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DescribeReservedCacheNodesOfferingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeServerlessCaches
@@ -3335,7 +3292,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DescribeServerlessCachesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeServerlessCacheSnapshots
@@ -3385,7 +3341,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DescribeServerlessCacheSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeServiceUpdates
@@ -3428,7 +3383,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DescribeServiceUpdatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSnapshots
@@ -3521,7 +3475,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DescribeSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUpdateActions
@@ -3561,7 +3514,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DescribeUpdateActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUserGroups
@@ -3604,7 +3556,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DescribeUserGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUsers
@@ -3647,7 +3598,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DescribeUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateGlobalReplicationGroup
@@ -3695,7 +3645,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<DisassociateGlobalReplicationGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportServerlessCacheSnapshot
@@ -3744,7 +3693,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<ExportServerlessCacheSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FailoverGlobalReplicationGroup
@@ -3791,7 +3739,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<FailoverGlobalReplicationGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  IncreaseNodeGroupsInGlobalReplicationGroup
@@ -3834,7 +3781,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<IncreaseNodeGroupsInGlobalReplicationGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  IncreaseReplicaCount
@@ -3912,7 +3858,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<IncreaseReplicaCountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAllowedNodeTypeModifications
@@ -3966,7 +3911,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<ListAllowedNodeTypeModificationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -4064,7 +4008,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyCacheCluster
@@ -4138,7 +4081,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<ModifyCacheClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyCacheParameterGroup
@@ -4190,7 +4132,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<ModifyCacheParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyCacheSubnetGroup
@@ -4243,7 +4184,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<ModifyCacheSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyGlobalReplicationGroup
@@ -4286,7 +4226,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<ModifyGlobalReplicationGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyReplicationGroup
@@ -4391,7 +4330,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<ModifyReplicationGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyReplicationGroupShardConfiguration
@@ -4460,7 +4398,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<ModifyReplicationGroupShardConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyServerlessCache
@@ -4518,7 +4455,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<ModifyServerlessCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyUser
@@ -4567,7 +4503,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<ModifyUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyUserGroup
@@ -4625,7 +4560,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<ModifyUserGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PurchaseReservedCacheNodesOffering
@@ -4681,7 +4615,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<PurchaseReservedCacheNodesOfferingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RebalanceSlotsInGlobalReplicationGroup
@@ -4724,7 +4657,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<RebalanceSlotsInGlobalReplicationGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RebootCacheCluster
@@ -4789,7 +4721,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<RebootCacheClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTagsFromResource
@@ -4881,7 +4812,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<RemoveTagsFromResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetCacheParameterGroup
@@ -4935,7 +4865,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<ResetCacheParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RevokeCacheSecurityGroupIngress
@@ -4987,7 +4916,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<RevokeCacheSecurityGroupIngressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMigration
@@ -5033,7 +4961,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<StartMigrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestFailover
@@ -5178,7 +5105,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<TestFailoverResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestMigration
@@ -5224,7 +5150,6 @@ namespace Amazon.ElastiCache
 
             return InvokeAsync<TestMigrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

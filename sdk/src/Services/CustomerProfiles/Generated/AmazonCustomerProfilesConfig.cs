@@ -30,7 +30,6 @@ namespace Amazon.CustomerProfiles
     /// <summary>
     /// Configuration for accessing Amazon CustomerProfiles service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCustomerProfilesConfig : ClientConfig
     {
         private static readonly string UserAgentString =

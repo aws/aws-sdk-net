@@ -316,7 +316,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<ActivateEventSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelReplay
@@ -363,7 +362,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<CancelReplayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApiDestination
@@ -411,7 +409,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<CreateApiDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateArchive
@@ -468,7 +465,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<CreateArchiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConnection
@@ -513,7 +509,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<CreateConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEventBus
@@ -571,7 +566,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<CreateEventBusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePartnerEventSource
@@ -659,7 +653,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<CreatePartnerEventSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeactivateEventSource
@@ -719,7 +712,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<DeactivateEventSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeauthorizeConnection
@@ -763,7 +755,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<DeauthorizeConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApiDestination
@@ -806,7 +797,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<DeleteApiDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteArchive
@@ -849,7 +839,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<DeleteArchiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnection
@@ -892,7 +881,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<DeleteConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventBus
@@ -934,7 +922,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<DeleteEventBusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePartnerEventSource
@@ -984,7 +971,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<DeletePartnerEventSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRule
@@ -1059,7 +1045,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<DeleteRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApiDestination
@@ -1099,7 +1084,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<DescribeApiDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeArchive
@@ -1142,7 +1126,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<DescribeArchiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConnection
@@ -1182,7 +1165,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<DescribeConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventBus
@@ -1235,7 +1217,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<DescribeEventBusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventSource
@@ -1279,7 +1260,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<DescribeEventSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePartnerEventSource
@@ -1325,7 +1305,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<DescribePartnerEventSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReplay
@@ -1373,7 +1352,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<DescribeReplayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRule
@@ -1419,7 +1397,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<DescribeRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableRule
@@ -1477,7 +1454,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<DisableRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableRule
@@ -1534,7 +1510,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<EnableRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApiDestinations
@@ -1571,7 +1546,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<ListApiDestinationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListArchives
@@ -1612,7 +1586,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<ListArchivesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConnections
@@ -1649,7 +1622,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<ListConnectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventBuses
@@ -1687,7 +1659,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<ListEventBusesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventSources
@@ -1729,7 +1700,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<ListEventSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPartnerEventSourceAccounts
@@ -1774,7 +1744,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<ListPartnerEventSourceAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPartnerEventSources
@@ -1815,7 +1784,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<ListPartnerEventSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReplays
@@ -1853,7 +1821,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<ListReplaysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRuleNamesByTarget
@@ -1894,7 +1861,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<ListRuleNamesByTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRules
@@ -1973,7 +1939,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<ListRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2014,7 +1979,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTargetsByRule
@@ -2054,7 +2018,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<ListTargetsByRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEvents
@@ -2091,7 +2054,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<PutEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutPartnerEvents
@@ -2132,7 +2094,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<PutPartnerEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutPermission
@@ -2210,7 +2171,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<PutPermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRule
@@ -2339,7 +2299,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<PutRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutTargets
@@ -2605,7 +2564,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<PutTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemovePermission
@@ -2654,7 +2612,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<RemovePermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTargets
@@ -2718,7 +2675,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<RemoveTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartReplay
@@ -2776,7 +2732,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<StartReplayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2847,7 +2802,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestEventPattern
@@ -2895,7 +2849,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<TestEventPatternResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2947,7 +2900,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApiDestination
@@ -2994,7 +2946,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<UpdateApiDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateArchive
@@ -3044,7 +2995,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<UpdateArchiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConnection
@@ -3091,7 +3041,6 @@ namespace Amazon.CloudWatchEvents
 
             return InvokeAsync<UpdateConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

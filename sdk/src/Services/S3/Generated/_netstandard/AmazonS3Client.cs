@@ -508,7 +508,6 @@ namespace Amazon.S3
 
             return InvokeAsync<AbortMultipartUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CompleteMultipartUpload
@@ -722,7 +721,6 @@ namespace Amazon.S3
 
             return InvokeAsync<CompleteMultipartUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyObject
@@ -1406,7 +1404,6 @@ namespace Amazon.S3
 
             return InvokeAsync<CopyObjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyPart
@@ -2173,7 +2170,6 @@ namespace Amazon.S3
 
             return InvokeAsync<CopyPartResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBucketMetadataTableConfiguration
@@ -2259,7 +2255,6 @@ namespace Amazon.S3
 
             return InvokeAsync<CreateBucketMetadataTableConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSession
@@ -2438,7 +2433,6 @@ namespace Amazon.S3
 
             return InvokeAsync<CreateSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBucket
@@ -2596,7 +2590,6 @@ namespace Amazon.S3
 
             return InvokeAsync<DeleteBucketResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBucketAnalyticsConfiguration
@@ -2671,7 +2664,6 @@ namespace Amazon.S3
 
             return InvokeAsync<DeleteBucketAnalyticsConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBucketEncryption
@@ -2759,7 +2751,6 @@ namespace Amazon.S3
 
             return InvokeAsync<DeleteBucketEncryptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBucketIntelligentTieringConfiguration
@@ -2843,7 +2834,6 @@ namespace Amazon.S3
 
             return InvokeAsync<DeleteBucketIntelligentTieringConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBucketInventoryConfiguration
@@ -2917,7 +2907,6 @@ namespace Amazon.S3
 
             return InvokeAsync<DeleteBucketInventoryConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBucketMetadataTableConfiguration
@@ -2976,7 +2965,6 @@ namespace Amazon.S3
 
             return InvokeAsync<DeleteBucketMetadataTableConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBucketMetricsConfiguration
@@ -3057,7 +3045,6 @@ namespace Amazon.S3
 
             return InvokeAsync<DeleteBucketMetricsConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBucketOwnershipControls
@@ -3119,7 +3106,6 @@ namespace Amazon.S3
 
             return InvokeAsync<DeleteBucketOwnershipControlsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBucketPolicy
@@ -3315,7 +3301,6 @@ namespace Amazon.S3
 
             return InvokeAsync<DeleteBucketPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBucketReplication
@@ -3388,7 +3373,6 @@ namespace Amazon.S3
 
             return InvokeAsync<DeleteBucketReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBucketTagging
@@ -3496,7 +3480,6 @@ namespace Amazon.S3
 
             return InvokeAsync<DeleteBucketTaggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBucketWebsite
@@ -3626,7 +3609,6 @@ namespace Amazon.S3
 
             return InvokeAsync<DeleteBucketWebsiteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCORSConfiguration
@@ -3744,7 +3726,6 @@ namespace Amazon.S3
 
             return InvokeAsync<DeleteCORSConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLifecycleConfiguration
@@ -3928,7 +3909,6 @@ namespace Amazon.S3
 
             return InvokeAsync<DeleteLifecycleConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteObject
@@ -4361,7 +4341,6 @@ namespace Amazon.S3
 
             return InvokeAsync<DeleteObjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteObjects
@@ -4524,7 +4503,6 @@ namespace Amazon.S3
 
             return InvokeAsync<DeleteObjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteObjectTagging
@@ -4593,7 +4571,6 @@ namespace Amazon.S3
 
             return InvokeAsync<DeleteObjectTaggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePublicAccessBlock
@@ -4663,7 +4640,6 @@ namespace Amazon.S3
 
             return InvokeAsync<DeletePublicAccessBlockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketAccelerateConfiguration
@@ -4805,7 +4781,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetBucketAccelerateConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketAcl
@@ -4882,7 +4857,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetBucketAclResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketAnalyticsConfiguration
@@ -4958,7 +4932,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetBucketAnalyticsConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketEncryption
@@ -5047,7 +5020,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetBucketEncryptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketIntelligentTieringConfiguration
@@ -5130,7 +5102,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetBucketIntelligentTieringConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketInventoryConfiguration
@@ -5205,7 +5176,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetBucketInventoryConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketLocation
@@ -5343,7 +5313,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetBucketLocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketLogging
@@ -5441,7 +5410,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetBucketLoggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketMetadataTableConfiguration
@@ -5500,7 +5468,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetBucketMetadataTableConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketMetricsConfiguration
@@ -5580,7 +5547,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetBucketMetricsConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketNotification
@@ -5732,7 +5698,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetBucketNotificationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketOwnershipControls
@@ -5794,7 +5759,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetBucketOwnershipControlsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketPolicy
@@ -6000,7 +5964,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetBucketPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketPolicyStatus
@@ -6074,7 +6037,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetBucketPolicyStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketReplication
@@ -6108,7 +6070,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetBucketReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketRequestPayment
@@ -6198,7 +6159,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetBucketRequestPaymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketTagging
@@ -6272,7 +6232,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetBucketTaggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketVersioning
@@ -6398,7 +6357,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetBucketVersioningResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketWebsite
@@ -6514,7 +6472,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetBucketWebsiteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCORSConfiguration
@@ -6660,7 +6617,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetCORSConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLifecycleConfiguration
@@ -6912,7 +6868,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetLifecycleConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetObject
@@ -7570,7 +7525,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetObjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetObjectAcl
@@ -7657,7 +7611,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetObjectAclResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetObjectAttributes
@@ -7902,7 +7855,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetObjectAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetObjectLegalHold
@@ -7958,7 +7910,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetObjectLegalHoldResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetObjectLockConfiguration
@@ -8012,7 +7963,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetObjectLockConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetObjectMetadata
@@ -8562,7 +8512,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetObjectMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetObjectRetention
@@ -8618,7 +8567,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetObjectRetentionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetObjectTagging
@@ -8698,7 +8646,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetObjectTaggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetObjectTorrent
@@ -8814,7 +8761,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetObjectTorrentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPublicAccessBlock
@@ -8897,7 +8843,6 @@ namespace Amazon.S3
 
             return InvokeAsync<GetPublicAccessBlockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HeadBucket
@@ -8997,7 +8942,6 @@ namespace Amazon.S3
 
             return InvokeAsync<HeadBucketResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InitiateMultipartUpload
@@ -9569,7 +9513,6 @@ namespace Amazon.S3
 
             return InvokeAsync<InitiateMultipartUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBucketAnalyticsConfigurations
@@ -9654,7 +9597,6 @@ namespace Amazon.S3
 
             return InvokeAsync<ListBucketAnalyticsConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBucketIntelligentTieringConfigurations
@@ -9737,7 +9679,6 @@ namespace Amazon.S3
 
             return InvokeAsync<ListBucketIntelligentTieringConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBucketInventoryConfigurations
@@ -9822,7 +9763,6 @@ namespace Amazon.S3
 
             return InvokeAsync<ListBucketInventoryConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBucketMetricsConfigurations
@@ -9909,7 +9849,6 @@ namespace Amazon.S3
 
             return InvokeAsync<ListBucketMetricsConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBuckets
@@ -10012,7 +9951,6 @@ namespace Amazon.S3
 
             return InvokeAsync<ListBucketsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDirectoryBuckets
@@ -10080,7 +10018,6 @@ namespace Amazon.S3
 
             return InvokeAsync<ListDirectoryBucketsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMultipartUploads
@@ -10530,7 +10467,6 @@ namespace Amazon.S3
 
             return InvokeAsync<ListMultipartUploadsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListObjects
@@ -10740,7 +10676,6 @@ namespace Amazon.S3
 
             return InvokeAsync<ListObjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListObjectsV2
@@ -10866,7 +10801,6 @@ namespace Amazon.S3
 
             return InvokeAsync<ListObjectsV2Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListParts
@@ -11122,7 +11056,6 @@ namespace Amazon.S3
 
             return InvokeAsync<ListPartsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVersions
@@ -11338,7 +11271,6 @@ namespace Amazon.S3
 
             return InvokeAsync<ListVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucket
@@ -11668,7 +11600,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutBucketResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketAccelerateConfiguration
@@ -11767,7 +11698,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutBucketAccelerateConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketAcl
@@ -12045,7 +11975,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutBucketAclResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketAnalyticsConfiguration
@@ -12176,7 +12105,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutBucketAnalyticsConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketEncryption
@@ -12350,7 +12278,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutBucketEncryptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketIntelligentTieringConfiguration
@@ -12467,7 +12394,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutBucketIntelligentTieringConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketInventoryConfiguration
@@ -12606,7 +12532,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutBucketInventoryConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketLogging
@@ -12750,7 +12675,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutBucketLoggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketMetricsConfiguration
@@ -12845,7 +12769,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutBucketMetricsConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketNotification
@@ -12964,7 +12887,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutBucketNotificationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketOwnershipControls
@@ -13026,7 +12948,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutBucketOwnershipControlsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketPolicy
@@ -13348,7 +13269,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutBucketPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketReplication
@@ -13474,7 +13394,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutBucketReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketRequestPayment
@@ -13580,7 +13499,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutBucketRequestPaymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketTagging
@@ -13780,7 +13698,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutBucketTaggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketVersioning
@@ -13887,7 +13804,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutBucketVersioningResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketWebsite
@@ -14185,7 +14101,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutBucketWebsiteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutCORSConfiguration
@@ -14387,7 +14302,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutCORSConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutLifecycleConfiguration
@@ -14717,7 +14631,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutLifecycleConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutObject
@@ -14903,7 +14816,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutObjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutObjectAcl
@@ -15171,7 +15083,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutObjectAclResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutObjectLegalHold
@@ -15218,7 +15129,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutObjectLegalHoldResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutObjectLockConfiguration
@@ -15278,7 +15188,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutObjectLockConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutObjectRetention
@@ -15327,7 +15236,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutObjectRetentionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutObjectTagging
@@ -15433,7 +15341,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutObjectTaggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutPublicAccessBlock
@@ -15516,7 +15423,6 @@ namespace Amazon.S3
 
             return InvokeAsync<PutPublicAccessBlockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreObject
@@ -16683,7 +16589,6 @@ namespace Amazon.S3
 
             return InvokeAsync<RestoreObjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SelectObjectContent
@@ -16841,7 +16746,6 @@ namespace Amazon.S3
 
             return InvokeAsync<SelectObjectContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UploadPart
@@ -17084,7 +16988,6 @@ namespace Amazon.S3
 
             return InvokeAsync<UploadPartResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  WriteGetObjectResponse
@@ -17178,7 +17081,6 @@ namespace Amazon.S3
 
             return InvokeAsync<WriteGetObjectResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

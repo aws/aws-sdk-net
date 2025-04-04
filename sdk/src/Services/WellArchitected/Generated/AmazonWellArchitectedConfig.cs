@@ -30,7 +30,6 @@ namespace Amazon.WellArchitected
     /// <summary>
     /// Configuration for accessing Amazon WellArchitected service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonWellArchitectedConfig : ClientConfig
     {
         private static readonly string UserAgentString =

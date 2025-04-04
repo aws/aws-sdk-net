@@ -342,7 +342,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<CreateCapabilityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePartnership
@@ -405,7 +404,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<CreatePartnershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProfile
@@ -468,7 +466,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<CreateProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStarterMappingTemplate
@@ -537,7 +534,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<CreateStarterMappingTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTransformer
@@ -635,7 +631,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<CreateTransformerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCapability
@@ -692,7 +687,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<DeleteCapabilityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePartnership
@@ -749,7 +743,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<DeletePartnershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProfile
@@ -806,7 +799,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<DeleteProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTransformer
@@ -864,7 +856,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<DeleteTransformerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateMapping
@@ -923,7 +914,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<GenerateMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCapability
@@ -976,7 +966,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<GetCapabilityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPartnership
@@ -1030,7 +1019,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<GetPartnershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProfile
@@ -1083,7 +1071,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<GetProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTransformer
@@ -1138,7 +1125,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<GetTransformerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTransformerJob
@@ -1190,7 +1176,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<GetTransformerJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCapabilities
@@ -1240,7 +1225,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<ListCapabilitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPartnerships
@@ -1294,7 +1278,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<ListPartnershipsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProfiles
@@ -1344,7 +1327,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<ListProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1390,7 +1372,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTransformers
@@ -1440,7 +1421,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<ListTransformersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartTransformerJob
@@ -1504,7 +1484,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<StartTransformerJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1559,7 +1538,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestConversion
@@ -1613,7 +1591,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<TestConversionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestMapping
@@ -1667,7 +1644,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<TestMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestParsing
@@ -1720,7 +1696,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<TestParsingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1767,7 +1742,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCapability
@@ -1830,7 +1804,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<UpdateCapabilityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePartnership
@@ -1893,7 +1866,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<UpdatePartnershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProfile
@@ -1955,7 +1927,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<UpdateProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTransformer
@@ -2019,7 +1990,6 @@ namespace Amazon.B2bi
 
             return InvokeAsync<UpdateTransformerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

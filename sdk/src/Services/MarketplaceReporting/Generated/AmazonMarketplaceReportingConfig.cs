@@ -30,7 +30,6 @@ namespace Amazon.MarketplaceReporting
     /// <summary>
     /// Configuration for accessing Amazon MarketplaceReporting service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMarketplaceReportingConfig : ClientConfig
     {
         private static readonly string UserAgentString =

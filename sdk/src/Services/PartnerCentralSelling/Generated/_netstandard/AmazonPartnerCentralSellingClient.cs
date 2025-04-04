@@ -415,7 +415,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<AcceptEngagementInvitationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssignOpportunity
@@ -509,7 +508,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<AssignOpportunityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateOpportunity
@@ -639,7 +637,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<AssociateOpportunityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEngagement
@@ -736,7 +733,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<CreateEngagementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEngagementInvitation
@@ -830,7 +826,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<CreateEngagementInvitationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOpportunity
@@ -953,7 +948,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<CreateOpportunityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateResourceSnapshot
@@ -1049,7 +1043,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<CreateResourceSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateResourceSnapshotJob
@@ -1146,7 +1139,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<CreateResourceSnapshotJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourceSnapshotJob
@@ -1230,7 +1222,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<DeleteResourceSnapshotJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateOpportunity
@@ -1325,7 +1316,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<DisassociateOpportunityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAwsOpportunitySummary
@@ -1411,7 +1401,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<GetAwsOpportunitySummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEngagement
@@ -1484,7 +1473,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<GetEngagementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEngagementInvitation
@@ -1570,7 +1558,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<GetEngagementInvitationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOpportunity
@@ -1659,7 +1646,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<GetOpportunityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceSnapshot
@@ -1732,7 +1718,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<GetResourceSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceSnapshotJob
@@ -1805,7 +1790,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<GetResourceSnapshotJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSellingSystemSettings
@@ -1879,7 +1863,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<GetSellingSystemSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEngagementByAcceptingInvitationTasks
@@ -1953,7 +1936,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<ListEngagementByAcceptingInvitationTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEngagementFromOpportunityTasks
@@ -2027,7 +2009,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<ListEngagementFromOpportunityTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEngagementInvitations
@@ -2112,7 +2093,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<ListEngagementInvitationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEngagementMembers
@@ -2188,7 +2168,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<ListEngagementMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEngagementResourceAssociations
@@ -2262,7 +2241,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<ListEngagementResourceAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEngagements
@@ -2337,7 +2315,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<ListEngagementsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOpportunities
@@ -2450,7 +2427,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<ListOpportunitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceSnapshotJobs
@@ -2525,7 +2501,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<ListResourceSnapshotJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceSnapshots
@@ -2621,7 +2596,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<ListResourceSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSolutions
@@ -2696,7 +2670,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<ListSolutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2779,7 +2752,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutSellingSystemSettings
@@ -2853,7 +2825,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<PutSellingSystemSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectEngagementInvitation
@@ -2948,7 +2919,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<RejectEngagementInvitationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartEngagementByAcceptingInvitationTask
@@ -3056,7 +3026,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<StartEngagementByAcceptingInvitationTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartEngagementFromOpportunityTask
@@ -3163,7 +3132,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<StartEngagementFromOpportunityTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartResourceSnapshotJob
@@ -3236,7 +3204,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<StartResourceSnapshotJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopResourceSnapshotJob
@@ -3309,7 +3276,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<StopResourceSnapshotJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SubmitOpportunity
@@ -3395,7 +3361,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<SubmitOpportunityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3488,7 +3453,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3581,7 +3545,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateOpportunity
@@ -3685,7 +3648,6 @@ namespace Amazon.PartnerCentralSelling
 
             return InvokeAsync<UpdateOpportunityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

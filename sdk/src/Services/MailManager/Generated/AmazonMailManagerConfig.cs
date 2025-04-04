@@ -30,7 +30,6 @@ namespace Amazon.MailManager
     /// <summary>
     /// Configuration for accessing Amazon MailManager service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMailManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =

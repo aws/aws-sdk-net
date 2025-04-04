@@ -317,7 +317,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<AddAttributesToFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAssessmentTarget
@@ -384,7 +383,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<CreateAssessmentTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAssessmentTemplate
@@ -442,7 +440,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<CreateAssessmentTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateExclusionsPreview
@@ -499,7 +496,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<CreateExclusionsPreviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateResourceGroup
@@ -553,7 +549,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<CreateResourceGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAssessmentRun
@@ -607,7 +602,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<DeleteAssessmentRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAssessmentTarget
@@ -661,7 +655,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<DeleteAssessmentTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAssessmentTemplate
@@ -715,7 +708,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<DeleteAssessmentTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAssessmentRuns
@@ -756,7 +748,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<DescribeAssessmentRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAssessmentTargets
@@ -798,7 +789,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<DescribeAssessmentTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAssessmentTemplates
@@ -840,7 +830,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<DescribeAssessmentTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCrossAccountAccessRole
@@ -877,7 +866,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<DescribeCrossAccountAccessRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeExclusions
@@ -918,7 +906,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<DescribeExclusionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFindings
@@ -959,7 +946,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<DescribeFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeResourceGroups
@@ -1000,7 +986,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<DescribeResourceGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRulesPackages
@@ -1041,7 +1026,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<DescribeRulesPackagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAssessmentReport
@@ -1102,7 +1086,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<GetAssessmentReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExclusionsPreview
@@ -1152,7 +1135,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<GetExclusionsPreviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTelemetryMetadata
@@ -1200,7 +1182,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<GetTelemetryMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssessmentRunAgents
@@ -1249,7 +1230,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<ListAssessmentRunAgentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssessmentRuns
@@ -1298,7 +1278,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<ListAssessmentRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssessmentTargets
@@ -1344,7 +1323,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<ListAssessmentTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssessmentTemplates
@@ -1393,7 +1371,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<ListAssessmentTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventSubscriptions
@@ -1443,7 +1420,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<ListEventSubscriptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExclusions
@@ -1491,7 +1467,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<ListExclusionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFindings
@@ -1540,7 +1515,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<ListFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRulesPackages
@@ -1584,7 +1558,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<ListRulesPackagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1632,7 +1605,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PreviewAgents
@@ -1685,7 +1657,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<PreviewAgentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterCrossAccountAccessRole
@@ -1737,7 +1708,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<RegisterCrossAccountAccessRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveAttributesFromFindings
@@ -1789,7 +1759,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<RemoveAttributesFromFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetTagsForResource
@@ -1841,7 +1810,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<SetTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartAssessmentRun
@@ -1906,7 +1874,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<StartAssessmentRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopAssessmentRun
@@ -1957,7 +1924,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<StopAssessmentRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SubscribeToEvent
@@ -2013,7 +1979,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<SubscribeToEventResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UnsubscribeFromEvent
@@ -2065,7 +2030,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<UnsubscribeFromEventResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAssessmentTarget
@@ -2122,7 +2086,6 @@ namespace Amazon.Inspector
 
             return InvokeAsync<UpdateAssessmentTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

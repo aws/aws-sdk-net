@@ -30,7 +30,6 @@ namespace Amazon.IotData
     /// <summary>
     /// Configuration for accessing Amazon IotData service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonIotDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =

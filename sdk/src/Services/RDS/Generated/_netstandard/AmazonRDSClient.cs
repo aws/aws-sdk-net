@@ -376,7 +376,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<AddRoleToDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddRoleToDBInstance
@@ -434,7 +433,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<AddRoleToDBInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddSourceIdentifierToSubscription
@@ -474,7 +472,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<AddSourceIdentifierToSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddTagsToResource
@@ -546,7 +543,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<AddTagsToResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ApplyPendingMaintenanceAction
@@ -589,7 +585,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ApplyPendingMaintenanceActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AuthorizeDBSecurityGroupIngress
@@ -663,7 +658,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<AuthorizeDBSecurityGroupIngressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BacktrackDBCluster
@@ -714,7 +708,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<BacktrackDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelExportTask
@@ -755,7 +748,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CancelExportTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyDBClusterParameterGroup
@@ -807,7 +799,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CopyDBClusterParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyDBClusterSnapshot
@@ -913,7 +904,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CopyDBClusterSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyDBParameterGroup
@@ -965,7 +955,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CopyDBParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyDBSnapshot
@@ -1035,7 +1024,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CopyDBSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyOptionGroup
@@ -1078,7 +1066,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CopyOptionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBlueGreenDeployment
@@ -1172,7 +1159,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CreateBlueGreenDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCustomDBEngineVersion
@@ -1221,7 +1207,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CreateCustomDBEngineVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBCluster
@@ -1349,7 +1334,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CreateDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBClusterEndpoint
@@ -1407,7 +1391,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CreateDBClusterEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBClusterParameterGroup
@@ -1496,7 +1479,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CreateDBClusterParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBClusterSnapshot
@@ -1556,7 +1538,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CreateDBClusterSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBInstance
@@ -1686,7 +1667,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CreateDBInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBInstanceReadReplica
@@ -1823,7 +1803,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CreateDBInstanceReadReplicaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBParameterGroup
@@ -1879,7 +1858,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CreateDBParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBProxy
@@ -1925,7 +1903,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CreateDBProxyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBProxyEndpoint
@@ -1980,7 +1957,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CreateDBProxyEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBSecurityGroup
@@ -2040,7 +2016,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CreateDBSecurityGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBShardGroup
@@ -2105,7 +2080,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CreateDBShardGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBSnapshot
@@ -2152,7 +2126,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CreateDBSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBSubnetGroup
@@ -2205,7 +2178,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CreateDBSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEventSubscription
@@ -2293,7 +2265,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CreateEventSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGlobalCluster
@@ -2357,7 +2328,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CreateGlobalClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIntegration
@@ -2411,7 +2381,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CreateIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOptionGroup
@@ -2456,7 +2425,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CreateOptionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTenantDatabase
@@ -2505,7 +2473,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<CreateTenantDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBlueGreenDeployment
@@ -2555,7 +2522,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeleteBlueGreenDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCustomDBEngineVersion
@@ -2625,7 +2591,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeleteCustomDBEngineVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBCluster
@@ -2697,7 +2662,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeleteDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBClusterAutomatedBackup
@@ -2739,7 +2703,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeleteDBClusterAutomatedBackupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBClusterEndpoint
@@ -2789,7 +2752,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeleteDBClusterEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBClusterParameterGroup
@@ -2843,7 +2805,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeleteDBClusterParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBClusterSnapshot
@@ -2899,7 +2860,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeleteDBClusterSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBInstance
@@ -2996,7 +2956,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeleteDBInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBInstanceAutomatedBackup
@@ -3038,7 +2997,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeleteDBInstanceAutomatedBackupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBParameterGroup
@@ -3081,7 +3039,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeleteDBParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBProxy
@@ -3122,7 +3079,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeleteDBProxyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBProxyEndpoint
@@ -3165,7 +3121,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeleteDBProxyEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBSecurityGroup
@@ -3220,7 +3175,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeleteDBSecurityGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBShardGroup
@@ -3263,7 +3217,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeleteDBShardGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBSnapshot
@@ -3309,7 +3262,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeleteDBSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBSubnetGroup
@@ -3358,7 +3310,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeleteDBSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventSubscription
@@ -3399,7 +3350,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeleteEventSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGlobalCluster
@@ -3446,7 +3396,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeleteGlobalClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIntegration
@@ -3491,7 +3440,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeleteIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOptionGroup
@@ -3531,7 +3479,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeleteOptionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTenantDatabase
@@ -3580,7 +3527,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeleteTenantDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterDBProxyTargets
@@ -3630,7 +3576,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DeregisterDBProxyTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountAttributes
@@ -3699,7 +3644,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeAccountAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBlueGreenDeployments
@@ -3745,7 +3689,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeBlueGreenDeploymentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCertificates
@@ -3792,7 +3735,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeCertificatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBClusterAutomatedBackups
@@ -3837,7 +3779,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBClusterAutomatedBackupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBClusterBacktracks
@@ -3888,7 +3829,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBClusterBacktracksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBClusterEndpoints
@@ -3931,7 +3871,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBClusterEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBClusterParameterGroups
@@ -3981,7 +3920,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBClusterParameterGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBClusterParameters
@@ -4029,7 +3967,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBClusterParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBClusters
@@ -4083,7 +4020,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBClusterSnapshotAttributes
@@ -4137,7 +4073,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBClusterSnapshotAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBClusterSnapshots
@@ -4185,7 +4120,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBClusterSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBEngineVersions
@@ -4238,7 +4172,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBEngineVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBInstanceAutomatedBackups
@@ -4283,7 +4216,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBInstanceAutomatedBackupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBInstances
@@ -4356,7 +4288,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBLogFiles
@@ -4402,7 +4333,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBLogFilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBParameterGroups
@@ -4465,7 +4395,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBParameterGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBParameters
@@ -4502,7 +4431,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBProxies
@@ -4540,7 +4468,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBProxiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBProxyEndpoints
@@ -4581,7 +4508,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBProxyEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBProxyTargetGroups
@@ -4627,7 +4553,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBProxyTargetGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBProxyTargets
@@ -4676,7 +4601,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBProxyTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBRecommendations
@@ -4711,7 +4635,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBSecurityGroups
@@ -4796,7 +4719,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBSecurityGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBShardGroups
@@ -4836,7 +4758,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBShardGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBSnapshotAttributes
@@ -4888,7 +4809,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBSnapshotAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBSnapshots
@@ -4947,7 +4867,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBSnapshotTenantDatabases
@@ -4993,7 +4912,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBSnapshotTenantDatabasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBSubnetGroups
@@ -5066,7 +4984,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeDBSubnetGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEngineDefaultClusterParameters
@@ -5107,7 +5024,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeEngineDefaultClusterParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEngineDefaultParameters
@@ -5142,7 +5058,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeEngineDefaultParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventCategories
@@ -5203,7 +5118,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeEventCategoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEvents
@@ -5288,7 +5202,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventSubscriptions
@@ -5361,7 +5274,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeEventSubscriptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeExportTasks
@@ -5399,7 +5311,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeExportTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGlobalClusters
@@ -5447,7 +5358,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeGlobalClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeIntegrations
@@ -5484,7 +5394,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeIntegrationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOptionGroupOptions
@@ -5518,7 +5427,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeOptionGroupOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOptionGroups
@@ -5577,7 +5485,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeOptionGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOrderableDBInstanceOptions
@@ -5611,7 +5518,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeOrderableDBInstanceOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePendingMaintenanceActions
@@ -5657,7 +5563,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribePendingMaintenanceActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReservedDBInstances
@@ -5718,7 +5623,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeReservedDBInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReservedDBInstancesOfferings
@@ -5777,7 +5681,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeReservedDBInstancesOfferingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSourceRegions
@@ -5826,7 +5729,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeSourceRegionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTenantDatabases
@@ -5864,7 +5766,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeTenantDatabasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeValidDBInstanceModifications
@@ -5910,7 +5811,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DescribeValidDBInstanceModificationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableHttpEndpoint
@@ -5964,7 +5864,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DisableHttpEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DownloadDBLogFilePortion
@@ -6013,7 +5912,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<DownloadDBLogFilePortionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableHttpEndpoint
@@ -6073,7 +5971,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<EnableHttpEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FailoverDBCluster
@@ -6153,7 +6050,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<FailoverDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FailoverGlobalCluster
@@ -6260,7 +6156,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<FailoverGlobalClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -6330,7 +6225,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyActivityStream
@@ -6383,7 +6277,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyActivityStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyCertificates
@@ -6457,7 +6350,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyCertificatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyCurrentDBClusterCapacity
@@ -6533,7 +6425,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyCurrentDBClusterCapacityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyCustomDBEngineVersion
@@ -6589,7 +6480,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyCustomDBEngineVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBCluster
@@ -6686,7 +6576,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBClusterEndpoint
@@ -6742,7 +6631,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyDBClusterEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBClusterParameterGroup
@@ -6816,7 +6704,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyDBClusterParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBClusterSnapshotAttribute
@@ -6889,7 +6776,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyDBClusterSnapshotAttributeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBInstance
@@ -6999,7 +6885,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyDBInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBParameterGroup
@@ -7057,7 +6942,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyDBParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBProxy
@@ -7102,7 +6986,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyDBProxyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBProxyEndpoint
@@ -7149,7 +7032,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyDBProxyEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBProxyTargetGroup
@@ -7194,7 +7076,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyDBProxyTargetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBRecommendation
@@ -7229,7 +7110,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyDBRecommendationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBShardGroup
@@ -7274,7 +7154,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyDBShardGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBSnapshot
@@ -7318,7 +7197,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyDBSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBSnapshotAttribute
@@ -7389,7 +7267,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyDBSnapshotAttributeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBSubnetGroup
@@ -7442,7 +7319,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyDBSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyEventSubscription
@@ -7505,7 +7381,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyEventSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyGlobalCluster
@@ -7564,7 +7439,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyGlobalClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyIntegration
@@ -7609,7 +7483,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyOptionGroup
@@ -7649,7 +7522,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyOptionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyTenantDatabase
@@ -7698,7 +7570,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ModifyTenantDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PromoteReadReplica
@@ -7753,7 +7624,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<PromoteReadReplicaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PromoteReadReplicaDBCluster
@@ -7793,7 +7663,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<PromoteReadReplicaDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PurchaseReservedDBInstancesOffering
@@ -7836,7 +7705,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<PurchaseReservedDBInstancesOfferingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RebootDBCluster
@@ -7896,7 +7764,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<RebootDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RebootDBInstance
@@ -7958,7 +7825,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<RebootDBInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RebootDBShardGroup
@@ -8005,7 +7871,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<RebootDBShardGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterDBProxyTargets
@@ -8070,7 +7935,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<RegisterDBProxyTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveFromGlobalCluster
@@ -8121,7 +7985,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<RemoveFromGlobalClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveRoleFromDBCluster
@@ -8177,7 +8040,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<RemoveRoleFromDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveRoleFromDBInstance
@@ -8222,7 +8084,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<RemoveRoleFromDBInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveSourceIdentifierFromSubscription
@@ -8262,7 +8123,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<RemoveSourceIdentifierFromSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTagsFromResource
@@ -8332,7 +8192,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<RemoveTagsFromResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetDBClusterParameterGroup
@@ -8396,7 +8255,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ResetDBClusterParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetDBParameterGroup
@@ -8443,7 +8301,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<ResetDBParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreDBClusterFromS3
@@ -8554,7 +8411,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<RestoreDBClusterFromS3Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreDBClusterFromSnapshot
@@ -8681,7 +8537,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<RestoreDBClusterFromSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreDBClusterToPointInTime
@@ -8806,7 +8661,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<RestoreDBClusterToPointInTimeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreDBInstanceFromDBSnapshot
@@ -8960,7 +8814,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<RestoreDBInstanceFromDBSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreDBInstanceFromS3
@@ -9074,7 +8927,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<RestoreDBInstanceFromS3Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreDBInstanceToPointInTime
@@ -9215,7 +9067,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<RestoreDBInstanceToPointInTimeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RevokeDBSecurityGroupIngress
@@ -9277,7 +9128,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<RevokeDBSecurityGroupIngressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartActivityStream
@@ -9334,7 +9184,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<StartActivityStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDBCluster
@@ -9389,7 +9238,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<StartDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDBInstance
@@ -9479,7 +9327,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<StartDBInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDBInstanceAutomatedBackupsReplication
@@ -9541,7 +9388,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<StartDBInstanceAutomatedBackupsReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartExportTask
@@ -9626,7 +9472,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<StartExportTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopActivityStream
@@ -9685,7 +9530,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<StopActivityStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopDBCluster
@@ -9741,7 +9585,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<StopDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopDBInstance
@@ -9807,7 +9650,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<StopDBInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopDBInstanceAutomatedBackupsReplication
@@ -9858,7 +9700,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<StopDBInstanceAutomatedBackupsReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SwitchoverBlueGreenDeployment
@@ -9914,7 +9755,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<SwitchoverBlueGreenDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SwitchoverGlobalCluster
@@ -9981,7 +9821,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<SwitchoverGlobalClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SwitchoverReadReplica
@@ -10023,7 +9862,6 @@ namespace Amazon.RDS
 
             return InvokeAsync<SwitchoverReadReplicaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

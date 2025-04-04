@@ -357,7 +357,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<AddNotificationChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInsight
@@ -413,7 +412,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<DeleteInsightResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountHealth
@@ -465,7 +463,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<DescribeAccountHealthResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountOverview
@@ -517,7 +514,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<DescribeAccountOverviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAnomaly
@@ -570,7 +566,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<DescribeAnomalyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventSourcesConfig
@@ -623,7 +618,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<DescribeEventSourcesConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFeedback
@@ -677,7 +671,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<DescribeFeedbackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInsight
@@ -730,7 +723,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<DescribeInsightResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOrganizationHealth
@@ -781,7 +773,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<DescribeOrganizationHealthResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOrganizationOverview
@@ -832,7 +823,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<DescribeOrganizationOverviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOrganizationResourceCollectionHealth
@@ -883,7 +873,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<DescribeOrganizationResourceCollectionHealthResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeResourceCollectionHealth
@@ -940,7 +929,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<DescribeResourceCollectionHealthResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeServiceIntegration
@@ -995,7 +983,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<DescribeServiceIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCostEstimation
@@ -1051,7 +1038,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<GetCostEstimationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceCollection
@@ -1110,7 +1096,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<GetResourceCollectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAnomaliesForInsight
@@ -1164,7 +1149,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<ListAnomaliesForInsightResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAnomalousLogGroups
@@ -1217,7 +1201,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<ListAnomalousLogGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEvents
@@ -1271,7 +1254,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<ListEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInsights
@@ -1323,7 +1305,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<ListInsightsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMonitoredResources
@@ -1371,7 +1352,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<ListMonitoredResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNotificationChannels
@@ -1424,7 +1404,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<ListNotificationChannelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOrganizationInsights
@@ -1474,7 +1453,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<ListOrganizationInsightsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecommendations
@@ -1528,7 +1506,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<ListRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutFeedback
@@ -1584,7 +1561,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<PutFeedbackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveNotificationChannel
@@ -1642,7 +1618,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<RemoveNotificationChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchInsights
@@ -1702,7 +1677,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<SearchInsightsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchOrganizationInsights
@@ -1762,7 +1736,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<SearchOrganizationInsightsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartCostEstimation
@@ -1819,7 +1792,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<StartCostEstimationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEventSourcesConfig
@@ -1872,7 +1844,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<UpdateEventSourcesConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResourceCollection
@@ -1931,7 +1902,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<UpdateResourceCollectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServiceIntegration
@@ -1986,7 +1956,6 @@ namespace Amazon.DevOpsGuru
 
             return InvokeAsync<UpdateServiceIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

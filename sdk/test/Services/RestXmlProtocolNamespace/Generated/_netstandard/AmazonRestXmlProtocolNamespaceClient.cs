@@ -285,7 +285,6 @@ namespace Amazon.RestXmlProtocolNamespace
 
             return InvokeAsync<SimpleScalarPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
     }

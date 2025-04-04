@@ -30,7 +30,6 @@ namespace Amazon.StorageGateway
     /// <summary>
     /// Configuration for accessing Amazon StorageGateway service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonStorageGatewayConfig : ClientConfig
     {
         private static readonly string UserAgentString =

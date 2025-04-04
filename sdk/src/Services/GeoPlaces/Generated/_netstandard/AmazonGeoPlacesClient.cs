@@ -335,7 +335,6 @@ namespace Amazon.GeoPlaces
 
             return InvokeAsync<AutocompleteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Geocode
@@ -382,7 +381,6 @@ namespace Amazon.GeoPlaces
 
             return InvokeAsync<GeocodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPlace
@@ -428,7 +426,6 @@ namespace Amazon.GeoPlaces
 
             return InvokeAsync<GetPlaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReverseGeocode
@@ -475,7 +472,6 @@ namespace Amazon.GeoPlaces
 
             return InvokeAsync<ReverseGeocodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchNearby
@@ -521,7 +517,6 @@ namespace Amazon.GeoPlaces
 
             return InvokeAsync<SearchNearbyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchText
@@ -569,7 +564,6 @@ namespace Amazon.GeoPlaces
 
             return InvokeAsync<SearchTextResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Suggest
@@ -617,7 +611,6 @@ namespace Amazon.GeoPlaces
 
             return InvokeAsync<SuggestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

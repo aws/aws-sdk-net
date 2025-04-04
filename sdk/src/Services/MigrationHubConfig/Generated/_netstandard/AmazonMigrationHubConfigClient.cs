@@ -343,7 +343,6 @@ namespace Amazon.MigrationHubConfig
 
             return InvokeAsync<CreateHomeRegionControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteHomeRegionControl
@@ -394,7 +393,6 @@ namespace Amazon.MigrationHubConfig
 
             return InvokeAsync<DeleteHomeRegionControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeHomeRegionControls
@@ -444,7 +442,6 @@ namespace Amazon.MigrationHubConfig
 
             return InvokeAsync<DescribeHomeRegionControlsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetHomeRegion
@@ -498,7 +495,6 @@ namespace Amazon.MigrationHubConfig
 
             return InvokeAsync<GetHomeRegionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

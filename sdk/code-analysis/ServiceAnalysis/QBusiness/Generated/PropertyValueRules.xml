@@ -83,6 +83,35 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QBusiness.Model.ChatRequest.ApplicationId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.ChatRequest.ClientToken</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.ChatRequest.ConversationId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.ChatRequest.ParentMessageId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.ChatRequest.UserId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>\P{C}*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QBusiness.Model.ChatSyncRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
@@ -2068,35 +2097,6 @@
     <property>Amazon.QBusiness.Model.BlockedPhrasesConfigurationUpdate.SystemMessageOverride</property>
     <min>0</min>
     <max>350</max>
-    <pattern>\P{C}*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.QBusiness.Model.ChatInput.ApplicationId</property>
-    <min>36</min>
-    <max>36</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.QBusiness.Model.ChatInput.ClientToken</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.QBusiness.Model.ChatInput.ConversationId</property>
-    <min>36</min>
-    <max>36</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.QBusiness.Model.ChatInput.ParentMessageId</property>
-    <min>36</min>
-    <max>36</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.QBusiness.Model.ChatInput.UserId</property>
-    <min>1</min>
-    <max>1024</max>
     <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>

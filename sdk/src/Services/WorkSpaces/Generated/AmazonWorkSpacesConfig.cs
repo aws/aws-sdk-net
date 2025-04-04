@@ -30,7 +30,6 @@ namespace Amazon.WorkSpaces
     /// <summary>
     /// Configuration for accessing Amazon WorkSpaces service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonWorkSpacesConfig : ClientConfig
     {
         private static readonly string UserAgentString =

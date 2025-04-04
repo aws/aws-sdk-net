@@ -30,7 +30,6 @@ namespace Amazon.SageMakerGeospatial
     /// <summary>
     /// Configuration for accessing Amazon SageMakerGeospatial service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSageMakerGeospatialConfig : ClientConfig
     {
         private static readonly string UserAgentString =

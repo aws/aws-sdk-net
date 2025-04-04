@@ -30,7 +30,6 @@ namespace Amazon.ResourceGroups
     /// <summary>
     /// Configuration for accessing Amazon ResourceGroups service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonResourceGroupsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

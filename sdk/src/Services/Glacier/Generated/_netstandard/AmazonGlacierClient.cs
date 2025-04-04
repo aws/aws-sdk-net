@@ -377,7 +377,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<AbortMultipartUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AbortVaultLock
@@ -443,7 +442,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<AbortVaultLockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddTagsToVault
@@ -498,7 +496,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<AddTagsToVaultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CompleteMultipartUpload
@@ -594,7 +591,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<CompleteMultipartUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CompleteVaultLock
@@ -661,7 +657,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<CompleteVaultLockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVault
@@ -740,7 +735,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<CreateVaultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteArchive
@@ -821,7 +815,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<DeleteArchiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVault
@@ -895,7 +888,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<DeleteVaultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVaultAccessPolicy
@@ -953,7 +945,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<DeleteVaultAccessPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVaultNotifications
@@ -1018,7 +1009,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<DeleteVaultNotificationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeJob
@@ -1093,7 +1083,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<DescribeJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVault
@@ -1163,7 +1152,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<DescribeVaultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataRetrievalPolicy
@@ -1209,7 +1197,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<GetDataRetrievalPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJobOutput
@@ -1312,7 +1299,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<GetJobOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVaultAccessPolicy
@@ -1364,7 +1350,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<GetVaultAccessPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVaultLock
@@ -1443,7 +1428,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<GetVaultLockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVaultNotifications
@@ -1514,7 +1498,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<GetVaultNotificationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InitiateJob
@@ -1572,7 +1555,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<InitiateJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InitiateMultipartUpload
@@ -1663,7 +1645,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<InitiateMultipartUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InitiateVaultLock
@@ -1756,7 +1737,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<InitiateVaultLockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobs
@@ -1849,7 +1829,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMultipartUploads
@@ -1931,7 +1910,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<ListMultipartUploadsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListParts
@@ -2007,7 +1985,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<ListPartsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProvisionedCapacity
@@ -2050,7 +2027,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<ListProvisionedCapacityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForVault
@@ -2099,7 +2075,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<ListTagsForVaultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVaults
@@ -2230,7 +2205,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<ListVaultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PurchaseProvisionedCapacity
@@ -2276,7 +2250,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<PurchaseProvisionedCapacityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTagsFromVault
@@ -2326,7 +2299,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<RemoveTagsFromVaultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetDataRetrievalPolicy
@@ -2379,7 +2351,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<SetDataRetrievalPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetVaultAccessPolicy
@@ -2431,7 +2402,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<SetVaultAccessPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetVaultNotifications
@@ -2522,7 +2492,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<SetVaultNotificationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UploadArchive
@@ -2620,7 +2589,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<UploadArchiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UploadMultipartPart
@@ -2729,7 +2697,6 @@ namespace Amazon.Glacier
 
             return InvokeAsync<UploadMultipartPartResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

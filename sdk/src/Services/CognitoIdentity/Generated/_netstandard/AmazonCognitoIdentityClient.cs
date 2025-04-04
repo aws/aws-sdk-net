@@ -374,7 +374,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<CreateIdentityPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIdentities
@@ -423,7 +422,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<DeleteIdentitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIdentityPool
@@ -517,7 +515,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<DeleteIdentityPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeIdentity
@@ -611,7 +608,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<DescribeIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeIdentityPool
@@ -705,7 +701,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<DescribeIdentityPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCredentialsForIdentity
@@ -906,7 +901,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<GetCredentialsForIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetId
@@ -970,7 +964,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<GetIdResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIdentityPoolRoles
@@ -1068,7 +1061,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<GetIdentityPoolRolesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOpenIdToken
@@ -1184,7 +1176,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<GetOpenIdTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOpenIdTokenForDeveloperIdentity
@@ -1258,7 +1249,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<GetOpenIdTokenForDeveloperIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPrincipalTagAttributeMap
@@ -1308,7 +1298,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<GetPrincipalTagAttributeMapResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIdentities
@@ -1362,7 +1351,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<ListIdentitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIdentityPools
@@ -1416,7 +1404,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<ListIdentityPoolsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1475,7 +1462,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  LookupDeveloperIdentity
@@ -1547,7 +1533,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<LookupDeveloperIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  MergeDeveloperIdentities
@@ -1616,7 +1601,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<MergeDeveloperIdentitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetIdentityPoolRoles
@@ -1724,7 +1708,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<SetIdentityPoolRolesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetPrincipalTagAttributeMap
@@ -1774,7 +1757,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<SetPrincipalTagAttributeMapResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1846,7 +1828,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UnlinkDeveloperIdentity
@@ -1906,7 +1887,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<UnlinkDeveloperIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UnlinkIdentity
@@ -1968,7 +1948,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<UnlinkIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2018,7 +1997,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIdentityPool
@@ -2086,7 +2064,6 @@ namespace Amazon.CognitoIdentity
 
             return InvokeAsync<UpdateIdentityPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

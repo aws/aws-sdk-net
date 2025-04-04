@@ -325,7 +325,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<AssociateMemberToFarmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateMemberToFleet
@@ -379,7 +378,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<AssociateMemberToFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateMemberToJob
@@ -433,7 +431,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<AssociateMemberToJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateMemberToQueue
@@ -487,7 +484,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<AssociateMemberToQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssumeFleetRoleForRead
@@ -538,7 +534,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<AssumeFleetRoleForReadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssumeFleetRoleForWorker
@@ -592,7 +587,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<AssumeFleetRoleForWorkerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssumeQueueRoleForRead
@@ -643,7 +637,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<AssumeQueueRoleForReadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssumeQueueRoleForUser
@@ -693,7 +686,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<AssumeQueueRoleForUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssumeQueueRoleForWorker
@@ -747,7 +739,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<AssumeQueueRoleForWorkerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetJobEntity
@@ -797,7 +788,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<BatchGetJobEntityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyJobTemplate
@@ -847,7 +837,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<CopyJobTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBudget
@@ -901,7 +890,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<CreateBudgetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFarm
@@ -958,7 +946,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<CreateFarmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFleet
@@ -1014,7 +1001,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<CreateFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateJob
@@ -1070,7 +1056,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<CreateJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLicenseEndpoint
@@ -1126,7 +1111,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<CreateLicenseEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLimit
@@ -1189,7 +1173,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<CreateLimitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMonitor
@@ -1242,7 +1225,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<CreateMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateQueue
@@ -1297,7 +1279,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<CreateQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateQueueEnvironment
@@ -1351,7 +1332,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<CreateQueueEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateQueueFleetAssociation
@@ -1401,7 +1381,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<CreateQueueFleetAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateQueueLimitAssociation
@@ -1454,7 +1433,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<CreateQueueLimitAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStorageProfile
@@ -1509,7 +1487,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<CreateStorageProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorker
@@ -1566,7 +1543,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<CreateWorkerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBudget
@@ -1616,7 +1592,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<DeleteBudgetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFarm
@@ -1666,7 +1641,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<DeleteFarmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFleet
@@ -1720,7 +1694,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<DeleteFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLicenseEndpoint
@@ -1774,7 +1747,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<DeleteLicenseEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLimit
@@ -1822,7 +1794,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<DeleteLimitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMeteredProduct
@@ -1872,7 +1843,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<DeleteMeteredProductResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMonitor
@@ -1923,7 +1893,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<DeleteMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteQueue
@@ -1984,7 +1953,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<DeleteQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteQueueEnvironment
@@ -2031,7 +1999,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<DeleteQueueEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteQueueFleetAssociation
@@ -2085,7 +2052,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<DeleteQueueFleetAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteQueueLimitAssociation
@@ -2142,7 +2108,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<DeleteQueueLimitAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStorageProfile
@@ -2189,7 +2154,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<DeleteStorageProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorker
@@ -2243,7 +2207,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<DeleteWorkerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateMemberFromFarm
@@ -2293,7 +2256,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<DisassociateMemberFromFarmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateMemberFromFleet
@@ -2347,7 +2309,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<DisassociateMemberFromFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateMemberFromJob
@@ -2397,7 +2358,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<DisassociateMemberFromJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateMemberFromQueue
@@ -2451,7 +2411,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<DisassociateMemberFromQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBudget
@@ -2501,7 +2460,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<GetBudgetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFarm
@@ -2551,7 +2509,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<GetFarmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFleet
@@ -2601,7 +2558,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<GetFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJob
@@ -2651,7 +2607,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<GetJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLicenseEndpoint
@@ -2701,7 +2656,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<GetLicenseEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLimit
@@ -2751,7 +2705,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<GetLimitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMonitor
@@ -2801,7 +2754,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<GetMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueue
@@ -2851,7 +2803,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<GetQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueueEnvironment
@@ -2901,7 +2852,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<GetQueueEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueueFleetAssociation
@@ -2951,7 +2901,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<GetQueueFleetAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueueLimitAssociation
@@ -3001,7 +2950,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<GetQueueLimitAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSession
@@ -3051,7 +2999,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<GetSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSessionAction
@@ -3101,7 +3048,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<GetSessionActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSessionsStatisticsAggregation
@@ -3154,7 +3100,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<GetSessionsStatisticsAggregationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStep
@@ -3204,7 +3149,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<GetStepResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStorageProfile
@@ -3254,7 +3198,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<GetStorageProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStorageProfileForQueue
@@ -3304,7 +3247,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<GetStorageProfileForQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTask
@@ -3354,7 +3296,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<GetTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorker
@@ -3404,7 +3345,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<GetWorkerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAvailableMeteredProducts
@@ -3444,7 +3384,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListAvailableMeteredProductsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBudgets
@@ -3494,7 +3433,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListBudgetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFarmMembers
@@ -3544,7 +3482,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListFarmMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFarms
@@ -3591,7 +3528,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListFarmsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFleetMembers
@@ -3641,7 +3577,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListFleetMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFleets
@@ -3691,7 +3626,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListFleetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobMembers
@@ -3741,7 +3675,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListJobMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobParameterDefinitions
@@ -3791,7 +3724,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListJobParameterDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobs
@@ -3841,7 +3773,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLicenseEndpoints
@@ -3891,7 +3822,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListLicenseEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLimits
@@ -3941,7 +3871,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListLimitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMeteredProducts
@@ -3991,7 +3920,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListMeteredProductsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMonitors
@@ -4038,7 +3966,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListMonitorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQueueEnvironments
@@ -4088,7 +4015,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListQueueEnvironmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQueueFleetAssociations
@@ -4134,7 +4060,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListQueueFleetAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQueueLimitAssociations
@@ -4180,7 +4105,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListQueueLimitAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQueueMembers
@@ -4230,7 +4154,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListQueueMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQueues
@@ -4280,7 +4203,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListQueuesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSessionActions
@@ -4330,7 +4252,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListSessionActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSessions
@@ -4380,7 +4301,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSessionsForWorker
@@ -4430,7 +4350,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListSessionsForWorkerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStepConsumers
@@ -4480,7 +4399,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListStepConsumersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStepDependencies
@@ -4530,7 +4448,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListStepDependenciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSteps
@@ -4580,7 +4497,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListStepsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStorageProfiles
@@ -4630,7 +4546,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListStorageProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStorageProfilesForQueue
@@ -4680,7 +4595,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListStorageProfilesForQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -4730,7 +4644,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTasks
@@ -4780,7 +4693,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkers
@@ -4830,7 +4742,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<ListWorkersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutMeteredProduct
@@ -4880,7 +4791,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<PutMeteredProductResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchJobs
@@ -4930,7 +4840,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<SearchJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchSteps
@@ -4980,7 +4889,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<SearchStepsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchTasks
@@ -5030,7 +4938,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<SearchTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchWorkers
@@ -5080,7 +4987,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<SearchWorkersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSessionsStatisticsAggregation
@@ -5135,7 +5041,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<StartSessionsStatisticsAggregationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -5189,7 +5094,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -5243,7 +5147,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBudget
@@ -5293,7 +5196,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<UpdateBudgetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFarm
@@ -5343,7 +5245,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<UpdateFarmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFleet
@@ -5397,7 +5298,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<UpdateFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateJob
@@ -5463,7 +5363,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<UpdateJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLimit
@@ -5513,7 +5412,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<UpdateLimitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMonitor
@@ -5564,7 +5462,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<UpdateMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQueue
@@ -5614,7 +5511,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<UpdateQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQueueEnvironment
@@ -5664,7 +5560,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<UpdateQueueEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQueueFleetAssociation
@@ -5714,7 +5609,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<UpdateQueueFleetAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQueueLimitAssociation
@@ -5766,7 +5660,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<UpdateQueueLimitAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSession
@@ -5820,7 +5713,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<UpdateSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStep
@@ -5874,7 +5766,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<UpdateStepResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStorageProfile
@@ -5924,7 +5815,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<UpdateStorageProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTask
@@ -5978,7 +5868,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<UpdateTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorker
@@ -6032,7 +5921,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<UpdateWorkerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkerSchedule
@@ -6086,7 +5974,6 @@ namespace Amazon.Deadline
 
             return InvokeAsync<UpdateWorkerScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

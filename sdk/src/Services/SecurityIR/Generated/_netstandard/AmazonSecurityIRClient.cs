@@ -322,7 +322,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<BatchGetMemberAccountDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelMembership
@@ -383,7 +382,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<CancelMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CloseCase
@@ -444,7 +442,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<CloseCaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCase
@@ -505,7 +502,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<CreateCaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCaseComment
@@ -566,7 +562,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<CreateCaseCommentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMembership
@@ -627,7 +622,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<CreateMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCase
@@ -688,7 +682,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<GetCaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCaseAttachmentDownloadUrl
@@ -749,7 +742,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<GetCaseAttachmentDownloadUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCaseAttachmentUploadUrl
@@ -810,7 +802,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<GetCaseAttachmentUploadUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMembership
@@ -871,7 +862,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<GetMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCaseEdits
@@ -932,7 +922,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<ListCaseEditsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCases
@@ -993,7 +982,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<ListCasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListComments
@@ -1054,7 +1042,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<ListCommentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMemberships
@@ -1115,7 +1102,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<ListMembershipsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1176,7 +1162,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1237,7 +1222,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1298,7 +1282,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCase
@@ -1359,7 +1342,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<UpdateCaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCaseComment
@@ -1420,7 +1402,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<UpdateCaseCommentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCaseStatus
@@ -1483,7 +1464,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<UpdateCaseStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMembership
@@ -1544,7 +1524,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<UpdateMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResolverType
@@ -1614,7 +1593,6 @@ namespace Amazon.SecurityIR
 
             return InvokeAsync<UpdateResolverTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

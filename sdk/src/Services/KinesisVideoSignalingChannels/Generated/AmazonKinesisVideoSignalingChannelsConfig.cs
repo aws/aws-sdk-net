@@ -30,7 +30,6 @@ namespace Amazon.KinesisVideoSignalingChannels
     /// <summary>
     /// Configuration for accessing Amazon KinesisVideoSignalingChannels service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonKinesisVideoSignalingChannelsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

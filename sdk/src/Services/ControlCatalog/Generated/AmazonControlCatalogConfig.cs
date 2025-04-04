@@ -30,7 +30,6 @@ namespace Amazon.ControlCatalog
     /// <summary>
     /// Configuration for accessing Amazon ControlCatalog service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonControlCatalogConfig : ClientConfig
     {
         private static readonly string UserAgentString =

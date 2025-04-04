@@ -329,7 +329,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<CreateHttpNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePrivateDnsNamespace
@@ -388,7 +387,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<CreatePrivateDnsNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePublicDnsNamespace
@@ -454,7 +452,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<CreatePublicDnsNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateService
@@ -548,7 +545,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<CreateServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNamespace
@@ -598,7 +594,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<DeleteNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteService
@@ -645,7 +640,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<DeleteServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServiceAttributes
@@ -687,7 +681,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<DeleteServiceAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterInstance
@@ -741,7 +734,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<DeregisterInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DiscoverInstances
@@ -795,7 +787,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<DiscoverInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DiscoverInstancesRevision
@@ -845,7 +836,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<DiscoverInstancesRevisionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInstance
@@ -891,7 +881,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<GetInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInstancesHealthStatus
@@ -945,7 +934,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<GetInstancesHealthStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNamespace
@@ -987,7 +975,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<GetNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOperation
@@ -1036,7 +1023,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<GetOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetService
@@ -1078,7 +1064,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<GetServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceAttributes
@@ -1120,7 +1105,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<GetServiceAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInstances
@@ -1163,7 +1147,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<ListInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNamespaces
@@ -1203,7 +1186,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<ListNamespacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOperations
@@ -1242,7 +1224,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<ListOperationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServices
@@ -1282,7 +1263,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<ListServicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1324,7 +1304,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterInstance
@@ -1427,7 +1406,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<RegisterInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1473,7 +1451,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1515,7 +1492,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateHttpNamespace
@@ -1564,7 +1540,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<UpdateHttpNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInstanceCustomHealthStatus
@@ -1627,7 +1602,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<UpdateInstanceCustomHealthStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePrivateDnsNamespace
@@ -1676,7 +1650,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<UpdatePrivateDnsNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePublicDnsNamespace
@@ -1725,7 +1698,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<UpdatePublicDnsNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateService
@@ -1802,7 +1774,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<UpdateServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServiceAttributes
@@ -1848,7 +1819,6 @@ namespace Amazon.ServiceDiscovery
 
             return InvokeAsync<UpdateServiceAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.Redshift
     /// <summary>
     /// Configuration for accessing Amazon Redshift service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonRedshiftConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -312,7 +312,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<AssociateAccessGrantsIdentityCenterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAccessGrant
@@ -371,7 +370,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<CreateAccessGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAccessGrantsInstance
@@ -420,7 +418,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<CreateAccessGrantsInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAccessGrantsLocation
@@ -488,7 +485,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<CreateAccessGrantsLocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAccessPoint
@@ -571,7 +567,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<CreateAccessPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAccessPointForObjectLambda
@@ -633,7 +628,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<CreateAccessPointForObjectLambdaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBucket
@@ -747,7 +741,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<CreateBucketResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateJob
@@ -836,7 +829,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<CreateJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMultiRegionAccessPoint
@@ -916,7 +908,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<CreateMultiRegionAccessPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStorageLensGroup
@@ -970,7 +961,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<CreateStorageLensGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccessGrant
@@ -1011,7 +1001,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DeleteAccessGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccessGrantsInstance
@@ -1058,7 +1047,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DeleteAccessGrantsInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccessGrantsInstanceResourcePolicy
@@ -1102,7 +1090,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DeleteAccessGrantsInstanceResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccessGrantsLocation
@@ -1148,7 +1135,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DeleteAccessGrantsLocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccessPoint
@@ -1219,7 +1205,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DeleteAccessPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccessPointForObjectLambda
@@ -1280,7 +1265,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DeleteAccessPointForObjectLambdaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccessPointPolicy
@@ -1346,7 +1330,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DeleteAccessPointPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccessPointPolicyForObjectLambda
@@ -1402,7 +1385,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DeleteAccessPointPolicyForObjectLambdaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBucket
@@ -1478,7 +1460,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DeleteBucketResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBucketLifecycleConfiguration
@@ -1562,7 +1543,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DeleteBucketLifecycleConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBucketPolicy
@@ -1654,7 +1634,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DeleteBucketPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBucketReplication
@@ -1743,7 +1722,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DeleteBucketReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBucketTagging
@@ -1818,7 +1796,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DeleteBucketTaggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteJobTagging
@@ -1888,7 +1865,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DeleteJobTaggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMultiRegionAccessPoint
@@ -1967,7 +1943,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DeleteMultiRegionAccessPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePublicAccessBlock
@@ -2025,7 +2000,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DeletePublicAccessBlockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStorageLensConfiguration
@@ -2076,7 +2050,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DeleteStorageLensConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStorageLensConfigurationTagging
@@ -2127,7 +2100,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DeleteStorageLensConfigurationTaggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStorageLensGroup
@@ -2174,7 +2146,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DeleteStorageLensGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeJob
@@ -2253,7 +2224,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DescribeJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMultiRegionAccessPointOperation
@@ -2322,7 +2292,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DescribeMultiRegionAccessPointOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DissociateAccessGrantsIdentityCenter
@@ -2368,7 +2337,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DissociateAccessGrantsIdentityCenterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccessGrant
@@ -2408,7 +2376,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetAccessGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccessGrantsInstance
@@ -2454,7 +2421,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetAccessGrantsInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccessGrantsInstanceForPrefix
@@ -2500,7 +2466,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetAccessGrantsInstanceForPrefixResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccessGrantsInstanceResourcePolicy
@@ -2541,7 +2506,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetAccessGrantsInstanceResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccessGrantsLocation
@@ -2583,7 +2547,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetAccessGrantsLocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccessPoint
@@ -2654,7 +2617,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetAccessPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccessPointConfigurationForObjectLambda
@@ -2705,7 +2667,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetAccessPointConfigurationForObjectLambdaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccessPointForObjectLambda
@@ -2766,7 +2727,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetAccessPointForObjectLambdaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccessPointPolicy
@@ -2822,7 +2782,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetAccessPointPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccessPointPolicyForObjectLambda
@@ -2878,7 +2837,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetAccessPointPolicyForObjectLambdaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccessPointPolicyStatus
@@ -2921,7 +2879,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetAccessPointPolicyStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccessPointPolicyStatusForObjectLambda
@@ -2963,7 +2920,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetAccessPointPolicyStatusForObjectLambdaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucket
@@ -3043,7 +2999,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetBucketResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketLifecycleConfiguration
@@ -3144,7 +3099,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetBucketLifecycleConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketPolicy
@@ -3243,7 +3197,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetBucketPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketReplication
@@ -3342,7 +3295,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetBucketReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketTagging
@@ -3430,7 +3382,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetBucketTaggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketVersioning
@@ -3515,7 +3466,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetBucketVersioningResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataAccess
@@ -3565,7 +3515,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetDataAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJobTagging
@@ -3635,7 +3584,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetJobTaggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMultiRegionAccessPoint
@@ -3707,7 +3655,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetMultiRegionAccessPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMultiRegionAccessPointPolicy
@@ -3769,7 +3716,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetMultiRegionAccessPointPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMultiRegionAccessPointPolicyStatus
@@ -3832,7 +3778,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetMultiRegionAccessPointPolicyStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMultiRegionAccessPointRoutes
@@ -3900,7 +3845,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetMultiRegionAccessPointRoutesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPublicAccessBlock
@@ -3962,7 +3906,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetPublicAccessBlockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStorageLensConfiguration
@@ -4013,7 +3956,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetStorageLensConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStorageLensConfigurationTagging
@@ -4064,7 +4006,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetStorageLensConfigurationTaggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStorageLensGroup
@@ -4111,7 +4052,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetStorageLensGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccessGrants
@@ -4151,7 +4091,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<ListAccessGrantsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccessGrantsInstances
@@ -4194,7 +4133,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<ListAccessGrantsInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccessGrantsLocations
@@ -4235,7 +4173,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<ListAccessGrantsLocationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccessPoints
@@ -4310,7 +4247,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<ListAccessPointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccessPointsForObjectLambda
@@ -4374,7 +4310,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<ListAccessPointsForObjectLambdaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCallerAccessGrants
@@ -4425,7 +4360,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<ListCallerAccessGrantsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobs
@@ -4502,7 +4436,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMultiRegionAccessPoints
@@ -4577,7 +4510,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<ListMultiRegionAccessPointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRegionalBuckets
@@ -4627,7 +4559,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<ListRegionalBucketsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStorageLensConfigurations
@@ -4678,7 +4609,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<ListStorageLensConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStorageLensGroups
@@ -4725,7 +4655,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<ListStorageLensGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -4784,7 +4713,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAccessGrantsInstanceResourcePolicy
@@ -4825,7 +4753,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<PutAccessGrantsInstanceResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAccessPointConfigurationForObjectLambda
@@ -4876,7 +4803,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<PutAccessPointConfigurationForObjectLambdaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAccessPointPolicy
@@ -4944,7 +4870,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<PutAccessPointPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAccessPointPolicyForObjectLambda
@@ -5002,7 +4927,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<PutAccessPointPolicyForObjectLambdaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketLifecycleConfiguration
@@ -5073,7 +4997,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<PutBucketLifecycleConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketPolicy
@@ -5168,7 +5091,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<PutBucketPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketReplication
@@ -5321,7 +5243,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<PutBucketReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketTagging
@@ -5455,7 +5376,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<PutBucketTaggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketVersioning
@@ -5568,7 +5488,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<PutBucketVersioningResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutJobTagging
@@ -5689,7 +5608,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<PutJobTaggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutMultiRegionAccessPointPolicy
@@ -5754,7 +5672,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<PutMultiRegionAccessPointPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutPublicAccessBlock
@@ -5813,7 +5730,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<PutPublicAccessBlockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutStorageLensConfiguration
@@ -5865,7 +5781,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<PutStorageLensConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutStorageLensConfigurationTagging
@@ -5916,7 +5831,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<PutStorageLensConfigurationTaggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SubmitMultiRegionAccessPointRoutes
@@ -6000,7 +5914,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<SubmitMultiRegionAccessPointRoutesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -6059,7 +5972,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -6117,7 +6029,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccessGrantsLocation
@@ -6162,7 +6073,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<UpdateAccessGrantsLocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateJobPriority
@@ -6241,7 +6151,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<UpdateJobPriorityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateJobStatus
@@ -6323,7 +6232,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<UpdateJobStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStorageLensGroup
@@ -6370,7 +6278,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<UpdateStorageLensGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

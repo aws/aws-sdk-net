@@ -30,7 +30,6 @@ namespace Amazon.LicenseManagerUserSubscriptions
     /// <summary>
     /// Configuration for accessing Amazon LicenseManagerUserSubscriptions service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonLicenseManagerUserSubscriptionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

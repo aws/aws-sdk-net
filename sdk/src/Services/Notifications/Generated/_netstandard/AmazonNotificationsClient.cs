@@ -339,7 +339,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<AssociateChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateManagedNotificationAccountContact
@@ -394,7 +393,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<AssociateManagedNotificationAccountContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateManagedNotificationAdditionalChannel
@@ -454,7 +452,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<AssociateManagedNotificationAdditionalChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEventRule
@@ -510,7 +507,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<CreateEventRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNotificationConfiguration
@@ -562,7 +558,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<CreateNotificationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventRule
@@ -614,7 +609,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<DeleteEventRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNotificationConfiguration
@@ -666,7 +660,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<DeleteNotificationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterNotificationHub
@@ -727,7 +720,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<DeregisterNotificationHubResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableNotificationsAccessForOrganization
@@ -782,7 +774,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<DisableNotificationsAccessForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateChannel
@@ -832,7 +823,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<DisassociateChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateManagedNotificationAccountContact
@@ -884,7 +874,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<DisassociateManagedNotificationAccountContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateManagedNotificationAdditionalChannel
@@ -938,7 +927,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<DisassociateManagedNotificationAdditionalChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableNotificationsAccessForOrganization
@@ -993,7 +981,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<EnableNotificationsAccessForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEventRule
@@ -1042,7 +1029,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<GetEventRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetManagedNotificationChildEvent
@@ -1091,7 +1077,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<GetManagedNotificationChildEventResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetManagedNotificationConfiguration
@@ -1140,7 +1125,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<GetManagedNotificationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetManagedNotificationEvent
@@ -1189,7 +1173,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<GetManagedNotificationEventResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNotificationConfiguration
@@ -1238,7 +1221,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<GetNotificationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNotificationEvent
@@ -1299,7 +1281,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<GetNotificationEventResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNotificationsAccessForOrganization
@@ -1346,7 +1327,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<GetNotificationsAccessForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChannels
@@ -1395,7 +1375,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<ListChannelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventRules
@@ -1445,7 +1424,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<ListEventRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListManagedNotificationChannelAssociations
@@ -1495,7 +1473,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<ListManagedNotificationChannelAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListManagedNotificationChildEvents
@@ -1543,7 +1520,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<ListManagedNotificationChildEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListManagedNotificationConfigurations
@@ -1590,7 +1566,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<ListManagedNotificationConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListManagedNotificationEvents
@@ -1637,7 +1612,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<ListManagedNotificationEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNotificationConfigurations
@@ -1684,7 +1658,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<ListNotificationConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNotificationEvents
@@ -1743,7 +1716,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<ListNotificationEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNotificationHubs
@@ -1789,7 +1761,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<ListNotificationHubsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1850,7 +1821,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterNotificationHub
@@ -1908,7 +1878,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<RegisterNotificationHubResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1969,7 +1938,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2025,7 +1993,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEventRule
@@ -2077,7 +2044,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<UpdateEventRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNotificationConfiguration
@@ -2129,7 +2095,6 @@ namespace Amazon.Notifications
 
             return InvokeAsync<UpdateNotificationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

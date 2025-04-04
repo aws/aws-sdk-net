@@ -342,7 +342,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<CreateInvocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSession
@@ -441,7 +440,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<CreateSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAgentMemory
@@ -506,7 +504,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<DeleteAgentMemoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSession
@@ -564,7 +561,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<DeleteSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EndSession
@@ -622,7 +618,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<EndSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateQuery
@@ -689,7 +684,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<GenerateQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAgentMemory
@@ -754,7 +748,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<GetAgentMemoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInvocationStep
@@ -807,7 +800,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<GetInvocationStepResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSession
@@ -860,7 +852,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<GetSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InvokeAgent
@@ -1003,7 +994,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<InvokeAgentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InvokeFlow
@@ -1078,7 +1068,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<InvokeFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InvokeInlineAgent
@@ -1173,7 +1162,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<InvokeInlineAgentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInvocations
@@ -1226,7 +1214,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<ListInvocationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInvocationSteps
@@ -1279,7 +1266,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<ListInvocationStepsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSessions
@@ -1328,7 +1314,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<ListSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1379,7 +1364,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  OptimizePrompt
@@ -1435,7 +1419,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<OptimizePromptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutInvocationStep
@@ -1522,7 +1505,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<PutInvocationStepResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Rerank
@@ -1588,7 +1570,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<RerankResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Retrieve
@@ -1653,7 +1634,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<RetrieveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RetrieveAndGenerate
@@ -1720,7 +1700,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<RetrieveAndGenerateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RetrieveAndGenerateStream
@@ -1795,7 +1774,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<RetrieveAndGenerateStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1850,7 +1828,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1901,7 +1878,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSession
@@ -1958,7 +1934,6 @@ namespace Amazon.BedrockAgentRuntime
 
             return InvokeAsync<UpdateSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

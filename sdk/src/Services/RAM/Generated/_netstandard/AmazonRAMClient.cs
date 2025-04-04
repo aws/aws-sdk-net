@@ -354,7 +354,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<AcceptResourceShareInvitationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateResourceShare
@@ -432,7 +431,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<AssociateResourceShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateResourceSharePermission
@@ -492,7 +490,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<AssociateResourceSharePermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePermission
@@ -565,7 +562,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<CreatePermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePermissionVersion
@@ -646,7 +642,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<CreatePermissionVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateResourceShare
@@ -735,7 +730,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<CreateResourceShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePermission
@@ -797,7 +791,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<DeletePermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePermissionVersion
@@ -867,7 +860,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<DeletePermissionVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourceShare
@@ -940,7 +932,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<DeleteResourceShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateResourceShare
@@ -1012,7 +1003,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<DisassociateResourceShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateResourceSharePermission
@@ -1076,7 +1066,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<DisassociateResourceSharePermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableSharingWithAwsOrganization
@@ -1134,7 +1123,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<EnableSharingWithAwsOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPermission
@@ -1188,7 +1176,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<GetPermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicies
@@ -1246,7 +1233,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<GetResourcePoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceShareAssociations
@@ -1306,7 +1292,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<GetResourceShareAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceShareInvitations
@@ -1369,7 +1354,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<GetResourceShareInvitationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceShares
@@ -1425,7 +1409,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<GetResourceSharesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPendingInvitationResources
@@ -1494,7 +1477,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<ListPendingInvitationResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPermissionAssociations
@@ -1549,7 +1531,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<ListPermissionAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPermissions
@@ -1602,7 +1583,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<ListPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPermissionVersions
@@ -1661,7 +1641,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<ListPermissionVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPrincipals
@@ -1718,7 +1697,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<ListPrincipalsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReplacePermissionAssociationsWork
@@ -1768,7 +1746,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<ListReplacePermissionAssociationsWorkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResources
@@ -1828,7 +1805,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<ListResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceSharePermissions
@@ -1887,7 +1863,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<ListResourceSharePermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceTypes
@@ -1936,7 +1911,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<ListResourceTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PromotePermissionCreatedFromPolicy
@@ -2030,7 +2004,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<PromotePermissionCreatedFromPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PromoteResourceShareCreatedFromPolicy
@@ -2122,7 +2095,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<PromoteResourceShareCreatedFromPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectResourceShareInvitation
@@ -2192,7 +2164,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<RejectResourceShareInvitationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReplacePermissionAssociations
@@ -2277,7 +2248,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<ReplacePermissionAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetDefaultPermissionVersion
@@ -2339,7 +2309,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<SetDefaultPermissionVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2409,7 +2378,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2461,7 +2429,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResourceShare
@@ -2526,7 +2493,6 @@ namespace Amazon.RAM
 
             return InvokeAsync<UpdateResourceShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

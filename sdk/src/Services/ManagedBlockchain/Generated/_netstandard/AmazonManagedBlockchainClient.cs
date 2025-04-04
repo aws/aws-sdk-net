@@ -338,7 +338,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<CreateAccessorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMember
@@ -408,7 +407,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<CreateMemberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNetwork
@@ -472,7 +470,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<CreateNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNode
@@ -542,7 +539,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<CreateNodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProposal
@@ -607,7 +603,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<CreateProposalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccessor
@@ -665,7 +660,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<DeleteAccessorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMember
@@ -731,7 +725,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<DeleteMemberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNode
@@ -792,7 +785,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<DeleteNodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccessor
@@ -845,7 +837,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<GetAccessorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMember
@@ -902,7 +893,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<GetMemberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNetwork
@@ -959,7 +949,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<GetNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNode
@@ -1016,7 +1005,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<GetNodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProposal
@@ -1073,7 +1061,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<GetProposalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccessors
@@ -1123,7 +1110,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<ListAccessorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInvitations
@@ -1184,7 +1170,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<ListInvitationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMembers
@@ -1238,7 +1223,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<ListMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNetworks
@@ -1293,7 +1277,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<ListNetworksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNodes
@@ -1347,7 +1330,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<ListNodesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProposals
@@ -1404,7 +1386,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<ListProposalsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProposalVotes
@@ -1459,7 +1440,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<ListProposalVotesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1514,7 +1494,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectInvitation
@@ -1576,7 +1555,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<RejectInvitationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1644,7 +1622,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1698,7 +1675,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMember
@@ -1755,7 +1731,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<UpdateMemberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNode
@@ -1812,7 +1787,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<UpdateNodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  VoteOnProposal
@@ -1874,7 +1848,6 @@ namespace Amazon.ManagedBlockchain
 
             return InvokeAsync<VoteOnProposalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

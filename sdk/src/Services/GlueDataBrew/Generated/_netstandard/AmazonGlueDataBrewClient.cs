@@ -358,7 +358,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<BatchDeleteRecipeVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataset
@@ -404,7 +403,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<CreateDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProfileJob
@@ -453,7 +451,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<CreateProfileJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProject
@@ -499,7 +496,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<CreateProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRecipe
@@ -542,7 +538,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<CreateRecipeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRecipeJob
@@ -592,7 +587,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<CreateRecipeJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRuleset
@@ -636,7 +630,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<CreateRulesetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSchedule
@@ -680,7 +673,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<CreateScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataset
@@ -723,7 +715,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<DeleteDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteJob
@@ -766,7 +757,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<DeleteJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProject
@@ -809,7 +799,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<DeleteProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRecipeVersion
@@ -852,7 +841,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<DeleteRecipeVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRuleset
@@ -895,7 +883,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<DeleteRulesetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSchedule
@@ -935,7 +922,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<DeleteScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataset
@@ -975,7 +961,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<DescribeDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeJob
@@ -1015,7 +1000,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<DescribeJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeJobRun
@@ -1055,7 +1039,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<DescribeJobRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProject
@@ -1095,7 +1078,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<DescribeProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRecipe
@@ -1136,7 +1118,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<DescribeRecipeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRuleset
@@ -1176,7 +1157,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<DescribeRulesetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSchedule
@@ -1216,7 +1196,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<DescribeScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatasets
@@ -1253,7 +1232,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<ListDatasetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobRuns
@@ -1293,7 +1271,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<ListJobRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobs
@@ -1330,7 +1307,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProjects
@@ -1367,7 +1343,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<ListProjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecipes
@@ -1404,7 +1379,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<ListRecipesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecipeVersions
@@ -1441,7 +1415,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<ListRecipeVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRulesets
@@ -1482,7 +1455,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<ListRulesetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSchedules
@@ -1519,7 +1491,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<ListSchedulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1562,7 +1533,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PublishRecipe
@@ -1605,7 +1575,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<PublishRecipeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendProjectSessionAction
@@ -1648,7 +1617,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<SendProjectSessionActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartJobRun
@@ -1694,7 +1662,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<StartJobRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartProjectSession
@@ -1740,7 +1707,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<StartProjectSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopJobRun
@@ -1780,7 +1746,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<StopJobRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1824,7 +1789,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1867,7 +1831,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataset
@@ -1910,7 +1873,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<UpdateDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProfileJob
@@ -1953,7 +1915,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<UpdateProfileJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProject
@@ -1993,7 +1954,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<UpdateProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRecipe
@@ -2033,7 +1993,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<UpdateRecipeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRecipeJob
@@ -2076,7 +2035,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<UpdateRecipeJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRuleset
@@ -2116,7 +2074,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<UpdateRulesetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSchedule
@@ -2159,7 +2116,6 @@ namespace Amazon.GlueDataBrew
 
             return InvokeAsync<UpdateScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

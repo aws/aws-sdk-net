@@ -30,7 +30,6 @@ namespace Amazon.FMS
     /// <summary>
     /// Configuration for accessing Amazon FMS service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonFMSConfig : ClientConfig
     {
         private static readonly string UserAgentString =

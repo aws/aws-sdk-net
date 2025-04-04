@@ -30,7 +30,6 @@ namespace Amazon.VoiceID
     /// <summary>
     /// Configuration for accessing Amazon VoiceID service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonVoiceIDConfig : ClientConfig
     {
         private static readonly string UserAgentString =

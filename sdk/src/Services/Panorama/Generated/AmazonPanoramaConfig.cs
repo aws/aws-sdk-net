@@ -30,7 +30,6 @@ namespace Amazon.Panorama
     /// <summary>
     /// Configuration for accessing Amazon Panorama service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonPanoramaConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -316,7 +316,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<BatchDeleteEvaluationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEvaluationJob
@@ -372,7 +371,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<CreateEvaluationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGuardrail
@@ -474,7 +472,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<CreateGuardrailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGuardrailVersion
@@ -532,7 +529,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<CreateGuardrailVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInferenceProfile
@@ -600,7 +596,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<CreateInferenceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMarketplaceModelEndpoint
@@ -657,7 +652,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<CreateMarketplaceModelEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateModelCopyJob
@@ -709,7 +703,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<CreateModelCopyJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateModelCustomizationJob
@@ -795,7 +788,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<CreateModelCustomizationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateModelImportJob
@@ -858,7 +850,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<CreateModelImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateModelInvocationJob
@@ -924,7 +915,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<CreateModelInvocationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePromptRouter
@@ -986,7 +976,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<CreatePromptRouterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProvisionedModelThroughput
@@ -1048,7 +1037,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<CreateProvisionedModelThroughputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCustomModel
@@ -1103,7 +1091,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<DeleteCustomModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGuardrail
@@ -1168,7 +1155,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<DeleteGuardrailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteImportedModel
@@ -1223,7 +1209,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<DeleteImportedModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInferenceProfile
@@ -1278,7 +1263,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<DeleteInferenceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMarketplaceModelEndpoint
@@ -1328,7 +1312,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<DeleteMarketplaceModelEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteModelInvocationLoggingConfiguration
@@ -1371,7 +1354,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<DeleteModelInvocationLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePromptRouter
@@ -1421,7 +1403,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<DeletePromptRouterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProvisionedModelThroughput
@@ -1477,7 +1458,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<DeleteProvisionedModelThroughputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterMarketplaceModelEndpoint
@@ -1532,7 +1512,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<DeregisterMarketplaceModelEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCustomModel
@@ -1585,7 +1564,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<GetCustomModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEvaluationJob
@@ -1635,7 +1613,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<GetEvaluationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFoundationModel
@@ -1685,7 +1662,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<GetFoundationModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGuardrail
@@ -1736,7 +1712,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<GetGuardrailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetImportedModel
@@ -1786,7 +1761,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<GetImportedModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInferenceProfile
@@ -1838,7 +1812,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<GetInferenceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMarketplaceModelEndpoint
@@ -1888,7 +1861,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<GetMarketplaceModelEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetModelCopyJob
@@ -1940,7 +1912,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<GetModelCopyJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetModelCustomizationJob
@@ -1993,7 +1964,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<GetModelCustomizationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetModelImportJob
@@ -2046,7 +2016,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<GetModelImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetModelInvocationJob
@@ -2097,7 +2066,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<GetModelInvocationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetModelInvocationLoggingConfiguration
@@ -2140,7 +2108,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<GetModelInvocationLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPromptRouter
@@ -2190,7 +2157,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<GetPromptRouterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProvisionedModelThroughput
@@ -2242,7 +2208,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<GetProvisionedModelThroughputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCustomModels
@@ -2296,7 +2261,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<ListCustomModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEvaluationJobs
@@ -2342,7 +2306,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<ListEvaluationJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFoundationModels
@@ -2391,7 +2354,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<ListFoundationModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGuardrails
@@ -2452,7 +2414,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<ListGuardrailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImportedModels
@@ -2501,7 +2462,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<ListImportedModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInferenceProfiles
@@ -2550,7 +2510,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<ListInferenceProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMarketplaceModelEndpoints
@@ -2601,7 +2560,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<ListMarketplaceModelEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListModelCopyJobs
@@ -2654,7 +2612,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<ListModelCopyJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListModelCustomizationJobs
@@ -2708,7 +2665,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<ListModelCustomizationJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListModelImportJobs
@@ -2757,7 +2713,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<ListModelImportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListModelInvocationJobs
@@ -2804,7 +2759,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<ListModelInvocationJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPromptRouters
@@ -2850,7 +2804,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<ListPromptRoutersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProvisionedModelThroughputs
@@ -2898,7 +2851,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<ListProvisionedModelThroughputsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2955,7 +2907,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutModelInvocationLoggingConfiguration
@@ -3001,7 +2952,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<PutModelInvocationLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterMarketplaceModelEndpoint
@@ -3055,7 +3005,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<RegisterMarketplaceModelEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopEvaluationJob
@@ -3108,7 +3057,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<StopEvaluationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopModelCustomizationJob
@@ -3163,7 +3111,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<StopModelCustomizationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopModelInvocationJob
@@ -3218,7 +3165,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<StopModelInvocationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3275,7 +3221,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3327,7 +3272,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGuardrail
@@ -3435,7 +3379,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<UpdateGuardrailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMarketplaceModelEndpoint
@@ -3492,7 +3435,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<UpdateMarketplaceModelEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProvisionedModelThroughput
@@ -3545,7 +3487,6 @@ namespace Amazon.Bedrock
 
             return InvokeAsync<UpdateProvisionedModelThroughputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

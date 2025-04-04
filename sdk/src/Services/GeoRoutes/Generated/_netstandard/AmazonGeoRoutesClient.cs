@@ -318,7 +318,6 @@ namespace Amazon.GeoRoutes
 
             return InvokeAsync<CalculateIsolinesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CalculateRouteMatrix
@@ -366,7 +365,6 @@ namespace Amazon.GeoRoutes
 
             return InvokeAsync<CalculateRouteMatrixResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CalculateRoutes
@@ -413,7 +411,6 @@ namespace Amazon.GeoRoutes
 
             return InvokeAsync<CalculateRoutesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  OptimizeWaypoints
@@ -461,7 +458,6 @@ namespace Amazon.GeoRoutes
 
             return InvokeAsync<OptimizeWaypointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SnapToRoads
@@ -507,7 +503,6 @@ namespace Amazon.GeoRoutes
 
             return InvokeAsync<SnapToRoadsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

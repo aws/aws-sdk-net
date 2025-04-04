@@ -336,7 +336,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<AddPolicyStatementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteUniqueId
@@ -379,7 +378,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<BatchDeleteUniqueIdResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIdMappingWorkflow
@@ -436,7 +434,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<CreateIdMappingWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIdNamespace
@@ -493,7 +490,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<CreateIdNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMatchingWorkflow
@@ -551,7 +547,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<CreateMatchingWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSchemaMapping
@@ -608,7 +603,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<CreateSchemaMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIdMappingWorkflow
@@ -660,7 +654,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<DeleteIdMappingWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIdNamespace
@@ -706,7 +699,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<DeleteIdNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMatchingWorkflow
@@ -758,7 +750,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<DeleteMatchingWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePolicyStatement
@@ -812,7 +803,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<DeletePolicyStatementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSchemaMapping
@@ -866,7 +856,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<DeleteSchemaMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIdMappingJob
@@ -916,7 +905,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<GetIdMappingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIdMappingWorkflow
@@ -965,7 +953,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<GetIdMappingWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIdNamespace
@@ -1014,7 +1001,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<GetIdNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMatchId
@@ -1063,7 +1049,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<GetMatchIdResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMatchingJob
@@ -1113,7 +1098,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<GetMatchingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMatchingWorkflow
@@ -1162,7 +1146,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<GetMatchingWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPolicy
@@ -1211,7 +1194,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<GetPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProviderService
@@ -1260,7 +1242,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<GetProviderServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSchemaMapping
@@ -1309,7 +1290,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<GetSchemaMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIdMappingJobs
@@ -1358,7 +1338,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<ListIdMappingJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIdMappingWorkflows
@@ -1405,7 +1384,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<ListIdMappingWorkflowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIdNamespaces
@@ -1451,7 +1429,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<ListIdNamespacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMatchingJobs
@@ -1500,7 +1477,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<ListMatchingJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMatchingWorkflows
@@ -1547,7 +1523,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<ListMatchingWorkflowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProviderServices
@@ -1594,7 +1569,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<ListProviderServicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSchemaMappings
@@ -1641,7 +1615,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<ListSchemaMappingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1685,7 +1658,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutPolicy
@@ -1739,7 +1711,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<PutPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartIdMappingJob
@@ -1798,7 +1769,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<StartIdMappingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMatchingJob
@@ -1857,7 +1827,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<StartMatchingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1909,7 +1878,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1950,7 +1918,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIdMappingWorkflow
@@ -2001,7 +1968,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<UpdateIdMappingWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIdNamespace
@@ -2050,7 +2016,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<UpdateIdNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMatchingWorkflow
@@ -2101,7 +2066,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<UpdateMatchingWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSchemaMapping
@@ -2162,7 +2126,6 @@ namespace Amazon.EntityResolution
 
             return InvokeAsync<UpdateSchemaMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

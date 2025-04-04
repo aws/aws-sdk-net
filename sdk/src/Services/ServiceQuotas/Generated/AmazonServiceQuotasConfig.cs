@@ -30,7 +30,6 @@ namespace Amazon.ServiceQuotas
     /// <summary>
     /// Configuration for accessing Amazon ServiceQuotas service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonServiceQuotasConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -184,6 +184,22 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexRuntimeV2.Model.StartConversationRequest.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexRuntimeV2.Model.StartConversationRequest.LocaleId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexRuntimeV2.Model.StartConversationRequest.SessionId</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>[0-9a-zA-Z._:-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.ActiveContext.Name</property>
     <min>1</min>
     <max>100</max>
@@ -345,22 +361,6 @@
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.SessionState.OriginatingRequestId</property>
     <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.LexRuntimeV2.Model.StartConversationRequest.BotId</property>
-    <min>10</min>
-    <max>10</max>
-    <pattern>^[0-9a-zA-Z]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.LexRuntimeV2.Model.StartConversationRequest.LocaleId</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.LexRuntimeV2.Model.StartConversationRequest.SessionId</property>
-    <min>2</min>
-    <max>100</max>
-    <pattern>[0-9a-zA-Z._:-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.TextInputEvent.EventId</property>

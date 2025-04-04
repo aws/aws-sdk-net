@@ -338,7 +338,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<CancelJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateComputeEnvironment
@@ -489,7 +488,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<CreateComputeEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConsumableResource
@@ -531,7 +529,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<CreateConsumableResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateJobQueue
@@ -583,7 +580,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<CreateJobQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSchedulingPolicy
@@ -625,7 +621,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<CreateSchedulingPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteComputeEnvironment
@@ -677,7 +672,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<DeleteComputeEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConsumableResource
@@ -719,7 +713,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<DeleteConsumableResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteJobQueue
@@ -770,7 +763,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<DeleteJobQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSchedulingPolicy
@@ -817,7 +809,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<DeleteSchedulingPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterJobDefinition
@@ -860,7 +851,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<DeregisterJobDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeComputeEnvironments
@@ -909,7 +899,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<DescribeComputeEnvironmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConsumableResource
@@ -951,7 +940,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<DescribeConsumableResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeJobDefinitions
@@ -994,7 +982,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<DescribeJobDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeJobQueues
@@ -1036,7 +1023,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<DescribeJobQueuesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeJobs
@@ -1078,7 +1064,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<DescribeJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSchedulingPolicies
@@ -1120,7 +1105,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<DescribeSchedulingPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJobQueueSnapshot
@@ -1162,7 +1146,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<GetJobQueueSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConsumableResources
@@ -1204,7 +1187,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<ListConsumableResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobs
@@ -1268,7 +1250,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobsByConsumableResource
@@ -1310,7 +1291,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<ListJobsByConsumableResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSchedulingPolicies
@@ -1352,7 +1332,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<ListSchedulingPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1396,7 +1375,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterJobDefinition
@@ -1438,7 +1416,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<RegisterJobDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SubmitJob
@@ -1498,7 +1475,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<SubmitJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1545,7 +1521,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TerminateJob
@@ -1589,7 +1564,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<TerminateJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1631,7 +1605,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateComputeEnvironment
@@ -1673,7 +1646,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<UpdateComputeEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConsumableResource
@@ -1715,7 +1687,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<UpdateConsumableResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateJobQueue
@@ -1757,7 +1728,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<UpdateJobQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSchedulingPolicy
@@ -1799,7 +1769,6 @@ namespace Amazon.Batch
 
             return InvokeAsync<UpdateSchedulingPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

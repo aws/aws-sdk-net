@@ -296,7 +296,6 @@ namespace Amazon.MarketplaceDeployment
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDeploymentParameter
@@ -351,7 +350,6 @@ namespace Amazon.MarketplaceDeployment
 
             return InvokeAsync<PutDeploymentParameterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -403,7 +401,6 @@ namespace Amazon.MarketplaceDeployment
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -455,7 +452,6 @@ namespace Amazon.MarketplaceDeployment
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

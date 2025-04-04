@@ -292,7 +292,6 @@ namespace Amazon.PaginatorsTest
 
             return InvokeAsync<TestPaginatorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
     }

@@ -30,7 +30,6 @@ namespace Amazon.IoTEventsData
     /// <summary>
     /// Configuration for accessing Amazon IoTEventsData service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonIoTEventsDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =

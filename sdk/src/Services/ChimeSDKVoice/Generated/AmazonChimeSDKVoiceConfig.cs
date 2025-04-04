@@ -30,7 +30,6 @@ namespace Amazon.ChimeSDKVoice
     /// <summary>
     /// Configuration for accessing Amazon ChimeSDKVoice service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonChimeSDKVoiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

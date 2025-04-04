@@ -328,7 +328,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<CancelTrainedModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelTrainedModelInferenceJob
@@ -374,7 +373,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<CancelTrainedModelInferenceJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAudienceModel
@@ -426,7 +424,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<CreateAudienceModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfiguredAudienceModel
@@ -475,7 +472,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<CreateConfiguredAudienceModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfiguredModelAlgorithm
@@ -521,7 +517,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<CreateConfiguredModelAlgorithmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfiguredModelAlgorithmAssociation
@@ -571,7 +566,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<CreateConfiguredModelAlgorithmAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMLInputChannel
@@ -621,7 +615,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<CreateMLInputChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTrainedModel
@@ -671,7 +664,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<CreateTrainedModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTrainingDataset
@@ -716,7 +708,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<CreateTrainingDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAudienceGenerationJob
@@ -763,7 +754,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<DeleteAudienceGenerationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAudienceModel
@@ -810,7 +800,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<DeleteAudienceModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfiguredAudienceModel
@@ -859,7 +848,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<DeleteConfiguredAudienceModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfiguredAudienceModelPolicy
@@ -902,7 +890,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<DeleteConfiguredAudienceModelPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfiguredModelAlgorithm
@@ -948,7 +935,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<DeleteConfiguredModelAlgorithmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfiguredModelAlgorithmAssociation
@@ -994,7 +980,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<DeleteConfiguredModelAlgorithmAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMLConfiguration
@@ -1037,7 +1022,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<DeleteMLConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMLInputChannelData
@@ -1083,7 +1067,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<DeleteMLInputChannelDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTrainedModelOutput
@@ -1129,7 +1112,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<DeleteTrainedModelOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTrainingDataset
@@ -1178,7 +1160,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<DeleteTrainingDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAudienceGenerationJob
@@ -1221,7 +1202,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<GetAudienceGenerationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAudienceModel
@@ -1264,7 +1244,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<GetAudienceModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCollaborationConfiguredModelAlgorithmAssociation
@@ -1307,7 +1286,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<GetCollaborationConfiguredModelAlgorithmAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCollaborationMLInputChannel
@@ -1350,7 +1328,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<GetCollaborationMLInputChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCollaborationTrainedModel
@@ -1393,7 +1370,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<GetCollaborationTrainedModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfiguredAudienceModel
@@ -1436,7 +1412,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<GetConfiguredAudienceModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfiguredAudienceModelPolicy
@@ -1479,7 +1454,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<GetConfiguredAudienceModelPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfiguredModelAlgorithm
@@ -1522,7 +1496,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<GetConfiguredModelAlgorithmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfiguredModelAlgorithmAssociation
@@ -1565,7 +1538,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<GetConfiguredModelAlgorithmAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMLConfiguration
@@ -1608,7 +1580,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<GetMLConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMLInputChannel
@@ -1651,7 +1622,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<GetMLInputChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTrainedModel
@@ -1694,7 +1664,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<GetTrainedModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTrainedModelInferenceJob
@@ -1737,7 +1706,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<GetTrainedModelInferenceJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTrainingDataset
@@ -1780,7 +1748,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<GetTrainingDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAudienceExportJobs
@@ -1820,7 +1787,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<ListAudienceExportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAudienceGenerationJobs
@@ -1860,7 +1826,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<ListAudienceGenerationJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAudienceModels
@@ -1900,7 +1865,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<ListAudienceModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCollaborationConfiguredModelAlgorithmAssociations
@@ -1940,7 +1904,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<ListCollaborationConfiguredModelAlgorithmAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCollaborationMLInputChannels
@@ -1980,7 +1943,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<ListCollaborationMLInputChannelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCollaborationTrainedModelExportJobs
@@ -2020,7 +1982,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<ListCollaborationTrainedModelExportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCollaborationTrainedModelInferenceJobs
@@ -2060,7 +2021,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<ListCollaborationTrainedModelInferenceJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCollaborationTrainedModels
@@ -2100,7 +2060,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<ListCollaborationTrainedModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfiguredAudienceModels
@@ -2140,7 +2099,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<ListConfiguredAudienceModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfiguredModelAlgorithmAssociations
@@ -2180,7 +2138,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<ListConfiguredModelAlgorithmAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfiguredModelAlgorithms
@@ -2220,7 +2177,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<ListConfiguredModelAlgorithmsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMLInputChannels
@@ -2260,7 +2216,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<ListMLInputChannelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2303,7 +2258,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrainedModelInferenceJobs
@@ -2343,7 +2297,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<ListTrainedModelInferenceJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrainedModels
@@ -2383,7 +2336,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<ListTrainedModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrainingDatasets
@@ -2423,7 +2375,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<ListTrainingDatasetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutConfiguredAudienceModelPolicy
@@ -2466,7 +2417,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<PutConfiguredAudienceModelPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutMLConfiguration
@@ -2506,7 +2456,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<PutMLConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartAudienceExportJob
@@ -2555,7 +2504,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<StartAudienceExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartAudienceGenerationJob
@@ -2604,7 +2552,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<StartAudienceGenerationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartTrainedModelExportJob
@@ -2650,7 +2597,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<StartTrainedModelExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartTrainedModelInferenceJob
@@ -2699,7 +2645,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<StartTrainedModelInferenceJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2742,7 +2687,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2785,7 +2729,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfiguredAudienceModel
@@ -2833,7 +2776,6 @@ namespace Amazon.CleanRoomsML
 
             return InvokeAsync<UpdateConfiguredAudienceModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

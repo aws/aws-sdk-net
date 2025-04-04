@@ -357,7 +357,6 @@ namespace Amazon.Keyspaces
 
             return InvokeAsync<CreateKeyspaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTable
@@ -429,7 +428,6 @@ namespace Amazon.Keyspaces
 
             return InvokeAsync<CreateTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateType
@@ -499,7 +497,6 @@ namespace Amazon.Keyspaces
 
             return InvokeAsync<CreateTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteKeyspace
@@ -557,7 +554,6 @@ namespace Amazon.Keyspaces
 
             return InvokeAsync<DeleteKeyspaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTable
@@ -621,7 +617,6 @@ namespace Amazon.Keyspaces
 
             return InvokeAsync<DeleteTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteType
@@ -686,7 +681,6 @@ namespace Amazon.Keyspaces
 
             return InvokeAsync<DeleteTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKeyspace
@@ -741,7 +735,6 @@ namespace Amazon.Keyspaces
 
             return InvokeAsync<GetKeyspaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTable
@@ -801,7 +794,6 @@ namespace Amazon.Keyspaces
 
             return InvokeAsync<GetTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTableAutoScalingSettings
@@ -883,7 +875,6 @@ namespace Amazon.Keyspaces
 
             return InvokeAsync<GetTableAutoScalingSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetType
@@ -946,7 +937,6 @@ namespace Amazon.Keyspaces
 
             return InvokeAsync<GetTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKeyspaces
@@ -999,7 +989,6 @@ namespace Amazon.Keyspaces
 
             return InvokeAsync<ListKeyspacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTables
@@ -1058,7 +1047,6 @@ namespace Amazon.Keyspaces
 
             return InvokeAsync<ListTablesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1117,7 +1105,6 @@ namespace Amazon.Keyspaces
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTypes
@@ -1179,7 +1166,6 @@ namespace Amazon.Keyspaces
 
             return InvokeAsync<ListTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreTable
@@ -1303,7 +1289,6 @@ namespace Amazon.Keyspaces
 
             return InvokeAsync<RestoreTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1372,7 +1357,6 @@ namespace Amazon.Keyspaces
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1430,7 +1414,6 @@ namespace Amazon.Keyspaces
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateKeyspace
@@ -1582,7 +1565,6 @@ namespace Amazon.Keyspaces
 
             return InvokeAsync<UpdateKeyspaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTable
@@ -1642,7 +1624,6 @@ namespace Amazon.Keyspaces
 
             return InvokeAsync<UpdateTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

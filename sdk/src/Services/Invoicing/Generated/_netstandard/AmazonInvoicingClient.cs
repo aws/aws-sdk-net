@@ -343,7 +343,6 @@ namespace Amazon.Invoicing
 
             return InvokeAsync<BatchGetInvoiceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInvoiceUnit
@@ -389,7 +388,6 @@ namespace Amazon.Invoicing
 
             return InvokeAsync<CreateInvoiceUnitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInvoiceUnit
@@ -438,7 +436,6 @@ namespace Amazon.Invoicing
 
             return InvokeAsync<DeleteInvoiceUnitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInvoiceUnit
@@ -487,7 +484,6 @@ namespace Amazon.Invoicing
 
             return InvokeAsync<GetInvoiceUnitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInvoiceUnits
@@ -534,7 +530,6 @@ namespace Amazon.Invoicing
 
             return InvokeAsync<ListInvoiceUnitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -583,7 +578,6 @@ namespace Amazon.Invoicing
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -636,7 +630,6 @@ namespace Amazon.Invoicing
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -685,7 +678,6 @@ namespace Amazon.Invoicing
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInvoiceUnit
@@ -735,7 +727,6 @@ namespace Amazon.Invoicing
 
             return InvokeAsync<UpdateInvoiceUnitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

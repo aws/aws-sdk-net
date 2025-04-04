@@ -274,7 +274,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<AllQueryStringTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BodyWithXmlName
@@ -309,7 +308,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<BodyWithXmlNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConstantAndVariableQueryString
@@ -345,7 +343,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<ConstantAndVariableQueryStringResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConstantQueryString
@@ -381,7 +378,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<ConstantQueryStringResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ContentTypeParameters
@@ -416,7 +412,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<ContentTypeParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DatetimeOffsets
@@ -450,7 +445,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<DatetimeOffsetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EmptyInputAndEmptyOutput
@@ -487,7 +481,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<EmptyInputAndEmptyOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EndpointOperation
@@ -521,7 +514,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<EndpointOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EndpointWithHostLabelHeaderOperation
@@ -555,7 +547,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<EndpointWithHostLabelHeaderOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EndpointWithHostLabelOperation
@@ -589,7 +580,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<EndpointWithHostLabelOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FlattenedXmlMap
@@ -623,7 +613,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<FlattenedXmlMapResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FlattenedXmlMapWithXmlName
@@ -657,7 +646,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<FlattenedXmlMapWithXmlNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FlattenedXmlMapWithXmlNamespace
@@ -691,7 +679,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<FlattenedXmlMapWithXmlNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FractionalSeconds
@@ -725,7 +712,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<FractionalSecondsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GreetingWithErrors
@@ -772,7 +758,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<GreetingWithErrorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpEnumPayload
@@ -806,7 +791,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<HttpEnumPayloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpPayloadTraits
@@ -846,7 +830,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<HttpPayloadTraitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpPayloadWithMemberXmlName
@@ -881,7 +864,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<HttpPayloadWithMemberXmlNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpPayloadWithStructure
@@ -921,7 +903,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<HttpPayloadWithStructureResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpPayloadWithUnion
@@ -955,7 +936,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<HttpPayloadWithUnionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpPayloadWithXmlName
@@ -990,7 +970,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<HttpPayloadWithXmlNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpPayloadWithXmlNamespace
@@ -1024,7 +1003,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<HttpPayloadWithXmlNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpPayloadWithXmlNamespaceAndPrefix
@@ -1058,7 +1036,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<HttpPayloadWithXmlNamespaceAndPrefixResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpPrefixHeaders
@@ -1092,7 +1069,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<HttpPrefixHeadersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpRequestWithFloatLabels
@@ -1126,7 +1102,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<HttpRequestWithFloatLabelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpRequestWithGreedyLabelInPath
@@ -1160,7 +1135,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<HttpRequestWithGreedyLabelInPathResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpRequestWithLabels
@@ -1195,7 +1169,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<HttpRequestWithLabelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpRequestWithLabelsAndTimestampFormat
@@ -1229,7 +1202,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<HttpRequestWithLabelsAndTimestampFormatResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpResponseCode
@@ -1263,7 +1235,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<HttpResponseCodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpStringPayload
@@ -1297,7 +1268,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<HttpStringPayloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  IgnoreQueryParamsInResponse
@@ -1332,7 +1302,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<IgnoreQueryParamsInResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InputAndOutputWithHeaders
@@ -1367,7 +1336,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<InputAndOutputWithHeadersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NestedXmlMaps
@@ -1401,7 +1369,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<NestedXmlMapsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NestedXmlMapWithXmlName
@@ -1435,7 +1402,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<NestedXmlMapWithXmlNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NoInputAndNoOutput
@@ -1471,7 +1437,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<NoInputAndNoOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NoInputAndOutput
@@ -1507,7 +1472,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<NoInputAndOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NullAndEmptyHeadersClient
@@ -1541,7 +1505,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<NullAndEmptyHeadersClientResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NullAndEmptyHeadersServer
@@ -1575,7 +1538,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<NullAndEmptyHeadersServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  OmitsNullSerializesEmptyString
@@ -1609,7 +1571,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<OmitsNullSerializesEmptyStringResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutWithContentEncoding
@@ -1643,7 +1604,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<PutWithContentEncodingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryIdempotencyTokenAutoFill
@@ -1677,7 +1637,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<QueryIdempotencyTokenAutoFillResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryParamsAsStringListMap
@@ -1711,7 +1670,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<QueryParamsAsStringListMapResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryPrecedence
@@ -1745,7 +1703,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<QueryPrecedenceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SimpleScalarProperties
@@ -1779,7 +1736,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<SimpleScalarPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TimestampFormatHeaders
@@ -1813,7 +1769,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<TimestampFormatHeadersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlAttributes
@@ -1847,7 +1802,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<XmlAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlAttributesOnPayload
@@ -1881,7 +1835,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<XmlAttributesOnPayloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlBlobs
@@ -1915,7 +1868,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<XmlBlobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlEmptyBlobs
@@ -1949,7 +1901,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<XmlEmptyBlobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlEmptyLists
@@ -1983,7 +1934,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<XmlEmptyListsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlEmptyMaps
@@ -2017,7 +1967,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<XmlEmptyMapsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlEmptyStrings
@@ -2051,7 +2000,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<XmlEmptyStringsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlEnums
@@ -2085,7 +2033,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<XmlEnumsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlIntEnums
@@ -2119,7 +2066,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<XmlIntEnumsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlLists
@@ -2158,7 +2104,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<XmlListsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlMaps
@@ -2192,7 +2137,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<XmlMapsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlMapsXmlName
@@ -2226,7 +2170,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<XmlMapsXmlNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlMapWithXmlNamespace
@@ -2260,7 +2203,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<XmlMapWithXmlNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlNamespaces
@@ -2294,7 +2236,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<XmlNamespacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlTimestamps
@@ -2329,7 +2270,6 @@ namespace Amazon.RestXmlProtocol
 
             return InvokeAsync<XmlTimestampsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
     }

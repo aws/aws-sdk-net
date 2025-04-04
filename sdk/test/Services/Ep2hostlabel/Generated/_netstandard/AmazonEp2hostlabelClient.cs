@@ -276,7 +276,6 @@ namespace Amazon.Ep2hostlabel
 
             return InvokeAsync<MyOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

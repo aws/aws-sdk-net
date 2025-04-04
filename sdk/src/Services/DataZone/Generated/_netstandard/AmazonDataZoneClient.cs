@@ -320,7 +320,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<AcceptPredictionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AcceptSubscriptionRequest
@@ -375,7 +374,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<AcceptSubscriptionRequestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddEntityOwner
@@ -433,7 +431,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<AddEntityOwnerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddPolicyGrant
@@ -489,7 +486,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<AddPolicyGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateEnvironmentRole
@@ -544,7 +540,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<AssociateEnvironmentRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelMetadataGenerationRun
@@ -599,7 +594,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CancelMetadataGenerationRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelSubscription
@@ -654,7 +648,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CancelSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAsset
@@ -712,7 +705,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateAssetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAssetFilter
@@ -770,7 +762,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateAssetFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAssetRevision
@@ -825,7 +816,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateAssetRevisionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAssetType
@@ -880,7 +870,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateAssetTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConnection
@@ -939,7 +928,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataProduct
@@ -997,7 +985,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateDataProductResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataProductRevision
@@ -1052,7 +1039,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateDataProductRevisionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataSource
@@ -1110,7 +1096,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDomain
@@ -1168,7 +1153,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDomainUnit
@@ -1223,7 +1207,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateDomainUnitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEnvironment
@@ -1278,7 +1261,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEnvironmentAction
@@ -1334,7 +1316,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateEnvironmentActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEnvironmentProfile
@@ -1392,7 +1373,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateEnvironmentProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFormType
@@ -1447,7 +1427,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateFormTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGlossary
@@ -1502,7 +1481,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateGlossaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGlossaryTerm
@@ -1560,7 +1538,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateGlossaryTermResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGroupProfile
@@ -1612,7 +1589,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateGroupProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateListingChangeSet
@@ -1671,7 +1647,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateListingChangeSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProject
@@ -1729,7 +1704,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProjectMembership
@@ -1781,7 +1755,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateProjectMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProjectProfile
@@ -1839,7 +1812,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateProjectProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRule
@@ -1903,7 +1875,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSubscriptionGrant
@@ -1958,7 +1929,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateSubscriptionGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSubscriptionRequest
@@ -2013,7 +1983,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateSubscriptionRequestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSubscriptionTarget
@@ -2068,7 +2037,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateSubscriptionTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUserProfile
@@ -2120,7 +2088,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<CreateUserProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAsset
@@ -2175,7 +2142,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteAssetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAssetFilter
@@ -2230,7 +2196,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteAssetFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAssetType
@@ -2285,7 +2250,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteAssetTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnection
@@ -2338,7 +2302,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataProduct
@@ -2393,7 +2356,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteDataProductResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataSource
@@ -2451,7 +2413,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDomain
@@ -2506,7 +2467,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDomainUnit
@@ -2561,7 +2521,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteDomainUnitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEnvironment
@@ -2613,7 +2572,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEnvironmentAction
@@ -2669,7 +2627,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteEnvironmentActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEnvironmentBlueprintConfiguration
@@ -2718,7 +2675,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteEnvironmentBlueprintConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEnvironmentProfile
@@ -2770,7 +2726,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteEnvironmentProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFormType
@@ -2825,7 +2780,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteFormTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGlossary
@@ -2880,7 +2834,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteGlossaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGlossaryTerm
@@ -2935,7 +2888,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteGlossaryTermResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteListing
@@ -2990,7 +2942,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteListingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProject
@@ -3042,7 +2993,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProjectMembership
@@ -3097,7 +3047,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteProjectMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProjectProfile
@@ -3149,7 +3098,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteProjectProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRule
@@ -3210,7 +3158,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSubscriptionGrant
@@ -3265,7 +3212,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteSubscriptionGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSubscriptionRequest
@@ -3320,7 +3266,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteSubscriptionRequestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSubscriptionTarget
@@ -3375,7 +3320,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteSubscriptionTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTimeSeriesDataPoints
@@ -3427,7 +3371,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DeleteTimeSeriesDataPointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateEnvironmentRole
@@ -3482,7 +3425,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<DisassociateEnvironmentRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAsset
@@ -3534,7 +3476,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetAssetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAssetFilter
@@ -3586,7 +3527,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetAssetFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAssetType
@@ -3638,7 +3578,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetAssetTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConnection
@@ -3691,7 +3630,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataProduct
@@ -3743,7 +3681,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetDataProductResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataSource
@@ -3801,7 +3738,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataSourceRun
@@ -3859,7 +3795,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetDataSourceRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDomain
@@ -3914,7 +3849,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDomainUnit
@@ -3966,7 +3900,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetDomainUnitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEnvironment
@@ -4018,7 +3951,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEnvironmentAction
@@ -4070,7 +4002,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetEnvironmentActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEnvironmentBlueprint
@@ -4122,7 +4053,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetEnvironmentBlueprintResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEnvironmentBlueprintConfiguration
@@ -4174,7 +4104,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetEnvironmentBlueprintConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEnvironmentCredentials
@@ -4226,7 +4155,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetEnvironmentCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEnvironmentProfile
@@ -4278,7 +4206,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetEnvironmentProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFormType
@@ -4330,7 +4257,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetFormTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGlossary
@@ -4382,7 +4308,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetGlossaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGlossaryTerm
@@ -4434,7 +4359,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetGlossaryTermResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGroupProfile
@@ -4486,7 +4410,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetGroupProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIamPortalLoginUrl
@@ -4541,7 +4464,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetIamPortalLoginUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJobRun
@@ -4593,7 +4515,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetJobRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLineageEvent
@@ -4645,7 +4566,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetLineageEventResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLineageNode
@@ -4697,7 +4617,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetLineageNodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetListing
@@ -4750,7 +4669,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetListingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMetadataGenerationRun
@@ -4802,7 +4720,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetMetadataGenerationRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProject
@@ -4854,7 +4771,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProjectProfile
@@ -4906,7 +4822,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetProjectProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRule
@@ -4964,7 +4879,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSubscription
@@ -5016,7 +4930,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSubscriptionGrant
@@ -5068,7 +4981,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetSubscriptionGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSubscriptionRequestDetails
@@ -5120,7 +5032,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetSubscriptionRequestDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSubscriptionTarget
@@ -5172,7 +5083,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetSubscriptionTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTimeSeriesDataPoint
@@ -5224,7 +5134,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetTimeSeriesDataPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUserProfile
@@ -5276,7 +5185,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<GetUserProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssetFilters
@@ -5328,7 +5236,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListAssetFiltersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssetRevisions
@@ -5380,7 +5287,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListAssetRevisionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConnections
@@ -5430,7 +5336,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListConnectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataProductRevisions
@@ -5482,7 +5387,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListDataProductRevisionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataSourceRunActivities
@@ -5540,7 +5444,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListDataSourceRunActivitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataSourceRuns
@@ -5598,7 +5501,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListDataSourceRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataSources
@@ -5656,7 +5558,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListDataSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomains
@@ -5714,7 +5615,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListDomainsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomainUnitsForParent
@@ -5763,7 +5663,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListDomainUnitsForParentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEntityOwners
@@ -5812,7 +5711,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListEntityOwnersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnvironmentActions
@@ -5861,7 +5759,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListEnvironmentActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnvironmentBlueprintConfigurations
@@ -5913,7 +5810,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListEnvironmentBlueprintConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnvironmentBlueprints
@@ -5965,7 +5861,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListEnvironmentBlueprintsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnvironmentProfiles
@@ -6014,7 +5909,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListEnvironmentProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnvironments
@@ -6063,7 +5957,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListEnvironmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobRuns
@@ -6115,7 +6008,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListJobRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLineageEvents
@@ -6164,7 +6056,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListLineageEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLineageNodeHistory
@@ -6216,7 +6107,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListLineageNodeHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMetadataGenerationRuns
@@ -6268,7 +6158,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListMetadataGenerationRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNotifications
@@ -6320,7 +6209,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListNotificationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPolicyGrants
@@ -6369,7 +6257,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListPolicyGrantsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProjectMemberships
@@ -6421,7 +6308,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListProjectMembershipsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProjectProfiles
@@ -6470,7 +6356,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListProjectProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProjects
@@ -6519,7 +6404,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListProjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRules
@@ -6577,7 +6461,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSubscriptionGrants
@@ -6629,7 +6512,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListSubscriptionGrantsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSubscriptionRequests
@@ -6681,7 +6563,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListSubscriptionRequestsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSubscriptions
@@ -6733,7 +6614,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListSubscriptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSubscriptionTargets
@@ -6785,7 +6665,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListSubscriptionTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -6837,7 +6716,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTimeSeriesDataPoints
@@ -6889,7 +6767,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<ListTimeSeriesDataPointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PostLineageEvent
@@ -6947,7 +6824,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<PostLineageEventResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PostTimeSeriesDataPoints
@@ -7005,7 +6881,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<PostTimeSeriesDataPointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEnvironmentBlueprintConfiguration
@@ -7060,7 +6935,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<PutEnvironmentBlueprintConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectPredictions
@@ -7116,7 +6990,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<RejectPredictionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectSubscriptionRequest
@@ -7171,7 +7044,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<RejectSubscriptionRequestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveEntityOwner
@@ -7223,7 +7095,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<RemoveEntityOwnerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemovePolicyGrant
@@ -7272,7 +7143,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<RemovePolicyGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RevokeSubscription
@@ -7327,7 +7197,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<RevokeSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Search
@@ -7376,7 +7245,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<SearchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchGroupProfiles
@@ -7428,7 +7296,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<SearchGroupProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchListings
@@ -7477,7 +7344,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<SearchListingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchTypes
@@ -7526,7 +7392,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<SearchTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchUserProfiles
@@ -7578,7 +7443,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<SearchUserProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDataSourceRun
@@ -7636,7 +7500,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<StartDataSourceRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMetadataGenerationRun
@@ -7694,7 +7557,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<StartMetadataGenerationRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -7746,7 +7608,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -7795,7 +7656,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAssetFilter
@@ -7850,7 +7710,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<UpdateAssetFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConnection
@@ -7909,7 +7768,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<UpdateConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataSource
@@ -7967,7 +7825,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<UpdateDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDomain
@@ -8025,7 +7882,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<UpdateDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDomainUnit
@@ -8080,7 +7936,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<UpdateDomainUnitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEnvironment
@@ -8135,7 +7990,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<UpdateEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEnvironmentAction
@@ -8190,7 +8044,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<UpdateEnvironmentActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEnvironmentProfile
@@ -8248,7 +8101,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<UpdateEnvironmentProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGlossary
@@ -8303,7 +8155,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<UpdateGlossaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGlossaryTerm
@@ -8358,7 +8209,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<UpdateGlossaryTermResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGroupProfile
@@ -8410,7 +8260,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<UpdateGroupProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProject
@@ -8468,7 +8317,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<UpdateProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProjectProfile
@@ -8526,7 +8374,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<UpdateProjectProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRule
@@ -8590,7 +8437,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<UpdateRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSubscriptionGrantStatus
@@ -8645,7 +8491,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<UpdateSubscriptionGrantStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSubscriptionRequest
@@ -8700,7 +8545,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<UpdateSubscriptionRequestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSubscriptionTarget
@@ -8755,7 +8599,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<UpdateSubscriptionTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUserProfile
@@ -8807,7 +8650,6 @@ namespace Amazon.DataZone
 
             return InvokeAsync<UpdateUserProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

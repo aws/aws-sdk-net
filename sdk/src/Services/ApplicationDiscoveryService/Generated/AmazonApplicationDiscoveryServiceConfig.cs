@@ -30,7 +30,6 @@ namespace Amazon.ApplicationDiscoveryService
     /// <summary>
     /// Configuration for accessing Amazon ApplicationDiscoveryService service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonApplicationDiscoveryServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

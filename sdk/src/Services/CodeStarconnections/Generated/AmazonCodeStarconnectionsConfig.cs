@@ -30,7 +30,6 @@ namespace Amazon.CodeStarconnections
     /// <summary>
     /// Configuration for accessing Amazon CodeStarconnections service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCodeStarconnectionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

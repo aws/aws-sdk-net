@@ -30,7 +30,6 @@ namespace Amazon.CloudFormation
     /// <summary>
     /// Configuration for accessing Amazon CloudFormation service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCloudFormationConfig : ClientConfig
     {
         private static readonly string UserAgentString =

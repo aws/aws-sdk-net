@@ -30,7 +30,6 @@ namespace Amazon.S3Control
     /// <summary>
     /// Configuration for accessing Amazon S3Control service
     /// </summary>
-    [AWSSignerType("s3v4")]
     public partial class AmazonS3ControlConfig : ClientConfig
     {
         private static readonly string UserAgentString =

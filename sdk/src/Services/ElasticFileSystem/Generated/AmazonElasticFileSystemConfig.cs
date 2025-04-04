@@ -30,7 +30,6 @@ namespace Amazon.ElasticFileSystem
     /// <summary>
     /// Configuration for accessing Amazon ElasticFileSystem service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonElasticFileSystemConfig : ClientConfig
     {
         private static readonly string UserAgentString =

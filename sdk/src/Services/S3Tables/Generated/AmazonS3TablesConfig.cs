@@ -30,7 +30,6 @@ namespace Amazon.S3Tables
     /// <summary>
     /// Configuration for accessing Amazon S3Tables service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonS3TablesConfig : ClientConfig
     {
         private static readonly string UserAgentString =

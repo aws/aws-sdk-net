@@ -30,7 +30,6 @@ namespace Amazon.ElasticLoadBalancing
     /// <summary>
     /// Configuration for accessing Amazon ElasticLoadBalancing service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonElasticLoadBalancingConfig : ClientConfig
     {
         private static readonly string UserAgentString =

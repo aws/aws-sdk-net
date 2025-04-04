@@ -30,7 +30,6 @@ namespace Amazon.WAFRegional
     /// <summary>
     /// Configuration for accessing Amazon WAFRegional service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonWAFRegionalConfig : ClientConfig
     {
         private static readonly string UserAgentString =

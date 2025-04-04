@@ -327,7 +327,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<CreateProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTrustAnchor
@@ -376,7 +375,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<CreateTrustAnchorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAttributeMapping
@@ -419,7 +417,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<DeleteAttributeMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCrl
@@ -464,7 +461,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<DeleteCrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProfile
@@ -509,7 +505,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<DeleteProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTrustAnchor
@@ -554,7 +549,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<DeleteTrustAnchorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableCrl
@@ -599,7 +593,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<DisableCrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableProfile
@@ -645,7 +638,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<DisableProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableTrustAnchor
@@ -691,7 +683,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<DisableTrustAnchorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableCrl
@@ -737,7 +728,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<EnableCrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableProfile
@@ -782,7 +772,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<EnableProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableTrustAnchor
@@ -828,7 +817,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<EnableTrustAnchorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCrl
@@ -870,7 +858,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<GetCrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProfile
@@ -915,7 +902,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<GetProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSubject
@@ -963,7 +949,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<GetSubjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTrustAnchor
@@ -1011,7 +996,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<GetTrustAnchorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportCrl
@@ -1059,7 +1043,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<ImportCrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCrls
@@ -1105,7 +1088,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<ListCrlsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProfiles
@@ -1150,7 +1132,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<ListProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSubjects
@@ -1195,7 +1176,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<ListSubjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1243,7 +1223,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrustAnchors
@@ -1288,7 +1267,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<ListTrustAnchorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAttributeMapping
@@ -1333,7 +1311,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<PutAttributeMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutNotificationSettings
@@ -1386,7 +1363,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<PutNotificationSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetNotificationSettings
@@ -1435,7 +1411,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<ResetNotificationSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1486,7 +1461,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1534,7 +1508,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCrl
@@ -1584,7 +1557,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<UpdateCrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProfile
@@ -1633,7 +1605,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<UpdateProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTrustAnchor
@@ -1685,7 +1656,6 @@ namespace Amazon.IAMRolesAnywhere
 
             return InvokeAsync<UpdateTrustAnchorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

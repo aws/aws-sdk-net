@@ -30,7 +30,6 @@ namespace Amazon.MediaConnect
     /// <summary>
     /// Configuration for accessing Amazon MediaConnect service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMediaConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =

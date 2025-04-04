@@ -333,7 +333,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<AssociateChannelFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchCreateChannelMembership
@@ -391,7 +390,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<BatchCreateChannelMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ChannelFlowCallback
@@ -466,7 +464,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<ChannelFlowCallbackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateChannel
@@ -536,7 +533,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<CreateChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateChannelBan
@@ -609,7 +605,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<CreateChannelBanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateChannelFlow
@@ -695,7 +690,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<CreateChannelFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateChannelMembership
@@ -798,7 +792,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<CreateChannelMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateChannelModerator
@@ -884,7 +877,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<CreateChannelModeratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteChannel
@@ -948,7 +940,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<DeleteChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteChannelBan
@@ -1007,7 +998,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<DeleteChannelBanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteChannelFlow
@@ -1072,7 +1062,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<DeleteChannelFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteChannelMembership
@@ -1135,7 +1124,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<DeleteChannelMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteChannelMessage
@@ -1195,7 +1183,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<DeleteChannelMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteChannelModerator
@@ -1254,7 +1241,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<DeleteChannelModeratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMessagingStreamingConfigurations
@@ -1308,7 +1294,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<DeleteMessagingStreamingConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeChannel
@@ -1367,7 +1352,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<DescribeChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeChannelBan
@@ -1429,7 +1413,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<DescribeChannelBanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeChannelFlow
@@ -1482,7 +1465,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<DescribeChannelFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeChannelMembership
@@ -1544,7 +1526,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<DescribeChannelMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeChannelMembershipForAppInstanceUser
@@ -1604,7 +1585,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<DescribeChannelMembershipForAppInstanceUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeChannelModeratedByAppInstanceUser
@@ -1664,7 +1644,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<DescribeChannelModeratedByAppInstanceUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeChannelModerator
@@ -1726,7 +1705,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<DescribeChannelModeratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateChannelFlow
@@ -1797,7 +1775,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<DisassociateChannelFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetChannelMembershipPreferences
@@ -1861,7 +1838,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<GetChannelMembershipPreferencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetChannelMessage
@@ -1923,7 +1899,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<GetChannelMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetChannelMessageStatus
@@ -2014,7 +1989,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<GetChannelMessageStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMessagingSessionEndpoint
@@ -2063,7 +2037,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<GetMessagingSessionEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMessagingStreamingConfigurations
@@ -2120,7 +2093,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<GetMessagingStreamingConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChannelBans
@@ -2179,7 +2151,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<ListChannelBansResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChannelFlows
@@ -2232,7 +2203,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<ListChannelFlowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChannelMemberships
@@ -2296,7 +2266,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<ListChannelMembershipsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChannelMembershipsForAppInstanceUser
@@ -2357,7 +2326,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<ListChannelMembershipsForAppInstanceUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChannelMessages
@@ -2424,7 +2392,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<ListChannelMessagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChannelModerators
@@ -2483,7 +2450,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<ListChannelModeratorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChannels
@@ -2556,7 +2522,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<ListChannelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChannelsAssociatedWithChannelFlow
@@ -2610,7 +2575,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<ListChannelsAssociatedWithChannelFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChannelsModeratedByAppInstanceUser
@@ -2669,7 +2633,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<ListChannelsModeratedByAppInstanceUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSubChannels
@@ -2722,7 +2685,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<ListSubChannelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2774,7 +2736,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutChannelExpirationSettings
@@ -2847,7 +2808,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<PutChannelExpirationSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutChannelMembershipPreferences
@@ -2914,7 +2874,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<PutChannelMembershipPreferencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutMessagingStreamingConfigurations
@@ -2975,7 +2934,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<PutMessagingStreamingConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RedactChannelMessage
@@ -3039,7 +2997,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<RedactChannelMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchChannels
@@ -3099,7 +3056,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<SearchChannelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendChannelMessage
@@ -3172,7 +3128,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<SendChannelMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3227,7 +3182,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3279,7 +3233,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateChannel
@@ -3346,7 +3299,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<UpdateChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateChannelFlow
@@ -3402,7 +3354,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<UpdateChannelFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateChannelMessage
@@ -3465,7 +3416,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<UpdateChannelMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateChannelReadMarker
@@ -3528,7 +3478,6 @@ namespace Amazon.ChimeSDKMessaging
 
             return InvokeAsync<UpdateChannelReadMarkerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

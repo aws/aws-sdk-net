@@ -30,7 +30,6 @@ namespace Amazon.IoTThingsGraph
     /// <summary>
     /// Configuration for accessing Amazon IoTThingsGraph service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonIoTThingsGraphConfig : ClientConfig
     {
         private static readonly string UserAgentString =

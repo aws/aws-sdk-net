@@ -30,7 +30,6 @@ namespace Amazon.NetworkMonitor
     /// <summary>
     /// Configuration for accessing Amazon NetworkMonitor service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonNetworkMonitorConfig : ClientConfig
     {
         private static readonly string UserAgentString =

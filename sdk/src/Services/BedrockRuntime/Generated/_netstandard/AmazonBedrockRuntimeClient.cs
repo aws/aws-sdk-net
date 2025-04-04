@@ -329,7 +329,6 @@ namespace Amazon.BedrockRuntime
 
             return InvokeAsync<ApplyGuardrailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Converse
@@ -460,7 +459,6 @@ namespace Amazon.BedrockRuntime
 
             return InvokeAsync<ConverseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConverseStream
@@ -602,7 +600,6 @@ namespace Amazon.BedrockRuntime
 
             return InvokeAsync<ConverseStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAsyncInvoke
@@ -655,7 +652,6 @@ namespace Amazon.BedrockRuntime
 
             return InvokeAsync<GetAsyncInvokeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InvokeModel
@@ -761,7 +757,6 @@ namespace Amazon.BedrockRuntime
 
             return InvokeAsync<InvokeModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InvokeModelWithResponseStream
@@ -879,7 +874,6 @@ namespace Amazon.BedrockRuntime
 
             return InvokeAsync<InvokeModelWithResponseStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAsyncInvokes
@@ -932,7 +926,6 @@ namespace Amazon.BedrockRuntime
 
             return InvokeAsync<ListAsyncInvokesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartAsyncInvoke
@@ -1017,7 +1010,6 @@ namespace Amazon.BedrockRuntime
 
             return InvokeAsync<StartAsyncInvokeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

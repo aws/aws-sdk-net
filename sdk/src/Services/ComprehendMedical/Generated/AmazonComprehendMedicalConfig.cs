@@ -30,7 +30,6 @@ namespace Amazon.ComprehendMedical
     /// <summary>
     /// Configuration for accessing Amazon ComprehendMedical service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonComprehendMedicalConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -30,7 +30,6 @@ namespace Amazon.OpsWorks
     /// <summary>
     /// Configuration for accessing Amazon OpsWorks service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonOpsWorksConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -30,7 +30,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
     /// <summary>
     /// Configuration for accessing Amazon MigrationHubStrategyRecommendations service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMigrationHubStrategyRecommendationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

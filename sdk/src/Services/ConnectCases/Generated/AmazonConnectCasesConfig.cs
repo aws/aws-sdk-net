@@ -30,7 +30,6 @@ namespace Amazon.ConnectCases
     /// <summary>
     /// Configuration for accessing Amazon ConnectCases service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonConnectCasesConfig : ClientConfig
     {
         private static readonly string UserAgentString =

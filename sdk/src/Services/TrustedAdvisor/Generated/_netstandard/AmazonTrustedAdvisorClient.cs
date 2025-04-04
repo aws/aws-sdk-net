@@ -310,7 +310,6 @@ namespace Amazon.TrustedAdvisor
 
             return InvokeAsync<BatchUpdateRecommendationResourceExclusionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOrganizationRecommendation
@@ -361,7 +360,6 @@ namespace Amazon.TrustedAdvisor
 
             return InvokeAsync<GetOrganizationRecommendationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRecommendation
@@ -411,7 +409,6 @@ namespace Amazon.TrustedAdvisor
 
             return InvokeAsync<GetRecommendationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChecks
@@ -458,7 +455,6 @@ namespace Amazon.TrustedAdvisor
 
             return InvokeAsync<ListChecksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOrganizationRecommendationAccounts
@@ -509,7 +505,6 @@ namespace Amazon.TrustedAdvisor
 
             return InvokeAsync<ListOrganizationRecommendationAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOrganizationRecommendationResources
@@ -560,7 +555,6 @@ namespace Amazon.TrustedAdvisor
 
             return InvokeAsync<ListOrganizationRecommendationResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOrganizationRecommendations
@@ -608,7 +602,6 @@ namespace Amazon.TrustedAdvisor
 
             return InvokeAsync<ListOrganizationRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecommendationResources
@@ -658,7 +651,6 @@ namespace Amazon.TrustedAdvisor
 
             return InvokeAsync<ListRecommendationResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecommendations
@@ -705,7 +697,6 @@ namespace Amazon.TrustedAdvisor
 
             return InvokeAsync<ListRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateOrganizationRecommendationLifecycle
@@ -759,7 +750,6 @@ namespace Amazon.TrustedAdvisor
 
             return InvokeAsync<UpdateOrganizationRecommendationLifecycleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRecommendationLifecycle
@@ -812,7 +802,6 @@ namespace Amazon.TrustedAdvisor
 
             return InvokeAsync<UpdateRecommendationLifecycleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

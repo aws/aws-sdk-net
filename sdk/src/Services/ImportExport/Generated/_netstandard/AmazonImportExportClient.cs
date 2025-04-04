@@ -302,7 +302,6 @@ namespace Amazon.ImportExport
 
             return InvokeAsync<CancelJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateJob
@@ -396,7 +395,6 @@ namespace Amazon.ImportExport
 
             return InvokeAsync<CreateJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetShippingLabel
@@ -454,7 +452,6 @@ namespace Amazon.ImportExport
 
             return InvokeAsync<GetShippingLabelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStatus
@@ -507,7 +504,6 @@ namespace Amazon.ImportExport
 
             return InvokeAsync<GetStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobs
@@ -588,7 +584,6 @@ namespace Amazon.ImportExport
 
             return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateJob
@@ -685,7 +680,6 @@ namespace Amazon.ImportExport
 
             return InvokeAsync<UpdateJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

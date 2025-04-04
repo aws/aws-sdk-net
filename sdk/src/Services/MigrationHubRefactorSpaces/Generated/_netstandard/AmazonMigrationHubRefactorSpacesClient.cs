@@ -346,7 +346,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEnvironment
@@ -415,7 +414,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<CreateEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRoute
@@ -570,7 +568,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<CreateRouteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateService
@@ -637,7 +634,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<CreateServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplication
@@ -691,7 +687,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<DeleteApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEnvironment
@@ -745,7 +740,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<DeleteEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -794,7 +788,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRoute
@@ -846,7 +839,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<DeleteRouteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteService
@@ -898,7 +890,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<DeleteServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplication
@@ -947,7 +938,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<GetApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEnvironment
@@ -996,7 +986,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<GetEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicy
@@ -1045,7 +1034,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRoute
@@ -1094,7 +1082,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<GetRouteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetService
@@ -1143,7 +1130,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<GetServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplications
@@ -1199,7 +1185,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<ListApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnvironments
@@ -1249,7 +1234,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<ListEnvironmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnvironmentVpcs
@@ -1299,7 +1283,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<ListEnvironmentVpcsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRoutes
@@ -1354,7 +1337,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<ListRoutesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServices
@@ -1410,7 +1392,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<ListServicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1454,7 +1435,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -1510,7 +1490,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1562,7 +1541,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1608,7 +1586,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRoute
@@ -1657,7 +1634,6 @@ namespace Amazon.MigrationHubRefactorSpaces
 
             return InvokeAsync<UpdateRouteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

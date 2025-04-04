@@ -413,7 +413,6 @@ namespace Amazon.Route53RecoveryCluster
 
             return InvokeAsync<GetRoutingControlStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRoutingControls
@@ -505,7 +504,6 @@ namespace Amazon.Route53RecoveryCluster
 
             return InvokeAsync<ListRoutingControlsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRoutingControlState
@@ -603,7 +601,6 @@ namespace Amazon.Route53RecoveryCluster
 
             return InvokeAsync<UpdateRoutingControlStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRoutingControlStates
@@ -705,7 +702,6 @@ namespace Amazon.Route53RecoveryCluster
 
             return InvokeAsync<UpdateRoutingControlStatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

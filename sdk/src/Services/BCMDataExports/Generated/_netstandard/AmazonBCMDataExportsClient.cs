@@ -345,7 +345,6 @@ namespace Amazon.BCMDataExports
 
             return InvokeAsync<CreateExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteExport
@@ -391,7 +390,6 @@ namespace Amazon.BCMDataExports
 
             return InvokeAsync<DeleteExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExecution
@@ -437,7 +435,6 @@ namespace Amazon.BCMDataExports
 
             return InvokeAsync<GetExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExport
@@ -483,7 +480,6 @@ namespace Amazon.BCMDataExports
 
             return InvokeAsync<GetExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTable
@@ -527,7 +523,6 @@ namespace Amazon.BCMDataExports
 
             return InvokeAsync<GetTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExecutions
@@ -573,7 +568,6 @@ namespace Amazon.BCMDataExports
 
             return InvokeAsync<ListExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExports
@@ -616,7 +610,6 @@ namespace Amazon.BCMDataExports
 
             return InvokeAsync<ListExportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTables
@@ -659,7 +652,6 @@ namespace Amazon.BCMDataExports
 
             return InvokeAsync<ListTablesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -705,7 +697,6 @@ namespace Amazon.BCMDataExports
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -751,7 +742,6 @@ namespace Amazon.BCMDataExports
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -797,7 +787,6 @@ namespace Amazon.BCMDataExports
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateExport
@@ -844,7 +833,6 @@ namespace Amazon.BCMDataExports
 
             return InvokeAsync<UpdateExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

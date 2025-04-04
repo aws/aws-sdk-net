@@ -327,7 +327,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<CreateAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAgreement
@@ -398,7 +397,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<CreateAgreementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConnector
@@ -466,7 +464,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<CreateConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProfile
@@ -517,7 +514,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<CreateProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateServer
@@ -578,7 +574,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<CreateServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUser
@@ -635,7 +630,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<CreateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWebApp
@@ -686,7 +680,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<CreateWebAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkflow
@@ -743,7 +736,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<CreateWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccess
@@ -792,7 +784,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DeleteAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAgreement
@@ -840,7 +831,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DeleteAgreementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCertificate
@@ -888,7 +878,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DeleteCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnector
@@ -936,7 +925,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DeleteConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteHostKey
@@ -987,7 +975,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DeleteHostKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProfile
@@ -1035,7 +1022,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DeleteProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServer
@@ -1091,7 +1077,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DeleteServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSshPublicKey
@@ -1142,7 +1127,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DeleteSshPublicKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUser
@@ -1200,7 +1184,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWebApp
@@ -1250,7 +1233,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DeleteWebAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWebAppCustomization
@@ -1305,7 +1287,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DeleteWebAppCustomizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkflow
@@ -1356,7 +1337,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DeleteWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccess
@@ -1411,7 +1391,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DescribeAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAgreement
@@ -1459,7 +1438,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DescribeAgreementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCertificate
@@ -1507,7 +1485,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DescribeCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConnector
@@ -1555,7 +1532,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DescribeConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeExecution
@@ -1615,7 +1591,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DescribeExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeHostKey
@@ -1663,7 +1638,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DescribeHostKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProfile
@@ -1711,7 +1685,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DescribeProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSecurityPolicy
@@ -1763,7 +1736,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DescribeSecurityPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeServer
@@ -1818,7 +1790,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DescribeServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUser
@@ -1873,7 +1844,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DescribeUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWebApp
@@ -1923,7 +1893,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DescribeWebAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWebAppCustomization
@@ -1973,7 +1942,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DescribeWebAppCustomizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkflow
@@ -2021,7 +1989,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<DescribeWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportCertificate
@@ -2070,7 +2037,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<ImportCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportHostKey
@@ -2125,7 +2091,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<ImportHostKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportSshPublicKey
@@ -2188,7 +2153,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<ImportSshPublicKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccesses
@@ -2239,7 +2203,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<ListAccessesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAgreements
@@ -2294,7 +2257,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<ListAgreementsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCertificates
@@ -2349,7 +2311,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<ListCertificatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConnectors
@@ -2400,7 +2361,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<ListConnectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExecutions
@@ -2458,7 +2418,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<ListExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFileTransferResults
@@ -2514,7 +2473,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<ListFileTransferResultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHostKeys
@@ -2566,7 +2524,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<ListHostKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProfiles
@@ -2620,7 +2577,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<ListProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSecurityPolicies
@@ -2670,7 +2626,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<ListSecurityPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServers
@@ -2718,7 +2673,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<ListServersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2766,7 +2720,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUsers
@@ -2818,7 +2771,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<ListUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWebApps
@@ -2865,7 +2817,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<ListWebAppsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkflows
@@ -2913,7 +2864,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<ListWorkflowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendWorkflowStepState
@@ -2974,7 +2924,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<SendWorkflowStepStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDirectoryListing
@@ -3071,7 +3020,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<StartDirectoryListingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartFileTransfer
@@ -3148,7 +3096,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<StartFileTransferResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartServer
@@ -3212,7 +3159,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<StartServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopServer
@@ -3282,7 +3228,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<StopServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3336,7 +3281,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestConnection
@@ -3386,7 +3330,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<TestConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestIdentityProvider
@@ -3494,7 +3437,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<TestIdentityProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3548,7 +3490,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccess
@@ -3604,7 +3545,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<UpdateAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAgreement
@@ -3674,7 +3614,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<UpdateAgreementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCertificate
@@ -3725,7 +3664,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<UpdateCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConnector
@@ -3782,7 +3720,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<UpdateConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateHostKey
@@ -3834,7 +3771,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<UpdateHostKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProfile
@@ -3887,7 +3823,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<UpdateProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServer
@@ -3956,7 +3891,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<UpdateServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUser
@@ -4034,7 +3968,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<UpdateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWebApp
@@ -4090,7 +4023,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<UpdateWebAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWebAppCustomization
@@ -4146,7 +4078,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<UpdateWebAppCustomizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

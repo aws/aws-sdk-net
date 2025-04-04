@@ -174,7 +174,6 @@ namespace Amazon.IoTJobsDataPlane
 
             return InvokeAsync<DescribeJobExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPendingJobExecutions
@@ -229,7 +228,6 @@ namespace Amazon.IoTJobsDataPlane
 
             return InvokeAsync<GetPendingJobExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartCommandExecution
@@ -282,7 +280,6 @@ namespace Amazon.IoTJobsDataPlane
 
             return InvokeAsync<StartCommandExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartNextPendingJobExecution
@@ -338,7 +335,6 @@ namespace Amazon.IoTJobsDataPlane
 
             return InvokeAsync<StartNextPendingJobExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateJobExecution
@@ -399,7 +395,6 @@ namespace Amazon.IoTJobsDataPlane
 
             return InvokeAsync<UpdateJobExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -333,7 +333,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<AddTagsToStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStream
@@ -447,7 +446,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<CreateStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DecreaseStreamRetentionPeriod
@@ -567,7 +565,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<DecreaseStreamRetentionPeriodResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -631,7 +628,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStream
@@ -718,7 +714,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<DeleteStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterStreamConsumer
@@ -774,7 +769,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<DeregisterStreamConsumerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLimits
@@ -821,7 +815,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<DescribeLimitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStream
@@ -908,7 +901,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<DescribeStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStreamConsumer
@@ -970,7 +962,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<DescribeStreamConsumerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStreamSummary
@@ -1036,7 +1027,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<DescribeStreamSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableEnhancedMonitoring
@@ -1096,7 +1086,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<DisableEnhancedMonitoringResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableEnhancedMonitoring
@@ -1156,7 +1145,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<EnableEnhancedMonitoringResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRecords
@@ -1309,7 +1297,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<GetRecordsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicy
@@ -1373,7 +1360,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetShardIterator
@@ -1480,7 +1466,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<GetShardIteratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  IncreaseStreamRetentionPeriod
@@ -1606,7 +1591,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<IncreaseStreamRetentionPeriodResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListShards
@@ -1683,7 +1667,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<ListShardsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStreamConsumers
@@ -1741,7 +1724,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<ListStreamConsumersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStreams
@@ -1860,7 +1842,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<ListStreamsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForStream
@@ -1917,7 +1898,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<ListTagsForStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  MergeShards
@@ -2031,7 +2011,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<MergeShardsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRecord
@@ -2173,7 +2152,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<PutRecordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRecords
@@ -2341,7 +2319,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<PutRecordsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -2419,7 +2396,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterStreamConsumer
@@ -2490,7 +2466,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<RegisterStreamConsumerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTagsFromStream
@@ -2558,7 +2533,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<RemoveTagsFromStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SplitShard
@@ -2684,7 +2658,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<SplitShardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartStreamEncryption
@@ -2789,7 +2762,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<StartStreamEncryptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopStreamEncryption
@@ -2870,7 +2842,92 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<StopStreamEncryptionResponse>(request, options, cancellationToken);
         }
+        #endregion
+        
+        #region  SubscribeToShard
 
+#if NET8_0_OR_GREATER
+        internal virtual SubscribeToShardResponse SubscribeToShard(SubscribeToShardRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SubscribeToShardRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SubscribeToShardResponseUnmarshaller.Instance;
+
+            return Invoke<SubscribeToShardResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This operation establishes an HTTP/2 connection between the consumer you specify in
+        /// the <c>ConsumerARN</c> parameter and the shard you specify in the <c>ShardId</c> parameter.
+        /// After the connection is successfully established, Kinesis Data Streams pushes records
+        /// from the shard to the consumer over this connection. Before you call this operation,
+        /// call <a>RegisterStreamConsumer</a> to register the consumer with Kinesis Data Streams.
+        /// 
+        ///  
+        /// <para>
+        /// When the <c>SubscribeToShard</c> call succeeds, your consumer starts receiving events
+        /// of type <a>SubscribeToShardEvent</a> over the HTTP/2 connection for up to 5 minutes,
+        /// after which time you need to call <c>SubscribeToShard</c> again to renew the subscription
+        /// if you want to continue to receive records.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can make one call to <c>SubscribeToShard</c> per second per registered consumer
+        /// per shard. For example, if you have a 4000 shard stream and two registered stream
+        /// consumers, you can make one <c>SubscribeToShard</c> request per second for each combination
+        /// of shard and registered consumer, allowing you to subscribe both consumers to all
+        /// 4000 shards in one second. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you call <c>SubscribeToShard</c> again with the same <c>ConsumerARN</c> and <c>ShardId</c>
+        /// within 5 seconds of a successful call, you'll get a <c>ResourceInUseException</c>.
+        /// If you call <c>SubscribeToShard</c> 5 seconds or more after a successful call, the
+        /// second call takes over the subscription and the previous connection expires or fails
+        /// with a <c>ResourceInUseException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an example of how to use this operation, see <a href="https://docs.aws.amazon.com/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced
+        /// Fan-Out Using the Kinesis Data Streams API</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SubscribeToShard service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SubscribeToShard service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SubscribeToShard">REST API Reference for SubscribeToShard Operation</seealso>
+        public virtual Task<SubscribeToShardResponse> SubscribeToShardAsync(SubscribeToShardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SubscribeToShardRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SubscribeToShardResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SubscribeToShardResponse>(request, options, cancellationToken);
+        }
+#endif
         #endregion
         
         #region  UpdateShardCount
@@ -2998,7 +3055,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<UpdateShardCountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStreamMode
@@ -3049,7 +3105,6 @@ namespace Amazon.Kinesis
 
             return InvokeAsync<UpdateStreamModeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

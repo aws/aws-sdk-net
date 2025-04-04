@@ -30,7 +30,6 @@ namespace Amazon.MediaPackageVod
     /// <summary>
     /// Configuration for accessing Amazon MediaPackageVod service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMediaPackageVodConfig : ClientConfig
     {
         private static readonly string UserAgentString =

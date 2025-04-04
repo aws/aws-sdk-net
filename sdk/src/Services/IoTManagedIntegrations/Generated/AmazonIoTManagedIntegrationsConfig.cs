@@ -30,7 +30,6 @@ namespace Amazon.IoTManagedIntegrations
     /// <summary>
     /// Configuration for accessing Amazon IoTManagedIntegrations service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonIoTManagedIntegrationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

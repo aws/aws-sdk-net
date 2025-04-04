@@ -323,7 +323,6 @@ namespace Amazon.CodeGuruSecurity
 
             return InvokeAsync<BatchGetFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateScan
@@ -376,7 +375,6 @@ namespace Amazon.CodeGuruSecurity
 
             return InvokeAsync<CreateScanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUploadUrl
@@ -429,7 +427,6 @@ namespace Amazon.CodeGuruSecurity
 
             return InvokeAsync<CreateUploadUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccountConfiguration
@@ -475,7 +472,6 @@ namespace Amazon.CodeGuruSecurity
 
             return InvokeAsync<GetAccountConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFindings
@@ -528,7 +524,6 @@ namespace Amazon.CodeGuruSecurity
 
             return InvokeAsync<GetFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMetricsSummary
@@ -576,7 +571,6 @@ namespace Amazon.CodeGuruSecurity
 
             return InvokeAsync<GetMetricsSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetScan
@@ -625,7 +619,6 @@ namespace Amazon.CodeGuruSecurity
 
             return InvokeAsync<GetScanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFindingsMetrics
@@ -671,7 +664,6 @@ namespace Amazon.CodeGuruSecurity
 
             return InvokeAsync<ListFindingsMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListScans
@@ -717,7 +709,6 @@ namespace Amazon.CodeGuruSecurity
 
             return InvokeAsync<ListScansResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -770,7 +761,6 @@ namespace Amazon.CodeGuruSecurity
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -823,7 +813,6 @@ namespace Amazon.CodeGuruSecurity
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -876,7 +865,6 @@ namespace Amazon.CodeGuruSecurity
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccountConfiguration
@@ -925,7 +913,6 @@ namespace Amazon.CodeGuruSecurity
 
             return InvokeAsync<UpdateAccountConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

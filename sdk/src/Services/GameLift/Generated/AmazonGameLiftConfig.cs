@@ -30,7 +30,6 @@ namespace Amazon.GameLift
     /// <summary>
     /// Configuration for accessing Amazon GameLift service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonGameLiftConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -30,7 +30,6 @@ namespace Amazon.PcaConnectorAd
     /// <summary>
     /// Configuration for accessing Amazon PcaConnectorAd service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonPcaConnectorAdConfig : ClientConfig
     {
         private static readonly string UserAgentString =

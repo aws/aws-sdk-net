@@ -30,7 +30,6 @@ namespace Amazon.Lightsail
     /// <summary>
     /// Configuration for accessing Amazon Lightsail service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonLightsailConfig : ClientConfig
     {
         private static readonly string UserAgentString =

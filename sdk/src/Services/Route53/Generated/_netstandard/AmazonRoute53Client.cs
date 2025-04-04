@@ -350,7 +350,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ActivateKeySigningKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateVPCWithHostedZone
@@ -479,7 +478,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<AssociateVPCWithHostedZoneResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ChangeCidrCollection
@@ -569,7 +567,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ChangeCidrCollectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ChangeResourceRecordSets
@@ -742,7 +739,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ChangeResourceRecordSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ChangeTagsForResource
@@ -801,7 +797,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ChangeTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCidrCollection
@@ -851,7 +846,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<CreateCidrCollectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateHealthCheck
@@ -974,7 +968,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<CreateHealthCheckResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateHostedZone
@@ -1169,7 +1162,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<CreateHostedZoneResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateKeySigningKey
@@ -1238,7 +1230,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<CreateKeySigningKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateQueryLoggingConfig
@@ -1485,7 +1476,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<CreateQueryLoggingConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateReusableDelegationSet
@@ -1619,7 +1609,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<CreateReusableDelegationSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTrafficPolicy
@@ -1684,7 +1673,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<CreateTrafficPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTrafficPolicyInstance
@@ -1764,7 +1752,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<CreateTrafficPolicyInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTrafficPolicyVersion
@@ -1830,7 +1817,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<CreateTrafficPolicyVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVPCAssociationAuthorization
@@ -1898,7 +1884,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<CreateVPCAssociationAuthorizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeactivateKeySigningKey
@@ -1958,7 +1943,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<DeactivateKeySigningKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCidrCollection
@@ -2006,7 +1990,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<DeleteCidrCollectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteHealthCheck
@@ -2067,7 +2050,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<DeleteHealthCheckResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteHostedZone
@@ -2177,7 +2159,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<DeleteHostedZoneResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteKeySigningKey
@@ -2244,7 +2225,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<DeleteKeySigningKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteQueryLoggingConfig
@@ -2295,7 +2275,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<DeleteQueryLoggingConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReusableDelegationSet
@@ -2354,7 +2333,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<DeleteReusableDelegationSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTrafficPolicy
@@ -2422,7 +2400,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<DeleteTrafficPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTrafficPolicyInstance
@@ -2476,7 +2453,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<DeleteTrafficPolicyInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVPCAssociationAuthorization
@@ -2540,7 +2516,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<DeleteVPCAssociationAuthorizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableHostedZoneDNSSEC
@@ -2600,7 +2575,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<DisableHostedZoneDNSSECResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateVPCFromHostedZone
@@ -2708,7 +2682,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<DisassociateVPCFromHostedZoneResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableHostedZoneDNSSEC
@@ -2771,7 +2744,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<EnableHostedZoneDNSSECResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccountLimit
@@ -2824,7 +2796,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<GetAccountLimitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetChange
@@ -2878,7 +2849,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<GetChangeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCheckerIpRanges
@@ -2923,7 +2893,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<GetCheckerIpRangesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDNSSEC
@@ -2967,7 +2936,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<GetDNSSECResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGeoLocation
@@ -3044,7 +3012,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<GetGeoLocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetHealthCheck
@@ -3087,7 +3054,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<GetHealthCheckResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetHealthCheckCount
@@ -3122,7 +3088,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<GetHealthCheckCountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetHealthCheckLastFailureReason
@@ -3162,7 +3127,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<GetHealthCheckLastFailureReasonResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetHealthCheckStatus
@@ -3209,7 +3173,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<GetHealthCheckStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetHostedZone
@@ -3258,7 +3221,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<GetHostedZoneResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetHostedZoneCount
@@ -3319,7 +3281,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<GetHostedZoneCountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetHostedZoneLimit
@@ -3370,7 +3331,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<GetHostedZoneLimitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueryLoggingConfig
@@ -3417,7 +3377,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<GetQueryLoggingConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReusableDelegationSet
@@ -3461,7 +3420,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<GetReusableDelegationSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReusableDelegationSetLimit
@@ -3509,7 +3467,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<GetReusableDelegationSetLimitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTrafficPolicy
@@ -3556,7 +3513,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<GetTrafficPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTrafficPolicyInstance
@@ -3609,7 +3565,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<GetTrafficPolicyInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTrafficPolicyInstanceCount
@@ -3644,7 +3599,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<GetTrafficPolicyInstanceCountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCidrBlocks
@@ -3687,7 +3641,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ListCidrBlocksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCidrCollections
@@ -3725,7 +3678,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ListCidrCollectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCidrLocations
@@ -3766,7 +3718,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ListCidrLocationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGeoLocations
@@ -3861,7 +3812,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ListGeoLocationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHealthChecks
@@ -3928,7 +3878,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ListHealthChecksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHostedZones
@@ -4017,7 +3966,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ListHostedZonesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHostedZonesByName
@@ -4131,7 +4079,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ListHostedZonesByNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHostedZonesByVPC
@@ -4224,7 +4171,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ListHostedZonesByVPCResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQueryLoggingConfigs
@@ -4276,7 +4222,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ListQueryLoggingConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceRecordSets
@@ -4411,7 +4356,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ListResourceRecordSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReusableDelegationSets
@@ -4472,7 +4416,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ListReusableDelegationSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -4531,7 +4474,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResources
@@ -4590,7 +4532,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ListTagsForResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrafficPolicies
@@ -4636,7 +4577,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ListTrafficPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrafficPolicyInstances
@@ -4690,7 +4630,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ListTrafficPolicyInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrafficPolicyInstancesByHostedZone
@@ -4748,7 +4687,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ListTrafficPolicyInstancesByHostedZoneResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrafficPolicyInstancesByPolicy
@@ -4806,7 +4744,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ListTrafficPolicyInstancesByPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrafficPolicyVersions
@@ -4851,7 +4788,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ListTrafficPolicyVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVPCAssociationAuthorizations
@@ -4902,7 +4838,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<ListVPCAssociationAuthorizationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestDNSAnswer
@@ -4956,7 +4891,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<TestDNSAnswerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateHealthCheck
@@ -5006,7 +4940,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<UpdateHealthCheckResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateHostedZoneComment
@@ -5053,7 +4986,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<UpdateHostedZoneCommentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTrafficPolicyComment
@@ -5097,7 +5029,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<UpdateTrafficPolicyCommentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTrafficPolicyInstance
@@ -5188,7 +5119,6 @@ namespace Amazon.Route53
 
             return InvokeAsync<UpdateTrafficPolicyInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

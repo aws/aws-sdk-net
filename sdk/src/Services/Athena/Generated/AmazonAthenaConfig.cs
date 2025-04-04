@@ -30,7 +30,6 @@ namespace Amazon.Athena
     /// <summary>
     /// Configuration for accessing Amazon Athena service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonAthenaConfig : ClientConfig
     {
         private static readonly string UserAgentString =

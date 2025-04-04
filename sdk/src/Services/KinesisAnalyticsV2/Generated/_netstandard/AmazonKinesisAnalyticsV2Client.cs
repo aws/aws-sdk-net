@@ -326,7 +326,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<AddApplicationCloudWatchLoggingOptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddApplicationInput
@@ -394,7 +393,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<AddApplicationInputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddApplicationInputProcessingConfiguration
@@ -448,7 +446,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<AddApplicationInputProcessingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddApplicationOutput
@@ -520,7 +517,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<AddApplicationOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddApplicationReferenceDataSource
@@ -580,7 +576,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<AddApplicationReferenceDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddApplicationVpcConfiguration
@@ -648,7 +643,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<AddApplicationVpcConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApplication
@@ -714,7 +708,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApplicationPresignedUrl
@@ -778,7 +771,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<CreateApplicationPresignedUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApplicationSnapshot
@@ -834,7 +826,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<CreateApplicationSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplication
@@ -889,7 +880,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<DeleteApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplicationCloudWatchLoggingOption
@@ -943,7 +933,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<DeleteApplicationCloudWatchLoggingOptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplicationInputProcessingConfiguration
@@ -994,7 +983,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<DeleteApplicationInputProcessingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplicationOutput
@@ -1047,7 +1035,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<DeleteApplicationOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplicationReferenceDataSource
@@ -1106,7 +1093,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<DeleteApplicationReferenceDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplicationSnapshot
@@ -1161,7 +1147,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<DeleteApplicationSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplicationVpcConfiguration
@@ -1212,7 +1197,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<DeleteApplicationVpcConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApplication
@@ -1261,7 +1245,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<DescribeApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApplicationOperation
@@ -1306,7 +1289,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<DescribeApplicationOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApplicationSnapshot
@@ -1350,7 +1332,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<DescribeApplicationSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApplicationVersion
@@ -1402,7 +1383,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<DescribeApplicationVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DiscoverInputSchema
@@ -1469,7 +1449,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<DiscoverInputSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplicationOperations
@@ -1514,7 +1493,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<ListApplicationOperationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplications
@@ -1558,7 +1536,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<ListApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplicationSnapshots
@@ -1599,7 +1576,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<ListApplicationSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplicationVersions
@@ -1656,7 +1632,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<ListApplicationVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1703,7 +1678,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RollbackApplication
@@ -1771,7 +1745,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<RollbackApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartApplication
@@ -1821,7 +1794,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<StartApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopApplication
@@ -1887,7 +1859,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<StopApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1943,7 +1914,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1998,7 +1968,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplication
@@ -2066,7 +2035,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplicationMaintenanceConfiguration
@@ -2147,7 +2115,6 @@ namespace Amazon.KinesisAnalyticsV2
 
             return InvokeAsync<UpdateApplicationMaintenanceConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

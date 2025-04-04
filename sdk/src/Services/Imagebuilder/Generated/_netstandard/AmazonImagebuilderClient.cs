@@ -326,7 +326,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<CancelImageCreationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelLifecycleExecution
@@ -388,7 +387,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<CancelLifecycleExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateComponent
@@ -475,7 +473,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<CreateComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateContainerRecipe
@@ -549,7 +546,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<CreateContainerRecipeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDistributionConfiguration
@@ -624,7 +620,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<CreateDistributionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateImage
@@ -693,7 +688,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<CreateImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateImagePipeline
@@ -764,7 +758,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<CreateImagePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateImageRecipe
@@ -838,7 +831,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<CreateImageRecipeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInfrastructureConfiguration
@@ -909,7 +901,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<CreateInfrastructureConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLifecyclePolicy
@@ -979,7 +970,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<CreateLifecyclePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkflow
@@ -1053,7 +1043,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<CreateWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteComponent
@@ -1111,7 +1100,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<DeleteComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteContainerRecipe
@@ -1169,7 +1157,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<DeleteContainerRecipeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDistributionConfiguration
@@ -1227,7 +1214,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<DeleteDistributionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteImage
@@ -1305,7 +1291,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<DeleteImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteImagePipeline
@@ -1363,7 +1348,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<DeleteImagePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteImageRecipe
@@ -1421,7 +1405,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<DeleteImageRecipeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInfrastructureConfiguration
@@ -1479,7 +1462,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<DeleteInfrastructureConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLifecyclePolicy
@@ -1537,7 +1519,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<DeleteLifecyclePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkflow
@@ -1595,7 +1576,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<DeleteWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetComponent
@@ -1649,7 +1629,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<GetComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetComponentPolicy
@@ -1701,7 +1680,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<GetComponentPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContainerRecipe
@@ -1755,7 +1733,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<GetContainerRecipeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContainerRecipePolicy
@@ -1807,7 +1784,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<GetContainerRecipePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDistributionConfiguration
@@ -1861,7 +1837,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<GetDistributionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetImage
@@ -1915,7 +1890,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<GetImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetImagePipeline
@@ -1969,7 +1943,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<GetImagePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetImagePolicy
@@ -2021,7 +1994,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<GetImagePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetImageRecipe
@@ -2075,7 +2047,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<GetImageRecipeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetImageRecipePolicy
@@ -2127,7 +2098,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<GetImageRecipePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInfrastructureConfiguration
@@ -2181,7 +2151,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<GetInfrastructureConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLifecycleExecution
@@ -2236,7 +2205,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<GetLifecycleExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLifecyclePolicy
@@ -2290,7 +2258,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<GetLifecyclePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMarketplaceResource
@@ -2346,7 +2313,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<GetMarketplaceResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkflow
@@ -2400,7 +2366,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<GetWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkflowExecution
@@ -2455,7 +2420,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<GetWorkflowExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkflowStepExecution
@@ -2510,7 +2474,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<GetWorkflowStepExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportComponent
@@ -2579,7 +2542,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ImportComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportDiskImage
@@ -2631,7 +2593,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ImportDiskImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportVmImage
@@ -2687,7 +2648,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ImportVmImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListComponentBuildVersions
@@ -2745,7 +2705,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListComponentBuildVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListComponents
@@ -2818,7 +2777,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListComponentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContainerRecipes
@@ -2875,7 +2833,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListContainerRecipesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDistributionConfigurations
@@ -2932,7 +2889,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListDistributionConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImageBuildVersions
@@ -2989,7 +2945,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListImageBuildVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImagePackages
@@ -3050,7 +3005,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListImagePackagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImagePipelineImages
@@ -3110,7 +3064,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListImagePipelineImagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImagePipelines
@@ -3167,7 +3120,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListImagePipelinesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImageRecipes
@@ -3224,7 +3176,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListImageRecipesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImages
@@ -3282,7 +3233,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListImagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImageScanFindingAggregations
@@ -3365,7 +3315,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListImageScanFindingAggregationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImageScanFindings
@@ -3422,7 +3371,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListImageScanFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInfrastructureConfigurations
@@ -3479,7 +3427,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListInfrastructureConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLifecycleExecutionResources
@@ -3537,7 +3484,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListLifecycleExecutionResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLifecycleExecutions
@@ -3594,7 +3540,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListLifecycleExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLifecyclePolicies
@@ -3651,7 +3596,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListLifecyclePoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3694,7 +3638,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWaitingWorkflowSteps
@@ -3752,7 +3695,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListWaitingWorkflowStepsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkflowBuildVersions
@@ -3809,7 +3751,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListWorkflowBuildVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkflowExecutions
@@ -3867,7 +3808,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListWorkflowExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkflows
@@ -3924,7 +3864,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListWorkflowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkflowStepExecutions
@@ -3982,7 +3921,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<ListWorkflowStepExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutComponentPolicy
@@ -4046,7 +3984,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<PutComponentPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutContainerRecipePolicy
@@ -4111,7 +4048,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<PutContainerRecipePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutImagePolicy
@@ -4175,7 +4111,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<PutImagePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutImageRecipePolicy
@@ -4239,7 +4174,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<PutImageRecipePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendWorkflowStepAction
@@ -4308,7 +4242,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<SendWorkflowStepActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartImagePipelineExecution
@@ -4373,7 +4306,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<StartImagePipelineExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartResourceStateUpdate
@@ -4439,7 +4371,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<StartResourceStateUpdateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -4482,7 +4413,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -4525,7 +4455,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDistributionConfiguration
@@ -4592,7 +4521,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<UpdateDistributionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateImagePipeline
@@ -4664,7 +4592,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<UpdateImagePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInfrastructureConfiguration
@@ -4727,7 +4654,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<UpdateInfrastructureConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLifecyclePolicy
@@ -4793,7 +4719,6 @@ namespace Amazon.Imagebuilder
 
             return InvokeAsync<UpdateLifecyclePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

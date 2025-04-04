@@ -30,7 +30,6 @@ namespace Amazon.RestJsonProtocol
     /// <summary>
     /// Configuration for accessing Amazon RestJsonProtocol service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonRestJsonProtocolConfig : ClientConfig
     {
         private static readonly string UserAgentString =

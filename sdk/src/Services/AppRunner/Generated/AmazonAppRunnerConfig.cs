@@ -30,7 +30,6 @@ namespace Amazon.AppRunner
     /// <summary>
     /// Configuration for accessing Amazon AppRunner service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonAppRunnerConfig : ClientConfig
     {
         private static readonly string UserAgentString =

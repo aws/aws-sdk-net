@@ -30,7 +30,6 @@ namespace Amazon.MainframeModernization
     /// <summary>
     /// Configuration for accessing Amazon MainframeModernization service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMainframeModernizationConfig : ClientConfig
     {
         private static readonly string UserAgentString =

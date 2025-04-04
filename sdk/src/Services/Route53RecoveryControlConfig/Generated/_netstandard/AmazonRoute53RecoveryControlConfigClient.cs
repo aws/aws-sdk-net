@@ -324,7 +324,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<CreateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateControlPanel
@@ -387,7 +386,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<CreateControlPanelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRoutingControl
@@ -458,7 +456,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<CreateRoutingControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSafetyRule
@@ -526,7 +523,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<CreateSafetyRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCluster
@@ -581,7 +577,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<DeleteClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteControlPanel
@@ -636,7 +631,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<DeleteControlPanelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRoutingControl
@@ -691,7 +685,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<DeleteRoutingControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSafetyRule
@@ -739,7 +732,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<DeleteSafetyRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCluster
@@ -795,7 +787,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<DescribeClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeControlPanel
@@ -850,7 +841,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<DescribeControlPanelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRoutingControl
@@ -913,7 +903,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<DescribeRoutingControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSafetyRule
@@ -956,7 +945,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<DescribeSafetyRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicy
@@ -997,7 +985,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssociatedRoute53HealthChecks
@@ -1044,7 +1031,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<ListAssociatedRoute53HealthChecksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClusters
@@ -1096,7 +1082,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<ListClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListControlPanels
@@ -1148,7 +1133,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<ListControlPanelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRoutingControls
@@ -1203,7 +1187,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<ListRoutingControlsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSafetyRules
@@ -1256,7 +1239,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<ListSafetyRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1302,7 +1284,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1348,7 +1329,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1394,7 +1374,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCluster
@@ -1449,7 +1428,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<UpdateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateControlPanel
@@ -1505,7 +1483,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<UpdateControlPanelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRoutingControl
@@ -1562,7 +1539,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<UpdateRoutingControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSafetyRule
@@ -1610,7 +1586,6 @@ namespace Amazon.Route53RecoveryControlConfig
 
             return InvokeAsync<UpdateSafetyRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

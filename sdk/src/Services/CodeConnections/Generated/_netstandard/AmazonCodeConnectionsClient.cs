@@ -399,7 +399,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<CreateConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateHost
@@ -446,7 +445,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<CreateHostResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRepositoryLink
@@ -503,7 +501,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<CreateRepositoryLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSyncConfiguration
@@ -561,7 +558,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<CreateSyncConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnection
@@ -598,7 +594,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<DeleteConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteHost
@@ -646,7 +641,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<DeleteHostResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRepositoryLink
@@ -705,7 +699,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<DeleteRepositoryLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSyncConfiguration
@@ -758,7 +751,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<DeleteSyncConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConnection
@@ -798,7 +790,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<GetConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetHost
@@ -839,7 +830,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<GetHostResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRepositoryLink
@@ -893,7 +883,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<GetRepositoryLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRepositorySyncStatus
@@ -943,7 +932,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<GetRepositorySyncStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceSyncStatus
@@ -993,7 +981,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<GetResourceSyncStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSyncBlockerSummary
@@ -1042,7 +1029,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<GetSyncBlockerSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSyncConfiguration
@@ -1093,7 +1079,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<GetSyncConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConnections
@@ -1130,7 +1115,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<ListConnectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHosts
@@ -1164,7 +1148,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<ListHostsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRepositoryLinks
@@ -1217,7 +1200,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<ListRepositoryLinksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRepositorySyncDefinitions
@@ -1266,7 +1248,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<ListRepositorySyncDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSyncConfigurations
@@ -1315,7 +1296,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<ListSyncConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1352,7 +1332,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1393,7 +1372,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1430,7 +1408,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateHost
@@ -1476,7 +1453,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<UpdateHostResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRepositoryLink
@@ -1533,7 +1509,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<UpdateRepositoryLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSyncBlocker
@@ -1589,7 +1564,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<UpdateSyncBlockerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSyncConfiguration
@@ -1645,7 +1619,6 @@ namespace Amazon.CodeConnections
 
             return InvokeAsync<UpdateSyncConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

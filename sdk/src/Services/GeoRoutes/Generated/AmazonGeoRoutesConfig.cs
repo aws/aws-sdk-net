@@ -30,7 +30,6 @@ namespace Amazon.GeoRoutes
     /// <summary>
     /// Configuration for accessing Amazon GeoRoutes service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonGeoRoutesConfig : ClientConfig
     {
         private static readonly string UserAgentString =

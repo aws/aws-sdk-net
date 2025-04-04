@@ -382,7 +382,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<CreateBrokerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfiguration
@@ -429,7 +428,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<CreateConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTags
@@ -475,7 +473,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<CreateTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUser
@@ -533,7 +530,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<CreateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBroker
@@ -579,7 +575,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<DeleteBrokerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTags
@@ -625,7 +620,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<DeleteTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUser
@@ -671,7 +665,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBroker
@@ -717,7 +710,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<DescribeBrokerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBrokerEngineTypes
@@ -760,7 +752,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<DescribeBrokerEngineTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBrokerInstanceOptions
@@ -803,7 +794,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<DescribeBrokerInstanceOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConfiguration
@@ -849,7 +839,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<DescribeConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConfigurationRevision
@@ -895,7 +884,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<DescribeConfigurationRevisionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUser
@@ -941,7 +929,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<DescribeUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBrokers
@@ -984,7 +971,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<ListBrokersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfigurationRevisions
@@ -1030,7 +1016,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<ListConfigurationRevisionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfigurations
@@ -1073,7 +1058,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<ListConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTags
@@ -1119,7 +1103,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<ListTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUsers
@@ -1165,7 +1148,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<ListUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Promote
@@ -1211,7 +1193,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<PromoteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RebootBroker
@@ -1257,7 +1238,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<RebootBrokerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBroker
@@ -1306,7 +1286,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<UpdateBrokerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfiguration
@@ -1355,7 +1334,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<UpdateConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUser
@@ -1404,7 +1382,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<UpdateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -308,7 +308,6 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
 
             return InvokeAsync<DeregisterSubscriptionProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRegisteredSubscriptionProvider
@@ -355,7 +354,6 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
 
             return InvokeAsync<GetRegisteredSubscriptionProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceSettings
@@ -398,7 +396,6 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
 
             return InvokeAsync<GetServiceSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLinuxSubscriptionInstances
@@ -442,7 +439,6 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
 
             return InvokeAsync<ListLinuxSubscriptionInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLinuxSubscriptions
@@ -486,7 +482,6 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
 
             return InvokeAsync<ListLinuxSubscriptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRegisteredSubscriptionProviders
@@ -529,7 +524,6 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
 
             return InvokeAsync<ListRegisteredSubscriptionProvidersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -572,7 +566,6 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterSubscriptionProvider
@@ -616,7 +609,6 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
 
             return InvokeAsync<RegisterSubscriptionProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -659,7 +651,6 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -699,7 +690,6 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServiceSettings
@@ -742,7 +732,6 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
 
             return InvokeAsync<UpdateServiceSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

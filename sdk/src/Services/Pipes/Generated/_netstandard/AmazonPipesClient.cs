@@ -318,7 +318,6 @@ namespace Amazon.Pipes
 
             return InvokeAsync<CreatePipeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePipe
@@ -368,7 +367,6 @@ namespace Amazon.Pipes
 
             return InvokeAsync<DeletePipeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePipe
@@ -416,7 +414,6 @@ namespace Amazon.Pipes
 
             return InvokeAsync<DescribePipeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPipes
@@ -461,7 +458,6 @@ namespace Amazon.Pipes
 
             return InvokeAsync<ListPipesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -504,7 +500,6 @@ namespace Amazon.Pipes
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartPipe
@@ -553,7 +548,6 @@ namespace Amazon.Pipes
 
             return InvokeAsync<StartPipeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopPipe
@@ -602,7 +596,6 @@ namespace Amazon.Pipes
 
             return InvokeAsync<StopPipeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -665,7 +658,6 @@ namespace Amazon.Pipes
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -708,7 +700,6 @@ namespace Amazon.Pipes
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePipe
@@ -770,7 +761,6 @@ namespace Amazon.Pipes
 
             return InvokeAsync<UpdatePipeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

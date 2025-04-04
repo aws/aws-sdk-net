@@ -30,7 +30,6 @@ namespace Amazon.SimpleDB
     /// <summary>
     /// Configuration for accessing Amazon SimpleDB service
     /// </summary>
-    [AWSSignerType("v2")]
     public partial class AmazonSimpleDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =

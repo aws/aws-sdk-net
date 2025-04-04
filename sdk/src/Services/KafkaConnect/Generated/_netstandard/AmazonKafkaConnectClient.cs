@@ -324,7 +324,6 @@ namespace Amazon.KafkaConnect
 
             return InvokeAsync<CreateConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCustomPlugin
@@ -388,7 +387,6 @@ namespace Amazon.KafkaConnect
 
             return InvokeAsync<CreateCustomPluginResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkerConfiguration
@@ -452,7 +450,6 @@ namespace Amazon.KafkaConnect
 
             return InvokeAsync<CreateWorkerConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnector
@@ -512,7 +509,6 @@ namespace Amazon.KafkaConnect
 
             return InvokeAsync<DeleteConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCustomPlugin
@@ -572,7 +568,6 @@ namespace Amazon.KafkaConnect
 
             return InvokeAsync<DeleteCustomPluginResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkerConfiguration
@@ -632,7 +627,6 @@ namespace Amazon.KafkaConnect
 
             return InvokeAsync<DeleteWorkerConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConnector
@@ -692,7 +686,6 @@ namespace Amazon.KafkaConnect
 
             return InvokeAsync<DescribeConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConnectorOperation
@@ -752,7 +745,6 @@ namespace Amazon.KafkaConnect
 
             return InvokeAsync<DescribeConnectorOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCustomPlugin
@@ -812,7 +804,6 @@ namespace Amazon.KafkaConnect
 
             return InvokeAsync<DescribeCustomPluginResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkerConfiguration
@@ -872,7 +863,6 @@ namespace Amazon.KafkaConnect
 
             return InvokeAsync<DescribeWorkerConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConnectorOperations
@@ -932,7 +922,6 @@ namespace Amazon.KafkaConnect
 
             return InvokeAsync<ListConnectorOperationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConnectors
@@ -994,7 +983,6 @@ namespace Amazon.KafkaConnect
 
             return InvokeAsync<ListConnectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCustomPlugins
@@ -1054,7 +1042,6 @@ namespace Amazon.KafkaConnect
 
             return InvokeAsync<ListCustomPluginsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1114,7 +1101,6 @@ namespace Amazon.KafkaConnect
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkerConfigurations
@@ -1174,7 +1160,6 @@ namespace Amazon.KafkaConnect
 
             return InvokeAsync<ListWorkerConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1238,7 +1223,6 @@ namespace Amazon.KafkaConnect
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1298,7 +1282,6 @@ namespace Amazon.KafkaConnect
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConnector
@@ -1358,7 +1341,6 @@ namespace Amazon.KafkaConnect
 
             return InvokeAsync<UpdateConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

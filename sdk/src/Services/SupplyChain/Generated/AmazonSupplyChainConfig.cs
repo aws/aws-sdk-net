@@ -30,7 +30,6 @@ namespace Amazon.SupplyChain
     /// <summary>
     /// Configuration for accessing Amazon SupplyChain service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSupplyChainConfig : ClientConfig
     {
         private static readonly string UserAgentString =

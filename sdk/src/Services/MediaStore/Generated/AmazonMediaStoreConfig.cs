@@ -30,7 +30,6 @@ namespace Amazon.MediaStore
     /// <summary>
     /// Configuration for accessing Amazon MediaStore service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMediaStoreConfig : ClientConfig
     {
         private static readonly string UserAgentString =

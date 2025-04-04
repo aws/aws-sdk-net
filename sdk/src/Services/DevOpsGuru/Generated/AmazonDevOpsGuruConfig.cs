@@ -30,7 +30,6 @@ namespace Amazon.DevOpsGuru
     /// <summary>
     /// Configuration for accessing Amazon DevOpsGuru service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonDevOpsGuruConfig : ClientConfig
     {
         private static readonly string UserAgentString =

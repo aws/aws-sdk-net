@@ -353,7 +353,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<AssociateDelegateToResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateMemberToGroup
@@ -414,7 +413,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<AssociateMemberToGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssumeImpersonationRole
@@ -463,7 +461,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<AssumeImpersonationRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelMailboxExportJob
@@ -517,7 +514,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<CancelMailboxExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAlias
@@ -583,7 +579,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<CreateAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAvailabilityConfiguration
@@ -635,7 +630,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<CreateAvailabilityConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGroup
@@ -696,7 +690,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<CreateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIdentityCenterApplication
@@ -735,7 +728,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<CreateIdentityCenterApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateImpersonationRole
@@ -797,7 +789,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<CreateImpersonationRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMobileDeviceAccessRule
@@ -845,7 +836,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<CreateMobileDeviceAccessRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOrganization
@@ -915,7 +905,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<CreateOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateResource
@@ -975,7 +964,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<CreateResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUser
@@ -1040,7 +1028,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<CreateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccessControlRule
@@ -1089,7 +1076,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DeleteAccessControlRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAlias
@@ -1141,7 +1127,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DeleteAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAvailabilityConfiguration
@@ -1184,7 +1169,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DeleteAvailabilityConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEmailMonitoringConfiguration
@@ -1229,7 +1213,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DeleteEmailMonitoringConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGroup
@@ -1287,7 +1270,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DeleteGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIdentityCenterApplication
@@ -1329,7 +1311,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DeleteIdentityCenterApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIdentityProviderConfiguration
@@ -1376,7 +1357,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DeleteIdentityProviderConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteImpersonationRole
@@ -1421,7 +1401,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DeleteImpersonationRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMailboxPermissions
@@ -1473,7 +1452,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DeleteMailboxPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMobileDeviceAccessOverride
@@ -1529,7 +1507,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DeleteMobileDeviceAccessOverrideResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMobileDeviceAccessRule
@@ -1581,7 +1558,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DeleteMobileDeviceAccessRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOrganization
@@ -1629,7 +1605,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DeleteOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePersonalAccessToken
@@ -1674,7 +1649,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DeletePersonalAccessTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResource
@@ -1726,7 +1700,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DeleteResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRetentionPolicy
@@ -1771,7 +1744,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DeleteRetentionPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUser
@@ -1837,7 +1809,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterFromWorkMail
@@ -1891,7 +1862,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DeregisterFromWorkMailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterMailDomain
@@ -1947,7 +1917,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DeregisterMailDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEmailMonitoringConfiguration
@@ -1995,7 +1964,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DescribeEmailMonitoringConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEntity
@@ -2043,7 +2011,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DescribeEntityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGroup
@@ -2091,7 +2058,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DescribeGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeIdentityProviderConfiguration
@@ -2139,7 +2105,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DescribeIdentityProviderConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInboundDmarcSettings
@@ -2181,7 +2146,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DescribeInboundDmarcSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMailboxExportJob
@@ -2229,7 +2193,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DescribeMailboxExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOrganization
@@ -2270,7 +2233,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DescribeOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeResource
@@ -2321,7 +2283,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DescribeResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUser
@@ -2375,7 +2336,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DescribeUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateDelegateFromResource
@@ -2430,7 +2390,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DisassociateDelegateFromResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateMemberFromGroup
@@ -2491,7 +2450,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<DisassociateMemberFromGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccessControlEffect
@@ -2545,7 +2503,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<GetAccessControlEffectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDefaultRetentionPolicy
@@ -2593,7 +2550,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<GetDefaultRetentionPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetImpersonationRole
@@ -2641,7 +2597,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<GetImpersonationRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetImpersonationRoleEffect
@@ -2696,7 +2651,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<GetImpersonationRoleEffectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMailboxDetails
@@ -2744,7 +2698,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<GetMailboxDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMailDomain
@@ -2793,7 +2746,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<GetMailDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMobileDeviceAccessEffect
@@ -2840,7 +2792,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<GetMobileDeviceAccessEffectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMobileDeviceAccessOverride
@@ -2892,7 +2843,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<GetMobileDeviceAccessOverrideResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPersonalAccessTokenMetadata
@@ -2940,7 +2890,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<GetPersonalAccessTokenMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccessControlRules
@@ -2982,7 +2931,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<ListAccessControlRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAliases
@@ -3034,7 +2982,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<ListAliasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAvailabilityConfigurations
@@ -3079,7 +3026,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<ListAvailabilityConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroupMembers
@@ -3132,7 +3078,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<ListGroupMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroups
@@ -3180,7 +3125,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<ListGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroupsForEntity
@@ -3232,7 +3176,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<ListGroupsForEntityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImpersonationRoles
@@ -3277,7 +3220,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<ListImpersonationRolesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMailboxExportJobs
@@ -3323,7 +3265,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<ListMailboxExportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMailboxPermissions
@@ -3371,7 +3312,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<ListMailboxPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMailDomains
@@ -3416,7 +3356,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<ListMailDomainsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMobileDeviceAccessOverrides
@@ -3465,7 +3404,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<ListMobileDeviceAccessOverridesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMobileDeviceAccessRules
@@ -3510,7 +3448,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<ListMobileDeviceAccessRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOrganizations
@@ -3547,7 +3484,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<ListOrganizationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPersonalAccessTokens
@@ -3599,7 +3535,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<ListPersonalAccessTokensResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceDelegates
@@ -3655,7 +3590,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<ListResourceDelegatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResources
@@ -3703,7 +3637,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<ListResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3740,7 +3673,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUsers
@@ -3785,7 +3717,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<ListUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAccessControlRule
@@ -3842,7 +3773,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<PutAccessControlRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEmailMonitoringConfiguration
@@ -3890,7 +3820,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<PutEmailMonitoringConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutIdentityProviderConfiguration
@@ -3942,7 +3871,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<PutIdentityProviderConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutInboundDmarcSettings
@@ -3984,7 +3912,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<PutInboundDmarcSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutMailboxPermissions
@@ -4036,7 +3963,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<PutMailboxPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutMobileDeviceAccessOverride
@@ -4089,7 +4015,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<PutMobileDeviceAccessOverrideResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRetentionPolicy
@@ -4137,7 +4062,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<PutRetentionPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterMailDomain
@@ -4192,7 +4116,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<RegisterMailDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterToWorkMail
@@ -4274,7 +4197,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<RegisterToWorkMailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetPassword
@@ -4339,7 +4261,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<ResetPasswordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMailboxExportJob
@@ -4393,7 +4314,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<StartMailboxExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -4440,7 +4360,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestAvailabilityConfiguration
@@ -4500,7 +4419,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<TestAvailabilityConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -4537,7 +4455,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAvailabilityConfiguration
@@ -4586,7 +4503,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<UpdateAvailabilityConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDefaultMailDomain
@@ -4640,7 +4556,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<UpdateDefaultMailDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGroup
@@ -4695,7 +4610,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<UpdateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateImpersonationRole
@@ -4753,7 +4667,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<UpdateImpersonationRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMailboxQuota
@@ -4805,7 +4718,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<UpdateMailboxQuotaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMobileDeviceAccessRule
@@ -4853,7 +4765,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<UpdateMobileDeviceAccessRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePrimaryEmailAddress
@@ -4927,7 +4838,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<UpdatePrimaryEmailAddressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResource
@@ -5005,7 +4915,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<UpdateResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUser
@@ -5068,7 +4977,6 @@ namespace Amazon.WorkMail
 
             return InvokeAsync<UpdateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

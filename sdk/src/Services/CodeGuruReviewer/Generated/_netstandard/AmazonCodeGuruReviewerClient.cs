@@ -358,7 +358,6 @@ namespace Amazon.CodeGuruReviewer
 
             return InvokeAsync<AssociateRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCodeReview
@@ -414,7 +413,6 @@ namespace Amazon.CodeGuruReviewer
 
             return InvokeAsync<CreateCodeReviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCodeReview
@@ -463,7 +461,6 @@ namespace Amazon.CodeGuruReviewer
 
             return InvokeAsync<DescribeCodeReviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRecommendationFeedback
@@ -512,7 +509,6 @@ namespace Amazon.CodeGuruReviewer
 
             return InvokeAsync<DescribeRecommendationFeedbackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRepositoryAssociation
@@ -562,7 +558,6 @@ namespace Amazon.CodeGuruReviewer
 
             return InvokeAsync<DescribeRepositoryAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateRepository
@@ -615,7 +610,6 @@ namespace Amazon.CodeGuruReviewer
 
             return InvokeAsync<DisassociateRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCodeReviews
@@ -661,7 +655,6 @@ namespace Amazon.CodeGuruReviewer
 
             return InvokeAsync<ListCodeReviewsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecommendationFeedback
@@ -711,7 +704,6 @@ namespace Amazon.CodeGuruReviewer
 
             return InvokeAsync<ListRecommendationFeedbackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecommendations
@@ -760,7 +752,6 @@ namespace Amazon.CodeGuruReviewer
 
             return InvokeAsync<ListRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRepositoryAssociations
@@ -808,7 +799,6 @@ namespace Amazon.CodeGuruReviewer
 
             return InvokeAsync<ListRepositoryAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -851,7 +841,6 @@ namespace Amazon.CodeGuruReviewer
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRecommendationFeedback
@@ -901,7 +890,6 @@ namespace Amazon.CodeGuruReviewer
 
             return InvokeAsync<PutRecommendationFeedbackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -944,7 +932,6 @@ namespace Amazon.CodeGuruReviewer
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -987,7 +974,6 @@ namespace Amazon.CodeGuruReviewer
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.DocDB
     /// <summary>
     /// Configuration for accessing Amazon DocDB service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonDocDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =

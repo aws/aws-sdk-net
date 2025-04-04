@@ -275,7 +275,6 @@ namespace Amazon.JsonProtocol
 
             return InvokeAsync<ContentTypeParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DatetimeOffsets
@@ -309,7 +308,6 @@ namespace Amazon.JsonProtocol
 
             return InvokeAsync<DatetimeOffsetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EmptyOperation
@@ -343,7 +341,6 @@ namespace Amazon.JsonProtocol
 
             return InvokeAsync<EmptyOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EndpointOperation
@@ -377,7 +374,6 @@ namespace Amazon.JsonProtocol
 
             return InvokeAsync<EndpointOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EndpointWithHostLabelOperation
@@ -411,7 +407,6 @@ namespace Amazon.JsonProtocol
 
             return InvokeAsync<EndpointWithHostLabelOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FractionalSeconds
@@ -445,7 +440,6 @@ namespace Amazon.JsonProtocol
 
             return InvokeAsync<FractionalSecondsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GreetingWithErrors
@@ -496,7 +490,6 @@ namespace Amazon.JsonProtocol
 
             return InvokeAsync<GreetingWithErrorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HostWithPathOperation
@@ -530,7 +523,6 @@ namespace Amazon.JsonProtocol
 
             return InvokeAsync<HostWithPathOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  JsonEnums
@@ -564,7 +556,6 @@ namespace Amazon.JsonProtocol
 
             return InvokeAsync<JsonEnumsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  JsonIntEnums
@@ -598,7 +589,6 @@ namespace Amazon.JsonProtocol
 
             return InvokeAsync<JsonIntEnumsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  JsonUnions
@@ -632,7 +622,6 @@ namespace Amazon.JsonProtocol
 
             return InvokeAsync<JsonUnionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  KitchenSinkOperation
@@ -672,7 +661,6 @@ namespace Amazon.JsonProtocol
 
             return InvokeAsync<KitchenSinkOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NullOperation
@@ -706,7 +694,6 @@ namespace Amazon.JsonProtocol
 
             return InvokeAsync<NullOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  OperationWithOptionalInputOutput
@@ -740,7 +727,6 @@ namespace Amazon.JsonProtocol
 
             return InvokeAsync<OperationWithOptionalInputOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAndGetInlineDocuments
@@ -774,7 +760,6 @@ namespace Amazon.JsonProtocol
 
             return InvokeAsync<PutAndGetInlineDocumentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutWithContentEncoding
@@ -808,7 +793,6 @@ namespace Amazon.JsonProtocol
 
             return InvokeAsync<PutWithContentEncodingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SimpleScalarProperties
@@ -842,7 +826,6 @@ namespace Amazon.JsonProtocol
 
             return InvokeAsync<SimpleScalarPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
     }

@@ -350,7 +350,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<AssociateCustomDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAutoScalingConfiguration
@@ -424,7 +423,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<CreateAutoScalingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConnection
@@ -484,7 +482,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<CreateConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateObservabilityConfiguration
@@ -555,7 +552,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<CreateObservabilityConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateService
@@ -614,7 +610,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<CreateServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVpcConnector
@@ -667,7 +662,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<CreateVpcConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVpcIngressConnection
@@ -722,7 +716,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<CreateVpcIngressConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAutoScalingConfiguration
@@ -770,7 +763,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<DeleteAutoScalingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnection
@@ -817,7 +809,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<DeleteConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteObservabilityConfiguration
@@ -864,7 +855,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<DeleteObservabilityConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteService
@@ -924,7 +914,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<DeleteServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVpcConnector
@@ -970,7 +959,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<DeleteVpcConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVpcIngressConnection
@@ -1038,7 +1026,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<DeleteVpcIngressConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAutoScalingConfiguration
@@ -1083,7 +1070,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<DescribeAutoScalingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCustomDomains
@@ -1129,7 +1115,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<DescribeCustomDomainsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeObservabilityConfiguration
@@ -1174,7 +1159,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<DescribeObservabilityConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeService
@@ -1219,7 +1203,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<DescribeServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVpcConnector
@@ -1264,7 +1247,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<DescribeVpcConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVpcIngressConnection
@@ -1309,7 +1291,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<DescribeVpcIngressConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateCustomDomain
@@ -1366,7 +1347,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<DisassociateCustomDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAutoScalingConfigurations
@@ -1416,7 +1396,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<ListAutoScalingConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConnections
@@ -1458,7 +1437,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<ListConnectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListObservabilityConfigurations
@@ -1508,7 +1486,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<ListObservabilityConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOperations
@@ -1559,7 +1536,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<ListOperationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServices
@@ -1600,7 +1576,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<ListServicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServicesForAutoScalingConfiguration
@@ -1645,7 +1620,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<ListServicesForAutoScalingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1694,7 +1668,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVpcConnectors
@@ -1735,7 +1708,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<ListVpcConnectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVpcIngressConnections
@@ -1776,7 +1748,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<ListVpcIngressConnectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PauseService
@@ -1831,7 +1802,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<PauseServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResumeService
@@ -1886,7 +1856,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<ResumeServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDeployment
@@ -1945,7 +1914,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<StartDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1994,7 +1962,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2042,7 +2009,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDefaultAutoScalingConfiguration
@@ -2088,7 +2054,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<UpdateDefaultAutoScalingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateService
@@ -2151,7 +2116,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<UpdateServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVpcIngressConnection
@@ -2214,7 +2178,6 @@ namespace Amazon.AppRunner
 
             return InvokeAsync<UpdateVpcIngressConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

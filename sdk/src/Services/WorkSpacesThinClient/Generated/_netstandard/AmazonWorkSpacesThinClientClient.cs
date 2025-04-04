@@ -333,7 +333,6 @@ namespace Amazon.WorkSpacesThinClient
 
             return InvokeAsync<CreateEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDevice
@@ -386,7 +385,6 @@ namespace Amazon.WorkSpacesThinClient
 
             return InvokeAsync<DeleteDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEnvironment
@@ -439,7 +437,6 @@ namespace Amazon.WorkSpacesThinClient
 
             return InvokeAsync<DeleteEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterDevice
@@ -492,7 +489,6 @@ namespace Amazon.WorkSpacesThinClient
 
             return InvokeAsync<DeregisterDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDevice
@@ -541,7 +537,6 @@ namespace Amazon.WorkSpacesThinClient
 
             return InvokeAsync<GetDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEnvironment
@@ -590,7 +585,6 @@ namespace Amazon.WorkSpacesThinClient
 
             return InvokeAsync<GetEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSoftwareSet
@@ -639,7 +633,6 @@ namespace Amazon.WorkSpacesThinClient
 
             return InvokeAsync<GetSoftwareSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDevices
@@ -685,7 +678,6 @@ namespace Amazon.WorkSpacesThinClient
 
             return InvokeAsync<ListDevicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnvironments
@@ -731,7 +723,6 @@ namespace Amazon.WorkSpacesThinClient
 
             return InvokeAsync<ListEnvironmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSoftwareSets
@@ -777,7 +768,6 @@ namespace Amazon.WorkSpacesThinClient
 
             return InvokeAsync<ListSoftwareSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -826,7 +816,6 @@ namespace Amazon.WorkSpacesThinClient
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -879,7 +868,6 @@ namespace Amazon.WorkSpacesThinClient
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -932,7 +920,6 @@ namespace Amazon.WorkSpacesThinClient
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDevice
@@ -981,7 +968,6 @@ namespace Amazon.WorkSpacesThinClient
 
             return InvokeAsync<UpdateDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEnvironment
@@ -1030,7 +1016,6 @@ namespace Amazon.WorkSpacesThinClient
 
             return InvokeAsync<UpdateEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSoftwareSet
@@ -1079,7 +1064,6 @@ namespace Amazon.WorkSpacesThinClient
 
             return InvokeAsync<UpdateSoftwareSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

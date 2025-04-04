@@ -30,7 +30,6 @@ namespace Amazon.CodeCommit
     /// <summary>
     /// Configuration for accessing Amazon CodeCommit service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCodeCommitConfig : ClientConfig
     {
         private static readonly string UserAgentString =

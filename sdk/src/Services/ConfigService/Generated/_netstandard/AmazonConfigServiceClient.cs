@@ -422,7 +422,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<AssociateResourceTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetAggregateResourceConfig
@@ -531,7 +530,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<BatchGetAggregateResourceConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetResourceConfig
@@ -643,7 +641,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<BatchGetResourceConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAggregationAuthorization
@@ -682,7 +679,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DeleteAggregationAuthorizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfigRule
@@ -801,7 +797,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DeleteConfigRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfigurationAggregator
@@ -839,7 +834,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DeleteConfigurationAggregatorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfigurationRecorder
@@ -912,7 +906,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DeleteConfigurationRecorderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConformancePack
@@ -996,7 +989,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DeleteConformancePackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDeliveryChannel
@@ -1076,7 +1068,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DeleteDeliveryChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEvaluationResults
@@ -1158,7 +1149,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DeleteEvaluationResultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOrganizationConfigRule
@@ -1284,7 +1274,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DeleteOrganizationConfigRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOrganizationConformancePack
@@ -1414,7 +1403,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DeleteOrganizationConformancePackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePendingAggregationRequest
@@ -1453,7 +1441,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DeletePendingAggregationRequestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRemediationConfiguration
@@ -1543,7 +1530,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DeleteRemediationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRemediationExceptions
@@ -1588,7 +1574,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DeleteRemediationExceptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourceConfig
@@ -1686,7 +1671,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DeleteResourceConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRetentionConfiguration
@@ -1727,7 +1711,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DeleteRetentionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServiceLinkedConfigurationRecorder
@@ -1878,7 +1861,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DeleteServiceLinkedConfigurationRecorderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStoredQuery
@@ -1975,7 +1957,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DeleteStoredQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeliverConfigSnapshot
@@ -2081,7 +2062,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DeliverConfigSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAggregateComplianceByConfigRules
@@ -2193,7 +2173,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeAggregateComplianceByConfigRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAggregateComplianceByConformancePacks
@@ -2307,7 +2286,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeAggregateComplianceByConformancePacksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAggregationAuthorizations
@@ -2352,7 +2330,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeAggregationAuthorizationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeComplianceByConfigRule
@@ -2431,7 +2408,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeComplianceByConfigRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeComplianceByResource
@@ -2506,7 +2482,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeComplianceByResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConfigRuleEvaluationStatus
@@ -2555,7 +2530,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeConfigRuleEvaluationStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConfigRules
@@ -2602,7 +2576,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeConfigRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConfigurationAggregators
@@ -2652,7 +2625,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeConfigurationAggregatorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConfigurationAggregatorSourcesStatus
@@ -2703,7 +2675,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeConfigurationAggregatorSourcesStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConfigurationRecorders
@@ -2902,7 +2873,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeConfigurationRecordersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConfigurationRecorderStatus
@@ -3113,7 +3083,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeConfigurationRecorderStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConformancePackCompliance
@@ -3170,7 +3139,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeConformancePackComplianceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConformancePacks
@@ -3218,7 +3186,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeConformancePacksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConformancePackStatus
@@ -3269,7 +3236,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeConformancePackStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDeliveryChannels
@@ -3344,7 +3310,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeDeliveryChannelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDeliveryChannelStatus
@@ -3419,7 +3384,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeDeliveryChannelStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOrganizationConfigRules
@@ -3526,7 +3490,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeOrganizationConfigRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOrganizationConfigRuleStatuses
@@ -3619,7 +3582,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeOrganizationConfigRuleStatusesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOrganizationConformancePacks
@@ -3731,7 +3693,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeOrganizationConformancePacksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOrganizationConformancePackStatuses
@@ -3828,7 +3789,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeOrganizationConformancePackStatusesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePendingAggregationRequests
@@ -3873,7 +3833,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribePendingAggregationRequestsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRemediationConfigurations
@@ -3907,7 +3866,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeRemediationConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRemediationExceptions
@@ -3969,7 +3927,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeRemediationExceptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRemediationExecutionStatus
@@ -4017,7 +3974,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeRemediationExecutionStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRetentionConfigurations
@@ -4070,7 +4026,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DescribeRetentionConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateResourceTypes
@@ -4210,7 +4165,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<DisassociateResourceTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAggregateComplianceDetailsByConfigRule
@@ -4323,7 +4277,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<GetAggregateComplianceDetailsByConfigRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAggregateConfigRuleComplianceSummary
@@ -4434,7 +4387,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<GetAggregateConfigRuleComplianceSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAggregateConformancePackComplianceSummary
@@ -4546,7 +4498,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<GetAggregateConformancePackComplianceSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAggregateDiscoveredResourceCounts
@@ -4658,7 +4609,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<GetAggregateDiscoveredResourceCountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAggregateResourceConfig
@@ -4767,7 +4717,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<GetAggregateResourceConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetComplianceDetailsByConfigRule
@@ -4816,7 +4765,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<GetComplianceDetailsByConfigRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetComplianceDetailsByResource
@@ -4856,7 +4804,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<GetComplianceDetailsByResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetComplianceSummaryByConfigRule
@@ -4891,7 +4838,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<GetComplianceSummaryByConfigRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetComplianceSummaryByResourceType
@@ -4931,7 +4877,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<GetComplianceSummaryByResourceTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConformancePackComplianceDetails
@@ -4983,7 +4928,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<GetConformancePackComplianceDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConformancePackComplianceSummary
@@ -5028,7 +4972,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<GetConformancePackComplianceSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCustomRulePolicy
@@ -5067,7 +5010,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<GetCustomRulePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDiscoveredResourceCounts
@@ -5226,7 +5168,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<GetDiscoveredResourceCountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOrganizationConfigRuleDetailedStatus
@@ -5307,7 +5248,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<GetOrganizationConfigRuleDetailedStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOrganizationConformancePackDetailedStatus
@@ -5392,7 +5332,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<GetOrganizationConformancePackDetailedStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOrganizationCustomRulePolicy
@@ -5466,7 +5405,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<GetOrganizationCustomRulePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceConfigHistory
@@ -5605,7 +5543,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<GetResourceConfigHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceEvaluationSummary
@@ -5655,7 +5592,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<GetResourceEvaluationSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStoredQuery
@@ -5751,7 +5687,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<GetStoredQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAggregateDiscoveredResources
@@ -5865,7 +5800,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<ListAggregateDiscoveredResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfigurationRecorders
@@ -5958,7 +5892,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<ListConfigurationRecordersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConformancePackComplianceScores
@@ -6014,7 +5947,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<ListConformancePackComplianceScoresResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDiscoveredResources
@@ -6136,7 +6068,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<ListDiscoveredResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceEvaluations
@@ -6182,7 +6113,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<ListResourceEvaluationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStoredQueries
@@ -6280,7 +6210,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<ListStoredQueriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -6383,7 +6312,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAggregationAuthorization
@@ -6442,7 +6370,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<PutAggregationAuthorizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutConfigRule
@@ -6644,7 +6571,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<PutConfigRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutConfigurationAggregator
@@ -6788,7 +6714,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<PutConfigurationAggregatorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutConfigurationRecorder
@@ -7011,7 +6936,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<PutConfigurationRecorderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutConformancePack
@@ -7158,7 +7082,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<PutConformancePackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDeliveryChannel
@@ -7241,7 +7164,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<PutDeliveryChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEvaluations
@@ -7288,7 +7210,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<PutEvaluationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutExternalEvaluation
@@ -7332,7 +7253,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<PutExternalEvaluationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutOrganizationConfigRule
@@ -7628,7 +7548,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<PutOrganizationConfigRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutOrganizationConformancePack
@@ -7893,7 +7812,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<PutOrganizationConformancePackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRemediationConfigurations
@@ -8032,7 +7950,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<PutRemediationConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRemediationExceptions
@@ -8183,7 +8100,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<PutRemediationExceptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourceConfig
@@ -8350,7 +8266,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<PutResourceConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRetentionConfiguration
@@ -8402,7 +8317,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<PutRetentionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutServiceLinkedConfigurationRecorder
@@ -8631,7 +8545,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<PutServiceLinkedConfigurationRecorderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutStoredQuery
@@ -8749,7 +8662,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<PutStoredQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SelectAggregateResourceConfig
@@ -8820,7 +8732,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<SelectAggregateResourceConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SelectResourceConfig
@@ -8871,7 +8782,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<SelectResourceConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartConfigRulesEvaluation
@@ -9019,7 +8929,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<StartConfigRulesEvaluationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartConfigurationRecorder
@@ -9155,7 +9064,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<StartConfigurationRecorderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartRemediationExecution
@@ -9249,7 +9157,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<StartRemediationExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartResourceEvaluation
@@ -9316,7 +9223,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<StartResourceEvaluationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopConfigurationRecorder
@@ -9434,7 +9340,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<StopConfigurationRecorderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -9539,7 +9444,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -9635,7 +9539,6 @@ namespace Amazon.ConfigService
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.LookoutforVision
     /// <summary>
     /// Configuration for accessing Amazon LookoutforVision service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonLookoutforVisionConfig : ClientConfig
     {
         private static readonly string UserAgentString =

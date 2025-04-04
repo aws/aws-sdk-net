@@ -30,7 +30,6 @@ namespace Amazon.Route53Profiles
     /// <summary>
     /// Configuration for accessing Amazon Route53Profiles service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonRoute53ProfilesConfig : ClientConfig
     {
         private static readonly string UserAgentString =

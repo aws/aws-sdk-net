@@ -331,7 +331,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<BatchGetCaseRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetField
@@ -382,7 +381,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<BatchGetFieldResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchPutFieldOptions
@@ -437,7 +435,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<BatchPutFieldOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCase
@@ -511,7 +508,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<CreateCaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCaseRule
@@ -574,7 +570,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<CreateCaseRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDomain
@@ -640,7 +635,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<CreateDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateField
@@ -701,7 +695,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<CreateFieldResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLayout
@@ -776,7 +769,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<CreateLayoutResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRelatedItem
@@ -849,7 +841,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<CreateRelatedItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTemplate
@@ -940,7 +931,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<CreateTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCaseRule
@@ -996,7 +986,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<DeleteCaseRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDomain
@@ -1057,7 +1046,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<DeleteDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteField
@@ -1178,7 +1166,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<DeleteFieldResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLayout
@@ -1241,7 +1228,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<DeleteLayoutResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTemplate
@@ -1304,7 +1290,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<DeleteTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCase
@@ -1355,7 +1340,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<GetCaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCaseAuditEvents
@@ -1406,7 +1390,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<GetCaseAuditEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCaseEventConfiguration
@@ -1457,7 +1440,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<GetCaseEventConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDomain
@@ -1508,7 +1490,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<GetDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLayout
@@ -1559,7 +1540,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<GetLayoutResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTemplate
@@ -1632,7 +1612,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<GetTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCaseRules
@@ -1686,7 +1665,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<ListCaseRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCasesForContact
@@ -1737,7 +1715,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<ListCasesForContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomains
@@ -1784,7 +1761,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<ListDomainsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFieldOptions
@@ -1835,7 +1811,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<ListFieldOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFields
@@ -1886,7 +1861,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<ListFieldsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLayouts
@@ -1938,7 +1912,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<ListLayoutsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1989,7 +1962,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTemplates
@@ -2067,7 +2039,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<ListTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutCaseEventConfiguration
@@ -2120,7 +2091,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<PutCaseEventConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchCases
@@ -2180,7 +2150,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<SearchCasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchRelatedItems
@@ -2237,7 +2206,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<SearchRelatedItemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2288,7 +2256,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2339,7 +2306,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCase
@@ -2404,7 +2370,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<UpdateCaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCaseRule
@@ -2463,7 +2428,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<UpdateCaseRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateField
@@ -2519,7 +2483,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<UpdateFieldResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLayout
@@ -2595,7 +2558,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<UpdateLayoutResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTemplate
@@ -2681,7 +2643,6 @@ namespace Amazon.ConnectCases
 
             return InvokeAsync<UpdateTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -338,7 +338,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<CreateMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateScope
@@ -399,7 +398,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<CreateScopeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMonitor
@@ -448,7 +446,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<DeleteMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteScope
@@ -500,7 +497,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<DeleteScopeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMonitor
@@ -551,7 +547,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<GetMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueryResultsMonitorTopContributors
@@ -617,7 +612,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<GetQueryResultsMonitorTopContributorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueryResultsWorkloadInsightsTopContributors
@@ -689,7 +683,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<GetQueryResultsWorkloadInsightsTopContributorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueryResultsWorkloadInsightsTopContributorsData
@@ -766,7 +759,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<GetQueryResultsWorkloadInsightsTopContributorsDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueryStatusMonitorTopContributors
@@ -830,7 +822,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<GetQueryStatusMonitorTopContributorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueryStatusWorkloadInsightsTopContributors
@@ -893,7 +884,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<GetQueryStatusWorkloadInsightsTopContributorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueryStatusWorkloadInsightsTopContributorsData
@@ -961,7 +951,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<GetQueryStatusWorkloadInsightsTopContributorsDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetScope
@@ -1014,7 +1003,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<GetScopeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMonitors
@@ -1061,7 +1049,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<ListMonitorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListScopes
@@ -1110,7 +1097,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<ListScopesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1162,7 +1148,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartQueryMonitorTopContributors
@@ -1219,7 +1204,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<StartQueryMonitorTopContributorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartQueryWorkloadInsightsTopContributors
@@ -1276,7 +1260,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<StartQueryWorkloadInsightsTopContributorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartQueryWorkloadInsightsTopContributorsData
@@ -1333,7 +1316,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<StartQueryWorkloadInsightsTopContributorsDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopQueryMonitorTopContributors
@@ -1390,7 +1372,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<StopQueryMonitorTopContributorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopQueryWorkloadInsightsTopContributors
@@ -1447,7 +1428,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<StopQueryWorkloadInsightsTopContributorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopQueryWorkloadInsightsTopContributorsData
@@ -1511,7 +1491,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<StopQueryWorkloadInsightsTopContributorsDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1563,7 +1542,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1615,7 +1593,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMonitor
@@ -1664,7 +1641,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<UpdateMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateScope
@@ -1718,7 +1694,6 @@ namespace Amazon.NetworkFlowMonitor
 
             return InvokeAsync<UpdateScopeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

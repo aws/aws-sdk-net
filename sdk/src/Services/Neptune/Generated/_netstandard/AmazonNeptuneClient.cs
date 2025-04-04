@@ -330,7 +330,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<AddRoleToDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddSourceIdentifierToSubscription
@@ -370,7 +369,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<AddSourceIdentifierToSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddTagsToResource
@@ -415,7 +413,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<AddTagsToResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ApplyPendingMaintenanceAction
@@ -452,7 +449,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<ApplyPendingMaintenanceActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyDBClusterParameterGroup
@@ -495,7 +491,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<CopyDBClusterParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyDBClusterSnapshot
@@ -553,7 +548,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<CopyDBClusterSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyDBParameterGroup
@@ -596,7 +590,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<CopyDBParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBCluster
@@ -702,7 +695,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<CreateDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBClusterEndpoint
@@ -754,7 +746,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<CreateDBClusterEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBClusterParameterGroup
@@ -824,7 +815,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<CreateDBClusterParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBClusterSnapshot
@@ -873,7 +863,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<CreateDBClusterSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBInstance
@@ -971,7 +960,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<CreateDBInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBParameterGroup
@@ -1035,7 +1023,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<CreateDBParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBSubnetGroup
@@ -1088,7 +1075,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<CreateDBSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEventSubscription
@@ -1164,7 +1150,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<CreateEventSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGlobalCluster
@@ -1222,7 +1207,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<CreateGlobalClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBCluster
@@ -1279,7 +1263,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DeleteDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBClusterEndpoint
@@ -1323,7 +1306,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DeleteDBClusterEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBClusterParameterGroup
@@ -1366,7 +1348,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DeleteDBClusterParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBClusterSnapshot
@@ -1413,7 +1394,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DeleteDBClusterSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBInstance
@@ -1484,7 +1464,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DeleteDBInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBParameterGroup
@@ -1527,7 +1506,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DeleteDBParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBSubnetGroup
@@ -1576,7 +1554,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DeleteDBSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventSubscription
@@ -1616,7 +1593,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DeleteEventSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGlobalCluster
@@ -1657,7 +1633,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DeleteGlobalClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBClusterEndpoints
@@ -1701,7 +1676,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DescribeDBClusterEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBClusterParameterGroups
@@ -1740,7 +1714,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DescribeDBClusterParameterGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBClusterParameters
@@ -1777,7 +1750,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DescribeDBClusterParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBClusters
@@ -1821,7 +1793,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DescribeDBClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBClusterSnapshotAttributes
@@ -1874,7 +1845,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DescribeDBClusterSnapshotAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBClusterSnapshots
@@ -1911,7 +1881,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DescribeDBClusterSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBEngineVersions
@@ -1945,7 +1914,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DescribeDBEngineVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBInstances
@@ -1989,7 +1957,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DescribeDBInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBParameterGroups
@@ -2028,7 +1995,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DescribeDBParameterGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBParameters
@@ -2065,7 +2031,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DescribeDBParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBSubnetGroups
@@ -2109,7 +2074,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DescribeDBSubnetGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEngineDefaultClusterParameters
@@ -2144,7 +2108,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DescribeEngineDefaultClusterParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEngineDefaultParameters
@@ -2179,7 +2142,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DescribeEngineDefaultParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventCategories
@@ -2214,7 +2176,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DescribeEventCategoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEvents
@@ -2251,7 +2212,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DescribeEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventSubscriptions
@@ -2295,7 +2255,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DescribeEventSubscriptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGlobalClusters
@@ -2332,7 +2291,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DescribeGlobalClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOrderableDBInstanceOptions
@@ -2366,7 +2324,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DescribeOrderableDBInstanceOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePendingMaintenanceActions
@@ -2404,7 +2361,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DescribePendingMaintenanceActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeValidDBInstanceModifications
@@ -2445,7 +2401,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<DescribeValidDBInstanceModificationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FailoverDBCluster
@@ -2502,7 +2457,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<FailoverDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FailoverGlobalCluster
@@ -2565,7 +2519,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<FailoverGlobalClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2608,7 +2561,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBCluster
@@ -2683,7 +2635,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<ModifyDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBClusterEndpoint
@@ -2733,7 +2684,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<ModifyDBClusterEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBClusterParameterGroup
@@ -2797,7 +2747,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<ModifyDBClusterParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBClusterSnapshotAttribute
@@ -2862,7 +2811,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<ModifyDBClusterSnapshotAttributeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBInstance
@@ -2955,7 +2903,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<ModifyDBInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBParameterGroup
@@ -3019,7 +2966,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<ModifyDBParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBSubnetGroup
@@ -3072,7 +3018,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<ModifyDBSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyEventSubscription
@@ -3133,7 +3078,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<ModifyEventSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyGlobalCluster
@@ -3175,7 +3119,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<ModifyGlobalClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PromoteReadReplicaDBCluster
@@ -3215,7 +3158,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<PromoteReadReplicaDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RebootDBInstance
@@ -3263,7 +3205,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<RebootDBInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveFromGlobalCluster
@@ -3308,7 +3249,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<RemoveFromGlobalClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveRoleFromDBCluster
@@ -3352,7 +3292,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<RemoveRoleFromDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveSourceIdentifierFromSubscription
@@ -3392,7 +3331,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<RemoveSourceIdentifierFromSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTagsFromResource
@@ -3435,7 +3373,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<RemoveTagsFromResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetDBClusterParameterGroup
@@ -3489,7 +3426,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<ResetDBClusterParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetDBParameterGroup
@@ -3536,7 +3472,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<ResetDBParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreDBClusterFromSnapshot
@@ -3637,7 +3572,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<RestoreDBClusterFromSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreDBClusterToPointInTime
@@ -3743,7 +3677,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<RestoreDBClusterToPointInTimeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDBCluster
@@ -3787,7 +3720,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<StartDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopDBCluster
@@ -3837,7 +3769,6 @@ namespace Amazon.Neptune
 
             return InvokeAsync<StopDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

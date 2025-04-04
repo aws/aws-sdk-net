@@ -308,7 +308,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<BatchDeleteBuildsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetBuildBatches
@@ -345,7 +344,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<BatchGetBuildBatchesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetBuilds
@@ -382,7 +380,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<BatchGetBuildsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetFleets
@@ -419,7 +416,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<BatchGetFleetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetProjects
@@ -456,7 +452,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<BatchGetProjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetReportGroups
@@ -493,7 +488,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<BatchGetReportGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetReports
@@ -530,7 +524,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<BatchGetReportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFleet
@@ -575,7 +568,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<CreateFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProject
@@ -620,7 +612,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<CreateProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateReportGroup
@@ -665,7 +656,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<CreateReportGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWebhook
@@ -726,7 +716,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<CreateWebhookResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBuildBatch
@@ -763,7 +752,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<DeleteBuildBatchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFleet
@@ -800,7 +788,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<DeleteFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProject
@@ -837,7 +824,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<DeleteProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReport
@@ -874,7 +860,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<DeleteReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReportGroup
@@ -911,7 +896,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<DeleteReportGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -948,7 +932,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSourceCredentials
@@ -988,7 +971,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<DeleteSourceCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWebhook
@@ -1033,7 +1015,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<DeleteWebhookResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCodeCoverages
@@ -1070,7 +1051,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<DescribeCodeCoveragesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTestCases
@@ -1110,7 +1090,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<DescribeTestCasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReportGroupTrend
@@ -1150,7 +1129,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<GetReportGroupTrendResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicy
@@ -1190,7 +1168,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportSourceCredentials
@@ -1237,7 +1214,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<ImportSourceCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InvalidateProjectCache
@@ -1277,7 +1253,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<InvalidateProjectCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBuildBatches
@@ -1314,7 +1289,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<ListBuildBatchesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBuildBatchesForProject
@@ -1354,7 +1328,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<ListBuildBatchesForProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBuilds
@@ -1391,7 +1364,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<ListBuildsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBuildsForProject
@@ -1432,7 +1404,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<ListBuildsForProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCuratedEnvironmentImages
@@ -1466,7 +1437,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<ListCuratedEnvironmentImagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFleets
@@ -1504,7 +1474,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<ListFleetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProjects
@@ -1542,7 +1511,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<ListProjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReportGroups
@@ -1579,7 +1547,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<ListReportGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReports
@@ -1616,7 +1583,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<ListReportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReportsForReportGroup
@@ -1656,7 +1622,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<ListReportsForReportGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSharedProjects
@@ -1694,7 +1659,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<ListSharedProjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSharedReportGroups
@@ -1732,7 +1696,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<ListSharedReportGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSourceCredentials
@@ -1769,7 +1732,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<ListSourceCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -1809,7 +1771,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RetryBuild
@@ -1853,7 +1814,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<RetryBuildResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RetryBuildBatch
@@ -1893,7 +1853,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<RetryBuildBatchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartBuild
@@ -1946,7 +1905,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<StartBuildResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartBuildBatch
@@ -1986,7 +1944,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<StartBuildBatchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopBuild
@@ -2026,7 +1983,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<StopBuildResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopBuildBatch
@@ -2066,7 +2022,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<StopBuildBatchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFleet
@@ -2110,7 +2065,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<UpdateFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProject
@@ -2150,7 +2104,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<UpdateProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProjectVisibility
@@ -2230,7 +2183,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<UpdateProjectVisibilityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateReportGroup
@@ -2270,7 +2222,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<UpdateReportGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWebhook
@@ -2319,7 +2270,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<UpdateWebhookResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

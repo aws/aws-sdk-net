@@ -30,7 +30,6 @@ namespace Amazon.RestXmlProtocolNamespace
     /// <summary>
     /// Configuration for accessing Amazon RestXmlProtocolNamespace service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonRestXmlProtocolNamespaceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

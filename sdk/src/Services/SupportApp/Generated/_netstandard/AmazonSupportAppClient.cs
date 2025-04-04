@@ -435,7 +435,6 @@ namespace Amazon.SupportApp
 
             return InvokeAsync<CreateSlackChannelConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccountAlias
@@ -481,7 +480,6 @@ namespace Amazon.SupportApp
 
             return InvokeAsync<DeleteAccountAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSlackChannelConfiguration
@@ -565,7 +563,6 @@ namespace Amazon.SupportApp
 
             return InvokeAsync<DeleteSlackChannelConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSlackWorkspaceConfiguration
@@ -649,7 +646,6 @@ namespace Amazon.SupportApp
 
             return InvokeAsync<DeleteSlackWorkspaceConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccountAlias
@@ -688,7 +684,6 @@ namespace Amazon.SupportApp
 
             return InvokeAsync<GetAccountAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSlackChannelConfigurations
@@ -728,7 +723,6 @@ namespace Amazon.SupportApp
 
             return InvokeAsync<ListSlackChannelConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSlackWorkspaceConfigurations
@@ -768,7 +762,6 @@ namespace Amazon.SupportApp
 
             return InvokeAsync<ListSlackWorkspaceConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAccountAlias
@@ -815,7 +808,6 @@ namespace Amazon.SupportApp
 
             return InvokeAsync<PutAccountAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterSlackWorkspaceForOrganization
@@ -942,7 +934,6 @@ namespace Amazon.SupportApp
 
             return InvokeAsync<RegisterSlackWorkspaceForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSlackChannelConfiguration
@@ -1025,7 +1016,6 @@ namespace Amazon.SupportApp
 
             return InvokeAsync<UpdateSlackChannelConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

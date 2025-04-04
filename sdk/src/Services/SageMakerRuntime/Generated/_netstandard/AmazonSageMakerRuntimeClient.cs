@@ -330,7 +330,6 @@ namespace Amazon.SageMakerRuntime
 
             return InvokeAsync<InvokeEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InvokeEndpointAsync
@@ -395,7 +394,6 @@ namespace Amazon.SageMakerRuntime
 
             return InvokeAsync<InvokeEndpointAsyncResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InvokeEndpointWithResponseStream
@@ -501,7 +499,6 @@ namespace Amazon.SageMakerRuntime
 
             return InvokeAsync<InvokeEndpointWithResponseStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

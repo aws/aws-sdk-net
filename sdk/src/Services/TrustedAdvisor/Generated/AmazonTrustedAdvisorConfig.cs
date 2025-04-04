@@ -30,7 +30,6 @@ namespace Amazon.TrustedAdvisor
     /// <summary>
     /// Configuration for accessing Amazon TrustedAdvisor service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonTrustedAdvisorConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -30,7 +30,6 @@ namespace Amazon.Imagebuilder
     /// <summary>
     /// Configuration for accessing Amazon Imagebuilder service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonImagebuilderConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -377,7 +377,6 @@ namespace Amazon.ARCZonalShift
 
             return InvokeAsync<CancelZonalShiftResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePracticeRunConfiguration
@@ -449,7 +448,6 @@ namespace Amazon.ARCZonalShift
 
             return InvokeAsync<CreatePracticeRunConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePracticeRunConfiguration
@@ -504,7 +502,6 @@ namespace Amazon.ARCZonalShift
 
             return InvokeAsync<DeletePracticeRunConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAutoshiftObserverNotificationStatus
@@ -563,7 +560,6 @@ namespace Amazon.ARCZonalShift
 
             return InvokeAsync<GetAutoshiftObserverNotificationStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetManagedResource
@@ -622,7 +618,6 @@ namespace Amazon.ARCZonalShift
 
             return InvokeAsync<GetManagedResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAutoshifts
@@ -670,7 +665,6 @@ namespace Amazon.ARCZonalShift
 
             return InvokeAsync<ListAutoshiftsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListManagedResources
@@ -720,7 +714,6 @@ namespace Amazon.ARCZonalShift
 
             return InvokeAsync<ListManagedResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListZonalShifts
@@ -775,7 +768,6 @@ namespace Amazon.ARCZonalShift
 
             return InvokeAsync<ListZonalShiftsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartZonalShift
@@ -852,7 +844,6 @@ namespace Amazon.ARCZonalShift
 
             return InvokeAsync<StartZonalShiftResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAutoshiftObserverNotificationStatus
@@ -914,7 +905,6 @@ namespace Amazon.ARCZonalShift
 
             return InvokeAsync<UpdateAutoshiftObserverNotificationStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePracticeRunConfiguration
@@ -969,7 +959,6 @@ namespace Amazon.ARCZonalShift
 
             return InvokeAsync<UpdatePracticeRunConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateZonalAutoshiftConfiguration
@@ -1036,7 +1025,6 @@ namespace Amazon.ARCZonalShift
 
             return InvokeAsync<UpdateZonalAutoshiftConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateZonalShift
@@ -1091,7 +1079,6 @@ namespace Amazon.ARCZonalShift
 
             return InvokeAsync<UpdateZonalShiftResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

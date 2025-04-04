@@ -355,7 +355,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<AssociateAssessmentReportEvidenceFolderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchAssociateAssessmentReportEvidence
@@ -403,7 +402,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<BatchAssociateAssessmentReportEvidenceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchCreateDelegationByAssessment
@@ -451,7 +449,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<BatchCreateDelegationByAssessmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteDelegationByAssessment
@@ -499,7 +496,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<BatchDeleteDelegationByAssessmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDisassociateAssessmentReportEvidence
@@ -547,7 +543,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<BatchDisassociateAssessmentReportEvidenceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchImportEvidenceToAssessmentControl
@@ -632,7 +627,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<BatchImportEvidenceToAssessmentControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAssessment
@@ -690,7 +684,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<CreateAssessmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAssessmentFramework
@@ -745,7 +738,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<CreateAssessmentFrameworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAssessmentReport
@@ -793,7 +785,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<CreateAssessmentReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateControl
@@ -848,7 +839,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<CreateControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAssessment
@@ -896,7 +886,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<DeleteAssessmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAssessmentFramework
@@ -944,7 +933,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<DeleteAssessmentFrameworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAssessmentFrameworkShare
@@ -992,7 +980,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<DeleteAssessmentFrameworkShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAssessmentReport
@@ -1073,7 +1060,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<DeleteAssessmentReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteControl
@@ -1130,7 +1116,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<DeleteControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterAccount
@@ -1192,7 +1177,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<DeregisterAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterOrganizationAdminAccount
@@ -1321,7 +1305,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<DeregisterOrganizationAdminAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateAssessmentReportEvidenceFolder
@@ -1369,7 +1352,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<DisassociateAssessmentReportEvidenceFolderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccountStatus
@@ -1407,7 +1389,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<GetAccountStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAssessment
@@ -1455,7 +1436,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<GetAssessmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAssessmentFramework
@@ -1503,7 +1483,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<GetAssessmentFrameworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAssessmentReportUrl
@@ -1551,7 +1530,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<GetAssessmentReportUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetChangeLogs
@@ -1599,7 +1577,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<GetChangeLogsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetControl
@@ -1647,7 +1624,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<GetControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDelegations
@@ -1692,7 +1668,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<GetDelegationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEvidence
@@ -1740,7 +1715,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<GetEvidenceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEvidenceByEvidenceFolder
@@ -1788,7 +1762,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<GetEvidenceByEvidenceFolderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEvidenceFileUploadUrl
@@ -1861,7 +1834,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<GetEvidenceFileUploadUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEvidenceFolder
@@ -1909,7 +1881,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<GetEvidenceFolderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEvidenceFoldersByAssessment
@@ -1957,7 +1928,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<GetEvidenceFoldersByAssessmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEvidenceFoldersByAssessmentControl
@@ -2006,7 +1976,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<GetEvidenceFoldersByAssessmentControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInsights
@@ -2048,7 +2017,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<GetInsightsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInsightsByAssessment
@@ -2096,7 +2064,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<GetInsightsByAssessmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOrganizationAdminAccount
@@ -2145,7 +2112,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<GetOrganizationAdminAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServicesInScope
@@ -2207,7 +2173,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<GetServicesInScopeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSettings
@@ -2249,7 +2214,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<GetSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssessmentControlInsightsByControlDomain
@@ -2307,7 +2271,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<ListAssessmentControlInsightsByControlDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssessmentFrameworks
@@ -2353,7 +2316,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<ListAssessmentFrameworksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssessmentFrameworkShareRequests
@@ -2399,7 +2361,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<ListAssessmentFrameworkShareRequestsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssessmentReports
@@ -2444,7 +2405,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<ListAssessmentReportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssessments
@@ -2489,7 +2449,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<ListAssessmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListControlDomainInsights
@@ -2553,7 +2512,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<ListControlDomainInsightsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListControlDomainInsightsByAssessment
@@ -2616,7 +2574,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<ListControlDomainInsightsByAssessmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListControlInsightsByControlDomain
@@ -2674,7 +2631,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<ListControlInsightsByControlDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListControls
@@ -2719,7 +2675,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<ListControlsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKeywordsForDataSource
@@ -2764,7 +2719,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<ListKeywordsForDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNotifications
@@ -2809,7 +2763,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<ListNotificationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2853,7 +2806,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterAccount
@@ -2904,7 +2856,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<RegisterAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterOrganizationAdminAccount
@@ -2953,7 +2904,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<RegisterOrganizationAdminAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartAssessmentFrameworkShare
@@ -3058,7 +3008,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<StartAssessmentFrameworkShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3102,7 +3051,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3146,7 +3094,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAssessment
@@ -3197,7 +3144,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<UpdateAssessmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAssessmentControl
@@ -3245,7 +3191,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<UpdateAssessmentControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAssessmentControlSetStatus
@@ -3293,7 +3238,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<UpdateAssessmentControlSetStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAssessmentFramework
@@ -3341,7 +3285,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<UpdateAssessmentFrameworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAssessmentFrameworkShare
@@ -3396,7 +3339,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<UpdateAssessmentFrameworkShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAssessmentStatus
@@ -3451,7 +3393,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<UpdateAssessmentStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateControl
@@ -3499,7 +3440,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<UpdateControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSettings
@@ -3544,7 +3484,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<UpdateSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ValidateAssessmentReportIntegrity
@@ -3592,7 +3531,6 @@ namespace Amazon.AuditManager
 
             return InvokeAsync<ValidateAssessmentReportIntegrityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

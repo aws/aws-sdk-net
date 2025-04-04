@@ -30,7 +30,6 @@ namespace Amazon.BackupGateway
     /// <summary>
     /// Configuration for accessing Amazon BackupGateway service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonBackupGatewayConfig : ClientConfig
     {
         private static readonly string UserAgentString =

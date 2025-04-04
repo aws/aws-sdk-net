@@ -325,7 +325,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<AssociateServiceRoleToAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchAssociateClientDeviceWithCoreDevice
@@ -390,7 +389,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<BatchAssociateClientDeviceWithCoreDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDisassociateClientDeviceFromCoreDevice
@@ -443,7 +441,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<BatchDisassociateClientDeviceFromCoreDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelDeployment
@@ -500,7 +497,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<CancelDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateComponentVersion
@@ -612,7 +608,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<CreateComponentVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDeployment
@@ -692,7 +687,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<CreateDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteComponent
@@ -756,7 +750,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<DeleteComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCoreDevice
@@ -814,7 +807,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<DeleteCoreDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDeployment
@@ -877,7 +869,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<DeleteDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeComponent
@@ -928,7 +919,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<DescribeComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateServiceRoleFromAccount
@@ -969,7 +959,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<DisassociateServiceRoleFromAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetComponent
@@ -1020,7 +1009,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<GetComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetComponentVersionArtifact
@@ -1073,7 +1061,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<GetComponentVersionArtifactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConnectivityInfo
@@ -1124,7 +1111,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<GetConnectivityInfoResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCoreDevice
@@ -1211,7 +1197,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<GetCoreDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeployment
@@ -1262,7 +1247,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<GetDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceRoleForAccount
@@ -1303,7 +1287,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<GetServiceRoleForAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClientDevicesAssociatedWithCoreDevice
@@ -1354,7 +1337,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<ListClientDevicesAssociatedWithCoreDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListComponents
@@ -1406,7 +1388,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<ListComponentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListComponentVersions
@@ -1458,7 +1439,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<ListComponentVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCoreDevices
@@ -1549,7 +1529,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<ListCoreDevicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeployments
@@ -1597,7 +1576,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<ListDeploymentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEffectiveDeployments
@@ -1649,7 +1627,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<ListEffectiveDeploymentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInstalledComponents
@@ -1739,7 +1716,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<ListInstalledComponentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1783,7 +1759,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResolveComponentCandidates
@@ -1862,7 +1837,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<ResolveComponentCandidatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1907,7 +1881,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1951,7 +1924,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConnectivityInfo
@@ -2002,7 +1974,6 @@ namespace Amazon.GreengrassV2
 
             return InvokeAsync<UpdateConnectivityInfoResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

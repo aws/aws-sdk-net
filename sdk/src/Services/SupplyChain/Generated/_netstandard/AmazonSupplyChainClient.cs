@@ -339,7 +339,6 @@ namespace Amazon.SupplyChain
 
             return InvokeAsync<CreateBillOfMaterialsImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataIntegrationFlow
@@ -397,7 +396,6 @@ namespace Amazon.SupplyChain
 
             return InvokeAsync<CreateDataIntegrationFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataLakeDataset
@@ -454,7 +452,6 @@ namespace Amazon.SupplyChain
 
             return InvokeAsync<CreateDataLakeDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInstance
@@ -522,7 +519,6 @@ namespace Amazon.SupplyChain
 
             return InvokeAsync<CreateInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataIntegrationFlow
@@ -578,7 +574,6 @@ namespace Amazon.SupplyChain
 
             return InvokeAsync<DeleteDataIntegrationFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataLakeDataset
@@ -635,7 +630,6 @@ namespace Amazon.SupplyChain
 
             return InvokeAsync<DeleteDataLakeDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInstance
@@ -701,7 +695,6 @@ namespace Amazon.SupplyChain
 
             return InvokeAsync<DeleteInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBillOfMaterialsImportJob
@@ -756,7 +749,6 @@ namespace Amazon.SupplyChain
 
             return InvokeAsync<GetBillOfMaterialsImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataIntegrationFlow
@@ -812,7 +804,6 @@ namespace Amazon.SupplyChain
 
             return InvokeAsync<GetDataIntegrationFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataLakeDataset
@@ -869,7 +860,6 @@ namespace Amazon.SupplyChain
 
             return InvokeAsync<GetDataLakeDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInstance
@@ -925,7 +915,6 @@ namespace Amazon.SupplyChain
 
             return InvokeAsync<GetInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataIntegrationFlows
@@ -981,7 +970,6 @@ namespace Amazon.SupplyChain
 
             return InvokeAsync<ListDataIntegrationFlowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataLakeDatasets
@@ -1038,7 +1026,6 @@ namespace Amazon.SupplyChain
 
             return InvokeAsync<ListDataLakeDatasetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInstances
@@ -1095,7 +1082,6 @@ namespace Amazon.SupplyChain
 
             return InvokeAsync<ListInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1153,7 +1139,6 @@ namespace Amazon.SupplyChain
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendDataIntegrationEvent
@@ -1212,7 +1197,6 @@ namespace Amazon.SupplyChain
 
             return InvokeAsync<SendDataIntegrationEventResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1271,7 +1255,6 @@ namespace Amazon.SupplyChain
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1329,7 +1312,6 @@ namespace Amazon.SupplyChain
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataIntegrationFlow
@@ -1387,7 +1369,6 @@ namespace Amazon.SupplyChain
 
             return InvokeAsync<UpdateDataIntegrationFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataLakeDataset
@@ -1444,7 +1425,6 @@ namespace Amazon.SupplyChain
 
             return InvokeAsync<UpdateDataLakeDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInstance
@@ -1501,7 +1481,6 @@ namespace Amazon.SupplyChain
 
             return InvokeAsync<UpdateInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

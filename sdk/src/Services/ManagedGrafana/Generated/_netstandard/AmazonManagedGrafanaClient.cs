@@ -325,7 +325,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<AssociateLicenseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkspace
@@ -385,7 +384,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<CreateWorkspaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkspaceApiKey
@@ -449,7 +447,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<CreateWorkspaceApiKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkspaceServiceAccount
@@ -525,7 +522,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<CreateWorkspaceServiceAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkspaceServiceAccountToken
@@ -599,7 +595,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<CreateWorkspaceServiceAccountTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkspace
@@ -651,7 +646,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<DeleteWorkspaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkspaceApiKey
@@ -710,7 +704,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<DeleteWorkspaceApiKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkspaceServiceAccount
@@ -773,7 +766,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<DeleteWorkspaceServiceAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkspaceServiceAccountToken
@@ -837,7 +829,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<DeleteWorkspaceServiceAccountTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkspace
@@ -886,7 +877,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<DescribeWorkspaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkspaceAuthentication
@@ -939,7 +929,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<DescribeWorkspaceAuthenticationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkspaceConfiguration
@@ -985,7 +974,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<DescribeWorkspaceConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateLicense
@@ -1034,7 +1022,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<DisassociateLicenseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPermissions
@@ -1087,7 +1074,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<ListPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1138,7 +1124,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVersions
@@ -1188,7 +1173,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<ListVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkspaces
@@ -1232,7 +1216,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<ListWorkspacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkspaceServiceAccounts
@@ -1290,7 +1273,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<ListWorkspaceServiceAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkspaceServiceAccountTokens
@@ -1353,7 +1335,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<ListWorkspaceServiceAccountTokensResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1411,7 +1392,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1461,7 +1441,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePermissions
@@ -1511,7 +1490,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<UpdatePermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkspace
@@ -1575,7 +1553,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<UpdateWorkspaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkspaceAuthentication
@@ -1637,7 +1614,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<UpdateWorkspaceAuthenticationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkspaceConfiguration
@@ -1689,7 +1665,6 @@ namespace Amazon.ManagedGrafana
 
             return InvokeAsync<UpdateWorkspaceConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

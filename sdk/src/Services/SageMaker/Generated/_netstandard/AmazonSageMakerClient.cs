@@ -321,7 +321,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<AddAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddTags
@@ -387,7 +386,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<AddTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateTrialComponent
@@ -430,7 +428,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<AssociateTrialComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteClusterNodes
@@ -485,7 +482,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<BatchDeleteClusterNodesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDescribeModelPackage
@@ -519,7 +515,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<BatchDescribeModelPackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAction
@@ -560,7 +555,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAlgorithm
@@ -595,7 +589,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateAlgorithmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApp
@@ -639,7 +632,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAppImageConfig
@@ -678,7 +670,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateAppImageConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateArtifact
@@ -719,7 +710,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateArtifactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAutoMLJob
@@ -803,7 +793,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateAutoMLJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAutoMLJobV2
@@ -900,7 +889,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateAutoMLJobV2Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCluster
@@ -945,7 +933,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateClusterSchedulerConfig
@@ -989,7 +976,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateClusterSchedulerConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCodeRepository
@@ -1033,7 +1019,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateCodeRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCompilationJob
@@ -1117,7 +1102,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateCompilationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateComputeQuota
@@ -1161,7 +1145,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateComputeQuotaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateContext
@@ -1202,7 +1185,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateContextResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataQualityJobDefinition
@@ -1245,7 +1227,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateDataQualityJobDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDeviceFleet
@@ -1286,7 +1267,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateDeviceFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDomain
@@ -1387,7 +1367,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEdgeDeploymentPlan
@@ -1426,7 +1405,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateEdgeDeploymentPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEdgeDeploymentStage
@@ -1464,7 +1442,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateEdgeDeploymentStageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEdgePackagingJob
@@ -1505,7 +1482,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateEdgePackagingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEndpoint
@@ -1644,7 +1620,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEndpointConfig
@@ -1722,7 +1697,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateEndpointConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateExperiment
@@ -1800,7 +1774,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateExperimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFeatureGroup
@@ -1863,7 +1836,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateFeatureGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFlowDefinition
@@ -1904,7 +1876,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateFlowDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateHub
@@ -1945,7 +1916,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateHubResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateHubContentReference
@@ -1990,7 +1960,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateHubContentReferenceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateHumanTaskUi
@@ -2033,7 +2002,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateHumanTaskUiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateHyperParameterTuningJob
@@ -2094,7 +2062,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateHyperParameterTuningJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateImage
@@ -2138,7 +2105,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateImageVersion
@@ -2183,7 +2149,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateImageVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInferenceComponent
@@ -2228,7 +2193,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateInferenceComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInferenceExperiment
@@ -2289,7 +2253,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateInferenceExperimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInferenceRecommendationsJob
@@ -2331,7 +2294,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateInferenceRecommendationsJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLabelingJob
@@ -2427,7 +2389,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateLabelingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMlflowTrackingServer
@@ -2467,7 +2428,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateMlflowTrackingServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateModel
@@ -2535,7 +2495,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateModelBiasJobDefinition
@@ -2576,7 +2535,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateModelBiasJobDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateModelCard
@@ -2624,7 +2582,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateModelCardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateModelCardExportJob
@@ -2669,7 +2626,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateModelCardExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateModelExplainabilityJobDefinition
@@ -2710,7 +2666,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateModelExplainabilityJobDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateModelPackage
@@ -2776,7 +2731,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateModelPackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateModelPackageGroup
@@ -2814,7 +2768,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateModelPackageGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateModelQualityJobDefinition
@@ -2857,7 +2810,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateModelQualityJobDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMonitoringSchedule
@@ -2899,7 +2851,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateMonitoringScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNotebookInstance
@@ -2991,7 +2942,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateNotebookInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNotebookInstanceLifecycleConfig
@@ -3057,7 +3007,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateNotebookInstanceLifecycleConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOptimizationJob
@@ -3108,7 +3057,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateOptimizationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePartnerApp
@@ -3150,7 +3098,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreatePartnerAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePartnerAppPresignedUrl
@@ -3187,7 +3134,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreatePartnerAppPresignedUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePipeline
@@ -3232,7 +3178,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreatePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePresignedDomainUrl
@@ -3300,7 +3245,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreatePresignedDomainUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePresignedMlflowTrackingServerUrl
@@ -3339,7 +3283,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreatePresignedMlflowTrackingServerUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePresignedNotebookInstanceUrl
@@ -3400,7 +3343,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreatePresignedNotebookInstanceUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProcessingJob
@@ -3444,7 +3386,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateProcessingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProject
@@ -3483,7 +3424,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSpace
@@ -3524,7 +3464,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateSpaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStudioLifecycleConfig
@@ -3561,7 +3500,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateStudioLifecycleConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTrainingJob
@@ -3686,7 +3624,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateTrainingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTrainingPlan
@@ -3803,7 +3740,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateTrainingPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTransformJob
@@ -3889,7 +3825,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateTransformJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTrial
@@ -3951,7 +3886,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateTrialResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTrialComponent
@@ -4008,7 +3942,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateTrialComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUserProfile
@@ -4055,7 +3988,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateUserProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkforce
@@ -4115,7 +4047,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateWorkforceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkteam
@@ -4163,7 +4094,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<CreateWorkteamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAction
@@ -4200,7 +4130,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAlgorithm
@@ -4238,7 +4167,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteAlgorithmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApp
@@ -4278,7 +4206,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAppImageConfig
@@ -4315,7 +4242,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteAppImageConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteArtifact
@@ -4352,7 +4278,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteArtifactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAssociation
@@ -4389,7 +4314,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCluster
@@ -4430,7 +4354,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteClusterSchedulerConfig
@@ -4467,7 +4390,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteClusterSchedulerConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCodeRepository
@@ -4501,7 +4423,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteCodeRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCompilationJob
@@ -4548,7 +4469,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteCompilationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteComputeQuota
@@ -4585,7 +4505,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteComputeQuotaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteContext
@@ -4622,7 +4541,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteContextResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataQualityJobDefinition
@@ -4659,7 +4577,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteDataQualityJobDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDeviceFleet
@@ -4696,7 +4613,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteDeviceFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDomain
@@ -4739,7 +4655,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEdgeDeploymentPlan
@@ -4777,7 +4692,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteEdgeDeploymentPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEdgeDeploymentStage
@@ -4814,7 +4728,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteEdgeDeploymentStageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEndpoint
@@ -4864,7 +4777,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEndpointConfig
@@ -4909,7 +4821,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteEndpointConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteExperiment
@@ -4948,7 +4859,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteExperimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFeatureGroup
@@ -4999,7 +4909,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteFeatureGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFlowDefinition
@@ -5039,7 +4948,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteFlowDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteHub
@@ -5079,7 +4987,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteHubResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteHubContent
@@ -5119,7 +5026,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteHubContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteHubContentReference
@@ -5156,7 +5062,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteHubContentReferenceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteHumanTaskUi
@@ -5200,7 +5105,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteHumanTaskUiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteHyperParameterTuningJob
@@ -5237,7 +5141,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteHyperParameterTuningJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteImage
@@ -5278,7 +5181,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteImageVersion
@@ -5319,7 +5221,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteImageVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInferenceComponent
@@ -5353,7 +5254,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteInferenceComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInferenceExperiment
@@ -5401,7 +5301,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteInferenceExperimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMlflowTrackingServer
@@ -5439,7 +5338,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteMlflowTrackingServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteModel
@@ -5476,7 +5374,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteModelBiasJobDefinition
@@ -5513,7 +5410,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteModelBiasJobDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteModelCard
@@ -5554,7 +5450,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteModelCardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteModelExplainabilityJobDefinition
@@ -5591,7 +5486,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteModelExplainabilityJobDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteModelPackage
@@ -5636,7 +5530,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteModelPackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteModelPackageGroup
@@ -5674,7 +5567,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteModelPackageGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteModelPackageGroupPolicy
@@ -5708,7 +5600,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteModelPackageGroupPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteModelQualityJobDefinition
@@ -5745,7 +5636,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteModelQualityJobDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMonitoringSchedule
@@ -5783,7 +5673,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteMonitoringScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNotebookInstance
@@ -5826,7 +5715,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteNotebookInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNotebookInstanceLifecycleConfig
@@ -5860,7 +5748,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteNotebookInstanceLifecycleConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOptimizationJob
@@ -5897,7 +5784,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteOptimizationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePartnerApp
@@ -5938,7 +5824,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeletePartnerAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePipeline
@@ -5981,7 +5866,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeletePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProject
@@ -6019,7 +5903,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSpace
@@ -6059,7 +5942,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteSpaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStudioLifecycleConfig
@@ -6102,7 +5984,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteStudioLifecycleConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTags
@@ -6154,7 +6035,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTrial
@@ -6193,7 +6073,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteTrialResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTrialComponent
@@ -6233,7 +6112,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteTrialComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUserProfile
@@ -6274,7 +6152,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteUserProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkforce
@@ -6324,7 +6201,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteWorkforceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkteam
@@ -6362,7 +6238,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeleteWorkteamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterDevices
@@ -6397,7 +6272,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DeregisterDevicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAction
@@ -6434,7 +6308,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAlgorithm
@@ -6468,7 +6341,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeAlgorithmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApp
@@ -6505,7 +6377,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAppImageConfig
@@ -6542,7 +6413,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeAppImageConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeArtifact
@@ -6579,7 +6449,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeArtifactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAutoMLJob
@@ -6623,7 +6492,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeAutoMLJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAutoMLJobV2
@@ -6661,7 +6529,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeAutoMLJobV2Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCluster
@@ -6698,7 +6565,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClusterNode
@@ -6736,7 +6602,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeClusterNodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClusterSchedulerConfig
@@ -6775,7 +6640,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeClusterSchedulerConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCodeRepository
@@ -6809,7 +6673,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeCodeRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCompilationJob
@@ -6852,7 +6715,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeCompilationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeComputeQuota
@@ -6889,7 +6751,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeComputeQuotaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeContext
@@ -6926,7 +6787,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeContextResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataQualityJobDefinition
@@ -6963,7 +6823,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeDataQualityJobDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDevice
@@ -7000,7 +6859,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDeviceFleet
@@ -7037,7 +6895,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeDeviceFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDomain
@@ -7074,7 +6931,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEdgeDeploymentPlan
@@ -7111,7 +6967,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeEdgeDeploymentPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEdgePackagingJob
@@ -7148,7 +7003,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeEdgePackagingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEndpoint
@@ -7182,7 +7036,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEndpointConfig
@@ -7217,7 +7070,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeEndpointConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeExperiment
@@ -7254,7 +7106,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeExperimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFeatureGroup
@@ -7293,7 +7144,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeFeatureGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFeatureMetadata
@@ -7330,7 +7180,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeFeatureMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFlowDefinition
@@ -7367,7 +7216,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeFlowDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeHub
@@ -7404,7 +7252,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeHubResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeHubContent
@@ -7441,7 +7288,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeHubContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeHumanTaskUi
@@ -7478,7 +7324,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeHumanTaskUiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeHyperParameterTuningJob
@@ -7517,7 +7362,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeHyperParameterTuningJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeImage
@@ -7554,7 +7398,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeImageVersion
@@ -7591,7 +7434,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeImageVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInferenceComponent
@@ -7625,7 +7467,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeInferenceComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInferenceExperiment
@@ -7662,7 +7503,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeInferenceExperimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInferenceRecommendationsJob
@@ -7700,7 +7540,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeInferenceRecommendationsJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLabelingJob
@@ -7737,7 +7576,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeLabelingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLineageGroup
@@ -7776,7 +7614,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeLineageGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMlflowTrackingServer
@@ -7813,7 +7650,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeMlflowTrackingServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeModel
@@ -7847,7 +7683,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeModelBiasJobDefinition
@@ -7884,7 +7719,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeModelBiasJobDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeModelCard
@@ -7922,7 +7756,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeModelCardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeModelCardExportJob
@@ -7959,7 +7792,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeModelCardExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeModelExplainabilityJobDefinition
@@ -7996,7 +7828,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeModelExplainabilityJobDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeModelPackage
@@ -8043,7 +7874,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeModelPackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeModelPackageGroup
@@ -8077,7 +7907,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeModelPackageGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeModelQualityJobDefinition
@@ -8114,7 +7943,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeModelQualityJobDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMonitoringSchedule
@@ -8151,7 +7979,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeMonitoringScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeNotebookInstance
@@ -8185,7 +8012,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeNotebookInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeNotebookInstanceLifecycleConfig
@@ -8225,7 +8051,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeNotebookInstanceLifecycleConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOptimizationJob
@@ -8262,7 +8087,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeOptimizationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePartnerApp
@@ -8299,7 +8123,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribePartnerAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePipeline
@@ -8336,7 +8159,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePipelineDefinitionForExecution
@@ -8373,7 +8195,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribePipelineDefinitionForExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePipelineExecution
@@ -8410,7 +8231,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribePipelineExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProcessingJob
@@ -8447,7 +8267,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeProcessingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProject
@@ -8481,7 +8300,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSpace
@@ -8518,7 +8336,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeSpaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStudioLifecycleConfig
@@ -8555,7 +8372,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeStudioLifecycleConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSubscribedWorkteam
@@ -8590,7 +8406,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeSubscribedWorkteamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTrainingJob
@@ -8636,7 +8451,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeTrainingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTrainingPlan
@@ -8673,7 +8487,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeTrainingPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTransformJob
@@ -8710,7 +8523,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeTransformJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTrial
@@ -8747,7 +8559,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeTrialResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTrialComponent
@@ -8784,7 +8595,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeTrialComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUserProfile
@@ -8825,7 +8635,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeUserProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkforce
@@ -8868,7 +8677,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeWorkforceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkteam
@@ -8904,7 +8712,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DescribeWorkteamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableSagemakerServicecatalogPortfolio
@@ -8939,7 +8746,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DisableSagemakerServicecatalogPortfolioResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateTrialComponent
@@ -8987,7 +8793,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<DisassociateTrialComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableSagemakerServicecatalogPortfolio
@@ -9022,7 +8827,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<EnableSagemakerServicecatalogPortfolioResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeviceFleetReport
@@ -9056,7 +8860,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<GetDeviceFleetReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLineageGroupPolicy
@@ -9093,7 +8896,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<GetLineageGroupPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetModelPackageGroupPolicy
@@ -9130,7 +8932,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<GetModelPackageGroupPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSagemakerServicecatalogPortfolioStatus
@@ -9165,7 +8966,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<GetSagemakerServicecatalogPortfolioStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetScalingConfigurationRecommendation
@@ -9203,7 +9003,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<GetScalingConfigurationRecommendationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSearchSuggestions
@@ -9239,7 +9038,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<GetSearchSuggestionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportHubContent
@@ -9283,7 +9081,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ImportHubContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListActions
@@ -9320,7 +9117,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAlgorithms
@@ -9354,7 +9150,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListAlgorithmsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAliases
@@ -9391,7 +9186,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListAliasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAppImageConfigs
@@ -9427,7 +9221,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListAppImageConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApps
@@ -9461,7 +9254,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListAppsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListArtifacts
@@ -9498,7 +9290,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListArtifactsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssociations
@@ -9535,7 +9326,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAutoMLJobs
@@ -9569,7 +9359,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListAutoMLJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCandidatesForAutoMLJob
@@ -9606,7 +9395,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListCandidatesForAutoMLJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClusterNodes
@@ -9644,7 +9432,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListClusterNodesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClusters
@@ -9678,7 +9465,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClusterSchedulerConfigs
@@ -9712,7 +9498,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListClusterSchedulerConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCodeRepositories
@@ -9746,7 +9531,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListCodeRepositoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCompilationJobs
@@ -9787,7 +9571,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListCompilationJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListComputeQuotas
@@ -9821,7 +9604,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListComputeQuotasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContexts
@@ -9858,7 +9640,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListContextsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataQualityJobDefinitions
@@ -9892,7 +9673,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListDataQualityJobDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeviceFleets
@@ -9926,7 +9706,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListDeviceFleetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDevices
@@ -9960,7 +9739,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListDevicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomains
@@ -9994,7 +9772,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListDomainsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEdgeDeploymentPlans
@@ -10028,7 +9805,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListEdgeDeploymentPlansResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEdgePackagingJobs
@@ -10062,7 +9838,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListEdgePackagingJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEndpointConfigs
@@ -10096,7 +9871,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListEndpointConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEndpoints
@@ -10130,7 +9904,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExperiments
@@ -10166,7 +9939,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListExperimentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFeatureGroups
@@ -10200,7 +9972,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListFeatureGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFlowDefinitions
@@ -10234,7 +10005,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListFlowDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHubContents
@@ -10271,7 +10041,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListHubContentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHubContentVersions
@@ -10308,7 +10077,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListHubContentVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHubs
@@ -10342,7 +10110,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListHubsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHumanTaskUis
@@ -10376,7 +10143,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListHumanTaskUisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHyperParameterTuningJobs
@@ -10411,7 +10177,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListHyperParameterTuningJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImages
@@ -10446,7 +10211,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListImagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImageVersions
@@ -10484,7 +10248,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListImageVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInferenceComponents
@@ -10518,7 +10281,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListInferenceComponentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInferenceExperiments
@@ -10552,7 +10314,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListInferenceExperimentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInferenceRecommendationsJobs
@@ -10586,7 +10347,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListInferenceRecommendationsJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInferenceRecommendationsJobSteps
@@ -10629,7 +10389,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListInferenceRecommendationsJobStepsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLabelingJobs
@@ -10663,7 +10422,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListLabelingJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLabelingJobsForWorkteam
@@ -10700,7 +10458,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListLabelingJobsForWorkteamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLineageGroups
@@ -10736,7 +10493,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListLineageGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMlflowTrackingServers
@@ -10770,7 +10526,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListMlflowTrackingServersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListModelBiasJobDefinitions
@@ -10804,7 +10559,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListModelBiasJobDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListModelCardExportJobs
@@ -10838,7 +10592,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListModelCardExportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListModelCards
@@ -10872,7 +10625,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListModelCardsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListModelCardVersions
@@ -10909,7 +10661,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListModelCardVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListModelExplainabilityJobDefinitions
@@ -10943,7 +10694,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListModelExplainabilityJobDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListModelMetadata
@@ -10978,7 +10728,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListModelMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListModelPackageGroups
@@ -11012,7 +10761,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListModelPackageGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListModelPackages
@@ -11046,7 +10794,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListModelPackagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListModelQualityJobDefinitions
@@ -11080,7 +10827,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListModelQualityJobDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListModels
@@ -11114,7 +10860,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMonitoringAlertHistory
@@ -11151,7 +10896,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListMonitoringAlertHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMonitoringAlerts
@@ -11188,7 +10932,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListMonitoringAlertsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMonitoringExecutions
@@ -11222,7 +10965,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListMonitoringExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMonitoringSchedules
@@ -11256,7 +10998,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListMonitoringSchedulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNotebookInstanceLifecycleConfigs
@@ -11291,7 +11032,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListNotebookInstanceLifecycleConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNotebookInstances
@@ -11326,7 +11066,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListNotebookInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOptimizationJobs
@@ -11360,7 +11099,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListOptimizationJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPartnerApps
@@ -11394,7 +11132,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListPartnerAppsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPipelineExecutions
@@ -11431,7 +11168,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListPipelineExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPipelineExecutionSteps
@@ -11468,7 +11204,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListPipelineExecutionStepsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPipelineParametersForExecution
@@ -11505,7 +11240,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListPipelineParametersForExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPipelines
@@ -11539,7 +11273,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListPipelinesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProcessingJobs
@@ -11573,7 +11306,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListProcessingJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProjects
@@ -11607,7 +11339,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListProjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceCatalogs
@@ -11642,7 +11373,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListResourceCatalogsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSpaces
@@ -11676,7 +11406,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListSpacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStageDevices
@@ -11711,7 +11440,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListStageDevicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStudioLifecycleConfigs
@@ -11749,7 +11477,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListStudioLifecycleConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSubscribedWorkteams
@@ -11785,7 +11512,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListSubscribedWorkteamsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTags
@@ -11819,7 +11545,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrainingJobs
@@ -11885,7 +11610,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListTrainingJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrainingJobsForHyperParameterTuningJob
@@ -11923,7 +11647,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListTrainingJobsForHyperParameterTuningJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrainingPlans
@@ -11957,7 +11680,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListTrainingPlansResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTransformJobs
@@ -11991,7 +11713,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListTransformJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrialComponents
@@ -12044,7 +11765,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListTrialComponentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrials
@@ -12085,7 +11805,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListTrialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUserProfiles
@@ -12119,7 +11838,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListUserProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkforces
@@ -12155,7 +11873,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListWorkforcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkteams
@@ -12191,7 +11908,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<ListWorkteamsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutModelPackageGroupPolicy
@@ -12232,7 +11948,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<PutModelPackageGroupPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryLineage
@@ -12271,7 +11986,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<QueryLineageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterDevices
@@ -12309,7 +12023,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<RegisterDevicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RenderUiTemplate
@@ -12346,7 +12059,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<RenderUiTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RetryPipelineExecution
@@ -12391,7 +12103,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<RetryPipelineExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Search
@@ -12439,7 +12150,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<SearchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchTrainingPlanOfferings
@@ -12495,7 +12205,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<SearchTrainingPlanOfferingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendPipelineExecutionStepFailure
@@ -12542,7 +12251,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<SendPipelineExecutionStepFailureResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendPipelineExecutionStepSuccess
@@ -12590,7 +12298,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<SendPipelineExecutionStepSuccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartEdgeDeploymentStage
@@ -12624,7 +12331,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StartEdgeDeploymentStageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartInferenceExperiment
@@ -12665,7 +12371,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StartInferenceExperimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMlflowTrackingServer
@@ -12706,7 +12411,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StartMlflowTrackingServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMonitoringSchedule
@@ -12750,7 +12454,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StartMonitoringScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartNotebookInstance
@@ -12791,7 +12494,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StartNotebookInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartPipelineExecution
@@ -12836,7 +12538,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StartPipelineExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopAutoMLJob
@@ -12873,7 +12574,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StopAutoMLJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopCompilationJob
@@ -12922,7 +12622,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StopCompilationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopEdgeDeploymentStage
@@ -12956,7 +12655,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StopEdgeDeploymentStageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopEdgePackagingJob
@@ -12990,7 +12688,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StopEdgePackagingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopHyperParameterTuningJob
@@ -13036,7 +12733,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StopHyperParameterTuningJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopInferenceExperiment
@@ -13077,7 +12773,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StopInferenceExperimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopInferenceRecommendationsJob
@@ -13114,7 +12809,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StopInferenceRecommendationsJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopLabelingJob
@@ -13152,7 +12846,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StopLabelingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopMlflowTrackingServer
@@ -13193,7 +12886,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StopMlflowTrackingServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopMonitoringSchedule
@@ -13230,7 +12922,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StopMonitoringScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopNotebookInstance
@@ -13274,7 +12965,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StopNotebookInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopOptimizationJob
@@ -13311,7 +13001,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StopOptimizationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopPipelineExecution
@@ -13388,7 +13077,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StopPipelineExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopProcessingJob
@@ -13425,7 +13113,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StopProcessingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopTrainingJob
@@ -13470,7 +13157,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StopTrainingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopTransformJob
@@ -13515,7 +13201,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<StopTransformJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAction
@@ -13556,7 +13241,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAppImageConfig
@@ -13593,7 +13277,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateAppImageConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateArtifact
@@ -13634,7 +13317,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateArtifactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCluster
@@ -13679,7 +13361,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateClusterSchedulerConfig
@@ -13724,7 +13405,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateClusterSchedulerConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateClusterSoftware
@@ -13775,7 +13455,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateClusterSoftwareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCodeRepository
@@ -13813,7 +13492,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateCodeRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateComputeQuota
@@ -13858,7 +13536,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateComputeQuotaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContext
@@ -13899,7 +13576,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateContextResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDeviceFleet
@@ -13936,7 +13612,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateDeviceFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDevices
@@ -13970,7 +13645,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateDevicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDomain
@@ -14014,7 +13688,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEndpoint
@@ -14078,7 +13751,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEndpointWeightsAndCapacities
@@ -14121,7 +13793,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateEndpointWeightsAndCapacitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateExperiment
@@ -14163,7 +13834,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateExperimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFeatureGroup
@@ -14222,7 +13892,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateFeatureGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFeatureMetadata
@@ -14259,7 +13928,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateFeatureMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateHub
@@ -14296,7 +13964,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateHubResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateHubContent
@@ -14373,7 +14040,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateHubContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateHubContentReference
@@ -14432,7 +14098,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateHubContentReferenceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateImage
@@ -14475,7 +14140,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateImageVersion
@@ -14515,7 +14179,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateImageVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInferenceComponent
@@ -14553,7 +14216,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateInferenceComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInferenceComponentRuntimeConfig
@@ -14591,7 +14253,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateInferenceComponentRuntimeConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInferenceExperiment
@@ -14634,7 +14295,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateInferenceExperimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMlflowTrackingServer
@@ -14679,7 +14339,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateMlflowTrackingServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateModelCard
@@ -14730,7 +14389,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateModelCardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateModelPackage
@@ -14768,7 +14426,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateModelPackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMonitoringAlert
@@ -14809,7 +14466,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateMonitoringAlertResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMonitoringSchedule
@@ -14850,7 +14506,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateMonitoringScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNotebookInstance
@@ -14890,7 +14545,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateNotebookInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNotebookInstanceLifecycleConfig
@@ -14929,7 +14583,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateNotebookInstanceLifecycleConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePartnerApp
@@ -14970,7 +14623,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdatePartnerAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePipeline
@@ -15011,7 +14663,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdatePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePipelineExecution
@@ -15052,7 +14703,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdatePipelineExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProject
@@ -15099,7 +14749,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSpace
@@ -15149,7 +14798,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateSpaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTrainingJob
@@ -15191,7 +14839,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateTrainingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTrial
@@ -15232,7 +14879,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateTrialResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTrialComponent
@@ -15273,7 +14919,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateTrialComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUserProfile
@@ -15317,7 +14962,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateUserProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkforce
@@ -15404,7 +15048,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateWorkforceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkteam
@@ -15442,7 +15085,6 @@ namespace Amazon.SageMaker
 
             return InvokeAsync<UpdateWorkteamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -415,7 +415,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<AddTagsToOnPremisesInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetApplicationRevisions
@@ -468,7 +467,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<BatchGetApplicationRevisionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetApplications
@@ -515,7 +513,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<BatchGetApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetDeploymentGroups
@@ -570,7 +567,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<BatchGetDeploymentGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetDeploymentInstances
@@ -639,7 +635,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<BatchGetDeploymentInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetDeployments
@@ -683,7 +678,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<BatchGetDeploymentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetDeploymentTargets
@@ -772,7 +766,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<BatchGetDeploymentTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetOnPremisesInstances
@@ -816,7 +809,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<BatchGetOnPremisesInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ContinueDeployment
@@ -878,7 +870,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<ContinueDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApplication
@@ -932,7 +923,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDeployment
@@ -1093,7 +1083,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<CreateDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDeploymentConfig
@@ -1153,7 +1142,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<CreateDeploymentConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDeploymentGroup
@@ -1319,7 +1307,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<CreateDeploymentGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplication
@@ -1364,7 +1351,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<DeleteApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDeploymentConfig
@@ -1417,7 +1403,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<DeleteDeploymentConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDeploymentGroup
@@ -1468,7 +1453,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<DeleteDeploymentGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGitHubAccountToken
@@ -1517,7 +1501,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<DeleteGitHubAccountTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcesByExternalId
@@ -1561,7 +1544,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<DeleteResourcesByExternalIdResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterOnPremisesInstance
@@ -1601,7 +1583,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<DeregisterOnPremisesInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplication
@@ -1644,7 +1625,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<GetApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplicationRevision
@@ -1696,7 +1676,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<GetApplicationRevisionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeployment
@@ -1748,7 +1727,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<GetDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeploymentConfig
@@ -1795,7 +1773,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<GetDeploymentConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeploymentGroup
@@ -1850,7 +1827,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<GetDeploymentGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeploymentInstance
@@ -1908,7 +1884,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<GetDeploymentInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeploymentTarget
@@ -1966,7 +1941,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<GetDeploymentTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOnPremisesInstance
@@ -2009,7 +1983,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<GetOnPremisesInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplicationRevisions
@@ -2073,7 +2046,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<ListApplicationRevisionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplications
@@ -2132,7 +2104,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<ListApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeploymentConfigs
@@ -2191,7 +2162,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<ListDeploymentConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeploymentGroups
@@ -2238,7 +2208,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<ListDeploymentGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeploymentInstances
@@ -2317,7 +2286,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<ListDeploymentInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeployments
@@ -2385,7 +2353,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<ListDeploymentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeploymentTargets
@@ -2448,7 +2415,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<ListDeploymentTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGitHubAccountTokenNames
@@ -2491,7 +2457,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<ListGitHubAccountTokenNamesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOnPremisesInstances
@@ -2541,7 +2506,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<ListOnPremisesInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2586,7 +2550,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutLifecycleEventHookExecutionStatus
@@ -2651,7 +2614,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<PutLifecycleEventHookExecutionStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterApplicationRevision
@@ -2703,7 +2665,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<RegisterApplicationRevisionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterOnPremisesInstance
@@ -2777,7 +2738,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<RegisterOnPremisesInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTagsFromOnPremisesInstances
@@ -2832,7 +2792,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<RemoveTagsFromOnPremisesInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SkipWaitTimeForInstanceTermination
@@ -2887,7 +2846,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<SkipWaitTimeForInstanceTerminationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopDeployment
@@ -2939,7 +2897,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<StopDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2999,7 +2956,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3060,7 +3016,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplication
@@ -3107,7 +3062,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDeploymentGroup
@@ -3267,7 +3221,6 @@ namespace Amazon.CodeDeploy
 
             return InvokeAsync<UpdateDeploymentGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

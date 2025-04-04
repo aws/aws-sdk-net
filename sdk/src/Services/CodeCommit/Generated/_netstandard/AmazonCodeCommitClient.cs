@@ -788,7 +788,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<AssociateApprovalRuleTemplateWithRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchAssociateApprovalRuleTemplateWithRepositories
@@ -859,7 +858,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<BatchAssociateApprovalRuleTemplateWithRepositoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDescribeMergeConflicts
@@ -970,7 +968,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<BatchDescribeMergeConflictsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDisassociateApprovalRuleTemplateFromRepositories
@@ -1041,7 +1038,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<BatchDisassociateApprovalRuleTemplateFromRepositoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetCommits
@@ -1114,7 +1110,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<BatchGetCommitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetRepositories
@@ -1191,7 +1186,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<BatchGetRepositoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApprovalRuleTemplate
@@ -1260,7 +1254,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<CreateApprovalRuleTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBranch
@@ -1353,7 +1346,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<CreateBranchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCommit
@@ -1542,7 +1534,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<CreateCommitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePullRequest
@@ -1678,7 +1669,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<CreatePullRequestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePullRequestApprovalRule
@@ -1762,7 +1752,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<CreatePullRequestApprovalRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRepository
@@ -1856,7 +1845,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<CreateRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUnreferencedMergeCommit
@@ -2036,7 +2024,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<CreateUnreferencedMergeCommitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApprovalRuleTemplate
@@ -2085,7 +2072,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<DeleteApprovalRuleTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBranch
@@ -2162,7 +2148,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<DeleteBranchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCommentContent
@@ -2210,7 +2195,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<DeleteCommentContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFile
@@ -2330,7 +2314,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<DeleteFileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePullRequestApprovalRule
@@ -2407,7 +2390,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<DeletePullRequestApprovalRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRepository
@@ -2478,7 +2460,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<DeleteRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMergeConflicts
@@ -2597,7 +2578,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<DescribeMergeConflictsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePullRequestEvents
@@ -2675,7 +2655,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<DescribePullRequestEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateApprovalRuleTemplateFromRepository
@@ -2758,7 +2737,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<DisassociateApprovalRuleTemplateFromRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EvaluatePullRequestApprovalRules
@@ -2829,7 +2807,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<EvaluatePullRequestApprovalRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApprovalRuleTemplate
@@ -2877,7 +2854,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<GetApprovalRuleTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBlob
@@ -2957,7 +2933,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<GetBlobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBranch
@@ -3033,7 +3008,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<GetBranchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetComment
@@ -3104,7 +3078,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<GetCommentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCommentReactions
@@ -3162,7 +3135,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<GetCommentReactionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCommentsForComparedCommit
@@ -3251,7 +3223,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<GetCommentsForComparedCommitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCommentsForPullRequest
@@ -3355,7 +3326,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<GetCommentsForPullRequestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCommit
@@ -3430,7 +3400,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<GetCommitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDifferences
@@ -3523,7 +3492,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<GetDifferencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFile
@@ -3611,7 +3579,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<GetFileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFolder
@@ -3694,7 +3661,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<GetFolderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMergeCommit
@@ -3776,7 +3742,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<GetMergeCommitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMergeConflicts
@@ -3892,7 +3857,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<GetMergeConflictsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMergeOptions
@@ -3987,7 +3951,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<GetMergeOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPullRequest
@@ -4047,7 +4010,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<GetPullRequestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPullRequestApprovalStates
@@ -4115,7 +4077,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<GetPullRequestApprovalStatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPullRequestOverrideState
@@ -4183,7 +4144,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<GetPullRequestOverrideStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRepository
@@ -4259,7 +4219,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<GetRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRepositoryTriggers
@@ -4325,7 +4284,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<GetRepositoryTriggersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApprovalRuleTemplates
@@ -4367,7 +4325,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<ListApprovalRuleTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssociatedApprovalRuleTemplatesForRepository
@@ -4439,7 +4396,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<ListAssociatedApprovalRuleTemplatesForRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBranches
@@ -4508,7 +4464,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<ListBranchesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFileCommitHistory
@@ -4595,7 +4550,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<ListFileCommitHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPullRequests
@@ -4679,7 +4633,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<ListPullRequestsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRepositories
@@ -4722,7 +4675,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<ListRepositoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRepositoriesForApprovalRuleTemplate
@@ -4791,7 +4743,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<ListRepositoriesForApprovalRuleTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -4851,7 +4802,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  MergeBranchesByFastForward
@@ -4957,7 +4907,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<MergeBranchesByFastForwardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  MergeBranchesBySquash
@@ -5135,7 +5084,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<MergeBranchesBySquashResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  MergeBranchesByThreeWay
@@ -5313,7 +5261,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<MergeBranchesByThreeWayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  MergePullRequestByFastForward
@@ -5423,7 +5370,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<MergePullRequestByFastForwardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  MergePullRequestBySquash
@@ -5603,7 +5549,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<MergePullRequestBySquashResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  MergePullRequestByThreeWay
@@ -5783,7 +5728,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<MergePullRequestByThreeWayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  OverridePullRequestApprovalRules
@@ -5866,7 +5810,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<OverridePullRequestApprovalRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PostCommentForComparedCommit
@@ -5988,7 +5931,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<PostCommentForComparedCommitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PostCommentForPullRequest
@@ -6125,7 +6067,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<PostCommentForPullRequestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PostCommentReply
@@ -6192,7 +6133,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<PostCommentReplyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutCommentReaction
@@ -6253,7 +6193,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<PutCommentReactionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutFile
@@ -6407,7 +6346,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<PutFileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRepositoryTriggers
@@ -6518,7 +6456,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<PutRepositoryTriggersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -6593,7 +6530,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestRepositoryTriggers
@@ -6706,7 +6642,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<TestRepositoryTriggersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -6781,7 +6716,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApprovalRuleTemplateContent
@@ -6840,7 +6774,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<UpdateApprovalRuleTemplateContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApprovalRuleTemplateDescription
@@ -6894,7 +6827,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<UpdateApprovalRuleTemplateDescriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApprovalRuleTemplateName
@@ -6947,7 +6879,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<UpdateApprovalRuleTemplateNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateComment
@@ -7006,7 +6937,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<UpdateCommentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDefaultBranch
@@ -7089,7 +7019,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<UpdateDefaultBranchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePullRequestApprovalRuleContent
@@ -7177,7 +7106,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<UpdatePullRequestApprovalRuleContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePullRequestApprovalState
@@ -7266,7 +7194,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<UpdatePullRequestApprovalStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePullRequestDescription
@@ -7318,7 +7245,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<UpdatePullRequestDescriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePullRequestStatus
@@ -7388,7 +7314,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<UpdatePullRequestStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePullRequestTitle
@@ -7443,7 +7368,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<UpdatePullRequestTitleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRepositoryDescription
@@ -7522,7 +7446,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<UpdateRepositoryDescriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRepositoryEncryptionKey
@@ -7599,7 +7522,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<UpdateRepositoryEncryptionKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRepositoryName
@@ -7657,7 +7579,6 @@ namespace Amazon.CodeCommit
 
             return InvokeAsync<UpdateRepositoryNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

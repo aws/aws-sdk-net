@@ -397,7 +397,6 @@ namespace Amazon.PaymentCryptography
 
             return InvokeAsync<CreateAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateKey
@@ -507,7 +506,6 @@ namespace Amazon.PaymentCryptography
 
             return InvokeAsync<CreateKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAlias
@@ -601,7 +599,6 @@ namespace Amazon.PaymentCryptography
 
             return InvokeAsync<DeleteAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteKey
@@ -701,7 +698,6 @@ namespace Amazon.PaymentCryptography
 
             return InvokeAsync<DeleteKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportKey
@@ -985,7 +981,6 @@ namespace Amazon.PaymentCryptography
 
             return InvokeAsync<ExportKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAlias
@@ -1068,7 +1063,6 @@ namespace Amazon.PaymentCryptography
 
             return InvokeAsync<GetAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKey
@@ -1147,7 +1141,6 @@ namespace Amazon.PaymentCryptography
 
             return InvokeAsync<GetKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetParametersForExport
@@ -1235,7 +1228,6 @@ namespace Amazon.PaymentCryptography
 
             return InvokeAsync<GetParametersForExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetParametersForImport
@@ -1323,7 +1315,6 @@ namespace Amazon.PaymentCryptography
 
             return InvokeAsync<GetParametersForImportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPublicKeyCertificate
@@ -1390,7 +1381,6 @@ namespace Amazon.PaymentCryptography
 
             return InvokeAsync<GetPublicKeyCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportKey
@@ -1683,7 +1673,6 @@ namespace Amazon.PaymentCryptography
 
             return InvokeAsync<ImportKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAliases
@@ -1777,7 +1766,6 @@ namespace Amazon.PaymentCryptography
 
             return InvokeAsync<ListAliasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKeys
@@ -1864,7 +1852,6 @@ namespace Amazon.PaymentCryptography
 
             return InvokeAsync<ListKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1945,7 +1932,6 @@ namespace Amazon.PaymentCryptography
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreKey
@@ -2037,7 +2023,6 @@ namespace Amazon.PaymentCryptography
 
             return InvokeAsync<RestoreKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartKeyUsage
@@ -2112,7 +2097,6 @@ namespace Amazon.PaymentCryptography
 
             return InvokeAsync<StartKeyUsageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopKeyUsage
@@ -2197,7 +2181,6 @@ namespace Amazon.PaymentCryptography
 
             return InvokeAsync<StopKeyUsageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2289,7 +2272,6 @@ namespace Amazon.PaymentCryptography
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2370,7 +2352,6 @@ namespace Amazon.PaymentCryptography
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAlias
@@ -2460,7 +2441,6 @@ namespace Amazon.PaymentCryptography
 
             return InvokeAsync<UpdateAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

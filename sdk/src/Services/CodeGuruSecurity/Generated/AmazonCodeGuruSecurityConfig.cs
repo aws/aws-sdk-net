@@ -30,7 +30,6 @@ namespace Amazon.CodeGuruSecurity
     /// <summary>
     /// Configuration for accessing Amazon CodeGuruSecurity service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCodeGuruSecurityConfig : ClientConfig
     {
         private static readonly string UserAgentString =

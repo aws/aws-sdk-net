@@ -30,7 +30,6 @@ namespace Amazon.Route53RecoveryCluster
     /// <summary>
     /// Configuration for accessing Amazon Route53RecoveryCluster service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonRoute53RecoveryClusterConfig : ClientConfig
     {
         private static readonly string UserAgentString =

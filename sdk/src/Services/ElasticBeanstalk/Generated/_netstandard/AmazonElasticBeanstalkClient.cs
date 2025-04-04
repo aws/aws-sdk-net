@@ -320,7 +320,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<AbortEnvironmentUpdateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ApplyEnvironmentManagedAction
@@ -362,7 +361,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<ApplyEnvironmentManagedActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateEnvironmentOperationsRole
@@ -403,7 +401,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<AssociateEnvironmentOperationsRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CheckDNSAvailability
@@ -437,7 +434,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<CheckDNSAvailabilityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ComposeEnvironments
@@ -482,7 +478,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<ComposeEnvironmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApplication
@@ -520,7 +515,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApplicationVersion
@@ -612,7 +606,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<CreateApplicationVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfigurationTemplate
@@ -681,7 +674,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<CreateConfigurationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEnvironment
@@ -722,7 +714,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<CreateEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePlatformVersion
@@ -765,7 +756,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<CreatePlatformVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStorageLocation
@@ -844,7 +834,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<CreateStorageLocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplication
@@ -889,7 +878,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<DeleteApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplicationVersion
@@ -958,7 +946,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<DeleteApplicationVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfigurationTemplate
@@ -1004,7 +991,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<DeleteConfigurationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEnvironmentConfiguration
@@ -1048,7 +1034,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<DeleteEnvironmentConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePlatformVersion
@@ -1096,7 +1081,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<DeletePlatformVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountAttributes
@@ -1139,7 +1123,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<DescribeAccountAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApplications
@@ -1192,7 +1175,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<DescribeApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApplicationVersions
@@ -1245,7 +1227,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<DescribeApplicationVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConfigurationOptions
@@ -1310,7 +1291,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<DescribeConfigurationOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConfigurationSettings
@@ -1366,7 +1346,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<DescribeConfigurationSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEnvironmentHealth
@@ -1408,7 +1387,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<DescribeEnvironmentHealthResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEnvironmentManagedActionHistory
@@ -1445,7 +1423,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<DescribeEnvironmentManagedActionHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEnvironmentManagedActions
@@ -1482,7 +1459,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<DescribeEnvironmentManagedActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEnvironmentResources
@@ -1519,7 +1495,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<DescribeEnvironmentResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEnvironments
@@ -1572,7 +1547,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<DescribeEnvironmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEvents
@@ -1637,7 +1611,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<DescribeEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInstancesHealth
@@ -1680,7 +1653,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<DescribeInstancesHealthResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePlatformVersion
@@ -1727,7 +1699,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<DescribePlatformVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateEnvironmentOperationsRole
@@ -1767,7 +1738,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<DisassociateEnvironmentOperationsRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAvailableSolutionStacks
@@ -1822,7 +1792,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<ListAvailableSolutionStacksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPlatformBranches
@@ -1863,7 +1832,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<ListPlatformBranchesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPlatformVersions
@@ -1911,7 +1879,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<ListPlatformVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1962,7 +1929,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RebuildEnvironment
@@ -2000,7 +1966,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<RebuildEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RequestEnvironmentInfo
@@ -2059,7 +2024,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<RequestEnvironmentInfoResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestartAppServer
@@ -2094,7 +2058,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<RestartAppServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RetrieveEnvironmentInfo
@@ -2138,7 +2101,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<RetrieveEnvironmentInfoResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SwapEnvironmentCNAMEs
@@ -2172,7 +2134,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<SwapEnvironmentCNAMEsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TerminateEnvironment
@@ -2209,7 +2170,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<TerminateEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplication
@@ -2250,7 +2210,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplicationResourceLifecycle
@@ -2287,7 +2246,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<UpdateApplicationResourceLifecycleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplicationVersion
@@ -2328,7 +2286,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<UpdateApplicationVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfigurationTemplate
@@ -2384,7 +2341,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<UpdateConfigurationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEnvironment
@@ -2439,7 +2395,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<UpdateEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTagsForResource
@@ -2524,7 +2479,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<UpdateTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ValidateConfigurationSettings
@@ -2571,7 +2525,6 @@ namespace Amazon.ElasticBeanstalk
 
             return InvokeAsync<ValidateConfigurationSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

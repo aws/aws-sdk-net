@@ -30,7 +30,6 @@ namespace Amazon.Ep2substring
     /// <summary>
     /// Configuration for accessing Amazon Ep2substring service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonEp2substringConfig : ClientConfig
     {
         private static readonly string UserAgentString =

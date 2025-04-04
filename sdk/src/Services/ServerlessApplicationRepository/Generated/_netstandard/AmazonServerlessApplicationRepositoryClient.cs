@@ -351,7 +351,6 @@ namespace Amazon.ServerlessApplicationRepository
 
             return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApplicationVersion
@@ -400,7 +399,6 @@ namespace Amazon.ServerlessApplicationRepository
 
             return InvokeAsync<CreateApplicationVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCloudFormationChangeSet
@@ -446,7 +444,6 @@ namespace Amazon.ServerlessApplicationRepository
 
             return InvokeAsync<CreateCloudFormationChangeSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCloudFormationTemplate
@@ -496,7 +493,6 @@ namespace Amazon.ServerlessApplicationRepository
 
             return InvokeAsync<CreateCloudFormationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplication
@@ -549,7 +545,6 @@ namespace Amazon.ServerlessApplicationRepository
 
             return InvokeAsync<DeleteApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplication
@@ -599,7 +594,6 @@ namespace Amazon.ServerlessApplicationRepository
 
             return InvokeAsync<GetApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplicationPolicy
@@ -649,7 +643,6 @@ namespace Amazon.ServerlessApplicationRepository
 
             return InvokeAsync<GetApplicationPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCloudFormationTemplate
@@ -699,7 +692,6 @@ namespace Amazon.ServerlessApplicationRepository
 
             return InvokeAsync<GetCloudFormationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplicationDependencies
@@ -749,7 +741,6 @@ namespace Amazon.ServerlessApplicationRepository
 
             return InvokeAsync<ListApplicationDependenciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplications
@@ -796,7 +787,6 @@ namespace Amazon.ServerlessApplicationRepository
 
             return InvokeAsync<ListApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplicationVersions
@@ -846,7 +836,6 @@ namespace Amazon.ServerlessApplicationRepository
 
             return InvokeAsync<ListApplicationVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutApplicationPolicy
@@ -898,7 +887,6 @@ namespace Amazon.ServerlessApplicationRepository
 
             return InvokeAsync<PutApplicationPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UnshareApplication
@@ -953,7 +941,6 @@ namespace Amazon.ServerlessApplicationRepository
 
             return InvokeAsync<UnshareApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplication
@@ -1006,7 +993,6 @@ namespace Amazon.ServerlessApplicationRepository
 
             return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

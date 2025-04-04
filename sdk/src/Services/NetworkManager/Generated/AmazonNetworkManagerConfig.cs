@@ -30,7 +30,6 @@ namespace Amazon.NetworkManager
     /// <summary>
     /// Configuration for accessing Amazon NetworkManager service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonNetworkManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -381,7 +381,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<AbortDocumentVersionUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ActivateUser
@@ -431,7 +430,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<ActivateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddResourcePermissions
@@ -482,7 +480,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<AddResourcePermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateComment
@@ -542,7 +539,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<CreateCommentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCustomMetadata
@@ -599,7 +595,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<CreateCustomMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFolder
@@ -664,7 +659,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<CreateFolderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLabels
@@ -717,7 +711,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<CreateLabelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNotificationSubscription
@@ -770,7 +763,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<CreateNotificationSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUser
@@ -821,7 +813,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<CreateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeactivateUser
@@ -871,7 +862,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<DeactivateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteComment
@@ -928,7 +918,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<DeleteCommentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCustomMetadata
@@ -981,7 +970,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<DeleteCustomMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDocument
@@ -1043,7 +1031,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<DeleteDocumentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDocumentVersion
@@ -1102,7 +1089,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<DeleteDocumentVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFolder
@@ -1164,7 +1150,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<DeleteFolderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFolderContents
@@ -1220,7 +1205,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<DeleteFolderContentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLabels
@@ -1273,7 +1257,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<DeleteLabelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNotificationSubscription
@@ -1319,7 +1302,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<DeleteNotificationSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUser
@@ -1376,7 +1358,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeActivities
@@ -1426,7 +1407,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<DescribeActivitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeComments
@@ -1479,7 +1459,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<DescribeCommentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDocumentVersions
@@ -1543,7 +1522,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<DescribeDocumentVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFolderContents
@@ -1603,7 +1581,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<DescribeFolderContentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGroups
@@ -1651,7 +1628,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<DescribeGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeNotificationSubscriptions
@@ -1694,7 +1670,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<DescribeNotificationSubscriptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeResourcePermissions
@@ -1744,7 +1719,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<DescribeResourcePermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRootFolders
@@ -1804,7 +1778,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<DescribeRootFoldersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUsers
@@ -1869,7 +1842,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<DescribeUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCurrentUser
@@ -1927,7 +1899,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<GetCurrentUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDocument
@@ -1983,7 +1954,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<GetDocumentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDocumentPath
@@ -2041,7 +2011,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<GetDocumentPathResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDocumentVersion
@@ -2097,7 +2066,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<GetDocumentVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFolder
@@ -2153,7 +2121,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<GetFolderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFolderPath
@@ -2211,7 +2178,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<GetFolderPathResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResources
@@ -2262,7 +2228,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<GetResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InitiateDocumentVersionUpload
@@ -2352,7 +2317,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<InitiateDocumentVersionUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveAllResourcePermissions
@@ -2399,7 +2363,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<RemoveAllResourcePermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveResourcePermission
@@ -2446,7 +2409,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<RemoveResourcePermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreDocumentVersions
@@ -2505,7 +2467,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<RestoreDocumentVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchResources
@@ -2551,7 +2512,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<SearchResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDocument
@@ -2617,7 +2577,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<UpdateDocumentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDocumentVersion
@@ -2683,7 +2642,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<UpdateDocumentVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFolder
@@ -2749,7 +2707,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<UpdateFolderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUser
@@ -2812,7 +2769,6 @@ namespace Amazon.WorkDocs
 
             return InvokeAsync<UpdateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

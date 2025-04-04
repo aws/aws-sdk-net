@@ -30,7 +30,6 @@ namespace Amazon.QBusiness
     /// <summary>
     /// Configuration for accessing Amazon QBusiness service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonQBusinessConfig : ClientConfig
     {
         private static readonly string UserAgentString =

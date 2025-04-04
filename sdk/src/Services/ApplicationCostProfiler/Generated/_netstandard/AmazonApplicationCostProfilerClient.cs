@@ -319,7 +319,6 @@ namespace Amazon.ApplicationCostProfiler
 
             return InvokeAsync<DeleteReportDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReportDefinition
@@ -365,7 +364,6 @@ namespace Amazon.ApplicationCostProfiler
 
             return InvokeAsync<GetReportDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportApplicationUsage
@@ -418,7 +416,6 @@ namespace Amazon.ApplicationCostProfiler
 
             return InvokeAsync<ImportApplicationUsageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReportDefinitions
@@ -469,7 +466,6 @@ namespace Amazon.ApplicationCostProfiler
 
             return InvokeAsync<ListReportDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutReportDefinition
@@ -518,7 +514,6 @@ namespace Amazon.ApplicationCostProfiler
 
             return InvokeAsync<PutReportDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateReportDefinition
@@ -564,7 +559,6 @@ namespace Amazon.ApplicationCostProfiler
 
             return InvokeAsync<UpdateReportDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -331,7 +331,6 @@ namespace Amazon.TaxSettings
 
             return InvokeAsync<BatchDeleteTaxRegistrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetTaxExemptions
@@ -375,7 +374,6 @@ namespace Amazon.TaxSettings
 
             return InvokeAsync<BatchGetTaxExemptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchPutTaxRegistration
@@ -644,7 +642,6 @@ namespace Amazon.TaxSettings
 
             return InvokeAsync<BatchPutTaxRegistrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSupplementalTaxRegistration
@@ -691,7 +688,6 @@ namespace Amazon.TaxSettings
 
             return InvokeAsync<DeleteSupplementalTaxRegistrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTaxRegistration
@@ -746,7 +742,6 @@ namespace Amazon.TaxSettings
 
             return InvokeAsync<DeleteTaxRegistrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTaxExemptionTypes
@@ -790,7 +785,6 @@ namespace Amazon.TaxSettings
 
             return InvokeAsync<GetTaxExemptionTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTaxInheritance
@@ -834,7 +828,6 @@ namespace Amazon.TaxSettings
 
             return InvokeAsync<GetTaxInheritanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTaxRegistration
@@ -878,7 +871,6 @@ namespace Amazon.TaxSettings
 
             return InvokeAsync<GetTaxRegistrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTaxRegistrationDocument
@@ -919,7 +911,6 @@ namespace Amazon.TaxSettings
 
             return InvokeAsync<GetTaxRegistrationDocumentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSupplementalTaxRegistrations
@@ -963,7 +954,6 @@ namespace Amazon.TaxSettings
 
             return InvokeAsync<ListSupplementalTaxRegistrationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTaxExemptions
@@ -1008,7 +998,6 @@ namespace Amazon.TaxSettings
 
             return InvokeAsync<ListTaxExemptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTaxRegistrations
@@ -1054,7 +1043,6 @@ namespace Amazon.TaxSettings
 
             return InvokeAsync<ListTaxRegistrationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutSupplementalTaxRegistration
@@ -1098,7 +1086,6 @@ namespace Amazon.TaxSettings
 
             return InvokeAsync<PutSupplementalTaxRegistrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutTaxExemption
@@ -1152,7 +1139,6 @@ namespace Amazon.TaxSettings
 
             return InvokeAsync<PutTaxExemptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutTaxInheritance
@@ -1199,7 +1185,6 @@ namespace Amazon.TaxSettings
 
             return InvokeAsync<PutTaxInheritanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutTaxRegistration
@@ -1467,7 +1452,6 @@ namespace Amazon.TaxSettings
 
             return InvokeAsync<PutTaxRegistrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

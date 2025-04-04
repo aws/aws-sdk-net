@@ -334,7 +334,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<BatchPutMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelPipelineReprocessing
@@ -383,7 +382,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<CancelPipelineReprocessingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateChannel
@@ -436,7 +434,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<CreateChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataset
@@ -492,7 +489,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<CreateDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDatasetContent
@@ -542,7 +538,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<CreateDatasetContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDatastore
@@ -594,7 +589,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<CreateDatastoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePipeline
@@ -649,7 +643,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<CreatePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteChannel
@@ -698,7 +691,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<DeleteChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataset
@@ -752,7 +744,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<DeleteDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDatasetContent
@@ -801,7 +792,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<DeleteDatasetContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDatastore
@@ -850,7 +840,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<DeleteDatastoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePipeline
@@ -899,7 +888,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<DeletePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeChannel
@@ -948,7 +936,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<DescribeChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataset
@@ -997,7 +984,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<DescribeDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDatastore
@@ -1046,7 +1032,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<DescribeDatastoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLoggingOptions
@@ -1095,7 +1080,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<DescribeLoggingOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePipeline
@@ -1144,7 +1128,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<DescribePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDatasetContent
@@ -1193,7 +1176,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<GetDatasetContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChannels
@@ -1239,7 +1221,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<ListChannelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatasetContents
@@ -1288,7 +1269,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<ListDatasetContentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatasets
@@ -1334,7 +1314,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<ListDatasetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatastores
@@ -1380,7 +1359,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<ListDatastoresResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPipelines
@@ -1426,7 +1404,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<ListPipelinesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1478,7 +1455,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutLoggingOptions
@@ -1532,7 +1508,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<PutLoggingOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RunPipelineActivity
@@ -1578,7 +1553,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<RunPipelineActivityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SampleChannelData
@@ -1628,7 +1602,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<SampleChannelDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartPipelineReprocessing
@@ -1680,7 +1653,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<StartPipelineReprocessingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1733,7 +1705,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1785,7 +1756,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateChannel
@@ -1834,7 +1804,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<UpdateChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataset
@@ -1883,7 +1852,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<UpdateDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDatastore
@@ -1932,7 +1900,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<UpdateDatastoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePipeline
@@ -1986,7 +1953,6 @@ namespace Amazon.IoTAnalytics
 
             return InvokeAsync<UpdatePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

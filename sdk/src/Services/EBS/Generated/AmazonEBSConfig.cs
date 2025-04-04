@@ -30,7 +30,6 @@ namespace Amazon.EBS
     /// <summary>
     /// Configuration for accessing Amazon EBS service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonEBSConfig : ClientConfig
     {
         private static readonly string UserAgentString =

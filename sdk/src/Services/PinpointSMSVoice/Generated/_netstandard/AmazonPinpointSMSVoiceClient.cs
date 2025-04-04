@@ -294,7 +294,6 @@ namespace Amazon.PinpointSMSVoice
 
             return InvokeAsync<CreateConfigurationSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfigurationSetEventDestination
@@ -348,7 +347,6 @@ namespace Amazon.PinpointSMSVoice
 
             return InvokeAsync<CreateConfigurationSetEventDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfigurationSet
@@ -396,7 +394,6 @@ namespace Amazon.PinpointSMSVoice
 
             return InvokeAsync<DeleteConfigurationSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfigurationSetEventDestination
@@ -444,7 +441,6 @@ namespace Amazon.PinpointSMSVoice
 
             return InvokeAsync<DeleteConfigurationSetEventDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfigurationSetEventDestinations
@@ -493,7 +489,6 @@ namespace Amazon.PinpointSMSVoice
 
             return InvokeAsync<GetConfigurationSetEventDestinationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfigurationSets
@@ -539,7 +534,6 @@ namespace Amazon.PinpointSMSVoice
 
             return InvokeAsync<ListConfigurationSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendVoiceMessage
@@ -584,7 +578,6 @@ namespace Amazon.PinpointSMSVoice
 
             return InvokeAsync<SendVoiceMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfigurationSetEventDestination
@@ -634,7 +627,6 @@ namespace Amazon.PinpointSMSVoice
 
             return InvokeAsync<UpdateConfigurationSetEventDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

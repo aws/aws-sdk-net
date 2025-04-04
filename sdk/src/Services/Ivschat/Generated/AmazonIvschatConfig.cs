@@ -30,7 +30,6 @@ namespace Amazon.Ivschat
     /// <summary>
     /// Configuration for accessing Amazon Ivschat service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonIvschatConfig : ClientConfig
     {
         private static readonly string UserAgentString =

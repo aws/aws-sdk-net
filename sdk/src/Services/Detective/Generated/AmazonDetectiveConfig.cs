@@ -30,7 +30,6 @@ namespace Amazon.Detective
     /// <summary>
     /// Configuration for accessing Amazon Detective service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonDetectiveConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -374,7 +374,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<BatchExecuteStatementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetItem
@@ -711,7 +710,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<BatchGetItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchWriteItem
@@ -1041,7 +1039,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<BatchWriteItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBackup
@@ -1180,7 +1177,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<CreateBackupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGlobalTable
@@ -1344,7 +1340,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<CreateGlobalTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTable
@@ -1564,7 +1559,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<CreateTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBackup
@@ -1651,7 +1645,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<DeleteBackupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteItem
@@ -1887,7 +1880,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<DeleteItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -2020,7 +2012,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTable
@@ -2262,7 +2253,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<DeleteTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBackup
@@ -2311,7 +2301,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<DescribeBackupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeContinuousBackups
@@ -2376,7 +2365,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<DescribeContinuousBackupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeContributorInsights
@@ -2418,7 +2406,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<DescribeContributorInsightsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEndpoints
@@ -2454,7 +2441,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<DescribeEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeExport
@@ -2528,7 +2514,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<DescribeExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGlobalTable
@@ -2588,7 +2573,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<DescribeGlobalTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGlobalTableSettings
@@ -2648,7 +2632,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<DescribeGlobalTableSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeImport
@@ -2685,7 +2668,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<DescribeImportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeKinesisStreamingDestination
@@ -2730,7 +2712,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<DescribeKinesisStreamingDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLimits
@@ -2858,7 +2839,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<DescribeLimitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTable
@@ -2960,7 +2940,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<DescribeTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTableReplicaAutoScaling
@@ -3008,7 +2987,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<DescribeTableReplicaAutoScalingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTimeToLive
@@ -3078,7 +3056,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<DescribeTimeToLiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableKinesisStreamingDestination
@@ -3179,7 +3156,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<DisableKinesisStreamingDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableKinesisStreamingDestination
@@ -3282,7 +3258,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<EnableKinesisStreamingDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteStatement
@@ -3367,7 +3342,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<ExecuteStatementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteTransaction
@@ -3754,7 +3728,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<ExecuteTransactionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportTableToPointInTime
@@ -3840,7 +3813,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<ExportTableToPointInTimeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetItem
@@ -4007,7 +3979,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<GetItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicy
@@ -4101,7 +4072,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportTable
@@ -4195,7 +4165,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<ImportTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBackups
@@ -4256,7 +4225,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<ListBackupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContributorInsights
@@ -4298,7 +4266,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<ListContributorInsightsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExports
@@ -4369,7 +4336,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<ListExportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGlobalTables
@@ -4426,7 +4392,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<ListGlobalTablesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImports
@@ -4494,7 +4459,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<ListImportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTables
@@ -4632,7 +4596,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<ListTablesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsOfResource
@@ -4684,7 +4647,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<ListTagsOfResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutItem
@@ -4968,7 +4930,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<PutItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -5098,7 +5059,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Query
@@ -5220,7 +5180,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<QueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreTableFromBackup
@@ -5343,7 +5302,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<RestoreTableFromBackupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreTableToPointInTime
@@ -5506,7 +5464,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<RestoreTableToPointInTimeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Scan
@@ -5898,7 +5855,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<ScanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -6022,7 +5978,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TransactGetItems
@@ -6350,7 +6305,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<TransactGetItemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TransactWriteItems
@@ -6805,7 +6759,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<TransactWriteItemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -6927,7 +6880,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContinuousBackups
@@ -6993,7 +6945,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<UpdateContinuousBackupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContributorInsights
@@ -7040,7 +6991,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<UpdateContributorInsightsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGlobalTable
@@ -7146,7 +7096,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<UpdateGlobalTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGlobalTableSettings
@@ -7267,7 +7216,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<UpdateGlobalTableSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateItem
@@ -7480,7 +7428,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<UpdateItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateKinesisStreamingDestination
@@ -7580,7 +7527,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<UpdateKinesisStreamingDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTable
@@ -7824,7 +7770,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<UpdateTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTableReplicaAutoScaling
@@ -7927,7 +7872,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<UpdateTableReplicaAutoScalingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTimeToLive
@@ -8065,7 +8009,6 @@ namespace Amazon.DynamoDBv2
 
             return InvokeAsync<UpdateTimeToLiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -360,7 +360,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<CreateAccessPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFileSystem
@@ -648,7 +647,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<CreateFileSystemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMountTarget
@@ -901,7 +899,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<CreateMountTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateReplicationConfiguration
@@ -1011,7 +1008,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<CreateReplicationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTags
@@ -1074,7 +1070,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<CreateTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccessPoint
@@ -1127,7 +1122,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<DeleteAccessPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFileSystem
@@ -1273,7 +1267,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<DeleteFileSystemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFileSystemPolicy
@@ -1330,7 +1323,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<DeleteFileSystemPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMountTarget
@@ -1484,7 +1476,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<DeleteMountTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReplicationConfiguration
@@ -1542,7 +1533,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<DeleteReplicationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTags
@@ -1604,7 +1594,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<DeleteTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccessPoints
@@ -1662,7 +1651,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<DescribeAccessPointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountPreferences
@@ -1700,7 +1688,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<DescribeAccountPreferencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBackupPolicy
@@ -1752,7 +1739,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<DescribeBackupPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFileSystemPolicy
@@ -1806,7 +1792,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<DescribeFileSystemPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFileSystems
@@ -1882,7 +1867,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<DescribeFileSystemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLifecycleConfiguration
@@ -1936,7 +1920,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<DescribeLifecycleConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMountTargets
@@ -2044,7 +2027,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<DescribeMountTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMountTargetSecurityGroups
@@ -2160,7 +2142,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<DescribeMountTargetSecurityGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReplicationConfigurations
@@ -2214,7 +2195,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<DescribeReplicationConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTags
@@ -2321,7 +2301,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<DescribeTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2377,7 +2356,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyMountTargetSecurityGroups
@@ -2458,7 +2436,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<ModifyMountTargetSecurityGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAccountPreferences
@@ -2513,7 +2490,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<PutAccountPreferencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBackupPolicy
@@ -2566,7 +2542,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<PutBackupPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutFileSystemPolicy
@@ -2636,7 +2611,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<PutFileSystemPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutLifecycleConfiguration
@@ -2754,7 +2728,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<PutLifecycleConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2809,7 +2782,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2865,7 +2837,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFileSystem
@@ -2929,7 +2900,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<UpdateFileSystemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFileSystemProtection
@@ -3001,7 +2971,6 @@ namespace Amazon.ElasticFileSystem
 
             return InvokeAsync<UpdateFileSystemProtectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

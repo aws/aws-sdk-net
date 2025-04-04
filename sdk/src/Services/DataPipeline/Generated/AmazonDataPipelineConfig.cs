@@ -30,7 +30,6 @@ namespace Amazon.DataPipeline
     /// <summary>
     /// Configuration for accessing Amazon DataPipeline service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonDataPipelineConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -313,7 +313,6 @@ namespace Amazon.IoTSecureTunneling
 
             return InvokeAsync<CloseTunnelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTunnel
@@ -356,7 +355,6 @@ namespace Amazon.IoTSecureTunneling
 
             return InvokeAsync<DescribeTunnelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -393,7 +391,6 @@ namespace Amazon.IoTSecureTunneling
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTunnels
@@ -434,7 +431,6 @@ namespace Amazon.IoTSecureTunneling
 
             return InvokeAsync<ListTunnelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  OpenTunnel
@@ -478,7 +474,6 @@ namespace Amazon.IoTSecureTunneling
 
             return InvokeAsync<OpenTunnelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RotateTunnelAccessToken
@@ -530,7 +525,6 @@ namespace Amazon.IoTSecureTunneling
 
             return InvokeAsync<RotateTunnelAccessTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -567,7 +561,6 @@ namespace Amazon.IoTSecureTunneling
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -604,7 +597,6 @@ namespace Amazon.IoTSecureTunneling
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

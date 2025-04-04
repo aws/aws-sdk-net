@@ -30,7 +30,6 @@ namespace Amazon.ECRPublic
     /// <summary>
     /// Configuration for accessing Amazon ECRPublic service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonECRPublicConfig : ClientConfig
     {
         private static readonly string UserAgentString =

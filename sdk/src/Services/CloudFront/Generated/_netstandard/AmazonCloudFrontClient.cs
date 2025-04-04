@@ -335,7 +335,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<AssociateAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyDistribution
@@ -634,7 +633,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CopyDistributionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAnycastIpList
@@ -686,7 +684,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CreateAnycastIpListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCachePolicy
@@ -783,7 +780,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CreateCachePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCloudFrontOriginAccessIdentity
@@ -841,7 +837,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CreateCloudFrontOriginAccessIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateContinuousDeploymentPolicy
@@ -909,7 +904,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CreateContinuousDeploymentPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDistribution
@@ -1187,7 +1181,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CreateDistributionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDistributionWithTags
@@ -1481,7 +1474,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CreateDistributionWithTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFieldLevelEncryptionConfig
@@ -1539,7 +1531,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CreateFieldLevelEncryptionConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFieldLevelEncryptionProfile
@@ -1597,7 +1588,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CreateFieldLevelEncryptionProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFunction
@@ -1670,7 +1660,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CreateFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInvalidation
@@ -1728,7 +1717,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CreateInvalidationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateKeyGroup
@@ -1792,7 +1780,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CreateKeyGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateKeyValueStore
@@ -1846,7 +1833,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CreateKeyValueStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMonitoringSubscription
@@ -1900,7 +1886,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CreateMonitoringSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOriginAccessControl
@@ -1964,7 +1949,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CreateOriginAccessControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOriginRequestPolicy
@@ -2065,7 +2049,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CreateOriginRequestPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePublicKey
@@ -2111,7 +2094,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CreatePublicKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRealtimeLogConfig
@@ -2171,7 +2153,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CreateRealtimeLogConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateResponseHeadersPolicy
@@ -2278,7 +2259,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CreateResponseHeadersPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStreamingDistribution
@@ -2356,7 +2336,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CreateStreamingDistributionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStreamingDistributionWithTags
@@ -2437,7 +2416,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CreateStreamingDistributionWithTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVpcOrigin
@@ -2492,7 +2470,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<CreateVpcOriginResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAnycastIpList
@@ -2550,7 +2527,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<DeleteAnycastIpListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCachePolicy
@@ -2614,7 +2590,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<DeleteCachePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCloudFrontOriginAccessIdentity
@@ -2697,7 +2672,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<DeleteCloudFrontOriginAccessIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteContinuousDeploymentPolicy
@@ -2757,7 +2731,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<DeleteContinuousDeploymentPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDistribution
@@ -2842,7 +2815,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<DeleteDistributionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFieldLevelEncryptionConfig
@@ -2891,7 +2863,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<DeleteFieldLevelEncryptionConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFieldLevelEncryptionProfile
@@ -2940,7 +2911,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<DeleteFieldLevelEncryptionProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFunction
@@ -3001,7 +2971,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<DeleteFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteKeyGroup
@@ -3059,7 +3028,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<DeleteKeyGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteKeyValueStore
@@ -3111,7 +3079,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<DeleteKeyValueStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMonitoringSubscription
@@ -3157,7 +3124,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<DeleteMonitoringSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOriginAccessControl
@@ -3213,7 +3179,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<DeleteOriginAccessControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOriginRequestPolicy
@@ -3278,7 +3243,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<DeleteOriginRequestPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePublicKey
@@ -3327,7 +3291,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<DeletePublicKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRealtimeLogConfig
@@ -3387,7 +3350,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<DeleteRealtimeLogConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResponseHeadersPolicy
@@ -3452,7 +3414,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<DeleteResponseHeadersPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStreamingDistribution
@@ -3647,7 +3608,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<DeleteStreamingDistributionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVpcOrigin
@@ -3705,7 +3665,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<DeleteVpcOriginResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFunction
@@ -3752,7 +3711,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<DescribeFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeKeyValueStore
@@ -3798,7 +3756,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<DescribeKeyValueStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAnycastIpList
@@ -3844,7 +3801,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetAnycastIpListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCachePolicy
@@ -3900,7 +3856,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetCachePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCachePolicyConfig
@@ -3948,7 +3903,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetCachePolicyConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCloudFrontOriginAccessIdentity
@@ -4013,7 +3967,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetCloudFrontOriginAccessIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCloudFrontOriginAccessIdentityConfig
@@ -4078,7 +4031,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetCloudFrontOriginAccessIdentityConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContinuousDeploymentPolicy
@@ -4119,7 +4071,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetContinuousDeploymentPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContinuousDeploymentPolicyConfig
@@ -4159,7 +4110,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetContinuousDeploymentPolicyConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDistribution
@@ -4224,7 +4174,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetDistributionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDistributionConfig
@@ -4289,7 +4238,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetDistributionConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFieldLevelEncryption
@@ -4329,7 +4277,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetFieldLevelEncryptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFieldLevelEncryptionConfig
@@ -4369,7 +4316,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetFieldLevelEncryptionConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFieldLevelEncryptionProfile
@@ -4409,7 +4355,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetFieldLevelEncryptionProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFieldLevelEncryptionProfileConfig
@@ -4449,7 +4394,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetFieldLevelEncryptionProfileConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFunction
@@ -4496,7 +4440,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInvalidation
@@ -4539,7 +4482,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetInvalidationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKeyGroup
@@ -4584,7 +4526,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetKeyGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKeyGroupConfig
@@ -4630,7 +4571,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetKeyGroupConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMonitoringSubscription
@@ -4677,7 +4617,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetMonitoringSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOriginAccessControl
@@ -4717,7 +4656,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetOriginAccessControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOriginAccessControlConfig
@@ -4757,7 +4695,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetOriginAccessControlConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOriginRequestPolicy
@@ -4814,7 +4751,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetOriginRequestPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOriginRequestPolicyConfig
@@ -4863,7 +4799,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetOriginRequestPolicyConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPublicKey
@@ -4903,7 +4838,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetPublicKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPublicKeyConfig
@@ -4943,7 +4877,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetPublicKeyConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRealtimeLogConfig
@@ -4993,7 +4926,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetRealtimeLogConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResponseHeadersPolicy
@@ -5043,7 +4975,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetResponseHeadersPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResponseHeadersPolicyConfig
@@ -5092,7 +5023,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetResponseHeadersPolicyConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStreamingDistribution
@@ -5157,7 +5087,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetStreamingDistributionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStreamingDistributionConfig
@@ -5222,7 +5151,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetStreamingDistributionConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVpcOrigin
@@ -5268,7 +5196,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<GetVpcOriginResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAnycastIpLists
@@ -5314,7 +5241,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListAnycastIpListsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCachePolicies
@@ -5371,7 +5297,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListCachePoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCloudFrontOriginAccessIdentities
@@ -5430,7 +5355,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListCloudFrontOriginAccessIdentitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConflictingAliases
@@ -5503,7 +5427,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListConflictingAliasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContinuousDeploymentPolicies
@@ -5555,7 +5478,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListContinuousDeploymentPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDistributions
@@ -5614,7 +5536,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListDistributionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDistributionsByAnycastIpListId
@@ -5660,7 +5581,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListDistributionsByAnycastIpListIdResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDistributionsByCachePolicyId
@@ -5713,7 +5633,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListDistributionsByCachePolicyIdResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDistributionsByKeyGroup
@@ -5763,7 +5682,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListDistributionsByKeyGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDistributionsByOriginRequestPolicyId
@@ -5816,7 +5734,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListDistributionsByOriginRequestPolicyIdResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDistributionsByRealtimeLogConfig
@@ -5869,7 +5786,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListDistributionsByRealtimeLogConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDistributionsByResponseHeadersPolicyId
@@ -5922,7 +5838,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListDistributionsByResponseHeadersPolicyIdResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDistributionsByVpcOriginId
@@ -5968,7 +5883,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListDistributionsByVpcOriginIdResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDistributionsByWebACLId
@@ -6010,7 +5924,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListDistributionsByWebACLIdResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFieldLevelEncryptionConfigs
@@ -6048,7 +5961,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListFieldLevelEncryptionConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFieldLevelEncryptionProfiles
@@ -6086,7 +5998,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListFieldLevelEncryptionProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFunctions
@@ -6140,7 +6051,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListFunctionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInvalidations
@@ -6183,7 +6093,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListInvalidationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKeyGroups
@@ -6229,7 +6138,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListKeyGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKeyValueStores
@@ -6272,7 +6180,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListKeyValueStoresResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOriginAccessControls
@@ -6326,7 +6233,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListOriginAccessControlsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOriginRequestPolicies
@@ -6383,7 +6289,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListOriginRequestPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPublicKeys
@@ -6420,7 +6325,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListPublicKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRealtimeLogConfigs
@@ -6472,7 +6376,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListRealtimeLogConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResponseHeadersPolicies
@@ -6529,7 +6432,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListResponseHeadersPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStreamingDistributions
@@ -6588,7 +6490,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListStreamingDistributionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -6635,7 +6536,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVpcOrigins
@@ -6681,7 +6581,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<ListVpcOriginsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PublishFunction
@@ -6743,7 +6642,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<PublishFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -6790,7 +6688,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestFunction
@@ -6856,7 +6753,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<TestFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -6903,7 +6799,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCachePolicy
@@ -6998,7 +6893,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<UpdateCachePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCloudFrontOriginAccessIdentity
@@ -7057,7 +6951,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<UpdateCloudFrontOriginAccessIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContinuousDeploymentPolicy
@@ -7137,7 +7030,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<UpdateContinuousDeploymentPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDistribution
@@ -7455,7 +7347,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<UpdateDistributionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDistributionWithStagingConfig
@@ -7745,7 +7636,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<UpdateDistributionWithStagingConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFieldLevelEncryptionConfig
@@ -7812,7 +7702,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<UpdateFieldLevelEncryptionConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFieldLevelEncryptionProfile
@@ -7882,7 +7771,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<UpdateFieldLevelEncryptionProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFunction
@@ -7947,7 +7835,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<UpdateFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateKeyGroup
@@ -8024,7 +7911,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<UpdateKeyGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateKeyValueStore
@@ -8076,7 +7962,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<UpdateKeyValueStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateOriginAccessControl
@@ -8131,7 +8016,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<UpdateOriginAccessControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateOriginRequestPolicy
@@ -8227,7 +8111,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<UpdateOriginRequestPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePublicKey
@@ -8282,7 +8165,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<UpdatePublicKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRealtimeLogConfig
@@ -8350,7 +8232,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<UpdateRealtimeLogConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResponseHeadersPolicy
@@ -8459,7 +8340,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<UpdateResponseHeadersPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStreamingDistribution
@@ -8536,7 +8416,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<UpdateStreamingDistributionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVpcOrigin
@@ -8603,7 +8482,6 @@ namespace Amazon.CloudFront
 
             return InvokeAsync<UpdateVpcOriginResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -319,7 +319,6 @@ namespace Amazon.TimestreamInfluxDB
 
             return InvokeAsync<CreateDbClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDbInstance
@@ -374,7 +373,6 @@ namespace Amazon.TimestreamInfluxDB
 
             return InvokeAsync<CreateDbInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDbParameterGroup
@@ -429,7 +427,6 @@ namespace Amazon.TimestreamInfluxDB
 
             return InvokeAsync<CreateDbParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDbCluster
@@ -481,7 +478,6 @@ namespace Amazon.TimestreamInfluxDB
 
             return InvokeAsync<DeleteDbClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDbInstance
@@ -533,7 +529,6 @@ namespace Amazon.TimestreamInfluxDB
 
             return InvokeAsync<DeleteDbInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDbCluster
@@ -582,7 +577,6 @@ namespace Amazon.TimestreamInfluxDB
 
             return InvokeAsync<GetDbClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDbInstance
@@ -631,7 +625,6 @@ namespace Amazon.TimestreamInfluxDB
 
             return InvokeAsync<GetDbInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDbParameterGroup
@@ -680,7 +673,6 @@ namespace Amazon.TimestreamInfluxDB
 
             return InvokeAsync<GetDbParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDbClusters
@@ -729,7 +721,6 @@ namespace Amazon.TimestreamInfluxDB
 
             return InvokeAsync<ListDbClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDbInstances
@@ -778,7 +769,6 @@ namespace Amazon.TimestreamInfluxDB
 
             return InvokeAsync<ListDbInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDbInstancesForCluster
@@ -827,7 +817,6 @@ namespace Amazon.TimestreamInfluxDB
 
             return InvokeAsync<ListDbInstancesForClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDbParameterGroups
@@ -876,7 +865,6 @@ namespace Amazon.TimestreamInfluxDB
 
             return InvokeAsync<ListDbParameterGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -913,7 +901,6 @@ namespace Amazon.TimestreamInfluxDB
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -954,7 +941,6 @@ namespace Amazon.TimestreamInfluxDB
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -991,7 +977,6 @@ namespace Amazon.TimestreamInfluxDB
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDbCluster
@@ -1043,7 +1028,6 @@ namespace Amazon.TimestreamInfluxDB
 
             return InvokeAsync<UpdateDbClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDbInstance
@@ -1095,7 +1079,6 @@ namespace Amazon.TimestreamInfluxDB
 
             return InvokeAsync<UpdateDbInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

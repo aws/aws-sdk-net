@@ -335,7 +335,6 @@ namespace Amazon.SSO
 
             return InvokeAsync<GetRoleCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccountRoles
@@ -384,7 +383,6 @@ namespace Amazon.SSO
 
             return InvokeAsync<ListAccountRolesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccounts
@@ -436,7 +434,6 @@ namespace Amazon.SSO
 
             return InvokeAsync<ListAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Logout
@@ -501,7 +498,6 @@ namespace Amazon.SSO
 
             return InvokeAsync<LogoutResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -342,7 +342,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<AssociateLibraryItemReviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateQAppWithUser
@@ -402,7 +401,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<AssociateQAppWithUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchCreateCategory
@@ -462,7 +460,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<BatchCreateCategoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteCategory
@@ -522,7 +519,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<BatchDeleteCategoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchUpdateCategory
@@ -582,7 +578,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<BatchUpdateCategoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLibraryItem
@@ -640,7 +635,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<CreateLibraryItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePresignedUrl
@@ -693,7 +687,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<CreatePresignedUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateQApp
@@ -757,7 +750,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<CreateQAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLibraryItem
@@ -815,7 +807,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<DeleteLibraryItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteQApp
@@ -869,7 +860,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<DeleteQAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeQAppPermissions
@@ -923,7 +913,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<DescribeQAppPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateLibraryItemReview
@@ -984,7 +973,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<DisassociateLibraryItemReviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateQAppFromUser
@@ -1037,7 +1025,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<DisassociateQAppFromUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportQAppSessionData
@@ -1098,7 +1085,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<ExportQAppSessionDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLibraryItem
@@ -1152,7 +1138,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<GetLibraryItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQApp
@@ -1206,7 +1191,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<GetQAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQAppSession
@@ -1263,7 +1247,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<GetQAppSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQAppSessionMetadata
@@ -1320,7 +1303,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<GetQAppSessionMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportDocument
@@ -1384,7 +1366,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<ImportDocumentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCategories
@@ -1439,7 +1420,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<ListCategoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLibraryItems
@@ -1493,7 +1473,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<ListLibraryItemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQApps
@@ -1545,7 +1524,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<ListQAppsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQAppSessionData
@@ -1602,7 +1580,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<ListQAppSessionDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1652,7 +1629,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PredictQApp
@@ -1704,7 +1680,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<PredictQAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartQAppSession
@@ -1768,7 +1743,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<StartQAppSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopQAppSession
@@ -1827,7 +1801,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<StopQAppSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1881,7 +1854,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1931,7 +1903,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLibraryItem
@@ -1988,7 +1959,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<UpdateLibraryItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLibraryItemMetadata
@@ -2045,7 +2015,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<UpdateLibraryItemMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQApp
@@ -2103,7 +2072,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<UpdateQAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQAppPermissions
@@ -2157,7 +2125,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<UpdateQAppPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQAppSession
@@ -2218,7 +2185,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<UpdateQAppSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQAppSessionMetadata
@@ -2275,7 +2241,6 @@ namespace Amazon.QApps
 
             return InvokeAsync<UpdateQAppSessionMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.KinesisVideoMedia
     /// <summary>
     /// Configuration for accessing Amazon KinesisVideoMedia service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonKinesisVideoMediaConfig : ClientConfig
     {
         private static readonly string UserAgentString =

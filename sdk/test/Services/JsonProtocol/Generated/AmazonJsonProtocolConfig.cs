@@ -30,7 +30,6 @@ namespace Amazon.JsonProtocol
     /// <summary>
     /// Configuration for accessing Amazon JsonProtocol service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonJsonProtocolConfig : ClientConfig
     {
         private static readonly string UserAgentString =

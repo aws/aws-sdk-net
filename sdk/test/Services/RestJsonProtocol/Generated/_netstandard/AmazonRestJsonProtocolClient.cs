@@ -274,7 +274,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<AllQueryStringTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConstantAndVariableQueryString
@@ -310,7 +309,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<ConstantAndVariableQueryStringResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConstantQueryString
@@ -346,7 +344,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<ConstantQueryStringResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ContentTypeParameters
@@ -381,7 +378,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<ContentTypeParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DatetimeOffsets
@@ -415,7 +411,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<DatetimeOffsetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DocumentType
@@ -449,7 +444,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<DocumentTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DocumentTypeAsMapValue
@@ -483,7 +477,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<DocumentTypeAsMapValueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DocumentTypeAsPayload
@@ -517,7 +510,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<DocumentTypeAsPayloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EmptyInputAndEmptyOutput
@@ -554,7 +546,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<EmptyInputAndEmptyOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EndpointOperation
@@ -588,7 +579,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<EndpointOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EndpointWithHostLabelOperation
@@ -622,7 +612,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<EndpointWithHostLabelOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FractionalSeconds
@@ -656,7 +645,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<FractionalSecondsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GreetingWithErrors
@@ -708,7 +696,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<GreetingWithErrorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HostWithPathOperation
@@ -742,7 +729,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<HostWithPathOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpChecksumRequired
@@ -776,7 +762,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<HttpChecksumRequiredResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpEnumPayload
@@ -810,7 +795,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<HttpEnumPayloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpPayloadTraits
@@ -850,7 +834,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<HttpPayloadTraitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpPayloadWithStructure
@@ -890,7 +873,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<HttpPayloadWithStructureResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpPayloadWithUnion
@@ -924,7 +906,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<HttpPayloadWithUnionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpPrefixHeaders
@@ -958,7 +939,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<HttpPrefixHeadersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpPrefixHeadersInResponse
@@ -992,7 +972,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<HttpPrefixHeadersInResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpRequestWithFloatLabels
@@ -1026,7 +1005,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<HttpRequestWithFloatLabelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpRequestWithGreedyLabelInPath
@@ -1060,7 +1038,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<HttpRequestWithGreedyLabelInPathResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpRequestWithLabels
@@ -1095,7 +1072,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<HttpRequestWithLabelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpRequestWithLabelsAndTimestampFormat
@@ -1129,7 +1105,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<HttpRequestWithLabelsAndTimestampFormatResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpRequestWithRegexLiteral
@@ -1163,7 +1138,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<HttpRequestWithRegexLiteralResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpResponseCode
@@ -1197,7 +1171,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<HttpResponseCodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HttpStringPayload
@@ -1231,7 +1204,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<HttpStringPayloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  IgnoreQueryParamsInResponse
@@ -1266,7 +1238,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<IgnoreQueryParamsInResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InputAndOutputWithHeaders
@@ -1301,7 +1272,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<InputAndOutputWithHeadersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  JsonBlobs
@@ -1335,7 +1305,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<JsonBlobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  JsonEnums
@@ -1369,7 +1338,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<JsonEnumsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  JsonIntEnums
@@ -1403,7 +1371,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<JsonIntEnumsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  JsonLists
@@ -1440,7 +1407,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<JsonListsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  JsonMaps
@@ -1474,7 +1440,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<JsonMapsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  JsonTimestamps
@@ -1509,7 +1474,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<JsonTimestampsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  JsonUnions
@@ -1543,7 +1507,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<JsonUnionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  MediaTypeHeader
@@ -1577,7 +1540,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<MediaTypeHeaderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NoInputAndNoOutput
@@ -1613,7 +1575,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<NoInputAndNoOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NoInputAndOutput
@@ -1649,7 +1610,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<NoInputAndOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NullAndEmptyHeadersClient
@@ -1683,7 +1643,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<NullAndEmptyHeadersClientResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NullAndEmptyHeadersServer
@@ -1717,7 +1676,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<NullAndEmptyHeadersServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  OmitsNullSerializesEmptyString
@@ -1751,7 +1709,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<OmitsNullSerializesEmptyStringResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  OmitsSerializingEmptyLists
@@ -1786,7 +1743,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<OmitsSerializingEmptyListsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PostUnionWithJsonName
@@ -1820,7 +1776,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<PostUnionWithJsonNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutWithContentEncoding
@@ -1854,7 +1809,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<PutWithContentEncodingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryIdempotencyTokenAutoFill
@@ -1888,7 +1842,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<QueryIdempotencyTokenAutoFillResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryParamsAsStringListMap
@@ -1922,7 +1875,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<QueryParamsAsStringListMapResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryPrecedence
@@ -1956,7 +1908,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<QueryPrecedenceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RecursiveShapes
@@ -1990,7 +1941,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<RecursiveShapesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResponseCodeHttpFallback
@@ -2024,7 +1974,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<ResponseCodeHttpFallbackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResponseCodeRequired
@@ -2058,7 +2007,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<ResponseCodeRequiredResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SimpleScalarProperties
@@ -2092,7 +2040,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<SimpleScalarPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestBodyStructure
@@ -2132,7 +2079,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<TestBodyStructureResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestGetNoInputNoPayload
@@ -2172,7 +2118,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<TestGetNoInputNoPayloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestGetNoPayload
@@ -2212,7 +2157,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<TestGetNoPayloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestPayloadBlob
@@ -2253,7 +2197,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<TestPayloadBlobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestPayloadStructure
@@ -2293,7 +2236,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<TestPayloadStructureResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestPostNoInputNoPayload
@@ -2333,7 +2275,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<TestPostNoInputNoPayloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestPostNoPayload
@@ -2373,7 +2314,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<TestPostNoPayloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TimestampFormatHeaders
@@ -2407,7 +2347,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<TimestampFormatHeadersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UnitInputAndOutput
@@ -2441,7 +2380,6 @@ namespace Amazon.RestJsonProtocol
 
             return InvokeAsync<UnitInputAndOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
     }

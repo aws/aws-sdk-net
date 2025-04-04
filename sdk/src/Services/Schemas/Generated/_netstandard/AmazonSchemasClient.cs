@@ -312,7 +312,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<CreateDiscovererResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRegistry
@@ -364,7 +363,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<CreateRegistryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSchema
@@ -416,7 +414,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<CreateSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDiscoverer
@@ -468,7 +465,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<DeleteDiscovererResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRegistry
@@ -520,7 +516,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<DeleteRegistryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -572,7 +567,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSchema
@@ -624,7 +618,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<DeleteSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSchemaVersion
@@ -676,7 +669,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<DeleteSchemaVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCodeBinding
@@ -728,7 +720,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<DescribeCodeBindingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDiscoverer
@@ -780,7 +771,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<DescribeDiscovererResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRegistry
@@ -832,7 +822,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<DescribeRegistryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSchema
@@ -884,7 +873,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<DescribeSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportSchema
@@ -939,7 +927,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<ExportSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCodeBindingSource
@@ -991,7 +978,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<GetCodeBindingSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDiscoveredSchema
@@ -1040,7 +1026,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<GetDiscoveredSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicy
@@ -1092,7 +1077,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDiscoverers
@@ -1141,7 +1125,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<ListDiscoverersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRegistries
@@ -1190,7 +1173,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<ListRegistriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSchemas
@@ -1239,7 +1221,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<ListSchemasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSchemaVersions
@@ -1291,7 +1272,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<ListSchemaVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1337,7 +1317,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutCodeBinding
@@ -1392,7 +1371,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<PutCodeBindingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -1447,7 +1425,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchSchemas
@@ -1496,7 +1473,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<SearchSchemasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDiscoverer
@@ -1548,7 +1524,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<StartDiscovererResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopDiscoverer
@@ -1600,7 +1575,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<StopDiscovererResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1646,7 +1620,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1692,7 +1665,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDiscoverer
@@ -1744,7 +1716,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<UpdateDiscovererResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRegistry
@@ -1796,7 +1767,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<UpdateRegistryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSchema
@@ -1851,7 +1821,6 @@ namespace Amazon.Schemas
 
             return InvokeAsync<UpdateSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

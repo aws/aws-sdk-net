@@ -280,7 +280,6 @@ namespace Amazon.QueryCompatible
 
             return InvokeAsync<CreateQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  MemberRefOp
@@ -314,7 +313,6 @@ namespace Amazon.QueryCompatible
 
             return InvokeAsync<MemberRefOpResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StaticOp
@@ -348,7 +346,6 @@ namespace Amazon.QueryCompatible
 
             return InvokeAsync<StaticOpResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
     }

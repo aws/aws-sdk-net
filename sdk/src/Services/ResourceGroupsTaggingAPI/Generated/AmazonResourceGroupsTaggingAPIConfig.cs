@@ -30,7 +30,6 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// <summary>
     /// Configuration for accessing Amazon ResourceGroupsTaggingAPI service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonResourceGroupsTaggingAPIConfig : ClientConfig
     {
         private static readonly string UserAgentString =

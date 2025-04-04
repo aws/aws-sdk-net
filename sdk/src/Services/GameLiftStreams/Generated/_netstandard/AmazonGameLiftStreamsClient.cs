@@ -347,7 +347,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<AddStreamGroupLocationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateApplications
@@ -407,7 +406,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<AssociateApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApplication
@@ -486,7 +484,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStreamGroup
@@ -574,7 +571,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<CreateStreamGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStreamSessionConnection
@@ -656,7 +652,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<CreateStreamSessionConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplication
@@ -748,7 +743,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<DeleteApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStreamGroup
@@ -811,7 +805,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<DeleteStreamGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateApplications
@@ -876,7 +869,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<DisassociateApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportStreamSessionFiles
@@ -970,7 +962,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<ExportStreamSessionFilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplication
@@ -1025,7 +1016,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<GetApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStreamGroup
@@ -1080,7 +1070,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<GetStreamGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStreamSession
@@ -1136,7 +1125,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<GetStreamSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplications
@@ -1187,7 +1175,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<ListApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStreamGroups
@@ -1238,7 +1225,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<ListStreamGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStreamSessions
@@ -1302,7 +1288,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<ListStreamSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStreamSessionsByAccount
@@ -1365,7 +1350,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<ListStreamSessionsByAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1431,7 +1415,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveStreamGroupLocations
@@ -1494,7 +1477,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<RemoveStreamGroupLocationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartStreamSession
@@ -1589,7 +1571,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<StartStreamSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1664,7 +1645,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TerminateStreamSession
@@ -1720,7 +1700,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<TerminateStreamSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1770,7 +1749,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplication
@@ -1832,7 +1810,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStreamGroup
@@ -1915,7 +1892,6 @@ namespace Amazon.GameLiftStreams
 
             return InvokeAsync<UpdateStreamGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

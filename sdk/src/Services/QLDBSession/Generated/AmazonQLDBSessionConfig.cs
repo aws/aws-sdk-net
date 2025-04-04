@@ -30,7 +30,6 @@ namespace Amazon.QLDBSession
     /// <summary>
     /// Configuration for accessing Amazon QLDBSession service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonQLDBSessionConfig : ClientConfig
     {
         private static readonly string UserAgentString =

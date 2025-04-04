@@ -326,7 +326,6 @@ namespace Amazon.Translate
 
             return InvokeAsync<CreateParallelDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteParallelData
@@ -376,7 +375,6 @@ namespace Amazon.Translate
 
             return InvokeAsync<DeleteParallelDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTerminology
@@ -426,7 +424,6 @@ namespace Amazon.Translate
 
             return InvokeAsync<DeleteTerminologyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTextTranslationJob
@@ -473,7 +470,6 @@ namespace Amazon.Translate
 
             return InvokeAsync<DescribeTextTranslationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetParallelData
@@ -523,7 +519,6 @@ namespace Amazon.Translate
 
             return InvokeAsync<GetParallelDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTerminology
@@ -573,7 +568,6 @@ namespace Amazon.Translate
 
             return InvokeAsync<GetTerminologyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportTerminology
@@ -640,7 +634,6 @@ namespace Amazon.Translate
 
             return InvokeAsync<ImportTerminologyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLanguages
@@ -688,7 +681,6 @@ namespace Amazon.Translate
 
             return InvokeAsync<ListLanguagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListParallelData
@@ -733,7 +725,6 @@ namespace Amazon.Translate
 
             return InvokeAsync<ListParallelDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -781,7 +772,6 @@ namespace Amazon.Translate
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTerminologies
@@ -826,7 +816,6 @@ namespace Amazon.Translate
 
             return InvokeAsync<ListTerminologiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTextTranslationJobs
@@ -874,7 +863,6 @@ namespace Amazon.Translate
 
             return InvokeAsync<ListTextTranslationJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartTextTranslationJob
@@ -946,7 +934,6 @@ namespace Amazon.Translate
 
             return InvokeAsync<StartTextTranslationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopTextTranslationJob
@@ -1006,7 +993,6 @@ namespace Amazon.Translate
 
             return InvokeAsync<StopTextTranslationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1061,7 +1047,6 @@ namespace Amazon.Translate
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TranslateDocument
@@ -1136,7 +1121,6 @@ namespace Amazon.Translate
 
             return InvokeAsync<TranslateDocumentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TranslateText
@@ -1208,7 +1192,6 @@ namespace Amazon.Translate
 
             return InvokeAsync<TranslateTextResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1260,7 +1243,6 @@ namespace Amazon.Translate
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateParallelData
@@ -1326,7 +1308,6 @@ namespace Amazon.Translate
 
             return InvokeAsync<UpdateParallelDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

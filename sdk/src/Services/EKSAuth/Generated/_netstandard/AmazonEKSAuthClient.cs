@@ -317,7 +317,6 @@ namespace Amazon.EKSAuth
 
             return InvokeAsync<AssumeRoleForPodIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

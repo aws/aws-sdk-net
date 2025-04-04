@@ -305,7 +305,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<BuildSuggestersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDomain
@@ -358,7 +357,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<CreateDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DefineAnalysisScheme
@@ -417,7 +415,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<DefineAnalysisSchemeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DefineExpression
@@ -476,7 +473,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<DefineExpressionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DefineIndexField
@@ -538,7 +534,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<DefineIndexFieldResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DefineSuggester
@@ -598,7 +593,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<DefineSuggesterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAnalysisScheme
@@ -652,7 +646,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<DeleteAnalysisSchemeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDomain
@@ -697,7 +690,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<DeleteDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteExpression
@@ -752,7 +744,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<DeleteExpressionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIndexField
@@ -807,7 +798,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<DeleteIndexFieldResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSuggester
@@ -861,7 +851,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<DeleteSuggesterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAnalysisSchemes
@@ -913,7 +902,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<DescribeAnalysisSchemesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAvailabilityOptions
@@ -972,7 +960,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<DescribeAvailabilityOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDomainEndpointOptions
@@ -1027,7 +1014,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<DescribeDomainEndpointOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDomains
@@ -1108,7 +1094,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<DescribeDomainsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeExpressions
@@ -1159,7 +1144,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<DescribeExpressionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeIndexFields
@@ -1211,7 +1195,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<DescribeIndexFieldsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeScalingParameters
@@ -1261,7 +1244,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<DescribeScalingParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeServiceAccessPolicies
@@ -1312,7 +1294,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<DescribeServiceAccessPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSuggesters
@@ -1364,7 +1345,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<DescribeSuggestersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  IndexDocuments
@@ -1415,7 +1395,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<IndexDocumentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomainNames
@@ -1474,7 +1453,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<ListDomainNamesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAvailabilityOptions
@@ -1538,7 +1516,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<UpdateAvailabilityOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDomainEndpointOptions
@@ -1599,7 +1576,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<UpdateDomainEndpointOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateScalingParameters
@@ -1661,7 +1637,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<UpdateScalingParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServiceAccessPolicies
@@ -1718,7 +1693,6 @@ namespace Amazon.CloudSearch
 
             return InvokeAsync<UpdateServiceAccessPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

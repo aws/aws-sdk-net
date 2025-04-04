@@ -30,7 +30,6 @@ namespace Amazon.MediaPackage
     /// <summary>
     /// Configuration for accessing Amazon MediaPackage service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMediaPackageConfig : ClientConfig
     {
         private static readonly string UserAgentString =

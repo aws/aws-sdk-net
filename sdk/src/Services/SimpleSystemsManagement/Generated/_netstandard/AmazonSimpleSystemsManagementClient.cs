@@ -398,7 +398,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<AddTagsToResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateOpsItemRelatedItem
@@ -453,7 +452,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<AssociateOpsItemRelatedItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelCommand
@@ -627,7 +625,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<CancelCommandResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelMaintenanceWindowExecution
@@ -677,7 +674,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<CancelMaintenanceWindowExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateActivation
@@ -734,7 +730,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<CreateActivationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAssociation
@@ -936,7 +931,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<CreateAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAssociationBatch
@@ -1044,7 +1038,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<CreateAssociationBatchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDocument
@@ -1144,7 +1137,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<CreateDocumentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMaintenanceWindow
@@ -1206,7 +1198,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<CreateMaintenanceWindowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOpsItem
@@ -1269,7 +1260,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<CreateOpsItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOpsMetadata
@@ -1322,7 +1312,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<CreateOpsMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePatchBaseline
@@ -1380,7 +1369,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<CreatePatchBaselineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateResourceDataSync
@@ -1461,7 +1449,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<CreateResourceDataSyncResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteActivation
@@ -1512,7 +1499,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DeleteActivationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAssociation
@@ -1658,7 +1644,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DeleteAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDocument
@@ -1750,7 +1735,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DeleteDocumentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInventory
@@ -1802,7 +1786,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DeleteInventoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMaintenanceWindow
@@ -1839,7 +1822,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DeleteMaintenanceWindowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOpsItem
@@ -1913,7 +1895,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DeleteOpsItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOpsMetadata
@@ -1956,7 +1937,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DeleteOpsMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteParameter
@@ -2005,7 +1985,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DeleteParameterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteParameters
@@ -2043,7 +2022,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DeleteParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePatchBaseline
@@ -2084,7 +2062,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DeletePatchBaselineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourceDataSync
@@ -2129,7 +2106,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DeleteResourceDataSyncResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -2201,7 +2177,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterManagedInstance
@@ -2273,7 +2248,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DeregisterManagedInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterPatchBaselineForPatchGroup
@@ -2313,7 +2287,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DeregisterPatchBaselineForPatchGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterTargetFromMaintenanceWindow
@@ -2365,7 +2338,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DeregisterTargetFromMaintenanceWindowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterTaskFromMaintenanceWindow
@@ -2413,7 +2385,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DeregisterTaskFromMaintenanceWindowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeActivations
@@ -2459,7 +2430,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeActivationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAssociation
@@ -2593,7 +2563,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAssociationExecutions
@@ -2636,7 +2605,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeAssociationExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAssociationExecutionTargets
@@ -2682,7 +2650,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeAssociationExecutionTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAutomationExecutions
@@ -2728,7 +2695,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeAutomationExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAutomationStepExecutions
@@ -2778,7 +2744,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeAutomationStepExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAvailablePatches
@@ -2822,7 +2787,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeAvailablePatchesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDocument
@@ -2892,7 +2856,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeDocumentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDocumentPermission
@@ -2946,7 +2909,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeDocumentPermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEffectiveInstanceAssociations
@@ -3010,7 +2972,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeEffectiveInstanceAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEffectivePatchesForPatchBaseline
@@ -3066,7 +3027,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeEffectivePatchesForPatchBaselineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInstanceAssociationsStatus
@@ -3130,7 +3090,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeInstanceAssociationsStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInstanceInformation
@@ -3289,7 +3248,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeInstanceInformationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInstancePatches
@@ -3357,7 +3315,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeInstancePatchesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInstancePatchStates
@@ -3397,7 +3354,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeInstancePatchStatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInstancePatchStatesForPatchGroup
@@ -3441,7 +3397,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeInstancePatchStatesForPatchGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInstanceProperties
@@ -3519,7 +3474,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeInstancePropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInventoryDeletions
@@ -3563,7 +3517,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeInventoryDeletionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMaintenanceWindowExecutions
@@ -3602,7 +3555,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeMaintenanceWindowExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMaintenanceWindowExecutionTaskInvocations
@@ -3651,7 +3603,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeMaintenanceWindowExecutionTaskInvocationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMaintenanceWindowExecutionTasks
@@ -3699,7 +3650,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeMaintenanceWindowExecutionTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMaintenanceWindows
@@ -3736,7 +3686,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeMaintenanceWindowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMaintenanceWindowSchedule
@@ -3784,7 +3733,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeMaintenanceWindowScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMaintenanceWindowsForTarget
@@ -3822,7 +3770,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeMaintenanceWindowsForTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMaintenanceWindowTargets
@@ -3870,7 +3817,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeMaintenanceWindowTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMaintenanceWindowTasks
@@ -3927,7 +3873,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeMaintenanceWindowTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOpsItems
@@ -3975,7 +3920,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeOpsItemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeParameters
@@ -4044,7 +3988,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePatchBaselines
@@ -4081,7 +4024,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribePatchBaselinesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePatchGroups
@@ -4118,7 +4060,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribePatchGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePatchGroupState
@@ -4158,7 +4099,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribePatchGroupStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePatchProperties
@@ -4250,7 +4190,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribePatchPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSessions
@@ -4294,7 +4233,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DescribeSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateOpsItemRelatedItem
@@ -4347,7 +4285,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<DisassociateOpsItemRelatedItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAutomationExecution
@@ -4388,7 +4325,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetAutomationExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCalendarState
@@ -4454,7 +4390,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetCalendarStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCommandInvocation
@@ -4537,7 +4472,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetCommandInvocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConnectionStatus
@@ -4575,7 +4509,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetConnectionStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDefaultPatchBaseline
@@ -4620,7 +4553,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetDefaultPatchBaselineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeployablePatchSnapshotForInstance
@@ -4683,7 +4615,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetDeployablePatchSnapshotForInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDocument
@@ -4755,7 +4686,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetDocumentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExecutionPreview
@@ -4796,7 +4726,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetExecutionPreviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInventory
@@ -4853,7 +4782,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetInventoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInventorySchema
@@ -4897,7 +4825,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetInventorySchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMaintenanceWindow
@@ -4945,7 +4872,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetMaintenanceWindowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMaintenanceWindowExecution
@@ -4993,7 +4919,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetMaintenanceWindowExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMaintenanceWindowExecutionTask
@@ -5041,7 +4966,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetMaintenanceWindowExecutionTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMaintenanceWindowExecutionTaskInvocation
@@ -5089,7 +5013,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetMaintenanceWindowExecutionTaskInvocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMaintenanceWindowTask
@@ -5150,7 +5073,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetMaintenanceWindowTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOpsItem
@@ -5207,7 +5129,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetOpsItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOpsMetadata
@@ -5250,7 +5171,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetOpsMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOpsSummary
@@ -5307,7 +5227,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetOpsSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetParameter
@@ -5369,7 +5288,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetParameterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetParameterHistory
@@ -5431,7 +5349,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetParameterHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetParameters
@@ -5478,7 +5395,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetParametersByPath
@@ -5542,7 +5458,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetParametersByPathResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPatchBaseline
@@ -5593,7 +5508,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetPatchBaselineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPatchBaselineForPatchGroup
@@ -5630,7 +5544,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetPatchBaselineForPatchGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicies
@@ -5674,7 +5587,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetResourcePoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceSetting
@@ -5735,7 +5647,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<GetServiceSettingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  LabelParameterVersion
@@ -5841,7 +5752,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<LabelParameterVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssociations
@@ -5884,7 +5794,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<ListAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssociationVersions
@@ -5927,7 +5836,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<ListAssociationVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCommandInvocations
@@ -6118,7 +6026,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<ListCommandInvocationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCommands
@@ -6297,7 +6204,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<ListCommandsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListComplianceItems
@@ -6349,7 +6255,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<ListComplianceItemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListComplianceSummaries
@@ -6394,7 +6299,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<ListComplianceSummariesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDocumentMetadataHistory
@@ -6440,7 +6344,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<ListDocumentMetadataHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDocuments
@@ -6515,7 +6418,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<ListDocumentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDocumentVersions
@@ -6558,7 +6460,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<ListDocumentVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInventoryEntries
@@ -6628,7 +6529,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<ListInventoryEntriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNodes
@@ -6678,7 +6578,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<ListNodesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNodesSummary
@@ -6733,7 +6632,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<ListNodesSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOpsItemEvents
@@ -6782,7 +6680,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<ListOpsItemEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOpsItemRelatedItems
@@ -6824,7 +6721,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<ListOpsItemRelatedItemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOpsMetadata
@@ -6865,7 +6761,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<ListOpsMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceComplianceSummaries
@@ -6910,7 +6805,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<ListResourceComplianceSummariesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceDataSync
@@ -6965,7 +6859,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<ListResourceDataSyncResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -7014,7 +6907,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDocumentPermission
@@ -7079,7 +6971,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<ModifyDocumentPermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutComplianceItems
@@ -7210,7 +7101,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<PutComplianceItemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutInventory
@@ -7308,7 +7198,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<PutInventoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutParameter
@@ -7417,7 +7306,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<PutParameterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -7525,7 +7413,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterDefaultPatchBaseline
@@ -7584,7 +7471,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<RegisterDefaultPatchBaselineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterPatchBaselineForPatchGroup
@@ -7649,7 +7535,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<RegisterPatchBaselineForPatchGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterTargetWithMaintenanceWindow
@@ -7711,7 +7596,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<RegisterTargetWithMaintenanceWindowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterTaskWithMaintenanceWindow
@@ -7777,7 +7661,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<RegisterTaskWithMaintenanceWindowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTagsFromResource
@@ -7824,7 +7707,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<RemoveTagsFromResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetServiceSetting
@@ -7888,7 +7770,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<ResetServiceSettingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResumeSession
@@ -7944,7 +7825,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<ResumeSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendAutomationSignal
@@ -7993,7 +7873,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<SendAutomationSignalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendCommand
@@ -8171,7 +8050,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<SendCommandResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartAssociationsOnce
@@ -8212,7 +8090,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<StartAssociationsOnceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartAutomationExecution
@@ -8272,7 +8149,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<StartAutomationExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartChangeRequestExecution
@@ -8334,7 +8210,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<StartChangeRequestExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartExecutionPreview
@@ -8376,7 +8251,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<StartExecutionPreviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSession
@@ -8440,7 +8314,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<StartSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopAutomationExecution
@@ -8484,7 +8357,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<StopAutomationExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TerminateSession
@@ -8522,7 +8394,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<TerminateSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UnlabelParameterVersion
@@ -8577,7 +8448,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<UnlabelParameterVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAssociation
@@ -8681,7 +8551,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<UpdateAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAssociationStatus
@@ -8762,7 +8631,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<UpdateAssociationStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDocument
@@ -8829,7 +8697,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<UpdateDocumentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDocumentDefaultVersion
@@ -8883,7 +8750,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<UpdateDocumentDefaultVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDocumentMetadata
@@ -8931,7 +8797,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<UpdateDocumentMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMaintenanceWindow
@@ -8990,7 +8855,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<UpdateMaintenanceWindowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMaintenanceWindowTarget
@@ -9069,7 +8933,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<UpdateMaintenanceWindowTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMaintenanceWindowTask
@@ -9171,7 +9034,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<UpdateMaintenanceWindowTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateManagedInstanceRole
@@ -9234,7 +9096,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<UpdateManagedInstanceRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateOpsItem
@@ -9303,7 +9164,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<UpdateOpsItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateOpsMetadata
@@ -9354,7 +9214,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<UpdateOpsMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePatchBaseline
@@ -9410,7 +9269,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<UpdatePatchBaselineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResourceDataSync
@@ -9469,7 +9327,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<UpdateResourceDataSyncResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServiceSetting
@@ -9532,7 +9389,6 @@ namespace Amazon.SimpleSystemsManagement
 
             return InvokeAsync<UpdateServiceSettingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

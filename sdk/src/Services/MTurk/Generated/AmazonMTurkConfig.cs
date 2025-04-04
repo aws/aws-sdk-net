@@ -30,7 +30,6 @@ namespace Amazon.MTurk
     /// <summary>
     /// Configuration for accessing Amazon MTurk service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMTurkConfig : ClientConfig
     {
         private static readonly string UserAgentString =

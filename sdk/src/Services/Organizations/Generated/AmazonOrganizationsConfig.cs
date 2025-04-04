@@ -30,7 +30,6 @@ namespace Amazon.Organizations
     /// <summary>
     /// Configuration for accessing Amazon Organizations service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonOrganizationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

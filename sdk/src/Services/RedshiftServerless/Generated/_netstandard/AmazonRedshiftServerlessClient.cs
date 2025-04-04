@@ -331,7 +331,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<ConvertRecoveryPointToSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCustomDomainAssociation
@@ -383,7 +382,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<CreateCustomDomainAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEndpointAccess
@@ -435,7 +433,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<CreateEndpointAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNamespace
@@ -481,7 +478,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<CreateNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateScheduledAction
@@ -529,7 +525,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<CreateScheduledActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSnapshot
@@ -583,7 +578,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<CreateSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSnapshotCopyConfiguration
@@ -636,7 +630,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<CreateSnapshotCopyConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUsageLimit
@@ -686,7 +679,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<CreateUsageLimitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkgroup
@@ -767,7 +759,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<CreateWorkgroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCustomDomainAssociation
@@ -819,7 +810,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<DeleteCustomDomainAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEndpointAccess
@@ -865,7 +855,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<DeleteEndpointAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNamespace
@@ -912,7 +901,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<DeleteNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -955,7 +943,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteScheduledAction
@@ -998,7 +985,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<DeleteScheduledActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSnapshot
@@ -1044,7 +1030,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<DeleteSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSnapshotCopyConfiguration
@@ -1093,7 +1078,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<DeleteSnapshotCopyConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUsageLimit
@@ -1139,7 +1123,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<DeleteUsageLimitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkgroup
@@ -1185,7 +1168,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<DeleteWorkgroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCredentials
@@ -1245,7 +1227,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<GetCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCustomDomainAssociation
@@ -1297,7 +1278,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<GetCustomDomainAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEndpointAccess
@@ -1343,7 +1323,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<GetEndpointAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNamespace
@@ -1386,7 +1365,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<GetNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRecoveryPoint
@@ -1432,7 +1410,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<GetRecoveryPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicy
@@ -1475,7 +1452,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetScheduledAction
@@ -1518,7 +1494,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<GetScheduledActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSnapshot
@@ -1561,7 +1536,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<GetSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTableRestoreStatus
@@ -1601,7 +1575,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<GetTableRestoreStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTrack
@@ -1653,7 +1626,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<GetTrackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUsageLimit
@@ -1699,7 +1671,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<GetUsageLimitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkgroup
@@ -1742,7 +1713,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<GetWorkgroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCustomDomainAssociations
@@ -1791,7 +1761,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<ListCustomDomainAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEndpointAccess
@@ -1837,7 +1806,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<ListEndpointAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListManagedWorkgroups
@@ -1877,7 +1845,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<ListManagedWorkgroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNamespaces
@@ -1917,7 +1884,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<ListNamespacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecoveryPoints
@@ -1957,7 +1923,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<ListRecoveryPointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListScheduledActions
@@ -2004,7 +1969,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<ListScheduledActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSnapshotCopyConfigurations
@@ -2053,7 +2017,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<ListSnapshotCopyConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSnapshots
@@ -2096,7 +2059,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<ListSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTableRestoreStatus
@@ -2139,7 +2101,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<ListTableRestoreStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2185,7 +2146,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTracks
@@ -2234,7 +2194,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<ListTracksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUsageLimits
@@ -2283,7 +2242,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<ListUsageLimitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkgroups
@@ -2323,7 +2281,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<ListWorkgroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -2373,7 +2330,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreFromRecoveryPoint
@@ -2419,7 +2375,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<RestoreFromRecoveryPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreFromSnapshot
@@ -2468,7 +2423,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<RestoreFromSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreTableFromRecoveryPoint
@@ -2515,7 +2469,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<RestoreTableFromRecoveryPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreTableFromSnapshot
@@ -2563,7 +2516,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<RestoreTableFromSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2612,7 +2564,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2658,7 +2609,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCustomDomainAssociation
@@ -2710,7 +2660,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<UpdateCustomDomainAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEndpointAccess
@@ -2759,7 +2708,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<UpdateEndpointAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNamespace
@@ -2808,7 +2756,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<UpdateNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateScheduledAction
@@ -2854,7 +2801,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<UpdateScheduledActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSnapshot
@@ -2900,7 +2846,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<UpdateSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSnapshotCopyConfiguration
@@ -2949,7 +2894,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<UpdateSnapshotCopyConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUsageLimit
@@ -2996,7 +2940,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<UpdateUsageLimitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkgroup
@@ -3076,7 +3019,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<UpdateWorkgroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

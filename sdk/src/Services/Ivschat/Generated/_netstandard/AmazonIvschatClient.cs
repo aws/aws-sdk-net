@@ -479,7 +479,6 @@ namespace Amazon.Ivschat
 
             return InvokeAsync<CreateChatTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLoggingConfiguration
@@ -531,7 +530,6 @@ namespace Amazon.Ivschat
 
             return InvokeAsync<CreateLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRoom
@@ -583,7 +581,6 @@ namespace Amazon.Ivschat
 
             return InvokeAsync<CreateRoomResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLoggingConfiguration
@@ -632,7 +629,6 @@ namespace Amazon.Ivschat
 
             return InvokeAsync<DeleteLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMessage
@@ -684,7 +680,6 @@ namespace Amazon.Ivschat
 
             return InvokeAsync<DeleteMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRoom
@@ -730,7 +725,6 @@ namespace Amazon.Ivschat
 
             return InvokeAsync<DeleteRoomResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisconnectUser
@@ -781,7 +775,6 @@ namespace Amazon.Ivschat
 
             return InvokeAsync<DisconnectUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLoggingConfiguration
@@ -824,7 +817,6 @@ namespace Amazon.Ivschat
 
             return InvokeAsync<GetLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRoom
@@ -867,7 +859,6 @@ namespace Amazon.Ivschat
 
             return InvokeAsync<GetRoomResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLoggingConfigurations
@@ -908,7 +899,6 @@ namespace Amazon.Ivschat
 
             return InvokeAsync<ListLoggingConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRooms
@@ -952,7 +942,6 @@ namespace Amazon.Ivschat
 
             return InvokeAsync<ListRoomsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -995,7 +984,6 @@ namespace Amazon.Ivschat
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendEvent
@@ -1046,7 +1034,6 @@ namespace Amazon.Ivschat
 
             return InvokeAsync<SendEventResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1089,7 +1076,6 @@ namespace Amazon.Ivschat
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1132,7 +1118,6 @@ namespace Amazon.Ivschat
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLoggingConfiguration
@@ -1181,7 +1166,6 @@ namespace Amazon.Ivschat
 
             return InvokeAsync<UpdateLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRoom
@@ -1227,7 +1211,6 @@ namespace Amazon.Ivschat
 
             return InvokeAsync<UpdateRoomResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

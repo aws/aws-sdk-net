@@ -322,7 +322,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<AcceptInputDeviceTransferResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDelete
@@ -380,7 +379,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<BatchDeleteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchStart
@@ -438,7 +436,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<BatchStartResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchStop
@@ -496,7 +493,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<BatchStopResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchUpdateSchedule
@@ -554,7 +550,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<BatchUpdateScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelInputDeviceTransfer
@@ -615,7 +610,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<CancelInputDeviceTransferResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ClaimDevice
@@ -674,7 +668,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ClaimDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateChannel
@@ -732,7 +725,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<CreateChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateChannelPlacementGroup
@@ -792,7 +784,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<CreateChannelPlacementGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCloudWatchAlarmTemplate
@@ -845,7 +836,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<CreateCloudWatchAlarmTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCloudWatchAlarmTemplateGroup
@@ -898,7 +888,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<CreateCloudWatchAlarmTemplateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCluster
@@ -953,7 +942,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<CreateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEventBridgeRuleTemplate
@@ -1006,7 +994,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<CreateEventBridgeRuleTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEventBridgeRuleTemplateGroup
@@ -1059,7 +1046,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<CreateEventBridgeRuleTemplateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInput
@@ -1111,7 +1097,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<CreateInputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInputSecurityGroup
@@ -1163,7 +1148,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<CreateInputSecurityGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMultiplex
@@ -1221,7 +1205,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<CreateMultiplexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMultiplexProgram
@@ -1279,7 +1262,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<CreateMultiplexProgramResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNetwork
@@ -1336,7 +1318,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<CreateNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNode
@@ -1392,7 +1373,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<CreateNodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNodeRegistrationScript
@@ -1450,7 +1430,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<CreateNodeRegistrationScriptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePartnerInput
@@ -1502,7 +1481,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<CreatePartnerInputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSignalMap
@@ -1555,7 +1533,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<CreateSignalMapResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTags
@@ -1601,7 +1578,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<CreateTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteChannel
@@ -1659,7 +1635,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DeleteChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteChannelPlacementGroup
@@ -1717,7 +1692,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DeleteChannelPlacementGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCloudWatchAlarmTemplate
@@ -1769,7 +1743,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DeleteCloudWatchAlarmTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCloudWatchAlarmTemplateGroup
@@ -1822,7 +1795,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DeleteCloudWatchAlarmTemplateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCluster
@@ -1880,7 +1852,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DeleteClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventBridgeRuleTemplate
@@ -1932,7 +1903,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DeleteEventBridgeRuleTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventBridgeRuleTemplateGroup
@@ -1985,7 +1955,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DeleteEventBridgeRuleTemplateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInput
@@ -2043,7 +2012,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DeleteInputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInputSecurityGroup
@@ -2098,7 +2066,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DeleteInputSecurityGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMultiplex
@@ -2156,7 +2123,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DeleteMultiplexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMultiplexProgram
@@ -2214,7 +2180,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DeleteMultiplexProgramResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNetwork
@@ -2272,7 +2237,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DeleteNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNode
@@ -2330,7 +2294,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DeleteNodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReservation
@@ -2388,7 +2351,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DeleteReservationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSchedule
@@ -2443,7 +2405,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DeleteScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSignalMap
@@ -2495,7 +2456,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DeleteSignalMapResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTags
@@ -2541,7 +2501,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DeleteTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountConfiguration
@@ -2593,7 +2552,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DescribeAccountConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeChannel
@@ -2648,7 +2606,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DescribeChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeChannelPlacementGroup
@@ -2703,7 +2660,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DescribeChannelPlacementGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCluster
@@ -2758,7 +2714,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DescribeClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInput
@@ -2813,7 +2768,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DescribeInputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInputDevice
@@ -2868,7 +2822,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DescribeInputDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInputDeviceThumbnail
@@ -2923,7 +2876,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DescribeInputDeviceThumbnailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInputSecurityGroup
@@ -2978,7 +2930,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DescribeInputSecurityGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMultiplex
@@ -3033,7 +2984,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DescribeMultiplexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMultiplexProgram
@@ -3088,7 +3038,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DescribeMultiplexProgramResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeNetwork
@@ -3143,7 +3092,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DescribeNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeNode
@@ -3198,7 +3146,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DescribeNodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOffering
@@ -3253,7 +3200,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DescribeOfferingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReservation
@@ -3308,7 +3254,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DescribeReservationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSchedule
@@ -3363,7 +3308,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DescribeScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeThumbnails
@@ -3421,7 +3365,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DescribeThumbnailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCloudWatchAlarmTemplate
@@ -3470,7 +3413,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<GetCloudWatchAlarmTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCloudWatchAlarmTemplateGroup
@@ -3519,7 +3461,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<GetCloudWatchAlarmTemplateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEventBridgeRuleTemplate
@@ -3568,7 +3509,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<GetEventBridgeRuleTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEventBridgeRuleTemplateGroup
@@ -3617,7 +3557,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<GetEventBridgeRuleTemplateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSignalMap
@@ -3666,7 +3605,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<GetSignalMapResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChannelPlacementGroups
@@ -3718,7 +3656,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ListChannelPlacementGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChannels
@@ -3770,7 +3707,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ListChannelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCloudWatchAlarmTemplateGroups
@@ -3819,7 +3755,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ListCloudWatchAlarmTemplateGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCloudWatchAlarmTemplates
@@ -3868,7 +3803,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ListCloudWatchAlarmTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClusters
@@ -3920,7 +3854,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ListClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventBridgeRuleTemplateGroups
@@ -3969,7 +3902,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ListEventBridgeRuleTemplateGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventBridgeRuleTemplates
@@ -4018,7 +3950,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ListEventBridgeRuleTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInputDevices
@@ -4070,7 +4001,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ListInputDevicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInputDeviceTransfers
@@ -4127,7 +4057,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ListInputDeviceTransfersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInputs
@@ -4179,7 +4108,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ListInputsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInputSecurityGroups
@@ -4231,7 +4159,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ListInputSecurityGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMultiplexes
@@ -4283,7 +4210,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ListMultiplexesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMultiplexPrograms
@@ -4338,7 +4264,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ListMultiplexProgramsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNetworks
@@ -4390,7 +4315,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ListNetworksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNodes
@@ -4442,7 +4366,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ListNodesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOfferings
@@ -4494,7 +4417,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ListOfferingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReservations
@@ -4546,7 +4468,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ListReservationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSignalMaps
@@ -4595,7 +4516,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ListSignalMapsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -4641,7 +4561,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVersions
@@ -4700,7 +4619,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ListVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PurchaseOffering
@@ -4758,7 +4676,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<PurchaseOfferingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RebootInputDevice
@@ -4818,7 +4735,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<RebootInputDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectInputDeviceTransfer
@@ -4879,7 +4795,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<RejectInputDeviceTransferResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestartChannelPipelines
@@ -4937,7 +4852,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<RestartChannelPipelinesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartChannel
@@ -4995,7 +4909,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<StartChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDeleteMonitorDeployment
@@ -5047,7 +4960,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<StartDeleteMonitorDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartInputDevice
@@ -5107,7 +5019,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<StartInputDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartInputDeviceMaintenanceWindow
@@ -5171,7 +5082,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<StartInputDeviceMaintenanceWindowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMonitorDeployment
@@ -5223,7 +5133,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<StartMonitorDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMultiplex
@@ -5282,7 +5191,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<StartMultiplexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartUpdateSignalMap
@@ -5335,7 +5243,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<StartUpdateSignalMapResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopChannel
@@ -5393,7 +5300,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<StopChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopInputDevice
@@ -5453,7 +5359,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<StopInputDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopMultiplex
@@ -5511,7 +5416,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<StopMultiplexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TransferInputDevice
@@ -5573,7 +5477,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<TransferInputDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccountConfiguration
@@ -5628,7 +5531,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<UpdateAccountConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateChannel
@@ -5683,7 +5585,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<UpdateChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateChannelClass
@@ -5744,7 +5645,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<UpdateChannelClassResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateChannelPlacementGroup
@@ -5802,7 +5702,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<UpdateChannelPlacementGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCloudWatchAlarmTemplate
@@ -5854,7 +5753,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<UpdateCloudWatchAlarmTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCloudWatchAlarmTemplateGroup
@@ -5906,7 +5804,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<UpdateCloudWatchAlarmTemplateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCluster
@@ -5961,7 +5858,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<UpdateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEventBridgeRuleTemplate
@@ -6013,7 +5909,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<UpdateEventBridgeRuleTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEventBridgeRuleTemplateGroup
@@ -6065,7 +5960,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<UpdateEventBridgeRuleTemplateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInput
@@ -6120,7 +6014,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<UpdateInputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInputDevice
@@ -6178,7 +6071,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<UpdateInputDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInputSecurityGroup
@@ -6233,7 +6125,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<UpdateInputSecurityGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMultiplex
@@ -6291,7 +6182,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<UpdateMultiplexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMultiplexProgram
@@ -6349,7 +6239,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<UpdateMultiplexProgramResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNetwork
@@ -6404,7 +6293,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<UpdateNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNode
@@ -6459,7 +6347,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<UpdateNodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNodeState
@@ -6517,7 +6404,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<UpdateNodeStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateReservation
@@ -6575,7 +6461,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<UpdateReservationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

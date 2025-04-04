@@ -315,7 +315,6 @@ namespace Amazon.SSMQuickSetup
 
             return InvokeAsync<CreateConfigurationManagerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfigurationManager
@@ -369,7 +368,6 @@ namespace Amazon.SSMQuickSetup
 
             return InvokeAsync<DeleteConfigurationManagerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfiguration
@@ -423,7 +421,6 @@ namespace Amazon.SSMQuickSetup
 
             return InvokeAsync<GetConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfigurationManager
@@ -477,7 +474,6 @@ namespace Amazon.SSMQuickSetup
 
             return InvokeAsync<GetConfigurationManagerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceSettings
@@ -525,7 +521,6 @@ namespace Amazon.SSMQuickSetup
 
             return InvokeAsync<GetServiceSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfigurationManagers
@@ -576,7 +571,6 @@ namespace Amazon.SSMQuickSetup
 
             return InvokeAsync<ListConfigurationManagersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfigurations
@@ -628,7 +622,6 @@ namespace Amazon.SSMQuickSetup
 
             return InvokeAsync<ListConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQuickSetupTypes
@@ -675,7 +668,6 @@ namespace Amazon.SSMQuickSetup
 
             return InvokeAsync<ListQuickSetupTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -729,7 +721,6 @@ namespace Amazon.SSMQuickSetup
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -783,7 +774,6 @@ namespace Amazon.SSMQuickSetup
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -837,7 +827,6 @@ namespace Amazon.SSMQuickSetup
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfigurationDefinition
@@ -891,7 +880,6 @@ namespace Amazon.SSMQuickSetup
 
             return InvokeAsync<UpdateConfigurationDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfigurationManager
@@ -945,7 +933,6 @@ namespace Amazon.SSMQuickSetup
 
             return InvokeAsync<UpdateConfigurationManagerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServiceSettings
@@ -996,7 +983,6 @@ namespace Amazon.SSMQuickSetup
 
             return InvokeAsync<UpdateServiceSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

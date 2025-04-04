@@ -314,7 +314,6 @@ namespace Amazon.ForecastQueryService
 
             return InvokeAsync<QueryForecastResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryWhatIfForecast
@@ -363,7 +362,6 @@ namespace Amazon.ForecastQueryService
 
             return InvokeAsync<QueryWhatIfForecastResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

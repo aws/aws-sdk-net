@@ -30,7 +30,6 @@ namespace Amazon.Tnb
     /// <summary>
     /// Configuration for accessing Amazon Tnb service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonTnbConfig : ClientConfig
     {
         private static readonly string UserAgentString =

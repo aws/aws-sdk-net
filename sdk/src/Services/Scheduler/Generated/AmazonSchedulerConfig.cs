@@ -30,7 +30,6 @@ namespace Amazon.Scheduler
     /// <summary>
     /// Configuration for accessing Amazon Scheduler service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSchedulerConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -316,7 +316,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<AssociateCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelJob
@@ -371,7 +370,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<CancelJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateJob
@@ -427,7 +425,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<CreateJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateJobTemplate
@@ -483,7 +480,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<CreateJobTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePreset
@@ -538,7 +534,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<CreatePresetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateQueue
@@ -594,7 +589,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<CreateQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteJobTemplate
@@ -649,7 +643,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<DeleteJobTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePolicy
@@ -704,7 +697,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<DeletePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePreset
@@ -759,7 +751,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<DeletePresetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteQueue
@@ -814,7 +805,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<DeleteQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEndpoints
@@ -873,7 +863,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<DescribeEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateCertificate
@@ -929,7 +918,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<DisassociateCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJob
@@ -984,7 +972,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<GetJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJobTemplate
@@ -1039,7 +1026,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<GetJobTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPolicy
@@ -1094,7 +1080,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<GetPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPreset
@@ -1149,7 +1134,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<GetPresetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueue
@@ -1204,7 +1188,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<GetQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobs
@@ -1262,7 +1245,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobTemplates
@@ -1319,7 +1301,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<ListJobTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPresets
@@ -1376,7 +1357,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<ListPresetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQueues
@@ -1433,7 +1413,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<ListQueuesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1488,7 +1467,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVersions
@@ -1543,7 +1521,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<ListVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Probe
@@ -1599,7 +1576,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<ProbeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutPolicy
@@ -1655,7 +1631,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<PutPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchJobs
@@ -1713,7 +1688,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<SearchJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1769,7 +1743,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1825,7 +1798,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateJobTemplate
@@ -1880,7 +1852,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<UpdateJobTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePreset
@@ -1935,7 +1906,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<UpdatePresetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQueue
@@ -1990,7 +1960,6 @@ namespace Amazon.MediaConvert
 
             return InvokeAsync<UpdateQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.Schemas
     /// <summary>
     /// Configuration for accessing Amazon Schemas service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSchemasConfig : ClientConfig
     {
         private static readonly string UserAgentString =

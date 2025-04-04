@@ -30,7 +30,6 @@ namespace Amazon.BCMPricingCalculator
     /// <summary>
     /// Configuration for accessing Amazon BCMPricingCalculator service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonBCMPricingCalculatorConfig : ClientConfig
     {
         private static readonly string UserAgentString =

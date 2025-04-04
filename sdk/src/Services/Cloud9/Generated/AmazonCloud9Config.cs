@@ -30,7 +30,6 @@ namespace Amazon.Cloud9
     /// <summary>
     /// Configuration for accessing Amazon Cloud9 service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCloud9Config : ClientConfig
     {
         private static readonly string UserAgentString =

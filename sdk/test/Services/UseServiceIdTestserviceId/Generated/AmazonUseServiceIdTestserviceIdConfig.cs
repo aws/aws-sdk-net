@@ -30,7 +30,6 @@ namespace Amazon.UseServiceIdTestserviceId
     /// <summary>
     /// Configuration for accessing Amazon UseServiceIdTestserviceId service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonUseServiceIdTestserviceIdConfig : ClientConfig
     {
         private static readonly string UserAgentString =

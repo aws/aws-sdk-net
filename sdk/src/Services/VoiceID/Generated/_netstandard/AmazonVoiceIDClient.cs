@@ -322,7 +322,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<AssociateFraudsterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDomain
@@ -385,7 +384,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<CreateDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWatchlist
@@ -446,7 +444,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<CreateWatchlistResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDomain
@@ -503,7 +500,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<DeleteDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFraudster
@@ -561,7 +557,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<DeleteFraudsterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSpeaker
@@ -618,7 +613,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<DeleteSpeakerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWatchlist
@@ -678,7 +672,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<DeleteWatchlistResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDomain
@@ -731,7 +724,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<DescribeDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFraudster
@@ -784,7 +776,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<DescribeFraudsterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFraudsterRegistrationJob
@@ -837,7 +828,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<DescribeFraudsterRegistrationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSpeaker
@@ -890,7 +880,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<DescribeSpeakerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSpeakerEnrollmentJob
@@ -943,7 +932,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<DescribeSpeakerEnrollmentJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWatchlist
@@ -996,7 +984,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<DescribeWatchlistResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateFraudster
@@ -1055,7 +1042,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<DisassociateFraudsterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EvaluateSession
@@ -1113,7 +1099,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<EvaluateSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomains
@@ -1162,7 +1147,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<ListDomainsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFraudsterRegistrationJobs
@@ -1217,7 +1201,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<ListFraudsterRegistrationJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFraudsters
@@ -1270,7 +1253,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<ListFraudstersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSpeakerEnrollmentJobs
@@ -1325,7 +1307,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<ListSpeakerEnrollmentJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSpeakers
@@ -1378,7 +1359,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<ListSpeakersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1431,7 +1411,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWatchlists
@@ -1484,7 +1463,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<ListWatchlistsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  OptOutSpeaker
@@ -1550,7 +1528,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<OptOutSpeakerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartFraudsterRegistrationJob
@@ -1611,7 +1588,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<StartFraudsterRegistrationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSpeakerEnrollmentJob
@@ -1672,7 +1648,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<StartSpeakerEnrollmentJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1729,7 +1704,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1786,7 +1760,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDomain
@@ -1845,7 +1818,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<UpdateDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWatchlist
@@ -1903,7 +1875,6 @@ namespace Amazon.VoiceID
 
             return InvokeAsync<UpdateWatchlistResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

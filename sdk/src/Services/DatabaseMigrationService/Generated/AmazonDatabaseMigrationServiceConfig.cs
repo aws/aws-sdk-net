@@ -30,7 +30,6 @@ namespace Amazon.DatabaseMigrationService
     /// <summary>
     /// Configuration for accessing Amazon DatabaseMigrationService service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonDatabaseMigrationServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

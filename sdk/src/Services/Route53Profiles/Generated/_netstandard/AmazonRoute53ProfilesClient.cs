@@ -322,7 +322,6 @@ namespace Amazon.Route53Profiles
 
             return InvokeAsync<AssociateProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateResourceToProfile
@@ -381,7 +380,6 @@ namespace Amazon.Route53Profiles
 
             return InvokeAsync<AssociateResourceToProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProfile
@@ -431,7 +429,6 @@ namespace Amazon.Route53Profiles
 
             return InvokeAsync<CreateProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProfile
@@ -482,7 +479,6 @@ namespace Amazon.Route53Profiles
 
             return InvokeAsync<DeleteProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateProfile
@@ -535,7 +531,6 @@ namespace Amazon.Route53Profiles
 
             return InvokeAsync<DisassociateProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateResourceFromProfile
@@ -594,7 +589,6 @@ namespace Amazon.Route53Profiles
 
             return InvokeAsync<DisassociateResourceFromProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProfile
@@ -642,7 +636,6 @@ namespace Amazon.Route53Profiles
 
             return InvokeAsync<GetProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProfileAssociation
@@ -690,7 +683,6 @@ namespace Amazon.Route53Profiles
 
             return InvokeAsync<GetProfileAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProfileResourceAssociation
@@ -740,7 +732,6 @@ namespace Amazon.Route53Profiles
 
             return InvokeAsync<GetProfileResourceAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProfileAssociations
@@ -790,7 +781,6 @@ namespace Amazon.Route53Profiles
 
             return InvokeAsync<ListProfileAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProfileResourceAssociations
@@ -846,7 +836,6 @@ namespace Amazon.Route53Profiles
 
             return InvokeAsync<ListProfileResourceAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProfiles
@@ -896,7 +885,6 @@ namespace Amazon.Route53Profiles
 
             return InvokeAsync<ListProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -946,7 +934,6 @@ namespace Amazon.Route53Profiles
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -993,7 +980,6 @@ namespace Amazon.Route53Profiles
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1043,7 +1029,6 @@ namespace Amazon.Route53Profiles
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProfileResourceAssociation
@@ -1102,7 +1087,6 @@ namespace Amazon.Route53Profiles
 
             return InvokeAsync<UpdateProfileResourceAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

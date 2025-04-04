@@ -30,7 +30,6 @@ namespace Amazon.BedrockAgentRuntime
     /// <summary>
     /// Configuration for accessing Amazon BedrockAgentRuntime service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonBedrockAgentRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =

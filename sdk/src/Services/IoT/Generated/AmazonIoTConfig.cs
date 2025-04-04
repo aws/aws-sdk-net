@@ -30,7 +30,6 @@ namespace Amazon.IoT
     /// <summary>
     /// Configuration for accessing Amazon IoT service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonIoTConfig : ClientConfig
     {
         private static readonly string UserAgentString =

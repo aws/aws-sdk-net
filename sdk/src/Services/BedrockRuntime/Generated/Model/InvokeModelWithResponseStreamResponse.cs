@@ -32,7 +32,7 @@ namespace Amazon.BedrockRuntime.Model
     /// <summary>
     /// This is the response object from the InvokeModelWithResponseStream operation.
     /// </summary>
-    public partial class InvokeModelWithResponseStreamResponse : AmazonWebServiceResponse
+    public partial class InvokeModelWithResponseStreamResponse : AmazonWebServiceResponse, IDisposable
     {
         private ResponseStream _body;
         private string _contentType;
@@ -97,5 +97,36 @@ namespace Amazon.BedrockRuntime.Model
             return this._performanceConfigLatency != null;
         }
 
+        #region Dispose Pattern
+
+        private bool _disposed;
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                this._body?.Dispose();
+                this._body = null;
+            }
+
+            this._disposed = true;
+         }
+
+         #endregion
     }
 }

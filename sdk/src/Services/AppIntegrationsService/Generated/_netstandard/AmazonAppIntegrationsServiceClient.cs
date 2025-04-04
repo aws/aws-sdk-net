@@ -345,7 +345,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataIntegration
@@ -405,7 +404,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<CreateDataIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataIntegrationAssociation
@@ -457,7 +455,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<CreateDataIntegrationAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEventIntegration
@@ -512,7 +509,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<CreateEventIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplication
@@ -562,7 +558,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<DeleteApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataIntegration
@@ -622,7 +617,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<DeleteDataIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventIntegration
@@ -672,7 +666,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<DeleteEventIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplication
@@ -721,7 +714,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<GetApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataIntegration
@@ -779,7 +771,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<GetDataIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEventIntegration
@@ -828,7 +819,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<GetEventIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplicationAssociations
@@ -877,7 +867,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<ListApplicationAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplications
@@ -923,7 +912,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<ListApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataIntegrationAssociations
@@ -981,7 +969,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<ListDataIntegrationAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataIntegrations
@@ -1036,7 +1023,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<ListDataIntegrationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventIntegrationAssociations
@@ -1085,7 +1071,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<ListEventIntegrationAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventIntegrations
@@ -1131,7 +1116,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<ListEventIntegrationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1177,7 +1161,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1223,7 +1206,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1269,7 +1251,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplication
@@ -1321,7 +1302,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataIntegration
@@ -1379,7 +1359,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<UpdateDataIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataIntegrationAssociation
@@ -1435,7 +1414,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<UpdateDataIntegrationAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEventIntegration
@@ -1484,7 +1462,6 @@ namespace Amazon.AppIntegrationsService
 
             return InvokeAsync<UpdateEventIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -344,7 +344,6 @@ namespace Amazon.CertificateManager
 
             return InvokeAsync<AddTagsToCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCertificate
@@ -462,7 +461,6 @@ namespace Amazon.CertificateManager
 
             return InvokeAsync<DeleteCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCertificate
@@ -540,7 +538,6 @@ namespace Amazon.CertificateManager
 
             return InvokeAsync<DescribeCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportCertificate
@@ -596,7 +593,6 @@ namespace Amazon.CertificateManager
 
             return InvokeAsync<ExportCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccountConfiguration
@@ -636,7 +632,6 @@ namespace Amazon.CertificateManager
 
             return InvokeAsync<GetAccountConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCertificate
@@ -722,7 +717,6 @@ namespace Amazon.CertificateManager
 
             return InvokeAsync<GetCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportCertificate
@@ -855,7 +849,6 @@ namespace Amazon.CertificateManager
 
             return InvokeAsync<ImportCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCertificates
@@ -940,7 +933,6 @@ namespace Amazon.CertificateManager
 
             return InvokeAsync<ListCertificatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForCertificate
@@ -984,7 +976,6 @@ namespace Amazon.CertificateManager
 
             return InvokeAsync<ListTagsForCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAccountConfiguration
@@ -1039,7 +1030,6 @@ namespace Amazon.CertificateManager
 
             return InvokeAsync<PutAccountConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTagsFromCertificate
@@ -1103,7 +1093,6 @@ namespace Amazon.CertificateManager
 
             return InvokeAsync<RemoveTagsFromCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RenewCertificate
@@ -1148,7 +1137,6 @@ namespace Amazon.CertificateManager
 
             return InvokeAsync<RenewCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RequestCertificate
@@ -1292,7 +1280,6 @@ namespace Amazon.CertificateManager
 
             return InvokeAsync<RequestCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResendValidationEmail
@@ -1348,7 +1335,6 @@ namespace Amazon.CertificateManager
 
             return InvokeAsync<ResendValidationEmailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCertificateOptions
@@ -1398,7 +1384,6 @@ namespace Amazon.CertificateManager
 
             return InvokeAsync<UpdateCertificateOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

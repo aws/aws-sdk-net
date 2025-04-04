@@ -687,7 +687,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<AssociateExternalConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyPackageVersions
@@ -753,7 +752,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<CopyPackageVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDomain
@@ -822,7 +820,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<CreateDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePackageGroup
@@ -882,7 +879,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<CreatePackageGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRepository
@@ -940,7 +936,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<CreateRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDomain
@@ -991,7 +986,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<DeleteDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDomainPermissionsPolicy
@@ -1045,7 +1039,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<DeleteDomainPermissionsPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePackage
@@ -1101,7 +1094,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<DeletePackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePackageGroup
@@ -1163,7 +1155,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<DeletePackageGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePackageVersions
@@ -1222,7 +1213,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<DeletePackageVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRepository
@@ -1276,7 +1266,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<DeleteRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRepositoryPermissionsPolicy
@@ -1340,7 +1329,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<DeleteRepositoryPermissionsPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDomain
@@ -1392,7 +1380,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<DescribeDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePackage
@@ -1444,7 +1431,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<DescribePackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePackageGroup
@@ -1496,7 +1482,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<DescribePackageGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePackageVersion
@@ -1551,7 +1536,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<DescribePackageVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRepository
@@ -1603,7 +1587,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<DescribeRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateExternalConnection
@@ -1661,7 +1644,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<DisassociateExternalConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisposePackageVersions
@@ -1729,7 +1711,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<DisposePackageVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAssociatedPackageGroup
@@ -1787,7 +1768,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<GetAssociatedPackageGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAuthorizationToken
@@ -1866,7 +1846,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<GetAuthorizationTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDomainPermissionsPolicy
@@ -1925,7 +1904,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<GetDomainPermissionsPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPackageVersionAsset
@@ -1981,7 +1959,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<GetPackageVersionAssetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPackageVersionReadme
@@ -2038,7 +2015,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<GetPackageVersionReadmeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRepositoryEndpoint
@@ -2124,7 +2100,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<GetRepositoryEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRepositoryPermissionsPolicy
@@ -2175,7 +2150,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<GetRepositoryPermissionsPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAllowedRepositoriesForGroup
@@ -2233,7 +2207,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<ListAllowedRepositoriesForGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssociatedPackages
@@ -2283,7 +2256,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<ListAssociatedPackagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomains
@@ -2332,7 +2304,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<ListDomainsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPackageGroups
@@ -2383,7 +2354,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<ListPackageGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPackages
@@ -2435,7 +2405,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<ListPackagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPackageVersionAssets
@@ -2487,7 +2456,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<ListPackageVersionAssetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPackageVersionDependencies
@@ -2543,7 +2511,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<ListPackageVersionDependenciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPackageVersions
@@ -2597,7 +2564,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<ListPackageVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRepositories
@@ -2646,7 +2612,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<ListRepositoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRepositoriesInDomain
@@ -2699,7 +2664,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<ListRepositoriesInDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSubPackageGroups
@@ -2756,7 +2720,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<ListSubPackageGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2805,7 +2768,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PublishPackageVersion
@@ -2881,7 +2843,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<PublishPackageVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDomainPermissionsPolicy
@@ -2947,7 +2908,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<PutDomainPermissionsPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutPackageOriginConfiguration
@@ -3018,7 +2978,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<PutPackageOriginConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRepositoryPermissionsPolicy
@@ -3085,7 +3044,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<PutRepositoryPermissionsPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3137,7 +3095,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3185,7 +3142,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePackageGroup
@@ -3242,7 +3198,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<UpdatePackageGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePackageGroupOriginConfiguration
@@ -3307,7 +3262,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<UpdatePackageGroupOriginConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePackageVersionsStatus
@@ -3364,7 +3318,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<UpdatePackageVersionsStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRepository
@@ -3422,7 +3375,6 @@ namespace Amazon.CodeArtifact
 
             return InvokeAsync<UpdateRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

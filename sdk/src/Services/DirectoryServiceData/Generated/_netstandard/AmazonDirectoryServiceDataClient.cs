@@ -400,7 +400,6 @@ namespace Amazon.DirectoryServiceData
 
             return InvokeAsync<AddGroupMemberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGroup
@@ -473,7 +472,6 @@ namespace Amazon.DirectoryServiceData
 
             return InvokeAsync<CreateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUser
@@ -546,7 +544,6 @@ namespace Amazon.DirectoryServiceData
 
             return InvokeAsync<CreateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGroup
@@ -622,7 +619,6 @@ namespace Amazon.DirectoryServiceData
 
             return InvokeAsync<DeleteGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUser
@@ -698,7 +694,6 @@ namespace Amazon.DirectoryServiceData
 
             return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGroup
@@ -761,7 +756,6 @@ namespace Amazon.DirectoryServiceData
 
             return InvokeAsync<DescribeGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUser
@@ -824,7 +818,6 @@ namespace Amazon.DirectoryServiceData
 
             return InvokeAsync<DescribeUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableUser
@@ -902,7 +895,6 @@ namespace Amazon.DirectoryServiceData
 
             return InvokeAsync<DisableUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroupMembers
@@ -978,7 +970,6 @@ namespace Amazon.DirectoryServiceData
 
             return InvokeAsync<ListGroupMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroups
@@ -1051,7 +1042,6 @@ namespace Amazon.DirectoryServiceData
 
             return InvokeAsync<ListGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroupsForMember
@@ -1127,7 +1117,6 @@ namespace Amazon.DirectoryServiceData
 
             return InvokeAsync<ListGroupsForMemberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUsers
@@ -1200,7 +1189,6 @@ namespace Amazon.DirectoryServiceData
 
             return InvokeAsync<ListUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveGroupMember
@@ -1276,7 +1264,6 @@ namespace Amazon.DirectoryServiceData
 
             return InvokeAsync<RemoveGroupMemberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchGroups
@@ -1351,7 +1338,6 @@ namespace Amazon.DirectoryServiceData
 
             return InvokeAsync<SearchGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchUsers
@@ -1425,7 +1411,6 @@ namespace Amazon.DirectoryServiceData
 
             return InvokeAsync<SearchUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGroup
@@ -1501,7 +1486,6 @@ namespace Amazon.DirectoryServiceData
 
             return InvokeAsync<UpdateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUser
@@ -1577,7 +1561,6 @@ namespace Amazon.DirectoryServiceData
 
             return InvokeAsync<UpdateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

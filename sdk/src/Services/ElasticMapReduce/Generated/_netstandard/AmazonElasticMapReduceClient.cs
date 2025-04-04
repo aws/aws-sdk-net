@@ -310,7 +310,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<AddInstanceFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddInstanceGroups
@@ -348,7 +347,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<AddInstanceGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddJobFlowSteps
@@ -419,7 +417,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<AddJobFlowStepsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddTags
@@ -462,7 +459,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<AddTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelSteps
@@ -509,7 +505,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<CancelStepsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSecurityConfiguration
@@ -550,7 +545,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<CreateSecurityConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStudio
@@ -590,7 +584,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<CreateStudioResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStudioSessionMapping
@@ -635,7 +628,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<CreateStudioSessionMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSecurityConfiguration
@@ -675,7 +667,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<DeleteSecurityConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStudio
@@ -715,7 +706,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<DeleteStudioResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStudioSessionMapping
@@ -756,7 +746,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<DeleteStudioSessionMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCluster
@@ -823,7 +812,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<DescribeClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeJobFlows
@@ -952,7 +940,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<DescribeJobFlowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeNotebookExecution
@@ -993,7 +980,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<DescribeNotebookExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReleaseLabel
@@ -1036,7 +1022,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<DescribeReleaseLabelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSecurityConfiguration
@@ -1076,7 +1061,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<DescribeSecurityConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStep
@@ -1141,7 +1125,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<DescribeStepResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStudio
@@ -1182,7 +1165,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<DescribeStudioResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAutoTerminationPolicy
@@ -1216,7 +1198,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<GetAutoTerminationPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBlockPublicAccessConfiguration
@@ -1258,7 +1239,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<GetBlockPublicAccessConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetClusterSessionCredentials
@@ -1302,7 +1282,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<GetClusterSessionCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetManagedScalingPolicy
@@ -1336,7 +1315,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<GetManagedScalingPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStudioSessionMapping
@@ -1378,7 +1356,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<GetStudioSessionMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBootstrapActions
@@ -1443,7 +1420,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<ListBootstrapActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClusters
@@ -1516,7 +1492,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<ListClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInstanceFleets
@@ -1563,7 +1538,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<ListInstanceFleetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInstanceGroups
@@ -1628,7 +1602,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<ListInstanceGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInstances
@@ -1699,7 +1672,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<ListInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNotebookExecutions
@@ -1743,7 +1715,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<ListNotebookExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReleaseLabels
@@ -1783,7 +1754,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<ListReleaseLabelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSecurityConfigurations
@@ -1826,7 +1796,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<ListSecurityConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSteps
@@ -1899,7 +1868,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<ListStepsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStudios
@@ -1941,7 +1909,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<ListStudiosResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStudioSessionMappings
@@ -1983,7 +1950,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<ListStudioSessionMappingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSupportedInstanceTypes
@@ -2024,7 +1990,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<ListSupportedInstanceTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyCluster
@@ -2066,7 +2031,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<ModifyClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyInstanceFleet
@@ -2115,7 +2079,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<ModifyInstanceFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyInstanceGroups
@@ -2155,7 +2118,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<ModifyInstanceGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAutoScalingPolicy
@@ -2192,7 +2154,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<PutAutoScalingPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAutoTerminationPolicy
@@ -2238,7 +2199,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<PutAutoTerminationPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBlockPublicAccessConfiguration
@@ -2280,7 +2240,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<PutBlockPublicAccessConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutManagedScalingPolicy
@@ -2317,7 +2276,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<PutManagedScalingPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveAutoScalingPolicy
@@ -2352,7 +2310,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<RemoveAutoScalingPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveAutoTerminationPolicy
@@ -2386,7 +2343,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<RemoveAutoTerminationPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveManagedScalingPolicy
@@ -2420,7 +2376,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<RemoveManagedScalingPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTags
@@ -2468,7 +2423,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<RemoveTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RunJobFlow
@@ -2540,7 +2494,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<RunJobFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetKeepJobFlowAliveWhenNoSteps
@@ -2589,7 +2542,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<SetKeepJobFlowAliveWhenNoStepsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetTerminationProtection
@@ -2649,7 +2601,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<SetTerminationProtectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetUnhealthyNodeReplacement
@@ -2705,7 +2656,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<SetUnhealthyNodeReplacementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetVisibleToAllUsers
@@ -2768,7 +2718,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<SetVisibleToAllUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartNotebookExecution
@@ -2808,7 +2757,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<StartNotebookExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopNotebookExecution
@@ -2849,7 +2797,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<StopNotebookExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TerminateJobFlows
@@ -2898,7 +2845,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<TerminateJobFlowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStudio
@@ -2939,7 +2885,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<UpdateStudioResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStudioSessionMapping
@@ -2981,7 +2926,6 @@ namespace Amazon.ElasticMapReduce
 
             return InvokeAsync<UpdateStudioSessionMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

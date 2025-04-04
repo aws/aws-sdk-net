@@ -312,7 +312,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<BatchDetectDominantLanguageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDetectEntities
@@ -366,7 +365,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<BatchDetectEntitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDetectKeyPhrases
@@ -418,7 +416,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<BatchDetectKeyPhrasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDetectSentiment
@@ -471,7 +468,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<BatchDetectSentimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDetectSyntax
@@ -526,7 +522,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<BatchDetectSyntaxResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDetectTargetedSentiment
@@ -585,7 +580,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<BatchDetectTargetedSentimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ClassifyDocument
@@ -660,7 +654,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<ClassifyDocumentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ContainsPiiEntities
@@ -710,7 +703,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<ContainsPiiEntitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataset
@@ -771,7 +763,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<CreateDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDocumentClassifier
@@ -839,7 +830,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<CreateDocumentClassifierResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEndpoint
@@ -903,7 +893,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<CreateEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEntityRecognizer
@@ -970,7 +959,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<CreateEntityRecognizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFlywheel
@@ -1066,7 +1054,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<CreateFlywheelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDocumentClassifier
@@ -1132,7 +1119,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DeleteDocumentClassifierResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEndpoint
@@ -1185,7 +1171,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DeleteEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEntityRecognizer
@@ -1251,7 +1236,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DeleteEntityRecognizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFlywheel
@@ -1311,7 +1295,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DeleteFlywheelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -1354,7 +1337,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataset
@@ -1402,7 +1384,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DescribeDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDocumentClassificationJob
@@ -1449,7 +1430,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DescribeDocumentClassificationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDocumentClassifier
@@ -1495,7 +1475,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DescribeDocumentClassifierResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDominantLanguageDetectionJob
@@ -1542,7 +1521,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DescribeDominantLanguageDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEndpoint
@@ -1590,7 +1568,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DescribeEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEntitiesDetectionJob
@@ -1637,7 +1614,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DescribeEntitiesDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEntityRecognizer
@@ -1684,7 +1660,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DescribeEntityRecognizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventsDetectionJob
@@ -1730,7 +1705,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DescribeEventsDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFlywheel
@@ -1778,7 +1752,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DescribeFlywheelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFlywheelIteration
@@ -1826,7 +1799,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DescribeFlywheelIterationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeKeyPhrasesDetectionJob
@@ -1873,7 +1845,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DescribeKeyPhrasesDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePiiEntitiesDetectionJob
@@ -1920,7 +1891,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DescribePiiEntitiesDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeResourcePolicy
@@ -1964,7 +1934,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DescribeResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSentimentDetectionJob
@@ -2011,7 +1980,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DescribeSentimentDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTargetedSentimentDetectionJob
@@ -2058,7 +2026,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DescribeTargetedSentimentDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTopicsDetectionJob
@@ -2105,7 +2072,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DescribeTopicsDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectDominantLanguage
@@ -2150,7 +2116,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DetectDominantLanguageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectEntities
@@ -2226,7 +2191,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DetectEntitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectKeyPhrases
@@ -2274,7 +2238,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DetectKeyPhrasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectPiiEntities
@@ -2323,7 +2286,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DetectPiiEntitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectSentiment
@@ -2372,7 +2334,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DetectSentimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectSyntax
@@ -2422,7 +2383,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DetectSyntaxResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectTargetedSentiment
@@ -2477,7 +2437,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DetectTargetedSentimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectToxicContent
@@ -2528,7 +2487,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<DetectToxicContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportModel
@@ -2606,7 +2564,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<ImportModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatasets
@@ -2657,7 +2614,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<ListDatasetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDocumentClassificationJobs
@@ -2703,7 +2659,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<ListDocumentClassificationJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDocumentClassifiers
@@ -2749,7 +2704,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<ListDocumentClassifiersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDocumentClassifierSummaries
@@ -2792,7 +2746,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<ListDocumentClassifierSummariesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDominantLanguageDetectionJobs
@@ -2838,7 +2791,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<ListDominantLanguageDetectionJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEndpoints
@@ -2883,7 +2835,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<ListEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEntitiesDetectionJobs
@@ -2929,7 +2880,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<ListEntitiesDetectionJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEntityRecognizers
@@ -2984,7 +2934,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<ListEntityRecognizersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEntityRecognizerSummaries
@@ -3027,7 +2976,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<ListEntityRecognizerSummariesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventsDetectionJobs
@@ -3073,7 +3021,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<ListEventsDetectionJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFlywheelIterationHistory
@@ -3124,7 +3071,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<ListFlywheelIterationHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFlywheels
@@ -3170,7 +3116,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<ListFlywheelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKeyPhrasesDetectionJobs
@@ -3216,7 +3161,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<ListKeyPhrasesDetectionJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPiiEntitiesDetectionJobs
@@ -3262,7 +3206,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<ListPiiEntitiesDetectionJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSentimentDetectionJobs
@@ -3308,7 +3251,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<ListSentimentDetectionJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3351,7 +3293,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTargetedSentimentDetectionJobs
@@ -3397,7 +3338,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<ListTargetedSentimentDetectionJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTopicsDetectionJobs
@@ -3443,7 +3383,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<ListTopicsDetectionJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -3488,7 +3427,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDocumentClassificationJob
@@ -3552,7 +3490,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<StartDocumentClassificationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDominantLanguageDetectionJob
@@ -3609,7 +3546,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<StartDominantLanguageDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartEntitiesDetectionJob
@@ -3680,7 +3616,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<StartEntitiesDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartEventsDetectionJob
@@ -3736,7 +3671,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<StartEventsDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartFlywheelIteration
@@ -3788,7 +3722,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<StartFlywheelIterationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartKeyPhrasesDetectionJob
@@ -3845,7 +3778,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<StartKeyPhrasesDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartPiiEntitiesDetectionJob
@@ -3901,7 +3833,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<StartPiiEntitiesDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSentimentDetectionJob
@@ -3958,7 +3889,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<StartSentimentDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartTargetedSentimentDetectionJob
@@ -4016,7 +3946,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<StartTargetedSentimentDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartTopicsDetectionJob
@@ -4073,7 +4002,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<StartTopicsDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopDominantLanguageDetectionJob
@@ -4133,7 +4061,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<StopDominantLanguageDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopEntitiesDetectionJob
@@ -4193,7 +4120,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<StopEntitiesDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopEventsDetectionJob
@@ -4236,7 +4162,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<StopEventsDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopKeyPhrasesDetectionJob
@@ -4296,7 +4221,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<StopKeyPhrasesDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopPiiEntitiesDetectionJob
@@ -4339,7 +4263,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<StopPiiEntitiesDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopSentimentDetectionJob
@@ -4399,7 +4322,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<StopSentimentDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopTargetedSentimentDetectionJob
@@ -4459,7 +4381,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<StopTargetedSentimentDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopTrainingDocumentClassifier
@@ -4514,7 +4435,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<StopTrainingDocumentClassifierResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopTrainingEntityRecognizer
@@ -4569,7 +4489,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<StopTrainingEntityRecognizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -4624,7 +4543,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -4675,7 +4593,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEndpoint
@@ -4734,7 +4651,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<UpdateEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFlywheel
@@ -4784,7 +4700,6 @@ namespace Amazon.Comprehend
 
             return InvokeAsync<UpdateFlywheelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

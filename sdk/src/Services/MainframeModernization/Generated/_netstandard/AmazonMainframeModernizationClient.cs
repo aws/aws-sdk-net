@@ -317,7 +317,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<CancelBatchJobExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApplication
@@ -370,7 +369,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataSetImportTask
@@ -425,7 +423,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<CreateDataSetImportTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDeployment
@@ -480,7 +477,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<CreateDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEnvironment
@@ -532,7 +528,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<CreateEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplication
@@ -581,7 +576,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<DeleteApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplicationFromEnvironment
@@ -637,7 +631,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<DeleteApplicationFromEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEnvironment
@@ -687,7 +680,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<DeleteEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplication
@@ -736,7 +728,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<GetApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplicationVersion
@@ -785,7 +776,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<GetApplicationVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBatchJobExecution
@@ -834,7 +824,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<GetBatchJobExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataSetDetails
@@ -892,7 +881,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<GetDataSetDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataSetImportTask
@@ -942,7 +930,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<GetDataSetImportTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeployment
@@ -991,7 +978,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<GetDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEnvironment
@@ -1040,7 +1026,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<GetEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSignedBluinsightsUrl
@@ -1083,7 +1068,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<GetSignedBluinsightsUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplications
@@ -1131,7 +1115,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<ListApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplicationVersions
@@ -1180,7 +1163,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<ListApplicationVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBatchJobDefinitions
@@ -1231,7 +1213,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<ListBatchJobDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBatchJobExecutions
@@ -1280,7 +1261,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<ListBatchJobExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBatchJobRestartPoints
@@ -1333,7 +1313,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<ListBatchJobRestartPointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataSetImportHistory
@@ -1382,7 +1361,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<ListDataSetImportHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataSets
@@ -1443,7 +1421,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<ListDataSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeployments
@@ -1494,7 +1471,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<ListDeploymentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEngineVersions
@@ -1540,7 +1516,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<ListEngineVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnvironments
@@ -1586,7 +1561,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<ListEnvironmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1635,7 +1609,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartApplication
@@ -1687,7 +1660,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<StartApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartBatchJob
@@ -1740,7 +1712,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<StartBatchJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopApplication
@@ -1792,7 +1763,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<StopApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1844,7 +1814,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1893,7 +1862,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplication
@@ -1945,7 +1913,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEnvironment
@@ -2000,7 +1967,6 @@ namespace Amazon.MainframeModernization
 
             return InvokeAsync<UpdateEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

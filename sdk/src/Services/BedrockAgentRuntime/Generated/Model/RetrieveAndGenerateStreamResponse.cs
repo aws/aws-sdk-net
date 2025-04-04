@@ -32,7 +32,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// <summary>
     /// This is the response object from the RetrieveAndGenerateStream operation.
     /// </summary>
-    public partial class RetrieveAndGenerateStreamResponse : AmazonWebServiceResponse
+    public partial class RetrieveAndGenerateStreamResponse : AmazonWebServiceResponse, IDisposable
     {
         private string _sessionId;
         private RetrieveAndGenerateStreamResponseOutput _stream;
@@ -75,5 +75,36 @@ namespace Amazon.BedrockAgentRuntime.Model
             return this._stream != null;
         }
 
+        #region Dispose Pattern
+
+        private bool _disposed;
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                this._stream?.Dispose();
+                this._stream = null;
+            }
+
+            this._disposed = true;
+         }
+
+         #endregion
     }
 }

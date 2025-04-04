@@ -30,7 +30,6 @@ namespace Amazon.SecurityHub
     /// <summary>
     /// Configuration for accessing Amazon SecurityHub service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSecurityHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =

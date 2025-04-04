@@ -315,7 +315,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<CancelClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelJob
@@ -363,7 +362,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<CancelJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAddress
@@ -410,7 +408,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<CreateAddressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCluster
@@ -462,7 +459,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<CreateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateJob
@@ -675,7 +671,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<CreateJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLongTermPricing
@@ -715,7 +710,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<CreateLongTermPricingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateReturnShippingLabel
@@ -772,7 +766,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<CreateReturnShippingLabelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAddress
@@ -811,7 +804,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<DescribeAddressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAddresses
@@ -855,7 +847,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<DescribeAddressesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCluster
@@ -894,7 +885,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<DescribeClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeJob
@@ -933,7 +923,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<DescribeJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReturnShippingLabel
@@ -980,7 +969,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<DescribeReturnShippingLabelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJobManifest
@@ -1047,7 +1035,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<GetJobManifestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJobUnlockCode
@@ -1107,7 +1094,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<GetJobUnlockCodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSnowballUsage
@@ -1149,7 +1135,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<GetSnowballUsageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSoftwareUpdates
@@ -1192,7 +1177,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<GetSoftwareUpdatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClusterJobs
@@ -1236,7 +1220,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<ListClusterJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClusters
@@ -1276,7 +1259,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<ListClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCompatibleImages
@@ -1323,7 +1305,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<ListCompatibleImagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobs
@@ -1365,7 +1346,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLongTermPricing
@@ -1407,7 +1387,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<ListLongTermPricingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPickupLocations
@@ -1445,7 +1424,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<ListPickupLocationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceVersions
@@ -1488,7 +1466,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<ListServiceVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCluster
@@ -1545,7 +1522,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<UpdateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateJob
@@ -1606,7 +1582,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<UpdateJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateJobShipmentState
@@ -1648,7 +1623,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<UpdateJobShipmentStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLongTermPricing
@@ -1686,7 +1660,6 @@ namespace Amazon.Snowball
 
             return InvokeAsync<UpdateLongTermPricingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

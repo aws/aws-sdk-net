@@ -284,7 +284,6 @@ namespace Amazon.SageMakerMetrics
 
             return InvokeAsync<BatchGetMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchPutMetrics
@@ -319,7 +318,6 @@ namespace Amazon.SageMakerMetrics
 
             return InvokeAsync<BatchPutMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

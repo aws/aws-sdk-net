@@ -312,7 +312,6 @@ namespace Amazon.BedrockDataAutomation
 
             return InvokeAsync<CreateBlueprintResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBlueprintVersion
@@ -364,7 +363,6 @@ namespace Amazon.BedrockDataAutomation
 
             return InvokeAsync<CreateBlueprintVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataAutomationProject
@@ -416,7 +414,6 @@ namespace Amazon.BedrockDataAutomation
 
             return InvokeAsync<CreateDataAutomationProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBlueprint
@@ -465,7 +462,6 @@ namespace Amazon.BedrockDataAutomation
 
             return InvokeAsync<DeleteBlueprintResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataAutomationProject
@@ -514,7 +510,6 @@ namespace Amazon.BedrockDataAutomation
 
             return InvokeAsync<DeleteDataAutomationProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBlueprint
@@ -563,7 +558,6 @@ namespace Amazon.BedrockDataAutomation
 
             return InvokeAsync<GetBlueprintResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataAutomationProject
@@ -612,7 +606,6 @@ namespace Amazon.BedrockDataAutomation
 
             return InvokeAsync<GetDataAutomationProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBlueprints
@@ -661,7 +654,6 @@ namespace Amazon.BedrockDataAutomation
 
             return InvokeAsync<ListBlueprintsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataAutomationProjects
@@ -710,7 +702,6 @@ namespace Amazon.BedrockDataAutomation
 
             return InvokeAsync<ListDataAutomationProjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -759,7 +750,6 @@ namespace Amazon.BedrockDataAutomation
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -811,7 +801,6 @@ namespace Amazon.BedrockDataAutomation
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -860,7 +849,6 @@ namespace Amazon.BedrockDataAutomation
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBlueprint
@@ -912,7 +900,6 @@ namespace Amazon.BedrockDataAutomation
 
             return InvokeAsync<UpdateBlueprintResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataAutomationProject
@@ -967,7 +954,6 @@ namespace Amazon.BedrockDataAutomation
 
             return InvokeAsync<UpdateDataAutomationProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

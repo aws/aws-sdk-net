@@ -320,7 +320,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<CreateApiKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAuthorizer
@@ -373,7 +372,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<CreateAuthorizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBasePathMapping
@@ -426,7 +424,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<CreateBasePathMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDeployment
@@ -483,7 +480,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<CreateDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDocumentationPart
@@ -536,7 +532,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<CreateDocumentationPartResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDocumentationVersion
@@ -589,7 +584,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<CreateDocumentationVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDomainName
@@ -639,7 +633,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<CreateDomainNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDomainNameAccessAssociation
@@ -690,7 +683,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<CreateDomainNameAccessAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateModel
@@ -743,7 +735,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<CreateModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRequestValidator
@@ -796,7 +787,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<CreateRequestValidatorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateResource
@@ -849,7 +839,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<CreateResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRestApi
@@ -899,7 +888,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<CreateRestApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStage
@@ -952,7 +940,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<CreateStageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUsagePlan
@@ -1006,7 +993,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<CreateUsagePlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUsagePlanKey
@@ -1059,7 +1045,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<CreateUsagePlanKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVpcLink
@@ -1111,7 +1096,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<CreateVpcLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApiKey
@@ -1161,7 +1145,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteApiKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAuthorizer
@@ -1211,7 +1194,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteAuthorizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBasePathMapping
@@ -1261,7 +1243,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteBasePathMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteClientCertificate
@@ -1311,7 +1292,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteClientCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDeployment
@@ -1365,7 +1345,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDocumentationPart
@@ -1415,7 +1394,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteDocumentationPartResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDocumentationVersion
@@ -1465,7 +1443,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteDocumentationVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDomainName
@@ -1515,7 +1492,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteDomainNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDomainNameAccessAssociation
@@ -1572,7 +1548,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteDomainNameAccessAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGatewayResponse
@@ -1623,7 +1598,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteGatewayResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIntegration
@@ -1673,7 +1647,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIntegrationResponse
@@ -1723,7 +1696,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteIntegrationResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMethod
@@ -1769,7 +1741,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteMethodResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMethodResponse
@@ -1819,7 +1790,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteMethodResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteModel
@@ -1869,7 +1839,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRequestValidator
@@ -1919,7 +1888,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteRequestValidatorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResource
@@ -1969,7 +1937,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRestApi
@@ -2019,7 +1986,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteRestApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStage
@@ -2072,7 +2038,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteStageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUsagePlan
@@ -2122,7 +2087,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteUsagePlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUsagePlanKey
@@ -2173,7 +2137,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteUsagePlanKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVpcLink
@@ -2223,7 +2186,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<DeleteVpcLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FlushStageAuthorizersCache
@@ -2276,7 +2238,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<FlushStageAuthorizersCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FlushStageCache
@@ -2329,7 +2290,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<FlushStageCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateClientCertificate
@@ -2379,7 +2339,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GenerateClientCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccount
@@ -2426,7 +2385,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApiKey
@@ -2473,7 +2431,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetApiKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApiKeys
@@ -2520,7 +2477,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetApiKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAuthorizer
@@ -2567,7 +2523,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetAuthorizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAuthorizers
@@ -2614,7 +2569,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetAuthorizersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBasePathMapping
@@ -2661,7 +2615,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetBasePathMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBasePathMappings
@@ -2708,7 +2661,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetBasePathMappingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetClientCertificate
@@ -2755,7 +2707,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetClientCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetClientCertificates
@@ -2802,7 +2753,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetClientCertificatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeployment
@@ -2853,7 +2803,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeployments
@@ -2904,7 +2853,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetDeploymentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDocumentationPart
@@ -2951,7 +2899,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetDocumentationPartResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDocumentationParts
@@ -2998,7 +2945,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetDocumentationPartsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDocumentationVersion
@@ -3041,7 +2987,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetDocumentationVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDocumentationVersions
@@ -3088,7 +3033,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetDocumentationVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDomainName
@@ -3136,7 +3080,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetDomainNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDomainNameAccessAssociations
@@ -3183,7 +3126,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetDomainNameAccessAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDomainNames
@@ -3230,7 +3172,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetDomainNamesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExport
@@ -3283,7 +3224,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGatewayResponse
@@ -3330,7 +3270,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetGatewayResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGatewayResponses
@@ -3379,7 +3318,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetGatewayResponsesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIntegration
@@ -3426,7 +3364,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIntegrationResponse
@@ -3473,7 +3410,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetIntegrationResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMethod
@@ -3516,7 +3452,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetMethodResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMethodResponse
@@ -3559,7 +3494,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetMethodResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetModel
@@ -3606,7 +3540,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetModels
@@ -3653,7 +3586,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetModelTemplate
@@ -3701,7 +3633,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetModelTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRequestValidator
@@ -3748,7 +3679,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetRequestValidatorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRequestValidators
@@ -3795,7 +3725,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetRequestValidatorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResource
@@ -3838,7 +3767,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResources
@@ -3885,7 +3813,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRestApi
@@ -3932,7 +3859,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetRestApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRestApis
@@ -3979,7 +3905,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetRestApisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSdk
@@ -4032,7 +3957,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetSdkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSdkType
@@ -4079,7 +4003,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetSdkTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSdkTypes
@@ -4126,7 +4049,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetSdkTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStage
@@ -4179,7 +4101,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetStageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStages
@@ -4232,7 +4153,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetStagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTags
@@ -4279,7 +4199,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUsage
@@ -4326,7 +4245,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetUsageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUsagePlan
@@ -4373,7 +4291,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetUsagePlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUsagePlanKey
@@ -4420,7 +4337,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetUsagePlanKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUsagePlanKeys
@@ -4468,7 +4384,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetUsagePlanKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUsagePlans
@@ -4515,7 +4430,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetUsagePlansResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVpcLink
@@ -4562,7 +4476,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetVpcLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVpcLinks
@@ -4609,7 +4522,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<GetVpcLinksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportApiKeys
@@ -4662,7 +4574,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<ImportApiKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportDocumentationParts
@@ -4715,7 +4626,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<ImportDocumentationPartsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportRestApi
@@ -4769,7 +4679,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<ImportRestApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutGatewayResponse
@@ -4823,7 +4732,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<PutGatewayResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutIntegration
@@ -4876,7 +4784,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<PutIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutIntegrationResponse
@@ -4929,7 +4836,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<PutIntegrationResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutMethod
@@ -4982,7 +4888,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<PutMethodResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutMethodResponse
@@ -5035,7 +4940,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<PutMethodResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRestApi
@@ -5090,7 +4994,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<PutRestApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectDomainNameAccessAssociation
@@ -5148,7 +5051,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<RejectDomainNameAccessAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -5201,7 +5103,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestInvokeAuthorizer
@@ -5249,7 +5150,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<TestInvokeAuthorizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestInvokeMethod
@@ -5297,7 +5197,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<TestInvokeMethodResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -5350,7 +5249,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccount
@@ -5403,7 +5301,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApiKey
@@ -5456,7 +5353,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateApiKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAuthorizer
@@ -5509,7 +5405,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateAuthorizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBasePathMapping
@@ -5562,7 +5457,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateBasePathMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateClientCertificate
@@ -5615,7 +5509,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateClientCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDeployment
@@ -5672,7 +5565,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDocumentationPart
@@ -5725,7 +5617,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateDocumentationPartResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDocumentationVersion
@@ -5778,7 +5669,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateDocumentationVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDomainName
@@ -5831,7 +5721,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateDomainNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGatewayResponse
@@ -5884,7 +5773,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateGatewayResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIntegration
@@ -5937,7 +5825,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIntegrationResponse
@@ -5990,7 +5877,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateIntegrationResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMethod
@@ -6040,7 +5926,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateMethodResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMethodResponse
@@ -6093,7 +5978,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateMethodResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateModel
@@ -6146,7 +6030,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRequestValidator
@@ -6199,7 +6082,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateRequestValidatorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResource
@@ -6249,7 +6131,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRestApi
@@ -6302,7 +6183,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateRestApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStage
@@ -6355,7 +6235,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateStageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUsage
@@ -6409,7 +6288,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateUsageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUsagePlan
@@ -6462,7 +6340,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateUsagePlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVpcLink
@@ -6515,7 +6392,6 @@ namespace Amazon.APIGateway
 
             return InvokeAsync<UpdateVpcLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

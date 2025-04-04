@@ -319,7 +319,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<CancelSolNetworkOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSolFunctionPackage
@@ -385,7 +384,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<CreateSolFunctionPackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSolNetworkInstance
@@ -452,7 +450,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<CreateSolNetworkInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSolNetworkPackage
@@ -523,7 +520,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<CreateSolNetworkPackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSolFunctionPackage
@@ -587,7 +583,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<DeleteSolFunctionPackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSolNetworkInstance
@@ -649,7 +644,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<DeleteSolNetworkInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSolNetworkPackage
@@ -711,7 +705,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<DeleteSolNetworkPackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSolFunctionInstance
@@ -767,7 +760,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<GetSolFunctionInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSolFunctionPackage
@@ -826,7 +818,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<GetSolFunctionPackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSolFunctionPackageContent
@@ -884,7 +875,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<GetSolFunctionPackageContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSolFunctionPackageDescriptor
@@ -948,7 +938,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<GetSolFunctionPackageDescriptorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSolNetworkInstance
@@ -1005,7 +994,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<GetSolNetworkInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSolNetworkOperation
@@ -1062,7 +1050,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<GetSolNetworkOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSolNetworkPackage
@@ -1119,7 +1106,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<GetSolNetworkPackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSolNetworkPackageContent
@@ -1176,7 +1162,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<GetSolNetworkPackageContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSolNetworkPackageDescriptor
@@ -1233,7 +1218,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<GetSolNetworkPackageDescriptorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InstantiateSolNetworkInstance
@@ -1298,7 +1282,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<InstantiateSolNetworkInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSolFunctionInstances
@@ -1350,7 +1333,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<ListSolFunctionInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSolFunctionPackages
@@ -1405,7 +1387,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<ListSolFunctionPackagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSolNetworkInstances
@@ -1459,7 +1440,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<ListSolNetworkInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSolNetworkOperations
@@ -1513,7 +1493,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<ListSolNetworkOperationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSolNetworkPackages
@@ -1567,7 +1546,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<ListSolNetworkPackagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1617,7 +1595,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutSolFunctionPackageContent
@@ -1675,7 +1652,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<PutSolFunctionPackageContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutSolNetworkPackageContent
@@ -1732,7 +1708,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<PutSolNetworkPackageContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1789,7 +1764,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TerminateSolNetworkInstance
@@ -1853,7 +1827,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<TerminateSolNetworkInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1910,7 +1883,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSolFunctionPackage
@@ -1968,7 +1940,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<UpdateSolFunctionPackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSolNetworkInstance
@@ -2033,7 +2004,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<UpdateSolNetworkInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSolNetworkPackage
@@ -2096,7 +2066,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<UpdateSolNetworkPackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ValidateSolFunctionPackageContent
@@ -2155,7 +2124,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<ValidateSolFunctionPackageContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ValidateSolNetworkPackageContent
@@ -2213,7 +2181,6 @@ namespace Amazon.Tnb
 
             return InvokeAsync<ValidateSolNetworkPackageContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

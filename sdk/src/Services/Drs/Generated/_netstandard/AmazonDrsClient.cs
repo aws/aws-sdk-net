@@ -318,7 +318,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<AssociateSourceNetworkStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateExtendedSourceServer
@@ -374,7 +373,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<CreateExtendedSourceServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLaunchConfigurationTemplate
@@ -426,7 +424,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<CreateLaunchConfigurationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateReplicationConfigurationTemplate
@@ -478,7 +475,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<CreateReplicationConfigurationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSourceNetwork
@@ -534,7 +530,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<CreateSourceNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteJob
@@ -584,7 +579,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<DeleteJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLaunchAction
@@ -633,7 +627,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<DeleteLaunchActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLaunchConfigurationTemplate
@@ -683,7 +676,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<DeleteLaunchConfigurationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRecoveryInstance
@@ -735,7 +727,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<DeleteRecoveryInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReplicationConfigurationTemplate
@@ -785,7 +776,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<DeleteReplicationConfigurationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSourceNetwork
@@ -835,7 +825,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<DeleteSourceNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSourceServer
@@ -885,7 +874,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<DeleteSourceServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeJobLogItems
@@ -931,7 +919,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<DescribeJobLogItemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeJobs
@@ -982,7 +969,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<DescribeJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLaunchConfigurationTemplates
@@ -1032,7 +1018,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<DescribeLaunchConfigurationTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRecoveryInstances
@@ -1078,7 +1063,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<DescribeRecoveryInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRecoverySnapshots
@@ -1127,7 +1111,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<DescribeRecoverySnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReplicationConfigurationTemplates
@@ -1176,7 +1159,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<DescribeReplicationConfigurationTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSourceNetworks
@@ -1222,7 +1204,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<DescribeSourceNetworksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSourceServers
@@ -1268,7 +1249,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<DescribeSourceServersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisconnectRecoveryInstance
@@ -1330,7 +1310,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<DisconnectRecoveryInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisconnectSourceServer
@@ -1390,7 +1369,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<DisconnectSourceServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportSourceNetworkCfnTemplate
@@ -1443,7 +1421,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<ExportSourceNetworkCfnTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFailbackReplicationConfiguration
@@ -1489,7 +1466,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<GetFailbackReplicationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLaunchConfiguration
@@ -1535,7 +1511,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<GetLaunchConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReplicationConfiguration
@@ -1584,7 +1559,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<GetReplicationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InitializeService
@@ -1630,7 +1604,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<InitializeServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExtensibleSourceServers
@@ -1681,7 +1654,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<ListExtensibleSourceServersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLaunchActions
@@ -1730,7 +1702,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<ListLaunchActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStagingAccounts
@@ -1779,7 +1750,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<ListStagingAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1828,7 +1798,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutLaunchAction
@@ -1881,7 +1850,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<PutLaunchActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RetryDataReplication
@@ -1935,7 +1903,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<RetryDataReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReverseReplication
@@ -1994,7 +1961,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<ReverseReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartFailbackLaunch
@@ -2049,7 +2015,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<StartFailbackLaunchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartRecovery
@@ -2100,7 +2065,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<StartRecoveryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartReplication
@@ -2151,7 +2115,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<StartReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSourceNetworkRecovery
@@ -2205,7 +2168,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<StartSourceNetworkRecoveryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSourceNetworkReplication
@@ -2256,7 +2218,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<StartSourceNetworkReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopFailback
@@ -2303,7 +2264,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<StopFailbackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopReplication
@@ -2354,7 +2314,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<StopReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopSourceNetworkReplication
@@ -2408,7 +2367,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<StopSourceNetworkReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2460,7 +2418,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TerminateRecoveryInstances
@@ -2512,7 +2469,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<TerminateRecoveryInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2562,7 +2518,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFailbackReplicationConfiguration
@@ -2612,7 +2567,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<UpdateFailbackReplicationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLaunchConfiguration
@@ -2665,7 +2619,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<UpdateLaunchConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLaunchConfigurationTemplate
@@ -2717,7 +2670,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<UpdateLaunchConfigurationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateReplicationConfiguration
@@ -2773,7 +2725,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<UpdateReplicationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateReplicationConfigurationTemplate
@@ -2825,7 +2776,6 @@ namespace Amazon.Drs
 
             return InvokeAsync<UpdateReplicationConfigurationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

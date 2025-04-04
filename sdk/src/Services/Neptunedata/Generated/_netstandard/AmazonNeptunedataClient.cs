@@ -337,7 +337,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<CancelGremlinQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelLoaderJob
@@ -419,7 +418,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<CancelLoaderJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelMLDataProcessingJob
@@ -495,7 +493,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<CancelMLDataProcessingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelMLModelTrainingJob
@@ -571,7 +568,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<CancelMLModelTrainingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelMLModelTransformJob
@@ -647,7 +643,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<CancelMLModelTransformJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelOpenCypherQuery
@@ -736,7 +731,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<CancelOpenCypherQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMLEndpoint
@@ -813,7 +807,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<CreateMLEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMLEndpoint
@@ -889,7 +882,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<DeleteMLEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePropertygraphStatistics
@@ -970,7 +962,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<DeletePropertygraphStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSparqlStatistics
@@ -1051,7 +1042,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<DeleteSparqlStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteFastReset
@@ -1142,7 +1132,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<ExecuteFastResetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteGremlinExplainQuery
@@ -1283,7 +1272,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<ExecuteGremlinExplainQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteGremlinProfileQuery
@@ -1398,7 +1386,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<ExecuteGremlinProfileQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteGremlinQuery
@@ -1530,7 +1517,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<ExecuteGremlinQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteOpenCypherExplainQuery
@@ -1647,7 +1633,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<ExecuteOpenCypherExplainQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteOpenCypherQuery
@@ -1792,7 +1777,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<ExecuteOpenCypherQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEngineStatus
@@ -1858,7 +1842,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<GetEngineStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGremlinQueryStatus
@@ -1956,7 +1939,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<GetGremlinQueryStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLoaderJobStatus
@@ -2043,7 +2025,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<GetLoaderJobStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMLDataProcessingJob
@@ -2119,7 +2100,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<GetMLDataProcessingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMLEndpoint
@@ -2195,7 +2175,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<GetMLEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMLModelTrainingJob
@@ -2271,7 +2250,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<GetMLModelTrainingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMLModelTransformJob
@@ -2347,7 +2325,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<GetMLModelTransformJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOpenCypherQueryStatus
@@ -2448,7 +2425,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<GetOpenCypherQueryStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPropertygraphStatistics
@@ -2529,7 +2505,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<GetPropertygraphStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPropertygraphStream
@@ -2652,7 +2627,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<GetPropertygraphStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPropertygraphSummary
@@ -2733,7 +2707,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<GetPropertygraphSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRDFGraphSummary
@@ -2814,7 +2787,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<GetRDFGraphSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSparqlStatistics
@@ -2887,7 +2859,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<GetSparqlStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSparqlStream
@@ -2991,7 +2962,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<GetSparqlStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGremlinQueries
@@ -3090,7 +3060,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<ListGremlinQueriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLoaderJobs
@@ -3168,7 +3137,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<ListLoaderJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMLDataProcessingJobs
@@ -3244,7 +3212,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<ListMLDataProcessingJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMLEndpoints
@@ -3320,7 +3287,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<ListMLEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMLModelTrainingJobs
@@ -3396,7 +3362,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<ListMLModelTrainingJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMLModelTransformJobs
@@ -3472,7 +3437,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<ListMLModelTransformJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOpenCypherQueries
@@ -3574,7 +3538,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<ListOpenCypherQueriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ManagePropertygraphStatistics
@@ -3655,7 +3618,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<ManagePropertygraphStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ManageSparqlStatistics
@@ -3736,7 +3698,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<ManageSparqlStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartLoaderJob
@@ -3822,7 +3783,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<StartLoaderJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMLDataProcessingJob
@@ -3899,7 +3859,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<StartMLDataProcessingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMLModelTrainingJob
@@ -3975,7 +3934,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<StartMLModelTrainingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMLModelTransformJob
@@ -4051,7 +4009,6 @@ namespace Amazon.Neptunedata
 
             return InvokeAsync<StartMLModelTransformJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

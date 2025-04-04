@@ -30,7 +30,6 @@ namespace Amazon.AmplifyBackend
     /// <summary>
     /// Configuration for accessing Amazon AmplifyBackend service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonAmplifyBackendConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -726,7 +726,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<CreateLandingZoneResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLandingZone
@@ -780,7 +779,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<DeleteLandingZoneResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableBaseline
@@ -840,7 +838,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<DisableBaselineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableControl
@@ -900,7 +897,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<DisableControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableBaseline
@@ -959,7 +955,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<EnableBaselineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableControl
@@ -1019,7 +1014,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<EnableControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBaseline
@@ -1070,7 +1064,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<GetBaselineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBaselineOperation
@@ -1123,7 +1116,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<GetBaselineOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetControlOperation
@@ -1175,7 +1167,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<GetControlOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEnabledBaseline
@@ -1224,7 +1215,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<GetEnabledBaselineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEnabledControl
@@ -1274,7 +1264,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<GetEnabledControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLandingZone
@@ -1323,7 +1312,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<GetLandingZoneResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLandingZoneOperation
@@ -1373,7 +1361,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<GetLandingZoneOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBaselines
@@ -1420,7 +1407,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<ListBaselinesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListControlOperations
@@ -1467,7 +1453,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<ListControlOperationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnabledBaselines
@@ -1516,7 +1501,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<ListEnabledBaselinesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnabledControls
@@ -1567,7 +1551,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<ListEnabledControlsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLandingZoneOperations
@@ -1614,7 +1597,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<ListLandingZoneOperationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLandingZones
@@ -1667,7 +1649,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<ListLandingZonesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1712,7 +1693,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetEnabledBaseline
@@ -1771,7 +1751,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<ResetEnabledBaselineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetEnabledControl
@@ -1827,7 +1806,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<ResetEnabledControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetLandingZone
@@ -1883,7 +1861,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<ResetLandingZoneResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1927,7 +1904,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1971,7 +1947,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEnabledBaseline
@@ -2029,7 +2004,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<UpdateEnabledBaselineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEnabledControl
@@ -2106,7 +2080,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<UpdateEnabledControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLandingZone
@@ -2160,7 +2133,6 @@ namespace Amazon.ControlTower
 
             return InvokeAsync<UpdateLandingZoneResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -324,7 +324,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<BatchGetIncidentFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateReplicationSet
@@ -377,7 +376,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<CreateReplicationSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateResponsePlan
@@ -431,7 +429,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<CreateResponsePlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTimelineEvent
@@ -486,7 +483,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<CreateTimelineEventResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIncidentRecord
@@ -532,7 +528,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<DeleteIncidentRecordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReplicationSet
@@ -582,7 +577,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<DeleteReplicationSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -632,7 +626,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResponsePlan
@@ -679,7 +672,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<DeleteResponsePlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTimelineEvent
@@ -725,7 +717,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<DeleteTimelineEventResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIncidentRecord
@@ -774,7 +765,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<GetIncidentRecordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReplicationSet
@@ -823,7 +813,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<GetReplicationSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicies
@@ -872,7 +861,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<GetResourcePoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResponsePlan
@@ -921,7 +909,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<GetResponsePlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTimelineEvent
@@ -970,7 +957,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<GetTimelineEventResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIncidentFindings
@@ -1022,7 +1008,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<ListIncidentFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIncidentRecords
@@ -1069,7 +1054,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<ListIncidentRecordsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRelatedItems
@@ -1115,7 +1099,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<ListRelatedItemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReplicationSets
@@ -1161,7 +1144,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<ListReplicationSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResponsePlans
@@ -1207,7 +1189,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<ListResponsePlansResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1256,7 +1237,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTimelineEvents
@@ -1302,7 +1282,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<ListTimelineEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -1354,7 +1333,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartIncident
@@ -1406,7 +1384,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<StartIncidentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1461,7 +1438,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1513,7 +1489,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDeletionProtection
@@ -1563,7 +1538,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<UpdateDeletionProtectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIncidentRecord
@@ -1618,7 +1592,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<UpdateIncidentRecordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRelatedItems
@@ -1670,7 +1643,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<UpdateRelatedItemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateReplicationSet
@@ -1722,7 +1694,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<UpdateReplicationSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResponsePlan
@@ -1774,7 +1745,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<UpdateResponsePlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTimelineEvent
@@ -1826,7 +1796,6 @@ namespace Amazon.SSMIncidents
 
             return InvokeAsync<UpdateTimelineEventResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

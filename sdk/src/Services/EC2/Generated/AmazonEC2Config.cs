@@ -30,7 +30,6 @@ namespace Amazon.EC2
     /// <summary>
     /// Configuration for accessing Amazon EC2 service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonEC2Config : ClientConfig
     {
         private static readonly string UserAgentString =

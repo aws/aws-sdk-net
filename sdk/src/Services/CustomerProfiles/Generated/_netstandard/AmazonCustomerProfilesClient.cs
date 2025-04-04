@@ -337,7 +337,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<AddProfileKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetCalculatedAttributeForProfile
@@ -386,7 +385,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<BatchGetCalculatedAttributeForProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetProfile
@@ -435,7 +433,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<BatchGetProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCalculatedAttributeDefinition
@@ -489,7 +486,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<CreateCalculatedAttributeDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDomain
@@ -571,7 +567,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<CreateDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEventStream
@@ -627,7 +622,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<CreateEventStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEventTrigger
@@ -683,7 +677,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<CreateEventTriggerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIntegrationWorkflow
@@ -734,7 +727,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<CreateIntegrationWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProfile
@@ -789,7 +781,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<CreateProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSegmentDefinition
@@ -838,7 +829,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<CreateSegmentDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSegmentEstimate
@@ -887,7 +877,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<CreateSegmentEstimateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSegmentSnapshot
@@ -936,7 +925,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<CreateSegmentSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCalculatedAttributeDefinition
@@ -988,7 +976,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<DeleteCalculatedAttributeDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDomain
@@ -1038,7 +1025,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<DeleteDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventStream
@@ -1087,7 +1073,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<DeleteEventStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventTrigger
@@ -1142,7 +1127,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<DeleteEventTriggerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIntegration
@@ -1191,7 +1175,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<DeleteIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProfile
@@ -1240,7 +1223,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<DeleteProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProfileKey
@@ -1289,7 +1271,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<DeleteProfileKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProfileObject
@@ -1338,7 +1319,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<DeleteProfileObjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProfileObjectType
@@ -1390,7 +1370,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<DeleteProfileObjectTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSegmentDefinition
@@ -1439,7 +1418,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<DeleteSegmentDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkflow
@@ -1489,7 +1467,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<DeleteWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectProfileObjectType
@@ -1538,7 +1515,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<DetectProfileObjectTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAutoMergingPreview
@@ -1606,7 +1582,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<GetAutoMergingPreviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCalculatedAttributeDefinition
@@ -1655,7 +1630,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<GetCalculatedAttributeDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCalculatedAttributeForProfile
@@ -1704,7 +1678,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<GetCalculatedAttributeForProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDomain
@@ -1753,7 +1726,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<GetDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEventStream
@@ -1802,7 +1774,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<GetEventStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEventTrigger
@@ -1851,7 +1822,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<GetEventTriggerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIdentityResolutionJob
@@ -1907,7 +1877,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<GetIdentityResolutionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIntegration
@@ -1956,7 +1925,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<GetIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMatches
@@ -2071,7 +2039,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<GetMatchesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProfileObjectType
@@ -2120,7 +2087,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<GetProfileObjectTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProfileObjectTypeTemplate
@@ -2176,7 +2142,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<GetProfileObjectTypeTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSegmentDefinition
@@ -2225,7 +2190,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<GetSegmentDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSegmentEstimate
@@ -2274,7 +2238,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<GetSegmentEstimateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSegmentMembership
@@ -2323,7 +2286,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<GetSegmentMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSegmentSnapshot
@@ -2372,7 +2334,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<GetSegmentSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSimilarProfiles
@@ -2423,7 +2384,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<GetSimilarProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkflow
@@ -2472,7 +2432,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<GetWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkflowSteps
@@ -2521,7 +2480,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<GetWorkflowStepsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccountIntegrations
@@ -2570,7 +2528,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<ListAccountIntegrationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCalculatedAttributeDefinitions
@@ -2619,7 +2576,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<ListCalculatedAttributeDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCalculatedAttributesForProfile
@@ -2668,7 +2624,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<ListCalculatedAttributesForProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomains
@@ -2717,7 +2672,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<ListDomainsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventStreams
@@ -2766,7 +2720,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<ListEventStreamsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventTriggers
@@ -2815,7 +2768,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<ListEventTriggersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIdentityResolutionJobs
@@ -2865,7 +2817,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<ListIdentityResolutionJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIntegrations
@@ -2914,7 +2865,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<ListIntegrationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListObjectTypeAttributes
@@ -2963,7 +2913,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<ListObjectTypeAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProfileAttributeValues
@@ -3012,7 +2961,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<ListProfileAttributeValuesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProfileObjects
@@ -3061,7 +3009,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<ListProfileObjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProfileObjectTypes
@@ -3110,7 +3057,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<ListProfileObjectTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProfileObjectTypeTemplates
@@ -3159,7 +3105,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<ListProfileObjectTypeTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRuleBasedMatches
@@ -3208,7 +3153,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<ListRuleBasedMatchesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSegmentDefinitions
@@ -3257,7 +3201,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<ListSegmentDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3302,7 +3245,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkflows
@@ -3351,7 +3293,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<ListWorkflowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  MergeProfiles
@@ -3442,7 +3383,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<MergeProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutIntegration
@@ -3503,7 +3443,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<PutIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutProfileObject
@@ -3570,7 +3509,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<PutProfileObjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutProfileObjectType
@@ -3625,7 +3563,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<PutProfileObjectTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchProfiles
@@ -3683,7 +3620,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<SearchProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3747,7 +3683,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3792,7 +3727,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCalculatedAttributeDefinition
@@ -3843,7 +3777,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<UpdateCalculatedAttributeDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDomain
@@ -3914,7 +3847,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<UpdateDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEventTrigger
@@ -3963,7 +3895,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<UpdateEventTriggerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProfile
@@ -4020,7 +3951,6 @@ namespace Amazon.CustomerProfiles
 
             return InvokeAsync<UpdateProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

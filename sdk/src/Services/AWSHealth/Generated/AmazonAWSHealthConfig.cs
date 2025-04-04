@@ -30,7 +30,6 @@ namespace Amazon.AWSHealth
     /// <summary>
     /// Configuration for accessing Amazon AWSHealth service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonAWSHealthConfig : ClientConfig
     {
         private static readonly string UserAgentString =

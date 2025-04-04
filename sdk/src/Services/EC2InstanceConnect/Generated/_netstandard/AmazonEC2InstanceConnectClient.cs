@@ -340,7 +340,6 @@ namespace Amazon.EC2InstanceConnect
 
             return InvokeAsync<SendSerialConsoleSSHPublicKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendSSHPublicKey
@@ -401,7 +400,6 @@ namespace Amazon.EC2InstanceConnect
 
             return InvokeAsync<SendSSHPublicKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

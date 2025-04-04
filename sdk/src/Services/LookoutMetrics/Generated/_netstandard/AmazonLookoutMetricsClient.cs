@@ -315,7 +315,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<ActivateAnomalyDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BackTestAnomalyDetector
@@ -365,7 +364,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<BackTestAnomalyDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAlert
@@ -421,7 +419,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<CreateAlertResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAnomalyDetector
@@ -474,7 +471,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<CreateAnomalyDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMetricSet
@@ -530,7 +526,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<CreateMetricSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeactivateAnomalyDetector
@@ -583,7 +578,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<DeactivateAnomalyDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAlert
@@ -633,7 +627,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<DeleteAlertResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAnomalyDetector
@@ -687,7 +680,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<DeleteAnomalyDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAlert
@@ -744,7 +736,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<DescribeAlertResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAnomalyDetectionExecutions
@@ -794,7 +785,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<DescribeAnomalyDetectionExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAnomalyDetector
@@ -851,7 +841,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<DescribeAnomalyDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMetricSet
@@ -908,7 +897,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<DescribeMetricSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectMetricSetConfig
@@ -958,7 +946,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<DetectMetricSetConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAnomalyGroup
@@ -1008,7 +995,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<GetAnomalyGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataQualityMetrics
@@ -1058,7 +1044,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<GetDataQualityMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFeedback
@@ -1108,7 +1093,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<GetFeedbackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSampleData
@@ -1158,7 +1142,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<GetSampleDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAlerts
@@ -1215,7 +1198,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<ListAlertsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAnomalyDetectors
@@ -1272,7 +1254,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<ListAnomalyDetectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAnomalyGroupRelatedMetrics
@@ -1322,7 +1303,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<ListAnomalyGroupRelatedMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAnomalyGroupSummaries
@@ -1372,7 +1352,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<ListAnomalyGroupSummariesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAnomalyGroupTimeSeries
@@ -1422,7 +1401,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<ListAnomalyGroupTimeSeriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMetricSets
@@ -1479,7 +1457,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<ListMetricSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1524,7 +1501,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutFeedback
@@ -1574,7 +1550,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<PutFeedbackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1619,7 +1594,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1664,7 +1638,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAlert
@@ -1714,7 +1687,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<UpdateAlertResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAnomalyDetector
@@ -1765,7 +1737,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<UpdateAnomalyDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMetricSet
@@ -1818,7 +1789,6 @@ namespace Amazon.LookoutMetrics
 
             return InvokeAsync<UpdateMetricSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

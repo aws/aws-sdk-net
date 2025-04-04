@@ -30,7 +30,6 @@ namespace Amazon.Neptune
     /// <summary>
     /// Configuration for accessing Amazon Neptune service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonNeptuneConfig : ClientConfig
     {
         private static readonly string UserAgentString =

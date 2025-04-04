@@ -318,7 +318,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<AcceptResourceGroupingRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddDraftAppVersionResourceMappings
@@ -386,7 +385,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<AddDraftAppVersionResourceMappingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchUpdateRecommendationStatus
@@ -438,7 +436,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<BatchUpdateRecommendationStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApp
@@ -518,7 +515,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<CreateAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAppVersionAppComponent
@@ -589,7 +585,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<CreateAppVersionAppComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAppVersionResource
@@ -671,7 +666,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<CreateAppVersionResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRecommendationTemplate
@@ -734,7 +728,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<CreateRecommendationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateResiliencyPolicy
@@ -805,7 +798,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<CreateResiliencyPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApp
@@ -859,7 +851,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<DeleteAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAppAssessment
@@ -918,7 +909,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<DeleteAppAssessmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAppInputSource
@@ -977,7 +967,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<DeleteAppInputSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAppVersionAppComponent
@@ -1048,7 +1037,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<DeleteAppVersionAppComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAppVersionResource
@@ -1123,7 +1111,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<DeleteAppVersionResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRecommendationTemplate
@@ -1175,7 +1162,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<DeleteRecommendationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResiliencyPolicy
@@ -1233,7 +1219,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<DeleteResiliencyPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApp
@@ -1285,7 +1270,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<DescribeAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAppAssessment
@@ -1337,7 +1321,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<DescribeAppAssessmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAppVersion
@@ -1389,7 +1372,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<DescribeAppVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAppVersionAppComponent
@@ -1447,7 +1429,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<DescribeAppVersionAppComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAppVersionResource
@@ -1524,7 +1505,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<DescribeAppVersionResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAppVersionResourcesResolutionStatus
@@ -1578,7 +1558,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<DescribeAppVersionResourcesResolutionStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAppVersionTemplate
@@ -1630,7 +1609,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<DescribeAppVersionTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDraftAppVersionResourcesImportStatus
@@ -1691,7 +1669,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<DescribeDraftAppVersionResourcesImportStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMetricsExport
@@ -1743,7 +1720,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<DescribeMetricsExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeResiliencyPolicy
@@ -1797,7 +1773,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<DescribeResiliencyPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeResourceGroupingRecommendationTask
@@ -1850,7 +1825,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<DescribeResourceGroupingRecommendationTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportResourcesToDraftAppVersion
@@ -1916,7 +1890,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ImportResourcesToDraftAppVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAlarmRecommendations
@@ -1968,7 +1941,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ListAlarmRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAppAssessmentComplianceDrifts
@@ -2017,7 +1989,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ListAppAssessmentComplianceDriftsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAppAssessmentResourceDrifts
@@ -2066,7 +2037,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ListAppAssessmentResourceDriftsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAppAssessments
@@ -2119,7 +2089,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ListAppAssessmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAppComponentCompliances
@@ -2171,7 +2140,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ListAppComponentCompliancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAppComponentRecommendations
@@ -2223,7 +2191,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ListAppComponentRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAppInputSources
@@ -2277,7 +2244,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ListAppInputSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApps
@@ -2339,7 +2305,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ListAppsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAppVersionAppComponents
@@ -2397,7 +2362,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ListAppVersionAppComponentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAppVersionResourceMappings
@@ -2451,7 +2415,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ListAppVersionResourceMappingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAppVersionResources
@@ -2509,7 +2472,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ListAppVersionResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAppVersions
@@ -2557,7 +2519,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ListAppVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMetrics
@@ -2606,7 +2567,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ListMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecommendationTemplates
@@ -2655,7 +2615,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ListRecommendationTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResiliencyPolicies
@@ -2707,7 +2666,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ListResiliencyPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceGroupingRecommendations
@@ -2759,7 +2717,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ListResourceGroupingRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSopRecommendations
@@ -2818,7 +2775,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ListSopRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSuggestedResiliencyPolicies
@@ -2870,7 +2826,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ListSuggestedResiliencyPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2922,7 +2877,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTestRecommendations
@@ -2980,7 +2934,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ListTestRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUnsupportedAppVersionResources
@@ -3040,7 +2993,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ListUnsupportedAppVersionResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PublishAppVersion
@@ -3098,7 +3050,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<PublishAppVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDraftAppVersionTemplate
@@ -3156,7 +3107,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<PutDraftAppVersionTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectResourceGroupingRecommendations
@@ -3208,7 +3158,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<RejectResourceGroupingRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveDraftAppVersionResourceMappings
@@ -3266,7 +3215,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<RemoveDraftAppVersionResourceMappingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResolveAppVersionResources
@@ -3324,7 +3272,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<ResolveAppVersionResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartAppAssessment
@@ -3387,7 +3334,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<StartAppAssessmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMetricsExport
@@ -3447,7 +3393,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<StartMetricsExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartResourceGroupingRecommendationTask
@@ -3505,7 +3450,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<StartResourceGroupingRecommendationTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3557,7 +3501,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3609,7 +3552,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApp
@@ -3667,7 +3609,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<UpdateAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAppVersion
@@ -3733,7 +3674,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<UpdateAppVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAppVersionAppComponent
@@ -3799,7 +3739,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<UpdateAppVersionAppComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAppVersionResource
@@ -3879,7 +3818,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<UpdateAppVersionResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResiliencyPolicy
@@ -3948,7 +3886,6 @@ namespace Amazon.ResilienceHub
 
             return InvokeAsync<UpdateResiliencyPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

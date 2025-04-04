@@ -30,7 +30,6 @@ namespace Amazon.SSOAdmin
     /// <summary>
     /// Configuration for accessing Amazon SSOAdmin service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSSOAdminConfig : ClientConfig
     {
         private static readonly string UserAgentString =

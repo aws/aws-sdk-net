@@ -317,7 +317,6 @@ namespace Amazon.SnowDeviceManagement
 
             return InvokeAsync<CancelTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTask
@@ -369,7 +368,6 @@ namespace Amazon.SnowDeviceManagement
 
             return InvokeAsync<CreateTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDevice
@@ -419,7 +417,6 @@ namespace Amazon.SnowDeviceManagement
 
             return InvokeAsync<DescribeDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDeviceEc2Instances
@@ -470,7 +467,6 @@ namespace Amazon.SnowDeviceManagement
 
             return InvokeAsync<DescribeDeviceEc2InstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeExecution
@@ -519,7 +515,6 @@ namespace Amazon.SnowDeviceManagement
 
             return InvokeAsync<DescribeExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTask
@@ -568,7 +563,6 @@ namespace Amazon.SnowDeviceManagement
 
             return InvokeAsync<DescribeTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeviceResources
@@ -618,7 +612,6 @@ namespace Amazon.SnowDeviceManagement
 
             return InvokeAsync<ListDeviceResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDevices
@@ -666,7 +659,6 @@ namespace Amazon.SnowDeviceManagement
 
             return InvokeAsync<ListDevicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExecutions
@@ -715,7 +707,6 @@ namespace Amazon.SnowDeviceManagement
 
             return InvokeAsync<ListExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -758,7 +749,6 @@ namespace Amazon.SnowDeviceManagement
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTasks
@@ -804,7 +794,6 @@ namespace Amazon.SnowDeviceManagement
 
             return InvokeAsync<ListTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -847,7 +836,6 @@ namespace Amazon.SnowDeviceManagement
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -890,7 +878,6 @@ namespace Amazon.SnowDeviceManagement
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

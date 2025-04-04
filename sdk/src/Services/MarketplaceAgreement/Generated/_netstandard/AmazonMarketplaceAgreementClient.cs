@@ -337,7 +337,6 @@ namespace Amazon.MarketplaceAgreement
 
             return InvokeAsync<DescribeAgreementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAgreementTerms
@@ -415,7 +414,6 @@ namespace Amazon.MarketplaceAgreement
 
             return InvokeAsync<GetAgreementTermsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchAgreements
@@ -536,7 +534,6 @@ namespace Amazon.MarketplaceAgreement
 
             return InvokeAsync<SearchAgreementsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

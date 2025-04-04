@@ -380,7 +380,6 @@ namespace Amazon.AppConfigData
 
             return InvokeAsync<GetLatestConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartConfigurationSession
@@ -429,7 +428,6 @@ namespace Amazon.AppConfigData
 
             return InvokeAsync<StartConfigurationSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

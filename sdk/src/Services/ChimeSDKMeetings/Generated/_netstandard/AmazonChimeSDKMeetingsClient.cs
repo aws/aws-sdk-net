@@ -327,7 +327,6 @@ namespace Amazon.ChimeSDKMeetings
 
             return InvokeAsync<BatchCreateAttendeeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchUpdateAttendeeCapabilitiesExcept
@@ -431,7 +430,6 @@ namespace Amazon.ChimeSDKMeetings
 
             return InvokeAsync<BatchUpdateAttendeeCapabilitiesExceptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAttendee
@@ -494,7 +492,6 @@ namespace Amazon.ChimeSDKMeetings
 
             return InvokeAsync<CreateAttendeeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMeeting
@@ -556,7 +553,6 @@ namespace Amazon.ChimeSDKMeetings
 
             return InvokeAsync<CreateMeetingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMeetingWithAttendees
@@ -618,7 +614,6 @@ namespace Amazon.ChimeSDKMeetings
 
             return InvokeAsync<CreateMeetingWithAttendeesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAttendee
@@ -676,7 +671,6 @@ namespace Amazon.ChimeSDKMeetings
 
             return InvokeAsync<DeleteAttendeeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMeeting
@@ -734,7 +728,6 @@ namespace Amazon.ChimeSDKMeetings
 
             return InvokeAsync<DeleteMeetingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAttendee
@@ -791,7 +784,6 @@ namespace Amazon.ChimeSDKMeetings
 
             return InvokeAsync<GetAttendeeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMeeting
@@ -848,7 +840,6 @@ namespace Amazon.ChimeSDKMeetings
 
             return InvokeAsync<GetMeetingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAttendees
@@ -905,7 +896,6 @@ namespace Amazon.ChimeSDKMeetings
 
             return InvokeAsync<ListAttendeesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -963,7 +953,6 @@ namespace Amazon.ChimeSDKMeetings
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMeetingTranscription
@@ -1051,7 +1040,6 @@ namespace Amazon.ChimeSDKMeetings
 
             return InvokeAsync<StartMeetingTranscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopMeetingTranscription
@@ -1128,7 +1116,6 @@ namespace Amazon.ChimeSDKMeetings
 
             return InvokeAsync<StopMeetingTranscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1189,7 +1176,6 @@ namespace Amazon.ChimeSDKMeetings
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1281,7 +1267,6 @@ namespace Amazon.ChimeSDKMeetings
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAttendeeCapabilities
@@ -1384,7 +1369,6 @@ namespace Amazon.ChimeSDKMeetings
 
             return InvokeAsync<UpdateAttendeeCapabilitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

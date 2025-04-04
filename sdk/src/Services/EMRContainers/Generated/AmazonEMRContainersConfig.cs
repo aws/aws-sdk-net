@@ -30,7 +30,6 @@ namespace Amazon.EMRContainers
     /// <summary>
     /// Configuration for accessing Amazon EMRContainers service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonEMRContainersConfig : ClientConfig
     {
         private static readonly string UserAgentString =

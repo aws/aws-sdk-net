@@ -315,7 +315,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<CreateEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateKxChangeset
@@ -371,7 +370,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<CreateKxChangesetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateKxCluster
@@ -426,7 +424,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<CreateKxClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateKxDatabase
@@ -484,7 +481,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<CreateKxDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateKxDataview
@@ -544,7 +540,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<CreateKxDataviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateKxEnvironment
@@ -600,7 +595,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<CreateKxEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateKxScalingGroup
@@ -655,7 +649,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<CreateKxScalingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateKxUser
@@ -713,7 +706,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<CreateKxUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateKxVolume
@@ -771,7 +763,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<CreateKxVolumeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEnvironment
@@ -822,7 +813,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<DeleteEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteKxCluster
@@ -877,7 +867,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<DeleteKxClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteKxClusterNode
@@ -926,7 +915,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<DeleteKxClusterNodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteKxDatabase
@@ -980,7 +968,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<DeleteKxDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteKxDataview
@@ -1033,7 +1020,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<DeleteKxDataviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteKxEnvironment
@@ -1086,7 +1072,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<DeleteKxEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteKxScalingGroup
@@ -1142,7 +1127,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<DeleteKxScalingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteKxUser
@@ -1194,7 +1178,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<DeleteKxUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteKxVolume
@@ -1251,7 +1234,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<DeleteKxVolumeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEnvironment
@@ -1299,7 +1281,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<GetEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKxChangeset
@@ -1348,7 +1329,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<GetKxChangesetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKxCluster
@@ -1403,7 +1383,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<GetKxClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKxConnectionString
@@ -1453,7 +1432,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<GetKxConnectionStringResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKxDatabase
@@ -1502,7 +1480,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<GetKxDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKxDataview
@@ -1551,7 +1528,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<GetKxDataviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKxEnvironment
@@ -1600,7 +1576,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<GetKxEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKxScalingGroup
@@ -1655,7 +1630,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<GetKxScalingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKxUser
@@ -1704,7 +1678,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<GetKxUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKxVolume
@@ -1759,7 +1732,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<GetKxVolumeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnvironments
@@ -1804,7 +1776,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<ListEnvironmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKxChangesets
@@ -1853,7 +1824,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<ListKxChangesetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKxClusterNodes
@@ -1905,7 +1875,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<ListKxClusterNodesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKxClusters
@@ -1960,7 +1929,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<ListKxClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKxDatabases
@@ -2009,7 +1977,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<ListKxDatabasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKxDataviews
@@ -2058,7 +2025,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<ListKxDataviewsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKxEnvironments
@@ -2101,7 +2067,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<ListKxEnvironmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKxScalingGroups
@@ -2156,7 +2121,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<ListKxScalingGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKxUsers
@@ -2205,7 +2169,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<ListKxUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKxVolumes
@@ -2260,7 +2223,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<ListKxVolumesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2303,7 +2265,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2346,7 +2307,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2389,7 +2349,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEnvironment
@@ -2440,7 +2399,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<UpdateEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateKxClusterCodeConfiguration
@@ -2498,7 +2456,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<UpdateKxClusterCodeConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateKxClusterDatabases
@@ -2561,7 +2518,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<UpdateKxClusterDatabasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateKxDatabase
@@ -2613,7 +2569,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<UpdateKxDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateKxDataview
@@ -2670,7 +2625,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<UpdateKxDataviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateKxEnvironment
@@ -2722,7 +2676,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<UpdateKxEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateKxEnvironmentNetwork
@@ -2782,7 +2735,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<UpdateKxEnvironmentNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateKxUser
@@ -2837,7 +2789,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<UpdateKxUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateKxVolume
@@ -2894,7 +2845,6 @@ namespace Amazon.Finspace
 
             return InvokeAsync<UpdateKxVolumeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

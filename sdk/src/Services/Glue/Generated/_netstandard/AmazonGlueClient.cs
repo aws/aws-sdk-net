@@ -318,7 +318,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<BatchCreatePartitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteConnection
@@ -358,7 +357,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<BatchDeleteConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeletePartition
@@ -404,7 +402,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<BatchDeletePartitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteTable
@@ -470,7 +467,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<BatchDeleteTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteTableVersion
@@ -516,7 +512,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<BatchDeleteTableVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetBlueprints
@@ -559,7 +554,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<BatchGetBlueprintsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetCrawlers
@@ -602,7 +596,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<BatchGetCrawlersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetCustomEntityTypes
@@ -645,7 +638,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<BatchGetCustomEntityTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetDataQualityResult
@@ -688,7 +680,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<BatchGetDataQualityResultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetDevEndpoints
@@ -737,7 +728,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<BatchGetDevEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetJobs
@@ -783,7 +773,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<BatchGetJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetPartition
@@ -841,7 +830,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<BatchGetPartitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetTableOptimizer
@@ -890,7 +878,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<BatchGetTableOptimizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetTriggers
@@ -936,7 +923,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<BatchGetTriggersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetWorkflows
@@ -982,7 +968,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<BatchGetWorkflowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchPutDataQualityStatisticAnnotation
@@ -1028,7 +1013,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<BatchPutDataQualityStatisticAnnotationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchStopJobRun
@@ -1071,7 +1055,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<BatchStopJobRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchUpdatePartition
@@ -1120,7 +1103,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<BatchUpdatePartitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelDataQualityRuleRecommendationRun
@@ -1166,7 +1148,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CancelDataQualityRuleRecommendationRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelDataQualityRulesetEvaluationRun
@@ -1212,7 +1193,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CancelDataQualityRulesetEvaluationRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelMLTaskRun
@@ -1261,7 +1241,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CancelMLTaskRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelStatement
@@ -1313,7 +1292,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CancelStatementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CheckSchemaVersionValidity
@@ -1358,7 +1336,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CheckSchemaVersionValidityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBlueprint
@@ -1407,7 +1384,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateBlueprintResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCatalog
@@ -1474,7 +1450,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateCatalogResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateClassifier
@@ -1519,7 +1494,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateClassifierResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateColumnStatisticsTaskSettings
@@ -1575,7 +1549,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateColumnStatisticsTaskSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConnection
@@ -1630,7 +1603,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCrawler
@@ -1678,7 +1650,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateCrawlerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCustomEntityType
@@ -1740,7 +1711,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateCustomEntityTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDatabase
@@ -1804,7 +1774,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataQualityRuleset
@@ -1859,7 +1828,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateDataQualityRulesetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDevEndpoint
@@ -1917,7 +1885,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateDevEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIntegration
@@ -1988,7 +1955,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIntegrationResourceProperty
@@ -2051,7 +2017,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateIntegrationResourcePropertyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIntegrationTableProperties
@@ -2110,7 +2075,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateIntegrationTablePropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateJob
@@ -2165,7 +2129,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMLTransform
@@ -2236,7 +2199,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateMLTransformResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePartition
@@ -2291,7 +2253,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreatePartitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePartitionIndex
@@ -2346,7 +2307,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreatePartitionIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRegistry
@@ -2398,7 +2358,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateRegistryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSchema
@@ -2468,7 +2427,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateScript
@@ -2511,7 +2469,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateScriptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSecurityConfiguration
@@ -2564,7 +2521,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateSecurityConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSession
@@ -2622,7 +2578,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTable
@@ -2689,7 +2644,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTableOptimizer
@@ -2744,7 +2698,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateTableOptimizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTrigger
@@ -2809,7 +2762,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateTriggerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUsageProfile
@@ -2861,7 +2813,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateUsageProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUserDefinedFunction
@@ -2916,7 +2867,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateUserDefinedFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkflow
@@ -2968,7 +2918,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<CreateWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBlueprint
@@ -3011,7 +2960,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteBlueprintResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCatalog
@@ -3085,7 +3033,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteCatalogResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteClassifier
@@ -3125,7 +3072,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteClassifierResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteColumnStatisticsForPartition
@@ -3180,7 +3126,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteColumnStatisticsForPartitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteColumnStatisticsForTable
@@ -3235,7 +3180,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteColumnStatisticsForTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteColumnStatisticsTaskSettings
@@ -3278,7 +3222,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteColumnStatisticsTaskSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnection
@@ -3318,7 +3261,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCrawler
@@ -3365,7 +3307,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteCrawlerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCustomEntityType
@@ -3414,7 +3355,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteCustomEntityTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDatabase
@@ -3485,7 +3425,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataQualityRuleset
@@ -3531,7 +3470,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteDataQualityRulesetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDevEndpoint
@@ -3577,7 +3515,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteDevEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIntegration
@@ -3644,7 +3581,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIntegrationTableProperties
@@ -3700,7 +3636,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteIntegrationTablePropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteJob
@@ -3744,7 +3679,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMLTransform
@@ -3795,7 +3729,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteMLTransformResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePartition
@@ -3841,7 +3774,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeletePartitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePartitionIndex
@@ -3893,7 +3825,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeletePartitionIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRegistry
@@ -3943,7 +3874,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteRegistryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -3992,7 +3922,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSchema
@@ -4042,7 +3971,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSchemaVersions
@@ -4110,7 +4038,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteSchemaVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSecurityConfiguration
@@ -4156,7 +4083,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteSecurityConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSession
@@ -4208,7 +4134,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTable
@@ -4280,7 +4205,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTableOptimizer
@@ -4330,7 +4254,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteTableOptimizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTableVersion
@@ -4376,7 +4299,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteTableVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTrigger
@@ -4422,7 +4344,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteTriggerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUsageProfile
@@ -4468,7 +4389,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteUsageProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUserDefinedFunction
@@ -4514,7 +4434,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteUserDefinedFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkflow
@@ -4560,7 +4479,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DeleteWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConnectionType
@@ -4607,7 +4525,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DescribeConnectionTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEntity
@@ -4668,7 +4585,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DescribeEntityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInboundIntegrations
@@ -4729,7 +4645,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DescribeInboundIntegrationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeIntegrations
@@ -4784,7 +4699,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<DescribeIntegrationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBlueprint
@@ -4830,7 +4744,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetBlueprintResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBlueprintRun
@@ -4873,7 +4786,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetBlueprintRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBlueprintRuns
@@ -4919,7 +4831,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetBlueprintRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCatalog
@@ -4977,7 +4888,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetCatalogResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCatalogImportStatus
@@ -5017,7 +4927,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetCatalogImportStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCatalogs
@@ -5077,7 +4986,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetCatalogsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetClassifier
@@ -5117,7 +5025,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetClassifierResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetClassifiers
@@ -5154,7 +5061,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetClassifiersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetColumnStatisticsForPartition
@@ -5209,7 +5115,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetColumnStatisticsForPartitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetColumnStatisticsForTable
@@ -5264,7 +5169,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetColumnStatisticsForTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetColumnStatisticsTaskRun
@@ -5307,7 +5211,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetColumnStatisticsTaskRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetColumnStatisticsTaskRuns
@@ -5344,7 +5247,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetColumnStatisticsTaskRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetColumnStatisticsTaskSettings
@@ -5387,7 +5289,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetColumnStatisticsTaskSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConnection
@@ -5433,7 +5334,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConnections
@@ -5479,7 +5379,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetConnectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCrawler
@@ -5519,7 +5418,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetCrawlerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCrawlerMetrics
@@ -5556,7 +5454,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetCrawlerMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCrawlers
@@ -5593,7 +5490,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetCrawlersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCustomEntityType
@@ -5642,7 +5538,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetCustomEntityTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDatabase
@@ -5697,7 +5592,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDatabases
@@ -5752,7 +5646,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetDatabasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataCatalogEncryptionSettings
@@ -5795,7 +5688,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetDataCatalogEncryptionSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataflowGraph
@@ -5838,7 +5730,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetDataflowGraphResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataQualityModel
@@ -5885,7 +5776,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetDataQualityModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataQualityModelResult
@@ -5931,7 +5821,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetDataQualityModelResultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataQualityResult
@@ -5977,7 +5866,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetDataQualityResultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataQualityRuleRecommendationRun
@@ -6023,7 +5911,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetDataQualityRuleRecommendationRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataQualityRuleset
@@ -6069,7 +5956,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetDataQualityRulesetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataQualityRulesetEvaluationRun
@@ -6115,7 +6001,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetDataQualityRulesetEvaluationRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDevEndpoint
@@ -6169,7 +6054,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetDevEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDevEndpoints
@@ -6223,7 +6107,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetDevEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEntityRecords
@@ -6291,7 +6174,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetEntityRecordsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIntegrationResourceProperty
@@ -6347,7 +6229,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetIntegrationResourcePropertyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIntegrationTableProperties
@@ -6404,7 +6285,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetIntegrationTablePropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJob
@@ -6450,7 +6330,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJobBookmark
@@ -6520,7 +6399,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetJobBookmarkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJobRun
@@ -6567,7 +6445,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetJobRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJobRuns
@@ -6619,7 +6496,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetJobRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJobs
@@ -6665,7 +6541,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMapping
@@ -6711,7 +6586,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMLTaskRun
@@ -6760,7 +6634,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetMLTaskRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMLTaskRuns
@@ -6815,7 +6688,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetMLTaskRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMLTransform
@@ -6865,7 +6737,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetMLTransformResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMLTransforms
@@ -6915,7 +6786,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetMLTransformsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPartition
@@ -6970,7 +6840,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetPartitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPartitionIndexes
@@ -7019,7 +6888,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetPartitionIndexesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPartitions
@@ -7080,7 +6948,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetPartitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPlan
@@ -7123,7 +6990,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRegistry
@@ -7169,7 +7035,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetRegistryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicies
@@ -7222,7 +7087,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetResourcePoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicy
@@ -7268,7 +7132,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSchema
@@ -7314,7 +7177,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSchemaByDefinition
@@ -7364,7 +7226,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetSchemaByDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSchemaVersion
@@ -7412,7 +7273,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetSchemaVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSchemaVersionsDiff
@@ -7465,7 +7325,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetSchemaVersionsDiffResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSecurityConfiguration
@@ -7511,7 +7370,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetSecurityConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSecurityConfigurations
@@ -7557,7 +7415,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetSecurityConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSession
@@ -7606,7 +7463,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStatement
@@ -7658,7 +7514,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetStatementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTable
@@ -7716,7 +7571,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTableOptimizer
@@ -7765,7 +7619,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetTableOptimizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTables
@@ -7820,7 +7673,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetTablesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTableVersion
@@ -7869,7 +7721,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetTableVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTableVersions
@@ -7918,7 +7769,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetTableVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTags
@@ -7964,7 +7814,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTrigger
@@ -8010,7 +7859,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetTriggerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTriggers
@@ -8056,7 +7904,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetTriggersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUnfilteredPartitionMetadata
@@ -8119,7 +7966,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetUnfilteredPartitionMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUnfilteredPartitionsMetadata
@@ -8182,7 +8028,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetUnfilteredPartitionsMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUnfilteredTableMetadata
@@ -8246,7 +8091,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetUnfilteredTableMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUsageProfile
@@ -8295,7 +8139,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetUsageProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUserDefinedFunction
@@ -8344,7 +8187,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetUserDefinedFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUserDefinedFunctions
@@ -8393,7 +8235,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetUserDefinedFunctionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkflow
@@ -8439,7 +8280,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkflowRun
@@ -8486,7 +8326,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetWorkflowRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkflowRunProperties
@@ -8532,7 +8371,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetWorkflowRunPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkflowRuns
@@ -8578,7 +8416,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<GetWorkflowRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportCatalogToGlue
@@ -8618,7 +8455,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ImportCatalogToGlueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBlueprints
@@ -8661,7 +8497,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListBlueprintsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListColumnStatisticsTaskRuns
@@ -8698,7 +8533,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListColumnStatisticsTaskRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConnectionTypes
@@ -8742,7 +8576,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListConnectionTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCrawlers
@@ -8788,7 +8621,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListCrawlersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCrawls
@@ -8856,7 +8688,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListCrawlsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCustomEntityTypes
@@ -8899,7 +8730,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListCustomEntityTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataQualityResults
@@ -8942,7 +8772,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListDataQualityResultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataQualityRuleRecommendationRuns
@@ -8985,7 +8814,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListDataQualityRuleRecommendationRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataQualityRulesetEvaluationRuns
@@ -9029,7 +8857,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListDataQualityRulesetEvaluationRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataQualityRulesets
@@ -9075,7 +8902,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListDataQualityRulesetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataQualityStatisticAnnotations
@@ -9115,7 +8941,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListDataQualityStatisticAnnotationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataQualityStatistics
@@ -9158,7 +8983,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListDataQualityStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDevEndpoints
@@ -9213,7 +9037,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListDevEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEntities
@@ -9268,7 +9091,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListEntitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobs
@@ -9323,7 +9145,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMLTransforms
@@ -9373,7 +9194,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListMLTransformsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRegistries
@@ -9418,7 +9238,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListRegistriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSchemas
@@ -9472,7 +9291,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListSchemasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSchemaVersions
@@ -9520,7 +9338,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListSchemaVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSessions
@@ -9566,7 +9383,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStatements
@@ -9618,7 +9434,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListStatementsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTableOptimizerRuns
@@ -9670,7 +9485,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListTableOptimizerRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTriggers
@@ -9725,7 +9539,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListTriggersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUsageProfiles
@@ -9771,7 +9584,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListUsageProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkflows
@@ -9814,7 +9626,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ListWorkflowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyIntegration
@@ -9881,7 +9692,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ModifyIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDataCatalogEncryptionSettings
@@ -9925,7 +9735,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<PutDataCatalogEncryptionSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDataQualityProfileAnnotation
@@ -9968,7 +9777,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<PutDataQualityProfileAnnotationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -10017,7 +9825,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutSchemaVersionMetadata
@@ -10068,7 +9875,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<PutSchemaVersionMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutWorkflowRunProperties
@@ -10125,7 +9931,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<PutWorkflowRunPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QuerySchemaVersionMetadata
@@ -10168,7 +9973,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<QuerySchemaVersionMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterSchemaVersion
@@ -10237,7 +10041,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<RegisterSchemaVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveSchemaVersionMetadata
@@ -10281,7 +10084,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<RemoveSchemaVersionMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetJobBookmark
@@ -10348,7 +10150,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ResetJobBookmarkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResumeWorkflowRun
@@ -10402,7 +10203,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<ResumeWorkflowRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RunStatement
@@ -10460,7 +10260,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<RunStatementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchTables
@@ -10514,7 +10313,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<SearchTablesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartBlueprintRun
@@ -10566,7 +10364,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<StartBlueprintRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartColumnStatisticsTaskRun
@@ -10619,7 +10416,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<StartColumnStatisticsTaskRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartColumnStatisticsTaskRunSchedule
@@ -10665,7 +10461,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<StartColumnStatisticsTaskRunScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartCrawler
@@ -10709,7 +10504,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<StartCrawlerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartCrawlerSchedule
@@ -10759,7 +10553,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<StartCrawlerScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDataQualityRuleRecommendationRun
@@ -10813,7 +10606,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<StartDataQualityRuleRecommendationRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDataQualityRulesetEvaluationRun
@@ -10864,7 +10656,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<StartDataQualityRulesetEvaluationRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartExportLabelsTaskRun
@@ -10918,7 +10709,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<StartExportLabelsTaskRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartImportLabelsTaskRun
@@ -10998,7 +10788,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<StartImportLabelsTaskRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartJobRun
@@ -11050,7 +10839,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<StartJobRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMLEvaluationTaskRun
@@ -11114,7 +10902,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<StartMLEvaluationTaskRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMLLabelingSetGenerationTaskRun
@@ -11183,7 +10970,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<StartMLLabelingSetGenerationTaskRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartTrigger
@@ -11236,7 +11022,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<StartTriggerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartWorkflowRun
@@ -11288,7 +11073,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<StartWorkflowRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopColumnStatisticsTaskRun
@@ -11334,7 +11118,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<StopColumnStatisticsTaskRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopColumnStatisticsTaskRunSchedule
@@ -11377,7 +11160,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<StopColumnStatisticsTaskRunScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopCrawler
@@ -11423,7 +11205,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<StopCrawlerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopCrawlerSchedule
@@ -11470,7 +11251,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<StopCrawlerScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopSession
@@ -11522,7 +11302,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<StopSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopTrigger
@@ -11571,7 +11350,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<StopTriggerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopWorkflowRun
@@ -11620,7 +11398,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<StopWorkflowRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -11669,7 +11446,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestConnection
@@ -11741,7 +11517,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<TestConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -11787,7 +11562,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBlueprint
@@ -11839,7 +11613,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateBlueprintResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCatalog
@@ -11897,7 +11670,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateCatalogResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateClassifier
@@ -11944,7 +11716,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateClassifierResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateColumnStatisticsForPartition
@@ -11999,7 +11770,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateColumnStatisticsForPartitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateColumnStatisticsForTable
@@ -12054,7 +11824,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateColumnStatisticsForTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateColumnStatisticsTaskSettings
@@ -12103,7 +11872,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateColumnStatisticsTaskSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConnection
@@ -12149,7 +11917,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCrawler
@@ -12199,7 +11966,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateCrawlerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCrawlerSchedule
@@ -12248,7 +12014,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateCrawlerScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDatabase
@@ -12309,7 +12074,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataQualityRuleset
@@ -12364,7 +12128,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateDataQualityRulesetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDevEndpoint
@@ -12413,7 +12176,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateDevEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIntegrationResourceProperty
@@ -12472,7 +12234,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateIntegrationResourcePropertyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIntegrationTableProperties
@@ -12537,7 +12298,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateIntegrationTablePropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateJob
@@ -12587,7 +12347,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateJobFromSourceControl
@@ -12649,7 +12408,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateJobFromSourceControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMLTransform
@@ -12706,7 +12464,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateMLTransformResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePartition
@@ -12755,7 +12512,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdatePartitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRegistry
@@ -12806,7 +12562,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateRegistryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSchema
@@ -12873,7 +12628,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSourceControlFromJob
@@ -12935,7 +12689,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateSourceControlFromJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTable
@@ -13002,7 +12755,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTableOptimizer
@@ -13057,7 +12809,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateTableOptimizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTrigger
@@ -13113,7 +12864,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateTriggerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUsageProfile
@@ -13165,7 +12915,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateUsageProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUserDefinedFunction
@@ -13214,7 +12963,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateUserDefinedFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkflow
@@ -13263,7 +13011,6 @@ namespace Amazon.Glue
 
             return InvokeAsync<UpdateWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

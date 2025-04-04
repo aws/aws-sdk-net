@@ -328,7 +328,6 @@ namespace Amazon.ServiceQuotas
 
             return InvokeAsync<AssociateServiceQuotaTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServiceQuotaIncreaseRequestFromTemplate
@@ -392,7 +391,6 @@ namespace Amazon.ServiceQuotas
 
             return InvokeAsync<DeleteServiceQuotaIncreaseRequestFromTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateServiceQuotaTemplate
@@ -455,7 +453,6 @@ namespace Amazon.ServiceQuotas
 
             return InvokeAsync<DisassociateServiceQuotaTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAssociationForServiceQuotaTemplate
@@ -515,7 +512,6 @@ namespace Amazon.ServiceQuotas
 
             return InvokeAsync<GetAssociationForServiceQuotaTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAWSDefaultServiceQuota
@@ -566,7 +562,6 @@ namespace Amazon.ServiceQuotas
 
             return InvokeAsync<GetAWSDefaultServiceQuotaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRequestedServiceQuotaChange
@@ -616,7 +611,6 @@ namespace Amazon.ServiceQuotas
 
             return InvokeAsync<GetRequestedServiceQuotaChangeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceQuota
@@ -668,7 +662,6 @@ namespace Amazon.ServiceQuotas
 
             return InvokeAsync<GetServiceQuotaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceQuotaIncreaseRequestFromTemplate
@@ -732,7 +725,6 @@ namespace Amazon.ServiceQuotas
 
             return InvokeAsync<GetServiceQuotaIncreaseRequestFromTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAWSDefaultServiceQuotas
@@ -786,7 +778,6 @@ namespace Amazon.ServiceQuotas
 
             return InvokeAsync<ListAWSDefaultServiceQuotasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRequestedServiceQuotaChangeHistory
@@ -839,7 +830,6 @@ namespace Amazon.ServiceQuotas
 
             return InvokeAsync<ListRequestedServiceQuotaChangeHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRequestedServiceQuotaChangeHistoryByQuota
@@ -892,7 +882,6 @@ namespace Amazon.ServiceQuotas
 
             return InvokeAsync<ListRequestedServiceQuotaChangeHistoryByQuotaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceQuotaIncreaseRequestsInTemplate
@@ -952,7 +941,6 @@ namespace Amazon.ServiceQuotas
 
             return InvokeAsync<ListServiceQuotaIncreaseRequestsInTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceQuotas
@@ -1007,7 +995,6 @@ namespace Amazon.ServiceQuotas
 
             return InvokeAsync<ListServiceQuotasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServices
@@ -1057,7 +1044,6 @@ namespace Amazon.ServiceQuotas
 
             return InvokeAsync<ListServicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1107,7 +1093,6 @@ namespace Amazon.ServiceQuotas
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutServiceQuotaIncreaseRequestIntoTemplate
@@ -1174,7 +1159,6 @@ namespace Amazon.ServiceQuotas
 
             return InvokeAsync<PutServiceQuotaIncreaseRequestIntoTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RequestServiceQuotaIncrease
@@ -1237,7 +1221,6 @@ namespace Amazon.ServiceQuotas
 
             return InvokeAsync<RequestServiceQuotaIncreaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1296,7 +1279,6 @@ namespace Amazon.ServiceQuotas
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1347,7 +1329,6 @@ namespace Amazon.ServiceQuotas
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

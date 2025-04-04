@@ -353,7 +353,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<CreateGatewayRouteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMesh
@@ -427,7 +426,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<CreateMeshResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRoute
@@ -498,7 +496,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<CreateRouteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVirtualGateway
@@ -573,7 +570,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<CreateVirtualGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVirtualNode
@@ -671,7 +667,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<CreateVirtualNodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVirtualRouter
@@ -746,7 +741,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<CreateVirtualRouterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVirtualService
@@ -821,7 +815,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<CreateVirtualServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGatewayRoute
@@ -878,7 +871,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<DeleteGatewayRouteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMesh
@@ -941,7 +933,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<DeleteMeshResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRoute
@@ -998,7 +989,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<DeleteRouteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVirtualGateway
@@ -1056,7 +1046,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<DeleteVirtualGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVirtualNode
@@ -1119,7 +1108,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<DeleteVirtualNodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVirtualRouter
@@ -1182,7 +1170,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<DeleteVirtualRouterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVirtualService
@@ -1239,7 +1226,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<DeleteVirtualServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGatewayRoute
@@ -1292,7 +1278,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<DescribeGatewayRouteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMesh
@@ -1345,7 +1330,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<DescribeMeshResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRoute
@@ -1398,7 +1382,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<DescribeRouteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVirtualGateway
@@ -1451,7 +1434,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<DescribeVirtualGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVirtualNode
@@ -1504,7 +1486,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<DescribeVirtualNodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVirtualRouter
@@ -1557,7 +1538,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<DescribeVirtualRouterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVirtualService
@@ -1610,7 +1590,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<DescribeVirtualServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGatewayRoutes
@@ -1663,7 +1642,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<ListGatewayRoutesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMeshes
@@ -1716,7 +1694,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<ListMeshesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRoutes
@@ -1769,7 +1746,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<ListRoutesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1822,7 +1798,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVirtualGateways
@@ -1875,7 +1850,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<ListVirtualGatewaysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVirtualNodes
@@ -1928,7 +1902,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<ListVirtualNodesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVirtualRouters
@@ -1981,7 +1954,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<ListVirtualRoutersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVirtualServices
@@ -2034,7 +2006,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<ListVirtualServicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2095,7 +2066,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2148,7 +2118,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGatewayRoute
@@ -2210,7 +2179,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<UpdateGatewayRouteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMesh
@@ -2267,7 +2235,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<UpdateMeshResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRoute
@@ -2328,7 +2295,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<UpdateRouteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVirtualGateway
@@ -2389,7 +2355,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<UpdateVirtualGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVirtualNode
@@ -2450,7 +2415,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<UpdateVirtualNodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVirtualRouter
@@ -2511,7 +2475,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<UpdateVirtualRouterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVirtualService
@@ -2572,7 +2535,6 @@ namespace Amazon.AppMesh
 
             return InvokeAsync<UpdateVirtualServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

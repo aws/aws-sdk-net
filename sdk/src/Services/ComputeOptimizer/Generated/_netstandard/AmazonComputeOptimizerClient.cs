@@ -337,7 +337,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<DeleteRecommendationPreferencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRecommendationExportJobs
@@ -403,7 +402,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<DescribeRecommendationExportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportAutoScalingGroupRecommendations
@@ -476,7 +474,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<ExportAutoScalingGroupRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportEBSVolumeRecommendations
@@ -549,7 +546,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<ExportEBSVolumeRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportEC2InstanceRecommendations
@@ -622,7 +618,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<ExportEC2InstanceRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportECSServiceRecommendations
@@ -694,7 +689,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<ExportECSServiceRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportIdleRecommendations
@@ -766,7 +760,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<ExportIdleRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportLambdaFunctionRecommendations
@@ -839,7 +832,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<ExportLambdaFunctionRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportLicenseRecommendations
@@ -910,7 +902,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<ExportLicenseRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportRDSDatabaseRecommendations
@@ -982,7 +973,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<ExportRDSDatabaseRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAutoScalingGroupRecommendations
@@ -1048,7 +1038,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<GetAutoScalingGroupRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEBSVolumeRecommendations
@@ -1114,7 +1103,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<GetEBSVolumeRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEC2InstanceRecommendations
@@ -1181,7 +1169,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<GetEC2InstanceRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEC2RecommendationProjectedMetrics
@@ -1250,7 +1237,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<GetEC2RecommendationProjectedMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetECSServiceRecommendationProjectedMetrics
@@ -1309,7 +1295,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<GetECSServiceRecommendationProjectedMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetECSServiceRecommendations
@@ -1375,7 +1360,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<GetECSServiceRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEffectiveRecommendationPreferences
@@ -1443,7 +1427,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<GetEffectiveRecommendationPreferencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEnrollmentStatus
@@ -1504,7 +1487,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<GetEnrollmentStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEnrollmentStatusesForOrganization
@@ -1564,7 +1546,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<GetEnrollmentStatusesForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIdleRecommendations
@@ -1626,7 +1607,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<GetIdleRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLambdaFunctionRecommendations
@@ -1692,7 +1672,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<GetLambdaFunctionRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLicenseRecommendations
@@ -1758,7 +1737,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<GetLicenseRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRDSDatabaseRecommendationProjectedMetrics
@@ -1817,7 +1795,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<GetRDSDatabaseRecommendationProjectedMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRDSDatabaseRecommendations
@@ -1883,7 +1860,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<GetRDSDatabaseRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRecommendationPreferences
@@ -1954,7 +1930,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<GetRecommendationPreferencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRecommendationSummaries
@@ -2038,7 +2013,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<GetRecommendationSummariesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRecommendationPreferences
@@ -2104,7 +2078,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<PutRecommendationPreferencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEnrollmentStatus
@@ -2177,7 +2150,6 @@ namespace Amazon.ComputeOptimizer
 
             return InvokeAsync<UpdateEnrollmentStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.Shield
     /// <summary>
     /// Configuration for accessing Amazon Shield service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonShieldConfig : ClientConfig
     {
         private static readonly string UserAgentString =

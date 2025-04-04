@@ -313,7 +313,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<AcceptQualificationRequestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ApproveAssignment
@@ -383,7 +382,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<ApproveAssignmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateQualificationWithWorker
@@ -442,7 +440,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<AssociateQualificationWithWorkerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAdditionalAssignmentsForHIT
@@ -503,7 +500,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<CreateAdditionalAssignmentsForHITResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateHIT
@@ -575,7 +571,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<CreateHITResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateHITType
@@ -619,7 +614,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<CreateHITTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateHITWithHITType
@@ -682,7 +676,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<CreateHITWithHITTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateQualificationType
@@ -724,7 +717,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<CreateQualificationTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkerBlock
@@ -767,7 +759,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<CreateWorkerBlockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteHIT
@@ -838,7 +829,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<DeleteHITResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteQualificationType
@@ -896,7 +886,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<DeleteQualificationTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkerBlock
@@ -941,7 +930,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<DeleteWorkerBlockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateQualificationFromWorker
@@ -989,7 +977,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<DisassociateQualificationFromWorkerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccountBalance
@@ -1034,7 +1021,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<GetAccountBalanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAssignment
@@ -1075,7 +1061,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<GetAssignmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFileUploadURL
@@ -1124,7 +1109,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<GetFileUploadURLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetHIT
@@ -1165,7 +1149,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<GetHITResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQualificationScore
@@ -1219,7 +1202,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<GetQualificationScoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQualificationType
@@ -1261,7 +1243,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<GetQualificationTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssignmentsForHIT
@@ -1330,7 +1311,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<ListAssignmentsForHITResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBonusPayments
@@ -1372,7 +1352,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<ListBonusPaymentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHITs
@@ -1415,7 +1394,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<ListHITsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHITsForQualificationType
@@ -1459,7 +1437,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<ListHITsForQualificationTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQualificationRequests
@@ -1503,7 +1480,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<ListQualificationRequestsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQualificationTypes
@@ -1545,7 +1521,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<ListQualificationTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReviewableHITs
@@ -1587,7 +1562,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<ListReviewableHITsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReviewPolicyResultsForHIT
@@ -1632,7 +1606,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<ListReviewPolicyResultsForHITResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkerBlocks
@@ -1674,7 +1647,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<ListWorkerBlocksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkersWithQualificationType
@@ -1716,7 +1688,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<ListWorkersWithQualificationTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NotifyWorkers
@@ -1761,7 +1732,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<NotifyWorkersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectAssignment
@@ -1815,7 +1785,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<RejectAssignmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectQualificationRequest
@@ -1863,7 +1832,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<RejectQualificationRequestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendBonus
@@ -1911,7 +1879,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<SendBonusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendTestEventNotification
@@ -1956,7 +1923,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<SendTestEventNotificationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateExpirationForHIT
@@ -1998,7 +1964,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<UpdateExpirationForHITResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateHITReviewStatus
@@ -2041,7 +2006,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<UpdateHITReviewStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateHITTypeOfHIT
@@ -2085,7 +2049,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<UpdateHITTypeOfHITResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNotificationSettings
@@ -2134,7 +2097,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<UpdateNotificationSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQualificationType
@@ -2218,7 +2180,6 @@ namespace Amazon.MTurk
 
             return InvokeAsync<UpdateQualificationTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.PersonalizeRuntime
     /// <summary>
     /// Configuration for accessing Amazon PersonalizeRuntime service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonPersonalizeRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =

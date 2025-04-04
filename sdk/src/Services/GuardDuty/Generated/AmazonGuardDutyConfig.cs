@@ -30,7 +30,6 @@ namespace Amazon.GuardDuty
     /// <summary>
     /// Configuration for accessing Amazon GuardDuty service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonGuardDutyConfig : ClientConfig
     {
         private static readonly string UserAgentString =

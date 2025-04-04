@@ -32,7 +32,7 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// This is the response object from the InvokeWithResponseStream operation.
     /// </summary>
-    public partial class InvokeWithResponseStreamResponse : AmazonWebServiceResponse
+    public partial class InvokeWithResponseStreamResponse : AmazonWebServiceResponse, IDisposable
     {
         private InvokeWithResponseStreamResponseEvent _eventStream;
         private string _executedVersion;
@@ -115,5 +115,36 @@ namespace Amazon.Lambda.Model
             return this._statusCode.HasValue; 
         }
 
+        #region Dispose Pattern
+
+        private bool _disposed;
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                this._eventStream?.Dispose();
+                this._eventStream = null;
+            }
+
+            this._disposed = true;
+         }
+
+         #endregion
     }
 }

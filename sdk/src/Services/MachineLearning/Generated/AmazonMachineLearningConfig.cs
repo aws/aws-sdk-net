@@ -30,7 +30,6 @@ namespace Amazon.MachineLearning
     /// <summary>
     /// Configuration for accessing Amazon MachineLearning service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMachineLearningConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -30,7 +30,6 @@ namespace Amazon.CostExplorer
     /// <summary>
     /// Configuration for accessing Amazon CostExplorer service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCostExplorerConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -304,7 +304,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<AddSourceIdentifierToSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddTagsToResource
@@ -350,7 +349,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<AddTagsToResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ApplyPendingMaintenanceAction
@@ -394,7 +392,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<ApplyPendingMaintenanceActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyDBClusterParameterGroup
@@ -437,7 +434,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<CopyDBClusterParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyDBClusterSnapshot
@@ -503,7 +499,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<CopyDBClusterSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBCluster
@@ -596,7 +591,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<CreateDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBClusterParameterGroup
@@ -655,7 +649,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<CreateDBClusterParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBClusterSnapshot
@@ -704,7 +697,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<CreateDBClusterSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBInstance
@@ -794,7 +786,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<CreateDBInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDBSubnetGroup
@@ -846,7 +837,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<CreateDBSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEventSubscription
@@ -925,7 +915,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<CreateEventSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGlobalCluster
@@ -988,7 +977,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<CreateGlobalClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBCluster
@@ -1039,7 +1027,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DeleteDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBClusterParameterGroup
@@ -1082,7 +1069,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DeleteDBClusterParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBClusterSnapshot
@@ -1129,7 +1115,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DeleteDBClusterSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBInstance
@@ -1178,7 +1163,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DeleteDBInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDBSubnetGroup
@@ -1227,7 +1211,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DeleteDBSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventSubscription
@@ -1267,7 +1250,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DeleteEventSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGlobalCluster
@@ -1314,7 +1296,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DeleteGlobalClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCertificates
@@ -1352,7 +1333,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DescribeCertificatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBClusterParameterGroups
@@ -1391,7 +1371,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DescribeDBClusterParameterGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBClusterParameters
@@ -1428,7 +1407,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DescribeDBClusterParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBClusters
@@ -1469,7 +1447,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DescribeDBClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBClusterSnapshotAttributes
@@ -1517,7 +1494,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DescribeDBClusterSnapshotAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBClusterSnapshots
@@ -1554,7 +1530,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DescribeDBClusterSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBEngineVersions
@@ -1588,7 +1563,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DescribeDBEngineVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBInstances
@@ -1626,7 +1600,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DescribeDBInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDBSubnetGroups
@@ -1664,7 +1637,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DescribeDBSubnetGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEngineDefaultClusterParameters
@@ -1699,7 +1671,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DescribeEngineDefaultClusterParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventCategories
@@ -1734,7 +1705,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DescribeEventCategoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEvents
@@ -1771,7 +1741,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DescribeEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventSubscriptions
@@ -1815,7 +1784,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DescribeEventSubscriptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGlobalClusters
@@ -1858,7 +1826,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DescribeGlobalClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOrderableDBInstanceOptions
@@ -1892,7 +1859,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DescribeOrderableDBInstanceOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePendingMaintenanceActions
@@ -1930,7 +1896,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<DescribePendingMaintenanceActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FailoverDBCluster
@@ -1985,7 +1950,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<FailoverDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FailoverGlobalCluster
@@ -2042,7 +2006,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<FailoverGlobalClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2085,7 +2048,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBCluster
@@ -2158,7 +2120,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<ModifyDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBClusterParameterGroup
@@ -2219,7 +2180,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<ModifyDBClusterParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBClusterSnapshotAttribute
@@ -2278,7 +2238,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<ModifyDBClusterSnapshotAttributeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBInstance
@@ -2361,7 +2320,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<ModifyDBInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDBSubnetGroup
@@ -2413,7 +2371,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<ModifyDBSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyEventSubscription
@@ -2465,7 +2422,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<ModifyEventSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyGlobalCluster
@@ -2513,7 +2469,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<ModifyGlobalClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RebootDBInstance
@@ -2563,7 +2518,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<RebootDBInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveFromGlobalCluster
@@ -2614,7 +2568,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<RemoveFromGlobalClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveSourceIdentifierFromSubscription
@@ -2655,7 +2608,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<RemoveSourceIdentifierFromSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTagsFromResource
@@ -2698,7 +2650,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<RemoveTagsFromResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetDBClusterParameterGroup
@@ -2750,7 +2701,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<ResetDBClusterParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreDBClusterFromSnapshot
@@ -2844,7 +2794,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<RestoreDBClusterFromSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreDBClusterToPointInTime
@@ -2933,7 +2882,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<RestoreDBClusterToPointInTimeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDBCluster
@@ -2978,7 +2926,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<StartDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopDBCluster
@@ -3023,7 +2970,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<StopDBClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SwitchoverGlobalCluster
@@ -3070,7 +3016,6 @@ namespace Amazon.DocDB
 
             return InvokeAsync<SwitchoverGlobalClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -498,7 +498,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfigurationProfile
@@ -621,7 +620,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<CreateConfigurationProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDeploymentStrategy
@@ -692,7 +690,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<CreateDeploymentStrategyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEnvironment
@@ -769,7 +766,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<CreateEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateExtension
@@ -873,7 +869,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<CreateExtensionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateExtensionAssociation
@@ -953,7 +948,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<CreateExtensionAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateHostedConfigurationVersion
@@ -1034,7 +1028,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<CreateHostedConfigurationVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplication
@@ -1077,7 +1070,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<DeleteApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfigurationProfile
@@ -1131,7 +1123,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<DeleteConfigurationProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDeploymentStrategy
@@ -1174,7 +1165,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<DeleteDeploymentStrategyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEnvironment
@@ -1228,7 +1218,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<DeleteEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteExtension
@@ -1272,7 +1261,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<DeleteExtensionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteExtensionAssociation
@@ -1316,7 +1304,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<DeleteExtensionAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteHostedConfigurationVersion
@@ -1359,7 +1346,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<DeleteHostedConfigurationVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccountSettings
@@ -1399,7 +1385,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<GetAccountSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplication
@@ -1442,7 +1427,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<GetApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfiguration
@@ -1504,7 +1488,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<GetConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfigurationProfile
@@ -1547,7 +1530,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<GetConfigurationProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeployment
@@ -1590,7 +1572,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<GetDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeploymentStrategy
@@ -1637,7 +1618,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<GetDeploymentStrategyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEnvironment
@@ -1684,7 +1664,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<GetEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExtension
@@ -1727,7 +1706,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<GetExtensionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExtensionAssociation
@@ -1772,7 +1750,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<GetExtensionAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetHostedConfigurationVersion
@@ -1815,7 +1792,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<GetHostedConfigurationVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplications
@@ -1855,7 +1831,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<ListApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfigurationProfiles
@@ -1898,7 +1873,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<ListConfigurationProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeployments
@@ -1941,7 +1915,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<ListDeploymentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeploymentStrategies
@@ -1981,7 +1954,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<ListDeploymentStrategiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnvironments
@@ -2024,7 +1996,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<ListEnvironmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExtensionAssociations
@@ -2066,7 +2037,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<ListExtensionAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExtensions
@@ -2108,7 +2078,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<ListExtensionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHostedConfigurationVersions
@@ -2151,7 +2120,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<ListHostedConfigurationVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2194,7 +2162,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDeployment
@@ -2241,7 +2208,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<StartDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopDeployment
@@ -2288,7 +2254,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<StopDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2333,7 +2298,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2376,7 +2340,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccountSettings
@@ -2416,7 +2379,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<UpdateAccountSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplication
@@ -2459,7 +2421,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfigurationProfile
@@ -2502,7 +2463,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<UpdateConfigurationProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDeploymentStrategy
@@ -2545,7 +2505,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<UpdateDeploymentStrategyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEnvironment
@@ -2588,7 +2547,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<UpdateEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateExtension
@@ -2636,7 +2594,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<UpdateExtensionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateExtensionAssociation
@@ -2681,7 +2638,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<UpdateExtensionAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ValidateConfiguration
@@ -2724,7 +2680,6 @@ namespace Amazon.AppConfig
 
             return InvokeAsync<ValidateConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -433,7 +433,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<AcceptInvitationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetGraphMemberDatasources
@@ -480,7 +479,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<BatchGetGraphMemberDatasourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetMembershipDatasources
@@ -527,7 +525,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<BatchGetMembershipDatasourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGraph
@@ -605,7 +602,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<CreateGraphResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMembers
@@ -712,7 +708,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<CreateMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGraph
@@ -766,7 +761,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<DeleteGraphResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMembers
@@ -838,7 +832,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<DeleteMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOrganizationConfiguration
@@ -892,7 +885,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<DescribeOrganizationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableOrganizationAdminAccount
@@ -958,7 +950,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<DisableOrganizationAdminAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateMembership
@@ -1016,7 +1007,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<DisassociateMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableOrganizationAdminAccount
@@ -1089,7 +1079,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<EnableOrganizationAdminAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInvestigation
@@ -1144,7 +1133,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<GetInvestigationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMembers
@@ -1191,7 +1179,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<GetMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatasourcePackages
@@ -1238,7 +1225,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<ListDatasourcePackagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGraphs
@@ -1289,7 +1275,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<ListGraphsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIndicators
@@ -1342,7 +1327,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<ListIndicatorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInvestigations
@@ -1397,7 +1381,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<ListInvestigationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInvitations
@@ -1453,7 +1436,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<ListInvitationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMembers
@@ -1511,7 +1493,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<ListMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOrganizationAdminAccounts
@@ -1560,7 +1541,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<ListOrganizationAdminAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1607,7 +1587,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectInvitation
@@ -1665,7 +1644,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<RejectInvitationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartInvestigation
@@ -1720,7 +1698,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<StartInvestigationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMonitoringMember
@@ -1801,7 +1778,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<StartMonitoringMemberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1848,7 +1824,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1895,7 +1870,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDatasourcePackages
@@ -1958,7 +1932,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<UpdateDatasourcePackagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInvestigationState
@@ -2009,7 +1982,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<UpdateInvestigationStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateOrganizationConfiguration
@@ -2058,7 +2030,6 @@ namespace Amazon.Detective
 
             return InvokeAsync<UpdateOrganizationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

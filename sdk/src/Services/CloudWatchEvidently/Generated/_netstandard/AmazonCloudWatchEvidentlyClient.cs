@@ -347,7 +347,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<BatchEvaluateFeatureResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateExperiment
@@ -416,7 +415,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<CreateExperimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFeature
@@ -474,7 +472,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<CreateFeatureResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLaunch
@@ -538,7 +535,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<CreateLaunchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProject
@@ -590,7 +586,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<CreateProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSegment
@@ -657,7 +652,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<CreateSegmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteExperiment
@@ -715,7 +709,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<DeleteExperimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFeature
@@ -764,7 +757,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<DeleteFeatureResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLaunch
@@ -819,7 +811,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<DeleteLaunchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProject
@@ -869,7 +860,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<DeleteProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSegment
@@ -919,7 +909,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<DeleteSegmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EvaluateFeature
@@ -1010,7 +999,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<EvaluateFeatureResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExperiment
@@ -1057,7 +1045,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<GetExperimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExperimentResults
@@ -1117,7 +1104,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<GetExperimentResultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFeature
@@ -1164,7 +1150,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<GetFeatureResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLaunch
@@ -1211,7 +1196,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<GetLaunchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProject
@@ -1258,7 +1242,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<GetProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSegment
@@ -1305,7 +1288,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<GetSegmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExperiments
@@ -1348,7 +1330,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<ListExperimentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFeatures
@@ -1394,7 +1375,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<ListFeaturesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLaunches
@@ -1437,7 +1417,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<ListLaunchesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProjects
@@ -1481,7 +1460,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<ListProjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSegmentReferences
@@ -1527,7 +1505,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<ListSegmentReferencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSegments
@@ -1571,7 +1548,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<ListSegmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1614,7 +1590,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutProjectEvents
@@ -1661,7 +1636,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<PutProjectEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartExperiment
@@ -1713,7 +1687,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<StartExperimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartLaunch
@@ -1765,7 +1738,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<StartLaunchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopExperiment
@@ -1818,7 +1790,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<StopExperimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopLaunch
@@ -1868,7 +1839,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<StopLaunchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1941,7 +1911,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestSegmentPattern
@@ -1985,7 +1954,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<TestSegmentPatternResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2028,7 +1996,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateExperiment
@@ -2080,7 +2047,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<UpdateExperimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFeature
@@ -2136,7 +2102,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<UpdateFeatureResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLaunch
@@ -2189,7 +2154,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<UpdateLaunchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProject
@@ -2254,7 +2218,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<UpdateProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProjectDataDelivery
@@ -2312,7 +2275,6 @@ namespace Amazon.CloudWatchEvidently
 
             return InvokeAsync<UpdateProjectDataDeliveryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

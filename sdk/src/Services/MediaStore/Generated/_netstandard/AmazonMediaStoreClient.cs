@@ -305,7 +305,6 @@ namespace Amazon.MediaStore
 
             return InvokeAsync<CreateContainerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteContainer
@@ -350,7 +349,6 @@ namespace Amazon.MediaStore
 
             return InvokeAsync<DeleteContainerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteContainerPolicy
@@ -396,7 +394,6 @@ namespace Amazon.MediaStore
 
             return InvokeAsync<DeleteContainerPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCorsPolicy
@@ -450,7 +447,6 @@ namespace Amazon.MediaStore
 
             return InvokeAsync<DeleteCorsPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLifecyclePolicy
@@ -497,7 +493,6 @@ namespace Amazon.MediaStore
 
             return InvokeAsync<DeleteLifecyclePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMetricPolicy
@@ -545,7 +540,6 @@ namespace Amazon.MediaStore
 
             return InvokeAsync<DeleteMetricPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeContainer
@@ -590,7 +584,6 @@ namespace Amazon.MediaStore
 
             return InvokeAsync<DescribeContainerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContainerPolicy
@@ -638,7 +631,6 @@ namespace Amazon.MediaStore
 
             return InvokeAsync<GetContainerPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCorsPolicy
@@ -691,7 +683,6 @@ namespace Amazon.MediaStore
 
             return InvokeAsync<GetCorsPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLifecyclePolicy
@@ -737,7 +728,6 @@ namespace Amazon.MediaStore
 
             return InvokeAsync<GetLifecyclePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMetricPolicy
@@ -783,7 +773,6 @@ namespace Amazon.MediaStore
 
             return InvokeAsync<GetMetricPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContainers
@@ -834,7 +823,6 @@ namespace Amazon.MediaStore
 
             return InvokeAsync<ListContainersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -877,7 +865,6 @@ namespace Amazon.MediaStore
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutContainerPolicy
@@ -930,7 +917,6 @@ namespace Amazon.MediaStore
 
             return InvokeAsync<PutContainerPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutCorsPolicy
@@ -990,7 +976,6 @@ namespace Amazon.MediaStore
 
             return InvokeAsync<PutCorsPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutLifecyclePolicy
@@ -1041,7 +1026,6 @@ namespace Amazon.MediaStore
 
             return InvokeAsync<PutLifecyclePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutMetricPolicy
@@ -1086,7 +1070,6 @@ namespace Amazon.MediaStore
 
             return InvokeAsync<PutMetricPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartAccessLogging
@@ -1131,7 +1114,6 @@ namespace Amazon.MediaStore
 
             return InvokeAsync<StartAccessLoggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopAccessLogging
@@ -1176,7 +1158,6 @@ namespace Amazon.MediaStore
 
             return InvokeAsync<StopAccessLoggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1224,7 +1205,6 @@ namespace Amazon.MediaStore
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1267,7 +1247,6 @@ namespace Amazon.MediaStore
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

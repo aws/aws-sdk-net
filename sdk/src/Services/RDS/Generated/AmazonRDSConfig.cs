@@ -30,7 +30,6 @@ namespace Amazon.RDS
     /// <summary>
     /// Configuration for accessing Amazon RDS service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonRDSConfig : ClientConfig
     {
         private static readonly string UserAgentString =

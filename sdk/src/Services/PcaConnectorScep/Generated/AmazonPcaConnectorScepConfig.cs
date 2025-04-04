@@ -30,7 +30,6 @@ namespace Amazon.PcaConnectorScep
     /// <summary>
     /// Configuration for accessing Amazon PcaConnectorScep service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonPcaConnectorScepConfig : ClientConfig
     {
         private static readonly string UserAgentString =

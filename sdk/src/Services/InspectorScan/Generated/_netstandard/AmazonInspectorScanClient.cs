@@ -292,7 +292,6 @@ namespace Amazon.InspectorScan
 
             return InvokeAsync<ScanSbomResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.Inspector2
     /// <summary>
     /// Configuration for accessing Amazon Inspector2 service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonInspector2Config : ClientConfig
     {
         private static readonly string UserAgentString =

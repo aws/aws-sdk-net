@@ -323,7 +323,6 @@ namespace Amazon.Polly
 
             return InvokeAsync<DeleteLexiconResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVoices
@@ -387,7 +386,6 @@ namespace Amazon.Polly
 
             return InvokeAsync<DescribeVoicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLexicon
@@ -437,7 +435,6 @@ namespace Amazon.Polly
 
             return InvokeAsync<GetLexiconResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSpeechSynthesisTask
@@ -482,7 +479,6 @@ namespace Amazon.Polly
 
             return InvokeAsync<GetSpeechSynthesisTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLexicons
@@ -524,7 +520,6 @@ namespace Amazon.Polly
 
             return InvokeAsync<ListLexiconsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSpeechSynthesisTasks
@@ -566,7 +561,6 @@ namespace Amazon.Polly
 
             return InvokeAsync<ListSpeechSynthesisTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutLexicon
@@ -634,7 +628,6 @@ namespace Amazon.Polly
 
             return InvokeAsync<PutLexiconResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSpeechSynthesisTask
@@ -729,7 +722,6 @@ namespace Amazon.Polly
 
             return InvokeAsync<StartSpeechSynthesisTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SynthesizeSpeech
@@ -809,7 +801,6 @@ namespace Amazon.Polly
 
             return InvokeAsync<SynthesizeSpeechResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

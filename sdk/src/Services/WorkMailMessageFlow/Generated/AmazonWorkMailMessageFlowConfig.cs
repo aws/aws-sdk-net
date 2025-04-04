@@ -30,7 +30,6 @@ namespace Amazon.WorkMailMessageFlow
     /// <summary>
     /// Configuration for accessing Amazon WorkMailMessageFlow service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonWorkMailMessageFlowConfig : ClientConfig
     {
         private static readonly string UserAgentString =

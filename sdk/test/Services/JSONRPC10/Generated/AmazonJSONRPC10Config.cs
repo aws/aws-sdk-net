@@ -30,7 +30,6 @@ namespace Amazon.JSONRPC10
     /// <summary>
     /// Configuration for accessing Amazon JSONRPC10 service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonJSONRPC10Config : ClientConfig
     {
         private static readonly string UserAgentString =

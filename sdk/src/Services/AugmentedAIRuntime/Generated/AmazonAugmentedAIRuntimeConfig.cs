@@ -30,7 +30,6 @@ namespace Amazon.AugmentedAIRuntime
     /// <summary>
     /// Configuration for accessing Amazon AugmentedAIRuntime service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonAugmentedAIRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =

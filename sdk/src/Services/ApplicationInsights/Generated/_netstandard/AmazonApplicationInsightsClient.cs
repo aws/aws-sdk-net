@@ -322,7 +322,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<AddWorkloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApplication
@@ -374,7 +373,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateComponent
@@ -420,7 +418,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<CreateComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLogPattern
@@ -466,7 +463,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<CreateLogPatternResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplication
@@ -512,7 +508,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<DeleteApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteComponent
@@ -557,7 +552,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<DeleteComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLogPattern
@@ -603,7 +597,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<DeleteLogPatternResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApplication
@@ -646,7 +639,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<DescribeApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeComponent
@@ -689,7 +681,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<DescribeComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeComponentConfiguration
@@ -732,7 +723,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<DescribeComponentConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeComponentConfigurationRecommendation
@@ -775,7 +765,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<DescribeComponentConfigurationRecommendationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLogPattern
@@ -818,7 +807,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<DescribeLogPatternResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeObservation
@@ -861,7 +849,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<DescribeObservationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProblem
@@ -904,7 +891,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<DescribeProblemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProblemObservations
@@ -947,7 +933,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<DescribeProblemObservationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkload
@@ -990,7 +975,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<DescribeWorkloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplications
@@ -1030,7 +1014,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<ListApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListComponents
@@ -1073,7 +1056,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<ListComponentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfigurationHistory
@@ -1131,7 +1113,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<ListConfigurationHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLogPatterns
@@ -1174,7 +1155,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<ListLogPatternsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLogPatternSets
@@ -1217,7 +1197,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<ListLogPatternSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProblems
@@ -1260,7 +1239,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<ListProblemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1304,7 +1282,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkloads
@@ -1347,7 +1324,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<ListWorkloadsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveWorkload
@@ -1390,7 +1366,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<RemoveWorkloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1444,7 +1419,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1484,7 +1458,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplication
@@ -1527,7 +1500,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateComponent
@@ -1573,7 +1545,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<UpdateComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateComponentConfiguration
@@ -1621,7 +1592,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<UpdateComponentConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLogPattern
@@ -1667,7 +1637,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<UpdateLogPatternResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProblem
@@ -1710,7 +1679,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<UpdateProblemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkload
@@ -1753,7 +1721,6 @@ namespace Amazon.ApplicationInsights
 
             return InvokeAsync<UpdateWorkloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.QueryProtocol
     /// <summary>
     /// Configuration for accessing Amazon QueryProtocol service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonQueryProtocolConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -365,7 +365,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<AssociatePermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteDocument
@@ -430,7 +429,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<BatchDeleteDocumentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchPutDocument
@@ -514,7 +512,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<BatchPutDocumentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelSubscription
@@ -570,7 +567,73 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<CancelSubscriptionResponse>(request, options, cancellationToken);
         }
+        #endregion
+        
+        #region  Chat
 
+#if NET8_0_OR_GREATER
+        internal virtual ChatResponse Chat(ChatRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ChatRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ChatResponseUnmarshaller.Instance;
+
+            return Invoke<ChatResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts or continues a streaming Amazon Q Business conversation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the Chat service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the Chat service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ExternalResourceException">
+        /// An external resource that you configured with your application is returning errors
+        /// and preventing this operation from succeeding. Fix those errors and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.LicenseNotFoundException">
+        /// You don't have permissions to perform the action because your license is inactive.
+        /// Ask your admin to activate your license and try again after your licence is active.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/Chat">REST API Reference for Chat Operation</seealso>
+        public virtual Task<ChatResponse> ChatAsync(ChatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ChatRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ChatResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ChatResponse>(request, options, cancellationToken);
+        }
+#endif
         #endregion
         
         #region  ChatSync
@@ -636,7 +699,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<ChatSyncResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApplication
@@ -721,7 +783,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataAccessor
@@ -788,7 +849,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<CreateDataAccessorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataSource
@@ -855,7 +915,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<CreateDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIndex
@@ -929,7 +988,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<CreateIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePlugin
@@ -990,7 +1048,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<CreatePluginResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRetriever
@@ -1051,7 +1108,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<CreateRetrieverResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSubscription
@@ -1118,7 +1174,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<CreateSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUser
@@ -1180,7 +1235,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<CreateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWebExperience
@@ -1241,7 +1295,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<CreateWebExperienceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplication
@@ -1299,7 +1352,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<DeleteApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAttachment
@@ -1357,7 +1409,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<DeleteAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteChatControlsConfiguration
@@ -1411,7 +1462,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<DeleteChatControlsConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConversation
@@ -1469,7 +1519,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<DeleteConversationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataAccessor
@@ -1529,7 +1578,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<DeleteDataAccessorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataSource
@@ -1589,7 +1637,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<DeleteDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGroup
@@ -1658,7 +1705,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<DeleteGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIndex
@@ -1716,7 +1762,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<DeleteIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePlugin
@@ -1774,7 +1819,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<DeletePluginResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRetriever
@@ -1832,7 +1876,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<DeleteRetrieverResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUser
@@ -1890,7 +1933,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWebExperience
@@ -1948,7 +1990,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<DeleteWebExperienceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociatePermission
@@ -2008,7 +2049,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<DisassociatePermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplication
@@ -2062,7 +2102,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<GetApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetChatControlsConfiguration
@@ -2117,7 +2156,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<GetChatControlsConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataAccessor
@@ -2175,7 +2213,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<GetDataAccessorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataSource
@@ -2229,7 +2266,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<GetDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGroup
@@ -2287,7 +2323,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<GetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIndex
@@ -2341,7 +2376,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<GetIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMedia
@@ -2411,7 +2445,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<GetMediaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPlugin
@@ -2465,7 +2498,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<GetPluginResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPolicy
@@ -2521,7 +2553,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<GetPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRetriever
@@ -2575,7 +2606,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<GetRetrieverResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUser
@@ -2634,7 +2664,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<GetUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWebExperience
@@ -2688,7 +2717,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<GetWebExperienceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplications
@@ -2746,7 +2774,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<ListApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAttachments
@@ -2805,7 +2832,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<ListAttachmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConversations
@@ -2863,7 +2889,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<ListConversationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataAccessors
@@ -2919,7 +2944,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<ListDataAccessorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataSources
@@ -2973,7 +2997,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<ListDataSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataSourceSyncJobs
@@ -3031,7 +3054,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<ListDataSourceSyncJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDocuments
@@ -3085,7 +3107,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<ListDocumentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroups
@@ -3143,7 +3164,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<ListGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIndices
@@ -3197,7 +3217,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<ListIndicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMessages
@@ -3255,7 +3274,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<ListMessagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPluginActions
@@ -3310,7 +3328,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<ListPluginActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPlugins
@@ -3364,7 +3381,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<ListPluginsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPluginTypeActions
@@ -3414,7 +3430,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<ListPluginTypeActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPluginTypeMetadata
@@ -3464,7 +3479,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<ListPluginTypeMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRetrievers
@@ -3518,7 +3532,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<ListRetrieversResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSubscriptions
@@ -3576,7 +3589,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<ListSubscriptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3631,7 +3643,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWebExperiences
@@ -3685,7 +3696,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<ListWebExperiencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutFeedback
@@ -3740,7 +3750,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<PutFeedbackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutGroup
@@ -3818,7 +3827,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<PutGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchRelevantContent
@@ -3881,7 +3889,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<SearchRelevantContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDataSourceSyncJob
@@ -3943,7 +3950,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<StartDataSourceSyncJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopDataSourceSyncJob
@@ -4001,7 +4007,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<StopDataSourceSyncJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -4060,7 +4065,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -4114,7 +4118,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplication
@@ -4187,7 +4190,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateChatControlsConfiguration
@@ -4248,7 +4250,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<UpdateChatControlsConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataAccessor
@@ -4309,7 +4310,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<UpdateDataAccessorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataSource
@@ -4367,7 +4367,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<UpdateDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIndex
@@ -4428,7 +4427,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<UpdateIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePlugin
@@ -4489,7 +4487,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<UpdatePluginResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRetriever
@@ -4550,7 +4547,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<UpdateRetrieverResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSubscription
@@ -4611,7 +4607,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<UpdateSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUser
@@ -4668,7 +4663,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<UpdateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWebExperience
@@ -4726,7 +4720,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<UpdateWebExperienceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

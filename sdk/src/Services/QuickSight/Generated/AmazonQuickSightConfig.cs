@@ -30,7 +30,6 @@ namespace Amazon.QuickSight
     /// <summary>
     /// Configuration for accessing Amazon QuickSight service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonQuickSightConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -587,7 +587,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<CancelKeyDeletionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConnectCustomKeyStore
@@ -856,7 +855,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<ConnectCustomKeyStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAlias
@@ -1178,7 +1176,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<CreateAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCustomKeyStore
@@ -1477,7 +1474,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<CreateCustomKeyStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGrant
@@ -1650,7 +1646,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<CreateGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateKey
@@ -2077,7 +2072,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<CreateKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Decrypt
@@ -2320,7 +2314,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<DecryptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAlias
@@ -2576,7 +2569,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<DeleteAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCustomKeyStore
@@ -2749,7 +2741,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<DeleteCustomKeyStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteImportedKeyMaterial
@@ -2872,7 +2863,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<DeleteImportedKeyMaterialResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeriveSharedSecret
@@ -3103,7 +3093,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<DeriveSharedSecretResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCustomKeyStores
@@ -3231,7 +3220,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<DescribeCustomKeyStoresResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeKey
@@ -3515,7 +3503,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<DescribeKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableKey
@@ -3715,7 +3702,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<DisableKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableKeyRotation
@@ -3997,7 +3983,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<DisableKeyRotationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisconnectCustomKeyStore
@@ -4155,7 +4140,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<DisconnectCustomKeyStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableKey
@@ -4355,7 +4339,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<EnableKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableKeyRotation
@@ -4703,7 +4686,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<EnableKeyRotationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Encrypt
@@ -4944,7 +4926,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<EncryptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateDataKey
@@ -5201,7 +5182,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<GenerateDataKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateDataKeyPair
@@ -5435,7 +5415,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<GenerateDataKeyPairResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateDataKeyPairWithoutPlaintext
@@ -5640,7 +5619,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<GenerateDataKeyPairWithoutPlaintextResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateDataKeyWithoutPlaintext
@@ -5860,7 +5838,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<GenerateDataKeyWithoutPlaintextResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateMac
@@ -6016,7 +5993,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<GenerateMacResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateRandom
@@ -6276,7 +6252,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<GenerateRandomResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKeyPolicy
@@ -6454,7 +6429,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<GetKeyPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKeyRotationStatus
@@ -6780,7 +6754,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<GetKeyRotationStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetParametersForImport
@@ -6966,7 +6939,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<GetParametersForImportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPublicKey
@@ -7160,7 +7132,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<GetPublicKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportKeyMaterial
@@ -7414,7 +7385,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<ImportKeyMaterialResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAliases
@@ -7527,7 +7497,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<ListAliasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGrants
@@ -7666,7 +7635,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<ListGrantsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKeyPolicies
@@ -7772,7 +7740,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<ListKeyPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKeyRotations
@@ -7899,7 +7866,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<ListKeyRotationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKeys
@@ -7981,7 +7947,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<ListKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceTags
@@ -8074,7 +8039,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<ListResourceTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRetirableGrants
@@ -8388,7 +8352,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<ListRetirableGrantsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutKeyPolicy
@@ -8612,7 +8575,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<PutKeyPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReEncrypt
@@ -8862,7 +8824,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<ReEncryptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReplicateKey
@@ -9073,7 +9034,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<ReplicateKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RetireGrant
@@ -9337,7 +9297,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<RetireGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RevokeGrant
@@ -9591,7 +9550,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<RevokeGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RotateKeyOnDemand
@@ -9768,7 +9726,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<RotateKeyOnDemandResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ScheduleKeyDeletion
@@ -10197,7 +10154,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<ScheduleKeyDeletionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Sign
@@ -10390,7 +10346,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<SignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -10545,7 +10500,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -10683,7 +10637,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAlias
@@ -10993,7 +10946,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<UpdateAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCustomKeyStore
@@ -11336,7 +11288,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<UpdateCustomKeyStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateKeyDescription
@@ -11542,7 +11493,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<UpdateKeyDescriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePrimaryRegion
@@ -11720,7 +11670,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<UpdatePrimaryRegionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Verify
@@ -11903,7 +11852,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<VerifyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  VerifyMac
@@ -12059,7 +12007,6 @@ namespace Amazon.KeyManagementService
 
             return InvokeAsync<VerifyMacResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

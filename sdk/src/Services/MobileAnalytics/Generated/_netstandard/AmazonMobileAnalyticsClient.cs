@@ -281,7 +281,6 @@ namespace Amazon.MobileAnalytics
 
             return InvokeAsync<PutEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -325,7 +325,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<AddClientIDToOpenIDConnectProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddRoleToInstanceProfile
@@ -408,7 +407,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<AddRoleToInstanceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddUserToGroup
@@ -453,7 +451,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<AddUserToGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachGroupPolicy
@@ -523,7 +520,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<AttachGroupPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachRolePolicy
@@ -605,7 +601,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<AttachRolePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachUserPolicy
@@ -675,7 +670,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<AttachUserPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ChangePassword
@@ -744,7 +738,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ChangePasswordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAccessKey
@@ -867,7 +860,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<CreateAccessKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAccountAlias
@@ -918,7 +910,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<CreateAccountAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGroup
@@ -972,7 +963,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<CreateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInstanceProfile
@@ -1032,7 +1022,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<CreateInstanceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLoginProfile
@@ -1098,7 +1087,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<CreateLoginProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOpenIDConnectProvider
@@ -1212,7 +1200,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<CreateOpenIDConnectProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePolicy
@@ -1286,7 +1273,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<CreatePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePolicyVersion
@@ -1354,7 +1340,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<CreatePolicyVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRole
@@ -1418,7 +1403,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<CreateRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSAMLProvider
@@ -1500,7 +1484,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<CreateSAMLProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateServiceLinkedRole
@@ -1561,7 +1544,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<CreateServiceLinkedRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateServiceSpecificCredential
@@ -1629,7 +1611,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<CreateServiceSpecificCredentialResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUser
@@ -1691,7 +1672,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<CreateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVirtualMFADevice
@@ -1761,7 +1741,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<CreateVirtualMFADeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeactivateMFADevice
@@ -1823,7 +1802,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeactivateMFADeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccessKey
@@ -1877,7 +1855,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeleteAccessKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccountAlias
@@ -1929,7 +1906,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeleteAccountAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccountPasswordPolicy
@@ -2004,7 +1980,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeleteAccountPasswordPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGroup
@@ -2054,7 +2029,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeleteGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGroupPolicy
@@ -2107,7 +2081,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeleteGroupPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInstanceProfile
@@ -2169,7 +2142,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeleteInstanceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLoginProfile
@@ -2237,7 +2209,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeleteLoginProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOpenIDConnectProvider
@@ -2294,7 +2265,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeleteOpenIDConnectProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePolicy
@@ -2378,7 +2348,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeletePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePolicyVersion
@@ -2443,7 +2412,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeletePolicyVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRole
@@ -2532,7 +2500,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeleteRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRolePermissionsBoundary
@@ -2592,7 +2559,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeleteRolePermissionsBoundaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRolePolicy
@@ -2652,7 +2618,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeleteRolePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSAMLProvider
@@ -2714,7 +2679,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeleteSAMLProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServerCertificate
@@ -2782,7 +2746,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeleteServerCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServiceLinkedRole
@@ -2850,7 +2813,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeleteServiceLinkedRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServiceSpecificCredential
@@ -2888,7 +2850,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeleteServiceSpecificCredentialResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSigningCertificate
@@ -2946,7 +2907,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeleteSigningCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSSHPublicKey
@@ -2992,7 +2952,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeleteSSHPublicKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUser
@@ -3086,7 +3045,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUserPermissionsBoundary
@@ -3134,7 +3092,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeleteUserPermissionsBoundaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUserPolicy
@@ -3187,7 +3144,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeleteUserPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVirtualMFADevice
@@ -3247,7 +3203,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DeleteVirtualMFADeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachGroupPolicy
@@ -3303,7 +3258,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DetachGroupPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachRolePolicy
@@ -3366,7 +3320,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DetachRolePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachUserPolicy
@@ -3422,7 +3375,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DetachUserPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableOrganizationsRootCredentialsManagement
@@ -3476,7 +3428,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DisableOrganizationsRootCredentialsManagementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableOrganizationsRootSessions
@@ -3529,7 +3480,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<DisableOrganizationsRootSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableMFADevice
@@ -3593,7 +3543,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<EnableMFADeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableOrganizationsRootCredentialsManagement
@@ -3668,7 +3617,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<EnableOrganizationsRootCredentialsManagementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableOrganizationsRootSessions
@@ -3743,7 +3691,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<EnableOrganizationsRootSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateCredentialReport
@@ -3814,7 +3761,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GenerateCredentialReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateOrganizationsAccessReport
@@ -3993,7 +3939,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GenerateOrganizationsAccessReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateServiceLastAccessedDetails
@@ -4105,7 +4050,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GenerateServiceLastAccessedDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccessKeyLastUsed
@@ -4141,7 +4085,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetAccessKeyLastUsedResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccountAuthorizationDetails
@@ -4194,7 +4137,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetAccountAuthorizationDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccountPasswordPolicy
@@ -4267,7 +4209,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetAccountPasswordPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccountSummary
@@ -4340,7 +4281,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetAccountSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContextKeysForCustomPolicy
@@ -4424,7 +4364,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetContextKeysForCustomPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContextKeysForPrincipalPolicy
@@ -4589,7 +4528,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetContextKeysForPrincipalPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCredentialReport
@@ -4678,7 +4616,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetCredentialReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGroup
@@ -4720,7 +4657,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGroupPolicy
@@ -4782,7 +4718,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetGroupPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInstanceProfile
@@ -4826,7 +4761,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetInstanceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLoginProfile
@@ -4884,7 +4818,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetLoginProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMFADevice
@@ -4925,7 +4858,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetMFADeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOpenIDConnectProvider
@@ -4971,7 +4903,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetOpenIDConnectProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOrganizationsAccessReport
@@ -5036,7 +4967,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetOrganizationsAccessReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPolicy
@@ -5098,7 +5028,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPolicyVersion
@@ -5172,7 +5101,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetPolicyVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRole
@@ -5225,7 +5153,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRolePolicy
@@ -5291,7 +5218,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetRolePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSAMLProvider
@@ -5344,7 +5270,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetSAMLProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServerCertificate
@@ -5393,7 +5318,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetServerCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceLastAccessedDetails
@@ -5498,7 +5422,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetServiceLastAccessedDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceLastAccessedDetailsWithEntities
@@ -5569,7 +5492,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetServiceLastAccessedDetailsWithEntitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceLinkedRoleDeletionStatus
@@ -5618,7 +5540,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetServiceLinkedRoleDeletionStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSSHPublicKey
@@ -5668,7 +5589,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetSSHPublicKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUser
@@ -5749,7 +5669,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUserPolicy
@@ -5810,7 +5729,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<GetUserPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccessKeys
@@ -5929,7 +5847,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListAccessKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccountAliases
@@ -5996,7 +5913,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListAccountAliasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAttachedGroupPolicies
@@ -6057,7 +5973,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListAttachedGroupPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAttachedRolePolicies
@@ -6117,7 +6032,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListAttachedRolePoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAttachedUserPolicies
@@ -6177,7 +6091,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListAttachedUserPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEntitiesForPolicy
@@ -6234,7 +6147,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListEntitiesForPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroupPolicies
@@ -6289,7 +6201,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListGroupPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroups
@@ -6358,7 +6269,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroupsForUser
@@ -6404,7 +6314,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListGroupsForUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInstanceProfiles
@@ -6493,7 +6402,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListInstanceProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInstanceProfilesForRole
@@ -6542,7 +6450,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListInstanceProfilesForRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInstanceProfileTags
@@ -6585,7 +6492,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListInstanceProfileTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMFADevices
@@ -6668,7 +6574,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListMFADevicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMFADeviceTags
@@ -6716,7 +6621,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListMFADeviceTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOpenIDConnectProviders
@@ -6763,7 +6667,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListOpenIDConnectProvidersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOpenIDConnectProviderTags
@@ -6817,7 +6720,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListOpenIDConnectProviderTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOrganizationsFeatures
@@ -6870,7 +6772,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListOrganizationsFeaturesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPolicies
@@ -6983,7 +6884,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPoliciesGrantingServiceAccess
@@ -7072,7 +6972,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListPoliciesGrantingServiceAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPolicyTags
@@ -7120,7 +7019,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListPolicyTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPolicyVersions
@@ -7172,7 +7070,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListPolicyVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRolePolicies
@@ -7227,7 +7124,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListRolePoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRoles
@@ -7344,7 +7240,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListRolesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRoleTags
@@ -7387,7 +7282,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListRoleTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSAMLProviders
@@ -7466,7 +7360,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListSAMLProvidersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSAMLProviderTags
@@ -7520,7 +7413,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListSAMLProviderTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServerCertificates
@@ -7621,7 +7513,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListServerCertificatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServerCertificateTags
@@ -7674,7 +7565,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListServerCertificateTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceSpecificCredentials
@@ -7720,7 +7610,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListServiceSpecificCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSigningCertificates
@@ -7817,7 +7706,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListSigningCertificatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSSHPublicKeys
@@ -7869,7 +7757,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListSSHPublicKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUserPolicies
@@ -7924,7 +7811,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListUserPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUsers
@@ -8033,7 +7919,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUserTags
@@ -8076,7 +7961,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListUserTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVirtualMFADevices
@@ -8159,7 +8043,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ListVirtualMFADevicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutGroupPolicy
@@ -8231,7 +8114,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<PutGroupPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRolePermissionsBoundary
@@ -8304,7 +8186,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<PutRolePermissionsBoundaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRolePolicy
@@ -8392,7 +8273,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<PutRolePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutUserPermissionsBoundary
@@ -8454,7 +8334,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<PutUserPermissionsBoundaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutUserPolicy
@@ -8526,7 +8405,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<PutUserPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveClientIDFromOpenIDConnectProvider
@@ -8578,7 +8456,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<RemoveClientIDFromOpenIDConnectProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveRoleFromInstanceProfile
@@ -8645,7 +8522,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<RemoveRoleFromInstanceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveUserFromGroup
@@ -8690,7 +8566,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<RemoveUserFromGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetServiceSpecificCredential
@@ -8731,7 +8606,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ResetServiceSpecificCredentialResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResyncMFADevice
@@ -8791,7 +8665,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<ResyncMFADeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetDefaultPolicyVersion
@@ -8852,7 +8725,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<SetDefaultPolicyVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetSecurityTokenServicePreferences
@@ -8916,7 +8788,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<SetSecurityTokenServicePreferencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SimulateCustomPolicy
@@ -8995,7 +8866,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<SimulateCustomPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SimulatePrincipalPolicy
@@ -9091,7 +8961,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<SimulatePrincipalPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagInstanceProfile
@@ -9180,7 +9049,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<TagInstanceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagMFADevice
@@ -9270,7 +9138,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<TagMFADeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagOpenIDConnectProvider
@@ -9361,7 +9228,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<TagOpenIDConnectProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagPolicy
@@ -9450,7 +9316,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<TagPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagRole
@@ -9549,7 +9414,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<TagRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagSAMLProvider
@@ -9640,7 +9504,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<TagSAMLProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagServerCertificate
@@ -9742,7 +9605,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<TagServerCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagUser
@@ -9841,7 +9703,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<TagUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagInstanceProfile
@@ -9892,7 +9753,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UntagInstanceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagMFADevice
@@ -9943,7 +9803,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UntagMFADeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagOpenIDConnectProvider
@@ -9995,7 +9854,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UntagOpenIDConnectProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagPolicy
@@ -10046,7 +9904,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UntagPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagRole
@@ -10093,7 +9950,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UntagRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagSAMLProvider
@@ -10145,7 +10001,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UntagSAMLProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagServerCertificate
@@ -10206,7 +10061,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UntagServerCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagUser
@@ -10253,7 +10107,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UntagUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccessKey
@@ -10315,7 +10168,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UpdateAccessKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccountPasswordPolicy
@@ -10428,7 +10280,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UpdateAccountPasswordPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAssumeRolePolicy
@@ -10487,7 +10338,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UpdateAssumeRolePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGroup
@@ -10553,7 +10403,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UpdateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLoginProfile
@@ -10617,7 +10466,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UpdateLoginProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateOpenIDConnectProviderThumbprint
@@ -10691,7 +10539,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UpdateOpenIDConnectProviderThumbprintResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRole
@@ -10739,7 +10586,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UpdateRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRoleDescription
@@ -10793,7 +10639,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UpdateRoleDescriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSAMLProvider
@@ -10844,7 +10689,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UpdateSAMLProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServerCertificate
@@ -10917,7 +10761,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UpdateServerCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServiceSpecificCredential
@@ -10958,7 +10801,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UpdateServiceSpecificCredentialResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSigningCertificate
@@ -11014,7 +10856,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UpdateSigningCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSSHPublicKey
@@ -11062,7 +10903,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UpdateSSHPublicKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUser
@@ -11137,7 +10977,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UpdateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UploadServerCertificate
@@ -11232,7 +11071,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UploadServerCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UploadSigningCertificate
@@ -11322,7 +11160,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UploadSigningCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UploadSSHPublicKey
@@ -11383,7 +11220,6 @@ namespace Amazon.IdentityManagement
 
             return InvokeAsync<UploadSSHPublicKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -299,7 +299,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<AcceptGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CheckInLicense
@@ -358,7 +357,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<CheckInLicenseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CheckoutBorrowLicense
@@ -427,7 +425,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<CheckoutBorrowLicenseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CheckoutLicense
@@ -500,7 +497,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<CheckoutLicenseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGrant
@@ -559,7 +555,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<CreateGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGrantVersion
@@ -616,7 +611,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<CreateGrantVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLicense
@@ -672,7 +666,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<CreateLicenseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLicenseConfiguration
@@ -735,7 +728,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<CreateLicenseConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLicenseConversionTaskForResource
@@ -788,7 +780,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<CreateLicenseConversionTaskForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLicenseManagerReportGenerator
@@ -847,7 +838,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<CreateLicenseManagerReportGeneratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLicenseVersion
@@ -906,7 +896,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<CreateLicenseVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateToken
@@ -972,7 +961,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<CreateTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGrant
@@ -1028,7 +1016,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<DeleteGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLicense
@@ -1087,7 +1074,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<DeleteLicenseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLicenseConfiguration
@@ -1142,7 +1128,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<DeleteLicenseConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLicenseManagerReportGenerator
@@ -1208,7 +1193,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<DeleteLicenseManagerReportGeneratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteToken
@@ -1264,7 +1248,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<DeleteTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExtendLicenseConsumption
@@ -1320,7 +1303,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<ExtendLicenseConsumptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccessToken
@@ -1371,7 +1353,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<GetAccessTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGrant
@@ -1427,7 +1408,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<GetGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLicense
@@ -1480,7 +1460,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<GetLicenseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLicenseConfiguration
@@ -1530,7 +1509,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<GetLicenseConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLicenseConversionTask
@@ -1580,7 +1558,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<GetLicenseConversionTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLicenseManagerReportGenerator
@@ -1639,7 +1616,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<GetLicenseManagerReportGeneratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLicenseUsage
@@ -1692,7 +1668,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<GetLicenseUsageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceSettings
@@ -1739,7 +1714,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<GetServiceSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssociationsForLicenseConfiguration
@@ -1799,7 +1773,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<ListAssociationsForLicenseConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDistributedGrants
@@ -1855,7 +1828,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<ListDistributedGrantsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFailuresForLicenseConfigurationOperations
@@ -1905,7 +1877,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<ListFailuresForLicenseConfigurationOperationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLicenseConfigurations
@@ -1958,7 +1929,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<ListLicenseConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLicenseConversionTasks
@@ -2008,7 +1978,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<ListLicenseConversionTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLicenseManagerReportGenerators
@@ -2067,7 +2036,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<ListLicenseManagerReportGeneratorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLicenses
@@ -2120,7 +2088,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<ListLicensesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLicenseSpecificationsForResource
@@ -2170,7 +2137,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<ListLicenseSpecificationsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLicenseVersions
@@ -2220,7 +2186,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<ListLicenseVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReceivedGrants
@@ -2278,7 +2243,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<ListReceivedGrantsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReceivedGrantsForOrganization
@@ -2334,7 +2298,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<ListReceivedGrantsForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReceivedLicenses
@@ -2390,7 +2353,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<ListReceivedLicensesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReceivedLicensesForOrganization
@@ -2446,7 +2408,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<ListReceivedLicensesForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceInventory
@@ -2502,7 +2463,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<ListResourceInventoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2552,7 +2512,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTokens
@@ -2602,7 +2561,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<ListTokensResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUsageForLicenseConfiguration
@@ -2657,7 +2615,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<ListUsageForLicenseConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectGrant
@@ -2713,7 +2670,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<RejectGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2763,7 +2719,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2813,7 +2768,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLicenseConfiguration
@@ -2866,7 +2820,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<UpdateLicenseConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLicenseManagerReportGenerator
@@ -2931,7 +2884,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<UpdateLicenseManagerReportGeneratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLicenseSpecificationsForResource
@@ -3001,7 +2953,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<UpdateLicenseSpecificationsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServiceSettings
@@ -3051,7 +3002,6 @@ namespace Amazon.LicenseManager
 
             return InvokeAsync<UpdateServiceSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

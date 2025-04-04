@@ -30,7 +30,6 @@ namespace Amazon.RestXmlProtocol
     /// <summary>
     /// Configuration for accessing Amazon RestXmlProtocol service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonRestXmlProtocolConfig : ClientConfig
     {
         private static readonly string UserAgentString =

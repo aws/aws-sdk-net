@@ -30,7 +30,6 @@ namespace Amazon.ServiceCatalog
     /// <summary>
     /// Configuration for accessing Amazon ServiceCatalog service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonServiceCatalogConfig : ClientConfig
     {
         private static readonly string UserAgentString =

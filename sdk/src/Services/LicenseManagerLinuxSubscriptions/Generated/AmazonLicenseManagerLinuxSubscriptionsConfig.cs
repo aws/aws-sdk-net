@@ -30,7 +30,6 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
     /// <summary>
     /// Configuration for accessing Amazon LicenseManagerLinuxSubscriptions service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonLicenseManagerLinuxSubscriptionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

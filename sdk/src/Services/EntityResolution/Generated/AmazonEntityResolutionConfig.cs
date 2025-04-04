@@ -30,7 +30,6 @@ namespace Amazon.EntityResolution
     /// <summary>
     /// Configuration for accessing Amazon EntityResolution service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonEntityResolutionConfig : ClientConfig
     {
         private static readonly string UserAgentString =

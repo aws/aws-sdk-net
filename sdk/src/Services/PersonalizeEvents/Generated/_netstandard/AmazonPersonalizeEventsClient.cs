@@ -298,7 +298,6 @@ namespace Amazon.PersonalizeEvents
 
             return InvokeAsync<PutActionInteractionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutActions
@@ -342,7 +341,6 @@ namespace Amazon.PersonalizeEvents
 
             return InvokeAsync<PutActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEvents
@@ -380,7 +378,6 @@ namespace Amazon.PersonalizeEvents
 
             return InvokeAsync<PutEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutItems
@@ -424,7 +421,6 @@ namespace Amazon.PersonalizeEvents
 
             return InvokeAsync<PutItemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutUsers
@@ -468,7 +464,6 @@ namespace Amazon.PersonalizeEvents
 
             return InvokeAsync<PutUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

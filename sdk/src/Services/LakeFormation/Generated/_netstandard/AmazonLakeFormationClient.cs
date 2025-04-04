@@ -315,7 +315,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<AddLFTagsToResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssumeDecoratedRoleWithSAML
@@ -379,7 +378,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<AssumeDecoratedRoleWithSAMLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGrantPermissions
@@ -419,7 +417,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<BatchGrantPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchRevokePermissions
@@ -459,7 +456,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<BatchRevokePermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelTransaction
@@ -516,7 +512,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<CancelTransactionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CommitTransaction
@@ -570,7 +565,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<CommitTransactionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataCellsFilter
@@ -626,7 +620,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<CreateDataCellsFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLakeFormationIdentityCenterConfiguration
@@ -679,7 +672,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<CreateLakeFormationIdentityCenterConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLakeFormationOptIn
@@ -734,7 +726,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<CreateLakeFormationOptInResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLFTag
@@ -786,7 +777,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<CreateLFTagResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLFTagExpression
@@ -851,7 +841,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<CreateLFTagExpressionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataCellsFilter
@@ -900,7 +889,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<DeleteDataCellsFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLakeFormationIdentityCenterConfiguration
@@ -952,7 +940,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<DeleteLakeFormationIdentityCenterConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLakeFormationOptIn
@@ -1005,7 +992,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<DeleteLakeFormationOptInResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLFTag
@@ -1058,7 +1044,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<DeleteLFTagResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLFTagExpression
@@ -1109,7 +1094,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<DeleteLFTagExpressionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteObjectsOnCancel
@@ -1179,7 +1163,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<DeleteObjectsOnCancelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterResource
@@ -1231,7 +1214,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<DeregisterResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLakeFormationIdentityCenterConfiguration
@@ -1280,7 +1262,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<DescribeLakeFormationIdentityCenterConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeResource
@@ -1326,7 +1307,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<DescribeResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTransaction
@@ -1372,7 +1352,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<DescribeTransactionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExtendTransaction
@@ -1435,7 +1414,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<ExtendTransactionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataCellsFilter
@@ -1484,7 +1462,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<GetDataCellsFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataLakePrincipal
@@ -1527,7 +1504,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<GetDataLakePrincipalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataLakeSettings
@@ -1571,7 +1547,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<GetDataLakeSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEffectivePermissionsForPath
@@ -1619,7 +1594,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<GetEffectivePermissionsForPathResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLFTag
@@ -1668,7 +1642,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<GetLFTagResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLFTagExpression
@@ -1718,7 +1691,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<GetLFTagExpressionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueryState
@@ -1763,7 +1735,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<GetQueryStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueryStatistics
@@ -1815,7 +1786,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<GetQueryStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceLFTags
@@ -1867,7 +1837,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<GetResourceLFTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTableObjects
@@ -1924,7 +1893,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<GetTableObjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTemporaryGluePartitionCredentials
@@ -1982,7 +1950,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<GetTemporaryGluePartitionCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTemporaryGlueTableCredentials
@@ -2046,7 +2013,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<GetTemporaryGlueTableCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkUnitResults
@@ -2096,7 +2062,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<GetWorkUnitResultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkUnits
@@ -2145,7 +2110,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<GetWorkUnitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GrantPermissions
@@ -2195,7 +2159,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<GrantPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataCellsFilter
@@ -2241,7 +2204,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<ListDataCellsFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLakeFormationOptIns
@@ -2288,7 +2250,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<ListLakeFormationOptInsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLFTagExpressions
@@ -2339,7 +2300,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<ListLFTagExpressionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLFTags
@@ -2388,7 +2348,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<ListLFTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPermissions
@@ -2443,7 +2402,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<ListPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResources
@@ -2486,7 +2444,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<ListResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTableStorageOptimizers
@@ -2532,7 +2489,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<ListTableStorageOptimizersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTransactions
@@ -2583,7 +2539,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<ListTransactionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDataLakeSettings
@@ -2632,7 +2587,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<PutDataLakeSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterResource
@@ -2714,7 +2668,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<RegisterResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveLFTagsFromResource
@@ -2771,7 +2724,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<RemoveLFTagsFromResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RevokePermissions
@@ -2815,7 +2767,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<RevokePermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchDatabasesByLFTags
@@ -2871,7 +2822,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<SearchDatabasesByLFTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchTablesByLFTags
@@ -2927,7 +2877,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<SearchTablesByLFTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartQueryPlanning
@@ -2979,7 +2928,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<StartQueryPlanningResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartTransaction
@@ -3020,7 +2968,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<StartTransactionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataCellsFilter
@@ -3072,7 +3019,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<UpdateDataCellsFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLakeFormationIdentityCenterConfiguration
@@ -3124,7 +3070,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<UpdateLakeFormationIdentityCenterConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLFTag
@@ -3180,7 +3125,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<UpdateLFTagResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLFTagExpression
@@ -3235,7 +3179,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<UpdateLFTagExpressionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResource
@@ -3282,7 +3225,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<UpdateResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTableObjects
@@ -3344,7 +3286,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<UpdateTableObjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTableStorageOptimizer
@@ -3390,7 +3331,6 @@ namespace Amazon.LakeFormation
 
             return InvokeAsync<UpdateTableStorageOptimizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

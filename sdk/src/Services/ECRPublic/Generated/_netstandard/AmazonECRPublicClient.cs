@@ -331,7 +331,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<BatchCheckLayerAvailabilityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteImage
@@ -390,7 +389,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<BatchDeleteImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CompleteLayerUpload
@@ -471,7 +469,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<CompleteLayerUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRepository
@@ -531,7 +528,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<CreateRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRepository
@@ -584,7 +580,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<DeleteRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRepositoryPolicy
@@ -635,7 +630,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<DeleteRepositoryPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeImages
@@ -694,7 +688,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<DescribeImagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeImageTags
@@ -741,7 +734,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<DescribeImageTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRegistries
@@ -784,7 +776,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<DescribeRegistriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRepositories
@@ -831,7 +822,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<DescribeRepositoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAuthorizationToken
@@ -877,7 +867,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<GetAuthorizationTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRegistryCatalogData
@@ -917,7 +906,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<GetRegistryCatalogDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRepositoryCatalogData
@@ -968,7 +956,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<GetRepositoryCatalogDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRepositoryPolicy
@@ -1019,7 +1006,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<GetRepositoryPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InitiateLayerUpload
@@ -1083,7 +1069,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<InitiateLayerUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1130,7 +1115,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutImage
@@ -1217,7 +1201,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<PutImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRegistryCatalogData
@@ -1260,7 +1243,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<PutRegistryCatalogDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRepositoryCatalogData
@@ -1307,7 +1289,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<PutRepositoryCatalogDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetRepositoryPolicy
@@ -1356,7 +1337,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<SetRepositoryPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1414,7 +1394,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1469,7 +1448,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UploadLayerPart
@@ -1545,7 +1523,6 @@ namespace Amazon.ECRPublic
 
             return InvokeAsync<UploadLayerPartResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

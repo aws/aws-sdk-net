@@ -30,7 +30,6 @@ namespace Amazon.MQ
     /// <summary>
     /// Configuration for accessing Amazon MQ service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMQConfig : ClientConfig
     {
         private static readonly string UserAgentString =

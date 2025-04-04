@@ -30,7 +30,6 @@ namespace Amazon.DataSync
     /// <summary>
     /// Configuration for accessing Amazon DataSync service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonDataSyncConfig : ClientConfig
     {
         private static readonly string UserAgentString =

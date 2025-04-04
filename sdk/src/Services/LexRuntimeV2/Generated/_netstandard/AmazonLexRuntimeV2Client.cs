@@ -316,7 +316,6 @@ namespace Amazon.LexRuntimeV2
 
             return InvokeAsync<DeleteSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSession
@@ -376,7 +375,6 @@ namespace Amazon.LexRuntimeV2
 
             return InvokeAsync<GetSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutSession
@@ -435,7 +433,6 @@ namespace Amazon.LexRuntimeV2
 
             return InvokeAsync<PutSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RecognizeText
@@ -528,7 +525,6 @@ namespace Amazon.LexRuntimeV2
 
             return InvokeAsync<RecognizeTextResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RecognizeUtterance
@@ -661,7 +657,121 @@ namespace Amazon.LexRuntimeV2
 
             return InvokeAsync<RecognizeUtteranceResponse>(request, options, cancellationToken);
         }
+        #endregion
+        
+        #region  StartConversation
 
+#if NET8_0_OR_GREATER
+        internal virtual StartConversationResponse StartConversation(StartConversationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartConversationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartConversationResponseUnmarshaller.Instance;
+
+            return Invoke<StartConversationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts an HTTP/2 bidirectional event stream that enables you to send audio, text,
+        /// or DTMF input in real time. After your application starts a conversation, users send
+        /// input to Amazon Lex V2 as a stream of events. Amazon Lex V2 processes the incoming
+        /// events and responds with streaming text or audio events. 
+        /// 
+        ///  
+        /// <para>
+        /// Audio input must be in the following format: <c>audio/lpcm sample-rate=8000 sample-size-bits=16
+        /// channel-count=1; is-big-endian=false</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the optional post-fulfillment response is specified, the messages are returned
+        /// as follows. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_PostFulfillmentStatusSpecification.html">PostFulfillmentStatusSpecification</a>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Success message</b> - Returned if the Lambda function completes successfully and
+        /// the intent state is fulfilled or ready fulfillment if the message is present.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Failed message</b> - The failed message is returned if the Lambda function throws
+        /// an exception or if the Lambda function returns a failed intent state without a message.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Timeout message</b> - If you don't configure a timeout message and a timeout,
+        /// and the Lambda function doesn't return within 30 seconds, the timeout message is returned.
+        /// If you configure a timeout, the timeout message is returned when the period times
+        /// out. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete.html">Completion
+        /// message</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the optional update message is configured, it is played at the specified frequency
+        /// while the Lambda function is running and the update message state is active. If the
+        /// fulfillment update message is not active, the Lambda function runs with a 30 second
+        /// timeout. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-update.html">Update
+        /// message </a> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>StartConversation</c> operation is supported only in the following SDKs: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/goto/SdkForCpp/runtime.lex.v2-2020-08-07/StartConversation">AWS
+        /// SDK for C++</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/goto/SdkForJavaV2/runtime.lex.v2-2020-08-07/StartConversation">AWS
+        /// SDK for Java V2</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/goto/SdkForRubyV3/runtime.lex.v2-2020-08-07/StartConversation">AWS
+        /// SDK for Ruby V3</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartConversation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartConversation service method, as returned by LexRuntimeV2.</returns>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexRuntimeV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/StartConversation">REST API Reference for StartConversation Operation</seealso>
+        public virtual Task<StartConversationResponse> StartConversationAsync(StartConversationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartConversationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartConversationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartConversationResponse>(request, options, cancellationToken);
+        }
+#endif
         #endregion
         
         #region DetermineServiceOperationEndpoint

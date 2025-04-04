@@ -378,7 +378,6 @@ namespace Amazon.AWSHealth
 
             return InvokeAsync<DescribeAffectedAccountsForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAffectedEntities
@@ -439,7 +438,6 @@ namespace Amazon.AWSHealth
 
             return InvokeAsync<DescribeAffectedEntitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAffectedEntitiesForOrganization
@@ -505,7 +503,6 @@ namespace Amazon.AWSHealth
 
             return InvokeAsync<DescribeAffectedEntitiesForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEntityAggregates
@@ -539,7 +536,6 @@ namespace Amazon.AWSHealth
 
             return InvokeAsync<DescribeEntityAggregatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEntityAggregatesForOrganization
@@ -574,7 +570,6 @@ namespace Amazon.AWSHealth
 
             return InvokeAsync<DescribeEntityAggregatesForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventAggregates
@@ -620,7 +615,6 @@ namespace Amazon.AWSHealth
 
             return InvokeAsync<DescribeEventAggregatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventDetails
@@ -675,7 +669,6 @@ namespace Amazon.AWSHealth
 
             return InvokeAsync<DescribeEventDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventDetailsForOrganization
@@ -755,7 +748,6 @@ namespace Amazon.AWSHealth
 
             return InvokeAsync<DescribeEventDetailsForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEvents
@@ -822,7 +814,6 @@ namespace Amazon.AWSHealth
 
             return InvokeAsync<DescribeEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventsForOrganization
@@ -904,7 +895,6 @@ namespace Amazon.AWSHealth
 
             return InvokeAsync<DescribeEventsForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventTypes
@@ -960,7 +950,6 @@ namespace Amazon.AWSHealth
 
             return InvokeAsync<DescribeEventTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeHealthServiceStatusForOrganization
@@ -996,7 +985,6 @@ namespace Amazon.AWSHealth
 
             return InvokeAsync<DescribeHealthServiceStatusForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableHealthServiceAccessForOrganization
@@ -1055,7 +1043,6 @@ namespace Amazon.AWSHealth
 
             return InvokeAsync<DisableHealthServiceAccessForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableHealthServiceAccessForOrganization
@@ -1126,7 +1113,6 @@ namespace Amazon.AWSHealth
 
             return InvokeAsync<EnableHealthServiceAccessForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

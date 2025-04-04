@@ -30,7 +30,6 @@ namespace Amazon.TimestreamWrite
     /// <summary>
     /// Configuration for accessing Amazon TimestreamWrite service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonTimestreamWriteConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -316,7 +316,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<AssociateAgentCollaboratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateAgentKnowledgeBase
@@ -374,7 +373,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<AssociateAgentKnowledgeBaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAgent
@@ -472,7 +470,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<CreateAgentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAgentActionGroup
@@ -552,7 +549,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<CreateAgentActionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAgentAlias
@@ -608,7 +604,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<CreateAgentAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataSource
@@ -672,7 +667,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<CreateDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFlow
@@ -729,7 +723,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<CreateFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFlowAlias
@@ -786,7 +779,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<CreateFlowAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFlowVersion
@@ -843,7 +835,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<CreateFlowVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateKnowledgeBase
@@ -950,7 +941,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<CreateKnowledgeBaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePrompt
@@ -1006,7 +996,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<CreatePromptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePromptVersion
@@ -1065,7 +1054,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<CreatePromptVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAgent
@@ -1118,7 +1106,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<DeleteAgentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAgentActionGroup
@@ -1171,7 +1158,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<DeleteAgentActionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAgentAlias
@@ -1221,7 +1207,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<DeleteAgentAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAgentVersion
@@ -1274,7 +1259,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<DeleteAgentVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataSource
@@ -1327,7 +1311,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<DeleteDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFlow
@@ -1380,7 +1363,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<DeleteFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFlowAlias
@@ -1433,7 +1415,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<DeleteFlowAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFlowVersion
@@ -1486,7 +1467,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<DeleteFlowVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteKnowledgeBase
@@ -1541,7 +1521,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<DeleteKnowledgeBaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteKnowledgeBaseDocuments
@@ -1596,7 +1575,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<DeleteKnowledgeBaseDocumentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePrompt
@@ -1653,7 +1631,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<DeletePromptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateAgentCollaborator
@@ -1706,7 +1683,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<DisassociateAgentCollaboratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateAgentKnowledgeBase
@@ -1759,7 +1735,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<DisassociateAgentKnowledgeBaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAgent
@@ -1809,7 +1784,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<GetAgentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAgentActionGroup
@@ -1859,7 +1833,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<GetAgentActionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAgentAlias
@@ -1909,7 +1882,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<GetAgentAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAgentCollaborator
@@ -1959,7 +1931,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<GetAgentCollaboratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAgentKnowledgeBase
@@ -2009,7 +1980,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<GetAgentKnowledgeBaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAgentVersion
@@ -2059,7 +2029,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<GetAgentVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataSource
@@ -2109,7 +2078,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<GetDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFlow
@@ -2160,7 +2128,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<GetFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFlowAlias
@@ -2211,7 +2178,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<GetFlowAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFlowVersion
@@ -2262,7 +2228,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<GetFlowVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIngestionJob
@@ -2313,7 +2278,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<GetIngestionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKnowledgeBase
@@ -2363,7 +2327,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<GetKnowledgeBaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKnowledgeBaseDocuments
@@ -2418,7 +2381,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<GetKnowledgeBaseDocumentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPrompt
@@ -2472,7 +2434,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<GetPromptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  IngestKnowledgeBaseDocuments
@@ -2529,7 +2490,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<IngestKnowledgeBaseDocumentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAgentActionGroups
@@ -2579,7 +2539,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<ListAgentActionGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAgentAliases
@@ -2629,7 +2588,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<ListAgentAliasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAgentCollaborators
@@ -2679,7 +2637,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<ListAgentCollaboratorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAgentKnowledgeBases
@@ -2729,7 +2686,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<ListAgentKnowledgeBasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAgents
@@ -2775,7 +2731,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<ListAgentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAgentVersions
@@ -2825,7 +2780,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<ListAgentVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataSources
@@ -2875,7 +2829,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<ListDataSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFlowAliases
@@ -2925,7 +2878,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<ListFlowAliasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFlows
@@ -2973,7 +2925,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<ListFlowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFlowVersions
@@ -3024,7 +2975,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<ListFlowVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIngestionJobs
@@ -3075,7 +3025,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<ListIngestionJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKnowledgeBaseDocuments
@@ -3130,7 +3079,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<ListKnowledgeBaseDocumentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKnowledgeBases
@@ -3177,7 +3125,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<ListKnowledgeBasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPrompts
@@ -3231,7 +3178,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<ListPromptsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3281,7 +3227,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PrepareAgent
@@ -3337,7 +3282,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<PrepareAgentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PrepareFlow
@@ -3395,7 +3339,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<PrepareFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartIngestionJob
@@ -3452,7 +3395,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<StartIngestionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopIngestionJob
@@ -3506,7 +3448,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<StopIngestionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3560,7 +3501,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3610,7 +3550,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAgent
@@ -3666,7 +3605,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<UpdateAgentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAgentActionGroup
@@ -3722,7 +3660,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<UpdateAgentActionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAgentAlias
@@ -3778,7 +3715,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<UpdateAgentAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAgentCollaborator
@@ -3834,7 +3770,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<UpdateAgentCollaboratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAgentKnowledgeBase
@@ -3887,7 +3822,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<UpdateAgentKnowledgeBaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataSource
@@ -3947,7 +3881,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<UpdateDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFlow
@@ -4006,7 +3939,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<UpdateFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFlowAlias
@@ -4064,7 +3996,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<UpdateFlowAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateKnowledgeBase
@@ -4143,7 +4074,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<UpdateKnowledgeBaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePrompt
@@ -4202,7 +4132,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<UpdatePromptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ValidateFlowDefinition
@@ -4248,7 +4177,6 @@ namespace Amazon.BedrockAgent
 
             return InvokeAsync<ValidateFlowDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

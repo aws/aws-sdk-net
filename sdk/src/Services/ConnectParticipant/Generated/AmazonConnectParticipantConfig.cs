@@ -30,7 +30,6 @@ namespace Amazon.ConnectParticipant
     /// <summary>
     /// Configuration for accessing Amazon ConnectParticipant service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonConnectParticipantConfig : ClientConfig
     {
         private static readonly string UserAgentString =

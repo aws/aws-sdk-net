@@ -30,7 +30,6 @@ namespace Amazon.Repostspace
     /// <summary>
     /// Configuration for accessing Amazon Repostspace service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonRepostspaceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

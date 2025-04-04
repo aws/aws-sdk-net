@@ -360,7 +360,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<CreateCallAnalyticsCategoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLanguageModel
@@ -434,7 +433,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<CreateLanguageModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMedicalVocabulary
@@ -506,7 +504,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<CreateMedicalVocabularyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVocabulary
@@ -577,7 +574,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<CreateVocabularyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVocabularyFilter
@@ -647,7 +643,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<CreateVocabularyFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCallAnalyticsCategory
@@ -699,7 +694,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<DeleteCallAnalyticsCategoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCallAnalyticsJob
@@ -747,7 +741,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<DeleteCallAnalyticsJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLanguageModel
@@ -796,7 +789,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<DeleteLanguageModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMedicalScribeJob
@@ -844,7 +836,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<DeleteMedicalScribeJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMedicalTranscriptionJob
@@ -893,7 +884,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<DeleteMedicalTranscriptionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMedicalVocabulary
@@ -946,7 +936,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<DeleteMedicalVocabularyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTranscriptionJob
@@ -994,7 +983,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<DeleteTranscriptionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVocabulary
@@ -1047,7 +1035,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<DeleteVocabularyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVocabularyFilter
@@ -1100,7 +1087,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<DeleteVocabularyFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLanguageModel
@@ -1163,7 +1149,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<DescribeLanguageModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCallAnalyticsCategory
@@ -1219,7 +1204,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<GetCallAnalyticsCategoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCallAnalyticsJob
@@ -1292,7 +1276,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<GetCallAnalyticsJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMedicalScribeJob
@@ -1355,7 +1338,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<GetMedicalScribeJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMedicalTranscriptionJob
@@ -1418,7 +1400,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<GetMedicalTranscriptionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMedicalVocabulary
@@ -1481,7 +1462,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<GetMedicalVocabularyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTranscriptionJob
@@ -1549,7 +1529,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<GetTranscriptionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVocabulary
@@ -1612,7 +1591,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<GetVocabularyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVocabularyFilter
@@ -1668,7 +1646,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<GetVocabularyFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCallAnalyticsCategories
@@ -1721,7 +1698,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<ListCallAnalyticsCategoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCallAnalyticsJobs
@@ -1774,7 +1750,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<ListCallAnalyticsJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLanguageModels
@@ -1827,7 +1802,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<ListLanguageModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMedicalScribeJobs
@@ -1880,7 +1854,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<ListMedicalScribeJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMedicalTranscriptionJobs
@@ -1933,7 +1906,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<ListMedicalTranscriptionJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMedicalVocabularies
@@ -1986,7 +1958,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<ListMedicalVocabulariesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2044,7 +2015,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTranscriptionJobs
@@ -2097,7 +2067,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<ListTranscriptionJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVocabularies
@@ -2150,7 +2119,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<ListVocabulariesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVocabularyFilters
@@ -2203,7 +2171,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<ListVocabularyFiltersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartCallAnalyticsJob
@@ -2315,7 +2282,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<StartCallAnalyticsJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMedicalScribeJob
@@ -2419,7 +2385,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<StartMedicalScribeJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMedicalTranscriptionJob
@@ -2526,7 +2491,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<StartMedicalTranscriptionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartTranscriptionJob
@@ -2615,7 +2579,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<StartTranscriptionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2677,7 +2640,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2738,7 +2700,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCallAnalyticsCategory
@@ -2800,7 +2761,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<UpdateCallAnalyticsCategoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMedicalVocabulary
@@ -2857,7 +2817,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<UpdateMedicalVocabularyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVocabulary
@@ -2914,7 +2873,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<UpdateVocabularyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVocabularyFilter
@@ -2967,7 +2925,6 @@ namespace Amazon.TranscribeService
 
             return InvokeAsync<UpdateVocabularyFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

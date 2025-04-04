@@ -312,7 +312,6 @@ namespace Amazon.CloudFrontKeyValueStore
 
             return InvokeAsync<DeleteKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeKeyValueStore
@@ -358,7 +357,6 @@ namespace Amazon.CloudFrontKeyValueStore
 
             return InvokeAsync<DescribeKeyValueStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKey
@@ -404,7 +402,6 @@ namespace Amazon.CloudFrontKeyValueStore
 
             return InvokeAsync<GetKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKeys
@@ -453,7 +450,6 @@ namespace Amazon.CloudFrontKeyValueStore
 
             return InvokeAsync<ListKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutKey
@@ -505,7 +501,6 @@ namespace Amazon.CloudFrontKeyValueStore
 
             return InvokeAsync<PutKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateKeys
@@ -557,7 +552,6 @@ namespace Amazon.CloudFrontKeyValueStore
 
             return InvokeAsync<UpdateKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

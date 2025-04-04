@@ -324,7 +324,6 @@ namespace Amazon.Braket
 
             return InvokeAsync<CancelJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelQuantumTask
@@ -376,7 +375,6 @@ namespace Amazon.Braket
 
             return InvokeAsync<CancelQuantumTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateJob
@@ -434,7 +432,6 @@ namespace Amazon.Braket
 
             return InvokeAsync<CreateJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateQuantumTask
@@ -489,7 +486,6 @@ namespace Amazon.Braket
 
             return InvokeAsync<CreateQuantumTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDevice
@@ -550,7 +546,6 @@ namespace Amazon.Braket
 
             return InvokeAsync<GetDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJob
@@ -599,7 +594,6 @@ namespace Amazon.Braket
 
             return InvokeAsync<GetJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQuantumTask
@@ -648,7 +642,6 @@ namespace Amazon.Braket
 
             return InvokeAsync<GetQuantumTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -691,7 +684,6 @@ namespace Amazon.Braket
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchDevices
@@ -737,7 +729,6 @@ namespace Amazon.Braket
 
             return InvokeAsync<SearchDevicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchJobs
@@ -783,7 +774,6 @@ namespace Amazon.Braket
 
             return InvokeAsync<SearchJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchQuantumTasks
@@ -829,7 +819,6 @@ namespace Amazon.Braket
 
             return InvokeAsync<SearchQuantumTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -872,7 +861,6 @@ namespace Amazon.Braket
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -915,7 +903,6 @@ namespace Amazon.Braket
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

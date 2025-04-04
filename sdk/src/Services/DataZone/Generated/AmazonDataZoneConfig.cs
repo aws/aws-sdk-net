@@ -30,7 +30,6 @@ namespace Amazon.DataZone
     /// <summary>
     /// Configuration for accessing Amazon DataZone service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonDataZoneConfig : ClientConfig
     {
         private static readonly string UserAgentString =

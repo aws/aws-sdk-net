@@ -307,7 +307,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<BatchUpdateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopySnapshot
@@ -365,7 +364,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<CopySnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateACL
@@ -421,7 +419,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<CreateACLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCluster
@@ -511,7 +508,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<CreateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMultiRegionCluster
@@ -563,7 +559,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<CreateMultiRegionClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateParameterGroup
@@ -621,7 +616,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<CreateParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSnapshot
@@ -679,7 +673,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<CreateSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSubnetGroup
@@ -739,7 +732,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<CreateSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUser
@@ -792,7 +784,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<CreateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteACL
@@ -837,7 +828,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<DeleteACLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCluster
@@ -896,7 +886,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<DeleteClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMultiRegionCluster
@@ -940,7 +929,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<DeleteMultiRegionClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteParameterGroup
@@ -991,7 +979,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<DeleteParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSnapshot
@@ -1042,7 +1029,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<DeleteSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSubnetGroup
@@ -1086,7 +1072,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<DeleteSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUser
@@ -1130,7 +1115,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeACLs
@@ -1170,7 +1154,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<DescribeACLsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClusters
@@ -1217,7 +1200,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<DescribeClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEngineVersions
@@ -1260,7 +1242,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<DescribeEngineVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEvents
@@ -1307,7 +1288,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<DescribeEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMultiRegionClusters
@@ -1353,7 +1333,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<DescribeMultiRegionClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeParameterGroups
@@ -1400,7 +1379,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<DescribeParameterGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeParameters
@@ -1446,7 +1424,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<DescribeParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReservedNodes
@@ -1493,7 +1470,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<DescribeReservedNodesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReservedNodesOfferings
@@ -1539,7 +1515,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<DescribeReservedNodesOfferingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeServiceUpdates
@@ -1579,7 +1554,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<DescribeServiceUpdatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSnapshots
@@ -1627,7 +1601,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<DescribeSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSubnetGroups
@@ -1668,7 +1641,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<DescribeSubnetGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUsers
@@ -1708,7 +1680,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<DescribeUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FailoverShard
@@ -1770,7 +1741,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<FailoverShardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAllowedMultiRegionClusterUpdates
@@ -1813,7 +1783,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<ListAllowedMultiRegionClusterUpdatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAllowedNodeTypeUpdates
@@ -1861,7 +1830,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<ListAllowedNodeTypeUpdatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTags
@@ -1931,7 +1899,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<ListTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PurchaseReservedNodesOffering
@@ -1987,7 +1954,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<PurchaseReservedNodesOfferingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetParameterGroup
@@ -2038,7 +2004,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<ResetParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2125,7 +2090,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2198,7 +2162,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateACL
@@ -2253,7 +2216,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<UpdateACLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCluster
@@ -2336,7 +2298,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<UpdateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMultiRegionCluster
@@ -2386,7 +2347,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<UpdateMultiRegionClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateParameterGroup
@@ -2436,7 +2396,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<UpdateParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSubnetGroup
@@ -2489,7 +2448,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<UpdateSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUser
@@ -2535,7 +2493,6 @@ namespace Amazon.MemoryDB
 
             return InvokeAsync<UpdateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

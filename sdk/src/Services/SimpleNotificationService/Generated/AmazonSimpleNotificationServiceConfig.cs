@@ -30,7 +30,6 @@ namespace Amazon.SimpleNotificationService
     /// <summary>
     /// Configuration for accessing Amazon SimpleNotificationService service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSimpleNotificationServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

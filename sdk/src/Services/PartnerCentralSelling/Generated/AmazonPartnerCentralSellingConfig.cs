@@ -30,7 +30,6 @@ namespace Amazon.PartnerCentralSelling
     /// <summary>
     /// Configuration for accessing Amazon PartnerCentralSelling service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonPartnerCentralSellingConfig : ClientConfig
     {
         private static readonly string UserAgentString =

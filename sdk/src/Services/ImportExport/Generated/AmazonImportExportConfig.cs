@@ -30,7 +30,6 @@ namespace Amazon.ImportExport
     /// <summary>
     /// Configuration for accessing Amazon ImportExport service
     /// </summary>
-    [AWSSignerType("v2")]
     public partial class AmazonImportExportConfig : ClientConfig
     {
         private static readonly string UserAgentString =

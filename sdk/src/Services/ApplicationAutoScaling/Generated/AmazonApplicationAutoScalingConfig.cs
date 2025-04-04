@@ -30,7 +30,6 @@ namespace Amazon.ApplicationAutoScaling
     /// <summary>
     /// Configuration for accessing Amazon ApplicationAutoScaling service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonApplicationAutoScalingConfig : ClientConfig
     {
         private static readonly string UserAgentString =

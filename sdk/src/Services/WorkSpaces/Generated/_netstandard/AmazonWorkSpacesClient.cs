@@ -342,7 +342,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<AcceptAccountLinkInvitationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateConnectionAlias
@@ -404,7 +403,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<AssociateConnectionAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateIpGroups
@@ -456,7 +454,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<AssociateIpGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateWorkspaceApplication
@@ -520,7 +517,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<AssociateWorkspaceApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AuthorizeIpRules
@@ -575,7 +571,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<AuthorizeIpRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyWorkspaceImage
@@ -651,7 +646,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<CopyWorkspaceImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAccountLinkInvitation
@@ -698,7 +692,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<CreateAccountLinkInvitationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConnectClientAddIn
@@ -753,7 +746,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<CreateConnectClientAddInResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConnectionAlias
@@ -807,7 +799,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<CreateConnectionAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIpGroup
@@ -872,7 +863,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<CreateIpGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStandbyWorkspaces
@@ -921,7 +911,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<CreateStandbyWorkspacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTags
@@ -964,7 +953,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<CreateTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUpdatedWorkspaceImage
@@ -1044,7 +1032,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<CreateUpdatedWorkspaceImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkspaceBundle
@@ -1098,7 +1085,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<CreateWorkspaceBundleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkspaceImage
@@ -1153,7 +1139,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<CreateWorkspaceImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkspaces
@@ -1220,7 +1205,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<CreateWorkspacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkspacesPool
@@ -1272,7 +1256,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<CreateWorkspacesPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccountLinkInvitation
@@ -1322,7 +1305,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DeleteAccountLinkInvitationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteClientBranding
@@ -1374,7 +1356,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DeleteClientBrandingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnectClientAddIn
@@ -1417,7 +1398,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DeleteConnectClientAddInResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnectionAlias
@@ -1487,7 +1467,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DeleteConnectionAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIpGroup
@@ -1538,7 +1517,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DeleteIpGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTags
@@ -1578,7 +1556,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DeleteTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkspaceBundle
@@ -1626,7 +1603,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DeleteWorkspaceBundleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkspaceImage
@@ -1671,7 +1647,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DeleteWorkspaceImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeployWorkspaceApplications
@@ -1723,7 +1698,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DeployWorkspaceApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterWorkspaceDirectory
@@ -1791,7 +1765,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DeregisterWorkspaceDirectoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccount
@@ -1829,7 +1802,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountModifications
@@ -1867,7 +1839,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeAccountModificationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApplicationAssociations
@@ -1913,7 +1884,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeApplicationAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApplications
@@ -1960,7 +1930,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBundleAssociations
@@ -2006,7 +1975,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeBundleAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClientBranding
@@ -2058,7 +2026,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeClientBrandingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClientProperties
@@ -2101,7 +2068,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeClientPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConnectClientAddIns
@@ -2144,7 +2110,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeConnectClientAddInsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConnectionAliases
@@ -2189,7 +2154,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeConnectionAliasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConnectionAliasPermissions
@@ -2238,7 +2202,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeConnectionAliasPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeImageAssociations
@@ -2284,7 +2247,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeImageAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeIpGroups
@@ -2324,7 +2286,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeIpGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTags
@@ -2361,7 +2322,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkspaceAssociations
@@ -2407,7 +2367,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeWorkspaceAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkspaceBundles
@@ -2473,7 +2432,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeWorkspaceBundlesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkspaceDirectories
@@ -2529,7 +2487,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeWorkspaceDirectoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkspaceImagePermissions
@@ -2573,7 +2530,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeWorkspaceImagePermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkspaceImages
@@ -2611,7 +2567,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeWorkspaceImagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkspaces
@@ -2685,7 +2640,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeWorkspacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkspacesConnectionStatus
@@ -2722,7 +2676,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeWorkspacesConnectionStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkspaceSnapshots
@@ -2765,7 +2718,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeWorkspaceSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkspacesPools
@@ -2808,7 +2760,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeWorkspacesPoolsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkspacesPoolSessions
@@ -2851,7 +2802,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DescribeWorkspacesPoolSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateConnectionAlias
@@ -2911,7 +2861,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DisassociateConnectionAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateIpGroups
@@ -2960,7 +2909,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DisassociateIpGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateWorkspaceApplication
@@ -3009,7 +2957,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<DisassociateWorkspaceApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccountLink
@@ -3056,7 +3003,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<GetAccountLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportClientBranding
@@ -3132,7 +3078,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<ImportClientBrandingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportWorkspaceImage
@@ -3188,7 +3133,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<ImportWorkspaceImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccountLinks
@@ -3232,7 +3176,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<ListAccountLinksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAvailableManagementCidrRanges
@@ -3287,7 +3230,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<ListAvailableManagementCidrRangesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  MigrateWorkspace
@@ -3356,7 +3298,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<MigrateWorkspaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyAccount
@@ -3405,7 +3346,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<ModifyAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyCertificateBasedAuthProperties
@@ -3452,7 +3392,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<ModifyCertificateBasedAuthPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyClientProperties
@@ -3498,7 +3437,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<ModifyClientPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyEndpointEncryptionMode
@@ -3542,7 +3480,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<ModifyEndpointEncryptionModeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifySamlProperties
@@ -3590,7 +3527,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<ModifySamlPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifySelfservicePermissions
@@ -3638,7 +3574,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<ModifySelfservicePermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyStreamingProperties
@@ -3684,7 +3619,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<ModifyStreamingPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyWorkspaceAccessProperties
@@ -3726,7 +3660,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<ModifyWorkspaceAccessPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyWorkspaceCreationProperties
@@ -3772,7 +3705,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<ModifyWorkspaceCreationPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyWorkspaceProperties
@@ -3839,7 +3771,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<ModifyWorkspacePropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyWorkspaceState
@@ -3893,7 +3824,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<ModifyWorkspaceStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RebootWorkspaces
@@ -3941,7 +3871,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<RebootWorkspacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RebuildWorkspaces
@@ -3995,7 +3924,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<RebuildWorkspacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterWorkspaceDirectory
@@ -4066,7 +3994,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<RegisterWorkspaceDirectoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectAccountLinkInvitation
@@ -4116,7 +4043,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<RejectAccountLinkInvitationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreWorkspace
@@ -4178,7 +4104,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<RestoreWorkspaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RevokeIpRules
@@ -4224,7 +4149,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<RevokeIpRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartWorkspaces
@@ -4264,7 +4188,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<StartWorkspacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartWorkspacesPool
@@ -4325,7 +4248,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<StartWorkspacesPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopWorkspaces
@@ -4365,7 +4287,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<StopWorkspacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopWorkspacesPool
@@ -4420,7 +4341,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<StopWorkspacesPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TerminateWorkspaces
@@ -4491,7 +4411,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<TerminateWorkspacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TerminateWorkspacesPool
@@ -4540,7 +4459,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<TerminateWorkspacesPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TerminateWorkspacesPoolSession
@@ -4589,7 +4507,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<TerminateWorkspacesPoolSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConnectClientAddIn
@@ -4633,7 +4550,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<UpdateConnectClientAddInResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConnectionAliasPermission
@@ -4709,7 +4625,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<UpdateConnectionAliasPermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRulesOfIpGroup
@@ -4759,7 +4674,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<UpdateRulesOfIpGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkspaceBundle
@@ -4818,7 +4732,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<UpdateWorkspaceBundleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkspaceImagePermission
@@ -4902,7 +4815,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<UpdateWorkspaceImagePermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkspacesPool
@@ -4957,7 +4869,6 @@ namespace Amazon.WorkSpaces
 
             return InvokeAsync<UpdateWorkspacesPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

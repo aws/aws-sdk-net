@@ -30,7 +30,6 @@ namespace Amazon.CodeConnections
     /// <summary>
     /// Configuration for accessing Amazon CodeConnections service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCodeConnectionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

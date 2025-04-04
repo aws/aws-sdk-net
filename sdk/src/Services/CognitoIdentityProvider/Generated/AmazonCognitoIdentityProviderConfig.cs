@@ -30,7 +30,6 @@ namespace Amazon.CognitoIdentityProvider
     /// <summary>
     /// Configuration for accessing Amazon CognitoIdentityProvider service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCognitoIdentityProviderConfig : ClientConfig
     {
         private static readonly string UserAgentString =

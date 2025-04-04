@@ -30,7 +30,6 @@ namespace Amazon.QApps
     /// <summary>
     /// Configuration for accessing Amazon QApps service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonQAppsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -30,7 +30,6 @@ namespace Amazon.SupportApp
     /// <summary>
     /// Configuration for accessing Amazon SupportApp service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSupportAppConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -30,7 +30,6 @@ namespace Amazon.PCS
     /// <summary>
     /// Configuration for accessing Amazon PCS service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonPCSConfig : ClientConfig
     {
         private static readonly string UserAgentString =

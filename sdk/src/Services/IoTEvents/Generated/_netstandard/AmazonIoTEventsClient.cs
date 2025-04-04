@@ -303,7 +303,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<CreateAlarmModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDetectorModel
@@ -358,7 +357,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<CreateDetectorModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInput
@@ -407,7 +405,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<CreateInputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAlarmModel
@@ -460,7 +457,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<DeleteAlarmModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDetectorModel
@@ -512,7 +508,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<DeleteDetectorModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInput
@@ -564,7 +559,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<DeleteInputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAlarmModel
@@ -614,7 +608,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<DescribeAlarmModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDetectorModel
@@ -664,7 +657,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<DescribeDetectorModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDetectorModelAnalysis
@@ -720,7 +712,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<DescribeDetectorModelAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInput
@@ -769,7 +760,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<DescribeInputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLoggingOptions
@@ -821,7 +811,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<DescribeLoggingOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDetectorModelAnalysisResults
@@ -877,7 +866,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<GetDetectorModelAnalysisResultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAlarmModels
@@ -924,7 +912,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<ListAlarmModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAlarmModelVersions
@@ -974,7 +961,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<ListAlarmModelVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDetectorModels
@@ -1021,7 +1007,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<ListDetectorModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDetectorModelVersions
@@ -1071,7 +1056,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<ListDetectorModelVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInputRoutings
@@ -1120,7 +1104,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<ListInputRoutingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInputs
@@ -1166,7 +1149,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<ListInputsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1215,7 +1197,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutLoggingOptions
@@ -1275,7 +1256,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<PutLoggingOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDetectorModelAnalysis
@@ -1325,7 +1305,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<StartDetectorModelAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1378,7 +1357,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1427,7 +1405,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAlarmModel
@@ -1480,7 +1457,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<UpdateAlarmModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDetectorModel
@@ -1533,7 +1509,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<UpdateDetectorModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInput
@@ -1585,7 +1560,6 @@ namespace Amazon.IoTEvents
 
             return InvokeAsync<UpdateInputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

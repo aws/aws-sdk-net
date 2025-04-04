@@ -30,7 +30,6 @@ namespace Amazon.CostOptimizationHub
     /// <summary>
     /// Configuration for accessing Amazon CostOptimizationHub service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCostOptimizationHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =

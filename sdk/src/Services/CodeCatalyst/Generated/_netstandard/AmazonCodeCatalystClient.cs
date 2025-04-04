@@ -525,7 +525,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<CreateAccessTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDevEnvironment
@@ -595,7 +594,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<CreateDevEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProject
@@ -655,7 +653,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<CreateProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSourceRepository
@@ -716,7 +713,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<CreateSourceRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSourceRepositoryBranch
@@ -783,7 +779,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<CreateSourceRepositoryBranchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccessToken
@@ -844,7 +839,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<DeleteAccessTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDevEnvironment
@@ -904,7 +898,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<DeleteDevEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProject
@@ -964,7 +957,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<DeleteProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSourceRepository
@@ -1025,7 +1017,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<DeleteSourceRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSpace
@@ -1092,7 +1083,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<DeleteSpaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDevEnvironment
@@ -1153,7 +1143,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<GetDevEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProject
@@ -1213,7 +1202,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<GetProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSourceRepository
@@ -1273,7 +1261,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<GetSourceRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSourceRepositoryCloneUrls
@@ -1334,7 +1321,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<GetSourceRepositoryCloneUrlsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSpace
@@ -1394,7 +1380,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<GetSpaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSubscription
@@ -1455,7 +1440,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<GetSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUserDetails
@@ -1515,7 +1499,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<GetUserDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkflow
@@ -1575,7 +1558,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<GetWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkflowRun
@@ -1635,7 +1617,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<GetWorkflowRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccessTokens
@@ -1696,7 +1677,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<ListAccessTokensResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDevEnvironments
@@ -1756,7 +1736,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<ListDevEnvironmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDevEnvironmentSessions
@@ -1816,7 +1795,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<ListDevEnvironmentSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventLogs
@@ -1891,7 +1869,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<ListEventLogsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProjects
@@ -1951,7 +1928,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<ListProjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSourceRepositories
@@ -2011,7 +1987,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<ListSourceRepositoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSourceRepositoryBranches
@@ -2071,7 +2046,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<ListSourceRepositoryBranchesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSpaces
@@ -2131,7 +2105,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<ListSpacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkflowRuns
@@ -2191,7 +2164,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<ListWorkflowRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkflows
@@ -2251,7 +2223,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<ListWorkflowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDevEnvironment
@@ -2311,7 +2282,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<StartDevEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDevEnvironmentSession
@@ -2371,7 +2341,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<StartDevEnvironmentSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartWorkflowRun
@@ -2431,7 +2400,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<StartWorkflowRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopDevEnvironment
@@ -2492,7 +2460,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<StopDevEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopDevEnvironmentSession
@@ -2552,7 +2519,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<StopDevEnvironmentSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDevEnvironment
@@ -2613,7 +2579,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<UpdateDevEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProject
@@ -2673,7 +2638,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<UpdateProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSpace
@@ -2733,7 +2697,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<UpdateSpaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  VerifySession
@@ -2794,7 +2757,6 @@ namespace Amazon.CodeCatalyst
 
             return InvokeAsync<VerifySessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

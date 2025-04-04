@@ -30,7 +30,6 @@ namespace Amazon.GlobalAccelerator
     /// <summary>
     /// Configuration for accessing Amazon GlobalAccelerator service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonGlobalAcceleratorConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -30,7 +30,6 @@ namespace Amazon.Greengrass
     /// <summary>
     /// Configuration for accessing Amazon Greengrass service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonGreengrassConfig : ClientConfig
     {
         private static readonly string UserAgentString =

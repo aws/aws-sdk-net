@@ -319,7 +319,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<CreateAnomalyMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAnomalySubscription
@@ -361,7 +360,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<CreateAnomalySubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCostCategoryDefinition
@@ -402,7 +400,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<CreateCostCategoryDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAnomalyMonitor
@@ -442,7 +439,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<DeleteAnomalyMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAnomalySubscription
@@ -482,7 +478,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<DeleteAnomalySubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCostCategoryDefinition
@@ -523,7 +518,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<DeleteCostCategoryDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCostCategoryDefinition
@@ -572,7 +566,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<DescribeCostCategoryDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAnomalies
@@ -614,7 +607,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<GetAnomaliesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAnomalyMonitors
@@ -658,7 +650,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<GetAnomalyMonitorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAnomalySubscriptions
@@ -702,7 +693,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<GetAnomalySubscriptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApproximateUsageRecords
@@ -743,7 +733,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<GetApproximateUsageRecordsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCommitmentPurchaseAnalysis
@@ -786,7 +775,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<GetCommitmentPurchaseAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCostAndUsage
@@ -851,7 +839,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<GetCostAndUsageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCostAndUsageWithResources
@@ -923,7 +910,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<GetCostAndUsageWithResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCostCategories
@@ -983,7 +969,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<GetCostCategoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCostForecast
@@ -1027,7 +1012,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<GetCostForecastResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDimensionValues
@@ -1081,7 +1065,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<GetDimensionValuesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReservationCoverage
@@ -1183,7 +1166,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<GetReservationCoverageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReservationPurchaseRecommendation
@@ -1249,7 +1231,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<GetReservationPurchaseRecommendationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReservationUtilization
@@ -1295,7 +1276,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<GetReservationUtilizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRightsizingRecommendation
@@ -1345,7 +1325,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<GetRightsizingRecommendationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSavingsPlanPurchaseRecommendationDetails
@@ -1386,7 +1365,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<GetSavingsPlanPurchaseRecommendationDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSavingsPlansCoverage
@@ -1454,7 +1432,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<GetSavingsPlansCoverageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSavingsPlansPurchaseRecommendation
@@ -1496,7 +1473,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<GetSavingsPlansPurchaseRecommendationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSavingsPlansUtilization
@@ -1545,7 +1521,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<GetSavingsPlansUtilizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSavingsPlansUtilizationDetails
@@ -1599,7 +1574,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<GetSavingsPlansUtilizationDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTags
@@ -1653,7 +1627,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<GetTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUsageForecast
@@ -1701,7 +1674,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<GetUsageForecastResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCommitmentPurchaseAnalyses
@@ -1744,7 +1716,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<ListCommitmentPurchaseAnalysesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCostAllocationTagBackfillHistory
@@ -1784,7 +1755,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<ListCostAllocationTagBackfillHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCostAllocationTags
@@ -1825,7 +1795,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<ListCostAllocationTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCostCategoryDefinitions
@@ -1868,7 +1837,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<ListCostCategoryDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSavingsPlansPurchaseRecommendationGeneration
@@ -1912,7 +1880,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<ListSavingsPlansPurchaseRecommendationGenerationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1953,7 +1920,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ProvideAnomalyFeedback
@@ -1990,7 +1956,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<ProvideAnomalyFeedbackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartCommitmentPurchaseAnalysis
@@ -2039,7 +2004,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<StartCommitmentPurchaseAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartCostAllocationTagBackfill
@@ -2087,7 +2051,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<StartCostAllocationTagBackfillResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSavingsPlansPurchaseRecommendationGeneration
@@ -2144,7 +2107,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<StartSavingsPlansPurchaseRecommendationGenerationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2202,7 +2164,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2243,7 +2204,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAnomalyMonitor
@@ -2284,7 +2244,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<UpdateAnomalyMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAnomalySubscription
@@ -2335,7 +2294,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<UpdateAnomalySubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCostAllocationTagsStatus
@@ -2375,7 +2333,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<UpdateCostAllocationTagsStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCostCategoryDefinition
@@ -2421,7 +2378,6 @@ namespace Amazon.CostExplorer
 
             return InvokeAsync<UpdateCostCategoryDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

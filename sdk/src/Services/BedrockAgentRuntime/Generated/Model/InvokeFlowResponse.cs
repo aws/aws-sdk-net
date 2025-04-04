@@ -32,7 +32,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// <summary>
     /// This is the response object from the InvokeFlow operation.
     /// </summary>
-    public partial class InvokeFlowResponse : AmazonWebServiceResponse
+    public partial class InvokeFlowResponse : AmazonWebServiceResponse, IDisposable
     {
         private string _executionId;
         private FlowResponseStream _responseStream;
@@ -75,5 +75,36 @@ namespace Amazon.BedrockAgentRuntime.Model
             return this._responseStream != null;
         }
 
+        #region Dispose Pattern
+
+        private bool _disposed;
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                this._responseStream?.Dispose();
+                this._responseStream = null;
+            }
+
+            this._disposed = true;
+         }
+
+         #endregion
     }
 }

@@ -453,7 +453,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<AssociateFirewallPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateSubnets
@@ -535,7 +534,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<AssociateSubnetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFirewall
@@ -638,7 +636,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<CreateFirewallResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFirewallPolicy
@@ -711,7 +708,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<CreateFirewallPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRuleGroup
@@ -784,7 +780,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<CreateRuleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTLSInspectionConfiguration
@@ -878,7 +873,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<CreateTLSInspectionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFirewall
@@ -964,7 +958,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<DeleteFirewallResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFirewallPolicy
@@ -1033,7 +1026,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<DeleteFirewallPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -1098,7 +1090,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRuleGroup
@@ -1167,7 +1158,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<DeleteRuleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTLSInspectionConfiguration
@@ -1233,7 +1223,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<DeleteTLSInspectionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFirewall
@@ -1295,7 +1284,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<DescribeFirewallResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFirewallPolicy
@@ -1357,7 +1345,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<DescribeFirewallPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFlowOperation
@@ -1419,7 +1406,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<DescribeFlowOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLoggingConfiguration
@@ -1481,7 +1467,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<DescribeLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeResourcePolicy
@@ -1543,7 +1528,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<DescribeResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRuleGroup
@@ -1605,7 +1589,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<DescribeRuleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRuleGroupMetadata
@@ -1669,7 +1652,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<DescribeRuleGroupMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTLSInspectionConfiguration
@@ -1731,7 +1713,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<DescribeTLSInspectionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateSubnets
@@ -1802,7 +1783,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<DisassociateSubnetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAnalysisReportResults
@@ -1869,7 +1849,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<GetAnalysisReportResultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAnalysisReports
@@ -1931,7 +1910,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<ListAnalysisReportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFirewallPolicies
@@ -1992,7 +1970,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<ListFirewallPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFirewalls
@@ -2058,7 +2035,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<ListFirewallsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFlowOperationResults
@@ -2132,7 +2108,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<ListFlowOperationResultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFlowOperations
@@ -2208,7 +2183,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<ListFlowOperationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRuleGroups
@@ -2269,7 +2243,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<ListRuleGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2341,7 +2314,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTLSInspectionConfigurations
@@ -2402,7 +2374,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<ListTLSInspectionConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -2498,7 +2469,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartAnalysisReport
@@ -2565,7 +2535,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<StartAnalysisReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartFlowCapture
@@ -2644,7 +2613,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<StartFlowCaptureResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartFlowFlush
@@ -2716,7 +2684,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<StartFlowFlushResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2788,7 +2755,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2860,7 +2826,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFirewallAnalysisSettings
@@ -2922,7 +2887,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<UpdateFirewallAnalysisSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFirewallDeleteProtection
@@ -2993,7 +2957,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<UpdateFirewallDeleteProtectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFirewallDescription
@@ -3059,7 +3022,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<UpdateFirewallDescriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFirewallEncryptionConfiguration
@@ -3127,7 +3089,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<UpdateFirewallEncryptionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFirewallPolicy
@@ -3192,7 +3153,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<UpdateFirewallPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFirewallPolicyChangeProtection
@@ -3263,7 +3223,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<UpdateFirewallPolicyChangeProtectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLoggingConfiguration
@@ -3365,7 +3324,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<UpdateLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRuleGroup
@@ -3439,7 +3397,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<UpdateRuleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSubnetChangeProtection
@@ -3507,7 +3464,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<UpdateSubnetChangeProtectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTLSInspectionConfiguration
@@ -3582,7 +3538,6 @@ namespace Amazon.NetworkFirewall
 
             return InvokeAsync<UpdateTLSInspectionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

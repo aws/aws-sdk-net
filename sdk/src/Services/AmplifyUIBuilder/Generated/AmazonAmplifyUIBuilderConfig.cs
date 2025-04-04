@@ -30,7 +30,6 @@ namespace Amazon.AmplifyUIBuilder
     /// <summary>
     /// Configuration for accessing Amazon AmplifyUIBuilder service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonAmplifyUIBuilderConfig : ClientConfig
     {
         private static readonly string UserAgentString =

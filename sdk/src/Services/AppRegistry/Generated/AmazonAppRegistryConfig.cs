@@ -30,7 +30,6 @@ namespace Amazon.AppRegistry
     /// <summary>
     /// Configuration for accessing Amazon AppRegistry service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonAppRegistryConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -402,7 +402,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<AnalyzeDocumentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AnalyzeExpense
@@ -492,7 +491,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<AnalyzeExpenseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AnalyzeID
@@ -568,7 +566,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<AnalyzeIDResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAdapter
@@ -645,7 +642,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<CreateAdapterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAdapterVersion
@@ -734,7 +730,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<CreateAdapterVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAdapter
@@ -798,7 +793,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<DeleteAdapterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAdapterVersion
@@ -863,7 +857,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<DeleteAdapterVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectDocumentText
@@ -957,7 +950,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<DetectDocumentTextResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAdapter
@@ -1018,7 +1010,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<GetAdapterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAdapterVersion
@@ -1080,7 +1071,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<GetAdapterVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDocumentAnalysis
@@ -1219,7 +1209,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<GetDocumentAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDocumentTextDetection
@@ -1324,7 +1313,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<GetDocumentTextDetectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExpenseAnalysis
@@ -1418,7 +1406,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<GetExpenseAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLendingAnalysis
@@ -1501,7 +1488,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<GetLendingAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLendingAnalysisSummary
@@ -1587,7 +1573,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<GetLendingAnalysisSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAdapters
@@ -1644,7 +1629,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<ListAdaptersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAdapterVersions
@@ -1704,7 +1688,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<ListAdapterVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1764,7 +1747,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDocumentAnalysis
@@ -1874,7 +1856,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<StartDocumentAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDocumentTextDetection
@@ -1984,7 +1965,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<StartDocumentTextDetectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartExpenseAnalysis
@@ -2096,7 +2076,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<StartExpenseAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartLendingAnalysis
@@ -2222,7 +2201,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<StartLendingAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2285,7 +2263,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2345,7 +2322,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAdapter
@@ -2409,7 +2385,6 @@ namespace Amazon.Textract
 
             return InvokeAsync<UpdateAdapterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

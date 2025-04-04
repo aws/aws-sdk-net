@@ -315,7 +315,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<AssociateUserToPermissionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateChangeset
@@ -372,7 +371,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<CreateChangesetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataset
@@ -429,7 +427,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<CreateDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataView
@@ -483,7 +480,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<CreateDataViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePermissionGroup
@@ -537,7 +533,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<CreatePermissionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUser
@@ -591,7 +586,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<CreateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataset
@@ -648,7 +642,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<DeleteDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePermissionGroup
@@ -705,7 +698,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<DeletePermissionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableUser
@@ -759,7 +751,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<DisableUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateUserFromPermissionGroup
@@ -813,7 +804,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<DisassociateUserFromPermissionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableUser
@@ -870,7 +860,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<EnableUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetChangeset
@@ -924,7 +913,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<GetChangesetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataset
@@ -978,7 +966,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<GetDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataView
@@ -1029,7 +1016,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<GetDataViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExternalDataViewAccessDetails
@@ -1092,7 +1078,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<GetExternalDataViewAccessDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPermissionGroup
@@ -1143,7 +1128,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<GetPermissionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProgrammaticAccessCredentials
@@ -1193,7 +1177,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<GetProgrammaticAccessCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUser
@@ -1244,7 +1227,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<GetUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkingLocation
@@ -1293,7 +1275,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<GetWorkingLocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChangesets
@@ -1347,7 +1328,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<ListChangesetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatasets
@@ -1398,7 +1378,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<ListDatasetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataViews
@@ -1449,7 +1428,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<ListDataViewsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPermissionGroups
@@ -1497,7 +1475,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<ListPermissionGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPermissionGroupsByUser
@@ -1548,7 +1525,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<ListPermissionGroupsByUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUsers
@@ -1596,7 +1572,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<ListUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUsersByPermissionGroup
@@ -1647,7 +1622,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<ListUsersByPermissionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetUserPassword
@@ -1703,7 +1677,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<ResetUserPasswordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateChangeset
@@ -1757,7 +1730,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<UpdateChangesetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataset
@@ -1811,7 +1783,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<UpdateDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePermissionGroup
@@ -1865,7 +1836,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<UpdatePermissionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUser
@@ -1920,7 +1890,6 @@ namespace Amazon.FinSpaceData
 
             return InvokeAsync<UpdateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -350,7 +350,6 @@ namespace Amazon.ApplicationSignals
 
             return InvokeAsync<BatchGetServiceLevelObjectiveBudgetReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchUpdateExclusionWindows
@@ -393,7 +392,6 @@ namespace Amazon.ApplicationSignals
 
             return InvokeAsync<BatchUpdateExclusionWindowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateServiceLevelObjective
@@ -559,7 +557,6 @@ namespace Amazon.ApplicationSignals
 
             return InvokeAsync<CreateServiceLevelObjectiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServiceLevelObjective
@@ -602,7 +599,6 @@ namespace Amazon.ApplicationSignals
 
             return InvokeAsync<DeleteServiceLevelObjectiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetService
@@ -642,7 +638,6 @@ namespace Amazon.ApplicationSignals
 
             return InvokeAsync<GetServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceLevelObjective
@@ -685,7 +680,6 @@ namespace Amazon.ApplicationSignals
 
             return InvokeAsync<GetServiceLevelObjectiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceDependencies
@@ -728,7 +722,6 @@ namespace Amazon.ApplicationSignals
 
             return InvokeAsync<ListServiceDependenciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceDependents
@@ -770,7 +763,6 @@ namespace Amazon.ApplicationSignals
 
             return InvokeAsync<ListServiceDependentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceLevelObjectiveExclusionWindows
@@ -813,7 +805,6 @@ namespace Amazon.ApplicationSignals
 
             return InvokeAsync<ListServiceLevelObjectiveExclusionWindowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceLevelObjectives
@@ -853,7 +844,6 @@ namespace Amazon.ApplicationSignals
 
             return InvokeAsync<ListServiceLevelObjectivesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceOperations
@@ -895,7 +885,6 @@ namespace Amazon.ApplicationSignals
 
             return InvokeAsync<ListServiceOperationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServices
@@ -937,7 +926,6 @@ namespace Amazon.ApplicationSignals
 
             return InvokeAsync<ListServicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -978,7 +966,6 @@ namespace Amazon.ApplicationSignals
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDiscovery
@@ -1058,7 +1045,6 @@ namespace Amazon.ApplicationSignals
 
             return InvokeAsync<StartDiscoveryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1126,7 +1112,6 @@ namespace Amazon.ApplicationSignals
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1166,7 +1151,6 @@ namespace Amazon.ApplicationSignals
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServiceLevelObjective
@@ -1216,7 +1200,6 @@ namespace Amazon.ApplicationSignals
 
             return InvokeAsync<UpdateServiceLevelObjectiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

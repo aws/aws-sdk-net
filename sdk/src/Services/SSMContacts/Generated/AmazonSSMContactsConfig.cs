@@ -30,7 +30,6 @@ namespace Amazon.SSMContacts
     /// <summary>
     /// Configuration for accessing Amazon SSMContacts service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSSMContactsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

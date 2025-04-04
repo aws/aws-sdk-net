@@ -344,7 +344,6 @@ namespace Amazon.DataPipeline
 
             return InvokeAsync<ActivatePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddTags
@@ -428,7 +427,6 @@ namespace Amazon.DataPipeline
 
             return InvokeAsync<AddTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePipeline
@@ -470,7 +468,6 @@ namespace Amazon.DataPipeline
 
             return InvokeAsync<CreatePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeactivatePipeline
@@ -527,7 +524,6 @@ namespace Amazon.DataPipeline
 
             return InvokeAsync<DeactivatePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePipeline
@@ -583,7 +579,6 @@ namespace Amazon.DataPipeline
 
             return InvokeAsync<DeletePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeObjects
@@ -633,7 +628,6 @@ namespace Amazon.DataPipeline
 
             return InvokeAsync<DescribeObjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePipelines
@@ -737,7 +731,6 @@ namespace Amazon.DataPipeline
 
             return InvokeAsync<DescribePipelinesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EvaluateExpression
@@ -791,7 +784,6 @@ namespace Amazon.DataPipeline
 
             return InvokeAsync<EvaluateExpressionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPipelineDefinition
@@ -841,7 +833,6 @@ namespace Amazon.DataPipeline
 
             return InvokeAsync<GetPipelineDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPipelines
@@ -912,7 +903,6 @@ namespace Amazon.DataPipeline
 
             return InvokeAsync<ListPipelinesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PollForTask
@@ -972,7 +962,6 @@ namespace Amazon.DataPipeline
 
             return InvokeAsync<PollForTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutPipelineDefinition
@@ -1036,7 +1025,6 @@ namespace Amazon.DataPipeline
 
             return InvokeAsync<PutPipelineDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryObjects
@@ -1086,7 +1074,6 @@ namespace Amazon.DataPipeline
 
             return InvokeAsync<QueryObjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTags
@@ -1170,7 +1157,6 @@ namespace Amazon.DataPipeline
 
             return InvokeAsync<RemoveTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReportTaskProgress
@@ -1235,7 +1221,6 @@ namespace Amazon.DataPipeline
 
             return InvokeAsync<ReportTaskProgressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReportTaskRunnerHeartbeat
@@ -1280,7 +1265,6 @@ namespace Amazon.DataPipeline
 
             return InvokeAsync<ReportTaskRunnerHeartbeatResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetStatus
@@ -1333,7 +1317,6 @@ namespace Amazon.DataPipeline
 
             return InvokeAsync<SetStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetTaskStatus
@@ -1389,7 +1372,6 @@ namespace Amazon.DataPipeline
 
             return InvokeAsync<SetTaskStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ValidatePipelineDefinition
@@ -1439,7 +1421,6 @@ namespace Amazon.DataPipeline
 
             return InvokeAsync<ValidatePipelineDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

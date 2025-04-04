@@ -39,8 +39,8 @@ namespace Amazon.Lambda.Model
     /// Lambda includes a <c>InvokeComplete</c> object.
     /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "InvokeWithResponseStreamResponseEventCollection is not descriptive")]
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose.")]
-    public sealed class InvokeWithResponseStreamResponseEvent : EnumerableEventStream<IEventStreamEvent, LambdaEventStreamException>
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventOutputStream. Users need to be able to call Dispose.")]
+    public sealed class InvokeWithResponseStreamResponseEvent : EnumerableEventOutputStream<IEventStreamEvent, LambdaEventStreamException>
     {
         /// <summary>
         ///The mapping of event message to a generator function to construct the matching EventStream event

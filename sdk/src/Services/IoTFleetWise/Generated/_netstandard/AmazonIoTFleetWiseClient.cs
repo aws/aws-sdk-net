@@ -331,7 +331,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<AssociateVehicleFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchCreateVehicle
@@ -392,7 +391,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<BatchCreateVehicleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchUpdateVehicle
@@ -453,7 +451,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<BatchUpdateVehicleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCampaign
@@ -528,7 +525,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<CreateCampaignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDecoderManifest
@@ -607,7 +603,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<CreateDecoderManifestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFleet
@@ -674,7 +669,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<CreateFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateModelManifest
@@ -740,7 +734,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<CreateModelManifestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSignalCatalog
@@ -801,7 +794,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<CreateSignalCatalogResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStateTemplate
@@ -871,7 +863,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<CreateStateTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVehicle
@@ -940,7 +931,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<CreateVehicleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCampaign
@@ -990,7 +980,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<DeleteCampaignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDecoderManifest
@@ -1041,7 +1030,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<DeleteDecoderManifestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFleet
@@ -1089,7 +1077,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<DeleteFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteModelManifest
@@ -1139,7 +1126,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<DeleteModelManifestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSignalCatalog
@@ -1189,7 +1175,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<DeleteSignalCatalogResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStateTemplate
@@ -1235,7 +1220,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<DeleteStateTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVehicle
@@ -1281,7 +1265,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<DeleteVehicleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateVehicleFleet
@@ -1331,7 +1314,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<DisassociateVehicleFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCampaign
@@ -1389,7 +1371,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<GetCampaignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDecoderManifest
@@ -1438,7 +1419,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<GetDecoderManifestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEncryptionConfiguration
@@ -1488,7 +1468,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<GetEncryptionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFleet
@@ -1537,7 +1516,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<GetFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLoggingOptions
@@ -1580,7 +1558,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<GetLoggingOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetModelManifest
@@ -1629,7 +1606,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<GetModelManifestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRegisterAccountStatus
@@ -1691,7 +1667,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<GetRegisterAccountStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSignalCatalog
@@ -1740,7 +1715,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<GetSignalCatalogResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStateTemplate
@@ -1798,7 +1772,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<GetStateTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVehicle
@@ -1847,7 +1820,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<GetVehicleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVehicleStatus
@@ -1897,7 +1869,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<GetVehicleStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportDecoderManifest
@@ -1964,7 +1935,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<ImportDecoderManifestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportSignalCatalog
@@ -2024,7 +1994,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<ImportSignalCatalogResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCampaigns
@@ -2077,7 +2046,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<ListCampaignsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDecoderManifestNetworkInterfaces
@@ -2133,7 +2101,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<ListDecoderManifestNetworkInterfacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDecoderManifests
@@ -2186,7 +2153,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<ListDecoderManifestsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDecoderManifestSignals
@@ -2242,7 +2208,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<ListDecoderManifestSignalsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFleets
@@ -2298,7 +2263,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<ListFleetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFleetsForVehicle
@@ -2354,7 +2318,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<ListFleetsForVehicleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListModelManifestNodes
@@ -2413,7 +2376,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<ListModelManifestNodesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListModelManifests
@@ -2466,7 +2428,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<ListModelManifestsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSignalCatalogNodes
@@ -2525,7 +2486,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<ListSignalCatalogNodesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSignalCatalogs
@@ -2582,7 +2542,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<ListSignalCatalogsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStateTemplates
@@ -2637,7 +2596,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<ListStateTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2686,7 +2644,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVehicles
@@ -2739,7 +2696,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<ListVehiclesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVehiclesInFleet
@@ -2795,7 +2751,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<ListVehiclesInFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEncryptionConfiguration
@@ -2851,7 +2806,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<PutEncryptionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutLoggingOptions
@@ -2904,7 +2858,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<PutLoggingOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterAccount
@@ -2995,7 +2948,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<RegisterAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3045,7 +2997,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3094,7 +3045,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCampaign
@@ -3147,7 +3097,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<UpdateCampaignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDecoderManifest
@@ -3213,7 +3162,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<UpdateDecoderManifestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFleet
@@ -3266,7 +3214,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<UpdateFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateModelManifest
@@ -3323,7 +3270,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<UpdateModelManifestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSignalCatalog
@@ -3386,7 +3332,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<UpdateSignalCatalogResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStateTemplate
@@ -3450,7 +3395,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<UpdateStateTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVehicle
@@ -3506,7 +3450,6 @@ namespace Amazon.IoTFleetWise
 
             return InvokeAsync<UpdateVehicleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

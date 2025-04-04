@@ -359,7 +359,6 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
             return InvokeAsync<DescribeReportCreationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetComplianceSummary
@@ -473,7 +472,6 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
             return InvokeAsync<GetComplianceSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResources
@@ -572,7 +570,6 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
             return InvokeAsync<GetResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTagKeys
@@ -656,7 +653,6 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
             return InvokeAsync<GetTagKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTagValues
@@ -740,7 +736,6 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
             return InvokeAsync<GetTagValuesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartReportCreation
@@ -854,7 +849,6 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
             return InvokeAsync<StartReportCreationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResources
@@ -975,7 +969,6 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
             return InvokeAsync<TagResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResources
@@ -1079,7 +1072,6 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
             return InvokeAsync<UntagResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

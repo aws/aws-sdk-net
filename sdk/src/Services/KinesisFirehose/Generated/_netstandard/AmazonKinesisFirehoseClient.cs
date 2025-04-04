@@ -388,7 +388,6 @@ namespace Amazon.KinesisFirehose
 
             return InvokeAsync<CreateDeliveryStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDeliveryStream
@@ -500,7 +499,6 @@ namespace Amazon.KinesisFirehose
 
             return InvokeAsync<DeleteDeliveryStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDeliveryStream
@@ -548,7 +546,6 @@ namespace Amazon.KinesisFirehose
 
             return InvokeAsync<DescribeDeliveryStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeliveryStreams
@@ -623,7 +620,6 @@ namespace Amazon.KinesisFirehose
 
             return InvokeAsync<ListDeliveryStreamsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForDeliveryStream
@@ -667,7 +663,6 @@ namespace Amazon.KinesisFirehose
 
             return InvokeAsync<ListTagsForDeliveryStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRecord
@@ -907,7 +902,6 @@ namespace Amazon.KinesisFirehose
 
             return InvokeAsync<PutRecordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRecordBatch
@@ -1201,7 +1195,6 @@ namespace Amazon.KinesisFirehose
 
             return InvokeAsync<PutRecordBatchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDeliveryStreamEncryption
@@ -1312,7 +1305,6 @@ namespace Amazon.KinesisFirehose
 
             return InvokeAsync<StartDeliveryStreamEncryptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopDeliveryStreamEncryption
@@ -1388,7 +1380,6 @@ namespace Amazon.KinesisFirehose
 
             return InvokeAsync<StopDeliveryStreamEncryptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagDeliveryStream
@@ -1450,7 +1441,6 @@ namespace Amazon.KinesisFirehose
 
             return InvokeAsync<TagDeliveryStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagDeliveryStream
@@ -1506,7 +1496,6 @@ namespace Amazon.KinesisFirehose
 
             return InvokeAsync<UntagDeliveryStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDestination
@@ -1591,7 +1580,6 @@ namespace Amazon.KinesisFirehose
 
             return InvokeAsync<UpdateDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

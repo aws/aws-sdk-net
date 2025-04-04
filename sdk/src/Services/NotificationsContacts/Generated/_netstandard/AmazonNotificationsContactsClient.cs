@@ -316,7 +316,6 @@ namespace Amazon.NotificationsContacts
 
             return InvokeAsync<ActivateEmailContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEmailContact
@@ -368,7 +367,6 @@ namespace Amazon.NotificationsContacts
 
             return InvokeAsync<CreateEmailContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEmailContact
@@ -426,7 +424,6 @@ namespace Amazon.NotificationsContacts
 
             return InvokeAsync<DeleteEmailContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEmailContact
@@ -475,7 +472,6 @@ namespace Amazon.NotificationsContacts
 
             return InvokeAsync<GetEmailContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEmailContacts
@@ -521,7 +517,6 @@ namespace Amazon.NotificationsContacts
 
             return InvokeAsync<ListEmailContactsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -571,7 +566,6 @@ namespace Amazon.NotificationsContacts
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendActivationCode
@@ -631,7 +625,6 @@ namespace Amazon.NotificationsContacts
 
             return InvokeAsync<SendActivationCodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -681,7 +674,6 @@ namespace Amazon.NotificationsContacts
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -731,7 +723,6 @@ namespace Amazon.NotificationsContacts
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

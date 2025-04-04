@@ -30,7 +30,6 @@ namespace Amazon.IAMRolesAnywhere
     /// <summary>
     /// Configuration for accessing Amazon IAMRolesAnywhere service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonIAMRolesAnywhereConfig : ClientConfig
     {
         private static readonly string UserAgentString =

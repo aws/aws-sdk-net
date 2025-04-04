@@ -317,7 +317,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<CreateApplicationInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateJobForDevices
@@ -366,7 +365,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<CreateJobForDevicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNodeFromTemplateJob
@@ -412,7 +410,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<CreateNodeFromTemplateJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePackage
@@ -458,7 +455,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<CreatePackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePackageImportJob
@@ -504,7 +500,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<CreatePackageImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDevice
@@ -553,7 +548,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<DeleteDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePackage
@@ -609,7 +603,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<DeletePackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterPackageVersion
@@ -658,7 +651,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<DeregisterPackageVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApplicationInstance
@@ -707,7 +699,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<DescribeApplicationInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApplicationInstanceDetails
@@ -756,7 +747,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<DescribeApplicationInstanceDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDevice
@@ -802,7 +792,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<DescribeDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDeviceJob
@@ -851,7 +840,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<DescribeDeviceJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeNode
@@ -900,7 +888,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<DescribeNodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeNodeFromTemplateJob
@@ -946,7 +933,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<DescribeNodeFromTemplateJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePackage
@@ -995,7 +981,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<DescribePackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePackageImportJob
@@ -1041,7 +1026,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<DescribePackageImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePackageVersion
@@ -1090,7 +1074,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<DescribePackageVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplicationInstanceDependencies
@@ -1130,7 +1113,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<ListApplicationInstanceDependenciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplicationInstanceNodeInstances
@@ -1170,7 +1152,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<ListApplicationInstanceNodeInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplicationInstances
@@ -1210,7 +1191,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<ListApplicationInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDevices
@@ -1256,7 +1236,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<ListDevicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDevicesJobs
@@ -1305,7 +1284,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<ListDevicesJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNodeFromTemplateJobs
@@ -1351,7 +1329,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<ListNodeFromTemplateJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNodes
@@ -1394,7 +1371,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<ListNodesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPackageImportJobs
@@ -1440,7 +1416,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<ListPackageImportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPackages
@@ -1489,7 +1464,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<ListPackagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1532,7 +1506,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ProvisionDevice
@@ -1585,7 +1558,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<ProvisionDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterPackageVersion
@@ -1631,7 +1603,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<RegisterPackageVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveApplicationInstance
@@ -1680,7 +1651,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<RemoveApplicationInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SignalApplicationInstanceNodeInstances
@@ -1726,7 +1696,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<SignalApplicationInstanceNodeInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1769,7 +1738,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1812,7 +1780,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDeviceMetadata
@@ -1861,7 +1828,6 @@ namespace Amazon.Panorama
 
             return InvokeAsync<UpdateDeviceMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -313,7 +313,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<CreateTestCaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTestConfiguration
@@ -365,7 +364,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<CreateTestConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTestSuite
@@ -417,7 +415,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<CreateTestSuiteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTestCase
@@ -469,7 +466,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<DeleteTestCaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTestConfiguration
@@ -521,7 +517,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<DeleteTestConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTestRun
@@ -570,7 +565,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<DeleteTestRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTestSuite
@@ -622,7 +616,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<DeleteTestSuiteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTestCase
@@ -671,7 +664,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<GetTestCaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTestConfiguration
@@ -720,7 +712,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<GetTestConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTestRunStep
@@ -769,7 +760,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<GetTestRunStepResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTestSuite
@@ -818,7 +808,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<GetTestSuiteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -867,7 +856,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTestCases
@@ -916,7 +904,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<ListTestCasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTestConfigurations
@@ -965,7 +952,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<ListTestConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTestRuns
@@ -1014,7 +1000,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<ListTestRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTestRunSteps
@@ -1063,7 +1048,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<ListTestRunStepsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTestRunTestCases
@@ -1112,7 +1096,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<ListTestRunTestCasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTestSuites
@@ -1161,7 +1144,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<ListTestSuitesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartTestRun
@@ -1216,7 +1198,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<StartTestRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1268,7 +1249,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1317,7 +1297,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTestCase
@@ -1369,7 +1348,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<UpdateTestCaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTestConfiguration
@@ -1421,7 +1399,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<UpdateTestConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTestSuite
@@ -1473,7 +1450,6 @@ namespace Amazon.AppTest
 
             return InvokeAsync<UpdateTestSuiteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

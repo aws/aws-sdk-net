@@ -30,7 +30,6 @@ namespace Amazon.OSIS
     /// <summary>
     /// Configuration for accessing Amazon OSIS service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonOSISConfig : ClientConfig
     {
         private static readonly string UserAgentString =

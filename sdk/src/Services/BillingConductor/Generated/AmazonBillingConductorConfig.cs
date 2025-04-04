@@ -30,7 +30,6 @@ namespace Amazon.BillingConductor
     /// <summary>
     /// Configuration for accessing Amazon BillingConductor service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonBillingConductorConfig : ClientConfig
     {
         private static readonly string UserAgentString =

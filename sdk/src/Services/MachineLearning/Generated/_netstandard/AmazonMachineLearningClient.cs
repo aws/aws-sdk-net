@@ -313,7 +313,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<AddTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBatchPrediction
@@ -375,7 +374,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<CreateBatchPredictionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataSourceFromRDS
@@ -438,7 +436,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<CreateDataSourceFromRDSResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataSourceFromRedshift
@@ -526,7 +523,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<CreateDataSourceFromRedshiftResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataSourceFromS3
@@ -607,7 +603,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<CreateDataSourceFromS3Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEvaluation
@@ -672,7 +667,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<CreateEvaluationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMLModel
@@ -743,7 +737,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<CreateMLModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRealtimeEndpoint
@@ -817,7 +810,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<CreateRealtimeEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBatchPrediction
@@ -907,7 +899,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<DeleteBatchPredictionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataSource
@@ -997,7 +988,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<DeleteDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEvaluation
@@ -1087,7 +1077,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<DeleteEvaluationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMLModel
@@ -1177,7 +1166,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<DeleteMLModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRealtimeEndpoint
@@ -1247,7 +1235,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<DeleteRealtimeEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTags
@@ -1299,7 +1286,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<DeleteTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBatchPredictions
@@ -1340,7 +1326,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<DescribeBatchPredictionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataSources
@@ -1380,7 +1365,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<DescribeDataSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEvaluations
@@ -1421,7 +1405,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<DescribeEvaluationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMLModels
@@ -1461,7 +1444,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<DescribeMLModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTags
@@ -1504,7 +1486,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<DescribeTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBatchPrediction
@@ -1576,7 +1557,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<GetBatchPredictionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataSource
@@ -1699,7 +1679,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<GetDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEvaluation
@@ -1771,7 +1750,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<GetEvaluationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMLModel
@@ -1888,7 +1866,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<GetMLModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Predict
@@ -1988,7 +1965,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<PredictResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBatchPrediction
@@ -2072,7 +2048,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<UpdateBatchPredictionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataSource
@@ -2156,7 +2131,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<UpdateDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEvaluation
@@ -2240,7 +2214,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<UpdateEvaluationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMLModel
@@ -2326,7 +2299,6 @@ namespace Amazon.MachineLearning
 
             return InvokeAsync<UpdateMLModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

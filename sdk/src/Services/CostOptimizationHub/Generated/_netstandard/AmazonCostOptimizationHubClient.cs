@@ -321,7 +321,6 @@ namespace Amazon.CostOptimizationHub
 
             return InvokeAsync<GetPreferencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRecommendation
@@ -378,7 +377,6 @@ namespace Amazon.CostOptimizationHub
 
             return InvokeAsync<GetRecommendationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnrollmentStatuses
@@ -425,7 +423,6 @@ namespace Amazon.CostOptimizationHub
 
             return InvokeAsync<ListEnrollmentStatusesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecommendations
@@ -471,7 +468,6 @@ namespace Amazon.CostOptimizationHub
 
             return InvokeAsync<ListRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecommendationSummaries
@@ -525,7 +521,6 @@ namespace Amazon.CostOptimizationHub
 
             return InvokeAsync<ListRecommendationSummariesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEnrollmentStatus
@@ -584,7 +579,6 @@ namespace Amazon.CostOptimizationHub
 
             return InvokeAsync<UpdateEnrollmentStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePreferences
@@ -632,7 +626,6 @@ namespace Amazon.CostOptimizationHub
 
             return InvokeAsync<UpdatePreferencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

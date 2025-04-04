@@ -30,7 +30,6 @@ namespace Amazon.Kendra
     /// <summary>
     /// Configuration for accessing Amazon Kendra service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonKendraConfig : ClientConfig
     {
         private static readonly string UserAgentString =

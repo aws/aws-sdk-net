@@ -30,7 +30,6 @@ namespace Amazon.ResourceExplorer2
     /// <summary>
     /// Configuration for accessing Amazon ResourceExplorer2 service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonResourceExplorer2Config : ClientConfig
     {
         private static readonly string UserAgentString =

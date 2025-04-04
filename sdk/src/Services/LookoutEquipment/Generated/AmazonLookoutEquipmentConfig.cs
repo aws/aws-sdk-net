@@ -30,7 +30,6 @@ namespace Amazon.LookoutEquipment
     /// <summary>
     /// Configuration for accessing Amazon LookoutEquipment service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonLookoutEquipmentConfig : ClientConfig
     {
         private static readonly string UserAgentString =

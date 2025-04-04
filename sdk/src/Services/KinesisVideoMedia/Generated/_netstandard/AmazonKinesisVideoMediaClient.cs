@@ -202,7 +202,6 @@ namespace Amazon.KinesisVideoMedia
 
             return InvokeAsync<GetMediaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

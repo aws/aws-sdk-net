@@ -30,7 +30,6 @@ namespace Amazon.SQS
     /// <summary>
     /// Configuration for accessing Amazon SQS service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSQSConfig : ClientConfig
     {
         private static readonly string UserAgentString =

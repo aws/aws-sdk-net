@@ -30,7 +30,6 @@ namespace Amazon.OAM
     /// <summary>
     /// Configuration for accessing Amazon OAM service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonOAMConfig : ClientConfig
     {
         private static readonly string UserAgentString =

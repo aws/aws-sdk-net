@@ -307,7 +307,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<ArchiveApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ArchiveWave
@@ -354,7 +353,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<ArchiveWaveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateApplications
@@ -401,7 +399,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<AssociateApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateSourceServers
@@ -448,7 +445,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<AssociateSourceServersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ChangeServerLifeCycleState
@@ -498,7 +494,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<ChangeServerLifeCycleStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApplication
@@ -542,7 +537,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConnector
@@ -582,7 +576,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<CreateConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLaunchConfigurationTemplate
@@ -625,7 +618,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<CreateLaunchConfigurationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateReplicationConfigurationTemplate
@@ -668,7 +660,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<CreateReplicationConfigurationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWave
@@ -712,7 +703,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<CreateWaveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplication
@@ -756,7 +746,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<DeleteApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnector
@@ -799,7 +788,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<DeleteConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteJob
@@ -843,7 +831,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<DeleteJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLaunchConfigurationTemplate
@@ -887,7 +874,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<DeleteLaunchConfigurationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReplicationConfigurationTemplate
@@ -931,7 +917,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<DeleteReplicationConfigurationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSourceServer
@@ -975,7 +960,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<DeleteSourceServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVcenterClient
@@ -1018,7 +1002,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<DeleteVcenterClientResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWave
@@ -1062,7 +1045,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<DeleteWaveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeJobLogItems
@@ -1102,7 +1084,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<DescribeJobLogItemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeJobs
@@ -1147,7 +1128,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<DescribeJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLaunchConfigurationTemplates
@@ -1191,7 +1171,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<DescribeLaunchConfigurationTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReplicationConfigurationTemplates
@@ -1234,7 +1213,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<DescribeReplicationConfigurationTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSourceServers
@@ -1274,7 +1252,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<DescribeSourceServersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVcenterClients
@@ -1317,7 +1294,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<DescribeVcenterClientsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateApplications
@@ -1361,7 +1337,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<DisassociateApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateSourceServers
@@ -1405,7 +1380,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<DisassociateSourceServersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisconnectFromService
@@ -1459,7 +1433,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<DisconnectFromServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FinalizeCutover
@@ -1514,7 +1487,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<FinalizeCutoverResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLaunchConfiguration
@@ -1554,7 +1526,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<GetLaunchConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReplicationConfiguration
@@ -1594,7 +1565,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<GetReplicationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InitializeService
@@ -1634,7 +1604,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<InitializeServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplications
@@ -1671,7 +1640,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<ListApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConnectors
@@ -1711,7 +1679,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<ListConnectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExportErrors
@@ -1751,7 +1718,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<ListExportErrorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExports
@@ -1788,7 +1754,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<ListExportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImportErrors
@@ -1828,7 +1793,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<ListImportErrorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImports
@@ -1868,7 +1832,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<ListImportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListManagedAccounts
@@ -1908,7 +1871,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<ListManagedAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSourceServerActions
@@ -1948,7 +1910,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<ListSourceServerActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1998,7 +1959,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTemplateActions
@@ -2038,7 +1998,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<ListTemplateActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWaves
@@ -2075,7 +2034,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<ListWavesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  MarkAsArchived
@@ -2121,7 +2079,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<MarkAsArchivedResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PauseReplication
@@ -2171,7 +2128,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<PauseReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutSourceServerAction
@@ -2218,7 +2174,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<PutSourceServerActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutTemplateAction
@@ -2265,7 +2220,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<PutTemplateActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveSourceServerAction
@@ -2308,7 +2262,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<RemoveSourceServerActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTemplateAction
@@ -2351,7 +2304,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<RemoveTemplateActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResumeReplication
@@ -2401,7 +2353,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<ResumeReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RetryDataReplication
@@ -2447,7 +2398,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<RetryDataReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartCutover
@@ -2493,7 +2443,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<StartCutoverResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartExport
@@ -2536,7 +2485,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<StartExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartImport
@@ -2586,7 +2534,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<StartImportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartReplication
@@ -2636,7 +2583,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<StartReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartTest
@@ -2682,7 +2628,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<StartTestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopReplication
@@ -2732,7 +2677,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<StopReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2785,7 +2729,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TerminateTargetInstances
@@ -2831,7 +2774,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<TerminateTargetInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UnarchiveApplication
@@ -2874,7 +2816,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<UnarchiveApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UnarchiveWave
@@ -2917,7 +2858,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<UnarchiveWaveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2968,7 +2908,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplication
@@ -3012,7 +2951,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConnector
@@ -3055,7 +2993,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<UpdateConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLaunchConfiguration
@@ -3108,7 +3045,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<UpdateLaunchConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLaunchConfigurationTemplate
@@ -3154,7 +3090,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<UpdateLaunchConfigurationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateReplicationConfiguration
@@ -3204,7 +3139,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<UpdateReplicationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateReplicationConfigurationTemplate
@@ -3250,7 +3184,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<UpdateReplicationConfigurationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSourceServer
@@ -3294,7 +3227,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<UpdateSourceServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSourceServerReplicationType
@@ -3342,7 +3274,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<UpdateSourceServerReplicationTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWave
@@ -3386,7 +3317,6 @@ namespace Amazon.Mgn
 
             return InvokeAsync<UpdateWaveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

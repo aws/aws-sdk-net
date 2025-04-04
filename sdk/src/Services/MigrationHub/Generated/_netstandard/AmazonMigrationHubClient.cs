@@ -354,7 +354,6 @@ namespace Amazon.MigrationHub
 
             return InvokeAsync<AssociateCreatedArtifactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateDiscoveredResource
@@ -426,7 +425,6 @@ namespace Amazon.MigrationHub
 
             return InvokeAsync<AssociateDiscoveredResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateSourceResource
@@ -490,7 +488,6 @@ namespace Amazon.MigrationHub
 
             return InvokeAsync<AssociateSourceResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProgressUpdateStream
@@ -555,7 +552,6 @@ namespace Amazon.MigrationHub
 
             return InvokeAsync<CreateProgressUpdateStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProgressUpdateStream
@@ -653,7 +649,6 @@ namespace Amazon.MigrationHub
 
             return InvokeAsync<DeleteProgressUpdateStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApplicationState
@@ -716,7 +711,6 @@ namespace Amazon.MigrationHub
 
             return InvokeAsync<DescribeApplicationStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMigrationTask
@@ -774,7 +768,6 @@ namespace Amazon.MigrationHub
 
             return InvokeAsync<DescribeMigrationTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateCreatedArtifact
@@ -858,7 +851,6 @@ namespace Amazon.MigrationHub
 
             return InvokeAsync<DisassociateCreatedArtifactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateDiscoveredResource
@@ -925,7 +917,6 @@ namespace Amazon.MigrationHub
 
             return InvokeAsync<DisassociateDiscoveredResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateSourceResource
@@ -988,7 +979,6 @@ namespace Amazon.MigrationHub
 
             return InvokeAsync<DisassociateSourceResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportMigrationTask
@@ -1061,7 +1051,6 @@ namespace Amazon.MigrationHub
 
             return InvokeAsync<ImportMigrationTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplicationStates
@@ -1115,7 +1104,6 @@ namespace Amazon.MigrationHub
 
             return InvokeAsync<ListApplicationStatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCreatedArtifacts
@@ -1189,7 +1177,6 @@ namespace Amazon.MigrationHub
 
             return InvokeAsync<ListCreatedArtifactsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDiscoveredResources
@@ -1247,7 +1234,6 @@ namespace Amazon.MigrationHub
 
             return InvokeAsync<ListDiscoveredResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMigrationTasks
@@ -1325,7 +1311,6 @@ namespace Amazon.MigrationHub
 
             return InvokeAsync<ListMigrationTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMigrationTaskUpdates
@@ -1381,7 +1366,6 @@ namespace Amazon.MigrationHub
 
             return InvokeAsync<ListMigrationTaskUpdatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProgressUpdateStreams
@@ -1434,7 +1418,6 @@ namespace Amazon.MigrationHub
 
             return InvokeAsync<ListProgressUpdateStreamsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSourceResources
@@ -1490,7 +1473,6 @@ namespace Amazon.MigrationHub
 
             return InvokeAsync<ListSourceResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NotifyApplicationState
@@ -1563,7 +1545,6 @@ namespace Amazon.MigrationHub
 
             return InvokeAsync<NotifyApplicationStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NotifyMigrationTaskState
@@ -1646,7 +1627,6 @@ namespace Amazon.MigrationHub
 
             return InvokeAsync<NotifyMigrationTaskStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourceAttributes
@@ -1734,7 +1714,6 @@ namespace Amazon.MigrationHub
 
             return InvokeAsync<PutResourceAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

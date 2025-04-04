@@ -321,7 +321,6 @@ namespace Amazon.CloudHSM
 
             return InvokeAsync<AddTagsToResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateHapg
@@ -428,7 +427,6 @@ namespace Amazon.CloudHSM
 
             return InvokeAsync<CreateHapgResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateHsm
@@ -503,7 +501,6 @@ namespace Amazon.CloudHSM
 
             return InvokeAsync<CreateHsmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLunaClient
@@ -564,7 +561,6 @@ namespace Amazon.CloudHSM
 
             return InvokeAsync<CreateLunaClientResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteHapg
@@ -669,7 +665,6 @@ namespace Amazon.CloudHSM
 
             return InvokeAsync<DeleteHapgResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteHsm
@@ -776,7 +771,6 @@ namespace Amazon.CloudHSM
 
             return InvokeAsync<DeleteHsmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLunaClient
@@ -881,7 +875,6 @@ namespace Amazon.CloudHSM
 
             return InvokeAsync<DeleteLunaClientResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeHapg
@@ -986,7 +979,6 @@ namespace Amazon.CloudHSM
 
             return InvokeAsync<DescribeHapgResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeHsm
@@ -1093,7 +1085,6 @@ namespace Amazon.CloudHSM
 
             return InvokeAsync<DescribeHsmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLunaClient
@@ -1154,7 +1145,6 @@ namespace Amazon.CloudHSM
 
             return InvokeAsync<DescribeLunaClientResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfig
@@ -1216,7 +1206,6 @@ namespace Amazon.CloudHSM
 
             return InvokeAsync<GetConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAvailableZones
@@ -1319,7 +1308,6 @@ namespace Amazon.CloudHSM
 
             return InvokeAsync<ListAvailableZonesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHapgs
@@ -1436,7 +1424,6 @@ namespace Amazon.CloudHSM
 
             return InvokeAsync<ListHapgsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHsms
@@ -1553,7 +1540,6 @@ namespace Amazon.CloudHSM
 
             return InvokeAsync<ListHsmsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLunaClients
@@ -1670,7 +1656,6 @@ namespace Amazon.CloudHSM
 
             return InvokeAsync<ListLunaClientsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1731,7 +1716,6 @@ namespace Amazon.CloudHSM
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyHapg
@@ -1792,7 +1776,6 @@ namespace Amazon.CloudHSM
 
             return InvokeAsync<ModifyHapgResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyHsm
@@ -1861,7 +1844,6 @@ namespace Amazon.CloudHSM
 
             return InvokeAsync<ModifyHsmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyLunaClient
@@ -1921,7 +1903,6 @@ namespace Amazon.CloudHSM
 
             return InvokeAsync<ModifyLunaClientResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTagsFromResource
@@ -1987,7 +1968,6 @@ namespace Amazon.CloudHSM
 
             return InvokeAsync<RemoveTagsFromResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

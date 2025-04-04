@@ -30,7 +30,6 @@ namespace Amazon.Pipes
     /// <summary>
     /// Configuration for accessing Amazon Pipes service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonPipesConfig : ClientConfig
     {
         private static readonly string UserAgentString =

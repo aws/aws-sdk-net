@@ -314,7 +314,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<CreateTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkflow
@@ -360,7 +359,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<CreateWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkflowStep
@@ -406,7 +404,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<CreateWorkflowStepResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkflowStepGroup
@@ -452,7 +449,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<CreateWorkflowStepGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTemplate
@@ -501,7 +497,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<DeleteTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkflow
@@ -551,7 +546,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<DeleteWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkflowStep
@@ -600,7 +594,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<DeleteWorkflowStepResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkflowStepGroup
@@ -649,7 +642,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<DeleteWorkflowStepGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTemplate
@@ -695,7 +687,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<GetTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTemplateStep
@@ -744,7 +735,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<GetTemplateStepResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTemplateStepGroup
@@ -793,7 +783,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<GetTemplateStepGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkflow
@@ -842,7 +831,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<GetWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkflowStep
@@ -888,7 +876,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<GetWorkflowStepResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkflowStepGroup
@@ -937,7 +924,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<GetWorkflowStepGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPlugins
@@ -980,7 +966,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<ListPluginsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1020,7 +1005,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTemplates
@@ -1063,7 +1047,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<ListTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTemplateStepGroups
@@ -1109,7 +1092,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<ListTemplateStepGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTemplateSteps
@@ -1158,7 +1140,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<ListTemplateStepsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkflows
@@ -1207,7 +1188,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<ListWorkflowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkflowStepGroups
@@ -1256,7 +1236,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<ListWorkflowStepGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkflowSteps
@@ -1302,7 +1281,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<ListWorkflowStepsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RetryWorkflowStep
@@ -1348,7 +1326,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<RetryWorkflowStepResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartWorkflow
@@ -1397,7 +1374,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<StartWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopWorkflow
@@ -1446,7 +1422,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<StopWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1486,7 +1461,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1526,7 +1500,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTemplate
@@ -1575,7 +1548,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<UpdateTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkflow
@@ -1624,7 +1596,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<UpdateWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkflowStep
@@ -1670,7 +1641,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<UpdateWorkflowStepResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkflowStepGroup
@@ -1719,7 +1689,6 @@ namespace Amazon.MigrationHubOrchestrator
 
             return InvokeAsync<UpdateWorkflowStepGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

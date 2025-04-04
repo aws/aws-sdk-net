@@ -30,7 +30,6 @@ namespace Amazon.IoTTwinMaker
     /// <summary>
     /// Configuration for accessing Amazon IoTTwinMaker service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonIoTTwinMakerConfig : ClientConfig
     {
         private static readonly string UserAgentString =

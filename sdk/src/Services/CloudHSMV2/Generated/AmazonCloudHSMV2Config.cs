@@ -30,7 +30,6 @@ namespace Amazon.CloudHSMV2
     /// <summary>
     /// Configuration for accessing Amazon CloudHSMV2 service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCloudHSMV2Config : ClientConfig
     {
         private static readonly string UserAgentString =

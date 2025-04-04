@@ -32,7 +32,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// <summary>
     /// This is the response object from the OptimizePrompt operation.
     /// </summary>
-    public partial class OptimizePromptResponse : AmazonWebServiceResponse
+    public partial class OptimizePromptResponse : AmazonWebServiceResponse, IDisposable
     {
         private OptimizedPromptStream _optimizedPrompt;
 
@@ -55,5 +55,36 @@ namespace Amazon.BedrockAgentRuntime.Model
             return this._optimizedPrompt != null;
         }
 
+        #region Dispose Pattern
+
+        private bool _disposed;
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                this._optimizedPrompt?.Dispose();
+                this._optimizedPrompt = null;
+            }
+
+            this._disposed = true;
+         }
+
+         #endregion
     }
 }

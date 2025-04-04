@@ -337,7 +337,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<AssociateToConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateChimeWebhookConfiguration
@@ -386,7 +385,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<CreateChimeWebhookConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCustomAction
@@ -436,7 +434,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<CreateCustomActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMicrosoftTeamsChannelConfiguration
@@ -485,7 +482,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<CreateMicrosoftTeamsChannelConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSlackChannelConfiguration
@@ -534,7 +530,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<CreateSlackChannelConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteChimeWebhookConfiguration
@@ -580,7 +575,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<DeleteChimeWebhookConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCustomAction
@@ -627,7 +621,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<DeleteCustomActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMicrosoftTeamsChannelConfiguration
@@ -673,7 +666,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<DeleteMicrosoftTeamsChannelConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMicrosoftTeamsConfiguredTeam
@@ -715,7 +707,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<DeleteMicrosoftTeamsConfiguredTeamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMicrosoftTeamsUserIdentity
@@ -758,7 +749,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<DeleteMicrosoftTeamsUserIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSlackChannelConfiguration
@@ -804,7 +794,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<DeleteSlackChannelConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSlackUserIdentity
@@ -847,7 +836,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<DeleteSlackUserIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSlackWorkspaceAuthorization
@@ -888,7 +876,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<DeleteSlackWorkspaceAuthorizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeChimeWebhookConfigurations
@@ -931,7 +918,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<DescribeChimeWebhookConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSlackChannelConfigurations
@@ -974,7 +960,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<DescribeSlackChannelConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSlackUserIdentities
@@ -1017,7 +1002,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<DescribeSlackUserIdentitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSlackWorkspaces
@@ -1061,7 +1045,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<DescribeSlackWorkspacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateFromConfiguration
@@ -1105,7 +1088,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<DisassociateFromConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccountPreferences
@@ -1145,7 +1127,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<GetAccountPreferencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCustomAction
@@ -1192,7 +1173,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<GetCustomActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMicrosoftTeamsChannelConfiguration
@@ -1235,7 +1215,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<GetMicrosoftTeamsChannelConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssociations
@@ -1269,7 +1248,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<ListAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCustomActions
@@ -1313,7 +1291,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<ListCustomActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMicrosoftTeamsChannelConfigurations
@@ -1356,7 +1333,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<ListMicrosoftTeamsChannelConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMicrosoftTeamsConfiguredTeams
@@ -1399,7 +1375,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<ListMicrosoftTeamsConfiguredTeamsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMicrosoftTeamsUserIdentities
@@ -1442,7 +1417,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<ListMicrosoftTeamsUserIdentitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1486,7 +1460,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1533,7 +1506,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1577,7 +1549,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccountPreferences
@@ -1620,7 +1591,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<UpdateAccountPreferencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateChimeWebhookConfiguration
@@ -1666,7 +1636,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<UpdateChimeWebhookConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCustomAction
@@ -1713,7 +1682,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<UpdateCustomActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMicrosoftTeamsChannelConfiguration
@@ -1759,7 +1727,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<UpdateMicrosoftTeamsChannelConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSlackChannelConfiguration
@@ -1805,7 +1772,6 @@ namespace Amazon.Chatbot
 
             return InvokeAsync<UpdateSlackChannelConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

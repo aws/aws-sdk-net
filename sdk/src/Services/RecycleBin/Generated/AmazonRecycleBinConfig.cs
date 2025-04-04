@@ -30,7 +30,6 @@ namespace Amazon.RecycleBin
     /// <summary>
     /// Configuration for accessing Amazon RecycleBin service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonRecycleBinConfig : ClientConfig
     {
         private static readonly string UserAgentString =

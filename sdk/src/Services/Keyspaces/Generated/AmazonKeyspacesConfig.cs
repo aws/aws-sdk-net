@@ -30,7 +30,6 @@ namespace Amazon.Keyspaces
     /// <summary>
     /// Configuration for accessing Amazon Keyspaces service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonKeyspacesConfig : ClientConfig
     {
         private static readonly string UserAgentString =

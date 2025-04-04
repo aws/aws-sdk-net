@@ -30,7 +30,6 @@ namespace Amazon.MemoryDB
     /// <summary>
     /// Configuration for accessing Amazon MemoryDB service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMemoryDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -30,7 +30,6 @@ namespace Amazon.ServiceDiscovery
     /// <summary>
     /// Configuration for accessing Amazon ServiceDiscovery service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonServiceDiscoveryConfig : ClientConfig
     {
         private static readonly string UserAgentString =

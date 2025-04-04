@@ -307,7 +307,6 @@ namespace Amazon.HealthLake
 
             return InvokeAsync<CreateFHIRDatastoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFHIRDatastore
@@ -359,7 +358,6 @@ namespace Amazon.HealthLake
 
             return InvokeAsync<DeleteFHIRDatastoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFHIRDatastore
@@ -407,7 +405,6 @@ namespace Amazon.HealthLake
 
             return InvokeAsync<DescribeFHIRDatastoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFHIRExportJob
@@ -454,7 +451,6 @@ namespace Amazon.HealthLake
 
             return InvokeAsync<DescribeFHIRExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFHIRImportJob
@@ -501,7 +497,6 @@ namespace Amazon.HealthLake
 
             return InvokeAsync<DescribeFHIRImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFHIRDatastores
@@ -545,7 +540,6 @@ namespace Amazon.HealthLake
 
             return InvokeAsync<ListFHIRDatastoresResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFHIRExportJobs
@@ -594,7 +588,6 @@ namespace Amazon.HealthLake
 
             return InvokeAsync<ListFHIRExportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFHIRImportJobs
@@ -643,7 +636,6 @@ namespace Amazon.HealthLake
 
             return InvokeAsync<ListFHIRImportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -683,7 +675,6 @@ namespace Amazon.HealthLake
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartFHIRExportJob
@@ -732,7 +723,6 @@ namespace Amazon.HealthLake
 
             return InvokeAsync<StartFHIRExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartFHIRImportJob
@@ -781,7 +771,6 @@ namespace Amazon.HealthLake
 
             return InvokeAsync<StartFHIRImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -821,7 +810,6 @@ namespace Amazon.HealthLake
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -861,7 +849,6 @@ namespace Amazon.HealthLake
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

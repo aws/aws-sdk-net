@@ -373,7 +373,6 @@ namespace Amazon.SSOOIDC
 
             return InvokeAsync<CreateTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTokenWithIAM
@@ -454,7 +453,6 @@ namespace Amazon.SSOOIDC
 
             return InvokeAsync<CreateTokenWithIAMResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterClient
@@ -509,7 +507,6 @@ namespace Amazon.SSOOIDC
 
             return InvokeAsync<RegisterClientResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDeviceAuthorization
@@ -564,7 +561,6 @@ namespace Amazon.SSOOIDC
 
             return InvokeAsync<StartDeviceAuthorizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

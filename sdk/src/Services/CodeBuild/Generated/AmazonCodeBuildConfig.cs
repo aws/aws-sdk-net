@@ -30,7 +30,6 @@ namespace Amazon.CodeBuild
     /// <summary>
     /// Configuration for accessing Amazon CodeBuild service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCodeBuildConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -370,7 +370,6 @@ namespace Amazon.SimSpaceWeaver
 
             return InvokeAsync<CreateSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApp
@@ -419,7 +418,6 @@ namespace Amazon.SimSpaceWeaver
 
             return InvokeAsync<DeleteAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSimulation
@@ -475,7 +473,6 @@ namespace Amazon.SimSpaceWeaver
 
             return InvokeAsync<DeleteSimulationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApp
@@ -521,7 +518,6 @@ namespace Amazon.SimSpaceWeaver
 
             return InvokeAsync<DescribeAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSimulation
@@ -567,7 +563,6 @@ namespace Amazon.SimSpaceWeaver
 
             return InvokeAsync<DescribeSimulationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApps
@@ -613,7 +608,6 @@ namespace Amazon.SimSpaceWeaver
 
             return InvokeAsync<ListAppsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSimulations
@@ -657,7 +651,6 @@ namespace Amazon.SimSpaceWeaver
 
             return InvokeAsync<ListSimulationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -697,7 +690,6 @@ namespace Amazon.SimSpaceWeaver
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartApp
@@ -746,7 +738,6 @@ namespace Amazon.SimSpaceWeaver
 
             return InvokeAsync<StartAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartClock
@@ -795,7 +786,6 @@ namespace Amazon.SimSpaceWeaver
 
             return InvokeAsync<StartClockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSimulation
@@ -849,7 +839,6 @@ namespace Amazon.SimSpaceWeaver
 
             return InvokeAsync<StartSimulationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopApp
@@ -898,7 +887,6 @@ namespace Amazon.SimSpaceWeaver
 
             return InvokeAsync<StopAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopClock
@@ -947,7 +935,6 @@ namespace Amazon.SimSpaceWeaver
 
             return InvokeAsync<StopClockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopSimulation
@@ -1003,7 +990,6 @@ namespace Amazon.SimSpaceWeaver
 
             return InvokeAsync<StopSimulationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1047,7 +1033,6 @@ namespace Amazon.SimSpaceWeaver
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1089,7 +1074,6 @@ namespace Amazon.SimSpaceWeaver
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

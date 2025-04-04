@@ -373,7 +373,6 @@ namespace Amazon.KinesisVideoWebRTCStorage
 
             return InvokeAsync<JoinStorageSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  JoinStorageSessionAsViewer
@@ -440,7 +439,6 @@ namespace Amazon.KinesisVideoWebRTCStorage
 
             return InvokeAsync<JoinStorageSessionAsViewerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

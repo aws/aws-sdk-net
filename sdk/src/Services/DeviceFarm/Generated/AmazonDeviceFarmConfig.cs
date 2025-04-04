@@ -30,7 +30,6 @@ namespace Amazon.DeviceFarm
     /// <summary>
     /// Configuration for accessing Amazon DeviceFarm service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonDeviceFarmConfig : ClientConfig
     {
         private static readonly string UserAgentString =

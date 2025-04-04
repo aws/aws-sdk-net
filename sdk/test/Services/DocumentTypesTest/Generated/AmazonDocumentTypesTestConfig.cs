@@ -30,7 +30,6 @@ namespace Amazon.DocumentTypesTest
     /// <summary>
     /// Configuration for accessing Amazon DocumentTypesTest service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonDocumentTypesTestConfig : ClientConfig
     {
         private static readonly string UserAgentString =

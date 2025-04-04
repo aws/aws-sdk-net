@@ -30,7 +30,6 @@ namespace Amazon.CodePipeline
     /// <summary>
     /// Configuration for accessing Amazon CodePipeline service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCodePipelineConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -312,7 +312,6 @@ namespace Amazon.SageMakerGeospatial
 
             return InvokeAsync<DeleteEarthObservationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVectorEnrichmentJob
@@ -364,7 +363,6 @@ namespace Amazon.SageMakerGeospatial
 
             return InvokeAsync<DeleteVectorEnrichmentJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportEarthObservationJob
@@ -420,7 +418,6 @@ namespace Amazon.SageMakerGeospatial
 
             return InvokeAsync<ExportEarthObservationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportVectorEnrichmentJob
@@ -475,7 +472,6 @@ namespace Amazon.SageMakerGeospatial
 
             return InvokeAsync<ExportVectorEnrichmentJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEarthObservationJob
@@ -524,7 +520,6 @@ namespace Amazon.SageMakerGeospatial
 
             return InvokeAsync<GetEarthObservationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRasterDataCollection
@@ -573,7 +568,6 @@ namespace Amazon.SageMakerGeospatial
 
             return InvokeAsync<GetRasterDataCollectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTile
@@ -622,7 +616,6 @@ namespace Amazon.SageMakerGeospatial
 
             return InvokeAsync<GetTileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVectorEnrichmentJob
@@ -672,7 +665,6 @@ namespace Amazon.SageMakerGeospatial
 
             return InvokeAsync<GetVectorEnrichmentJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEarthObservationJobs
@@ -722,7 +714,6 @@ namespace Amazon.SageMakerGeospatial
 
             return InvokeAsync<ListEarthObservationJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRasterDataCollections
@@ -771,7 +762,6 @@ namespace Amazon.SageMakerGeospatial
 
             return InvokeAsync<ListRasterDataCollectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -820,7 +810,6 @@ namespace Amazon.SageMakerGeospatial
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVectorEnrichmentJobs
@@ -869,7 +858,6 @@ namespace Amazon.SageMakerGeospatial
 
             return InvokeAsync<ListVectorEnrichmentJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchRasterDataCollection
@@ -919,7 +907,6 @@ namespace Amazon.SageMakerGeospatial
 
             return InvokeAsync<SearchRasterDataCollectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartEarthObservationJob
@@ -974,7 +961,6 @@ namespace Amazon.SageMakerGeospatial
 
             return InvokeAsync<StartEarthObservationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartVectorEnrichmentJob
@@ -1030,7 +1016,6 @@ namespace Amazon.SageMakerGeospatial
 
             return InvokeAsync<StartVectorEnrichmentJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopEarthObservationJob
@@ -1082,7 +1067,6 @@ namespace Amazon.SageMakerGeospatial
 
             return InvokeAsync<StopEarthObservationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopVectorEnrichmentJob
@@ -1134,7 +1118,6 @@ namespace Amazon.SageMakerGeospatial
 
             return InvokeAsync<StopVectorEnrichmentJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1183,7 +1166,6 @@ namespace Amazon.SageMakerGeospatial
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1232,7 +1214,6 @@ namespace Amazon.SageMakerGeospatial
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

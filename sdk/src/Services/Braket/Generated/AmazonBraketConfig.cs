@@ -30,7 +30,6 @@ namespace Amazon.Braket
     /// <summary>
     /// Configuration for accessing Amazon Braket service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonBraketConfig : ClientConfig
     {
         private static readonly string UserAgentString =

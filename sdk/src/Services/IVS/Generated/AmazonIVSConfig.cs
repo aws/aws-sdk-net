@@ -30,7 +30,6 @@ namespace Amazon.IVS
     /// <summary>
     /// Configuration for accessing Amazon IVS service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonIVSConfig : ClientConfig
     {
         private static readonly string UserAgentString =

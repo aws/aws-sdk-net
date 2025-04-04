@@ -313,7 +313,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<GetApplicationComponentDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplicationComponentStrategies
@@ -357,7 +356,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<GetApplicationComponentStrategiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAssessment
@@ -404,7 +402,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<GetAssessmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetImportFileTask
@@ -454,7 +451,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<GetImportFileTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLatestAssessmentId
@@ -501,7 +497,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<GetLatestAssessmentIdResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPortfolioPreferences
@@ -548,7 +543,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<GetPortfolioPreferencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPortfolioSummary
@@ -593,7 +587,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<GetPortfolioSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRecommendationReportDetails
@@ -643,7 +636,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<GetRecommendationReportDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServerDetails
@@ -693,7 +685,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<GetServerDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServerStrategies
@@ -743,7 +734,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<GetServerStrategiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAnalyzableServers
@@ -791,7 +781,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<ListAnalyzableServersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplicationComponents
@@ -838,7 +827,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<ListApplicationComponentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCollectors
@@ -885,7 +873,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<ListCollectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImportFileTask
@@ -932,7 +919,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<ListImportFileTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServers
@@ -979,7 +965,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<ListServersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutPortfolioPreferences
@@ -1030,7 +1015,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<PutPortfolioPreferencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartAssessment
@@ -1078,7 +1062,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<StartAssessmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartImportFileTask
@@ -1129,7 +1112,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<StartImportFileTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartRecommendationReportGeneration
@@ -1180,7 +1162,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<StartRecommendationReportGenerationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopAssessment
@@ -1227,7 +1208,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<StopAssessmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplicationComponentConfig
@@ -1273,7 +1253,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<UpdateApplicationComponentConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServerConfig
@@ -1319,7 +1298,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
             return InvokeAsync<UpdateServerConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

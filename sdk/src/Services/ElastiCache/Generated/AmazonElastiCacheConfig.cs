@@ -30,7 +30,6 @@ namespace Amazon.ElastiCache
     /// <summary>
     /// Configuration for accessing Amazon ElastiCache service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonElastiCacheConfig : ClientConfig
     {
         private static readonly string UserAgentString =

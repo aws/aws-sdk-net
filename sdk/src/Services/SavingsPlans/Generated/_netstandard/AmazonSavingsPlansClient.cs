@@ -292,7 +292,6 @@ namespace Amazon.SavingsPlans
 
             return InvokeAsync<CreateSavingsPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteQueuedSavingsPlan
@@ -338,7 +337,6 @@ namespace Amazon.SavingsPlans
 
             return InvokeAsync<DeleteQueuedSavingsPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSavingsPlanRates
@@ -378,7 +376,6 @@ namespace Amazon.SavingsPlans
 
             return InvokeAsync<DescribeSavingsPlanRatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSavingsPlans
@@ -418,7 +415,6 @@ namespace Amazon.SavingsPlans
 
             return InvokeAsync<DescribeSavingsPlansResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSavingsPlansOfferingRates
@@ -458,7 +454,6 @@ namespace Amazon.SavingsPlans
 
             return InvokeAsync<DescribeSavingsPlansOfferingRatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSavingsPlansOfferings
@@ -498,7 +493,6 @@ namespace Amazon.SavingsPlans
 
             return InvokeAsync<DescribeSavingsPlansOfferingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -541,7 +535,6 @@ namespace Amazon.SavingsPlans
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReturnSavingsPlan
@@ -587,7 +580,6 @@ namespace Amazon.SavingsPlans
 
             return InvokeAsync<ReturnSavingsPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -633,7 +625,6 @@ namespace Amazon.SavingsPlans
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -676,7 +667,6 @@ namespace Amazon.SavingsPlans
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

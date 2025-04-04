@@ -343,7 +343,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<AddFacetToObjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ApplySchema
@@ -419,7 +418,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<ApplySchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachObject
@@ -511,7 +509,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<AttachObjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachPolicy
@@ -584,7 +581,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<AttachPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachToIndex
@@ -669,7 +665,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<AttachToIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachTypedLink
@@ -749,7 +744,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<AttachTypedLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchRead
@@ -815,7 +809,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<BatchReadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchWrite
@@ -885,7 +878,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<BatchWriteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDirectory
@@ -963,7 +955,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<CreateDirectoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFacet
@@ -1040,7 +1031,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<CreateFacetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIndex
@@ -1121,7 +1111,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<CreateIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateObject
@@ -1204,7 +1193,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<CreateObjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSchema
@@ -1289,7 +1277,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<CreateSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTypedLinkFacet
@@ -1366,7 +1353,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<CreateTypedLinkFacetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDirectory
@@ -1440,7 +1426,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<DeleteDirectoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFacet
@@ -1514,7 +1499,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<DeleteFacetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteObject
@@ -1590,7 +1574,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<DeleteObjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSchema
@@ -1660,7 +1643,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<DeleteSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTypedLinkFacet
@@ -1730,7 +1712,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<DeleteTypedLinkFacetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachFromIndex
@@ -1805,7 +1786,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<DetachFromIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachObject
@@ -1879,7 +1859,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<DetachObjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachPolicy
@@ -1951,7 +1930,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<DetachPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachTypedLink
@@ -2026,7 +2004,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<DetachTypedLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableDirectory
@@ -2097,7 +2074,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<DisableDirectoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableDirectory
@@ -2168,7 +2144,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<EnableDirectoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAppliedSchemaVersion
@@ -2234,7 +2209,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<GetAppliedSchemaVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDirectory
@@ -2297,7 +2271,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<GetDirectoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFacet
@@ -2368,7 +2341,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<GetFacetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLinkAttributes
@@ -2441,7 +2413,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<GetLinkAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetObjectAttributes
@@ -2514,7 +2485,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<GetObjectAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetObjectInformation
@@ -2583,7 +2553,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<GetObjectInformationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSchemaAsJson
@@ -2650,7 +2619,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<GetSchemaAsJsonResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTypedLinkFacetInformation
@@ -2724,7 +2692,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<GetTypedLinkFacetInformationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAppliedSchemaArns
@@ -2794,7 +2761,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<ListAppliedSchemaArnsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAttachedIndices
@@ -2863,7 +2829,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<ListAttachedIndicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDevelopmentSchemaArns
@@ -2932,7 +2897,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<ListDevelopmentSchemaArnsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDirectories
@@ -2998,7 +2962,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<ListDirectoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFacetAttributes
@@ -3070,7 +3033,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<ListFacetAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFacetNames
@@ -3139,7 +3101,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<ListFacetNamesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIncomingTypedLinks
@@ -3218,7 +3179,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<ListIncomingTypedLinksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIndex
@@ -3297,7 +3257,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<ListIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListManagedSchemaArns
@@ -3355,7 +3314,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<ListManagedSchemaArnsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListObjectAttributes
@@ -3431,7 +3389,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<ListObjectAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListObjectChildren
@@ -3507,7 +3464,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<ListObjectChildrenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListObjectParentPaths
@@ -3591,7 +3547,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<ListObjectParentPathsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListObjectParents
@@ -3666,7 +3621,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<ListObjectParentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListObjectPolicies
@@ -3738,7 +3692,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<ListObjectPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOutgoingTypedLinks
@@ -3817,7 +3770,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<ListOutgoingTypedLinksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPolicyAttachments
@@ -3892,7 +3844,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<ListPolicyAttachmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPublishedSchemaArns
@@ -3963,7 +3914,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<ListPublishedSchemaArnsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -4036,7 +3986,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTypedLinkFacetAttributes
@@ -4110,7 +4059,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<ListTypedLinkFacetAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTypedLinkFacetNames
@@ -4181,7 +4129,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<ListTypedLinkFacetNamesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  LookupPolicy
@@ -4258,7 +4205,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<LookupPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PublishSchema
@@ -4327,7 +4273,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<PublishSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutSchemaFromJson
@@ -4398,7 +4343,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<PutSchemaFromJsonResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveFacetFromObject
@@ -4471,7 +4415,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<RemoveFacetFromObjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -4542,7 +4485,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -4613,7 +4555,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFacet
@@ -4706,7 +4647,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<UpdateFacetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLinkAttributes
@@ -4780,7 +4720,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<UpdateLinkAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateObjectAttributes
@@ -4857,7 +4796,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<UpdateObjectAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSchema
@@ -4923,7 +4861,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<UpdateSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTypedLinkFacet
@@ -5003,7 +4940,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<UpdateTypedLinkFacetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpgradeAppliedSchema
@@ -5083,7 +5019,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<UpgradeAppliedSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpgradePublishedSchema
@@ -5159,7 +5094,6 @@ namespace Amazon.CloudDirectory
 
             return InvokeAsync<UpgradePublishedSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

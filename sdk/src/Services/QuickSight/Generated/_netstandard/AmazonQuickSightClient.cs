@@ -318,7 +318,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<BatchCreateTopicReviewedAnswerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteTopicReviewedAnswer
@@ -373,7 +372,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<BatchDeleteTopicReviewedAnswerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelIngestion
@@ -428,7 +426,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CancelIngestionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAccountCustomization
@@ -511,7 +508,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateAccountCustomizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAccountSubscription
@@ -611,7 +607,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateAccountSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAnalysis
@@ -673,7 +668,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBrand
@@ -729,7 +723,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateBrandResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCustomPermissions
@@ -796,7 +789,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateCustomPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDashboard
@@ -868,7 +860,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateDashboardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataSet
@@ -936,7 +927,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateDataSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataSource
@@ -1000,7 +990,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFolder
@@ -1067,7 +1056,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateFolderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFolderMembership
@@ -1131,7 +1119,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateFolderMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGroup
@@ -1207,7 +1194,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGroupMembership
@@ -1265,7 +1251,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateGroupMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIAMPolicyAssignment
@@ -1327,7 +1312,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateIAMPolicyAssignmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIngestion
@@ -1397,7 +1381,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateIngestionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNamespace
@@ -1476,7 +1459,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRefreshSchedule
@@ -1538,7 +1520,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateRefreshScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRoleMembership
@@ -1597,7 +1578,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateRoleMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTemplate
@@ -1676,7 +1656,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTemplateAlias
@@ -1734,7 +1713,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateTemplateAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTheme
@@ -1805,7 +1783,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateThemeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateThemeAlias
@@ -1866,7 +1843,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateThemeAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTopic
@@ -1927,7 +1903,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateTopicResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTopicRefreshSchedule
@@ -1988,7 +1963,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateTopicRefreshScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVPCConnection
@@ -2052,7 +2026,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<CreateVPCConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccountCustomization
@@ -2117,7 +2090,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteAccountCustomizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccountSubscription
@@ -2180,7 +2152,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteAccountSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAnalysis
@@ -2253,7 +2224,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBrand
@@ -2309,7 +2279,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteBrandResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBrandAssignment
@@ -2365,7 +2334,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteBrandAssignmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCustomPermissions
@@ -2429,7 +2397,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteCustomPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDashboard
@@ -2484,7 +2451,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteDashboardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataSet
@@ -2536,7 +2502,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteDataSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataSetRefreshProperties
@@ -2594,7 +2559,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteDataSetRefreshPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataSource
@@ -2647,7 +2611,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDefaultQBusinessApplication
@@ -2699,7 +2662,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteDefaultQBusinessApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFolder
@@ -2763,7 +2725,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteFolderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFolderMembership
@@ -2821,7 +2782,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteFolderMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGroup
@@ -2879,7 +2839,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGroupMembership
@@ -2937,7 +2896,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteGroupMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIAMPolicyAssignment
@@ -2996,7 +2954,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteIAMPolicyAssignmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIdentityPropagationConfig
@@ -3055,7 +3012,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteIdentityPropagationConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNamespace
@@ -3116,7 +3072,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRefreshSchedule
@@ -3171,7 +3126,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteRefreshScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRoleCustomPermission
@@ -3229,7 +3183,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteRoleCustomPermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRoleMembership
@@ -3287,7 +3240,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteRoleMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTemplate
@@ -3345,7 +3297,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTemplateAlias
@@ -3398,7 +3349,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteTemplateAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTheme
@@ -3459,7 +3409,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteThemeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteThemeAlias
@@ -3516,7 +3465,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteThemeAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTopic
@@ -3571,7 +3519,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteTopicResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTopicRefreshSchedule
@@ -3632,7 +3579,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteTopicRefreshScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUser
@@ -3692,7 +3638,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUserByPrincipalId
@@ -3750,7 +3695,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteUserByPrincipalIdResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUserCustomPermission
@@ -3811,7 +3755,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteUserCustomPermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVPCConnection
@@ -3872,7 +3815,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DeleteVPCConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountCustomization
@@ -3995,7 +3937,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeAccountCustomizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountSettings
@@ -4051,7 +3992,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeAccountSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountSubscription
@@ -4109,7 +4049,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeAccountSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAnalysis
@@ -4167,7 +4106,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAnalysisDefinition
@@ -4240,7 +4178,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeAnalysisDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAnalysisPermissions
@@ -4292,7 +4229,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeAnalysisPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAssetBundleExportJob
@@ -4350,7 +4286,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeAssetBundleExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAssetBundleImportJob
@@ -4402,7 +4337,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeAssetBundleImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBrand
@@ -4458,7 +4392,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeBrandResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBrandAssignment
@@ -4514,7 +4447,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeBrandAssignmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBrandPublishedVersion
@@ -4570,7 +4502,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeBrandPublishedVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCustomPermissions
@@ -4628,7 +4559,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeCustomPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDashboard
@@ -4686,7 +4616,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeDashboardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDashboardDefinition
@@ -4759,7 +4688,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeDashboardDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDashboardPermissions
@@ -4811,7 +4739,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeDashboardPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDashboardSnapshotJob
@@ -4872,7 +4799,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeDashboardSnapshotJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDashboardSnapshotJobResult
@@ -4944,7 +4870,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeDashboardSnapshotJobResultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDashboardsQAConfiguration
@@ -4999,7 +4924,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeDashboardsQAConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataSet
@@ -5052,7 +4976,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeDataSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataSetPermissions
@@ -5109,7 +5032,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeDataSetPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataSetRefreshProperties
@@ -5167,7 +5089,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeDataSetRefreshPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataSource
@@ -5219,7 +5140,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataSourcePermissions
@@ -5271,7 +5191,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeDataSourcePermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDefaultQBusinessApplication
@@ -5323,7 +5242,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeDefaultQBusinessApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFolder
@@ -5381,7 +5299,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeFolderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFolderPermissions
@@ -5442,7 +5359,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeFolderPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFolderResolvedPermissions
@@ -5504,7 +5420,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeFolderResolvedPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGroup
@@ -5562,7 +5477,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGroupMembership
@@ -5622,7 +5536,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeGroupMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeIAMPolicyAssignment
@@ -5677,7 +5590,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeIAMPolicyAssignmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeIngestion
@@ -5732,7 +5644,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeIngestionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeIpRestriction
@@ -5784,7 +5695,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeIpRestrictionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeKeyRegistration
@@ -5833,7 +5743,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeKeyRegistrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeNamespace
@@ -5888,7 +5797,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeQPersonalizationConfiguration
@@ -5943,7 +5851,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeQPersonalizationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeQuickSightQSearchConfiguration
@@ -5998,7 +5905,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeQuickSightQSearchConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRefreshSchedule
@@ -6053,7 +5959,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeRefreshScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRoleCustomPermission
@@ -6111,7 +6016,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeRoleCustomPermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTemplate
@@ -6175,7 +6079,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTemplateAlias
@@ -6224,7 +6127,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeTemplateAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTemplateDefinition
@@ -6297,7 +6199,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeTemplateDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTemplatePermissions
@@ -6352,7 +6253,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeTemplatePermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTheme
@@ -6413,7 +6313,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeThemeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeThemeAlias
@@ -6468,7 +6367,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeThemeAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeThemePermissions
@@ -6526,7 +6424,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeThemePermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTopic
@@ -6578,7 +6475,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeTopicResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTopicPermissions
@@ -6630,7 +6526,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeTopicPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTopicRefresh
@@ -6682,7 +6577,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeTopicRefreshResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTopicRefreshSchedule
@@ -6743,7 +6637,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeTopicRefreshScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUser
@@ -6801,7 +6694,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVPCConnection
@@ -6859,7 +6751,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<DescribeVPCConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateEmbedUrlForAnonymousUser
@@ -6968,7 +6859,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<GenerateEmbedUrlForAnonymousUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateEmbedUrlForRegisteredUser
@@ -7087,7 +6977,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<GenerateEmbedUrlForRegisteredUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateEmbedUrlForRegisteredUserWithIdentity
@@ -7182,7 +7071,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<GenerateEmbedUrlForRegisteredUserWithIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDashboardEmbedUrl
@@ -7315,7 +7203,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<GetDashboardEmbedUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSessionEmbedUrl
@@ -7406,7 +7293,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<GetSessionEmbedUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAnalyses
@@ -7455,7 +7341,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListAnalysesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssetBundleExportJobs
@@ -7513,7 +7398,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListAssetBundleExportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssetBundleImportJobs
@@ -7571,7 +7455,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListAssetBundleImportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBrands
@@ -7621,7 +7504,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListBrandsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCustomPermissions
@@ -7679,7 +7561,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListCustomPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDashboards
@@ -7728,7 +7609,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListDashboardsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDashboardVersions
@@ -7783,7 +7663,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListDashboardVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataSets
@@ -7841,7 +7720,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListDataSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataSources
@@ -7894,7 +7772,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListDataSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFolderMembers
@@ -7955,7 +7832,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListFolderMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFolders
@@ -8016,7 +7892,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListFoldersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFoldersForResource
@@ -8077,7 +7952,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListFoldersForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroupMemberships
@@ -8138,7 +8012,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListGroupMembershipsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroups
@@ -8199,7 +8072,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIAMPolicyAssignments
@@ -8254,7 +8126,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListIAMPolicyAssignmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIAMPolicyAssignmentsForUser
@@ -8315,7 +8186,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListIAMPolicyAssignmentsForUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIdentityPropagationConfigs
@@ -8374,7 +8244,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListIdentityPropagationConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIngestions
@@ -8432,7 +8301,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListIngestionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNamespaces
@@ -8494,7 +8362,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListNamespacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRefreshSchedules
@@ -8549,7 +8416,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListRefreshSchedulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRoleMemberships
@@ -8613,7 +8479,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListRoleMembershipsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -8665,7 +8530,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTemplateAliases
@@ -8717,7 +8581,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListTemplateAliasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTemplates
@@ -8772,7 +8635,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTemplateVersions
@@ -8827,7 +8689,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListTemplateVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListThemeAliases
@@ -8885,7 +8746,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListThemeAliasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListThemes
@@ -8946,7 +8806,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListThemesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListThemeVersions
@@ -9007,7 +8866,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListThemeVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTopicRefreshSchedules
@@ -9068,7 +8926,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListTopicRefreshSchedulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTopicReviewedAnswers
@@ -9120,7 +8977,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListTopicReviewedAnswersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTopics
@@ -9172,7 +9028,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListTopicsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUserGroups
@@ -9230,7 +9085,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListUserGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUsers
@@ -9291,7 +9145,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVPCConnections
@@ -9350,7 +9203,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<ListVPCConnectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PredictQAResults
@@ -9399,7 +9251,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<PredictQAResultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDataSetRefreshProperties
@@ -9460,7 +9311,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<PutDataSetRefreshPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterUser
@@ -9532,7 +9382,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<RegisterUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreAnalysis
@@ -9593,7 +9442,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<RestoreAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchAnalyses
@@ -9655,7 +9503,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<SearchAnalysesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchDashboards
@@ -9717,7 +9564,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<SearchDashboardsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchDataSets
@@ -9772,7 +9618,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<SearchDataSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchDataSources
@@ -9828,7 +9673,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<SearchDataSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchFolders
@@ -9893,7 +9737,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<SearchFoldersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchGroups
@@ -9955,7 +9798,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<SearchGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchTopics
@@ -10010,7 +9852,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<SearchTopicsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartAssetBundleExportJob
@@ -10086,7 +9927,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<StartAssetBundleExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartAssetBundleImportJob
@@ -10162,7 +10002,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<StartAssetBundleImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDashboardSnapshotJob
@@ -10354,7 +10193,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<StartDashboardSnapshotJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDashboardSnapshotJobSchedule
@@ -10429,7 +10267,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<StartDashboardSnapshotJobScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -10517,7 +10354,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -10569,7 +10405,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccountCustomization
@@ -10637,7 +10472,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateAccountCustomizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccountSettings
@@ -10692,7 +10526,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateAccountSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAnalysis
@@ -10750,7 +10583,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAnalysisPermissions
@@ -10808,7 +10640,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateAnalysisPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplicationWithTokenExchangeGrant
@@ -10869,7 +10700,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateApplicationWithTokenExchangeGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBrand
@@ -10925,7 +10755,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateBrandResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBrandAssignment
@@ -10981,7 +10810,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateBrandAssignmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBrandPublishedVersion
@@ -11037,7 +10865,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateBrandPublishedVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCustomPermissions
@@ -11098,7 +10925,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateCustomPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDashboard
@@ -11165,7 +10991,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateDashboardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDashboardLinks
@@ -11226,7 +11051,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateDashboardLinksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDashboardPermissions
@@ -11284,7 +11108,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateDashboardPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDashboardPublishedVersion
@@ -11339,7 +11162,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateDashboardPublishedVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDashboardsQAConfiguration
@@ -11394,7 +11216,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateDashboardsQAConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataSet
@@ -11459,7 +11280,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateDataSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataSetPermissions
@@ -11519,7 +11339,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateDataSetPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataSource
@@ -11577,7 +11396,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataSourcePermissions
@@ -11632,7 +11450,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateDataSourcePermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDefaultQBusinessApplication
@@ -11687,7 +11504,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateDefaultQBusinessApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFolder
@@ -11751,7 +11567,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateFolderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFolderPermissions
@@ -11812,7 +11627,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateFolderPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGroup
@@ -11870,7 +11684,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIAMPolicyAssignment
@@ -11931,7 +11744,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateIAMPolicyAssignmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIdentityPropagationConfig
@@ -11990,7 +11802,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateIdentityPropagationConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIpRestriction
@@ -12049,7 +11860,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateIpRestrictionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateKeyRegistration
@@ -12098,7 +11908,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateKeyRegistrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePublicSharingSettings
@@ -12177,7 +11986,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdatePublicSharingSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQPersonalizationConfiguration
@@ -12235,7 +12043,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateQPersonalizationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQuickSightQSearchConfiguration
@@ -12290,7 +12097,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateQuickSightQSearchConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRefreshSchedule
@@ -12348,7 +12154,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateRefreshScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRoleCustomPermission
@@ -12406,7 +12211,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateRoleCustomPermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSPICECapacityConfiguration
@@ -12458,7 +12262,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateSPICECapacityConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTemplate
@@ -12519,7 +12322,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTemplateAlias
@@ -12571,7 +12373,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateTemplateAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTemplatePermissions
@@ -12629,7 +12430,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateTemplatePermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTheme
@@ -12693,7 +12493,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateThemeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateThemeAlias
@@ -12751,7 +12550,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateThemeAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateThemePermissions
@@ -12892,7 +12690,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateThemePermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTopic
@@ -12953,7 +12750,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateTopicResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTopicPermissions
@@ -13017,7 +12813,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateTopicPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTopicRefreshSchedule
@@ -13078,7 +12873,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateTopicRefreshScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUser
@@ -13136,7 +12930,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUserCustomPermission
@@ -13197,7 +12990,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateUserCustomPermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVPCConnection
@@ -13261,7 +13053,6 @@ namespace Amazon.QuickSight
 
             return InvokeAsync<UpdateVPCConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

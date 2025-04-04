@@ -30,7 +30,6 @@ namespace Amazon.ManagedBlockchain
     /// <summary>
     /// Configuration for accessing Amazon ManagedBlockchain service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonManagedBlockchainConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -30,7 +30,6 @@ namespace Amazon.SavingsPlans
     /// <summary>
     /// Configuration for accessing Amazon SavingsPlans service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSavingsPlansConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -340,7 +340,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<CreateSignalingChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStream
@@ -436,7 +435,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<CreateStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEdgeConfiguration
@@ -502,7 +500,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<DeleteEdgeConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSignalingChannel
@@ -579,7 +576,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<DeleteSignalingChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStream
@@ -675,7 +671,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<DeleteStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEdgeConfiguration
@@ -729,7 +724,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<DescribeEdgeConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeImageGenerationConfiguration
@@ -776,7 +770,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<DescribeImageGenerationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMappedResourceConfiguration
@@ -824,7 +817,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<DescribeMappedResourceConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMediaStorageConfiguration
@@ -872,7 +864,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<DescribeMediaStorageConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeNotificationConfiguration
@@ -919,7 +910,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<DescribeNotificationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSignalingChannel
@@ -968,7 +958,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<DescribeSignalingChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStream
@@ -1016,7 +1005,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<DescribeStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataEndpoint
@@ -1076,7 +1064,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<GetDataEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSignalingChannelEndpoint
@@ -1163,7 +1150,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<GetSignalingChannelEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEdgeAgentConfigurations
@@ -1212,7 +1198,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<ListEdgeAgentConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSignalingChannels
@@ -1258,7 +1243,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<ListSignalingChannelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStreams
@@ -1300,7 +1284,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<ListStreamsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1347,7 +1330,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForStream
@@ -1403,7 +1385,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<ListTagsForStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartEdgeConfigurationUpdate
@@ -1498,7 +1479,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<StartEdgeConfigurationUpdateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1554,7 +1534,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagStream
@@ -1626,7 +1605,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<TagStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1675,7 +1653,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagStream
@@ -1732,7 +1709,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<UntagStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataRetention
@@ -1834,7 +1810,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<UpdateDataRetentionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateImageGenerationConfiguration
@@ -1907,7 +1882,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<UpdateImageGenerationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMediaStorageConfiguration
@@ -2001,7 +1975,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<UpdateMediaStorageConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNotificationConfiguration
@@ -2074,7 +2047,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<UpdateNotificationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSignalingChannel
@@ -2157,7 +2129,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<UpdateSignalingChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStream
@@ -2248,7 +2219,6 @@ namespace Amazon.KinesisVideo
 
             return InvokeAsync<UpdateStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

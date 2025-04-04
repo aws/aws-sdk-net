@@ -30,7 +30,6 @@ namespace Amazon.DSQL
     /// <summary>
     /// Configuration for accessing Amazon DSQL service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonDSQLConfig : ClientConfig
     {
         private static readonly string UserAgentString =

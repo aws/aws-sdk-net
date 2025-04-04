@@ -393,7 +393,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AddCustomAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminAddUserToGroup
@@ -470,7 +469,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminAddUserToGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminConfirmSignUp
@@ -575,7 +573,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminConfirmSignUpResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminCreateUser
@@ -733,7 +730,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminCreateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminDeleteUser
@@ -808,7 +804,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminDeleteUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminDeleteUserAttributes
@@ -885,7 +880,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminDeleteUserAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminDisableProviderForUser
@@ -999,7 +993,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminDisableProviderForUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminDisableUser
@@ -1075,7 +1068,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminDisableUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminEnableUser
@@ -1150,7 +1142,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminEnableUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminForgetDevice
@@ -1231,7 +1222,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminForgetDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminGetDevice
@@ -1308,7 +1298,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminGetDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminGetUser
@@ -1389,7 +1378,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminGetUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminInitiateAuth
@@ -1527,7 +1515,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminInitiateAuthResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminLinkProviderForUser
@@ -1634,7 +1621,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminLinkProviderForUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminListDevices
@@ -1713,7 +1699,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminListDevicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminListGroupsForUser
@@ -1791,7 +1776,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminListGroupsForUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminListUserAuthEvents
@@ -1871,7 +1855,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminListUserAuthEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminRemoveUserFromGroup
@@ -1950,7 +1933,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminRemoveUserFromGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminResetUserPassword
@@ -2081,7 +2063,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminResetUserPasswordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminRespondToAuthChallenge
@@ -2248,7 +2229,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminRespondToAuthChallengeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminSetUserMFAPreference
@@ -2330,7 +2310,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminSetUserMFAPreferenceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminSetUserPassword
@@ -2447,7 +2426,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminSetUserPasswordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminSetUserSettings
@@ -2520,7 +2498,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminSetUserSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminUpdateAuthEventFeedback
@@ -2610,7 +2587,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminUpdateAuthEventFeedbackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminUpdateDeviceStatus
@@ -2694,7 +2670,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminUpdateDeviceStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminUpdateUserAttributes
@@ -2835,7 +2810,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminUpdateUserAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdminUserGlobalSignOut
@@ -2942,7 +2916,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AdminUserGlobalSignOutResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateSoftwareToken
@@ -3018,7 +2991,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<AssociateSoftwareTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ChangePassword
@@ -3107,7 +3079,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<ChangePasswordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CompleteWebAuthnRegistration
@@ -3190,7 +3161,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<CompleteWebAuthnRegistrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConfirmDevice
@@ -3289,7 +3259,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<ConfirmDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConfirmForgotPassword
@@ -3392,7 +3361,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<ConfirmForgotPasswordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConfirmSignUp
@@ -3502,7 +3470,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<ConfirmSignUpResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGroup
@@ -3584,7 +3551,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<CreateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIdentityProvider
@@ -3667,7 +3633,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<CreateIdentityProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateManagedLoginBranding
@@ -3768,7 +3733,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<CreateManagedLoginBrandingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateResourceServer
@@ -3847,7 +3811,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<CreateResourceServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUserImportJob
@@ -3928,7 +3891,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<CreateUserImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUserPool
@@ -4052,7 +4014,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<CreateUserPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUserPoolClient
@@ -4147,7 +4108,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<CreateUserPoolClientResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUserPoolDomain
@@ -4240,7 +4200,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<CreateUserPoolDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGroup
@@ -4316,7 +4275,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<DeleteGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIdentityProvider
@@ -4397,7 +4355,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<DeleteIdentityProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteManagedLoginBranding
@@ -4475,7 +4432,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<DeleteManagedLoginBrandingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourceServer
@@ -4554,7 +4510,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<DeleteResourceServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUser
@@ -4633,7 +4588,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUserAttributes
@@ -4713,7 +4667,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<DeleteUserAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUserPool
@@ -4783,7 +4736,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<DeleteUserPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUserPoolClient
@@ -4837,7 +4789,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<DeleteUserPoolClientResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUserPoolDomain
@@ -4886,7 +4837,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<DeleteUserPoolDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWebAuthnCredential
@@ -4953,7 +4903,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<DeleteWebAuthnCredentialResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeIdentityProvider
@@ -5003,7 +4952,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<DescribeIdentityProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeManagedLoginBranding
@@ -5054,7 +5002,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<DescribeManagedLoginBrandingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeManagedLoginBrandingByClient
@@ -5105,7 +5052,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<DescribeManagedLoginBrandingByClientResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeResourceServer
@@ -5156,7 +5102,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<DescribeResourceServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRiskConfiguration
@@ -5213,7 +5158,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<DescribeRiskConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUserImportJob
@@ -5264,7 +5208,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<DescribeUserImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUserPool
@@ -5341,7 +5284,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<DescribeUserPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUserPoolClient
@@ -5417,7 +5359,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<DescribeUserPoolClientResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUserPoolDomain
@@ -5486,7 +5427,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<DescribeUserPoolDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ForgetDevice
@@ -5569,7 +5509,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<ForgetDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ForgotPassword
@@ -5699,7 +5638,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<ForgotPasswordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCSVHeader
@@ -5777,7 +5715,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<GetCSVHeaderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDevice
@@ -5860,7 +5797,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<GetDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGroup
@@ -5937,7 +5873,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<GetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIdentityProviderByIdentifier
@@ -5990,7 +5925,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<GetIdentityProviderByIdentifierResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLogDeliveryConfiguration
@@ -6065,7 +5999,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<GetLogDeliveryConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSigningCertificate
@@ -6143,7 +6076,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<GetSigningCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUICustomization
@@ -6198,7 +6130,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<GetUICustomizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUser
@@ -6276,7 +6207,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<GetUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUserAttributeVerificationCode
@@ -6408,7 +6338,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<GetUserAttributeVerificationCodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUserAuthFactors
@@ -6494,7 +6423,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<GetUserAuthFactorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUserPoolMfaConfig
@@ -6583,7 +6511,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<GetUserPoolMfaConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GlobalSignOut
@@ -6690,7 +6617,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<GlobalSignOutResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InitiateAuth
@@ -6815,7 +6741,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<InitiateAuthResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDevices
@@ -6898,7 +6823,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<ListDevicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroups
@@ -6970,7 +6894,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<ListGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIdentityProviders
@@ -7044,7 +6967,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<ListIdentityProvidersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceServers
@@ -7118,7 +7040,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<ListResourceServersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -7170,7 +7091,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUserImportJobs
@@ -7245,7 +7165,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<ListUserImportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUserPoolClients
@@ -7320,7 +7239,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<ListUserPoolClientsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUserPools
@@ -7388,7 +7306,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<ListUserPoolsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUsers
@@ -7460,7 +7377,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<ListUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUsersInGroup
@@ -7534,7 +7450,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<ListUsersInGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWebAuthnCredentials
@@ -7597,7 +7512,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<ListWebAuthnCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResendConfirmationCode
@@ -7720,7 +7634,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<ResendConfirmationCodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RespondToAuthChallenge
@@ -7879,7 +7792,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<RespondToAuthChallengeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RevokeToken
@@ -7949,7 +7861,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<RevokeTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetLogDeliveryConfiguration
@@ -8006,7 +7917,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<SetLogDeliveryConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetRiskConfiguration
@@ -8094,7 +8004,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<SetRiskConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetUICustomization
@@ -8173,7 +8082,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<SetUICustomizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetUserMFAPreference
@@ -8256,7 +8164,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<SetUserMFAPreferenceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetUserPoolMfaConfig
@@ -8349,7 +8256,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<SetUserPoolMfaConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetUserSettings
@@ -8426,7 +8332,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<SetUserSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SignUp
@@ -8557,7 +8462,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<SignUpResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartUserImportJob
@@ -8613,7 +8517,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<StartUserImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartWebAuthnRegistration
@@ -8683,7 +8586,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<StartWebAuthnRegistrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopUserImportJob
@@ -8739,7 +8641,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<StopUserImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -8812,7 +8713,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -8862,7 +8762,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAuthEventFeedback
@@ -8942,7 +8841,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<UpdateAuthEventFeedbackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDeviceStatus
@@ -9029,7 +8927,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<UpdateDeviceStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGroup
@@ -9103,7 +9000,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<UpdateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIdentityProvider
@@ -9185,7 +9081,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<UpdateIdentityProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateManagedLoginBranding
@@ -9274,7 +9169,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<UpdateManagedLoginBrandingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResourceServer
@@ -9352,7 +9246,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<UpdateResourceServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUserAttributes
@@ -9498,7 +9391,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<UpdateUserAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUserPool
@@ -9630,7 +9522,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<UpdateUserPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUserPoolClient
@@ -9725,7 +9616,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<UpdateUserPoolClientResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUserPoolDomain
@@ -9832,7 +9722,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<UpdateUserPoolDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  VerifySoftwareToken
@@ -9922,7 +9811,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<VerifySoftwareTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  VerifyUserAttribute
@@ -10024,7 +9912,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<VerifyUserAttributeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

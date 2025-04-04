@@ -30,7 +30,6 @@ namespace Amazon.Comprehend
     /// <summary>
     /// Configuration for accessing Amazon Comprehend service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonComprehendConfig : ClientConfig
     {
         private static readonly string UserAgentString =

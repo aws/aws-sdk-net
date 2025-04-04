@@ -30,7 +30,6 @@ namespace Amazon.MedicalImaging
     /// <summary>
     /// Configuration for accessing Amazon MedicalImaging service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMedicalImagingConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -320,7 +320,6 @@ namespace Amazon.OSIS
 
             return InvokeAsync<CreatePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePipeline
@@ -374,7 +373,6 @@ namespace Amazon.OSIS
 
             return InvokeAsync<DeletePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPipeline
@@ -424,7 +422,6 @@ namespace Amazon.OSIS
 
             return InvokeAsync<GetPipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPipelineBlueprint
@@ -477,7 +474,6 @@ namespace Amazon.OSIS
 
             return InvokeAsync<GetPipelineBlueprintResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPipelineChangeProgress
@@ -535,7 +531,6 @@ namespace Amazon.OSIS
 
             return InvokeAsync<GetPipelineChangeProgressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPipelineBlueprints
@@ -587,7 +582,6 @@ namespace Amazon.OSIS
 
             return InvokeAsync<ListPipelineBlueprintsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPipelines
@@ -639,7 +633,6 @@ namespace Amazon.OSIS
 
             return InvokeAsync<ListPipelinesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -691,7 +684,6 @@ namespace Amazon.OSIS
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartPipeline
@@ -745,7 +737,6 @@ namespace Amazon.OSIS
 
             return InvokeAsync<StartPipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopPipeline
@@ -799,7 +790,6 @@ namespace Amazon.OSIS
 
             return InvokeAsync<StopPipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -853,7 +843,6 @@ namespace Amazon.OSIS
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -905,7 +894,6 @@ namespace Amazon.OSIS
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePipeline
@@ -959,7 +947,6 @@ namespace Amazon.OSIS
 
             return InvokeAsync<UpdatePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ValidatePipeline
@@ -1008,7 +995,6 @@ namespace Amazon.OSIS
 
             return InvokeAsync<ValidatePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

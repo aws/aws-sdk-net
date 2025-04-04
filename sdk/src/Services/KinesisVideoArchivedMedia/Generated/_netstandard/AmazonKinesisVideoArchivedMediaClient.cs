@@ -233,7 +233,6 @@ namespace Amazon.KinesisVideoArchivedMedia
 
             return InvokeAsync<GetClipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDASHStreamingSessionURL
@@ -479,7 +478,6 @@ namespace Amazon.KinesisVideoArchivedMedia
 
             return InvokeAsync<GetDASHStreamingSessionURLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetHLSStreamingSessionURL
@@ -765,7 +763,6 @@ namespace Amazon.KinesisVideoArchivedMedia
 
             return InvokeAsync<GetHLSStreamingSessionURLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetImages
@@ -829,7 +826,6 @@ namespace Amazon.KinesisVideoArchivedMedia
 
             return InvokeAsync<GetImagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMediaForFragmentList
@@ -931,7 +927,6 @@ namespace Amazon.KinesisVideoArchivedMedia
 
             return InvokeAsync<GetMediaForFragmentListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFragments
@@ -1035,7 +1030,6 @@ namespace Amazon.KinesisVideoArchivedMedia
 
             return InvokeAsync<ListFragmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.QConnect
     /// <summary>
     /// Configuration for accessing Amazon QConnect service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonQConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -383,7 +383,6 @@ namespace Amazon.TimestreamWrite
 
             return InvokeAsync<CreateBatchLoadTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDatabase
@@ -450,7 +449,6 @@ namespace Amazon.TimestreamWrite
 
             return InvokeAsync<CreateDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTable
@@ -522,7 +520,6 @@ namespace Amazon.TimestreamWrite
 
             return InvokeAsync<CreateTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDatabase
@@ -599,7 +596,6 @@ namespace Amazon.TimestreamWrite
 
             return InvokeAsync<DeleteDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTable
@@ -671,7 +667,6 @@ namespace Amazon.TimestreamWrite
 
             return InvokeAsync<DeleteTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBatchLoadTask
@@ -730,7 +725,6 @@ namespace Amazon.TimestreamWrite
 
             return InvokeAsync<DescribeBatchLoadTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDatabase
@@ -793,7 +787,6 @@ namespace Amazon.TimestreamWrite
 
             return InvokeAsync<DescribeDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEndpoints
@@ -865,7 +858,6 @@ namespace Amazon.TimestreamWrite
 
             return InvokeAsync<DescribeEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTable
@@ -927,7 +919,6 @@ namespace Amazon.TimestreamWrite
 
             return InvokeAsync<DescribeTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBatchLoadTasks
@@ -984,7 +975,6 @@ namespace Amazon.TimestreamWrite
 
             return InvokeAsync<ListBatchLoadTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatabases
@@ -1041,7 +1031,6 @@ namespace Amazon.TimestreamWrite
 
             return InvokeAsync<ListDatabasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTables
@@ -1102,7 +1091,6 @@ namespace Amazon.TimestreamWrite
 
             return InvokeAsync<ListTablesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1154,7 +1142,6 @@ namespace Amazon.TimestreamWrite
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResumeBatchLoadTask
@@ -1213,7 +1200,6 @@ namespace Amazon.TimestreamWrite
 
             return InvokeAsync<ResumeBatchLoadTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1270,7 +1256,6 @@ namespace Amazon.TimestreamWrite
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1325,7 +1310,6 @@ namespace Amazon.TimestreamWrite
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDatabase
@@ -1395,7 +1379,6 @@ namespace Amazon.TimestreamWrite
 
             return InvokeAsync<UpdateDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTable
@@ -1465,7 +1448,6 @@ namespace Amazon.TimestreamWrite
 
             return InvokeAsync<UpdateTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  WriteRecords
@@ -1618,7 +1600,6 @@ namespace Amazon.TimestreamWrite
 
             return InvokeAsync<WriteRecordsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

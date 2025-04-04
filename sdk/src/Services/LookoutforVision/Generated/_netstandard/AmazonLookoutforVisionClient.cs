@@ -345,7 +345,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<CreateDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateModel
@@ -429,7 +428,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<CreateModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProject
@@ -494,7 +492,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<CreateProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataset
@@ -574,7 +571,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<DeleteDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteModel
@@ -641,7 +637,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<DeleteModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProject
@@ -712,7 +707,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<DeleteProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataset
@@ -772,7 +766,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<DescribeDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeModel
@@ -832,7 +825,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<DescribeModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeModelPackagingJob
@@ -894,7 +886,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<DescribeModelPackagingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProject
@@ -954,7 +945,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<DescribeProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectAnomalies
@@ -1033,7 +1023,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<DetectAnomaliesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatasetEntries
@@ -1095,7 +1084,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<ListDatasetEntriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListModelPackagingJobs
@@ -1158,7 +1146,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<ListModelPackagingJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListModels
@@ -1223,7 +1210,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<ListModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProjects
@@ -1289,7 +1275,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<ListProjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1349,7 +1334,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartModel
@@ -1427,7 +1411,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<StartModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartModelPackagingJob
@@ -1536,7 +1519,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<StartModelPackagingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopModel
@@ -1601,7 +1583,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<StopModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1667,7 +1648,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1729,7 +1709,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDatasetEntries
@@ -1811,7 +1790,6 @@ namespace Amazon.LookoutforVision
 
             return InvokeAsync<UpdateDatasetEntriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -371,7 +371,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<CountClosedWorkflowExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CountOpenWorkflowExecutions
@@ -463,7 +462,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<CountOpenWorkflowExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CountPendingActivityTasks
@@ -539,7 +537,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<CountPendingActivityTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CountPendingDecisionTasks
@@ -615,7 +612,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<CountPendingDecisionTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteActivityType
@@ -709,7 +705,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<DeleteActivityTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkflowType
@@ -803,7 +798,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<DeleteWorkflowTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeprecateActivityType
@@ -890,7 +884,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<DeprecateActivityTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeprecateDomain
@@ -975,7 +968,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<DeprecateDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeprecateWorkflowType
@@ -1068,7 +1060,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<DeprecateWorkflowTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeActivityType
@@ -1152,7 +1143,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<DescribeActivityTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDomain
@@ -1225,7 +1215,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<DescribeDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkflowExecution
@@ -1304,7 +1293,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<DescribeWorkflowExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkflowType
@@ -1388,7 +1376,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<DescribeWorkflowTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkflowExecutionHistory
@@ -1468,7 +1455,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<GetWorkflowExecutionHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListActivityTypes
@@ -1545,7 +1531,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<ListActivityTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClosedWorkflowExecutions
@@ -1638,7 +1623,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<ListClosedWorkflowExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomains
@@ -1714,7 +1698,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<ListDomainsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOpenWorkflowExecutions
@@ -1807,7 +1790,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<ListOpenWorkflowExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1854,7 +1836,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkflowTypes
@@ -1928,7 +1909,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<ListWorkflowTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PollForActivityTask
@@ -2018,7 +1998,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<PollForActivityTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PollForDecisionTask
@@ -2123,7 +2102,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<PollForDecisionTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RecordActivityTaskHeartbeat
@@ -2231,7 +2209,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<RecordActivityTaskHeartbeatResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterActivityType
@@ -2334,7 +2311,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<RegisterActivityTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterDomain
@@ -2415,7 +2391,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<RegisterDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterWorkflowType
@@ -2523,7 +2498,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<RegisterWorkflowTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RequestCancelWorkflowExecution
@@ -2610,7 +2584,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<RequestCancelWorkflowExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RespondActivityTaskCanceled
@@ -2703,7 +2676,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<RespondActivityTaskCanceledResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RespondActivityTaskCompleted
@@ -2793,7 +2765,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<RespondActivityTaskCompletedResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RespondActivityTaskFailed
@@ -2877,7 +2848,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<RespondActivityTaskFailedResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RespondDecisionTaskCompleted
@@ -2941,7 +2911,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<RespondDecisionTaskCompletedResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SignalWorkflowExecution
@@ -3026,7 +2995,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<SignalWorkflowExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartWorkflowExecution
@@ -3168,7 +3136,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<StartWorkflowExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3224,7 +3191,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TerminateWorkflowExecution
@@ -3315,7 +3281,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<TerminateWorkflowExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UndeprecateActivityType
@@ -3408,7 +3373,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<UndeprecateActivityTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UndeprecateDomain
@@ -3492,7 +3456,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<UndeprecateDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UndeprecateWorkflowType
@@ -3585,7 +3548,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<UndeprecateWorkflowTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3632,7 +3594,6 @@ namespace Amazon.SimpleWorkflow
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.IoTFleetHub
     /// <summary>
     /// Configuration for accessing Amazon IoTFleetHub service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonIoTFleetHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =

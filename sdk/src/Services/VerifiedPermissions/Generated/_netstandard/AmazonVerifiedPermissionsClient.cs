@@ -495,7 +495,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<BatchGetPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchIsAuthorized
@@ -670,7 +669,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<BatchIsAuthorizedResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchIsAuthorizedWithToken
@@ -843,7 +841,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<BatchIsAuthorizedWithTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIdentitySource
@@ -1038,7 +1035,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<CreateIdentitySourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePolicy
@@ -1218,7 +1214,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<CreatePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePolicyStore
@@ -1383,7 +1378,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<CreatePolicyStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePolicyTemplate
@@ -1550,7 +1544,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<CreatePolicyTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIdentitySource
@@ -1705,7 +1698,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<DeleteIdentitySourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePolicy
@@ -1862,7 +1854,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<DeletePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePolicyStore
@@ -2013,7 +2004,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<DeletePolicyStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePolicyTemplate
@@ -2172,7 +2162,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<DeletePolicyTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIdentitySource
@@ -2320,7 +2309,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<GetIdentitySourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPolicy
@@ -2468,7 +2456,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<GetPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPolicyStore
@@ -2616,7 +2603,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<GetPolicyStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPolicyTemplate
@@ -2764,7 +2750,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<GetPolicyTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSchema
@@ -2912,7 +2897,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<GetSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  IsAuthorized
@@ -3064,7 +3048,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<IsAuthorizedResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  IsAuthorizedWithToken
@@ -3232,7 +3215,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<IsAuthorizedWithTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIdentitySources
@@ -3381,7 +3363,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<ListIdentitySourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPolicies
@@ -3529,7 +3510,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<ListPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPolicyStores
@@ -3674,7 +3654,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<ListPolicyStoresResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPolicyTemplates
@@ -3822,7 +3801,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<ListPolicyTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutSchema
@@ -3989,7 +3967,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<PutSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIdentitySource
@@ -4149,7 +4126,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<UpdateIdentitySourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePolicy
@@ -4357,7 +4333,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<UpdatePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePolicyStore
@@ -4516,7 +4491,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<UpdatePolicyStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePolicyTemplate
@@ -4683,7 +4657,6 @@ namespace Amazon.VerifiedPermissions
 
             return InvokeAsync<UpdatePolicyTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

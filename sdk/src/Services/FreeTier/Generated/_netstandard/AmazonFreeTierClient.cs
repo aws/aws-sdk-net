@@ -328,7 +328,6 @@ namespace Amazon.FreeTier
 
             return InvokeAsync<GetFreeTierUsageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

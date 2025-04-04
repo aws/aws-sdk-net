@@ -324,7 +324,6 @@ namespace Amazon.MarketplaceEntitlementService
 
             return InvokeAsync<GetEntitlementsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

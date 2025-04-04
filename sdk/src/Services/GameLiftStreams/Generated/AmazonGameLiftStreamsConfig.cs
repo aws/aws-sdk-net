@@ -30,7 +30,6 @@ namespace Amazon.GameLiftStreams
     /// <summary>
     /// Configuration for accessing Amazon GameLiftStreams service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonGameLiftStreamsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

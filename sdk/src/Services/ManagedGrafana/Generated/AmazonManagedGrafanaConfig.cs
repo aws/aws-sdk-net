@@ -30,7 +30,6 @@ namespace Amazon.ManagedGrafana
     /// <summary>
     /// Configuration for accessing Amazon ManagedGrafana service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonManagedGrafanaConfig : ClientConfig
     {
         private static readonly string UserAgentString =

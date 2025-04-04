@@ -30,7 +30,6 @@ namespace Amazon.EKSAuth
     /// <summary>
     /// Configuration for accessing Amazon EKSAuth service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonEKSAuthConfig : ClientConfig
     {
         private static readonly string UserAgentString =

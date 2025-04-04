@@ -30,7 +30,6 @@ namespace Amazon.Personalize
     /// <summary>
     /// Configuration for accessing Amazon Personalize service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonPersonalizeConfig : ClientConfig
     {
         private static readonly string UserAgentString =

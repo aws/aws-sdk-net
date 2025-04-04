@@ -30,7 +30,6 @@ namespace Amazon.Chime
     /// <summary>
     /// Configuration for accessing Amazon Chime service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonChimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -30,7 +30,6 @@ namespace Amazon.IoTDeviceAdvisor
     /// <summary>
     /// Configuration for accessing Amazon IoTDeviceAdvisor service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonIoTDeviceAdvisorConfig : ClientConfig
     {
         private static readonly string UserAgentString =

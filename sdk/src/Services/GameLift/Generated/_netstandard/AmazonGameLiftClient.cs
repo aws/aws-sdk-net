@@ -424,7 +424,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<AcceptMatchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ClaimGameServer
@@ -538,7 +537,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<ClaimGameServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAlias
@@ -623,7 +621,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<CreateAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBuild
@@ -732,7 +729,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<CreateBuildResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateContainerFleet
@@ -892,7 +888,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<CreateContainerFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateContainerGroupDefinition
@@ -1112,7 +1107,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<CreateContainerGroupDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFleet
@@ -1292,7 +1286,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<CreateFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFleetLocations
@@ -1401,7 +1394,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<CreateFleetLocationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGameServerGroup
@@ -1512,7 +1504,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<CreateGameServerGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGameSession
@@ -1653,7 +1644,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<CreateGameSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGameSessionQueue
@@ -1773,7 +1763,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<CreateGameSessionQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLocation
@@ -1830,7 +1819,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<CreateLocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMatchmakingConfiguration
@@ -1922,7 +1910,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<CreateMatchmakingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMatchmakingRuleSet
@@ -2010,7 +1997,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<CreateMatchmakingRuleSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePlayerSession
@@ -2186,7 +2172,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<CreatePlayerSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePlayerSessions
@@ -2362,7 +2347,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<CreatePlayerSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateScript
@@ -2467,7 +2451,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<CreateScriptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVpcPeeringAuthorization
@@ -2561,7 +2544,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<CreateVpcPeeringAuthorizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVpcPeeringConnection
@@ -2648,7 +2630,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<CreateVpcPeeringConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAlias
@@ -2762,7 +2743,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DeleteAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBuild
@@ -2894,7 +2874,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DeleteBuildResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteContainerFleet
@@ -2967,7 +2946,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DeleteContainerFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteContainerGroupDefinition
@@ -3077,7 +3055,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DeleteContainerGroupDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFleet
@@ -3221,7 +3198,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DeleteFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFleetLocations
@@ -3296,7 +3272,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DeleteFleetLocationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGameServerGroup
@@ -3394,7 +3369,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DeleteGameServerGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGameSessionQueue
@@ -3450,7 +3424,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DeleteGameSessionQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLocation
@@ -3505,7 +3478,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DeleteLocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMatchmakingConfiguration
@@ -3560,7 +3532,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DeleteMatchmakingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMatchmakingRuleSet
@@ -3626,7 +3597,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DeleteMatchmakingRuleSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteScalingPolicy
@@ -3686,7 +3656,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DeleteScalingPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteScript
@@ -3767,7 +3736,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DeleteScriptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVpcPeeringAuthorization
@@ -3827,7 +3795,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DeleteVpcPeeringAuthorizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVpcPeeringConnection
@@ -3894,7 +3861,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DeleteVpcPeeringConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterCompute
@@ -3956,7 +3922,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DeregisterComputeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterGameServer
@@ -4028,7 +3993,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DeregisterGameServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAlias
@@ -4142,7 +4106,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBuild
@@ -4256,7 +4219,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeBuildResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCompute
@@ -4330,7 +4292,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeComputeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeContainerFleet
@@ -4410,7 +4371,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeContainerFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeContainerGroupDefinition
@@ -4497,7 +4457,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeContainerGroupDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEC2InstanceLimits
@@ -4709,7 +4668,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeEC2InstanceLimitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFleetAttributes
@@ -4798,7 +4756,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeFleetAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFleetCapacity
@@ -4902,7 +4859,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeFleetCapacityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFleetDeployment
@@ -4977,7 +4933,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeFleetDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFleetEvents
@@ -5051,7 +5006,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeFleetEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFleetLocationAttributes
@@ -5145,7 +5099,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeFleetLocationAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFleetLocationCapacity
@@ -5234,7 +5187,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeFleetLocationCapacityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFleetLocationUtilization
@@ -5318,7 +5270,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeFleetLocationUtilizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFleetPortSettings
@@ -5474,7 +5425,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeFleetPortSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFleetUtilization
@@ -5573,7 +5523,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeFleetUtilizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGameServer
@@ -5643,7 +5592,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeGameServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGameServerGroup
@@ -5715,7 +5663,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeGameServerGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGameServerInstances
@@ -5796,7 +5743,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeGameServerInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGameSessionDetails
@@ -5902,7 +5848,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeGameSessionDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGameSessionPlacement
@@ -5965,7 +5910,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeGameSessionPlacementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGameSessionQueues
@@ -6027,7 +5971,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeGameSessionQueuesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGameSessions
@@ -6144,7 +6087,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeGameSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInstances
@@ -6253,7 +6195,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMatchmaking
@@ -6327,7 +6268,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeMatchmakingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMatchmakingConfigurations
@@ -6394,7 +6334,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeMatchmakingConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMatchmakingRuleSets
@@ -6457,7 +6396,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeMatchmakingRuleSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePlayerSessions
@@ -6545,7 +6483,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribePlayerSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRuntimeConfiguration
@@ -6621,7 +6558,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeRuntimeConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeScalingPolicies
@@ -6686,7 +6622,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeScalingPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeScript
@@ -6759,7 +6694,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeScriptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVpcPeeringAuthorizations
@@ -6816,7 +6750,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeVpcPeeringAuthorizationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVpcPeeringConnections
@@ -6884,7 +6817,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<DescribeVpcPeeringConnectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetComputeAccess
@@ -6963,7 +6895,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<GetComputeAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetComputeAuthToken
@@ -7057,7 +6988,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<GetComputeAuthTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGameSessionLogUrl
@@ -7169,7 +7099,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<GetGameSessionLogUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInstanceAccess
@@ -7269,7 +7198,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<GetInstanceAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAliases
@@ -7330,7 +7258,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<ListAliasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBuilds
@@ -7397,7 +7324,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<ListBuildsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCompute
@@ -7481,7 +7407,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<ListComputeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContainerFleets
@@ -7566,7 +7491,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<ListContainerFleetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContainerGroupDefinitions
@@ -7650,7 +7574,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<ListContainerGroupDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContainerGroupDefinitionVersions
@@ -7737,7 +7660,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<ListContainerGroupDefinitionVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFleetDeployments
@@ -7818,7 +7740,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<ListFleetDeploymentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFleets
@@ -7903,7 +7824,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<ListFleetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGameServerGroups
@@ -7948,7 +7868,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<ListGameServerGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGameServers
@@ -8010,7 +7929,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<ListGameServersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLocations
@@ -8055,7 +7973,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<ListLocationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListScripts
@@ -8120,7 +8037,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<ListScriptsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -8204,7 +8120,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutScalingPolicy
@@ -8350,7 +8265,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<PutScalingPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterCompute
@@ -8455,7 +8369,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<RegisterComputeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterGameServer
@@ -8540,7 +8453,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<RegisterGameServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RequestUploadCredentials
@@ -8668,7 +8580,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<RequestUploadCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResolveAlias
@@ -8794,7 +8705,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<ResolveAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResumeGameServerGroup
@@ -8869,7 +8779,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<ResumeGameServerGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchGameSessions
@@ -9035,7 +8944,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<SearchGameSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartFleetActions
@@ -9119,7 +9027,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<StartFleetActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartGameSessionPlacement
@@ -9258,7 +9165,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<StartGameSessionPlacementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMatchBackfill
@@ -9362,7 +9268,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<StartMatchBackfillResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMatchmaking
@@ -9451,7 +9356,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<StartMatchmakingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopFleetActions
@@ -9542,7 +9446,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<StopFleetActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopGameSessionPlacement
@@ -9593,7 +9496,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<StopGameSessionPlacementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopMatchmaking
@@ -9666,7 +9568,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<StopMatchmakingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SuspendGameServerGroup
@@ -9748,7 +9649,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<SuspendGameServerGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -9835,7 +9735,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TerminateGameSession
@@ -9955,7 +9854,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<TerminateGameSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -10042,7 +9940,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAlias
@@ -10103,7 +10000,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<UpdateAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBuild
@@ -10169,7 +10065,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<UpdateBuildResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContainerFleet
@@ -10298,7 +10193,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<UpdateContainerFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContainerGroupDefinition
@@ -10409,7 +10303,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<UpdateContainerGroupDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFleetAttributes
@@ -10487,7 +10380,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<UpdateFleetAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFleetCapacity
@@ -10606,7 +10498,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<UpdateFleetCapacityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFleetPortSettings
@@ -10692,7 +10583,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<UpdateFleetPortSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGameServer
@@ -10788,7 +10678,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<UpdateGameServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGameServerGroup
@@ -10861,7 +10750,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<UpdateGameServerGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGameSession
@@ -10934,7 +10822,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<UpdateGameSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGameSessionQueue
@@ -10996,7 +10883,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<UpdateGameSessionQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMatchmakingConfiguration
@@ -11057,7 +10943,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<UpdateMatchmakingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRuntimeConfiguration
@@ -11140,7 +11025,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<UpdateRuntimeConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateScript
@@ -11227,7 +11111,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<UpdateScriptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ValidateMatchmakingRuleSet
@@ -11285,7 +11168,6 @@ namespace Amazon.GameLift
 
             return InvokeAsync<ValidateMatchmakingRuleSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

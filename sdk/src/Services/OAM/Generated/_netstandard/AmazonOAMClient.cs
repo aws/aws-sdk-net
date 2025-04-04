@@ -361,7 +361,6 @@ namespace Amazon.OAM
 
             return InvokeAsync<CreateLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSink
@@ -424,7 +423,6 @@ namespace Amazon.OAM
 
             return InvokeAsync<CreateSinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLink
@@ -471,7 +469,6 @@ namespace Amazon.OAM
 
             return InvokeAsync<DeleteLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSink
@@ -520,7 +517,6 @@ namespace Amazon.OAM
 
             return InvokeAsync<DeleteSinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLink
@@ -572,7 +568,6 @@ namespace Amazon.OAM
 
             return InvokeAsync<GetLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSink
@@ -624,7 +619,6 @@ namespace Amazon.OAM
 
             return InvokeAsync<GetSinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSinkPolicy
@@ -672,7 +666,6 @@ namespace Amazon.OAM
 
             return InvokeAsync<GetSinkPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAttachedLinks
@@ -729,7 +722,6 @@ namespace Amazon.OAM
 
             return InvokeAsync<ListAttachedLinksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLinks
@@ -779,7 +771,6 @@ namespace Amazon.OAM
 
             return InvokeAsync<ListLinksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSinks
@@ -823,7 +814,6 @@ namespace Amazon.OAM
 
             return InvokeAsync<ListSinksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -863,7 +853,6 @@ namespace Amazon.OAM
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutSinkPolicy
@@ -939,7 +928,6 @@ namespace Amazon.OAM
 
             return InvokeAsync<PutSinkPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1014,7 +1002,6 @@ namespace Amazon.OAM
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1062,7 +1049,6 @@ namespace Amazon.OAM
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLink
@@ -1121,7 +1107,6 @@ namespace Amazon.OAM
 
             return InvokeAsync<UpdateLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.ServerlessApplicationRepository
     /// <summary>
     /// Configuration for accessing Amazon ServerlessApplicationRepository service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonServerlessApplicationRepositoryConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -30,7 +30,6 @@ namespace Amazon.ECS
     /// <summary>
     /// Configuration for accessing Amazon ECS service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonECSConfig : ClientConfig
     {
         private static readonly string UserAgentString =

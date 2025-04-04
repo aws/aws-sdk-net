@@ -30,7 +30,6 @@ namespace Amazon.Rekognition
     /// <summary>
     /// Configuration for accessing Amazon Rekognition service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonRekognitionConfig : ClientConfig
     {
         private static readonly string UserAgentString =

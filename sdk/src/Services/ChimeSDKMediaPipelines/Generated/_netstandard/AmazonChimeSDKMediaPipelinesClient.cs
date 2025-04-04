@@ -318,7 +318,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<CreateMediaCapturePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMediaConcatenationPipeline
@@ -373,7 +372,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<CreateMediaConcatenationPipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMediaInsightsPipeline
@@ -431,7 +429,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<CreateMediaInsightsPipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMediaInsightsPipelineConfiguration
@@ -489,7 +486,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<CreateMediaInsightsPipelineConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMediaLiveConnectorPipeline
@@ -544,7 +540,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<CreateMediaLiveConnectorPipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMediaPipelineKinesisVideoStreamPool
@@ -628,7 +623,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<CreateMediaPipelineKinesisVideoStreamPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMediaStreamPipeline
@@ -686,7 +680,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<CreateMediaStreamPipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMediaCapturePipeline
@@ -741,7 +734,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<DeleteMediaCapturePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMediaInsightsPipelineConfiguration
@@ -800,7 +792,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<DeleteMediaInsightsPipelineConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMediaPipeline
@@ -859,7 +850,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<DeleteMediaPipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMediaPipelineKinesisVideoStreamPool
@@ -918,7 +908,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<DeleteMediaPipelineKinesisVideoStreamPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMediaCapturePipeline
@@ -973,7 +962,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<GetMediaCapturePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMediaInsightsPipelineConfiguration
@@ -1028,7 +1016,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<GetMediaInsightsPipelineConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMediaPipeline
@@ -1083,7 +1070,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<GetMediaPipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMediaPipelineKinesisVideoStreamPool
@@ -1138,7 +1124,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<GetMediaPipelineKinesisVideoStreamPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSpeakerSearchTask
@@ -1193,7 +1178,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<GetSpeakerSearchTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVoiceToneAnalysisTask
@@ -1248,7 +1232,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<GetVoiceToneAnalysisTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMediaCapturePipelines
@@ -1303,7 +1286,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<ListMediaCapturePipelinesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMediaInsightsPipelineConfigurations
@@ -1358,7 +1340,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<ListMediaInsightsPipelineConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMediaPipelineKinesisVideoStreamPools
@@ -1413,7 +1394,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<ListMediaPipelineKinesisVideoStreamPoolsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMediaPipelines
@@ -1468,7 +1448,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<ListMediaPipelinesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1523,7 +1502,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSpeakerSearchTask
@@ -1591,7 +1569,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<StartSpeakerSearchTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartVoiceToneAnalysisTask
@@ -1661,7 +1638,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<StartVoiceToneAnalysisTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopSpeakerSearchTask
@@ -1720,7 +1696,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<StopSpeakerSearchTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopVoiceToneAnalysisTask
@@ -1779,7 +1754,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<StopVoiceToneAnalysisTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1835,7 +1809,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1890,7 +1863,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMediaInsightsPipelineConfiguration
@@ -1949,7 +1921,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<UpdateMediaInsightsPipelineConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMediaInsightsPipelineStatus
@@ -2008,7 +1979,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<UpdateMediaInsightsPipelineStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMediaPipelineKinesisVideoStreamPool
@@ -2067,7 +2037,6 @@ namespace Amazon.ChimeSDKMediaPipelines
 
             return InvokeAsync<UpdateMediaPipelineKinesisVideoStreamPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

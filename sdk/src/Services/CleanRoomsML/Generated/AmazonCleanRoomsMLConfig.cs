@@ -30,7 +30,6 @@ namespace Amazon.CleanRoomsML
     /// <summary>
     /// Configuration for accessing Amazon CleanRoomsML service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCleanRoomsMLConfig : ClientConfig
     {
         private static readonly string UserAgentString =

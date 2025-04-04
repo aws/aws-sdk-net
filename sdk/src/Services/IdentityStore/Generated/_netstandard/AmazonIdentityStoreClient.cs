@@ -342,7 +342,6 @@ namespace Amazon.IdentityStore
 
             return InvokeAsync<CreateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGroupMembership
@@ -411,7 +410,6 @@ namespace Amazon.IdentityStore
 
             return InvokeAsync<CreateGroupMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUser
@@ -479,7 +477,6 @@ namespace Amazon.IdentityStore
 
             return InvokeAsync<CreateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGroup
@@ -543,7 +540,6 @@ namespace Amazon.IdentityStore
 
             return InvokeAsync<DeleteGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGroupMembership
@@ -607,7 +603,6 @@ namespace Amazon.IdentityStore
 
             return InvokeAsync<DeleteGroupMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUser
@@ -671,7 +666,6 @@ namespace Amazon.IdentityStore
 
             return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGroup
@@ -729,7 +723,6 @@ namespace Amazon.IdentityStore
 
             return InvokeAsync<DescribeGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGroupMembership
@@ -788,7 +781,6 @@ namespace Amazon.IdentityStore
 
             return InvokeAsync<DescribeGroupMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUser
@@ -846,7 +838,6 @@ namespace Amazon.IdentityStore
 
             return InvokeAsync<DescribeUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGroupId
@@ -904,7 +895,6 @@ namespace Amazon.IdentityStore
 
             return InvokeAsync<GetGroupIdResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGroupMembershipId
@@ -962,7 +952,6 @@ namespace Amazon.IdentityStore
 
             return InvokeAsync<GetGroupMembershipIdResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUserId
@@ -1020,7 +1009,6 @@ namespace Amazon.IdentityStore
 
             return InvokeAsync<GetUserIdResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  IsMemberInGroups
@@ -1079,7 +1067,6 @@ namespace Amazon.IdentityStore
 
             return InvokeAsync<IsMemberInGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroupMemberships
@@ -1138,7 +1125,6 @@ namespace Amazon.IdentityStore
 
             return InvokeAsync<ListGroupMembershipsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroupMembershipsForMember
@@ -1197,7 +1183,6 @@ namespace Amazon.IdentityStore
 
             return InvokeAsync<ListGroupMembershipsForMemberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroups
@@ -1257,7 +1242,6 @@ namespace Amazon.IdentityStore
 
             return InvokeAsync<ListGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUsers
@@ -1317,7 +1301,6 @@ namespace Amazon.IdentityStore
 
             return InvokeAsync<ListUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGroup
@@ -1386,7 +1369,6 @@ namespace Amazon.IdentityStore
 
             return InvokeAsync<UpdateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUser
@@ -1455,7 +1437,6 @@ namespace Amazon.IdentityStore
 
             return InvokeAsync<UpdateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

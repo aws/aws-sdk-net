@@ -280,7 +280,6 @@ namespace Amazon.SagemakerEdgeManager
 
             return InvokeAsync<GetDeploymentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeviceRegistration
@@ -318,7 +317,6 @@ namespace Amazon.SagemakerEdgeManager
 
             return InvokeAsync<GetDeviceRegistrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendHeartbeat
@@ -356,7 +354,6 @@ namespace Amazon.SagemakerEdgeManager
 
             return InvokeAsync<SendHeartbeatResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

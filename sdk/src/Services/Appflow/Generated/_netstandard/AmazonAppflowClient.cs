@@ -392,7 +392,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<CancelFlowExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConnectorProfile
@@ -449,7 +448,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<CreateConnectorProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFlow
@@ -515,7 +513,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<CreateFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnectorProfile
@@ -562,7 +559,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<DeleteConnectorProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFlow
@@ -611,7 +607,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<DeleteFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConnector
@@ -658,7 +653,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<DescribeConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConnectorEntity
@@ -710,7 +704,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<DescribeConnectorEntityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConnectorProfiles
@@ -759,7 +752,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<DescribeConnectorProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConnectors
@@ -804,7 +796,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<DescribeConnectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFlow
@@ -846,7 +837,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<DescribeFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFlowExecutionRecords
@@ -891,7 +881,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<DescribeFlowExecutionRecordsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConnectorEntities
@@ -944,7 +933,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<ListConnectorEntitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConnectors
@@ -987,7 +975,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<ListConnectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFlows
@@ -1028,7 +1015,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<ListFlowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1073,7 +1059,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterConnector
@@ -1140,7 +1125,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<RegisterConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetConnectorMetadataCache
@@ -1201,7 +1185,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<ResetConnectorMetadataCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartFlow
@@ -1252,7 +1235,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<StartFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopFlow
@@ -1304,7 +1286,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<StopFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1349,7 +1330,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UnregisterConnector
@@ -1397,7 +1377,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<UnregisterConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1442,7 +1421,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConnectorProfile
@@ -1495,7 +1473,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<UpdateConnectorProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConnectorRegistration
@@ -1571,7 +1548,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<UpdateConnectorRegistrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFlow
@@ -1633,7 +1609,6 @@ namespace Amazon.Appflow
 
             return InvokeAsync<UpdateFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

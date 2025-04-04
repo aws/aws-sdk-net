@@ -329,7 +329,6 @@ namespace Amazon.EMRServerless
 
             return InvokeAsync<CancelJobRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApplication
@@ -376,7 +375,6 @@ namespace Amazon.EMRServerless
 
             return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplication
@@ -420,7 +418,6 @@ namespace Amazon.EMRServerless
 
             return InvokeAsync<DeleteApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplication
@@ -463,7 +460,6 @@ namespace Amazon.EMRServerless
 
             return InvokeAsync<GetApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDashboardForJobRun
@@ -520,7 +516,6 @@ namespace Amazon.EMRServerless
 
             return InvokeAsync<GetDashboardForJobRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJobRun
@@ -563,7 +558,6 @@ namespace Amazon.EMRServerless
 
             return InvokeAsync<GetJobRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplications
@@ -603,7 +597,6 @@ namespace Amazon.EMRServerless
 
             return InvokeAsync<ListApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobRunAttempts
@@ -646,7 +639,6 @@ namespace Amazon.EMRServerless
 
             return InvokeAsync<ListJobRunAttemptsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobRuns
@@ -686,7 +678,6 @@ namespace Amazon.EMRServerless
 
             return InvokeAsync<ListJobRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -729,7 +720,6 @@ namespace Amazon.EMRServerless
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartApplication
@@ -775,7 +765,6 @@ namespace Amazon.EMRServerless
 
             return InvokeAsync<StartApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartJobRun
@@ -822,7 +811,6 @@ namespace Amazon.EMRServerless
 
             return InvokeAsync<StartJobRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopApplication
@@ -866,7 +854,6 @@ namespace Amazon.EMRServerless
 
             return InvokeAsync<StopApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -914,7 +901,6 @@ namespace Amazon.EMRServerless
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -957,7 +943,6 @@ namespace Amazon.EMRServerless
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplication
@@ -1001,7 +986,6 @@ namespace Amazon.EMRServerless
 
             return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -534,7 +534,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<AddPermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelMessageMoveTask
@@ -611,7 +610,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<CancelMessageMoveTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ChangeMessageVisibility
@@ -883,7 +881,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<ChangeMessageVisibilityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ChangeMessageVisibilityBatch
@@ -1045,7 +1042,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<ChangeMessageVisibilityBatchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateQueue
@@ -1309,7 +1305,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<CreateQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMessage
@@ -1479,7 +1474,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<DeleteMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMessageBatch
@@ -1639,7 +1633,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<DeleteMessageBatchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteQueue
@@ -1805,7 +1798,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<DeleteQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueueAttributes
@@ -1933,7 +1925,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<GetQueueAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueueUrl
@@ -2061,7 +2052,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<GetQueueUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeadLetterSourceQueues
@@ -2139,7 +2129,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<ListDeadLetterSourceQueuesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMessageMoveTasks
@@ -2213,7 +2202,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<ListMessageMoveTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQueues
@@ -2353,7 +2341,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<ListQueuesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQueueTags
@@ -2425,7 +2412,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<ListQueueTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PurgeQueue
@@ -2583,7 +2569,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<PurgeQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReceiveMessage
@@ -2887,7 +2872,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<ReceiveMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemovePermission
@@ -3035,7 +3019,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<RemovePermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendMessage
@@ -3257,7 +3240,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<SendMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendMessageBatch
@@ -3553,7 +3535,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<SendMessageBatchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetQueueAttributes
@@ -3733,7 +3714,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<SetQueueAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMessageMoveTask
@@ -3815,7 +3795,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<StartMessageMoveTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagQueue
@@ -3913,7 +3892,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<TagQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagQueue
@@ -3985,7 +3963,6 @@ namespace Amazon.SQS
 
             return InvokeAsync<UntagQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.Proton
     /// <summary>
     /// Configuration for accessing Amazon Proton service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonProtonConfig : ClientConfig
     {
         private static readonly string UserAgentString =

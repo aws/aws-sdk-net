@@ -317,7 +317,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<CancelLegalHoldResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBackupPlan
@@ -376,7 +375,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<CreateBackupPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBackupSelection
@@ -429,7 +427,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<CreateBackupSelectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBackupVault
@@ -488,7 +485,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<CreateBackupVaultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFramework
@@ -542,7 +538,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<CreateFrameworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLegalHold
@@ -593,7 +588,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<CreateLegalHoldResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLogicallyAirGappedBackupVault
@@ -660,7 +654,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<CreateLogicallyAirGappedBackupVaultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateReportPlan
@@ -718,7 +711,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<CreateReportPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRestoreTestingPlan
@@ -779,7 +771,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<CreateRestoreTestingPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRestoreTestingSelection
@@ -864,7 +855,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<CreateRestoreTestingSelectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBackupPlan
@@ -917,7 +907,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DeleteBackupPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBackupSelection
@@ -965,7 +954,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DeleteBackupSelectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBackupVault
@@ -1017,7 +1005,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DeleteBackupVaultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBackupVaultAccessPolicy
@@ -1064,7 +1051,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DeleteBackupVaultAccessPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBackupVaultLockConfiguration
@@ -1123,7 +1109,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DeleteBackupVaultLockConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBackupVaultNotifications
@@ -1170,7 +1155,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DeleteBackupVaultNotificationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFramework
@@ -1221,7 +1205,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DeleteFrameworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRecoveryPoint
@@ -1300,7 +1283,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DeleteRecoveryPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReportPlan
@@ -1351,7 +1333,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DeleteReportPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRestoreTestingPlan
@@ -1398,7 +1379,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DeleteRestoreTestingPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRestoreTestingSelection
@@ -1444,7 +1424,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DeleteRestoreTestingSelectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBackupJob
@@ -1495,7 +1474,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DescribeBackupJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBackupVault
@@ -1542,7 +1520,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DescribeBackupVaultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCopyJob
@@ -1589,7 +1566,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DescribeCopyJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFramework
@@ -1636,7 +1612,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DescribeFrameworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGlobalSettings
@@ -1679,7 +1654,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DescribeGlobalSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProtectedResource
@@ -1728,7 +1702,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DescribeProtectedResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRecoveryPoint
@@ -1776,7 +1749,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DescribeRecoveryPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRegionSettings
@@ -1816,7 +1788,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DescribeRegionSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReportJob
@@ -1859,7 +1830,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DescribeReportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReportPlan
@@ -1907,7 +1877,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DescribeReportPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRestoreJob
@@ -1958,7 +1927,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DescribeRestoreJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateRecoveryPoint
@@ -2021,7 +1989,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DisassociateRecoveryPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateRecoveryPointFromParent
@@ -2073,7 +2040,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<DisassociateRecoveryPointFromParentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportBackupPlanTemplate
@@ -2120,7 +2086,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ExportBackupPlanTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBackupPlan
@@ -2168,7 +2133,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<GetBackupPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBackupPlanFromJSON
@@ -2220,7 +2184,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<GetBackupPlanFromJSONResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBackupPlanFromTemplate
@@ -2267,7 +2230,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<GetBackupPlanFromTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBackupSelection
@@ -2315,7 +2277,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<GetBackupSelectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBackupVaultAccessPolicy
@@ -2362,7 +2323,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<GetBackupVaultAccessPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBackupVaultNotifications
@@ -2409,7 +2369,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<GetBackupVaultNotificationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLegalHold
@@ -2457,7 +2416,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<GetLegalHoldResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRecoveryPointIndexDetails
@@ -2505,7 +2463,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<GetRecoveryPointIndexDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRecoveryPointRestoreMetadata
@@ -2552,7 +2509,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<GetRecoveryPointRestoreMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRestoreJobMetadata
@@ -2599,7 +2555,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<GetRestoreJobMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRestoreTestingInferredMetadata
@@ -2648,7 +2603,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<GetRestoreTestingInferredMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRestoreTestingPlan
@@ -2690,7 +2644,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<GetRestoreTestingPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRestoreTestingSelection
@@ -2731,7 +2684,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<GetRestoreTestingSelectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSupportedResourceTypes
@@ -2768,7 +2720,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<GetSupportedResourceTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBackupJobs
@@ -2811,7 +2762,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListBackupJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBackupJobSummaries
@@ -2860,7 +2810,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListBackupJobSummariesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBackupPlans
@@ -2907,7 +2856,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListBackupPlansResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBackupPlanTemplates
@@ -2954,7 +2902,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListBackupPlanTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBackupPlanVersions
@@ -3002,7 +2949,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListBackupPlanVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBackupSelections
@@ -3050,7 +2996,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListBackupSelectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBackupVaults
@@ -3097,7 +3042,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListBackupVaultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCopyJobs
@@ -3138,7 +3082,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListCopyJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCopyJobSummaries
@@ -3187,7 +3130,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListCopyJobSummariesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFrameworks
@@ -3229,7 +3171,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListFrameworksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIndexedRecoveryPoints
@@ -3280,7 +3221,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListIndexedRecoveryPointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLegalHolds
@@ -3321,7 +3261,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListLegalHoldsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProtectedResources
@@ -3364,7 +3303,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListProtectedResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProtectedResourcesByBackupVault
@@ -3408,7 +3346,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListProtectedResourcesByBackupVaultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecoveryPointsByBackupVault
@@ -3455,7 +3392,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListRecoveryPointsByBackupVaultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecoveryPointsByLegalHold
@@ -3500,7 +3436,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListRecoveryPointsByLegalHoldResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecoveryPointsByResource
@@ -3554,7 +3489,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListRecoveryPointsByResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReportJobs
@@ -3598,7 +3532,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListReportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReportPlans
@@ -3640,7 +3573,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListReportPlansResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRestoreJobs
@@ -3688,7 +3620,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListRestoreJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRestoreJobsByProtectedResource
@@ -3742,7 +3673,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListRestoreJobsByProtectedResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRestoreJobSummaries
@@ -3791,7 +3721,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListRestoreJobSummariesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRestoreTestingPlans
@@ -3832,7 +3761,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListRestoreTestingPlansResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRestoreTestingSelections
@@ -3877,7 +3805,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListRestoreTestingSelectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTags
@@ -3925,7 +3852,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<ListTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBackupVaultAccessPolicy
@@ -3973,7 +3899,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<PutBackupVaultAccessPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBackupVaultLockConfiguration
@@ -4041,7 +3966,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<PutBackupVaultLockConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBackupVaultNotifications
@@ -4088,7 +4012,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<PutBackupVaultNotificationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRestoreValidationResult
@@ -4141,7 +4064,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<PutRestoreValidationResultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartBackupJob
@@ -4196,7 +4118,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<StartBackupJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartCopyJob
@@ -4256,7 +4177,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<StartCopyJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartReportJob
@@ -4303,7 +4223,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<StartReportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartRestoreJob
@@ -4354,7 +4273,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<StartRestoreJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopBackupJob
@@ -4413,7 +4331,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<StopBackupJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -4471,7 +4388,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -4525,7 +4441,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBackupPlan
@@ -4572,7 +4487,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<UpdateBackupPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFramework
@@ -4630,7 +4544,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<UpdateFrameworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGlobalSettings
@@ -4680,7 +4593,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<UpdateGlobalSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRecoveryPointIndexSettings
@@ -4736,7 +4648,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<UpdateRecoveryPointIndexSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRecoveryPointLifecycle
@@ -4817,7 +4728,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<UpdateRecoveryPointLifecycleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRegionSettings
@@ -4867,7 +4777,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<UpdateRegionSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateReportPlan
@@ -4918,7 +4827,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<UpdateReportPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRestoreTestingPlan
@@ -4996,7 +4904,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<UpdateRestoreTestingPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRestoreTestingSelection
@@ -5057,7 +4964,6 @@ namespace Amazon.Backup
 
             return InvokeAsync<UpdateRestoreTestingSelectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

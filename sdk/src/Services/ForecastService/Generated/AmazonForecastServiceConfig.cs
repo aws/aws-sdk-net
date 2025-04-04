@@ -30,7 +30,6 @@ namespace Amazon.ForecastService
     /// <summary>
     /// Configuration for accessing Amazon ForecastService service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonForecastServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

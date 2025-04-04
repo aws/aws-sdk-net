@@ -30,7 +30,6 @@ namespace Amazon.SageMakerRuntime
     /// <summary>
     /// Configuration for accessing Amazon SageMakerRuntime service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSageMakerRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =

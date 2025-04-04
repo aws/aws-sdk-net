@@ -30,7 +30,6 @@ namespace Amazon.FIS
     /// <summary>
     /// Configuration for accessing Amazon FIS service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonFISConfig : ClientConfig
     {
         private static readonly string UserAgentString =

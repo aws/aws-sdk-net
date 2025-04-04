@@ -292,7 +292,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<CreateApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApiMapping
@@ -342,7 +341,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<CreateApiMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAuthorizer
@@ -392,7 +390,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<CreateAuthorizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDeployment
@@ -442,7 +439,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<CreateDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDomainName
@@ -495,7 +491,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<CreateDomainNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIntegration
@@ -545,7 +540,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<CreateIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIntegrationResponse
@@ -595,7 +589,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<CreateIntegrationResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateModel
@@ -645,7 +638,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<CreateModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRoute
@@ -695,7 +687,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<CreateRouteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRouteResponse
@@ -745,7 +736,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<CreateRouteResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStage
@@ -795,7 +785,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<CreateStageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVpcLink
@@ -836,7 +825,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<CreateVpcLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccessLogSettings
@@ -878,7 +866,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<DeleteAccessLogSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApi
@@ -919,7 +906,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<DeleteApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApiMapping
@@ -964,7 +950,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<DeleteApiMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAuthorizer
@@ -1005,7 +990,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<DeleteAuthorizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCorsConfiguration
@@ -1046,7 +1030,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<DeleteCorsConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDeployment
@@ -1087,7 +1070,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<DeleteDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDomainName
@@ -1128,7 +1110,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<DeleteDomainNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIntegration
@@ -1169,7 +1150,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<DeleteIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIntegrationResponse
@@ -1210,7 +1190,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<DeleteIntegrationResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteModel
@@ -1251,7 +1230,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<DeleteModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRoute
@@ -1292,7 +1270,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<DeleteRouteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRouteRequestParameter
@@ -1333,7 +1310,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<DeleteRouteRequestParameterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRouteResponse
@@ -1374,7 +1350,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<DeleteRouteResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRouteSettings
@@ -1415,7 +1390,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<DeleteRouteSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStage
@@ -1456,7 +1430,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<DeleteStageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVpcLink
@@ -1497,7 +1470,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<DeleteVpcLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportApi
@@ -1542,7 +1514,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<ExportApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApi
@@ -1583,7 +1554,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApiMapping
@@ -1628,7 +1598,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetApiMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApiMappings
@@ -1673,7 +1642,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetApiMappingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApis
@@ -1718,7 +1686,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetApisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAuthorizer
@@ -1759,7 +1726,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetAuthorizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAuthorizers
@@ -1804,7 +1770,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetAuthorizersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeployment
@@ -1845,7 +1810,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeployments
@@ -1890,7 +1854,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetDeploymentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDomainName
@@ -1931,7 +1894,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetDomainNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDomainNames
@@ -1976,7 +1938,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetDomainNamesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIntegration
@@ -2017,7 +1978,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIntegrationResponse
@@ -2058,7 +2018,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetIntegrationResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIntegrationResponses
@@ -2103,7 +2062,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetIntegrationResponsesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIntegrations
@@ -2148,7 +2106,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetIntegrationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetModel
@@ -2189,7 +2146,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetModels
@@ -2234,7 +2190,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetModelTemplate
@@ -2275,7 +2230,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetModelTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRoute
@@ -2316,7 +2270,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetRouteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRouteResponse
@@ -2357,7 +2310,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetRouteResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRouteResponses
@@ -2402,7 +2354,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetRouteResponsesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRoutes
@@ -2447,7 +2398,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetRoutesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStage
@@ -2488,7 +2438,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetStageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStages
@@ -2533,7 +2482,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetStagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTags
@@ -2583,7 +2531,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVpcLink
@@ -2624,7 +2571,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetVpcLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVpcLinks
@@ -2665,7 +2611,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<GetVpcLinksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportApi
@@ -2715,7 +2660,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<ImportApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReimportApi
@@ -2765,7 +2709,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<ReimportApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetAuthorizersCache
@@ -2806,7 +2749,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<ResetAuthorizersCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2856,7 +2798,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2906,7 +2847,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApi
@@ -2956,7 +2896,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<UpdateApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApiMapping
@@ -3006,7 +2945,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<UpdateApiMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAuthorizer
@@ -3056,7 +2994,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<UpdateAuthorizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDeployment
@@ -3106,7 +3043,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<UpdateDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDomainName
@@ -3156,7 +3092,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<UpdateDomainNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIntegration
@@ -3206,7 +3141,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<UpdateIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIntegrationResponse
@@ -3256,7 +3190,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<UpdateIntegrationResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateModel
@@ -3306,7 +3239,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<UpdateModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRoute
@@ -3356,7 +3288,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<UpdateRouteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRouteResponse
@@ -3406,7 +3337,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<UpdateRouteResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStage
@@ -3456,7 +3386,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<UpdateStageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVpcLink
@@ -3501,7 +3430,6 @@ namespace Amazon.ApiGatewayV2
 
             return InvokeAsync<UpdateVpcLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

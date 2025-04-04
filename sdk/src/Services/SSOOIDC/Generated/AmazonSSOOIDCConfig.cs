@@ -30,7 +30,6 @@ namespace Amazon.SSOOIDC
     /// <summary>
     /// Configuration for accessing Amazon SSOOIDC service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSSOOIDCConfig : ClientConfig
     {
         private static readonly string UserAgentString =

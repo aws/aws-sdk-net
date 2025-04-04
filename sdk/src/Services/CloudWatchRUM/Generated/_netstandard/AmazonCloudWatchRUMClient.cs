@@ -392,7 +392,6 @@ namespace Amazon.CloudWatchRUM
 
             return InvokeAsync<BatchCreateRumMetricDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteRumMetricDefinitions
@@ -456,7 +455,6 @@ namespace Amazon.CloudWatchRUM
 
             return InvokeAsync<BatchDeleteRumMetricDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetRumMetricDefinitions
@@ -503,7 +501,6 @@ namespace Amazon.CloudWatchRUM
 
             return InvokeAsync<BatchGetRumMetricDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAppMonitor
@@ -574,7 +571,6 @@ namespace Amazon.CloudWatchRUM
 
             return InvokeAsync<CreateAppMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAppMonitor
@@ -626,7 +622,6 @@ namespace Amazon.CloudWatchRUM
 
             return InvokeAsync<DeleteAppMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -685,7 +680,6 @@ namespace Amazon.CloudWatchRUM
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRumMetricsDestination
@@ -738,7 +732,6 @@ namespace Amazon.CloudWatchRUM
 
             return InvokeAsync<DeleteRumMetricsDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAppMonitor
@@ -787,7 +780,6 @@ namespace Amazon.CloudWatchRUM
 
             return InvokeAsync<GetAppMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAppMonitorData
@@ -837,7 +829,6 @@ namespace Amazon.CloudWatchRUM
 
             return InvokeAsync<GetAppMonitorDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicy
@@ -893,7 +884,6 @@ namespace Amazon.CloudWatchRUM
 
             return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAppMonitors
@@ -939,7 +929,6 @@ namespace Amazon.CloudWatchRUM
 
             return InvokeAsync<ListAppMonitorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRumMetricsDestinations
@@ -991,7 +980,6 @@ namespace Amazon.CloudWatchRUM
 
             return InvokeAsync<ListRumMetricsDestinationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1034,7 +1022,6 @@ namespace Amazon.CloudWatchRUM
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -1100,7 +1087,6 @@ namespace Amazon.CloudWatchRUM
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRumEvents
@@ -1156,7 +1142,6 @@ namespace Amazon.CloudWatchRUM
 
             return InvokeAsync<PutRumEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRumMetricsDestination
@@ -1214,7 +1199,6 @@ namespace Amazon.CloudWatchRUM
 
             return InvokeAsync<PutRumMetricsDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1287,7 +1271,6 @@ namespace Amazon.CloudWatchRUM
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1330,7 +1313,6 @@ namespace Amazon.CloudWatchRUM
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAppMonitor
@@ -1401,7 +1383,6 @@ namespace Amazon.CloudWatchRUM
 
             return InvokeAsync<UpdateAppMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRumMetricDefinition
@@ -1457,7 +1438,6 @@ namespace Amazon.CloudWatchRUM
 
             return InvokeAsync<UpdateRumMetricDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

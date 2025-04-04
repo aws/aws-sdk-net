@@ -30,7 +30,6 @@ namespace Amazon.MarketplaceEntitlementService
     /// <summary>
     /// Configuration for accessing Amazon MarketplaceEntitlementService service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMarketplaceEntitlementServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

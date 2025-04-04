@@ -336,7 +336,6 @@ namespace Amazon.S3Outposts
 
             return InvokeAsync<CreateEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEndpoint
@@ -409,7 +408,6 @@ namespace Amazon.S3Outposts
 
             return InvokeAsync<DeleteEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEndpoints
@@ -474,7 +472,6 @@ namespace Amazon.S3Outposts
 
             return InvokeAsync<ListEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOutpostsWithS3
@@ -522,7 +519,6 @@ namespace Amazon.S3Outposts
 
             return InvokeAsync<ListOutpostsWithS3Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSharedEndpoints
@@ -588,7 +584,6 @@ namespace Amazon.S3Outposts
 
             return InvokeAsync<ListSharedEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

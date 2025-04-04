@@ -356,7 +356,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<AddListenerCertificatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddTags
@@ -419,7 +418,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<AddTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddTrustStoreRevocations
@@ -465,7 +463,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<AddTrustStoreRevocationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateListener
@@ -588,7 +585,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<CreateListenerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLoadBalancer
@@ -687,7 +683,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<CreateLoadBalancerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRule
@@ -781,7 +776,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<CreateRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTargetGroup
@@ -853,7 +847,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<CreateTargetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTrustStore
@@ -906,7 +899,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<CreateTrustStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteListener
@@ -952,7 +944,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DeleteListenerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLoadBalancer
@@ -1008,7 +999,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DeleteLoadBalancerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRule
@@ -1053,7 +1043,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DeleteRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSharedTrustStoreAssociation
@@ -1096,7 +1085,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DeleteSharedTrustStoreAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTargetGroup
@@ -1141,7 +1129,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DeleteTargetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTrustStore
@@ -1181,7 +1168,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DeleteTrustStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterTargets
@@ -1254,7 +1240,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DeregisterTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountLimits
@@ -1310,7 +1295,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DescribeAccountLimitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCapacityReservation
@@ -1347,7 +1331,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DescribeCapacityReservationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeListenerAttributes
@@ -1384,7 +1367,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DescribeListenerAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeListenerCertificates
@@ -1435,7 +1417,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DescribeListenerCertificatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeListeners
@@ -1480,7 +1461,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DescribeListenersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLoadBalancerAttributes
@@ -1539,7 +1519,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DescribeLoadBalancerAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLoadBalancers
@@ -1576,7 +1555,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DescribeLoadBalancersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRules
@@ -1620,7 +1598,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DescribeRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSSLPolicies
@@ -1664,7 +1641,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DescribeSSLPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTags
@@ -1715,7 +1691,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DescribeTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTargetGroupAttributes
@@ -1773,7 +1748,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DescribeTargetGroupAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTargetGroups
@@ -1816,7 +1790,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DescribeTargetGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTargetHealth
@@ -1860,7 +1833,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DescribeTargetHealthResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTrustStoreAssociations
@@ -1897,7 +1869,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DescribeTrustStoreAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTrustStoreRevocations
@@ -1937,7 +1908,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DescribeTrustStoreRevocationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTrustStores
@@ -1974,7 +1944,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<DescribeTrustStoresResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicy
@@ -2011,7 +1980,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTrustStoreCaCertificatesBundle
@@ -2053,7 +2021,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<GetTrustStoreCaCertificatesBundleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTrustStoreRevocationContent
@@ -2098,7 +2065,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<GetTrustStoreRevocationContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyCapacityReservation
@@ -2162,7 +2128,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<ModifyCapacityReservationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyIpPools
@@ -2199,7 +2164,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<ModifyIpPoolsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyListener
@@ -2308,7 +2272,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<ModifyListenerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyListenerAttributes
@@ -2348,7 +2311,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<ModifyListenerAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyLoadBalancerAttributes
@@ -2395,7 +2357,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<ModifyLoadBalancerAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyRule
@@ -2473,7 +2434,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<ModifyRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyTargetGroup
@@ -2514,7 +2474,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<ModifyTargetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyTargetGroupAttributes
@@ -2554,7 +2513,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<ModifyTargetGroupAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyTrustStore
@@ -2597,7 +2555,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<ModifyTrustStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterTargets
@@ -2664,7 +2621,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<RegisterTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveListenerCertificates
@@ -2705,7 +2661,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<RemoveListenerCertificatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTags
@@ -2759,7 +2714,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<RemoveTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTrustStoreRevocations
@@ -2799,7 +2753,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<RemoveTrustStoreRevocationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetIpAddressType
@@ -2842,7 +2795,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<SetIpAddressTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetRulePriorities
@@ -2891,7 +2843,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<SetRulePrioritiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetSecurityGroups
@@ -2946,7 +2897,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<SetSecurityGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetSubnets
@@ -3010,7 +2960,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
             return InvokeAsync<SetSubnetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

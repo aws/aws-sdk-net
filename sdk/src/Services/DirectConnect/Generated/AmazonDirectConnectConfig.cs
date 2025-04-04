@@ -30,7 +30,6 @@ namespace Amazon.DirectConnect
     /// <summary>
     /// Configuration for accessing Amazon DirectConnect service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonDirectConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =

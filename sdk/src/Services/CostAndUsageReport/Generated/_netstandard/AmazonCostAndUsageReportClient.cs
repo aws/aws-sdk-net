@@ -324,7 +324,6 @@ namespace Amazon.CostAndUsageReport
 
             return InvokeAsync<DeleteReportDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReportDefinitions
@@ -361,7 +360,6 @@ namespace Amazon.CostAndUsageReport
 
             return InvokeAsync<DescribeReportDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -404,7 +402,6 @@ namespace Amazon.CostAndUsageReport
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyReportDefinition
@@ -444,7 +441,6 @@ namespace Amazon.CostAndUsageReport
 
             return InvokeAsync<ModifyReportDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutReportDefinition
@@ -495,7 +491,6 @@ namespace Amazon.CostAndUsageReport
 
             return InvokeAsync<PutReportDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -538,7 +533,6 @@ namespace Amazon.CostAndUsageReport
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -581,7 +575,6 @@ namespace Amazon.CostAndUsageReport
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

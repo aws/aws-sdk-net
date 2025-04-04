@@ -30,7 +30,6 @@ namespace Amazon.SSO
     /// <summary>
     /// Configuration for accessing Amazon SSO service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSSOConfig : ClientConfig
     {
         private static readonly string UserAgentString =

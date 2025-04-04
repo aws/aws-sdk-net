@@ -330,7 +330,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<CreateAppInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAppInstanceAdmin
@@ -404,7 +403,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<CreateAppInstanceAdminResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAppInstanceBot
@@ -464,7 +462,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<CreateAppInstanceBotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAppInstanceUser
@@ -524,7 +521,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<CreateAppInstanceUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAppInstance
@@ -579,7 +575,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<DeleteAppInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAppInstanceAdmin
@@ -639,7 +634,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<DeleteAppInstanceAdminResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAppInstanceBot
@@ -698,7 +692,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<DeleteAppInstanceBotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAppInstanceUser
@@ -757,7 +750,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<DeleteAppInstanceUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterAppInstanceUserEndpoint
@@ -809,7 +801,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<DeregisterAppInstanceUserEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAppInstance
@@ -861,7 +852,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<DescribeAppInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAppInstanceAdmin
@@ -913,7 +903,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<DescribeAppInstanceAdminResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAppInstanceBot
@@ -968,7 +957,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<DescribeAppInstanceBotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAppInstanceUser
@@ -1020,7 +1008,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<DescribeAppInstanceUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAppInstanceUserEndpoint
@@ -1072,7 +1059,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<DescribeAppInstanceUserEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAppInstanceRetentionSettings
@@ -1124,7 +1110,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<GetAppInstanceRetentionSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAppInstanceAdmins
@@ -1179,7 +1164,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<ListAppInstanceAdminsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAppInstanceBots
@@ -1234,7 +1218,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<ListAppInstanceBotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAppInstances
@@ -1286,7 +1269,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<ListAppInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAppInstanceUserEndpoints
@@ -1338,7 +1320,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<ListAppInstanceUserEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAppInstanceUsers
@@ -1390,7 +1371,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<ListAppInstanceUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1442,7 +1422,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAppInstanceRetentionSettings
@@ -1494,7 +1473,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<PutAppInstanceRetentionSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAppInstanceUserExpirationSettings
@@ -1562,7 +1540,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<PutAppInstanceUserExpirationSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterAppInstanceUserEndpoint
@@ -1623,7 +1600,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<RegisterAppInstanceUserEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1678,7 +1654,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1730,7 +1705,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAppInstance
@@ -1786,7 +1760,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<UpdateAppInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAppInstanceBot
@@ -1845,7 +1818,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<UpdateAppInstanceBotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAppInstanceUser
@@ -1904,7 +1876,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<UpdateAppInstanceUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAppInstanceUserEndpoint
@@ -1961,7 +1932,6 @@ namespace Amazon.ChimeSDKIdentity
 
             return InvokeAsync<UpdateAppInstanceUserEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

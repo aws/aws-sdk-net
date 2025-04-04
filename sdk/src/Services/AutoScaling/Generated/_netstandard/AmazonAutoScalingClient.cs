@@ -330,7 +330,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<AttachInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachLoadBalancers
@@ -400,7 +399,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<AttachLoadBalancersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachLoadBalancerTargetGroups
@@ -487,7 +485,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<AttachLoadBalancerTargetGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachTrafficSources
@@ -566,7 +563,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<AttachTrafficSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteScheduledAction
@@ -604,7 +600,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<BatchDeleteScheduledActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchPutScheduledUpdateGroupAction
@@ -651,7 +646,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<BatchPutScheduledUpdateGroupActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelInstanceRefresh
@@ -713,7 +707,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<CancelInstanceRefreshResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CompleteLifecycleAction
@@ -796,7 +789,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<CompleteLifecycleActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAutoScalingGroup
@@ -872,7 +864,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<CreateAutoScalingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLaunchConfiguration
@@ -942,7 +933,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<CreateLaunchConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOrUpdateTags
@@ -1003,7 +993,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<CreateOrUpdateTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAutoScalingGroup
@@ -1076,7 +1065,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DeleteAutoScalingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLaunchConfiguration
@@ -1123,7 +1111,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DeleteLaunchConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLifecycleHook
@@ -1167,7 +1154,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DeleteLifecycleHookResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNotificationConfiguration
@@ -1205,7 +1191,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DeleteNotificationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePolicy
@@ -1258,7 +1243,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DeletePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteScheduledAction
@@ -1296,7 +1280,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DeleteScheduledActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTags
@@ -1337,7 +1320,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DeleteTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWarmPool
@@ -1393,7 +1375,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DeleteWarmPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountLimits
@@ -1470,7 +1451,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DescribeAccountLimitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAdjustmentTypes
@@ -1567,7 +1547,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DescribeAdjustmentTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAutoScalingGroups
@@ -1664,7 +1643,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DescribeAutoScalingGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAutoScalingInstances
@@ -1731,7 +1709,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DescribeAutoScalingInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAutoScalingNotificationTypes
@@ -1792,7 +1769,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DescribeAutoScalingNotificationTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInstanceRefreshes
@@ -1850,7 +1826,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DescribeInstanceRefreshesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLaunchConfigurations
@@ -1917,7 +1892,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DescribeLaunchConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLifecycleHooks
@@ -1955,7 +1929,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DescribeLifecycleHooksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLifecycleHookTypes
@@ -2007,7 +1980,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DescribeLifecycleHookTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLoadBalancers
@@ -2092,7 +2064,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DescribeLoadBalancersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLoadBalancerTargetGroups
@@ -2179,7 +2150,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DescribeLoadBalancerTargetGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMetricCollectionTypes
@@ -2240,7 +2210,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DescribeMetricCollectionTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeNotificationConfigurations
@@ -2309,7 +2278,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DescribeNotificationConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePolicies
@@ -2382,7 +2350,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DescribePoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeScalingActivities
@@ -2483,7 +2450,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DescribeScalingActivitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeScalingProcessTypes
@@ -2548,7 +2514,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DescribeScalingProcessTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeScheduledActions
@@ -2631,7 +2596,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DescribeScheduledActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTags
@@ -2734,7 +2698,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DescribeTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTerminationPolicyTypes
@@ -2809,7 +2772,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DescribeTerminationPolicyTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTrafficSources
@@ -2861,7 +2823,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DescribeTrafficSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWarmPool
@@ -2914,7 +2875,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DescribeWarmPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachInstances
@@ -2974,7 +2934,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DetachInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachLoadBalancers
@@ -3036,7 +2995,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DetachLoadBalancersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachLoadBalancerTargetGroups
@@ -3099,7 +3057,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DetachLoadBalancerTargetGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachTrafficSources
@@ -3145,7 +3102,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DetachTrafficSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableMetricsCollection
@@ -3183,7 +3139,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<DisableMetricsCollectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableMetricsCollection
@@ -3230,7 +3185,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<EnableMetricsCollectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnterStandby
@@ -3287,7 +3241,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<EnterStandbyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecutePolicy
@@ -3329,7 +3282,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<ExecutePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExitStandby
@@ -3378,7 +3330,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<ExitStandbyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPredictiveScalingForecast
@@ -3434,7 +3385,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<GetPredictiveScalingForecastResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutLifecycleHook
@@ -3540,7 +3490,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<PutLifecycleHookResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutNotificationConfiguration
@@ -3605,7 +3554,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<PutNotificationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutScalingPolicy
@@ -3673,7 +3621,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<PutScalingPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutScheduledUpdateGroupAction
@@ -3738,7 +3685,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<PutScheduledUpdateGroupActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutWarmPool
@@ -3803,7 +3749,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<PutWarmPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RecordLifecycleActionHeartbeat
@@ -3886,7 +3831,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<RecordLifecycleActionHeartbeatResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResumeProcesses
@@ -3935,7 +3879,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<ResumeProcessesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RollbackInstanceRefresh
@@ -4024,7 +3967,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<RollbackInstanceRefreshResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetDesiredCapacity
@@ -4077,7 +4019,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<SetDesiredCapacityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetInstanceHealth
@@ -4122,7 +4063,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<SetInstanceHealthResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetInstanceProtection
@@ -4178,7 +4118,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<SetInstanceProtectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartInstanceRefresh
@@ -4260,7 +4199,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<StartInstanceRefreshResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SuspendProcesses
@@ -4316,7 +4254,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<SuspendProcessesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TerminateInstanceInAutoScalingGroup
@@ -4379,7 +4316,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<TerminateInstanceInAutoScalingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAutoScalingGroup
@@ -4479,7 +4415,6 @@ namespace Amazon.AutoScaling
 
             return InvokeAsync<UpdateAutoScalingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

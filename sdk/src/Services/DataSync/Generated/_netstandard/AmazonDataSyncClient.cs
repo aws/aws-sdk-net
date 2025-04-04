@@ -312,7 +312,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<AddStorageSystemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelTaskExecution
@@ -362,7 +361,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<CancelTaskExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAgent
@@ -409,7 +407,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<CreateAgentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLocationAzureBlob
@@ -459,7 +456,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<CreateLocationAzureBlobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLocationEfs
@@ -506,7 +502,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<CreateLocationEfsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLocationFsxLustre
@@ -553,7 +548,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<CreateLocationFsxLustreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLocationFsxOntap
@@ -600,7 +594,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<CreateLocationFsxOntapResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLocationFsxOpenZfs
@@ -653,7 +646,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<CreateLocationFsxOpenZfsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLocationFsxWindows
@@ -701,7 +693,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<CreateLocationFsxWindowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLocationHdfs
@@ -748,7 +739,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<CreateLocationHdfsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLocationNfs
@@ -795,7 +785,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<CreateLocationNfsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLocationObjectStorage
@@ -842,7 +831,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<CreateLocationObjectStorageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLocationS3
@@ -903,7 +891,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<CreateLocationS3Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLocationSmb
@@ -951,7 +938,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<CreateLocationSmbResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTask
@@ -1004,7 +990,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<CreateTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAgent
@@ -1053,7 +1038,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<DeleteAgentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLocation
@@ -1093,7 +1077,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<DeleteLocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTask
@@ -1133,7 +1116,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<DeleteTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAgent
@@ -1174,7 +1156,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<DescribeAgentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDiscoveryJob
@@ -1214,7 +1195,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<DescribeDiscoveryJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLocationAzureBlob
@@ -1255,7 +1235,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<DescribeLocationAzureBlobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLocationEfs
@@ -1296,7 +1275,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<DescribeLocationEfsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLocationFsxLustre
@@ -1337,7 +1315,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<DescribeLocationFsxLustreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLocationFsxOntap
@@ -1385,7 +1362,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<DescribeLocationFsxOntapResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLocationFsxOpenZfs
@@ -1433,7 +1409,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<DescribeLocationFsxOpenZfsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLocationFsxWindows
@@ -1474,7 +1449,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<DescribeLocationFsxWindowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLocationHdfs
@@ -1515,7 +1489,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<DescribeLocationHdfsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLocationNfs
@@ -1556,7 +1529,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<DescribeLocationNfsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLocationObjectStorage
@@ -1597,7 +1569,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<DescribeLocationObjectStorageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLocationS3
@@ -1637,7 +1608,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<DescribeLocationS3Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLocationSmb
@@ -1678,7 +1648,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<DescribeLocationSmbResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStorageSystem
@@ -1719,7 +1688,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<DescribeStorageSystemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStorageSystemResourceMetrics
@@ -1760,7 +1728,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<DescribeStorageSystemResourceMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStorageSystemResources
@@ -1801,7 +1768,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<DescribeStorageSystemResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTask
@@ -1842,7 +1808,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<DescribeTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTaskExecution
@@ -1893,7 +1858,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<DescribeTaskExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateRecommendations
@@ -1942,7 +1906,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<GenerateRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAgents
@@ -1999,7 +1962,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<ListAgentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDiscoveryJobs
@@ -2040,7 +2002,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<ListDiscoveryJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLocations
@@ -2087,7 +2048,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<ListLocationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStorageSystems
@@ -2127,7 +2087,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<ListStorageSystemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2167,7 +2126,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTaskExecutions
@@ -2207,7 +2165,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<ListTaskExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTasks
@@ -2247,7 +2204,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<ListTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveStorageSystem
@@ -2288,7 +2244,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<RemoveStorageSystemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDiscoveryJob
@@ -2330,7 +2285,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<StartDiscoveryJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartTaskExecution
@@ -2384,7 +2338,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<StartTaskExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopDiscoveryJob
@@ -2432,7 +2385,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<StopDiscoveryJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2478,7 +2430,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2518,7 +2469,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAgent
@@ -2558,7 +2508,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<UpdateAgentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDiscoveryJob
@@ -2598,7 +2547,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<UpdateDiscoveryJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLocationAzureBlob
@@ -2645,7 +2593,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<UpdateLocationAzureBlobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLocationEfs
@@ -2692,7 +2639,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<UpdateLocationEfsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLocationFsxLustre
@@ -2739,7 +2685,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<UpdateLocationFsxLustreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLocationFsxOntap
@@ -2786,7 +2731,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<UpdateLocationFsxOntapResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLocationFsxOpenZfs
@@ -2839,7 +2783,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<UpdateLocationFsxOpenZfsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLocationFsxWindows
@@ -2886,7 +2829,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<UpdateLocationFsxWindowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLocationHdfs
@@ -2933,7 +2875,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<UpdateLocationHdfsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLocationNfs
@@ -2980,7 +2921,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<UpdateLocationNfsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLocationObjectStorage
@@ -3027,7 +2967,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<UpdateLocationObjectStorageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLocationS3
@@ -3084,7 +3023,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<UpdateLocationS3Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLocationSmb
@@ -3131,7 +3069,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<UpdateLocationSmbResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStorageSystem
@@ -3172,7 +3109,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<UpdateStorageSystemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTask
@@ -3213,7 +3149,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<UpdateTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTaskExecution
@@ -3261,7 +3196,6 @@ namespace Amazon.DataSync
 
             return InvokeAsync<UpdateTaskExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

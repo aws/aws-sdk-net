@@ -366,7 +366,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<CreateCapacityProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCluster
@@ -448,7 +447,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<CreateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateService
@@ -654,7 +652,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<CreateServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTaskSet
@@ -761,7 +758,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<CreateTaskSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccountSetting
@@ -825,7 +821,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<DeleteAccountSettingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAttributes
@@ -877,7 +872,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<DeleteAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCapacityProvider
@@ -960,7 +954,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<DeleteCapacityProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCluster
@@ -1059,7 +1052,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<DeleteClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteService
@@ -1153,7 +1145,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<DeleteServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTaskDefinitions
@@ -1254,7 +1245,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<DeleteTaskDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTaskSet
@@ -1343,7 +1333,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<DeleteTaskSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterContainerInstance
@@ -1432,7 +1421,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<DeregisterContainerInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterTaskDefinition
@@ -1521,7 +1509,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<DeregisterTaskDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCapacityProviders
@@ -1585,7 +1572,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<DescribeCapacityProvidersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClusters
@@ -1655,7 +1641,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<DescribeClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeContainerInstances
@@ -1724,7 +1709,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<DescribeContainerInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeServiceDeployments
@@ -1809,7 +1793,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<DescribeServiceDeploymentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeServiceRevisions
@@ -1899,7 +1882,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<DescribeServiceRevisionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeServices
@@ -1967,7 +1949,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<DescribeServicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTaskDefinition
@@ -2040,7 +2021,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<DescribeTaskDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTasks
@@ -2119,7 +2099,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<DescribeTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTaskSets
@@ -2204,7 +2183,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<DescribeTaskSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteCommand
@@ -2311,7 +2289,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<ExecuteCommandResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTaskProtection
@@ -2388,7 +2365,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<GetTaskProtectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccountSettings
@@ -2452,7 +2428,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<ListAccountSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAttributes
@@ -2504,7 +2479,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<ListAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClusters
@@ -2568,7 +2542,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<ListClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContainerInstances
@@ -2639,7 +2612,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<ListContainerInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceDeployments
@@ -2724,7 +2696,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<ListServiceDeploymentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServices
@@ -2793,7 +2764,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<ListServicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServicesByNamespace
@@ -2865,7 +2835,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<ListServicesByNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2933,7 +2902,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTaskDefinitionFamilies
@@ -3006,7 +2974,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<ListTaskDefinitionFamiliesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTaskDefinitions
@@ -3072,7 +3039,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<ListTaskDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTasks
@@ -3151,7 +3117,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<ListTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAccountSetting
@@ -3223,7 +3188,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<PutAccountSettingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAccountSettingDefault
@@ -3288,7 +3252,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<PutAccountSettingDefaultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAttributes
@@ -3349,7 +3312,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<PutAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutClusterCapacityProviders
@@ -3447,7 +3409,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<PutClusterCapacityProvidersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterTaskDefinition
@@ -3532,7 +3493,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<RegisterTaskDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RunTask
@@ -3693,7 +3653,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<RunTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartTask
@@ -3788,7 +3747,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<StartTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopTask
@@ -3881,7 +3839,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<StopTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SubmitAttachmentStateChanges
@@ -3956,7 +3913,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<SubmitAttachmentStateChangesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -4030,7 +3986,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -4101,7 +4056,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCapacityProvider
@@ -4165,7 +4119,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<UpdateCapacityProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCluster
@@ -4236,7 +4189,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<UpdateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateClusterSettings
@@ -4304,7 +4256,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<UpdateClusterSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContainerAgent
@@ -4418,7 +4369,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<UpdateContainerAgentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContainerInstancesState
@@ -4550,7 +4500,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<UpdateContainerInstancesStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateService
@@ -4815,7 +4764,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<UpdateServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServicePrimaryTaskSet
@@ -4906,7 +4854,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<UpdateServicePrimaryTaskSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTaskProtection
@@ -5021,7 +4968,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<UpdateTaskProtectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTaskSet
@@ -5110,7 +5056,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<UpdateTaskSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

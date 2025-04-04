@@ -314,7 +314,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<CancelCapacityTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelOrder
@@ -363,7 +362,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<CancelOrderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOrder
@@ -415,7 +413,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<CreateOrderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOutpost
@@ -472,7 +469,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<CreateOutpostResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSite
@@ -521,7 +517,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<CreateSiteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOutpost
@@ -570,7 +565,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<DeleteOutpostResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSite
@@ -619,7 +613,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<DeleteSiteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCapacityTask
@@ -665,7 +658,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<GetCapacityTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCatalogItem
@@ -708,7 +700,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<GetCatalogItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConnection
@@ -769,7 +760,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<GetConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOrder
@@ -812,7 +802,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<GetOrderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOutpost
@@ -858,7 +847,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<GetOutpostResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOutpostInstanceTypes
@@ -904,7 +892,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<GetOutpostInstanceTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOutpostSupportedInstanceTypes
@@ -952,7 +939,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<GetOutpostSupportedInstanceTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSite
@@ -998,7 +984,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<GetSiteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSiteAddress
@@ -1044,7 +1029,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<GetSiteAddressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssetInstances
@@ -1091,7 +1075,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<ListAssetInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssets
@@ -1145,7 +1128,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<ListAssetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBlockingInstancesForCapacityTask
@@ -1193,7 +1175,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<ListBlockingInstancesForCapacityTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCapacityTasks
@@ -1247,7 +1228,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<ListCapacityTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCatalogItems
@@ -1298,7 +1278,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<ListCatalogItemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOrders
@@ -1344,7 +1323,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<ListOrdersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOutposts
@@ -1395,7 +1373,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<ListOutpostsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSites
@@ -1447,7 +1424,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<ListSitesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1490,7 +1466,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartCapacityTask
@@ -1540,7 +1515,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<StartCapacityTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartConnection
@@ -1601,7 +1575,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<StartConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1644,7 +1617,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1687,7 +1659,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateOutpost
@@ -1736,7 +1707,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<UpdateOutpostResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSite
@@ -1785,7 +1755,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<UpdateSiteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSiteAddress
@@ -1845,7 +1814,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<UpdateSiteAddressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSiteRackPhysicalProperties
@@ -1902,7 +1870,6 @@ namespace Amazon.Outposts
 
             return InvokeAsync<UpdateSiteRackPhysicalPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

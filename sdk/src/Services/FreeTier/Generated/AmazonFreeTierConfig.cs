@@ -30,7 +30,6 @@ namespace Amazon.FreeTier
     /// <summary>
     /// Configuration for accessing Amazon FreeTier service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonFreeTierConfig : ClientConfig
     {
         private static readonly string UserAgentString =

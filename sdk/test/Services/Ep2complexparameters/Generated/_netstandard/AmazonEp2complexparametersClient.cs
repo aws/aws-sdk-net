@@ -276,7 +276,6 @@ namespace Amazon.Ep2complexparameters
 
             return InvokeAsync<EmptyStaticContextOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOfObjectsOperation
@@ -310,7 +309,6 @@ namespace Amazon.Ep2complexparameters
 
             return InvokeAsync<ListOfObjectsOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOfUnionsOperation
@@ -344,7 +342,6 @@ namespace Amazon.Ep2complexparameters
 
             return InvokeAsync<ListOfUnionsOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  MapOperation
@@ -378,7 +375,6 @@ namespace Amazon.Ep2complexparameters
 
             return InvokeAsync<MapOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NoBindingsOperation
@@ -412,7 +408,6 @@ namespace Amazon.Ep2complexparameters
 
             return InvokeAsync<NoBindingsOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StaticContextOperation
@@ -446,7 +441,6 @@ namespace Amazon.Ep2complexparameters
 
             return InvokeAsync<StaticContextOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

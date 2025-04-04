@@ -324,7 +324,6 @@ namespace Amazon.Billing
 
             return InvokeAsync<CreateBillingViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBillingView
@@ -374,7 +373,6 @@ namespace Amazon.Billing
 
             return InvokeAsync<DeleteBillingViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBillingView
@@ -423,7 +421,6 @@ namespace Amazon.Billing
 
             return InvokeAsync<GetBillingViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicy
@@ -473,7 +470,6 @@ namespace Amazon.Billing
 
             return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBillingViews
@@ -527,7 +523,6 @@ namespace Amazon.Billing
 
             return InvokeAsync<ListBillingViewsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSourceViewsForBillingView
@@ -577,7 +572,6 @@ namespace Amazon.Billing
 
             return InvokeAsync<ListSourceViewsForBillingViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -626,7 +620,6 @@ namespace Amazon.Billing
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -675,7 +668,6 @@ namespace Amazon.Billing
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -725,7 +717,6 @@ namespace Amazon.Billing
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBillingView
@@ -782,7 +773,6 @@ namespace Amazon.Billing
 
             return InvokeAsync<UpdateBillingViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

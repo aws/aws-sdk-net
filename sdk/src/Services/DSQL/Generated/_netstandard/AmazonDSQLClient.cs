@@ -323,7 +323,6 @@ namespace Amazon.DSQL
 
             return InvokeAsync<CreateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMultiRegionClusters
@@ -378,7 +377,6 @@ namespace Amazon.DSQL
 
             return InvokeAsync<CreateMultiRegionClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCluster
@@ -430,7 +428,6 @@ namespace Amazon.DSQL
 
             return InvokeAsync<DeleteClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMultiRegionClusters
@@ -482,7 +479,6 @@ namespace Amazon.DSQL
 
             return InvokeAsync<DeleteMultiRegionClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCluster
@@ -531,7 +527,6 @@ namespace Amazon.DSQL
 
             return InvokeAsync<GetClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClusters
@@ -580,7 +575,6 @@ namespace Amazon.DSQL
 
             return InvokeAsync<ListClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -629,7 +623,6 @@ namespace Amazon.DSQL
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -681,7 +674,6 @@ namespace Amazon.DSQL
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -730,7 +722,6 @@ namespace Amazon.DSQL
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCluster
@@ -782,7 +773,6 @@ namespace Amazon.DSQL
 
             return InvokeAsync<UpdateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

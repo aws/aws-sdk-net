@@ -319,7 +319,6 @@ namespace Amazon.Account
 
             return InvokeAsync<AcceptPrimaryEmailUpdateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAlternateContact
@@ -386,7 +385,6 @@ namespace Amazon.Account
 
             return InvokeAsync<DeleteAlternateContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableRegion
@@ -447,7 +445,6 @@ namespace Amazon.Account
 
             return InvokeAsync<DisableRegionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableRegion
@@ -501,7 +498,6 @@ namespace Amazon.Account
 
             return InvokeAsync<EnableRegionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAlternateContact
@@ -568,7 +564,6 @@ namespace Amazon.Account
 
             return InvokeAsync<GetAlternateContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContactInformation
@@ -626,7 +621,6 @@ namespace Amazon.Account
 
             return InvokeAsync<GetContactInformationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPrimaryEmail
@@ -678,7 +672,6 @@ namespace Amazon.Account
 
             return InvokeAsync<GetPrimaryEmailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRegionOptStatus
@@ -727,7 +720,6 @@ namespace Amazon.Account
 
             return InvokeAsync<GetRegionOptStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRegions
@@ -777,7 +769,6 @@ namespace Amazon.Account
 
             return InvokeAsync<ListRegionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAlternateContact
@@ -841,7 +832,6 @@ namespace Amazon.Account
 
             return InvokeAsync<PutAlternateContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutContactInformation
@@ -896,7 +886,6 @@ namespace Amazon.Account
 
             return InvokeAsync<PutContactInformationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartPrimaryEmailUpdate
@@ -953,7 +942,6 @@ namespace Amazon.Account
 
             return InvokeAsync<StartPrimaryEmailUpdateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

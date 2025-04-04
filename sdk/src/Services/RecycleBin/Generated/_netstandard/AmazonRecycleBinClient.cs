@@ -345,7 +345,6 @@ namespace Amazon.RecycleBin
 
             return InvokeAsync<CreateRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRule
@@ -393,7 +392,6 @@ namespace Amazon.RecycleBin
 
             return InvokeAsync<DeleteRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRule
@@ -436,7 +434,6 @@ namespace Amazon.RecycleBin
 
             return InvokeAsync<GetRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRules
@@ -476,7 +473,6 @@ namespace Amazon.RecycleBin
 
             return InvokeAsync<ListRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -519,7 +515,6 @@ namespace Amazon.RecycleBin
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  LockRule
@@ -573,7 +568,6 @@ namespace Amazon.RecycleBin
 
             return InvokeAsync<LockRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -620,7 +614,6 @@ namespace Amazon.RecycleBin
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UnlockRule
@@ -667,7 +660,6 @@ namespace Amazon.RecycleBin
 
             return InvokeAsync<UnlockRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -710,7 +702,6 @@ namespace Amazon.RecycleBin
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRule
@@ -765,7 +756,6 @@ namespace Amazon.RecycleBin
 
             return InvokeAsync<UpdateRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

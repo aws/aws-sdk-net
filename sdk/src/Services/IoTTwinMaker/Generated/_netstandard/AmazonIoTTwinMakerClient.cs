@@ -310,7 +310,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<BatchPutPropertyValuesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelMetadataTransferJob
@@ -362,7 +361,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<CancelMetadataTransferJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateComponentType
@@ -414,7 +412,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<CreateComponentTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEntity
@@ -466,7 +463,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<CreateEntityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMetadataTransferJob
@@ -521,7 +517,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<CreateMetadataTransferJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateScene
@@ -573,7 +568,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<CreateSceneResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSyncJob
@@ -625,7 +619,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<CreateSyncJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkspace
@@ -677,7 +670,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<CreateWorkspaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteComponentType
@@ -726,7 +718,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<DeleteComponentTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEntity
@@ -775,7 +766,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<DeleteEntityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteScene
@@ -824,7 +814,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<DeleteSceneResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSyncJob
@@ -876,7 +865,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<DeleteSyncJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkspace
@@ -925,7 +913,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<DeleteWorkspaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteQuery
@@ -986,7 +973,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<ExecuteQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetComponentType
@@ -1035,7 +1021,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<GetComponentTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEntity
@@ -1084,7 +1069,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<GetEntityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMetadataTransferJob
@@ -1133,7 +1117,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<GetMetadataTransferJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPricingPlan
@@ -1179,7 +1162,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<GetPricingPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPropertyValue
@@ -1240,7 +1222,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<GetPropertyValueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPropertyValueHistory
@@ -1303,7 +1284,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<GetPropertyValueHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetScene
@@ -1352,7 +1332,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<GetSceneResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSyncJob
@@ -1404,7 +1383,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<GetSyncJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkspace
@@ -1453,7 +1431,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<GetWorkspaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListComponents
@@ -1502,7 +1479,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<ListComponentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListComponentTypes
@@ -1548,7 +1524,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<ListComponentTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEntities
@@ -1594,7 +1569,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<ListEntitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMetadataTransferJobs
@@ -1640,7 +1614,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<ListMetadataTransferJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProperties
@@ -1689,7 +1662,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<ListPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListScenes
@@ -1735,7 +1707,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<ListScenesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSyncJobs
@@ -1784,7 +1755,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<ListSyncJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSyncResources
@@ -1833,7 +1803,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<ListSyncResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1873,7 +1842,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkspaces
@@ -1919,7 +1887,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<ListWorkspacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1962,7 +1929,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2002,7 +1968,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateComponentType
@@ -2054,7 +2019,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<UpdateComponentTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEntity
@@ -2109,7 +2073,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<UpdateEntityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePricingPlan
@@ -2155,7 +2118,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<UpdatePricingPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateScene
@@ -2204,7 +2166,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<UpdateSceneResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkspace
@@ -2256,7 +2217,6 @@ namespace Amazon.IoTTwinMaker
 
             return InvokeAsync<UpdateWorkspaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

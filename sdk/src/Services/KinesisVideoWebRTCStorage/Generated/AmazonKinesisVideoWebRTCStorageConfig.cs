@@ -30,7 +30,6 @@ namespace Amazon.KinesisVideoWebRTCStorage
     /// <summary>
     /// Configuration for accessing Amazon KinesisVideoWebRTCStorage service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonKinesisVideoWebRTCStorageConfig : ClientConfig
     {
         private static readonly string UserAgentString =

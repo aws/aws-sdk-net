@@ -351,7 +351,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<AcceptReservedNodeExchangeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddPartner
@@ -399,7 +398,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<AddPartnerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateDataShareConsumer
@@ -441,7 +439,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<AssociateDataShareConsumerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AuthorizeClusterSecurityGroupIngress
@@ -512,7 +509,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<AuthorizeClusterSecurityGroupIngressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AuthorizeDataShare
@@ -551,7 +547,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<AuthorizeDataShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AuthorizeEndpointAccess
@@ -603,7 +598,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<AuthorizeEndpointAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AuthorizeSnapshotAccess
@@ -667,7 +661,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<AuthorizeSnapshotAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteClusterSnapshots
@@ -705,7 +698,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<BatchDeleteClusterSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchModifyClusterSnapshots
@@ -750,7 +742,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<BatchModifyClusterSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelResize
@@ -796,7 +787,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<CancelResizeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyClusterSnapshot
@@ -869,7 +859,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<CopyClusterSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAuthenticationProfile
@@ -916,7 +905,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<CreateAuthenticationProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCluster
@@ -1074,7 +1062,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<CreateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateClusterParameterGroup
@@ -1137,7 +1124,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<CreateClusterParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateClusterSecurityGroup
@@ -1193,7 +1179,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<CreateClusterSecurityGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateClusterSnapshot
@@ -1260,7 +1245,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<CreateClusterSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateClusterSubnetGroup
@@ -1331,7 +1315,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<CreateClusterSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCustomDomainAssociation
@@ -1376,7 +1359,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<CreateCustomDomainAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEndpointAccess
@@ -1440,7 +1422,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<CreateEndpointAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEventSubscription
@@ -1538,7 +1519,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<CreateEventSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateHsmClientCertificate
@@ -1598,7 +1578,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<CreateHsmClientCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateHsmConfiguration
@@ -1657,7 +1636,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<CreateHsmConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIntegration
@@ -1721,7 +1699,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<CreateIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRedshiftIdcApplication
@@ -1771,7 +1748,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<CreateRedshiftIdcApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateScheduledAction
@@ -1831,7 +1807,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<CreateScheduledActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSnapshotCopyGrant
@@ -1895,7 +1870,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<CreateSnapshotCopyGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSnapshotSchedule
@@ -1948,7 +1922,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<CreateSnapshotScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTags
@@ -2005,7 +1978,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<CreateTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUsageLimit
@@ -2061,7 +2033,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<CreateUsageLimitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeauthorizeDataShare
@@ -2098,7 +2069,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeauthorizeDataShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAuthenticationProfile
@@ -2140,7 +2110,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeleteAuthenticationProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCluster
@@ -2214,7 +2183,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeleteClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteClusterParameterGroup
@@ -2262,7 +2230,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeleteClusterParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteClusterSecurityGroup
@@ -2314,7 +2281,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeleteClusterSecurityGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteClusterSnapshot
@@ -2365,7 +2331,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeleteClusterSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteClusterSubnetGroup
@@ -2408,7 +2373,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeleteClusterSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCustomDomainAssociation
@@ -2454,7 +2418,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeleteCustomDomainAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEndpointAccess
@@ -2503,7 +2466,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeleteEndpointAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventSubscription
@@ -2545,7 +2507,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeleteEventSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteHsmClientCertificate
@@ -2586,7 +2547,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeleteHsmClientCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteHsmConfiguration
@@ -2627,7 +2587,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeleteHsmConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIntegration
@@ -2675,7 +2634,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeleteIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePartner
@@ -2722,7 +2680,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeletePartnerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRedshiftIdcApplication
@@ -2769,7 +2726,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeleteRedshiftIdcApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -2809,7 +2765,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteScheduledAction
@@ -2849,7 +2804,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeleteScheduledActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSnapshotCopyGrant
@@ -2890,7 +2844,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeleteSnapshotCopyGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSnapshotSchedule
@@ -2930,7 +2883,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeleteSnapshotScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTags
@@ -2971,7 +2923,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeleteTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUsageLimit
@@ -3011,7 +2962,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeleteUsageLimitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterNamespace
@@ -3055,7 +3005,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DeregisterNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountAttributes
@@ -3089,7 +3038,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeAccountAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAuthenticationProfiles
@@ -3131,7 +3079,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeAuthenticationProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClusterDbRevisions
@@ -3171,7 +3118,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeClusterDbRevisionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClusterParameterGroups
@@ -3280,7 +3226,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeClusterParameterGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClusterParameters
@@ -3332,7 +3277,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeClusterParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClusters
@@ -3433,7 +3377,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClusterSecurityGroups
@@ -3542,7 +3485,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeClusterSecurityGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClusterSnapshots
@@ -3655,7 +3597,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeClusterSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClusterSubnetGroups
@@ -3752,7 +3693,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeClusterSubnetGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClusterTracks
@@ -3792,7 +3732,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeClusterTracksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClusterVersions
@@ -3851,7 +3790,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeClusterVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCustomDomainAssociations
@@ -3891,7 +3829,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeCustomDomainAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataShares
@@ -3929,7 +3866,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeDataSharesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataSharesForConsumer
@@ -3967,7 +3903,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeDataSharesForConsumerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataSharesForProducer
@@ -4005,7 +3940,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeDataSharesForProducerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDefaultClusterParameters
@@ -4045,7 +3979,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeDefaultClusterParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEndpointAccess
@@ -4088,7 +4021,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeEndpointAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEndpointAuthorization
@@ -4128,7 +4060,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeEndpointAuthorizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventCategories
@@ -4185,7 +4116,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeEventCategoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEvents
@@ -4244,7 +4174,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventSubscriptions
@@ -4343,7 +4272,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeEventSubscriptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeHsmClientCertificates
@@ -4440,7 +4368,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeHsmClientCertificatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeHsmConfigurations
@@ -4537,7 +4464,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeHsmConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInboundIntegrations
@@ -4580,7 +4506,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeInboundIntegrationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeIntegrations
@@ -4620,7 +4545,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeIntegrationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLoggingStatus
@@ -4661,7 +4585,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeLoggingStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeNodeConfigurationOptions
@@ -4713,7 +4636,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeNodeConfigurationOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOrderableClusterOptions
@@ -4780,7 +4702,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeOrderableClusterOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePartners
@@ -4823,7 +4744,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribePartnersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRedshiftIdcApplications
@@ -4870,7 +4790,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeRedshiftIdcApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReservedNodeExchangeStatus
@@ -4914,7 +4833,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeReservedNodeExchangeStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReservedNodeOfferings
@@ -5009,7 +4927,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeReservedNodeOfferingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReservedNodes
@@ -5076,7 +4993,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeReservedNodesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeResize
@@ -5128,7 +5044,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeResizeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeScheduledActions
@@ -5168,7 +5083,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeScheduledActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSnapshotCopyGrants
@@ -5217,7 +5131,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeSnapshotCopyGrantsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSnapshotSchedules
@@ -5251,7 +5164,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeSnapshotSchedulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStorage
@@ -5285,7 +5197,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeStorageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTableRestoreStatus
@@ -5329,7 +5240,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeTableRestoreStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTags
@@ -5403,7 +5313,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUsageLimits
@@ -5466,7 +5375,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DescribeUsageLimitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableLogging
@@ -5510,7 +5418,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DisableLoggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableSnapshotCopy
@@ -5567,7 +5474,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DisableSnapshotCopyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateDataShareConsumer
@@ -5607,7 +5513,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<DisassociateDataShareConsumerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableLogging
@@ -5667,7 +5572,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<EnableLoggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableSnapshotCopy
@@ -5742,7 +5646,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<EnableSnapshotCopyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FailoverPrimaryCompute
@@ -5789,7 +5692,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<FailoverPrimaryComputeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetClusterCredentials
@@ -5860,7 +5762,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<GetClusterCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetClusterCredentialsWithIAM
@@ -5914,7 +5815,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<GetClusterCredentialsWithIAMResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReservedNodeExchangeConfigurationOptions
@@ -5975,7 +5875,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<GetReservedNodeExchangeConfigurationOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReservedNodeExchangeOfferings
@@ -6029,7 +5928,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<GetReservedNodeExchangeOfferingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicy
@@ -6072,7 +5970,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecommendations
@@ -6113,7 +6010,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ListRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyAquaConfiguration
@@ -6157,7 +6053,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ModifyAquaConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyAuthenticationProfile
@@ -6204,7 +6099,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ModifyAuthenticationProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyCluster
@@ -6358,7 +6252,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ModifyClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyClusterDbRevision
@@ -6405,7 +6298,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ModifyClusterDbRevisionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyClusterIamRoles
@@ -6453,7 +6345,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ModifyClusterIamRolesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyClusterMaintenance
@@ -6493,7 +6384,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ModifyClusterMaintenanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyClusterParameterGroup
@@ -6542,7 +6432,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ModifyClusterParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyClusterSnapshot
@@ -6596,7 +6485,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ModifyClusterSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyClusterSnapshotSchedule
@@ -6639,7 +6527,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ModifyClusterSnapshotScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyClusterSubnetGroup
@@ -6725,7 +6612,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ModifyClusterSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyCustomDomainAssociation
@@ -6771,7 +6657,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ModifyCustomDomainAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyEndpointAccess
@@ -6823,7 +6708,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ModifyEndpointAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyEventSubscription
@@ -6890,7 +6774,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ModifyEventSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyIntegration
@@ -6941,7 +6824,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ModifyIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyRedshiftIdcApplication
@@ -6988,7 +6870,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ModifyRedshiftIdcApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyScheduledAction
@@ -7043,7 +6924,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ModifyScheduledActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifySnapshotCopyRetentionPeriod
@@ -7103,7 +6983,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ModifySnapshotCopyRetentionPeriodResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifySnapshotSchedule
@@ -7146,7 +7025,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ModifySnapshotScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyUsageLimit
@@ -7190,7 +7068,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ModifyUsageLimitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PauseCluster
@@ -7233,7 +7110,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<PauseClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PurchaseReservedNodeOffering
@@ -7291,7 +7167,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<PurchaseReservedNodeOfferingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -7337,7 +7212,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RebootCluster
@@ -7382,7 +7256,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<RebootClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterNamespace
@@ -7425,7 +7298,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<RegisterNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectDataShare
@@ -7462,7 +7334,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<RejectDataShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetClusterParameterGroup
@@ -7507,7 +7378,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ResetClusterParameterGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResizeCluster
@@ -7630,7 +7500,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ResizeClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreFromClusterSnapshot
@@ -7818,7 +7687,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<RestoreFromClusterSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreTableFromClusterSnapshot
@@ -7896,7 +7764,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<RestoreTableFromClusterSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResumeCluster
@@ -7942,7 +7809,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<ResumeClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RevokeClusterSecurityGroupIngress
@@ -7990,7 +7856,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<RevokeClusterSecurityGroupIngressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RevokeEndpointAccess
@@ -8045,7 +7910,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<RevokeEndpointAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RevokeSnapshotAccess
@@ -8101,7 +7965,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<RevokeSnapshotAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RotateEncryptionKey
@@ -8148,7 +8011,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<RotateEncryptionKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePartnerStatus
@@ -8194,7 +8056,6 @@ namespace Amazon.Redshift
 
             return InvokeAsync<UpdatePartnerStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

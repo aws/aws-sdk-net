@@ -437,7 +437,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<AddLayerVersionPermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddPermission
@@ -530,7 +529,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<AddPermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAlias
@@ -589,7 +587,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<CreateAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCodeSigningConfig
@@ -632,7 +629,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<CreateCodeSigningConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEventSourceMapping
@@ -801,7 +797,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<CreateEventSourceMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFunction
@@ -939,7 +934,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<CreateFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFunctionUrlConfig
@@ -990,7 +984,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<CreateFunctionUrlConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAlias
@@ -1037,7 +1030,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<DeleteAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCodeSigningConfig
@@ -1084,7 +1076,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<DeleteCodeSigningConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventSourceMapping
@@ -1146,7 +1137,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<DeleteEventSourceMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFunction
@@ -1248,7 +1238,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<DeleteFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFunctionCodeSigningConfig
@@ -1301,7 +1290,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<DeleteFunctionCodeSigningConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFunctionConcurrency
@@ -1351,7 +1339,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<DeleteFunctionConcurrencyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFunctionEventInvokeConfig
@@ -1407,7 +1394,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<DeleteFunctionEventInvokeConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFunctionUrlConfig
@@ -1455,7 +1441,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<DeleteFunctionUrlConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLayerVersion
@@ -1499,7 +1484,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<DeleteLayerVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProvisionedConcurrencyConfig
@@ -1549,7 +1533,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<DeleteProvisionedConcurrencyConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccountSettings
@@ -1591,7 +1574,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<GetAccountSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAlias
@@ -1638,7 +1620,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<GetAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCodeSigningConfig
@@ -1681,7 +1662,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<GetCodeSigningConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEventSourceMapping
@@ -1729,7 +1709,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<GetEventSourceMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFunction
@@ -1811,7 +1790,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<GetFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFunctionCodeSigningConfig
@@ -1858,7 +1836,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<GetFunctionCodeSigningConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFunctionConcurrency
@@ -1906,7 +1883,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<GetFunctionConcurrencyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFunctionConfiguration
@@ -1998,7 +1974,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<GetFunctionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFunctionEventInvokeConfig
@@ -2051,7 +2026,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<GetFunctionEventInvokeConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFunctionRecursionConfig
@@ -2099,7 +2073,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<GetFunctionRecursionConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFunctionUrlConfig
@@ -2146,7 +2119,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<GetFunctionUrlConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLayerVersion
@@ -2194,7 +2166,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<GetLayerVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLayerVersionByArn
@@ -2242,7 +2213,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<GetLayerVersionByArnResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLayerVersionPolicy
@@ -2290,7 +2260,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<GetLayerVersionPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPolicy
@@ -2338,7 +2307,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<GetPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProvisionedConcurrencyConfig
@@ -2388,7 +2356,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<GetProvisionedConcurrencyConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRuntimeManagementConfig
@@ -2440,7 +2407,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<GetRuntimeManagementConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Invoke
@@ -2639,7 +2605,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<InvokeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InvokeWithResponseStream
@@ -2793,7 +2758,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<InvokeWithResponseStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAliases
@@ -2841,7 +2805,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<ListAliasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCodeSigningConfigs
@@ -2883,7 +2846,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<ListCodeSigningConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventSourceMappings
@@ -2931,7 +2893,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<ListEventSourceMappingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFunctionEventInvokeConfigs
@@ -2983,7 +2944,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<ListFunctionEventInvokeConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFunctions
@@ -3083,7 +3043,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<ListFunctionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFunctionsByCodeSigningConfig
@@ -3128,7 +3087,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<ListFunctionsByCodeSigningConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFunctionUrlConfigs
@@ -3175,7 +3133,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<ListFunctionUrlConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLayers
@@ -3224,7 +3181,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<ListLayersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLayerVersions
@@ -3275,7 +3231,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<ListLayerVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProvisionedConcurrencyConfigs
@@ -3322,7 +3277,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<ListProvisionedConcurrencyConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTags
@@ -3370,7 +3324,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<ListTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVersionsByFunction
@@ -3419,7 +3372,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<ListVersionsByFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PublishLayerVersion
@@ -3478,7 +3430,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<PublishLayerVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PublishVersion
@@ -3562,7 +3513,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<PublishVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutFunctionCodeSigningConfig
@@ -3617,7 +3567,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<PutFunctionCodeSigningConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutFunctionConcurrency
@@ -3685,7 +3634,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<PutFunctionConcurrencyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutFunctionEventInvokeConfig
@@ -3761,7 +3709,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<PutFunctionEventInvokeConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutFunctionRecursionConfig
@@ -3827,7 +3774,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<PutFunctionRecursionConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutProvisionedConcurrencyConfig
@@ -3877,7 +3823,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<PutProvisionedConcurrencyConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRuntimeManagementConfig
@@ -3929,7 +3874,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<PutRuntimeManagementConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveLayerVersionPermission
@@ -3993,7 +3937,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<RemoveLayerVersionPermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemovePermission
@@ -4057,7 +4000,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<RemovePermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -4108,7 +4050,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -4159,7 +4100,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAlias
@@ -4225,7 +4165,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<UpdateAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCodeSigningConfig
@@ -4269,7 +4208,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<UpdateCodeSigningConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEventSourceMapping
@@ -4443,7 +4381,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<UpdateEventSourceMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFunctionCode
@@ -4558,7 +4495,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<UpdateFunctionCodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFunctionConfiguration
@@ -4659,7 +4595,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<UpdateFunctionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFunctionEventInvokeConfig
@@ -4715,7 +4650,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<UpdateFunctionEventInvokeConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFunctionUrlConfig
@@ -4765,7 +4699,6 @@ namespace Amazon.Lambda
 
             return InvokeAsync<UpdateFunctionUrlConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

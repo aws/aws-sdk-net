@@ -30,7 +30,6 @@ namespace Amazon.ObservabilityAdmin
     /// <summary>
     /// Configuration for accessing Amazon ObservabilityAdmin service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonObservabilityAdminConfig : ClientConfig
     {
         private static readonly string UserAgentString =

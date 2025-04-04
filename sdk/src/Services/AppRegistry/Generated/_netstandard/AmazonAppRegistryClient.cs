@@ -315,7 +315,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<AssociateAttributeGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateResource
@@ -412,7 +411,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<AssociateResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApplication
@@ -463,7 +461,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAttributeGroup
@@ -513,7 +510,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<CreateAttributeGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplication
@@ -558,7 +554,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<DeleteApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAttributeGroup
@@ -601,7 +596,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<DeleteAttributeGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateAttributeGroup
@@ -646,7 +640,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<DisassociateAttributeGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateResource
@@ -737,7 +730,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<DisassociateResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplication
@@ -788,7 +780,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<GetApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAssociatedResource
@@ -831,7 +822,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<GetAssociatedResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAttributeGroup
@@ -879,7 +869,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<GetAttributeGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfiguration
@@ -916,7 +905,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<GetConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplications
@@ -956,7 +944,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<ListApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssociatedAttributeGroups
@@ -1000,7 +987,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<ListAssociatedAttributeGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssociatedResources
@@ -1052,7 +1038,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<ListAssociatedResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAttributeGroups
@@ -1092,7 +1077,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<ListAttributeGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAttributeGroupsForApplication
@@ -1136,7 +1120,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<ListAttributeGroupsForApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1179,7 +1162,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutConfiguration
@@ -1223,7 +1205,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<PutConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SyncResource
@@ -1280,7 +1261,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<SyncResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1333,7 +1313,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1381,7 +1360,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplication
@@ -1431,7 +1409,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAttributeGroup
@@ -1478,7 +1455,6 @@ namespace Amazon.AppRegistry
 
             return InvokeAsync<UpdateAttributeGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

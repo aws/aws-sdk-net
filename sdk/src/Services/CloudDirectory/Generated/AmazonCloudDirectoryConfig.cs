@@ -30,7 +30,6 @@ namespace Amazon.CloudDirectory
     /// <summary>
     /// Configuration for accessing Amazon CloudDirectory service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCloudDirectoryConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -274,7 +274,6 @@ namespace Amazon.DocumentTypesTest
 
             return InvokeAsync<ExecuteQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
     }

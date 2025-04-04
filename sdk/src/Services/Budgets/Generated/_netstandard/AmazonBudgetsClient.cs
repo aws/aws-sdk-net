@@ -394,7 +394,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<CreateBudgetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBudgetAction
@@ -453,7 +452,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<CreateBudgetActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNotification
@@ -510,7 +508,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<CreateNotificationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSubscriber
@@ -567,7 +564,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<CreateSubscriberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBudget
@@ -624,7 +620,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<DeleteBudgetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBudgetAction
@@ -678,7 +673,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<DeleteBudgetActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNotification
@@ -735,7 +729,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<DeleteNotificationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSubscriber
@@ -791,7 +784,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<DeleteSubscriberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBudget
@@ -849,7 +841,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<DescribeBudgetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBudgetAction
@@ -899,7 +890,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<DescribeBudgetActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBudgetActionHistories
@@ -952,7 +942,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<DescribeBudgetActionHistoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBudgetActionsForAccount
@@ -1002,7 +991,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<DescribeBudgetActionsForAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBudgetActionsForBudget
@@ -1055,7 +1043,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<DescribeBudgetActionsForBudgetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBudgetNotificationsForAccount
@@ -1111,7 +1098,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<DescribeBudgetNotificationsForAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBudgetPerformanceHistory
@@ -1168,7 +1154,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<DescribeBudgetPerformanceHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBudgets
@@ -1232,7 +1217,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<DescribeBudgetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeNotificationsForBudget
@@ -1288,7 +1272,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<DescribeNotificationsForBudgetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSubscribersForNotification
@@ -1344,7 +1327,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<DescribeSubscribersForNotificationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteBudgetAction
@@ -1398,7 +1380,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<ExecuteBudgetActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1448,7 +1429,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1501,7 +1481,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1551,7 +1530,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBudget
@@ -1612,7 +1590,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<UpdateBudgetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBudgetAction
@@ -1666,7 +1643,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<UpdateBudgetActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNotification
@@ -1719,7 +1695,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<UpdateNotificationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSubscriber
@@ -1772,7 +1747,6 @@ namespace Amazon.Budgets
 
             return InvokeAsync<UpdateSubscriberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

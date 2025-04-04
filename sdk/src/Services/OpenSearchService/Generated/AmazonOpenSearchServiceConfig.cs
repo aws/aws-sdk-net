@@ -30,7 +30,6 @@ namespace Amazon.OpenSearchService
     /// <summary>
     /// Configuration for accessing Amazon OpenSearchService service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonOpenSearchServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

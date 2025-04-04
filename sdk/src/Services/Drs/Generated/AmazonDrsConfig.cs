@@ -30,7 +30,6 @@ namespace Amazon.Drs
     /// <summary>
     /// Configuration for accessing Amazon Drs service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonDrsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

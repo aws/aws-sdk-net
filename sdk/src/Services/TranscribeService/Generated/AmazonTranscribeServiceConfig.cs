@@ -30,7 +30,6 @@ namespace Amazon.TranscribeService
     /// <summary>
     /// Configuration for accessing Amazon TranscribeService service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonTranscribeServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

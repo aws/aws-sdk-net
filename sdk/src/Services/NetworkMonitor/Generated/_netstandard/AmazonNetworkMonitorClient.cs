@@ -369,7 +369,6 @@ namespace Amazon.NetworkMonitor
 
             return InvokeAsync<CreateMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProbe
@@ -424,7 +423,6 @@ namespace Amazon.NetworkMonitor
 
             return InvokeAsync<CreateProbeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMonitor
@@ -479,7 +477,6 @@ namespace Amazon.NetworkMonitor
 
             return InvokeAsync<DeleteMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProbe
@@ -540,7 +537,6 @@ namespace Amazon.NetworkMonitor
 
             return InvokeAsync<DeleteProbeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMonitor
@@ -595,7 +591,6 @@ namespace Amazon.NetworkMonitor
 
             return InvokeAsync<GetMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProbe
@@ -646,7 +641,6 @@ namespace Amazon.NetworkMonitor
 
             return InvokeAsync<GetProbeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMonitors
@@ -692,7 +686,6 @@ namespace Amazon.NetworkMonitor
 
             return InvokeAsync<ListMonitorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -744,7 +737,6 @@ namespace Amazon.NetworkMonitor
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -796,7 +788,6 @@ namespace Amazon.NetworkMonitor
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -848,7 +839,6 @@ namespace Amazon.NetworkMonitor
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMonitor
@@ -902,7 +892,6 @@ namespace Amazon.NetworkMonitor
 
             return InvokeAsync<UpdateMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProbe
@@ -989,7 +978,6 @@ namespace Amazon.NetworkMonitor
 
             return InvokeAsync<UpdateProbeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

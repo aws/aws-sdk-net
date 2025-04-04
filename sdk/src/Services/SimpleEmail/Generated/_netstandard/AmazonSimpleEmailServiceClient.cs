@@ -354,7 +354,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<CloneReceiptRuleSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfigurationSet
@@ -410,7 +409,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<CreateConfigurationSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfigurationSetEventDestination
@@ -485,7 +483,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<CreateConfigurationSetEventDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfigurationSetTrackingOptions
@@ -549,7 +546,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<CreateConfigurationSetTrackingOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCustomVerificationEmailTemplate
@@ -609,7 +605,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<CreateCustomVerificationEmailTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateReceiptFilter
@@ -661,7 +656,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<CreateReceiptFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateReceiptRule
@@ -737,7 +731,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<CreateReceiptRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateReceiptRuleSet
@@ -789,7 +782,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<CreateReceiptRuleSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTemplate
@@ -842,7 +834,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<CreateTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfigurationSet
@@ -886,7 +877,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<DeleteConfigurationSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfigurationSetEventDestination
@@ -934,7 +924,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<DeleteConfigurationSetEventDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfigurationSetTrackingOptions
@@ -989,7 +978,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<DeleteConfigurationSetTrackingOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCustomVerificationEmailTemplate
@@ -1033,7 +1021,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<DeleteCustomVerificationEmailTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIdentity
@@ -1073,7 +1060,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<DeleteIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIdentityPolicy
@@ -1126,7 +1112,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<DeleteIdentityPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReceiptFilter
@@ -1170,7 +1155,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<DeleteReceiptFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReceiptRule
@@ -1217,7 +1201,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<DeleteReceiptRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReceiptRuleSet
@@ -1268,7 +1251,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<DeleteReceiptRuleSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTemplate
@@ -1307,7 +1289,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<DeleteTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVerifiedEmailAddress
@@ -1342,7 +1323,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<DeleteVerifiedEmailAddressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeActiveReceiptRuleSet
@@ -1387,7 +1367,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<DescribeActiveReceiptRuleSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConfigurationSet
@@ -1431,7 +1410,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<DescribeConfigurationSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReceiptRule
@@ -1481,7 +1459,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<DescribeReceiptRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReceiptRuleSet
@@ -1528,7 +1505,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<DescribeReceiptRuleSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccountSendingEnabled
@@ -1567,7 +1543,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<GetAccountSendingEnabledResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCustomVerificationEmailTemplate
@@ -1615,7 +1590,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<GetCustomVerificationEmailTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIdentityDkimAttributes
@@ -1681,7 +1655,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<GetIdentityDkimAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIdentityMailFromDomainAttributes
@@ -1722,7 +1695,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<GetIdentityMailFromDomainAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIdentityNotificationAttributes
@@ -1768,7 +1740,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<GetIdentityNotificationAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIdentityPolicies
@@ -1821,7 +1792,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<GetIdentityPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIdentityVerificationAttributes
@@ -1880,7 +1850,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<GetIdentityVerificationAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSendQuota
@@ -1943,7 +1912,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<GetSendQuotaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSendStatistics
@@ -2010,7 +1978,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<GetSendStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTemplate
@@ -2054,7 +2021,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<GetTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfigurationSets
@@ -2101,7 +2067,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<ListConfigurationSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCustomVerificationEmailTemplates
@@ -2146,7 +2111,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<ListCustomVerificationEmailTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIdentities
@@ -2235,7 +2199,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<ListIdentitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIdentityPolicies
@@ -2288,7 +2251,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<ListIdentityPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReceiptFilters
@@ -2333,7 +2295,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<ListReceiptFiltersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReceiptRuleSets
@@ -2380,7 +2341,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<ListReceiptRuleSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTemplates
@@ -2420,7 +2380,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<ListTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVerifiedEmailAddresses
@@ -2475,7 +2434,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<ListVerifiedEmailAddressesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutConfigurationSetDeliveryOptions
@@ -2515,7 +2473,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<PutConfigurationSetDeliveryOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutIdentityPolicy
@@ -2571,7 +2528,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<PutIdentityPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReorderReceiptRuleSet
@@ -2626,7 +2582,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<ReorderReceiptRuleSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendBounce
@@ -2681,7 +2636,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<SendBounceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendBulkTemplatedEmail
@@ -2795,7 +2749,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<SendBulkTemplatedEmailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendCustomVerificationEmail
@@ -2861,7 +2814,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<SendCustomVerificationEmailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendEmail
@@ -2967,7 +2919,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<SendEmailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendRawEmail
@@ -3144,7 +3095,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<SendRawEmailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendTemplatedEmail
@@ -3267,7 +3217,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<SendTemplatedEmailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetActiveReceiptRuleSet
@@ -3319,7 +3268,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<SetActiveReceiptRuleSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetIdentityDkimEnabled
@@ -3377,7 +3325,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<SetIdentityDkimEnabledResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetIdentityFeedbackForwardingEnabled
@@ -3429,7 +3376,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<SetIdentityFeedbackForwardingEnabledResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetIdentityHeadersInNotificationsEnabled
@@ -3475,7 +3421,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<SetIdentityHeadersInNotificationsEnabledResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetIdentityMailFromDomain
@@ -3523,7 +3468,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<SetIdentityMailFromDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetIdentityNotificationTopic
@@ -3572,7 +3516,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<SetIdentityNotificationTopicResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetReceiptRulePosition
@@ -3622,7 +3565,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<SetReceiptRulePositionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestRenderTemplate
@@ -3675,7 +3617,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<TestRenderTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccountSendingEnabled
@@ -3718,7 +3659,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<UpdateAccountSendingEnabledResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfigurationSetEventDestination
@@ -3785,7 +3725,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<UpdateConfigurationSetEventDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfigurationSetReputationMetricsEnabled
@@ -3830,7 +3769,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<UpdateConfigurationSetReputationMetricsEnabledResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfigurationSetSendingEnabled
@@ -3876,7 +3814,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<UpdateConfigurationSetSendingEnabledResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfigurationSetTrackingOptions
@@ -3939,7 +3876,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<UpdateConfigurationSetTrackingOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCustomVerificationEmailTemplate
@@ -3994,7 +3930,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<UpdateCustomVerificationEmailTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateReceiptRule
@@ -4067,7 +4002,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<UpdateReceiptRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTemplate
@@ -4116,7 +4050,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<UpdateTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  VerifyDomainDkim
@@ -4196,7 +4129,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<VerifyDomainDkimResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  VerifyDomainIdentity
@@ -4238,7 +4170,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<VerifyDomainIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  VerifyEmailAddress
@@ -4272,7 +4203,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<VerifyEmailAddressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  VerifyEmailIdentity
@@ -4313,7 +4243,6 @@ namespace Amazon.SimpleEmail
 
             return InvokeAsync<VerifyEmailIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

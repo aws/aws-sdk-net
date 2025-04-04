@@ -30,7 +30,6 @@ namespace Amazon.ChimeSDKMeetings
     /// <summary>
     /// Configuration for accessing Amazon ChimeSDKMeetings service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonChimeSDKMeetingsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

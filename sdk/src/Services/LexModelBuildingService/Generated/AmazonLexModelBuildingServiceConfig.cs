@@ -30,7 +30,6 @@ namespace Amazon.LexModelBuildingService
     /// <summary>
     /// Configuration for accessing Amazon LexModelBuildingService service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonLexModelBuildingServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

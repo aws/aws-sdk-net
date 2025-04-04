@@ -30,7 +30,6 @@ namespace Amazon.S3Outposts
     /// <summary>
     /// Configuration for accessing Amazon S3Outposts service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonS3OutpostsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -30,7 +30,6 @@ namespace Amazon.PI
     /// <summary>
     /// Configuration for accessing Amazon PI service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonPIConfig : ClientConfig
     {
         private static readonly string UserAgentString =

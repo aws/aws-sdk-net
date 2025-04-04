@@ -357,7 +357,6 @@ namespace Amazon.SocialMessaging
 
             return InvokeAsync<AssociateWhatsAppBusinessAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWhatsAppMessageMedia
@@ -416,7 +415,6 @@ namespace Amazon.SocialMessaging
 
             return InvokeAsync<DeleteWhatsAppMessageMediaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateWhatsAppBusinessAccount
@@ -468,7 +466,6 @@ namespace Amazon.SocialMessaging
 
             return InvokeAsync<DisassociateWhatsAppBusinessAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLinkedWhatsAppBusinessAccount
@@ -523,7 +520,6 @@ namespace Amazon.SocialMessaging
 
             return InvokeAsync<GetLinkedWhatsAppBusinessAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLinkedWhatsAppBusinessAccountPhoneNumber
@@ -578,7 +574,6 @@ namespace Amazon.SocialMessaging
 
             return InvokeAsync<GetLinkedWhatsAppBusinessAccountPhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWhatsAppMessageMedia
@@ -639,7 +634,6 @@ namespace Amazon.SocialMessaging
 
             return InvokeAsync<GetWhatsAppMessageMediaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLinkedWhatsAppBusinessAccounts
@@ -691,7 +685,6 @@ namespace Amazon.SocialMessaging
 
             return InvokeAsync<ListLinkedWhatsAppBusinessAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -740,7 +733,6 @@ namespace Amazon.SocialMessaging
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PostWhatsAppMessageMedia
@@ -801,7 +793,6 @@ namespace Amazon.SocialMessaging
 
             return InvokeAsync<PostWhatsAppMessageMediaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutWhatsAppBusinessAccountEventDestinations
@@ -852,7 +843,6 @@ namespace Amazon.SocialMessaging
 
             return InvokeAsync<PutWhatsAppBusinessAccountEventDestinationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendWhatsAppMessage
@@ -910,7 +900,6 @@ namespace Amazon.SocialMessaging
 
             return InvokeAsync<SendWhatsAppMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -960,7 +949,6 @@ namespace Amazon.SocialMessaging
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1009,7 +997,6 @@ namespace Amazon.SocialMessaging
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -430,7 +430,6 @@ namespace Amazon.ApplicationAutoScaling
 
             return InvokeAsync<DeleteScalingPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteScheduledAction
@@ -488,7 +487,6 @@ namespace Amazon.ApplicationAutoScaling
 
             return InvokeAsync<DeleteScheduledActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterScalableTarget
@@ -549,7 +547,6 @@ namespace Amazon.ApplicationAutoScaling
 
             return InvokeAsync<DeregisterScalableTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeScalableTargets
@@ -602,7 +599,6 @@ namespace Amazon.ApplicationAutoScaling
 
             return InvokeAsync<DescribeScalableTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeScalingActivities
@@ -662,7 +658,6 @@ namespace Amazon.ApplicationAutoScaling
 
             return InvokeAsync<DescribeScalingActivitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeScalingPolicies
@@ -730,7 +725,6 @@ namespace Amazon.ApplicationAutoScaling
 
             return InvokeAsync<DescribeScalingPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeScheduledActions
@@ -790,7 +784,6 @@ namespace Amazon.ApplicationAutoScaling
 
             return InvokeAsync<DescribeScheduledActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPredictiveScalingForecast
@@ -844,7 +837,6 @@ namespace Amazon.ApplicationAutoScaling
 
             return InvokeAsync<GetPredictiveScalingForecastResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -887,7 +879,6 @@ namespace Amazon.ApplicationAutoScaling
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutScalingPolicy
@@ -992,7 +983,6 @@ namespace Amazon.ApplicationAutoScaling
 
             return InvokeAsync<PutScalingPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutScheduledAction
@@ -1079,7 +1069,6 @@ namespace Amazon.ApplicationAutoScaling
 
             return InvokeAsync<PutScheduledActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterScalableTarget
@@ -1180,7 +1169,6 @@ namespace Amazon.ApplicationAutoScaling
 
             return InvokeAsync<RegisterScalableTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1251,7 +1239,6 @@ namespace Amazon.ApplicationAutoScaling
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1293,7 +1280,6 @@ namespace Amazon.ApplicationAutoScaling
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

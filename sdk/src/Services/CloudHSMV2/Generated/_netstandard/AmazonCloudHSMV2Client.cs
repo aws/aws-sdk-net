@@ -323,7 +323,6 @@ namespace Amazon.CloudHSMV2
 
             return InvokeAsync<CopyBackupToRegionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCluster
@@ -385,7 +384,6 @@ namespace Amazon.CloudHSMV2
 
             return InvokeAsync<CreateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateHsm
@@ -442,7 +440,6 @@ namespace Amazon.CloudHSMV2
 
             return InvokeAsync<CreateHsmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBackup
@@ -500,7 +497,6 @@ namespace Amazon.CloudHSMV2
 
             return InvokeAsync<DeleteBackupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCluster
@@ -563,7 +559,6 @@ namespace Amazon.CloudHSMV2
 
             return InvokeAsync<DeleteClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteHsm
@@ -622,7 +617,6 @@ namespace Amazon.CloudHSMV2
 
             return InvokeAsync<DeleteHsmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -681,7 +675,6 @@ namespace Amazon.CloudHSMV2
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBackups
@@ -751,7 +744,6 @@ namespace Amazon.CloudHSMV2
 
             return InvokeAsync<DescribeBackupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClusters
@@ -817,7 +809,6 @@ namespace Amazon.CloudHSMV2
 
             return InvokeAsync<DescribeClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicy
@@ -874,7 +865,6 @@ namespace Amazon.CloudHSMV2
 
             return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InitializeCluster
@@ -934,7 +924,6 @@ namespace Amazon.CloudHSMV2
 
             return InvokeAsync<InitializeClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTags
@@ -1003,7 +992,6 @@ namespace Amazon.CloudHSMV2
 
             return InvokeAsync<ListTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyBackupAttributes
@@ -1060,7 +1048,6 @@ namespace Amazon.CloudHSMV2
 
             return InvokeAsync<ModifyBackupAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyCluster
@@ -1117,7 +1104,6 @@ namespace Amazon.CloudHSMV2
 
             return InvokeAsync<ModifyClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -1196,7 +1182,6 @@ namespace Amazon.CloudHSMV2
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreBackup
@@ -1254,7 +1239,6 @@ namespace Amazon.CloudHSMV2
 
             return InvokeAsync<RestoreBackupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1318,7 +1302,6 @@ namespace Amazon.CloudHSMV2
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1379,7 +1362,6 @@ namespace Amazon.CloudHSMV2
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

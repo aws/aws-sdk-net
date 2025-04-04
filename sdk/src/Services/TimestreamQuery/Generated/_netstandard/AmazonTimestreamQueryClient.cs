@@ -349,7 +349,6 @@ namespace Amazon.TimestreamQuery
 
             return InvokeAsync<CancelQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateScheduledQuery
@@ -411,7 +410,6 @@ namespace Amazon.TimestreamQuery
 
             return InvokeAsync<CreateScheduledQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteScheduledQuery
@@ -467,7 +465,6 @@ namespace Amazon.TimestreamQuery
 
             return InvokeAsync<DeleteScheduledQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountSettings
@@ -523,7 +520,6 @@ namespace Amazon.TimestreamQuery
 
             return InvokeAsync<DescribeAccountSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEndpoints
@@ -593,7 +589,6 @@ namespace Amazon.TimestreamQuery
 
             return InvokeAsync<DescribeEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeScheduledQuery
@@ -649,7 +644,6 @@ namespace Amazon.TimestreamQuery
 
             return InvokeAsync<DescribeScheduledQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteScheduledQuery
@@ -714,7 +708,6 @@ namespace Amazon.TimestreamQuery
 
             return InvokeAsync<ExecuteScheduledQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListScheduledQueries
@@ -768,7 +761,6 @@ namespace Amazon.TimestreamQuery
 
             return InvokeAsync<ListScheduledQueriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -818,7 +810,6 @@ namespace Amazon.TimestreamQuery
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PrepareQuery
@@ -873,7 +864,6 @@ namespace Amazon.TimestreamQuery
 
             return InvokeAsync<PrepareQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Query
@@ -985,7 +975,6 @@ namespace Amazon.TimestreamQuery
 
             return InvokeAsync<QueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1040,7 +1029,6 @@ namespace Amazon.TimestreamQuery
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1090,7 +1078,6 @@ namespace Amazon.TimestreamQuery
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccountSettings
@@ -1152,7 +1139,6 @@ namespace Amazon.TimestreamQuery
 
             return InvokeAsync<UpdateAccountSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateScheduledQuery
@@ -1208,7 +1194,6 @@ namespace Amazon.TimestreamQuery
 
             return InvokeAsync<UpdateScheduledQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.SnowDeviceManagement
     /// <summary>
     /// Configuration for accessing Amazon SnowDeviceManagement service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSnowDeviceManagementConfig : ClientConfig
     {
         private static readonly string UserAgentString =

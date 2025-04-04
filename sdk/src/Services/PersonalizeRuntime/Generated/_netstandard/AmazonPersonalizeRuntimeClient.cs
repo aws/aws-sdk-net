@@ -291,7 +291,6 @@ namespace Amazon.PersonalizeRuntime
 
             return InvokeAsync<GetActionRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPersonalizedRanking
@@ -338,7 +337,6 @@ namespace Amazon.PersonalizeRuntime
 
             return InvokeAsync<GetPersonalizedRankingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRecommendations
@@ -401,7 +399,6 @@ namespace Amazon.PersonalizeRuntime
 
             return InvokeAsync<GetRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

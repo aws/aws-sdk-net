@@ -30,7 +30,6 @@ namespace Amazon.SecurityToken
     /// <summary>
     /// Configuration for accessing Amazon SecurityTokenService service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSecurityTokenServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -355,7 +355,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<AcceptCertificateTransferResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddThingToBillingGroup
@@ -407,7 +406,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<AddThingToBillingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddThingToThingGroup
@@ -459,7 +457,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<AddThingToThingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateSbomWithPackageVersion
@@ -519,7 +516,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<AssociateSbomWithPackageVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateTargetsWithJob
@@ -586,7 +582,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<AssociateTargetsWithJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachPolicy
@@ -647,7 +642,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<AttachPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachPrincipalPolicy
@@ -768,7 +762,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<AttachPrincipalPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachSecurityProfile
@@ -829,7 +822,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<AttachSecurityProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachThingPrincipal
@@ -933,7 +925,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<AttachThingPrincipalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelAuditMitigationActionsTask
@@ -986,7 +977,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CancelAuditMitigationActionsTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelAuditTask
@@ -1039,7 +1029,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CancelAuditTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelCertificateTransfer
@@ -1169,7 +1158,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CancelCertificateTransferResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelDetectMitigationActionsTask
@@ -1221,7 +1209,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CancelDetectMitigationActionsTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelJob
@@ -1276,7 +1263,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CancelJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelJobExecution
@@ -1336,7 +1322,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CancelJobExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ClearDefaultAuthorizer
@@ -1394,7 +1379,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ClearDefaultAuthorizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConfirmTopicRuleDestination
@@ -1453,7 +1437,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ConfirmTopicRuleDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAuditSuppression
@@ -1508,7 +1491,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateAuditSuppressionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAuthorizer
@@ -1569,7 +1551,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateAuthorizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBillingGroup
@@ -1624,7 +1605,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateBillingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCertificateFromCsr
@@ -1951,7 +1931,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateCertificateFromCsrResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCertificateProvider
@@ -2025,7 +2004,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateCertificateProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCommand
@@ -2076,7 +2054,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateCommandResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCustomMetric
@@ -2132,7 +2109,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateCustomMetricResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDimension
@@ -2190,7 +2166,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateDimensionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDomainConfiguration
@@ -2254,7 +2229,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateDomainConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDynamicThingGroup
@@ -2315,7 +2289,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateDynamicThingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFleetMetric
@@ -2388,7 +2361,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateFleetMetricResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateJob
@@ -2446,7 +2418,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateJobTemplate
@@ -2504,7 +2475,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateJobTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateKeysAndCertificate
@@ -2659,7 +2629,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateKeysAndCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMitigationAction
@@ -2717,7 +2686,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateMitigationActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOTAUpdate
@@ -2781,7 +2749,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateOTAUpdateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePackage
@@ -2838,7 +2805,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreatePackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePackageVersion
@@ -2895,7 +2861,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreatePackageVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePolicy
@@ -3015,7 +2980,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreatePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePolicyVersion
@@ -3208,7 +3172,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreatePolicyVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProvisioningClaim
@@ -3266,7 +3229,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateProvisioningClaimResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProvisioningTemplate
@@ -3324,7 +3286,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateProvisioningTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProvisioningTemplateVersion
@@ -3386,7 +3347,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateProvisioningTemplateVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRoleAlias
@@ -3457,7 +3417,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateRoleAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateScheduledAudit
@@ -3512,7 +3471,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateScheduledAuditResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSecurityProfile
@@ -3564,7 +3522,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateSecurityProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStream
@@ -3630,7 +3587,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateThing
@@ -3699,7 +3655,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateThingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateThingGroup
@@ -3761,7 +3716,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateThingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateThingType
@@ -3822,7 +3776,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateThingTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTopicRule
@@ -3882,7 +3835,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateTopicRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTopicRuleDestination
@@ -3938,7 +3890,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<CreateTopicRuleDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccountAuditConfiguration
@@ -3991,7 +3942,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteAccountAuditConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAuditSuppression
@@ -4040,7 +3990,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteAuditSuppressionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAuthorizer
@@ -4101,7 +4050,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteAuthorizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBillingGroup
@@ -4154,7 +4102,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteBillingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCACertificate
@@ -4215,7 +4162,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteCACertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCertificate
@@ -4341,7 +4287,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCertificateProvider
@@ -4408,7 +4353,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteCertificateProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCommand
@@ -4455,7 +4399,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteCommandResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCommandExecution
@@ -4508,7 +4451,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteCommandExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCustomMetric
@@ -4565,7 +4507,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteCustomMetricResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDimension
@@ -4614,7 +4555,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteDimensionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDomainConfiguration
@@ -4672,7 +4612,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteDomainConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDynamicThingGroup
@@ -4725,7 +4664,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteDynamicThingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFleetMetric
@@ -4785,7 +4723,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteFleetMetricResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteJob
@@ -4856,7 +4793,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteJobExecution
@@ -4912,7 +4848,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteJobExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteJobTemplate
@@ -4958,7 +4893,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteJobTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMitigationAction
@@ -5007,7 +4941,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteMitigationActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOTAUpdate
@@ -5069,7 +5002,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteOTAUpdateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePackage
@@ -5123,7 +5055,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeletePackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePackageVersion
@@ -5173,7 +5104,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeletePackageVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePolicy
@@ -5319,7 +5249,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeletePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePolicyVersion
@@ -5433,7 +5362,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeletePolicyVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProvisioningTemplate
@@ -5495,7 +5423,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteProvisioningTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProvisioningTemplateVersion
@@ -5557,7 +5484,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteProvisioningTemplateVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRegistrationCode
@@ -5612,7 +5538,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteRegistrationCodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRoleAlias
@@ -5673,7 +5598,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteRoleAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteScheduledAudit
@@ -5725,7 +5649,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteScheduledAuditResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSecurityProfile
@@ -5778,7 +5701,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteSecurityProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStream
@@ -5839,7 +5761,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteThing
@@ -5949,7 +5870,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteThingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteThingGroup
@@ -6002,7 +5922,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteThingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteThingType
@@ -6064,7 +5983,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteThingTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTopicRule
@@ -6160,7 +6078,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteTopicRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTopicRuleDestination
@@ -6216,7 +6133,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteTopicRuleDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteV2LoggingLevel
@@ -6265,7 +6181,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeleteV2LoggingLevelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeprecateThingType
@@ -6323,7 +6238,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DeprecateThingTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountAuditConfiguration
@@ -6370,7 +6284,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeAccountAuditConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAuditFinding
@@ -6423,7 +6336,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeAuditFindingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAuditMitigationActionsTask
@@ -6471,7 +6383,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeAuditMitigationActionsTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAuditSuppression
@@ -6517,7 +6428,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeAuditSuppressionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAuditTask
@@ -6569,7 +6479,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeAuditTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAuthorizer
@@ -6627,7 +6536,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeAuthorizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBillingGroup
@@ -6679,7 +6587,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeBillingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCACertificate
@@ -6737,7 +6644,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeCACertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCertificate
@@ -6837,7 +6743,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCertificateProvider
@@ -6895,7 +6800,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeCertificateProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCustomMetric
@@ -6947,7 +6851,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeCustomMetricResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDefaultAuthorizer
@@ -7005,7 +6908,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeDefaultAuthorizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDetectMitigationActionsTask
@@ -7057,7 +6959,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeDetectMitigationActionsTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDimension
@@ -7109,7 +7010,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeDimensionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDomainConfiguration
@@ -7167,7 +7067,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeDomainConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEndpoint
@@ -7265,7 +7164,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventConfigurations
@@ -7311,7 +7209,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeEventConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFleetMetric
@@ -7369,7 +7266,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeFleetMetricResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeIndex
@@ -7427,7 +7323,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeJob
@@ -7479,7 +7374,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeJobExecution
@@ -7531,7 +7425,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeJobExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeJobTemplate
@@ -7577,7 +7470,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeJobTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeManagedJobTemplate
@@ -7624,7 +7516,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeManagedJobTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMitigationAction
@@ -7676,7 +7567,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeMitigationActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProvisioningTemplate
@@ -7731,7 +7621,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeProvisioningTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProvisioningTemplateVersion
@@ -7786,7 +7675,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeProvisioningTemplateVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRoleAlias
@@ -7844,7 +7732,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeRoleAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeScheduledAudit
@@ -7896,7 +7783,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeScheduledAuditResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSecurityProfile
@@ -7948,7 +7834,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeSecurityProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStream
@@ -8006,7 +7891,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeThing
@@ -8106,7 +7990,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeThingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeThingGroup
@@ -8158,7 +8041,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeThingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeThingRegistrationTask
@@ -8213,7 +8095,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeThingRegistrationTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeThingType
@@ -8271,7 +8152,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DescribeThingTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachPolicy
@@ -8334,7 +8214,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DetachPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachPrincipalPolicy
@@ -8449,7 +8328,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DetachPrincipalPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachSecurityProfile
@@ -8501,7 +8379,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DetachSecurityProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachThingPrincipal
@@ -8615,7 +8492,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DetachThingPrincipalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableTopicRule
@@ -8671,7 +8547,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DisableTopicRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateSbomFromPackageVersion
@@ -8728,7 +8603,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<DisassociateSbomFromPackageVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableTopicRule
@@ -8784,7 +8658,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<EnableTopicRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBehaviorModelTrainingSummaries
@@ -8836,7 +8709,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetBehaviorModelTrainingSummariesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketsAggregation
@@ -8903,7 +8775,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetBucketsAggregationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCardinality
@@ -8970,7 +8841,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetCardinalityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCommand
@@ -9017,7 +8887,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetCommandResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCommandExecution
@@ -9064,7 +8933,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetCommandExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEffectivePolicies
@@ -9126,7 +8994,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetEffectivePoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIndexingConfiguration
@@ -9181,7 +9048,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetIndexingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJobDocument
@@ -9233,7 +9099,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetJobDocumentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLoggingOptions
@@ -9286,7 +9151,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetLoggingOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOTAUpdate
@@ -9344,7 +9208,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetOTAUpdateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPackage
@@ -9397,7 +9260,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetPackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPackageConfiguration
@@ -9444,7 +9306,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetPackageConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPackageVersion
@@ -9497,7 +9358,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetPackageVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPercentiles
@@ -9572,7 +9432,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetPercentilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPolicy
@@ -9674,7 +9533,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPolicyVersion
@@ -9776,7 +9634,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetPolicyVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRegistrationCode
@@ -9837,7 +9694,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetRegistrationCodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStatistics
@@ -9906,7 +9762,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetThingConnectivityData
@@ -9961,7 +9816,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetThingConnectivityDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTopicRule
@@ -10049,7 +9903,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetTopicRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTopicRuleDestination
@@ -10101,7 +9954,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetTopicRuleDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetV2LoggingOptions
@@ -10150,7 +10002,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<GetV2LoggingOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListActiveViolations
@@ -10202,7 +10053,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListActiveViolationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAttachedPolicies
@@ -10263,7 +10113,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListAttachedPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAuditFindings
@@ -10313,7 +10162,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListAuditFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAuditMitigationActionsExecutions
@@ -10362,7 +10210,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListAuditMitigationActionsExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAuditMitigationActionsTasks
@@ -10411,7 +10258,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListAuditMitigationActionsTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAuditSuppressions
@@ -10460,7 +10306,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListAuditSuppressionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAuditTasks
@@ -10509,7 +10354,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListAuditTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAuthorizers
@@ -10564,7 +10408,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListAuthorizersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBillingGroups
@@ -10616,7 +10459,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListBillingGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCACertificates
@@ -10676,7 +10518,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListCACertificatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCertificateProviders
@@ -10731,7 +10572,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListCertificateProvidersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCertificates
@@ -10833,7 +10673,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListCertificatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCertificatesByCA
@@ -10888,7 +10727,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListCertificatesByCAResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCommandExecutions
@@ -10955,7 +10793,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListCommandExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCommands
@@ -10999,7 +10836,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListCommandsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCustomMetrics
@@ -11048,7 +10884,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListCustomMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDetectMitigationActionsExecutions
@@ -11098,7 +10933,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListDetectMitigationActionsExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDetectMitigationActionsTasks
@@ -11147,7 +10981,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListDetectMitigationActionsTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDimensions
@@ -11196,7 +11029,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListDimensionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomainConfigurations
@@ -11252,7 +11084,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListDomainConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFleetMetrics
@@ -11307,7 +11138,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListFleetMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIndices
@@ -11362,7 +11192,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListIndicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobExecutionsForJob
@@ -11414,7 +11243,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListJobExecutionsForJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobExecutionsForThing
@@ -11466,7 +11294,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListJobExecutionsForThingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobs
@@ -11518,7 +11345,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobTemplates
@@ -11567,7 +11393,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListJobTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListManagedJobTemplates
@@ -11614,7 +11439,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListManagedJobTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMetricValues
@@ -11661,7 +11485,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListMetricValuesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMitigationActions
@@ -11710,7 +11533,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListMitigationActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOTAUpdates
@@ -11765,7 +11587,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListOTAUpdatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOutgoingCertificates
@@ -11820,7 +11641,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListOutgoingCertificatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPackages
@@ -11870,7 +11690,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListPackagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPackageVersions
@@ -11920,7 +11739,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListPackageVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPolicies
@@ -12012,7 +11830,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPolicyPrincipals
@@ -12077,7 +11894,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListPolicyPrincipalsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPolicyVersions
@@ -12177,7 +11993,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListPolicyVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPrincipalPolicies
@@ -12294,7 +12109,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListPrincipalPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPrincipalThings
@@ -12398,7 +12212,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListPrincipalThingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPrincipalThingsV2
@@ -12457,7 +12270,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListPrincipalThingsV2Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProvisioningTemplates
@@ -12509,7 +12321,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListProvisioningTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProvisioningTemplateVersions
@@ -12564,7 +12375,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListProvisioningTemplateVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRelatedResourcesForAuditFinding
@@ -12657,7 +12467,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListRelatedResourcesForAuditFindingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRoleAliases
@@ -12712,7 +12521,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListRoleAliasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSbomValidationResults
@@ -12766,7 +12574,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListSbomValidationResultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListScheduledAudits
@@ -12815,7 +12622,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListScheduledAuditsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSecurityProfiles
@@ -12873,7 +12679,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListSecurityProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSecurityProfilesForTarget
@@ -12925,7 +12730,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListSecurityProfilesForTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStreams
@@ -12980,7 +12784,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListStreamsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -13032,7 +12835,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTargetsForPolicy
@@ -13093,7 +12895,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListTargetsForPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTargetsForSecurityProfile
@@ -13146,7 +12947,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListTargetsForSecurityProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListThingGroups
@@ -13198,7 +12998,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListThingGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListThingGroupsForThing
@@ -13250,7 +13049,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListThingGroupsForThingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListThingPrincipals
@@ -13354,7 +13152,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListThingPrincipalsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListThingPrincipalsV2
@@ -13413,7 +13210,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListThingPrincipalsV2Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListThingRegistrationTaskReports
@@ -13459,7 +13255,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListThingRegistrationTaskReportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListThingRegistrationTasks
@@ -13511,7 +13306,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListThingRegistrationTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListThings
@@ -13625,7 +13419,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListThingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListThingsInBillingGroup
@@ -13677,7 +13470,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListThingsInBillingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListThingsInThingGroup
@@ -13729,7 +13521,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListThingsInThingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListThingTypes
@@ -13784,7 +13575,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListThingTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTopicRuleDestinations
@@ -13836,7 +13626,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListTopicRuleDestinationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTopicRules
@@ -13918,7 +13707,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListTopicRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListV2LoggingLevels
@@ -13970,7 +13758,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListV2LoggingLevelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListViolationEvents
@@ -14021,7 +13808,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ListViolationEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutVerificationStateOnViolation
@@ -14065,7 +13851,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<PutVerificationStateOnViolationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterCACertificate
@@ -14138,7 +13923,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<RegisterCACertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterCertificate
@@ -14210,7 +13994,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<RegisterCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterCertificateWithoutCA
@@ -14270,7 +14053,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<RegisterCertificateWithoutCAResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterThing
@@ -14335,7 +14117,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<RegisterThingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectCertificateTransfer
@@ -14463,7 +14244,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<RejectCertificateTransferResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveThingFromBillingGroup
@@ -14520,7 +14300,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<RemoveThingFromBillingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveThingFromThingGroup
@@ -14578,7 +14357,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<RemoveThingFromThingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReplaceTopicRule
@@ -14639,7 +14417,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ReplaceTopicRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchIndex
@@ -14703,7 +14480,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<SearchIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetDefaultAuthorizer
@@ -14765,7 +14541,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<SetDefaultAuthorizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetDefaultPolicyVersion
@@ -14873,7 +14648,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<SetDefaultPolicyVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetLoggingOptions
@@ -14926,7 +14700,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<SetLoggingOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetV2LoggingLevel
@@ -14981,7 +14754,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<SetV2LoggingLevelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetV2LoggingOptions
@@ -15030,7 +14802,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<SetV2LoggingOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartAuditMitigationActionsTask
@@ -15086,7 +14857,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<StartAuditMitigationActionsTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDetectMitigationActionsTask
@@ -15142,7 +14912,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<StartDetectMitigationActionsTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartOnDemandAuditTask
@@ -15194,7 +14963,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<StartOnDemandAuditTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartThingRegistrationTask
@@ -15246,7 +15014,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<StartThingRegistrationTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopThingRegistrationTask
@@ -15301,7 +15068,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<StopThingRegistrationTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -15357,7 +15123,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestAuthorization
@@ -15420,7 +15185,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<TestAuthorizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestInvokeAuthorizer
@@ -15483,7 +15247,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<TestInvokeAuthorizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TransferCertificate
@@ -15635,7 +15398,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<TransferCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -15687,7 +15449,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccountAuditConfiguration
@@ -15737,7 +15498,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateAccountAuditConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAuditSuppression
@@ -15783,7 +15543,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateAuditSuppressionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAuthorizer
@@ -15844,7 +15603,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateAuthorizerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBillingGroup
@@ -15900,7 +15658,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateBillingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCACertificate
@@ -15958,7 +15715,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateCACertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCertificate
@@ -16088,7 +15844,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCertificateProvider
@@ -16146,7 +15901,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateCertificateProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCommand
@@ -16196,7 +15950,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateCommandResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCustomMetric
@@ -16248,7 +16001,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateCustomMetricResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDimension
@@ -16301,7 +16053,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateDimensionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDomainConfiguration
@@ -16363,7 +16114,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateDomainConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDynamicThingGroup
@@ -16422,7 +16172,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateDynamicThingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEventConfigurations
@@ -16471,7 +16220,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateEventConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFleetMetric
@@ -16542,7 +16290,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateFleetMetricResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIndexingConfiguration
@@ -16597,7 +16344,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateIndexingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateJob
@@ -16649,7 +16395,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMitigationAction
@@ -16701,7 +16446,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateMitigationActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePackage
@@ -16758,7 +16502,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdatePackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePackageConfiguration
@@ -16812,7 +16555,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdatePackageConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePackageVersion
@@ -16869,7 +16611,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdatePackageVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProvisioningTemplate
@@ -16925,7 +16666,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateProvisioningTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRoleAlias
@@ -16993,7 +16733,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateRoleAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateScheduledAudit
@@ -17046,7 +16785,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateScheduledAuditResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSecurityProfile
@@ -17102,7 +16840,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateSecurityProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStream
@@ -17163,7 +16900,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateThing
@@ -17225,7 +16961,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateThingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateThingGroup
@@ -17281,7 +17016,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateThingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateThingGroupsForThing
@@ -17333,7 +17067,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateThingGroupsForThingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateThingType
@@ -17385,7 +17118,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateThingTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTopicRuleDestination
@@ -17442,7 +17174,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<UpdateTopicRuleDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ValidateSecurityProfileBehaviors
@@ -17491,7 +17222,6 @@ namespace Amazon.IoT
 
             return InvokeAsync<ValidateSecurityProfileBehaviorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

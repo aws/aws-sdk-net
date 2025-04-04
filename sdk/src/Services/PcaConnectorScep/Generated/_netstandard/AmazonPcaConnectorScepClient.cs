@@ -340,7 +340,6 @@ namespace Amazon.PcaConnectorScep
 
             return InvokeAsync<CreateChallengeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConnector
@@ -408,7 +407,6 @@ namespace Amazon.PcaConnectorScep
 
             return InvokeAsync<CreateConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteChallenge
@@ -468,7 +466,6 @@ namespace Amazon.PcaConnectorScep
 
             return InvokeAsync<DeleteChallengeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnector
@@ -529,7 +526,6 @@ namespace Amazon.PcaConnectorScep
 
             return InvokeAsync<DeleteConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetChallengeMetadata
@@ -585,7 +581,6 @@ namespace Amazon.PcaConnectorScep
 
             return InvokeAsync<GetChallengeMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetChallengePassword
@@ -641,7 +636,6 @@ namespace Amazon.PcaConnectorScep
 
             return InvokeAsync<GetChallengePasswordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConnector
@@ -699,7 +693,6 @@ namespace Amazon.PcaConnectorScep
 
             return InvokeAsync<GetConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChallengeMetadata
@@ -755,7 +748,6 @@ namespace Amazon.PcaConnectorScep
 
             return InvokeAsync<ListChallengeMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConnectors
@@ -807,7 +799,6 @@ namespace Amazon.PcaConnectorScep
 
             return InvokeAsync<ListConnectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -867,7 +858,6 @@ namespace Amazon.PcaConnectorScep
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -923,7 +913,6 @@ namespace Amazon.PcaConnectorScep
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -979,7 +968,6 @@ namespace Amazon.PcaConnectorScep
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

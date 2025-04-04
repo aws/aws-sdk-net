@@ -332,7 +332,6 @@ namespace Amazon.ConnectContactLens
 
             return InvokeAsync<ListRealtimeContactAnalysisSegmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

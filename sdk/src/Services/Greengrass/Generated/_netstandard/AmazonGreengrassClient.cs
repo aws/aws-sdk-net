@@ -289,7 +289,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<AssociateRoleToGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateServiceRoleToAccount
@@ -331,7 +330,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<AssociateServiceRoleToAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConnectorDefinition
@@ -369,7 +367,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<CreateConnectorDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConnectorDefinitionVersion
@@ -406,7 +403,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<CreateConnectorDefinitionVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCoreDefinition
@@ -445,7 +441,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<CreateCoreDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCoreDefinitionVersion
@@ -483,7 +478,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<CreateCoreDefinitionVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDeployment
@@ -521,7 +515,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<CreateDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDeviceDefinition
@@ -559,7 +552,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<CreateDeviceDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDeviceDefinitionVersion
@@ -596,7 +588,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<CreateDeviceDefinitionVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFunctionDefinition
@@ -636,7 +627,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<CreateFunctionDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFunctionDefinitionVersion
@@ -673,7 +663,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<CreateFunctionDefinitionVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGroup
@@ -712,7 +701,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<CreateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGroupCertificateAuthority
@@ -752,7 +740,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<CreateGroupCertificateAuthorityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGroupVersion
@@ -789,7 +776,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<CreateGroupVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLoggerDefinition
@@ -827,7 +813,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<CreateLoggerDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLoggerDefinitionVersion
@@ -864,7 +849,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<CreateLoggerDefinitionVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateResourceDefinition
@@ -903,7 +887,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<CreateResourceDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateResourceDefinitionVersion
@@ -940,7 +923,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<CreateResourceDefinitionVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSoftwareUpdateJob
@@ -983,7 +965,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<CreateSoftwareUpdateJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSubscriptionDefinition
@@ -1021,7 +1002,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<CreateSubscriptionDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSubscriptionDefinitionVersion
@@ -1058,7 +1038,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<CreateSubscriptionDefinitionVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnectorDefinition
@@ -1095,7 +1074,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<DeleteConnectorDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCoreDefinition
@@ -1132,7 +1110,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<DeleteCoreDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDeviceDefinition
@@ -1169,7 +1146,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<DeleteDeviceDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFunctionDefinition
@@ -1206,7 +1182,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<DeleteFunctionDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGroup
@@ -1243,7 +1218,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<DeleteGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLoggerDefinition
@@ -1280,7 +1254,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<DeleteLoggerDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourceDefinition
@@ -1317,7 +1290,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<DeleteResourceDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSubscriptionDefinition
@@ -1354,7 +1326,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<DeleteSubscriptionDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateRoleFromGroup
@@ -1394,7 +1365,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<DisassociateRoleFromGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateServiceRoleFromAccount
@@ -1432,7 +1402,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<DisassociateServiceRoleFromAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAssociatedRole
@@ -1472,7 +1441,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetAssociatedRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBulkDeploymentStatus
@@ -1509,7 +1477,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetBulkDeploymentStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConnectivityInfo
@@ -1549,7 +1516,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetConnectivityInfoResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConnectorDefinition
@@ -1586,7 +1552,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetConnectorDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConnectorDefinitionVersion
@@ -1625,7 +1590,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetConnectorDefinitionVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCoreDefinition
@@ -1662,7 +1626,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetCoreDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCoreDefinitionVersion
@@ -1699,7 +1662,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetCoreDefinitionVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeploymentStatus
@@ -1736,7 +1698,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetDeploymentStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeviceDefinition
@@ -1773,7 +1734,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetDeviceDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeviceDefinitionVersion
@@ -1810,7 +1770,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetDeviceDefinitionVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFunctionDefinition
@@ -1848,7 +1807,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetFunctionDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFunctionDefinitionVersion
@@ -1886,7 +1844,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetFunctionDefinitionVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGroup
@@ -1923,7 +1880,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGroupCertificateAuthority
@@ -1963,7 +1919,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetGroupCertificateAuthorityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGroupCertificateConfiguration
@@ -2003,7 +1958,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetGroupCertificateConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGroupVersion
@@ -2040,7 +1994,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetGroupVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLoggerDefinition
@@ -2077,7 +2030,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetLoggerDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLoggerDefinitionVersion
@@ -2114,7 +2066,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetLoggerDefinitionVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceDefinition
@@ -2152,7 +2103,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetResourceDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceDefinitionVersion
@@ -2190,7 +2140,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetResourceDefinitionVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceRoleForAccount
@@ -2227,7 +2176,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetServiceRoleForAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSubscriptionDefinition
@@ -2264,7 +2212,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetSubscriptionDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSubscriptionDefinitionVersion
@@ -2301,7 +2248,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetSubscriptionDefinitionVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetThingRuntimeConfiguration
@@ -2341,7 +2287,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<GetThingRuntimeConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBulkDeploymentDetailedReports
@@ -2379,7 +2324,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ListBulkDeploymentDetailedReportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBulkDeployments
@@ -2416,7 +2360,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ListBulkDeploymentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConnectorDefinitions
@@ -2450,7 +2393,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ListConnectorDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConnectorDefinitionVersions
@@ -2489,7 +2431,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ListConnectorDefinitionVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCoreDefinitions
@@ -2523,7 +2464,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ListCoreDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCoreDefinitionVersions
@@ -2560,7 +2500,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ListCoreDefinitionVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeployments
@@ -2597,7 +2536,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ListDeploymentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeviceDefinitions
@@ -2631,7 +2569,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ListDeviceDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeviceDefinitionVersions
@@ -2668,7 +2605,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ListDeviceDefinitionVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFunctionDefinitions
@@ -2702,7 +2638,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ListFunctionDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFunctionDefinitionVersions
@@ -2739,7 +2674,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ListFunctionDefinitionVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroupCertificateAuthorities
@@ -2779,7 +2713,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ListGroupCertificateAuthoritiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroups
@@ -2813,7 +2746,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ListGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroupVersions
@@ -2850,7 +2782,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ListGroupVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLoggerDefinitions
@@ -2884,7 +2815,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ListLoggerDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLoggerDefinitionVersions
@@ -2921,7 +2851,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ListLoggerDefinitionVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceDefinitions
@@ -2955,7 +2884,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ListResourceDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceDefinitionVersions
@@ -2992,7 +2920,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ListResourceDefinitionVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSubscriptionDefinitions
@@ -3026,7 +2953,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ListSubscriptionDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSubscriptionDefinitionVersions
@@ -3063,7 +2989,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ListSubscriptionDefinitionVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3100,7 +3025,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetDeployments
@@ -3137,7 +3061,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<ResetDeploymentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartBulkDeployment
@@ -3178,7 +3101,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<StartBulkDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopBulkDeployment
@@ -3218,7 +3140,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<StopBulkDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3257,7 +3178,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3294,7 +3214,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConnectivityInfo
@@ -3336,7 +3255,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<UpdateConnectivityInfoResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConnectorDefinition
@@ -3373,7 +3291,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<UpdateConnectorDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCoreDefinition
@@ -3410,7 +3327,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<UpdateCoreDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDeviceDefinition
@@ -3447,7 +3363,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<UpdateDeviceDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFunctionDefinition
@@ -3484,7 +3399,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<UpdateFunctionDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGroup
@@ -3521,7 +3435,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<UpdateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGroupCertificateConfiguration
@@ -3561,7 +3474,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<UpdateGroupCertificateConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLoggerDefinition
@@ -3598,7 +3510,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<UpdateLoggerDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResourceDefinition
@@ -3635,7 +3546,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<UpdateResourceDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSubscriptionDefinition
@@ -3672,7 +3582,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<UpdateSubscriptionDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateThingRuntimeConfiguration
@@ -3712,7 +3621,6 @@ namespace Amazon.Greengrass
 
             return InvokeAsync<UpdateThingRuntimeConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -325,7 +325,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<AssociateAccessPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateEncryptionConfig
@@ -390,7 +389,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<AssociateEncryptionConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateIdentityProviderConfig
@@ -459,7 +457,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<AssociateIdentityProviderConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAccessEntry
@@ -532,7 +529,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<CreateAccessEntryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAddon
@@ -597,7 +593,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<CreateAddonResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCluster
@@ -710,7 +705,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<CreateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEksAnywhereSubscription
@@ -765,7 +759,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<CreateEksAnywhereSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFargateProfile
@@ -864,7 +857,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<CreateFargateProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNodegroup
@@ -953,7 +945,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<CreateNodegroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePodIdentityAssociation
@@ -1030,7 +1021,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<CreatePodIdentityAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccessEntry
@@ -1082,7 +1072,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DeleteAccessEntryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAddon
@@ -1143,7 +1132,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DeleteAddonResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCluster
@@ -1211,7 +1199,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DeleteClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEksAnywhereSubscription
@@ -1266,7 +1253,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DeleteEksAnywhereSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFargateProfile
@@ -1331,7 +1317,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DeleteFargateProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNodegroup
@@ -1388,7 +1373,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DeleteNodegroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePodIdentityAssociation
@@ -1444,7 +1428,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DeletePodIdentityAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterCluster
@@ -1511,7 +1494,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DeregisterClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccessEntry
@@ -1557,7 +1539,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DescribeAccessEntryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAddon
@@ -1612,7 +1593,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DescribeAddonResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAddonConfiguration
@@ -1657,7 +1637,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DescribeAddonConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAddonVersions
@@ -1708,7 +1687,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DescribeAddonVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCluster
@@ -1773,7 +1751,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DescribeClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClusterVersions
@@ -1817,7 +1794,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DescribeClusterVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEksAnywhereSubscription
@@ -1868,7 +1844,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DescribeEksAnywhereSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFargateProfile
@@ -1919,7 +1894,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DescribeFargateProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeIdentityProviderConfig
@@ -1973,7 +1947,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DescribeIdentityProviderConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInsight
@@ -2022,7 +1995,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DescribeInsightResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeNodegroup
@@ -2076,7 +2048,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DescribeNodegroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePodIdentityAssociation
@@ -2133,7 +2104,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DescribePodIdentityAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUpdate
@@ -2191,7 +2161,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DescribeUpdateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateAccessPolicy
@@ -2237,7 +2206,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DisassociateAccessPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateIdentityProviderConfig
@@ -2302,7 +2270,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<DisassociateIdentityProviderConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccessEntries
@@ -2351,7 +2318,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<ListAccessEntriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccessPolicies
@@ -2388,7 +2354,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<ListAccessPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAddons
@@ -2443,7 +2408,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<ListAddonsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssociatedAccessPolicies
@@ -2489,7 +2453,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<ListAssociatedAccessPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClusters
@@ -2539,7 +2502,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<ListClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEksAnywhereSubscriptions
@@ -2588,7 +2550,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<ListEksAnywhereSubscriptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFargateProfiles
@@ -2640,7 +2601,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<ListFargateProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIdentityProviderConfigs
@@ -2694,7 +2654,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<ListIdentityProviderConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInsights
@@ -2745,7 +2704,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<ListInsightsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNodegroups
@@ -2801,7 +2759,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<ListNodegroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPodIdentityAssociations
@@ -2851,7 +2808,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<ListPodIdentityAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2893,7 +2849,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUpdates
@@ -2945,7 +2900,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<ListUpdatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterCluster
@@ -3033,7 +2987,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<RegisterClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3081,7 +3034,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3123,7 +3075,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccessEntry
@@ -3172,7 +3123,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<UpdateAccessEntryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAddon
@@ -3230,7 +3180,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<UpdateAddonResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateClusterConfig
@@ -3332,7 +3281,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<UpdateClusterConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateClusterVersion
@@ -3407,7 +3355,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<UpdateClusterVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEksAnywhereSubscription
@@ -3463,7 +3410,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<UpdateEksAnywhereSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNodegroupConfig
@@ -3525,7 +3471,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<UpdateNodegroupConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNodegroupVersion
@@ -3620,7 +3565,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<UpdateNodegroupVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePodIdentityAssociation
@@ -3672,7 +3616,6 @@ namespace Amazon.EKS
 
             return InvokeAsync<UpdatePodIdentityAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

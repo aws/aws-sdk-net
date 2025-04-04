@@ -30,7 +30,6 @@ namespace Amazon.NeptuneGraph
     /// <summary>
     /// Configuration for accessing Amazon NeptuneGraph service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonNeptuneGraphConfig : ClientConfig
     {
         private static readonly string UserAgentString =

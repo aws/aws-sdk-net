@@ -383,7 +383,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<AddPermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CheckIfPhoneNumberIsOptedOut
@@ -438,7 +437,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<CheckIfPhoneNumberIsOptedOutResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConfirmSubscription
@@ -598,7 +596,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<ConfirmSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePlatformApplication
@@ -698,7 +695,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<CreatePlatformApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePlatformEndpoint
@@ -760,7 +756,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<CreatePlatformEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSMSSandboxPhoneNumber
@@ -828,7 +823,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<CreateSMSSandboxPhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTopic
@@ -952,7 +946,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<CreateTopicResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEndpoint
@@ -1003,7 +996,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<DeleteEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePlatformApplication
@@ -1048,7 +1040,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<DeletePlatformApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSMSSandboxPhoneNumber
@@ -1114,7 +1105,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<DeleteSMSSandboxPhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTopic
@@ -1224,7 +1214,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<DeleteTopicResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataProtectionPolicy
@@ -1275,7 +1264,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<GetDataProtectionPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEndpointAttributes
@@ -1324,7 +1312,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<GetEndpointAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPlatformApplicationAttributes
@@ -1373,7 +1360,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<GetPlatformApplicationAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSMSAttributes
@@ -1425,7 +1411,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<GetSMSAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSMSSandboxAccountStatus
@@ -1482,7 +1467,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<GetSMSSandboxAccountStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSubscriptionAttributes
@@ -1558,7 +1542,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<GetSubscriptionAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTopicAttributes
@@ -1644,7 +1627,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<GetTopicAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEndpointsByPlatformApplication
@@ -1702,7 +1684,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<ListEndpointsByPlatformApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOriginationNumbers
@@ -1754,7 +1735,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<ListOriginationNumbersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPhoneNumbersOptedOut
@@ -1812,7 +1792,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<ListPhoneNumbersOptedOutResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPlatformApplications
@@ -1907,7 +1886,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<ListPlatformApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSMSSandboxPhoneNumbers
@@ -1970,7 +1948,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<ListSMSSandboxPhoneNumbersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSubscriptions
@@ -2092,7 +2069,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<ListSubscriptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSubscriptionsByTopic
@@ -2224,7 +2200,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<ListSubscriptionsByTopicResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2276,7 +2251,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTopics
@@ -2395,7 +2369,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<ListTopicsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  OptInPhoneNumber
@@ -2448,7 +2421,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<OptInPhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Publish
@@ -2770,7 +2742,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<PublishResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PublishBatch
@@ -2912,7 +2883,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<PublishBatchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDataProtectionPolicy
@@ -2963,7 +2933,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<PutDataProtectionPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemovePermission
@@ -3057,7 +3026,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<RemovePermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetEndpointAttributes
@@ -3106,7 +3074,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<SetEndpointAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetPlatformApplicationAttributes
@@ -3157,7 +3124,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<SetPlatformApplicationAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetSMSAttributes
@@ -3219,7 +3185,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<SetSMSAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetSubscriptionAttributes
@@ -3317,7 +3282,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<SetSubscriptionAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetTopicAttributes
@@ -3421,7 +3385,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<SetTopicAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Subscribe
@@ -3557,7 +3520,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<SubscribeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3645,7 +3607,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Unsubscribe
@@ -3761,7 +3722,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<UnsubscribeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3820,7 +3780,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  VerifySMSSandboxPhoneNumber
@@ -3886,7 +3845,6 @@ namespace Amazon.SimpleNotificationService
 
             return InvokeAsync<VerifySMSSandboxPhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

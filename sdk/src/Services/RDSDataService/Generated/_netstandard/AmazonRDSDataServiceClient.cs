@@ -389,7 +389,6 @@ namespace Amazon.RDSDataService
 
             return InvokeAsync<BatchExecuteStatementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BeginTransaction
@@ -504,7 +503,6 @@ namespace Amazon.RDSDataService
 
             return InvokeAsync<BeginTransactionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CommitTransaction
@@ -600,7 +598,6 @@ namespace Amazon.RDSDataService
 
             return InvokeAsync<CommitTransactionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteSql
@@ -660,7 +657,6 @@ namespace Amazon.RDSDataService
 
             return InvokeAsync<ExecuteSqlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteStatement
@@ -785,7 +781,6 @@ namespace Amazon.RDSDataService
 
             return InvokeAsync<ExecuteStatementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RollbackTransaction
@@ -880,7 +875,6 @@ namespace Amazon.RDSDataService
 
             return InvokeAsync<RollbackTransactionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

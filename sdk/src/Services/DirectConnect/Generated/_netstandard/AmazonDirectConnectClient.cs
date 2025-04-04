@@ -290,7 +290,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<AcceptDirectConnectGatewayAssociationProposalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AllocateConnectionOnInterconnect
@@ -349,7 +348,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<AllocateConnectionOnInterconnectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AllocateHostedConnection
@@ -409,7 +407,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<AllocateHostedConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AllocatePrivateVirtualInterface
@@ -463,7 +460,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<AllocatePrivateVirtualInterfaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AllocatePublicVirtualInterface
@@ -528,7 +524,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<AllocatePublicVirtualInterfaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AllocateTransitVirtualInterface
@@ -589,7 +584,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<AllocateTransitVirtualInterfaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateConnectionWithLag
@@ -648,7 +642,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<AssociateConnectionWithLagResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateHostedConnection
@@ -698,7 +691,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<AssociateHostedConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateMacSecKey
@@ -750,7 +742,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<AssociateMacSecKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateVirtualInterface
@@ -807,7 +798,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<AssociateVirtualInterfaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConfirmConnection
@@ -853,7 +843,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<ConfirmConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConfirmCustomerAgreement
@@ -894,7 +883,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<ConfirmCustomerAgreementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConfirmPrivateVirtualInterface
@@ -942,7 +930,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<ConfirmPrivateVirtualInterfaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConfirmPublicVirtualInterface
@@ -989,7 +976,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<ConfirmPublicVirtualInterfaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConfirmTransitVirtualInterface
@@ -1036,7 +1022,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<ConfirmTransitVirtualInterfaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBGPPeer
@@ -1108,7 +1093,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<CreateBGPPeerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConnection
@@ -1172,7 +1156,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<CreateConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDirectConnectGateway
@@ -1218,7 +1201,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<CreateDirectConnectGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDirectConnectGatewayAssociation
@@ -1260,7 +1242,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<CreateDirectConnectGatewayAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDirectConnectGatewayAssociationProposal
@@ -1307,7 +1288,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<CreateDirectConnectGatewayAssociationProposalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInterconnect
@@ -1383,7 +1363,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<CreateInterconnectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLag
@@ -1460,7 +1439,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<CreateLagResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePrivateVirtualInterface
@@ -1521,7 +1499,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<CreatePrivateVirtualInterfaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePublicVirtualInterface
@@ -1576,7 +1553,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<CreatePublicVirtualInterfaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTransitVirtualInterface
@@ -1643,7 +1619,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<CreateTransitVirtualInterfaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBGPPeer
@@ -1689,7 +1664,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DeleteBGPPeerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnection
@@ -1736,7 +1710,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DeleteConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDirectConnectGateway
@@ -1778,7 +1751,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DeleteDirectConnectGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDirectConnectGatewayAssociation
@@ -1827,7 +1799,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DeleteDirectConnectGatewayAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDirectConnectGatewayAssociationProposal
@@ -1868,7 +1839,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DeleteDirectConnectGatewayAssociationProposalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInterconnect
@@ -1914,7 +1884,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DeleteInterconnectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLag
@@ -1955,7 +1924,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DeleteLagResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVirtualInterface
@@ -1995,7 +1963,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DeleteVirtualInterfaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConnectionLoa
@@ -2051,7 +2018,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DescribeConnectionLoaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConnections
@@ -2116,7 +2082,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DescribeConnectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConnectionsOnInterconnect
@@ -2170,7 +2135,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DescribeConnectionsOnInterconnectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCustomerMetadata
@@ -2211,7 +2175,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DescribeCustomerMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDirectConnectGatewayAssociationProposals
@@ -2252,7 +2215,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DescribeDirectConnectGatewayAssociationProposalsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDirectConnectGatewayAssociations
@@ -2338,7 +2300,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DescribeDirectConnectGatewayAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDirectConnectGatewayAttachments
@@ -2384,7 +2345,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DescribeDirectConnectGatewayAttachmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDirectConnectGateways
@@ -2425,7 +2385,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DescribeDirectConnectGatewaysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeHostedConnections
@@ -2472,7 +2431,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DescribeHostedConnectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInterconnectLoa
@@ -2528,7 +2486,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DescribeInterconnectLoaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInterconnects
@@ -2595,7 +2552,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DescribeInterconnectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLags
@@ -2635,7 +2591,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DescribeLagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLoa
@@ -2683,7 +2638,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DescribeLoaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLocations
@@ -2750,7 +2704,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DescribeLocationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRouterConfiguration
@@ -2790,7 +2743,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DescribeRouterConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTags
@@ -2830,7 +2782,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DescribeTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVirtualGateways
@@ -2921,7 +2872,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DescribeVirtualGatewaysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVirtualInterfaces
@@ -3006,7 +2956,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DescribeVirtualInterfacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateConnectionFromLag
@@ -3059,7 +3008,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DisassociateConnectionFromLagResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateMacSecKey
@@ -3100,7 +3048,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<DisassociateMacSecKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVirtualInterfaceTestHistory
@@ -3140,7 +3087,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<ListVirtualInterfaceTestHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartBgpFailoverTest
@@ -3196,7 +3142,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<StartBgpFailoverTestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopBgpFailoverTest
@@ -3236,7 +3181,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<StopBgpFailoverTestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3289,7 +3233,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3329,7 +3272,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConnection
@@ -3383,7 +3325,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<UpdateConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDirectConnectGateway
@@ -3423,7 +3364,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<UpdateDirectConnectGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDirectConnectGatewayAssociation
@@ -3468,7 +3408,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<UpdateDirectConnectGatewayAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLag
@@ -3541,7 +3480,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<UpdateLagResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVirtualInterfaceAttributes
@@ -3591,7 +3529,6 @@ namespace Amazon.DirectConnect
 
             return InvokeAsync<UpdateVirtualInterfaceAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

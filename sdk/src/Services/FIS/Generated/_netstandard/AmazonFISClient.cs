@@ -336,7 +336,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<CreateExperimentTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTargetAccountConfiguration
@@ -385,7 +384,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<CreateTargetAccountConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteExperimentTemplate
@@ -425,7 +423,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<DeleteExperimentTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTargetAccountConfiguration
@@ -465,7 +462,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<DeleteTargetAccountConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAction
@@ -505,7 +501,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<GetActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExperiment
@@ -545,7 +540,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<GetExperimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExperimentTargetAccountConfiguration
@@ -585,7 +579,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<GetExperimentTargetAccountConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExperimentTemplate
@@ -625,7 +618,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<GetExperimentTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSafetyLever
@@ -662,7 +654,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<GetSafetyLeverResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTargetAccountConfiguration
@@ -703,7 +694,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<GetTargetAccountConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTargetResourceType
@@ -743,7 +733,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<GetTargetResourceTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListActions
@@ -780,7 +769,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<ListActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExperimentResolvedTargets
@@ -820,7 +808,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<ListExperimentResolvedTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExperiments
@@ -857,7 +844,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<ListExperimentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExperimentTargetAccountConfigurations
@@ -897,7 +883,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<ListExperimentTargetAccountConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExperimentTemplates
@@ -934,7 +919,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<ListExperimentTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -968,7 +952,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTargetAccountConfigurations
@@ -1008,7 +991,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<ListTargetAccountConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTargetResourceTypes
@@ -1045,7 +1027,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<ListTargetResourceTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartExperiment
@@ -1091,7 +1072,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<StartExperimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopExperiment
@@ -1131,7 +1111,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<StopExperimentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1165,7 +1144,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1199,7 +1177,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateExperimentTemplate
@@ -1242,7 +1219,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<UpdateExperimentTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSafetyLeverState
@@ -1285,7 +1261,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<UpdateSafetyLeverStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTargetAccountConfiguration
@@ -1325,7 +1300,6 @@ namespace Amazon.FIS
 
             return InvokeAsync<UpdateTargetAccountConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

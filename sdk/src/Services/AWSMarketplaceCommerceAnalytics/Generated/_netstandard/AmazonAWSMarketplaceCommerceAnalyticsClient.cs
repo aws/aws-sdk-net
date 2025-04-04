@@ -287,7 +287,6 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
 
             return InvokeAsync<GenerateDataSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSupportDataExport
@@ -334,7 +333,6 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
 
             return InvokeAsync<StartSupportDataExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -313,7 +313,6 @@ namespace Amazon.LaunchWizard
 
             return InvokeAsync<CreateDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDeployment
@@ -361,7 +360,6 @@ namespace Amazon.LaunchWizard
 
             return InvokeAsync<DeleteDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeployment
@@ -405,7 +403,6 @@ namespace Amazon.LaunchWizard
 
             return InvokeAsync<GetDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkload
@@ -449,7 +446,6 @@ namespace Amazon.LaunchWizard
 
             return InvokeAsync<GetWorkloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkloadDeploymentPattern
@@ -496,7 +492,6 @@ namespace Amazon.LaunchWizard
 
             return InvokeAsync<GetWorkloadDeploymentPatternResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeploymentEvents
@@ -540,7 +535,6 @@ namespace Amazon.LaunchWizard
 
             return InvokeAsync<ListDeploymentEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeployments
@@ -581,7 +575,6 @@ namespace Amazon.LaunchWizard
 
             return InvokeAsync<ListDeploymentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -625,7 +618,6 @@ namespace Amazon.LaunchWizard
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkloadDeploymentPatterns
@@ -671,7 +663,6 @@ namespace Amazon.LaunchWizard
 
             return InvokeAsync<ListWorkloadDeploymentPatternsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkloads
@@ -713,7 +704,6 @@ namespace Amazon.LaunchWizard
 
             return InvokeAsync<ListWorkloadsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -757,7 +747,6 @@ namespace Amazon.LaunchWizard
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -801,7 +790,6 @@ namespace Amazon.LaunchWizard
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

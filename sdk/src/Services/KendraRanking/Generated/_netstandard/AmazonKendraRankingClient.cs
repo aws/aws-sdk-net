@@ -332,7 +332,6 @@ namespace Amazon.KendraRanking
 
             return InvokeAsync<CreateRescoreExecutionPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRescoreExecutionPlan
@@ -392,7 +391,6 @@ namespace Amazon.KendraRanking
 
             return InvokeAsync<DeleteRescoreExecutionPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRescoreExecutionPlan
@@ -448,7 +446,6 @@ namespace Amazon.KendraRanking
 
             return InvokeAsync<DescribeRescoreExecutionPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRescoreExecutionPlans
@@ -500,7 +497,6 @@ namespace Amazon.KendraRanking
 
             return InvokeAsync<ListRescoreExecutionPlansResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -556,7 +552,6 @@ namespace Amazon.KendraRanking
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Rescore
@@ -617,7 +612,6 @@ namespace Amazon.KendraRanking
 
             return InvokeAsync<RescoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -674,7 +668,6 @@ namespace Amazon.KendraRanking
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -730,7 +723,6 @@ namespace Amazon.KendraRanking
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRescoreExecutionPlan
@@ -798,7 +790,6 @@ namespace Amazon.KendraRanking
 
             return InvokeAsync<UpdateRescoreExecutionPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

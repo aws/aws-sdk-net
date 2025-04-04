@@ -30,7 +30,6 @@ namespace Amazon.AppTest
     /// <summary>
     /// Configuration for accessing Amazon AppTest service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonAppTestConfig : ClientConfig
     {
         private static readonly string UserAgentString =

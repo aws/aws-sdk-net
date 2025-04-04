@@ -30,7 +30,6 @@ namespace Amazon.PinpointEmail
     /// <summary>
     /// Configuration for accessing Amazon PinpointEmail service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonPinpointEmailConfig : ClientConfig
     {
         private static readonly string UserAgentString =

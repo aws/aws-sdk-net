@@ -437,7 +437,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<AcceptAdministratorInvitationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AcceptInvitation
@@ -514,7 +513,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<AcceptInvitationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteAutomationRules
@@ -566,7 +564,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<BatchDeleteAutomationRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDisableStandards
@@ -624,7 +621,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<BatchDisableStandardsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchEnableStandards
@@ -683,7 +679,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<BatchEnableStandardsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetAutomationRules
@@ -739,7 +734,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<BatchGetAutomationRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetConfigurationPolicyAssociations
@@ -797,7 +791,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<BatchGetConfigurationPolicyAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetSecurityControls
@@ -847,7 +840,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<BatchGetSecurityControlsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetStandardsControlAssociations
@@ -904,7 +896,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<BatchGetStandardsControlAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchImportFindings
@@ -1032,7 +1023,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<BatchImportFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchUpdateAutomationRules
@@ -1085,7 +1075,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<BatchUpdateAutomationRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchUpdateFindings
@@ -1191,7 +1180,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<BatchUpdateFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchUpdateStandardsControlAssociations
@@ -1244,7 +1232,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<BatchUpdateStandardsControlAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateActionTarget
@@ -1302,7 +1289,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<CreateActionTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAutomationRule
@@ -1354,7 +1340,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<CreateAutomationRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfigurationPolicy
@@ -1410,7 +1395,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<CreateConfigurationPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFindingAggregator
@@ -1476,7 +1460,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<CreateFindingAggregatorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInsight
@@ -1534,7 +1517,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<CreateInsightResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMembers
@@ -1651,7 +1633,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<CreateMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeclineInvitations
@@ -1718,7 +1699,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<DeclineInvitationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteActionTarget
@@ -1771,7 +1751,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<DeleteActionTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfigurationPolicy
@@ -1832,7 +1811,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<DeleteConfigurationPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFindingAggregator
@@ -1902,7 +1880,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<DeleteFindingAggregatorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInsight
@@ -1954,7 +1931,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<DeleteInsightResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInvitations
@@ -2027,7 +2003,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<DeleteInvitationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMembers
@@ -2085,7 +2060,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<DeleteMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeActionTargets
@@ -2132,7 +2106,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<DescribeActionTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeHub
@@ -2185,7 +2158,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<DescribeHubResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOrganizationConfiguration
@@ -2235,7 +2207,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<DescribeOrganizationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProducts
@@ -2295,7 +2266,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<DescribeProductsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStandards
@@ -2345,7 +2315,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<DescribeStandardsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStandardsControls
@@ -2403,7 +2372,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<DescribeStandardsControlsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableImportFindingsForProduct
@@ -2456,7 +2424,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<DisableImportFindingsForProductResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableOrganizationAdminAccount
@@ -2509,7 +2476,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<DisableOrganizationAdminAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableSecurityHub
@@ -2579,7 +2545,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<DisableSecurityHubResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateFromAdministratorAccount
@@ -2638,7 +2603,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<DisassociateFromAdministratorAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateFromMasterAccount
@@ -2711,7 +2675,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<DisassociateFromMasterAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateMembers
@@ -2772,7 +2735,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<DisassociateMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableImportFindingsForProduct
@@ -2831,7 +2793,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<EnableImportFindingsForProductResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableOrganizationAdminAccount
@@ -2884,7 +2845,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<EnableOrganizationAdminAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableSecurityHub
@@ -2974,7 +2934,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<EnableSecurityHubResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAdministratorAccount
@@ -3033,7 +2992,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<GetAdministratorAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfigurationPolicy
@@ -3089,7 +3047,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<GetConfigurationPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfigurationPolicyAssociation
@@ -3147,7 +3104,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<GetConfigurationPolicyAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEnabledStandards
@@ -3196,7 +3152,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<GetEnabledStandardsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFindingAggregator
@@ -3260,7 +3215,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<GetFindingAggregatorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFindingHistory
@@ -3310,7 +3264,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<GetFindingHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFindings
@@ -3366,7 +3319,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<GetFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInsightResults
@@ -3418,7 +3370,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<GetInsightResultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInsights
@@ -3470,7 +3421,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<GetInsightsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInvitationsCount
@@ -3530,7 +3480,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<GetInvitationsCountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMasterAccount
@@ -3603,7 +3552,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<GetMasterAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMembers
@@ -3667,7 +3615,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<GetMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSecurityControlDefinition
@@ -3720,7 +3667,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<GetSecurityControlDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InviteMembers
@@ -3799,7 +3745,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<InviteMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAutomationRules
@@ -3851,7 +3796,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<ListAutomationRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfigurationPolicies
@@ -3905,7 +3849,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<ListConfigurationPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfigurationPolicyAssociations
@@ -3959,7 +3902,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<ListConfigurationPolicyAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnabledProductsForImport
@@ -4005,7 +3947,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<ListEnabledProductsForImportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFindingAggregators
@@ -4059,7 +4000,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<ListFindingAggregatorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInvitations
@@ -4123,7 +4063,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<ListInvitationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMembers
@@ -4179,7 +4118,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<ListMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOrganizationAdminAccounts
@@ -4229,7 +4167,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<ListOrganizationAdminAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSecurityControlDefinitions
@@ -4278,7 +4215,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<ListSecurityControlDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStandardsControlAssociations
@@ -4334,7 +4270,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<ListStandardsControlAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -4378,7 +4313,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartConfigurationPolicyAssociation
@@ -4436,7 +4370,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<StartConfigurationPolicyAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartConfigurationPolicyDisassociation
@@ -4496,7 +4429,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<StartConfigurationPolicyDisassociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -4540,7 +4472,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -4584,7 +4515,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateActionTarget
@@ -4631,7 +4561,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<UpdateActionTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfigurationPolicy
@@ -4690,7 +4619,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<UpdateConfigurationPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFindingAggregator
@@ -4758,7 +4686,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<UpdateFindingAggregatorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFindings
@@ -4825,7 +4752,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<UpdateFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInsight
@@ -4877,7 +4803,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<UpdateInsightResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateOrganizationConfiguration
@@ -4936,7 +4861,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<UpdateOrganizationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSecurityControl
@@ -4996,7 +4920,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<UpdateSecurityControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSecurityHubConfiguration
@@ -5051,7 +4974,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<UpdateSecurityHubConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStandardsControl
@@ -5108,7 +5030,6 @@ namespace Amazon.SecurityHub
 
             return InvokeAsync<UpdateStandardsControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

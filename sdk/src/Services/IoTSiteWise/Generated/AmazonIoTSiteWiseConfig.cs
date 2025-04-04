@@ -30,7 +30,6 @@ namespace Amazon.IoTSiteWise
     /// <summary>
     /// Configuration for accessing Amazon IoTSiteWise service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonIoTSiteWiseConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -30,7 +30,6 @@ namespace Amazon.EMRServerless
     /// <summary>
     /// Configuration for accessing Amazon EMRServerless service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonEMRServerlessConfig : ClientConfig
     {
         private static readonly string UserAgentString =

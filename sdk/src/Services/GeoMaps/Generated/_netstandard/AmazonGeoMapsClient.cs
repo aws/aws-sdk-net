@@ -310,7 +310,6 @@ namespace Amazon.GeoMaps
 
             return InvokeAsync<GetGlyphsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSprites
@@ -344,7 +343,6 @@ namespace Amazon.GeoMaps
 
             return InvokeAsync<GetSpritesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStaticMap
@@ -393,7 +391,6 @@ namespace Amazon.GeoMaps
 
             return InvokeAsync<GetStaticMapResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStyleDescriptor
@@ -427,7 +424,6 @@ namespace Amazon.GeoMaps
 
             return InvokeAsync<GetStyleDescriptorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTile
@@ -476,7 +472,6 @@ namespace Amazon.GeoMaps
 
             return InvokeAsync<GetTileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

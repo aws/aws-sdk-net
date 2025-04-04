@@ -340,7 +340,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<AssociateAssetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateTimeSeriesToAssetProperty
@@ -399,7 +398,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<AssociateTimeSeriesToAssetPropertyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchAssociateProjectAssets
@@ -465,7 +463,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<BatchAssociateProjectAssetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDisassociateProjectAssets
@@ -520,7 +517,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<BatchDisassociateProjectAssetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetAssetPropertyAggregates
@@ -577,7 +573,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<BatchGetAssetPropertyAggregatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetAssetPropertyValue
@@ -634,7 +629,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<BatchGetAssetPropertyValueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetAssetPropertyValueHistory
@@ -691,7 +685,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<BatchGetAssetPropertyValueHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchPutAssetPropertyValue
@@ -799,7 +792,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<BatchPutAssetPropertyValueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAccessPolicy
@@ -867,7 +859,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<CreateAccessPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAsset
@@ -941,7 +932,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<CreateAssetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAssetModel
@@ -1036,7 +1026,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<CreateAssetModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAssetModelCompositeModel
@@ -1140,7 +1129,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<CreateAssetModelCompositeModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBulkImportJob
@@ -1228,7 +1216,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<CreateBulkImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDashboard
@@ -1294,7 +1281,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<CreateDashboardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataset
@@ -1367,7 +1353,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<CreateDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGateway
@@ -1435,7 +1420,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<CreateGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePortal
@@ -1510,7 +1494,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<CreatePortalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProject
@@ -1582,7 +1565,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<CreateProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccessPolicy
@@ -1639,7 +1621,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DeleteAccessPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAsset
@@ -1706,7 +1687,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DeleteAssetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAssetModel
@@ -1772,7 +1752,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DeleteAssetModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAssetModelCompositeModel
@@ -1839,7 +1818,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DeleteAssetModelCompositeModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDashboard
@@ -1894,7 +1872,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DeleteDashboardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataset
@@ -1953,7 +1930,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DeleteDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGateway
@@ -2013,7 +1989,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DeleteGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePortal
@@ -2072,7 +2047,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DeletePortalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProject
@@ -2127,7 +2101,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DeleteProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTimeSeries
@@ -2212,7 +2185,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DeleteTimeSeriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccessPolicy
@@ -2268,7 +2240,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DescribeAccessPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAction
@@ -2323,7 +2294,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DescribeActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAsset
@@ -2378,7 +2348,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DescribeAssetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAssetCompositeModel
@@ -2435,7 +2404,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DescribeAssetCompositeModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAssetModel
@@ -2490,7 +2458,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DescribeAssetModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAssetModelCompositeModel
@@ -2547,7 +2514,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DescribeAssetModelCompositeModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAssetProperty
@@ -2614,7 +2580,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DescribeAssetPropertyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBulkImportJob
@@ -2671,7 +2636,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DescribeBulkImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDashboard
@@ -2726,7 +2690,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DescribeDashboardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataset
@@ -2781,7 +2744,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DescribeDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDefaultEncryptionConfiguration
@@ -2836,7 +2798,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DescribeDefaultEncryptionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGateway
@@ -2891,7 +2852,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DescribeGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGatewayCapabilityConfiguration
@@ -2950,7 +2910,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DescribeGatewayCapabilityConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLoggingOptions
@@ -3005,7 +2964,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DescribeLoggingOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePortal
@@ -3060,7 +3018,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DescribePortalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProject
@@ -3115,7 +3072,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DescribeProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStorageConfiguration
@@ -3185,7 +3141,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DescribeStorageConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTimeSeries
@@ -3264,7 +3219,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DescribeTimeSeriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateAssets
@@ -3324,7 +3278,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DisassociateAssetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateTimeSeriesFromAssetProperty
@@ -3383,7 +3336,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<DisassociateTimeSeriesFromAssetPropertyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteAction
@@ -3453,7 +3405,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<ExecuteActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteQuery
@@ -3518,7 +3469,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<ExecuteQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAssetPropertyAggregates
@@ -3592,7 +3542,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<GetAssetPropertyAggregatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAssetPropertyValue
@@ -3666,7 +3615,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<GetAssetPropertyValueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAssetPropertyValueHistory
@@ -3740,7 +3688,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<GetAssetPropertyValueHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInterpolatedAssetPropertyValues
@@ -3820,7 +3767,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<GetInterpolatedAssetPropertyValuesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InvokeAssistant
@@ -3893,7 +3839,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<InvokeAssistantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccessPolicies
@@ -3947,7 +3892,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<ListAccessPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListActions
@@ -4002,7 +3946,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<ListActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssetModelCompositeModels
@@ -4057,7 +4000,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<ListAssetModelCompositeModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssetModelProperties
@@ -4114,7 +4056,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<ListAssetModelPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssetModels
@@ -4166,7 +4107,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<ListAssetModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssetProperties
@@ -4223,7 +4163,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<ListAssetPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssetRelationships
@@ -4280,7 +4219,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<ListAssetRelationshipsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssets
@@ -4355,7 +4293,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<ListAssetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssociatedAssets
@@ -4424,7 +4361,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<ListAssociatedAssetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBulkImportJobs
@@ -4481,7 +4417,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<ListBulkImportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCompositionRelationships
@@ -4537,7 +4472,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<ListCompositionRelationshipsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDashboards
@@ -4589,7 +4523,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<ListDashboardsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatasets
@@ -4641,7 +4574,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<ListDatasetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGateways
@@ -4693,7 +4625,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<ListGatewaysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPortals
@@ -4745,7 +4676,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<ListPortalsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProjectAssets
@@ -4797,7 +4727,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<ListProjectAssetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProjects
@@ -4849,7 +4778,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<ListProjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -4922,7 +4850,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTimeSeries
@@ -4977,7 +4904,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<ListTimeSeriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDefaultEncryptionConfiguration
@@ -5046,7 +4972,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<PutDefaultEncryptionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutLoggingOptions
@@ -5105,7 +5030,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<PutLoggingOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutStorageConfiguration
@@ -5178,7 +5102,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<PutStorageConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -5257,7 +5180,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -5330,7 +5252,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccessPolicy
@@ -5386,7 +5307,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<UpdateAccessPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAsset
@@ -5449,7 +5369,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<UpdateAssetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAssetModel
@@ -5550,7 +5469,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<UpdateAssetModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAssetModelCompositeModel
@@ -5652,7 +5570,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<UpdateAssetModelCompositeModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAssetProperty
@@ -5719,7 +5636,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<UpdateAssetPropertyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDashboard
@@ -5774,7 +5690,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<UpdateDashboardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataset
@@ -5844,7 +5759,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<UpdateDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGateway
@@ -5903,7 +5817,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<UpdateGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGatewayCapabilityConfiguration
@@ -5978,7 +5891,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<UpdateGatewayCapabilityConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePortal
@@ -6037,7 +5949,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<UpdatePortalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProject
@@ -6092,7 +6003,6 @@ namespace Amazon.IoTSiteWise
 
             return InvokeAsync<UpdateProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

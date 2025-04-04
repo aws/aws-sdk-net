@@ -30,7 +30,6 @@ namespace Amazon.Ep2parsearn
     /// <summary>
     /// Configuration for accessing Amazon Ep2parsearn service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonEp2parsearnConfig : ClientConfig
     {
         private static readonly string UserAgentString =

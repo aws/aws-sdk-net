@@ -326,7 +326,6 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
             return InvokeAsync<AssociateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLicenseServerEndpoint
@@ -382,7 +381,6 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
             return InvokeAsync<CreateLicenseServerEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLicenseServerEndpoint
@@ -438,7 +436,6 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
             return InvokeAsync<DeleteLicenseServerEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterIdentityProvider
@@ -495,7 +492,6 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
             return InvokeAsync<DeregisterIdentityProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateUser
@@ -551,7 +547,6 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
             return InvokeAsync<DisassociateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIdentityProviders
@@ -607,7 +602,6 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
             return InvokeAsync<ListIdentityProvidersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInstances
@@ -663,7 +657,6 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
             return InvokeAsync<ListInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLicenseServerEndpoints
@@ -716,7 +709,6 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
             return InvokeAsync<ListLicenseServerEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProductSubscriptions
@@ -772,7 +764,6 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
             return InvokeAsync<ListProductSubscriptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -815,7 +806,6 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUserAssociations
@@ -871,7 +861,6 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
             return InvokeAsync<ListUserAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterIdentityProvider
@@ -927,7 +916,6 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
             return InvokeAsync<RegisterIdentityProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartProductSubscription
@@ -992,7 +980,6 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
             return InvokeAsync<StartProductSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopProductSubscription
@@ -1048,7 +1035,6 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
             return InvokeAsync<StopProductSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1091,7 +1077,6 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1131,7 +1116,6 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIdentityProviderSettings
@@ -1177,7 +1161,6 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
             return InvokeAsync<UpdateIdentityProviderSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

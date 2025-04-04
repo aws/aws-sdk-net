@@ -319,7 +319,6 @@ namespace Amazon.KinesisVideoSignalingChannels
 
             return InvokeAsync<GetIceServerConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendAlexaOfferToMaster
@@ -371,7 +370,6 @@ namespace Amazon.KinesisVideoSignalingChannels
 
             return InvokeAsync<SendAlexaOfferToMasterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

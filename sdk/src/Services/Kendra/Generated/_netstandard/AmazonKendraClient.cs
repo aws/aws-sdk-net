@@ -323,7 +323,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<AssociateEntitiesToExperienceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociatePersonasToEntities
@@ -386,7 +385,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<AssociatePersonasToEntitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteDocument
@@ -459,7 +457,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<BatchDeleteDocumentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteFeaturedResultsSet
@@ -516,7 +513,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<BatchDeleteFeaturedResultsSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetDocumentStatus
@@ -590,7 +586,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<BatchGetDocumentStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchPutDocument
@@ -674,7 +669,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<BatchPutDocumentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ClearQuerySuggestions
@@ -747,7 +741,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<ClearQuerySuggestionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAccessControlConfiguration
@@ -843,7 +836,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<CreateAccessControlConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataSource
@@ -929,7 +921,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<CreateDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateExperience
@@ -996,7 +987,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<CreateExperienceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFaq
@@ -1071,7 +1061,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<CreateFaqResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFeaturedResultsSet
@@ -1145,7 +1134,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<CreateFeaturedResultsSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIndex
@@ -1226,7 +1214,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<CreateIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateQuerySuggestionsBlockList
@@ -1317,7 +1304,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<CreateQuerySuggestionsBlockListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateThesaurus
@@ -1388,7 +1374,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<CreateThesaurusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccessControlConfiguration
@@ -1450,7 +1435,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<DeleteAccessControlConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataSource
@@ -1520,7 +1504,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<DeleteDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteExperience
@@ -1581,7 +1564,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<DeleteExperienceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFaq
@@ -1640,7 +1622,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<DeleteFaqResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIndex
@@ -1701,7 +1682,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<DeleteIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePrincipalMapping
@@ -1781,7 +1761,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<DeletePrincipalMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteQuerySuggestionsBlockList
@@ -1851,7 +1830,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<DeleteQuerySuggestionsBlockListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteThesaurus
@@ -1910,7 +1888,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<DeleteThesaurusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccessControlConfiguration
@@ -1968,7 +1945,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<DescribeAccessControlConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataSource
@@ -2023,7 +1999,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<DescribeDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeExperience
@@ -2080,7 +2055,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<DescribeExperienceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFaq
@@ -2135,7 +2109,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<DescribeFaqResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFeaturedResultsSet
@@ -2192,7 +2165,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<DescribeFeaturedResultsSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeIndex
@@ -2247,7 +2219,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<DescribeIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePrincipalMapping
@@ -2312,7 +2283,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<DescribePrincipalMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeQuerySuggestionsBlockList
@@ -2377,7 +2347,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<DescribeQuerySuggestionsBlockListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeQuerySuggestionsConfig
@@ -2442,7 +2411,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<DescribeQuerySuggestionsConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeThesaurus
@@ -2497,7 +2465,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<DescribeThesaurusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateEntitiesFromExperience
@@ -2556,7 +2523,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<DisassociateEntitiesFromExperienceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociatePersonasFromEntities
@@ -2615,7 +2581,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<DisassociatePersonasFromEntitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQuerySuggestions
@@ -2685,7 +2650,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<GetQuerySuggestionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSnapshots
@@ -2736,7 +2700,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<GetSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccessControlConfigurations
@@ -2793,7 +2756,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<ListAccessControlConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataSources
@@ -2848,7 +2810,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<ListDataSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataSourceSyncJobs
@@ -2907,7 +2868,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<ListDataSourceSyncJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEntityPersonas
@@ -2962,7 +2922,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<ListEntityPersonasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExperienceEntities
@@ -3021,7 +2980,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<ListExperienceEntitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExperiences
@@ -3079,7 +3037,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<ListExperiencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFaqs
@@ -3134,7 +3091,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<ListFaqsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFeaturedResultsSets
@@ -3191,7 +3147,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<ListFeaturedResultsSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroupsOlderThanOrderingId
@@ -3257,7 +3212,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<ListGroupsOlderThanOrderingIdResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIndices
@@ -3308,7 +3262,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<ListIndicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQuerySuggestionsBlockLists
@@ -3374,7 +3327,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<ListQuerySuggestionsBlockListsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3430,7 +3382,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListThesauri
@@ -3485,7 +3436,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<ListThesauriResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutPrincipalMapping
@@ -3570,7 +3520,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<PutPrincipalMappingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Query
@@ -3684,7 +3633,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<QueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Retrieve
@@ -3808,7 +3756,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<RetrieveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDataSourceSyncJob
@@ -3879,7 +3826,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<StartDataSourceSyncJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopDataSourceSyncJob
@@ -3935,7 +3881,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<StopDataSourceSyncJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SubmitFeedback
@@ -4001,7 +3946,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<SubmitFeedbackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -4057,7 +4001,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -4112,7 +4055,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccessControlConfiguration
@@ -4208,7 +4150,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<UpdateAccessControlConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataSource
@@ -4267,7 +4208,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<UpdateDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateExperience
@@ -4328,7 +4268,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<UpdateExperienceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFeaturedResultsSet
@@ -4392,7 +4331,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<UpdateFeaturedResultsSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIndex
@@ -4456,7 +4394,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<UpdateIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQuerySuggestionsBlockList
@@ -4537,7 +4474,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<UpdateQuerySuggestionsBlockListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQuerySuggestionsConfig
@@ -4622,7 +4558,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<UpdateQuerySuggestionsConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateThesaurus
@@ -4681,7 +4616,6 @@ namespace Amazon.Kendra
 
             return InvokeAsync<UpdateThesaurusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

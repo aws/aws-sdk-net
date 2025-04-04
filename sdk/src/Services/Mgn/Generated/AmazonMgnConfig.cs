@@ -30,7 +30,6 @@ namespace Amazon.Mgn
     /// <summary>
     /// Configuration for accessing Amazon Mgn service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMgnConfig : ClientConfig
     {
         private static readonly string UserAgentString =

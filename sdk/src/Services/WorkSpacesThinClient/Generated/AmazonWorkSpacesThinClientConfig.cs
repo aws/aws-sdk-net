@@ -30,7 +30,6 @@ namespace Amazon.WorkSpacesThinClient
     /// <summary>
     /// Configuration for accessing Amazon WorkSpacesThinClient service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonWorkSpacesThinClientConfig : ClientConfig
     {
         private static readonly string UserAgentString =

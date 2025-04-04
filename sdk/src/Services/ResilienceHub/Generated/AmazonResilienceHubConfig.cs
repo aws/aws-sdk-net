@@ -30,7 +30,6 @@ namespace Amazon.ResilienceHub
     /// <summary>
     /// Configuration for accessing Amazon ResilienceHub service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonResilienceHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -30,7 +30,6 @@ namespace Amazon.CloudControlApi
     /// <summary>
     /// Configuration for accessing Amazon CloudControlApi service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCloudControlApiConfig : ClientConfig
     {
         private static readonly string UserAgentString =

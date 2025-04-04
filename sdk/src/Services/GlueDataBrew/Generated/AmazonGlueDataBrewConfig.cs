@@ -30,7 +30,6 @@ namespace Amazon.GlueDataBrew
     /// <summary>
     /// Configuration for accessing Amazon GlueDataBrew service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonGlueDataBrewConfig : ClientConfig
     {
         private static readonly string UserAgentString =

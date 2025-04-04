@@ -330,7 +330,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<AllocateStaticIpResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachCertificateToDistribution
@@ -412,7 +411,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<AttachCertificateToDistributionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachDisk
@@ -487,7 +485,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<AttachDiskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachInstancesToLoadBalancer
@@ -566,7 +563,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<AttachInstancesToLoadBalancerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachLoadBalancerTlsCertificate
@@ -648,7 +644,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<AttachLoadBalancerTlsCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachStaticIp
@@ -714,7 +709,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<AttachStaticIpResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CloseInstancePublicPorts
@@ -788,7 +782,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CloseInstancePublicPortsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopySnapshot
@@ -869,7 +862,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CopySnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBucket
@@ -933,7 +925,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateBucketResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBucketAccessKey
@@ -1011,7 +1002,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateBucketAccessKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCertificate
@@ -1086,7 +1076,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCloudFormationStack
@@ -1163,7 +1152,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateCloudFormationStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateContactMethod
@@ -1235,7 +1223,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateContactMethodResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateContainerService
@@ -1301,7 +1288,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateContainerServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateContainerServiceDeployment
@@ -1377,7 +1363,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateContainerServiceDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateContainerServiceRegistryLogin
@@ -1463,7 +1448,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateContainerServiceRegistryLoginResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDisk
@@ -1537,7 +1521,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateDiskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDiskFromSnapshot
@@ -1613,7 +1596,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateDiskFromSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDiskSnapshot
@@ -1710,7 +1692,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateDiskSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDistribution
@@ -1780,7 +1761,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateDistributionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDomain
@@ -1853,7 +1833,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDomainEntry
@@ -1929,7 +1908,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateDomainEntryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGUISessionAccessDetails
@@ -1996,7 +1974,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateGUISessionAccessDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInstances
@@ -2069,7 +2046,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInstancesFromSnapshot
@@ -2143,7 +2119,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateInstancesFromSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInstanceSnapshot
@@ -2217,7 +2192,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateInstanceSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateKeyPair
@@ -2296,7 +2270,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateKeyPairResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLoadBalancer
@@ -2378,7 +2351,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateLoadBalancerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLoadBalancerTlsCertificate
@@ -2456,7 +2428,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateLoadBalancerTlsCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRelationalDatabase
@@ -2529,7 +2500,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateRelationalDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRelationalDatabaseFromSnapshot
@@ -2609,7 +2579,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateRelationalDatabaseFromSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRelationalDatabaseSnapshot
@@ -2683,7 +2652,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<CreateRelationalDatabaseSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAlarm
@@ -2753,7 +2721,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DeleteAlarmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAutoSnapshot
@@ -2817,7 +2784,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DeleteAutoSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBucket
@@ -2883,7 +2849,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DeleteBucketResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBucketAccessKey
@@ -2953,7 +2918,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DeleteBucketAccessKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCertificate
@@ -3020,7 +2984,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DeleteCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteContactMethod
@@ -3092,7 +3055,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DeleteContactMethodResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteContainerImage
@@ -3151,7 +3113,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DeleteContainerImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteContainerService
@@ -3210,7 +3171,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DeleteContainerServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDisk
@@ -3289,7 +3249,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DeleteDiskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDiskSnapshot
@@ -3371,7 +3330,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DeleteDiskSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDistribution
@@ -3433,7 +3391,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DeleteDistributionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDomain
@@ -3507,7 +3464,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DeleteDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDomainEntry
@@ -3581,7 +3537,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DeleteDomainEntryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInstance
@@ -3655,7 +3610,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DeleteInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInstanceSnapshot
@@ -3729,7 +3683,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DeleteInstanceSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteKeyPair
@@ -3812,7 +3765,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DeleteKeyPairResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteKnownHostKeys
@@ -3889,7 +3841,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DeleteKnownHostKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLoadBalancer
@@ -3965,7 +3916,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DeleteLoadBalancerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLoadBalancerTlsCertificate
@@ -4039,7 +3989,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DeleteLoadBalancerTlsCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRelationalDatabase
@@ -4113,7 +4062,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DeleteRelationalDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRelationalDatabaseSnapshot
@@ -4187,7 +4135,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DeleteRelationalDatabaseSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachCertificateFromDistribution
@@ -4256,7 +4203,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DetachCertificateFromDistributionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachDisk
@@ -4332,7 +4278,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DetachDiskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachInstancesFromLoadBalancer
@@ -4411,7 +4356,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DetachInstancesFromLoadBalancerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachStaticIp
@@ -4477,7 +4421,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DetachStaticIpResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableAddOn
@@ -4541,7 +4484,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DisableAddOnResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DownloadDefaultKeyPair
@@ -4613,7 +4555,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<DownloadDefaultKeyPairResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableAddOn
@@ -4677,7 +4618,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<EnableAddOnResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportSnapshot
@@ -4768,7 +4708,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<ExportSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetActiveNames
@@ -4834,7 +4773,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetActiveNamesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAlarms
@@ -4906,7 +4844,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetAlarmsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAutoSnapshots
@@ -4970,7 +4907,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetAutoSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBlueprints
@@ -5048,7 +4984,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetBlueprintsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketAccessKeys
@@ -5115,7 +5050,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetBucketAccessKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketBundles
@@ -5182,7 +5116,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetBucketBundlesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketMetricData
@@ -5248,7 +5181,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetBucketMetricDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBuckets
@@ -5315,7 +5247,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetBucketsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBundles
@@ -5394,7 +5325,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetBundlesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCertificates
@@ -5461,7 +5391,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetCertificatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCloudFormationStackRecords
@@ -5534,7 +5463,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetCloudFormationStackRecordsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContactMethods
@@ -5607,7 +5535,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetContactMethodsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContainerAPIMetadata
@@ -5652,7 +5579,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetContainerAPIMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContainerImages
@@ -5720,7 +5646,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetContainerImagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContainerLog
@@ -5793,7 +5718,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetContainerLogResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContainerServiceDeployments
@@ -5870,7 +5794,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetContainerServiceDeploymentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContainerServiceMetricData
@@ -5935,7 +5858,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetContainerServiceMetricDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContainerServicePowers
@@ -6001,7 +5923,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetContainerServicePowersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContainerServices
@@ -6060,7 +5981,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetContainerServicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCostEstimate
@@ -6120,7 +6040,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetCostEstimateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDisk
@@ -6186,7 +6105,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetDiskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDisks
@@ -6252,7 +6170,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetDisksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDiskSnapshot
@@ -6318,7 +6235,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetDiskSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDiskSnapshots
@@ -6385,7 +6301,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetDiskSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDistributionBundles
@@ -6454,7 +6369,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetDistributionBundlesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDistributionLatestCacheReset
@@ -6517,7 +6431,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetDistributionLatestCacheResetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDistributionMetricData
@@ -6587,7 +6500,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetDistributionMetricDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDistributions
@@ -6650,7 +6562,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetDistributionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDomain
@@ -6716,7 +6627,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDomains
@@ -6782,7 +6692,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetDomainsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExportSnapshotRecords
@@ -6856,7 +6765,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetExportSnapshotRecordsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInstance
@@ -6923,7 +6831,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInstanceAccessDetails
@@ -6998,7 +6905,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetInstanceAccessDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInstanceMetricData
@@ -7072,7 +6978,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetInstanceMetricDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInstancePortStates
@@ -7139,7 +7044,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetInstancePortStatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInstances
@@ -7205,7 +7109,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInstanceSnapshot
@@ -7271,7 +7174,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetInstanceSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInstanceSnapshots
@@ -7337,7 +7239,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetInstanceSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInstanceState
@@ -7403,7 +7304,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetInstanceStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKeyPair
@@ -7469,7 +7369,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetKeyPairResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKeyPairs
@@ -7535,7 +7434,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetKeyPairsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLoadBalancer
@@ -7601,7 +7499,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetLoadBalancerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLoadBalancerMetricData
@@ -7674,7 +7571,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetLoadBalancerMetricDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLoadBalancers
@@ -7740,7 +7636,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetLoadBalancersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLoadBalancerTlsCertificates
@@ -7817,7 +7712,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetLoadBalancerTlsCertificatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLoadBalancerTlsPolicies
@@ -7884,7 +7778,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetLoadBalancerTlsPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOperation
@@ -7951,7 +7844,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOperations
@@ -8024,7 +7916,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetOperationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOperationsForResource
@@ -8090,7 +7981,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetOperationsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRegions
@@ -8157,7 +8047,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetRegionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRelationalDatabase
@@ -8223,7 +8112,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetRelationalDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRelationalDatabaseBlueprints
@@ -8296,7 +8184,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetRelationalDatabaseBlueprintsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRelationalDatabaseBundles
@@ -8368,7 +8255,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetRelationalDatabaseBundlesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRelationalDatabaseEvents
@@ -8434,7 +8320,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetRelationalDatabaseEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRelationalDatabaseLogEvents
@@ -8500,7 +8385,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetRelationalDatabaseLogEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRelationalDatabaseLogStreams
@@ -8566,7 +8450,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetRelationalDatabaseLogStreamsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRelationalDatabaseMasterUserPassword
@@ -8639,7 +8522,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetRelationalDatabaseMasterUserPasswordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRelationalDatabaseMetricData
@@ -8712,7 +8594,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetRelationalDatabaseMetricDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRelationalDatabaseParameters
@@ -8786,7 +8667,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetRelationalDatabaseParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRelationalDatabases
@@ -8852,7 +8732,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetRelationalDatabasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRelationalDatabaseSnapshot
@@ -8918,7 +8797,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetRelationalDatabaseSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRelationalDatabaseSnapshots
@@ -8984,7 +8862,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetRelationalDatabaseSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSetupHistory
@@ -9044,7 +8921,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetSetupHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStaticIp
@@ -9110,7 +8986,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetStaticIpResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStaticIps
@@ -9176,7 +9051,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<GetStaticIpsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportKeyPair
@@ -9242,7 +9116,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<ImportKeyPairResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  IsVpcPeered
@@ -9308,7 +9181,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<IsVpcPeeredResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  OpenInstancePublicPorts
@@ -9383,7 +9255,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<OpenInstancePublicPortsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PeerVpc
@@ -9449,7 +9320,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<PeerVpcResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAlarm
@@ -9531,7 +9401,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<PutAlarmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutInstancePublicPorts
@@ -9610,7 +9479,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<PutInstancePublicPortsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RebootInstance
@@ -9684,7 +9552,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<RebootInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RebootRelationalDatabase
@@ -9758,7 +9625,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<RebootRelationalDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterContainerImage
@@ -9827,7 +9693,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<RegisterContainerImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReleaseStaticIp
@@ -9893,7 +9758,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<ReleaseStaticIpResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetDistributionCache
@@ -9962,7 +9826,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<ResetDistributionCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendContactMethodVerification
@@ -10047,7 +9910,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<SendContactMethodVerificationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetIpAddressType
@@ -10120,7 +9982,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<SetIpAddressTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetResourceAccessForBucket
@@ -10185,7 +10046,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<SetResourceAccessForBucketResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetupInstanceHttps
@@ -10251,7 +10111,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<SetupInstanceHttpsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartGUISession
@@ -10312,7 +10171,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<StartGUISessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartInstance
@@ -10395,7 +10253,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<StartInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartRelationalDatabase
@@ -10470,7 +10327,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<StartRelationalDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopGUISession
@@ -10531,7 +10387,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<StopGUISessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopInstance
@@ -10613,7 +10468,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<StopInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopRelationalDatabase
@@ -10694,7 +10548,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<StopRelationalDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -10771,7 +10624,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestAlarm
@@ -10843,7 +10695,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<TestAlarmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UnpeerVpc
@@ -10909,7 +10760,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<UnpeerVpcResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -10984,7 +10834,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBucket
@@ -11049,7 +10898,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<UpdateBucketResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBucketBundle
@@ -11128,7 +10976,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<UpdateBucketBundleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContainerService
@@ -11188,7 +11035,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<UpdateContainerServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDistribution
@@ -11255,7 +11101,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<UpdateDistributionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDistributionBundle
@@ -11335,7 +11180,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<UpdateDistributionBundleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDomainEntry
@@ -11409,7 +11253,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<UpdateDomainEntryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInstanceMetadataOptions
@@ -11482,7 +11325,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<UpdateInstanceMetadataOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLoadBalancerAttribute
@@ -11557,7 +11399,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<UpdateLoadBalancerAttributeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRelationalDatabase
@@ -11636,7 +11477,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<UpdateRelationalDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRelationalDatabaseParameters
@@ -11719,7 +11559,6 @@ namespace Amazon.Lightsail
 
             return InvokeAsync<UpdateRelationalDatabaseParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

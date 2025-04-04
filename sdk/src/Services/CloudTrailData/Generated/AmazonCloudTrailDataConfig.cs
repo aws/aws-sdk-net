@@ -30,7 +30,6 @@ namespace Amazon.CloudTrailData
     /// <summary>
     /// Configuration for accessing Amazon CloudTrailData service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCloudTrailDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =

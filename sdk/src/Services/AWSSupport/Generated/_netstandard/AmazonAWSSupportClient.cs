@@ -396,7 +396,6 @@ namespace Amazon.AWSSupport
 
             return InvokeAsync<AddAttachmentsToSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddCommunicationToCase
@@ -460,7 +459,6 @@ namespace Amazon.AWSSupport
 
             return InvokeAsync<AddCommunicationToCaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCase
@@ -552,7 +550,6 @@ namespace Amazon.AWSSupport
 
             return InvokeAsync<CreateCaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAttachment
@@ -614,7 +611,6 @@ namespace Amazon.AWSSupport
 
             return InvokeAsync<DescribeAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCases
@@ -690,7 +686,6 @@ namespace Amazon.AWSSupport
 
             return InvokeAsync<DescribeCasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCommunications
@@ -757,7 +752,6 @@ namespace Amazon.AWSSupport
 
             return InvokeAsync<DescribeCommunicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCreateCaseOptions
@@ -813,7 +807,6 @@ namespace Amazon.AWSSupport
 
             return InvokeAsync<DescribeCreateCaseOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeServices
@@ -922,7 +915,6 @@ namespace Amazon.AWSSupport
 
             return InvokeAsync<DescribeServicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSeverityLevels
@@ -1013,7 +1005,6 @@ namespace Amazon.AWSSupport
 
             return InvokeAsync<DescribeSeverityLevelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSupportedLanguages
@@ -1069,7 +1060,6 @@ namespace Amazon.AWSSupport
 
             return InvokeAsync<DescribeSupportedLanguagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTrustedAdvisorCheckRefreshStatuses
@@ -1139,7 +1129,6 @@ namespace Amazon.AWSSupport
 
             return InvokeAsync<DescribeTrustedAdvisorCheckRefreshStatusesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTrustedAdvisorCheckResult
@@ -1236,7 +1225,6 @@ namespace Amazon.AWSSupport
 
             return InvokeAsync<DescribeTrustedAdvisorCheckResultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTrustedAdvisorChecks
@@ -1309,7 +1297,6 @@ namespace Amazon.AWSSupport
 
             return InvokeAsync<DescribeTrustedAdvisorChecksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTrustedAdvisorCheckSummaries
@@ -1377,7 +1364,6 @@ namespace Amazon.AWSSupport
 
             return InvokeAsync<DescribeTrustedAdvisorCheckSummariesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RefreshTrustedAdvisorCheck
@@ -1446,7 +1432,6 @@ namespace Amazon.AWSSupport
 
             return InvokeAsync<RefreshTrustedAdvisorCheckResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResolveCase
@@ -1501,7 +1486,6 @@ namespace Amazon.AWSSupport
 
             return InvokeAsync<ResolveCaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

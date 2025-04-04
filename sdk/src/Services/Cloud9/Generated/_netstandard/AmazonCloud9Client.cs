@@ -400,7 +400,6 @@ namespace Amazon.Cloud9
 
             return InvokeAsync<CreateEnvironmentEC2Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEnvironmentMembership
@@ -463,7 +462,6 @@ namespace Amazon.Cloud9
 
             return InvokeAsync<CreateEnvironmentMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEnvironment
@@ -527,7 +525,6 @@ namespace Amazon.Cloud9
 
             return InvokeAsync<DeleteEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEnvironmentMembership
@@ -590,7 +587,6 @@ namespace Amazon.Cloud9
 
             return InvokeAsync<DeleteEnvironmentMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEnvironmentMemberships
@@ -653,7 +649,6 @@ namespace Amazon.Cloud9
 
             return InvokeAsync<DescribeEnvironmentMembershipsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEnvironments
@@ -716,7 +711,6 @@ namespace Amazon.Cloud9
 
             return InvokeAsync<DescribeEnvironmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEnvironmentStatus
@@ -779,7 +773,6 @@ namespace Amazon.Cloud9
 
             return InvokeAsync<DescribeEnvironmentStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnvironments
@@ -848,7 +841,6 @@ namespace Amazon.Cloud9
 
             return InvokeAsync<ListEnvironmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -899,7 +891,6 @@ namespace Amazon.Cloud9
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -958,7 +949,6 @@ namespace Amazon.Cloud9
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1012,7 +1002,6 @@ namespace Amazon.Cloud9
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEnvironment
@@ -1075,7 +1064,6 @@ namespace Amazon.Cloud9
 
             return InvokeAsync<UpdateEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEnvironmentMembership
@@ -1138,7 +1126,6 @@ namespace Amazon.Cloud9
 
             return InvokeAsync<UpdateEnvironmentMembershipResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

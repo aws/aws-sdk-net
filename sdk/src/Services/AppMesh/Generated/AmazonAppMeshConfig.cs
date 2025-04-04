@@ -30,7 +30,6 @@ namespace Amazon.AppMesh
     /// <summary>
     /// Configuration for accessing Amazon AppMesh service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonAppMeshConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -339,7 +339,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<AssociateAdminAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateThirdPartyFirewall
@@ -393,7 +392,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<AssociateThirdPartyFirewallResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchAssociateResource
@@ -451,7 +449,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<BatchAssociateResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDisassociateResource
@@ -503,7 +500,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<BatchDisassociateResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAppsList
@@ -552,7 +548,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<DeleteAppsListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNotificationChannel
@@ -602,7 +597,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<DeleteNotificationChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePolicy
@@ -660,7 +654,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<DeletePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProtocolsList
@@ -709,7 +702,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<DeleteProtocolsListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourceSet
@@ -761,7 +753,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<DeleteResourceSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateAdminAccount
@@ -821,7 +812,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<DisassociateAdminAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateThirdPartyFirewall
@@ -875,7 +865,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<DisassociateThirdPartyFirewallResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAdminAccount
@@ -925,7 +914,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<GetAdminAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAdminScope
@@ -984,7 +972,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<GetAdminScopeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAppsList
@@ -1033,7 +1020,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<GetAppsListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetComplianceDetail
@@ -1092,7 +1078,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<GetComplianceDetailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNotificationChannel
@@ -1142,7 +1127,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<GetNotificationChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPolicy
@@ -1194,7 +1178,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<GetPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProtectionStatus
@@ -1239,7 +1222,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<GetProtectionStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProtocolsList
@@ -1288,7 +1270,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<GetProtocolsListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceSet
@@ -1340,7 +1321,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<GetResourceSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetThirdPartyFirewallAssociationStatus
@@ -1393,7 +1373,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<GetThirdPartyFirewallAssociationStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetViolationDetails
@@ -1438,7 +1417,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<GetViolationDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAdminAccountsForOrganization
@@ -1499,7 +1477,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<ListAdminAccountsForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAdminsManagingAccount
@@ -1546,7 +1523,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<ListAdminsManagingAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAppsLists
@@ -1601,7 +1577,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<ListAppsListsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListComplianceStatus
@@ -1643,7 +1618,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<ListComplianceStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDiscoveredResources
@@ -1693,7 +1667,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<ListDiscoveredResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMemberAccounts
@@ -1741,7 +1714,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<ListMemberAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPolicies
@@ -1796,7 +1768,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<ListPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProtocolsLists
@@ -1845,7 +1816,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<ListProtocolsListsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceSetResources
@@ -1897,7 +1867,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<ListResourceSetResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceSets
@@ -1946,7 +1915,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<ListResourceSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1998,7 +1966,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListThirdPartyFirewallFirewallPolicies
@@ -2051,7 +2018,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<ListThirdPartyFirewallFirewallPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAdminAccount
@@ -2114,7 +2080,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<PutAdminAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAppsList
@@ -2172,7 +2137,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<PutAppsListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutNotificationChannel
@@ -2233,7 +2197,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<PutNotificationChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutPolicy
@@ -2364,7 +2327,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<PutPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutProtocolsList
@@ -2422,7 +2384,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<PutProtocolsListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourceSet
@@ -2483,7 +2444,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<PutResourceSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2541,7 +2501,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2593,7 +2552,6 @@ namespace Amazon.FMS
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -321,7 +321,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<CreateCredentialLockerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDestination
@@ -372,7 +371,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<CreateDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEventLogConfiguration
@@ -425,7 +423,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<CreateEventLogConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateManagedThing
@@ -485,7 +482,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<CreateManagedThingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNotificationConfiguration
@@ -536,7 +532,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<CreateNotificationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOtaTask
@@ -586,7 +581,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<CreateOtaTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOtaTaskConfiguration
@@ -636,7 +630,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<CreateOtaTaskConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProvisioningProfile
@@ -694,7 +687,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<CreateProvisioningProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCredentialLocker
@@ -754,7 +746,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<DeleteCredentialLockerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDestination
@@ -804,7 +795,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<DeleteDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventLogConfiguration
@@ -854,7 +844,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<DeleteEventLogConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteManagedThing
@@ -915,7 +904,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<DeleteManagedThingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNotificationConfiguration
@@ -965,7 +953,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<DeleteNotificationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOtaTask
@@ -1015,7 +1002,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<DeleteOtaTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOtaTaskConfiguration
@@ -1065,7 +1051,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<DeleteOtaTaskConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProvisioningProfile
@@ -1121,7 +1106,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<DeleteProvisioningProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCredentialLocker
@@ -1174,7 +1158,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<GetCredentialLockerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCustomEndpoint
@@ -1230,7 +1213,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<GetCustomEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDefaultEncryptionConfiguration
@@ -1288,7 +1270,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<GetDefaultEncryptionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDestination
@@ -1338,7 +1319,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<GetDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeviceDiscovery
@@ -1394,7 +1374,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<GetDeviceDiscoveryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEventLogConfiguration
@@ -1444,7 +1423,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<GetEventLogConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetHubConfiguration
@@ -1497,7 +1475,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<GetHubConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetManagedThing
@@ -1553,7 +1530,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<GetManagedThingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetManagedThingCapabilities
@@ -1609,7 +1585,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<GetManagedThingCapabilitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetManagedThingConnectivityData
@@ -1665,7 +1640,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<GetManagedThingConnectivityDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetManagedThingMetaData
@@ -1721,7 +1695,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<GetManagedThingMetaDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetManagedThingState
@@ -1776,7 +1749,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<GetManagedThingStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNotificationConfiguration
@@ -1826,7 +1798,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<GetNotificationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOtaTask
@@ -1876,7 +1847,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<GetOtaTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOtaTaskConfiguration
@@ -1926,7 +1896,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<GetOtaTaskConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProvisioningProfile
@@ -1982,7 +1951,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<GetProvisioningProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRuntimeLogConfiguration
@@ -2033,7 +2001,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<GetRuntimeLogConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSchemaVersion
@@ -2089,7 +2056,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<GetSchemaVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCredentialLockers
@@ -2139,7 +2105,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<ListCredentialLockersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDestinations
@@ -2186,7 +2151,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<ListDestinationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventLogConfigurations
@@ -2233,7 +2197,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<ListEventLogConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListManagedThings
@@ -2286,7 +2249,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<ListManagedThingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListManagedThingSchemas
@@ -2342,7 +2304,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<ListManagedThingSchemasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNotificationConfigurations
@@ -2389,7 +2350,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<ListNotificationConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOtaTaskConfigurations
@@ -2436,7 +2396,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<ListOtaTaskConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOtaTaskExecutions
@@ -2483,7 +2442,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<ListOtaTaskExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOtaTasks
@@ -2530,7 +2488,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<ListOtaTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProvisioningProfiles
@@ -2583,7 +2540,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<ListProvisioningProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSchemaVersions
@@ -2636,7 +2592,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<ListSchemaVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDefaultEncryptionConfiguration
@@ -2693,7 +2648,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<PutDefaultEncryptionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutHubConfiguration
@@ -2746,7 +2700,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<PutHubConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRuntimeLogConfiguration
@@ -2797,7 +2750,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<PutRuntimeLogConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterCustomEndpoint
@@ -2855,7 +2807,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<RegisterCustomEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetRuntimeLogConfiguration
@@ -2906,7 +2857,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<ResetRuntimeLogConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendManagedThingCommand
@@ -2959,7 +2909,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<SendManagedThingCommandResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDeviceDiscovery
@@ -3020,7 +2969,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<StartDeviceDiscoveryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDestination
@@ -3070,7 +3018,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<UpdateDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEventLogConfiguration
@@ -3120,7 +3067,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<UpdateEventLogConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateManagedThing
@@ -3179,7 +3125,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<UpdateManagedThingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNotificationConfiguration
@@ -3229,7 +3174,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<UpdateNotificationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateOtaTask
@@ -3279,7 +3223,6 @@ namespace Amazon.IoTManagedIntegrations
 
             return InvokeAsync<UpdateOtaTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -433,7 +433,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<AddTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelQuery
@@ -507,7 +506,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<CancelQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateChannel
@@ -583,7 +581,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<CreateChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDashboard
@@ -695,7 +692,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<CreateDashboardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEventDataStore
@@ -846,7 +842,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<CreateEventDataStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTrail
@@ -1038,7 +1033,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<CreateTrailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteChannel
@@ -1084,7 +1078,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<DeleteChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDashboard
@@ -1131,7 +1124,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<DeleteDashboardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventDataStore
@@ -1237,7 +1229,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<DeleteEventDataStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -1313,7 +1304,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTrail
@@ -1439,7 +1429,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<DeleteTrailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterOrganizationDelegatedAdmin
@@ -1523,7 +1512,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<DeregisterOrganizationDelegatedAdminResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeQuery
@@ -1593,7 +1581,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<DescribeQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTrails
@@ -1772,7 +1759,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<DescribeTrailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableFederation
@@ -1874,7 +1860,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<DisableFederationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableFederation
@@ -1992,7 +1977,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<EnableFederationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateQuery
@@ -2080,7 +2064,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<GenerateQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetChannel
@@ -2126,7 +2109,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<GetChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDashboard
@@ -2166,7 +2148,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<GetDashboardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEventDataStore
@@ -2221,7 +2202,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<GetEventDataStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEventSelectors
@@ -2362,7 +2342,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<GetEventSelectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetImport
@@ -2408,7 +2387,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<GetImportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInsightSelectors
@@ -2537,7 +2515,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<GetInsightSelectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueryResults
@@ -2616,7 +2593,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<GetQueryResultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicy
@@ -2686,7 +2662,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTrail
@@ -2781,7 +2756,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<GetTrailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTrailStatus
@@ -2879,7 +2853,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<GetTrailStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChannels
@@ -2923,7 +2896,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<ListChannelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDashboards
@@ -2960,7 +2932,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<ListDashboardsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventDataStores
@@ -3011,7 +2982,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<ListEventDataStoresResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImportFailures
@@ -3058,7 +3028,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<ListImportFailuresResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImports
@@ -3110,7 +3079,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<ListImportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInsightsMetricData
@@ -3183,7 +3151,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<ListInsightsMetricDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPublicKeys
@@ -3241,7 +3208,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<ListPublicKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQueries
@@ -3319,7 +3285,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<ListQueriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTags
@@ -3438,7 +3403,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<ListTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrails
@@ -3478,7 +3442,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<ListTrailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  LookupEvents
@@ -3609,7 +3572,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<LookupEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEventSelectors
@@ -3862,7 +3824,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<PutEventSelectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutInsightSelectors
@@ -4053,7 +4014,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<PutInsightSelectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -4131,7 +4091,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterOrganizationDelegatedAdmin
@@ -4223,7 +4182,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<RegisterOrganizationDelegatedAdminResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTags
@@ -4358,7 +4316,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<RemoveTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreEventDataStore
@@ -4450,7 +4407,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<RestoreEventDataStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchSampleQueries
@@ -4494,7 +4450,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<SearchSampleQueriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDashboardRefresh
@@ -4556,7 +4511,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<StartDashboardRefreshResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartEventDataStoreIngestion
@@ -4632,7 +4586,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<StartEventDataStoreIngestionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartImport
@@ -4740,7 +4693,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<StartImportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartLogging
@@ -4868,7 +4820,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<StartLoggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartQuery
@@ -4968,7 +4919,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<StartQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopEventDataStoreIngestion
@@ -5044,7 +4994,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<StopEventDataStoreIngestionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopImport
@@ -5090,7 +5039,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<StopImportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopLogging
@@ -5220,7 +5168,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<StopLoggingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateChannel
@@ -5286,7 +5233,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<UpdateChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDashboard
@@ -5379,7 +5325,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<UpdateDashboardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEventDataStore
@@ -5569,7 +5514,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<UpdateEventDataStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTrail
@@ -5818,7 +5762,6 @@ namespace Amazon.CloudTrail
 
             return InvokeAsync<UpdateTrailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

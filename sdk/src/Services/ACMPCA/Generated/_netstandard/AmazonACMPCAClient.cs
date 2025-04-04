@@ -363,7 +363,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<CreateCertificateAuthorityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCertificateAuthorityAuditReport
@@ -438,7 +437,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<CreateCertificateAuthorityAuditReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePermission
@@ -525,7 +523,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<CreatePermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCertificateAuthority
@@ -605,7 +602,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<DeleteCertificateAuthorityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePermission
@@ -690,7 +686,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<DeletePermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePolicy
@@ -795,7 +790,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<DeletePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCertificateAuthority
@@ -875,7 +869,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<DescribeCertificateAuthorityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCertificateAuthorityAuditReport
@@ -923,7 +916,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<DescribeCertificateAuthorityAuditReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCertificate
@@ -979,7 +971,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<GetCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCertificateAuthorityCertificate
@@ -1026,7 +1017,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<GetCertificateAuthorityCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCertificateAuthorityCsr
@@ -1081,7 +1071,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<GetCertificateAuthorityCsrResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPolicy
@@ -1168,7 +1157,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<GetPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportCertificateAuthorityCertificate
@@ -1394,7 +1382,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<ImportCertificateAuthorityCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  IssueCertificate
@@ -1458,7 +1445,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<IssueCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCertificateAuthorities
@@ -1497,7 +1483,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<ListCertificateAuthoritiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPermissions
@@ -1585,7 +1570,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<ListPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTags
@@ -1636,7 +1620,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<ListTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutPolicy
@@ -1740,7 +1723,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<PutPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreCertificateAuthority
@@ -1797,7 +1779,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<RestoreCertificateAuthorityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RevokeCertificate
@@ -1888,7 +1869,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<RevokeCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagCertificateAuthority
@@ -1957,7 +1937,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<TagCertificateAuthorityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagCertificateAuthority
@@ -2011,7 +1990,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<UntagCertificateAuthorityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCertificateAuthority
@@ -2079,7 +2057,6 @@ namespace Amazon.ACMPCA
 
             return InvokeAsync<UpdateCertificateAuthorityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

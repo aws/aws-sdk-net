@@ -30,7 +30,6 @@ namespace Amazon.CloudFrontKeyValueStore
     /// <summary>
     /// Configuration for accessing Amazon CloudFrontKeyValueStore service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCloudFrontKeyValueStoreConfig : ClientConfig
     {
         private static readonly string UserAgentString =

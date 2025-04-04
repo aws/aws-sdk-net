@@ -30,7 +30,6 @@ namespace Amazon.IVSRealTime
     /// <summary>
     /// Configuration for accessing Amazon IVSRealTime service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonIVSRealTimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -375,7 +375,6 @@ namespace Amazon.MarketplaceReporting
 
             return InvokeAsync<GetBuyerDashboardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

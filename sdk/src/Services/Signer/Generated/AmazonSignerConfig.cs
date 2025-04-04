@@ -30,7 +30,6 @@ namespace Amazon.Signer
     /// <summary>
     /// Configuration for accessing Amazon Signer service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSignerConfig : ClientConfig
     {
         private static readonly string UserAgentString =

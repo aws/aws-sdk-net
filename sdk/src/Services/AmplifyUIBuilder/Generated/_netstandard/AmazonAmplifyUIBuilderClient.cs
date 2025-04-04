@@ -325,7 +325,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<CreateComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateForm
@@ -372,7 +371,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<CreateFormResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTheme
@@ -419,7 +417,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<CreateThemeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteComponent
@@ -462,7 +459,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<DeleteComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteForm
@@ -505,7 +501,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<DeleteFormResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTheme
@@ -548,7 +543,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<DeleteThemeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExchangeCodeForToken
@@ -592,7 +586,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<ExchangeCodeForTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportComponents
@@ -633,7 +626,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<ExportComponentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportForms
@@ -673,7 +665,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<ExportFormsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportThemes
@@ -713,7 +704,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<ExportThemesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCodegenJob
@@ -759,7 +749,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<GetCodegenJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetComponent
@@ -802,7 +791,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<GetComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetForm
@@ -845,7 +833,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<GetFormResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMetadata
@@ -885,7 +872,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<GetMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTheme
@@ -928,7 +914,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<GetThemeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCodegenJobs
@@ -971,7 +956,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<ListCodegenJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListComponents
@@ -1011,7 +995,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<ListComponentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListForms
@@ -1051,7 +1034,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<ListFormsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1100,7 +1082,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListThemes
@@ -1140,7 +1121,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<ListThemesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutMetadataFlag
@@ -1180,7 +1160,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<PutMetadataFlagResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RefreshToken
@@ -1225,7 +1204,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<RefreshTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartCodegenJob
@@ -1268,7 +1246,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<StartCodegenJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1317,7 +1294,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1366,7 +1342,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateComponent
@@ -1409,7 +1384,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<UpdateComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateForm
@@ -1452,7 +1426,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<UpdateFormResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTheme
@@ -1495,7 +1468,6 @@ namespace Amazon.AmplifyUIBuilder
 
             return InvokeAsync<UpdateThemeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

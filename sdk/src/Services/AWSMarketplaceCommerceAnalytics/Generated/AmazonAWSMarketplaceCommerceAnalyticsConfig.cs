@@ -30,7 +30,6 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
     /// <summary>
     /// Configuration for accessing Amazon AWSMarketplaceCommerceAnalytics service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonAWSMarketplaceCommerceAnalyticsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

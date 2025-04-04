@@ -30,7 +30,6 @@ namespace Amazon.Ep2complexparameters
     /// <summary>
     /// Configuration for accessing Amazon Ep2complexparameters service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonEp2complexparametersConfig : ClientConfig
     {
         private static readonly string UserAgentString =

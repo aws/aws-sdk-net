@@ -358,7 +358,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<AssociateDefaultViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetView
@@ -411,7 +410,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<BatchGetViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIndex
@@ -545,7 +543,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<CreateIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateView
@@ -631,7 +628,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<CreateViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIndex
@@ -699,7 +695,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<DeleteIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteView
@@ -763,7 +758,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<DeleteViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateDefaultView
@@ -827,7 +821,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<DisassociateDefaultViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccountLevelServiceConfiguration
@@ -879,7 +872,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<GetAccountLevelServiceConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDefaultView
@@ -935,7 +927,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<GetDefaultViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIndex
@@ -990,7 +981,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<GetIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetManagedView
@@ -1048,7 +1038,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<GetManagedViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetView
@@ -1105,7 +1094,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<GetViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIndexes
@@ -1156,7 +1144,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<ListIndexesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIndexesForMembers
@@ -1209,7 +1196,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<ListIndexesForMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListManagedViews
@@ -1264,7 +1250,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<ListManagedViewsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResources
@@ -1323,7 +1308,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<ListResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSupportedResourceTypes
@@ -1374,7 +1358,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<ListSupportedResourceTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1431,7 +1414,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListViews
@@ -1492,7 +1474,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<ListViewsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Search
@@ -1570,7 +1551,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<SearchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1642,7 +1622,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1700,7 +1679,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIndexType
@@ -1838,7 +1816,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<UpdateIndexTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateView
@@ -1895,7 +1872,6 @@ namespace Amazon.ResourceExplorer2
 
             return InvokeAsync<UpdateViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

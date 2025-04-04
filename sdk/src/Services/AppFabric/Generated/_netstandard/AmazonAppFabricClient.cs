@@ -325,7 +325,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<BatchGetUserAccessTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConnectAppAuthorization
@@ -376,7 +375,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<ConnectAppAuthorizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAppAuthorization
@@ -433,7 +431,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<CreateAppAuthorizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAppBundle
@@ -486,7 +483,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<CreateAppBundleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIngestion
@@ -539,7 +535,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<CreateIngestionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIngestionDestination
@@ -593,7 +588,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<CreateIngestionDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAppAuthorization
@@ -644,7 +638,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<DeleteAppAuthorizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAppBundle
@@ -695,7 +688,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<DeleteAppBundleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIngestion
@@ -746,7 +738,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<DeleteIngestionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIngestionDestination
@@ -804,7 +795,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<DeleteIngestionDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAppAuthorization
@@ -854,7 +844,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<GetAppAuthorizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAppBundle
@@ -904,7 +893,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<GetAppBundleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIngestion
@@ -954,7 +942,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<GetIngestionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIngestionDestination
@@ -1004,7 +991,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<GetIngestionDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAppAuthorizations
@@ -1054,7 +1040,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<ListAppAuthorizationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAppBundles
@@ -1101,7 +1086,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<ListAppBundlesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIngestionDestinations
@@ -1151,7 +1135,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<ListIngestionDestinationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIngestions
@@ -1201,7 +1184,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<ListIngestionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1251,7 +1233,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartIngestion
@@ -1304,7 +1285,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<StartIngestionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartUserAccessTasks
@@ -1360,7 +1340,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<StartUserAccessTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopIngestion
@@ -1413,7 +1392,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<StopIngestionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1463,7 +1441,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1513,7 +1490,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAppAuthorization
@@ -1570,7 +1546,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<UpdateAppAuthorizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIngestionDestination
@@ -1627,7 +1602,6 @@ namespace Amazon.AppFabric
 
             return InvokeAsync<UpdateIngestionDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

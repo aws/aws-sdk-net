@@ -306,7 +306,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<CancelContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfig
@@ -357,7 +356,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<CreateConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataflowEndpointGroup
@@ -412,7 +410,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<CreateDataflowEndpointGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEphemeris
@@ -455,7 +452,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<CreateEphemerisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMissionProfile
@@ -504,7 +500,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<CreateMissionProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfig
@@ -547,7 +542,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<DeleteConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataflowEndpointGroup
@@ -590,7 +584,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<DeleteDataflowEndpointGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEphemeris
@@ -633,7 +626,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<DeleteEphemerisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMissionProfile
@@ -676,7 +668,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<DeleteMissionProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeContact
@@ -719,7 +710,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<DescribeContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEphemeris
@@ -762,7 +752,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<DescribeEphemerisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAgentConfiguration
@@ -812,7 +801,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<GetAgentConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfig
@@ -860,7 +848,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<GetConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataflowEndpointGroup
@@ -903,7 +890,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<GetDataflowEndpointGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMinuteUsage
@@ -946,7 +932,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<GetMinuteUsageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMissionProfile
@@ -989,7 +974,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<GetMissionProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSatellite
@@ -1032,7 +1016,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<GetSatelliteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfigs
@@ -1075,7 +1058,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<ListConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContacts
@@ -1124,7 +1106,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<ListContactsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataflowEndpointGroups
@@ -1167,7 +1148,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<ListDataflowEndpointGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEphemerides
@@ -1210,7 +1190,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<ListEphemeridesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroundStations
@@ -1253,7 +1232,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<ListGroundStationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMissionProfiles
@@ -1296,7 +1274,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<ListMissionProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSatellites
@@ -1339,7 +1316,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<ListSatellitesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1382,7 +1358,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterAgent
@@ -1432,7 +1407,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<RegisterAgentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReserveContact
@@ -1475,7 +1449,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<ReserveContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1518,7 +1491,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1561,7 +1533,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAgentStatus
@@ -1611,7 +1582,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<UpdateAgentStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfig
@@ -1660,7 +1630,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<UpdateConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEphemeris
@@ -1703,7 +1672,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<UpdateEphemerisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMissionProfile
@@ -1752,7 +1720,6 @@ namespace Amazon.GroundStation
 
             return InvokeAsync<UpdateMissionProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

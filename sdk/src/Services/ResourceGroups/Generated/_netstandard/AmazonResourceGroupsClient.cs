@@ -381,7 +381,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<CancelTagSyncTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGroup
@@ -450,7 +449,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<CreateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGroup
@@ -517,7 +515,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<DeleteGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccountSettings
@@ -566,7 +563,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<GetAccountSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGroup
@@ -632,7 +628,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<GetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGroupConfiguration
@@ -700,7 +695,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<GetGroupConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGroupQuery
@@ -768,7 +762,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<GetGroupQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTags
@@ -835,7 +828,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<GetTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTagSyncTask
@@ -905,7 +897,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<GetTagSyncTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GroupResources
@@ -992,7 +983,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<GroupResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroupingStatuses
@@ -1042,7 +1032,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<ListGroupingStatusesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroupResources
@@ -1125,7 +1114,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<ListGroupResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroups
@@ -1188,7 +1176,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<ListGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagSyncTasks
@@ -1256,7 +1243,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<ListTagSyncTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutGroupConfiguration
@@ -1324,7 +1310,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<PutGroupConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchResources
@@ -1405,7 +1390,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<SearchResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartTagSyncTask
@@ -1484,7 +1468,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<StartTagSyncTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Tag
@@ -1558,7 +1541,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<TagResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UngroupResources
@@ -1627,7 +1609,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<UngroupResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Untag
@@ -1693,7 +1674,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<UntagResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccountSettings
@@ -1749,7 +1729,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<UpdateAccountSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGroup
@@ -1816,7 +1795,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<UpdateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGroupQuery
@@ -1884,7 +1862,6 @@ namespace Amazon.ResourceGroups
 
             return InvokeAsync<UpdateGroupQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -354,7 +354,6 @@ namespace Amazon.EBS
 
             return InvokeAsync<CompleteSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSnapshotBlock
@@ -418,7 +417,6 @@ namespace Amazon.EBS
 
             return InvokeAsync<GetSnapshotBlockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChangedBlocks
@@ -483,7 +481,6 @@ namespace Amazon.EBS
 
             return InvokeAsync<ListChangedBlocksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSnapshotBlocks
@@ -547,7 +544,6 @@ namespace Amazon.EBS
 
             return InvokeAsync<ListSnapshotBlocksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutSnapshotBlock
@@ -616,7 +612,6 @@ namespace Amazon.EBS
 
             return InvokeAsync<PutSnapshotBlockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSnapshot
@@ -695,7 +690,6 @@ namespace Amazon.EBS
 
             return InvokeAsync<StartSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

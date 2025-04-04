@@ -330,7 +330,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<AssociateEntityToThingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFlowTemplate
@@ -385,7 +384,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<CreateFlowTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSystemInstance
@@ -463,7 +461,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<CreateSystemInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSystemTemplate
@@ -512,7 +509,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<CreateSystemTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFlowTemplate
@@ -562,7 +558,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<DeleteFlowTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNamespace
@@ -606,7 +601,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<DeleteNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSystemInstance
@@ -660,7 +654,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<DeleteSystemInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSystemTemplate
@@ -710,7 +703,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<DeleteSystemTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeploySystemInstance
@@ -789,7 +781,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<DeploySystemInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeprecateFlowTemplate
@@ -838,7 +829,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<DeprecateFlowTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeprecateSystemTemplate
@@ -886,7 +876,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<DeprecateSystemTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeNamespace
@@ -935,7 +924,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<DescribeNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DissociateEntityFromThing
@@ -985,7 +973,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<DissociateEntityFromThingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEntities
@@ -1075,7 +1062,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<GetEntitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFlowTemplate
@@ -1124,7 +1110,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<GetFlowTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFlowTemplateRevisions
@@ -1174,7 +1159,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<GetFlowTemplateRevisionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNamespaceDeletionStatus
@@ -1219,7 +1203,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<GetNamespaceDeletionStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSystemInstance
@@ -1267,7 +1250,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<GetSystemInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSystemTemplate
@@ -1315,7 +1297,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<GetSystemTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSystemTemplateRevisions
@@ -1366,7 +1347,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<GetSystemTemplateRevisionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUploadStatus
@@ -1414,7 +1394,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<GetUploadStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFlowExecutionMessages
@@ -1462,7 +1441,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<ListFlowExecutionMessagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1510,7 +1488,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchEntities
@@ -1556,7 +1533,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<SearchEntitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchFlowExecutions
@@ -1604,7 +1580,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<SearchFlowExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchFlowTemplates
@@ -1649,7 +1624,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<SearchFlowTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchSystemInstances
@@ -1694,7 +1668,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<SearchSystemInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchSystemTemplates
@@ -1740,7 +1713,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<SearchSystemTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchThings
@@ -1801,7 +1773,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<SearchThingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1849,7 +1820,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UndeploySystemInstance
@@ -1900,7 +1870,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<UndeploySystemInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1948,7 +1917,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFlowTemplate
@@ -1999,7 +1967,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<UpdateFlowTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSystemTemplate
@@ -2049,7 +2016,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<UpdateSystemTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UploadEntityDefinitions
@@ -2120,7 +2086,6 @@ namespace Amazon.IoTThingsGraph
 
             return InvokeAsync<UploadEntityDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

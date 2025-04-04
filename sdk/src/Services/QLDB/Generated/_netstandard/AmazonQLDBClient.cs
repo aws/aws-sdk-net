@@ -311,7 +311,6 @@ namespace Amazon.QLDB
 
             return InvokeAsync<CancelJournalKinesisStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLedger
@@ -357,7 +356,6 @@ namespace Amazon.QLDB
 
             return InvokeAsync<CreateLedgerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLedger
@@ -410,7 +408,6 @@ namespace Amazon.QLDB
 
             return InvokeAsync<DeleteLedgerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeJournalKinesisStream
@@ -462,7 +459,6 @@ namespace Amazon.QLDB
 
             return InvokeAsync<DescribeJournalKinesisStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeJournalS3Export
@@ -516,7 +512,6 @@ namespace Amazon.QLDB
 
             return InvokeAsync<DescribeJournalS3ExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLedger
@@ -557,7 +552,6 @@ namespace Amazon.QLDB
 
             return InvokeAsync<DescribeLedgerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportJournalToS3
@@ -615,7 +609,6 @@ namespace Amazon.QLDB
 
             return InvokeAsync<ExportJournalToS3Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBlock
@@ -678,7 +671,6 @@ namespace Amazon.QLDB
 
             return InvokeAsync<GetBlockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDigest
@@ -722,7 +714,6 @@ namespace Amazon.QLDB
 
             return InvokeAsync<GetDigestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRevision
@@ -767,7 +758,6 @@ namespace Amazon.QLDB
 
             return InvokeAsync<GetRevisionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJournalKinesisStreamsForLedger
@@ -823,7 +813,6 @@ namespace Amazon.QLDB
 
             return InvokeAsync<ListJournalKinesisStreamsForLedgerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJournalS3Exports
@@ -870,7 +859,6 @@ namespace Amazon.QLDB
 
             return InvokeAsync<ListJournalS3ExportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJournalS3ExportsForLedger
@@ -917,7 +905,6 @@ namespace Amazon.QLDB
 
             return InvokeAsync<ListJournalS3ExportsForLedgerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLedgers
@@ -958,7 +945,6 @@ namespace Amazon.QLDB
 
             return InvokeAsync<ListLedgersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -998,7 +984,6 @@ namespace Amazon.QLDB
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StreamJournalToKinesis
@@ -1043,7 +1028,6 @@ namespace Amazon.QLDB
 
             return InvokeAsync<StreamJournalToKinesisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1089,7 +1073,6 @@ namespace Amazon.QLDB
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1130,7 +1113,6 @@ namespace Amazon.QLDB
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLedger
@@ -1170,7 +1152,6 @@ namespace Amazon.QLDB
 
             return InvokeAsync<UpdateLedgerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLedgerPermissionsMode
@@ -1219,7 +1200,6 @@ namespace Amazon.QLDB
 
             return InvokeAsync<UpdateLedgerPermissionsModeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

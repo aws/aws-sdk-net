@@ -439,7 +439,6 @@ namespace Amazon.OpsWorksCM
 
             return InvokeAsync<AssociateNodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBackup
@@ -504,7 +503,6 @@ namespace Amazon.OpsWorksCM
 
             return InvokeAsync<CreateBackupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateServer
@@ -595,7 +593,6 @@ namespace Amazon.OpsWorksCM
 
             return InvokeAsync<CreateServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBackup
@@ -646,7 +643,6 @@ namespace Amazon.OpsWorksCM
 
             return InvokeAsync<DeleteBackupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServer
@@ -707,7 +703,6 @@ namespace Amazon.OpsWorksCM
 
             return InvokeAsync<DeleteServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountAttributes
@@ -746,7 +741,6 @@ namespace Amazon.OpsWorksCM
 
             return InvokeAsync<DescribeAccountAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBackups
@@ -800,7 +794,6 @@ namespace Amazon.OpsWorksCM
 
             return InvokeAsync<DescribeBackupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEvents
@@ -854,7 +847,6 @@ namespace Amazon.OpsWorksCM
 
             return InvokeAsync<DescribeEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeNodeAssociationStatus
@@ -902,7 +894,6 @@ namespace Amazon.OpsWorksCM
 
             return InvokeAsync<DescribeNodeAssociationStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeServers
@@ -957,7 +948,6 @@ namespace Amazon.OpsWorksCM
 
             return InvokeAsync<DescribeServersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateNode
@@ -1011,7 +1001,6 @@ namespace Amazon.OpsWorksCM
 
             return InvokeAsync<DisassociateNodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportServerEngineAttribute
@@ -1068,7 +1057,6 @@ namespace Amazon.OpsWorksCM
 
             return InvokeAsync<ExportServerEngineAttributeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1109,7 +1097,6 @@ namespace Amazon.OpsWorksCM
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreServer
@@ -1174,7 +1161,6 @@ namespace Amazon.OpsWorksCM
 
             return InvokeAsync<RestoreServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMaintenance
@@ -1228,7 +1214,6 @@ namespace Amazon.OpsWorksCM
 
             return InvokeAsync<StartMaintenanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1272,7 +1257,6 @@ namespace Amazon.OpsWorksCM
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1315,7 +1299,6 @@ namespace Amazon.OpsWorksCM
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServer
@@ -1363,7 +1346,6 @@ namespace Amazon.OpsWorksCM
 
             return InvokeAsync<UpdateServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServerEngineAttributes
@@ -1421,7 +1403,6 @@ namespace Amazon.OpsWorksCM
 
             return InvokeAsync<UpdateServerEngineAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

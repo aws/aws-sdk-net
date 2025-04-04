@@ -362,7 +362,6 @@ namespace Amazon.RedshiftDataAPIService
 
             return InvokeAsync<BatchExecuteStatementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelStatement
@@ -415,7 +414,6 @@ namespace Amazon.RedshiftDataAPIService
 
             return InvokeAsync<CancelStatementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStatement
@@ -467,7 +465,6 @@ namespace Amazon.RedshiftDataAPIService
 
             return InvokeAsync<DescribeStatementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTable
@@ -558,7 +555,6 @@ namespace Amazon.RedshiftDataAPIService
 
             return InvokeAsync<DescribeTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteStatement
@@ -652,7 +648,6 @@ namespace Amazon.RedshiftDataAPIService
 
             return InvokeAsync<ExecuteStatementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStatementResult
@@ -705,7 +700,6 @@ namespace Amazon.RedshiftDataAPIService
 
             return InvokeAsync<GetStatementResultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStatementResultV2
@@ -758,7 +752,6 @@ namespace Amazon.RedshiftDataAPIService
 
             return InvokeAsync<GetStatementResultV2Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatabases
@@ -848,7 +841,6 @@ namespace Amazon.RedshiftDataAPIService
 
             return InvokeAsync<ListDatabasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSchemas
@@ -938,7 +930,6 @@ namespace Amazon.RedshiftDataAPIService
 
             return InvokeAsync<ListSchemasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStatements
@@ -994,7 +985,6 @@ namespace Amazon.RedshiftDataAPIService
 
             return InvokeAsync<ListStatementsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTables
@@ -1085,7 +1075,6 @@ namespace Amazon.RedshiftDataAPIService
 
             return InvokeAsync<ListTablesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

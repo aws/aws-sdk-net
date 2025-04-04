@@ -30,7 +30,6 @@ namespace Amazon.ElasticTranscoder
     /// <summary>
     /// Configuration for accessing Amazon ElasticTranscoder service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonElasticTranscoderConfig : ClientConfig
     {
         private static readonly string UserAgentString =

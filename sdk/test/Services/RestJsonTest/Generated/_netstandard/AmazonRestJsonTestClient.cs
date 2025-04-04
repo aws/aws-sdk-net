@@ -274,7 +274,6 @@ namespace Amazon.RestJsonTest
 
             return InvokeAsync<MemberRefOpResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NoPayload
@@ -308,7 +307,6 @@ namespace Amazon.RestJsonTest
 
             return InvokeAsync<NoPayloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NoPayloadPost
@@ -343,7 +341,6 @@ namespace Amazon.RestJsonTest
 
             return InvokeAsync<NoPayloadPostResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryBooleanList
@@ -377,7 +374,6 @@ namespace Amazon.RestJsonTest
 
             return InvokeAsync<QueryBooleanListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryIntegerList
@@ -411,7 +407,6 @@ namespace Amazon.RestJsonTest
 
             return InvokeAsync<QueryIntegerListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryIntegerListMap
@@ -445,7 +440,6 @@ namespace Amazon.RestJsonTest
 
             return InvokeAsync<QueryIntegerListMapResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryStringEscaping
@@ -479,7 +473,6 @@ namespace Amazon.RestJsonTest
 
             return InvokeAsync<QueryStringEscapingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryStringList
@@ -513,7 +506,6 @@ namespace Amazon.RestJsonTest
 
             return InvokeAsync<QueryStringListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryStringListMap
@@ -547,7 +539,6 @@ namespace Amazon.RestJsonTest
 
             return InvokeAsync<QueryStringListMapResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryTimestampList
@@ -581,7 +572,6 @@ namespace Amazon.RestJsonTest
 
             return InvokeAsync<QueryTimestampListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StaticOp
@@ -615,7 +605,6 @@ namespace Amazon.RestJsonTest
 
             return InvokeAsync<StaticOpResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestBlobPayload
@@ -649,7 +638,6 @@ namespace Amazon.RestJsonTest
 
             return InvokeAsync<TestBlobPayloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestBody
@@ -683,7 +671,6 @@ namespace Amazon.RestJsonTest
 
             return InvokeAsync<TestBodyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestPayload
@@ -717,7 +704,6 @@ namespace Amazon.RestJsonTest
 
             return InvokeAsync<TestPayloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
     }

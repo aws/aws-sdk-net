@@ -328,7 +328,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<AcceptSharedDirectoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddIpRoutes
@@ -396,7 +395,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<AddIpRoutesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddRegion
@@ -462,7 +460,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<AddRegionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddTagsToResource
@@ -513,7 +510,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<AddTagsToResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelSchemaExtension
@@ -559,7 +555,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<CancelSchemaExtensionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConnectDirectory
@@ -614,7 +609,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<ConnectDirectoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAlias
@@ -671,7 +665,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<CreateAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateComputer
@@ -729,7 +722,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<CreateComputerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConditionalForwarder
@@ -786,7 +778,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<CreateConditionalForwarderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDirectory
@@ -842,7 +833,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<CreateDirectoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLogSubscription
@@ -895,7 +885,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<CreateLogSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMicrosoftAD
@@ -955,7 +944,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<CreateMicrosoftADResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSnapshot
@@ -1013,7 +1001,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<CreateSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTrust
@@ -1076,7 +1063,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<CreateTrustResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConditionalForwarder
@@ -1129,7 +1115,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DeleteConditionalForwarderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDirectory
@@ -1180,7 +1165,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DeleteDirectoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLogSubscription
@@ -1226,7 +1210,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DeleteLogSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSnapshot
@@ -1272,7 +1255,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DeleteSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTrust
@@ -1322,7 +1304,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DeleteTrustResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterCertificate
@@ -1382,7 +1363,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DeregisterCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterEventTopic
@@ -1428,7 +1408,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DeregisterEventTopicResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCertificate
@@ -1481,7 +1460,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DescribeCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClientAuthenticationSettings
@@ -1536,7 +1514,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DescribeClientAuthenticationSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConditionalForwarders
@@ -1594,7 +1571,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DescribeConditionalForwardersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDirectories
@@ -1713,7 +1689,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DescribeDirectoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDirectoryDataAccess
@@ -1763,7 +1738,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DescribeDirectoryDataAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDomainControllers
@@ -1815,7 +1789,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DescribeDomainControllersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventTopics
@@ -1868,7 +1841,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DescribeEventTopicsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLDAPSSettings
@@ -1920,7 +1892,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DescribeLDAPSSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRegions
@@ -1975,7 +1946,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DescribeRegionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSettings
@@ -2027,7 +1997,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DescribeSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSharedDirectories
@@ -2079,7 +2048,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DescribeSharedDirectoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSnapshots
@@ -2140,7 +2108,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DescribeSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTrusts
@@ -2198,7 +2165,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DescribeTrustsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUpdateDirectory
@@ -2250,7 +2216,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DescribeUpdateDirectoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableClientAuthentication
@@ -2302,7 +2267,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DisableClientAuthenticationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableDirectoryDataAccess
@@ -2358,7 +2322,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DisableDirectoryDataAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableLDAPS
@@ -2413,7 +2376,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DisableLDAPSResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableRadius
@@ -2457,7 +2419,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DisableRadiusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableSso
@@ -2506,7 +2467,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<DisableSsoResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableClientAuthentication
@@ -2562,7 +2522,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<EnableClientAuthenticationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableDirectoryDataAccess
@@ -2618,7 +2577,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<EnableDirectoryDataAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableLDAPS
@@ -2677,7 +2635,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<EnableLDAPSResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableRadius
@@ -2727,7 +2684,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<EnableRadiusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableSso
@@ -2778,7 +2734,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<EnableSsoResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDirectoryLimits
@@ -2849,7 +2804,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<GetDirectoryLimitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSnapshotLimits
@@ -2892,7 +2846,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<GetSnapshotLimitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCertificates
@@ -2945,7 +2898,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<ListCertificatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIpRoutes
@@ -2994,7 +2946,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<ListIpRoutesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLogSubscriptions
@@ -3040,7 +2991,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<ListLogSubscriptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSchemaExtensions
@@ -3086,7 +3036,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<ListSchemaExtensionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3135,7 +3084,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterCertificate
@@ -3196,7 +3144,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<RegisterCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterEventTopic
@@ -3246,7 +3193,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<RegisterEventTopicResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectSharedDirectory
@@ -3295,7 +3241,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<RejectSharedDirectoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveIpRoutes
@@ -3344,7 +3289,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<RemoveIpRoutesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveRegion
@@ -3398,7 +3342,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<RemoveRegionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTagsFromResource
@@ -3444,7 +3387,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<RemoveTagsFromResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetUserPassword
@@ -3522,7 +3464,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<ResetUserPasswordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreFromSnapshot
@@ -3581,7 +3522,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<RestoreFromSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ShareDirectory
@@ -3670,7 +3610,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<ShareDirectoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSchemaExtension
@@ -3724,7 +3663,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<StartSchemaExtensionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UnshareDirectory
@@ -3773,7 +3711,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<UnshareDirectoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConditionalForwarder
@@ -3826,7 +3763,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<UpdateConditionalForwarderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDirectorySetup
@@ -3889,7 +3825,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<UpdateDirectorySetupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNumberOfDomainControllers
@@ -3949,7 +3884,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<UpdateNumberOfDomainControllersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRadius
@@ -3996,7 +3930,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<UpdateRadiusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSettings
@@ -4054,7 +3987,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<UpdateSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTrust
@@ -4101,7 +4033,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<UpdateTrustResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  VerifyTrust
@@ -4157,7 +4088,6 @@ namespace Amazon.DirectoryService
 
             return InvokeAsync<VerifyTrustResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

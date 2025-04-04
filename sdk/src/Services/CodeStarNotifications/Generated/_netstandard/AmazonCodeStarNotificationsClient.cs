@@ -405,7 +405,6 @@ namespace Amazon.CodeStarNotifications
 
             return InvokeAsync<CreateNotificationRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNotificationRule
@@ -451,7 +450,6 @@ namespace Amazon.CodeStarNotifications
 
             return InvokeAsync<DeleteNotificationRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTarget
@@ -488,7 +486,6 @@ namespace Amazon.CodeStarNotifications
 
             return InvokeAsync<DeleteTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeNotificationRule
@@ -528,7 +525,6 @@ namespace Amazon.CodeStarNotifications
 
             return InvokeAsync<DescribeNotificationRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventTypes
@@ -569,7 +565,6 @@ namespace Amazon.CodeStarNotifications
 
             return InvokeAsync<ListEventTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNotificationRules
@@ -610,7 +605,6 @@ namespace Amazon.CodeStarNotifications
 
             return InvokeAsync<ListNotificationRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -650,7 +644,6 @@ namespace Amazon.CodeStarNotifications
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTargets
@@ -691,7 +684,6 @@ namespace Amazon.CodeStarNotifications
 
             return InvokeAsync<ListTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Subscribe
@@ -736,7 +728,6 @@ namespace Amazon.CodeStarNotifications
 
             return InvokeAsync<SubscribeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -785,7 +776,6 @@ namespace Amazon.CodeStarNotifications
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Unsubscribe
@@ -824,7 +814,6 @@ namespace Amazon.CodeStarNotifications
 
             return InvokeAsync<UnsubscribeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -873,7 +862,6 @@ namespace Amazon.CodeStarNotifications
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNotificationRule
@@ -924,7 +912,6 @@ namespace Amazon.CodeStarNotifications
 
             return InvokeAsync<UpdateNotificationRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

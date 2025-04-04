@@ -353,7 +353,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<AttachCustomerManagedPolicyReferenceToPermissionSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachManagedPolicyToPermissionSet
@@ -422,7 +421,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<AttachManagedPolicyToPermissionSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAccountAssignment
@@ -504,7 +502,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<CreateAccountAssignmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApplication
@@ -564,7 +561,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApplicationAssignment
@@ -624,7 +620,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<CreateApplicationAssignmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInstance
@@ -698,7 +693,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<CreateInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInstanceAccessControlAttributeConfiguration
@@ -764,7 +758,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<CreateInstanceAccessControlAttributeConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePermissionSet
@@ -831,7 +824,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<CreatePermissionSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTrustedTokenIssuer
@@ -897,7 +889,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<CreateTrustedTokenIssuerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccountAssignment
@@ -961,7 +952,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DeleteAccountAssignmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplication
@@ -1018,7 +1008,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DeleteApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplicationAccessScope
@@ -1074,7 +1063,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DeleteApplicationAccessScopeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplicationAssignment
@@ -1131,7 +1119,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DeleteApplicationAssignmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplicationAuthenticationMethod
@@ -1187,7 +1174,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DeleteApplicationAuthenticationMethodResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplicationGrant
@@ -1243,7 +1229,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DeleteApplicationGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInlinePolicyFromPermissionSet
@@ -1299,7 +1284,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DeleteInlinePolicyFromPermissionSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInstance
@@ -1354,7 +1338,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DeleteInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInstanceAccessControlAttributeConfiguration
@@ -1415,7 +1398,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DeleteInstanceAccessControlAttributeConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePermissionsBoundaryFromPermissionSet
@@ -1471,7 +1453,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DeletePermissionsBoundaryFromPermissionSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePermissionSet
@@ -1527,7 +1508,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DeletePermissionSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTrustedTokenIssuer
@@ -1590,7 +1570,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DeleteTrustedTokenIssuerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountAssignmentCreationStatus
@@ -1640,7 +1619,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DescribeAccountAssignmentCreationStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountAssignmentDeletionStatus
@@ -1690,7 +1668,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DescribeAccountAssignmentDeletionStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApplication
@@ -1741,7 +1718,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DescribeApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApplicationAssignment
@@ -1794,7 +1770,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DescribeApplicationAssignmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApplicationProvider
@@ -1845,7 +1820,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DescribeApplicationProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInstance
@@ -1911,7 +1885,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DescribeInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInstanceAccessControlAttributeConfiguration
@@ -1965,7 +1938,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DescribeInstanceAccessControlAttributeConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePermissionSet
@@ -2015,7 +1987,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DescribePermissionSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePermissionSetProvisioningStatus
@@ -2065,7 +2036,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DescribePermissionSetProvisioningStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTrustedTokenIssuer
@@ -2118,7 +2088,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DescribeTrustedTokenIssuerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachCustomerManagedPolicyReferenceFromPermissionSet
@@ -2174,7 +2143,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DetachCustomerManagedPolicyReferenceFromPermissionSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachManagedPolicyFromPermissionSet
@@ -2231,7 +2199,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<DetachManagedPolicyFromPermissionSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplicationAccessScope
@@ -2281,7 +2248,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<GetApplicationAccessScopeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplicationAssignmentConfiguration
@@ -2331,7 +2297,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<GetApplicationAssignmentConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplicationAuthenticationMethod
@@ -2381,7 +2346,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<GetApplicationAuthenticationMethodResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplicationGrant
@@ -2431,7 +2395,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<GetApplicationGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInlinePolicyForPermissionSet
@@ -2481,7 +2444,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<GetInlinePolicyForPermissionSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPermissionsBoundaryForPermissionSet
@@ -2531,7 +2493,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<GetPermissionsBoundaryForPermissionSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccountAssignmentCreationStatus
@@ -2582,7 +2543,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<ListAccountAssignmentCreationStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccountAssignmentDeletionStatus
@@ -2633,7 +2593,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<ListAccountAssignmentDeletionStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccountAssignments
@@ -2684,7 +2643,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<ListAccountAssignmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccountAssignmentsForPrincipal
@@ -2735,7 +2693,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<ListAccountAssignmentsForPrincipalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccountsForProvisionedPermissionSet
@@ -2785,7 +2742,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<ListAccountsForProvisionedPermissionSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplicationAccessScopes
@@ -2835,7 +2791,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<ListApplicationAccessScopesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplicationAssignments
@@ -2885,7 +2840,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<ListApplicationAssignmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplicationAssignmentsForPrincipal
@@ -2935,7 +2889,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<ListApplicationAssignmentsForPrincipalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplicationAuthenticationMethods
@@ -2985,7 +2938,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<ListApplicationAuthenticationMethodsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplicationGrants
@@ -3035,7 +2987,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<ListApplicationGrantsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplicationProviders
@@ -3082,7 +3033,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<ListApplicationProvidersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplications
@@ -3132,7 +3082,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<ListApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCustomerManagedPolicyReferencesInPermissionSet
@@ -3182,7 +3131,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<ListCustomerManagedPolicyReferencesInPermissionSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInstances
@@ -3230,7 +3178,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<ListInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListManagedPoliciesInPermissionSet
@@ -3281,7 +3228,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<ListManagedPoliciesInPermissionSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPermissionSetProvisioningStatus
@@ -3332,7 +3278,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<ListPermissionSetProvisioningStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPermissionSets
@@ -3382,7 +3327,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<ListPermissionSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPermissionSetsProvisionedToAccount
@@ -3433,7 +3377,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<ListPermissionSetsProvisionedToAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3483,7 +3426,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrustedTokenIssuers
@@ -3530,7 +3472,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<ListTrustedTokenIssuersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ProvisionPermissionSet
@@ -3586,7 +3527,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<ProvisionPermissionSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutApplicationAccessScope
@@ -3643,7 +3583,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<PutApplicationAccessScopeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutApplicationAssignmentConfiguration
@@ -3704,7 +3643,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<PutApplicationAssignmentConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutApplicationAuthenticationMethod
@@ -3760,7 +3698,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<PutApplicationAuthenticationMethodResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutApplicationGrant
@@ -3816,7 +3753,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<PutApplicationGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutInlinePolicyToPermissionSet
@@ -3884,7 +3820,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<PutInlinePolicyToPermissionSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutPermissionsBoundaryToPermissionSet
@@ -3941,7 +3876,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<PutPermissionsBoundaryToPermissionSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -4001,7 +3935,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -4057,7 +3990,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplication
@@ -4113,7 +4045,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInstance
@@ -4167,7 +4098,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<UpdateInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInstanceAccessControlAttributeConfiguration
@@ -4230,7 +4160,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<UpdateInstanceAccessControlAttributeConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePermissionSet
@@ -4286,7 +4215,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<UpdatePermissionSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTrustedTokenIssuer
@@ -4350,7 +4278,6 @@ namespace Amazon.SSOAdmin
 
             return InvokeAsync<UpdateTrustedTokenIssuerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

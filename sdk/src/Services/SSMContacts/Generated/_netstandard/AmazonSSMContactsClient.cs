@@ -321,7 +321,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<AcceptPageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ActivateContactChannel
@@ -371,7 +370,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<ActivateContactChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateContact
@@ -428,7 +426,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<CreateContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateContactChannel
@@ -480,7 +477,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<CreateContactChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRotation
@@ -532,7 +528,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<CreateRotationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRotationOverride
@@ -584,7 +579,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<CreateRotationOverrideResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeactivateContactChannel
@@ -634,7 +628,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<DeactivateContactChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteContact
@@ -689,7 +682,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<DeleteContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteContactChannel
@@ -741,7 +733,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<DeleteContactChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRotation
@@ -794,7 +785,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<DeleteRotationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRotationOverride
@@ -843,7 +833,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<DeleteRotationOverrideResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEngagement
@@ -896,7 +885,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<DescribeEngagementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePage
@@ -948,7 +936,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<DescribePageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContact
@@ -1000,7 +987,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<GetContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContactChannel
@@ -1052,7 +1038,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<GetContactChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContactPolicy
@@ -1101,7 +1086,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<GetContactPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRotation
@@ -1150,7 +1134,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<GetRotationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRotationOverride
@@ -1199,7 +1182,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<GetRotationOverrideResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContactChannels
@@ -1251,7 +1233,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<ListContactChannelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContacts
@@ -1297,7 +1278,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<ListContactsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEngagements
@@ -1343,7 +1323,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<ListEngagementsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPageReceipts
@@ -1392,7 +1371,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<ListPageReceiptsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPageResolutions
@@ -1444,7 +1422,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<ListPageResolutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPagesByContact
@@ -1493,7 +1470,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<ListPagesByContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPagesByEngagement
@@ -1542,7 +1518,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<ListPagesByEngagementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPreviewRotationShifts
@@ -1595,7 +1570,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<ListPreviewRotationShiftsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRotationOverrides
@@ -1644,7 +1618,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<ListRotationOverridesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRotations
@@ -1693,7 +1666,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<ListRotationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRotationShifts
@@ -1745,7 +1717,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<ListRotationShiftsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1794,7 +1765,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutContactPolicy
@@ -1849,7 +1819,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<PutContactPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendActivationCode
@@ -1906,7 +1875,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<SendActivationCodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartEngagement
@@ -1959,7 +1927,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<StartEngagementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopEngagement
@@ -2009,7 +1976,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<StopEngagementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2062,7 +2028,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2111,7 +2076,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContact
@@ -2166,7 +2130,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<UpdateContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContactChannel
@@ -2221,7 +2184,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<UpdateContactChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRotation
@@ -2273,7 +2235,6 @@ namespace Amazon.SSMContacts
 
             return InvokeAsync<UpdateRotationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

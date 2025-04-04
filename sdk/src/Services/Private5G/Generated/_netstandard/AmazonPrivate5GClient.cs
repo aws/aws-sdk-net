@@ -306,7 +306,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<AcknowledgeOrderReceiptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ActivateDeviceIdentifier
@@ -349,7 +348,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<ActivateDeviceIdentifierResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ActivateNetworkSite
@@ -392,7 +390,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<ActivateNetworkSiteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConfigureAccessPoint
@@ -443,7 +440,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<ConfigureAccessPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNetwork
@@ -486,7 +482,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<CreateNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNetworkSite
@@ -529,7 +524,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<CreateNetworkSiteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeactivateDeviceIdentifier
@@ -572,7 +566,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<DeactivateDeviceIdentifierResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNetwork
@@ -620,7 +613,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<DeleteNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNetworkSite
@@ -668,7 +660,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<DeleteNetworkSiteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeviceIdentifier
@@ -711,7 +702,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<GetDeviceIdentifierResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNetwork
@@ -754,7 +744,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<GetNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNetworkResource
@@ -797,7 +786,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<GetNetworkResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNetworkSite
@@ -840,7 +828,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<GetNetworkSiteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOrder
@@ -883,7 +870,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<GetOrderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeviceIdentifiers
@@ -934,7 +920,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<ListDeviceIdentifiersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNetworkResources
@@ -985,7 +970,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<ListNetworkResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNetworks
@@ -1029,7 +1013,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<ListNetworksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNetworkSites
@@ -1073,7 +1056,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<ListNetworkSitesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOrders
@@ -1124,7 +1106,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<ListOrdersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1173,7 +1154,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Ping
@@ -1210,7 +1190,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<PingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartNetworkResourceUpdate
@@ -1276,7 +1255,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<StartNetworkResourceUpdateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1325,7 +1303,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1374,7 +1351,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNetworkSite
@@ -1417,7 +1393,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<UpdateNetworkSiteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNetworkSitePlan
@@ -1460,7 +1435,6 @@ namespace Amazon.Private5G
 
             return InvokeAsync<UpdateNetworkSitePlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

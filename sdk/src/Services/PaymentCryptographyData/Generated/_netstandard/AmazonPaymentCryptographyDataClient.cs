@@ -372,7 +372,6 @@ namespace Amazon.PaymentCryptographyData
 
             return InvokeAsync<DecryptDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EncryptData
@@ -505,7 +504,6 @@ namespace Amazon.PaymentCryptographyData
 
             return InvokeAsync<EncryptDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateCardValidationData
@@ -595,7 +593,6 @@ namespace Amazon.PaymentCryptographyData
 
             return InvokeAsync<GenerateCardValidationDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateMac
@@ -684,7 +681,6 @@ namespace Amazon.PaymentCryptographyData
 
             return InvokeAsync<GenerateMacResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateMacEmvPinChange
@@ -788,7 +784,6 @@ namespace Amazon.PaymentCryptographyData
 
             return InvokeAsync<GenerateMacEmvPinChangeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GeneratePinData
@@ -886,7 +881,6 @@ namespace Amazon.PaymentCryptographyData
 
             return InvokeAsync<GeneratePinDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReEncryptData
@@ -997,7 +991,6 @@ namespace Amazon.PaymentCryptographyData
 
             return InvokeAsync<ReEncryptDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TranslatePinData
@@ -1122,7 +1115,6 @@ namespace Amazon.PaymentCryptographyData
 
             return InvokeAsync<TranslatePinDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  VerifyAuthRequestCryptogram
@@ -1217,7 +1209,6 @@ namespace Amazon.PaymentCryptographyData
 
             return InvokeAsync<VerifyAuthRequestCryptogramResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  VerifyCardValidationData
@@ -1312,7 +1303,6 @@ namespace Amazon.PaymentCryptographyData
 
             return InvokeAsync<VerifyCardValidationDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  VerifyMac
@@ -1394,7 +1384,6 @@ namespace Amazon.PaymentCryptographyData
 
             return InvokeAsync<VerifyMacResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  VerifyPinData
@@ -1482,7 +1471,6 @@ namespace Amazon.PaymentCryptographyData
 
             return InvokeAsync<VerifyPinDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

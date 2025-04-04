@@ -30,7 +30,6 @@ namespace Amazon.AuditManager
     /// <summary>
     /// Configuration for accessing Amazon AuditManager service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonAuditManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =

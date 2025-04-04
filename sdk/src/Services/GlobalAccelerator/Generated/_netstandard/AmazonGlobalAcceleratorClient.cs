@@ -412,7 +412,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<AddCustomRoutingEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddEndpoints
@@ -490,7 +489,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<AddEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AdvertiseByoipCidr
@@ -554,7 +552,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<AdvertiseByoipCidrResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AllowCustomRoutingTraffic
@@ -607,7 +604,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<AllowCustomRoutingTrafficResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAccelerator
@@ -667,7 +663,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<CreateAcceleratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCrossAccountAttachment
@@ -746,7 +741,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<CreateCrossAccountAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCustomRoutingAccelerator
@@ -813,7 +807,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<CreateCustomRoutingAcceleratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCustomRoutingEndpointGroup
@@ -873,7 +866,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<CreateCustomRoutingEndpointGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCustomRoutingListener
@@ -925,7 +917,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<CreateCustomRoutingListenerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEndpointGroup
@@ -989,7 +980,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<CreateEndpointGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateListener
@@ -1041,7 +1031,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<CreateListenerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccelerator
@@ -1115,7 +1104,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<DeleteAcceleratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCrossAccountAttachment
@@ -1174,7 +1162,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<DeleteCrossAccountAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCustomRoutingAccelerator
@@ -1247,7 +1234,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<DeleteCustomRoutingAcceleratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCustomRoutingEndpointGroup
@@ -1290,7 +1276,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<DeleteCustomRoutingEndpointGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCustomRoutingListener
@@ -1337,7 +1322,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<DeleteCustomRoutingListenerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEndpointGroup
@@ -1380,7 +1364,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<DeleteEndpointGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteListener
@@ -1427,7 +1410,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<DeleteListenerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DenyCustomRoutingTraffic
@@ -1480,7 +1462,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<DenyCustomRoutingTrafficResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeprovisionByoipCidr
@@ -1545,7 +1526,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<DeprovisionByoipCidrResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccelerator
@@ -1588,7 +1568,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<DescribeAcceleratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAcceleratorAttributes
@@ -1631,7 +1610,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<DescribeAcceleratorAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCrossAccountAttachment
@@ -1677,7 +1655,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<DescribeCrossAccountAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCustomRoutingAccelerator
@@ -1720,7 +1697,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<DescribeCustomRoutingAcceleratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCustomRoutingAcceleratorAttributes
@@ -1763,7 +1739,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<DescribeCustomRoutingAcceleratorAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCustomRoutingEndpointGroup
@@ -1806,7 +1781,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<DescribeCustomRoutingEndpointGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCustomRoutingListener
@@ -1849,7 +1823,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<DescribeCustomRoutingListenerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEndpointGroup
@@ -1892,7 +1865,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<DescribeEndpointGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeListener
@@ -1935,7 +1907,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<DescribeListenerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccelerators
@@ -1978,7 +1949,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<ListAcceleratorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListByoipCidrs
@@ -2025,7 +1995,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<ListByoipCidrsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCrossAccountAttachments
@@ -2071,7 +2040,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<ListCrossAccountAttachmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCrossAccountResourceAccounts
@@ -2118,7 +2086,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<ListCrossAccountResourceAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCrossAccountResources
@@ -2167,7 +2134,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<ListCrossAccountResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCustomRoutingAccelerators
@@ -2210,7 +2176,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<ListCustomRoutingAcceleratorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCustomRoutingEndpointGroups
@@ -2257,7 +2222,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<ListCustomRoutingEndpointGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCustomRoutingListeners
@@ -2303,7 +2267,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<ListCustomRoutingListenersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCustomRoutingPortMappings
@@ -2371,7 +2334,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<ListCustomRoutingPortMappingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCustomRoutingPortMappingsByDestination
@@ -2421,7 +2383,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<ListCustomRoutingPortMappingsByDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEndpointGroups
@@ -2467,7 +2428,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<ListEndpointGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListListeners
@@ -2513,7 +2473,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<ListListenersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2571,7 +2530,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ProvisionByoipCidr
@@ -2630,7 +2588,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<ProvisionByoipCidrResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveCustomRoutingEndpoints
@@ -2682,7 +2639,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<RemoveCustomRoutingEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveEndpoints
@@ -2754,7 +2710,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<RemoveEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2803,7 +2758,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2854,7 +2808,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccelerator
@@ -2940,7 +2893,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<UpdateAcceleratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAcceleratorAttributes
@@ -2989,7 +2941,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<UpdateAcceleratorAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCrossAccountAttachment
@@ -3050,7 +3001,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<UpdateCrossAccountAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCustomRoutingAccelerator
@@ -3099,7 +3049,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<UpdateCustomRoutingAcceleratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCustomRoutingAcceleratorAttributes
@@ -3148,7 +3097,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<UpdateCustomRoutingAcceleratorAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCustomRoutingListener
@@ -3198,7 +3146,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<UpdateCustomRoutingListenerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEndpointGroup
@@ -3248,7 +3195,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<UpdateEndpointGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateListener
@@ -3298,7 +3244,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<UpdateListenerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  WithdrawByoipCidr
@@ -3361,7 +3306,6 @@ namespace Amazon.GlobalAccelerator
 
             return InvokeAsync<WithdrawByoipCidrResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

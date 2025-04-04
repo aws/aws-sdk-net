@@ -30,7 +30,6 @@ namespace Amazon.SimpleSystemsManagement
     /// <summary>
     /// Configuration for accessing Amazon SimpleSystemsManagement service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSimpleSystemsManagementConfig : ClientConfig
     {
         private static readonly string UserAgentString =

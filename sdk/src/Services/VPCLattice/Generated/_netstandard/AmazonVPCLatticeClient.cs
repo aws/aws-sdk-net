@@ -329,7 +329,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<BatchUpdateRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAccessLogSubscription
@@ -388,7 +387,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<CreateAccessLogSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateListener
@@ -447,7 +445,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<CreateListenerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateResourceConfiguration
@@ -504,7 +501,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<CreateResourceConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateResourceGateway
@@ -560,7 +556,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<CreateResourceGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRule
@@ -619,7 +614,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<CreateRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateService
@@ -682,7 +676,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<CreateServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateServiceNetwork
@@ -745,7 +738,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<CreateServiceNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateServiceNetworkResourceAssociation
@@ -803,7 +795,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<CreateServiceNetworkResourceAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateServiceNetworkServiceAssociation
@@ -878,7 +869,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<CreateServiceNetworkServiceAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateServiceNetworkVpcAssociation
@@ -955,7 +945,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<CreateServiceNetworkVpcAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTargetGroup
@@ -1019,7 +1008,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<CreateTargetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccessLogSubscription
@@ -1068,7 +1056,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<DeleteAccessLogSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAuthPolicy
@@ -1120,7 +1107,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<DeleteAuthPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteListener
@@ -1173,7 +1159,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<DeleteListenerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourceConfiguration
@@ -1226,7 +1211,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<DeleteResourceConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourceEndpointAssociation
@@ -1275,7 +1259,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<DeleteResourceEndpointAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourceGateway
@@ -1328,7 +1311,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<DeleteResourceGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -1377,7 +1359,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRule
@@ -1439,7 +1420,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<DeleteRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteService
@@ -1496,7 +1476,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<DeleteServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServiceNetwork
@@ -1553,7 +1532,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<DeleteServiceNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServiceNetworkResourceAssociation
@@ -1606,7 +1584,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<DeleteServiceNetworkResourceAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServiceNetworkServiceAssociation
@@ -1660,7 +1637,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<DeleteServiceNetworkServiceAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServiceNetworkVpcAssociation
@@ -1714,7 +1690,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<DeleteServiceNetworkVpcAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTargetGroup
@@ -1765,7 +1740,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<DeleteTargetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterTargets
@@ -1818,7 +1792,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<DeregisterTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccessLogSubscription
@@ -1867,7 +1840,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<GetAccessLogSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAuthPolicy
@@ -1916,7 +1888,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<GetAuthPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetListener
@@ -1965,7 +1936,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<GetListenerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceConfiguration
@@ -2014,7 +1984,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<GetResourceConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceGateway
@@ -2063,7 +2032,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<GetResourceGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicy
@@ -2113,7 +2081,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRule
@@ -2164,7 +2131,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<GetRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetService
@@ -2213,7 +2179,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<GetServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceNetwork
@@ -2262,7 +2227,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<GetServiceNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceNetworkResourceAssociation
@@ -2312,7 +2276,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<GetServiceNetworkResourceAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceNetworkServiceAssociation
@@ -2362,7 +2325,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<GetServiceNetworkServiceAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceNetworkVpcAssociation
@@ -2412,7 +2374,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<GetServiceNetworkVpcAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTargetGroup
@@ -2461,7 +2422,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<GetTargetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccessLogSubscriptions
@@ -2507,7 +2467,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<ListAccessLogSubscriptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListListeners
@@ -2556,7 +2515,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<ListListenersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceConfigurations
@@ -2602,7 +2560,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<ListResourceConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceEndpointAssociations
@@ -2648,7 +2605,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<ListResourceEndpointAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceGateways
@@ -2694,7 +2650,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<ListResourceGatewaysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRules
@@ -2743,7 +2698,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<ListRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceNetworkResourceAssociations
@@ -2789,7 +2743,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<ListServiceNetworkResourceAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceNetworks
@@ -2836,7 +2789,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<ListServiceNetworksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceNetworkServiceAssociations
@@ -2892,7 +2844,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<ListServiceNetworkServiceAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceNetworkVpcAssociations
@@ -2940,7 +2891,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<ListServiceNetworkVpcAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceNetworkVpcEndpointAssociations
@@ -2986,7 +2936,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<ListServiceNetworkVpcEndpointAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServices
@@ -3032,7 +2981,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<ListServicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3078,7 +3026,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTargetGroups
@@ -3125,7 +3072,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<ListTargetGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTargets
@@ -3176,7 +3122,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<ListTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAuthPolicy
@@ -3232,7 +3177,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<PutAuthPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -3283,7 +3227,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterTargets
@@ -3340,7 +3283,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<RegisterTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3389,7 +3331,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3435,7 +3376,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccessLogSubscription
@@ -3488,7 +3428,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<UpdateAccessLogSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateListener
@@ -3544,7 +3483,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<UpdateListenerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResourceConfiguration
@@ -3596,7 +3534,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<UpdateResourceConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResourceGateway
@@ -3645,7 +3582,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<UpdateResourceGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRule
@@ -3702,7 +3638,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<UpdateRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateService
@@ -3758,7 +3693,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<UpdateServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServiceNetwork
@@ -3811,7 +3745,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<UpdateServiceNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServiceNetworkVpcAssociation
@@ -3868,7 +3801,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<UpdateServiceNetworkVpcAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTargetGroup
@@ -3924,7 +3856,6 @@ namespace Amazon.VPCLattice
 
             return InvokeAsync<UpdateTargetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

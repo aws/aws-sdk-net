@@ -30,7 +30,6 @@ namespace Amazon.MarketplaceCatalog
     /// <summary>
     /// Configuration for accessing Amazon MarketplaceCatalog service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMarketplaceCatalogConfig : ClientConfig
     {
         private static readonly string UserAgentString =

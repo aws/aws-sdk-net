@@ -30,7 +30,6 @@ namespace Amazon.Invoicing
     /// <summary>
     /// Configuration for accessing Amazon Invoicing service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonInvoicingConfig : ClientConfig
     {
         private static readonly string UserAgentString =

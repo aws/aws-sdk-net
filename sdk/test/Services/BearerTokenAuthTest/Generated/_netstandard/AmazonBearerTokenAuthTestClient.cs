@@ -274,7 +274,6 @@ namespace Amazon.BearerTokenAuthTest
 
             return InvokeAsync<InheritBearerAuthOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  OverrideAuthToSigV4Operation
@@ -308,7 +307,6 @@ namespace Amazon.BearerTokenAuthTest
 
             return InvokeAsync<OverrideAuthToSigV4OperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
     }

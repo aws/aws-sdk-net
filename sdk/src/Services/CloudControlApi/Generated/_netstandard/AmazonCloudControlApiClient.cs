@@ -309,7 +309,6 @@ namespace Amazon.CloudControlApi
 
             return InvokeAsync<CancelResourceRequestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateResource
@@ -427,7 +426,6 @@ namespace Amazon.CloudControlApi
 
             return InvokeAsync<CreateResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResource
@@ -545,7 +543,6 @@ namespace Amazon.CloudControlApi
 
             return InvokeAsync<DeleteResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResource
@@ -652,7 +649,6 @@ namespace Amazon.CloudControlApi
 
             return InvokeAsync<GetResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceRequestStatus
@@ -692,7 +688,6 @@ namespace Amazon.CloudControlApi
 
             return InvokeAsync<GetResourceRequestStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceRequests
@@ -735,7 +730,6 @@ namespace Amazon.CloudControlApi
 
             return InvokeAsync<ListResourceRequestsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResources
@@ -841,7 +835,6 @@ namespace Amazon.CloudControlApi
 
             return InvokeAsync<ListResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResource
@@ -975,7 +968,6 @@ namespace Amazon.CloudControlApi
 
             return InvokeAsync<UpdateResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

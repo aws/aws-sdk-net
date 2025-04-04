@@ -30,7 +30,6 @@ namespace Amazon.KeyManagementService
     /// <summary>
     /// Configuration for accessing Amazon KeyManagementService service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonKeyManagementServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

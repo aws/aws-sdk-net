@@ -30,7 +30,6 @@ namespace Amazon.PaginatorsTest
     /// <summary>
     /// Configuration for accessing Amazon PaginatorsTest service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonPaginatorsTestConfig : ClientConfig
     {
         private static readonly string UserAgentString =

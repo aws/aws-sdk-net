@@ -30,7 +30,6 @@ namespace Amazon.LakeFormation
     /// <summary>
     /// Configuration for accessing Amazon LakeFormation service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonLakeFormationConfig : ClientConfig
     {
         private static readonly string UserAgentString =

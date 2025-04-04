@@ -30,7 +30,6 @@ namespace Amazon.MarketplaceAgreement
     /// <summary>
     /// Configuration for accessing Amazon MarketplaceAgreement service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMarketplaceAgreementConfig : ClientConfig
     {
         private static readonly string UserAgentString =

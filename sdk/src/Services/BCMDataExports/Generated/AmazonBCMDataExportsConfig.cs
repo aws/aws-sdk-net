@@ -30,7 +30,6 @@ namespace Amazon.BCMDataExports
     /// <summary>
     /// Configuration for accessing Amazon BCMDataExports service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonBCMDataExportsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

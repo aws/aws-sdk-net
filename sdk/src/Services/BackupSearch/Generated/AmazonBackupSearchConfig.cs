@@ -30,7 +30,6 @@ namespace Amazon.BackupSearch
     /// <summary>
     /// Configuration for accessing Amazon BackupSearch service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonBackupSearchConfig : ClientConfig
     {
         private static readonly string UserAgentString =

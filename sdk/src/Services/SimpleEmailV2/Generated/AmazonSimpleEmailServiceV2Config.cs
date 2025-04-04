@@ -30,7 +30,6 @@ namespace Amazon.SimpleEmailV2
     /// <summary>
     /// Configuration for accessing Amazon SimpleEmailServiceV2 service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSimpleEmailServiceV2Config : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -309,7 +309,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<AssociateApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateMergedGraphqlApi
@@ -365,7 +364,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<AssociateMergedGraphqlApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateSourceGraphqlApi
@@ -421,7 +419,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<AssociateSourceGraphqlApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApi
@@ -474,7 +471,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<CreateApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApiCache
@@ -526,7 +522,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<CreateApiCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApiKey
@@ -584,7 +579,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<CreateApiKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateChannelNamespace
@@ -644,7 +638,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<CreateChannelNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataSource
@@ -696,7 +689,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<CreateDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDomainName
@@ -740,7 +732,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<CreateDomainNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFunction
@@ -798,7 +789,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<CreateFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGraphqlApi
@@ -852,7 +842,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<CreateGraphqlApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateResolver
@@ -910,7 +899,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<CreateResolverResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateType
@@ -962,7 +950,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<CreateTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApi
@@ -1017,7 +1004,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<DeleteApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApiCache
@@ -1069,7 +1055,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<DeleteApiCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApiKey
@@ -1117,7 +1102,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<DeleteApiKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteChannelNamespace
@@ -1172,7 +1156,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<DeleteChannelNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataSource
@@ -1224,7 +1207,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<DeleteDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDomainName
@@ -1276,7 +1258,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<DeleteDomainNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFunction
@@ -1328,7 +1309,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<DeleteFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGraphqlApi
@@ -1383,7 +1363,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<DeleteGraphqlApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResolver
@@ -1435,7 +1414,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<DeleteResolverResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteType
@@ -1487,7 +1465,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<DeleteTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateApi
@@ -1539,7 +1516,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<DisassociateApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateMergedGraphqlApi
@@ -1592,7 +1568,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<DisassociateMergedGraphqlApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateSourceGraphqlApi
@@ -1645,7 +1620,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<DisassociateSourceGraphqlApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EvaluateCode
@@ -1694,7 +1668,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<EvaluateCodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EvaluateMappingTemplate
@@ -1751,7 +1724,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<EvaluateMappingTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FlushApiCache
@@ -1803,7 +1775,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<FlushApiCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApi
@@ -1854,7 +1825,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<GetApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApiAssociation
@@ -1902,7 +1872,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<GetApiAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApiCache
@@ -1954,7 +1923,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<GetApiCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetChannelNamespace
@@ -2005,7 +1973,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<GetChannelNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataSource
@@ -2057,7 +2024,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<GetDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataSourceIntrospection
@@ -2104,7 +2070,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<GetDataSourceIntrospectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDomainName
@@ -2152,7 +2117,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<GetDomainNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFunction
@@ -2197,7 +2161,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<GetFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGraphqlApi
@@ -2248,7 +2211,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<GetGraphqlApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGraphqlApiEnvironmentVariables
@@ -2300,7 +2262,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<GetGraphqlApiEnvironmentVariablesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIntrospectionSchema
@@ -2347,7 +2308,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<GetIntrospectionSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResolver
@@ -2392,7 +2352,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<GetResolverResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSchemaCreationStatus
@@ -2440,7 +2399,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<GetSchemaCreationStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSourceApiAssociation
@@ -2488,7 +2446,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<GetSourceApiAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetType
@@ -2540,7 +2497,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<GetTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApiKeys
@@ -2596,7 +2552,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<ListApiKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApis
@@ -2646,7 +2601,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<ListApisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChannelNamespaces
@@ -2700,7 +2654,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<ListChannelNamespacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataSources
@@ -2748,7 +2701,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<ListDataSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomainNames
@@ -2792,7 +2744,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<ListDomainNamesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFunctions
@@ -2840,7 +2791,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<ListFunctionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGraphqlApis
@@ -2884,7 +2834,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<ListGraphqlApisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResolvers
@@ -2932,7 +2881,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<ListResolversResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResolversByFunction
@@ -2980,7 +2928,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<ListResolversByFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSourceApiAssociations
@@ -3028,7 +2975,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<ListSourceApiAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3082,7 +3028,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTypes
@@ -3134,7 +3079,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<ListTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTypesByAssociation
@@ -3186,7 +3130,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<ListTypesByAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutGraphqlApiEnvironmentVariables
@@ -3301,7 +3244,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<PutGraphqlApiEnvironmentVariablesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDataSourceIntrospection
@@ -3350,7 +3292,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<StartDataSourceIntrospectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSchemaCreation
@@ -3407,7 +3348,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<StartSchemaCreationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSchemaMerge
@@ -3459,7 +3399,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<StartSchemaMergeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3513,7 +3452,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3567,7 +3505,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApi
@@ -3622,7 +3559,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<UpdateApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApiCache
@@ -3674,7 +3610,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<UpdateApiCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApiKey
@@ -3729,7 +3664,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<UpdateApiKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateChannelNamespace
@@ -3784,7 +3718,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<UpdateChannelNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataSource
@@ -3836,7 +3769,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<UpdateDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDomainName
@@ -3888,7 +3820,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<UpdateDomainNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFunction
@@ -3940,7 +3871,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<UpdateFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGraphqlApi
@@ -3995,7 +3925,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<UpdateGraphqlApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResolver
@@ -4047,7 +3976,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<UpdateResolverResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSourceApiAssociation
@@ -4099,7 +4027,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<UpdateSourceApiAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateType
@@ -4151,7 +4078,6 @@ namespace Amazon.AppSync
 
             return InvokeAsync<UpdateTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

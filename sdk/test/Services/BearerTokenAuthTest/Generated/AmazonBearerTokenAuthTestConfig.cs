@@ -30,7 +30,6 @@ namespace Amazon.BearerTokenAuthTest
     /// <summary>
     /// Configuration for accessing Amazon BearerTokenAuthTest service
     /// </summary>
-    [AWSSignerType("bearer")]
     public partial class AmazonBearerTokenAuthTestConfig : ClientConfig
     {
         private static readonly string UserAgentString =

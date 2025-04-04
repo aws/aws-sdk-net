@@ -349,7 +349,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<AddTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ApplySecurityGroupsToLoadBalancer
@@ -400,7 +399,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<ApplySecurityGroupsToLoadBalancerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachLoadBalancerToSubnets
@@ -454,7 +452,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<AttachLoadBalancerToSubnetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConfigureHealthCheck
@@ -498,7 +495,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<ConfigureHealthCheckResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAppCookieStickinessPolicy
@@ -564,7 +560,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<CreateAppCookieStickinessPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLBCookieStickinessPolicy
@@ -633,7 +628,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<CreateLBCookieStickinessPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLoadBalancer
@@ -727,7 +721,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<CreateLoadBalancerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLoadBalancerListeners
@@ -788,7 +781,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<CreateLoadBalancerListenersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLoadBalancerPolicy
@@ -843,7 +835,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<CreateLoadBalancerPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLoadBalancer
@@ -890,7 +881,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<DeleteLoadBalancerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLoadBalancerListeners
@@ -927,7 +917,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<DeleteLoadBalancerListenersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLoadBalancerPolicy
@@ -968,7 +957,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<DeleteLoadBalancerPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterInstancesFromLoadBalancer
@@ -1020,7 +1008,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<DeregisterInstancesFromLoadBalancerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountLimits
@@ -1060,7 +1047,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<DescribeAccountLimitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInstanceHealth
@@ -1104,7 +1090,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<DescribeInstanceHealthResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLoadBalancerAttributes
@@ -1144,7 +1129,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<DescribeLoadBalancerAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLoadBalancerPolicies
@@ -1229,7 +1213,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<DescribeLoadBalancerPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLoadBalancerPolicyTypes
@@ -1314,7 +1297,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<DescribeLoadBalancerPolicyTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLoadBalancers
@@ -1383,7 +1365,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<DescribeLoadBalancersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTags
@@ -1420,7 +1401,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<DescribeTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachLoadBalancerFromSubnets
@@ -1467,7 +1447,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<DetachLoadBalancerFromSubnetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableAvailabilityZonesForLoadBalancer
@@ -1526,7 +1505,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<DisableAvailabilityZonesForLoadBalancerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableAvailabilityZonesForLoadBalancer
@@ -1575,7 +1553,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<EnableAvailabilityZonesForLoadBalancerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyLoadBalancerAttributes
@@ -1651,7 +1628,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<ModifyLoadBalancerAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterInstancesWithLoadBalancer
@@ -1722,7 +1698,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<RegisterInstancesWithLoadBalancerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTags
@@ -1759,7 +1734,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<RemoveTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetLoadBalancerListenerSSLCertificate
@@ -1819,7 +1793,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<SetLoadBalancerListenerSSLCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetLoadBalancerPoliciesForBackendServer
@@ -1883,7 +1856,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<SetLoadBalancerPoliciesForBackendServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetLoadBalancerPoliciesOfListener
@@ -1942,7 +1914,6 @@ namespace Amazon.ElasticLoadBalancing
 
             return InvokeAsync<SetLoadBalancerPoliciesOfListenerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

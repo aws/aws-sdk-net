@@ -339,7 +339,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<CreateAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateReplicationJob
@@ -403,7 +402,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<CreateReplicationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApp
@@ -455,7 +453,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<DeleteAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAppLaunchConfiguration
@@ -505,7 +502,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<DeleteAppLaunchConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAppReplicationConfiguration
@@ -555,7 +551,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<DeleteAppReplicationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAppValidationConfiguration
@@ -605,7 +600,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<DeleteAppValidationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReplicationJob
@@ -662,7 +656,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<DeleteReplicationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServerCatalog
@@ -709,7 +702,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<DeleteServerCatalogResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateConnector
@@ -762,7 +754,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<DisassociateConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateChangeSet
@@ -813,7 +804,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<GenerateChangeSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateTemplate
@@ -864,7 +854,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<GenerateTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApp
@@ -914,7 +903,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<GetAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAppLaunchConfiguration
@@ -964,7 +952,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<GetAppLaunchConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAppReplicationConfiguration
@@ -1015,7 +1002,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<GetAppReplicationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAppValidationConfiguration
@@ -1065,7 +1051,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<GetAppValidationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAppValidationOutput
@@ -1115,7 +1100,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<GetAppValidationOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConnectors
@@ -1153,7 +1137,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<GetConnectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReplicationJobs
@@ -1197,7 +1180,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<GetReplicationJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReplicationRuns
@@ -1241,7 +1223,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<GetReplicationRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServers
@@ -1293,7 +1274,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<GetServersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportAppCatalog
@@ -1343,7 +1323,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<ImportAppCatalogResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportServerCatalog
@@ -1400,7 +1379,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<ImportServerCatalogResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  LaunchApp
@@ -1450,7 +1428,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<LaunchAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApps
@@ -1500,7 +1477,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<ListAppsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NotifyAppValidationOutput
@@ -1551,7 +1527,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<NotifyAppValidationOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAppLaunchConfiguration
@@ -1601,7 +1576,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<PutAppLaunchConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAppReplicationConfiguration
@@ -1651,7 +1625,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<PutAppReplicationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAppValidationConfiguration
@@ -1701,7 +1674,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<PutAppValidationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartAppReplication
@@ -1752,7 +1724,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<StartAppReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartOnDemandAppReplication
@@ -1802,7 +1773,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<StartOnDemandAppReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartOnDemandReplicationRun
@@ -1864,7 +1834,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<StartOnDemandReplicationRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopAppReplication
@@ -1915,7 +1884,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<StopAppReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TerminateApp
@@ -1965,7 +1933,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<TerminateAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApp
@@ -2015,7 +1982,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<UpdateAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateReplicationJob
@@ -2074,7 +2040,6 @@ namespace Amazon.ServerMigrationService
 
             return InvokeAsync<UpdateReplicationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

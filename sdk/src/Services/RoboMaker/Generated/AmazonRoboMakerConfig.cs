@@ -30,7 +30,6 @@ namespace Amazon.RoboMaker
     /// <summary>
     /// Configuration for accessing Amazon RoboMaker service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonRoboMakerConfig : ClientConfig
     {
         private static readonly string UserAgentString =

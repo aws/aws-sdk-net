@@ -330,7 +330,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<CancelJobRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateJobTemplate
@@ -376,7 +375,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<CreateJobTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateManagedEndpoint
@@ -421,7 +419,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<CreateManagedEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSecurityConfiguration
@@ -464,7 +461,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<CreateSecurityConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVirtualCluster
@@ -514,7 +510,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<CreateVirtualClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteJobTemplate
@@ -557,7 +552,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<DeleteJobTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteManagedEndpoint
@@ -599,7 +593,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<DeleteManagedEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVirtualCluster
@@ -643,7 +636,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<DeleteVirtualClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeJobRun
@@ -687,7 +679,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<DescribeJobRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeJobTemplate
@@ -733,7 +724,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<DescribeJobTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeManagedEndpoint
@@ -778,7 +768,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<DescribeManagedEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSecurityConfiguration
@@ -825,7 +814,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<DescribeSecurityConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVirtualCluster
@@ -872,7 +860,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<DescribeVirtualClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetManagedEndpointSessionCredentials
@@ -918,7 +905,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<GetManagedEndpointSessionCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobRuns
@@ -959,7 +945,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<ListJobRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobTemplates
@@ -1002,7 +987,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<ListJobTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListManagedEndpoints
@@ -1044,7 +1028,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<ListManagedEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSecurityConfigurations
@@ -1088,7 +1071,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<ListSecurityConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1131,7 +1113,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVirtualClusters
@@ -1175,7 +1156,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<ListVirtualClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartJobRun
@@ -1219,7 +1199,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<StartJobRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1270,7 +1249,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1313,7 +1291,6 @@ namespace Amazon.EMRContainers
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

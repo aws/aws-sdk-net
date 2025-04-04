@@ -318,7 +318,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<AssociateMemberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetAccountStatus
@@ -370,7 +369,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<BatchGetAccountStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetCodeSnippet
@@ -418,7 +416,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<BatchGetCodeSnippetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetFindingDetails
@@ -465,7 +462,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<BatchGetFindingDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetFreeTrialInfo
@@ -512,7 +508,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<BatchGetFreeTrialInfoResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetMemberEc2DeepInspectionStatus
@@ -561,7 +556,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<BatchGetMemberEc2DeepInspectionStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchUpdateMemberEc2DeepInspectionStatus
@@ -610,7 +604,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<BatchUpdateMemberEc2DeepInspectionStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelFindingsReport
@@ -661,7 +654,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<CancelFindingsReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelSbomExport
@@ -712,7 +704,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<CancelSbomExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCisScanConfiguration
@@ -759,7 +750,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<CreateCisScanConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFilter
@@ -814,7 +804,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<CreateFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFindingsReport
@@ -867,7 +856,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<CreateFindingsReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSbomExport
@@ -918,7 +906,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<CreateSbomExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCisScanConfiguration
@@ -969,7 +956,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<DeleteCisScanConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFilter
@@ -1020,7 +1006,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<DeleteFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOrganizationConfiguration
@@ -1067,7 +1052,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<DescribeOrganizationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Disable
@@ -1119,7 +1103,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<DisableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableDelegatedAdminAccount
@@ -1173,7 +1156,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<DisableDelegatedAdminAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateMember
@@ -1220,7 +1202,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<DisassociateMemberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Enable
@@ -1271,7 +1252,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<EnableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableDelegatedAdminAccount
@@ -1325,7 +1305,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<EnableDelegatedAdminAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCisScanReport
@@ -1376,7 +1355,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<GetCisScanReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCisScanResultDetails
@@ -1423,7 +1401,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<GetCisScanResultDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfiguration
@@ -1467,7 +1444,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<GetConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDelegatedAdminAccount
@@ -1519,7 +1495,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<GetDelegatedAdminAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEc2DeepInspectionConfiguration
@@ -1567,7 +1542,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<GetEc2DeepInspectionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEncryptionKey
@@ -1618,7 +1592,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<GetEncryptionKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFindingsReportStatus
@@ -1669,7 +1642,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<GetFindingsReportStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMember
@@ -1720,7 +1692,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<GetMemberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSbomExport
@@ -1771,7 +1742,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<GetSbomExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccountPermissions
@@ -1818,7 +1788,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<ListAccountPermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCisScanConfigurations
@@ -1865,7 +1834,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<ListCisScanConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCisScanResultsAggregatedByChecks
@@ -1912,7 +1880,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<ListCisScanResultsAggregatedByChecksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCisScanResultsAggregatedByTargetResource
@@ -1959,7 +1926,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<ListCisScanResultsAggregatedByTargetResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCisScans
@@ -2006,7 +1972,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<ListCisScansResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCoverage
@@ -2050,7 +2015,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<ListCoverageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCoverageStatistics
@@ -2094,7 +2058,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<ListCoverageStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDelegatedAdminAccounts
@@ -2141,7 +2104,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<ListDelegatedAdminAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFilters
@@ -2188,7 +2150,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<ListFiltersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFindingAggregations
@@ -2232,7 +2193,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<ListFindingAggregationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFindings
@@ -2276,7 +2236,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<ListFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMembers
@@ -2324,7 +2283,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<ListMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2372,7 +2330,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUsageTotals
@@ -2419,7 +2376,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<ListUsageTotalsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetEncryptionKey
@@ -2471,7 +2427,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<ResetEncryptionKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchVulnerabilities
@@ -2518,7 +2473,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<SearchVulnerabilitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendCisSessionHealth
@@ -2570,7 +2524,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<SendCisSessionHealthResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendCisSessionTelemetry
@@ -2622,7 +2575,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<SendCisSessionTelemetryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartCisSession
@@ -2674,7 +2626,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<StartCisSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopCisSession
@@ -2726,7 +2677,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<StopCisSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2777,7 +2727,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2825,7 +2774,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCisScanConfiguration
@@ -2876,7 +2824,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<UpdateCisScanConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfiguration
@@ -2925,7 +2872,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<UpdateConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEc2DeepInspectionConfiguration
@@ -2973,7 +2919,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<UpdateEc2DeepInspectionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEncryptionKey
@@ -3025,7 +2970,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<UpdateEncryptionKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFilter
@@ -3076,7 +3020,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<UpdateFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateOrganizationConfiguration
@@ -3123,7 +3066,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<UpdateOrganizationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateOrgEc2DeepInspectionConfiguration
@@ -3171,7 +3113,6 @@ namespace Amazon.Inspector2
 
             return InvokeAsync<UpdateOrgEc2DeepInspectionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

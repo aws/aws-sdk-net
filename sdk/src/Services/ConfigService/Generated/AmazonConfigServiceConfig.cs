@@ -30,7 +30,6 @@ namespace Amazon.ConfigService
     /// <summary>
     /// Configuration for accessing Amazon ConfigService service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonConfigServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

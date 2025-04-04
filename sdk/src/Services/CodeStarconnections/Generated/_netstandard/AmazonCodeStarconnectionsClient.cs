@@ -402,7 +402,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<CreateConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateHost
@@ -449,7 +448,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<CreateHostResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRepositoryLink
@@ -506,7 +504,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<CreateRepositoryLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSyncConfiguration
@@ -564,7 +561,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<CreateSyncConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnection
@@ -601,7 +597,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<DeleteConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteHost
@@ -649,7 +644,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<DeleteHostResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRepositoryLink
@@ -708,7 +702,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<DeleteRepositoryLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSyncConfiguration
@@ -761,7 +754,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<DeleteSyncConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConnection
@@ -801,7 +793,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<GetConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetHost
@@ -842,7 +833,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<GetHostResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRepositoryLink
@@ -896,7 +886,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<GetRepositoryLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRepositorySyncStatus
@@ -946,7 +935,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<GetRepositorySyncStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceSyncStatus
@@ -996,7 +984,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<GetResourceSyncStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSyncBlockerSummary
@@ -1045,7 +1032,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<GetSyncBlockerSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSyncConfiguration
@@ -1096,7 +1082,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<GetSyncConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConnections
@@ -1133,7 +1118,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<ListConnectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHosts
@@ -1167,7 +1151,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<ListHostsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRepositoryLinks
@@ -1220,7 +1203,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<ListRepositoryLinksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRepositorySyncDefinitions
@@ -1269,7 +1251,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<ListRepositorySyncDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSyncConfigurations
@@ -1318,7 +1299,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<ListSyncConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1355,7 +1335,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1396,7 +1375,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1433,7 +1411,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateHost
@@ -1479,7 +1456,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<UpdateHostResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRepositoryLink
@@ -1536,7 +1512,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<UpdateRepositoryLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSyncBlocker
@@ -1592,7 +1567,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<UpdateSyncBlockerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSyncConfiguration
@@ -1648,7 +1622,6 @@ namespace Amazon.CodeStarconnections
 
             return InvokeAsync<UpdateSyncConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

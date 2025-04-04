@@ -30,7 +30,6 @@ namespace Amazon.Chatbot
     /// <summary>
     /// Configuration for accessing Amazon Chatbot service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonChatbotConfig : ClientConfig
     {
         private static readonly string UserAgentString =

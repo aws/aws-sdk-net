@@ -324,7 +324,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<BatchGetMetricDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelExportJob
@@ -367,7 +366,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<CancelExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfigurationSet
@@ -423,7 +421,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<CreateConfigurationSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfigurationSetEventDestination
@@ -480,7 +477,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<CreateConfigurationSetEventDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateContact
@@ -527,7 +523,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<CreateContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateContactList
@@ -573,7 +568,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<CreateContactListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCustomVerificationEmailTemplate
@@ -632,7 +626,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<CreateCustomVerificationEmailTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDedicatedIpPool
@@ -684,7 +677,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<CreateDedicatedIpPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDeliverabilityTestReport
@@ -753,7 +745,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<CreateDeliverabilityTestReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEmailIdentity
@@ -846,7 +837,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<CreateEmailIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEmailIdentityPolicy
@@ -913,7 +903,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<CreateEmailIdentityPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEmailTemplate
@@ -967,7 +956,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<CreateEmailTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateExportJob
@@ -1018,7 +1006,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<CreateExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateImportJob
@@ -1061,7 +1048,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<CreateImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMultiRegionEndpoint
@@ -1116,7 +1102,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<CreateMultiRegionEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfigurationSet
@@ -1170,7 +1155,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<DeleteConfigurationSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfigurationSetEventDestination
@@ -1221,7 +1205,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<DeleteConfigurationSetEventDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteContact
@@ -1264,7 +1247,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<DeleteContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteContactList
@@ -1310,7 +1292,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<DeleteContactListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCustomVerificationEmailTemplate
@@ -1363,7 +1344,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<DeleteCustomVerificationEmailTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDedicatedIpPool
@@ -1409,7 +1389,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<DeleteDedicatedIpPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEmailIdentity
@@ -1456,7 +1435,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<DeleteEmailIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEmailIdentityPolicy
@@ -1518,7 +1496,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<DeleteEmailIdentityPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEmailTemplate
@@ -1566,7 +1543,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<DeleteEmailTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMultiRegionEndpoint
@@ -1618,7 +1594,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<DeleteMultiRegionEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSuppressedDestination
@@ -1661,7 +1636,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<DeleteSuppressedDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccount
@@ -1702,7 +1676,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBlacklistReports
@@ -1745,7 +1718,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetBlacklistReportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfigurationSet
@@ -1797,7 +1769,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetConfigurationSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfigurationSetEventDestinations
@@ -1848,7 +1819,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetConfigurationSetEventDestinationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContact
@@ -1891,7 +1861,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContactList
@@ -1935,7 +1904,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetContactListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCustomVerificationEmailTemplate
@@ -1988,7 +1956,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetCustomVerificationEmailTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDedicatedIp
@@ -2033,7 +2000,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetDedicatedIpResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDedicatedIpPool
@@ -2076,7 +2042,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetDedicatedIpPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDedicatedIps
@@ -2120,7 +2085,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetDedicatedIpsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeliverabilityDashboardOptions
@@ -2175,7 +2139,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetDeliverabilityDashboardOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeliverabilityTestReport
@@ -2218,7 +2181,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetDeliverabilityTestReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDomainDeliverabilityCampaign
@@ -2263,7 +2225,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetDomainDeliverabilityCampaignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDomainStatisticsReport
@@ -2307,7 +2268,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetDomainStatisticsReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEmailIdentity
@@ -2352,7 +2312,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetEmailIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEmailIdentityPolicies
@@ -2414,7 +2373,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetEmailIdentityPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEmailTemplate
@@ -2463,7 +2421,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetEmailTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExportJob
@@ -2506,7 +2463,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetImportJob
@@ -2549,7 +2505,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMessageInsights
@@ -2598,7 +2553,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetMessageInsightsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMultiRegionEndpoint
@@ -2647,7 +2601,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetMultiRegionEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSuppressedDestination
@@ -2691,7 +2644,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<GetSuppressedDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfigurationSets
@@ -2739,7 +2691,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<ListConfigurationSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContactLists
@@ -2779,7 +2730,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<ListContactListsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContacts
@@ -2822,7 +2772,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<ListContactsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCustomVerificationEmailTemplates
@@ -2873,7 +2822,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<ListCustomVerificationEmailTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDedicatedIpPools
@@ -2914,7 +2862,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<ListDedicatedIpPoolsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeliverabilityTestReports
@@ -2959,7 +2906,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<ListDeliverabilityTestReportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomainDeliverabilityCampaigns
@@ -3004,7 +2950,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<ListDomainDeliverabilityCampaignsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEmailIdentities
@@ -3047,7 +2992,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<ListEmailIdentitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEmailTemplates
@@ -3093,7 +3037,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<ListEmailTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExportJobs
@@ -3133,7 +3076,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<ListExportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImportJobs
@@ -3173,7 +3115,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<ListImportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMultiRegionEndpoints
@@ -3219,7 +3160,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<ListMultiRegionEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecommendations
@@ -3268,7 +3208,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<ListRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSuppressedDestinations
@@ -3311,7 +3250,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<ListSuppressedDestinationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3358,7 +3296,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAccountDedicatedIpWarmupAttributes
@@ -3398,7 +3335,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutAccountDedicatedIpWarmupAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAccountDetails
@@ -3441,7 +3377,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutAccountDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAccountSendingAttributes
@@ -3481,7 +3416,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutAccountSendingAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAccountSuppressionAttributes
@@ -3521,7 +3455,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutAccountSuppressionAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAccountVdmAttributes
@@ -3566,7 +3499,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutAccountVdmAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutConfigurationSetArchivingOptions
@@ -3611,7 +3543,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutConfigurationSetArchivingOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutConfigurationSetDeliveryOptions
@@ -3655,7 +3586,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutConfigurationSetDeliveryOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutConfigurationSetReputationOptions
@@ -3699,7 +3629,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutConfigurationSetReputationOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutConfigurationSetSendingOptions
@@ -3743,7 +3672,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutConfigurationSetSendingOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutConfigurationSetSuppressionOptions
@@ -3786,7 +3714,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutConfigurationSetSuppressionOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutConfigurationSetTrackingOptions
@@ -3830,7 +3757,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutConfigurationSetTrackingOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutConfigurationSetVdmOptions
@@ -3878,7 +3804,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutConfigurationSetVdmOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDedicatedIpInPool
@@ -3933,7 +3858,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutDedicatedIpInPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDedicatedIpPoolScalingAttributes
@@ -3985,7 +3909,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutDedicatedIpPoolScalingAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDedicatedIpWarmupAttributes
@@ -4028,7 +3951,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutDedicatedIpWarmupAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDeliverabilityDashboardOption
@@ -4089,7 +4011,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutDeliverabilityDashboardOptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEmailIdentityConfigurationSetAttributes
@@ -4132,7 +4053,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutEmailIdentityConfigurationSetAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEmailIdentityDkimAttributes
@@ -4175,7 +4095,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutEmailIdentityDkimAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEmailIdentityDkimSigningAttributes
@@ -4245,7 +4164,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutEmailIdentityDkimSigningAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEmailIdentityFeedbackAttributes
@@ -4304,7 +4222,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutEmailIdentityFeedbackAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEmailIdentityMailFromAttributes
@@ -4347,7 +4264,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutEmailIdentityMailFromAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutSuppressedDestination
@@ -4387,7 +4303,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<PutSuppressedDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendBulkEmail
@@ -4447,7 +4362,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<SendBulkEmailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendCustomVerificationEmail
@@ -4517,7 +4431,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<SendCustomVerificationEmailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendEmail
@@ -4599,7 +4512,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<SendEmailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -4655,7 +4567,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestRenderEmailTemplate
@@ -4704,7 +4615,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<TestRenderEmailTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -4750,7 +4660,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfigurationSetEventDestination
@@ -4801,7 +4710,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<UpdateConfigurationSetEventDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContact
@@ -4855,7 +4763,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<UpdateContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContactList
@@ -4901,7 +4808,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<UpdateContactListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCustomVerificationEmailTemplate
@@ -4954,7 +4860,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<UpdateCustomVerificationEmailTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEmailIdentityPolicy
@@ -5016,7 +4921,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<UpdateEmailIdentityPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEmailTemplate
@@ -5067,7 +4971,6 @@ namespace Amazon.SimpleEmailV2
 
             return InvokeAsync<UpdateEmailTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.LexModelsV2
     /// <summary>
     /// Configuration for accessing Amazon LexModelsV2 service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonLexModelsV2Config : ClientConfig
     {
         private static readonly string UserAgentString =

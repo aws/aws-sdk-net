@@ -463,7 +463,6 @@ namespace Amazon.MedicalImaging
 
             return InvokeAsync<CopyImageSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDatastore
@@ -515,7 +514,6 @@ namespace Amazon.MedicalImaging
 
             return InvokeAsync<CreateDatastoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDatastore
@@ -573,7 +571,6 @@ namespace Amazon.MedicalImaging
 
             return InvokeAsync<DeleteDatastoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteImageSet
@@ -625,7 +622,6 @@ namespace Amazon.MedicalImaging
 
             return InvokeAsync<DeleteImageSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDatastore
@@ -674,7 +670,6 @@ namespace Amazon.MedicalImaging
 
             return InvokeAsync<GetDatastoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDICOMImportJob
@@ -736,7 +731,6 @@ namespace Amazon.MedicalImaging
 
             return InvokeAsync<GetDICOMImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetImageFrame
@@ -788,7 +782,6 @@ namespace Amazon.MedicalImaging
 
             return InvokeAsync<GetImageFrameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetImageSet
@@ -840,7 +833,6 @@ namespace Amazon.MedicalImaging
 
             return InvokeAsync<GetImageSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetImageSetMetadata
@@ -892,7 +884,6 @@ namespace Amazon.MedicalImaging
 
             return InvokeAsync<GetImageSetMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatastores
@@ -938,7 +929,6 @@ namespace Amazon.MedicalImaging
 
             return InvokeAsync<ListDatastoresResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDICOMImportJobs
@@ -990,7 +980,6 @@ namespace Amazon.MedicalImaging
 
             return InvokeAsync<ListDICOMImportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImageSetVersions
@@ -1042,7 +1031,6 @@ namespace Amazon.MedicalImaging
 
             return InvokeAsync<ListImageSetVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1091,7 +1079,6 @@ namespace Amazon.MedicalImaging
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchImageSets
@@ -1156,7 +1143,6 @@ namespace Amazon.MedicalImaging
 
             return InvokeAsync<SearchImageSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDICOMImportJob
@@ -1214,7 +1200,6 @@ namespace Amazon.MedicalImaging
 
             return InvokeAsync<StartDICOMImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1263,7 +1248,6 @@ namespace Amazon.MedicalImaging
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1312,7 +1296,6 @@ namespace Amazon.MedicalImaging
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateImageSetMetadata
@@ -1367,7 +1350,6 @@ namespace Amazon.MedicalImaging
 
             return InvokeAsync<UpdateImageSetMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

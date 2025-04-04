@@ -290,7 +290,6 @@ namespace Amazon.ApiGatewayManagementApi
 
             return InvokeAsync<DeleteConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConnection
@@ -334,7 +333,6 @@ namespace Amazon.ApiGatewayManagementApi
 
             return InvokeAsync<GetConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PostToConnection
@@ -381,7 +379,6 @@ namespace Amazon.ApiGatewayManagementApi
 
             return InvokeAsync<PostToConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

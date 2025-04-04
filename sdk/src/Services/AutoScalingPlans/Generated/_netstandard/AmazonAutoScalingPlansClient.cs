@@ -334,7 +334,6 @@ namespace Amazon.AutoScalingPlans
 
             return InvokeAsync<CreateScalingPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteScalingPlan
@@ -392,7 +391,6 @@ namespace Amazon.AutoScalingPlans
 
             return InvokeAsync<DeleteScalingPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeScalingPlanResources
@@ -439,7 +437,6 @@ namespace Amazon.AutoScalingPlans
 
             return InvokeAsync<DescribeScalingPlanResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeScalingPlans
@@ -486,7 +483,6 @@ namespace Amazon.AutoScalingPlans
 
             return InvokeAsync<DescribeScalingPlansResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetScalingPlanResourceForecastData
@@ -533,7 +529,6 @@ namespace Amazon.AutoScalingPlans
 
             return InvokeAsync<GetScalingPlanResourceForecastDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateScalingPlan
@@ -586,7 +581,6 @@ namespace Amazon.AutoScalingPlans
 
             return InvokeAsync<UpdateScalingPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

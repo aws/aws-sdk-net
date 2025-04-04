@@ -339,7 +339,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<AssociateAppBlockBuilderAppBlockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateApplicationFleet
@@ -389,7 +388,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<AssociateApplicationFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateApplicationToEntitlement
@@ -435,7 +433,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<AssociateApplicationToEntitlementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateFleet
@@ -488,7 +485,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<AssociateFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchAssociateUserStack
@@ -529,7 +525,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<BatchAssociateUserStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDisassociateUserStack
@@ -569,7 +564,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<BatchDisassociateUserStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyImage
@@ -623,7 +617,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<CopyImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAppBlock
@@ -682,7 +675,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<CreateAppBlockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAppBlockBuilder
@@ -748,7 +740,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<CreateAppBlockBuilderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAppBlockBuilderStreamingURL
@@ -788,7 +779,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<CreateAppBlockBuilderStreamingURLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApplication
@@ -850,7 +840,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDirectoryConfig
@@ -905,7 +894,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<CreateDirectoryConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEntitlement
@@ -955,7 +943,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<CreateEntitlementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFleet
@@ -1025,7 +1012,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<CreateFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateImageBuilder
@@ -1101,7 +1087,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<CreateImageBuilderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateImageBuilderStreamingURL
@@ -1141,7 +1126,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<CreateImageBuilderStreamingURLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStack
@@ -1201,7 +1185,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<CreateStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStreamingURL
@@ -1248,7 +1231,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<CreateStreamingURLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateThemeForStack
@@ -1302,7 +1284,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<CreateThemeForStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUpdatedImage
@@ -1366,7 +1347,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<CreateUpdatedImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUsageReportSubscription
@@ -1410,7 +1390,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<CreateUsageReportSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUser
@@ -1460,7 +1439,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<CreateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAppBlock
@@ -1503,7 +1481,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DeleteAppBlockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAppBlockBuilder
@@ -1554,7 +1531,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DeleteAppBlockBuilderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplication
@@ -1600,7 +1576,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DeleteApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDirectoryConfig
@@ -1641,7 +1616,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DeleteDirectoryConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEntitlement
@@ -1687,7 +1661,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DeleteEntitlementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFleet
@@ -1730,7 +1703,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DeleteFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteImage
@@ -1777,7 +1749,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DeleteImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteImageBuilder
@@ -1820,7 +1791,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DeleteImageBuilderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteImagePermissions
@@ -1862,7 +1832,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DeleteImagePermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStack
@@ -1910,7 +1879,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DeleteStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteThemeForStack
@@ -1954,7 +1922,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DeleteThemeForStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUsageReportSubscription
@@ -1995,7 +1962,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DeleteUsageReportSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUser
@@ -2032,7 +1998,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAppBlockBuilderAppBlockAssociations
@@ -2072,7 +2037,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DescribeAppBlockBuilderAppBlockAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAppBlockBuilders
@@ -2112,7 +2076,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DescribeAppBlockBuildersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAppBlocks
@@ -2152,7 +2115,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DescribeAppBlocksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApplicationFleetAssociations
@@ -2193,7 +2155,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DescribeApplicationFleetAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApplications
@@ -2233,7 +2194,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DescribeApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDirectoryConfigs
@@ -2280,7 +2240,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DescribeDirectoryConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEntitlements
@@ -2323,7 +2282,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DescribeEntitlementsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFleets
@@ -2361,7 +2319,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DescribeFleetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeImageBuilders
@@ -2399,7 +2356,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DescribeImageBuildersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeImagePermissions
@@ -2437,7 +2393,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DescribeImagePermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeImages
@@ -2478,7 +2433,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DescribeImagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSessions
@@ -2518,7 +2472,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DescribeSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStacks
@@ -2556,7 +2509,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DescribeStacksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeThemeForStack
@@ -2597,7 +2549,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DescribeThemeForStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUsageReportSubscriptions
@@ -2638,7 +2589,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DescribeUsageReportSubscriptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUsers
@@ -2681,7 +2631,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DescribeUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUserStackAssociations
@@ -2733,7 +2682,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DescribeUserStackAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableUser
@@ -2771,7 +2719,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DisableUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateAppBlockBuilderAppBlock
@@ -2817,7 +2764,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DisassociateAppBlockBuilderAppBlockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateApplicationFleet
@@ -2860,7 +2806,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DisassociateApplicationFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateApplicationFromEntitlement
@@ -2903,7 +2848,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DisassociateApplicationFromEntitlementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateFleet
@@ -2949,7 +2893,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<DisassociateFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableUser
@@ -2991,7 +2934,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<EnableUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExpireSession
@@ -3025,7 +2967,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<ExpireSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssociatedFleets
@@ -3059,7 +3000,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<ListAssociatedFleetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssociatedStacks
@@ -3093,7 +3033,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<ListAssociatedStacksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEntitledApplications
@@ -3136,7 +3075,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<ListEntitledApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3180,7 +3118,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartAppBlockBuilder
@@ -3247,7 +3184,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<StartAppBlockBuilderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartFleet
@@ -3307,7 +3243,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<StartFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartImageBuilder
@@ -3357,7 +3292,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<StartImageBuilderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopAppBlockBuilder
@@ -3406,7 +3340,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<StopAppBlockBuilderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopFleet
@@ -3446,7 +3379,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<StopFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopImageBuilder
@@ -3489,7 +3421,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<StopImageBuilderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3550,7 +3481,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3597,7 +3527,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAppBlockBuilder
@@ -3671,7 +3600,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<UpdateAppBlockBuilderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplication
@@ -3714,7 +3642,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDirectoryConfig
@@ -3768,7 +3695,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<UpdateDirectoryConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEntitlement
@@ -3814,7 +3740,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<UpdateEntitlementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFleet
@@ -3917,7 +3842,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<UpdateFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateImagePermissions
@@ -3960,7 +3884,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<UpdateImagePermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStack
@@ -4022,7 +3945,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<UpdateStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateThemeForStack
@@ -4076,7 +3998,6 @@ namespace Amazon.AppStream
 
             return InvokeAsync<UpdateThemeForStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

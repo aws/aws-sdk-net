@@ -244,6 +244,12 @@ namespace Amazon.Kinesis.Internal
                 result.StreamARN = request.StreamARN;
                 return result;
             }
+            if (requestContext.RequestName == "SubscribeToShardRequest") {
+                result.OperationType = "data";
+                var request = (SubscribeToShardRequest)requestContext.OriginalRequest;
+                result.ConsumerARN = request.ConsumerARN;
+                return result;
+            }
             if (requestContext.RequestName == "UpdateShardCountRequest") {
                 result.OperationType = "control";
                 var request = (UpdateShardCountRequest)requestContext.OriginalRequest;

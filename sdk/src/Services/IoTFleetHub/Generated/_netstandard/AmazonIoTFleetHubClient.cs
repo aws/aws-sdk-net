@@ -317,7 +317,6 @@ namespace Amazon.IoTFleetHub
 
             return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplication
@@ -363,7 +362,6 @@ namespace Amazon.IoTFleetHub
 
             return InvokeAsync<DeleteApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApplication
@@ -409,7 +407,6 @@ namespace Amazon.IoTFleetHub
 
             return InvokeAsync<DescribeApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplications
@@ -453,7 +450,6 @@ namespace Amazon.IoTFleetHub
 
             return InvokeAsync<ListApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -496,7 +492,6 @@ namespace Amazon.IoTFleetHub
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -540,7 +535,6 @@ namespace Amazon.IoTFleetHub
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -583,7 +577,6 @@ namespace Amazon.IoTFleetHub
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplication
@@ -632,7 +625,6 @@ namespace Amazon.IoTFleetHub
 
             return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

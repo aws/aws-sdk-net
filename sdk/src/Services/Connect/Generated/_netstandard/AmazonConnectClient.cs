@@ -343,7 +343,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ActivateEvaluationFormResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateAnalyticsDataSet
@@ -393,7 +392,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<AssociateAnalyticsDataSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateApprovedOrigin
@@ -453,7 +451,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<AssociateApprovedOriginResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateBot
@@ -514,7 +511,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<AssociateBotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateDefaultVocabulary
@@ -564,7 +560,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<AssociateDefaultVocabularyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateFlow
@@ -616,7 +611,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<AssociateFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateInstanceStorageConfig
@@ -681,7 +675,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<AssociateInstanceStorageConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateLambdaFunction
@@ -741,7 +734,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<AssociateLambdaFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateLexBot
@@ -802,7 +794,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<AssociateLexBotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociatePhoneNumberContactFlow
@@ -864,7 +855,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<AssociatePhoneNumberContactFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateQueueQuickConnects
@@ -921,7 +911,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<AssociateQueueQuickConnectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateRoutingProfileQueues
@@ -970,7 +959,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<AssociateRoutingProfileQueuesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateSecurityKey
@@ -1030,7 +1018,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<AssociateSecurityKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateTrafficDistributionGroupUser
@@ -1083,7 +1070,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<AssociateTrafficDistributionGroupUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateUserProficiencies
@@ -1132,7 +1118,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<AssociateUserProficienciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchAssociateAnalyticsDataSet
@@ -1182,7 +1167,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<BatchAssociateAnalyticsDataSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDisassociateAnalyticsDataSet
@@ -1232,7 +1216,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<BatchDisassociateAnalyticsDataSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetAttachedFileMetadata
@@ -1282,7 +1265,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<BatchGetAttachedFileMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetFlowAssociation
@@ -1334,7 +1316,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<BatchGetFlowAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchPutContact
@@ -1399,7 +1380,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<BatchPutContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ClaimPhoneNumber
@@ -1489,7 +1469,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ClaimPhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CompleteAttachedFileUpload
@@ -1539,7 +1518,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CompleteAttachedFileUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAgentStatus
@@ -1599,7 +1577,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateAgentStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateContact
@@ -1669,7 +1646,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateContactFlow
@@ -1733,7 +1709,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateContactFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateContactFlowModule
@@ -1797,7 +1772,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateContactFlowModuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateContactFlowVersion
@@ -1855,7 +1829,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateContactFlowVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEmailAddress
@@ -1921,7 +1894,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateEmailAddressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEvaluationForm
@@ -1976,7 +1948,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateEvaluationFormResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateHoursOfOperation
@@ -2036,7 +2007,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateHoursOfOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateHoursOfOperationOverride
@@ -2091,7 +2061,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateHoursOfOperationOverrideResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInstance
@@ -2161,7 +2130,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIntegrationAssociation
@@ -2210,7 +2178,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateIntegrationAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateParticipant
@@ -2261,7 +2228,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateParticipantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePersistentContactAssociation
@@ -2315,7 +2281,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreatePersistentContactAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePredefinedAttribute
@@ -2374,7 +2339,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreatePredefinedAttributeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePrompt
@@ -2428,7 +2392,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreatePromptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePushNotificationRegistration
@@ -2483,7 +2446,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreatePushNotificationRegistrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateQueue
@@ -2564,7 +2526,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateQuickConnect
@@ -2619,7 +2580,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateQuickConnectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRoutingProfile
@@ -2674,7 +2634,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateRoutingProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRule
@@ -2735,7 +2694,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSecurityProfile
@@ -2798,7 +2756,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateSecurityProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTaskTemplate
@@ -2850,7 +2807,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateTaskTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTrafficDistributionGroup
@@ -2924,7 +2880,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateTrafficDistributionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUseCase
@@ -2973,7 +2928,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateUseCaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUser
@@ -3042,7 +2996,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUserHierarchyGroup
@@ -3097,7 +3050,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateUserHierarchyGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateView
@@ -3171,7 +3123,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateViewVersion
@@ -3240,7 +3191,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateViewVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVocabulary
@@ -3298,7 +3248,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<CreateVocabularyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeactivateEvaluationForm
@@ -3349,7 +3298,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeactivateEvaluationFormResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAttachedFile
@@ -3404,7 +3352,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteAttachedFileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteContactEvaluation
@@ -3453,7 +3400,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteContactEvaluationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteContactFlow
@@ -3505,7 +3451,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteContactFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteContactFlowModule
@@ -3557,7 +3502,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteContactFlowModuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteContactFlowVersion
@@ -3609,7 +3553,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteContactFlowVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEmailAddress
@@ -3664,7 +3607,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteEmailAddressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEvaluationForm
@@ -3724,7 +3666,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteEvaluationFormResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteHoursOfOperation
@@ -3778,7 +3719,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteHoursOfOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteHoursOfOperationOverride
@@ -3827,7 +3767,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteHoursOfOperationOverrideResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInstance
@@ -3884,7 +3823,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIntegrationAssociation
@@ -3931,7 +3869,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteIntegrationAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePredefinedAttribute
@@ -3983,7 +3920,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeletePredefinedAttributeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePrompt
@@ -4032,7 +3968,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeletePromptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePushNotificationRegistration
@@ -4081,7 +4016,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeletePushNotificationRegistrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteQueue
@@ -4133,7 +4067,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteQuickConnect
@@ -4204,7 +4137,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteQuickConnectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRoutingProfile
@@ -4256,7 +4188,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteRoutingProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRule
@@ -4305,7 +4236,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSecurityProfile
@@ -4360,7 +4290,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteSecurityProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTaskTemplate
@@ -4409,7 +4338,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteTaskTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTrafficDistributionGroup
@@ -4465,7 +4393,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteTrafficDistributionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUseCase
@@ -4511,7 +4438,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteUseCaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUser
@@ -4588,7 +4514,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUserHierarchyGroup
@@ -4641,7 +4566,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteUserHierarchyGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteView
@@ -4697,7 +4621,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteViewVersion
@@ -4752,7 +4675,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteViewVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVocabulary
@@ -4804,7 +4726,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DeleteVocabularyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAgentStatus
@@ -4858,7 +4779,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeAgentStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAuthenticationProfile
@@ -4913,7 +4833,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeAuthenticationProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeContact
@@ -4979,7 +4898,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeContactEvaluation
@@ -5025,7 +4943,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeContactEvaluationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeContactFlow
@@ -5102,7 +5019,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeContactFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeContactFlowModule
@@ -5162,7 +5078,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeContactFlowModuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEmailAddress
@@ -5214,7 +5129,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeEmailAddressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEvaluationForm
@@ -5261,7 +5175,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeEvaluationFormResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeHoursOfOperation
@@ -5315,7 +5228,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeHoursOfOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeHoursOfOperationOverride
@@ -5364,7 +5276,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeHoursOfOperationOverrideResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInstance
@@ -5419,7 +5330,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInstanceAttribute
@@ -5473,7 +5383,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeInstanceAttributeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInstanceStorageConfig
@@ -5528,7 +5437,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeInstanceStorageConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePhoneNumber
@@ -5590,7 +5498,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribePhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePredefinedAttribute
@@ -5643,7 +5550,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribePredefinedAttributeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePrompt
@@ -5692,7 +5598,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribePromptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeQueue
@@ -5746,7 +5651,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeQuickConnect
@@ -5795,7 +5699,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeQuickConnectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRoutingProfile
@@ -5844,7 +5747,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeRoutingProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRule
@@ -5893,7 +5795,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSecurityProfile
@@ -5950,7 +5851,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeSecurityProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTrafficDistributionGroup
@@ -5999,7 +5899,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeTrafficDistributionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUser
@@ -6051,7 +5950,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUserHierarchyGroup
@@ -6100,7 +5998,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeUserHierarchyGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUserHierarchyStructure
@@ -6149,7 +6046,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeUserHierarchyStructureResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeView
@@ -6218,7 +6114,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVocabulary
@@ -6267,7 +6162,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DescribeVocabularyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateAnalyticsDataSet
@@ -6316,7 +6210,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DisassociateAnalyticsDataSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateApprovedOrigin
@@ -6370,7 +6263,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DisassociateApprovedOriginResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateBot
@@ -6422,7 +6314,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DisassociateBotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateFlow
@@ -6474,7 +6365,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DisassociateFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateInstanceStorageConfig
@@ -6529,7 +6419,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DisassociateInstanceStorageConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateLambdaFunction
@@ -6584,7 +6473,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DisassociateLambdaFunctionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateLexBot
@@ -6639,7 +6527,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DisassociateLexBotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociatePhoneNumberContactFlow
@@ -6701,7 +6588,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DisassociatePhoneNumberContactFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateQueueQuickConnects
@@ -6755,7 +6641,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DisassociateQueueQuickConnectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateRoutingProfileQueues
@@ -6804,7 +6689,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DisassociateRoutingProfileQueuesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateSecurityKey
@@ -6858,7 +6742,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DisassociateSecurityKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateTrafficDistributionGroupUser
@@ -6911,7 +6794,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DisassociateTrafficDistributionGroupUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateUserProficiencies
@@ -6960,7 +6842,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DisassociateUserProficienciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DismissUserContact
@@ -7016,7 +6897,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<DismissUserContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAttachedFile
@@ -7067,7 +6947,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<GetAttachedFileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContactAttributes
@@ -7110,7 +6989,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<GetContactAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCurrentMetricData
@@ -7165,7 +7043,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<GetCurrentMetricDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCurrentUserData
@@ -7214,7 +7091,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<GetCurrentUserDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEffectiveHoursOfOperations
@@ -7263,7 +7139,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<GetEffectiveHoursOfOperationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFederationToken
@@ -7335,7 +7210,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<GetFederationTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFlowAssociation
@@ -7387,7 +7261,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<GetFlowAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMetricData
@@ -7453,7 +7326,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<GetMetricDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMetricDataV2
@@ -7517,7 +7389,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<GetMetricDataV2Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPromptFile
@@ -7566,7 +7437,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<GetPromptFileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTaskTemplate
@@ -7615,7 +7485,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<GetTaskTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTrafficDistribution
@@ -7664,7 +7533,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<GetTrafficDistributionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportPhoneNumber
@@ -7747,7 +7615,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ImportPhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAgentStatuses
@@ -7801,7 +7668,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListAgentStatusesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAnalyticsDataAssociations
@@ -7850,7 +7716,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListAnalyticsDataAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAnalyticsDataLakeDataSets
@@ -7900,7 +7765,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListAnalyticsDataLakeDataSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApprovedOrigins
@@ -7954,7 +7818,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListApprovedOriginsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssociatedContacts
@@ -8004,7 +7867,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListAssociatedContactsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAuthenticationProfiles
@@ -8060,7 +7922,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListAuthenticationProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBots
@@ -8113,7 +7974,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListBotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContactEvaluations
@@ -8159,7 +8019,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListContactEvaluationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContactFlowModules
@@ -8211,7 +8070,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListContactFlowModulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContactFlows
@@ -8271,7 +8129,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListContactFlowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContactFlowVersions
@@ -8324,7 +8181,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListContactFlowVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContactReferences
@@ -8380,7 +8236,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListContactReferencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDefaultVocabularies
@@ -8426,7 +8281,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListDefaultVocabulariesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEvaluationForms
@@ -8472,7 +8326,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListEvaluationFormsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEvaluationFormVersions
@@ -8518,7 +8371,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListEvaluationFormVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFlowAssociations
@@ -8570,7 +8422,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListFlowAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHoursOfOperationOverrides
@@ -8619,7 +8470,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListHoursOfOperationOverridesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHoursOfOperations
@@ -8675,7 +8525,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListHoursOfOperationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInstanceAttributes
@@ -8729,7 +8578,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListInstanceAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInstances
@@ -8776,7 +8624,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInstanceStorageConfigs
@@ -8831,7 +8678,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListInstanceStorageConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIntegrationAssociations
@@ -8878,7 +8724,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListIntegrationAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLambdaFunctions
@@ -8933,7 +8778,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListLambdaFunctionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLexBots
@@ -8989,7 +8833,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListLexBotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPhoneNumbers
@@ -9063,7 +8906,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListPhoneNumbersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPhoneNumbersV2
@@ -9133,7 +8975,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListPhoneNumbersV2Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPredefinedAttributes
@@ -9186,7 +9027,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListPredefinedAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPrompts
@@ -9235,7 +9075,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListPromptsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQueueQuickConnects
@@ -9289,7 +9128,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListQueueQuickConnectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQueues
@@ -9350,7 +9188,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListQueuesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQuickConnects
@@ -9399,7 +9236,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListQuickConnectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRealtimeContactAnalysisSegmentsV2
@@ -9461,7 +9297,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListRealtimeContactAnalysisSegmentsV2Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRoutingProfileQueues
@@ -9510,7 +9345,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListRoutingProfileQueuesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRoutingProfiles
@@ -9567,7 +9401,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListRoutingProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRules
@@ -9616,7 +9449,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSecurityKeys
@@ -9670,7 +9502,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListSecurityKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSecurityProfileApplications
@@ -9719,7 +9550,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListSecurityProfileApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSecurityProfilePermissions
@@ -9776,7 +9606,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListSecurityProfilePermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSecurityProfiles
@@ -9834,7 +9663,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListSecurityProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -9890,7 +9718,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTaskTemplates
@@ -9939,7 +9766,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListTaskTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrafficDistributionGroups
@@ -9985,7 +9811,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListTrafficDistributionGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrafficDistributionGroupUsers
@@ -10034,7 +9859,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListTrafficDistributionGroupUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUseCases
@@ -10080,7 +9904,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListUseCasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUserHierarchyGroups
@@ -10136,7 +9959,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListUserHierarchyGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUserProficiencies
@@ -10185,7 +10007,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListUserProficienciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUsers
@@ -10234,7 +10055,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListViews
@@ -10291,7 +10111,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListViewsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListViewVersions
@@ -10349,7 +10168,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ListViewVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  MonitorContact
@@ -10405,7 +10223,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<MonitorContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PauseContact
@@ -10464,7 +10281,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<PauseContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutUserStatus
@@ -10524,7 +10340,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<PutUserStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReleasePhoneNumber
@@ -10614,7 +10429,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ReleasePhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReplicateInstance
@@ -10681,7 +10495,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ReplicateInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResumeContact
@@ -10737,7 +10550,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ResumeContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResumeContactRecording
@@ -10788,7 +10600,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<ResumeContactRecordingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchAgentStatuses
@@ -10837,7 +10648,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SearchAgentStatusesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchAvailablePhoneNumbers
@@ -10886,7 +10696,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SearchAvailablePhoneNumbersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchContactFlowModules
@@ -10935,7 +10744,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SearchContactFlowModulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchContactFlows
@@ -10984,7 +10792,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SearchContactFlowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchContacts
@@ -11033,7 +10840,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SearchContactsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchEmailAddresses
@@ -11085,7 +10891,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SearchEmailAddressesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchHoursOfOperationOverrides
@@ -11134,7 +10939,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SearchHoursOfOperationOverridesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchHoursOfOperations
@@ -11183,7 +10987,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SearchHoursOfOperationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchPredefinedAttributes
@@ -11235,7 +11038,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SearchPredefinedAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchPrompts
@@ -11284,7 +11086,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SearchPromptsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchQueues
@@ -11333,7 +11134,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SearchQueuesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchQuickConnects
@@ -11382,7 +11182,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SearchQuickConnectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchResourceTags
@@ -11435,7 +11234,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SearchResourceTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchRoutingProfiles
@@ -11484,7 +11282,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SearchRoutingProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchSecurityProfiles
@@ -11541,7 +11338,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SearchSecurityProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchUserHierarchyGroups
@@ -11597,7 +11393,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SearchUserHierarchyGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchUsers
@@ -11652,7 +11447,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SearchUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchVocabularies
@@ -11699,7 +11493,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SearchVocabulariesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendChatIntegrationEvent
@@ -11771,7 +11564,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SendChatIntegrationEventResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendOutboundEmail
@@ -11835,7 +11627,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SendOutboundEmailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartAttachedFileUpload
@@ -11895,7 +11686,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<StartAttachedFileUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartChatContact
@@ -11989,7 +11779,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<StartChatContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartContactEvaluation
@@ -12051,7 +11840,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<StartContactEvaluationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartContactRecording
@@ -12125,7 +11913,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<StartContactRecordingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartContactStreaming
@@ -12196,7 +11983,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<StartContactStreamingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartEmailContact
@@ -12252,7 +12038,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<StartEmailContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartOutboundChatContact
@@ -12338,7 +12123,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<StartOutboundChatContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartOutboundEmailContact
@@ -12394,7 +12178,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<StartOutboundEmailContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartOutboundVoiceContact
@@ -12477,7 +12260,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<StartOutboundVoiceContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartScreenSharing
@@ -12532,7 +12314,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<StartScreenSharingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartTaskContact
@@ -12640,7 +12421,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<StartTaskContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartWebRTCContact
@@ -12691,7 +12471,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<StartWebRTCContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopContact
@@ -12767,7 +12546,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<StopContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopContactRecording
@@ -12820,7 +12598,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<StopContactRecordingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopContactStreaming
@@ -12868,7 +12645,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<StopContactStreamingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SubmitContactEvaluation
@@ -12927,7 +12703,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SubmitContactEvaluationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SuspendContactRecording
@@ -12984,7 +12759,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<SuspendContactRecordingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagContact
@@ -13035,7 +12809,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<TagContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -13098,7 +12871,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TransferContact
@@ -13184,7 +12956,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<TransferContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagContact
@@ -13235,7 +13006,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UntagContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -13284,7 +13054,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAgentStatus
@@ -13344,7 +13113,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateAgentStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAuthenticationProfile
@@ -13399,7 +13167,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateAuthenticationProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContact
@@ -13467,7 +13234,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContactAttributes
@@ -13531,7 +13297,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateContactAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContactEvaluation
@@ -13583,7 +13348,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateContactEvaluationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContactFlowContent
@@ -13648,7 +13412,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateContactFlowContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContactFlowMetadata
@@ -13700,7 +13463,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateContactFlowMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContactFlowModuleContent
@@ -13760,7 +13522,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateContactFlowModuleContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContactFlowModuleMetadata
@@ -13815,7 +13576,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateContactFlowModuleMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContactFlowName
@@ -13873,7 +13633,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateContactFlowNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContactRoutingData
@@ -13941,7 +13700,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateContactRoutingDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContactSchedule
@@ -13993,7 +13751,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateContactScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEmailAddressMetadata
@@ -14050,7 +13807,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateEmailAddressMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEvaluationForm
@@ -14110,7 +13866,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateEvaluationFormResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateHoursOfOperation
@@ -14167,7 +13922,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateHoursOfOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateHoursOfOperationOverride
@@ -14222,7 +13976,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateHoursOfOperationOverrideResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInstanceAttribute
@@ -14276,7 +14029,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateInstanceAttributeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInstanceStorageConfig
@@ -14330,7 +14082,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateInstanceStorageConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateParticipantAuthentication
@@ -14401,7 +14152,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateParticipantAuthenticationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateParticipantRoleConfig
@@ -14477,7 +14227,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateParticipantRoleConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePhoneNumber
@@ -14549,7 +14298,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdatePhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePhoneNumberMetadata
@@ -14615,7 +14363,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdatePhoneNumberMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePredefinedAttribute
@@ -14668,7 +14415,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdatePredefinedAttributeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePrompt
@@ -14717,7 +14463,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdatePromptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQueueHoursOfOperation
@@ -14771,7 +14516,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateQueueHoursOfOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQueueMaxContacts
@@ -14826,7 +14570,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateQueueMaxContactsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQueueName
@@ -14884,7 +14627,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateQueueNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQueueOutboundCallerConfig
@@ -14964,7 +14706,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateQueueOutboundCallerConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQueueOutboundEmailConfig
@@ -15019,7 +14760,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateQueueOutboundEmailConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQueueStatus
@@ -15073,7 +14813,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateQueueStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQuickConnectConfig
@@ -15122,7 +14861,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateQuickConnectConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQuickConnectName
@@ -15172,7 +14910,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateQuickConnectNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRoutingProfileAgentAvailabilityTimer
@@ -15222,7 +14959,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateRoutingProfileAgentAvailabilityTimerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRoutingProfileConcurrency
@@ -15272,7 +15008,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateRoutingProfileConcurrencyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRoutingProfileDefaultOutboundQueue
@@ -15321,7 +15056,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateRoutingProfileDefaultOutboundQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRoutingProfileName
@@ -15374,7 +15108,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateRoutingProfileNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRoutingProfileQueues
@@ -15423,7 +15156,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateRoutingProfileQueuesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRule
@@ -15481,7 +15213,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSecurityProfile
@@ -15538,7 +15269,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateSecurityProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTaskTemplate
@@ -15592,7 +15322,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateTaskTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTrafficDistribution
@@ -15666,7 +15395,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateTrafficDistributionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUserHierarchy
@@ -15715,7 +15443,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateUserHierarchyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUserHierarchyGroupName
@@ -15767,7 +15494,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateUserHierarchyGroupNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUserHierarchyStructure
@@ -15819,7 +15545,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateUserHierarchyStructureResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUserIdentityInfo
@@ -15879,7 +15604,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateUserIdentityInfoResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUserPhoneConfig
@@ -15928,7 +15652,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateUserPhoneConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUserProficiencies
@@ -15977,7 +15700,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateUserProficienciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUserRoutingProfile
@@ -16026,7 +15748,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateUserRoutingProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUserSecurityProfiles
@@ -16075,7 +15796,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateUserSecurityProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateViewContent
@@ -16139,7 +15859,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateViewContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateViewMetadata
@@ -16198,7 +15917,6 @@ namespace Amazon.Connect
 
             return InvokeAsync<UpdateViewMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

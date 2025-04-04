@@ -30,7 +30,6 @@ namespace Amazon.MobileAnalytics
     /// <summary>
     /// Configuration for accessing Amazon MobileAnalytics service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMobileAnalyticsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

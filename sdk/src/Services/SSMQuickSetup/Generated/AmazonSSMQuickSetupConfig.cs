@@ -30,7 +30,6 @@ namespace Amazon.SSMQuickSetup
     /// <summary>
     /// Configuration for accessing Amazon SSMQuickSetup service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSSMQuickSetupConfig : ClientConfig
     {
         private static readonly string UserAgentString =

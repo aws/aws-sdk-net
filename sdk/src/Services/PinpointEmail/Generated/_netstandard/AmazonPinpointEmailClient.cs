@@ -359,7 +359,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<CreateConfigurationSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfigurationSetEventDestination
@@ -418,7 +417,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<CreateConfigurationSetEventDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDedicatedIpPool
@@ -470,7 +468,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<CreateDedicatedIpPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDeliverabilityTestReport
@@ -539,7 +536,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<CreateDeliverabilityTestReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEmailIdentity
@@ -604,7 +600,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<CreateEmailIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfigurationSet
@@ -658,7 +653,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<DeleteConfigurationSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfigurationSetEventDestination
@@ -710,7 +704,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<DeleteConfigurationSetEventDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDedicatedIpPool
@@ -756,7 +749,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<DeleteDedicatedIpPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEmailIdentity
@@ -803,7 +795,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<DeleteEmailIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccount
@@ -844,7 +835,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<GetAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBlacklistReports
@@ -887,7 +877,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<GetBlacklistReportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfigurationSet
@@ -939,7 +928,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<GetConfigurationSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConfigurationSetEventDestinations
@@ -991,7 +979,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<GetConfigurationSetEventDestinationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDedicatedIp
@@ -1036,7 +1023,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<GetDedicatedIpResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDedicatedIps
@@ -1079,7 +1065,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<GetDedicatedIpsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeliverabilityDashboardOptions
@@ -1134,7 +1119,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<GetDeliverabilityDashboardOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeliverabilityTestReport
@@ -1177,7 +1161,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<GetDeliverabilityTestReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDomainDeliverabilityCampaign
@@ -1222,7 +1205,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<GetDomainDeliverabilityCampaignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDomainStatisticsReport
@@ -1266,7 +1248,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<GetDomainStatisticsReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEmailIdentity
@@ -1311,7 +1292,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<GetEmailIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfigurationSets
@@ -1360,7 +1340,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<ListConfigurationSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDedicatedIpPools
@@ -1401,7 +1380,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<ListDedicatedIpPoolsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeliverabilityTestReports
@@ -1446,7 +1424,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<ListDeliverabilityTestReportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomainDeliverabilityCampaigns
@@ -1492,7 +1469,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<ListDomainDeliverabilityCampaignsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEmailIdentities
@@ -1534,7 +1510,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<ListEmailIdentitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1582,7 +1557,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAccountDedicatedIpWarmupAttributes
@@ -1622,7 +1596,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<PutAccountDedicatedIpWarmupAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAccountSendingAttributes
@@ -1662,7 +1635,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<PutAccountSendingAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutConfigurationSetDeliveryOptions
@@ -1706,7 +1678,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<PutConfigurationSetDeliveryOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutConfigurationSetReputationOptions
@@ -1750,7 +1721,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<PutConfigurationSetReputationOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutConfigurationSetSendingOptions
@@ -1794,7 +1764,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<PutConfigurationSetSendingOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutConfigurationSetTrackingOptions
@@ -1838,7 +1807,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<PutConfigurationSetTrackingOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDedicatedIpInPool
@@ -1893,7 +1861,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<PutDedicatedIpInPoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDedicatedIpWarmupAttributes
@@ -1936,7 +1903,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<PutDedicatedIpWarmupAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDeliverabilityDashboardOption
@@ -1996,7 +1962,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<PutDeliverabilityDashboardOptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEmailIdentityDkimAttributes
@@ -2039,7 +2004,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<PutEmailIdentityDkimAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEmailIdentityFeedbackAttributes
@@ -2099,7 +2063,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<PutEmailIdentityFeedbackAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEmailIdentityMailFromAttributes
@@ -2142,7 +2105,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<PutEmailIdentityMailFromAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendEmail
@@ -2218,7 +2180,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<SendEmailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2274,7 +2235,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2320,7 +2280,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfigurationSetEventDestination
@@ -2372,7 +2331,6 @@ namespace Amazon.PinpointEmail
 
             return InvokeAsync<UpdateConfigurationSetEventDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

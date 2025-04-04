@@ -338,7 +338,6 @@ namespace Amazon.ConnectParticipant
 
             return InvokeAsync<CancelParticipantAuthenticationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CompleteAttachmentUpload
@@ -408,7 +407,6 @@ namespace Amazon.ConnectParticipant
 
             return InvokeAsync<CompleteAttachmentUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateParticipantConnection
@@ -509,7 +507,6 @@ namespace Amazon.ConnectParticipant
 
             return InvokeAsync<CreateParticipantConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeView
@@ -564,7 +561,6 @@ namespace Amazon.ConnectParticipant
 
             return InvokeAsync<DescribeViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisconnectParticipant
@@ -625,7 +621,6 @@ namespace Amazon.ConnectParticipant
 
             return InvokeAsync<DisconnectParticipantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAttachment
@@ -687,7 +682,6 @@ namespace Amazon.ConnectParticipant
 
             return InvokeAsync<GetAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAuthenticationUrl
@@ -751,7 +745,6 @@ namespace Amazon.ConnectParticipant
 
             return InvokeAsync<GetAuthenticationUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTranscript
@@ -841,7 +834,6 @@ namespace Amazon.ConnectParticipant
 
             return InvokeAsync<GetTranscriptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendEvent
@@ -917,7 +909,6 @@ namespace Amazon.ConnectParticipant
 
             return InvokeAsync<SendEventResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendMessage
@@ -978,7 +969,6 @@ namespace Amazon.ConnectParticipant
 
             return InvokeAsync<SendMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartAttachmentUpload
@@ -1043,7 +1033,6 @@ namespace Amazon.ConnectParticipant
 
             return InvokeAsync<StartAttachmentUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.PersonalizeEvents
     /// <summary>
     /// Configuration for accessing Amazon PersonalizeEvents service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonPersonalizeEventsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

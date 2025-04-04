@@ -388,7 +388,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<CreateEncoderConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIngestConfiguration
@@ -435,7 +434,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<CreateIngestConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateParticipantToken
@@ -490,7 +488,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<CreateParticipantTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStage
@@ -536,7 +533,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<CreateStageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStorageConfiguration
@@ -594,7 +590,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<CreateStorageConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEncoderConfiguration
@@ -647,7 +642,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<DeleteEncoderConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIngestConfiguration
@@ -698,7 +692,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<DeleteIngestConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePublicKey
@@ -748,7 +741,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<DeletePublicKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStage
@@ -799,7 +791,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<DeleteStageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStorageConfiguration
@@ -859,7 +850,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<DeleteStorageConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisconnectParticipant
@@ -907,7 +897,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<DisconnectParticipantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetComposition
@@ -959,7 +948,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<GetCompositionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEncoderConfiguration
@@ -1011,7 +999,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<GetEncoderConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIngestConfiguration
@@ -1054,7 +1041,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<GetIngestConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetParticipant
@@ -1097,7 +1083,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<GetParticipantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPublicKey
@@ -1140,7 +1125,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<GetPublicKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStage
@@ -1183,7 +1167,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<GetStageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStageSession
@@ -1226,7 +1209,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<GetStageSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStorageConfiguration
@@ -1278,7 +1260,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<GetStorageConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportPublicKey
@@ -1327,7 +1308,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<ImportPublicKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCompositions
@@ -1377,7 +1357,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<ListCompositionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEncoderConfigurations
@@ -1427,7 +1406,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<ListEncoderConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIngestConfigurations
@@ -1468,7 +1446,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<ListIngestConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListParticipantEvents
@@ -1508,7 +1485,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<ListParticipantEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListParticipants
@@ -1548,7 +1524,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<ListParticipantsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPublicKeys
@@ -1589,7 +1564,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<ListPublicKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStages
@@ -1633,7 +1607,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<ListStagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStageSessions
@@ -1673,7 +1646,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<ListStageSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStorageConfigurations
@@ -1723,7 +1695,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<ListStorageConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1766,7 +1737,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartComposition
@@ -1849,7 +1819,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<StartCompositionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopComposition
@@ -1902,7 +1871,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<StopCompositionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1945,7 +1913,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1988,7 +1955,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIngestConfiguration
@@ -2038,7 +2004,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<UpdateIngestConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStage
@@ -2090,7 +2055,6 @@ namespace Amazon.IVSRealTime
 
             return InvokeAsync<UpdateStageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

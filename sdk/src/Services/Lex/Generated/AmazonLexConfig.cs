@@ -30,7 +30,6 @@ namespace Amazon.Lex
     /// <summary>
     /// Configuration for accessing Amazon Lex service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonLexConfig : ClientConfig
     {
         private static readonly string UserAgentString =

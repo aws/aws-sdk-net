@@ -436,7 +436,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<AssociateWebACLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CheckCapacity
@@ -547,7 +546,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<CheckCapacityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAPIKey
@@ -633,7 +631,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<CreateAPIKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIPSet
@@ -724,7 +721,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<CreateIPSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRegexPatternSet
@@ -813,7 +809,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<CreateRegexPatternSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRuleGroup
@@ -927,7 +922,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<CreateRuleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWebACL
@@ -1073,7 +1067,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<CreateWebACLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAPIKey
@@ -1156,7 +1149,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<DeleteAPIKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFirewallManagerRuleGroups
@@ -1240,7 +1232,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<DeleteFirewallManagerRuleGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIPSet
@@ -1328,7 +1319,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<DeleteIPSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLoggingConfiguration
@@ -1405,7 +1395,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<DeleteLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePermissionPolicy
@@ -1479,7 +1468,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<DeletePermissionPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRegexPatternSet
@@ -1567,7 +1555,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<DeleteRegexPatternSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRuleGroup
@@ -1655,7 +1642,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<DeleteRuleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWebACL
@@ -1783,7 +1769,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<DeleteWebACLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAllManagedProducts
@@ -1850,7 +1835,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<DescribeAllManagedProductsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeManagedProductsByVendor
@@ -1916,7 +1900,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<DescribeManagedProductsByVendorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeManagedRuleGroup
@@ -1998,7 +1981,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<DescribeManagedRuleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateWebACL
@@ -2089,7 +2071,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<DisassociateWebACLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateMobileSdkReleaseUrl
@@ -2169,7 +2150,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<GenerateMobileSdkReleaseUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDecryptedAPIKey
@@ -2255,7 +2235,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<GetDecryptedAPIKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIPSet
@@ -2327,7 +2306,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<GetIPSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLoggingConfiguration
@@ -2399,7 +2377,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<GetLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetManagedRuleSet
@@ -2484,7 +2461,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<GetManagedRuleSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMobileSdkRelease
@@ -2565,7 +2541,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<GetMobileSdkReleaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPermissionPolicy
@@ -2639,7 +2614,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<GetPermissionPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRateBasedStatementManagedKeys
@@ -2741,7 +2715,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<GetRateBasedStatementManagedKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRegexPatternSet
@@ -2813,7 +2786,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<GetRegexPatternSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRuleGroup
@@ -2885,7 +2857,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<GetRuleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSampledRequests
@@ -2966,7 +2937,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<GetSampledRequestsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWebACL
@@ -3038,7 +3008,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<GetWebACLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWebACLForResource
@@ -3141,7 +3110,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<GetWebACLForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAPIKeys
@@ -3220,7 +3188,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<ListAPIKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAvailableManagedRuleGroups
@@ -3288,7 +3255,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<ListAvailableManagedRuleGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAvailableManagedRuleGroupVersions
@@ -3360,7 +3326,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<ListAvailableManagedRuleGroupVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIPSets
@@ -3426,7 +3391,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<ListIPSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLoggingConfigurations
@@ -3492,7 +3456,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<ListLoggingConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListManagedRuleSets
@@ -3571,7 +3534,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<ListManagedRuleSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMobileSdkReleases
@@ -3646,7 +3608,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<ListMobileSdkReleasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRegexPatternSets
@@ -3713,7 +3674,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<ListRegexPatternSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourcesForWebACL
@@ -3803,7 +3763,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<ListResourcesForWebACLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRuleGroups
@@ -3870,7 +3829,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<ListRuleGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3960,7 +3918,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWebACLs
@@ -4026,7 +3983,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<ListWebACLsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutLoggingConfiguration
@@ -4196,7 +4152,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<PutLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutManagedRuleSetVersions
@@ -4299,7 +4254,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<PutManagedRuleSetVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutPermissionPolicy
@@ -4433,7 +4387,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<PutPermissionPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -4529,7 +4482,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -4612,7 +4564,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIPSet
@@ -4757,7 +4708,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<UpdateIPSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateManagedRuleSetVersionExpiryDate
@@ -4850,7 +4800,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<UpdateManagedRuleSetVersionExpiryDateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRegexPatternSet
@@ -4995,7 +4944,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<UpdateRegexPatternSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRuleGroup
@@ -5178,7 +5126,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<UpdateRuleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWebACL
@@ -5375,7 +5322,6 @@ namespace Amazon.WAFV2
 
             return InvokeAsync<UpdateWebACLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

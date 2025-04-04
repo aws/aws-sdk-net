@@ -372,7 +372,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<AssociateFirewallRuleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateResolverEndpointIpAddress
@@ -435,7 +434,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<AssociateResolverEndpointIpAddressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateResolverQueryLogConfig
@@ -514,7 +512,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<AssociateResolverQueryLogConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateResolverRule
@@ -575,7 +572,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<AssociateResolverRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFirewallDomainList
@@ -634,7 +630,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<CreateFirewallDomainListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFirewallRule
@@ -695,7 +690,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<CreateFirewallRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFirewallRuleGroup
@@ -753,7 +747,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<CreateFirewallRuleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOutpostResolver
@@ -813,7 +806,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<CreateOutpostResolverResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateResolverEndpoint
@@ -891,7 +883,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<CreateResolverEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateResolverQueryLogConfig
@@ -972,7 +963,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<CreateResolverQueryLogConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateResolverRule
@@ -1042,7 +1032,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<CreateResolverRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFirewallDomainList
@@ -1100,7 +1089,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<DeleteFirewallDomainListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFirewallRule
@@ -1157,7 +1145,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<DeleteFirewallRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFirewallRuleGroup
@@ -1219,7 +1206,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<DeleteFirewallRuleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOutpostResolver
@@ -1281,7 +1267,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<DeleteOutpostResolverResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResolverEndpoint
@@ -1342,7 +1327,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<DeleteResolverEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResolverQueryLogConfig
@@ -1418,7 +1402,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<DeleteResolverQueryLogConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResolverRule
@@ -1469,7 +1452,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<DeleteResolverRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateFirewallRuleGroup
@@ -1532,7 +1514,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<DisassociateFirewallRuleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateResolverEndpointIpAddress
@@ -1592,7 +1573,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<DisassociateResolverEndpointIpAddressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateResolverQueryLogConfig
@@ -1669,7 +1649,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<DisassociateResolverQueryLogConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateResolverRule
@@ -1722,7 +1701,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<DisassociateResolverRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFirewallConfig
@@ -1780,7 +1758,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<GetFirewallConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFirewallDomainList
@@ -1833,7 +1810,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<GetFirewallDomainListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFirewallRuleGroup
@@ -1886,7 +1862,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<GetFirewallRuleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFirewallRuleGroupAssociation
@@ -1941,7 +1916,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<GetFirewallRuleGroupAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFirewallRuleGroupPolicy
@@ -2000,7 +1974,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<GetFirewallRuleGroupPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOutpostResolver
@@ -2058,7 +2031,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<GetOutpostResolverResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResolverConfig
@@ -2119,7 +2091,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<GetResolverConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResolverDnssecConfig
@@ -2178,7 +2149,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<GetResolverDnssecConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResolverEndpoint
@@ -2225,7 +2195,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<GetResolverEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResolverQueryLogConfig
@@ -2286,7 +2255,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<GetResolverQueryLogConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResolverQueryLogConfigAssociation
@@ -2347,7 +2315,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<GetResolverQueryLogConfigAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResolverQueryLogConfigPolicy
@@ -2405,7 +2372,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<GetResolverQueryLogConfigPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResolverRule
@@ -2453,7 +2419,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<GetResolverRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResolverRuleAssociation
@@ -2500,7 +2465,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<GetResolverRuleAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResolverRulePolicy
@@ -2556,7 +2520,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<GetResolverRulePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportFirewallDomains
@@ -2642,7 +2605,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<ImportFirewallDomainsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFirewallConfigs
@@ -2703,7 +2665,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<ListFirewallConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFirewallDomainLists
@@ -2765,7 +2726,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<ListFirewallDomainListsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFirewallDomains
@@ -2829,7 +2789,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<ListFirewallDomainsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFirewallRuleGroupAssociations
@@ -2890,7 +2849,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<ListFirewallRuleGroupAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFirewallRuleGroups
@@ -2951,7 +2909,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<ListFirewallRuleGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFirewallRules
@@ -3016,7 +2973,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<ListFirewallRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOutpostResolvers
@@ -3074,7 +3030,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<ListOutpostResolversResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResolverConfigs
@@ -3138,7 +3093,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<ListResolverConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResolverDnssecConfigs
@@ -3198,7 +3152,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<ListResolverDnssecConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResolverEndpointIpAddresses
@@ -3247,7 +3200,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<ListResolverEndpointIpAddressesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResolverEndpoints
@@ -3297,7 +3249,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<ListResolverEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResolverQueryLogConfigAssociations
@@ -3356,7 +3307,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<ListResolverQueryLogConfigAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResolverQueryLogConfigs
@@ -3417,7 +3367,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<ListResolverQueryLogConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResolverRuleAssociations
@@ -3467,7 +3416,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<ListResolverRuleAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResolverRules
@@ -3516,7 +3464,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<ListResolverRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3568,7 +3515,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutFirewallRuleGroupPolicy
@@ -3627,7 +3573,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<PutFirewallRuleGroupPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResolverQueryLogConfigPolicy
@@ -3688,7 +3633,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<PutResolverQueryLogConfigPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResolverRulePolicy
@@ -3746,7 +3690,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<PutResolverRulePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3801,7 +3744,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3850,7 +3792,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFirewallConfig
@@ -3908,7 +3849,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<UpdateFirewallConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFirewallDomains
@@ -3973,7 +3913,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<UpdateFirewallDomainsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFirewallRule
@@ -4035,7 +3974,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<UpdateFirewallRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFirewallRuleGroupAssociation
@@ -4098,7 +4036,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<UpdateFirewallRuleGroupAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateOutpostResolver
@@ -4164,7 +4101,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<UpdateOutpostResolverResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResolverConfig
@@ -4234,7 +4170,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<UpdateResolverConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResolverDnssecConfig
@@ -4294,7 +4229,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<UpdateResolverDnssecConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResolverEndpoint
@@ -4355,7 +4289,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<UpdateResolverEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResolverRule
@@ -4422,7 +4355,6 @@ namespace Amazon.Route53Resolver
 
             return InvokeAsync<UpdateResolverRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

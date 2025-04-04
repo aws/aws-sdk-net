@@ -30,7 +30,6 @@ namespace Amazon.Macie2
     /// <summary>
     /// Configuration for accessing Amazon Macie2 service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMacie2Config : ClientConfig
     {
         private static readonly string UserAgentString =

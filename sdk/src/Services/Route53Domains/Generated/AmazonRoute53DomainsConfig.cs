@@ -30,7 +30,6 @@ namespace Amazon.Route53Domains
     /// <summary>
     /// Configuration for accessing Amazon Route53Domains service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonRoute53DomainsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

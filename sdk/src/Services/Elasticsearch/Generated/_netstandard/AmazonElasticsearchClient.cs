@@ -324,7 +324,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<AcceptInboundCrossClusterSearchConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddTags
@@ -374,7 +373,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<AddTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociatePackage
@@ -430,7 +428,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<AssociatePackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AuthorizeVpcEndpointAccess
@@ -487,7 +484,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<AuthorizeVpcEndpointAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelDomainConfigChange
@@ -539,7 +535,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<CancelDomainConfigChangeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelElasticsearchServiceSoftwareUpdate
@@ -589,7 +584,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<CancelElasticsearchServiceSoftwareUpdateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateElasticsearchDomain
@@ -651,7 +645,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<CreateElasticsearchDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOutboundCrossClusterSearchConnection
@@ -702,7 +695,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<CreateOutboundCrossClusterSearchConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePackage
@@ -762,7 +754,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<CreatePackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVpcEndpoint
@@ -818,7 +809,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<CreateVpcEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteElasticsearchDomain
@@ -867,7 +857,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<DeleteElasticsearchDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteElasticsearchServiceRole
@@ -915,7 +904,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<DeleteElasticsearchServiceRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInboundCrossClusterSearchConnection
@@ -958,7 +946,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<DeleteInboundCrossClusterSearchConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOutboundCrossClusterSearchConnection
@@ -1001,7 +988,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<DeleteOutboundCrossClusterSearchConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePackage
@@ -1057,7 +1043,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<DeletePackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVpcEndpoint
@@ -1106,7 +1091,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<DeleteVpcEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDomainAutoTunes
@@ -1155,7 +1139,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<DescribeDomainAutoTunesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDomainChangeProgress
@@ -1204,7 +1187,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<DescribeDomainChangeProgressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeElasticsearchDomain
@@ -1253,7 +1235,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<DescribeElasticsearchDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeElasticsearchDomainConfig
@@ -1302,7 +1283,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<DescribeElasticsearchDomainConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeElasticsearchDomains
@@ -1347,7 +1327,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<DescribeElasticsearchDomainsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeElasticsearchInstanceTypeLimits
@@ -1405,7 +1384,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<DescribeElasticsearchInstanceTypeLimitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInboundCrossClusterSearchConnections
@@ -1447,7 +1425,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<DescribeInboundCrossClusterSearchConnectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOutboundCrossClusterSearchConnections
@@ -1489,7 +1466,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<DescribeOutboundCrossClusterSearchConnectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePackages
@@ -1542,7 +1518,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<DescribePackagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReservedElasticsearchInstanceOfferings
@@ -1591,7 +1566,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<DescribeReservedElasticsearchInstanceOfferingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReservedElasticsearchInstances
@@ -1640,7 +1614,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<DescribeReservedElasticsearchInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVpcEndpoints
@@ -1688,7 +1661,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<DescribeVpcEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DissociatePackage
@@ -1744,7 +1716,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<DissociatePackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCompatibleElasticsearchVersions
@@ -1798,7 +1769,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<GetCompatibleElasticsearchVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPackageVersionHistory
@@ -1851,7 +1821,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<GetPackageVersionHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUpgradeHistory
@@ -1904,7 +1873,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<GetUpgradeHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUpgradeStatus
@@ -1957,7 +1925,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<GetUpgradeStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomainNames
@@ -1997,7 +1964,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<ListDomainNamesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomainsForPackage
@@ -2049,7 +2015,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<ListDomainsForPackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListElasticsearchInstanceTypes
@@ -2097,7 +2062,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<ListElasticsearchInstanceTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListElasticsearchVersions
@@ -2145,7 +2109,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<ListElasticsearchVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPackagesForDomain
@@ -2197,7 +2160,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<ListPackagesForDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTags
@@ -2245,7 +2207,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<ListTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVpcEndpointAccess
@@ -2295,7 +2256,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<ListVpcEndpointAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVpcEndpoints
@@ -2341,7 +2301,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<ListVpcEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVpcEndpointsForDomain
@@ -2391,7 +2350,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<ListVpcEndpointsForDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PurchaseReservedElasticsearchInstanceOffering
@@ -2448,7 +2406,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<PurchaseReservedElasticsearchInstanceOfferingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectInboundCrossClusterSearchConnection
@@ -2491,7 +2448,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<RejectInboundCrossClusterSearchConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTags
@@ -2535,7 +2491,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<RemoveTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RevokeVpcEndpointAccess
@@ -2588,7 +2543,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<RevokeVpcEndpointAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartElasticsearchServiceSoftwareUpdate
@@ -2636,7 +2590,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<StartElasticsearchServiceSoftwareUpdateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateElasticsearchDomainConfig
@@ -2693,7 +2646,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<UpdateElasticsearchDomainConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePackage
@@ -2749,7 +2701,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<UpdatePackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVpcEndpoint
@@ -2805,7 +2756,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<UpdateVpcEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpgradeElasticsearchDomain
@@ -2862,7 +2812,6 @@ namespace Amazon.Elasticsearch
 
             return InvokeAsync<UpgradeElasticsearchDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

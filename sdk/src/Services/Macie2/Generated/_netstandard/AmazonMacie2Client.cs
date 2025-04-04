@@ -321,7 +321,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<AcceptInvitationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetCustomDataIdentifiers
@@ -382,7 +381,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<BatchGetCustomDataIdentifiersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchUpdateAutomatedDiscoveryAccounts
@@ -435,7 +433,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<BatchUpdateAutomatedDiscoveryAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAllowList
@@ -496,7 +493,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<CreateAllowListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateClassificationJob
@@ -557,7 +553,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<CreateClassificationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCustomDataIdentifier
@@ -618,7 +613,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<CreateCustomDataIdentifierResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFindingsFilter
@@ -679,7 +673,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<CreateFindingsFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInvitations
@@ -740,7 +733,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<CreateInvitationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMember
@@ -801,7 +793,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<CreateMemberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSampleFindings
@@ -862,7 +853,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<CreateSampleFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeclineInvitations
@@ -923,7 +913,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<DeclineInvitationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAllowList
@@ -976,7 +965,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<DeleteAllowListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCustomDataIdentifier
@@ -1037,7 +1025,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<DeleteCustomDataIdentifierResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFindingsFilter
@@ -1098,7 +1085,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<DeleteFindingsFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInvitations
@@ -1159,7 +1145,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<DeleteInvitationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMember
@@ -1220,7 +1205,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<DeleteMemberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBuckets
@@ -1282,7 +1266,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<DescribeBucketsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClassificationJob
@@ -1343,7 +1326,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<DescribeClassificationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOrganizationConfiguration
@@ -1404,7 +1386,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<DescribeOrganizationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableMacie
@@ -1465,7 +1446,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<DisableMacieResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableOrganizationAdminAccount
@@ -1527,7 +1507,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<DisableOrganizationAdminAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateFromAdministratorAccount
@@ -1588,7 +1567,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<DisassociateFromAdministratorAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateFromMasterAccount
@@ -1651,7 +1629,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<DisassociateFromMasterAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateMember
@@ -1712,7 +1689,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<DisassociateMemberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableMacie
@@ -1773,7 +1749,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<EnableMacieResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableOrganizationAdminAccount
@@ -1835,7 +1810,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<EnableOrganizationAdminAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAdministratorAccount
@@ -1896,7 +1870,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetAdministratorAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAllowList
@@ -1949,7 +1922,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetAllowListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAutomatedDiscoveryConfiguration
@@ -1999,7 +1971,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetAutomatedDiscoveryConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucketStatistics
@@ -2061,7 +2032,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetBucketStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetClassificationExportConfiguration
@@ -2122,7 +2092,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetClassificationExportConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetClassificationScope
@@ -2175,7 +2144,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetClassificationScopeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCustomDataIdentifier
@@ -2236,7 +2204,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetCustomDataIdentifierResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFindings
@@ -2297,7 +2264,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFindingsFilter
@@ -2358,7 +2324,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetFindingsFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFindingsPublicationConfiguration
@@ -2419,7 +2384,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetFindingsPublicationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFindingStatistics
@@ -2480,7 +2444,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetFindingStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInvitationsCount
@@ -2542,7 +2505,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetInvitationsCountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMacieSession
@@ -2603,7 +2565,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetMacieSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMasterAccount
@@ -2666,7 +2627,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetMasterAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMember
@@ -2728,7 +2688,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetMemberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceProfile
@@ -2786,7 +2745,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetResourceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRevealConfiguration
@@ -2836,7 +2794,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetRevealConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSensitiveDataOccurrences
@@ -2893,7 +2850,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetSensitiveDataOccurrencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSensitiveDataOccurrencesAvailability
@@ -2943,7 +2899,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetSensitiveDataOccurrencesAvailabilityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSensitivityInspectionTemplate
@@ -2996,7 +2951,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetSensitivityInspectionTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUsageStatistics
@@ -3057,7 +3011,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetUsageStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUsageTotals
@@ -3118,7 +3071,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<GetUsageTotalsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAllowLists
@@ -3167,7 +3119,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<ListAllowListsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAutomatedDiscoveryAccounts
@@ -3220,7 +3171,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<ListAutomatedDiscoveryAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClassificationJobs
@@ -3281,7 +3231,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<ListClassificationJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClassificationScopes
@@ -3330,7 +3279,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<ListClassificationScopesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCustomDataIdentifiers
@@ -3391,7 +3339,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<ListCustomDataIdentifiersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFindings
@@ -3452,7 +3399,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<ListFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFindingsFilters
@@ -3513,7 +3459,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<ListFindingsFiltersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInvitations
@@ -3575,7 +3520,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<ListInvitationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListManagedDataIdentifiers
@@ -3610,7 +3554,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<ListManagedDataIdentifiersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMembers
@@ -3672,7 +3615,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<ListMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOrganizationAdminAccounts
@@ -3734,7 +3676,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<ListOrganizationAdminAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceProfileArtifacts
@@ -3788,7 +3729,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<ListResourceProfileArtifactsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceProfileDetections
@@ -3846,7 +3786,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<ListResourceProfileDetectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSensitivityInspectionTemplates
@@ -3900,7 +3839,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<ListSensitivityInspectionTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3934,7 +3872,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutClassificationExportConfiguration
@@ -3995,7 +3932,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<PutClassificationExportConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutFindingsPublicationConfiguration
@@ -4056,7 +3992,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<PutFindingsPublicationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchResources
@@ -4118,7 +4053,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<SearchResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -4153,7 +4087,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestCustomDataIdentifier
@@ -4214,7 +4147,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<TestCustomDataIdentifierResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -4248,7 +4180,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAllowList
@@ -4301,7 +4232,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<UpdateAllowListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAutomatedDiscoveryConfiguration
@@ -4351,7 +4281,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<UpdateAutomatedDiscoveryConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateClassificationJob
@@ -4412,7 +4341,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<UpdateClassificationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateClassificationScope
@@ -4465,7 +4393,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<UpdateClassificationScopeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFindingsFilter
@@ -4526,7 +4453,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<UpdateFindingsFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMacieSession
@@ -4588,7 +4514,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<UpdateMacieSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMemberSession
@@ -4649,7 +4574,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<UpdateMemberSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateOrganizationConfiguration
@@ -4710,7 +4634,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<UpdateOrganizationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResourceProfile
@@ -4767,7 +4690,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<UpdateResourceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResourceProfileDetections
@@ -4824,7 +4746,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<UpdateResourceProfileDetectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRevealConfiguration
@@ -4874,7 +4795,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<UpdateRevealConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSensitivityInspectionTemplate
@@ -4927,7 +4847,6 @@ namespace Amazon.Macie2
 
             return InvokeAsync<UpdateSensitivityInspectionTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

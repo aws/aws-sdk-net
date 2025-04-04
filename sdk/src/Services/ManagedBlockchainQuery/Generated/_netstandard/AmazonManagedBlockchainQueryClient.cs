@@ -330,7 +330,6 @@ namespace Amazon.ManagedBlockchainQuery
 
             return InvokeAsync<BatchGetTokenBalanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAssetContract
@@ -396,7 +395,6 @@ namespace Amazon.ManagedBlockchainQuery
 
             return InvokeAsync<GetAssetContractResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTokenBalance
@@ -459,7 +457,6 @@ namespace Amazon.ManagedBlockchainQuery
 
             return InvokeAsync<GetTokenBalanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTransaction
@@ -522,7 +519,6 @@ namespace Amazon.ManagedBlockchainQuery
 
             return InvokeAsync<GetTransactionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssetContracts
@@ -580,7 +576,6 @@ namespace Amazon.ManagedBlockchainQuery
 
             return InvokeAsync<ListAssetContractsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFilteredTransactionEvents
@@ -638,7 +633,6 @@ namespace Amazon.ManagedBlockchainQuery
 
             return InvokeAsync<ListFilteredTransactionEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTokenBalances
@@ -710,7 +704,6 @@ namespace Amazon.ManagedBlockchainQuery
 
             return InvokeAsync<ListTokenBalancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTransactionEvents
@@ -770,7 +763,6 @@ namespace Amazon.ManagedBlockchainQuery
 
             return InvokeAsync<ListTransactionEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTransactions
@@ -822,7 +814,6 @@ namespace Amazon.ManagedBlockchainQuery
 
             return InvokeAsync<ListTransactionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

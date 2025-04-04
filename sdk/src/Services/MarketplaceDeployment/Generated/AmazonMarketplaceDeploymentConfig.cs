@@ -30,7 +30,6 @@ namespace Amazon.MarketplaceDeployment
     /// <summary>
     /// Configuration for accessing Amazon MarketplaceDeployment service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMarketplaceDeploymentConfig : ClientConfig
     {
         private static readonly string UserAgentString =

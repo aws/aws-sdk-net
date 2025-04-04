@@ -309,7 +309,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<CreateCellResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCrossAccountAuthorization
@@ -360,7 +359,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<CreateCrossAccountAuthorizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateReadinessCheck
@@ -412,7 +410,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<CreateReadinessCheckResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRecoveryGroup
@@ -462,7 +459,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<CreateRecoveryGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateResourceSet
@@ -513,7 +509,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<CreateResourceSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCell
@@ -562,7 +557,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<DeleteCellResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCrossAccountAuthorization
@@ -608,7 +602,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<DeleteCrossAccountAuthorizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReadinessCheck
@@ -657,7 +650,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<DeleteReadinessCheckResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRecoveryGroup
@@ -706,7 +698,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<DeleteRecoveryGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourceSet
@@ -755,7 +746,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<DeleteResourceSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetArchitectureRecommendations
@@ -805,7 +795,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<GetArchitectureRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCell
@@ -856,7 +845,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<GetCellResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCellReadinessSummary
@@ -906,7 +894,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<GetCellReadinessSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReadinessCheck
@@ -955,7 +942,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<GetReadinessCheckResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReadinessCheckResourceStatus
@@ -1006,7 +992,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<GetReadinessCheckResourceStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReadinessCheckStatus
@@ -1057,7 +1042,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<GetReadinessCheckStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRecoveryGroup
@@ -1107,7 +1091,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<GetRecoveryGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRecoveryGroupReadinessSummary
@@ -1158,7 +1141,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<GetRecoveryGroupReadinessSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceSet
@@ -1208,7 +1190,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<GetResourceSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCells
@@ -1254,7 +1235,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<ListCellsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCrossAccountAuthorizations
@@ -1300,7 +1280,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<ListCrossAccountAuthorizationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReadinessChecks
@@ -1346,7 +1325,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<ListReadinessChecksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecoveryGroups
@@ -1392,7 +1370,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<ListRecoveryGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceSets
@@ -1438,7 +1415,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<ListResourceSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRules
@@ -1484,7 +1460,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<ListRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResources
@@ -1527,7 +1502,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<ListTagsForResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1570,7 +1544,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1613,7 +1586,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCell
@@ -1662,7 +1634,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<UpdateCellResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateReadinessCheck
@@ -1711,7 +1682,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<UpdateReadinessCheckResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRecoveryGroup
@@ -1760,7 +1730,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<UpdateRecoveryGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResourceSet
@@ -1809,7 +1778,6 @@ namespace Amazon.Route53RecoveryReadiness
 
             return InvokeAsync<UpdateResourceSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

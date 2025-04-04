@@ -316,7 +316,6 @@ namespace Amazon.Scheduler
 
             return InvokeAsync<CreateScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateScheduleGroup
@@ -365,7 +364,6 @@ namespace Amazon.Scheduler
 
             return InvokeAsync<CreateScheduleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSchedule
@@ -414,7 +412,6 @@ namespace Amazon.Scheduler
 
             return InvokeAsync<DeleteScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteScheduleGroup
@@ -474,7 +471,6 @@ namespace Amazon.Scheduler
 
             return InvokeAsync<DeleteScheduleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSchedule
@@ -520,7 +516,6 @@ namespace Amazon.Scheduler
 
             return InvokeAsync<GetScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetScheduleGroup
@@ -566,7 +561,6 @@ namespace Amazon.Scheduler
 
             return InvokeAsync<GetScheduleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListScheduleGroups
@@ -609,7 +603,6 @@ namespace Amazon.Scheduler
 
             return InvokeAsync<ListScheduleGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSchedules
@@ -655,7 +648,6 @@ namespace Amazon.Scheduler
 
             return InvokeAsync<ListSchedulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -701,7 +693,6 @@ namespace Amazon.Scheduler
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -751,7 +742,6 @@ namespace Amazon.Scheduler
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -800,7 +790,6 @@ namespace Amazon.Scheduler
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSchedule
@@ -860,7 +849,6 @@ namespace Amazon.Scheduler
 
             return InvokeAsync<UpdateScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

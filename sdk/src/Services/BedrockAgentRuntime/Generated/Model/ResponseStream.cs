@@ -38,8 +38,8 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// The response from invoking the agent and associated citations and trace information.
     /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "ResponseStreamCollection is not descriptive")]
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose.")]
-    public sealed class ResponseStream : EnumerableEventStream<IEventStreamEvent, BedrockAgentRuntimeEventStreamException>
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventOutputStream. Users need to be able to call Dispose.")]
+    public sealed class ResponseStream : EnumerableEventOutputStream<IEventStreamEvent, BedrockAgentRuntimeEventStreamException>
     {
         /// <summary>
         ///The mapping of event message to a generator function to construct the matching EventStream event

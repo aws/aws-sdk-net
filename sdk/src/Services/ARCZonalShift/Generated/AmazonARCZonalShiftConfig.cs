@@ -30,7 +30,6 @@ namespace Amazon.ARCZonalShift
     /// <summary>
     /// Configuration for accessing Amazon ARCZonalShift service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonARCZonalShiftConfig : ClientConfig
     {
         private static readonly string UserAgentString =

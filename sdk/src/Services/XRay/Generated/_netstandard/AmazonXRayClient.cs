@@ -311,7 +311,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<BatchGetTracesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelTraceRetrieval
@@ -357,7 +356,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<CancelTraceRetrievalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGroup
@@ -397,7 +395,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<CreateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSamplingRule
@@ -446,7 +443,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<CreateSamplingRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGroup
@@ -486,7 +482,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<DeleteGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -531,7 +526,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSamplingRule
@@ -571,7 +565,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<DeleteSamplingRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEncryptionConfig
@@ -611,7 +604,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<GetEncryptionConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGroup
@@ -651,7 +643,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<GetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGroups
@@ -691,7 +682,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<GetGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIndexingRules
@@ -739,7 +729,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<GetIndexingRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInsight
@@ -781,7 +770,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<GetInsightResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInsightEvents
@@ -823,7 +811,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<GetInsightEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInsightImpactGraph
@@ -865,7 +852,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<GetInsightImpactGraphResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInsightSummaries
@@ -906,7 +892,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<GetInsightSummariesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRetrievedTracesGraph
@@ -976,7 +961,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<GetRetrievedTracesGraphResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSamplingRules
@@ -1016,7 +1000,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<GetSamplingRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSamplingStatisticSummaries
@@ -1056,7 +1039,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<GetSamplingStatisticSummariesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSamplingTargets
@@ -1096,7 +1078,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<GetSamplingTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceGraph
@@ -1140,7 +1121,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<GetServiceGraphResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTimeSeriesServiceStatistics
@@ -1180,7 +1160,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<GetTimeSeriesServiceStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTraceGraph
@@ -1220,7 +1199,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<GetTraceGraphResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTraceSegmentDestination
@@ -1263,7 +1241,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<GetTraceSegmentDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTraceSummaries
@@ -1330,7 +1307,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<GetTraceSummariesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourcePolicies
@@ -1370,7 +1346,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<ListResourcePoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRetrievedTraces
@@ -1441,7 +1416,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<ListRetrievedTracesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1486,7 +1460,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEncryptionConfig
@@ -1526,7 +1499,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<PutEncryptionConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -1586,7 +1558,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutTelemetryRecords
@@ -1626,7 +1597,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<PutTelemetryRecordsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutTraceSegments
@@ -1746,7 +1716,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<PutTraceSegmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartTraceRetrieval
@@ -1812,7 +1781,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<StartTraceRetrievalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1859,7 +1827,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1904,7 +1871,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGroup
@@ -1944,7 +1910,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<UpdateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIndexingRule
@@ -1995,7 +1960,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<UpdateIndexingRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSamplingRule
@@ -2035,7 +1999,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<UpdateSamplingRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTraceSegmentDestination
@@ -2078,7 +2041,6 @@ namespace Amazon.XRay
 
             return InvokeAsync<UpdateTraceSegmentDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

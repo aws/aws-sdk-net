@@ -317,7 +317,6 @@ namespace Amazon.ObservabilityAdmin
 
             return InvokeAsync<GetTelemetryEvaluationStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTelemetryEvaluationStatusForOrganization
@@ -366,7 +365,6 @@ namespace Amazon.ObservabilityAdmin
 
             return InvokeAsync<GetTelemetryEvaluationStatusForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceTelemetry
@@ -415,7 +413,6 @@ namespace Amazon.ObservabilityAdmin
 
             return InvokeAsync<ListResourceTelemetryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourceTelemetryForOrganization
@@ -463,7 +460,6 @@ namespace Amazon.ObservabilityAdmin
 
             return InvokeAsync<ListResourceTelemetryForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartTelemetryEvaluation
@@ -511,7 +507,6 @@ namespace Amazon.ObservabilityAdmin
 
             return InvokeAsync<StartTelemetryEvaluationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartTelemetryEvaluationForOrganization
@@ -559,7 +554,6 @@ namespace Amazon.ObservabilityAdmin
 
             return InvokeAsync<StartTelemetryEvaluationForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopTelemetryEvaluation
@@ -606,7 +600,6 @@ namespace Amazon.ObservabilityAdmin
 
             return InvokeAsync<StopTelemetryEvaluationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopTelemetryEvaluationForOrganization
@@ -654,7 +647,6 @@ namespace Amazon.ObservabilityAdmin
 
             return InvokeAsync<StopTelemetryEvaluationForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

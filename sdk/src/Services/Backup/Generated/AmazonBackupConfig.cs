@@ -30,7 +30,6 @@ namespace Amazon.Backup
     /// <summary>
     /// Configuration for accessing Amazon Backup service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonBackupConfig : ClientConfig
     {
         private static readonly string UserAgentString =

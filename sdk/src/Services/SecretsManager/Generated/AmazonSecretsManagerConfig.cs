@@ -30,7 +30,6 @@ namespace Amazon.SecretsManager
     /// <summary>
     /// Configuration for accessing Amazon SecretsManager service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSecretsManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -350,7 +350,6 @@ namespace Amazon.AugmentedAIRuntime
 
             return InvokeAsync<DeleteHumanLoopResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeHumanLoop
@@ -398,7 +397,6 @@ namespace Amazon.AugmentedAIRuntime
 
             return InvokeAsync<DescribeHumanLoopResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHumanLoops
@@ -446,7 +444,6 @@ namespace Amazon.AugmentedAIRuntime
 
             return InvokeAsync<ListHumanLoopsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartHumanLoop
@@ -502,7 +499,6 @@ namespace Amazon.AugmentedAIRuntime
 
             return InvokeAsync<StartHumanLoopResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopHumanLoop
@@ -549,7 +545,6 @@ namespace Amazon.AugmentedAIRuntime
 
             return InvokeAsync<StopHumanLoopResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

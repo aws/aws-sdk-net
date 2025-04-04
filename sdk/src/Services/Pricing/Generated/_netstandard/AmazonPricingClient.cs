@@ -354,7 +354,6 @@ namespace Amazon.Pricing
 
             return InvokeAsync<DescribeServicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAttributeValues
@@ -409,7 +408,6 @@ namespace Amazon.Pricing
 
             return InvokeAsync<GetAttributeValuesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPriceListFileUrl
@@ -472,7 +470,6 @@ namespace Amazon.Pricing
 
             return InvokeAsync<GetPriceListFileUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProducts
@@ -524,7 +521,6 @@ namespace Amazon.Pricing
 
             return InvokeAsync<GetProductsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPriceLists
@@ -597,7 +593,6 @@ namespace Amazon.Pricing
 
             return InvokeAsync<ListPriceListsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

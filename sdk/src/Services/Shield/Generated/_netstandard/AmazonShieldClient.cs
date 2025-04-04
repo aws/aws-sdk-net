@@ -343,7 +343,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<AssociateDRTLogBucketResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateDRTRole
@@ -442,7 +441,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<AssociateDRTRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateHealthCheck
@@ -508,7 +506,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<AssociateHealthCheckResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateProactiveEngagementDetails
@@ -582,7 +579,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<AssociateProactiveEngagementDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProtection
@@ -660,7 +656,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<CreateProtectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProtectionGroup
@@ -718,7 +713,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<CreateProtectionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSubscription
@@ -773,7 +767,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<CreateSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProtection
@@ -819,7 +812,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<DeleteProtectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProtectionGroup
@@ -865,7 +857,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<DeleteProtectionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSubscription
@@ -916,7 +907,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<DeleteSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAttack
@@ -958,7 +948,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<DescribeAttackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAttackStatistics
@@ -1011,7 +1000,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<DescribeAttackStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDRTAccess
@@ -1055,7 +1043,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<DescribeDRTAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEmergencyContactSettings
@@ -1099,7 +1086,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<DescribeEmergencyContactSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProtection
@@ -1145,7 +1131,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<DescribeProtectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProtectionGroup
@@ -1187,7 +1172,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<DescribeProtectionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSubscription
@@ -1229,7 +1213,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<DescribeSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableApplicationLayerAutomaticResponse
@@ -1284,7 +1267,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<DisableApplicationLayerAutomaticResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableProactiveEngagement
@@ -1338,7 +1320,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<DisableProactiveEngagementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateDRTLogBucket
@@ -1397,7 +1378,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<DisassociateDRTLogBucketResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateDRTRole
@@ -1446,7 +1426,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<DisassociateDRTRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateHealthCheck
@@ -1510,7 +1489,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<DisassociateHealthCheckResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableApplicationLayerAutomaticResponse
@@ -1597,7 +1575,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<EnableApplicationLayerAutomaticResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableProactiveEngagement
@@ -1651,7 +1628,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<EnableProactiveEngagementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSubscriptionState
@@ -1689,7 +1665,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<GetSubscriptionStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAttacks
@@ -1734,7 +1709,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<ListAttacksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProtectionGroups
@@ -1783,7 +1757,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<ListProtectionGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProtections
@@ -1832,7 +1805,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<ListProtectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourcesInProtectionGroup
@@ -1879,7 +1851,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<ListResourcesInProtectionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1926,7 +1897,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1976,7 +1946,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2026,7 +1995,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplicationLayerAutomaticResponse
@@ -2080,7 +2048,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<UpdateApplicationLayerAutomaticResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEmergencyContactSettings
@@ -2132,7 +2099,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<UpdateEmergencyContactSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProtectionGroup
@@ -2184,7 +2150,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<UpdateProtectionGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSubscription
@@ -2249,7 +2214,6 @@ namespace Amazon.Shield
 
             return InvokeAsync<UpdateSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

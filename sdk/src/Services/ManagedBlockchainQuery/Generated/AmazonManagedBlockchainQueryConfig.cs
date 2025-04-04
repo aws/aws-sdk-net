@@ -30,7 +30,6 @@ namespace Amazon.ManagedBlockchainQuery
     /// <summary>
     /// Configuration for accessing Amazon ManagedBlockchainQuery service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonManagedBlockchainQueryConfig : ClientConfig
     {
         private static readonly string UserAgentString =

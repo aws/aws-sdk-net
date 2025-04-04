@@ -739,7 +739,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<AssociateFacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CompareFaces
@@ -881,7 +880,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<CompareFacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyProjectVersion
@@ -995,7 +993,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<CopyProjectVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCollection
@@ -1077,7 +1074,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<CreateCollectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataset
@@ -1186,7 +1182,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<CreateDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFaceLivenessSession
@@ -1253,7 +1248,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<CreateFaceLivenessSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProject
@@ -1319,7 +1313,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<CreateProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProjectVersion
@@ -1428,7 +1421,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<CreateProjectVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStreamProcessor
@@ -1534,7 +1526,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<CreateStreamProcessorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUser
@@ -1611,7 +1602,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<CreateUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCollection
@@ -1673,7 +1663,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<DeleteCollectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataset
@@ -1757,7 +1746,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<DeleteDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFaces
@@ -1818,7 +1806,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<DeleteFacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProject
@@ -1890,7 +1877,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<DeleteProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProjectPolicy
@@ -1964,7 +1950,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<DeleteProjectPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProjectVersion
@@ -2035,7 +2020,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<DeleteProjectVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStreamProcessor
@@ -2095,7 +2079,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<DeleteStreamProcessorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUser
@@ -2161,7 +2144,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCollection
@@ -2223,7 +2205,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<DescribeCollectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataset
@@ -2291,7 +2272,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<DescribeDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProjects
@@ -2351,7 +2331,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<DescribeProjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProjectVersions
@@ -2416,7 +2395,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<DescribeProjectVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStreamProcessor
@@ -2472,7 +2450,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<DescribeStreamProcessorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectCustomLabels
@@ -2609,7 +2586,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<DetectCustomLabelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectFaces
@@ -2702,7 +2678,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<DetectFacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectLabels
@@ -2931,7 +2906,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<DetectLabelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectModerationLabels
@@ -3028,7 +3002,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<DetectModerationLabelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectProtectiveEquipment
@@ -3149,7 +3122,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<DetectProtectiveEquipmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectText
@@ -3254,7 +3226,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<DetectTextResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateFaces
@@ -3323,7 +3294,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<DisassociateFacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DistributeDatasetEntries
@@ -3410,7 +3380,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<DistributeDatasetEntriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCelebrityInfo
@@ -3477,7 +3446,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<GetCelebrityInfoResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCelebrityRecognition
@@ -3599,7 +3567,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<GetCelebrityRecognitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContentModeration
@@ -3703,7 +3670,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<GetContentModerationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFaceDetection
@@ -3790,7 +3756,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<GetFaceDetectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFaceLivenessSessionResults
@@ -3855,7 +3820,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<GetFaceLivenessSessionResultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFaceSearch
@@ -3952,7 +3916,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<GetFaceSearchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLabelDetection
@@ -4108,7 +4071,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<GetLabelDetectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMediaAnalysisJob
@@ -4163,7 +4125,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<GetMediaAnalysisJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPersonTracking
@@ -4265,7 +4226,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<GetPersonTrackingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSegmentDetection
@@ -4363,7 +4323,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<GetSegmentDetectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTextDetection
@@ -4453,7 +4412,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<GetTextDetectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  IndexFaces
@@ -4668,7 +4626,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<IndexFacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCollections
@@ -4737,7 +4694,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<ListCollectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatasetEntries
@@ -4828,7 +4784,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<ListDatasetEntriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatasetLabels
@@ -4907,7 +4862,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<ListDatasetLabelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFaces
@@ -4972,7 +4926,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<ListFacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMediaAnalysisJobs
@@ -5027,7 +4980,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<ListMediaAnalysisJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProjectPolicies
@@ -5101,7 +5053,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<ListProjectPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStreamProcessors
@@ -5155,7 +5106,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<ListStreamProcessorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -5216,7 +5166,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUsers
@@ -5277,7 +5226,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<ListUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutProjectPolicy
@@ -5389,7 +5337,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<PutProjectPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RecognizeCelebrities
@@ -5492,7 +5439,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<RecognizeCelebritiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchFaces
@@ -5573,7 +5519,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<SearchFacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchFacesByImage
@@ -5698,7 +5643,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<SearchFacesByImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchUsers
@@ -5756,7 +5700,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<SearchUsersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchUsersByImage
@@ -5836,7 +5779,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<SearchUsersByImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartCelebrityRecognition
@@ -5923,7 +5865,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<StartCelebrityRecognitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartContentModeration
@@ -6013,7 +5954,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<StartContentModerationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartFaceDetection
@@ -6098,7 +6038,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<StartFaceDetectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartFaceSearch
@@ -6184,7 +6123,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<StartFaceSearchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartLabelDetection
@@ -6292,7 +6230,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<StartLabelDetectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMediaAnalysisJob
@@ -6368,7 +6305,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<StartMediaAnalysisJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartPersonTracking
@@ -6452,7 +6388,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<StartPersonTrackingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartProjectVersion
@@ -6537,7 +6472,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<StartProjectVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSegmentDetection
@@ -6634,7 +6568,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<StartSegmentDetectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartStreamProcessor
@@ -6700,7 +6633,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<StartStreamProcessorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartTextDetection
@@ -6784,7 +6716,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<StartTextDetectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopProjectVersion
@@ -6855,7 +6786,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<StopProjectVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopStreamProcessor
@@ -6912,7 +6842,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<StopStreamProcessorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -6978,7 +6907,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -7039,7 +6967,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDatasetEntries
@@ -7147,7 +7074,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<UpdateDatasetEntriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStreamProcessor
@@ -7205,7 +7131,6 @@ namespace Amazon.Rekognition
 
             return InvokeAsync<UpdateStreamProcessorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

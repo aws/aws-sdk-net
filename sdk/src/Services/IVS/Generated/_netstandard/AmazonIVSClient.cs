@@ -464,7 +464,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<BatchGetChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetStreamKey
@@ -498,7 +497,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<BatchGetStreamKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchStartViewerSessionRevocation
@@ -545,7 +543,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<BatchStartViewerSessionRevocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateChannel
@@ -594,7 +591,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<CreateChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePlaybackRestrictionPolicy
@@ -644,7 +640,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<CreatePlaybackRestrictionPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRecordingConfiguration
@@ -712,7 +707,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<CreateRecordingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStreamKey
@@ -769,7 +763,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<CreateStreamKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteChannel
@@ -827,7 +820,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<DeleteChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePlaybackKeyPair
@@ -875,7 +867,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<DeletePlaybackKeyPairResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePlaybackRestrictionPolicy
@@ -924,7 +915,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<DeletePlaybackRestrictionPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRecordingConfiguration
@@ -981,7 +971,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<DeleteRecordingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStreamKey
@@ -1027,7 +1016,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<DeleteStreamKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetChannel
@@ -1070,7 +1058,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<GetChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPlaybackKeyPair
@@ -1117,7 +1104,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<GetPlaybackKeyPairResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPlaybackRestrictionPolicy
@@ -1163,7 +1149,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<GetPlaybackRestrictionPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRecordingConfiguration
@@ -1209,7 +1194,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<GetRecordingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStream
@@ -1255,7 +1239,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<GetStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStreamKey
@@ -1298,7 +1281,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<GetStreamKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetStreamSession
@@ -1341,7 +1323,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<GetStreamSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportPlaybackKeyPair
@@ -1393,7 +1374,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<ImportPlaybackKeyPairResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChannels
@@ -1439,7 +1419,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<ListChannelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPlaybackKeyPairs
@@ -1480,7 +1459,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<ListPlaybackKeyPairsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPlaybackRestrictionPolicies
@@ -1526,7 +1504,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<ListPlaybackRestrictionPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecordingConfigurations
@@ -1570,7 +1547,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<ListRecordingConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStreamKeys
@@ -1613,7 +1589,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<ListStreamKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStreams
@@ -1654,7 +1629,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<ListStreamsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStreamSessions
@@ -1698,7 +1672,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<ListStreamSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1741,7 +1714,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutMetadata
@@ -1794,7 +1766,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<PutMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartViewerSessionRevocation
@@ -1850,7 +1821,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<StartViewerSessionRevocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopStream
@@ -1908,7 +1878,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<StopStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1951,7 +1920,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1994,7 +1962,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateChannel
@@ -2045,7 +2012,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<UpdateChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePlaybackRestrictionPolicy
@@ -2094,7 +2060,6 @@ namespace Amazon.IVS
 
             return InvokeAsync<UpdatePlaybackRestrictionPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

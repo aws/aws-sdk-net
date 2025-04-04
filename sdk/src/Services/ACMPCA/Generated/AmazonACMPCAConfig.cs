@@ -30,7 +30,6 @@ namespace Amazon.ACMPCA
     /// <summary>
     /// Configuration for accessing Amazon ACMPCA service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonACMPCAConfig : ClientConfig
     {
         private static readonly string UserAgentString =

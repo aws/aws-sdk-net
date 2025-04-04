@@ -329,7 +329,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<BatchCreateVariableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetVariable
@@ -377,7 +376,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<BatchGetVariableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelBatchImportJob
@@ -428,7 +426,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<CancelBatchImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelBatchPredictionJob
@@ -479,7 +476,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<CancelBatchPredictionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBatchImportJob
@@ -530,7 +526,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<CreateBatchImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBatchPredictionJob
@@ -581,7 +576,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<CreateBatchPredictionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDetectorVersion
@@ -632,7 +626,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<CreateDetectorVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateList
@@ -687,7 +680,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<CreateListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateModel
@@ -735,7 +727,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<CreateModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateModelVersion
@@ -786,7 +777,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<CreateModelVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRule
@@ -834,7 +824,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<CreateRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVariable
@@ -882,7 +871,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<CreateVariableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBatchImportJob
@@ -931,7 +919,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<DeleteBatchImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBatchPredictionJob
@@ -979,7 +966,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<DeleteBatchPredictionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDetector
@@ -1037,7 +1023,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<DeleteDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDetectorVersion
@@ -1098,7 +1083,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<DeleteDetectorVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEntityType
@@ -1159,7 +1143,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<DeleteEntityTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEvent
@@ -1215,7 +1198,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<DeleteEventResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventsByEventType
@@ -1269,7 +1251,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<DeleteEventsByEventTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventType
@@ -1330,7 +1311,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<DeleteEventTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteExternalModel
@@ -1388,7 +1368,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<DeleteExternalModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLabel
@@ -1449,7 +1428,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<DeleteLabelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteList
@@ -1506,7 +1484,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<DeleteListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteModel
@@ -1568,7 +1545,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<DeleteModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteModelVersion
@@ -1630,7 +1606,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<DeleteModelVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOutcome
@@ -1691,7 +1666,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<DeleteOutcomeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRule
@@ -1749,7 +1723,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<DeleteRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVariable
@@ -1815,7 +1788,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<DeleteVariableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDetector
@@ -1866,7 +1838,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<DescribeDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeModelVersions
@@ -1918,7 +1889,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<DescribeModelVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBatchImportJobs
@@ -1973,7 +1943,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<GetBatchImportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBatchPredictionJobs
@@ -2028,7 +1997,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<GetBatchPredictionJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeleteEventsByEventTypeStatus
@@ -2079,7 +2047,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<GetDeleteEventsByEventTypeStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDetectors
@@ -2135,7 +2102,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<GetDetectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDetectorVersion
@@ -2186,7 +2152,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<GetDetectorVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEntityTypes
@@ -2241,7 +2206,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<GetEntityTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEvent
@@ -2293,7 +2257,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<GetEventResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEventPrediction
@@ -2352,7 +2315,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<GetEventPredictionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEventPredictionMetadata
@@ -2404,7 +2366,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<GetEventPredictionMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEventTypes
@@ -2459,7 +2420,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<GetEventTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExternalModels
@@ -2515,7 +2475,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<GetExternalModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKMSEncryptionKey
@@ -2564,7 +2523,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<GetKMSEncryptionKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLabels
@@ -2619,7 +2577,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<GetLabelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetListElements
@@ -2670,7 +2627,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<GetListElementsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetListsMetadata
@@ -2721,7 +2677,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<GetListsMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetModels
@@ -2784,7 +2739,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<GetModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetModelVersion
@@ -2835,7 +2789,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<GetModelVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOutcomes
@@ -2890,7 +2843,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<GetOutcomesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRules
@@ -2951,7 +2903,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<GetRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVariables
@@ -3006,7 +2957,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<GetVariablesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventPredictions
@@ -3070,7 +3020,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<ListEventPredictionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3120,7 +3069,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDetector
@@ -3171,7 +3119,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<PutDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEntityType
@@ -3225,7 +3172,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<PutEntityTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEventType
@@ -3281,7 +3227,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<PutEventTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutExternalModel
@@ -3334,7 +3279,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<PutExternalModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutKMSEncryptionKey
@@ -3388,7 +3332,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<PutKMSEncryptionKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutLabel
@@ -3441,7 +3384,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<PutLabelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutOutcome
@@ -3492,7 +3434,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<PutOutcomeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendEvent
@@ -3548,7 +3489,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<SendEventResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3596,7 +3536,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3644,7 +3583,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDetectorVersion
@@ -3700,7 +3638,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<UpdateDetectorVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDetectorVersionMetadata
@@ -3752,7 +3689,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<UpdateDetectorVersionMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDetectorVersionStatus
@@ -3808,7 +3744,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<UpdateDetectorVersionStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEventLabel
@@ -3862,7 +3797,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<UpdateEventLabelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateList
@@ -3916,7 +3850,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<UpdateListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateModel
@@ -3970,7 +3903,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<UpdateModelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateModelVersion
@@ -4028,7 +3960,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<UpdateModelVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateModelVersionStatus
@@ -4100,7 +4031,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<UpdateModelVersionStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRuleMetadata
@@ -4154,7 +4084,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<UpdateRuleMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRuleVersion
@@ -4209,7 +4138,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<UpdateRuleVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVariable
@@ -4263,7 +4191,6 @@ namespace Amazon.FraudDetector
 
             return InvokeAsync<UpdateVariableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

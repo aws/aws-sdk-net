@@ -30,7 +30,6 @@ namespace Amazon.DynamoDBStreams
     /// <summary>
     /// Configuration for accessing Amazon DynamoDBStreams service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonDynamoDBStreamsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

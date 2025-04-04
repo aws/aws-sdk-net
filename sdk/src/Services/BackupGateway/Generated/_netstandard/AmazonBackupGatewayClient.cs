@@ -331,7 +331,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<AssociateGatewayToServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGateway
@@ -376,7 +375,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<CreateGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGateway
@@ -423,7 +421,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<DeleteGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteHypervisor
@@ -476,7 +473,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<DeleteHypervisorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateGatewayFromServer
@@ -527,7 +523,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<DisassociateGatewayFromServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBandwidthRateLimitSchedule
@@ -576,7 +571,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<GetBandwidthRateLimitScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGateway
@@ -623,7 +617,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<GetGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetHypervisor
@@ -672,7 +665,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<GetHypervisorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetHypervisorPropertyMappings
@@ -721,7 +713,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<GetHypervisorPropertyMappingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVirtualMachine
@@ -768,7 +759,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<GetVirtualMachineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportHypervisorConfiguration
@@ -818,7 +808,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<ImportHypervisorConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGateways
@@ -863,7 +852,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<ListGatewaysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHypervisors
@@ -907,7 +895,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<ListHypervisorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -954,7 +941,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVirtualMachines
@@ -998,7 +984,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<ListVirtualMachinesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBandwidthRateLimitSchedule
@@ -1047,7 +1032,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<PutBandwidthRateLimitScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutHypervisorPropertyMappings
@@ -1102,7 +1086,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<PutHypervisorPropertyMappingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutMaintenanceStartTime
@@ -1152,7 +1135,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<PutMaintenanceStartTimeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartVirtualMachinesMetadataSync
@@ -1202,7 +1184,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<StartVirtualMachinesMetadataSyncResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1249,7 +1230,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestHypervisorConfiguration
@@ -1300,7 +1280,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<TestHypervisorConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1347,7 +1326,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGatewayInformation
@@ -1398,7 +1376,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<UpdateGatewayInformationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGatewaySoftwareNow
@@ -1453,7 +1430,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<UpdateGatewaySoftwareNowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateHypervisor
@@ -1508,7 +1484,6 @@ namespace Amazon.BackupGateway
 
             return InvokeAsync<UpdateHypervisorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

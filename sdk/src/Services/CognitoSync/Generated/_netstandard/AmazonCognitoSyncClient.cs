@@ -330,7 +330,6 @@ namespace Amazon.CognitoSync
 
             return InvokeAsync<BulkPublishResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataset
@@ -391,7 +390,6 @@ namespace Amazon.CognitoSync
 
             return InvokeAsync<DeleteDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataset
@@ -449,7 +447,6 @@ namespace Amazon.CognitoSync
 
             return InvokeAsync<DescribeDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeIdentityPoolUsage
@@ -543,7 +540,6 @@ namespace Amazon.CognitoSync
 
             return InvokeAsync<DescribeIdentityPoolUsageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeIdentityUsage
@@ -598,7 +594,6 @@ namespace Amazon.CognitoSync
 
             return InvokeAsync<DescribeIdentityUsageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBulkPublishDetails
@@ -650,7 +645,6 @@ namespace Amazon.CognitoSync
 
             return InvokeAsync<GetBulkPublishDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCognitoEvents
@@ -706,7 +700,6 @@ namespace Amazon.CognitoSync
 
             return InvokeAsync<GetCognitoEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIdentityPoolConfiguration
@@ -800,7 +793,6 @@ namespace Amazon.CognitoSync
 
             return InvokeAsync<GetIdentityPoolConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatasets
@@ -855,7 +847,6 @@ namespace Amazon.CognitoSync
 
             return InvokeAsync<ListDatasetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIdentityPoolUsage
@@ -907,7 +898,6 @@ namespace Amazon.CognitoSync
 
             return InvokeAsync<ListIdentityPoolUsageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecords
@@ -963,7 +953,6 @@ namespace Amazon.CognitoSync
 
             return InvokeAsync<ListRecordsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterDevice
@@ -1021,7 +1010,6 @@ namespace Amazon.CognitoSync
 
             return InvokeAsync<RegisterDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetCognitoEvents
@@ -1078,7 +1066,6 @@ namespace Amazon.CognitoSync
 
             return InvokeAsync<SetCognitoEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetIdentityPoolConfiguration
@@ -1136,7 +1123,6 @@ namespace Amazon.CognitoSync
 
             return InvokeAsync<SetIdentityPoolConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SubscribeToDataset
@@ -1194,7 +1180,6 @@ namespace Amazon.CognitoSync
 
             return InvokeAsync<SubscribeToDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UnsubscribeFromDataset
@@ -1252,7 +1237,6 @@ namespace Amazon.CognitoSync
 
             return InvokeAsync<UnsubscribeFromDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRecords
@@ -1335,7 +1319,6 @@ namespace Amazon.CognitoSync
 
             return InvokeAsync<UpdateRecordsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

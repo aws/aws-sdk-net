@@ -316,7 +316,6 @@ namespace Amazon.Repostspace
 
             return InvokeAsync<BatchAddRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchRemoveRole
@@ -365,7 +364,6 @@ namespace Amazon.Repostspace
 
             return InvokeAsync<BatchRemoveRoleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSpace
@@ -420,7 +418,6 @@ namespace Amazon.Repostspace
 
             return InvokeAsync<CreateSpaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSpace
@@ -469,7 +466,6 @@ namespace Amazon.Repostspace
 
             return InvokeAsync<DeleteSpaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterAdmin
@@ -518,7 +514,6 @@ namespace Amazon.Repostspace
 
             return InvokeAsync<DeregisterAdminResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSpace
@@ -567,7 +562,6 @@ namespace Amazon.Repostspace
 
             return InvokeAsync<GetSpaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSpaces
@@ -614,7 +608,6 @@ namespace Amazon.Repostspace
 
             return InvokeAsync<ListSpacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -664,7 +657,6 @@ namespace Amazon.Repostspace
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterAdmin
@@ -713,7 +705,6 @@ namespace Amazon.Repostspace
 
             return InvokeAsync<RegisterAdminResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendInvites
@@ -762,7 +753,6 @@ namespace Amazon.Repostspace
 
             return InvokeAsync<SendInvitesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -815,7 +805,6 @@ namespace Amazon.Repostspace
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -864,7 +853,6 @@ namespace Amazon.Repostspace
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSpace
@@ -916,7 +904,6 @@ namespace Amazon.Repostspace
 
             return InvokeAsync<UpdateSpaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

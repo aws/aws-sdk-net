@@ -334,7 +334,6 @@ namespace Amazon.BackupSearch
 
             return InvokeAsync<GetSearchJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSearchResultExportJob
@@ -400,7 +399,6 @@ namespace Amazon.BackupSearch
 
             return InvokeAsync<GetSearchResultExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSearchJobBackups
@@ -470,7 +468,6 @@ namespace Amazon.BackupSearch
 
             return InvokeAsync<ListSearchJobBackupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSearchJobResults
@@ -525,7 +522,6 @@ namespace Amazon.BackupSearch
 
             return InvokeAsync<ListSearchJobResultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSearchJobs
@@ -571,7 +567,6 @@ namespace Amazon.BackupSearch
 
             return InvokeAsync<ListSearchJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSearchResultExportJobs
@@ -630,7 +625,6 @@ namespace Amazon.BackupSearch
 
             return InvokeAsync<ListSearchResultExportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -685,7 +679,6 @@ namespace Amazon.BackupSearch
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSearchJob
@@ -750,7 +743,6 @@ namespace Amazon.BackupSearch
 
             return InvokeAsync<StartSearchJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSearchResultExportJob
@@ -819,7 +811,6 @@ namespace Amazon.BackupSearch
 
             return InvokeAsync<StartSearchResultExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopSearchJob
@@ -889,7 +880,6 @@ namespace Amazon.BackupSearch
 
             return InvokeAsync<StopSearchJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -944,7 +934,6 @@ namespace Amazon.BackupSearch
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -999,7 +988,6 @@ namespace Amazon.BackupSearch
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

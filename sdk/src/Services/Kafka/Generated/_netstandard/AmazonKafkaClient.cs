@@ -315,7 +315,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<BatchAssociateScramSecretResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDisassociateScramSecret
@@ -370,7 +369,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<BatchDisassociateScramSecretResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCluster
@@ -425,7 +423,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<CreateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateClusterV2
@@ -480,7 +477,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<CreateClusterV2Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfiguration
@@ -535,7 +531,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<CreateConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateReplicator
@@ -593,7 +588,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<CreateReplicatorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVpcConnection
@@ -645,7 +639,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<CreateVpcConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCluster
@@ -691,7 +684,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<DeleteClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteClusterPolicy
@@ -738,7 +730,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<DeleteClusterPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfiguration
@@ -784,7 +775,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<DeleteConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReplicator
@@ -839,7 +829,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<DeleteReplicatorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVpcConnection
@@ -885,7 +874,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<DeleteVpcConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCluster
@@ -935,7 +923,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<DescribeClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClusterOperation
@@ -984,7 +971,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<DescribeClusterOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClusterOperationV2
@@ -1039,7 +1025,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<DescribeClusterOperationV2Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeClusterV2
@@ -1089,7 +1074,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<DescribeClusterV2Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConfiguration
@@ -1141,7 +1125,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<DescribeConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConfigurationRevision
@@ -1193,7 +1176,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<DescribeConfigurationRevisionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReplicator
@@ -1248,7 +1230,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<DescribeReplicatorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVpcConnection
@@ -1300,7 +1281,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<DescribeVpcConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBootstrapBrokers
@@ -1353,7 +1333,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<GetBootstrapBrokersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetClusterPolicy
@@ -1399,7 +1378,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<GetClusterPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCompatibleKafkaVersions
@@ -1454,7 +1432,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<GetCompatibleKafkaVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClientVpcConnections
@@ -1503,7 +1480,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<ListClientVpcConnectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClusterOperations
@@ -1550,7 +1526,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<ListClusterOperationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClusterOperationsV2
@@ -1606,7 +1581,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<ListClusterOperationsV2Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClusters
@@ -1652,7 +1626,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<ListClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClustersV2
@@ -1698,7 +1671,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<ListClustersV2Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfigurationRevisions
@@ -1750,7 +1722,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<ListConfigurationRevisionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfigurations
@@ -1799,7 +1770,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<ListConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKafkaVersions
@@ -1845,7 +1815,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<ListKafkaVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNodes
@@ -1891,7 +1860,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<ListNodesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReplicators
@@ -1946,7 +1914,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<ListReplicatorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListScramSecrets
@@ -2001,7 +1968,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<ListScramSecretsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2044,7 +2010,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVpcConnections
@@ -2093,7 +2058,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<ListVpcConnectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutClusterPolicy
@@ -2137,7 +2101,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<PutClusterPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RebootBroker
@@ -2192,7 +2155,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<RebootBrokerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectClientVpcConnection
@@ -2241,7 +2203,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<RejectClientVpcConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2284,7 +2245,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2327,7 +2287,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBrokerCount
@@ -2376,7 +2335,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<UpdateBrokerCountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBrokerStorage
@@ -2425,7 +2383,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<UpdateBrokerStorageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBrokerType
@@ -2480,7 +2437,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<UpdateBrokerTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateClusterConfiguration
@@ -2532,7 +2488,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<UpdateClusterConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateClusterKafkaVersion
@@ -2587,7 +2542,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<UpdateClusterKafkaVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConfiguration
@@ -2639,7 +2593,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<UpdateConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConnectivity
@@ -2691,7 +2644,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<UpdateConnectivityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMonitoring
@@ -2742,7 +2694,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<UpdateMonitoringResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateReplicationInfo
@@ -2797,7 +2748,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<UpdateReplicationInfoResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSecurity
@@ -2853,7 +2803,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<UpdateSecurityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStorage
@@ -2908,7 +2857,6 @@ namespace Amazon.Kafka
 
             return InvokeAsync<UpdateStorageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

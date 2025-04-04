@@ -30,7 +30,6 @@ namespace Amazon.TimestreamInfluxDB
     /// <summary>
     /// Configuration for accessing Amazon TimestreamInfluxDB service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonTimestreamInfluxDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =

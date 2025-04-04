@@ -326,7 +326,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<AcceptDomainTransferFromAnotherAwsAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateDelegationSignerToDomain
@@ -392,7 +391,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<AssociateDelegationSignerToDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelDomainTransferToAnotherAwsAccount
@@ -455,7 +453,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<CancelDomainTransferToAnotherAwsAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CheckDomainAvailability
@@ -500,7 +497,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<CheckDomainAvailabilityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CheckDomainTransferability
@@ -543,7 +539,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<CheckDomainTransferabilityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDomain
@@ -616,7 +611,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<DeleteDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTagsForDomain
@@ -706,7 +700,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<DeleteTagsForDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableDomainAutoRenew
@@ -750,7 +743,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<DisableDomainAutoRenewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableDomainTransferLock
@@ -807,7 +799,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<DisableDomainTransferLockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateDelegationSignerFromDomain
@@ -859,7 +850,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<DisassociateDelegationSignerFromDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableDomainAutoRenew
@@ -916,7 +906,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<EnableDomainAutoRenewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableDomainTransferLock
@@ -971,7 +960,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<EnableDomainTransferLockResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContactReachabilityStatus
@@ -1025,7 +1013,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<GetContactReachabilityStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDomainDetail
@@ -1070,7 +1057,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<GetDomainDetailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDomainSuggestions
@@ -1113,7 +1099,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<GetDomainSuggestionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOperationDetail
@@ -1153,7 +1138,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<GetOperationDetailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomains
@@ -1220,7 +1204,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<ListDomainsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOperations
@@ -1297,7 +1280,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<ListOperationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPrices
@@ -1363,7 +1345,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<ListPricesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForDomain
@@ -1451,7 +1432,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<ListTagsForDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PushDomain
@@ -1508,7 +1488,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<PushDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterDomain
@@ -1606,7 +1585,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<RegisterDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectDomainTransferFromAnotherAwsAccount
@@ -1664,7 +1642,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<RejectDomainTransferFromAnotherAwsAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RenewDomain
@@ -1726,7 +1703,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<RenewDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResendContactReachabilityEmail
@@ -1774,7 +1750,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<ResendContactReachabilityEmailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResendOperationAuthorization
@@ -1814,7 +1789,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<ResendOperationAuthorizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RetrieveDomainAuthCode
@@ -1858,7 +1832,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<RetrieveDomainAuthCodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TransferDomain
@@ -1966,7 +1939,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<TransferDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TransferDomainToAnotherAwsAccount
@@ -2052,7 +2024,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<TransferDomainToAnotherAwsAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDomainContact
@@ -2112,7 +2083,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<UpdateDomainContactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDomainContactPrivacy
@@ -2192,7 +2162,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<UpdateDomainContactPrivacyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDomainNameservers
@@ -2253,7 +2222,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<UpdateDomainNameserversResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTagsForDomain
@@ -2343,7 +2311,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<UpdateTagsForDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ViewBilling
@@ -2384,7 +2351,6 @@ namespace Amazon.Route53Domains
 
             return InvokeAsync<ViewBillingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

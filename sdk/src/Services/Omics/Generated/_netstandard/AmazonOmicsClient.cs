@@ -320,7 +320,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<AbortMultipartReadSetUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AcceptShare
@@ -375,7 +374,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<AcceptShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteReadSet
@@ -427,7 +425,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<BatchDeleteReadSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelAnnotationImportJob
@@ -476,7 +473,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<CancelAnnotationImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelRun
@@ -534,7 +530,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<CancelRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelVariantImportJob
@@ -583,7 +578,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<CancelVariantImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CompleteMultipartReadSetUpload
@@ -641,7 +635,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<CompleteMultipartReadSetUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAnnotationStore
@@ -696,7 +689,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<CreateAnnotationStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAnnotationStoreVersion
@@ -751,7 +743,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<CreateAnnotationStoreVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMultipartReadSetUpload
@@ -809,7 +800,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<CreateMultipartReadSetUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateReferenceStore
@@ -861,7 +851,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<CreateReferenceStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRunCache
@@ -929,7 +918,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<CreateRunCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRunGroup
@@ -988,7 +976,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<CreateRunGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSequenceStore
@@ -1040,7 +1027,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<CreateSequenceStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateShare
@@ -1115,7 +1101,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<CreateShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVariantStore
@@ -1170,7 +1155,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<CreateVariantStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkflow
@@ -1228,7 +1212,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<CreateWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAnnotationStore
@@ -1280,7 +1263,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<DeleteAnnotationStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAnnotationStoreVersions
@@ -1332,7 +1314,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<DeleteAnnotationStoreVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReference
@@ -1387,7 +1368,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<DeleteReferenceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReferenceStore
@@ -1442,7 +1422,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<DeleteReferenceStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRun
@@ -1500,7 +1479,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<DeleteRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRunCache
@@ -1567,7 +1545,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<DeleteRunCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRunGroup
@@ -1625,7 +1602,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<DeleteRunGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteS3AccessPolicy
@@ -1680,7 +1656,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<DeleteS3AccessPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSequenceStore
@@ -1735,7 +1710,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<DeleteSequenceStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteShare
@@ -1792,7 +1766,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<DeleteShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVariantStore
@@ -1844,7 +1817,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<DeleteVariantStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkflow
@@ -1902,7 +1874,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<DeleteWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAnnotationImportJob
@@ -1951,7 +1922,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetAnnotationImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAnnotationStore
@@ -2000,7 +1970,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetAnnotationStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAnnotationStoreVersion
@@ -2049,7 +2018,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetAnnotationStoreVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReadSet
@@ -2107,7 +2075,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetReadSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReadSetActivationJob
@@ -2159,7 +2126,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetReadSetActivationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReadSetExportJob
@@ -2211,7 +2177,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetReadSetExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReadSetImportJob
@@ -2263,7 +2228,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetReadSetImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReadSetMetadata
@@ -2315,7 +2279,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetReadSetMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReference
@@ -2370,7 +2333,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetReferenceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReferenceImportJob
@@ -2422,7 +2384,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetReferenceImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReferenceMetadata
@@ -2474,7 +2435,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetReferenceMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReferenceStore
@@ -2526,7 +2486,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetReferenceStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRun
@@ -2596,7 +2555,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRunCache
@@ -2660,7 +2618,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetRunCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRunGroup
@@ -2718,7 +2675,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetRunGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRunTask
@@ -2776,7 +2732,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetRunTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetS3AccessPolicy
@@ -2834,7 +2789,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetS3AccessPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSequenceStore
@@ -2886,7 +2840,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetSequenceStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetShare
@@ -2941,7 +2894,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVariantImportJob
@@ -2990,7 +2942,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetVariantImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVariantStore
@@ -3039,7 +2990,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetVariantStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkflow
@@ -3102,7 +3052,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAnnotationImportJobs
@@ -3151,7 +3100,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListAnnotationImportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAnnotationStores
@@ -3200,7 +3148,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListAnnotationStoresResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAnnotationStoreVersions
@@ -3249,7 +3196,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListAnnotationStoreVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMultipartReadSetUploads
@@ -3308,7 +3254,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListMultipartReadSetUploadsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReadSetActivationJobs
@@ -3360,7 +3305,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListReadSetActivationJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReadSetExportJobs
@@ -3412,7 +3356,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListReadSetExportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReadSetImportJobs
@@ -3464,7 +3407,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListReadSetImportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReadSets
@@ -3516,7 +3458,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListReadSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReadSetUploadParts
@@ -3575,7 +3516,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListReadSetUploadPartsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReferenceImportJobs
@@ -3627,7 +3567,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListReferenceImportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReferences
@@ -3679,7 +3618,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListReferencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReferenceStores
@@ -3728,7 +3666,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListReferenceStoresResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRunCaches
@@ -3786,7 +3723,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListRunCachesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRunGroups
@@ -3844,7 +3780,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListRunGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRuns
@@ -3911,7 +3846,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRunTasks
@@ -3969,7 +3903,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListRunTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSequenceStores
@@ -4018,7 +3951,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListSequenceStoresResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListShares
@@ -4074,7 +4006,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListSharesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -4132,7 +4063,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVariantImportJobs
@@ -4181,7 +4111,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListVariantImportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVariantStores
@@ -4230,7 +4159,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListVariantStoresResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkflows
@@ -4288,7 +4216,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListWorkflowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutS3AccessPolicy
@@ -4343,7 +4270,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<PutS3AccessPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartAnnotationImportJob
@@ -4395,7 +4321,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<StartAnnotationImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartReadSetActivationJob
@@ -4451,7 +4376,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<StartReadSetActivationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartReadSetExportJob
@@ -4506,7 +4430,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<StartReadSetExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartReadSetImportJob
@@ -4561,7 +4484,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<StartReadSetImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartReferenceImportJob
@@ -4616,7 +4538,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<StartReferenceImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartRun
@@ -4695,7 +4616,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<StartRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartVariantImportJob
@@ -4747,7 +4667,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<StartVariantImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -4805,7 +4724,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -4863,7 +4781,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAnnotationStore
@@ -4912,7 +4829,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<UpdateAnnotationStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAnnotationStoreVersion
@@ -4961,7 +4877,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<UpdateAnnotationStoreVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRunCache
@@ -5019,7 +4934,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<UpdateRunCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRunGroup
@@ -5077,7 +4991,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<UpdateRunGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSequenceStore
@@ -5132,7 +5045,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<UpdateSequenceStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVariantStore
@@ -5181,7 +5093,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<UpdateVariantStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkflow
@@ -5239,7 +5150,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<UpdateWorkflowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UploadReadSetPart
@@ -5298,7 +5208,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<UploadReadSetPartResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.InternetMonitor
     /// <summary>
     /// Configuration for accessing Amazon InternetMonitor service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonInternetMonitorConfig : ClientConfig
     {
         private static readonly string UserAgentString =

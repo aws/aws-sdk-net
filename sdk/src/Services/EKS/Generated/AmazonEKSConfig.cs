@@ -30,7 +30,6 @@ namespace Amazon.EKS
     /// <summary>
     /// Configuration for accessing Amazon EKS service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonEKSConfig : ClientConfig
     {
         private static readonly string UserAgentString =

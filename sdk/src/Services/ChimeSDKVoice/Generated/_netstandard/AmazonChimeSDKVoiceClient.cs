@@ -321,7 +321,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<AssociatePhoneNumbersWithVoiceConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociatePhoneNumbersWithVoiceConnectorGroup
@@ -379,7 +378,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<AssociatePhoneNumbersWithVoiceConnectorGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeletePhoneNumber
@@ -441,7 +439,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<BatchDeletePhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchUpdatePhoneNumber
@@ -504,7 +501,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<BatchUpdatePhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePhoneNumberOrder
@@ -563,7 +559,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<CreatePhoneNumberOrderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProxySession
@@ -619,7 +614,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<CreateProxySessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSipMediaApplication
@@ -682,7 +676,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<CreateSipMediaApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSipMediaApplicationCall
@@ -741,7 +734,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<CreateSipMediaApplicationCallResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSipRule
@@ -804,7 +796,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<CreateSipRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVoiceConnector
@@ -865,7 +856,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<CreateVoiceConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVoiceConnectorGroup
@@ -931,7 +921,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<CreateVoiceConnectorGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVoiceProfile
@@ -1013,7 +1002,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<CreateVoiceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVoiceProfileDomain
@@ -1088,7 +1076,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<CreateVoiceProfileDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePhoneNumber
@@ -1151,7 +1138,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<DeletePhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProxySession
@@ -1206,7 +1192,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<DeleteProxySessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSipMediaApplication
@@ -1264,7 +1249,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<DeleteSipMediaApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSipRule
@@ -1322,7 +1306,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<DeleteSipRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVoiceConnector
@@ -1381,7 +1364,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<DeleteVoiceConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVoiceConnectorEmergencyCallingConfiguration
@@ -1436,7 +1418,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<DeleteVoiceConnectorEmergencyCallingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVoiceConnectorExternalSystemsConfiguration
@@ -1491,7 +1472,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<DeleteVoiceConnectorExternalSystemsConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVoiceConnectorGroup
@@ -1550,7 +1530,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<DeleteVoiceConnectorGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVoiceConnectorOrigination
@@ -1613,7 +1592,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<DeleteVoiceConnectorOriginationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVoiceConnectorProxy
@@ -1668,7 +1646,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<DeleteVoiceConnectorProxyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVoiceConnectorStreamingConfiguration
@@ -1723,7 +1700,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<DeleteVoiceConnectorStreamingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVoiceConnectorTermination
@@ -1785,7 +1761,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<DeleteVoiceConnectorTerminationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVoiceConnectorTerminationCredentials
@@ -1841,7 +1816,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<DeleteVoiceConnectorTerminationCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVoiceProfile
@@ -1903,7 +1877,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<DeleteVoiceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVoiceProfileDomain
@@ -1964,7 +1937,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<DeleteVoiceProfileDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociatePhoneNumbersFromVoiceConnector
@@ -2020,7 +1992,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<DisassociatePhoneNumbersFromVoiceConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociatePhoneNumbersFromVoiceConnectorGroup
@@ -2076,7 +2047,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<DisassociatePhoneNumbersFromVoiceConnectorGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGlobalSettings
@@ -2129,7 +2099,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetGlobalSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPhoneNumber
@@ -2185,7 +2154,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetPhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPhoneNumberOrder
@@ -2241,7 +2209,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetPhoneNumberOrderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPhoneNumberSettings
@@ -2294,7 +2261,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetPhoneNumberSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProxySession
@@ -2350,7 +2316,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetProxySessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSipMediaApplication
@@ -2406,7 +2371,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetSipMediaApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSipMediaApplicationAlexaSkillConfiguration
@@ -2471,7 +2435,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetSipMediaApplicationAlexaSkillConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSipMediaApplicationLoggingConfiguration
@@ -2526,7 +2489,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetSipMediaApplicationLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSipRule
@@ -2582,7 +2544,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetSipRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSpeakerSearchTask
@@ -2643,7 +2604,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetSpeakerSearchTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVoiceConnector
@@ -2699,7 +2659,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetVoiceConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVoiceConnectorEmergencyCallingConfiguration
@@ -2754,7 +2713,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetVoiceConnectorEmergencyCallingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVoiceConnectorExternalSystemsConfiguration
@@ -2809,7 +2767,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetVoiceConnectorExternalSystemsConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVoiceConnectorGroup
@@ -2865,7 +2822,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetVoiceConnectorGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVoiceConnectorLoggingConfiguration
@@ -2921,7 +2877,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetVoiceConnectorLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVoiceConnectorOrigination
@@ -2976,7 +2931,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetVoiceConnectorOriginationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVoiceConnectorProxy
@@ -3032,7 +2986,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetVoiceConnectorProxyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVoiceConnectorStreamingConfiguration
@@ -3089,7 +3042,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetVoiceConnectorStreamingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVoiceConnectorTermination
@@ -3144,7 +3096,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetVoiceConnectorTerminationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVoiceConnectorTerminationHealth
@@ -3200,7 +3151,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetVoiceConnectorTerminationHealthResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVoiceProfile
@@ -3258,7 +3208,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetVoiceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVoiceProfileDomain
@@ -3316,7 +3265,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetVoiceProfileDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVoiceToneAnalysisTask
@@ -3377,7 +3325,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<GetVoiceToneAnalysisTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAvailableVoiceConnectorRegions
@@ -3430,7 +3377,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<ListAvailableVoiceConnectorRegionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPhoneNumberOrders
@@ -3482,7 +3428,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<ListPhoneNumberOrdersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPhoneNumbers
@@ -3538,7 +3483,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<ListPhoneNumbersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProxySessions
@@ -3593,7 +3537,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<ListProxySessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSipMediaApplications
@@ -3645,7 +3588,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<ListSipMediaApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSipRules
@@ -3697,7 +3639,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<ListSipRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSupportedPhoneNumberCountries
@@ -3752,7 +3693,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<ListSupportedPhoneNumberCountriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3804,7 +3744,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVoiceConnectorGroups
@@ -3856,7 +3795,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<ListVoiceConnectorGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVoiceConnectors
@@ -3908,7 +3846,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<ListVoiceConnectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVoiceConnectorTerminationCredentials
@@ -3963,7 +3900,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<ListVoiceConnectorTerminationCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVoiceProfileDomains
@@ -4018,7 +3954,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<ListVoiceProfileDomainsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVoiceProfiles
@@ -4073,7 +4008,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<ListVoiceProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutSipMediaApplicationAlexaSkillConfiguration
@@ -4138,7 +4072,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<PutSipMediaApplicationAlexaSkillConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutSipMediaApplicationLoggingConfiguration
@@ -4193,7 +4126,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<PutSipMediaApplicationLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutVoiceConnectorEmergencyCallingConfiguration
@@ -4248,7 +4180,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<PutVoiceConnectorEmergencyCallingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutVoiceConnectorExternalSystemsConfiguration
@@ -4306,7 +4237,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<PutVoiceConnectorExternalSystemsConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutVoiceConnectorLoggingConfiguration
@@ -4361,7 +4291,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<PutVoiceConnectorLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutVoiceConnectorOrigination
@@ -4416,7 +4345,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<PutVoiceConnectorOriginationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutVoiceConnectorProxy
@@ -4474,7 +4402,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<PutVoiceConnectorProxyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutVoiceConnectorStreamingConfiguration
@@ -4529,7 +4456,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<PutVoiceConnectorStreamingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutVoiceConnectorTermination
@@ -4587,7 +4513,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<PutVoiceConnectorTerminationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutVoiceConnectorTerminationCredentials
@@ -4642,7 +4567,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<PutVoiceConnectorTerminationCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestorePhoneNumber
@@ -4700,7 +4624,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<RestorePhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchAvailablePhoneNumbers
@@ -4755,7 +4678,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<SearchAvailablePhoneNumbersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSpeakerSearchTask
@@ -4835,7 +4757,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<StartSpeakerSearchTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartVoiceToneAnalysisTask
@@ -4917,7 +4838,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<StartVoiceToneAnalysisTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopSpeakerSearchTask
@@ -4981,7 +4901,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<StopSpeakerSearchTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopVoiceToneAnalysisTask
@@ -5045,7 +4964,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<StopVoiceToneAnalysisTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -5100,7 +5018,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -5152,7 +5069,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGlobalSettings
@@ -5204,7 +5120,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<UpdateGlobalSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePhoneNumber
@@ -5276,7 +5191,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<UpdatePhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePhoneNumberSettings
@@ -5330,7 +5244,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<UpdatePhoneNumberSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProxySession
@@ -5385,7 +5298,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<UpdateProxySessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSipMediaApplication
@@ -5443,7 +5355,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<UpdateSipMediaApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSipMediaApplicationCall
@@ -5502,7 +5413,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<UpdateSipMediaApplicationCallResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSipRule
@@ -5563,7 +5473,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<UpdateSipRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVoiceConnector
@@ -5618,7 +5527,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<UpdateVoiceConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVoiceConnectorGroup
@@ -5676,7 +5584,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<UpdateVoiceConnectorGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVoiceProfile
@@ -5757,7 +5664,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<UpdateVoiceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVoiceProfileDomain
@@ -5815,7 +5721,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<UpdateVoiceProfileDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ValidateE911Address
@@ -5873,7 +5778,6 @@ namespace Amazon.ChimeSDKVoice
 
             return InvokeAsync<ValidateE911AddressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

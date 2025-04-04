@@ -30,7 +30,6 @@ namespace Amazon.AccessAnalyzer
     /// <summary>
     /// Configuration for accessing Amazon AccessAnalyzer service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonAccessAnalyzerConfig : ClientConfig
     {
         private static readonly string UserAgentString =

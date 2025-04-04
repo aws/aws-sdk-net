@@ -353,7 +353,6 @@ namespace Amazon.ControlCatalog
 
             return InvokeAsync<GetControlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCommonControls
@@ -406,7 +405,6 @@ namespace Amazon.ControlCatalog
 
             return InvokeAsync<ListCommonControlsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListControls
@@ -456,7 +454,6 @@ namespace Amazon.ControlCatalog
 
             return InvokeAsync<ListControlsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomains
@@ -503,7 +500,6 @@ namespace Amazon.ControlCatalog
 
             return InvokeAsync<ListDomainsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListObjectives
@@ -556,7 +552,6 @@ namespace Amazon.ControlCatalog
 
             return InvokeAsync<ListObjectivesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

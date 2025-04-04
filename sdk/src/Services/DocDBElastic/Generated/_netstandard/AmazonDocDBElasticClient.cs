@@ -338,7 +338,6 @@ namespace Amazon.DocDBElastic
 
             return InvokeAsync<ApplyPendingMaintenanceActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyClusterSnapshot
@@ -393,7 +392,6 @@ namespace Amazon.DocDBElastic
 
             return InvokeAsync<CopyClusterSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCluster
@@ -445,7 +443,6 @@ namespace Amazon.DocDBElastic
 
             return InvokeAsync<CreateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateClusterSnapshot
@@ -500,7 +497,6 @@ namespace Amazon.DocDBElastic
 
             return InvokeAsync<CreateClusterSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCluster
@@ -552,7 +548,6 @@ namespace Amazon.DocDBElastic
 
             return InvokeAsync<DeleteClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteClusterSnapshot
@@ -604,7 +599,6 @@ namespace Amazon.DocDBElastic
 
             return InvokeAsync<DeleteClusterSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCluster
@@ -653,7 +647,6 @@ namespace Amazon.DocDBElastic
 
             return InvokeAsync<GetClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetClusterSnapshot
@@ -702,7 +695,6 @@ namespace Amazon.DocDBElastic
 
             return InvokeAsync<GetClusterSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPendingMaintenanceAction
@@ -754,7 +746,6 @@ namespace Amazon.DocDBElastic
 
             return InvokeAsync<GetPendingMaintenanceActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClusters
@@ -800,7 +791,6 @@ namespace Amazon.DocDBElastic
 
             return InvokeAsync<ListClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClusterSnapshots
@@ -846,7 +836,6 @@ namespace Amazon.DocDBElastic
 
             return InvokeAsync<ListClusterSnapshotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPendingMaintenanceActions
@@ -892,7 +881,6 @@ namespace Amazon.DocDBElastic
 
             return InvokeAsync<ListPendingMaintenanceActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -938,7 +926,6 @@ namespace Amazon.DocDBElastic
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreClusterFromSnapshot
@@ -993,7 +980,6 @@ namespace Amazon.DocDBElastic
 
             return InvokeAsync<RestoreClusterFromSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartCluster
@@ -1042,7 +1028,6 @@ namespace Amazon.DocDBElastic
 
             return InvokeAsync<StartClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopCluster
@@ -1092,7 +1077,6 @@ namespace Amazon.DocDBElastic
 
             return InvokeAsync<StopClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1138,7 +1122,6 @@ namespace Amazon.DocDBElastic
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1184,7 +1167,6 @@ namespace Amazon.DocDBElastic
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCluster
@@ -1237,7 +1219,6 @@ namespace Amazon.DocDBElastic
 
             return InvokeAsync<UpdateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

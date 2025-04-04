@@ -314,7 +314,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<CreateAssistantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAssistantAssociation
@@ -369,7 +368,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<CreateAssistantAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateContent
@@ -423,7 +421,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<CreateContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateKnowledgeBase
@@ -504,7 +501,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<CreateKnowledgeBaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateQuickResponse
@@ -557,7 +553,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<CreateQuickResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSession
@@ -604,7 +599,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<CreateSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAssistant
@@ -647,7 +641,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<DeleteAssistantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAssistantAssociation
@@ -690,7 +683,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<DeleteAssistantAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteContent
@@ -733,7 +725,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<DeleteContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteImportJob
@@ -782,7 +773,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<DeleteImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteKnowledgeBase
@@ -843,7 +833,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<DeleteKnowledgeBaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteQuickResponse
@@ -886,7 +875,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<DeleteQuickResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAssistant
@@ -929,7 +917,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<GetAssistantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAssistantAssociation
@@ -972,7 +959,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<GetAssistantAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContent
@@ -1015,7 +1001,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<GetContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContentSummary
@@ -1058,7 +1043,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<GetContentSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetImportJob
@@ -1101,7 +1085,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<GetImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKnowledgeBase
@@ -1144,7 +1127,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<GetKnowledgeBaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQuickResponse
@@ -1187,7 +1169,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<GetQuickResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRecommendations
@@ -1236,7 +1217,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<GetRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSession
@@ -1279,7 +1259,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<GetSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssistantAssociations
@@ -1322,7 +1301,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<ListAssistantAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssistants
@@ -1362,7 +1340,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<ListAssistantsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContents
@@ -1405,7 +1382,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<ListContentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImportJobs
@@ -1445,7 +1421,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<ListImportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKnowledgeBases
@@ -1485,7 +1460,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<ListKnowledgeBasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQuickResponses
@@ -1528,7 +1502,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<ListQuickResponsesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1565,7 +1538,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NotifyRecommendationsReceived
@@ -1611,7 +1583,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<NotifyRecommendationsReceivedResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryAssistant
@@ -1662,7 +1633,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<QueryAssistantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveKnowledgeBaseTemplateUri
@@ -1705,7 +1675,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<RemoveKnowledgeBaseTemplateUriResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchContent
@@ -1749,7 +1718,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<SearchContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchQuickResponses
@@ -1797,7 +1765,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<SearchQuickResponsesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchSessions
@@ -1840,7 +1807,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<SearchSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartContentUpload
@@ -1888,7 +1854,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<StartContentUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartImportJob
@@ -1952,7 +1917,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<StartImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1993,7 +1957,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2030,7 +1993,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContent
@@ -2077,7 +2039,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<UpdateContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateKnowledgeBaseTemplateUri
@@ -2123,7 +2084,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<UpdateKnowledgeBaseTemplateUriResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQuickResponse
@@ -2176,7 +2136,6 @@ namespace Amazon.ConnectWisdomService
 
             return InvokeAsync<UpdateQuickResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

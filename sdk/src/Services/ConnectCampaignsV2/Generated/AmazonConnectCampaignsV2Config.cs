@@ -30,7 +30,6 @@ namespace Amazon.ConnectCampaignsV2
     /// <summary>
     /// Configuration for accessing Amazon ConnectCampaignsV2 service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonConnectCampaignsV2Config : ClientConfig
     {
         private static readonly string UserAgentString =

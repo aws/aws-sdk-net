@@ -30,7 +30,6 @@ namespace Amazon.AppConfigData
     /// <summary>
     /// Configuration for accessing Amazon AppConfigData service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonAppConfigDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =

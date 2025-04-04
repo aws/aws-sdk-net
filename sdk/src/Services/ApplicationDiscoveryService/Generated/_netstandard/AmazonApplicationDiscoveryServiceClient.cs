@@ -426,7 +426,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<AssociateConfigurationItemsToApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteAgents
@@ -476,7 +475,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<BatchDeleteAgentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteImportData
@@ -538,7 +536,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<BatchDeleteImportDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApplication
@@ -589,7 +586,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTags
@@ -651,7 +647,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<CreateTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplications
@@ -702,7 +697,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<DeleteApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTags
@@ -758,7 +752,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<DeleteTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAgents
@@ -811,7 +804,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<DescribeAgentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBatchDeleteConfigurationTask
@@ -860,7 +852,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<DescribeBatchDeleteConfigurationTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConfigurations
@@ -945,7 +936,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<DescribeConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeContinuousExports
@@ -1005,7 +995,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<DescribeContinuousExportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeExportConfigurations
@@ -1063,7 +1052,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<DescribeExportConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeExportTasks
@@ -1115,7 +1103,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<DescribeExportTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeImportTasks
@@ -1167,7 +1154,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<DescribeImportTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTags
@@ -1245,7 +1231,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<DescribeTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateConfigurationItemsFromApplication
@@ -1296,7 +1281,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<DisassociateConfigurationItemsFromApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportConfigurations
@@ -1361,7 +1345,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<ExportConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDiscoverySummary
@@ -1418,7 +1401,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<GetDiscoverySummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConfigurations
@@ -1475,7 +1457,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<ListConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServerNeighbors
@@ -1526,7 +1507,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<ListServerNeighborsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartBatchDeleteConfigurationTask
@@ -1584,7 +1564,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<StartBatchDeleteConfigurationTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartContinuousExport
@@ -1647,7 +1626,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<StartContinuousExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDataCollectionByAgentIds
@@ -1698,7 +1676,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<StartDataCollectionByAgentIdsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartExportTask
@@ -1784,7 +1761,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<StartExportTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartImportTask
@@ -1884,7 +1860,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<StartImportTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopContinuousExport
@@ -1948,7 +1923,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<StopContinuousExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopDataCollectionByAgentIds
@@ -1999,7 +1973,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<StopDataCollectionByAgentIdsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplication
@@ -2050,7 +2023,6 @@ namespace Amazon.ApplicationDiscoveryService
 
             return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -301,7 +301,6 @@ namespace Amazon.Lex
 
             return InvokeAsync<DeleteSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSession
@@ -348,7 +347,6 @@ namespace Amazon.Lex
 
             return InvokeAsync<GetSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PostContent
@@ -513,7 +511,6 @@ namespace Amazon.Lex
 
             return InvokeAsync<PostContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PostText
@@ -664,7 +661,6 @@ namespace Amazon.Lex
 
             return InvokeAsync<PostTextResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutSession
@@ -747,7 +743,6 @@ namespace Amazon.Lex
 
             return InvokeAsync<PutSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

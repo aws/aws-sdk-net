@@ -317,7 +317,6 @@ namespace Amazon.SageMakerFeatureStoreRuntime
 
             return InvokeAsync<BatchGetRecordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRecord
@@ -398,7 +397,6 @@ namespace Amazon.SageMakerFeatureStoreRuntime
 
             return InvokeAsync<DeleteRecordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRecord
@@ -450,7 +448,6 @@ namespace Amazon.SageMakerFeatureStoreRuntime
 
             return InvokeAsync<GetRecordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRecord
@@ -520,7 +517,6 @@ namespace Amazon.SageMakerFeatureStoreRuntime
 
             return InvokeAsync<PutRecordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

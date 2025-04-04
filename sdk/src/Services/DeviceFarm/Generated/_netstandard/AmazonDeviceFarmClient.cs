@@ -329,7 +329,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<CreateDevicePoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInstanceProfile
@@ -375,7 +374,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<CreateInstanceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNetworkProfile
@@ -421,7 +419,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<CreateNetworkProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProject
@@ -503,7 +500,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<CreateProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRemoteAccessSession
@@ -549,7 +545,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<CreateRemoteAccessSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTestGridProject
@@ -594,7 +589,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<CreateTestGridProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTestGridUrl
@@ -639,7 +633,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<CreateTestGridUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUpload
@@ -685,7 +678,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<CreateUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVPCEConfiguration
@@ -729,7 +721,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<CreateVPCEConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDevicePool
@@ -776,7 +767,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<DeleteDevicePoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInstanceProfile
@@ -822,7 +812,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<DeleteInstanceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNetworkProfile
@@ -868,7 +857,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<DeleteNetworkProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProject
@@ -919,7 +907,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<DeleteProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRemoteAccessSession
@@ -965,7 +952,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<DeleteRemoteAccessSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRun
@@ -1016,7 +1002,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<DeleteRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTestGridProject
@@ -1073,7 +1058,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<DeleteTestGridProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUpload
@@ -1119,7 +1103,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<DeleteUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVPCEConfiguration
@@ -1166,7 +1149,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<DeleteVPCEConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccountSettings
@@ -1245,7 +1227,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<GetAccountSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDevice
@@ -1321,7 +1302,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<GetDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeviceInstance
@@ -1367,7 +1347,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<GetDeviceInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDevicePool
@@ -1443,7 +1422,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<GetDevicePoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDevicePoolCompatibility
@@ -1489,7 +1467,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<GetDevicePoolCompatibilityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInstanceProfile
@@ -1535,7 +1512,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<GetInstanceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJob
@@ -1611,7 +1587,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<GetJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNetworkProfile
@@ -1657,7 +1632,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<GetNetworkProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOfferingStatus
@@ -1710,7 +1684,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<GetOfferingStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProject
@@ -1786,7 +1759,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<GetProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRemoteAccessSession
@@ -1832,7 +1804,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<GetRemoteAccessSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRun
@@ -1908,7 +1879,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<GetRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSuite
@@ -1984,7 +1954,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<GetSuiteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTest
@@ -2060,7 +2029,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<GetTestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTestGridProject
@@ -2104,7 +2072,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<GetTestGridProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTestGridSession
@@ -2161,7 +2128,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<GetTestGridSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUpload
@@ -2237,7 +2203,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<GetUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVPCEConfiguration
@@ -2281,7 +2246,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<GetVPCEConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InstallToRemoteAccessSession
@@ -2328,7 +2292,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<InstallToRemoteAccessSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListArtifacts
@@ -2374,7 +2337,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListArtifactsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeviceInstances
@@ -2421,7 +2383,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListDeviceInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDevicePools
@@ -2467,7 +2428,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListDevicePoolsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDevices
@@ -2513,7 +2473,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListDevicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInstanceProfiles
@@ -2559,7 +2518,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListInstanceProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobs
@@ -2605,7 +2563,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNetworkProfiles
@@ -2651,7 +2608,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListNetworkProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOfferingPromotions
@@ -2703,7 +2659,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListOfferingPromotionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOfferings
@@ -2756,7 +2711,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListOfferingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOfferingTransactions
@@ -2809,7 +2763,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListOfferingTransactionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProjects
@@ -2855,7 +2808,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListProjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRemoteAccessSessions
@@ -2901,7 +2853,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListRemoteAccessSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRuns
@@ -2947,7 +2898,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSamples
@@ -2993,7 +2943,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListSamplesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSuites
@@ -3039,7 +2988,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListSuitesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3082,7 +3030,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTestGridProjects
@@ -3123,7 +3070,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListTestGridProjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTestGridSessionActions
@@ -3167,7 +3113,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListTestGridSessionActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTestGridSessionArtifacts
@@ -3211,7 +3156,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListTestGridSessionArtifactsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTestGridSessions
@@ -3255,7 +3199,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListTestGridSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTests
@@ -3301,7 +3244,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListTestsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUniqueProblems
@@ -3355,7 +3297,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListUniqueProblemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUploads
@@ -3401,7 +3342,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListUploadsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVPCEConfigurations
@@ -3442,7 +3382,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ListVPCEConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PurchaseOffering
@@ -3494,7 +3433,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<PurchaseOfferingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RenewOffering
@@ -3546,7 +3484,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<RenewOfferingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ScheduleRun
@@ -3595,7 +3532,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<ScheduleRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopJob
@@ -3645,7 +3581,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<StopJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopRemoteAccessSession
@@ -3691,7 +3626,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<StopRemoteAccessSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopRun
@@ -3741,7 +3675,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<StopRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3795,7 +3728,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3838,7 +3770,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDeviceInstance
@@ -3884,7 +3815,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<UpdateDeviceInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDevicePool
@@ -3932,7 +3862,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<UpdateDevicePoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInstanceProfile
@@ -3978,7 +3907,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<UpdateInstanceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNetworkProfile
@@ -4024,7 +3952,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<UpdateNetworkProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProject
@@ -4070,7 +3997,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<UpdateProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTestGridProject
@@ -4117,7 +4043,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<UpdateTestGridProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUpload
@@ -4163,7 +4088,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<UpdateUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVPCEConfiguration
@@ -4210,7 +4134,6 @@ namespace Amazon.DeviceFarm
 
             return InvokeAsync<UpdateVPCEConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.PrometheusService
     /// <summary>
     /// Configuration for accessing Amazon PrometheusService service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonPrometheusServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -30,7 +30,6 @@ namespace Amazon.IoTJobsDataPlane
     /// <summary>
     /// Configuration for accessing Amazon IoTJobsDataPlane service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonIoTJobsDataPlaneConfig : ClientConfig
     {
         private static readonly string UserAgentString =

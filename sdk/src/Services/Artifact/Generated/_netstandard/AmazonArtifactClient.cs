@@ -315,7 +315,6 @@ namespace Amazon.Artifact
 
             return InvokeAsync<GetAccountSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReport
@@ -370,7 +369,6 @@ namespace Amazon.Artifact
 
             return InvokeAsync<GetReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReportMetadata
@@ -422,7 +420,6 @@ namespace Amazon.Artifact
 
             return InvokeAsync<GetReportMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTermForReport
@@ -477,7 +474,6 @@ namespace Amazon.Artifact
 
             return InvokeAsync<GetTermForReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCustomerAgreements
@@ -523,7 +519,6 @@ namespace Amazon.Artifact
 
             return InvokeAsync<ListCustomerAgreementsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReports
@@ -575,7 +570,6 @@ namespace Amazon.Artifact
 
             return InvokeAsync<ListReportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAccountSettings
@@ -630,7 +624,6 @@ namespace Amazon.Artifact
 
             return InvokeAsync<PutAccountSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

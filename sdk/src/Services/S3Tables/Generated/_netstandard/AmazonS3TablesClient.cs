@@ -332,7 +332,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<CreateNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTable
@@ -398,7 +397,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<CreateTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTableBucket
@@ -459,7 +457,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<CreateTableBucketResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNamespace
@@ -520,7 +517,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<DeleteNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTable
@@ -580,7 +576,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<DeleteTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTableBucket
@@ -641,7 +636,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<DeleteTableBucketResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTableBucketPolicy
@@ -702,7 +696,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<DeleteTableBucketPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTablePolicy
@@ -763,7 +756,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<DeleteTablePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNamespace
@@ -826,7 +818,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<GetNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTable
@@ -889,7 +880,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<GetTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTableBucket
@@ -954,7 +944,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<GetTableBucketResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTableBucketMaintenanceConfiguration
@@ -1016,7 +1005,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<GetTableBucketMaintenanceConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTableBucketPolicy
@@ -1077,7 +1065,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<GetTableBucketPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTableMaintenanceConfiguration
@@ -1139,7 +1126,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<GetTableMaintenanceConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTableMaintenanceJobStatus
@@ -1200,7 +1186,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<GetTableMaintenanceJobStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTableMetadataLocation
@@ -1260,7 +1245,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<GetTableMetadataLocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTablePolicy
@@ -1321,7 +1305,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<GetTablePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNamespaces
@@ -1385,7 +1368,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<ListNamespacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTableBuckets
@@ -1449,7 +1431,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<ListTableBucketsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTables
@@ -1509,7 +1490,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<ListTablesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutTableBucketMaintenanceConfiguration
@@ -1571,7 +1551,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<PutTableBucketMaintenanceConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutTableBucketPolicy
@@ -1633,7 +1612,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<PutTableBucketPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutTableMaintenanceConfiguration
@@ -1695,7 +1673,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<PutTableMaintenanceConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutTablePolicy
@@ -1757,7 +1734,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<PutTablePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RenameTable
@@ -1817,7 +1793,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<RenameTableResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTableMetadataLocation
@@ -1880,7 +1855,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<UpdateTableMetadataLocationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

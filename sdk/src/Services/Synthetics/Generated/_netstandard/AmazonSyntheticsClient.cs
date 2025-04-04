@@ -334,7 +334,6 @@ namespace Amazon.Synthetics
 
             return InvokeAsync<AssociateResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCanary
@@ -401,7 +400,6 @@ namespace Amazon.Synthetics
 
             return InvokeAsync<CreateCanaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGroup
@@ -471,7 +469,6 @@ namespace Amazon.Synthetics
 
             return InvokeAsync<CreateGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCanary
@@ -555,7 +552,6 @@ namespace Amazon.Synthetics
 
             return InvokeAsync<DeleteCanaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGroup
@@ -609,7 +605,6 @@ namespace Amazon.Synthetics
 
             return InvokeAsync<DeleteGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCanaries
@@ -666,7 +661,6 @@ namespace Amazon.Synthetics
 
             return InvokeAsync<DescribeCanariesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCanariesLastRun
@@ -723,7 +717,6 @@ namespace Amazon.Synthetics
 
             return InvokeAsync<DescribeCanariesLastRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRuntimeVersions
@@ -765,7 +758,6 @@ namespace Amazon.Synthetics
 
             return InvokeAsync<DescribeRuntimeVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateResource
@@ -812,7 +804,6 @@ namespace Amazon.Synthetics
 
             return InvokeAsync<DisassociateResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCanary
@@ -853,7 +844,6 @@ namespace Amazon.Synthetics
 
             return InvokeAsync<GetCanaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCanaryRuns
@@ -896,7 +886,6 @@ namespace Amazon.Synthetics
 
             return InvokeAsync<GetCanaryRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGroup
@@ -943,7 +932,6 @@ namespace Amazon.Synthetics
 
             return InvokeAsync<GetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssociatedGroups
@@ -987,7 +975,6 @@ namespace Amazon.Synthetics
 
             return InvokeAsync<ListAssociatedGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroupResources
@@ -1034,7 +1021,6 @@ namespace Amazon.Synthetics
 
             return InvokeAsync<ListGroupResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGroups
@@ -1075,7 +1061,6 @@ namespace Amazon.Synthetics
 
             return InvokeAsync<ListGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1124,7 +1109,6 @@ namespace Amazon.Synthetics
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartCanary
@@ -1172,7 +1156,6 @@ namespace Amazon.Synthetics
 
             return InvokeAsync<StartCanaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopCanary
@@ -1226,7 +1209,6 @@ namespace Amazon.Synthetics
 
             return InvokeAsync<StopCanaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1299,7 +1281,6 @@ namespace Amazon.Synthetics
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1348,7 +1329,6 @@ namespace Amazon.Synthetics
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCanary
@@ -1403,7 +1383,6 @@ namespace Amazon.Synthetics
 
             return InvokeAsync<UpdateCanaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

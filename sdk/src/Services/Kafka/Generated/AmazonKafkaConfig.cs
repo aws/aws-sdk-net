@@ -30,7 +30,6 @@ namespace Amazon.Kafka
     /// <summary>
     /// Configuration for accessing Amazon Kafka service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonKafkaConfig : ClientConfig
     {
         private static readonly string UserAgentString =

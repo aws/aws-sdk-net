@@ -30,7 +30,6 @@ namespace Amazon.CodeGuruReviewer
     /// <summary>
     /// Configuration for accessing Amazon CodeGuruReviewer service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCodeGuruReviewerConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -551,7 +551,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<CreateByteMatchSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGeoMatchSet
@@ -701,7 +700,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<CreateGeoMatchSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIPSet
@@ -989,7 +987,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<CreateIPSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRateBasedRule
@@ -1209,7 +1206,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<CreateRateBasedRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRegexMatchSet
@@ -1308,7 +1304,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<CreateRegexMatchSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRegexPatternSet
@@ -1403,7 +1398,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<CreateRegexPatternSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRule
@@ -1751,7 +1745,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<CreateRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRuleGroup
@@ -1848,7 +1841,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<CreateRuleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSizeConstraintSet
@@ -2000,7 +1992,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<CreateSizeConstraintSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSqlInjectionMatchSet
@@ -2282,7 +2273,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<CreateSqlInjectionMatchSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWebACL
@@ -2456,7 +2446,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<CreateWebACLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWebACLMigrationStack
@@ -2627,7 +2616,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<CreateWebACLMigrationStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateXssMatchSet
@@ -2775,7 +2763,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<CreateXssMatchSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteByteMatchSet
@@ -3011,7 +2998,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<DeleteByteMatchSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGeoMatchSet
@@ -3134,7 +3120,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<DeleteGeoMatchSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIPSet
@@ -3368,7 +3353,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<DeleteIPSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLoggingConfiguration
@@ -3427,7 +3411,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<DeleteLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePermissionPolicy
@@ -3490,7 +3473,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<DeletePermissionPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRateBasedRule
@@ -3621,7 +3603,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<DeleteRateBasedRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRegexMatchSet
@@ -3746,7 +3727,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<DeleteRegexMatchSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRegexPatternSet
@@ -3848,7 +3828,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<DeleteRegexPatternSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRule
@@ -4094,7 +4073,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<DeleteRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRuleGroup
@@ -4249,7 +4227,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<DeleteRuleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSizeConstraintSet
@@ -4374,7 +4351,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<DeleteSizeConstraintSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSqlInjectionMatchSet
@@ -4612,7 +4588,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<DeleteSqlInjectionMatchSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWebACL
@@ -4850,7 +4825,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<DeleteWebACLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteXssMatchSet
@@ -4975,7 +4949,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<DeleteXssMatchSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetByteMatchSet
@@ -5077,7 +5050,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<GetByteMatchSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetChangeToken
@@ -5198,7 +5170,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<GetChangeTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetChangeTokenStatus
@@ -5324,7 +5295,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<GetChangeTokenStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGeoMatchSet
@@ -5383,7 +5353,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<GetGeoMatchSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIPSet
@@ -5485,7 +5454,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<GetIPSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLoggingConfiguration
@@ -5540,7 +5508,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<GetLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPermissionPolicy
@@ -5595,7 +5562,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<GetPermissionPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRateBasedRule
@@ -5655,7 +5621,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<GetRateBasedRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRateBasedRuleManagedKeys
@@ -5766,7 +5731,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<GetRateBasedRuleManagedKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRegexMatchSet
@@ -5825,7 +5789,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<GetRegexMatchSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRegexPatternSet
@@ -5884,7 +5847,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<GetRegexPatternSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRule
@@ -5988,7 +5950,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<GetRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRuleGroup
@@ -6048,7 +6009,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<GetRuleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSampledRequests
@@ -6114,7 +6074,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<GetSampledRequestsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSizeConstraintSet
@@ -6173,7 +6132,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<GetSizeConstraintSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSqlInjectionMatchSet
@@ -6275,7 +6233,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<GetSqlInjectionMatchSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWebACL
@@ -6377,7 +6334,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<GetWebACLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetXssMatchSet
@@ -6436,7 +6392,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<GetXssMatchSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListActivatedRulesInRuleGroup
@@ -6540,7 +6495,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<ListActivatedRulesInRuleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListByteMatchSets
@@ -6596,7 +6550,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<ListByteMatchSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGeoMatchSets
@@ -6652,7 +6605,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<ListGeoMatchSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIPSets
@@ -6708,7 +6660,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<ListIPSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLoggingConfigurations
@@ -6812,7 +6763,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<ListLoggingConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRateBasedRules
@@ -6868,7 +6818,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<ListRateBasedRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRegexMatchSets
@@ -6924,7 +6873,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<ListRegexMatchSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRegexPatternSets
@@ -6980,7 +6928,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<ListRegexPatternSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRuleGroups
@@ -7032,7 +6979,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<ListRuleGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRules
@@ -7088,7 +7034,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<ListRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSizeConstraintSets
@@ -7144,7 +7089,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<ListSizeConstraintSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSqlInjectionMatchSets
@@ -7200,7 +7144,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<ListSqlInjectionMatchSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSubscribedRuleGroups
@@ -7255,7 +7198,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<ListSubscribedRuleGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -7378,7 +7320,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWebACLs
@@ -7434,7 +7375,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<ListWebACLsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListXssMatchSets
@@ -7490,7 +7430,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<ListXssMatchSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutLoggingConfiguration
@@ -7588,7 +7527,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<PutLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutPermissionPolicy
@@ -7740,7 +7678,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<PutPermissionPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -7868,7 +7805,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -7978,7 +7914,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateByteMatchSet
@@ -8428,7 +8363,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<UpdateByteMatchSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGeoMatchSet
@@ -8660,7 +8594,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<UpdateGeoMatchSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIPSet
@@ -9192,7 +9125,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<UpdateIPSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRateBasedRule
@@ -9440,7 +9372,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<UpdateRateBasedRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRegexMatchSet
@@ -9620,7 +9551,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<UpdateRegexMatchSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRegexPatternSet
@@ -9802,7 +9732,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<UpdateRegexPatternSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRule
@@ -10278,7 +10207,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<UpdateRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRuleGroup
@@ -10488,7 +10416,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<UpdateRuleGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSizeConstraintSet
@@ -10738,7 +10665,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<UpdateSizeConstraintSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSqlInjectionMatchSet
@@ -11180,7 +11106,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<UpdateSqlInjectionMatchSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWebACL
@@ -11453,7 +11378,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<UpdateWebACLResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateXssMatchSet
@@ -11679,7 +11603,6 @@ namespace Amazon.WAF
 
             return InvokeAsync<UpdateXssMatchSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

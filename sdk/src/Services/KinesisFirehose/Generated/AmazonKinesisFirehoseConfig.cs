@@ -30,7 +30,6 @@ namespace Amazon.KinesisFirehose
     /// <summary>
     /// Configuration for accessing Amazon KinesisFirehose service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonKinesisFirehoseConfig : ClientConfig
     {
         private static readonly string UserAgentString =

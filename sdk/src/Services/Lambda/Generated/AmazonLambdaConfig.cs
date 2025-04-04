@@ -30,7 +30,6 @@ namespace Amazon.Lambda
     /// <summary>
     /// Configuration for accessing Amazon Lambda service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonLambdaConfig : ClientConfig
     {
         private static readonly string UserAgentString =

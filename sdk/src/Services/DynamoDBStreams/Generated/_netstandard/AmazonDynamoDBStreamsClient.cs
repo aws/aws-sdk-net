@@ -343,7 +343,6 @@ namespace Amazon.DynamoDBStreams
 
             return InvokeAsync<DescribeStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRecords
@@ -561,7 +560,6 @@ namespace Amazon.DynamoDBStreams
 
             return InvokeAsync<GetRecordsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetShardIterator
@@ -632,7 +630,6 @@ namespace Amazon.DynamoDBStreams
 
             return InvokeAsync<GetShardIteratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStreams
@@ -715,7 +712,6 @@ namespace Amazon.DynamoDBStreams
 
             return InvokeAsync<ListStreamsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

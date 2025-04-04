@@ -30,7 +30,6 @@ namespace Amazon.DirectoryService
     /// <summary>
     /// Configuration for accessing Amazon DirectoryService service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonDirectoryServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

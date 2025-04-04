@@ -342,7 +342,6 @@ namespace Amazon.PI
 
             return InvokeAsync<CreatePerformanceAnalysisReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePerformanceAnalysisReport
@@ -385,7 +384,6 @@ namespace Amazon.PI
 
             return InvokeAsync<DeletePerformanceAnalysisReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDimensionKeys
@@ -436,7 +434,6 @@ namespace Amazon.PI
 
             return InvokeAsync<DescribeDimensionKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDimensionKeyDetails
@@ -483,7 +480,6 @@ namespace Amazon.PI
 
             return InvokeAsync<GetDimensionKeyDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPerformanceAnalysisReport
@@ -529,7 +525,6 @@ namespace Amazon.PI
 
             return InvokeAsync<GetPerformanceAnalysisReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceMetadata
@@ -573,7 +568,6 @@ namespace Amazon.PI
 
             return InvokeAsync<GetResourceMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceMetrics
@@ -625,7 +619,6 @@ namespace Amazon.PI
 
             return InvokeAsync<GetResourceMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAvailableResourceDimensions
@@ -669,7 +662,6 @@ namespace Amazon.PI
 
             return InvokeAsync<ListAvailableResourceDimensionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAvailableResourceMetrics
@@ -712,7 +704,6 @@ namespace Amazon.PI
 
             return InvokeAsync<ListAvailableResourceMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPerformanceAnalysisReports
@@ -756,7 +747,6 @@ namespace Amazon.PI
 
             return InvokeAsync<ListPerformanceAnalysisReportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -799,7 +789,6 @@ namespace Amazon.PI
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -842,7 +831,6 @@ namespace Amazon.PI
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -885,7 +873,6 @@ namespace Amazon.PI
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

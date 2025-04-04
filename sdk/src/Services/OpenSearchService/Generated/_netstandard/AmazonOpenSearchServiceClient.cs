@@ -309,7 +309,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<AcceptInboundConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddDataSource
@@ -367,7 +366,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<AddDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddDirectQueryDataSource
@@ -420,7 +418,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<AddDirectQueryDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddTags
@@ -474,7 +471,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<AddTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociatePackage
@@ -529,7 +525,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<AssociatePackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociatePackages
@@ -583,7 +578,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<AssociatePackagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AuthorizeVpcEndpointAccess
@@ -636,7 +630,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<AuthorizeVpcEndpointAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelDomainConfigChange
@@ -685,7 +678,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<CancelDomainConfigChangeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelServiceSoftwareUpdate
@@ -735,7 +727,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<CancelServiceSoftwareUpdateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApplication
@@ -788,7 +779,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDomain
@@ -845,7 +835,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<CreateDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOutboundConnection
@@ -893,7 +882,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<CreateOutboundConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePackage
@@ -951,7 +939,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<CreatePackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVpcEndpoint
@@ -1004,7 +991,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<CreateVpcEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApplication
@@ -1060,7 +1046,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DeleteApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataSource
@@ -1114,7 +1099,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DeleteDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDirectQueryDataSource
@@ -1163,7 +1147,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DeleteDirectQueryDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDomain
@@ -1210,7 +1193,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DeleteDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInboundConnection
@@ -1252,7 +1234,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DeleteInboundConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOutboundConnection
@@ -1294,7 +1275,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DeleteOutboundConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePackage
@@ -1348,7 +1328,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DeletePackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVpcEndpoint
@@ -1394,7 +1373,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DeleteVpcEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDomain
@@ -1441,7 +1419,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DescribeDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDomainAutoTunes
@@ -1489,7 +1466,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DescribeDomainAutoTunesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDomainChangeProgress
@@ -1537,7 +1513,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DescribeDomainChangeProgressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDomainConfig
@@ -1583,7 +1558,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DescribeDomainConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDomainHealth
@@ -1633,7 +1607,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DescribeDomainHealthResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDomainNodes
@@ -1687,7 +1660,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DescribeDomainNodesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDomains
@@ -1731,7 +1703,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DescribeDomainsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDryRunProgress
@@ -1782,7 +1753,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DescribeDryRunProgressResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInboundConnections
@@ -1824,7 +1794,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DescribeInboundConnectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInstanceTypeLimits
@@ -1878,7 +1847,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DescribeInstanceTypeLimitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOutboundConnections
@@ -1920,7 +1888,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DescribeOutboundConnectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePackages
@@ -1971,7 +1938,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DescribePackagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReservedInstanceOfferings
@@ -2019,7 +1985,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DescribeReservedInstanceOfferingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReservedInstances
@@ -2067,7 +2032,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DescribeReservedInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVpcEndpoints
@@ -2113,7 +2077,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DescribeVpcEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DissociatePackage
@@ -2170,7 +2133,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DissociatePackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DissociatePackages
@@ -2223,7 +2185,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<DissociatePackagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplication
@@ -2275,7 +2236,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<GetApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCompatibleVersions
@@ -2325,7 +2285,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<GetCompatibleVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataSource
@@ -2378,7 +2337,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<GetDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDirectQueryDataSource
@@ -2428,7 +2386,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<GetDirectQueryDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDomainMaintenanceStatus
@@ -2477,7 +2434,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<GetDomainMaintenanceStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPackageVersionHistory
@@ -2529,7 +2485,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<GetPackageVersionHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUpgradeHistory
@@ -2579,7 +2534,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<GetUpgradeHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUpgradeStatus
@@ -2629,7 +2583,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<GetUpgradeStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplications
@@ -2681,7 +2634,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<ListApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataSources
@@ -2736,7 +2688,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<ListDataSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDirectQueryDataSources
@@ -2786,7 +2737,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<ListDirectQueryDataSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomainMaintenances
@@ -2835,7 +2785,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<ListDomainMaintenancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomainNames
@@ -2876,7 +2825,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<ListDomainNamesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomainsForPackage
@@ -2927,7 +2875,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<ListDomainsForPackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInstanceTypeDetails
@@ -2974,7 +2921,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<ListInstanceTypeDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPackagesForDomain
@@ -3025,7 +2971,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<ListPackagesForDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListScheduledActions
@@ -3077,7 +3022,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<ListScheduledActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTags
@@ -3125,7 +3069,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<ListTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVersions
@@ -3172,7 +3115,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<ListVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVpcEndpointAccess
@@ -3220,7 +3162,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<ListVpcEndpointAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVpcEndpoints
@@ -3264,7 +3205,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<ListVpcEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVpcEndpointsForDomain
@@ -3311,7 +3251,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<ListVpcEndpointsForDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PurchaseReservedInstanceOffering
@@ -3363,7 +3302,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<PurchaseReservedInstanceOfferingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectInboundConnection
@@ -3404,7 +3342,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<RejectInboundConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTags
@@ -3449,7 +3386,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<RemoveTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RevokeVpcEndpointAccess
@@ -3499,7 +3435,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<RevokeVpcEndpointAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDomainMaintenance
@@ -3550,7 +3485,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<StartDomainMaintenanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartServiceSoftwareUpdate
@@ -3598,7 +3532,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<StartServiceSoftwareUpdateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplication
@@ -3654,7 +3587,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataSource
@@ -3708,7 +3640,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<UpdateDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDirectQueryDataSource
@@ -3758,7 +3689,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<UpdateDirectQueryDataSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDomainConfig
@@ -3811,7 +3741,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<UpdateDomainConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePackage
@@ -3865,7 +3794,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<UpdatePackageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePackageScope
@@ -3915,7 +3843,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<UpdatePackageScopeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateScheduledAction
@@ -3975,7 +3902,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<UpdateScheduledActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVpcEndpoint
@@ -4028,7 +3954,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<UpdateVpcEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpgradeDomain
@@ -4081,7 +4006,6 @@ namespace Amazon.OpenSearchService
 
             return InvokeAsync<UpgradeDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -312,7 +312,6 @@ namespace Amazon.MediaPackageVod
 
             return InvokeAsync<ConfigureLogsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAsset
@@ -364,7 +363,6 @@ namespace Amazon.MediaPackageVod
 
             return InvokeAsync<CreateAssetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePackagingConfiguration
@@ -416,7 +414,6 @@ namespace Amazon.MediaPackageVod
 
             return InvokeAsync<CreatePackagingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePackagingGroup
@@ -468,7 +465,6 @@ namespace Amazon.MediaPackageVod
 
             return InvokeAsync<CreatePackagingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAsset
@@ -520,7 +516,6 @@ namespace Amazon.MediaPackageVod
 
             return InvokeAsync<DeleteAssetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePackagingConfiguration
@@ -572,7 +567,6 @@ namespace Amazon.MediaPackageVod
 
             return InvokeAsync<DeletePackagingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePackagingGroup
@@ -624,7 +618,6 @@ namespace Amazon.MediaPackageVod
 
             return InvokeAsync<DeletePackagingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAsset
@@ -676,7 +669,6 @@ namespace Amazon.MediaPackageVod
 
             return InvokeAsync<DescribeAssetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePackagingConfiguration
@@ -728,7 +720,6 @@ namespace Amazon.MediaPackageVod
 
             return InvokeAsync<DescribePackagingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePackagingGroup
@@ -780,7 +771,6 @@ namespace Amazon.MediaPackageVod
 
             return InvokeAsync<DescribePackagingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssets
@@ -832,7 +822,6 @@ namespace Amazon.MediaPackageVod
 
             return InvokeAsync<ListAssetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPackagingConfigurations
@@ -884,7 +873,6 @@ namespace Amazon.MediaPackageVod
 
             return InvokeAsync<ListPackagingConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPackagingGroups
@@ -936,7 +924,6 @@ namespace Amazon.MediaPackageVod
 
             return InvokeAsync<ListPackagingGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -970,7 +957,6 @@ namespace Amazon.MediaPackageVod
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1004,7 +990,6 @@ namespace Amazon.MediaPackageVod
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1038,7 +1023,6 @@ namespace Amazon.MediaPackageVod
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePackagingGroup
@@ -1091,7 +1075,6 @@ namespace Amazon.MediaPackageVod
 
             return InvokeAsync<UpdatePackagingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

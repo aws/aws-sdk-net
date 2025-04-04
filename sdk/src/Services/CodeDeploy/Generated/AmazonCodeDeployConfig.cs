@@ -30,7 +30,6 @@ namespace Amazon.CodeDeploy
     /// <summary>
     /// Configuration for accessing Amazon CodeDeploy service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCodeDeployConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -30,7 +30,6 @@ namespace Amazon.IoTFleetWise
     /// <summary>
     /// Configuration for accessing Amazon IoTFleetWise service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonIoTFleetWiseConfig : ClientConfig
     {
         private static readonly string UserAgentString =

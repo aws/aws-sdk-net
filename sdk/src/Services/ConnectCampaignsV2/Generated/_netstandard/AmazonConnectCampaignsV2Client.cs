@@ -316,7 +316,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<CreateCampaignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCampaign
@@ -362,7 +361,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<DeleteCampaignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCampaignChannelSubtypeConfig
@@ -412,7 +410,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<DeleteCampaignChannelSubtypeConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCampaignCommunicationLimits
@@ -466,7 +463,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<DeleteCampaignCommunicationLimitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCampaignCommunicationTime
@@ -520,7 +516,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<DeleteCampaignCommunicationTimeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnectInstanceConfig
@@ -572,7 +567,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<DeleteConnectInstanceConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnectInstanceIntegration
@@ -621,7 +615,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<DeleteConnectInstanceIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInstanceOnboardingJob
@@ -670,7 +663,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<DeleteInstanceOnboardingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCampaign
@@ -716,7 +708,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<DescribeCampaignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCampaignState
@@ -765,7 +756,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<GetCampaignStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCampaignStateBatch
@@ -811,7 +801,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<GetCampaignStateBatchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConnectInstanceConfig
@@ -857,7 +846,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<GetConnectInstanceConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInstanceOnboardingJobStatus
@@ -903,7 +891,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<GetInstanceOnboardingJobStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCampaigns
@@ -947,7 +934,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<ListCampaignsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConnectInstanceIntegrations
@@ -996,7 +982,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<ListConnectInstanceIntegrationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1045,7 +1030,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PauseCampaign
@@ -1102,7 +1086,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<PauseCampaignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutConnectInstanceIntegration
@@ -1155,7 +1138,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<PutConnectInstanceIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutOutboundRequestBatch
@@ -1213,7 +1195,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<PutOutboundRequestBatchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutProfileOutboundRequestBatch
@@ -1271,7 +1252,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<PutProfileOutboundRequestBatchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResumeCampaign
@@ -1328,7 +1308,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<ResumeCampaignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartCampaign
@@ -1385,7 +1364,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<StartCampaignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartInstanceOnboardingJob
@@ -1438,7 +1416,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<StartInstanceOnboardingJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopCampaign
@@ -1495,7 +1472,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<StopCampaignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1544,7 +1520,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1593,7 +1568,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCampaignChannelSubtypeConfig
@@ -1643,7 +1617,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<UpdateCampaignChannelSubtypeConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCampaignCommunicationLimits
@@ -1697,7 +1670,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<UpdateCampaignCommunicationLimitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCampaignCommunicationTime
@@ -1751,7 +1723,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<UpdateCampaignCommunicationTimeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCampaignFlowAssociation
@@ -1805,7 +1776,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<UpdateCampaignFlowAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCampaignName
@@ -1855,7 +1825,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<UpdateCampaignNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCampaignSchedule
@@ -1909,7 +1878,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<UpdateCampaignScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCampaignSource
@@ -1963,7 +1931,6 @@ namespace Amazon.ConnectCampaignsV2
 
             return InvokeAsync<UpdateCampaignSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -274,7 +274,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<DatetimeOffsetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EmptyInputAndEmptyOutput
@@ -314,7 +313,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<EmptyInputAndEmptyOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EndpointOperation
@@ -348,7 +346,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<EndpointOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EndpointWithHostLabelOperation
@@ -382,7 +379,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<EndpointWithHostLabelOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FractionalSeconds
@@ -416,7 +412,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<FractionalSecondsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GreetingWithErrors
@@ -459,7 +454,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<GreetingWithErrorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HostWithPathOperation
@@ -493,7 +487,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<HostWithPathOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  IgnoresWrappingXmlName
@@ -532,7 +525,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<IgnoresWrappingXmlNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NoInputAndOutput
@@ -572,7 +564,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<NoInputAndOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutWithContentEncoding
@@ -606,7 +597,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<PutWithContentEncodingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryIdempotencyTokenAutoFill
@@ -640,7 +630,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<QueryIdempotencyTokenAutoFillResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryLists
@@ -674,7 +663,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<QueryListsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryTimestamps
@@ -712,7 +700,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<QueryTimestampsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RecursiveXmlShapes
@@ -746,7 +733,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<RecursiveXmlShapesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SimpleInputParams
@@ -780,7 +766,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<SimpleInputParamsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SimpleScalarXmlProperties
@@ -814,7 +799,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<SimpleScalarXmlPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlBlobs
@@ -848,7 +832,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<XmlBlobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlEmptyBlobs
@@ -882,7 +865,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<XmlEmptyBlobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlEmptyLists
@@ -916,7 +898,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<XmlEmptyListsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlEnums
@@ -950,7 +931,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<XmlEnumsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlIntEnums
@@ -984,7 +964,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<XmlIntEnumsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlLists
@@ -1023,7 +1002,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<XmlListsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlNamespaces
@@ -1057,7 +1035,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<XmlNamespacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  XmlTimestamps
@@ -1092,7 +1069,6 @@ namespace Amazon.EC2Protocol
 
             return InvokeAsync<XmlTimestampsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
     }

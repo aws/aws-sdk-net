@@ -318,7 +318,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<AddTagsToResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ApplyPendingMaintenanceAction
@@ -356,7 +355,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<ApplyPendingMaintenanceActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchStartRecommendations
@@ -408,7 +406,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<BatchStartRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelReplicationTaskAssessmentRun
@@ -458,7 +455,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<CancelReplicationTaskAssessmentRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataMigration
@@ -507,7 +503,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<CreateDataMigrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataProvider
@@ -554,7 +549,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<CreateDataProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEndpoint
@@ -619,7 +613,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<CreateEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEventSubscription
@@ -704,7 +697,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<CreateEventSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFleetAdvisorCollector
@@ -753,7 +745,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<CreateFleetAdvisorCollectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInstanceProfile
@@ -814,7 +805,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<CreateInstanceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMigrationProject
@@ -876,7 +866,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<CreateMigrationProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateReplicationConfig
@@ -937,7 +926,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<CreateReplicationConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateReplicationInstance
@@ -1020,7 +1008,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<CreateReplicationInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateReplicationSubnetGroup
@@ -1088,7 +1075,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<CreateReplicationSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateReplicationTask
@@ -1140,7 +1126,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<CreateReplicationTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCertificate
@@ -1180,7 +1165,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DeleteCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnection
@@ -1223,7 +1207,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DeleteConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataMigration
@@ -1266,7 +1249,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DeleteDataMigrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataProvider
@@ -1319,7 +1301,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DeleteDataProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEndpoint
@@ -1365,7 +1346,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DeleteEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventSubscription
@@ -1408,7 +1388,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DeleteEventSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFleetAdvisorCollector
@@ -1451,7 +1430,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DeleteFleetAdvisorCollectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFleetAdvisorDatabases
@@ -1494,7 +1472,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DeleteFleetAdvisorDatabasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInstanceProfile
@@ -1547,7 +1524,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DeleteInstanceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMigrationProject
@@ -1599,7 +1575,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DeleteMigrationProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReplicationConfig
@@ -1645,7 +1620,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DeleteReplicationConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReplicationInstance
@@ -1692,7 +1666,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DeleteReplicationInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReplicationSubnetGroup
@@ -1735,7 +1708,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DeleteReplicationSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReplicationTask
@@ -1775,7 +1747,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DeleteReplicationTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReplicationTaskAssessmentRun
@@ -1825,7 +1796,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DeleteReplicationTaskAssessmentRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountAttributes
@@ -1870,7 +1840,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeAccountAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApplicableIndividualAssessments
@@ -1938,7 +1907,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeApplicableIndividualAssessmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCertificates
@@ -1975,7 +1943,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeCertificatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConnections
@@ -2013,7 +1980,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeConnectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConversionConfiguration
@@ -2050,7 +2016,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeConversionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataMigrations
@@ -2093,7 +2058,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeDataMigrationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataProviders
@@ -2136,7 +2100,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeDataProvidersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEndpoints
@@ -2173,7 +2136,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEndpointSettings
@@ -2208,7 +2170,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeEndpointSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEndpointTypes
@@ -2242,7 +2203,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeEndpointTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEngineVersions
@@ -2276,7 +2236,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeEngineVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventCategories
@@ -2312,7 +2271,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeEventCategoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEvents
@@ -2348,7 +2306,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventSubscriptions
@@ -2393,7 +2350,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeEventSubscriptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeExtensionPackAssociations
@@ -2429,7 +2385,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeExtensionPackAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFleetAdvisorCollectors
@@ -2466,7 +2421,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeFleetAdvisorCollectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFleetAdvisorDatabases
@@ -2503,7 +2457,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeFleetAdvisorDatabasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFleetAdvisorLsaAnalysis
@@ -2541,7 +2494,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeFleetAdvisorLsaAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFleetAdvisorSchemaObjectSummary
@@ -2578,7 +2530,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeFleetAdvisorSchemaObjectSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFleetAdvisorSchemas
@@ -2615,7 +2566,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeFleetAdvisorSchemasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInstanceProfiles
@@ -2658,7 +2608,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeInstanceProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMetadataModelAssessments
@@ -2696,7 +2645,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeMetadataModelAssessmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMetadataModelConversions
@@ -2733,7 +2681,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeMetadataModelConversionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMetadataModelExportsAsScript
@@ -2770,7 +2717,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeMetadataModelExportsAsScriptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMetadataModelExportsToTarget
@@ -2807,7 +2753,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeMetadataModelExportsToTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMetadataModelImports
@@ -2844,7 +2789,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeMetadataModelImportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMigrationProjects
@@ -2887,7 +2831,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeMigrationProjectsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOrderableReplicationInstances
@@ -2922,7 +2865,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeOrderableReplicationInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePendingMaintenanceActions
@@ -2960,7 +2902,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribePendingMaintenanceActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRecommendationLimitations
@@ -3001,7 +2942,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeRecommendationLimitationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRecommendations
@@ -3041,7 +2981,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRefreshSchemasStatus
@@ -3081,7 +3020,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeRefreshSchemasStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReplicationConfigs
@@ -3119,7 +3057,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeReplicationConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReplicationInstances
@@ -3156,7 +3093,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeReplicationInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReplicationInstanceTaskLogs
@@ -3196,7 +3132,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeReplicationInstanceTaskLogsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReplications
@@ -3234,7 +3169,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeReplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReplicationSubnetGroups
@@ -3271,7 +3205,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeReplicationSubnetGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReplicationTableStatistics
@@ -3312,7 +3245,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeReplicationTableStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReplicationTaskAssessmentResults
@@ -3356,7 +3288,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeReplicationTaskAssessmentResultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReplicationTaskAssessmentRuns
@@ -3405,7 +3336,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeReplicationTaskAssessmentRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReplicationTaskIndividualAssessments
@@ -3448,7 +3378,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeReplicationTaskIndividualAssessmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReplicationTasks
@@ -3485,7 +3414,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeReplicationTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSchemas
@@ -3525,7 +3453,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeSchemasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTableStatistics
@@ -3576,7 +3503,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<DescribeTableStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportMetadataModelAssessment
@@ -3614,7 +3540,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<ExportMetadataModelAssessmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportCertificate
@@ -3657,7 +3582,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<ImportCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3699,7 +3623,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyConversionConfiguration
@@ -3739,7 +3662,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<ModifyConversionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDataMigration
@@ -3782,7 +3704,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<ModifyDataMigrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyDataProvider
@@ -3835,7 +3756,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<ModifyDataProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyEndpoint
@@ -3894,7 +3814,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<ModifyEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyEventSubscription
@@ -3959,7 +3878,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<ModifyEventSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyInstanceProfile
@@ -4021,7 +3939,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<ModifyInstanceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyMigrationProject
@@ -4079,7 +3996,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<ModifyMigrationProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyReplicationConfig
@@ -4143,7 +4059,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<ModifyReplicationConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyReplicationInstance
@@ -4204,7 +4119,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<ModifyReplicationInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyReplicationSubnetGroup
@@ -4257,7 +4171,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<ModifyReplicationSubnetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifyReplicationTask
@@ -4314,7 +4227,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<ModifyReplicationTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  MoveReplicationTask
@@ -4365,7 +4277,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<MoveReplicationTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RebootReplicationInstance
@@ -4406,7 +4317,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<RebootReplicationInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RefreshSchemas
@@ -4454,7 +4364,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<RefreshSchemasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReloadReplicationTables
@@ -4501,7 +4410,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<ReloadReplicationTablesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReloadTables
@@ -4547,7 +4455,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<ReloadTablesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTagsFromResource
@@ -4589,7 +4496,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<RemoveTagsFromResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RunFleetAdvisorLsaAnalysis
@@ -4630,7 +4536,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<RunFleetAdvisorLsaAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartDataMigration
@@ -4679,7 +4584,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<StartDataMigrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartExtensionPackAssociation
@@ -4739,7 +4643,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<StartExtensionPackAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMetadataModelAssessment
@@ -4800,7 +4703,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<StartMetadataModelAssessmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMetadataModelConversion
@@ -4858,7 +4760,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<StartMetadataModelConversionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMetadataModelExportAsScript
@@ -4917,7 +4818,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<StartMetadataModelExportAsScriptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMetadataModelExportToTarget
@@ -4975,7 +4875,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<StartMetadataModelExportToTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMetadataModelImport
@@ -5039,7 +4938,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<StartMetadataModelImportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartRecommendations
@@ -5087,7 +4985,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<StartRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartReplication
@@ -5134,7 +5031,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<StartReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartReplicationTask
@@ -5183,7 +5079,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<StartReplicationTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartReplicationTaskAssessment
@@ -5247,7 +5142,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<StartReplicationTaskAssessmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartReplicationTaskAssessmentRun
@@ -5328,7 +5222,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<StartReplicationTaskAssessmentRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopDataMigration
@@ -5371,7 +5264,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<StopDataMigrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopReplication
@@ -5415,7 +5307,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<StopReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopReplicationTask
@@ -5455,7 +5346,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<StopReplicationTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestConnection
@@ -5504,7 +5394,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<TestConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSubscriptionsToEventBridge
@@ -5559,7 +5448,6 @@ namespace Amazon.DatabaseMigrationService
 
             return InvokeAsync<UpdateSubscriptionsToEventBridgeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

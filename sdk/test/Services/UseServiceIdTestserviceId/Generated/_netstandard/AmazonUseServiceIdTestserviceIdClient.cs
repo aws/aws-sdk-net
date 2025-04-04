@@ -274,7 +274,6 @@ namespace Amazon.UseServiceIdTestserviceId
 
             return InvokeAsync<NoPayloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
     }

@@ -30,7 +30,6 @@ namespace Amazon.Notifications
     /// <summary>
     /// Configuration for accessing Amazon Notifications service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonNotificationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

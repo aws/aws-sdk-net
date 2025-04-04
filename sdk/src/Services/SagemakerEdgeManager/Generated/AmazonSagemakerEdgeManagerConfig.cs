@@ -30,7 +30,6 @@ namespace Amazon.SagemakerEdgeManager
     /// <summary>
     /// Configuration for accessing Amazon SagemakerEdgeManager service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSagemakerEdgeManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =

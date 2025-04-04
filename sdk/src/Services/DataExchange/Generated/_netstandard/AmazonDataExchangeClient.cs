@@ -340,7 +340,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<AcceptDataGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelJob
@@ -391,7 +390,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<CancelJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataGrant
@@ -443,7 +441,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<CreateDataGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataSet
@@ -492,7 +489,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<CreateDataSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEventAction
@@ -541,7 +537,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<CreateEventActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateJob
@@ -594,7 +589,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<CreateJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRevision
@@ -643,7 +637,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<CreateRevisionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAsset
@@ -696,7 +689,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<DeleteAssetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataGrant
@@ -745,7 +737,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<DeleteDataGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataSet
@@ -798,7 +789,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<DeleteDataSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventAction
@@ -844,7 +834,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<DeleteEventActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRevision
@@ -897,7 +886,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<DeleteRevisionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAsset
@@ -943,7 +931,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<GetAssetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataGrant
@@ -992,7 +979,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<GetDataGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataSet
@@ -1038,7 +1024,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<GetDataSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEventAction
@@ -1084,7 +1069,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<GetEventActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJob
@@ -1130,7 +1114,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<GetJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReceivedDataGrant
@@ -1179,7 +1162,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<GetReceivedDataGrantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRevision
@@ -1225,7 +1207,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<GetRevisionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataGrants
@@ -1274,7 +1255,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<ListDataGrantsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataSetRevisions
@@ -1320,7 +1300,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<ListDataSetRevisionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataSets
@@ -1367,7 +1346,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<ListDataSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventActions
@@ -1413,7 +1391,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<ListEventActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJobs
@@ -1459,7 +1436,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReceivedDataGrants
@@ -1508,7 +1484,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<ListReceivedDataGrantsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRevisionAssets
@@ -1554,7 +1529,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<ListRevisionAssetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1588,7 +1562,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RevokeRevision
@@ -1641,7 +1614,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<RevokeRevisionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendApiAsset
@@ -1691,7 +1663,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<SendApiAssetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendDataSetNotification
@@ -1744,7 +1715,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<SendDataSetNotificationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartJob
@@ -1797,7 +1767,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<StartJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1831,7 +1800,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1865,7 +1833,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAsset
@@ -1918,7 +1885,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<UpdateAssetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataSet
@@ -1967,7 +1933,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<UpdateDataSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEventAction
@@ -2016,7 +1981,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<UpdateEventActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRevision
@@ -2069,7 +2033,6 @@ namespace Amazon.DataExchange
 
             return InvokeAsync<UpdateRevisionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

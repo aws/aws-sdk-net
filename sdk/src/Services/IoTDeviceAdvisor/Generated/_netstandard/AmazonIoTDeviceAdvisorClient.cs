@@ -315,7 +315,6 @@ namespace Amazon.IoTDeviceAdvisor
 
             return InvokeAsync<CreateSuiteDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSuiteDefinition
@@ -361,7 +360,6 @@ namespace Amazon.IoTDeviceAdvisor
 
             return InvokeAsync<DeleteSuiteDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEndpoint
@@ -404,7 +402,6 @@ namespace Amazon.IoTDeviceAdvisor
 
             return InvokeAsync<GetEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSuiteDefinition
@@ -453,7 +450,6 @@ namespace Amazon.IoTDeviceAdvisor
 
             return InvokeAsync<GetSuiteDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSuiteRun
@@ -502,7 +498,6 @@ namespace Amazon.IoTDeviceAdvisor
 
             return InvokeAsync<GetSuiteRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSuiteRunReport
@@ -552,7 +547,6 @@ namespace Amazon.IoTDeviceAdvisor
 
             return InvokeAsync<GetSuiteRunReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSuiteDefinitions
@@ -598,7 +592,6 @@ namespace Amazon.IoTDeviceAdvisor
 
             return InvokeAsync<ListSuiteDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSuiteRuns
@@ -645,7 +638,6 @@ namespace Amazon.IoTDeviceAdvisor
 
             return InvokeAsync<ListSuiteRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -694,7 +686,6 @@ namespace Amazon.IoTDeviceAdvisor
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSuiteRun
@@ -743,7 +734,6 @@ namespace Amazon.IoTDeviceAdvisor
 
             return InvokeAsync<StartSuiteRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopSuiteRun
@@ -792,7 +782,6 @@ namespace Amazon.IoTDeviceAdvisor
 
             return InvokeAsync<StopSuiteRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -841,7 +830,6 @@ namespace Amazon.IoTDeviceAdvisor
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -890,7 +878,6 @@ namespace Amazon.IoTDeviceAdvisor
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSuiteDefinition
@@ -936,7 +923,6 @@ namespace Amazon.IoTDeviceAdvisor
 
             return InvokeAsync<UpdateSuiteDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

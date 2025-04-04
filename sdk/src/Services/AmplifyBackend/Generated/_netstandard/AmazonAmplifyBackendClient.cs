@@ -306,7 +306,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<CloneBackendResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBackend
@@ -353,7 +352,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<CreateBackendResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBackendAPI
@@ -399,7 +397,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<CreateBackendAPIResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBackendAuth
@@ -445,7 +442,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<CreateBackendAuthResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBackendConfig
@@ -491,7 +487,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<CreateBackendConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBackendStorage
@@ -537,7 +532,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<CreateBackendStorageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateToken
@@ -584,7 +578,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<CreateTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBackend
@@ -630,7 +623,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<DeleteBackendResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBackendAPI
@@ -676,7 +668,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<DeleteBackendAPIResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBackendAuth
@@ -722,7 +713,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<DeleteBackendAuthResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBackendStorage
@@ -768,7 +758,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<DeleteBackendStorageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteToken
@@ -814,7 +803,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<DeleteTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GenerateBackendAPIModels
@@ -860,7 +848,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<GenerateBackendAPIModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBackend
@@ -906,7 +893,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<GetBackendResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBackendAPI
@@ -952,7 +938,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<GetBackendAPIResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBackendAPIModels
@@ -998,7 +983,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<GetBackendAPIModelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBackendAuth
@@ -1044,7 +1028,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<GetBackendAuthResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBackendJob
@@ -1090,7 +1073,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<GetBackendJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBackendStorage
@@ -1136,7 +1118,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<GetBackendStorageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetToken
@@ -1182,7 +1163,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<GetTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportBackendAuth
@@ -1228,7 +1208,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<ImportBackendAuthResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportBackendStorage
@@ -1274,7 +1253,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<ImportBackendStorageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBackendJobs
@@ -1320,7 +1298,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<ListBackendJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListS3Buckets
@@ -1366,7 +1343,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<ListS3BucketsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveAllBackends
@@ -1412,7 +1388,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<RemoveAllBackendsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveBackendConfig
@@ -1458,7 +1433,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<RemoveBackendConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBackendAPI
@@ -1504,7 +1478,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<UpdateBackendAPIResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBackendAuth
@@ -1550,7 +1523,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<UpdateBackendAuthResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBackendConfig
@@ -1596,7 +1568,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<UpdateBackendConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBackendJob
@@ -1642,7 +1613,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<UpdateBackendJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBackendStorage
@@ -1688,7 +1658,6 @@ namespace Amazon.AmplifyBackend
 
             return InvokeAsync<UpdateBackendStorageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

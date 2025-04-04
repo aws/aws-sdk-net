@@ -30,7 +30,6 @@ namespace Amazon.NetworkFirewall
     /// <summary>
     /// Configuration for accessing Amazon NetworkFirewall service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonNetworkFirewallConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -30,7 +30,6 @@ namespace Amazon.SSMIncidents
     /// <summary>
     /// Configuration for accessing Amazon SSMIncidents service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSSMIncidentsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

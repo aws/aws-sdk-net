@@ -30,7 +30,6 @@ namespace Amazon.HealthLake
     /// <summary>
     /// Configuration for accessing Amazon HealthLake service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonHealthLakeConfig : ClientConfig
     {
         private static readonly string UserAgentString =

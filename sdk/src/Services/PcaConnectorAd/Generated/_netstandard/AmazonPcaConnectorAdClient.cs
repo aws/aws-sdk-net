@@ -328,7 +328,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<CreateConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDirectoryRegistration
@@ -389,7 +388,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<CreateDirectoryRegistrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateServicePrincipalName
@@ -451,7 +449,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<CreateServicePrincipalNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTemplate
@@ -516,7 +513,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<CreateTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTemplateGroupAccessControlEntry
@@ -580,7 +576,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<CreateTemplateGroupAccessControlEntryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnector
@@ -645,7 +640,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<DeleteConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDirectoryRegistration
@@ -702,7 +696,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<DeleteDirectoryRegistrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServicePrincipalName
@@ -759,7 +752,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<DeleteServicePrincipalNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTemplate
@@ -820,7 +812,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<DeleteTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTemplateGroupAccessControlEntry
@@ -880,7 +871,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<DeleteTemplateGroupAccessControlEntryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConnector
@@ -937,7 +927,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<GetConnectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDirectoryRegistration
@@ -993,7 +982,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<GetDirectoryRegistrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServicePrincipalName
@@ -1050,7 +1038,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<GetServicePrincipalNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTemplate
@@ -1107,7 +1094,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<GetTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTemplateGroupAccessControlEntry
@@ -1163,7 +1149,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<GetTemplateGroupAccessControlEntryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConnectors
@@ -1216,7 +1201,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<ListConnectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDirectoryRegistrations
@@ -1269,7 +1253,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<ListDirectoryRegistrationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServicePrincipalNames
@@ -1326,7 +1309,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<ListServicePrincipalNamesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1382,7 +1364,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTemplateGroupAccessControlEntries
@@ -1438,7 +1419,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<ListTemplateGroupAccessControlEntriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTemplates
@@ -1494,7 +1474,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<ListTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1550,7 +1529,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1606,7 +1584,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTemplate
@@ -1666,7 +1643,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<UpdateTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTemplateGroupAccessControlEntry
@@ -1726,7 +1702,6 @@ namespace Amazon.PcaConnectorAd
 
             return InvokeAsync<UpdateTemplateGroupAccessControlEntryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

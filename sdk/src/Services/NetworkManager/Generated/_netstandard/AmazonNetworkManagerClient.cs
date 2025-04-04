@@ -321,7 +321,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<AcceptAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateConnectPeer
@@ -385,7 +384,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<AssociateConnectPeerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateCustomerGateway
@@ -456,7 +454,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<AssociateCustomerGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateLink
@@ -514,7 +511,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<AssociateLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateTransitGatewayConnectPeer
@@ -582,7 +578,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<AssociateTransitGatewayConnectPeerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConnectAttachment
@@ -643,7 +638,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<CreateConnectAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConnection
@@ -698,7 +692,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<CreateConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConnectPeer
@@ -753,7 +746,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<CreateConnectPeerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCoreNetwork
@@ -810,7 +802,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<CreateCoreNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDevice
@@ -867,7 +858,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<CreateDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDirectConnectGatewayAttachment
@@ -920,7 +910,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<CreateDirectConnectGatewayAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGlobalNetwork
@@ -973,7 +962,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<CreateGlobalNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLink
@@ -1029,7 +1017,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<CreateLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSite
@@ -1085,7 +1072,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<CreateSiteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSiteToSiteVpnAttachment
@@ -1139,7 +1125,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<CreateSiteToSiteVpnAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTransitGatewayPeering
@@ -1192,7 +1177,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<CreateTransitGatewayPeeringResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTransitGatewayRouteTableAttachment
@@ -1245,7 +1229,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<CreateTransitGatewayRouteTableAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVpcAttachment
@@ -1298,7 +1281,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<CreateVpcAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAttachment
@@ -1351,7 +1333,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<DeleteAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnection
@@ -1404,7 +1385,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<DeleteConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnectPeer
@@ -1457,7 +1437,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<DeleteConnectPeerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCoreNetwork
@@ -1511,7 +1490,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<DeleteCoreNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCoreNetworkPolicyVersion
@@ -1564,7 +1542,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<DeleteCoreNetworkPolicyVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDevice
@@ -1618,7 +1595,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<DeleteDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGlobalNetwork
@@ -1673,7 +1649,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<DeleteGlobalNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLink
@@ -1727,7 +1702,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<DeleteLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePeering
@@ -1780,7 +1754,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<DeletePeeringResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -1831,7 +1804,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSite
@@ -1884,7 +1856,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<DeleteSiteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterTransitGateway
@@ -1939,7 +1910,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<DeregisterTransitGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGlobalNetworks
@@ -1990,7 +1960,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<DescribeGlobalNetworksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateConnectPeer
@@ -2043,7 +2012,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<DisassociateConnectPeerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateCustomerGateway
@@ -2096,7 +2064,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<DisassociateCustomerGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateLink
@@ -2150,7 +2117,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<DisassociateLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateTransitGatewayConnectPeer
@@ -2203,7 +2169,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<DisassociateTransitGatewayConnectPeerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteCoreNetworkChangeSet
@@ -2257,7 +2222,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<ExecuteCoreNetworkChangeSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConnectAttachment
@@ -2306,7 +2270,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetConnectAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConnections
@@ -2355,7 +2318,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetConnectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConnectPeer
@@ -2404,7 +2366,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetConnectPeerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConnectPeerAssociations
@@ -2457,7 +2418,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetConnectPeerAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCoreNetwork
@@ -2506,7 +2466,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetCoreNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCoreNetworkChangeEvents
@@ -2555,7 +2514,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetCoreNetworkChangeEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCoreNetworkChangeSet
@@ -2604,7 +2562,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetCoreNetworkChangeSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCoreNetworkPolicy
@@ -2654,7 +2611,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetCoreNetworkPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCustomerGatewayAssociations
@@ -2708,7 +2664,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetCustomerGatewayAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDevices
@@ -2757,7 +2712,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetDevicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDirectConnectGatewayAttachment
@@ -2806,7 +2760,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetDirectConnectGatewayAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLinkAssociations
@@ -2856,7 +2809,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetLinkAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLinks
@@ -2911,7 +2863,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetLinksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNetworkResourceCounts
@@ -2957,7 +2908,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetNetworkResourceCountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNetworkResourceRelationships
@@ -3006,7 +2956,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetNetworkResourceRelationshipsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNetworkResources
@@ -3061,7 +3010,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetNetworkResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNetworkRoutes
@@ -3110,7 +3058,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetNetworkRoutesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNetworkTelemetry
@@ -3159,7 +3106,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetNetworkTelemetryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicy
@@ -3205,7 +3151,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRouteAnalysis
@@ -3254,7 +3199,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetRouteAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSites
@@ -3303,7 +3247,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetSitesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSiteToSiteVpnAttachment
@@ -3352,7 +3295,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetSiteToSiteVpnAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTransitGatewayConnectPeerAssociations
@@ -3406,7 +3348,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetTransitGatewayConnectPeerAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTransitGatewayPeering
@@ -3455,7 +3396,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetTransitGatewayPeeringResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTransitGatewayRegistrations
@@ -3504,7 +3444,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetTransitGatewayRegistrationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTransitGatewayRouteTableAttachment
@@ -3553,7 +3492,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetTransitGatewayRouteTableAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVpcAttachment
@@ -3602,7 +3540,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<GetVpcAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAttachments
@@ -3648,7 +3585,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<ListAttachmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConnectPeers
@@ -3694,7 +3630,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<ListConnectPeersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCoreNetworkPolicyVersions
@@ -3743,7 +3678,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<ListCoreNetworkPolicyVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCoreNetworks
@@ -3789,7 +3723,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<ListCoreNetworksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOrganizationServiceAccessStatus
@@ -3824,7 +3757,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<ListOrganizationServiceAccessStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPeerings
@@ -3870,7 +3802,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<ListPeeringsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3919,7 +3850,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutCoreNetworkPolicy
@@ -3976,7 +3906,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<PutCoreNetworkPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -4029,7 +3958,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterTransitGateway
@@ -4087,7 +4015,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<RegisterTransitGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectAttachment
@@ -4140,7 +4067,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<RejectAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreCoreNetworkPolicyVersion
@@ -4195,7 +4121,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<RestoreCoreNetworkPolicyVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartOrganizationServiceAccessUpdate
@@ -4249,7 +4174,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<StartOrganizationServiceAccessUpdateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartRouteAnalysis
@@ -4304,7 +4228,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<StartRouteAnalysisResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -4360,7 +4283,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -4413,7 +4335,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConnection
@@ -4467,7 +4388,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<UpdateConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCoreNetwork
@@ -4520,7 +4440,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<UpdateCoreNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDevice
@@ -4574,7 +4493,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<UpdateDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDirectConnectGatewayAttachment
@@ -4628,7 +4546,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<UpdateDirectConnectGatewayAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGlobalNetwork
@@ -4682,7 +4599,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<UpdateGlobalNetworkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLink
@@ -4739,7 +4655,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<UpdateLinkResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNetworkResourceMetadata
@@ -4792,7 +4707,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<UpdateNetworkResourceMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSite
@@ -4846,7 +4760,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<UpdateSiteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVpcAttachment
@@ -4899,7 +4812,6 @@ namespace Amazon.NetworkManager
 
             return InvokeAsync<UpdateVpcAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

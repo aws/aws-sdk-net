@@ -146,7 +146,6 @@ namespace Amazon.MediaStoreData
 
             return InvokeAsync<DeleteObjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeObject
@@ -189,7 +188,6 @@ namespace Amazon.MediaStoreData
 
             return InvokeAsync<DescribeObjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetObject
@@ -237,7 +235,6 @@ namespace Amazon.MediaStoreData
 
             return InvokeAsync<GetObjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListItems
@@ -277,7 +274,6 @@ namespace Amazon.MediaStoreData
 
             return InvokeAsync<ListItemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutObject
@@ -318,7 +314,6 @@ namespace Amazon.MediaStoreData
 
             return InvokeAsync<PutObjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

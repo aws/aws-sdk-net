@@ -350,7 +350,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<AddBridgeOutputsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddBridgeSources
@@ -407,7 +406,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<AddBridgeSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddFlowMediaStreams
@@ -462,7 +460,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<AddFlowMediaStreamsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddFlowOutputs
@@ -519,7 +516,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<AddFlowOutputsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddFlowSources
@@ -572,7 +568,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<AddFlowSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddFlowVpcInterfaces
@@ -625,7 +620,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<AddFlowVpcInterfacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBridge
@@ -683,7 +677,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<CreateBridgeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFlow
@@ -738,7 +731,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<CreateFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGateway
@@ -796,7 +788,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<CreateGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBridge
@@ -853,7 +844,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<DeleteBridgeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFlow
@@ -906,7 +896,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<DeleteFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGateway
@@ -964,7 +953,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<DeleteGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterGatewayInstance
@@ -1023,7 +1011,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<DeregisterGatewayInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBridge
@@ -1080,7 +1067,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<DescribeBridgeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFlow
@@ -1135,7 +1121,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<DescribeFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFlowSourceMetadata
@@ -1190,7 +1175,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<DescribeFlowSourceMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFlowSourceThumbnail
@@ -1243,7 +1227,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<DescribeFlowSourceThumbnailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGateway
@@ -1301,7 +1284,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<DescribeGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGatewayInstance
@@ -1358,7 +1340,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<DescribeGatewayInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOffering
@@ -1409,7 +1390,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<DescribeOfferingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReservation
@@ -1461,7 +1441,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<DescribeReservationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GrantFlowEntitlements
@@ -1518,7 +1497,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<GrantFlowEntitlementsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBridges
@@ -1570,7 +1548,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<ListBridgesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEntitlements
@@ -1618,7 +1595,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<ListEntitlementsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFlows
@@ -1666,7 +1642,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<ListFlowsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGatewayInstances
@@ -1719,7 +1694,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<ListGatewayInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGateways
@@ -1771,7 +1745,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<ListGatewaysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOfferings
@@ -1821,7 +1794,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<ListOfferingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReservations
@@ -1870,7 +1842,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<ListReservationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1914,7 +1885,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PurchaseOffering
@@ -1968,7 +1938,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<PurchaseOfferingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveBridgeOutput
@@ -2025,7 +1994,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<RemoveBridgeOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveBridgeSource
@@ -2082,7 +2050,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<RemoveBridgeSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveFlowMediaStream
@@ -2136,7 +2103,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<RemoveFlowMediaStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveFlowOutput
@@ -2192,7 +2158,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<RemoveFlowOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveFlowSource
@@ -2246,7 +2211,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<RemoveFlowSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveFlowVpcInterface
@@ -2302,7 +2266,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<RemoveFlowVpcInterfaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RevokeFlowEntitlement
@@ -2356,7 +2319,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<RevokeFlowEntitlementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartFlow
@@ -2409,7 +2371,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<StartFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopFlow
@@ -2462,7 +2423,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<StopFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2509,7 +2469,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2553,7 +2512,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBridge
@@ -2610,7 +2568,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<UpdateBridgeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBridgeOutput
@@ -2667,7 +2624,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<UpdateBridgeOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBridgeSource
@@ -2724,7 +2680,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<UpdateBridgeSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBridgeState
@@ -2781,7 +2736,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<UpdateBridgeStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFlow
@@ -2834,7 +2788,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<UpdateFlowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFlowEntitlement
@@ -2889,7 +2842,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<UpdateFlowEntitlementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFlowMediaStream
@@ -2942,7 +2894,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<UpdateFlowMediaStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFlowOutput
@@ -2995,7 +2946,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<UpdateFlowOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFlowSource
@@ -3048,7 +2998,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<UpdateFlowSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGatewayInstance
@@ -3105,7 +3054,6 @@ namespace Amazon.MediaConnect
 
             return InvokeAsync<UpdateGatewayInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

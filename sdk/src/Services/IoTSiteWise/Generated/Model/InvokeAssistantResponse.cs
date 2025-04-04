@@ -32,7 +32,7 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// This is the response object from the InvokeAssistant operation.
     /// </summary>
-    public partial class InvokeAssistantResponse : AmazonWebServiceResponse
+    public partial class InvokeAssistantResponse : AmazonWebServiceResponse, IDisposable
     {
         private ResponseStream _body;
         private string _conversationId;
@@ -73,5 +73,36 @@ namespace Amazon.IoTSiteWise.Model
             return this._conversationId != null;
         }
 
+        #region Dispose Pattern
+
+        private bool _disposed;
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                this._body?.Dispose();
+                this._body = null;
+            }
+
+            this._disposed = true;
+         }
+
+         #endregion
     }
 }

@@ -32,7 +32,7 @@ namespace Amazon.BedrockRuntime.Model
     /// <summary>
     /// This is the response object from the ConverseStream operation.
     /// </summary>
-    public partial class ConverseStreamResponse : AmazonWebServiceResponse
+    public partial class ConverseStreamResponse : AmazonWebServiceResponse, IDisposable
     {
         private ConverseStreamOutput _stream;
 
@@ -54,5 +54,36 @@ namespace Amazon.BedrockRuntime.Model
             return this._stream != null;
         }
 
+        #region Dispose Pattern
+
+        private bool _disposed;
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                this._stream?.Dispose();
+                this._stream = null;
+            }
+
+            this._disposed = true;
+         }
+
+         #endregion
     }
 }

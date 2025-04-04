@@ -343,7 +343,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<CreateAlertManagerDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLoggingConfiguration
@@ -391,7 +390,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<CreateLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRuleGroupsNamespace
@@ -454,7 +452,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<CreateRuleGroupsNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateScraper
@@ -534,7 +531,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<CreateScraperResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkspace
@@ -588,7 +584,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<CreateWorkspaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAlertManagerDefinition
@@ -640,7 +635,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<DeleteAlertManagerDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLoggingConfiguration
@@ -689,7 +683,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<DeleteLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRuleGroupsNamespace
@@ -741,7 +734,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<DeleteRuleGroupsNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteScraper
@@ -794,7 +786,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<DeleteScraperResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkspace
@@ -853,7 +844,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<DeleteWorkspaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAlertManagerDefinition
@@ -902,7 +892,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<DescribeAlertManagerDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLoggingConfiguration
@@ -948,7 +937,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<DescribeLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRuleGroupsNamespace
@@ -998,7 +986,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<DescribeRuleGroupsNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeScraper
@@ -1047,7 +1034,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<DescribeScraperResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkspace
@@ -1096,7 +1082,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<DescribeWorkspaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDefaultScraperConfiguration
@@ -1140,7 +1125,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<GetDefaultScraperConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRuleGroupsNamespaces
@@ -1189,7 +1173,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<ListRuleGroupsNamespacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListScrapers
@@ -1237,7 +1220,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<ListScrapersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1288,7 +1270,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkspaces
@@ -1335,7 +1316,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<ListWorkspacesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAlertManagerDefinition
@@ -1392,7 +1372,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<PutAlertManagerDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRuleGroupsNamespace
@@ -1460,7 +1439,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<PutRuleGroupsNamespaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1519,7 +1497,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1569,7 +1546,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLoggingConfiguration
@@ -1618,7 +1594,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<UpdateLoggingConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateScraper
@@ -1679,7 +1654,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<UpdateScraperResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkspaceAlias
@@ -1734,7 +1708,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<UpdateWorkspaceAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

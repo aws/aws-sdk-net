@@ -417,7 +417,6 @@ namespace Amazon.AWSMarketplaceMetering
 
             return InvokeAsync<BatchMeterUsageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  MeterUsage
@@ -511,7 +510,6 @@ namespace Amazon.AWSMarketplaceMetering
 
             return InvokeAsync<MeterUsageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterUsage
@@ -608,7 +606,6 @@ namespace Amazon.AWSMarketplaceMetering
 
             return InvokeAsync<RegisterUsageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResolveCustomer
@@ -678,7 +675,6 @@ namespace Amazon.AWSMarketplaceMetering
 
             return InvokeAsync<ResolveCustomerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

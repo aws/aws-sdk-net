@@ -160,7 +160,6 @@ namespace Amazon.CloudSearchDomain
 
             return InvokeAsync<SearchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Suggest
@@ -217,7 +216,6 @@ namespace Amazon.CloudSearchDomain
 
             return InvokeAsync<SuggestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UploadDocuments
@@ -278,7 +276,6 @@ namespace Amazon.CloudSearchDomain
 
             return InvokeAsync<UploadDocumentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

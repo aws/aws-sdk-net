@@ -30,7 +30,6 @@ namespace Amazon.AppStream
     /// <summary>
     /// Configuration for accessing Amazon AppStream service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonAppStreamConfig : ClientConfig
     {
         private static readonly string UserAgentString =

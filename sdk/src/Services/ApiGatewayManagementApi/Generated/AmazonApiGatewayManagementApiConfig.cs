@@ -30,7 +30,6 @@ namespace Amazon.ApiGatewayManagementApi
     /// <summary>
     /// Configuration for accessing Amazon ApiGatewayManagementApi service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonApiGatewayManagementApiConfig : ClientConfig
     {
         private static readonly string UserAgentString =

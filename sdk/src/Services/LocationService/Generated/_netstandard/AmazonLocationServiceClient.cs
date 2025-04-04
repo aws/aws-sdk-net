@@ -331,7 +331,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<AssociateTrackerConsumerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteDevicePositionHistory
@@ -382,7 +381,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<BatchDeleteDevicePositionHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteGeofence
@@ -439,7 +437,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<BatchDeleteGeofenceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchEvaluateGeofences
@@ -523,7 +520,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<BatchEvaluateGeofencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetDevicePosition
@@ -574,7 +570,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<BatchGetDevicePositionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchPutGeofence
@@ -627,7 +622,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<BatchPutGeofenceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchUpdateDevicePosition
@@ -707,7 +701,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<BatchUpdateDevicePositionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CalculateRoute
@@ -795,7 +788,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<CalculateRouteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CalculateRouteMatrix
@@ -892,7 +884,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<CalculateRouteMatrixResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGeofenceCollection
@@ -947,7 +938,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<CreateGeofenceCollectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateKey
@@ -1010,7 +1000,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<CreateKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMap
@@ -1075,7 +1064,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<CreateMapResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePlaceIndex
@@ -1143,7 +1131,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<CreatePlaceIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRouteCalculator
@@ -1213,7 +1200,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<CreateRouteCalculatorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTracker
@@ -1269,7 +1255,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<CreateTrackerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGeofenceCollection
@@ -1327,7 +1312,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<DeleteGeofenceCollectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteKey
@@ -1379,7 +1363,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<DeleteKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMap
@@ -1437,7 +1420,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<DeleteMapResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePlaceIndex
@@ -1494,7 +1476,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<DeletePlaceIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRouteCalculator
@@ -1551,7 +1532,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<DeleteRouteCalculatorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTracker
@@ -1610,7 +1590,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<DeleteTrackerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGeofenceCollection
@@ -1661,7 +1640,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<DescribeGeofenceCollectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeKey
@@ -1712,7 +1690,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<DescribeKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMap
@@ -1763,7 +1740,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<DescribeMapResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePlaceIndex
@@ -1814,7 +1790,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<DescribePlaceIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRouteCalculator
@@ -1865,7 +1840,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<DescribeRouteCalculatorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTracker
@@ -1916,7 +1890,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<DescribeTrackerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateTrackerConsumer
@@ -1974,7 +1947,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<DisassociateTrackerConsumerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ForecastGeofenceEvents
@@ -2041,7 +2013,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<ForecastGeofenceEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDevicePosition
@@ -2098,7 +2069,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<GetDevicePositionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDevicePositionHistory
@@ -2156,7 +2126,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<GetDevicePositionHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGeofence
@@ -2214,7 +2183,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<GetGeofenceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMapGlyphs
@@ -2265,7 +2233,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<GetMapGlyphsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMapSprites
@@ -2318,7 +2285,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<GetMapSpritesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMapStyleDescriptor
@@ -2376,7 +2342,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<GetMapStyleDescriptorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMapTile
@@ -2436,7 +2401,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<GetMapTileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPlace
@@ -2506,7 +2470,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<GetPlaceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDevicePositions
@@ -2554,7 +2517,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<ListDevicePositionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGeofenceCollections
@@ -2602,7 +2564,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<ListGeofenceCollectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGeofences
@@ -2653,7 +2614,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<ListGeofencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKeys
@@ -2701,7 +2661,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<ListKeysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMaps
@@ -2749,7 +2708,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<ListMapsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPlaceIndexes
@@ -2797,7 +2755,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<ListPlaceIndexesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRouteCalculators
@@ -2845,7 +2802,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<ListRouteCalculatorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2896,7 +2852,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrackerConsumers
@@ -2947,7 +2902,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<ListTrackerConsumersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrackers
@@ -2995,7 +2949,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<ListTrackersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutGeofence
@@ -3050,7 +3003,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<PutGeofenceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchPlaceIndexForPosition
@@ -3102,7 +3054,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<SearchPlaceIndexForPositionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchPlaceIndexForSuggestions
@@ -3169,7 +3120,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<SearchPlaceIndexForSuggestionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchPlaceIndexForText
@@ -3237,7 +3187,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<SearchPlaceIndexForTextResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3308,7 +3257,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3359,7 +3307,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGeofenceCollection
@@ -3410,7 +3357,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<UpdateGeofenceCollectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateKey
@@ -3461,7 +3407,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<UpdateKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMap
@@ -3512,7 +3457,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<UpdateMapResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePlaceIndex
@@ -3563,7 +3507,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<UpdatePlaceIndexResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRouteCalculator
@@ -3614,7 +3557,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<UpdateRouteCalculatorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTracker
@@ -3665,7 +3607,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<UpdateTrackerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  VerifyDevicePosition
@@ -3718,7 +3659,6 @@ namespace Amazon.LocationService
 
             return InvokeAsync<VerifyDevicePositionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

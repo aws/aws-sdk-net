@@ -311,7 +311,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<AcceptPortfolioShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateBudgetWithResource
@@ -358,7 +357,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<AssociateBudgetWithResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociatePrincipalWithPortfolio
@@ -431,7 +429,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<AssociatePrincipalWithPortfolioResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateProductWithPortfolio
@@ -480,7 +477,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<AssociateProductWithPortfolioResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateServiceActionWithProvisioningArtifact
@@ -527,7 +523,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<AssociateServiceActionWithProvisioningArtifactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateTagOptionWithResource
@@ -583,7 +578,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<AssociateTagOptionWithResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchAssociateServiceActionWithProvisioningArtifact
@@ -620,7 +614,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<BatchAssociateServiceActionWithProvisioningArtifactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDisassociateServiceActionFromProvisioningArtifact
@@ -657,7 +650,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<BatchDisassociateServiceActionFromProvisioningArtifactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CopyProduct
@@ -709,7 +701,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<CopyProductResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConstraint
@@ -761,7 +752,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<CreateConstraintResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePortfolio
@@ -812,7 +802,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<CreatePortfolioResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePortfolioShare
@@ -900,7 +889,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<CreatePortfolioShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProduct
@@ -957,7 +945,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<CreateProductResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProvisionedProductPlan
@@ -1017,7 +1004,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<CreateProvisionedProductPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProvisioningArtifact
@@ -1072,7 +1058,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<CreateProvisioningArtifactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateServiceAction
@@ -1113,7 +1098,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<CreateServiceActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTagOption
@@ -1159,7 +1143,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<CreateTagOptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConstraint
@@ -1204,7 +1187,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DeleteConstraintResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePortfolio
@@ -1263,7 +1245,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DeletePortfolioResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePortfolioShare
@@ -1318,7 +1299,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DeletePortfolioShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProduct
@@ -1376,7 +1356,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DeleteProductResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProvisionedProductPlan
@@ -1416,7 +1395,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DeleteProvisionedProductPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProvisioningArtifact
@@ -1468,7 +1446,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DeleteProvisioningArtifactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServiceAction
@@ -1509,7 +1486,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DeleteServiceActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTagOption
@@ -1560,7 +1536,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DeleteTagOptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConstraint
@@ -1597,7 +1572,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DescribeConstraintResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCopyProductStatus
@@ -1634,7 +1608,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DescribeCopyProductStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePortfolio
@@ -1676,7 +1649,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DescribePortfolioResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePortfolioShares
@@ -1728,7 +1700,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DescribePortfolioSharesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePortfolioShareStatus
@@ -1772,7 +1743,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DescribePortfolioShareStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProduct
@@ -1819,7 +1789,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DescribeProductResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProductAsAdmin
@@ -1860,7 +1829,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DescribeProductAsAdminResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProductView
@@ -1900,7 +1868,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DescribeProductViewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProvisionedProduct
@@ -1940,7 +1907,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DescribeProvisionedProductResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProvisionedProductPlan
@@ -1980,7 +1946,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DescribeProvisionedProductPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProvisioningArtifact
@@ -2021,7 +1986,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DescribeProvisioningArtifactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProvisioningParameters
@@ -2072,7 +2036,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DescribeProvisioningParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRecord
@@ -2123,7 +2086,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DescribeRecordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeServiceAction
@@ -2160,7 +2122,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DescribeServiceActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeServiceActionExecutionParameters
@@ -2201,7 +2162,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DescribeServiceActionExecutionParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTagOption
@@ -2243,7 +2203,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DescribeTagOptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableAWSOrganizationsAccess
@@ -2309,7 +2268,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DisableAWSOrganizationsAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateBudgetFromResource
@@ -2346,7 +2304,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DisassociateBudgetFromResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociatePrincipalFromPortfolio
@@ -2415,7 +2372,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DisassociatePrincipalFromPortfolioResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateProductFromPortfolio
@@ -2464,7 +2420,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DisassociateProductFromPortfolioResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateServiceActionFromProvisioningArtifact
@@ -2502,7 +2457,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DisassociateServiceActionFromProvisioningArtifactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateTagOptionFromResource
@@ -2544,7 +2498,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<DisassociateTagOptionFromResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableAWSOrganizationsAccess
@@ -2614,7 +2567,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<EnableAWSOrganizationsAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteProvisionedProductPlan
@@ -2658,7 +2610,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ExecuteProvisionedProductPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExecuteProvisionedProductServiceAction
@@ -2702,7 +2653,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ExecuteProvisionedProductServiceActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAWSOrganizationsAccessStatus
@@ -2743,7 +2693,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<GetAWSOrganizationsAccessStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProvisionedProductOutputs
@@ -2785,7 +2734,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<GetProvisionedProductOutputsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportAsProvisionedProduct
@@ -2868,7 +2816,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ImportAsProvisionedProductResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAcceptedPortfolioShares
@@ -2910,7 +2857,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ListAcceptedPortfolioSharesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBudgetsForResource
@@ -2950,7 +2896,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ListBudgetsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConstraintsForPortfolio
@@ -2990,7 +2935,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ListConstraintsForPortfolioResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLaunchPaths
@@ -3041,7 +2985,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ListLaunchPathsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOrganizationPortfolioAccess
@@ -3091,7 +3034,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ListOrganizationPortfolioAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPortfolioAccess
@@ -3137,7 +3079,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ListPortfolioAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPortfolios
@@ -3174,7 +3115,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ListPortfoliosResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPortfoliosForProduct
@@ -3214,7 +3154,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ListPortfoliosForProductResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPrincipalsForPortfolio
@@ -3255,7 +3194,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ListPrincipalsForPortfolioResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProvisionedProductPlans
@@ -3296,7 +3234,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ListProvisionedProductPlansResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProvisioningArtifacts
@@ -3336,7 +3273,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ListProvisioningArtifactsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProvisioningArtifactsForServiceAction
@@ -3377,7 +3313,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ListProvisioningArtifactsForServiceActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecordHistory
@@ -3414,7 +3349,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ListRecordHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourcesForTagOption
@@ -3459,7 +3393,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ListResourcesForTagOptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceActions
@@ -3496,7 +3429,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ListServiceActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceActionsForProvisioningArtifact
@@ -3537,7 +3469,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ListServiceActionsForProvisioningArtifactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStackInstancesForProvisionedProduct
@@ -3579,7 +3510,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ListStackInstancesForProvisionedProductResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagOptions
@@ -3621,7 +3551,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ListTagOptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NotifyProvisionProductEngineWorkflowResult
@@ -3661,7 +3590,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<NotifyProvisionProductEngineWorkflowResultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NotifyTerminateProvisionedProductEngineWorkflowResult
@@ -3701,7 +3629,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<NotifyTerminateProvisionedProductEngineWorkflowResultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NotifyUpdateProvisionedProductEngineWorkflowResult
@@ -3741,7 +3668,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<NotifyUpdateProvisionedProductEngineWorkflowResultResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ProvisionProduct
@@ -3806,7 +3732,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ProvisionProductResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectPortfolioShare
@@ -3843,7 +3768,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<RejectPortfolioShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ScanProvisionedProducts
@@ -3885,7 +3809,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<ScanProvisionedProductsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchProducts
@@ -3922,7 +3845,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<SearchProductsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchProductsAsAdmin
@@ -3962,7 +3884,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<SearchProductsAsAdminResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchProvisionedProducts
@@ -3999,7 +3920,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<SearchProvisionedProductsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TerminateProvisionedProduct
@@ -4045,7 +3965,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<TerminateProvisionedProductResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConstraint
@@ -4085,7 +4004,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<UpdateConstraintResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePortfolio
@@ -4139,7 +4057,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<UpdatePortfolioResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePortfolioShare
@@ -4222,7 +4139,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<UpdatePortfolioShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProduct
@@ -4267,7 +4183,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<UpdateProductResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProvisionedProduct
@@ -4318,7 +4233,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<UpdateProvisionedProductResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProvisionedProductProperties
@@ -4362,7 +4276,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<UpdateProvisionedProductPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProvisioningArtifact
@@ -4408,7 +4321,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<UpdateProvisioningArtifactResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServiceAction
@@ -4448,7 +4360,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<UpdateServiceActionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTagOption
@@ -4496,7 +4407,6 @@ namespace Amazon.ServiceCatalog
 
             return InvokeAsync<UpdateTagOptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

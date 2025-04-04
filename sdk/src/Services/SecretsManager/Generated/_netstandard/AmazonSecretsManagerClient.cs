@@ -414,7 +414,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<BatchGetSecretValueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelRotateSecret
@@ -512,7 +511,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<CancelRotateSecretResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSecret
@@ -676,7 +674,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<CreateSecretResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -759,7 +756,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSecret
@@ -881,7 +877,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<DeleteSecretResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSecret
@@ -940,7 +935,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<DescribeSecretResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRandomPassword
@@ -1020,7 +1014,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<GetRandomPasswordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicy
@@ -1104,7 +1097,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSecretValue
@@ -1207,7 +1199,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<GetSecretValueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSecrets
@@ -1310,7 +1301,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<ListSecretsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSecretVersionIds
@@ -1377,7 +1367,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<ListSecretVersionIdsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -1473,7 +1462,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutSecretValue
@@ -1608,7 +1596,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<PutSecretValueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveRegionsFromReplication
@@ -1691,7 +1678,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<RemoveRegionsFromReplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReplicateSecretToRegions
@@ -1777,7 +1763,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<ReplicateSecretToRegionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestoreSecret
@@ -1860,7 +1845,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<RestoreSecretResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RotateSecret
@@ -1960,7 +1944,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<RotateSecretResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopReplicationToReplica
@@ -2048,7 +2031,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<StopReplicationToReplicaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2144,7 +2126,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2238,7 +2219,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSecret
@@ -2389,7 +2369,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<UpdateSecretResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSecretVersionStage
@@ -2500,7 +2479,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<UpdateSecretVersionStageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ValidateResourcePolicy
@@ -2604,7 +2582,6 @@ namespace Amazon.SecretsManager
 
             return InvokeAsync<ValidateResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.SecurityIR
     /// <summary>
     /// Configuration for accessing Amazon SecurityIR service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSecurityIRConfig : ClientConfig
     {
         private static readonly string UserAgentString =

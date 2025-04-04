@@ -317,7 +317,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<BatchGetCollectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetEffectiveLifecyclePolicy
@@ -359,7 +358,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<BatchGetEffectiveLifecyclePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetLifecyclePolicy
@@ -401,7 +399,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<BatchGetLifecyclePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetVpcEndpoint
@@ -443,7 +440,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<BatchGetVpcEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAccessPolicy
@@ -496,7 +492,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<CreateAccessPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCollection
@@ -550,7 +545,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<CreateCollectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLifecyclePolicy
@@ -602,7 +596,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<CreateLifecyclePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSecurityConfig
@@ -653,7 +646,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<CreateSecurityConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSecurityPolicy
@@ -707,7 +699,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<CreateSecurityPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVpcEndpoint
@@ -758,7 +749,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<CreateVpcEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccessPolicy
@@ -807,7 +797,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<DeleteAccessPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCollection
@@ -856,7 +845,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<DeleteCollectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLifecyclePolicy
@@ -905,7 +893,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<DeleteLifecyclePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSecurityConfig
@@ -955,7 +942,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<DeleteSecurityConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSecurityPolicy
@@ -1003,7 +989,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<DeleteSecurityPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVpcEndpoint
@@ -1053,7 +1038,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<DeleteVpcEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccessPolicy
@@ -1097,7 +1081,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<GetAccessPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccountSettings
@@ -1137,7 +1120,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<GetAccountSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPoliciesStats
@@ -1175,7 +1157,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<GetPoliciesStatsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSecurityConfig
@@ -1220,7 +1201,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<GetSecurityConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSecurityPolicy
@@ -1266,7 +1246,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<GetSecurityPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccessPolicies
@@ -1306,7 +1285,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<ListAccessPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCollections
@@ -1354,7 +1332,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<ListCollectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLifecyclePolicies
@@ -1396,7 +1373,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<ListLifecyclePoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSecurityConfigs
@@ -1438,7 +1414,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<ListSecurityConfigsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSecurityPolicies
@@ -1478,7 +1453,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<ListSecurityPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1523,7 +1497,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVpcEndpoints
@@ -1565,7 +1538,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<ListVpcEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1619,7 +1591,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1669,7 +1640,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccessPolicy
@@ -1718,7 +1688,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<UpdateAccessPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccountSettings
@@ -1760,7 +1729,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<UpdateAccountSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCollection
@@ -1805,7 +1773,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<UpdateCollectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLifecyclePolicy
@@ -1858,7 +1825,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<UpdateLifecyclePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSecurityConfig
@@ -1908,7 +1874,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<UpdateSecurityConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSecurityPolicy
@@ -1962,7 +1927,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<UpdateSecurityPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVpcEndpoint
@@ -2009,7 +1973,6 @@ namespace Amazon.OpenSearchServerless
 
             return InvokeAsync<UpdateVpcEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

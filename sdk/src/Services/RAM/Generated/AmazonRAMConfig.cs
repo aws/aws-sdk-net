@@ -30,7 +30,6 @@ namespace Amazon.RAM
     /// <summary>
     /// Configuration for accessing Amazon RAM service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonRAMConfig : ClientConfig
     {
         private static readonly string UserAgentString =

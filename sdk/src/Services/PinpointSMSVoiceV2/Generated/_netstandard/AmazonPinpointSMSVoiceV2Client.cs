@@ -379,7 +379,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<AssociateOriginationIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateProtectConfiguration
@@ -439,7 +438,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<AssociateProtectConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConfigurationSet
@@ -507,7 +505,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<CreateConfigurationSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEventDestination
@@ -581,7 +578,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<CreateEventDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOptOutList
@@ -652,7 +648,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<CreateOptOutListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePool
@@ -727,7 +722,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<CreatePoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProtectConfiguration
@@ -782,7 +776,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<CreateProtectConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRegistration
@@ -839,7 +832,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<CreateRegistrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRegistrationAssociation
@@ -900,7 +892,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<CreateRegistrationAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRegistrationAttachment
@@ -966,7 +957,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<CreateRegistrationAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRegistrationVersion
@@ -1027,7 +1017,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<CreateRegistrationVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVerifiedDestinationNumber
@@ -1085,7 +1074,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<CreateVerifiedDestinationNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccountDefaultProtectConfiguration
@@ -1137,7 +1125,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DeleteAccountDefaultProtectConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConfigurationSet
@@ -1196,7 +1183,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DeleteConfigurationSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDefaultMessageType
@@ -1257,7 +1243,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DeleteDefaultMessageTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDefaultSenderId
@@ -1315,7 +1300,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DeleteDefaultSenderIdResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventDestination
@@ -1375,7 +1359,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DeleteEventDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteKeyword
@@ -1445,7 +1428,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DeleteKeywordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMediaMessageSpendLimitOverride
@@ -1498,7 +1480,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DeleteMediaMessageSpendLimitOverrideResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOptedOutNumber
@@ -1566,7 +1547,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DeleteOptedOutNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOptOutList
@@ -1630,7 +1610,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DeleteOptOutListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePool
@@ -1699,7 +1678,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DeletePoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProtectConfiguration
@@ -1758,7 +1736,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DeleteProtectConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProtectConfigurationRuleSetNumberOverride
@@ -1810,7 +1787,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DeleteProtectConfigurationRuleSetNumberOverrideResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRegistration
@@ -1867,7 +1843,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DeleteRegistrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRegistrationAttachment
@@ -1924,7 +1899,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DeleteRegistrationAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRegistrationFieldValue
@@ -1981,7 +1955,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DeleteRegistrationFieldValueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -2035,7 +2008,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTextMessageSpendLimitOverride
@@ -2088,7 +2060,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DeleteTextMessageSpendLimitOverrideResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVerifiedDestinationNumber
@@ -2145,7 +2116,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DeleteVerifiedDestinationNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVoiceMessageSpendLimitOverride
@@ -2198,7 +2168,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DeleteVoiceMessageSpendLimitOverrideResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountAttributes
@@ -2256,7 +2225,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DescribeAccountAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountLimits
@@ -2315,7 +2283,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DescribeAccountLimitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConfigurationSets
@@ -2380,7 +2347,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DescribeConfigurationSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeKeywords
@@ -2446,7 +2412,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DescribeKeywordsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOptedOutNumbers
@@ -2512,7 +2477,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DescribeOptedOutNumbersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOptOutLists
@@ -2576,7 +2540,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DescribeOptOutListsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePhoneNumbers
@@ -2641,7 +2604,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DescribePhoneNumbersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePools
@@ -2711,7 +2673,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DescribePoolsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProtectConfigurations
@@ -2764,7 +2725,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DescribeProtectConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRegistrationAttachments
@@ -2817,7 +2777,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DescribeRegistrationAttachmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRegistrationFieldDefinitions
@@ -2868,7 +2827,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DescribeRegistrationFieldDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRegistrationFieldValues
@@ -2920,7 +2878,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DescribeRegistrationFieldValuesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRegistrations
@@ -2972,7 +2929,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DescribeRegistrationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRegistrationSectionDefinitions
@@ -3023,7 +2979,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DescribeRegistrationSectionDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRegistrationTypeDefinitions
@@ -3074,7 +3029,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DescribeRegistrationTypeDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRegistrationVersions
@@ -3126,7 +3080,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DescribeRegistrationVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSenderIds
@@ -3191,7 +3144,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DescribeSenderIdsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSpendLimits
@@ -3249,7 +3201,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DescribeSpendLimitsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVerifiedDestinationNumbers
@@ -3301,7 +3252,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DescribeVerifiedDestinationNumbersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateOriginationIdentity
@@ -3364,7 +3314,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DisassociateOriginationIdentityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateProtectConfiguration
@@ -3421,7 +3370,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DisassociateProtectConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DiscardRegistrationVersion
@@ -3478,7 +3426,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<DiscardRegistrationVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProtectConfigurationCountryRuleSet
@@ -3530,7 +3477,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<GetProtectConfigurationCountryRuleSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicy
@@ -3584,7 +3530,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPoolOriginationIdentities
@@ -3642,7 +3587,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<ListPoolOriginationIdentitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProtectConfigurationRuleSetNumberOverrides
@@ -3695,7 +3639,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<ListProtectConfigurationRuleSetNumberOverridesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRegistrationAssociations
@@ -3747,7 +3690,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<ListRegistrationAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3799,7 +3741,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutKeyword
@@ -3872,7 +3813,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<PutKeywordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutMessageFeedback
@@ -3933,7 +3873,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<PutMessageFeedbackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutOptedOutNumber
@@ -3991,7 +3930,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<PutOptedOutNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutProtectConfigurationRuleSetNumberOverride
@@ -4048,7 +3986,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<PutProtectConfigurationRuleSetNumberOverrideResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRegistrationFieldValue
@@ -4105,7 +4042,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<PutRegistrationFieldValueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -4161,7 +4097,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReleasePhoneNumber
@@ -4225,7 +4160,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<ReleasePhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ReleaseSenderId
@@ -4282,7 +4216,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<ReleaseSenderIdResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RequestPhoneNumber
@@ -4344,7 +4277,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<RequestPhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RequestSenderId
@@ -4401,7 +4333,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<RequestSenderIdResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendDestinationNumberVerificationCode
@@ -4465,7 +4396,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<SendDestinationNumberVerificationCodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendMediaMessage
@@ -4525,7 +4455,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<SendMediaMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendTextMessage
@@ -4595,7 +4524,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<SendTextMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendVoiceMessage
@@ -4656,7 +4584,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<SendVoiceMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetAccountDefaultProtectConfiguration
@@ -4710,7 +4637,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<SetAccountDefaultProtectConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetDefaultMessageFeedbackEnabled
@@ -4762,7 +4688,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<SetDefaultMessageFeedbackEnabledResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetDefaultMessageType
@@ -4823,7 +4748,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<SetDefaultMessageTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetDefaultSenderId
@@ -4882,7 +4806,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<SetDefaultSenderIdResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetMediaMessageSpendLimitOverride
@@ -4933,7 +4856,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<SetMediaMessageSpendLimitOverrideResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetTextMessageSpendLimitOverride
@@ -4984,7 +4906,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<SetTextMessageSpendLimitOverrideResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetVoiceMessageSpendLimitOverride
@@ -5035,7 +4956,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<SetVoiceMessageSpendLimitOverrideResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SubmitRegistrationVersion
@@ -5092,7 +5012,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<SubmitRegistrationVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -5151,7 +5070,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -5205,7 +5123,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEventDestination
@@ -5271,7 +5188,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<UpdateEventDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePhoneNumber
@@ -5335,7 +5251,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<UpdatePhoneNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePool
@@ -5395,7 +5310,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<UpdatePoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProtectConfiguration
@@ -5447,7 +5361,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<UpdateProtectConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProtectConfigurationCountryRuleSet
@@ -5501,7 +5414,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<UpdateProtectConfigurationCountryRuleSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSenderId
@@ -5553,7 +5465,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<UpdateSenderIdResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  VerifyDestinationNumber
@@ -5611,7 +5522,6 @@ namespace Amazon.PinpointSMSVoiceV2
 
             return InvokeAsync<VerifyDestinationNumberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

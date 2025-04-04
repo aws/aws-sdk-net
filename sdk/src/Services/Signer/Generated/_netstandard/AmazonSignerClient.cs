@@ -358,7 +358,6 @@ namespace Amazon.Signer
 
             return InvokeAsync<AddProfilePermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelSigningProfile
@@ -411,7 +410,6 @@ namespace Amazon.Signer
 
             return InvokeAsync<CancelSigningProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSigningJob
@@ -463,7 +461,6 @@ namespace Amazon.Signer
 
             return InvokeAsync<DescribeSigningJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRevocationStatus
@@ -515,7 +512,6 @@ namespace Amazon.Signer
 
             return InvokeAsync<GetRevocationStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSigningPlatform
@@ -566,7 +562,6 @@ namespace Amazon.Signer
 
             return InvokeAsync<GetSigningPlatformResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSigningProfile
@@ -617,7 +612,6 @@ namespace Amazon.Signer
 
             return InvokeAsync<GetSigningProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProfilePermissions
@@ -671,7 +665,6 @@ namespace Amazon.Signer
 
             return InvokeAsync<ListProfilePermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSigningJobs
@@ -728,7 +721,6 @@ namespace Amazon.Signer
 
             return InvokeAsync<ListSigningJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSigningPlatforms
@@ -784,7 +776,6 @@ namespace Amazon.Signer
 
             return InvokeAsync<ListSigningPlatformsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSigningProfiles
@@ -838,7 +829,6 @@ namespace Amazon.Signer
 
             return InvokeAsync<ListSigningProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -890,7 +880,6 @@ namespace Amazon.Signer
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutSigningProfile
@@ -945,7 +934,6 @@ namespace Amazon.Signer
 
             return InvokeAsync<PutSigningProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveProfilePermission
@@ -1002,7 +990,6 @@ namespace Amazon.Signer
 
             return InvokeAsync<RemoveProfilePermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RevokeSignature
@@ -1057,7 +1044,6 @@ namespace Amazon.Signer
 
             return InvokeAsync<RevokeSignatureResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RevokeSigningProfile
@@ -1112,7 +1098,6 @@ namespace Amazon.Signer
 
             return InvokeAsync<RevokeSigningProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SignPayload
@@ -1166,7 +1151,6 @@ namespace Amazon.Signer
 
             return InvokeAsync<SignPayloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSigningJob
@@ -1268,7 +1252,6 @@ namespace Amazon.Signer
 
             return InvokeAsync<StartSigningJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1323,7 +1306,6 @@ namespace Amazon.Signer
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1376,7 +1358,6 @@ namespace Amazon.Signer
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

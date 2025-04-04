@@ -337,7 +337,6 @@ namespace Amazon.MarketplaceCatalog
 
             return InvokeAsync<BatchDescribeEntitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelChangeSet
@@ -416,7 +415,6 @@ namespace Amazon.MarketplaceCatalog
 
             return InvokeAsync<CancelChangeSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -490,7 +488,6 @@ namespace Amazon.MarketplaceCatalog
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeChangeSet
@@ -564,7 +561,6 @@ namespace Amazon.MarketplaceCatalog
 
             return InvokeAsync<DescribeChangeSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEntity
@@ -641,7 +637,6 @@ namespace Amazon.MarketplaceCatalog
 
             return InvokeAsync<DescribeEntityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicy
@@ -715,7 +710,6 @@ namespace Amazon.MarketplaceCatalog
 
             return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChangeSets
@@ -790,7 +784,6 @@ namespace Amazon.MarketplaceCatalog
 
             return InvokeAsync<ListChangeSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEntities
@@ -864,7 +857,6 @@ namespace Amazon.MarketplaceCatalog
 
             return InvokeAsync<ListEntitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -940,7 +932,6 @@ namespace Amazon.MarketplaceCatalog
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -1015,7 +1006,6 @@ namespace Amazon.MarketplaceCatalog
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartChangeSet
@@ -1116,7 +1106,6 @@ namespace Amazon.MarketplaceCatalog
 
             return InvokeAsync<StartChangeSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1192,7 +1181,6 @@ namespace Amazon.MarketplaceCatalog
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1268,7 +1256,6 @@ namespace Amazon.MarketplaceCatalog
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

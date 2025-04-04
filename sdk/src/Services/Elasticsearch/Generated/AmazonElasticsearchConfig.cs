@@ -30,7 +30,6 @@ namespace Amazon.Elasticsearch
     /// <summary>
     /// Configuration for accessing Amazon Elasticsearch service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonElasticsearchConfig : ClientConfig
     {
         private static readonly string UserAgentString =

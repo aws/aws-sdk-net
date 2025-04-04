@@ -340,7 +340,6 @@ namespace Amazon.QLDBSession
 
             return InvokeAsync<SendCommandResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

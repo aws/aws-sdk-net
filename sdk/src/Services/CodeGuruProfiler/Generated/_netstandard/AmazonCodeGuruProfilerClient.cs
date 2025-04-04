@@ -345,7 +345,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<AddNotificationChannelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetFrameMetricData
@@ -392,7 +391,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<BatchGetFrameMetricDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ConfigureAgent
@@ -440,7 +438,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<ConfigureAgentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProfilingGroup
@@ -492,7 +489,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<CreateProfilingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProfilingGroup
@@ -542,7 +538,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<DeleteProfilingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeProfilingGroup
@@ -590,7 +585,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<DescribeProfilingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFindingsReportAccountSummary
@@ -635,7 +629,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<GetFindingsReportAccountSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNotificationConfiguration
@@ -681,7 +674,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<GetNotificationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPolicy
@@ -724,7 +716,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<GetPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProfile
@@ -804,7 +795,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<GetProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRecommendations
@@ -854,7 +844,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<GetRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFindingsReports
@@ -900,7 +889,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<ListFindingsReportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProfileTimes
@@ -947,7 +935,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<ListProfileTimesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProfilingGroups
@@ -988,7 +975,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<ListProfilingGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1031,7 +1017,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PostAgentProfile
@@ -1079,7 +1064,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<PostAgentProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutPermission
@@ -1146,7 +1130,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<PutPermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveNotificationChannel
@@ -1192,7 +1175,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<RemoveNotificationChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemovePermission
@@ -1249,7 +1231,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<RemovePermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SubmitFeedback
@@ -1296,7 +1277,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<SubmitFeedbackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1339,7 +1319,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1382,7 +1361,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProfilingGroup
@@ -1432,7 +1410,6 @@ namespace Amazon.CodeGuruProfiler
 
             return InvokeAsync<UpdateProfilingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

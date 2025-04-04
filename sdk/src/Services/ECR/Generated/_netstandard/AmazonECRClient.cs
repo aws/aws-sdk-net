@@ -331,7 +331,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<BatchCheckLayerAvailabilityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteImage
@@ -387,7 +386,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<BatchDeleteImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetImage
@@ -448,7 +446,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<BatchGetImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetRepositoryScanningConfiguration
@@ -495,7 +492,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<BatchGetRepositoryScanningConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CompleteLayerUpload
@@ -573,7 +569,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<CompleteLayerUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePullThroughCacheRule
@@ -642,7 +637,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<CreatePullThroughCacheRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRepository
@@ -702,7 +696,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<CreateRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRepositoryCreationTemplate
@@ -757,7 +750,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<CreateRepositoryCreationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLifecyclePolicy
@@ -807,7 +799,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<DeleteLifecyclePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePullThroughCacheRule
@@ -854,7 +845,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<DeletePullThroughCacheRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRegistryPolicy
@@ -900,7 +890,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<DeleteRegistryPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRepository
@@ -953,7 +942,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<DeleteRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRepositoryCreationTemplate
@@ -1000,7 +988,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<DeleteRepositoryCreationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRepositoryPolicy
@@ -1048,7 +1035,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<DeleteRepositoryPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeImageReplicationStatus
@@ -1098,7 +1084,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<DescribeImageReplicationStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeImages
@@ -1154,7 +1139,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<DescribeImagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeImageScanFindings
@@ -1208,7 +1192,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<DescribeImageScanFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePullThroughCacheRules
@@ -1255,7 +1238,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<DescribePullThroughCacheRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRegistry
@@ -1299,7 +1281,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<DescribeRegistryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRepositories
@@ -1343,7 +1324,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<DescribeRepositoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRepositoryCreationTemplates
@@ -1388,7 +1368,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<DescribeRepositoryCreationTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccountSetting
@@ -1431,7 +1410,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<GetAccountSettingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAuthorizationToken
@@ -1482,7 +1460,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<GetAuthorizationTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDownloadUrlForLayer
@@ -1551,7 +1528,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<GetDownloadUrlForLayerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLifecyclePolicy
@@ -1601,7 +1577,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<GetLifecyclePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLifecyclePolicyPreview
@@ -1651,7 +1626,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<GetLifecyclePolicyPreviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRegistryPolicy
@@ -1697,7 +1671,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<GetRegistryPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRegistryScanningConfiguration
@@ -1740,7 +1713,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<GetRegistryScanningConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRepositoryPolicy
@@ -1788,7 +1760,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<GetRepositoryPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InitiateLayerUpload
@@ -1849,7 +1820,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<InitiateLayerUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImages
@@ -1902,7 +1872,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<ListImagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1946,7 +1915,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAccountSetting
@@ -1994,7 +1962,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<PutAccountSettingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutImage
@@ -2079,7 +2046,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<PutImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutImageScanningConfiguration
@@ -2135,7 +2101,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<PutImageScanningConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutImageTagMutability
@@ -2181,7 +2146,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<PutImageTagMutabilityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutLifecyclePolicy
@@ -2230,7 +2194,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<PutLifecyclePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRegistryPolicy
@@ -2281,7 +2244,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<PutRegistryPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRegistryScanningConfiguration
@@ -2324,7 +2286,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<PutRegistryScanningConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutReplicationConfiguration
@@ -2382,7 +2343,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<PutReplicationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetRepositoryPolicy
@@ -2428,7 +2388,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<SetRepositoryPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartImageScan
@@ -2495,7 +2454,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<StartImageScanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartLifecyclePolicyPreview
@@ -2549,7 +2507,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<StartLifecyclePolicyPreviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2602,7 +2559,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2654,7 +2610,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePullThroughCacheRule
@@ -2713,7 +2668,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<UpdatePullThroughCacheRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRepositoryCreationTemplate
@@ -2760,7 +2714,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<UpdateRepositoryCreationTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UploadLayerPart
@@ -2833,7 +2786,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<UploadLayerPartResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ValidatePullThroughCacheRule
@@ -2883,7 +2835,6 @@ namespace Amazon.ECR
 
             return InvokeAsync<ValidatePullThroughCacheRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

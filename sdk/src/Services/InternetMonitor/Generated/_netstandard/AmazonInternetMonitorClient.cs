@@ -365,7 +365,6 @@ namespace Amazon.InternetMonitor
 
             return InvokeAsync<CreateMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMonitor
@@ -411,7 +410,6 @@ namespace Amazon.InternetMonitor
 
             return InvokeAsync<DeleteMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetHealthEvent
@@ -470,7 +468,6 @@ namespace Amazon.InternetMonitor
 
             return InvokeAsync<GetHealthEventResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInternetEvent
@@ -526,7 +523,6 @@ namespace Amazon.InternetMonitor
 
             return InvokeAsync<GetInternetEventResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMonitor
@@ -574,7 +570,6 @@ namespace Amazon.InternetMonitor
 
             return InvokeAsync<GetMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueryResults
@@ -632,7 +627,6 @@ namespace Amazon.InternetMonitor
 
             return InvokeAsync<GetQueryResultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueryStatus
@@ -705,7 +699,6 @@ namespace Amazon.InternetMonitor
 
             return InvokeAsync<GetQueryStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHealthEvents
@@ -759,7 +752,6 @@ namespace Amazon.InternetMonitor
 
             return InvokeAsync<ListHealthEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInternetEvents
@@ -821,7 +813,6 @@ namespace Amazon.InternetMonitor
 
             return InvokeAsync<ListInternetEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMonitors
@@ -868,7 +859,6 @@ namespace Amazon.InternetMonitor
 
             return InvokeAsync<ListMonitorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -918,7 +908,6 @@ namespace Amazon.InternetMonitor
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartQuery
@@ -977,7 +966,6 @@ namespace Amazon.InternetMonitor
 
             return InvokeAsync<StartQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopQuery
@@ -1026,7 +1014,6 @@ namespace Amazon.InternetMonitor
 
             return InvokeAsync<StopQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1082,7 +1069,6 @@ namespace Amazon.InternetMonitor
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1131,7 +1117,6 @@ namespace Amazon.InternetMonitor
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMonitor
@@ -1193,7 +1178,6 @@ namespace Amazon.InternetMonitor
 
             return InvokeAsync<UpdateMonitorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

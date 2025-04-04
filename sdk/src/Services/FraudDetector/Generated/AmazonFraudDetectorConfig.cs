@@ -30,7 +30,6 @@ namespace Amazon.FraudDetector
     /// <summary>
     /// Configuration for accessing Amazon FraudDetector service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonFraudDetectorConfig : ClientConfig
     {
         private static readonly string UserAgentString =

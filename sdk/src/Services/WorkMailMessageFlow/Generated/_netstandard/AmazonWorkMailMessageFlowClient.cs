@@ -280,7 +280,6 @@ namespace Amazon.WorkMailMessageFlow
 
             return InvokeAsync<GetRawMessageContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRawMessageContent
@@ -361,7 +360,6 @@ namespace Amazon.WorkMailMessageFlow
 
             return InvokeAsync<PutRawMessageContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

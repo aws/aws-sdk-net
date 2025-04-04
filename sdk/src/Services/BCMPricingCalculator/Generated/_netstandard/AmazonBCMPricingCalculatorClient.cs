@@ -341,7 +341,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<BatchCreateBillScenarioCommitmentModificationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchCreateBillScenarioUsageModification
@@ -412,7 +411,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<BatchCreateBillScenarioUsageModificationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchCreateWorkloadEstimateUsage
@@ -482,7 +480,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<BatchCreateWorkloadEstimateUsageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteBillScenarioCommitmentModification
@@ -554,7 +551,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<BatchDeleteBillScenarioCommitmentModificationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteBillScenarioUsageModification
@@ -627,7 +623,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<BatchDeleteBillScenarioUsageModificationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDeleteWorkloadEstimateUsage
@@ -695,7 +690,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<BatchDeleteWorkloadEstimateUsageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchUpdateBillScenarioCommitmentModification
@@ -763,7 +757,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<BatchUpdateBillScenarioCommitmentModificationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchUpdateBillScenarioUsageModification
@@ -834,7 +827,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<BatchUpdateBillScenarioUsageModificationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchUpdateWorkloadEstimateUsage
@@ -900,7 +892,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<BatchUpdateWorkloadEstimateUsageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBillEstimate
@@ -964,7 +955,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<CreateBillEstimateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBillScenario
@@ -1023,7 +1013,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<CreateBillScenarioResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkloadEstimate
@@ -1081,7 +1070,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<CreateWorkloadEstimateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBillEstimate
@@ -1136,7 +1124,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<DeleteBillEstimateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBillScenario
@@ -1191,7 +1178,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<DeleteBillScenarioResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkloadEstimate
@@ -1242,7 +1228,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<DeleteWorkloadEstimateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBillEstimate
@@ -1296,7 +1281,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<GetBillEstimateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBillScenario
@@ -1350,7 +1334,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<GetBillScenarioResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPreferences
@@ -1401,7 +1384,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<GetPreferencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkloadEstimate
@@ -1455,7 +1437,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<GetWorkloadEstimateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBillEstimateCommitments
@@ -1509,7 +1490,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<ListBillEstimateCommitmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBillEstimateInputCommitmentModifications
@@ -1563,7 +1543,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<ListBillEstimateInputCommitmentModificationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBillEstimateInputUsageModifications
@@ -1617,7 +1596,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<ListBillEstimateInputUsageModificationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBillEstimateLineItems
@@ -1671,7 +1649,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<ListBillEstimateLineItemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBillEstimates
@@ -1722,7 +1699,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<ListBillEstimatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBillScenarioCommitmentModifications
@@ -1776,7 +1752,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<ListBillScenarioCommitmentModificationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBillScenarios
@@ -1827,7 +1802,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<ListBillScenariosResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBillScenarioUsageModifications
@@ -1881,7 +1855,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<ListBillScenarioUsageModificationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1932,7 +1905,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkloadEstimates
@@ -1983,7 +1955,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<ListWorkloadEstimatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkloadEstimateUsage
@@ -2037,7 +2008,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<ListWorkloadEstimateUsageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2091,7 +2061,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2142,7 +2111,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBillEstimate
@@ -2200,7 +2168,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<UpdateBillEstimateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBillScenario
@@ -2258,7 +2225,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<UpdateBillScenarioResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePreferences
@@ -2312,7 +2278,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<UpdatePreferencesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkloadEstimate
@@ -2370,7 +2335,6 @@ namespace Amazon.BCMPricingCalculator
 
             return InvokeAsync<UpdateWorkloadEstimateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

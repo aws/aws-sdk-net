@@ -336,7 +336,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<AssociateAwsAccountWithPartnerAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateMulticastGroupWithFuotaTask
@@ -388,7 +387,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<AssociateMulticastGroupWithFuotaTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateWirelessDeviceWithFuotaTask
@@ -440,7 +438,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<AssociateWirelessDeviceWithFuotaTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateWirelessDeviceWithMulticastGroup
@@ -492,7 +489,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<AssociateWirelessDeviceWithMulticastGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateWirelessDeviceWithThing
@@ -544,7 +540,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<AssociateWirelessDeviceWithThingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateWirelessGatewayWithCertificate
@@ -596,7 +591,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<AssociateWirelessGatewayWithCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateWirelessGatewayWithThing
@@ -648,7 +642,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<AssociateWirelessGatewayWithThingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelMulticastGroupSession
@@ -700,7 +693,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<CancelMulticastGroupSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDestination
@@ -752,7 +744,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<CreateDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDeviceProfile
@@ -801,7 +792,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<CreateDeviceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFuotaTask
@@ -853,7 +843,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<CreateFuotaTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMulticastGroup
@@ -905,7 +894,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<CreateMulticastGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNetworkAnalyzerConfiguration
@@ -957,7 +945,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<CreateNetworkAnalyzerConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateServiceProfile
@@ -1006,7 +993,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<CreateServiceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWirelessDevice
@@ -1058,7 +1044,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<CreateWirelessDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWirelessGateway
@@ -1128,7 +1113,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<CreateWirelessGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWirelessGatewayTask
@@ -1180,7 +1164,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<CreateWirelessGatewayTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWirelessGatewayTaskDefinition
@@ -1232,7 +1215,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<CreateWirelessGatewayTaskDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDestination
@@ -1284,7 +1266,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<DeleteDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDeviceProfile
@@ -1336,7 +1317,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<DeleteDeviceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFuotaTask
@@ -1385,7 +1365,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<DeleteFuotaTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMulticastGroup
@@ -1437,7 +1416,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<DeleteMulticastGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNetworkAnalyzerConfiguration
@@ -1489,7 +1467,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<DeleteNetworkAnalyzerConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteQueuedMessages
@@ -1538,7 +1515,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<DeleteQueuedMessagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServiceProfile
@@ -1590,7 +1566,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<DeleteServiceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWirelessDevice
@@ -1639,7 +1614,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<DeleteWirelessDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWirelessDeviceImportTask
@@ -1691,7 +1665,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<DeleteWirelessDeviceImportTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWirelessGateway
@@ -1761,7 +1734,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<DeleteWirelessGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWirelessGatewayTask
@@ -1810,7 +1782,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<DeleteWirelessGatewayTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWirelessGatewayTaskDefinition
@@ -1860,7 +1831,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<DeleteWirelessGatewayTaskDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterWirelessDevice
@@ -1906,7 +1876,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<DeregisterWirelessDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateAwsAccountFromPartnerAccount
@@ -1954,7 +1923,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<DisassociateAwsAccountFromPartnerAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateMulticastGroupFromFuotaTask
@@ -2003,7 +1971,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<DisassociateMulticastGroupFromFuotaTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateWirelessDeviceFromFuotaTask
@@ -2055,7 +2022,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<DisassociateWirelessDeviceFromFuotaTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateWirelessDeviceFromMulticastGroup
@@ -2104,7 +2070,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<DisassociateWirelessDeviceFromMulticastGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateWirelessDeviceFromThing
@@ -2156,7 +2121,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<DisassociateWirelessDeviceFromThingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateWirelessGatewayFromCertificate
@@ -2205,7 +2169,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<DisassociateWirelessGatewayFromCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateWirelessGatewayFromThing
@@ -2257,7 +2220,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<DisassociateWirelessGatewayFromThingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDestination
@@ -2306,7 +2268,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeviceProfile
@@ -2355,7 +2316,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetDeviceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEventConfigurationByResourceTypes
@@ -2398,7 +2358,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetEventConfigurationByResourceTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFuotaTask
@@ -2447,7 +2406,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetFuotaTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLogLevelsByResourceTypes
@@ -2497,7 +2455,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetLogLevelsByResourceTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMetricConfiguration
@@ -2549,7 +2506,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetMetricConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMetrics
@@ -2601,7 +2557,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMulticastGroup
@@ -2650,7 +2605,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetMulticastGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMulticastGroupSession
@@ -2699,7 +2653,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetMulticastGroupSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNetworkAnalyzerConfiguration
@@ -2748,7 +2701,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetNetworkAnalyzerConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPartnerAccount
@@ -2795,7 +2747,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetPartnerAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPosition
@@ -2854,7 +2805,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetPositionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPositionConfiguration
@@ -2913,7 +2863,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetPositionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPositionEstimate
@@ -2963,7 +2912,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetPositionEstimateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceEventConfiguration
@@ -3012,7 +2960,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetResourceEventConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourceLogLevel
@@ -3062,7 +3009,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetResourceLogLevelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePosition
@@ -3113,7 +3059,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetResourcePositionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceEndpoint
@@ -3160,7 +3105,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetServiceEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceProfile
@@ -3209,7 +3153,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetServiceProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWirelessDevice
@@ -3258,7 +3201,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetWirelessDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWirelessDeviceImportTask
@@ -3311,7 +3253,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetWirelessDeviceImportTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWirelessDeviceStatistics
@@ -3360,7 +3301,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetWirelessDeviceStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWirelessGateway
@@ -3409,7 +3349,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetWirelessGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWirelessGatewayCertificate
@@ -3458,7 +3397,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetWirelessGatewayCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWirelessGatewayFirmwareInformation
@@ -3507,7 +3445,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetWirelessGatewayFirmwareInformationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWirelessGatewayStatistics
@@ -3556,7 +3493,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetWirelessGatewayStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWirelessGatewayTask
@@ -3605,7 +3541,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetWirelessGatewayTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWirelessGatewayTaskDefinition
@@ -3654,7 +3589,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<GetWirelessGatewayTaskDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDestinations
@@ -3700,7 +3634,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<ListDestinationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeviceProfiles
@@ -3746,7 +3679,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<ListDeviceProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDevicesForWirelessDeviceImportTask
@@ -3798,7 +3730,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<ListDevicesForWirelessDeviceImportTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventConfigurations
@@ -3844,7 +3775,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<ListEventConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFuotaTasks
@@ -3890,7 +3820,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<ListFuotaTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMulticastGroups
@@ -3936,7 +3865,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<ListMulticastGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMulticastGroupsByFuotaTask
@@ -3985,7 +3913,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<ListMulticastGroupsByFuotaTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNetworkAnalyzerConfigurations
@@ -4031,7 +3958,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<ListNetworkAnalyzerConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPartnerAccounts
@@ -4077,7 +4003,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<ListPartnerAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPositionConfigurations
@@ -4133,7 +4058,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<ListPositionConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQueuedMessages
@@ -4182,7 +4106,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<ListQueuedMessagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceProfiles
@@ -4228,7 +4151,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<ListServiceProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -4277,7 +4199,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWirelessDeviceImportTasks
@@ -4329,7 +4250,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<ListWirelessDeviceImportTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWirelessDevices
@@ -4375,7 +4295,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<ListWirelessDevicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWirelessGateways
@@ -4421,7 +4340,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<ListWirelessGatewaysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWirelessGatewayTaskDefinitions
@@ -4467,7 +4385,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<ListWirelessGatewayTaskDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutPositionConfiguration
@@ -4526,7 +4443,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<PutPositionConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourceLogLevel
@@ -4577,7 +4493,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<PutResourceLogLevelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetAllResourceLogLevels
@@ -4627,7 +4542,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<ResetAllResourceLogLevelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetResourceLogLevel
@@ -4677,7 +4591,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<ResetResourceLogLevelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendDataToMulticastGroup
@@ -4729,7 +4642,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<SendDataToMulticastGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendDataToWirelessDevice
@@ -4775,7 +4687,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<SendDataToWirelessDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartBulkAssociateWirelessDeviceWithMulticastGroup
@@ -4824,7 +4735,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<StartBulkAssociateWirelessDeviceWithMulticastGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartBulkDisassociateWirelessDeviceFromMulticastGroup
@@ -4873,7 +4783,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<StartBulkDisassociateWirelessDeviceFromMulticastGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartFuotaTask
@@ -4925,7 +4834,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<StartFuotaTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMulticastGroupSession
@@ -4977,7 +4885,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<StartMulticastGroupSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSingleWirelessDeviceImportTask
@@ -5029,7 +4936,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<StartSingleWirelessDeviceImportTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartWirelessDeviceImportTask
@@ -5081,7 +4987,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<StartWirelessDeviceImportTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -5133,7 +5038,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestWirelessDevice
@@ -5179,7 +5083,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<TestWirelessDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -5228,7 +5131,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDestination
@@ -5277,7 +5179,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<UpdateDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEventConfigurationByResourceTypes
@@ -5323,7 +5224,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<UpdateEventConfigurationByResourceTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFuotaTask
@@ -5375,7 +5275,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<UpdateFuotaTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLogLevelsByResourceTypes
@@ -5429,7 +5328,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<UpdateLogLevelsByResourceTypesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMetricConfiguration
@@ -5481,7 +5379,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<UpdateMetricConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMulticastGroup
@@ -5533,7 +5430,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<UpdateMulticastGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNetworkAnalyzerConfiguration
@@ -5582,7 +5478,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<UpdateNetworkAnalyzerConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePartnerAccount
@@ -5628,7 +5523,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<UpdatePartnerAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePosition
@@ -5687,7 +5581,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<UpdatePositionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResourceEventConfiguration
@@ -5739,7 +5632,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<UpdateResourceEventConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateResourcePosition
@@ -5790,7 +5682,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<UpdateResourcePositionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWirelessDevice
@@ -5839,7 +5730,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<UpdateWirelessDeviceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWirelessDeviceImportTask
@@ -5891,7 +5781,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<UpdateWirelessDeviceImportTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWirelessGateway
@@ -5940,7 +5829,6 @@ namespace Amazon.IoTWireless
 
             return InvokeAsync<UpdateWirelessGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

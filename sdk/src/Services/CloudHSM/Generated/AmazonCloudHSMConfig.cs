@@ -30,7 +30,6 @@ namespace Amazon.CloudHSM
     /// <summary>
     /// Configuration for accessing Amazon CloudHSM service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCloudHSMConfig : ClientConfig
     {
         private static readonly string UserAgentString =

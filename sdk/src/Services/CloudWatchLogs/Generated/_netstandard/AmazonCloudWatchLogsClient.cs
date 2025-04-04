@@ -411,7 +411,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<AssociateKmsKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelExportTask
@@ -462,7 +461,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<CancelExportTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDelivery
@@ -567,7 +565,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<CreateDeliveryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateExportTask
@@ -660,7 +657,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<CreateExportTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLogAnomalyDetector
@@ -752,7 +748,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<CreateLogAnomalyDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLogGroup
@@ -850,7 +845,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<CreateLogGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLogStream
@@ -922,7 +916,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<CreateLogStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAccountPolicy
@@ -1002,7 +995,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DeleteAccountPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataProtectionPolicy
@@ -1053,7 +1045,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DeleteDataProtectionPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDelivery
@@ -1108,7 +1099,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DeleteDeliveryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDeliveryDestination
@@ -1169,7 +1159,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DeleteDeliveryDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDeliveryDestinationPolicy
@@ -1216,7 +1205,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DeleteDeliveryDestinationPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDeliverySource
@@ -1277,7 +1265,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DeleteDeliverySourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDestination
@@ -1325,7 +1312,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DeleteDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIndexPolicy
@@ -1388,7 +1374,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DeleteIndexPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIntegration
@@ -1438,7 +1423,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DeleteIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLogAnomalyDetector
@@ -1484,7 +1468,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DeleteLogAnomalyDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLogGroup
@@ -1531,7 +1514,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DeleteLogGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLogStream
@@ -1578,7 +1560,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DeleteLogStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMetricFilter
@@ -1624,7 +1605,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DeleteMetricFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteQueryDefinition
@@ -1678,7 +1658,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DeleteQueryDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -1722,7 +1701,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRetentionPolicy
@@ -1773,7 +1751,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DeleteRetentionPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSubscriptionFilter
@@ -1819,7 +1796,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DeleteSubscriptionFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTransformer
@@ -1878,7 +1854,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DeleteTransformerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccountPolicies
@@ -1951,7 +1926,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DescribeAccountPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConfigurationTemplates
@@ -1999,7 +1973,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DescribeConfigurationTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDeliveries
@@ -2060,7 +2033,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DescribeDeliveriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDeliveryDestinations
@@ -2106,7 +2078,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DescribeDeliveryDestinationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDeliverySources
@@ -2152,7 +2123,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DescribeDeliverySourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDestinations
@@ -2192,7 +2162,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DescribeDestinationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeExportTasks
@@ -2233,7 +2202,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DescribeExportTasksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFieldIndexes
@@ -2283,7 +2251,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DescribeFieldIndexesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeIndexPolicies
@@ -2349,7 +2316,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DescribeIndexPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLogGroups
@@ -2450,7 +2416,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DescribeLogGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLogStreams
@@ -2513,7 +2478,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DescribeLogStreamsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMetricFilters
@@ -2558,7 +2522,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DescribeMetricFiltersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeQueries
@@ -2603,7 +2566,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DescribeQueriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeQueryDefinitions
@@ -2651,7 +2613,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DescribeQueryDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeResourcePolicies
@@ -2691,7 +2652,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DescribeResourcePoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSubscriptionFilters
@@ -2735,7 +2695,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DescribeSubscriptionFiltersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateKmsKey
@@ -2810,7 +2769,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<DisassociateKmsKeyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  FilterLogEvents
@@ -2923,7 +2881,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<FilterLogEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataProtectionPolicy
@@ -2969,7 +2926,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<GetDataProtectionPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDelivery
@@ -3036,7 +2992,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<GetDeliveryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeliveryDestination
@@ -3085,7 +3040,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<GetDeliveryDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeliveryDestinationPolicy
@@ -3130,7 +3084,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<GetDeliveryDestinationPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeliverySource
@@ -3179,7 +3132,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<GetDeliverySourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIntegration
@@ -3222,7 +3174,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<GetIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLogAnomalyDetector
@@ -3269,7 +3220,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<GetLogAnomalyDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLogEvents
@@ -3361,7 +3311,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<GetLogEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLogGroupFields
@@ -3435,7 +3384,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<GetLogGroupFieldsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLogRecord
@@ -3488,7 +3436,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<GetLogRecordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueryResults
@@ -3559,7 +3506,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<GetQueryResultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTransformer
@@ -3611,7 +3557,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<GetTransformerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAnomalies
@@ -3659,7 +3604,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<ListAnomaliesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIntegrations
@@ -3701,7 +3645,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<ListIntegrationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLogAnomalyDetectors
@@ -3747,7 +3690,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<ListLogAnomalyDetectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLogGroupsForQuery
@@ -3802,7 +3744,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<ListLogGroupsForQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3846,7 +3787,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsLogGroup
@@ -3897,7 +3837,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<ListTagsLogGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAccountPolicy
@@ -4185,7 +4124,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<PutAccountPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDataProtectionPolicy
@@ -4270,7 +4208,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<PutDataProtectionPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDeliveryDestination
@@ -4373,7 +4310,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<PutDeliveryDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDeliveryDestinationPolicy
@@ -4456,7 +4392,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<PutDeliveryDestinationPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDeliverySource
@@ -4557,7 +4492,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<PutDeliverySourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDestination
@@ -4621,7 +4555,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<PutDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDestinationPolicy
@@ -4667,7 +4600,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<PutDestinationPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutIndexPolicy
@@ -4769,7 +4701,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<PutIndexPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutIntegration
@@ -4830,7 +4761,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<PutIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutLogEvents
@@ -4956,7 +4886,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<PutLogEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutMetricFilter
@@ -5049,7 +4978,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<PutMetricFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutQueryDefinition
@@ -5112,7 +5040,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<PutQueryDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -5157,7 +5084,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRetentionPolicy
@@ -5230,7 +5156,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<PutRetentionPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutSubscriptionFilter
@@ -5332,7 +5257,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<PutSubscriptionFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutTransformer
@@ -5429,7 +5353,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<PutTransformerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartLiveTail
@@ -5541,7 +5464,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<StartLiveTailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartQuery
@@ -5656,7 +5578,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<StartQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopQuery
@@ -5700,7 +5621,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<StopQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagLogGroup
@@ -5768,7 +5688,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<TagLogGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -5840,7 +5759,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestMetricFilter
@@ -5881,7 +5799,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<TestMetricFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestTransformer
@@ -5926,7 +5843,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<TestTransformerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagLogGroup
@@ -5985,7 +5901,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<UntagLogGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -6028,7 +5943,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAnomaly
@@ -6090,7 +6004,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<UpdateAnomalyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDeliveryConfiguration
@@ -6144,7 +6057,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<UpdateDeliveryConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLogAnomalyDetector
@@ -6190,7 +6102,6 @@ namespace Amazon.CloudWatchLogs
 
             return InvokeAsync<UpdateLogAnomalyDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.GeoMaps
     /// <summary>
     /// Configuration for accessing Amazon GeoMaps service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonGeoMapsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

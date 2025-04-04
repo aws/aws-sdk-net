@@ -30,7 +30,6 @@ namespace Amazon.ServerMigrationService
     /// <summary>
     /// Configuration for accessing Amazon ServerMigrationService service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonServerMigrationServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

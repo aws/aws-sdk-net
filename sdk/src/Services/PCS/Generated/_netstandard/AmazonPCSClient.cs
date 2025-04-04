@@ -447,7 +447,6 @@ namespace Amazon.PCS
 
             return InvokeAsync<CreateClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateComputeNodeGroup
@@ -609,7 +608,6 @@ namespace Amazon.PCS
 
             return InvokeAsync<CreateComputeNodeGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateQueue
@@ -763,7 +761,6 @@ namespace Amazon.PCS
 
             return InvokeAsync<CreateQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCluster
@@ -892,7 +889,6 @@ namespace Amazon.PCS
 
             return InvokeAsync<DeleteClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteComputeNodeGroup
@@ -1021,7 +1017,6 @@ namespace Amazon.PCS
 
             return InvokeAsync<DeleteComputeNodeGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteQueue
@@ -1151,7 +1146,6 @@ namespace Amazon.PCS
 
             return InvokeAsync<DeleteQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCluster
@@ -1281,7 +1275,6 @@ namespace Amazon.PCS
 
             return InvokeAsync<GetClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetComputeNodeGroup
@@ -1411,7 +1404,6 @@ namespace Amazon.PCS
 
             return InvokeAsync<GetComputeNodeGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueue
@@ -1540,7 +1532,6 @@ namespace Amazon.PCS
 
             return InvokeAsync<GetQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClusters
@@ -1668,7 +1659,6 @@ namespace Amazon.PCS
 
             return InvokeAsync<ListClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListComputeNodeGroups
@@ -1796,7 +1786,6 @@ namespace Amazon.PCS
 
             return InvokeAsync<ListComputeNodeGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQueues
@@ -1924,7 +1913,6 @@ namespace Amazon.PCS
 
             return InvokeAsync<ListQueuesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1967,7 +1955,6 @@ namespace Amazon.PCS
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterComputeNodeGroupInstance
@@ -2037,7 +2024,6 @@ namespace Amazon.PCS
 
             return InvokeAsync<RegisterComputeNodeGroupInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2083,7 +2069,6 @@ namespace Amazon.PCS
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2127,7 +2112,6 @@ namespace Amazon.PCS
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateComputeNodeGroup
@@ -2282,7 +2266,6 @@ namespace Amazon.PCS
 
             return InvokeAsync<UpdateComputeNodeGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQueue
@@ -2436,7 +2419,6 @@ namespace Amazon.PCS
 
             return InvokeAsync<UpdateQueueResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

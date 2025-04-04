@@ -398,7 +398,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<ActivateGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddCache
@@ -448,7 +447,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<AddCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddTagsToResource
@@ -519,7 +517,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<AddTagsToResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddUploadBuffer
@@ -570,7 +567,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<AddUploadBufferResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AddWorkingStorage
@@ -626,7 +622,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<AddWorkingStorageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssignTapePool
@@ -671,7 +666,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<AssignTapePoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateFileSystem
@@ -715,7 +709,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<AssociateFileSystemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachVolume
@@ -761,7 +754,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<AttachVolumeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelArchival
@@ -804,7 +796,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<CancelArchivalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelCacheReport
@@ -850,7 +841,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<CancelCacheReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelRetrieval
@@ -894,7 +884,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<CancelRetrievalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCachediSCSIVolume
@@ -958,7 +947,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<CreateCachediSCSIVolumeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNFSFileShare
@@ -1019,7 +1007,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<CreateNFSFileShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSMBFileShare
@@ -1080,7 +1067,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<CreateSMBFileShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSnapshot
@@ -1160,7 +1146,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<CreateSnapshotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSnapshotFromVolumeRecoveryPoint
@@ -1231,7 +1216,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<CreateSnapshotFromVolumeRecoveryPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStorediSCSIVolume
@@ -1289,7 +1273,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<CreateStorediSCSIVolumeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTapePool
@@ -1332,7 +1315,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<CreateTapePoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTapes
@@ -1382,7 +1364,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<CreateTapesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTapeWithBarcode
@@ -1434,7 +1415,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<CreateTapeWithBarcodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAutomaticTapeCreationPolicy
@@ -1478,7 +1458,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DeleteAutomaticTapeCreationPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBandwidthRateLimit
@@ -1524,7 +1503,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DeleteBandwidthRateLimitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCacheReport
@@ -1575,7 +1553,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DeleteCacheReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteChapCredentials
@@ -1619,7 +1596,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DeleteChapCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFileShare
@@ -1662,7 +1638,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DeleteFileShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGateway
@@ -1724,7 +1699,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DeleteGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSnapshotSchedule
@@ -1783,7 +1757,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DeleteSnapshotScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTape
@@ -1826,7 +1799,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DeleteTapeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTapeArchive
@@ -1869,7 +1841,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DeleteTapeArchiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTapePool
@@ -1913,7 +1884,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DeleteTapePoolResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVolume
@@ -1974,7 +1944,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DeleteVolumeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAvailabilityMonitorTest
@@ -2018,7 +1987,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DescribeAvailabilityMonitorTestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBandwidthRateLimit
@@ -2071,7 +2039,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DescribeBandwidthRateLimitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBandwidthRateLimitSchedule
@@ -2137,7 +2104,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DescribeBandwidthRateLimitScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCache
@@ -2186,7 +2152,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DescribeCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCachediSCSIVolumes
@@ -2235,7 +2200,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DescribeCachediSCSIVolumesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCacheReport
@@ -2278,7 +2242,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DescribeCacheReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeChapCredentials
@@ -2322,7 +2285,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DescribeChapCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFileSystemAssociations
@@ -2365,7 +2327,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DescribeFileSystemAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeGatewayInformation
@@ -2409,7 +2370,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DescribeGatewayInformationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMaintenanceStartTime
@@ -2453,7 +2413,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DescribeMaintenanceStartTimeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeNFSFileShares
@@ -2496,7 +2455,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DescribeNFSFileSharesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSMBFileShares
@@ -2539,7 +2497,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DescribeSMBFileSharesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSMBSettings
@@ -2582,7 +2539,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DescribeSMBSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSnapshotSchedule
@@ -2626,7 +2582,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DescribeSnapshotScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStorediSCSIVolumes
@@ -2671,7 +2626,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DescribeStorediSCSIVolumesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTapeArchives
@@ -2754,7 +2708,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DescribeTapeArchivesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTapeRecoveryPoints
@@ -2805,7 +2758,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DescribeTapeRecoveryPointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTapes
@@ -2859,7 +2811,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DescribeTapesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUploadBuffer
@@ -2908,7 +2859,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DescribeUploadBufferResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVTLDevices
@@ -2956,7 +2906,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DescribeVTLDevicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorkingStorage
@@ -3011,7 +2960,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DescribeWorkingStorageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachVolume
@@ -3057,7 +3005,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DetachVolumeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableGateway
@@ -3112,7 +3059,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DisableGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateFileSystem
@@ -3156,7 +3102,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<DisassociateFileSystemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EvictFilesFailingUpload
@@ -3211,7 +3156,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<EvictFilesFailingUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  JoinDomain
@@ -3268,7 +3212,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<JoinDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAutomaticTapeCreationPolicies
@@ -3316,7 +3259,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<ListAutomaticTapeCreationPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCacheReports
@@ -3361,7 +3303,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<ListCacheReportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFileShares
@@ -3405,7 +3346,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<ListFileSharesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFileSystemAssociations
@@ -3449,7 +3389,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<ListFileSystemAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListGateways
@@ -3548,7 +3487,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<ListGatewaysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLocalDisks
@@ -3601,7 +3539,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<ListLocalDisksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3644,7 +3581,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTapePools
@@ -3697,7 +3633,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<ListTapePoolsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTapes
@@ -3752,7 +3687,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<ListTapesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVolumeInitiators
@@ -3796,7 +3730,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<ListVolumeInitiatorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVolumeRecoveryPoints
@@ -3847,7 +3780,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<ListVolumeRecoveryPointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListVolumes
@@ -3902,7 +3834,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<ListVolumesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NotifyWhenUploaded
@@ -3961,7 +3892,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<NotifyWhenUploadedResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RefreshCache
@@ -4052,7 +3982,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<RefreshCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTagsFromResource
@@ -4095,7 +4024,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<RemoveTagsFromResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ResetCache
@@ -4193,7 +4121,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<ResetCacheResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RetrieveTapeArchive
@@ -4246,7 +4173,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<RetrieveTapeArchiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RetrieveTapeRecoveryPoint
@@ -4303,7 +4229,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<RetrieveTapeRecoveryPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetLocalConsolePassword
@@ -4348,7 +4273,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<SetLocalConsolePasswordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetSMBGuestPassword
@@ -4392,7 +4316,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<SetSMBGuestPasswordResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ShutdownGateway
@@ -4468,7 +4391,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<ShutdownGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartAvailabilityMonitorTest
@@ -4520,7 +4442,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<StartAvailabilityMonitorTestResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartCacheReport
@@ -4604,7 +4525,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<StartCacheReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartGateway
@@ -4662,7 +4582,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<StartGatewayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAutomaticTapeCreationPolicy
@@ -4715,7 +4634,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<UpdateAutomaticTapeCreationPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBandwidthRateLimit
@@ -4773,7 +4691,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<UpdateBandwidthRateLimitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBandwidthRateLimitSchedule
@@ -4820,7 +4737,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<UpdateBandwidthRateLimitScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateChapCredentials
@@ -4872,7 +4788,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<UpdateChapCredentialsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFileSystemAssociation
@@ -4915,7 +4830,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<UpdateFileSystemAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGatewayInformation
@@ -4967,7 +4881,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<UpdateGatewayInformationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGatewaySoftwareNow
@@ -5027,7 +4940,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<UpdateGatewaySoftwareNowResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMaintenanceStartTime
@@ -5088,7 +5000,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<UpdateMaintenanceStartTimeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNFSFileShare
@@ -5161,7 +5072,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<UpdateNFSFileShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSMBFileShare
@@ -5224,7 +5134,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<UpdateSMBFileShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSMBFileShareVisibility
@@ -5267,7 +5176,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<UpdateSMBFileShareVisibilityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSMBLocalGroups
@@ -5310,7 +5218,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<UpdateSMBLocalGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSMBSecurityStrategy
@@ -5365,7 +5272,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<UpdateSMBSecurityStrategyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSnapshotSchedule
@@ -5421,7 +5327,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<UpdateSnapshotScheduleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVTLDeviceType
@@ -5466,7 +5371,6 @@ namespace Amazon.StorageGateway
 
             return InvokeAsync<UpdateVTLDeviceTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

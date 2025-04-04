@@ -30,7 +30,6 @@ namespace Amazon.Ep2s3hostlabel
     /// <summary>
     /// Configuration for accessing Amazon Ep2s3hostlabel service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonEp2s3hostlabelConfig : ClientConfig
     {
         private static readonly string UserAgentString =

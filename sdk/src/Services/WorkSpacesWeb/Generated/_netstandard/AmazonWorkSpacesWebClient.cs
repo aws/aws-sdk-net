@@ -318,7 +318,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<AssociateBrowserSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateDataProtectionSettings
@@ -370,7 +369,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<AssociateDataProtectionSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateIpAccessSettings
@@ -422,7 +420,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<AssociateIpAccessSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateNetworkSettings
@@ -474,7 +471,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<AssociateNetworkSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateTrustStore
@@ -526,7 +522,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<AssociateTrustStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateUserAccessLoggingSettings
@@ -578,7 +573,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<AssociateUserAccessLoggingSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateUserSettings
@@ -630,7 +624,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<AssociateUserSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBrowserSettings
@@ -687,7 +680,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<CreateBrowserSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataProtectionSettings
@@ -742,7 +734,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<CreateDataProtectionSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIdentityProvider
@@ -797,7 +788,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<CreateIdentityProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIpAccessSettings
@@ -849,7 +839,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<CreateIpAccessSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNetworkSettings
@@ -903,7 +892,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<CreateNetworkSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePortal
@@ -958,7 +946,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<CreatePortalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTrustStore
@@ -1015,7 +1002,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<CreateTrustStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUserAccessLoggingSettings
@@ -1068,7 +1054,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<CreateUserAccessLoggingSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUserSettings
@@ -1122,7 +1107,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<CreateUserSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBrowserSettings
@@ -1171,7 +1155,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<DeleteBrowserSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataProtectionSettings
@@ -1220,7 +1203,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<DeleteDataProtectionSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIdentityProvider
@@ -1269,7 +1251,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<DeleteIdentityProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIpAccessSettings
@@ -1318,7 +1299,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<DeleteIpAccessSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNetworkSettings
@@ -1367,7 +1347,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<DeleteNetworkSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePortal
@@ -1416,7 +1395,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<DeletePortalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTrustStore
@@ -1465,7 +1443,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<DeleteTrustStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUserAccessLoggingSettings
@@ -1514,7 +1491,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<DeleteUserAccessLoggingSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUserSettings
@@ -1563,7 +1539,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<DeleteUserSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateBrowserSettings
@@ -1615,7 +1590,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<DisassociateBrowserSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateDataProtectionSettings
@@ -1667,7 +1641,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<DisassociateDataProtectionSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateIpAccessSettings
@@ -1719,7 +1692,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<DisassociateIpAccessSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateNetworkSettings
@@ -1771,7 +1743,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<DisassociateNetworkSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateTrustStore
@@ -1823,7 +1794,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<DisassociateTrustStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateUserAccessLoggingSettings
@@ -1875,7 +1845,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<DisassociateUserAccessLoggingSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateUserSettings
@@ -1927,7 +1896,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<DisassociateUserSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExpireSession
@@ -1976,7 +1944,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<ExpireSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBrowserSettings
@@ -2025,7 +1992,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<GetBrowserSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataProtectionSettings
@@ -2074,7 +2040,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<GetDataProtectionSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIdentityProvider
@@ -2123,7 +2088,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<GetIdentityProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIpAccessSettings
@@ -2172,7 +2136,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<GetIpAccessSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNetworkSettings
@@ -2221,7 +2184,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<GetNetworkSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPortal
@@ -2270,7 +2232,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<GetPortalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPortalServiceProviderMetadata
@@ -2319,7 +2280,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<GetPortalServiceProviderMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSession
@@ -2368,7 +2328,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<GetSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTrustStore
@@ -2417,7 +2376,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<GetTrustStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTrustStoreCertificate
@@ -2466,7 +2424,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<GetTrustStoreCertificateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUserAccessLoggingSettings
@@ -2515,7 +2472,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<GetUserAccessLoggingSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUserSettings
@@ -2564,7 +2520,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<GetUserSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBrowserSettings
@@ -2610,7 +2565,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<ListBrowserSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataProtectionSettings
@@ -2656,7 +2610,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<ListDataProtectionSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIdentityProviders
@@ -2702,7 +2655,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<ListIdentityProvidersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIpAccessSettings
@@ -2748,7 +2700,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<ListIpAccessSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNetworkSettings
@@ -2794,7 +2745,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<ListNetworkSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPortals
@@ -2840,7 +2790,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<ListPortalsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSessions
@@ -2889,7 +2838,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<ListSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2938,7 +2886,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrustStoreCertificates
@@ -2987,7 +2934,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<ListTrustStoreCertificatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrustStores
@@ -3033,7 +2979,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<ListTrustStoresResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUserAccessLoggingSettings
@@ -3079,7 +3024,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<ListUserAccessLoggingSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListUserSettings
@@ -3125,7 +3069,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<ListUserSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3177,7 +3120,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3226,7 +3168,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBrowserSettings
@@ -3275,7 +3216,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<UpdateBrowserSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataProtectionSettings
@@ -3324,7 +3264,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<UpdateDataProtectionSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIdentityProvider
@@ -3373,7 +3312,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<UpdateIdentityProviderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIpAccessSettings
@@ -3422,7 +3360,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<UpdateIpAccessSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNetworkSettings
@@ -3471,7 +3408,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<UpdateNetworkSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePortal
@@ -3526,7 +3462,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<UpdatePortalResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTrustStore
@@ -3578,7 +3513,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<UpdateTrustStoreResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUserAccessLoggingSettings
@@ -3627,7 +3561,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<UpdateUserAccessLoggingSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUserSettings
@@ -3676,7 +3609,6 @@ namespace Amazon.WorkSpacesWeb
 
             return InvokeAsync<UpdateUserSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

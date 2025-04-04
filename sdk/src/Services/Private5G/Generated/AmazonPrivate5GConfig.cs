@@ -30,7 +30,6 @@ namespace Amazon.Private5G
     /// <summary>
     /// Configuration for accessing Amazon Private5G service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonPrivate5GConfig : ClientConfig
     {
         private static readonly string UserAgentString =

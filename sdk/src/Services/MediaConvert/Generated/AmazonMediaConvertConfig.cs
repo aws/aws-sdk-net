@@ -30,7 +30,6 @@ namespace Amazon.MediaConvert
     /// <summary>
     /// Configuration for accessing Amazon MediaConvert service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMediaConvertConfig : ClientConfig
     {
         private static readonly string UserAgentString =

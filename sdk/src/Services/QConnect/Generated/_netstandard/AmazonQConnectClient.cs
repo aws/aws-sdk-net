@@ -356,7 +356,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<ActivateMessageTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAIAgent
@@ -412,7 +411,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<CreateAIAgentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAIAgentVersion
@@ -468,7 +466,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<CreateAIAgentVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAIGuardrail
@@ -524,7 +521,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<CreateAIGuardrailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAIGuardrailVersion
@@ -580,7 +576,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<CreateAIGuardrailVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAIPrompt
@@ -636,7 +631,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<CreateAIPromptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAIPromptVersion
@@ -692,7 +686,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<CreateAIPromptVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAssistant
@@ -742,7 +735,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<CreateAssistantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAssistantAssociation
@@ -797,7 +789,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<CreateAssistantAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateContent
@@ -851,7 +842,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<CreateContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateContentAssociation
@@ -936,7 +926,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<CreateContentAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateKnowledgeBase
@@ -1017,7 +1006,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<CreateKnowledgeBaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMessageTemplate
@@ -1077,7 +1065,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<CreateMessageTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMessageTemplateAttachment
@@ -1137,7 +1124,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<CreateMessageTemplateAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMessageTemplateVersion
@@ -1202,7 +1188,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<CreateMessageTemplateVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateQuickResponse
@@ -1255,7 +1240,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<CreateQuickResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSession
@@ -1306,7 +1290,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<CreateSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeactivateMessageTemplate
@@ -1360,7 +1343,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<DeactivateMessageTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAIAgent
@@ -1406,7 +1388,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<DeleteAIAgentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAIAgentVersion
@@ -1458,7 +1439,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<DeleteAIAgentVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAIGuardrail
@@ -1510,7 +1490,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<DeleteAIGuardrailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAIGuardrailVersion
@@ -1562,7 +1541,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<DeleteAIGuardrailVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAIPrompt
@@ -1608,7 +1586,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<DeleteAIPromptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAIPromptVersion
@@ -1660,7 +1637,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<DeleteAIPromptVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAssistant
@@ -1703,7 +1679,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<DeleteAssistantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAssistantAssociation
@@ -1746,7 +1721,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<DeleteAssistantAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteContent
@@ -1789,7 +1763,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<DeleteContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteContentAssociation
@@ -1840,7 +1813,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<DeleteContentAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteImportJob
@@ -1889,7 +1861,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<DeleteImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteKnowledgeBase
@@ -1950,7 +1921,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<DeleteKnowledgeBaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMessageTemplate
@@ -2006,7 +1976,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<DeleteMessageTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMessageTemplateAttachment
@@ -2060,7 +2029,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<DeleteMessageTemplateAttachmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteQuickResponse
@@ -2103,7 +2071,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<DeleteQuickResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAIAgent
@@ -2149,7 +2116,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<GetAIAgentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAIGuardrail
@@ -2195,7 +2161,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<GetAIGuardrailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAIPrompt
@@ -2241,7 +2206,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<GetAIPromptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAssistant
@@ -2284,7 +2248,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<GetAssistantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAssistantAssociation
@@ -2327,7 +2290,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<GetAssistantAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContent
@@ -2370,7 +2332,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<GetContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContentAssociation
@@ -2421,7 +2382,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<GetContentAssociationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetContentSummary
@@ -2464,7 +2424,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<GetContentSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetImportJob
@@ -2507,7 +2466,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<GetImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetKnowledgeBase
@@ -2550,7 +2508,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<GetKnowledgeBaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMessageTemplate
@@ -2600,7 +2557,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<GetMessageTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNextMessage
@@ -2643,7 +2599,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<GetNextMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQuickResponse
@@ -2686,7 +2641,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<GetQuickResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRecommendations
@@ -2745,7 +2699,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<GetRecommendationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSession
@@ -2788,7 +2741,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<GetSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAIAgents
@@ -2834,7 +2786,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<ListAIAgentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAIAgentVersions
@@ -2880,7 +2831,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<ListAIAgentVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAIGuardrails
@@ -2926,7 +2876,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<ListAIGuardrailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAIGuardrailVersions
@@ -2972,7 +2921,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<ListAIGuardrailVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAIPrompts
@@ -3018,7 +2966,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<ListAIPromptsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAIPromptVersions
@@ -3064,7 +3011,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<ListAIPromptVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssistantAssociations
@@ -3107,7 +3053,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<ListAssistantAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAssistants
@@ -3147,7 +3092,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<ListAssistantsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContentAssociations
@@ -3198,7 +3142,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<ListContentAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListContents
@@ -3241,7 +3184,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<ListContentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListImportJobs
@@ -3281,7 +3223,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<ListImportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListKnowledgeBases
@@ -3321,7 +3262,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<ListKnowledgeBasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMessages
@@ -3364,7 +3304,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<ListMessagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMessageTemplates
@@ -3411,7 +3350,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<ListMessageTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMessageTemplateVersions
@@ -3457,7 +3395,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<ListMessageTemplateVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQuickResponses
@@ -3500,7 +3437,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<ListQuickResponsesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3537,7 +3473,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NotifyRecommendationsReceived
@@ -3583,7 +3518,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<NotifyRecommendationsReceivedResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutFeedback
@@ -3627,7 +3561,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<PutFeedbackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  QueryAssistant
@@ -3689,7 +3622,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<QueryAssistantResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveAssistantAIAgent
@@ -3735,7 +3667,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<RemoveAssistantAIAgentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveKnowledgeBaseTemplateUri
@@ -3778,7 +3709,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<RemoveKnowledgeBaseTemplateUriResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RenderMessageTemplate
@@ -3828,7 +3758,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<RenderMessageTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchContent
@@ -3872,7 +3801,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<SearchContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchMessageTemplates
@@ -3918,7 +3846,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<SearchMessageTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchQuickResponses
@@ -3967,7 +3894,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<SearchQuickResponsesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SearchSessions
@@ -4010,7 +3936,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<SearchSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendMessage
@@ -4067,7 +3992,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<SendMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartContentUpload
@@ -4115,7 +4039,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<StartContentUploadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartImportJob
@@ -4179,7 +4102,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<StartImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -4219,7 +4141,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -4256,7 +4177,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAIAgent
@@ -4308,7 +4228,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<UpdateAIAgentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAIGuardrail
@@ -4360,7 +4279,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<UpdateAIGuardrailResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAIPrompt
@@ -4412,7 +4330,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<UpdateAIPromptResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAssistantAIAgent
@@ -4458,7 +4375,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<UpdateAssistantAIAgentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateContent
@@ -4505,7 +4421,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<UpdateContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateKnowledgeBaseTemplateUri
@@ -4552,7 +4467,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<UpdateKnowledgeBaseTemplateUriResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMessageTemplate
@@ -4608,7 +4522,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<UpdateMessageTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMessageTemplateMetadata
@@ -4664,7 +4577,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<UpdateMessageTemplateMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateQuickResponse
@@ -4717,7 +4629,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<UpdateQuickResponseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSession
@@ -4762,7 +4673,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<UpdateSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSessionData
@@ -4805,7 +4715,6 @@ namespace Amazon.QConnect
 
             return InvokeAsync<UpdateSessionDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

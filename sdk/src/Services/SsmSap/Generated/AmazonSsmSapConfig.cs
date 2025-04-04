@@ -30,7 +30,6 @@ namespace Amazon.SsmSap
     /// <summary>
     /// Configuration for accessing Amazon SsmSap service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSsmSapConfig : ClientConfig
     {
         private static readonly string UserAgentString =

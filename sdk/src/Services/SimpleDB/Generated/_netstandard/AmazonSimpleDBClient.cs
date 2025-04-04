@@ -301,7 +301,6 @@ namespace Amazon.SimpleDB
 
             return InvokeAsync<BatchDeleteAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchPutAttributes
@@ -410,7 +409,6 @@ namespace Amazon.SimpleDB
 
             return InvokeAsync<BatchPutAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDomain
@@ -465,7 +463,6 @@ namespace Amazon.SimpleDB
 
             return InvokeAsync<CreateDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAttributes
@@ -525,7 +522,6 @@ namespace Amazon.SimpleDB
 
             return InvokeAsync<DeleteAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDomain
@@ -564,7 +560,6 @@ namespace Amazon.SimpleDB
 
             return InvokeAsync<DeleteDomainResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DomainMetadata
@@ -606,7 +601,6 @@ namespace Amazon.SimpleDB
 
             return InvokeAsync<DomainMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAttributes
@@ -658,7 +652,6 @@ namespace Amazon.SimpleDB
 
             return InvokeAsync<GetAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDomains
@@ -733,7 +726,6 @@ namespace Amazon.SimpleDB
 
             return InvokeAsync<ListDomainsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAttributes
@@ -830,7 +822,6 @@ namespace Amazon.SimpleDB
 
             return InvokeAsync<PutAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  Select
@@ -908,7 +899,6 @@ namespace Amazon.SimpleDB
 
             return InvokeAsync<SelectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

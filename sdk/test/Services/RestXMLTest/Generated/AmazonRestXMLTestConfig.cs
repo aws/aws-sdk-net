@@ -30,7 +30,6 @@ namespace Amazon.RestXMLTest
     /// <summary>
     /// Configuration for accessing Amazon RestXMLTest service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonRestXMLTestConfig : ClientConfig
     {
         private static readonly string UserAgentString =

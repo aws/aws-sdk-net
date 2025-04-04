@@ -30,7 +30,6 @@ namespace Amazon.EC2InstanceConnect
     /// <summary>
     /// Configuration for accessing Amazon EC2InstanceConnect service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonEC2InstanceConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =

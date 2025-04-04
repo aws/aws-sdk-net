@@ -30,7 +30,6 @@ namespace Amazon.B2bi
     /// <summary>
     /// Configuration for accessing Amazon B2bi service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonB2biConfig : ClientConfig
     {
         private static readonly string UserAgentString =

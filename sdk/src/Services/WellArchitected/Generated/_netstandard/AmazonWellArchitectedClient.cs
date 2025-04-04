@@ -338,7 +338,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<AssociateLensesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateProfiles
@@ -390,7 +389,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<AssociateProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLensShare
@@ -480,7 +478,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<CreateLensShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLensVersion
@@ -547,7 +544,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<CreateLensVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMilestone
@@ -602,7 +598,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<CreateMilestoneResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProfile
@@ -654,7 +649,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<CreateProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateProfileShare
@@ -709,7 +703,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<CreateProfileShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateReviewTemplate
@@ -779,7 +772,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<CreateReviewTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTemplateShare
@@ -861,7 +853,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<CreateTemplateShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkload
@@ -960,7 +951,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<CreateWorkloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkloadShare
@@ -1032,7 +1022,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<CreateWorkloadShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLens
@@ -1104,7 +1093,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<DeleteLensResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLensShare
@@ -1176,7 +1164,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<DeleteLensShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProfile
@@ -1242,7 +1229,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<DeleteProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteProfileShare
@@ -1294,7 +1280,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<DeleteProfileShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteReviewTemplate
@@ -1357,7 +1342,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<DeleteReviewTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTemplateShare
@@ -1416,7 +1400,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<DeleteTemplateShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkload
@@ -1468,7 +1451,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<DeleteWorkloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkloadShare
@@ -1520,7 +1502,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<DeleteWorkloadShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateLenses
@@ -1583,7 +1564,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<DisassociateLensesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateProfiles
@@ -1635,7 +1615,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<DisassociateProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportLens
@@ -1709,7 +1688,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<ExportLensResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAnswer
@@ -1758,7 +1736,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<GetAnswerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetConsolidatedReport
@@ -1812,7 +1789,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<GetConsolidatedReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGlobalSettings
@@ -1858,7 +1834,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<GetGlobalSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLens
@@ -1907,7 +1882,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<GetLensResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLensReview
@@ -1956,7 +1930,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<GetLensReviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLensReviewReport
@@ -2005,7 +1978,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<GetLensReviewReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLensVersionDifference
@@ -2054,7 +2026,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<GetLensVersionDifferenceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMilestone
@@ -2103,7 +2074,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<GetMilestoneResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProfile
@@ -2152,7 +2122,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<GetProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetProfileTemplate
@@ -2201,7 +2170,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<GetProfileTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReviewTemplate
@@ -2250,7 +2218,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<GetReviewTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReviewTemplateAnswer
@@ -2299,7 +2266,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<GetReviewTemplateAnswerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReviewTemplateLensReview
@@ -2348,7 +2314,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<GetReviewTemplateLensReviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkload
@@ -2397,7 +2362,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<GetWorkloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportLens
@@ -2487,7 +2451,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<ImportLensResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAnswers
@@ -2536,7 +2499,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<ListAnswersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCheckDetails
@@ -2585,7 +2547,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<ListCheckDetailsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCheckSummaries
@@ -2634,7 +2595,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<ListCheckSummariesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLenses
@@ -2680,7 +2640,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<ListLensesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLensReviewImprovements
@@ -2729,7 +2688,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<ListLensReviewImprovementsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLensReviews
@@ -2778,7 +2736,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<ListLensReviewsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLensShares
@@ -2827,7 +2784,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<ListLensSharesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMilestones
@@ -2876,7 +2832,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<ListMilestonesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNotifications
@@ -2922,7 +2877,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<ListNotificationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProfileNotifications
@@ -2968,7 +2922,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<ListProfileNotificationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProfiles
@@ -3014,7 +2967,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<ListProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListProfileShares
@@ -3063,7 +3015,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<ListProfileSharesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReviewTemplateAnswers
@@ -3112,7 +3063,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<ListReviewTemplateAnswersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReviewTemplates
@@ -3158,7 +3108,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<ListReviewTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListShareInvitations
@@ -3210,7 +3159,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<ListShareInvitationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3257,7 +3205,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTemplateShares
@@ -3306,7 +3253,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<ListTemplateSharesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkloads
@@ -3352,7 +3298,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<ListWorkloadsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkloadShares
@@ -3401,7 +3346,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<ListWorkloadSharesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3448,7 +3392,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3502,7 +3445,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAnswer
@@ -3554,7 +3496,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<UpdateAnswerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGlobalSettings
@@ -3604,7 +3545,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<UpdateGlobalSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIntegration
@@ -3656,7 +3596,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<UpdateIntegrationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLensReview
@@ -3708,7 +3647,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<UpdateLensReviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateProfile
@@ -3760,7 +3698,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<UpdateProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateReviewTemplate
@@ -3812,7 +3749,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<UpdateReviewTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateReviewTemplateAnswer
@@ -3864,7 +3800,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<UpdateReviewTemplateAnswerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateReviewTemplateLensReview
@@ -3916,7 +3851,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<UpdateReviewTemplateLensReviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateShareInvitation
@@ -3975,7 +3909,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<UpdateShareInvitationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkload
@@ -4027,7 +3960,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<UpdateWorkloadResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkloadShare
@@ -4079,7 +4011,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<UpdateWorkloadShareResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpgradeLensReview
@@ -4134,7 +4065,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<UpgradeLensReviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpgradeProfileVersion
@@ -4189,7 +4119,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<UpgradeProfileVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpgradeReviewTemplateLensReview
@@ -4241,7 +4170,6 @@ namespace Amazon.WellArchitected
 
             return InvokeAsync<UpgradeReviewTemplateLensReviewResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

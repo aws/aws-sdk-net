@@ -30,7 +30,6 @@ namespace Amazon.Polly
     /// <summary>
     /// Configuration for accessing Amazon Polly service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonPollyConfig : ClientConfig
     {
         private static readonly string UserAgentString =

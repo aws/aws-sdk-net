@@ -322,7 +322,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<BatchGetNamedQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetPreparedStatement
@@ -366,7 +365,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<BatchGetPreparedStatementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetQueryExecution
@@ -411,7 +409,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<BatchGetQueryExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelCapacityReservation
@@ -455,7 +452,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<CancelCapacityReservationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCapacityReservation
@@ -497,7 +493,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<CreateCapacityReservationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataCatalog
@@ -560,7 +555,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<CreateDataCatalogResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNamedQuery
@@ -602,7 +596,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<CreateNamedQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateNotebook
@@ -647,7 +640,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<CreateNotebookResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePreparedStatement
@@ -688,7 +680,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<CreatePreparedStatementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePresignedNotebookUrl
@@ -736,7 +727,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<CreatePresignedNotebookUrlResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorkGroup
@@ -778,7 +768,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<CreateWorkGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCapacityReservation
@@ -823,7 +812,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<DeleteCapacityReservationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataCatalog
@@ -864,7 +852,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<DeleteDataCatalogResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNamedQuery
@@ -906,7 +893,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<DeleteNamedQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteNotebook
@@ -950,7 +936,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<DeleteNotebookResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePreparedStatement
@@ -994,7 +979,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<DeletePreparedStatementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorkGroup
@@ -1035,7 +1019,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<DeleteWorkGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ExportNotebook
@@ -1079,7 +1062,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<ExportNotebookResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCalculationExecution
@@ -1123,7 +1105,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<GetCalculationExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCalculationExecutionCode
@@ -1167,7 +1148,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<GetCalculationExecutionCodeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCalculationExecutionStatus
@@ -1211,7 +1191,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<GetCalculationExecutionStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCapacityAssignmentConfiguration
@@ -1252,7 +1231,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<GetCapacityAssignmentConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCapacityReservation
@@ -1293,7 +1271,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<GetCapacityReservationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDatabase
@@ -1340,7 +1317,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<GetDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataCatalog
@@ -1381,7 +1357,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<GetDataCatalogResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNamedQuery
@@ -1423,7 +1398,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<GetNamedQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetNotebookMetadata
@@ -1467,7 +1441,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<GetNotebookMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPreparedStatement
@@ -1511,7 +1484,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<GetPreparedStatementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueryExecution
@@ -1554,7 +1526,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<GetQueryExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueryResults
@@ -1618,7 +1589,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<GetQueryResultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetQueryRuntimeStatistics
@@ -1665,7 +1635,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<GetQueryRuntimeStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSession
@@ -1710,7 +1679,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<GetSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSessionStatus
@@ -1754,7 +1722,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<GetSessionStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTableMetadata
@@ -1801,7 +1768,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<GetTableMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorkGroup
@@ -1842,7 +1808,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<GetWorkGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ImportNotebook
@@ -1890,7 +1855,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<ImportNotebookResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplicationDPUSizes
@@ -1935,7 +1899,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<ListApplicationDPUSizesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCalculationExecutions
@@ -1980,7 +1943,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<ListCalculationExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCapacityReservations
@@ -2021,7 +1983,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<ListCapacityReservationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatabases
@@ -2068,7 +2029,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<ListDatabasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataCatalogs
@@ -2116,7 +2076,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<ListDataCatalogsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEngineVersions
@@ -2158,7 +2117,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<ListEngineVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExecutors
@@ -2204,7 +2162,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<ListExecutorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNamedQueries
@@ -2247,7 +2204,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<ListNamedQueriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNotebookMetadata
@@ -2291,7 +2247,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<ListNotebookMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListNotebookSessions
@@ -2337,7 +2292,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<ListNotebookSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPreparedStatements
@@ -2378,7 +2332,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<ListPreparedStatementsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListQueryExecutions
@@ -2422,7 +2375,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<ListQueryExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSessions
@@ -2468,7 +2420,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<ListSessionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTableMetadata
@@ -2515,7 +2466,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<ListTableMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2559,7 +2509,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorkGroups
@@ -2600,7 +2549,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<ListWorkGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutCapacityAssignmentConfiguration
@@ -2643,7 +2591,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<PutCapacityAssignmentConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartCalculationExecution
@@ -2697,7 +2644,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<StartCalculationExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartQueryExecution
@@ -2745,7 +2691,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<StartQueryExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSession
@@ -2796,7 +2741,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<StartSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopCalculationExecution
@@ -2851,7 +2795,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<StopCalculationExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopQueryExecution
@@ -2893,7 +2836,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<StopQueryExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2947,7 +2889,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TerminateSession
@@ -2994,7 +2935,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<TerminateSessionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3038,7 +2978,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCapacityReservation
@@ -3080,7 +3019,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<UpdateCapacityReservationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataCatalog
@@ -3121,7 +3059,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<UpdateDataCatalogResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNamedQuery
@@ -3162,7 +3099,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<UpdateNamedQueryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNotebook
@@ -3206,7 +3142,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<UpdateNotebookResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateNotebookMetadata
@@ -3250,7 +3185,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<UpdateNotebookMetadataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePreparedStatement
@@ -3294,7 +3228,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<UpdatePreparedStatementResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorkGroup
@@ -3336,7 +3269,6 @@ namespace Amazon.Athena
 
             return InvokeAsync<UpdateWorkGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

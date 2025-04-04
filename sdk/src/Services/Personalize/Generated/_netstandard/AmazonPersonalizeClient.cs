@@ -343,7 +343,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<CreateBatchInferenceJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBatchSegmentJob
@@ -397,7 +396,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<CreateBatchSegmentJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCampaign
@@ -549,7 +547,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<CreateCampaignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataDeletionJob
@@ -663,7 +660,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<CreateDataDeletionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataset
@@ -788,7 +784,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<CreateDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDatasetExportJob
@@ -865,7 +860,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<CreateDatasetExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDatasetGroup
@@ -1011,7 +1005,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<CreateDatasetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDatasetImportJob
@@ -1121,7 +1114,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<CreateDatasetImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEventTracker
@@ -1229,7 +1221,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<CreateEventTrackerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFilter
@@ -1279,7 +1270,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<CreateFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMetricAttribution
@@ -1331,7 +1321,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<CreateMetricAttributionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRecommender
@@ -1479,7 +1468,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<CreateRecommenderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSchema
@@ -1551,7 +1539,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<CreateSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSolution
@@ -1714,7 +1701,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<CreateSolutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSolutionVersion
@@ -1847,7 +1833,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<CreateSolutionVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCampaign
@@ -1893,7 +1878,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DeleteCampaignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataset
@@ -1938,7 +1922,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DeleteDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDatasetGroup
@@ -1995,7 +1978,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DeleteDatasetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventTracker
@@ -2039,7 +2021,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DeleteEventTrackerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFilter
@@ -2082,7 +2063,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DeleteFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMetricAttribution
@@ -2125,7 +2105,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DeleteMetricAttributionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRecommender
@@ -2170,7 +2149,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DeleteRecommenderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSchema
@@ -2214,7 +2192,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DeleteSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSolution
@@ -2262,7 +2239,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DeleteSolutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAlgorithm
@@ -2302,7 +2278,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DescribeAlgorithmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBatchInferenceJob
@@ -2344,7 +2319,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DescribeBatchInferenceJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeBatchSegmentJob
@@ -2386,7 +2360,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DescribeBatchSegmentJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCampaign
@@ -2448,7 +2421,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DescribeCampaignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataDeletionJob
@@ -2489,7 +2461,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DescribeDataDeletionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDataset
@@ -2529,7 +2500,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DescribeDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDatasetExportJob
@@ -2570,7 +2540,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DescribeDatasetExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDatasetGroup
@@ -2611,7 +2580,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DescribeDatasetGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDatasetImportJob
@@ -2652,7 +2620,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DescribeDatasetImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventTracker
@@ -2693,7 +2660,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DescribeEventTrackerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFeatureTransformation
@@ -2733,7 +2699,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DescribeFeatureTransformationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFilter
@@ -2773,7 +2738,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DescribeFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMetricAttribution
@@ -2813,7 +2777,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DescribeMetricAttributionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRecipe
@@ -2879,7 +2842,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DescribeRecipeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRecommender
@@ -2950,7 +2912,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DescribeRecommenderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSchema
@@ -2990,7 +2951,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DescribeSchemaResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSolution
@@ -3030,7 +2990,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DescribeSolutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSolutionVersion
@@ -3071,7 +3030,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<DescribeSolutionVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSolutionMetrics
@@ -3114,7 +3072,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<GetSolutionMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBatchInferenceJobs
@@ -3155,7 +3112,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<ListBatchInferenceJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBatchSegmentJobs
@@ -3196,7 +3152,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<ListBatchSegmentJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCampaigns
@@ -3239,7 +3194,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<ListCampaignsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataDeletionJobs
@@ -3284,7 +3238,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<ListDataDeletionJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatasetExportJobs
@@ -3328,7 +3281,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<ListDatasetExportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatasetGroups
@@ -3367,7 +3319,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<ListDatasetGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatasetImportJobs
@@ -3411,7 +3362,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<ListDatasetImportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatasets
@@ -3453,7 +3403,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<ListDatasetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventTrackers
@@ -3495,7 +3444,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<ListEventTrackersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFilters
@@ -3535,7 +3483,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<ListFiltersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMetricAttributionMetrics
@@ -3575,7 +3522,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<ListMetricAttributionMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMetricAttributions
@@ -3615,7 +3561,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<ListMetricAttributionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecipes
@@ -3656,7 +3601,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<ListRecipesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRecommenders
@@ -3699,7 +3643,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<ListRecommendersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSchemas
@@ -3738,7 +3681,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<ListSchemasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSolutions
@@ -3781,7 +3723,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<ListSolutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSolutionVersions
@@ -3827,7 +3768,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<ListSolutionVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3871,7 +3811,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartRecommender
@@ -3915,7 +3854,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<StartRecommenderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopRecommender
@@ -3959,7 +3897,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<StopRecommenderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopSolutionVersionCreation
@@ -4026,7 +3963,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<StopSolutionVersionCreationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -4075,7 +4011,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -4124,7 +4059,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCampaign
@@ -4205,7 +4139,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<UpdateCampaignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataset
@@ -4250,7 +4183,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<UpdateDatasetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMetricAttribution
@@ -4296,7 +4228,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<UpdateMetricAttributionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRecommender
@@ -4345,7 +4276,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<UpdateRecommenderResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSolution
@@ -4409,7 +4339,6 @@ namespace Amazon.Personalize
 
             return InvokeAsync<UpdateSolutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.ComputeOptimizer
     /// <summary>
     /// Configuration for accessing Amazon ComputeOptimizer service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonComputeOptimizerConfig : ClientConfig
     {
         private static readonly string UserAgentString =

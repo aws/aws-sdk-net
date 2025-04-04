@@ -30,7 +30,6 @@ namespace Amazon.MediaTailor
     /// <summary>
     /// Configuration for accessing Amazon MediaTailor service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonMediaTailorConfig : ClientConfig
     {
         private static readonly string UserAgentString =

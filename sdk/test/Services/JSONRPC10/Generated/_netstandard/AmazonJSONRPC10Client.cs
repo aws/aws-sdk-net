@@ -275,7 +275,6 @@ namespace Amazon.JSONRPC10
 
             return InvokeAsync<ContentTypeParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EmptyInputAndEmptyOutput
@@ -312,7 +311,6 @@ namespace Amazon.JSONRPC10
 
             return InvokeAsync<EmptyInputAndEmptyOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EndpointOperation
@@ -346,7 +344,6 @@ namespace Amazon.JSONRPC10
 
             return InvokeAsync<EndpointOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EndpointWithHostLabelOperation
@@ -380,7 +377,6 @@ namespace Amazon.JSONRPC10
 
             return InvokeAsync<EndpointWithHostLabelOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GreetingWithErrors
@@ -431,7 +427,6 @@ namespace Amazon.JSONRPC10
 
             return InvokeAsync<GreetingWithErrorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  HostWithPathOperation
@@ -465,7 +460,6 @@ namespace Amazon.JSONRPC10
 
             return InvokeAsync<HostWithPathOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  JsonUnions
@@ -499,7 +493,6 @@ namespace Amazon.JSONRPC10
 
             return InvokeAsync<JsonUnionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NoInputAndNoOutput
@@ -535,7 +528,6 @@ namespace Amazon.JSONRPC10
 
             return InvokeAsync<NoInputAndNoOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NoInputAndOutput
@@ -571,7 +563,6 @@ namespace Amazon.JSONRPC10
 
             return InvokeAsync<NoInputAndOutputResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutWithContentEncoding
@@ -605,7 +596,6 @@ namespace Amazon.JSONRPC10
 
             return InvokeAsync<PutWithContentEncodingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SimpleScalarProperties
@@ -639,7 +629,6 @@ namespace Amazon.JSONRPC10
 
             return InvokeAsync<SimpleScalarPropertiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
     }

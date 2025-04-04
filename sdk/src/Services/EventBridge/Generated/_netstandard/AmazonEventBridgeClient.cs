@@ -316,7 +316,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<ActivateEventSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelReplay
@@ -363,7 +362,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<CancelReplayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApiDestination
@@ -421,7 +419,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<CreateApiDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateArchive
@@ -507,7 +504,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<CreateArchiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateConnection
@@ -567,7 +563,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<CreateConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEndpoint
@@ -616,7 +611,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<CreateEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEventBus
@@ -674,7 +668,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<CreateEventBusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePartnerEventSource
@@ -778,7 +771,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<CreatePartnerEventSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeactivateEventSource
@@ -838,7 +830,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<DeactivateEventSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeauthorizeConnection
@@ -882,7 +873,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<DeauthorizeConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApiDestination
@@ -925,7 +915,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<DeleteApiDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteArchive
@@ -968,7 +957,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<DeleteArchiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteConnection
@@ -1011,7 +999,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<DeleteConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEndpoint
@@ -1057,7 +1044,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<DeleteEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventBus
@@ -1099,7 +1085,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<DeleteEventBusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePartnerEventSource
@@ -1149,7 +1134,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<DeletePartnerEventSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRule
@@ -1224,7 +1208,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<DeleteRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApiDestination
@@ -1264,7 +1247,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<DescribeApiDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeArchive
@@ -1307,7 +1289,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<DescribeArchiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeConnection
@@ -1347,7 +1328,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<DescribeConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEndpoint
@@ -1390,7 +1370,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<DescribeEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventBus
@@ -1443,7 +1422,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<DescribeEventBusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEventSource
@@ -1487,7 +1465,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<DescribeEventSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePartnerEventSource
@@ -1533,7 +1510,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<DescribePartnerEventSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeReplay
@@ -1581,7 +1557,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<DescribeReplayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRule
@@ -1627,7 +1602,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<DescribeRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableRule
@@ -1685,7 +1659,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<DisableRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableRule
@@ -1742,7 +1715,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<EnableRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApiDestinations
@@ -1779,7 +1751,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<ListApiDestinationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListArchives
@@ -1820,7 +1791,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<ListArchivesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListConnections
@@ -1857,7 +1827,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<ListConnectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEndpoints
@@ -1897,7 +1866,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<ListEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventBuses
@@ -1935,7 +1903,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<ListEventBusesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEventSources
@@ -1977,7 +1944,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<ListEventSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPartnerEventSourceAccounts
@@ -2022,7 +1988,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<ListPartnerEventSourceAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPartnerEventSources
@@ -2063,7 +2028,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<ListPartnerEventSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReplays
@@ -2101,7 +2065,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<ListReplaysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRuleNamesByTarget
@@ -2147,7 +2110,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<ListRuleNamesByTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRules
@@ -2198,7 +2160,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<ListRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2239,7 +2200,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTargetsByRule
@@ -2284,7 +2244,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<ListTargetsByRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEvents
@@ -2341,7 +2300,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<PutEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutPartnerEvents
@@ -2388,7 +2346,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<PutPartnerEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutPermission
@@ -2466,7 +2423,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<PutPermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutRule
@@ -2602,7 +2558,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<PutRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutTargets
@@ -2805,7 +2760,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<PutTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemovePermission
@@ -2854,7 +2808,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<RemovePermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveTargets
@@ -2927,7 +2880,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<RemoveTargetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartReplay
@@ -2985,7 +2937,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<StartReplayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3056,7 +3007,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestEventPattern
@@ -3104,7 +3054,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<TestEventPatternResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3156,7 +3105,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApiDestination
@@ -3203,7 +3151,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<UpdateApiDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateArchive
@@ -3253,7 +3200,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<UpdateArchiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateConnection
@@ -3306,7 +3252,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<UpdateConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEndpoint
@@ -3351,7 +3296,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<UpdateEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEventBus
@@ -3397,7 +3341,6 @@ namespace Amazon.EventBridge
 
             return InvokeAsync<UpdateEventBusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -327,7 +327,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<AcceptAdministratorInvitationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AcceptInvitation
@@ -369,7 +368,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<AcceptInvitationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ArchiveFindings
@@ -416,7 +414,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<ArchiveFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDetector
@@ -486,7 +483,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<CreateDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFilter
@@ -529,7 +525,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<CreateFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIPSet
@@ -573,7 +568,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<CreateIPSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMalwareProtectionPlan
@@ -626,7 +620,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<CreateMalwareProtectionPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateMembers
@@ -699,7 +692,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<CreateMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePublishingDestination
@@ -740,7 +732,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<CreatePublishingDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSampleFindings
@@ -782,7 +773,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<CreateSampleFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateThreatIntelSet
@@ -824,7 +814,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<CreateThreatIntelSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeclineInvitations
@@ -865,7 +854,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<DeclineInvitationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDetector
@@ -905,7 +893,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<DeleteDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFilter
@@ -945,7 +932,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<DeleteFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInvitations
@@ -986,7 +972,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<DeleteInvitationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIPSet
@@ -1027,7 +1012,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<DeleteIPSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMalwareProtectionPlan
@@ -1075,7 +1059,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<DeleteMalwareProtectionPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMembers
@@ -1123,7 +1106,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<DeleteMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePublishingDestination
@@ -1163,7 +1145,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<DeletePublishingDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteThreatIntelSet
@@ -1203,7 +1184,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<DeleteThreatIntelSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMalwareScans
@@ -1253,7 +1233,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<DescribeMalwareScansResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOrganizationConfiguration
@@ -1302,7 +1281,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<DescribeOrganizationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePublishingDestination
@@ -1342,7 +1320,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<DescribePublishingDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableOrganizationAdminAccount
@@ -1383,7 +1360,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<DisableOrganizationAdminAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateFromAdministratorAccount
@@ -1440,7 +1416,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<DisassociateFromAdministratorAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateFromMasterAccount
@@ -1493,7 +1468,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<DisassociateFromMasterAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateMembers
@@ -1567,7 +1541,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<DisassociateMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableOrganizationAdminAccount
@@ -1609,7 +1582,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<EnableOrganizationAdminAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAdministratorAccount
@@ -1657,7 +1629,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<GetAdministratorAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCoverageStatistics
@@ -1700,7 +1671,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<GetCoverageStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDetector
@@ -1748,7 +1718,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<GetDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFilter
@@ -1788,7 +1757,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<GetFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFindings
@@ -1828,7 +1796,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<GetFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetFindingsStatistics
@@ -1881,7 +1848,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<GetFindingsStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInvitationsCount
@@ -1922,7 +1888,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<GetInvitationsCountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIPSet
@@ -1962,7 +1927,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<GetIPSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMalwareProtectionPlan
@@ -2009,7 +1973,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<GetMalwareProtectionPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMalwareScanSettings
@@ -2057,7 +2020,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<GetMalwareScanSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMasterAccount
@@ -2100,7 +2062,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<GetMasterAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMemberDetectors
@@ -2148,7 +2109,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<GetMemberDetectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMembers
@@ -2189,7 +2149,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<GetMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOrganizationStatistics
@@ -2236,7 +2195,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<GetOrganizationStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRemainingFreeTrialDays
@@ -2276,7 +2234,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<GetRemainingFreeTrialDaysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetThreatIntelSet
@@ -2316,7 +2273,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<GetThreatIntelSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUsageStatistics
@@ -2361,7 +2317,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<GetUsageStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InviteMembers
@@ -2443,7 +2398,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<InviteMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCoverage
@@ -2491,7 +2445,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<ListCoverageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDetectors
@@ -2531,7 +2484,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<ListDetectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFilters
@@ -2571,7 +2523,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<ListFiltersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFindings
@@ -2618,7 +2569,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<ListFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListInvitations
@@ -2659,7 +2609,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<ListInvitationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIPSets
@@ -2701,7 +2650,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<ListIPSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMalwareProtectionPlans
@@ -2745,7 +2693,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<ListMalwareProtectionPlansResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMembers
@@ -2785,7 +2732,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<ListMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOrganizationAdminAccounts
@@ -2826,7 +2772,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<ListOrganizationAdminAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPublishingDestinations
@@ -2866,7 +2811,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<ListPublishingDestinationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2911,7 +2855,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListThreatIntelSets
@@ -2953,7 +2896,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<ListThreatIntelSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMalwareScan
@@ -3003,7 +2945,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<StartMalwareScanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMonitoringMembers
@@ -3045,7 +2986,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<StartMonitoringMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopMonitoringMembers
@@ -3093,7 +3033,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<StopMonitoringMembersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3136,7 +3075,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UnarchiveFindings
@@ -3176,7 +3114,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<UnarchiveFindingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3219,7 +3156,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDetector
@@ -3275,7 +3211,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<UpdateDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFilter
@@ -3315,7 +3250,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<UpdateFilterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFindingsFeedback
@@ -3355,7 +3289,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<UpdateFindingsFeedbackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIPSet
@@ -3395,7 +3328,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<UpdateIPSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMalwareProtectionPlan
@@ -3441,7 +3373,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<UpdateMalwareProtectionPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMalwareScanSettings
@@ -3489,7 +3420,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<UpdateMalwareScanSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMemberDetectors
@@ -3545,7 +3475,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<UpdateMemberDetectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateOrganizationConfiguration
@@ -3603,7 +3532,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<UpdateOrganizationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePublishingDestination
@@ -3643,7 +3571,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<UpdatePublishingDestinationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateThreatIntelSet
@@ -3683,7 +3610,6 @@ namespace Amazon.GuardDuty
 
             return InvokeAsync<UpdateThreatIntelSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

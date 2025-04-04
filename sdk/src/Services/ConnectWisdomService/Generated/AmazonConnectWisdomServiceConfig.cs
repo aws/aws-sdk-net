@@ -30,7 +30,6 @@ namespace Amazon.ConnectWisdomService
     /// <summary>
     /// Configuration for accessing Amazon ConnectWisdomService service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonConnectWisdomServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

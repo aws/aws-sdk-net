@@ -30,7 +30,6 @@ namespace Amazon.Synthetics
     /// <summary>
     /// Configuration for accessing Amazon Synthetics service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonSyntheticsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

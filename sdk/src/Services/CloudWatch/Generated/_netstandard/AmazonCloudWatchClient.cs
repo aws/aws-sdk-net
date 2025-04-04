@@ -347,7 +347,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<DeleteAlarmsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAnomalyDetector
@@ -398,7 +397,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<DeleteAnomalyDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDashboards
@@ -442,7 +440,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<DeleteDashboardsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInsightRules
@@ -488,7 +485,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<DeleteInsightRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteMetricStream
@@ -531,7 +527,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<DeleteMetricStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAlarmHistory
@@ -618,7 +613,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<DescribeAlarmHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAlarms
@@ -695,7 +689,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<DescribeAlarmsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAlarmsForMetric
@@ -737,7 +730,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<DescribeAlarmsForMetricResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAnomalyDetectors
@@ -788,7 +780,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<DescribeAnomalyDetectorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInsightRules
@@ -831,7 +822,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<DescribeInsightRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableAlarmActions
@@ -866,7 +856,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<DisableAlarmActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableInsightRules
@@ -907,7 +896,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<DisableInsightRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableAlarmActions
@@ -941,7 +929,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<EnableAlarmActionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableInsightRules
@@ -985,7 +972,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<EnableInsightRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDashboard
@@ -1035,7 +1021,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<GetDashboardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInsightRuleReport
@@ -1126,7 +1111,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<GetInsightRuleReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMetricData
@@ -1246,7 +1230,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<GetMetricDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMetricStatistics
@@ -1370,7 +1353,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<GetMetricStatisticsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMetricStream
@@ -1419,7 +1401,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<GetMetricStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMetricWidgetImage
@@ -1477,7 +1458,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<GetMetricWidgetImageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDashboards
@@ -1526,7 +1506,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<ListDashboardsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListManagedInsightRules
@@ -1570,7 +1549,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<ListManagedInsightRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMetrics
@@ -1689,7 +1667,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<ListMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMetricStreams
@@ -1735,7 +1712,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<ListMetricStreamsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1779,7 +1755,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAnomalyDetector
@@ -1842,7 +1817,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<PutAnomalyDetectorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutCompositeAlarm
@@ -1960,7 +1934,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<PutCompositeAlarmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutDashboard
@@ -2024,7 +1997,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<PutDashboardResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutInsightRule
@@ -2076,7 +2048,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<PutInsightRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutManagedInsightRules
@@ -2122,7 +2093,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<PutManagedInsightRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutMetricAlarm
@@ -2233,7 +2203,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<PutMetricAlarmResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutMetricData
@@ -2353,7 +2322,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<PutMetricDataResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutMetricStream
@@ -2454,7 +2422,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<PutMetricStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetAlarmState
@@ -2517,7 +2484,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<SetAlarmStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartMetricStreams
@@ -2560,7 +2526,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<StartMetricStreamsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopMetricStreams
@@ -2603,7 +2568,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<StopMetricStreamsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2675,7 +2639,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2721,7 +2684,6 @@ namespace Amazon.CloudWatch
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

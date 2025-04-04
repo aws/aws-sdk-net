@@ -30,7 +30,6 @@ namespace Amazon.PaymentCryptography
     /// <summary>
     /// Configuration for accessing Amazon PaymentCryptography service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonPaymentCryptographyConfig : ClientConfig
     {
         private static readonly string UserAgentString =

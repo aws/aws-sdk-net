@@ -30,7 +30,6 @@ namespace Amazon.Deadline
     /// <summary>
     /// Configuration for accessing Amazon Deadline service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonDeadlineConfig : ClientConfig
     {
         private static readonly string UserAgentString =

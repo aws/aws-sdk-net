@@ -274,7 +274,6 @@ namespace Amazon.RestXMLTest
 
             return InvokeAsync<MemberRefOpResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StaticOp
@@ -308,7 +307,6 @@ namespace Amazon.RestXMLTest
 
             return InvokeAsync<StaticOpResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestOperation
@@ -342,7 +340,6 @@ namespace Amazon.RestXMLTest
 
             return InvokeAsync<TestOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
     }

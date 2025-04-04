@@ -303,7 +303,6 @@ namespace Amazon.CloudTrailData
 
             return InvokeAsync<PutAuditEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

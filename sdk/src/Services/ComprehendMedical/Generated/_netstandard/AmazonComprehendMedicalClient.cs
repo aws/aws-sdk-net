@@ -298,7 +298,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<DescribeEntitiesDetectionV2JobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeICD10CMInferenceJob
@@ -349,7 +348,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<DescribeICD10CMInferenceJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePHIDetectionJob
@@ -400,7 +398,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<DescribePHIDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRxNormInferenceJob
@@ -451,7 +448,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<DescribeRxNormInferenceJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSNOMEDCTInferenceJob
@@ -502,7 +498,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<DescribeSNOMEDCTInferenceJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectEntities
@@ -570,7 +565,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<DetectEntitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectEntitiesV2
@@ -644,7 +638,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<DetectEntitiesV2Response>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetectPHI
@@ -704,7 +697,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<DetectPHIResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InferICD10CM
@@ -765,7 +757,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<InferICD10CMResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InferRxNorm
@@ -826,7 +817,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<InferRxNormResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InferSNOMEDCT
@@ -885,7 +875,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<InferSNOMEDCTResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEntitiesDetectionV2Jobs
@@ -935,7 +924,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<ListEntitiesDetectionV2JobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListICD10CMInferenceJobs
@@ -985,7 +973,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<ListICD10CMInferenceJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPHIDetectionJobs
@@ -1035,7 +1022,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<ListPHIDetectionJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRxNormInferenceJobs
@@ -1085,7 +1071,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<ListRxNormInferenceJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSNOMEDCTInferenceJobs
@@ -1135,7 +1120,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<ListSNOMEDCTInferenceJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartEntitiesDetectionV2Job
@@ -1186,7 +1170,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<StartEntitiesDetectionV2JobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartICD10CMInferenceJob
@@ -1238,7 +1221,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<StartICD10CMInferenceJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartPHIDetectionJob
@@ -1289,7 +1271,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<StartPHIDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartRxNormInferenceJob
@@ -1341,7 +1322,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<StartRxNormInferenceJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSNOMEDCTInferenceJob
@@ -1393,7 +1373,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<StartSNOMEDCTInferenceJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopEntitiesDetectionV2Job
@@ -1438,7 +1417,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<StopEntitiesDetectionV2JobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopICD10CMInferenceJob
@@ -1483,7 +1461,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<StopICD10CMInferenceJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopPHIDetectionJob
@@ -1528,7 +1505,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<StopPHIDetectionJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopRxNormInferenceJob
@@ -1573,7 +1549,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<StopRxNormInferenceJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopSNOMEDCTInferenceJob
@@ -1623,7 +1598,6 @@ namespace Amazon.ComprehendMedical
 
             return InvokeAsync<StopSNOMEDCTInferenceJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

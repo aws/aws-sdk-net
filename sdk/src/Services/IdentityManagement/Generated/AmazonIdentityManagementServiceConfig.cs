@@ -30,7 +30,6 @@ namespace Amazon.IdentityManagement
     /// <summary>
     /// Configuration for accessing Amazon IdentityManagementService service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonIdentityManagementServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

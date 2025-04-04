@@ -30,7 +30,6 @@ namespace Amazon.PinpointSMSVoice
     /// <summary>
     /// Configuration for accessing Amazon PinpointSMSVoice service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonPinpointSMSVoiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =

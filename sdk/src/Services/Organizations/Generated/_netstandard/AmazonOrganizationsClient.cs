@@ -676,7 +676,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<AcceptHandshakeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachPolicy
@@ -1169,7 +1168,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<AttachPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelHandshake
@@ -1381,7 +1379,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<CancelHandshakeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CloseAccount
@@ -1871,7 +1868,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<CloseAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAccount
@@ -2395,7 +2391,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<CreateAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateGovCloudAccount
@@ -2979,7 +2974,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<CreateGovCloudAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOrganization
@@ -3429,7 +3423,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<CreateOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateOrganizationalUnit
@@ -3882,7 +3875,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<CreateOrganizationalUnitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePolicy
@@ -4345,7 +4337,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<CreatePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeclineHandshake
@@ -4558,7 +4549,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<DeclineHandshakeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOrganization
@@ -4754,7 +4744,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<DeleteOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteOrganizationalUnit
@@ -4958,7 +4947,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<DeleteOrganizationalUnitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePolicy
@@ -5166,7 +5154,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<DeletePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteResourcePolicy
@@ -5476,7 +5463,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterDelegatedAdministrator
@@ -5937,7 +5923,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<DeregisterDelegatedAdministratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAccount
@@ -6135,7 +6120,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<DescribeAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCreateAccountStatus
@@ -6335,7 +6319,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<DescribeCreateAccountStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEffectivePolicy
@@ -6789,7 +6772,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<DescribeEffectivePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeHandshake
@@ -6992,7 +6974,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<DescribeHandshakeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOrganization
@@ -7066,7 +7047,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<DescribeOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOrganizationalUnit
@@ -7262,7 +7242,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<DescribeOrganizationalUnitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePolicy
@@ -7461,7 +7440,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<DescribePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeResourcePolicy
@@ -7768,7 +7746,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<DescribeResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachPolicy
@@ -8236,7 +8213,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<DetachPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableAWSServiceAccess
@@ -8739,7 +8715,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<DisableAWSServiceAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisablePolicyType
@@ -9206,7 +9181,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<DisablePolicyTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableAllFeatures
@@ -9738,7 +9712,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<EnableAllFeaturesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableAWSServiceAccess
@@ -10197,7 +10170,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<EnableAWSServiceAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnablePolicyType
@@ -10664,7 +10636,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<EnablePolicyTypeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InviteAccountToOrganization
@@ -11207,7 +11178,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<InviteAccountToOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  LeaveOrganization
@@ -11720,7 +11690,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<LeaveOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccounts
@@ -11921,7 +11890,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<ListAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccountsForParent
@@ -12128,7 +12096,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<ListAccountsForParentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAWSServiceAccessForOrganization
@@ -12570,7 +12537,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<ListAWSServiceAccessForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListChildren
@@ -12775,7 +12741,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<ListChildrenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCreateAccountStatus
@@ -12979,7 +12944,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<ListCreateAccountStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDelegatedAdministrators
@@ -13413,7 +13377,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<ListDelegatedAdministratorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDelegatedServicesForAccount
@@ -13856,7 +13819,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<ListDelegatedServicesForAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHandshakesForAccount
@@ -14062,7 +14024,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<ListHandshakesForAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListHandshakesForOrganization
@@ -14274,7 +14235,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<ListHandshakesForOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOrganizationalUnitsForParent
@@ -14477,7 +14437,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<ListOrganizationalUnitsForParentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListParents
@@ -14688,7 +14647,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<ListParentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPolicies
@@ -14891,7 +14849,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<ListPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPoliciesForTarget
@@ -15099,7 +15056,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<ListPoliciesForTargetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRoots
@@ -15308,7 +15264,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<ListRootsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -15524,7 +15479,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTargetsForPolicy
@@ -15731,7 +15685,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<ListTargetsForPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  MoveAccount
@@ -15943,7 +15896,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<MoveAccountResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePolicy
@@ -16379,7 +16331,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterDelegatedAdministrator
@@ -16835,7 +16786,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<RegisterDelegatedAdministratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveAccountFromOrganization
@@ -17309,7 +17259,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<RemoveAccountFromOrganizationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -17766,7 +17715,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -18223,7 +18171,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateOrganizationalUnit
@@ -18426,7 +18373,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<UpdateOrganizationalUnitResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePolicy
@@ -18880,7 +18826,6 @@ namespace Amazon.Organizations
 
             return InvokeAsync<UpdatePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

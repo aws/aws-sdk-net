@@ -2168,6 +2168,77 @@ namespace Amazon.Kinesis
 
         #endregion
                 
+        #region  SubscribeToShard
+
+#if NET8_0_OR_GREATER
+
+
+        /// <summary>
+        /// This operation establishes an HTTP/2 connection between the consumer you specify in
+        /// the <c>ConsumerARN</c> parameter and the shard you specify in the <c>ShardId</c> parameter.
+        /// After the connection is successfully established, Kinesis Data Streams pushes records
+        /// from the shard to the consumer over this connection. Before you call this operation,
+        /// call <a>RegisterStreamConsumer</a> to register the consumer with Kinesis Data Streams.
+        /// 
+        ///  
+        /// <para>
+        /// When the <c>SubscribeToShard</c> call succeeds, your consumer starts receiving events
+        /// of type <a>SubscribeToShardEvent</a> over the HTTP/2 connection for up to 5 minutes,
+        /// after which time you need to call <c>SubscribeToShard</c> again to renew the subscription
+        /// if you want to continue to receive records.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can make one call to <c>SubscribeToShard</c> per second per registered consumer
+        /// per shard. For example, if you have a 4000 shard stream and two registered stream
+        /// consumers, you can make one <c>SubscribeToShard</c> request per second for each combination
+        /// of shard and registered consumer, allowing you to subscribe both consumers to all
+        /// 4000 shards in one second. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you call <c>SubscribeToShard</c> again with the same <c>ConsumerARN</c> and <c>ShardId</c>
+        /// within 5 seconds of a successful call, you'll get a <c>ResourceInUseException</c>.
+        /// If you call <c>SubscribeToShard</c> 5 seconds or more after a successful call, the
+        /// second call takes over the subscription and the previous connection expires or fails
+        /// with a <c>ResourceInUseException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an example of how to use this operation, see <a href="https://docs.aws.amazon.com/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced
+        /// Fan-Out Using the Kinesis Data Streams API</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SubscribeToShard service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SubscribeToShard service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SubscribeToShard">REST API Reference for SubscribeToShard Operation</seealso>
+        Task<SubscribeToShardResponse> SubscribeToShardAsync(SubscribeToShardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+#endif
+        #endregion
+                
         #region  UpdateShardCount
 
 

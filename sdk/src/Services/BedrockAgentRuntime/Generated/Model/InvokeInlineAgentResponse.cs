@@ -32,7 +32,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// <summary>
     /// This is the response object from the InvokeInlineAgent operation.
     /// </summary>
-    public partial class InvokeInlineAgentResponse : AmazonWebServiceResponse
+    public partial class InvokeInlineAgentResponse : AmazonWebServiceResponse, IDisposable
     {
         private InlineAgentResponseStream _completion;
         private string _contentType;
@@ -95,5 +95,36 @@ namespace Amazon.BedrockAgentRuntime.Model
             return this._sessionId != null;
         }
 
+        #region Dispose Pattern
+
+        private bool _disposed;
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                this._completion?.Dispose();
+                this._completion = null;
+            }
+
+            this._disposed = true;
+         }
+
+         #endregion
     }
 }

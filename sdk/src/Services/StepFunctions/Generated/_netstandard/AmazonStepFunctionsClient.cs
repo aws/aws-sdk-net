@@ -371,7 +371,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<CreateActivityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStateMachine
@@ -501,7 +500,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<CreateStateMachineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStateMachineAlias
@@ -619,7 +617,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<CreateStateMachineAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteActivity
@@ -656,7 +653,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<DeleteActivityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStateMachine
@@ -745,7 +741,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<DeleteStateMachineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStateMachineAlias
@@ -826,7 +821,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<DeleteStateMachineAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStateMachineVersion
@@ -902,7 +896,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<DeleteStateMachineVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeActivity
@@ -949,7 +942,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<DescribeActivityResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeExecution
@@ -1020,7 +1012,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<DescribeExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMapRun
@@ -1064,7 +1055,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<DescribeMapRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStateMachine
@@ -1174,7 +1164,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<DescribeStateMachineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStateMachineAlias
@@ -1239,7 +1228,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<DescribeStateMachineAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStateMachineForExecution
@@ -1302,7 +1290,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<DescribeStateMachineForExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetActivityTask
@@ -1377,7 +1364,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<GetActivityTaskResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExecutionHistory
@@ -1445,7 +1431,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<GetExecutionHistoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListActivities
@@ -1497,7 +1482,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<ListActivitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListExecutions
@@ -1581,7 +1565,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<ListExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMapRuns
@@ -1626,7 +1609,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<ListMapRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStateMachineAliases
@@ -1712,7 +1694,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<ListStateMachineAliasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStateMachines
@@ -1764,7 +1745,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<ListStateMachinesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListStateMachineVersions
@@ -1834,7 +1814,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<ListStateMachineVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1880,7 +1859,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PublishStateMachineVersion
@@ -1975,7 +1953,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<PublishStateMachineVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RedriveExecution
@@ -2089,7 +2066,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<RedriveExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendTaskFailure
@@ -2157,7 +2133,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<SendTaskFailureResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendTaskHeartbeat
@@ -2220,7 +2195,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<SendTaskHeartbeatResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendTaskSuccess
@@ -2280,7 +2254,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<SendTaskSuccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartExecution
@@ -2427,7 +2400,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<StartExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSyncExecution
@@ -2504,7 +2476,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<StartSyncExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopExecution
@@ -2573,7 +2544,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<StopExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2630,7 +2600,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TestState
@@ -2750,7 +2719,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<TestStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2790,7 +2758,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMapRun
@@ -2834,7 +2801,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<UpdateMapRunResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStateMachine
@@ -3002,7 +2968,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<UpdateStateMachineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStateMachineAlias
@@ -3098,7 +3063,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<UpdateStateMachineAliasResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ValidateStateMachineDefinition
@@ -3182,7 +3146,6 @@ namespace Amazon.StepFunctions
 
             return InvokeAsync<ValidateStateMachineDefinitionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

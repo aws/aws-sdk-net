@@ -329,7 +329,6 @@ namespace Amazon.DLM
 
             return InvokeAsync<CreateLifecyclePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLifecyclePolicy
@@ -379,7 +378,6 @@ namespace Amazon.DLM
 
             return InvokeAsync<DeleteLifecyclePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLifecyclePolicies
@@ -430,7 +428,6 @@ namespace Amazon.DLM
 
             return InvokeAsync<GetLifecyclePoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetLifecyclePolicy
@@ -473,7 +470,6 @@ namespace Amazon.DLM
 
             return InvokeAsync<GetLifecyclePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -516,7 +512,6 @@ namespace Amazon.DLM
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -559,7 +554,6 @@ namespace Amazon.DLM
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -602,7 +596,6 @@ namespace Amazon.DLM
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLifecyclePolicy
@@ -654,7 +647,6 @@ namespace Amazon.DLM
 
             return InvokeAsync<UpdateLifecyclePolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

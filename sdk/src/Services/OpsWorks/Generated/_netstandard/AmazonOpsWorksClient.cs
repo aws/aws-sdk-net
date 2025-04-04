@@ -465,7 +465,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<AssignInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssignVolume
@@ -517,7 +516,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<AssignVolumeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateElasticIp
@@ -568,7 +566,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<AssociateElasticIpResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AttachElasticLoadBalancer
@@ -625,7 +622,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<AttachElasticLoadBalancerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CloneStack
@@ -674,7 +670,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<CloneStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApp
@@ -723,7 +718,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<CreateAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDeployment
@@ -773,7 +767,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<CreateDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInstance
@@ -822,7 +815,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<CreateInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateLayer
@@ -879,7 +871,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<CreateLayerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateStack
@@ -925,7 +916,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<CreateStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateUserProfile
@@ -970,7 +960,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<CreateUserProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApp
@@ -1018,7 +1007,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DeleteAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInstance
@@ -1072,7 +1060,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DeleteInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteLayer
@@ -1122,7 +1109,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DeleteLayerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteStack
@@ -1172,7 +1158,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DeleteStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUserProfile
@@ -1220,7 +1205,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DeleteUserProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterEcsCluster
@@ -1269,7 +1253,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DeregisterEcsClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterElasticIp
@@ -1319,7 +1302,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DeregisterElasticIpResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterInstance
@@ -1369,7 +1351,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DeregisterInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterRdsDbInstance
@@ -1417,7 +1398,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DeregisterRdsDbInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterVolume
@@ -1467,7 +1447,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DeregisterVolumeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeAgentVersions
@@ -1509,7 +1488,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribeAgentVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeApps
@@ -1561,7 +1539,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribeAppsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeCommands
@@ -1613,7 +1590,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribeCommandsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDeployments
@@ -1665,7 +1641,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribeDeploymentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeEcsClusters
@@ -1720,7 +1695,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribeEcsClustersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeElasticIps
@@ -1773,7 +1747,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribeElasticIpsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeElasticLoadBalancers
@@ -1862,7 +1835,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribeElasticLoadBalancersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeInstances
@@ -1914,7 +1886,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribeInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLayers
@@ -1966,7 +1937,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribeLayersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeLoadBasedAutoScaling
@@ -2018,7 +1988,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribeLoadBasedAutoScalingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeMyUserProfile
@@ -2087,7 +2056,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribeMyUserProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeOperatingSystems
@@ -2121,7 +2089,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribeOperatingSystemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribePermissions
@@ -2169,7 +2136,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribePermissionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRaidArrays
@@ -2221,7 +2187,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribeRaidArraysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRdsDbInstances
@@ -2273,7 +2238,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribeRdsDbInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeServiceErrors
@@ -2362,7 +2326,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribeServiceErrorsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStackProvisioningParameters
@@ -2410,7 +2373,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribeStackProvisioningParametersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStacks
@@ -2491,7 +2453,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribeStacksResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeStackSummary
@@ -2540,7 +2501,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribeStackSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeTimeBasedAutoScaling
@@ -2592,7 +2552,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribeTimeBasedAutoScalingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeUserProfiles
@@ -2673,7 +2632,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribeUserProfilesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeVolumes
@@ -2725,7 +2683,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DescribeVolumesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DetachElasticLoadBalancer
@@ -2770,7 +2727,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DetachElasticLoadBalancerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateElasticIp
@@ -2820,7 +2776,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<DisassociateElasticIpResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetHostnameSuggestion
@@ -2869,7 +2824,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<GetHostnameSuggestionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GrantAccess
@@ -2916,7 +2870,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<GrantAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTags
@@ -2956,7 +2909,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<ListTagsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RebootInstance
@@ -3005,7 +2957,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<RebootInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterEcsCluster
@@ -3056,7 +3007,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<RegisterEcsClusterResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterElasticIp
@@ -3108,7 +3058,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<RegisterElasticIpResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterInstance
@@ -3175,7 +3124,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<RegisterInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterRdsDbInstance
@@ -3223,7 +3171,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<RegisterRdsDbInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterVolume
@@ -3274,7 +3221,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<RegisterVolumeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetLoadBasedAutoScaling
@@ -3330,7 +3276,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<SetLoadBasedAutoScalingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetPermission
@@ -3379,7 +3324,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<SetPermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SetTimeBasedAutoScaling
@@ -3429,7 +3373,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<SetTimeBasedAutoScalingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartInstance
@@ -3478,7 +3421,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<StartInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartStack
@@ -3526,7 +3468,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<StartStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopInstance
@@ -3577,7 +3518,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<StopInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopStack
@@ -3625,7 +3565,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<StopStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3667,7 +3606,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UnassignInstance
@@ -3718,7 +3656,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<UnassignInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UnassignVolume
@@ -3768,7 +3705,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<UnassignVolumeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3808,7 +3744,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApp
@@ -3856,7 +3791,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<UpdateAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateElasticIp
@@ -3905,7 +3839,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<UpdateElasticIpResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInstance
@@ -3953,7 +3886,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<UpdateInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateLayer
@@ -4001,7 +3933,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<UpdateLayerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateMyUserProfile
@@ -4076,7 +4007,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<UpdateMyUserProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRdsDbInstance
@@ -4124,7 +4054,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<UpdateRdsDbInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateStack
@@ -4172,7 +4101,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<UpdateStackResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateUserProfile
@@ -4220,7 +4148,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<UpdateUserProfileResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVolume
@@ -4269,7 +4196,6 @@ namespace Amazon.OpsWorks
 
             return InvokeAsync<UpdateVolumeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

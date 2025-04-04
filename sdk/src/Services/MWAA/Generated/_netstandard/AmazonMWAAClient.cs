@@ -383,7 +383,6 @@ namespace Amazon.MWAA
 
             return InvokeAsync<CreateCliTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEnvironment
@@ -423,7 +422,6 @@ namespace Amazon.MWAA
 
             return InvokeAsync<CreateEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWebLoginToken
@@ -472,7 +470,6 @@ namespace Amazon.MWAA
 
             return InvokeAsync<CreateWebLoginTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEnvironment
@@ -515,7 +512,6 @@ namespace Amazon.MWAA
 
             return InvokeAsync<DeleteEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEnvironment
@@ -558,7 +554,6 @@ namespace Amazon.MWAA
 
             return InvokeAsync<GetEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  InvokeRestApi
@@ -616,7 +611,6 @@ namespace Amazon.MWAA
 
             return InvokeAsync<InvokeRestApiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnvironments
@@ -656,7 +650,6 @@ namespace Amazon.MWAA
 
             return InvokeAsync<ListEnvironmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -700,7 +693,6 @@ namespace Amazon.MWAA
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PublishMetrics
@@ -742,7 +734,6 @@ namespace Amazon.MWAA
 
             return InvokeAsync<PublishMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -786,7 +777,6 @@ namespace Amazon.MWAA
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -830,7 +820,6 @@ namespace Amazon.MWAA
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEnvironment
@@ -873,7 +862,6 @@ namespace Amazon.MWAA
 
             return InvokeAsync<UpdateEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

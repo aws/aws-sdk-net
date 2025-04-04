@@ -30,7 +30,6 @@ namespace Amazon.CloudSearchDomain
     /// <summary>
     /// Configuration for accessing Amazon CloudSearchDomain service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCloudSearchDomainConfig : ClientConfig
     {
         private static readonly string UserAgentString =

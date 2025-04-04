@@ -337,7 +337,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<AssociateAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociatePricingRules
@@ -393,7 +392,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<AssociatePricingRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchAssociateResourcesToCustomLineItem
@@ -448,7 +446,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<BatchAssociateResourcesToCustomLineItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDisassociateResourcesFromCustomLineItem
@@ -500,7 +497,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<BatchDisassociateResourcesFromCustomLineItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateBillingGroup
@@ -553,7 +549,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<CreateBillingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCustomLineItem
@@ -607,7 +602,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<CreateCustomLineItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePricingPlan
@@ -663,7 +657,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<CreatePricingPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePricingRule
@@ -715,7 +708,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<CreatePricingRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBillingGroup
@@ -761,7 +753,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<DeleteBillingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCustomLineItem
@@ -811,7 +802,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<DeleteCustomLineItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePricingPlan
@@ -861,7 +851,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<DeletePricingPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePricingRule
@@ -910,7 +899,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<DeletePricingRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateAccounts
@@ -962,7 +950,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<DisassociateAccountsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociatePricingRules
@@ -1014,7 +1001,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<DisassociatePricingRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBillingGroupCostReport
@@ -1064,7 +1050,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<GetBillingGroupCostReportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccountAssociations
@@ -1116,7 +1101,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<ListAccountAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBillingGroupCostReports
@@ -1167,7 +1151,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<ListBillingGroupCostReportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListBillingGroups
@@ -1217,7 +1200,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<ListBillingGroupsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCustomLineItems
@@ -1267,7 +1249,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<ListCustomLineItemsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCustomLineItemVersions
@@ -1313,7 +1294,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<ListCustomLineItemVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPricingPlans
@@ -1360,7 +1340,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<ListPricingPlansResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPricingPlansAssociatedWithPricingRule
@@ -1409,7 +1388,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<ListPricingPlansAssociatedWithPricingRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPricingRules
@@ -1456,7 +1434,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<ListPricingRulesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListPricingRulesAssociatedToPricingPlan
@@ -1505,7 +1482,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<ListPricingRulesAssociatedToPricingPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListResourcesAssociatedToCustomLineItem
@@ -1554,7 +1530,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<ListResourcesAssociatedToCustomLineItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1603,7 +1578,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1654,7 +1628,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1703,7 +1676,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBillingGroup
@@ -1755,7 +1727,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<UpdateBillingGroupResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCustomLineItem
@@ -1804,7 +1775,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<UpdateCustomLineItemResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePricingPlan
@@ -1856,7 +1826,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<UpdatePricingPlanResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePricingRule
@@ -1908,7 +1877,6 @@ namespace Amazon.BillingConductor
 
             return InvokeAsync<UpdatePricingRuleResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

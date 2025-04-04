@@ -305,7 +305,6 @@ namespace Amazon.SsmSap
 
             return InvokeAsync<DeleteResourcePermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterApplication
@@ -349,7 +348,6 @@ namespace Amazon.SsmSap
 
             return InvokeAsync<DeregisterApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplication
@@ -390,7 +388,6 @@ namespace Amazon.SsmSap
 
             return InvokeAsync<GetApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetComponent
@@ -433,7 +430,6 @@ namespace Amazon.SsmSap
 
             return InvokeAsync<GetComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDatabase
@@ -474,7 +470,6 @@ namespace Amazon.SsmSap
 
             return InvokeAsync<GetDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetOperation
@@ -514,7 +509,6 @@ namespace Amazon.SsmSap
 
             return InvokeAsync<GetOperationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePermission
@@ -557,7 +551,6 @@ namespace Amazon.SsmSap
 
             return InvokeAsync<GetResourcePermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListApplications
@@ -600,7 +593,6 @@ namespace Amazon.SsmSap
 
             return InvokeAsync<ListApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListComponents
@@ -646,7 +638,6 @@ namespace Amazon.SsmSap
 
             return InvokeAsync<ListComponentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDatabases
@@ -690,7 +681,6 @@ namespace Amazon.SsmSap
 
             return InvokeAsync<ListDatabasesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOperationEvents
@@ -736,7 +726,6 @@ namespace Amazon.SsmSap
 
             return InvokeAsync<ListOperationEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListOperations
@@ -776,7 +765,6 @@ namespace Amazon.SsmSap
 
             return InvokeAsync<ListOperationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -820,7 +808,6 @@ namespace Amazon.SsmSap
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutResourcePermission
@@ -863,7 +850,6 @@ namespace Amazon.SsmSap
 
             return InvokeAsync<PutResourcePermissionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterApplication
@@ -926,7 +912,6 @@ namespace Amazon.SsmSap
 
             return InvokeAsync<RegisterApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartApplication
@@ -977,7 +962,6 @@ namespace Amazon.SsmSap
 
             return InvokeAsync<StartApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartApplicationRefresh
@@ -1026,7 +1010,6 @@ namespace Amazon.SsmSap
 
             return InvokeAsync<StartApplicationRefreshResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopApplication
@@ -1078,7 +1061,6 @@ namespace Amazon.SsmSap
 
             return InvokeAsync<StopApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1121,7 +1103,6 @@ namespace Amazon.SsmSap
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -1164,7 +1145,6 @@ namespace Amazon.SsmSap
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplicationSettings
@@ -1213,7 +1193,6 @@ namespace Amazon.SsmSap
 
             return InvokeAsync<UpdateApplicationSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -297,7 +297,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<CreateAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCampaign
@@ -353,7 +352,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<CreateCampaignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEmailTemplate
@@ -402,7 +400,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<CreateEmailTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateExportJob
@@ -457,7 +454,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<CreateExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateImportJob
@@ -512,7 +508,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<CreateImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateInAppTemplate
@@ -561,7 +556,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<CreateInAppTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateJourney
@@ -616,7 +610,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<CreateJourneyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreatePushTemplate
@@ -666,7 +659,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<CreatePushTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRecommenderConfiguration
@@ -721,7 +713,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<CreateRecommenderConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSegment
@@ -777,7 +768,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<CreateSegmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSmsTemplate
@@ -826,7 +816,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<CreateSmsTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateVoiceTemplate
@@ -875,7 +864,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<CreateVoiceTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAdmChannel
@@ -931,7 +919,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteAdmChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApnsChannel
@@ -987,7 +974,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteApnsChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApnsSandboxChannel
@@ -1043,7 +1029,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteApnsSandboxChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApnsVoipChannel
@@ -1099,7 +1084,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteApnsVoipChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApnsVoipSandboxChannel
@@ -1155,7 +1139,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteApnsVoipSandboxChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteApp
@@ -1210,7 +1193,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBaiduChannel
@@ -1266,7 +1248,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteBaiduChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCampaign
@@ -1321,7 +1302,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteCampaignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEmailChannel
@@ -1377,7 +1357,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteEmailChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEmailTemplate
@@ -1432,7 +1411,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteEmailTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEndpoint
@@ -1487,7 +1465,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEventStream
@@ -1542,7 +1519,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteEventStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteGcmChannel
@@ -1598,7 +1574,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteGcmChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteInAppTemplate
@@ -1653,7 +1628,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteInAppTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteJourney
@@ -1708,7 +1682,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteJourneyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeletePushTemplate
@@ -1764,7 +1737,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeletePushTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRecommenderConfiguration
@@ -1819,7 +1791,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteRecommenderConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSegment
@@ -1874,7 +1845,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteSegmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSmsChannel
@@ -1930,7 +1900,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteSmsChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSmsTemplate
@@ -1985,7 +1954,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteSmsTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteUserEndpoints
@@ -2040,7 +2008,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteUserEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVoiceChannel
@@ -2096,7 +2063,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteVoiceChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteVoiceTemplate
@@ -2151,7 +2117,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<DeleteVoiceTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAdmChannel
@@ -2206,7 +2171,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetAdmChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApnsChannel
@@ -2261,7 +2225,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetApnsChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApnsSandboxChannel
@@ -2317,7 +2280,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetApnsSandboxChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApnsVoipChannel
@@ -2373,7 +2335,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetApnsVoipChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApnsVoipSandboxChannel
@@ -2429,7 +2390,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetApnsVoipSandboxChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApp
@@ -2484,7 +2444,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetAppResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplicationDateRangeKpi
@@ -2539,7 +2498,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetApplicationDateRangeKpiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApplicationSettings
@@ -2594,7 +2552,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetApplicationSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetApps
@@ -2650,7 +2607,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetAppsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBaiduChannel
@@ -2705,7 +2661,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetBaiduChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCampaign
@@ -2760,7 +2715,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetCampaignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCampaignActivities
@@ -2815,7 +2769,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetCampaignActivitiesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCampaignDateRangeKpi
@@ -2870,7 +2823,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetCampaignDateRangeKpiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCampaigns
@@ -2926,7 +2878,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetCampaignsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCampaignVersion
@@ -2982,7 +2933,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetCampaignVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetCampaignVersions
@@ -3038,7 +2988,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetCampaignVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetChannels
@@ -3093,7 +3042,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetChannelsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEmailChannel
@@ -3148,7 +3096,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetEmailChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEmailTemplate
@@ -3204,7 +3151,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetEmailTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEndpoint
@@ -3260,7 +3206,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEventStream
@@ -3315,7 +3260,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetEventStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExportJob
@@ -3371,7 +3315,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetExportJobs
@@ -3427,7 +3370,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetExportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetGcmChannel
@@ -3482,7 +3424,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetGcmChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetImportJob
@@ -3538,7 +3479,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetImportJobs
@@ -3594,7 +3534,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetImportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInAppMessages
@@ -3649,7 +3588,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetInAppMessagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetInAppTemplate
@@ -3705,7 +3643,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetInAppTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJourney
@@ -3760,7 +3697,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetJourneyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJourneyDateRangeKpi
@@ -3816,7 +3752,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetJourneyDateRangeKpiResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJourneyExecutionActivityMetrics
@@ -3872,7 +3807,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetJourneyExecutionActivityMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJourneyExecutionMetrics
@@ -3928,7 +3862,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetJourneyExecutionMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJourneyRunExecutionActivityMetrics
@@ -3984,7 +3917,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetJourneyRunExecutionActivityMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJourneyRunExecutionMetrics
@@ -4040,7 +3972,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetJourneyRunExecutionMetricsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetJourneyRuns
@@ -4095,7 +4026,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetJourneyRunsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetPushTemplate
@@ -4151,7 +4081,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetPushTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRecommenderConfiguration
@@ -4206,7 +4135,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetRecommenderConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRecommenderConfigurations
@@ -4262,7 +4190,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetRecommenderConfigurationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSegment
@@ -4318,7 +4245,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetSegmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSegmentExportJobs
@@ -4373,7 +4299,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetSegmentExportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSegmentImportJobs
@@ -4428,7 +4353,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetSegmentImportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSegments
@@ -4484,7 +4408,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetSegmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSegmentVersion
@@ -4540,7 +4463,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetSegmentVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSegmentVersions
@@ -4596,7 +4518,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetSegmentVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSmsChannel
@@ -4651,7 +4572,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetSmsChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSmsTemplate
@@ -4707,7 +4627,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetSmsTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUserEndpoints
@@ -4763,7 +4682,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetUserEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVoiceChannel
@@ -4818,7 +4736,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetVoiceChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetVoiceTemplate
@@ -4874,7 +4791,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<GetVoiceTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListJourneys
@@ -4930,7 +4846,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<ListJourneysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -4965,7 +4880,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTemplates
@@ -5015,7 +4929,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<ListTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTemplateVersions
@@ -5070,7 +4983,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<ListTemplateVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PhoneNumberValidate
@@ -5125,7 +5037,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<PhoneNumberValidateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEvents
@@ -5181,7 +5092,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<PutEventsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutEventStream
@@ -5237,7 +5147,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<PutEventStreamResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RemoveAttributes
@@ -5294,7 +5203,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<RemoveAttributesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendMessages
@@ -5349,7 +5257,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<SendMessagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendOTPMessage
@@ -5404,7 +5311,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<SendOTPMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SendUsersMessages
@@ -5459,7 +5365,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<SendUsersMessagesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -5494,7 +5399,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -5529,7 +5433,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAdmChannel
@@ -5585,7 +5488,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateAdmChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApnsChannel
@@ -5641,7 +5543,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateApnsChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApnsSandboxChannel
@@ -5697,7 +5598,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateApnsSandboxChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApnsVoipChannel
@@ -5753,7 +5653,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateApnsVoipChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApnsVoipSandboxChannel
@@ -5809,7 +5708,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateApnsVoipSandboxChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateApplicationSettings
@@ -5864,7 +5762,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateApplicationSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateBaiduChannel
@@ -5920,7 +5817,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateBaiduChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateCampaign
@@ -5975,7 +5871,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateCampaignResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEmailChannel
@@ -6031,7 +5926,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateEmailChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEmailTemplate
@@ -6087,7 +5981,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateEmailTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEndpoint
@@ -6146,7 +6039,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEndpointsBatch
@@ -6205,7 +6097,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateEndpointsBatchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateGcmChannel
@@ -6261,7 +6152,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateGcmChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateInAppTemplate
@@ -6317,7 +6207,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateInAppTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateJourney
@@ -6375,7 +6264,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateJourneyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateJourneyState
@@ -6430,7 +6318,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateJourneyStateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdatePushTemplate
@@ -6486,7 +6373,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdatePushTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRecommenderConfiguration
@@ -6541,7 +6427,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateRecommenderConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSegment
@@ -6597,7 +6482,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateSegmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSmsChannel
@@ -6653,7 +6537,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateSmsChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSmsTemplate
@@ -6708,7 +6591,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateSmsTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTemplateActiveVersion
@@ -6763,7 +6645,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateTemplateActiveVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVoiceChannel
@@ -6819,7 +6700,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateVoiceChannelResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateVoiceTemplate
@@ -6875,7 +6755,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<UpdateVoiceTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  VerifyOTPMessage
@@ -6930,7 +6809,6 @@ namespace Amazon.Pinpoint
 
             return InvokeAsync<VerifyOTPMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

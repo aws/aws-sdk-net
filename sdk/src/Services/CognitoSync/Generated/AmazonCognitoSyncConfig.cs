@@ -30,7 +30,6 @@ namespace Amazon.CognitoSync
     /// <summary>
     /// Configuration for accessing Amazon CognitoSync service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonCognitoSyncConfig : ClientConfig
     {
         private static readonly string UserAgentString =

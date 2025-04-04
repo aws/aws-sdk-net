@@ -375,7 +375,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<CreateAwsLogSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateCustomLogSource
@@ -442,7 +441,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<CreateCustomLogSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataLake
@@ -521,7 +519,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<CreateDataLakeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataLakeExceptionSubscription
@@ -584,7 +581,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<CreateDataLakeExceptionSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDataLakeOrganizationConfiguration
@@ -654,7 +650,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<CreateDataLakeOrganizationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSubscriber
@@ -717,7 +712,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<CreateSubscriberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSubscriberNotification
@@ -780,7 +774,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<CreateSubscriberNotificationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAwsLogSource
@@ -852,7 +845,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<DeleteAwsLogSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteCustomLogSource
@@ -914,7 +906,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<DeleteCustomLogSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataLake
@@ -988,7 +979,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<DeleteDataLakeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataLakeExceptionSubscription
@@ -1050,7 +1040,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<DeleteDataLakeExceptionSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDataLakeOrganizationConfiguration
@@ -1115,7 +1104,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<DeleteDataLakeOrganizationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSubscriber
@@ -1180,7 +1168,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<DeleteSubscriberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSubscriberNotification
@@ -1242,7 +1229,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<DeleteSubscriberNotificationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterDataLakeDelegatedAdministrator
@@ -1305,7 +1291,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<DeregisterDataLakeDelegatedAdministratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataLakeExceptionSubscription
@@ -1367,7 +1352,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<GetDataLakeExceptionSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataLakeOrganizationConfiguration
@@ -1430,7 +1414,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<GetDataLakeOrganizationConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDataLakeSources
@@ -1492,7 +1475,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<GetDataLakeSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSubscriber
@@ -1554,7 +1536,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<GetSubscriberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataLakeExceptions
@@ -1616,7 +1597,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<ListDataLakeExceptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDataLakes
@@ -1679,7 +1659,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<ListDataLakesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListLogSources
@@ -1740,7 +1719,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<ListLogSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSubscribers
@@ -1803,7 +1781,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<ListSubscribersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -1866,7 +1843,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterDataLakeDelegatedAdministrator
@@ -1929,7 +1905,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<RegisterDataLakeDelegatedAdministratorResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -1999,7 +1974,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2062,7 +2036,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataLake
@@ -2146,7 +2119,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<UpdateDataLakeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateDataLakeExceptionSubscription
@@ -2208,7 +2180,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<UpdateDataLakeExceptionSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSubscriber
@@ -2271,7 +2242,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<UpdateSubscriberResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSubscriberNotification
@@ -2333,7 +2303,6 @@ namespace Amazon.SecurityLake
 
             return InvokeAsync<UpdateSubscriberNotificationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

@@ -30,7 +30,6 @@ namespace Amazon.Artifact
     /// <summary>
     /// Configuration for accessing Amazon Artifact service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonArtifactConfig : ClientConfig
     {
         private static readonly string UserAgentString =

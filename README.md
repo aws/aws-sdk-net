@@ -876,6 +876,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* This is the initial SDK release for AWS Telco Network Builder (TNB). AWS Telco Network Builder is a network automation service that helps you deploy and manage telecom networks.
 * [AWSSDK.TranscribeService](https://www.nuget.org/packages/AWSSDK.TranscribeService/)
 	* Amazon Transcribe Public Preview Release
+* [AWSSDK.TranscribeStreaming](https://www.nuget.org/packages/AWSSDK.TranscribeStreaming/)
+	* Amazon Transcribe Streaming service provides operations and objects for transcribing streaming speech to text.
 * [AWSSDK.Transfer](https://www.nuget.org/packages/AWSSDK.Transfer/)
 	* AWS Transfer for SFTP is a fully managed service that enables transfer of secure data over the internet into and out of Amazon S3. SFTP is deeply embedded in data exchange workflows across different industries such as financial services, healthcare, advertising, and retail, among others.
 * [AWSSDK.Translate](https://www.nuget.org/packages/AWSSDK.Translate/)

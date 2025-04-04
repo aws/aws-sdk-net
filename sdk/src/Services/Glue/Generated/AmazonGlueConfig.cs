@@ -30,7 +30,6 @@ namespace Amazon.Glue
     /// <summary>
     /// Configuration for accessing Amazon Glue service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonGlueConfig : ClientConfig
     {
         private static readonly string UserAgentString =

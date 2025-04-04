@@ -30,7 +30,6 @@ namespace Amazon.ApplicationSignals
     /// <summary>
     /// Configuration for accessing Amazon ApplicationSignals service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonApplicationSignalsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

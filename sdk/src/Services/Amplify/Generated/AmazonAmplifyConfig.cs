@@ -30,7 +30,6 @@ namespace Amazon.Amplify
     /// <summary>
     /// Configuration for accessing Amazon Amplify service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonAmplifyConfig : ClientConfig
     {
         private static readonly string UserAgentString =

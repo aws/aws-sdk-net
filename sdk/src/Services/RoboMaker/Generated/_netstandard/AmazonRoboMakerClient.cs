@@ -316,7 +316,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<BatchDeleteWorldsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchDescribeSimulationJob
@@ -375,7 +374,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<BatchDescribeSimulationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelDeploymentJob
@@ -433,7 +431,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<CancelDeploymentJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelSimulationJob
@@ -492,7 +489,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<CancelSimulationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelSimulationJobBatch
@@ -552,7 +548,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<CancelSimulationJobBatchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelWorldExportJob
@@ -611,7 +606,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<CancelWorldExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelWorldGenerationJob
@@ -670,7 +664,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<CancelWorldGenerationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateDeploymentJob
@@ -761,7 +754,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<CreateDeploymentJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFleet
@@ -829,7 +821,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<CreateFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRobot
@@ -900,7 +891,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<CreateRobotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRobotApplication
@@ -967,7 +957,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<CreateRobotApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRobotApplicationVersion
@@ -1031,7 +1020,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<CreateRobotApplicationVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSimulationApplication
@@ -1098,7 +1086,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<CreateSimulationApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSimulationApplicationVersion
@@ -1162,7 +1149,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<CreateSimulationApplicationVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSimulationJob
@@ -1238,7 +1224,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<CreateSimulationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorldExportJob
@@ -1304,7 +1289,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<CreateWorldExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorldGenerationJob
@@ -1374,7 +1358,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<CreateWorldGenerationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateWorldTemplate
@@ -1440,7 +1423,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<CreateWorldTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteFleet
@@ -1504,7 +1486,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<DeleteFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRobot
@@ -1568,7 +1549,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<DeleteRobotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRobotApplication
@@ -1624,7 +1604,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<DeleteRobotApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSimulationApplication
@@ -1680,7 +1659,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<DeleteSimulationApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteWorldTemplate
@@ -1739,7 +1717,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<DeleteWorldTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterRobot
@@ -1806,7 +1783,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<DeregisterRobotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeDeploymentJob
@@ -1873,7 +1849,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<DescribeDeploymentJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeFleet
@@ -1940,7 +1915,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<DescribeFleetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRobot
@@ -2007,7 +1981,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<DescribeRobotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRobotApplication
@@ -2066,7 +2039,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<DescribeRobotApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSimulationApplication
@@ -2125,7 +2097,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<DescribeSimulationApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSimulationJob
@@ -2184,7 +2155,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<DescribeSimulationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeSimulationJobBatch
@@ -2240,7 +2210,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<DescribeSimulationJobBatchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorld
@@ -2299,7 +2268,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<DescribeWorldResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorldExportJob
@@ -2358,7 +2326,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<DescribeWorldExportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorldGenerationJob
@@ -2417,7 +2384,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<DescribeWorldGenerationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeWorldTemplate
@@ -2476,7 +2442,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<DescribeWorldTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetWorldTemplateBody
@@ -2535,7 +2500,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<GetWorldTemplateBodyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeploymentJobs
@@ -2603,7 +2567,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<ListDeploymentJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListFleets
@@ -2671,7 +2634,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<ListFleetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRobotApplications
@@ -2728,7 +2690,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<ListRobotApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRobots
@@ -2796,7 +2757,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<ListRobotsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSimulationApplications
@@ -2853,7 +2813,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<ListSimulationApplicationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSimulationJobBatches
@@ -2907,7 +2866,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<ListSimulationJobBatchesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSimulationJobs
@@ -2964,7 +2922,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<ListSimulationJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -3023,7 +2980,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorldExportJobs
@@ -3079,7 +3035,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<ListWorldExportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorldGenerationJobs
@@ -3135,7 +3090,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<ListWorldGenerationJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorlds
@@ -3191,7 +3145,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<ListWorldsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListWorldTemplates
@@ -3247,7 +3200,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<ListWorldTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterRobot
@@ -3319,7 +3271,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<RegisterRobotResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RestartSimulationJob
@@ -3382,7 +3333,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<RestartSimulationJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSimulationJobBatch
@@ -3447,7 +3397,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<StartSimulationJobBatchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  SyncDeploymentJob
@@ -3526,7 +3475,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<SyncDeploymentJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -3595,7 +3543,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -3660,7 +3607,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRobotApplication
@@ -3723,7 +3669,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<UpdateRobotApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateSimulationApplication
@@ -3786,7 +3731,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<UpdateSimulationApplicationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateWorldTemplate
@@ -3845,7 +3789,6 @@ namespace Amazon.RoboMaker
 
             return InvokeAsync<UpdateWorldTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

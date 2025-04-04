@@ -561,7 +561,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<AcceptEnvironmentAccountConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelComponentDeployment
@@ -620,7 +619,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<CancelComponentDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelEnvironmentDeployment
@@ -694,7 +692,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<CancelEnvironmentDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelServiceInstanceDeployment
@@ -768,7 +765,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<CancelServiceInstanceDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CancelServicePipelineDeployment
@@ -842,7 +838,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<CancelServicePipelineDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateComponent
@@ -905,7 +900,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<CreateComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEnvironment
@@ -984,7 +978,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<CreateEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEnvironmentAccountConnection
@@ -1047,7 +1040,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<CreateEnvironmentAccountConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEnvironmentTemplate
@@ -1122,7 +1114,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<CreateEnvironmentTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateEnvironmentTemplateVersion
@@ -1181,7 +1172,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<CreateEnvironmentTemplateVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRepository
@@ -1247,7 +1237,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<CreateRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateService
@@ -1306,7 +1295,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<CreateServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateServiceInstance
@@ -1358,7 +1346,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<CreateServiceInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateServiceSyncConfig
@@ -1411,7 +1398,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<CreateServiceSyncConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateServiceTemplate
@@ -1470,7 +1456,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<CreateServiceTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateServiceTemplateVersion
@@ -1528,7 +1513,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<CreateServiceTemplateVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTemplateSyncConfig
@@ -1592,7 +1576,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<CreateTemplateSyncConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteComponent
@@ -1650,7 +1633,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<DeleteComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteDeployment
@@ -1699,7 +1681,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<DeleteDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEnvironment
@@ -1751,7 +1732,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<DeleteEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEnvironmentAccountConnection
@@ -1817,7 +1797,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<DeleteEnvironmentAccountConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEnvironmentTemplate
@@ -1870,7 +1849,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<DeleteEnvironmentTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteEnvironmentTemplateVersion
@@ -1934,7 +1912,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<DeleteEnvironmentTemplateVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRepository
@@ -1986,7 +1963,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<DeleteRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteService
@@ -2050,7 +2026,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<DeleteServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServiceSyncConfig
@@ -2102,7 +2077,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<DeleteServiceSyncConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServiceTemplate
@@ -2155,7 +2129,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<DeleteServiceTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteServiceTemplateVersion
@@ -2219,7 +2192,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<DeleteServiceTemplateVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTemplateSyncConfig
@@ -2271,7 +2243,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<DeleteTemplateSyncConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAccountSettings
@@ -2320,7 +2291,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<GetAccountSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetComponent
@@ -2375,7 +2345,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<GetComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDeployment
@@ -2424,7 +2393,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<GetDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEnvironment
@@ -2473,7 +2441,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<GetEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEnvironmentAccountConnection
@@ -2528,7 +2495,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<GetEnvironmentAccountConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEnvironmentTemplate
@@ -2577,7 +2543,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<GetEnvironmentTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetEnvironmentTemplateVersion
@@ -2626,7 +2591,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<GetEnvironmentTemplateVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRepository
@@ -2675,7 +2639,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<GetRepositoryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRepositorySyncStatus
@@ -2739,7 +2702,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<GetRepositorySyncStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcesSummary
@@ -2811,7 +2773,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<GetResourcesSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetService
@@ -2860,7 +2821,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<GetServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceInstance
@@ -2910,7 +2870,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<GetServiceInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceInstanceSyncStatus
@@ -2959,7 +2918,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<GetServiceInstanceSyncStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceSyncBlockerSummary
@@ -3008,7 +2966,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<GetServiceSyncBlockerSummaryResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceSyncConfig
@@ -3057,7 +3014,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<GetServiceSyncConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceTemplate
@@ -3106,7 +3062,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<GetServiceTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetServiceTemplateVersion
@@ -3155,7 +3110,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<GetServiceTemplateVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTemplateSyncConfig
@@ -3204,7 +3158,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<GetTemplateSyncConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTemplateSyncStatus
@@ -3253,7 +3206,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<GetTemplateSyncStatusResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListComponentOutputs
@@ -3308,7 +3260,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<ListComponentOutputsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListComponentProvisionedResources
@@ -3363,7 +3314,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<ListComponentProvisionedResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListComponents
@@ -3416,7 +3366,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<ListComponentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListDeployments
@@ -3466,7 +3415,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<ListDeploymentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnvironmentAccountConnections
@@ -3518,7 +3466,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<ListEnvironmentAccountConnectionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnvironmentOutputs
@@ -3567,7 +3514,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<ListEnvironmentOutputsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnvironmentProvisionedResources
@@ -3616,7 +3562,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<ListEnvironmentProvisionedResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnvironments
@@ -3665,7 +3610,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<ListEnvironmentsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnvironmentTemplates
@@ -3711,7 +3655,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<ListEnvironmentTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListEnvironmentTemplateVersions
@@ -3760,7 +3703,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<ListEnvironmentTemplateVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRepositories
@@ -3809,7 +3751,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<ListRepositoriesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRepositorySyncDefinitions
@@ -3855,7 +3796,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<ListRepositorySyncDefinitionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceInstanceOutputs
@@ -3904,7 +3844,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<ListServiceInstanceOutputsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceInstanceProvisionedResources
@@ -3953,7 +3892,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<ListServiceInstanceProvisionedResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceInstances
@@ -4003,7 +3941,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<ListServiceInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServicePipelineOutputs
@@ -4052,7 +3989,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<ListServicePipelineOutputsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServicePipelineProvisionedResources
@@ -4101,7 +4037,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<ListServicePipelineProvisionedResourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServices
@@ -4147,7 +4082,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<ListServicesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceTemplates
@@ -4193,7 +4127,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<ListServiceTemplatesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListServiceTemplateVersions
@@ -4242,7 +4175,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<ListServiceTemplateVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -4292,7 +4224,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  NotifyResourceDeploymentStatusChange
@@ -4355,7 +4286,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<NotifyResourceDeploymentStatusChangeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RejectEnvironmentAccountConnection
@@ -4423,7 +4353,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<RejectEnvironmentAccountConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -4482,7 +4411,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -4541,7 +4469,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateAccountSettings
@@ -4591,7 +4518,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<UpdateAccountSettingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateComponent
@@ -4663,7 +4589,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<UpdateComponentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEnvironment
@@ -4803,7 +4728,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<UpdateEnvironmentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEnvironmentAccountConnection
@@ -4862,7 +4786,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<UpdateEnvironmentAccountConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEnvironmentTemplate
@@ -4914,7 +4837,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<UpdateEnvironmentTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateEnvironmentTemplateVersion
@@ -4966,7 +4888,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<UpdateEnvironmentTemplateVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateService
@@ -5047,7 +4968,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<UpdateServiceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServiceInstance
@@ -5116,7 +5036,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<UpdateServiceInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServicePipeline
@@ -5215,7 +5134,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<UpdateServicePipelineResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServiceSyncBlocker
@@ -5267,7 +5185,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<UpdateServiceSyncBlockerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServiceSyncConfig
@@ -5319,7 +5236,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<UpdateServiceSyncConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServiceTemplate
@@ -5371,7 +5287,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<UpdateServiceTemplateResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateServiceTemplateVersion
@@ -5423,7 +5338,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<UpdateServiceTemplateVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTemplateSyncConfig
@@ -5478,7 +5392,6 @@ namespace Amazon.Proton
 
             return InvokeAsync<UpdateTemplateSyncConfigResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

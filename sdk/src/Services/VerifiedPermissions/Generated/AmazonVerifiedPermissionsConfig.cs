@@ -30,7 +30,6 @@ namespace Amazon.VerifiedPermissions
     /// <summary>
     /// Configuration for accessing Amazon VerifiedPermissions service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonVerifiedPermissionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =

@@ -322,7 +322,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<CreateAddonInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAddonSubscription
@@ -367,7 +366,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<CreateAddonSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAddressList
@@ -417,7 +415,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<CreateAddressListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateAddressListImportJob
@@ -464,7 +461,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<CreateAddressListImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateArchive
@@ -514,7 +510,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<CreateArchiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateIngressPoint
@@ -557,7 +552,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<CreateIngressPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRelay
@@ -601,7 +595,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<CreateRelayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRuleSet
@@ -644,7 +637,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<CreateRuleSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateTrafficPolicy
@@ -687,7 +679,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<CreateTrafficPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAddonInstance
@@ -727,7 +718,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<DeleteAddonInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAddonSubscription
@@ -767,7 +757,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<DeleteAddonSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAddressList
@@ -811,7 +800,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<DeleteAddressListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteArchive
@@ -862,7 +850,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<DeleteArchiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteIngressPoint
@@ -905,7 +892,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<DeleteIngressPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRelay
@@ -948,7 +934,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<DeleteRelayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRuleSet
@@ -988,7 +973,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<DeleteRuleSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTrafficPolicy
@@ -1031,7 +1015,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<DeleteTrafficPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeregisterMemberFromAddressList
@@ -1078,7 +1061,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<DeregisterMemberFromAddressListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAddonInstance
@@ -1118,7 +1100,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<GetAddonInstanceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAddonSubscription
@@ -1158,7 +1139,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<GetAddonSubscriptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAddressList
@@ -1205,7 +1185,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<GetAddressListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAddressListImportJob
@@ -1252,7 +1231,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<GetAddressListImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetArchive
@@ -1299,7 +1277,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<GetArchiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetArchiveExport
@@ -1343,7 +1320,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<GetArchiveExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetArchiveMessage
@@ -1388,7 +1364,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<GetArchiveMessageResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetArchiveMessageContent
@@ -1433,7 +1408,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<GetArchiveMessageContentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetArchiveSearch
@@ -1477,7 +1451,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<GetArchiveSearchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetArchiveSearchResults
@@ -1524,7 +1497,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<GetArchiveSearchResultsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetIngressPoint
@@ -1564,7 +1536,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<GetIngressPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetMemberOfAddressList
@@ -1611,7 +1582,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<GetMemberOfAddressListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRelay
@@ -1651,7 +1621,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<GetRelayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRuleSet
@@ -1691,7 +1660,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<GetRuleSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTrafficPolicy
@@ -1731,7 +1699,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<GetTrafficPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAddonInstances
@@ -1768,7 +1735,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<ListAddonInstancesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAddonSubscriptions
@@ -1805,7 +1771,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<ListAddonSubscriptionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAddressListImportJobs
@@ -1852,7 +1817,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<ListAddressListImportJobsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAddressLists
@@ -1896,7 +1860,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<ListAddressListsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListArchiveExports
@@ -1943,7 +1906,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<ListArchiveExportsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListArchives
@@ -1987,7 +1949,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<ListArchivesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListArchiveSearches
@@ -2034,7 +1995,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<ListArchiveSearchesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListIngressPoints
@@ -2071,7 +2031,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<ListIngressPointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListMembersOfAddressList
@@ -2118,7 +2077,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<ListMembersOfAddressListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRelays
@@ -2155,7 +2113,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<ListRelaysResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListRuleSets
@@ -2192,7 +2149,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<ListRuleSetsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTagsForResource
@@ -2232,7 +2188,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListTrafficPolicies
@@ -2269,7 +2224,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<ListTrafficPoliciesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  RegisterMemberToAddressList
@@ -2319,7 +2273,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<RegisterMemberToAddressListResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartAddressListImportJob
@@ -2372,7 +2325,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<StartAddressListImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartArchiveExport
@@ -2422,7 +2374,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<StartArchiveExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartArchiveSearch
@@ -2475,7 +2426,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<StartArchiveSearchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopAddressListImportJob
@@ -2525,7 +2475,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<StopAddressListImportJobResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopArchiveExport
@@ -2569,7 +2518,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<StopArchiveExportResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopArchiveSearch
@@ -2613,7 +2561,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<StopArchiveSearchResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  TagResource
@@ -2659,7 +2606,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UntagResource
@@ -2702,7 +2648,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateArchive
@@ -2755,7 +2700,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<UpdateArchiveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateIngressPoint
@@ -2798,7 +2742,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<UpdateIngressPointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRelay
@@ -2841,7 +2784,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<UpdateRelayResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateRuleSet
@@ -2884,7 +2826,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<UpdateRuleSetResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateTrafficPolicy
@@ -2927,7 +2868,6 @@ namespace Amazon.MailManager
 
             return InvokeAsync<UpdateTrafficPolicyResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

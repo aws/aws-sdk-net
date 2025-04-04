@@ -30,7 +30,6 @@ namespace Amazon.Finspace
     /// <summary>
     /// Configuration for accessing Amazon Finspace service
     /// </summary>
-    [AWSSignerType("v4")]
     public partial class AmazonFinspaceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
