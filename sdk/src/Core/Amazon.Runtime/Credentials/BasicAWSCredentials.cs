@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 
@@ -29,9 +30,7 @@ namespace Amazon.Runtime
 
         #endregion
 
-
         #region Constructors
-
 
         /// <summary>
         /// Constructs a BasicAWSCredentials object for the specified accessKey and secretKey.
@@ -57,11 +56,11 @@ namespace Amazon.Runtime
             if (!string.IsNullOrEmpty(accessKey))
             {
                 _credentials = new ImmutableCredentials(accessKey, secretKey, null, accountId);
+                FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_CODE);
             }
         }
 
         #endregion
-
 
         #region Abstract class overrides
 
@@ -92,7 +91,6 @@ namespace Amazon.Runtime
                 new object[] { _credentials },
                 new object[] { bac._credentials });
         }
-
         public override int GetHashCode()
         {
             return Hashing.Hash(_credentials);

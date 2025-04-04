@@ -26,6 +26,7 @@ using System.Globalization;
 using System.Net;
 using System.Reflection;
 using System.Text;
+using Amazon.Runtime.Internal.UserAgent;
 
 namespace Amazon.Runtime.Internal
 {
@@ -66,6 +67,8 @@ namespace Amazon.Runtime.Internal
             try
             {
                 SetMetrics(executionContext.RequestContext);
+                SetUserAgentHeader(executionContext.RequestContext);
+
                 IRequest wrappedRequest = executionContext.RequestContext.Request;
                 httpRequest = CreateWebRequest(executionContext.RequestContext);
                 httpRequest.SetRequestHeaders(wrappedRequest.Headers);
@@ -183,6 +186,8 @@ namespace Amazon.Runtime.Internal
             try
             {
                 SetMetrics(executionContext.RequestContext);
+                SetUserAgentHeader(executionContext.RequestContext);
+
                 IRequest wrappedRequest = executionContext.RequestContext.Request;
                 httpRequest = CreateWebRequest(executionContext.RequestContext);
                 httpRequest.SetRequestHeaders(wrappedRequest.Headers);
@@ -495,6 +500,24 @@ namespace Amazon.Runtime.Internal
                 }
             }
             return originalStream;
+        }
+
+        private void SetUserAgentHeader(IRequestContext requestContext)
+        {
+            if (requestContext.Request.SignatureVersion == SignatureVersion.SigV4a)
+                requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.SIGV4A_SIGNING);
+
+            var metricsUserAgent = requestContext.UserAgentDetails.GenerateUserAgentWithMetrics();
+            Logger.DebugFormat("User-Agent Header: {0}", metricsUserAgent);
+
+            if (requestContext.ClientConfig.UseAlternateUserAgentHeader)
+            {
+                requestContext.Request.Headers[HeaderKeys.XAmzUserAgentHeader] = metricsUserAgent;
+            }
+            else
+            {
+                requestContext.Request.Headers[HeaderKeys.UserAgentHeader] = metricsUserAgent;
+            }
         }
     }
 }

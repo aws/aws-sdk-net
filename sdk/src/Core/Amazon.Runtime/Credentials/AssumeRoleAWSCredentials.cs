@@ -13,16 +13,17 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.RuntimeDependencies;
 using Amazon.Util.Internal;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Net;
-using System.Diagnostics.CodeAnalysis;
-using ThirdParty.RuntimeBackports;
 using System.Threading.Tasks;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.Runtime
 {
@@ -33,7 +34,6 @@ namespace Amazon.Runtime
     public class AssumeRoleAWSCredentials : RefreshingAWSCredentials
     {
         private RegionEndpoint DefaultSTSClientRegion = RegionEndpoint.USEast1;
-
         private Logger _logger = Logger.GetLogger(typeof(AssumeRoleAWSCredentials));
 
         /// <summary>
@@ -85,6 +85,7 @@ namespace Amazon.Runtime
             RoleArn = roleArn;
             RoleSessionName = roleSessionName;
             Options = options;
+            FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_STS_ASSUME_ROLE);
 
             // Make sure to fetch new credentials well before the current credentials expire to avoid
             // any request being made with expired credentials.

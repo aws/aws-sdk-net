@@ -17,6 +17,7 @@ using Amazon.Runtime.Identity;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Internal.Util;
 using System;
 using System.Collections.Generic;
@@ -53,6 +54,7 @@ namespace Amazon.Runtime
         IDictionary<string, object> ContextAttributes { get; }
 
         IHttpRequestStreamHandle RequestStreamHandle {get;set;}
+        UserAgentDetails UserAgentDetails { get; }
     }
 
     public interface IResponseContext
@@ -65,7 +67,7 @@ namespace Amazon.Runtime
     {
         AsyncCallback Callback { get; }
         object State { get; }
-    }    
+    }
 
     public interface IAsyncResponseContext : IResponseContext
     {
@@ -94,7 +96,7 @@ namespace Amazon.Runtime.Internal
         IDictionary<string, object> _contextAttributes;
 
         public RequestContext(bool enableMetric)
-            : this (enableMetric, null)
+            : this(enableMetric, null)
         {
         }
 
@@ -117,9 +119,10 @@ namespace Amazon.Runtime.Internal
         public AmazonWebServiceRequest OriginalRequest { get; set; }
         public IMarshaller<IRequest, AmazonWebServiceRequest> Marshaller { get; set; }
         public ResponseUnmarshaller Unmarshaller { get; set; }
-        public InvokeOptionsBase Options { get; set; }        
+        public InvokeOptionsBase Options { get; set; }
         public ISigner Signer { get; set; }
         public BaseIdentity Identity { get; set; }
+        public UserAgentDetails UserAgentDetails { get => ((IAmazonWebServiceRequest)OriginalRequest).UserAgentDetails; }
 
 #if AWS_ASYNC_API
         public System.Threading.CancellationToken CancellationToken { get; set; }
@@ -158,11 +161,11 @@ namespace Amazon.Runtime.Internal
 
         public Guid InvocationId { get; private set; }
 
-        public IDictionary<string, object> ContextAttributes 
-        { 
+        public IDictionary<string, object> ContextAttributes
+        {
             get
             {
-                if(_contextAttributes == null)
+                if (_contextAttributes == null)
                 {
                     _contextAttributes = new Dictionary<string, object>();
                 }
@@ -176,7 +179,7 @@ namespace Amazon.Runtime.Internal
 
     public class AsyncRequestContext : RequestContext, IAsyncRequestContext
     {
-        public AsyncRequestContext(bool enableMetrics, ISigner clientSigner):
+        public AsyncRequestContext(bool enableMetrics, ISigner clientSigner) :
             base(enableMetrics, clientSigner)
         {
         }
@@ -187,7 +190,7 @@ namespace Amazon.Runtime.Internal
 
     public class ResponseContext : IResponseContext
     {
-        public AmazonWebServiceResponse Response { get; set; }        
+        public AmazonWebServiceResponse Response { get; set; }
         public IWebResponseData HttpResponse { get; set; }
     }
 

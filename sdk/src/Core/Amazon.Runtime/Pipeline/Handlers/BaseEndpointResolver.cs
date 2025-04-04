@@ -20,6 +20,7 @@ using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Telemetry;
 using Amazon.Runtime.Telemetry.Metrics;
+using Amazon.Runtime.Internal.UserAgent;
 
 namespace Amazon.Runtime.Internal
 {
@@ -72,6 +73,10 @@ namespace Amazon.Runtime.Internal
                     Port = requestContext.Request.Endpoint.IsDefaultPort ? -1 : requestContext.Request.Endpoint.Port
                 };
                 requestContext.Request.Endpoint = uriBuilder.Uri;
+            }
+            if (!string.IsNullOrEmpty(requestContext.ClientConfig.ServiceURL))
+            {
+                requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.ENDPOINT_OVERRIDE);
             }
 
             // set authentication parameters and headers

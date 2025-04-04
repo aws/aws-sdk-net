@@ -8,7 +8,6 @@
             { "operation": "addAfter", "newType": "Amazon.S3.Internal.AmazonS3RedirectHandler", "targetType": "Amazon.Runtime.Internal.Unmarshaller" },
             { "operation": "addBefore", "newType": "Amazon.S3.Internal.S3Express.S3ExpressPreSigner", "targetType": "Amazon.Runtime.Internal.Signer" },
             { "operation": "addAfter", "newType": "Amazon.S3.Internal.AmazonS3PostMarshallHandler", "targetType": "Amazon.Runtime.Internal.EndpointResolver" },
-            { "operation": "addAfter", "newType": "Amazon.S3.Internal.AmazonS3UserAgentHandler", "targetType": "Amazon.Runtime.Internal.ChecksumHandler" },
             {
                 "condition":"this.Config.RetryMode == RequestRetryMode.Standard",
                 "operation": "replace",
