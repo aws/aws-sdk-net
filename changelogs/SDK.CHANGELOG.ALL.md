@@ -1,3 +1,26 @@
+### 4.0.0.0-preview.12 (2025-04-04 17:58 UTC)
+* Kinesis (4.0.0.0)
+	* Add the bi-directional streaming operation SubscribeToShard.
+* LexRuntimeV2 (4.0.0.0)
+	* Add the bi-directional streaming operation StartConversation.
+* QBusiness (4.0.0.0)
+	* Add the bi-directional streaming operation Chat.
+* S3 (4.0.0.0)
+	* Update remaining value types to be nullable.
+* TranscribeStreaming (4.0.0.0)
+	* Initial release of the TranscribeStreaming service package.
+* Core 4.0.0.0
+	* [Breaking Change] Move IEventStreamEvent to Amazon.Runtime.EventStreams namespace from Amazon.Runtime.EventStreams.Internal
+	* [Breaking Change] Renamed IEventStream to IEventOutputStream and IEnumerableEventStream to IEnumerableEventOutputStream
+	* Add core support for bi directional HTTP 2 service operations. Support is only available in .NET 8 and later.
+	* Changed the default value of SSOAWSCredentialsOptions.SupportsGettingNewToken as false and improved error messaging if required SSO options are missing while generating new credentials.
+	* Fix `EndpointDiscoveryHandler` not to fail when a request contains bearer token credentials.
+	* Log a warning when `ServiceUrl` and `RegionEndpoint` are set at the same time. The SDK will log whichever of the two is used.
+	* Remove redundant `AWSSignerType` attribute from service configuration classes.
+	* Support Account ID based endpoints. Account-based endpoints help ensure high performance and scalability by using your AWS account ID to route requests for services that support this feature. For more information visit [account id based endpoints on our docs](https://docs.aws.amazon.com/sdkref/latest/guide/feature-account-endpoints.html).
+	* Update the AWS SDK for .NET to include encoded metrics in the `User-Agent` header to track which features were used for a given request (for example, which retry behavior and how credentials were resolved)
+	* All services packages updated to require new Core
+
 ### 4.0.0.0-preview.11 (2025-03-26 12:13 UTC)
 * DynamoDBStreams (4.0.0.0)
 	* Update documentation for code generated from DynamoDB Streams models
