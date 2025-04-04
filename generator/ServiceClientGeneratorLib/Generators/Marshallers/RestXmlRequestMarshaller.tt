@@ -38,7 +38,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		{
 			var request = new DefaultRequest(publicRequest, "<#=this.Config.Namespace#>");
 <#
-	if ((this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && this.Operation.IsEventStreamOutput) || this.Config.ServiceModel.H2Support == H2SupportDegree.Required)
+	if ((this.Config.ServiceModel.H2Support == H2SupportDegree.Optional && this.Operation.IsEventStreamBidi) || (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && this.Operation.IsEventStreamOutput) || this.Config.ServiceModel.H2Support == H2SupportDegree.Required)
 	{
 #>
 #if NET8_0_OR_GREATER
