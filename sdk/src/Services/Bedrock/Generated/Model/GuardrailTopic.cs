@@ -47,7 +47,11 @@ namespace Amazon.Bedrock.Model
     {
         private string _definition;
         private List<string> _examples = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private GuardrailTopicAction _inputAction;
+        private bool? _inputEnabled;
         private string _name;
+        private GuardrailTopicAction _outputAction;
+        private bool? _outputEnabled;
         private GuardrailTopicType _type;
 
         /// <summary>
@@ -90,6 +94,54 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InputAction. 
+        /// <para>
+        /// The action to take when harmful content is detected in the input. Supported values
+        /// include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>BLOCK</c> – Block the content and replace it with blocked messaging.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NONE</c> – Take no action but return detection information in the trace response.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public GuardrailTopicAction InputAction
+        {
+            get { return this._inputAction; }
+            set { this._inputAction = value; }
+        }
+
+        // Check to see if InputAction property is set
+        internal bool IsSetInputAction()
+        {
+            return this._inputAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputEnabled. 
+        /// <para>
+        /// Indicates whether guardrail evaluation is enabled on the input. When disabled, you
+        /// aren't charged for the evaluation. The evaluation doesn't appear in the response.
+        /// </para>
+        /// </summary>
+        public bool InputEnabled
+        {
+            get { return this._inputEnabled.GetValueOrDefault(); }
+            set { this._inputEnabled = value; }
+        }
+
+        // Check to see if InputEnabled property is set
+        internal bool IsSetInputEnabled()
+        {
+            return this._inputEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the topic to deny.
@@ -106,6 +158,54 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputAction. 
+        /// <para>
+        /// The action to take when harmful content is detected in the output. Supported values
+        /// include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>BLOCK</c> – Block the content and replace it with blocked messaging.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NONE</c> – Take no action but return detection information in the trace response.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public GuardrailTopicAction OutputAction
+        {
+            get { return this._outputAction; }
+            set { this._outputAction = value; }
+        }
+
+        // Check to see if OutputAction property is set
+        internal bool IsSetOutputAction()
+        {
+            return this._outputAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputEnabled. 
+        /// <para>
+        /// Indicates whether guardrail evaluation is enabled on the output. When disabled, you
+        /// aren't charged for the evaluation. The evaluation doesn't appear in the response.
+        /// </para>
+        /// </summary>
+        public bool OutputEnabled
+        {
+            get { return this._outputEnabled.GetValueOrDefault(); }
+            set { this._outputEnabled = value; }
+        }
+
+        // Check to see if OutputEnabled property is set
+        internal bool IsSetOutputEnabled()
+        {
+            return this._outputEnabled.HasValue; 
         }
 
         /// <summary>

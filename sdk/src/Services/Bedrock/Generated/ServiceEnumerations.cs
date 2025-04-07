@@ -519,6 +519,56 @@ namespace Amazon.Bedrock
 
 
     /// <summary>
+    /// Constants used for properties of type GuardrailContentFilterAction.
+    /// </summary>
+    public class GuardrailContentFilterAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BLOCK for GuardrailContentFilterAction
+        /// </summary>
+        public static readonly GuardrailContentFilterAction BLOCK = new GuardrailContentFilterAction("BLOCK");
+        /// <summary>
+        /// Constant NONE for GuardrailContentFilterAction
+        /// </summary>
+        public static readonly GuardrailContentFilterAction NONE = new GuardrailContentFilterAction("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailContentFilterAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailContentFilterAction FindValue(string value)
+        {
+            return FindValue<GuardrailContentFilterAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailContentFilterAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GuardrailContentFilterType.
     /// </summary>
     public class GuardrailContentFilterType : ConstantClass
@@ -578,6 +628,56 @@ namespace Amazon.Bedrock
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GuardrailContentFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailContextualGroundingAction.
+    /// </summary>
+    public class GuardrailContextualGroundingAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BLOCK for GuardrailContextualGroundingAction
+        /// </summary>
+        public static readonly GuardrailContextualGroundingAction BLOCK = new GuardrailContextualGroundingAction("BLOCK");
+        /// <summary>
+        /// Constant NONE for GuardrailContextualGroundingAction
+        /// </summary>
+        public static readonly GuardrailContextualGroundingAction NONE = new GuardrailContextualGroundingAction("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailContextualGroundingAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailContextualGroundingAction FindValue(string value)
+        {
+            return FindValue<GuardrailContextualGroundingAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailContextualGroundingAction(string value)
         {
             return FindValue(value);
         }
@@ -968,6 +1068,10 @@ namespace Amazon.Bedrock
         /// Constant BLOCK for GuardrailSensitiveInformationAction
         /// </summary>
         public static readonly GuardrailSensitiveInformationAction BLOCK = new GuardrailSensitiveInformationAction("BLOCK");
+        /// <summary>
+        /// Constant NONE for GuardrailSensitiveInformationAction
+        /// </summary>
+        public static readonly GuardrailSensitiveInformationAction NONE = new GuardrailSensitiveInformationAction("NONE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1071,6 +1175,56 @@ namespace Amazon.Bedrock
 
 
     /// <summary>
+    /// Constants used for properties of type GuardrailTopicAction.
+    /// </summary>
+    public class GuardrailTopicAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BLOCK for GuardrailTopicAction
+        /// </summary>
+        public static readonly GuardrailTopicAction BLOCK = new GuardrailTopicAction("BLOCK");
+        /// <summary>
+        /// Constant NONE for GuardrailTopicAction
+        /// </summary>
+        public static readonly GuardrailTopicAction NONE = new GuardrailTopicAction("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailTopicAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailTopicAction FindValue(string value)
+        {
+            return FindValue<GuardrailTopicAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailTopicAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GuardrailTopicType.
     /// </summary>
     public class GuardrailTopicType : ConstantClass
@@ -1110,6 +1264,56 @@ namespace Amazon.Bedrock
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GuardrailTopicType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailWordAction.
+    /// </summary>
+    public class GuardrailWordAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BLOCK for GuardrailWordAction
+        /// </summary>
+        public static readonly GuardrailWordAction BLOCK = new GuardrailWordAction("BLOCK");
+        /// <summary>
+        /// Constant NONE for GuardrailWordAction
+        /// </summary>
+        public static readonly GuardrailWordAction NONE = new GuardrailWordAction("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailWordAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailWordAction FindValue(string value)
+        {
+            return FindValue<GuardrailWordAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailWordAction(string value)
         {
             return FindValue(value);
         }
