@@ -117,6 +117,11 @@ namespace Amazon.MediaLive.Model
         IListReservationsPaginator ListReservations(ListReservationsRequest request);
 
         /// <summary>
+        /// Paginator for ListSdiSources operation
+        ///</summary>
+        IListSdiSourcesPaginator ListSdiSources(ListSdiSourcesRequest request);
+
+        /// <summary>
         /// Paginator for ListSignalMaps operation
         ///</summary>
         IListSignalMapsPaginator ListSignalMaps(ListSignalMapsRequest request);

@@ -2154,6 +2154,95 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  CreateSdiSource
+
+
+        /// <summary>
+        /// Create an SdiSource for each video source that uses the SDI protocol. You will reference
+        /// the SdiSource when you create an SDI input in MediaLive. You will also reference it
+        /// in an SdiSourceMapping, in order to create a connection between the logical SdiSource
+        /// and the physical SDI card and port that the physical SDI source uses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSdiSource service method.</param>
+        /// 
+        /// <returns>The response from the CreateSdiSource service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateSdiSource">REST API Reference for CreateSdiSource Operation</seealso>
+        public virtual CreateSdiSourceResponse CreateSdiSource(CreateSdiSourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSdiSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSdiSourceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSdiSourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Create an SdiSource for each video source that uses the SDI protocol. You will reference
+        /// the SdiSource when you create an SDI input in MediaLive. You will also reference it
+        /// in an SdiSourceMapping, in order to create a connection between the logical SdiSource
+        /// and the physical SDI card and port that the physical SDI source uses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSdiSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSdiSource service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateSdiSource">REST API Reference for CreateSdiSource Operation</seealso>
+        public virtual Task<CreateSdiSourceResponse> CreateSdiSourceAsync(CreateSdiSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSdiSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSdiSourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateSdiSourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateSignalMap
 
 
@@ -3577,6 +3666,97 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  DeleteSdiSource
+
+
+        /// <summary>
+        /// Delete an SdiSource. The SdiSource must not be part of any SidSourceMapping and must
+        /// not be attached to any input.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSdiSource service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSdiSource service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteSdiSource">REST API Reference for DeleteSdiSource Operation</seealso>
+        public virtual DeleteSdiSourceResponse DeleteSdiSource(DeleteSdiSourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSdiSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSdiSourceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSdiSourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Delete an SdiSource. The SdiSource must not be part of any SidSourceMapping and must
+        /// not be attached to any input.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSdiSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSdiSource service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteSdiSource">REST API Reference for DeleteSdiSource Operation</seealso>
+        public virtual Task<DeleteSdiSourceResponse> DeleteSdiSourceAsync(DeleteSdiSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSdiSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSdiSourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteSdiSourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteSignalMap
 
 
@@ -4954,6 +5134,89 @@ namespace Amazon.MediaLive
             options.ResponseUnmarshaller = DescribeScheduleResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeScheduleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeSdiSource
+
+
+        /// <summary>
+        /// Gets details about a SdiSource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSdiSource service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSdiSource service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSdiSource">REST API Reference for DescribeSdiSource Operation</seealso>
+        public virtual DescribeSdiSourceResponse DescribeSdiSource(DescribeSdiSourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSdiSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSdiSourceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSdiSourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets details about a SdiSource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSdiSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSdiSource service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSdiSource">REST API Reference for DescribeSdiSource Operation</seealso>
+        public virtual Task<DescribeSdiSourceResponse> DescribeSdiSourceAsync(DescribeSdiSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSdiSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSdiSourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeSdiSourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6699,6 +6962,83 @@ namespace Amazon.MediaLive
             options.ResponseUnmarshaller = ListReservationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListReservationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSdiSources
+
+
+        /// <summary>
+        /// List all the SdiSources in the AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSdiSources service method.</param>
+        /// 
+        /// <returns>The response from the ListSdiSources service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListSdiSources">REST API Reference for ListSdiSources Operation</seealso>
+        public virtual ListSdiSourcesResponse ListSdiSources(ListSdiSourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSdiSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSdiSourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSdiSourcesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List all the SdiSources in the AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSdiSources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSdiSources service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListSdiSources">REST API Reference for ListSdiSources Operation</seealso>
+        public virtual Task<ListSdiSourcesResponse> ListSdiSourcesAsync(ListSdiSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSdiSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSdiSourcesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSdiSourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -9785,6 +10125,89 @@ namespace Amazon.MediaLive
             options.ResponseUnmarshaller = UpdateReservationResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateReservationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateSdiSource
+
+
+        /// <summary>
+        /// Change some of the settings in an SdiSource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSdiSource service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSdiSource service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateSdiSource">REST API Reference for UpdateSdiSource Operation</seealso>
+        public virtual UpdateSdiSourceResponse UpdateSdiSource(UpdateSdiSourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSdiSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSdiSourceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSdiSourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Change some of the settings in an SdiSource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSdiSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSdiSource service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateSdiSource">REST API Reference for UpdateSdiSource Operation</seealso>
+        public virtual Task<UpdateSdiSourceResponse> UpdateSdiSourceAsync(UpdateSdiSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSdiSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSdiSourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateSdiSourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

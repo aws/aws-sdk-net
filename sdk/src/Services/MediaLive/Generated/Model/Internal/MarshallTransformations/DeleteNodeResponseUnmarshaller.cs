@@ -106,6 +106,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     response.Role = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sdiSourceMappings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SdiSourceMapping, SdiSourceMappingUnmarshaller>(SdiSourceMappingUnmarshaller.Instance);
+                    response.SdiSourceMappings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("state", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

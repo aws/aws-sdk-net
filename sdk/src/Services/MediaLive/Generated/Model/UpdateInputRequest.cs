@@ -43,6 +43,7 @@ namespace Amazon.MediaLive.Model
         private MulticastSettingsUpdateRequest _multicastSettings;
         private string _name;
         private string _roleArn;
+        private List<string> _sdiSources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Smpte2110ReceiverGroupSettings _smpte2110ReceiverGroupSettings;
         private List<InputSourceRequest> _sources = AWSConfigs.InitializeCollections ? new List<InputSourceRequest>() : null;
         private SrtSettingsRequest _srtSettings;
@@ -172,6 +173,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SdiSources.
+        /// </summary>
+        public List<string> SdiSources
+        {
+            get { return this._sdiSources; }
+            set { this._sdiSources = value; }
+        }
+
+        // Check to see if SdiSources property is set
+        internal bool IsSetSdiSources()
+        {
+            return this._sdiSources != null && (this._sdiSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

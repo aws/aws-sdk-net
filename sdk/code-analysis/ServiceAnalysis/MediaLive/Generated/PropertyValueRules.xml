@@ -514,6 +514,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.ListSdiSourcesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.ListSignalMapsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>

@@ -1946,6 +1946,84 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  CreateSdiSource
+
+        /// <summary>
+        /// Create an SdiSource for each video source that uses the SDI protocol. You will reference
+        /// the SdiSource when you create an SDI input in MediaLive. You will also reference it
+        /// in an SdiSourceMapping, in order to create a connection between the logical SdiSource
+        /// and the physical SDI card and port that the physical SDI source uses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSdiSource service method.</param>
+        /// 
+        /// <returns>The response from the CreateSdiSource service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateSdiSource">REST API Reference for CreateSdiSource Operation</seealso>
+        public virtual CreateSdiSourceResponse CreateSdiSource(CreateSdiSourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSdiSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSdiSourceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSdiSourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSdiSource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSdiSource operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSdiSource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateSdiSource">REST API Reference for CreateSdiSource Operation</seealso>
+        public virtual IAsyncResult BeginCreateSdiSource(CreateSdiSourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSdiSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSdiSourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSdiSource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSdiSource.</param>
+        /// 
+        /// <returns>Returns a  CreateSdiSourceResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateSdiSource">REST API Reference for CreateSdiSource Operation</seealso>
+        public virtual CreateSdiSourceResponse EndCreateSdiSource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateSdiSourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateSignalMap
 
         /// <summary>
@@ -3227,6 +3305,85 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  DeleteSdiSource
+
+        /// <summary>
+        /// Delete an SdiSource. The SdiSource must not be part of any SidSourceMapping and must
+        /// not be attached to any input.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSdiSource service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSdiSource service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteSdiSource">REST API Reference for DeleteSdiSource Operation</seealso>
+        public virtual DeleteSdiSourceResponse DeleteSdiSource(DeleteSdiSourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSdiSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSdiSourceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSdiSourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSdiSource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSdiSource operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSdiSource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteSdiSource">REST API Reference for DeleteSdiSource Operation</seealso>
+        public virtual IAsyncResult BeginDeleteSdiSource(DeleteSdiSourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSdiSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSdiSourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSdiSource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSdiSource.</param>
+        /// 
+        /// <returns>Returns a  DeleteSdiSourceResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteSdiSource">REST API Reference for DeleteSdiSource Operation</seealso>
+        public virtual DeleteSdiSourceResponse EndDeleteSdiSource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteSdiSourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteSignalMap
 
         /// <summary>
@@ -4483,6 +4640,81 @@ namespace Amazon.MediaLive
         public virtual DescribeScheduleResponse EndDescribeSchedule(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeScheduleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeSdiSource
+
+        /// <summary>
+        /// Gets details about a SdiSource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSdiSource service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSdiSource service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSdiSource">REST API Reference for DescribeSdiSource Operation</seealso>
+        public virtual DescribeSdiSourceResponse DescribeSdiSource(DescribeSdiSourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSdiSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSdiSourceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSdiSourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSdiSource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSdiSource operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSdiSource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSdiSource">REST API Reference for DescribeSdiSource Operation</seealso>
+        public virtual IAsyncResult BeginDescribeSdiSource(DescribeSdiSourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSdiSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSdiSourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSdiSource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSdiSource.</param>
+        /// 
+        /// <returns>Returns a  DescribeSdiSourceResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSdiSource">REST API Reference for DescribeSdiSource Operation</seealso>
+        public virtual DescribeSdiSourceResponse EndDescribeSdiSource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeSdiSourceResponse>(asyncResult);
         }
 
         #endregion
@@ -6126,6 +6358,78 @@ namespace Amazon.MediaLive
         public virtual ListReservationsResponse EndListReservations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListReservationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSdiSources
+
+        /// <summary>
+        /// List all the SdiSources in the AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSdiSources service method.</param>
+        /// 
+        /// <returns>The response from the ListSdiSources service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListSdiSources">REST API Reference for ListSdiSources Operation</seealso>
+        public virtual ListSdiSourcesResponse ListSdiSources(ListSdiSourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSdiSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSdiSourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSdiSourcesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSdiSources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSdiSources operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSdiSources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListSdiSources">REST API Reference for ListSdiSources Operation</seealso>
+        public virtual IAsyncResult BeginListSdiSources(ListSdiSourcesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSdiSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSdiSourcesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSdiSources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSdiSources.</param>
+        /// 
+        /// <returns>Returns a  ListSdiSourcesResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListSdiSources">REST API Reference for ListSdiSources Operation</seealso>
+        public virtual ListSdiSourcesResponse EndListSdiSources(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSdiSourcesResponse>(asyncResult);
         }
 
         #endregion
@@ -8875,6 +9179,81 @@ namespace Amazon.MediaLive
         public virtual UpdateReservationResponse EndUpdateReservation(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateReservationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateSdiSource
+
+        /// <summary>
+        /// Change some of the settings in an SdiSource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSdiSource service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSdiSource service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateSdiSource">REST API Reference for UpdateSdiSource Operation</seealso>
+        public virtual UpdateSdiSourceResponse UpdateSdiSource(UpdateSdiSourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSdiSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSdiSourceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSdiSourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSdiSource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSdiSource operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSdiSource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateSdiSource">REST API Reference for UpdateSdiSource Operation</seealso>
+        public virtual IAsyncResult BeginUpdateSdiSource(UpdateSdiSourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSdiSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSdiSourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSdiSource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSdiSource.</param>
+        /// 
+        /// <returns>Returns a  UpdateSdiSourceResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateSdiSource">REST API Reference for UpdateSdiSource Operation</seealso>
+        public virtual UpdateSdiSourceResponse EndUpdateSdiSource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSdiSourceResponse>(asyncResult);
         }
 
         #endregion

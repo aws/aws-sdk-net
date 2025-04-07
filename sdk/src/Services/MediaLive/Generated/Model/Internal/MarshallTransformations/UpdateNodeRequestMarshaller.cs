@@ -85,6 +85,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Role);
                 }
 
+                if(publicRequest.IsSetSdiSourceMappings())
+                {
+                    context.Writer.WritePropertyName("sdiSourceMappings");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSdiSourceMappingsListValue in publicRequest.SdiSourceMappings)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SdiSourceMappingUpdateRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSdiSourceMappingsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
