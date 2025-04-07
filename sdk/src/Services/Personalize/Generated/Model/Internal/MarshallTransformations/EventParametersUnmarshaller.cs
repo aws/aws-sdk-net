@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SolutionUpdateConfig Object
+    /// Response Unmarshaller for EventParameters Object
     /// </summary>  
-    public class SolutionUpdateConfigUnmarshaller : IUnmarshaller<SolutionUpdateConfig, XmlUnmarshallerContext>, IUnmarshaller<SolutionUpdateConfig, JsonUnmarshallerContext>
+    public class EventParametersUnmarshaller : IUnmarshaller<EventParameters, XmlUnmarshallerContext>, IUnmarshaller<EventParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SolutionUpdateConfig IUnmarshaller<SolutionUpdateConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EventParameters IUnmarshaller<EventParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public SolutionUpdateConfig Unmarshall(JsonUnmarshallerContext context)
+        public EventParameters Unmarshall(JsonUnmarshallerContext context)
         {
-            SolutionUpdateConfig unmarshalledObject = new SolutionUpdateConfig();
+            EventParameters unmarshalledObject = new EventParameters();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,22 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("autoTrainingConfig", targetDepth))
+                if (context.TestExpression("eventType", targetDepth))
                 {
-                    var unmarshaller = AutoTrainingConfigUnmarshaller.Instance;
-                    unmarshalledObject.AutoTrainingConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EventType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("eventsConfig", targetDepth))
+                if (context.TestExpression("eventValueThreshold", targetDepth))
                 {
-                    var unmarshaller = EventsConfigUnmarshaller.Instance;
-                    unmarshalledObject.EventsConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.EventValueThreshold = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("weight", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Weight = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +89,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         }
 
 
-        private static SolutionUpdateConfigUnmarshaller _instance = new SolutionUpdateConfigUnmarshaller();        
+        private static EventParametersUnmarshaller _instance = new EventParametersUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SolutionUpdateConfigUnmarshaller Instance
+        public static EventParametersUnmarshaller Instance
         {
             get
             {

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SolutionUpdateConfig Marshaller
+    /// EventParameters Marshaller
     /// </summary>
-    public class SolutionUpdateConfigMarshaller : IRequestMarshaller<SolutionUpdateConfig, JsonMarshallerContext> 
+    public class EventParametersMarshaller : IRequestMarshaller<EventParameters, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,30 +44,40 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SolutionUpdateConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(EventParameters requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAutoTrainingConfig())
+            if(requestObject.IsSetEventType())
             {
-                context.Writer.WritePropertyName("autoTrainingConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AutoTrainingConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.AutoTrainingConfig, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("eventType");
+                context.Writer.Write(requestObject.EventType);
             }
 
-            if(requestObject.IsSetEventsConfig())
+            if(requestObject.IsSetEventValueThreshold())
             {
-                context.Writer.WritePropertyName("eventsConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("eventValueThreshold");
+                if(StringUtils.IsSpecialDoubleValue(requestObject.EventValueThreshold))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.EventValueThreshold));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.EventValueThreshold);
+                }
+            }
 
-                var marshaller = EventsConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.EventsConfig, context);
-
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetWeight())
+            {
+                context.Writer.WritePropertyName("weight");
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Weight))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Weight));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Weight);
+                }
             }
 
         }
@@ -75,7 +85,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SolutionUpdateConfigMarshaller Instance = new SolutionUpdateConfigMarshaller();
+        public readonly static EventParametersMarshaller Instance = new EventParametersMarshaller();
 
     }
 }

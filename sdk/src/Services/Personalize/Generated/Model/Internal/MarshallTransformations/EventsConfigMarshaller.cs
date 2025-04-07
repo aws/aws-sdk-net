@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SolutionUpdateConfig Marshaller
+    /// EventsConfig Marshaller
     /// </summary>
-    public class SolutionUpdateConfigMarshaller : IRequestMarshaller<SolutionUpdateConfig, JsonMarshallerContext> 
+    public class EventsConfigMarshaller : IRequestMarshaller<EventsConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,30 +44,24 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SolutionUpdateConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(EventsConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAutoTrainingConfig())
+            if(requestObject.IsSetEventParametersList())
             {
-                context.Writer.WritePropertyName("autoTrainingConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("eventParametersList");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectEventParametersListListValue in requestObject.EventParametersList)
+                {
+                    context.Writer.WriteObjectStart();
 
-                var marshaller = AutoTrainingConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.AutoTrainingConfig, context);
+                    var marshaller = EventParametersMarshaller.Instance;
+                    marshaller.Marshall(requestObjectEventParametersListListValue, context);
 
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetEventsConfig())
-            {
-                context.Writer.WritePropertyName("eventsConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EventsConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.EventsConfig, context);
-
-                context.Writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -75,7 +69,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SolutionUpdateConfigMarshaller Instance = new SolutionUpdateConfigMarshaller();
+        public readonly static EventsConfigMarshaller Instance = new EventsConfigMarshaller();
 
     }
 }

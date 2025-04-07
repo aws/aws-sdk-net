@@ -30,33 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Personalize.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDataset operation.
-    /// Deletes a dataset. You can't delete a dataset if an associated <c>DatasetImportJob</c>
-    /// or <c>SolutionVersion</c> is in the CREATE PENDING or IN PROGRESS state. For more
-    /// information about deleting datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/delete-dataset.html">Deleting
-    /// a dataset</a>.
+    /// Describes the configuration of events, which are used in solution creation.
     /// </summary>
-    public partial class DeleteDatasetRequest : AmazonPersonalizeRequest
+    public partial class EventsConfig
     {
-        private string _datasetArn;
+        private List<EventParameters> _eventParametersList = AWSConfigs.InitializeCollections ? new List<EventParameters>() : null;
 
         /// <summary>
-        /// Gets and sets the property DatasetArn. 
+        /// Gets and sets the property EventParametersList. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the dataset to delete.
+        /// A list of event parameters, which includes event types and their event value thresholds
+        /// and weights.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
-        public string DatasetArn
+        [AWSProperty(Max=10)]
+        public List<EventParameters> EventParametersList
         {
-            get { return this._datasetArn; }
-            set { this._datasetArn = value; }
+            get { return this._eventParametersList; }
+            set { this._eventParametersList = value; }
         }
 
-        // Check to see if DatasetArn property is set
-        internal bool IsSetDatasetArn()
+        // Check to see if EventParametersList property is set
+        internal bool IsSetEventParametersList()
         {
-            return this._datasetArn != null;
+            return this._eventParametersList != null && (this._eventParametersList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
