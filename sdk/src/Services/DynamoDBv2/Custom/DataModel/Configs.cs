@@ -553,8 +553,10 @@ namespace Amazon.DynamoDBv2.DataModel
         public List<ScanCondition> QueryFilter { get; set; }
 
         /// <summary>
-        /// Entity Conversion specification which controls how conversion between
-        /// .NET and DynamoDB types happens.
+        /// Specifies the conversion behavior for .NET objects (entities) mapped to DynamoDB items.
+        /// 
+        /// This setting controls how conversion between .NET and DynamoDB types happens
+        /// on classes annotated with <see cref="DynamoDBTableAttribute"/>
         /// </summary>
         public DynamoDBEntryConversion ItemConversion { get; set; }
 

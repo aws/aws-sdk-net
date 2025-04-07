@@ -53,9 +53,15 @@ namespace Amazon.DynamoDBv2.DataModel
         public bool LowerCamelCaseProperties { get; set; }
 
         /// <summary>
-        /// Gets and sets the Conversion Schema property.
+        /// Gets and sets the <see cref="ConversionSchema"/> used for mapping between .NET and DynamoDB types.
+        /// 
+        /// The conversion schema determines how types are serialized and deserialized during data persistence. 
+        /// When resolving the effective schema, the following precedence is applied:
+        /// 1. If set on the operation configuration, it takes the highest precedence.
+        /// 2. If not set on the operation, but specified at the table level, the table configuration is used.
+        /// 3. If neither is set, the context-level configuration is used as the default fallback.
         /// </summary>
-        public ConversionSchema Conversion { get; }
+        public ConversionSchema Conversion { get; set; }
 
         /// <summary>
         /// Construct an instance of DynamoDBTableAttribute
