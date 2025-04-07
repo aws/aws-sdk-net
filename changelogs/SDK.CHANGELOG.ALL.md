@@ -1,3 +1,19 @@
+### 3.7.1018.0 (2025-04-07 18:46 UTC)
+* Bedrock (3.7.418.0)
+	* New options for how to handle harmful content detected by Amazon Bedrock Guardrails.
+* BedrockRuntime (3.7.417.0)
+	* New options for how to handle harmful content detected by Amazon Bedrock Guardrails.
+* CodeBuild (3.7.416.0)
+	* AWS CodeBuild now offers an enhanced debugging experience.
+* Glue (3.7.415.0)
+	* Add input validations for multiple Glue APIs
+* MediaLive (3.7.415.0)
+	* AWS Elemental MediaLive now supports SDI inputs to MediaLive Anywhere Channels in workflows that use AWS SDKs.
+* Personalize (3.7.402.0)
+	* Add support for eventsConfig for CreateSolution, UpdateSolution, DescribeSolution, DescribeSolutionVersion. Add support for GetSolutionMetrics to return weighted NDCG metrics when eventsConfig is enabled for the solution.
+* Transfer (3.7.406.0)
+	* This launch enables customers to manage contents of their remote directories, by deleting old files or moving files to archive folders in remote servers once they have been retrieved. Customers will be able to automate the process using event-driven architecture.
+
 ### 3.7.1017.0 (2025-04-04 18:38 UTC)
 * DirectoryServiceData (3.7.400.108)
 	* Doc only update - fixed broken links.
