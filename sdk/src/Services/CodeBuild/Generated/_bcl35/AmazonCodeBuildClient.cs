@@ -446,6 +446,63 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  BatchGetCommandExecutions
+
+        /// <summary>
+        /// Gets information about the command executions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCommandExecutions service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetCommandExecutions service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetCommandExecutions">REST API Reference for BatchGetCommandExecutions Operation</seealso>
+        public virtual BatchGetCommandExecutionsResponse BatchGetCommandExecutions(BatchGetCommandExecutionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetCommandExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCommandExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetCommandExecutionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetCommandExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCommandExecutions operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetCommandExecutions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetCommandExecutions">REST API Reference for BatchGetCommandExecutions Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetCommandExecutions(BatchGetCommandExecutionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetCommandExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCommandExecutionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetCommandExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetCommandExecutions.</param>
+        /// 
+        /// <returns>Returns a  BatchGetCommandExecutionsResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetCommandExecutions">REST API Reference for BatchGetCommandExecutions Operation</seealso>
+        public virtual BatchGetCommandExecutionsResponse EndBatchGetCommandExecutions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetCommandExecutionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchGetFleets
 
         /// <summary>
@@ -670,6 +727,63 @@ namespace Amazon.CodeBuild
         public virtual BatchGetReportsResponse EndBatchGetReports(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetReportsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchGetSandboxes
+
+        /// <summary>
+        /// Gets information about the sandbox status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSandboxes service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetSandboxes service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetSandboxes">REST API Reference for BatchGetSandboxes Operation</seealso>
+        public virtual BatchGetSandboxesResponse BatchGetSandboxes(BatchGetSandboxesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetSandboxesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetSandboxesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetSandboxesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetSandboxes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSandboxes operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetSandboxes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetSandboxes">REST API Reference for BatchGetSandboxes Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetSandboxes(BatchGetSandboxesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetSandboxesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetSandboxesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetSandboxes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetSandboxes.</param>
+        /// 
+        /// <returns>Returns a  BatchGetSandboxesResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetSandboxes">REST API Reference for BatchGetSandboxes Operation</seealso>
+        public virtual BatchGetSandboxesResponse EndBatchGetSandboxes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetSandboxesResponse>(asyncResult);
         }
 
         #endregion
@@ -2016,6 +2130,66 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  ListCommandExecutionsForSandbox
+
+        /// <summary>
+        /// Gets a list of command executions for a sandbox.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCommandExecutionsForSandbox service method.</param>
+        /// 
+        /// <returns>The response from the ListCommandExecutionsForSandbox service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCommandExecutionsForSandbox">REST API Reference for ListCommandExecutionsForSandbox Operation</seealso>
+        public virtual ListCommandExecutionsForSandboxResponse ListCommandExecutionsForSandbox(ListCommandExecutionsForSandboxRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCommandExecutionsForSandboxRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCommandExecutionsForSandboxResponseUnmarshaller.Instance;
+
+            return Invoke<ListCommandExecutionsForSandboxResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCommandExecutionsForSandbox operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCommandExecutionsForSandbox operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCommandExecutionsForSandbox
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCommandExecutionsForSandbox">REST API Reference for ListCommandExecutionsForSandbox Operation</seealso>
+        public virtual IAsyncResult BeginListCommandExecutionsForSandbox(ListCommandExecutionsForSandboxRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCommandExecutionsForSandboxRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCommandExecutionsForSandboxResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCommandExecutionsForSandbox operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCommandExecutionsForSandbox.</param>
+        /// 
+        /// <returns>Returns a  ListCommandExecutionsForSandboxResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCommandExecutionsForSandbox">REST API Reference for ListCommandExecutionsForSandbox Operation</seealso>
+        public virtual ListCommandExecutionsForSandboxResponse EndListCommandExecutionsForSandbox(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCommandExecutionsForSandboxResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListCuratedEnvironmentImages
 
         /// <summary>
@@ -2356,6 +2530,123 @@ namespace Amazon.CodeBuild
         public virtual ListReportsForReportGroupResponse EndListReportsForReportGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<ListReportsForReportGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSandboxes
+
+        /// <summary>
+        /// Gets a list of sandboxes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSandboxes service method.</param>
+        /// 
+        /// <returns>The response from the ListSandboxes service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSandboxes">REST API Reference for ListSandboxes Operation</seealso>
+        public virtual ListSandboxesResponse ListSandboxes(ListSandboxesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSandboxesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSandboxesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSandboxesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSandboxes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSandboxes operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSandboxes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSandboxes">REST API Reference for ListSandboxes Operation</seealso>
+        public virtual IAsyncResult BeginListSandboxes(ListSandboxesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSandboxesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSandboxesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSandboxes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSandboxes.</param>
+        /// 
+        /// <returns>Returns a  ListSandboxesResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSandboxes">REST API Reference for ListSandboxes Operation</seealso>
+        public virtual ListSandboxesResponse EndListSandboxes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSandboxesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSandboxesForProject
+
+        /// <summary>
+        /// Gets a list of sandboxes for a given project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSandboxesForProject service method.</param>
+        /// 
+        /// <returns>The response from the ListSandboxesForProject service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSandboxesForProject">REST API Reference for ListSandboxesForProject Operation</seealso>
+        public virtual ListSandboxesForProjectResponse ListSandboxesForProject(ListSandboxesForProjectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSandboxesForProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSandboxesForProjectResponseUnmarshaller.Instance;
+
+            return Invoke<ListSandboxesForProjectResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSandboxesForProject operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSandboxesForProject operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSandboxesForProject
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSandboxesForProject">REST API Reference for ListSandboxesForProject Operation</seealso>
+        public virtual IAsyncResult BeginListSandboxesForProject(ListSandboxesForProjectRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSandboxesForProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSandboxesForProjectResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSandboxesForProject operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSandboxesForProject.</param>
+        /// 
+        /// <returns>Returns a  ListSandboxesForProjectResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSandboxesForProject">REST API Reference for ListSandboxesForProject Operation</seealso>
+        public virtual ListSandboxesForProjectResponse EndListSandboxesForProject(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSandboxesForProjectResponse>(asyncResult);
         }
 
         #endregion
@@ -2850,6 +3141,189 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  StartCommandExecution
+
+        /// <summary>
+        /// Starts a command execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCommandExecution service method.</param>
+        /// 
+        /// <returns>The response from the StartCommandExecution service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartCommandExecution">REST API Reference for StartCommandExecution Operation</seealso>
+        public virtual StartCommandExecutionResponse StartCommandExecution(StartCommandExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCommandExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCommandExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StartCommandExecutionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartCommandExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartCommandExecution operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartCommandExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartCommandExecution">REST API Reference for StartCommandExecution Operation</seealso>
+        public virtual IAsyncResult BeginStartCommandExecution(StartCommandExecutionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCommandExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCommandExecutionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartCommandExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartCommandExecution.</param>
+        /// 
+        /// <returns>Returns a  StartCommandExecutionResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartCommandExecution">REST API Reference for StartCommandExecution Operation</seealso>
+        public virtual StartCommandExecutionResponse EndStartCommandExecution(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartCommandExecutionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartSandbox
+
+        /// <summary>
+        /// Starts a sandbox.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSandbox service method.</param>
+        /// 
+        /// <returns>The response from the StartSandbox service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.AccountSuspendedException">
+        /// The CodeBuild access has been suspended for the calling Amazon Web Services account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartSandbox">REST API Reference for StartSandbox Operation</seealso>
+        public virtual StartSandboxResponse StartSandbox(StartSandboxRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSandboxRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSandboxResponseUnmarshaller.Instance;
+
+            return Invoke<StartSandboxResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSandbox operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSandbox operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSandbox
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartSandbox">REST API Reference for StartSandbox Operation</seealso>
+        public virtual IAsyncResult BeginStartSandbox(StartSandboxRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSandboxRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSandboxResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartSandbox operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartSandbox.</param>
+        /// 
+        /// <returns>Returns a  StartSandboxResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartSandbox">REST API Reference for StartSandbox Operation</seealso>
+        public virtual StartSandboxResponse EndStartSandbox(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartSandboxResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartSandboxConnection
+
+        /// <summary>
+        /// Starts a sandbox connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSandboxConnection service method.</param>
+        /// 
+        /// <returns>The response from the StartSandboxConnection service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartSandboxConnection">REST API Reference for StartSandboxConnection Operation</seealso>
+        public virtual StartSandboxConnectionResponse StartSandboxConnection(StartSandboxConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSandboxConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSandboxConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<StartSandboxConnectionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSandboxConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSandboxConnection operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSandboxConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartSandboxConnection">REST API Reference for StartSandboxConnection Operation</seealso>
+        public virtual IAsyncResult BeginStartSandboxConnection(StartSandboxConnectionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSandboxConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSandboxConnectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartSandboxConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartSandboxConnection.</param>
+        /// 
+        /// <returns>Returns a  StartSandboxConnectionResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartSandboxConnection">REST API Reference for StartSandboxConnection Operation</seealso>
+        public virtual StartSandboxConnectionResponse EndStartSandboxConnection(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartSandboxConnectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StopBuild
 
         /// <summary>
@@ -2966,6 +3440,66 @@ namespace Amazon.CodeBuild
         public virtual StopBuildBatchResponse EndStopBuildBatch(IAsyncResult asyncResult)
         {
             return EndInvoke<StopBuildBatchResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopSandbox
+
+        /// <summary>
+        /// Stops a sandbox.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopSandbox service method.</param>
+        /// 
+        /// <returns>The response from the StopSandbox service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopSandbox">REST API Reference for StopSandbox Operation</seealso>
+        public virtual StopSandboxResponse StopSandbox(StopSandboxRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSandboxRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSandboxResponseUnmarshaller.Instance;
+
+            return Invoke<StopSandboxResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopSandbox operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopSandbox operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopSandbox
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopSandbox">REST API Reference for StopSandbox Operation</seealso>
+        public virtual IAsyncResult BeginStopSandbox(StopSandboxRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSandboxRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSandboxResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopSandbox operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopSandbox.</param>
+        /// 
+        /// <returns>Returns a  StopSandboxResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopSandbox">REST API Reference for StopSandbox Operation</seealso>
+        public virtual StopSandboxResponse EndStopSandbox(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopSandboxResponse>(asyncResult);
         }
 
         #endregion

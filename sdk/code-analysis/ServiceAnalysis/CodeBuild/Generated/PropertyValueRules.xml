@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.BatchGetCommandExecutionsRequest.SandboxId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.CreateFleetRequest.BaseCapacity</property>
     <min>1</min>
   </property-value-rule>
@@ -172,6 +176,15 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ListCommandExecutionsForSandboxRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ListCommandExecutionsForSandboxRequest.SandboxId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.ListFleetsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -194,6 +207,20 @@
     <property>Amazon.CodeBuild.Model.ListReportsForReportGroupRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ListSandboxesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ListSandboxesForProjectRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ListSandboxesForProjectRequest.ProjectName</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.ListSharedProjectsRequest.MaxResults</property>
@@ -290,11 +317,31 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.StartCommandExecutionRequest.Command</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.StartCommandExecutionRequest.SandboxId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.StartSandboxRequest.ProjectName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.StartSandboxConnectionRequest.SandboxId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.StopBuildRequest.Id</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.StopBuildBatchRequest.Id</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.StopSandboxRequest.Id</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -491,6 +538,38 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CommandExecution.Command</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CommandExecution.ExitCode</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CommandExecution.Id</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CommandExecution.SandboxArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CommandExecution.SandboxId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CommandExecution.StandardErrContent</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CommandExecution.StandardOutputContent</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CommandExecution.Status</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.DebugSession.SessionTarget</property>
     <min>1</min>
   </property-value-rule>
@@ -616,6 +695,38 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.S3ReportExportConfig.EncryptionKey</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Sandbox.Arn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Sandbox.EncryptionKey</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Sandbox.Id</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Sandbox.ProjectName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Sandbox.ServiceRole</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Sandbox.SourceVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.SandboxSession.Id</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.SandboxSession.ResolvedSourceVersion</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
