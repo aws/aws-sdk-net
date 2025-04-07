@@ -494,6 +494,10 @@ namespace Amazon.BedrockRuntime
         /// Constant BLOCKED for GuardrailContentPolicyAction
         /// </summary>
         public static readonly GuardrailContentPolicyAction BLOCKED = new GuardrailContentPolicyAction("BLOCKED");
+        /// <summary>
+        /// Constant NONE for GuardrailContentPolicyAction
+        /// </summary>
+        public static readonly GuardrailContentPolicyAction NONE = new GuardrailContentPolicyAction("NONE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -935,6 +939,56 @@ namespace Amazon.BedrockRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type GuardrailOutputScope.
+    /// </summary>
+    public class GuardrailOutputScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL for GuardrailOutputScope
+        /// </summary>
+        public static readonly GuardrailOutputScope FULL = new GuardrailOutputScope("FULL");
+        /// <summary>
+        /// Constant INTERVENTIONS for GuardrailOutputScope
+        /// </summary>
+        public static readonly GuardrailOutputScope INTERVENTIONS = new GuardrailOutputScope("INTERVENTIONS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailOutputScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailOutputScope FindValue(string value)
+        {
+            return FindValue<GuardrailOutputScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailOutputScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GuardrailPiiEntityType.
     /// </summary>
     public class GuardrailPiiEntityType : ConstantClass
@@ -1114,6 +1168,10 @@ namespace Amazon.BedrockRuntime
         /// Constant BLOCKED for GuardrailSensitiveInformationPolicyAction
         /// </summary>
         public static readonly GuardrailSensitiveInformationPolicyAction BLOCKED = new GuardrailSensitiveInformationPolicyAction("BLOCKED");
+        /// <summary>
+        /// Constant NONE for GuardrailSensitiveInformationPolicyAction
+        /// </summary>
+        public static readonly GuardrailSensitiveInformationPolicyAction NONE = new GuardrailSensitiveInformationPolicyAction("NONE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1210,6 +1268,10 @@ namespace Amazon.BedrockRuntime
         /// Constant BLOCKED for GuardrailTopicPolicyAction
         /// </summary>
         public static readonly GuardrailTopicPolicyAction BLOCKED = new GuardrailTopicPolicyAction("BLOCKED");
+        /// <summary>
+        /// Constant NONE for GuardrailTopicPolicyAction
+        /// </summary>
+        public static readonly GuardrailTopicPolicyAction NONE = new GuardrailTopicPolicyAction("NONE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1306,6 +1368,10 @@ namespace Amazon.BedrockRuntime
         /// Constant Enabled for GuardrailTrace
         /// </summary>
         public static readonly GuardrailTrace Enabled = new GuardrailTrace("enabled");
+        /// <summary>
+        /// Constant Enabled_full for GuardrailTrace
+        /// </summary>
+        public static readonly GuardrailTrace Enabled_full = new GuardrailTrace("enabled_full");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1352,6 +1418,10 @@ namespace Amazon.BedrockRuntime
         /// Constant BLOCKED for GuardrailWordPolicyAction
         /// </summary>
         public static readonly GuardrailWordPolicyAction BLOCKED = new GuardrailWordPolicyAction("BLOCKED");
+        /// <summary>
+        /// Constant NONE for GuardrailWordPolicyAction
+        /// </summary>
+        public static readonly GuardrailWordPolicyAction NONE = new GuardrailWordPolicyAction("NONE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1722,6 +1792,10 @@ namespace Amazon.BedrockRuntime
         /// Constant ENABLED for Trace
         /// </summary>
         public static readonly Trace ENABLED = new Trace("ENABLED");
+        /// <summary>
+        /// Constant ENABLED_FULL for Trace
+        /// </summary>
+        public static readonly Trace ENABLED_FULL = new Trace("ENABLED_FULL");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

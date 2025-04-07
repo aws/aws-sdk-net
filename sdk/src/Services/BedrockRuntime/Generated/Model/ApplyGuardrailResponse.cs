@@ -35,6 +35,7 @@ namespace Amazon.BedrockRuntime.Model
     public partial class ApplyGuardrailResponse : AmazonWebServiceResponse
     {
         private GuardrailAction _action;
+        private string _actionReason;
         private List<GuardrailAssessment> _assessments = AWSConfigs.InitializeCollections ? new List<GuardrailAssessment>() : null;
         private GuardrailCoverage _guardrailCoverage;
         private List<GuardrailOutputContent> _outputs = AWSConfigs.InitializeCollections ? new List<GuardrailOutputContent>() : null;
@@ -57,6 +58,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActionReason. 
+        /// <para>
+        /// The reason for the action taken when harmful content is detected.
+        /// </para>
+        /// </summary>
+        public string ActionReason
+        {
+            get { return this._actionReason; }
+            set { this._actionReason = value; }
+        }
+
+        // Check to see if ActionReason property is set
+        internal bool IsSetActionReason()
+        {
+            return this._actionReason != null;
         }
 
         /// <summary>

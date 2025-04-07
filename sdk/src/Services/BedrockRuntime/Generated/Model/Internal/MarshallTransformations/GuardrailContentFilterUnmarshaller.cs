@@ -78,6 +78,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("detected", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Detected = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("filterStrength", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -58,6 +58,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     response.Action = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("actionReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ActionReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("assessments", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<GuardrailAssessment, GuardrailAssessmentUnmarshaller>(GuardrailAssessmentUnmarshaller.Instance);

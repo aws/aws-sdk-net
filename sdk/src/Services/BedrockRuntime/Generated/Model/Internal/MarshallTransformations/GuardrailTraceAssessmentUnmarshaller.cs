@@ -66,6 +66,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("actionReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ActionReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inputAssessment", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, GuardrailAssessment, StringUnmarshaller, GuardrailAssessmentUnmarshaller>(StringUnmarshaller.Instance, GuardrailAssessmentUnmarshaller.Instance);
