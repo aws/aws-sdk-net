@@ -30,21 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostOptimizationHub.Model
 {
     /// <summary>
-    /// The ElastiCache reserved instances configuration used for recommendations.
+    /// The DynamoDB reserved capacity configuration used for recommendations.
     /// </summary>
-    public partial class ElastiCacheReservedInstancesConfiguration
+    public partial class DynamoDbReservedCapacityConfiguration
     {
         private string _accountScope;
-        private string _currentGeneration;
-        private string _instanceFamily;
-        private string _instanceType;
+        private string _capacityUnits;
         private string _monthlyRecurringCost;
-        private string _normalizedUnitsToPurchase;
-        private string _numberOfInstancesToPurchase;
+        private string _numberOfCapacityUnitsToPurchase;
         private string _paymentOption;
         private string _reservedInstancesRegion;
         private string _service;
-        private bool? _sizeFlexEligible;
         private string _term;
         private string _upfrontCost;
 
@@ -67,63 +63,27 @@ namespace Amazon.CostOptimizationHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CurrentGeneration. 
+        /// Gets and sets the property CapacityUnits. 
         /// <para>
-        /// Determines whether the recommendation is for a current generation instance.
+        /// The capacity unit of the recommended reservation.
         /// </para>
         /// </summary>
-        public string CurrentGeneration
+        public string CapacityUnits
         {
-            get { return this._currentGeneration; }
-            set { this._currentGeneration = value; }
+            get { return this._capacityUnits; }
+            set { this._capacityUnits = value; }
         }
 
-        // Check to see if CurrentGeneration property is set
-        internal bool IsSetCurrentGeneration()
+        // Check to see if CapacityUnits property is set
+        internal bool IsSetCapacityUnits()
         {
-            return this._currentGeneration != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property InstanceFamily. 
-        /// <para>
-        /// The instance family of the recommended reservation.
-        /// </para>
-        /// </summary>
-        public string InstanceFamily
-        {
-            get { return this._instanceFamily; }
-            set { this._instanceFamily = value; }
-        }
-
-        // Check to see if InstanceFamily property is set
-        internal bool IsSetInstanceFamily()
-        {
-            return this._instanceFamily != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property InstanceType. 
-        /// <para>
-        /// The type of instance that Amazon Web Services recommends.
-        /// </para>
-        /// </summary>
-        public string InstanceType
-        {
-            get { return this._instanceType; }
-            set { this._instanceType = value; }
-        }
-
-        // Check to see if InstanceType property is set
-        internal bool IsSetInstanceType()
-        {
-            return this._instanceType != null;
+            return this._capacityUnits != null;
         }
 
         /// <summary>
         /// Gets and sets the property MonthlyRecurringCost. 
         /// <para>
-        /// How much purchasing these reserved instances costs you on a monthly basis.
+        /// How much purchasing this reserved capacity costs you on a monthly basis.
         /// </para>
         /// </summary>
         public string MonthlyRecurringCost
@@ -139,39 +99,22 @@ namespace Amazon.CostOptimizationHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NormalizedUnitsToPurchase. 
+        /// Gets and sets the property NumberOfCapacityUnitsToPurchase. 
         /// <para>
-        /// The number of normalized units that Amazon Web Services recommends that you purchase.
+        /// The number of reserved capacity units that Amazon Web Services recommends that you
+        /// purchase.
         /// </para>
         /// </summary>
-        public string NormalizedUnitsToPurchase
+        public string NumberOfCapacityUnitsToPurchase
         {
-            get { return this._normalizedUnitsToPurchase; }
-            set { this._normalizedUnitsToPurchase = value; }
+            get { return this._numberOfCapacityUnitsToPurchase; }
+            set { this._numberOfCapacityUnitsToPurchase = value; }
         }
 
-        // Check to see if NormalizedUnitsToPurchase property is set
-        internal bool IsSetNormalizedUnitsToPurchase()
+        // Check to see if NumberOfCapacityUnitsToPurchase property is set
+        internal bool IsSetNumberOfCapacityUnitsToPurchase()
         {
-            return this._normalizedUnitsToPurchase != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property NumberOfInstancesToPurchase. 
-        /// <para>
-        /// The number of instances that Amazon Web Services recommends that you purchase.
-        /// </para>
-        /// </summary>
-        public string NumberOfInstancesToPurchase
-        {
-            get { return this._numberOfInstancesToPurchase; }
-            set { this._numberOfInstancesToPurchase = value; }
-        }
-
-        // Check to see if NumberOfInstancesToPurchase property is set
-        internal bool IsSetNumberOfInstancesToPurchase()
-        {
-            return this._numberOfInstancesToPurchase != null;
+            return this._numberOfCapacityUnitsToPurchase != null;
         }
 
         /// <summary>
@@ -229,27 +172,9 @@ namespace Amazon.CostOptimizationHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SizeFlexEligible. 
-        /// <para>
-        /// Determines whether the recommendation is size flexible.
-        /// </para>
-        /// </summary>
-        public bool SizeFlexEligible
-        {
-            get { return this._sizeFlexEligible.GetValueOrDefault(); }
-            set { this._sizeFlexEligible = value; }
-        }
-
-        // Check to see if SizeFlexEligible property is set
-        internal bool IsSetSizeFlexEligible()
-        {
-            return this._sizeFlexEligible.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Term. 
         /// <para>
-        /// The reserved instances recommendation term in years.
+        /// The reserved capacity recommendation term in years.
         /// </para>
         /// </summary>
         public string Term
@@ -267,7 +192,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// <summary>
         /// Gets and sets the property UpfrontCost. 
         /// <para>
-        /// How much purchasing this instance costs you upfront.
+        /// How much purchasing this reserved capacity costs you upfront.
         /// </para>
         /// </summary>
         public string UpfrontCost

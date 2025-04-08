@@ -30,9 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostOptimizationHub.Model
 {
     /// <summary>
-    /// The ElastiCache reserved instances configuration used for recommendations.
+    /// The MemoryDB reserved instances configuration used for recommendations.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// MemoryDB reserved instances are referred to as "MemoryDB reserved nodes" in customer-facing
+    /// documentation.
+    /// </para>
+    ///  </note>
     /// </summary>
-    public partial class ElastiCacheReservedInstancesConfiguration
+    public partial class MemoryDbReservedInstancesConfiguration
     {
         private string _accountScope;
         private string _currentGeneration;
@@ -267,7 +274,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// <summary>
         /// Gets and sets the property UpfrontCost. 
         /// <para>
-        /// How much purchasing this instance costs you upfront.
+        /// How much purchasing these reserved instances costs you upfront.
         /// </para>
         /// </summary>
         public string UpfrontCost

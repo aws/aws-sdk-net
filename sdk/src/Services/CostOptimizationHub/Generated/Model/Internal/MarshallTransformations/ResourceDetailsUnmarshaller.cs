@@ -72,6 +72,12 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComputeSavingsPlans = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dynamoDbReservedCapacity", targetDepth))
+                {
+                    var unmarshaller = DynamoDbReservedCapacityUnmarshaller.Instance;
+                    unmarshalledObject.DynamoDbReservedCapacity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ebsVolume", targetDepth))
                 {
                     var unmarshaller = EbsVolumeUnmarshaller.Instance;
@@ -118,6 +124,12 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = LambdaFunctionUnmarshaller.Instance;
                     unmarshalledObject.LambdaFunction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("memoryDbReservedInstances", targetDepth))
+                {
+                    var unmarshaller = MemoryDbReservedInstancesUnmarshaller.Instance;
+                    unmarshalledObject.MemoryDbReservedInstances = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("openSearchReservedInstances", targetDepth))
