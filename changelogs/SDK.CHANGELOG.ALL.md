@@ -1,3 +1,22 @@
+### 3.7.1019.0 (2025-04-08 18:53 UTC)
+* BedrockRuntime (3.7.418.0)
+	* This release introduces our latest bedrock runtime API, InvokeModelWithBidirectionalStream. The API supports both input and output streams and is supported by only HTTP2.0.
+* CostExplorer (3.7.406.0)
+	* This release supports Pagination traits on Cost Anomaly Detection APIs.
+* CostOptimizationHub (3.7.404.0)
+	* This release adds resource type "MemoryDbReservedInstances" and resource type "DynamoDbReservedCapacity" to the GetRecommendation, ListRecommendations, and ListRecommendationSummaries APIs to support new MemoryDB and DynamoDB RI recommendations.
+* IoTFleetWise (3.7.406.0)
+	* This release adds the option to update the strategy of state templates already associated to a vehicle, without the need to remove and re-add them.
+* SecurityHub (3.7.403.20)
+	* Documentation updates for AWS Security Hub.
+* StorageGateway (3.7.404.0)
+	* Added new ActiveDirectoryStatus value, ListCacheReports paginator, and support for longer pagination tokens.
+* TaxSettings (3.7.405.0)
+	* Uzbekistan Launch on TaxSettings Page
+* Core 3.7.402.36
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1018.0 (2025-04-07 18:46 UTC)
 * Bedrock (3.7.418.0)
 	* New options for how to handle harmful content detected by Amazon Bedrock Guardrails.
