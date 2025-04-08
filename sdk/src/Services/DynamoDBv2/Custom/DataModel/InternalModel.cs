@@ -209,6 +209,9 @@ namespace Amazon.DynamoDBv2.DataModel
                 this.Converter = Utils.InstantiateConverter(ConverterType, context) as IPropertyConverter;
             }
 
+            if (StoreAsEpoch && StoreAsEpochLong)
+                throw new InvalidOperationException(PropertyName + " must not set both StoreAsEpoch and StoreAsEpochLong as true at the same time.");
+
             IPropertyConverter converter;
             if (context.ConverterCache.TryGetValue(MemberType, out converter) && converter != null)
             {
