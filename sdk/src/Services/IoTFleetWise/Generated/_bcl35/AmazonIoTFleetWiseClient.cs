@@ -4578,6 +4578,15 @@ namespace Amazon.IoTFleetWise
 
         /// <summary>
         /// Updates a vehicle.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Access to certain Amazon Web Services IoT FleetWise features is currently gated. For
+        /// more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon
+        /// Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT
+        /// FleetWise Developer Guide</i>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateVehicle service method.</param>
         /// 
