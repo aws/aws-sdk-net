@@ -428,6 +428,9 @@ namespace Amazon.DynamoDBv2.DataModel
         // indexName to GSIConfig mapping
         public Dictionary<string, GSIConfig> IndexNameToGSIMapping { get; set; }
 
+        // entity conversion
+        public DynamoDBEntryConversion Conversion { get; set; }
+
 
         public bool StorePolymorphicTypes => this.PolymorphicTypesStorageConfig.Any();
 
@@ -735,6 +738,10 @@ namespace Amazon.DynamoDBv2.DataModel
 
                     if (tableCache.Cache.TryGetValue(actualTableName, out config))
                     {
+                        if (flatConfig == null)
+                            throw new ArgumentNullException("flatConfig");
+
+                        flatConfig.ItemConversion = config.Conversion;
                         return config;
                     }
                 }
@@ -759,6 +766,8 @@ namespace Amazon.DynamoDBv2.DataModel
                     if (tableCache == null)
                     {
                         var baseStorageConfig = CreateStorageConfig(type, actualTableName: null, flatConfig);
+                        flatConfig.ItemConversion = baseStorageConfig.Conversion;
+
                         tableCache = new ConfigTableCache(baseStorageConfig);
                         Cache[type] = tableCache;
                     }
@@ -780,6 +789,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 }
 
                 config = CreateStorageConfig(type, actualTableName, flatConfig);
+                flatConfig.ItemConversion = config.Conversion;
                 tableCache.Cache[actualTableName] = config;
 
                 return config;
@@ -858,6 +868,13 @@ namespace Amazon.DynamoDBv2.DataModel
                 if (string.IsNullOrEmpty(tableAttribute.TableName)) throw new InvalidOperationException("DynamoDBTableAttribute.Table is empty or null");
                 config.TableName = tableAttribute.TableName;
                 config.LowerCamelCaseProperties = tableAttribute.LowerCamelCaseProperties;
+
+                config.Conversion = tableAttribute.Conversion switch
+                {
+                    ConversionSchema.V1 => DynamoDBEntryConversion.V1,
+                    ConversionSchema.V2 => DynamoDBEntryConversion.V2,
+                    _ => config.Conversion
+                };
             }
 
             string tableAlias;
