@@ -42,6 +42,8 @@ namespace Amazon.SageMaker.Model
         private bool? _enableIamSessionBasedIdentity;
         private ErrorInfo _error;
         private string _executionRoleArn;
+        private string _kmsKeyId;
+        private DateTime? _lastModifiedTime;
         private PartnerAppMaintenanceConfig _maintenanceConfig;
         private string _name;
         private PartnerAppStatus _status;
@@ -198,6 +200,44 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetExecutionRoleArn()
         {
             return this._executionRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The Amazon Web Services KMS customer managed key used to encrypt the data at rest
+        /// associated with SageMaker Partner AI Apps.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The time that the SageMaker Partner AI App was last modified.
+        /// </para>
+        /// </summary>
+        public DateTime LastModifiedTime
+        {
+            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            set { this._lastModifiedTime = value; }
+        }
+
+        // Check to see if LastModifiedTime property is set
+        internal bool IsSetLastModifiedTime()
+        {
+            return this._lastModifiedTime.HasValue; 
         }
 
         /// <summary>

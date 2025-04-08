@@ -42,7 +42,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// <summary>
         /// Gets and sets the property AccountScope. 
         /// <para>
-        /// The account scope that you want your recommendations for. Amazon Web Services calculates
+        /// The account scope for which you want recommendations. Amazon Web Services calculates
         /// recommendations including the management account and member accounts if the value
         /// is set to <c>PAYER</c>. If the value is <c>LINKED</c>, recommendations are calculated
         /// for individual member accounts only.

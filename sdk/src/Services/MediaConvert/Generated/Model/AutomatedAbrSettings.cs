@@ -37,6 +37,7 @@ namespace Amazon.MediaConvert.Model
     public partial class AutomatedAbrSettings
     {
         private int? _maxAbrBitrate;
+        private double? _maxQualityLevel;
         private int? _maxRenditions;
         private int? _minAbrBitrate;
         private List<AutomatedAbrRule> _rules = AWSConfigs.InitializeCollections ? new List<AutomatedAbrRule>() : null;
@@ -60,6 +61,26 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetMaxAbrBitrate()
         {
             return this._maxAbrBitrate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxQualityLevel. Optional. Specify the QVBR quality level
+        /// to use for all renditions in your automated ABR stack. To have MediaConvert automatically
+        /// determine the quality level: Leave blank. To manually specify a quality level: Enter
+        /// an integer from 1 to 10. MediaConvert will use a quality level up to the value that
+        /// you specify, depending on your source. For more information about QVBR quality levels,
+        /// see: https://docs.aws.amazon.com/mediaconvert/latest/ug/qvbr-guidelines.html
+        /// </summary>
+        public double MaxQualityLevel
+        {
+            get { return this._maxQualityLevel.GetValueOrDefault(); }
+            set { this._maxQualityLevel = value; }
+        }
+
+        // Check to see if MaxQualityLevel property is set
+        internal bool IsSetMaxQualityLevel()
+        {
+            return this._maxQualityLevel.HasValue; 
         }
 
         /// <summary>

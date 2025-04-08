@@ -301,6 +301,7 @@ namespace Amazon.MediaPackageV2.Model
         }
 
         /// <summary>
+<<<<<<< HEAD
         /// Gets and sets the property ResetAt. 
         /// <para>
         /// The time that the origin endpoint was last reset.
@@ -319,6 +320,27 @@ namespace Amazon.MediaPackageV2.Model
         }
 
         /// <summary>
+||||||| Commit version number update changes
+=======
+        /// Gets and sets the property ResetAt. 
+        /// <para>
+        /// The time that the origin endpoint was last reset.
+        /// </para>
+        /// </summary>
+        public DateTime ResetAt
+        {
+            get { return this._resetAt.GetValueOrDefault(); }
+            set { this._resetAt = value; }
+        }
+
+        // Check to see if ResetAt property is set
+        internal bool IsSetResetAt()
+        {
+            return this._resetAt.HasValue; 
+        }
+
+        /// <summary>
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// Gets and sets the property Segment.
         /// </summary>
         [AWSProperty(Required=true)]

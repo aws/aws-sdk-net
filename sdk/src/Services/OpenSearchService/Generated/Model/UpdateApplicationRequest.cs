@@ -31,7 +31,7 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApplication operation.
-    /// Update the OpenSearch Application.
+    /// Updates the configuration and settings of an existing OpenSearch application.
     /// </summary>
     public partial class UpdateApplicationRequest : AmazonOpenSearchServiceRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AppConfigs. 
         /// <para>
-        /// Configurations to be changed for the OpenSearch Application.
+        /// The configuration settings to modify for the OpenSearch application.
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]
@@ -61,7 +61,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DataSources. 
         /// <para>
-        /// Data sources to be associated with the OpenSearch Application.
+        /// The data sources to associate with the OpenSearch application.
         /// </para>
         /// </summary>
         public List<DataSource> DataSources
@@ -79,7 +79,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Unique identifier of the OpenSearch Application to be updated.
+        /// The unique identifier for the OpenSearch application to be updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -64,8 +64,8 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property ExpiresIn. 
         /// <para>
-        /// The length of time that you want a zonal shift to be active, which Route 53 ARC converts
-        /// to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal
+        /// The length of time that you want a zonal shift to be active, which ARC converts to
+        /// an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal
         /// shift to be active initially for up to three days (72 hours).
         /// </para>
         ///  

@@ -46,6 +46,22 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAttachments())
+            {
+                context.Writer.WritePropertyName("Attachments");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAttachmentsListValue in requestObject.Attachments)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AttachmentMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAttachmentsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetBody())
             {
                 context.Writer.WritePropertyName("Body");

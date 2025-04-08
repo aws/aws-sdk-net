@@ -78,7 +78,7 @@ namespace Amazon.ARCZonalShift.Model
         /// Gets and sets the property BlockedWindows. 
         /// <para>
         /// Add, change, or remove windows of days and times for when you can, optionally, block
-        /// Route 53 ARC from starting a practice run for a resource.
+        /// ARC from starting a practice run for a resource.
         /// </para>
         ///  
         /// <para>

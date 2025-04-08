@@ -64,6 +64,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
+            if(requestObject.IsSetUseServiceName())
+            {
+                context.Writer.WritePropertyName("UseServiceName");
+                context.Writer.Write(requestObject.UseServiceName);
+            }
+
         }
 
         /// <summary>

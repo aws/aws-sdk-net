@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// Specifies the weights for the fair share identifiers for the fair share policy. Fair
-    /// share identifiers that aren't included have a default weight of <c>1.0</c>.
+    /// Specifies the weights for the share identifiers for the fair-share policy. Share identifiers
+    /// that aren't included have a default weight of <c>1.0</c>.
     /// </summary>
     public partial class ShareAttributes
     {
@@ -41,15 +41,15 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ShareIdentifier. 
         /// <para>
-        /// A fair share identifier or fair share identifier prefix. If the string ends with an
-        /// asterisk (*), this entry specifies the weight factor to use for fair share identifiers
-        /// that start with that prefix. The list of fair share identifiers in a fair share policy
-        /// can't overlap. For example, you can't have one that specifies a <c>shareIdentifier</c>
-        /// of <c>UserA*</c> and another that specifies a <c>shareIdentifier</c> of <c>UserA-1</c>.
+        /// A share identifier or share identifier prefix. If the string ends with an asterisk
+        /// (*), this entry specifies the weight factor to use for share identifiers that start
+        /// with that prefix. The list of share identifiers in a fair-share policy can't overlap.
+        /// For example, you can't have one that specifies a <c>shareIdentifier</c> of <c>UserA*</c>
+        /// and another that specifies a <c>shareIdentifier</c> of <c>UserA-1</c>.
         /// </para>
         ///  
         /// <para>
-        /// There can be no more than 500 fair share identifiers active in a job queue.
+        /// There can be no more than 500 share identifiers active in a job queue.
         /// </para>
         ///  
         /// <para>
@@ -73,10 +73,10 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property WeightFactor. 
         /// <para>
-        /// The weight factor for the fair share identifier. The default value is 1.0. A lower
-        /// value has a higher priority for compute resources. For example, jobs that use a share
-        /// identifier with a weight factor of 0.125 (1/8) get 8 times the compute resources of
-        /// jobs that use a share identifier with a weight factor of 1.
+        /// The weight factor for the share identifier. The default value is 1.0. A lower value
+        /// has a higher priority for compute resources. For example, jobs that use a share identifier
+        /// with a weight factor of 0.125 (1/8) get 8 times the compute resources of jobs that
+        /// use a share identifier with a weight factor of 1.
         /// </para>
         ///  
         /// <para>

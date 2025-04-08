@@ -34,9 +34,28 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class GuardrailTraceAssessment
     {
+        private string _actionReason;
         private Dictionary<string, GuardrailAssessment> _inputAssessment = AWSConfigs.InitializeCollections ? new Dictionary<string, GuardrailAssessment>() : null;
         private List<string> _modelOutput = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, List<GuardrailAssessment>> _outputAssessments = AWSConfigs.InitializeCollections ? new Dictionary<string, List<GuardrailAssessment>>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ActionReason. 
+        /// <para>
+        /// Provides the reason for the action taken when harmful content is detected.
+        /// </para>
+        /// </summary>
+        public string ActionReason
+        {
+            get { return this._actionReason; }
+            set { this._actionReason = value; }
+        }
+
+        // Check to see if ActionReason property is set
+        internal bool IsSetActionReason()
+        {
+            return this._actionReason != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InputAssessment. 

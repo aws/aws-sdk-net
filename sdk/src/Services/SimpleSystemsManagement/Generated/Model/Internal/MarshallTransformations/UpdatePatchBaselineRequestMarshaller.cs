@@ -109,11 +109,31 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.ApprovedPatchesEnableNonSecurity.Value);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetBaselineId())
             {
                 context.Writer.WritePropertyName("BaselineId");
                 context.Writer.WriteStringValue(publicRequest.BaselineId);
             }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetBaselineId())
+                {
+                    context.Writer.WritePropertyName("BaselineId");
+                    context.Writer.Write(publicRequest.BaselineId);
+                }
+=======
+                if(publicRequest.IsSetAvailableSecurityUpdatesComplianceStatus())
+                {
+                    context.Writer.WritePropertyName("AvailableSecurityUpdatesComplianceStatus");
+                    context.Writer.Write(publicRequest.AvailableSecurityUpdatesComplianceStatus);
+                }
+
+                if(publicRequest.IsSetBaselineId())
+                {
+                    context.Writer.WritePropertyName("BaselineId");
+                    context.Writer.Write(publicRequest.BaselineId);
+                }
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
             if(publicRequest.IsSetDescription())
             {

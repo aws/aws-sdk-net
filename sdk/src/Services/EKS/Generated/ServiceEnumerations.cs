@@ -269,6 +269,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly AMITypes BOTTLEROCKET_ARM_64 = new AMITypes("BOTTLEROCKET_ARM_64");
         /// <summary>
+        /// Constant BOTTLEROCKET_ARM_64_FIPS for AMITypes
+        /// </summary>
+        public static readonly AMITypes BOTTLEROCKET_ARM_64_FIPS = new AMITypes("BOTTLEROCKET_ARM_64_FIPS");
+        /// <summary>
         /// Constant BOTTLEROCKET_ARM_64_NVIDIA for AMITypes
         /// </summary>
         public static readonly AMITypes BOTTLEROCKET_ARM_64_NVIDIA = new AMITypes("BOTTLEROCKET_ARM_64_NVIDIA");
@@ -276,6 +280,10 @@ namespace Amazon.EKS
         /// Constant BOTTLEROCKET_x86_64 for AMITypes
         /// </summary>
         public static readonly AMITypes BOTTLEROCKET_x86_64 = new AMITypes("BOTTLEROCKET_x86_64");
+        /// <summary>
+        /// Constant BOTTLEROCKET_x86_64_FIPS for AMITypes
+        /// </summary>
+        public static readonly AMITypes BOTTLEROCKET_x86_64_FIPS = new AMITypes("BOTTLEROCKET_x86_64_FIPS");
         /// <summary>
         /// Constant BOTTLEROCKET_x86_64_NVIDIA for AMITypes
         /// </summary>
@@ -1985,6 +1993,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType ReleaseVersion = new UpdateParamType("ReleaseVersion");
         /// <summary>
+        /// Constant RemoteNetworkConfig for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType RemoteNetworkConfig = new UpdateParamType("RemoteNetworkConfig");
+        /// <summary>
         /// Constant ResolveConflicts for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType ResolveConflicts = new UpdateParamType("ResolveConflicts");
@@ -2164,6 +2176,10 @@ namespace Amazon.EKS
         /// Constant LoggingUpdate for UpdateType
         /// </summary>
         public static readonly UpdateType LoggingUpdate = new UpdateType("LoggingUpdate");
+        /// <summary>
+        /// Constant RemoteNetworkConfigUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType RemoteNetworkConfigUpdate = new UpdateType("RemoteNetworkConfigUpdate");
         /// <summary>
         /// Constant UpgradePolicyUpdate for UpdateType
         /// </summary>

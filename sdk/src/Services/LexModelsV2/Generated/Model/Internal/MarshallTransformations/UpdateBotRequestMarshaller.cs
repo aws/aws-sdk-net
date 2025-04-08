@@ -112,8 +112,33 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 var marshaller = DataPrivacyMarshaller.Instance;
                 marshaller.Marshall(publicRequest.DataPrivacy, context);
 
+<<<<<<< HEAD
                 context.Writer.WriteEndObject();
             }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetIdleSessionTTLInSeconds())
+                {
+                    context.Writer.WritePropertyName("idleSessionTTLInSeconds");
+                    context.Writer.Write(publicRequest.IdleSessionTTLInSeconds);
+                }
+=======
+                if(publicRequest.IsSetErrorLogSettings())
+                {
+                    context.Writer.WritePropertyName("errorLogSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ErrorLogSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ErrorLogSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetIdleSessionTTLInSeconds())
+                {
+                    context.Writer.WritePropertyName("idleSessionTTLInSeconds");
+                    context.Writer.Write(publicRequest.IdleSessionTTLInSeconds);
+                }
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
             if(publicRequest.IsSetDescription())
             {

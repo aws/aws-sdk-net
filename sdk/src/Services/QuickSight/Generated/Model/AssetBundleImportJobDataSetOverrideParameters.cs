@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class AssetBundleImportJobDataSetOverrideParameters
     {
         private string _dataSetId;
+        private DataSetRefreshProperties _dataSetRefreshProperties;
         private string _name;
 
         /// <summary>
@@ -54,6 +55,21 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDataSetId()
         {
             return this._dataSetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSetRefreshProperties.
+        /// </summary>
+        public DataSetRefreshProperties DataSetRefreshProperties
+        {
+            get { return this._dataSetRefreshProperties; }
+            set { this._dataSetRefreshProperties = value; }
+        }
+
+        // Check to see if DataSetRefreshProperties property is set
+        internal bool IsSetDataSetRefreshProperties()
+        {
+            return this._dataSetRefreshProperties != null;
         }
 
         /// <summary>

@@ -46,12 +46,22 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+<<<<<<< HEAD
             if(requestObject.IsSetIdcInstanceArn())
             {
                 context.Writer.WritePropertyName("idcInstanceArn");
                 context.Writer.WriteStringValue(requestObject.IdcInstanceArn);
             }
 
+||||||| Commit version number update changes
+=======
+            if(requestObject.IsSetIdcInstanceArn())
+            {
+                context.Writer.WritePropertyName("idcInstanceArn");
+                context.Writer.Write(requestObject.IdcInstanceArn);
+            }
+
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");

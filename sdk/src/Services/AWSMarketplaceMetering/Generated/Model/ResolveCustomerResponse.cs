@@ -42,8 +42,8 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <summary>
         /// Gets and sets the property CustomerAWSAccountId. 
         /// <para>
-        /// The <c>CustomerAWSAccountId</c> provides the AWS account ID associated with the <c>CustomerIdentifier</c>
-        /// for the individual customer.
+        /// The <c>CustomerAWSAccountId</c> provides the Amazon Web Services account ID associated
+        /// with the <c>CustomerIdentifier</c> for the individual customer.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -66,7 +66,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// Calls to <c>BatchMeterUsage</c> require <c>CustomerIdentifiers</c> for each <c>UsageRecord</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string CustomerIdentifier
         {
             get { return this._customerIdentifier; }

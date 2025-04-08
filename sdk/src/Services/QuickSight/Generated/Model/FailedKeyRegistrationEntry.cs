@@ -84,7 +84,7 @@ namespace Amazon.QuickSight.Model
         /// user error. If the value of this property is <c>True</c>, the error was caused by
         /// user error. If the value of this property is <c>False</c>, the error occurred on the
         /// backend. If your job continues fail and with a <c>False</c> <c>SenderFault</c> value,
-        /// contact Amazon Web Services Support.
+        /// contact Amazon Web ServicesSupport.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

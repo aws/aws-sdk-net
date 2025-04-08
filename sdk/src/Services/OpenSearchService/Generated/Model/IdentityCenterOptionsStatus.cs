@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The status of IAM Identity Center Options settings for a domain.
+    /// The status of IAM Identity Center configuration settings for a domain.
     /// </summary>
     public partial class IdentityCenterOptionsStatus
     {
@@ -40,7 +40,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// Container for IAM Identity Center Options settings.
+        /// Configuration settings for IAM Identity Center integration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of IAM Identity Center Options settings for a domain.
+        /// The status of IAM Identity Center configuration settings for a domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

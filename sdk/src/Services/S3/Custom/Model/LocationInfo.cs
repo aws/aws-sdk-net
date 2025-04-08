@@ -21,18 +21,20 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Specifies the location where the bucket will be created.
-    /// 
-    ///  
     /// <para>
-    /// For directory buckets, the location type is Availability Zone. For more information
-    /// about directory buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
-    /// buckets</a> in the <i>Amazon S3 User Guide</i>.
-    /// </para>
-    ///  <note> 
+    /// Specifies the location where the bucket will be created.
+    /// </para> 
+    /// <para> 
+    /// <b>Directory buckets </b> - The location type is Availability Zone or Local Zone. To use the Local Zone location type, your account must be enabled 
+    /// for Dedicated Local Zones. Otherwise, you get an HTTP <c>403 Forbidden</c> error with the error code <c>AccessDenied</c>. To learn more, see 
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/opt-in-directory-bucket-lz.html">Enable accounts for Dedicated Local Zones</a> in 
+    /// the <i>Amazon S3 User Guide</i>. 
+    /// </para> 
+    /// <note> 
     /// <para>
     /// This functionality is only supported by directory buckets.
-    /// </para>
-    ///  </note>
+    /// </para> 
+    /// </note>
     /// </summary>
     public class LocationInfo
     {

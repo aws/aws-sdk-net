@@ -89,6 +89,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>dedicated-hosts-supported</c> - Indicates whether the instance type supports Dedicated
+        /// Hosts. (<c>true</c> | <c>false</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</c> - The baseline bandwidth
         /// performance for an EBS-optimized instance type, in Mbps.
         /// </para>

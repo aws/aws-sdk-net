@@ -63,6 +63,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
+<<<<<<< HEAD
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
@@ -71,6 +72,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
                 }
+||||||| Commit version number update changes
+=======
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
+                }
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
                 if(publicRequest.IsSetLaunchTemplateData())
                 {
                     if(publicRequest.LaunchTemplateData.IsSetBlockDeviceMappings())

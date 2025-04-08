@@ -46,6 +46,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetMatchType())
+            {
+                context.Writer.WritePropertyName("matchType");
+                context.Writer.Write(requestObject.MatchType);
+            }
+
             if(requestObject.IsSetSearchTerm())
             {
                 context.Writer.WritePropertyName("searchTerm");

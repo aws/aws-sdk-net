@@ -56,12 +56,22 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+<<<<<<< HEAD
                 if (context.TestExpression("analysisRuleTypes", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AnalysisRuleTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+||||||| Commit version number update changes
+=======
+                if (context.TestExpression("analysisRuleTypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AnalysisRuleTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

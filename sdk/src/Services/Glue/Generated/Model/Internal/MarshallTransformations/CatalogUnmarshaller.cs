@@ -56,12 +56,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+<<<<<<< HEAD
                 if (context.TestExpression("AllowFullTableExternalDataAccess", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AllowFullTableExternalDataAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+||||||| Commit version number update changes
+=======
+                if (context.TestExpression("AllowFullTableExternalDataAccess", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AllowFullTableExternalDataAccess = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
                 if (context.TestExpression("CatalogId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

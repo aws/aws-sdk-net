@@ -342,6 +342,7 @@ namespace Amazon.Amplify.Model
         }
 
         /// <summary>
+<<<<<<< HEAD
         /// Gets and sets the property EnableSkewProtection. 
         /// <para>
         /// Specifies whether the skew protection feature is enabled for the branch.
@@ -369,6 +370,36 @@ namespace Amazon.Amplify.Model
         }
 
         /// <summary>
+||||||| Commit version number update changes
+=======
+        /// Gets and sets the property EnableSkewProtection. 
+        /// <para>
+        /// Specifies whether the skew protection feature is enabled for the branch.
+        /// </para>
+        ///  
+        /// <para>
+        /// Deployment skew protection is available to Amplify applications to eliminate version
+        /// skew issues between client and servers in web applications. When you apply skew protection
+        /// to a branch, you can ensure that your clients always interact with the correct version
+        /// of server-side assets, regardless of when a deployment occurs. For more information
+        /// about skew protection, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/skew-protection.html">Skew
+        /// protection for Amplify deployments</a> in the <i>Amplify User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool EnableSkewProtection
+        {
+            get { return this._enableSkewProtection.GetValueOrDefault(); }
+            set { this._enableSkewProtection = value; }
+        }
+
+        // Check to see if EnableSkewProtection property is set
+        internal bool IsSetEnableSkewProtection()
+        {
+            return this._enableSkewProtection.HasValue; 
+        }
+
+        /// <summary>
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// Gets and sets the property EnvironmentVariables. 
         /// <para>
         ///  The environment variables for the branch. 

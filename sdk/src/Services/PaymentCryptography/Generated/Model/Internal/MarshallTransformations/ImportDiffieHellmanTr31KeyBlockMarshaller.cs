@@ -1,0 +1,112 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the payment-cryptography-2021-09-14.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.PaymentCryptography.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+#pragma warning disable CS0612,CS0618
+namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// ImportDiffieHellmanTr31KeyBlock Marshaller
+    /// </summary>
+    public class ImportDiffieHellmanTr31KeyBlockMarshaller : IRequestMarshaller<ImportDiffieHellmanTr31KeyBlock, JsonMarshallerContext> 
+    {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public void Marshall(ImportDiffieHellmanTr31KeyBlock requestObject, JsonMarshallerContext context)
+        {
+            if(requestObject == null)
+                return;
+            if(requestObject.IsSetCertificateAuthorityPublicKeyIdentifier())
+            {
+                context.Writer.WritePropertyName("CertificateAuthorityPublicKeyIdentifier");
+                context.Writer.Write(requestObject.CertificateAuthorityPublicKeyIdentifier);
+            }
+
+            if(requestObject.IsSetDerivationData())
+            {
+                context.Writer.WritePropertyName("DerivationData");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DiffieHellmanDerivationDataMarshaller.Instance;
+                marshaller.Marshall(requestObject.DerivationData, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDeriveKeyAlgorithm())
+            {
+                context.Writer.WritePropertyName("DeriveKeyAlgorithm");
+                context.Writer.Write(requestObject.DeriveKeyAlgorithm);
+            }
+
+            if(requestObject.IsSetKeyDerivationFunction())
+            {
+                context.Writer.WritePropertyName("KeyDerivationFunction");
+                context.Writer.Write(requestObject.KeyDerivationFunction);
+            }
+
+            if(requestObject.IsSetKeyDerivationHashAlgorithm())
+            {
+                context.Writer.WritePropertyName("KeyDerivationHashAlgorithm");
+                context.Writer.Write(requestObject.KeyDerivationHashAlgorithm);
+            }
+
+            if(requestObject.IsSetPrivateKeyIdentifier())
+            {
+                context.Writer.WritePropertyName("PrivateKeyIdentifier");
+                context.Writer.Write(requestObject.PrivateKeyIdentifier);
+            }
+
+            if(requestObject.IsSetPublicKeyCertificate())
+            {
+                context.Writer.WritePropertyName("PublicKeyCertificate");
+                context.Writer.Write(requestObject.PublicKeyCertificate);
+            }
+
+            if(requestObject.IsSetWrappedKeyBlock())
+            {
+                context.Writer.WritePropertyName("WrappedKeyBlock");
+                context.Writer.Write(requestObject.WrappedKeyBlock);
+            }
+
+        }
+
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>
+        public readonly static ImportDiffieHellmanTr31KeyBlockMarshaller Instance = new ImportDiffieHellmanTr31KeyBlockMarshaller();
+
+    }
+}

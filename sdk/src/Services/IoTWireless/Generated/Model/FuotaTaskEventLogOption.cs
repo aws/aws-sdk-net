@@ -31,11 +31,11 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// The log options for a FUOTA task event and can be used to set log levels for a specific
-    /// fuota task event.
+    /// FUOTA task event.
     /// 
     ///  
     /// <para>
-    /// For a LoRaWAN FuotaTask type, possible event for a log message is <c>Fuota</c>.
+    /// For a LoRaWAN FUOTA task, the only possible event for a log message is <c>Fuota</c>.
     /// </para>
     /// </summary>
     public partial class FuotaTaskEventLogOption

@@ -62,7 +62,7 @@ namespace Amazon.StorageGateway.Model
         /// If the request includes <c>Marker</c>, the response returns that value in this field.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=2000)]
         public string Marker
         {
             get { return this._marker; }
@@ -83,7 +83,7 @@ namespace Amazon.StorageGateway.Model
         /// shares.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=2000)]
         public string NextMarker
         {
             get { return this._nextMarker; }

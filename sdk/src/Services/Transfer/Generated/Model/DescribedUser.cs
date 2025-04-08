@@ -231,6 +231,15 @@ namespace Amazon.Transfer.Model
         /// Specifies the public key portion of the Secure Shell (SSH) keys stored for the described
         /// user.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To delete the public key body, set its value to zero keys, as shown here:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>SshPublicKeys: []</c> 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<SshPublicKey> SshPublicKeys

@@ -46,6 +46,7 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+<<<<<<< HEAD
             if(requestObject.IsSetConversationHistory())
             {
                 context.Writer.WritePropertyName("conversationHistory");
@@ -57,6 +58,20 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+||||||| Commit version number update changes
+=======
+            if(requestObject.IsSetConversationHistory())
+            {
+                context.Writer.WritePropertyName("conversationHistory");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConversationHistoryMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConversationHistory, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             if(requestObject.IsSetFiles())
             {
                 context.Writer.WritePropertyName("files");

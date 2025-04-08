@@ -68,6 +68,28 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetNeptuneAnalyticsConfiguration())
+            {
+                context.Writer.WritePropertyName("neptuneAnalyticsConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = NeptuneAnalyticsConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.NeptuneAnalyticsConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetOpensearchManagedClusterConfiguration())
+            {
+                context.Writer.WritePropertyName("opensearchManagedClusterConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OpenSearchManagedClusterConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.OpensearchManagedClusterConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetOpensearchServerlessConfiguration())
             {
                 context.Writer.WritePropertyName("opensearchServerlessConfiguration");

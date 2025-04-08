@@ -43,6 +43,7 @@ namespace Amazon.Glue.Model
         /// A list of the conditions that determine when the trigger will fire.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=500)]
         public List<Condition> Conditions
         {
             get { return this._conditions; }

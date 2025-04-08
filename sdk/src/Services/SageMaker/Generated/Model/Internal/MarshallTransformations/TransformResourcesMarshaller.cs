@@ -58,6 +58,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
+            if(requestObject.IsSetTransformAmiVersion())
+            {
+                context.Writer.WritePropertyName("TransformAmiVersion");
+                context.Writer.Write(requestObject.TransformAmiVersion);
+            }
+
             if(requestObject.IsSetVolumeKmsKeyId())
             {
                 context.Writer.WritePropertyName("VolumeKmsKeyId");

@@ -47,6 +47,11 @@ namespace Amazon.StorageGateway.Model
         IDescribeVTLDevicesPaginator DescribeVTLDevices(DescribeVTLDevicesRequest request);
 
         /// <summary>
+        /// Paginator for ListCacheReports operation
+        ///</summary>
+        IListCacheReportsPaginator ListCacheReports(ListCacheReportsRequest request);
+
+        /// <summary>
         /// Paginator for ListFileShares operation
         ///</summary>
         IListFileSharesPaginator ListFileShares(ListFileSharesRequest request);

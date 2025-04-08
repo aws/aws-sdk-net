@@ -90,6 +90,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
                 context.Writer.WriteStringValue(publicRequest.ClusterName);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetNetworkType())
             {
                 context.Writer.WritePropertyName("NetworkType");
@@ -101,6 +102,17 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
                 context.Writer.WritePropertyName("Tags");
                 context.Writer.WriteStartObject();
                 foreach (var publicRequestTagsKvp in publicRequest.Tags)
+||||||| Commit version number update changes
+                if(publicRequest.IsSetTags())
+=======
+                if(publicRequest.IsSetNetworkType())
+                {
+                    context.Writer.WritePropertyName("NetworkType");
+                    context.Writer.Write(publicRequest.NetworkType);
+                }
+
+                if(publicRequest.IsSetTags())
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
                 {
                     context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
                     var publicRequestTagsValue = publicRequestTagsKvp.Value;

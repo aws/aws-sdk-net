@@ -67,7 +67,7 @@ namespace Amazon.SimpleEmailV2.Internal
                         {
                             if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                             {
-                                return new Endpoint(Interpolate(@"https://{EndpointId}.endpoints.email.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4a"",""signingName"":""ses"",""signingRegionSet"":[""*""]}]}", refs), InterpolateJson(@"", refs));
+                                return new Endpoint(Interpolate(@"https://{EndpointId}.endpoints.email.global.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4a"",""signingName"":""ses"",""signingRegionSet"":[""*""]}]}", refs), InterpolateJson(@"", refs));
                             }
                             throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
                         }

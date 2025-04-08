@@ -36,6 +36,7 @@ namespace Amazon.BedrockRuntime.Model
     {
         private GuardrailContentPolicyAction _action;
         private GuardrailContentFilterConfidence _confidence;
+        private bool? _detected;
         private GuardrailContentFilterStrength _filterStrength;
         private GuardrailContentFilterType _type;
 
@@ -75,6 +76,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetConfidence()
         {
             return this._confidence != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Detected. 
+        /// <para>
+        /// Indicates whether content that breaches the guardrail configuration is detected.
+        /// </para>
+        /// </summary>
+        public bool Detected
+        {
+            get { return this._detected.GetValueOrDefault(); }
+            set { this._detected = value; }
+        }
+
+        // Check to see if Detected property is set
+        internal bool IsSetDetected()
+        {
+            return this._detected.HasValue; 
         }
 
         /// <summary>

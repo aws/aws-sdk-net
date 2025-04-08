@@ -421,6 +421,10 @@ namespace Amazon.CostOptimizationHub
         /// </summary>
         public static readonly ResourceType ComputeSavingsPlans = new ResourceType("ComputeSavingsPlans");
         /// <summary>
+        /// Constant DynamoDbReservedCapacity for ResourceType
+        /// </summary>
+        public static readonly ResourceType DynamoDbReservedCapacity = new ResourceType("DynamoDbReservedCapacity");
+        /// <summary>
         /// Constant EbsVolume for ResourceType
         /// </summary>
         public static readonly ResourceType EbsVolume = new ResourceType("EbsVolume");
@@ -452,6 +456,10 @@ namespace Amazon.CostOptimizationHub
         /// Constant LambdaFunction for ResourceType
         /// </summary>
         public static readonly ResourceType LambdaFunction = new ResourceType("LambdaFunction");
+        /// <summary>
+        /// Constant MemoryDbReservedInstances for ResourceType
+        /// </summary>
+        public static readonly ResourceType MemoryDbReservedInstances = new ResourceType("MemoryDbReservedInstances");
         /// <summary>
         /// Constant OpenSearchReservedInstances for ResourceType
         /// </summary>

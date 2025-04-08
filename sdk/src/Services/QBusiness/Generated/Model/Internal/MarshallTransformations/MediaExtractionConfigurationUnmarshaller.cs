@@ -56,12 +56,22 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+<<<<<<< HEAD
                 if (context.TestExpression("audioExtractionConfiguration", targetDepth))
                 {
                     var unmarshaller = AudioExtractionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AudioExtractionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+||||||| Commit version number update changes
+=======
+                if (context.TestExpression("audioExtractionConfiguration", targetDepth))
+                {
+                    var unmarshaller = AudioExtractionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AudioExtractionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
                 if (context.TestExpression("imageExtractionConfiguration", targetDepth))
                 {
                     var unmarshaller = ImageExtractionConfigurationUnmarshaller.Instance;
@@ -72,6 +82,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = VideoExtractionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.VideoExtractionConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("videoExtractionConfiguration", targetDepth))
+                {
+                    var unmarshaller = VideoExtractionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.VideoExtractionConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

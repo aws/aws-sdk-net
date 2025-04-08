@@ -90,16 +90,64 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetKeyAttributes())
             {
+<<<<<<< HEAD
                 context.Writer.WritePropertyName("KeyAttributes");
                 context.Writer.WriteStartObject();
                 foreach (var publicRequestKeyAttributesKvp in publicRequest.KeyAttributes)
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetKeyAttributes())
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDependencyConfig())
+                {
+                    context.Writer.WritePropertyName("DependencyConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DependencyConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DependencyConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetKeyAttributes())
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
                 {
                     context.Writer.WritePropertyName(publicRequestKeyAttributesKvp.Key);
                     var publicRequestKeyAttributesValue = publicRequestKeyAttributesKvp.Value;
 
                         context.Writer.WriteStringValue(publicRequestKeyAttributesValue);
                 }
+<<<<<<< HEAD
                 context.Writer.WriteEndObject();
+||||||| Commit version number update changes
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+
+                if(publicRequest.IsSetMetricSourceTypes())
+                {
+                    context.Writer.WritePropertyName("MetricSourceTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMetricSourceTypesListValue in publicRequest.MetricSourceTypes)
+                    {
+                            context.Writer.Write(publicRequestMetricSourceTypesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             }
 
             writer.WriteEndObject();

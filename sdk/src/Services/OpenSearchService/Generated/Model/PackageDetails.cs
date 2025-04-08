@@ -220,7 +220,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageEncryptionOptions. 
         /// <para>
-        /// Package Encryption Options for a package.
+        /// Encryption options for a package.
         /// </para>
         /// </summary>
         public PackageEncryptionOptions PackageEncryptionOptions
@@ -275,8 +275,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageOwner. 
         /// <para>
-        /// The owner of the package who is allowed to create/update a package and add users to
-        /// the package scope.
+        /// The owner of the package who is allowed to create and update a package and add users
+        /// to the package scope.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

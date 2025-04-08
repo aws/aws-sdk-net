@@ -68,6 +68,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             request.AddPathResource("{FlowArn}", StringUtils.FromString(publicRequest.FlowArn));
             if (!publicRequest.IsSetSourceArn())
                 throw new AmazonMediaConnectException("Request object does not have required field SourceArn set");
+<<<<<<< HEAD
             request.AddPathResource("{SourceArn}", StringUtils.FromString(publicRequest.SourceArn));
             request.ResourcePath = "/v1/flows/{FlowArn}/source/{SourceArn}";
 #if !NETFRAMEWORK
@@ -83,6 +84,33 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("decryption");
                 context.Writer.WriteStartObject();
+||||||| Commit version number update changes
+            request.AddPathResource("{sourceArn}", StringUtils.FromString(publicRequest.SourceArn));
+            request.ResourcePath = "/v1/flows/{flowArn}/source/{sourceArn}";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDecryption())
+                {
+                    context.Writer.WritePropertyName("decryption");
+                    context.Writer.WriteObjectStart();
+=======
+            request.AddPathResource("{SourceArn}", StringUtils.FromString(publicRequest.SourceArn));
+            request.ResourcePath = "/v1/flows/{FlowArn}/source/{SourceArn}";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDecryption())
+                {
+                    context.Writer.WritePropertyName("decryption");
+                    context.Writer.WriteObjectStart();
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
                 var marshaller = UpdateEncryptionMarshaller.Instance;
                 marshaller.Marshall(publicRequest.Decryption, context);

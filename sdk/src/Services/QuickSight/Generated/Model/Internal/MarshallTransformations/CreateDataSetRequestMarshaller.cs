@@ -278,12 +278,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WriteStartObject();
 
+<<<<<<< HEAD
                     var marshaller = TagMarshaller.Instance;
                     marshaller.Marshall(publicRequestTagsListValue, context);
 
                     context.Writer.WriteEndObject();
                 }
                 context.Writer.WriteEndArray();
+||||||| Commit version number update changes
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetUseAs())
+                {
+                    context.Writer.WritePropertyName("UseAs");
+                    context.Writer.Write(publicRequest.UseAs);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             }
 
             writer.WriteEndObject();

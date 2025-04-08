@@ -432,6 +432,21 @@ namespace AWSSDK.UnitTests
             .AppendLine("\tname = value")
             .ToString();
 
+        private static readonly string CredentialsProfilePropertyKeyWithMixedCase = new StringBuilder()
+            .AppendLine("[foo]")
+            .AppendLine("AWS_ACCESS_KEY_ID=basic_aws_ACCESS_key_id")
+            .AppendLine("Aws_sEcRet_AcceSS_key=basic_Aws_sEcRet_AcceSS_key")
+            .AppendLine("OuTpUt=json")
+            .ToString();
+
+        private static readonly string ConfigProfileWithSubpropertiesPropertyKeyWithMixedCase = new StringBuilder()
+            .AppendLine("[profile foo]")
+            .AppendLine("REgiON=us-EAST-2")
+            .AppendLine("output=text")
+            .AppendLine("s3 = ")
+            .AppendLine("\tnAMe = ValuE")
+            .ToString();
+
         private static readonly string ProfileWithEmptySubpropertyDefinitions = new StringBuilder()
             .AppendLine("[profile foo]")
             .AppendLine("aws_access_key_id=basic_aws_access_key_id")
@@ -481,7 +496,31 @@ namespace AWSSDK.UnitTests
                     {"name","value" }
                 };
                 expectedNestedProperties.Add("s3", entry);
-                tester.ReadAndAssertProfile("foo", BasicProfileOptions,  expectedNestedProperties);
+                tester.ReadAndAssertProfile("foo", BasicProfileOptions, expectedNestedProperties);
+            }
+        }
+
+        [TestMethod]
+        public void ReadProfileWithSubpropertiesPropertyKeyWithMixedCase()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(CredentialsProfilePropertyKeyWithMixedCase, ConfigProfileWithSubpropertiesPropertyKeyWithMixedCase))
+            {
+                CredentialProfileOptions expectedProfileOptions = new CredentialProfileOptions
+                {
+                    AccessKey = "basic_aws_ACCESS_key_id",
+                    SecretKey = "basic_Aws_sEcRet_AcceSS_key",
+                };
+                var expectedProperties = new Dictionary<string, string>
+                {
+                    { "output", "json" }
+                };
+                var expectedNestedProperties = new Dictionary<string, Dictionary<string, string>>();
+                var entry = new Dictionary<string, string>
+                {
+                    { "name", "ValuE" }
+                };
+                expectedNestedProperties.Add("s3", entry);
+                tester.ReadAndAssertProfile("foo", expectedProfileOptions, expectedProperties, RegionEndpoint.USEast2, null, expectedNestedProperties);
             }
         }
 

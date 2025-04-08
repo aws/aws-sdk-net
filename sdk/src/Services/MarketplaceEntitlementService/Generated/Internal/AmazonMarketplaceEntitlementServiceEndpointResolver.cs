@@ -50,10 +50,16 @@ namespace Amazon.MarketplaceEntitlementService.Internal
         {
             var config = (AmazonMarketplaceEntitlementServiceConfig)requestContext.ClientConfig;
             var result = new MarketplaceEntitlementServiceEndpointParameters();
+<<<<<<< HEAD
             result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
+||||||| Commit version number update changes
+            result.Region = config.RegionEndpoint?.SystemName;
+=======
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
+            result.Region = config.RegionEndpoint?.SystemName;
 
 
             // The region needs to be determined from the ServiceURL if not set.

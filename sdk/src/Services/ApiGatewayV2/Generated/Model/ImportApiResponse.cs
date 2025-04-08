@@ -44,6 +44,7 @@ namespace Amazon.ApiGatewayV2.Model
         private bool? _disableExecuteApiEndpoint;
         private bool? _disableSchemaValidation;
         private List<string> _importInfo = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private IpAddressType _ipAddressType;
         private string _name;
         private ProtocolType _protocolType;
         private string _routeSelectionExpression;
@@ -238,6 +239,24 @@ namespace Amazon.ApiGatewayV2.Model
         internal bool IsSetImportInfo()
         {
             return this._importInfo != null && (this._importInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address types that can invoke the API.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>

@@ -30,31 +30,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Custom prioritization settings for a game session queue to use when searching for
-    /// available game servers to place new game sessions. This configuration replaces the
-    /// default FleetIQ prioritization process. 
+    /// Custom prioritization settings to use with a game session queue. Prioritization settings
+    /// determine how the queue selects a game hosting resource to start a new game session.
+    /// This configuration replaces the default prioritization process for queues.
     /// 
     ///  
     /// <para>
-    /// By default, a queue makes placements based on the following default prioritizations:
+    /// By default, a queue makes game session placements based on the following criteria:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// If player latency data is included in a game session request, Amazon GameLift prioritizes
-    /// placing game sessions where the average player latency is lowest. Amazon GameLift
-    /// re-orders the queue's destinations and locations (for multi-location fleets) based
-    /// on the following priorities: (1) the lowest average latency across all players, (2)
-    /// the lowest hosting cost, (3) the queue's default destination order, and then (4),
-    /// an alphabetic list of locations.
+    /// When a game session request does not include player latency data, Amazon GameLift
+    /// places game sessions based on the following priorities: (1) the queue's default destination
+    /// order, and (2) for multi-location fleets, an alphabetic list of locations.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If player latency data is not included, Amazon GameLift prioritizes placing game sessions
-    /// in the queue's first destination. If that fleet has multiple locations, the game session
-    /// is placed on the first location (when listed alphabetically). Amazon GameLift re-orders
-    /// the queue's destinations and locations (for multi-location fleets) based on the following
-    /// priorities: (1) the queue's default destination order, and then (2) an alphabetic
-    /// list of locations.
+    /// When a game session request includes player latency data, Amazon GameLift re-orders
+    /// the queue's destinations to make placements where the average player latency is lowest.
+    /// It reorders based the following priorities: (1) the lowest average latency across
+    /// all players, (2) the lowest hosting cost, (3) the queue's default destination order,
+    /// and (4) for multi-location fleets, an alphabetic list of locations.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -100,9 +96,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>COST</c> -- Amazon GameLift prioritizes destinations with the lowest current hosting
-        /// costs. Cost is evaluated based on the location, instance type, and fleet type (Spot
-        /// or On-Demand) of each destination in the queue.
+        ///  <c>COST</c> -- Amazon GameLift prioritizes queue destinations with the lowest current
+        /// hosting costs. Cost is evaluated based on the destination's location, instance type,
+        /// and fleet type (Spot or On-Demand).
         /// </para>
         ///  </li> <li> 
         /// <para>

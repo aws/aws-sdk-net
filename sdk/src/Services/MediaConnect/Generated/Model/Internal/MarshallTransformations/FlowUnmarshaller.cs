@@ -92,6 +92,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.FlowSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("flowSize", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FlowSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("maintenance", targetDepth))
                 {
                     var unmarshaller = MaintenanceUnmarshaller.Instance;
@@ -114,6 +120,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NdiConfigUnmarshaller.Instance;
                     unmarshalledObject.NdiConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ndiConfig", targetDepth))
+                {
+                    var unmarshaller = NdiConfigUnmarshaller.Instance;
+                    unmarshalledObject.NdiConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("outputs", targetDepth))

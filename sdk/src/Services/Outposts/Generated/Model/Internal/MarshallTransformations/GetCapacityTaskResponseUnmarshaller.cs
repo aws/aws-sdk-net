@@ -52,6 +52,12 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AssetId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AssetId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CapacityTaskId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

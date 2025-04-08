@@ -43,7 +43,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ActiveDate. 
         /// <para>
-        /// An optional date that specifies when the certificate becomes active.
+        /// An optional date that specifies when the certificate becomes active. If you do not
+        /// specify a value, <c>ActiveDate</c> takes the same value as <c>NotBeforeDate</c>, which
+        /// is specified by the CA. 
         /// </para>
         /// </summary>
         public DateTime? ActiveDate
@@ -99,7 +101,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property InactiveDate. 
         /// <para>
-        /// An optional date that specifies when the certificate becomes inactive.
+        /// An optional date that specifies when the certificate becomes inactive. If you do not
+        /// specify a value, <c>InactiveDate</c> takes the same value as <c>NotAfterDate</c>,
+        /// which is specified by the CA.
         /// </para>
         /// </summary>
         public DateTime? InactiveDate

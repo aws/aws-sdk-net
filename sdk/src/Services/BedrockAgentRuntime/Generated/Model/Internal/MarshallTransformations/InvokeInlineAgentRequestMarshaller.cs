@@ -92,11 +92,29 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetAgentCollaboration())
             {
                 context.Writer.WritePropertyName("agentCollaboration");
                 context.Writer.WriteStringValue(publicRequest.AgentCollaboration);
             }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetBedrockModelConfigurations())
+                {
+                    context.Writer.WritePropertyName("bedrockModelConfigurations");
+                    context.Writer.WriteObjectStart();
+=======
+                if(publicRequest.IsSetAgentCollaboration())
+                {
+                    context.Writer.WritePropertyName("agentCollaboration");
+                    context.Writer.Write(publicRequest.AgentCollaboration);
+                }
+
+                if(publicRequest.IsSetBedrockModelConfigurations())
+                {
+                    context.Writer.WritePropertyName("bedrockModelConfigurations");
+                    context.Writer.WriteObjectStart();
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
             if(publicRequest.IsSetBedrockModelConfigurations())
             {
@@ -106,8 +124,54 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 var marshaller = InlineBedrockModelConfigurationsMarshaller.Instance;
                 marshaller.Marshall(publicRequest.BedrockModelConfigurations, context);
 
+<<<<<<< HEAD
                 context.Writer.WriteEndObject();
             }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetCustomerEncryptionKeyArn())
+                {
+                    context.Writer.WritePropertyName("customerEncryptionKeyArn");
+                    context.Writer.Write(publicRequest.CustomerEncryptionKeyArn);
+                }
+=======
+                if(publicRequest.IsSetCollaboratorConfigurations())
+                {
+                    context.Writer.WritePropertyName("collaboratorConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestCollaboratorConfigurationsListValue in publicRequest.CollaboratorConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CollaboratorConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestCollaboratorConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetCollaborators())
+                {
+                    context.Writer.WritePropertyName("collaborators");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestCollaboratorsListValue in publicRequest.Collaborators)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CollaboratorMarshaller.Instance;
+                        marshaller.Marshall(publicRequestCollaboratorsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetCustomerEncryptionKeyArn())
+                {
+                    context.Writer.WritePropertyName("customerEncryptionKeyArn");
+                    context.Writer.Write(publicRequest.CustomerEncryptionKeyArn);
+                }
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
             if(publicRequest.IsSetCollaboratorConfigurations())
             {

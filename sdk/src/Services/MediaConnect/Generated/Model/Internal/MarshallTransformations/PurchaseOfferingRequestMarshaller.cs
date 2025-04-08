@@ -65,6 +65,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetOfferingArn())
                 throw new AmazonMediaConnectException("Request object does not have required field OfferingArn set");
+<<<<<<< HEAD
             request.AddPathResource("{OfferingArn}", StringUtils.FromString(publicRequest.OfferingArn));
             request.ResourcePath = "/v1/offerings/{OfferingArn}";
 #if !NETFRAMEWORK
@@ -77,6 +78,15 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetReservationName())
+||||||| Commit version number update changes
+            request.AddPathResource("{offeringArn}", StringUtils.FromString(publicRequest.OfferingArn));
+            request.ResourcePath = "/v1/offerings/{offeringArn}";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+=======
+            request.AddPathResource("{OfferingArn}", StringUtils.FromString(publicRequest.OfferingArn));
+            request.ResourcePath = "/v1/offerings/{OfferingArn}";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             {
                 context.Writer.WritePropertyName("reservationName");
                 context.Writer.WriteStringValue(publicRequest.ReservationName);

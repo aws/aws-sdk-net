@@ -31,12 +31,34 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// The endpoint configuration to indicate the types of endpoints an API (RestApi) or
-    /// its custom domain name (DomainName) has.
+    /// its custom domain name (DomainName) has and the IP address types that can invoke it.
     /// </summary>
     public partial class EndpointConfiguration
     {
+        private IpAddressType _ipAddressType;
         private List<string> _types = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _vpcEndpointIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address types that can invoke an API (RestApi) or a DomainName. Use <c>ipv4</c>
+        /// to allow only IPv4 addresses to invoke an API or DomainName, or use <c>dualstack</c>
+        /// to allow both IPv4 and IPv6 addresses to invoke an API or a DomainName. For the <c>PRIVATE</c>
+        /// endpoint type, only <c>dualstack</c> is supported.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Types. 

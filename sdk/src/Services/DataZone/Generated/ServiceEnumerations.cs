@@ -3341,6 +3341,10 @@ namespace Amazon.DataZone
     {
 
         /// <summary>
+        /// Constant CREATE_LISTING_CHANGE_SET for RuleAction
+        /// </summary>
+        public static readonly RuleAction CREATE_LISTING_CHANGE_SET = new RuleAction("CREATE_LISTING_CHANGE_SET");
+        /// <summary>
         /// Constant CREATE_SUBSCRIPTION_REQUEST for RuleAction
         /// </summary>
         public static readonly RuleAction CREATE_SUBSCRIPTION_REQUEST = new RuleAction("CREATE_SUBSCRIPTION_REQUEST");

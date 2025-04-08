@@ -46,6 +46,18 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAction())
+            {
+                context.Writer.WritePropertyName("action");
+                context.Writer.Write(requestObject.Action);
+            }
+
+            if(requestObject.IsSetEnabled())
+            {
+                context.Writer.WritePropertyName("enabled");
+                context.Writer.Write(requestObject.Enabled);
+            }
+
             if(requestObject.IsSetThreshold())
             {
                 context.Writer.WritePropertyName("threshold");

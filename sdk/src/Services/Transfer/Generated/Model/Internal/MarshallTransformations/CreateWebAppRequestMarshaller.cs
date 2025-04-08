@@ -92,11 +92,23 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");
                 context.Writer.WriteStartArray();
                 foreach(var publicRequestTagsListValue in publicRequest.Tags)
+||||||| Commit version number update changes
+                if(publicRequest.IsSetWebAppUnits())
+=======
+                if(publicRequest.IsSetWebAppEndpointPolicy())
+                {
+                    context.Writer.WritePropertyName("WebAppEndpointPolicy");
+                    context.Writer.Write(publicRequest.WebAppEndpointPolicy);
+                }
+
+                if(publicRequest.IsSetWebAppUnits())
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
                 {
                     context.Writer.WriteStartObject();
 

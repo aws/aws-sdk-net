@@ -39,6 +39,7 @@ namespace Amazon.Transfer.Model
         private DescribedWebAppIdentityProviderDetails _describedIdentityProviderDetails;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _webAppEndpoint;
+        private WebAppEndpointPolicy _webAppEndpointPolicy;
         private string _webAppId;
         private WebAppUnits _webAppUnits;
 
@@ -138,6 +139,30 @@ namespace Amazon.Transfer.Model
         internal bool IsSetWebAppEndpoint()
         {
             return this._webAppEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebAppEndpointPolicy. 
+        /// <para>
+        ///  Setting for the type of endpoint policy for the web app. The default value is <c>STANDARD</c>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If your web app was created in an Amazon Web Services GovCloud (US) Region, the value
+        /// of this parameter can be <c>FIPS</c>, which indicates the web app endpoint is FIPS-compliant.
+        /// </para>
+        /// </summary>
+        public WebAppEndpointPolicy WebAppEndpointPolicy
+        {
+            get { return this._webAppEndpointPolicy; }
+            set { this._webAppEndpointPolicy = value; }
+        }
+
+        // Check to see if WebAppEndpointPolicy property is set
+        internal bool IsSetWebAppEndpointPolicy()
+        {
+            return this._webAppEndpointPolicy != null;
         }
 
         /// <summary>

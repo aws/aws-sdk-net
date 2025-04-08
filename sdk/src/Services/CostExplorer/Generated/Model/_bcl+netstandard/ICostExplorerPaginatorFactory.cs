@@ -27,6 +27,21 @@ namespace Amazon.CostExplorer.Model
     {
 
         /// <summary>
+        /// Paginator for GetAnomalies operation
+        ///</summary>
+        IGetAnomaliesPaginator GetAnomalies(GetAnomaliesRequest request);
+
+        /// <summary>
+        /// Paginator for GetAnomalyMonitors operation
+        ///</summary>
+        IGetAnomalyMonitorsPaginator GetAnomalyMonitors(GetAnomalyMonitorsRequest request);
+
+        /// <summary>
+        /// Paginator for GetAnomalySubscriptions operation
+        ///</summary>
+        IGetAnomalySubscriptionsPaginator GetAnomalySubscriptions(GetAnomalySubscriptionsRequest request);
+
+        /// <summary>
         /// Paginator for GetSavingsPlansCoverage operation
         ///</summary>
         IGetSavingsPlansCoveragePaginator GetSavingsPlansCoverage(GetSavingsPlansCoverageRequest request);

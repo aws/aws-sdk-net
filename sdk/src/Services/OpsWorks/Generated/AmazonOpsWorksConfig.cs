@@ -33,10 +33,16 @@ namespace Amazon.OpsWorks
     public partial class AmazonOpsWorksConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("OpsWorks", "4.0.0.0");
 
         private static readonly AmazonOpsWorksEndpointResolver EndpointResolver =
             new AmazonOpsWorksEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("OpsWorks", "3.7.400.104");
+=======
+            InternalSDKUtils.BuildUserAgentString("OpsWorks", "3.7.400.130");
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
         private string _userAgent = UserAgentString;
         ///<summary>

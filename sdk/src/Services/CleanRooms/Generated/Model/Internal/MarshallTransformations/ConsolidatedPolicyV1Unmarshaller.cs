@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -93,3 +94,111 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         }
     }
 }
+|||||||
+=======
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the cleanrooms-2022-02-17.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.CleanRooms.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+#pragma warning disable CS0612,CS0618
+namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ConsolidatedPolicyV1 Object
+    /// </summary>  
+    public class ConsolidatedPolicyV1Unmarshaller : IUnmarshaller<ConsolidatedPolicyV1, XmlUnmarshallerContext>, IUnmarshaller<ConsolidatedPolicyV1, JsonUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        ConsolidatedPolicyV1 IUnmarshaller<ConsolidatedPolicyV1, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns>The unmarshalled object</returns>
+        public ConsolidatedPolicyV1 Unmarshall(JsonUnmarshallerContext context)
+        {
+            ConsolidatedPolicyV1 unmarshalledObject = new ConsolidatedPolicyV1();
+            if (context.IsEmptyResponse)
+                return null;
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("aggregation", targetDepth))
+                {
+                    var unmarshaller = ConsolidatedPolicyAggregationUnmarshaller.Instance;
+                    unmarshalledObject.Aggregation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("custom", targetDepth))
+                {
+                    var unmarshaller = ConsolidatedPolicyCustomUnmarshaller.Instance;
+                    unmarshalledObject.Custom = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("list", targetDepth))
+                {
+                    var unmarshaller = ConsolidatedPolicyListUnmarshaller.Instance;
+                    unmarshalledObject.List = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
+        }
+
+
+        private static ConsolidatedPolicyV1Unmarshaller _instance = new ConsolidatedPolicyV1Unmarshaller();        
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ConsolidatedPolicyV1Unmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+    }
+}
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e

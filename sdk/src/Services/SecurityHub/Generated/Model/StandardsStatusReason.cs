@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// The reason for the current status of a standard subscription.
+    /// The reason for the current status of your subscription to the standard.
     /// </summary>
     public partial class StandardsStatusReason
     {

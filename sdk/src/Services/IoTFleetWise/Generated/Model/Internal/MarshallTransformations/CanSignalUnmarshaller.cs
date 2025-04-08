@@ -104,6 +104,12 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                     unmarshalledObject.SignalValueType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("signalValueType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SignalValueType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("startBit", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

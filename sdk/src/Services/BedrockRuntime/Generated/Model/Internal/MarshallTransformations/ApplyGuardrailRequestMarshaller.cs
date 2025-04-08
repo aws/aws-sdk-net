@@ -90,7 +90,25 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     var marshaller = GuardrailContentBlockMarshaller.Instance;
                     marshaller.Marshall(publicRequestContentListValue, context);
 
+<<<<<<< HEAD
                     context.Writer.WriteEndObject();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetSource())
+                {
+                    context.Writer.WritePropertyName("source");
+                    context.Writer.Write(publicRequest.Source);
+=======
+                if(publicRequest.IsSetOutputScope())
+                {
+                    context.Writer.WritePropertyName("outputScope");
+                    context.Writer.Write(publicRequest.OutputScope);
+                }
+
+                if(publicRequest.IsSetSource())
+                {
+                    context.Writer.WritePropertyName("source");
+                    context.Writer.Write(publicRequest.Source);
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
                 }
                 context.Writer.WriteEndArray();
             }

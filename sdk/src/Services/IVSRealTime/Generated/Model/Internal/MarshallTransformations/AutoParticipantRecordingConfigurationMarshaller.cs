@@ -46,6 +46,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+<<<<<<< HEAD
             if(requestObject.IsSetHlsConfiguration())
             {
                 context.Writer.WritePropertyName("hlsConfiguration");
@@ -57,6 +58,20 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+||||||| Commit version number update changes
+=======
+            if(requestObject.IsSetHlsConfiguration())
+            {
+                context.Writer.WritePropertyName("hlsConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ParticipantRecordingHlsConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.HlsConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             if(requestObject.IsSetMediaTypes())
             {
                 context.Writer.WritePropertyName("mediaTypes");
@@ -72,6 +87,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("recordingReconnectWindowSeconds");
                 context.Writer.WriteNumberValue(requestObject.RecordingReconnectWindowSeconds.Value);
+            }
+
+            if(requestObject.IsSetRecordingReconnectWindowSeconds())
+            {
+                context.Writer.WritePropertyName("recordingReconnectWindowSeconds");
+                context.Writer.Write(requestObject.RecordingReconnectWindowSeconds);
             }
 
             if(requestObject.IsSetStorageConfigurationArn())

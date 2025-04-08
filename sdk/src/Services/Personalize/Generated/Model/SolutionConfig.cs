@@ -37,6 +37,7 @@ namespace Amazon.Personalize.Model
         private Dictionary<string, string> _algorithmHyperParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private AutoMLConfig _automlConfig;
         private AutoTrainingConfig _autoTrainingConfig;
+        private EventsConfig _eventsConfig;
         private string _eventValueThreshold;
         private Dictionary<string, string> _featureTransformationParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private HPOConfig _hpoConfig;
@@ -97,6 +98,25 @@ namespace Amazon.Personalize.Model
         internal bool IsSetAutoTrainingConfig()
         {
             return this._autoTrainingConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventsConfig. 
+        /// <para>
+        /// Describes the configuration of an event, which includes a list of event parameters.
+        /// You can specify up to 10 event parameters. Events are used in solution creation.
+        /// </para>
+        /// </summary>
+        public EventsConfig EventsConfig
+        {
+            get { return this._eventsConfig; }
+            set { this._eventsConfig = value; }
+        }
+
+        // Check to see if EventsConfig property is set
+        internal bool IsSetEventsConfig()
+        {
+            return this._eventsConfig != null;
         }
 
         /// <summary>

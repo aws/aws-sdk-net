@@ -33,10 +33,16 @@ namespace Amazon.MWAA
     public partial class AmazonMWAAConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("MWAA", "4.0.0.0");
 
         private static readonly AmazonMWAAEndpointResolver EndpointResolver =
             new AmazonMWAAEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("MWAA", "3.7.402.50");
+=======
+            InternalSDKUtils.BuildUserAgentString("MWAA", "3.7.402.76");
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -87,7 +87,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property Scope. 
         /// <para>
         /// Specifies whether this is for a global resource type, such as a Amazon CloudFront
-        /// distribution. 
+        /// distribution. For an Amplify application, use <c>CLOUDFRONT</c>.
         /// </para>
         ///  
         /// <para>

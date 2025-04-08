@@ -31,14 +31,8 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccessPointPolicy operation.
-    /// <note> 
-    /// <para>
-    /// This operation is not supported by directory buckets.
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Returns the access point policy associated with the specified access point.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// The following actions are related to <c>GetAccessPointPolicy</c>:

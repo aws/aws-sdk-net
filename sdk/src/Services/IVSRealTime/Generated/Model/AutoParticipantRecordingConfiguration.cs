@@ -78,6 +78,7 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
+<<<<<<< HEAD
         /// Gets and sets the property RecordingReconnectWindowSeconds. 
         /// <para>
         /// If a stage publisher disconnects and then reconnects within the specified interval,
@@ -102,6 +103,33 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
+||||||| Commit version number update changes
+=======
+        /// Gets and sets the property RecordingReconnectWindowSeconds. 
+        /// <para>
+        /// If a stage publisher disconnects and then reconnects within the specified interval,
+        /// the multiple recordings will be considered a single recording and merged together.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is 0, which disables merging.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=300)]
+        public int RecordingReconnectWindowSeconds
+        {
+            get { return this._recordingReconnectWindowSeconds.GetValueOrDefault(); }
+            set { this._recordingReconnectWindowSeconds = value; }
+        }
+
+        // Check to see if RecordingReconnectWindowSeconds property is set
+        internal bool IsSetRecordingReconnectWindowSeconds()
+        {
+            return this._recordingReconnectWindowSeconds.HasValue; 
+        }
+
+        /// <summary>
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// Gets and sets the property StorageConfigurationArn. 
         /// <para>
         /// ARN of the <a>StorageConfiguration</a> resource to use for individual participant

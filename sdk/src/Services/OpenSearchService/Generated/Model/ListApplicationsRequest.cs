@@ -31,7 +31,7 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListApplications operation.
-    /// List all OpenSearch Applications under your account.
+    /// Lists all OpenSearch applications under your account.
     /// </summary>
     public partial class ListApplicationsRequest : AmazonOpenSearchServiceRequest
     {
@@ -73,9 +73,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Statuses. 
         /// <para>
-        /// OpenSearch Application Status can be used as filters for the listing request. Possible
-        /// values are <c>CREATING</c>, <c>UPDATING</c>, <c>DELETING</c>, <c>FAILED</c>, <c>ACTIVE</c>,
-        /// and <c>DELETED</c>.
+        /// Filters the list of OpenSearch applications by status. Possible values: <c>CREATING</c>,
+        /// <c>UPDATING</c>, <c>DELETING</c>, <c>FAILED</c>, <c>ACTIVE</c>, and <c>DELETED</c>.
         /// </para>
         /// </summary>
         public List<string> Statuses

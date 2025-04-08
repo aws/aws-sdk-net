@@ -31,7 +31,7 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplication operation.
-    /// Deletes an existing OpenSearch Application.
+    /// Deletes a specified OpenSearch application.
     /// </summary>
     public partial class DeleteApplicationRequest : AmazonOpenSearchServiceRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Unique identifier for the OpenSearch Application that you want to delete.
+        /// The unique identifier of the OpenSearch application to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

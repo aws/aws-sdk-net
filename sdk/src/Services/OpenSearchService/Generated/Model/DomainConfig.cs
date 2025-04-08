@@ -278,7 +278,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property IdentityCenterOptions. 
         /// <para>
-        /// Container for IAM Identity Center Option control for the domain.
+        /// Configuration options for enabling and managing IAM Identity Center integration within
+        /// a domain.
         /// </para>
         /// </summary>
         public IdentityCenterOptionsStatus IdentityCenterOptions

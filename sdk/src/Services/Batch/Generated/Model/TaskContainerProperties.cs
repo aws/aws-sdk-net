@@ -39,6 +39,7 @@ namespace Amazon.Batch.Model
         private List<TaskContainerDependency> _dependsOn = AWSConfigs.InitializeCollections ? new List<TaskContainerDependency>() : null;
         private List<KeyValuePair> _environment = AWSConfigs.InitializeCollections ? new List<KeyValuePair>() : null;
         private bool? _essential;
+        private FirelensConfiguration _firelensConfiguration;
         private string _image;
         private LinuxParameters _linuxParameters;
         private LogConfiguration _logConfiguration;
@@ -154,6 +155,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetEssential()
         {
             return this._essential.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FirelensConfiguration. 
+        /// <para>
+        /// The FireLens configuration for the container. This is used to specify and configure
+        /// a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
+        /// log</a> routing in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public FirelensConfiguration FirelensConfiguration
+        {
+            get { return this._firelensConfiguration; }
+            set { this._firelensConfiguration = value; }
+        }
+
+        // Check to see if FirelensConfiguration property is set
+        internal bool IsSetFirelensConfiguration()
+        {
+            return this._firelensConfiguration != null;
         }
 
         /// <summary>

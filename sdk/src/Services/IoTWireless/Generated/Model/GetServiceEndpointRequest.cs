@@ -43,7 +43,7 @@ namespace Amazon.IoTWireless.Model
         /// <para>
         /// The service type for which to get endpoint information about. Can be <c>CUPS</c> for
         /// the Configuration and Update Server endpoint, or <c>LNS</c> for the LoRaWAN Network
-        /// Server endpoint or <c>CLAIM</c> for the global endpoint.
+        /// Server endpoint.
         /// </para>
         /// </summary>
         public WirelessGatewayServiceType ServiceType

@@ -101,11 +101,37 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.CwLogEnabled.Value);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetDeobfuscationConfiguration())
             {
                 context.Writer.WritePropertyName("DeobfuscationConfiguration");
                 context.Writer.WriteStartObject();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetDomain())
+                {
+                    context.Writer.WritePropertyName("Domain");
+                    context.Writer.Write(publicRequest.Domain);
+                }
+=======
+                if(publicRequest.IsSetDeobfuscationConfiguration())
+                {
+                    context.Writer.WritePropertyName("DeobfuscationConfiguration");
+                    context.Writer.WriteObjectStart();
 
+                    var marshaller = DeobfuscationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeobfuscationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDomain())
+                {
+                    context.Writer.WritePropertyName("Domain");
+                    context.Writer.Write(publicRequest.Domain);
+                }
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
+
+<<<<<<< HEAD
                 var marshaller = DeobfuscationConfigurationMarshaller.Instance;
                 marshaller.Marshall(publicRequest.DeobfuscationConfiguration, context);
 
@@ -123,6 +149,22 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("DomainList");
                 context.Writer.WriteStartArray();
                 foreach(var publicRequestDomainListListValue in publicRequest.DomainList)
+||||||| Commit version number update changes
+                if(publicRequest.IsSetName())
+=======
+                if(publicRequest.IsSetDomainList())
+                {
+                    context.Writer.WritePropertyName("DomainList");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDomainListListValue in publicRequest.DomainList)
+                    {
+                            context.Writer.Write(publicRequestDomainListListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetName())
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
                 {
                         context.Writer.WriteStringValue(publicRequestDomainListListValue);
                 }

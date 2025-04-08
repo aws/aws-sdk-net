@@ -56,6 +56,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("contentPolicyImageUnits", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ContentPolicyImageUnits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("contentPolicyUnits", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

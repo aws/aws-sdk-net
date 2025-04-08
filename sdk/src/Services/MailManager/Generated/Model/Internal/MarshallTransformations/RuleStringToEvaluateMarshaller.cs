@@ -46,6 +46,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+<<<<<<< HEAD
             if(requestObject.IsSetAnalysis())
             {
                 context.Writer.WritePropertyName("Analysis");
@@ -57,6 +58,20 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+||||||| Commit version number update changes
+=======
+            if(requestObject.IsSetAnalysis())
+            {
+                context.Writer.WritePropertyName("Analysis");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AnalysisMarshaller.Instance;
+                marshaller.Marshall(requestObject.Analysis, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             if(requestObject.IsSetAttribute())
             {
                 context.Writer.WritePropertyName("Attribute");

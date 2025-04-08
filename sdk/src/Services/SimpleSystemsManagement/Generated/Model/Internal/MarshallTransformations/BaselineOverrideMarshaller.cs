@@ -80,6 +80,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.ApprovedPatchesEnableNonSecurity.Value);
             }
 
+            if(requestObject.IsSetAvailableSecurityUpdatesComplianceStatus())
+            {
+                context.Writer.WritePropertyName("AvailableSecurityUpdatesComplianceStatus");
+                context.Writer.Write(requestObject.AvailableSecurityUpdatesComplianceStatus);
+            }
+
             if(requestObject.IsSetGlobalFilters())
             {
                 context.Writer.WritePropertyName("GlobalFilters");

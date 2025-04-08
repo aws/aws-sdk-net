@@ -46,6 +46,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+<<<<<<< HEAD
             if(requestObject.IsSetAudioExtractionConfiguration())
             {
                 context.Writer.WritePropertyName("audioExtractionConfiguration");
@@ -57,6 +58,20 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+||||||| Commit version number update changes
+=======
+            if(requestObject.IsSetAudioExtractionConfiguration())
+            {
+                context.Writer.WritePropertyName("audioExtractionConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AudioExtractionConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AudioExtractionConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             if(requestObject.IsSetImageExtractionConfiguration())
             {
                 context.Writer.WritePropertyName("imageExtractionConfiguration");
@@ -77,6 +92,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.VideoExtractionConfiguration, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetVideoExtractionConfiguration())
+            {
+                context.Writer.WritePropertyName("videoExtractionConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VideoExtractionConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.VideoExtractionConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }

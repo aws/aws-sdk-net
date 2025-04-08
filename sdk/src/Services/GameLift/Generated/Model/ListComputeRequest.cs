@@ -36,7 +36,7 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Request options:</b> 
+    ///  <b>Request options</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -49,7 +49,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Results:</b> 
+    ///  <b>Results</b> 
     /// </para>
     ///  
     /// <para>
@@ -58,13 +58,13 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// For managed EC2 fleets (compute type <c>EC2</c>), this operation returns information
+    /// For a managed EC2 fleet (compute type <c>EC2</c>), this operation returns information
     /// about the EC2 instance. Compute names are EC2 instance IDs.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For Anywhere fleets (compute type <c>ANYWHERE</c>), this operation returns compute
-    /// names and details as provided when the compute was registered with <c>RegisterCompute</c>.
+    /// For an Anywhere fleet (compute type <c>ANYWHERE</c>), this operation returns compute
+    /// names and details from when the compute was registered with <c>RegisterCompute</c>.
     /// This includes <c>GameLiftServiceSdkEndpoint</c> or <c>GameLiftAgentEndpoint</c>.
     /// </para>
     ///  </li> </ul>

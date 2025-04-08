@@ -475,6 +475,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (this.StoreAsEpochLong.Contains(rangeKeyName))
                     rangeKey = KeyDateTimeToEpochSecondsLong(rangeKey, rangeKeyName);
 
+                if (this.StoreAsEpochLong.Contains(rangeKeyName))
+                    rangeKey = KeyDateTimeToEpochSecondsLong(rangeKey, rangeKeyName);
+
                 if (rangeKeyDescription.Type != rangeKey.Type)
                     throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                         "Schema for table {0}, range key {1}, is inconsistent with specified range key value.", TableName, hashKeyName));
@@ -502,20 +505,28 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal void UpdateRequestUserAgentDetails(AmazonDynamoDBRequest request, bool isAsync)
         {
-            if (request == null) return;
+            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)request).AddBeforeRequestHandler(isAsync ?
+                new RequestEventHandler(this.UserAgentRequestEventHandlerAsync) :
+                new RequestEventHandler(this.UserAgentRequestEventHandlerSync)
+                );
+        }
 
-            var userAgentDetails = ((Runtime.Internal.IAmazonWebServiceRequest)request).UserAgentDetails;
-
-            userAgentDetails.AddUserAgentComponent("ft/ddb-hll");
-            userAgentDetails.AddUserAgentComponent($"md/{(isAsync ? "TableAsync" : "TableSync")}");
-
-            if (this.TableConsumer == DynamoDBConsumer.DataModel)
+        private void UserAgentRequestEventHandler(object sender, RequestEventArgs args, bool isAsync)
+        {
+            WebServiceRequestEventArgs wsArgs = args as WebServiceRequestEventArgs;
+            if (wsArgs != null)
             {
-                userAgentDetails.AddFeature(UserAgentFeatureId.DDB_MAPPER);
-            }
-            else
-            {
-                userAgentDetails.AddUserAgentComponent($"md/{this.TableConsumer}");
+                var feature = string.Format(" ft/ddb-hll md/{0} md/{1}", this.TableConsumer, (isAsync ? "TableAsync" : "TableSync"));
+                if (wsArgs.Headers.Keys.Contains(HeaderKeys.UserAgentHeader))
+                {
+                    string currentUserAgent = wsArgs.Headers[HeaderKeys.UserAgentHeader];
+                    wsArgs.Headers[HeaderKeys.UserAgentHeader] = currentUserAgent + feature;
+                }
+                else if (wsArgs.Headers.Keys.Contains(HeaderKeys.XAmzUserAgentHeader))
+                {
+                    string currentUserAgent = wsArgs.Headers[HeaderKeys.XAmzUserAgentHeader];
+                    wsArgs.Headers[HeaderKeys.XAmzUserAgentHeader] = currentUserAgent + feature;
+                }
             }
         }
 

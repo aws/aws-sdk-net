@@ -987,6 +987,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MailManager.Model.PrivateNetworkConfiguration.VpcEndpointId</property>
+    <pattern>^vpce-[a-zA-Z0-9]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MailManager.Model.Relay.RelayId</property>
     <min>1</min>
     <max>100</max>

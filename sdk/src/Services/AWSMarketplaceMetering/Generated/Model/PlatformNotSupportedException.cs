@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
-    /// AWS Marketplace does not support metering usage from the underlying platform. Currently,
-    /// Amazon ECS, Amazon EKS, and AWS Fargate are supported.
+    /// Amazon Web Services Marketplace does not support metering usage from the underlying
+    /// platform. Currently, Amazon ECS, Amazon EKS, and Fargate are supported.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

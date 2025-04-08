@@ -820,6 +820,35 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  AssociateRouteServer
+
+
+
+        /// <summary>
+        /// Associates a route server with a VPC to enable dynamic route updates.
+        /// 
+        ///  
+        /// <para>
+        /// A route server association is the connection established between a route server and
+        /// a VPC.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateRouteServer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateRouteServer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteServer">REST API Reference for AssociateRouteServer Operation</seealso>
+        Task<AssociateRouteServerResponse> AssociateRouteServerAsync(AssociateRouteServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  AssociateRouteTable
 
 
@@ -3223,6 +3252,133 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  CreateRouteServer
+
+
+
+        /// <summary>
+        /// Creates a new route server to manage dynamic routing in a VPC.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon VPC Route Server simplifies routing for traffic between workloads that are
+        /// deployed within a VPC and its internet gateways. With this feature, VPC Route Server
+        /// dynamically updates VPC and internet gateway route tables with your preferred IPv4
+        /// or IPv6 routes to achieve routing fault tolerance for those workloads. This enables
+        /// you to automatically reroute traffic within a VPC, which increases the manageability
+        /// of VPC routing and interoperability with third-party workloads.
+        /// </para>
+        ///  
+        /// <para>
+        /// Route server supports the follow route table types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// VPC route tables not associated with subnets
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subnet route tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Internet gateway route tables
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Route server does not support route tables associated with virtual private gateways.
+        /// To propagate routes into a transit gateway route table, use <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
+        /// Gateway Connect</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouteServer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRouteServer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServer">REST API Reference for CreateRouteServer Operation</seealso>
+        Task<CreateRouteServerResponse> CreateRouteServerAsync(CreateRouteServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateRouteServerEndpoint
+
+
+
+        /// <summary>
+        /// Creates a new endpoint for a route server in a specified subnet.
+        /// 
+        ///  
+        /// <para>
+        /// A route server endpoint is an Amazon Web Services-managed component inside a subnet
+        /// that facilitates <a href="https://en.wikipedia.org/wiki/Border_Gateway_Protocol">BGP
+        /// (Border Gateway Protocol)</a> connections between your route server and your BGP peers.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouteServerEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRouteServerEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServerEndpoint">REST API Reference for CreateRouteServerEndpoint Operation</seealso>
+        Task<CreateRouteServerEndpointResponse> CreateRouteServerEndpointAsync(CreateRouteServerEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateRouteServerPeer
+
+
+
+        /// <summary>
+        /// Creates a new BGP peer for a specified route server endpoint.
+        /// 
+        ///  
+        /// <para>
+        /// A route server peer is a session between a route server endpoint and the device deployed
+        /// in Amazon Web Services (such as a firewall appliance or other network security function
+        /// running on an EC2 instance). The device must meet these requirements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Have an elastic network interface in the VPC
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Support BGP (Border Gateway Protocol)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can initiate BGP sessions
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouteServerPeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRouteServerPeer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServerPeer">REST API Reference for CreateRouteServerPeer Operation</seealso>
+        Task<CreateRouteServerPeerResponse> CreateRouteServerPeerAsync(CreateRouteServerPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateRouteTable
 
 
@@ -5237,6 +5393,124 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DeleteRouteServer
+
+
+
+        /// <summary>
+        /// Deletes the specified route server.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon VPC Route Server simplifies routing for traffic between workloads that are
+        /// deployed within a VPC and its internet gateways. With this feature, VPC Route Server
+        /// dynamically updates VPC and internet gateway route tables with your preferred IPv4
+        /// or IPv6 routes to achieve routing fault tolerance for those workloads. This enables
+        /// you to automatically reroute traffic within a VPC, which increases the manageability
+        /// of VPC routing and interoperability with third-party workloads.
+        /// </para>
+        ///  
+        /// <para>
+        /// Route server supports the follow route table types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// VPC route tables not associated with subnets
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subnet route tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Internet gateway route tables
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Route server does not support route tables associated with virtual private gateways.
+        /// To propagate routes into a transit gateway route table, use <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
+        /// Gateway Connect</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouteServer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRouteServer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServer">REST API Reference for DeleteRouteServer Operation</seealso>
+        Task<DeleteRouteServerResponse> DeleteRouteServerAsync(DeleteRouteServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteRouteServerEndpoint
+
+
+
+        /// <summary>
+        /// Deletes the specified route server endpoint.
+        /// 
+        ///  
+        /// <para>
+        /// A route server endpoint is an Amazon Web Services-managed component inside a subnet
+        /// that facilitates <a href="https://en.wikipedia.org/wiki/Border_Gateway_Protocol">BGP
+        /// (Border Gateway Protocol)</a> connections between your route server and your BGP peers.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouteServerEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRouteServerEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServerEndpoint">REST API Reference for DeleteRouteServerEndpoint Operation</seealso>
+        Task<DeleteRouteServerEndpointResponse> DeleteRouteServerEndpointAsync(DeleteRouteServerEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteRouteServerPeer
+
+
+
+        /// <summary>
+        /// Deletes the specified BGP peer from a route server.
+        /// 
+        ///  
+        /// <para>
+        /// A route server peer is a session between a route server endpoint and the device deployed
+        /// in Amazon Web Services (such as a firewall appliance or other network security function
+        /// running on an EC2 instance). The device must meet these requirements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Have an elastic network interface in the VPC
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Support BGP (Border Gateway Protocol)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can initiate BGP sessions
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouteServerPeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRouteServerPeer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServerPeer">REST API Reference for DeleteRouteServerPeer Operation</seealso>
+        Task<DeleteRouteServerPeerResponse> DeleteRouteServerPeerAsync(DeleteRouteServerPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteRouteTable
 
 
@@ -6110,28 +6384,40 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deregisters the specified AMI. After you deregister an AMI, it can't be used to launch
-        /// new instances.
+        /// Deregisters the specified AMI. A deregistered AMI can't be used to launch new instances.
         /// 
         ///  
         /// <para>
-        /// If you deregister an AMI that matches a Recycle Bin retention rule, the AMI is retained
-        /// in the Recycle Bin for the specified retention period. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
-        /// Bin</a> in the <i>Amazon EC2 User Guide</i>.
+        /// If a deregistered EBS-backed AMI matches a Recycle Bin retention rule, it moves to
+        /// the Recycle Bin for the specified retention period. It can be restored before its
+        /// retention period expires, after which it is permanently deleted. If the deregistered
+        /// AMI doesn't match a retention rule, it is permanently deleted immediately. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
+        /// Bin</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// When you deregister an AMI, it doesn't affect any instances that you've already launched
-        /// from the AMI. You'll continue to incur usage costs for those instances until you terminate
-        /// them.
+        /// Deregistering an AMI does not delete the following:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// When you deregister an Amazon EBS-backed AMI, it doesn't affect the snapshot that
-        /// was created for the root volume of the instance during the AMI creation process. When
-        /// you deregister an instance store-backed AMI, it doesn't affect the files that you
-        /// uploaded to Amazon S3 when you created the AMI.
+        /// Instances already launched from the AMI. You'll continue to incur usage costs for
+        /// the instances until you terminate them.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For EBS-backed AMIs: The snapshots that were created of the root and data volumes
+        /// of the instance during AMI creation. You'll continue to incur snapshot storage costs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For instance store-backed AMIs: The files uploaded to Amazon S3 during AMI creation.
+        /// You'll continue to incur S3 storage costs.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html">Deregister
+        /// an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterImage service method.</param>
@@ -9351,6 +9637,133 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DescribeRouteServerEndpoints
+
+
+
+        /// <summary>
+        /// Describes one or more route server endpoints.
+        /// 
+        ///  
+        /// <para>
+        /// A route server endpoint is an Amazon Web Services-managed component inside a subnet
+        /// that facilitates <a href="https://en.wikipedia.org/wiki/Border_Gateway_Protocol">BGP
+        /// (Border Gateway Protocol)</a> connections between your route server and your BGP peers.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRouteServerEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRouteServerEndpoints service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServerEndpoints">REST API Reference for DescribeRouteServerEndpoints Operation</seealso>
+        Task<DescribeRouteServerEndpointsResponse> DescribeRouteServerEndpointsAsync(DescribeRouteServerEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeRouteServerPeers
+
+
+
+        /// <summary>
+        /// Describes one or more route server peers.
+        /// 
+        ///  
+        /// <para>
+        /// A route server peer is a session between a route server endpoint and the device deployed
+        /// in Amazon Web Services (such as a firewall appliance or other network security function
+        /// running on an EC2 instance). The device must meet these requirements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Have an elastic network interface in the VPC
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Support BGP (Border Gateway Protocol)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can initiate BGP sessions
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRouteServerPeers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRouteServerPeers service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServerPeers">REST API Reference for DescribeRouteServerPeers Operation</seealso>
+        Task<DescribeRouteServerPeersResponse> DescribeRouteServerPeersAsync(DescribeRouteServerPeersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeRouteServers
+
+
+
+        /// <summary>
+        /// Describes one or more route servers.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon VPC Route Server simplifies routing for traffic between workloads that are
+        /// deployed within a VPC and its internet gateways. With this feature, VPC Route Server
+        /// dynamically updates VPC and internet gateway route tables with your preferred IPv4
+        /// or IPv6 routes to achieve routing fault tolerance for those workloads. This enables
+        /// you to automatically reroute traffic within a VPC, which increases the manageability
+        /// of VPC routing and interoperability with third-party workloads.
+        /// </para>
+        ///  
+        /// <para>
+        /// Route server supports the follow route table types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// VPC route tables not associated with subnets
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subnet route tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Internet gateway route tables
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Route server does not support route tables associated with virtual private gateways.
+        /// To propagate routes into a transit gateway route table, use <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
+        /// Gateway Connect</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRouteServers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRouteServers service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServers">REST API Reference for DescribeRouteServers Operation</seealso>
+        Task<DescribeRouteServersResponse> DescribeRouteServersAsync(DescribeRouteServersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeRouteTables
 
 
@@ -11663,6 +12076,66 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DisableRouteServerPropagation
+
+
+
+        /// <summary>
+        /// Disables route propagation from a route server to a specified route table.
+        /// 
+        ///  
+        /// <para>
+        /// When enabled, route server propagation installs the routes in the FIB on the route
+        /// table you've specified. Route server supports IPv4 and IPv6 route propagation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon VPC Route Server simplifies routing for traffic between workloads that are
+        /// deployed within a VPC and its internet gateways. With this feature, VPC Route Server
+        /// dynamically updates VPC and internet gateway route tables with your preferred IPv4
+        /// or IPv6 routes to achieve routing fault tolerance for those workloads. This enables
+        /// you to automatically reroute traffic within a VPC, which increases the manageability
+        /// of VPC routing and interoperability with third-party workloads.
+        /// </para>
+        ///  
+        /// <para>
+        /// Route server supports the follow route table types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// VPC route tables not associated with subnets
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subnet route tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Internet gateway route tables
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Route server does not support route tables associated with virtual private gateways.
+        /// To propagate routes into a transit gateway route table, use <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
+        /// Gateway Connect</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableRouteServerPropagation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableRouteServerPropagation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableRouteServerPropagation">REST API Reference for DisableRouteServerPropagation Operation</seealso>
+        Task<DisableRouteServerPropagationResponse> DisableRouteServerPropagationAsync(DisableRouteServerPropagationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DisableSerialConsoleAccess
 
 
@@ -12043,6 +12516,35 @@ namespace Amazon.EC2
         /// <returns>The response from the DisassociateNatGatewayAddress service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateNatGatewayAddress">REST API Reference for DisassociateNatGatewayAddress Operation</seealso>
         Task<DisassociateNatGatewayAddressResponse> DisassociateNatGatewayAddressAsync(DisassociateNatGatewayAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DisassociateRouteServer
+
+
+
+        /// <summary>
+        /// Disassociates a route server from a VPC.
+        /// 
+        ///  
+        /// <para>
+        /// A route server association is the connection established between a route server and
+        /// a VPC.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateRouteServer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateRouteServer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteServer">REST API Reference for DisassociateRouteServer Operation</seealso>
+        Task<DisassociateRouteServerResponse> DisassociateRouteServerAsync(DisassociateRouteServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -12566,6 +13068,35 @@ namespace Amazon.EC2
         /// <returns>The response from the EnableReachabilityAnalyzerOrganizationSharing service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableReachabilityAnalyzerOrganizationSharing">REST API Reference for EnableReachabilityAnalyzerOrganizationSharing Operation</seealso>
         Task<EnableReachabilityAnalyzerOrganizationSharingResponse> EnableReachabilityAnalyzerOrganizationSharingAsync(EnableReachabilityAnalyzerOrganizationSharingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  EnableRouteServerPropagation
+
+
+
+        /// <summary>
+        /// Defines which route tables the route server can update with routes.
+        /// 
+        ///  
+        /// <para>
+        /// When enabled, route server propagation installs the routes in the FIB on the route
+        /// table you've specified. Route server supports IPv4 and IPv6 route propagation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableRouteServerPropagation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableRouteServerPropagation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableRouteServerPropagation">REST API Reference for EnableRouteServerPropagation Operation</seealso>
+        Task<EnableRouteServerPropagationResponse> EnableRouteServerPropagationAsync(EnableRouteServerPropagationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -13687,6 +14218,145 @@ namespace Amazon.EC2
         /// <returns>The response from the GetReservedInstancesExchangeQuote service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetReservedInstancesExchangeQuote">REST API Reference for GetReservedInstancesExchangeQuote Operation</seealso>
         Task<GetReservedInstancesExchangeQuoteResponse> GetReservedInstancesExchangeQuoteAsync(GetReservedInstancesExchangeQuoteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetRouteServerAssociations
+
+
+
+        /// <summary>
+        /// Gets information about the associations for the specified route server.
+        /// 
+        ///  
+        /// <para>
+        /// A route server association is the connection established between a route server and
+        /// a VPC.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouteServerAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRouteServerAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerAssociations">REST API Reference for GetRouteServerAssociations Operation</seealso>
+        Task<GetRouteServerAssociationsResponse> GetRouteServerAssociationsAsync(GetRouteServerAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetRouteServerPropagations
+
+
+
+        /// <summary>
+        /// Gets information about the route propagations for the specified route server.
+        /// 
+        ///  
+        /// <para>
+        /// When enabled, route server propagation installs the routes in the FIB on the route
+        /// table you've specified. Route server supports IPv4 and IPv6 route propagation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon VPC Route Server simplifies routing for traffic between workloads that are
+        /// deployed within a VPC and its internet gateways. With this feature, VPC Route Server
+        /// dynamically updates VPC and internet gateway route tables with your preferred IPv4
+        /// or IPv6 routes to achieve routing fault tolerance for those workloads. This enables
+        /// you to automatically reroute traffic within a VPC, which increases the manageability
+        /// of VPC routing and interoperability with third-party workloads.
+        /// </para>
+        ///  
+        /// <para>
+        /// Route server supports the follow route table types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// VPC route tables not associated with subnets
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subnet route tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Internet gateway route tables
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Route server does not support route tables associated with virtual private gateways.
+        /// To propagate routes into a transit gateway route table, use <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
+        /// Gateway Connect</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouteServerPropagations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRouteServerPropagations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerPropagations">REST API Reference for GetRouteServerPropagations Operation</seealso>
+        Task<GetRouteServerPropagationsResponse> GetRouteServerPropagationsAsync(GetRouteServerPropagationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetRouteServerRoutingDatabase
+
+
+
+        /// <summary>
+        /// Gets the routing database for the specified route server. The <a href="https://en.wikipedia.org/wiki/Routing_table">Routing
+        /// Information Base (RIB)</a> serves as a database that stores all the routing information
+        /// and network topology data collected by a router or routing system, such as routes
+        /// learned from BGP peers. The RIB is constantly updated as new routing information is
+        /// received or existing routes change. This ensures that the route server always has
+        /// the most current view of the network topology and can make optimal routing decisions.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon VPC Route Server simplifies routing for traffic between workloads that are
+        /// deployed within a VPC and its internet gateways. With this feature, VPC Route Server
+        /// dynamically updates VPC and internet gateway route tables with your preferred IPv4
+        /// or IPv6 routes to achieve routing fault tolerance for those workloads. This enables
+        /// you to automatically reroute traffic within a VPC, which increases the manageability
+        /// of VPC routing and interoperability with third-party workloads.
+        /// </para>
+        ///  
+        /// <para>
+        /// Route server supports the follow route table types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// VPC route tables not associated with subnets
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subnet route tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Internet gateway route tables
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Route server does not support route tables associated with virtual private gateways.
+        /// To propagate routes into a transit gateway route table, use <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
+        /// Gateway Connect</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouteServerRoutingDatabase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRouteServerRoutingDatabase service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerRoutingDatabase">REST API Reference for GetRouteServerRoutingDatabase Operation</seealso>
+        Task<GetRouteServerRoutingDatabaseResponse> GetRouteServerRoutingDatabaseAsync(GetRouteServerRoutingDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -15315,6 +15985,61 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyReservedInstances service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyReservedInstances">REST API Reference for ModifyReservedInstances Operation</seealso>
         Task<ModifyReservedInstancesResponse> ModifyReservedInstancesAsync(ModifyReservedInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyRouteServer
+
+
+
+        /// <summary>
+        /// Modifies the configuration of an existing route server.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon VPC Route Server simplifies routing for traffic between workloads that are
+        /// deployed within a VPC and its internet gateways. With this feature, VPC Route Server
+        /// dynamically updates VPC and internet gateway route tables with your preferred IPv4
+        /// or IPv6 routes to achieve routing fault tolerance for those workloads. This enables
+        /// you to automatically reroute traffic within a VPC, which increases the manageability
+        /// of VPC routing and interoperability with third-party workloads.
+        /// </para>
+        ///  
+        /// <para>
+        /// Route server supports the follow route table types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// VPC route tables not associated with subnets
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subnet route tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Internet gateway route tables
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Route server does not support route tables associated with virtual private gateways.
+        /// To propagate routes into a transit gateway route table, use <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
+        /// Gateway Connect</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyRouteServer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyRouteServer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyRouteServer">REST API Reference for ModifyRouteServer Operation</seealso>
+        Task<ModifyRouteServerResponse> ModifyRouteServerAsync(ModifyRouteServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

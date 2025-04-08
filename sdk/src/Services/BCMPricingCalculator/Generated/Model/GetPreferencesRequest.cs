@@ -31,7 +31,7 @@ namespace Amazon.BCMPricingCalculator.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPreferences operation.
-    /// Retrieves the current preferences for the Amazon Web Services Cost Explorer service.
+    /// Retrieves the current preferences for Pricing Calculator.
     /// </summary>
     public partial class GetPreferencesRequest : AmazonBCMPricingCalculatorRequest
     {

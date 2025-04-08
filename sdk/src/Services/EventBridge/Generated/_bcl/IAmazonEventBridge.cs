@@ -263,34 +263,18 @@ namespace Amazon.EventBridge
         /// events sent to the archive, all events are sent to the archive except replayed events.
         /// Replayed events are not sent to an archive.
         /// 
-        ///  <note> 
+        ///  <important> 
         /// <para>
-        /// Archives and schema discovery are not supported for event buses encrypted using a
-        /// customer managed key. EventBridge returns an error if:
+        /// If you have specified that EventBridge use a customer managed key for encrypting the
+        /// source event bus, we strongly recommend you also specify a customer managed key for
+        /// any archives for the event bus as well. 
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// You call <c> <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateArchive.html">CreateArchive</a>
-        /// </c> on an event bus set to use a customer managed key for encryption.
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html">Encrypting
+        /// archives</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You call <c> <a href="https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers.html#CreateDiscoverer">CreateDiscoverer</a>
-        /// </c> on an event bus set to use a customer managed key for encryption.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You call <c> <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdatedEventBus.html">UpdatedEventBus</a>
-        /// </c> to set a customer managed key on an event bus with an archives or schema discovery
-        /// enabled.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// To enable archives or schema discovery on an event bus, choose to use an Amazon Web
-        /// Services owned key. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data
-        /// encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.
-        /// </para>
-        ///  </note>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateArchive service method.</param>
         /// 
@@ -326,34 +310,18 @@ namespace Amazon.EventBridge
         /// events sent to the archive, all events are sent to the archive except replayed events.
         /// Replayed events are not sent to an archive.
         /// 
-        ///  <note> 
+        ///  <important> 
         /// <para>
-        /// Archives and schema discovery are not supported for event buses encrypted using a
-        /// customer managed key. EventBridge returns an error if:
+        /// If you have specified that EventBridge use a customer managed key for encrypting the
+        /// source event bus, we strongly recommend you also specify a customer managed key for
+        /// any archives for the event bus as well. 
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// You call <c> <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateArchive.html">CreateArchive</a>
-        /// </c> on an event bus set to use a customer managed key for encryption.
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html">Encrypting
+        /// archives</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You call <c> <a href="https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers.html#CreateDiscoverer">CreateDiscoverer</a>
-        /// </c> on an event bus set to use a customer managed key for encryption.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You call <c> <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdatedEventBus.html">UpdatedEventBus</a>
-        /// </c> to set a customer managed key on an event bus with an archives or schema discovery
-        /// enabled.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// To enable archives or schema discovery on an event bus, choose to use an Amazon Web
-        /// Services owned key. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data
-        /// encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.
-        /// </para>
-        ///  </note>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateArchive service method.</param>
         /// <param name="cancellationToken">
@@ -402,7 +370,7 @@ namespace Amazon.EventBridge
         /// 
         /// <returns>The response from the CreateConnection service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.AccessDeniedException">
-        /// You do not have the necessary permissons for this action.
+        /// You do not have the necessary permissions for this action.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -442,7 +410,7 @@ namespace Amazon.EventBridge
         /// 
         /// <returns>The response from the CreateConnection service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.AccessDeniedException">
-        /// You do not have the necessary permissons for this action.
+        /// You do not have the necessary permissions for this action.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -2467,11 +2435,10 @@ namespace Amazon.EventBridge
         /// 
         ///  
         /// <para>
-        /// The maximum size for a PutEvents event entry is 256 KB. Entry size is calculated including
-        /// the event and any necessary characters and keys of the JSON representation of the
-        /// event. To learn more, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevent-size.html">Calculating
-        /// PutEvents event entry size</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>
-        /// 
+        /// You can batch multiple event entries into one request for efficiency. However, the
+        /// total entry size must be less than 256KB. You can calculate the entry size before
+        /// you send the events. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevents.html#eb-putevent-size">Calculating
+        /// PutEvents event entry size</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
         /// </para>
         ///  
         /// <para>
@@ -2501,11 +2468,10 @@ namespace Amazon.EventBridge
         /// 
         ///  
         /// <para>
-        /// The maximum size for a PutEvents event entry is 256 KB. Entry size is calculated including
-        /// the event and any necessary characters and keys of the JSON representation of the
-        /// event. To learn more, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevent-size.html">Calculating
-        /// PutEvents event entry size</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>
-        /// 
+        /// You can batch multiple event entries into one request for efficiency. However, the
+        /// total entry size must be less than 256KB. You can calculate the entry size before
+        /// you send the events. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevents.html#eb-putevent-size">Calculating
+        /// PutEvents event entry size</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
         /// </para>
         ///  
         /// <para>
@@ -3887,7 +3853,7 @@ namespace Amazon.EventBridge
         /// 
         /// <returns>The response from the UpdateConnection service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.AccessDeniedException">
-        /// You do not have the necessary permissons for this action.
+        /// You do not have the necessary permissions for this action.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
         /// There is concurrent modification on a rule, target, archive, or replay.
@@ -3920,7 +3886,7 @@ namespace Amazon.EventBridge
         /// 
         /// <returns>The response from the UpdateConnection service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.AccessDeniedException">
-        /// You do not have the necessary permissons for this action.
+        /// You do not have the necessary permissions for this action.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
         /// There is concurrent modification on a rule, target, archive, or replay.

@@ -43,6 +43,12 @@ namespace Amazon.EventBridge.Model
         /// For connections to private APIs, the Amazon Resource Name (ARN) of the resource association
         /// EventBridge created between the connection and the private API's resource configuration.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/connection-private.html#connection-private-snra">
+        /// Managing service network resource associations for connections</a> in the <i> <i>Amazon
+        /// EventBridge User Guide</i> </i>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=17, Max=2048)]
         public string ResourceAssociationArn

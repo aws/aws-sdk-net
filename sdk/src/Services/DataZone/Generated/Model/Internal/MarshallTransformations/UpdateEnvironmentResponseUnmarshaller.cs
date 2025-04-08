@@ -112,6 +112,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.EnvironmentConfigurationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("environmentConfigurationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EnvironmentConfigurationId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("environmentProfileId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

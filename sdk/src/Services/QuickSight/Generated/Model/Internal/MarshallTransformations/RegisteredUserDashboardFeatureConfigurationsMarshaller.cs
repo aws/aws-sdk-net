@@ -46,6 +46,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAmazonQInQuickSight())
+            {
+                context.Writer.WritePropertyName("AmazonQInQuickSight");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AmazonQInQuickSightDashboardConfigurationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AmazonQInQuickSight, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetBookmarks())
             {
                 context.Writer.WritePropertyName("Bookmarks");
@@ -55,6 +66,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.Bookmarks, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetRecentSnapshots())
+            {
+                context.Writer.WritePropertyName("RecentSnapshots");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RecentSnapshotsConfigurationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.RecentSnapshots, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSchedules())
+            {
+                context.Writer.WritePropertyName("Schedules");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SchedulesConfigurationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Schedules, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetSharedView())
@@ -77,6 +110,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.StatePersistence, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetThresholdAlerts())
+            {
+                context.Writer.WritePropertyName("ThresholdAlerts");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ThresholdAlertsConfigurationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ThresholdAlerts, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }

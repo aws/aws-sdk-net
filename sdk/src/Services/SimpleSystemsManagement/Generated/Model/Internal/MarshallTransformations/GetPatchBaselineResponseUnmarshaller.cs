@@ -76,6 +76,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     response.ApprovedPatchesEnableNonSecurity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AvailableSecurityUpdatesComplianceStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AvailableSecurityUpdatesComplianceStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BaselineId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

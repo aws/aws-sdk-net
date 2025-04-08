@@ -94,6 +94,12 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                     response.EventSourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("KmsKeyIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KmsKeyIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RetentionDays", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

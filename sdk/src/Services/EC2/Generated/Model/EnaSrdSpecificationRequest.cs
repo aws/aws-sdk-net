@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property EnaSrdEnabled. 
         /// <para>
         /// Specifies whether ENA Express is enabled for the network interface when you launch
-        /// an instance from your launch template.
+        /// an instance.
         /// </para>
         /// </summary>
         public bool? EnaSrdEnabled
@@ -59,7 +59,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EnaSrdUdpSpecification. 
         /// <para>
-        /// Contains ENA Express settings for UDP network traffic in your launch template.
+        /// Contains ENA Express settings for UDP network traffic for the network interface attached
+        /// to the instance.
         /// </para>
         /// </summary>
         public EnaSrdUdpSpecificationRequest EnaSrdUdpSpecification

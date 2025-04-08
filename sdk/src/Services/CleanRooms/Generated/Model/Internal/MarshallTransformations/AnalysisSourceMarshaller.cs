@@ -46,6 +46,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+<<<<<<< HEAD
             if(requestObject.IsSetArtifacts())
             {
                 context.Writer.WritePropertyName("artifacts");
@@ -57,6 +58,20 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+||||||| Commit version number update changes
+=======
+            if(requestObject.IsSetArtifacts())
+            {
+                context.Writer.WritePropertyName("artifacts");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AnalysisTemplateArtifactsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Artifacts, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             if(requestObject.IsSetText())
             {
                 context.Writer.WritePropertyName("text");

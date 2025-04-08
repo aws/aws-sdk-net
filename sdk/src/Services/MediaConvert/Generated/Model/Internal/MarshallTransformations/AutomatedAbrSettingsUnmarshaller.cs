@@ -62,6 +62,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.MaxAbrBitrate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("maxQualityLevel", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.MaxQualityLevel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("maxRenditions", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

@@ -49,10 +49,6 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The logical name of the resource as specified in the template.
         /// </para>
-        ///  
-        /// <para>
-        /// Default: There is no default value.
-        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string LogicalResourceId
@@ -81,10 +77,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Deleted stacks: You must specify the unique stack ID.
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Default: There is no default value.
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string StackName

@@ -52,6 +52,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.DataSetId);
             }
 
+            if(requestObject.IsSetDataSetRefreshProperties())
+            {
+                context.Writer.WritePropertyName("DataSetRefreshProperties");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DataSetRefreshPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataSetRefreshProperties, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");

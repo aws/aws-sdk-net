@@ -130,9 +130,41 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     var marshaller = EnvironmentConfigurationUserParameterMarshaller.Instance;
                     marshaller.Marshall(publicRequestUserParametersListValue, context);
 
+<<<<<<< HEAD
                     context.Writer.WriteEndObject();
                 }
                 context.Writer.WriteEndArray();
+||||||| Commit version number update changes
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetProjectProfileVersion())
+                {
+                    context.Writer.WritePropertyName("projectProfileVersion");
+                    context.Writer.Write(publicRequest.ProjectProfileVersion);
+                }
+
+                if(publicRequest.IsSetUserParameters())
+                {
+                    context.Writer.WritePropertyName("userParameters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestUserParametersListValue in publicRequest.UserParameters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EnvironmentConfigurationUserParameterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestUserParametersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             }
 
             writer.WriteEndObject();

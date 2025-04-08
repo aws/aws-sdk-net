@@ -105,7 +105,8 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property ProcessExitCode. 
         /// <para>
-        /// The exit code to exit the session.
+        /// The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit
+        /// exit codes to signed 32-bit exit codes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]

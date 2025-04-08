@@ -89,6 +89,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 
             if(publicRequest.IsSetDefaultResultConfiguration())
             {
+<<<<<<< HEAD
                 context.Writer.WritePropertyName("defaultResultConfiguration");
                 context.Writer.WriteStartObject();
 
@@ -96,6 +97,74 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.DefaultResultConfiguration, context);
 
                 context.Writer.WriteEndObject();
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDefaultResultConfiguration())
+                {
+                    context.Writer.WritePropertyName("defaultResultConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MembershipProtectedQueryResultConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DefaultResultConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetQueryLogStatus())
+                {
+                    context.Writer.WritePropertyName("queryLogStatus");
+                    context.Writer.Write(publicRequest.QueryLogStatus);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDefaultJobResultConfiguration())
+                {
+                    context.Writer.WritePropertyName("defaultJobResultConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MembershipProtectedJobResultConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DefaultJobResultConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDefaultResultConfiguration())
+                {
+                    context.Writer.WritePropertyName("defaultResultConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MembershipProtectedQueryResultConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DefaultResultConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetJobLogStatus())
+                {
+                    context.Writer.WritePropertyName("jobLogStatus");
+                    context.Writer.Write(publicRequest.JobLogStatus);
+                }
+
+                if(publicRequest.IsSetQueryLogStatus())
+                {
+                    context.Writer.WritePropertyName("queryLogStatus");
+                    context.Writer.Write(publicRequest.QueryLogStatus);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             }
 
             if(publicRequest.IsSetJobLogStatus())

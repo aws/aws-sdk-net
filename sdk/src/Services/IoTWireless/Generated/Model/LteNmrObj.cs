@@ -67,8 +67,16 @@ namespace Amazon.IoTWireless.Model
         /// (EUTRANCID).
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true, Min=0, Max=268435455)]
         public int? EutranCid
+||||||| Commit version number update changes
+        [AWSProperty(Required=true, Min=0, Max=268435455)]
+        public int EutranCid
+=======
+        [AWSProperty(Min=0, Max=268435455)]
+        public int EutranCid
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         {
             get { return this._eutranCid; }
             set { this._eutranCid = value; }

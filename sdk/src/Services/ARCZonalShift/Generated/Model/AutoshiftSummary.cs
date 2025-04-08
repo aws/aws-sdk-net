@@ -34,9 +34,8 @@ namespace Amazon.ARCZonalShift.Model
     /// move traffic for a resource away from an Availability Zone in an Amazon Web Services
     /// Region when Amazon Web Services determines that there's an issue in the Availability
     /// Zone that could potentially affect customers. You can configure zonal autoshift in
-    /// Route 53 ARC for managed resources in your Amazon Web Services account in a Region.
-    /// Supported Amazon Web Services resources are automatically registered with Route 53
-    /// ARC.
+    /// ARC for managed resources in your Amazon Web Services account in a Region. Supported
+    /// Amazon Web Services resources are automatically registered with ARC.
     /// 
     ///  
     /// <para>
@@ -86,8 +85,15 @@ namespace Amazon.ARCZonalShift.Model
         /// The time (in UTC) when the autoshift ended.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true)]
         public DateTime? EndTime
+||||||| Commit version number update changes
+        [AWSProperty(Required=true)]
+        public DateTime EndTime
+=======
+        public DateTime EndTime
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         {
             get { return this._endTime; }
             set { this._endTime = value; }

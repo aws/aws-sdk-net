@@ -159,11 +159,47 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.EnablePullRequestPreview.Value);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetEnableSkewProtection())
             {
                 context.Writer.WritePropertyName("enableSkewProtection");
                 context.Writer.WriteBooleanValue(publicRequest.EnableSkewProtection.Value);
             }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetEnvironmentVariables())
+                {
+                    context.Writer.WritePropertyName("environmentVariables");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestEnvironmentVariablesKvp in publicRequest.EnvironmentVariables)
+                    {
+                        context.Writer.WritePropertyName(publicRequestEnvironmentVariablesKvp.Key);
+                        var publicRequestEnvironmentVariablesValue = publicRequestEnvironmentVariablesKvp.Value;
+
+                            context.Writer.Write(publicRequestEnvironmentVariablesValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+=======
+                if(publicRequest.IsSetEnableSkewProtection())
+                {
+                    context.Writer.WritePropertyName("enableSkewProtection");
+                    context.Writer.Write(publicRequest.EnableSkewProtection);
+                }
+
+                if(publicRequest.IsSetEnvironmentVariables())
+                {
+                    context.Writer.WritePropertyName("environmentVariables");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestEnvironmentVariablesKvp in publicRequest.EnvironmentVariables)
+                    {
+                        context.Writer.WritePropertyName(publicRequestEnvironmentVariablesKvp.Key);
+                        var publicRequestEnvironmentVariablesValue = publicRequestEnvironmentVariablesKvp.Value;
+
+                            context.Writer.Write(publicRequestEnvironmentVariablesValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
             if(publicRequest.IsSetEnvironmentVariables())
             {

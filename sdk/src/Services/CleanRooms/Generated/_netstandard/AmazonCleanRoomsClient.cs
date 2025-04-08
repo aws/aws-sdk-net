@@ -2373,6 +2373,55 @@ namespace Amazon.CleanRooms
         }
         #endregion
         
+        #region  GetProtectedJob
+
+        internal virtual GetProtectedJobResponse GetProtectedJob(GetProtectedJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProtectedJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProtectedJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetProtectedJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns job processing metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProtectedJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetProtectedJob service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetProtectedJob">REST API Reference for GetProtectedJob Operation</seealso>
+        public virtual Task<GetProtectedJobResponse> GetProtectedJobAsync(GetProtectedJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProtectedJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProtectedJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetProtectedJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetProtectedQuery
 
         internal virtual GetProtectedQueryResponse GetProtectedQuery(GetProtectedQueryRequest request)
@@ -3326,6 +3375,55 @@ namespace Amazon.CleanRooms
         }
         #endregion
         
+        #region  ListProtectedJobs
+
+        internal virtual ListProtectedJobsResponse ListProtectedJobs(ListProtectedJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProtectedJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProtectedJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListProtectedJobsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists protected jobs, sorted by most recent job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProtectedJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProtectedJobs service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListProtectedJobs">REST API Reference for ListProtectedJobs Operation</seealso>
+        public virtual Task<ListProtectedJobsResponse> ListProtectedJobsAsync(ListProtectedJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProtectedJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProtectedJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListProtectedJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListProtectedQueries
 
         internal virtual ListProtectedQueriesResponse ListProtectedQueries(ListProtectedQueriesRequest request)
@@ -3613,6 +3711,58 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<StartProtectedJobResponse>(request, options, cancellationToken);
         }
+        #endregion
+        
+        #region  StartProtectedJob
+
+        internal virtual StartProtectedJobResponse StartProtectedJob(StartProtectedJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartProtectedJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartProtectedJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartProtectedJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a protected job that is started by Clean Rooms.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartProtectedJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartProtectedJob service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/StartProtectedJob">REST API Reference for StartProtectedJob Operation</seealso>
+        public virtual Task<StartProtectedJobResponse> StartProtectedJobAsync(StartProtectedJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartProtectedJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartProtectedJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartProtectedJobResponse>(request, options, cancellationToken);
+        }
+
         #endregion
         
         #region  StartProtectedQuery
@@ -4336,6 +4486,58 @@ namespace Amazon.CleanRooms
 
             return InvokeAsync<UpdateProtectedJobResponse>(request, options, cancellationToken);
         }
+        #endregion
+        
+        #region  UpdateProtectedJob
+
+        internal virtual UpdateProtectedJobResponse UpdateProtectedJob(UpdateProtectedJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProtectedJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProtectedJobResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProtectedJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the processing of a currently running job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProtectedJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProtectedJob service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateProtectedJob">REST API Reference for UpdateProtectedJob Operation</seealso>
+        public virtual Task<UpdateProtectedJobResponse> UpdateProtectedJobAsync(UpdateProtectedJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProtectedJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProtectedJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateProtectedJobResponse>(request, options, cancellationToken);
+        }
+
         #endregion
         
         #region  UpdateProtectedQuery

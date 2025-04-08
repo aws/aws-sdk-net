@@ -104,6 +104,7 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.CwLogEnabled.Value);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetDeobfuscationConfiguration())
             {
                 context.Writer.WritePropertyName("DeobfuscationConfiguration");
@@ -126,10 +127,49 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("DomainList");
                 context.Writer.WriteStartArray();
                 foreach(var publicRequestDomainListListValue in publicRequest.DomainList)
+||||||| Commit version number update changes
+                if(publicRequest.IsSetDomain())
+=======
+                if(publicRequest.IsSetDeobfuscationConfiguration())
+                {
+                    context.Writer.WritePropertyName("DeobfuscationConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DeobfuscationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeobfuscationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDomain())
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
                 {
                         context.Writer.WriteStringValue(publicRequestDomainListListValue);
                 }
+<<<<<<< HEAD
                 context.Writer.WriteEndArray();
+||||||| Commit version number update changes
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+
+                if(publicRequest.IsSetDomainList())
+                {
+                    context.Writer.WritePropertyName("DomainList");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDomainListListValue in publicRequest.DomainList)
+                    {
+                            context.Writer.Write(publicRequestDomainListListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             }
 
             writer.WriteEndObject();

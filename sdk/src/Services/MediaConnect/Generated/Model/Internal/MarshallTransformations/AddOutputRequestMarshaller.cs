@@ -126,6 +126,18 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.NdiSpeedHqQuality.Value);
             }
 
+            if(requestObject.IsSetNdiProgramName())
+            {
+                context.Writer.WritePropertyName("ndiProgramName");
+                context.Writer.Write(requestObject.NdiProgramName);
+            }
+
+            if(requestObject.IsSetNdiSpeedHqQuality())
+            {
+                context.Writer.WritePropertyName("ndiSpeedHqQuality");
+                context.Writer.Write(requestObject.NdiSpeedHqQuality);
+            }
+
             if(requestObject.IsSetOutputStatus())
             {
                 context.Writer.WritePropertyName("outputStatus");

@@ -59,6 +59,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+<<<<<<< HEAD
         /// Gets and sets the property DefaultFontSize. Specifies the default font size as a percentage
         /// of the computed cell size. Valid only if the defaultLineHeight is also set. If you
         /// leave this field empty, the default font size is 80% of the cell size.
@@ -93,6 +94,43 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+||||||| Commit version number update changes
+=======
+        /// Gets and sets the property DefaultFontSize. Specifies the default font size as a percentage
+        /// of the computed cell size. Valid only if the defaultLineHeight is also set. If you
+        /// leave this field empty, the default font size is 80% of the cell size.
+        /// </summary>
+        [AWSProperty(Min=1, Max=800)]
+        public int DefaultFontSize
+        {
+            get { return this._defaultFontSize.GetValueOrDefault(); }
+            set { this._defaultFontSize = value; }
+        }
+
+        // Check to see if DefaultFontSize property is set
+        internal bool IsSetDefaultFontSize()
+        {
+            return this._defaultFontSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultLineHeight. Documentation update needed
+        /// </summary>
+        [AWSProperty(Min=80, Max=800)]
+        public int DefaultLineHeight
+        {
+            get { return this._defaultLineHeight.GetValueOrDefault(); }
+            set { this._defaultLineHeight = value; }
+        }
+
+        // Check to see if DefaultLineHeight property is set
+        internal bool IsSetDefaultLineHeight()
+        {
+            return this._defaultLineHeight.HasValue; 
+        }
+
+        /// <summary>
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// Gets and sets the property FillLineGap. Specifies how to handle the gap between the
         /// lines (in multi-line captions). ENABLED: Fill with the captions background color (as
         /// specified in the input captions). DISABLED: Leave the gap unfilled

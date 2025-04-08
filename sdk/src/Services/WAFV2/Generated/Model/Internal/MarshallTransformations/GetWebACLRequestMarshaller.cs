@@ -77,9 +77,49 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetId())
             {
+<<<<<<< HEAD
                 context.Writer.WritePropertyName("Id");
                 context.Writer.WriteStringValue(publicRequest.Id);
             }
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetId())
+                {
+                    context.Writer.WritePropertyName("Id");
+                    context.Writer.Write(publicRequest.Id);
+                }
+
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetARN())
+                {
+                    context.Writer.WritePropertyName("ARN");
+                    context.Writer.Write(publicRequest.ARN);
+                }
+
+                if(publicRequest.IsSetId())
+                {
+                    context.Writer.WritePropertyName("Id");
+                    context.Writer.Write(publicRequest.Id);
+                }
+
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
             if(publicRequest.IsSetName())
             {

@@ -31,7 +31,7 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetApplication operation.
-    /// Check the configuration and status of an existing OpenSearch Application.
+    /// Retrieves the configuration and status of an existing OpenSearch application.
     /// </summary>
     public partial class GetApplicationRequest : AmazonOpenSearchServiceRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Unique identifier of the checked OpenSearch Application.
+        /// The unique identifier of the OpenSearch application to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

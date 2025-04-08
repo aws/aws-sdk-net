@@ -35,6 +35,7 @@ namespace Amazon.BedrockRuntime.Model
     public partial class GuardrailPiiEntityFilter
     {
         private GuardrailSensitiveInformationPolicyAction _action;
+        private bool? _detected;
         private string _match;
         private GuardrailPiiEntityType _type;
 
@@ -55,6 +56,25 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Detected. 
+        /// <para>
+        /// Indicates whether personally identifiable information (PII) that breaches the guardrail
+        /// configuration is detected.
+        /// </para>
+        /// </summary>
+        public bool Detected
+        {
+            get { return this._detected.GetValueOrDefault(); }
+            set { this._detected = value; }
+        }
+
+        // Check to see if Detected property is set
+        internal bool IsSetDetected()
+        {
+            return this._detected.HasValue; 
         }
 
         /// <summary>

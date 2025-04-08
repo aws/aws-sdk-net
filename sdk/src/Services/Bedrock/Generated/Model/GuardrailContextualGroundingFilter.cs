@@ -34,8 +34,58 @@ namespace Amazon.Bedrock.Model
     /// </summary>
     public partial class GuardrailContextualGroundingFilter
     {
+        private GuardrailContextualGroundingAction _action;
+        private bool? _enabled;
         private double? _threshold;
         private GuardrailContextualGroundingFilterType _type;
+
+        /// <summary>
+        /// Gets and sets the property Action. 
+        /// <para>
+        /// The action to take when content fails the contextual grounding evaluation. Supported
+        /// values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>BLOCK</c> – Block the content and replace it with blocked messaging.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NONE</c> – Take no action but return detection information in the trace response.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public GuardrailContextualGroundingAction Action
+        {
+            get { return this._action; }
+            set { this._action = value; }
+        }
+
+        // Check to see if Action property is set
+        internal bool IsSetAction()
+        {
+            return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Indicates whether contextual grounding is enabled for evaluation. When disabled, you
+        /// aren't charged for the evaluation. The evaluation doesn't appear in the response.
+        /// </para>
+        /// </summary>
+        public bool Enabled
+        {
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
+        }
+
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
+        {
+            return this._enabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Threshold. 

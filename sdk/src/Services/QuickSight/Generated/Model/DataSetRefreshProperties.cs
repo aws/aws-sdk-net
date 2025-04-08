@@ -34,7 +34,26 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class DataSetRefreshProperties
     {
+        private RefreshFailureConfiguration _failureConfiguration;
         private RefreshConfiguration _refreshConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property FailureConfiguration. 
+        /// <para>
+        /// The failure configuration for a dataset.
+        /// </para>
+        /// </summary>
+        public RefreshFailureConfiguration FailureConfiguration
+        {
+            get { return this._failureConfiguration; }
+            set { this._failureConfiguration = value; }
+        }
+
+        // Check to see if FailureConfiguration property is set
+        internal bool IsSetFailureConfiguration()
+        {
+            return this._failureConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RefreshConfiguration. 
@@ -42,7 +61,6 @@ namespace Amazon.QuickSight.Model
         /// The refresh configuration for a dataset.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public RefreshConfiguration RefreshConfiguration
         {
             get { return this._refreshConfiguration; }

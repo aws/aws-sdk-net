@@ -18085,6 +18085,18 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType ReservedInstances = new ResourceType("reserved-instances");
         /// <summary>
+        /// Constant RouteServer for ResourceType
+        /// </summary>
+        public static readonly ResourceType RouteServer = new ResourceType("route-server");
+        /// <summary>
+        /// Constant RouteServerEndpoint for ResourceType
+        /// </summary>
+        public static readonly ResourceType RouteServerEndpoint = new ResourceType("route-server-endpoint");
+        /// <summary>
+        /// Constant RouteServerPeer for ResourceType
+        /// </summary>
+        public static readonly ResourceType RouteServerPeer = new ResourceType("route-server-peer");
+        /// <summary>
         /// Constant RouteTable for ResourceType
         /// </summary>
         public static readonly ResourceType RouteTable = new ResourceType("route-table");
@@ -18428,6 +18440,682 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RouteOrigin(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteServerAssociationState.
+    /// </summary>
+    public class RouteServerAssociationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Associated for RouteServerAssociationState
+        /// </summary>
+        public static readonly RouteServerAssociationState Associated = new RouteServerAssociationState("associated");
+        /// <summary>
+        /// Constant Associating for RouteServerAssociationState
+        /// </summary>
+        public static readonly RouteServerAssociationState Associating = new RouteServerAssociationState("associating");
+        /// <summary>
+        /// Constant Disassociating for RouteServerAssociationState
+        /// </summary>
+        public static readonly RouteServerAssociationState Disassociating = new RouteServerAssociationState("disassociating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteServerAssociationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteServerAssociationState FindValue(string value)
+        {
+            return FindValue<RouteServerAssociationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteServerAssociationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteServerBfdState.
+    /// </summary>
+    public class RouteServerBfdState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Down for RouteServerBfdState
+        /// </summary>
+        public static readonly RouteServerBfdState Down = new RouteServerBfdState("down");
+        /// <summary>
+        /// Constant Up for RouteServerBfdState
+        /// </summary>
+        public static readonly RouteServerBfdState Up = new RouteServerBfdState("up");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteServerBfdState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteServerBfdState FindValue(string value)
+        {
+            return FindValue<RouteServerBfdState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteServerBfdState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteServerBgpState.
+    /// </summary>
+    public class RouteServerBgpState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Down for RouteServerBgpState
+        /// </summary>
+        public static readonly RouteServerBgpState Down = new RouteServerBgpState("down");
+        /// <summary>
+        /// Constant Up for RouteServerBgpState
+        /// </summary>
+        public static readonly RouteServerBgpState Up = new RouteServerBgpState("up");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteServerBgpState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteServerBgpState FindValue(string value)
+        {
+            return FindValue<RouteServerBgpState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteServerBgpState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteServerEndpointState.
+    /// </summary>
+    public class RouteServerEndpointState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for RouteServerEndpointState
+        /// </summary>
+        public static readonly RouteServerEndpointState Available = new RouteServerEndpointState("available");
+        /// <summary>
+        /// Constant Deleted for RouteServerEndpointState
+        /// </summary>
+        public static readonly RouteServerEndpointState Deleted = new RouteServerEndpointState("deleted");
+        /// <summary>
+        /// Constant DeleteFailed for RouteServerEndpointState
+        /// </summary>
+        public static readonly RouteServerEndpointState DeleteFailed = new RouteServerEndpointState("delete-failed");
+        /// <summary>
+        /// Constant Deleting for RouteServerEndpointState
+        /// </summary>
+        public static readonly RouteServerEndpointState Deleting = new RouteServerEndpointState("deleting");
+        /// <summary>
+        /// Constant Failed for RouteServerEndpointState
+        /// </summary>
+        public static readonly RouteServerEndpointState Failed = new RouteServerEndpointState("failed");
+        /// <summary>
+        /// Constant Failing for RouteServerEndpointState
+        /// </summary>
+        public static readonly RouteServerEndpointState Failing = new RouteServerEndpointState("failing");
+        /// <summary>
+        /// Constant Pending for RouteServerEndpointState
+        /// </summary>
+        public static readonly RouteServerEndpointState Pending = new RouteServerEndpointState("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteServerEndpointState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteServerEndpointState FindValue(string value)
+        {
+            return FindValue<RouteServerEndpointState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteServerEndpointState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteServerPeerLivenessMode.
+    /// </summary>
+    public class RouteServerPeerLivenessMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Bfd for RouteServerPeerLivenessMode
+        /// </summary>
+        public static readonly RouteServerPeerLivenessMode Bfd = new RouteServerPeerLivenessMode("bfd");
+        /// <summary>
+        /// Constant BgpKeepalive for RouteServerPeerLivenessMode
+        /// </summary>
+        public static readonly RouteServerPeerLivenessMode BgpKeepalive = new RouteServerPeerLivenessMode("bgp-keepalive");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteServerPeerLivenessMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteServerPeerLivenessMode FindValue(string value)
+        {
+            return FindValue<RouteServerPeerLivenessMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteServerPeerLivenessMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteServerPeerState.
+    /// </summary>
+    public class RouteServerPeerState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for RouteServerPeerState
+        /// </summary>
+        public static readonly RouteServerPeerState Available = new RouteServerPeerState("available");
+        /// <summary>
+        /// Constant Deleted for RouteServerPeerState
+        /// </summary>
+        public static readonly RouteServerPeerState Deleted = new RouteServerPeerState("deleted");
+        /// <summary>
+        /// Constant Deleting for RouteServerPeerState
+        /// </summary>
+        public static readonly RouteServerPeerState Deleting = new RouteServerPeerState("deleting");
+        /// <summary>
+        /// Constant Failed for RouteServerPeerState
+        /// </summary>
+        public static readonly RouteServerPeerState Failed = new RouteServerPeerState("failed");
+        /// <summary>
+        /// Constant Failing for RouteServerPeerState
+        /// </summary>
+        public static readonly RouteServerPeerState Failing = new RouteServerPeerState("failing");
+        /// <summary>
+        /// Constant Pending for RouteServerPeerState
+        /// </summary>
+        public static readonly RouteServerPeerState Pending = new RouteServerPeerState("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteServerPeerState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteServerPeerState FindValue(string value)
+        {
+            return FindValue<RouteServerPeerState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteServerPeerState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteServerPersistRoutesAction.
+    /// </summary>
+    public class RouteServerPersistRoutesAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disable for RouteServerPersistRoutesAction
+        /// </summary>
+        public static readonly RouteServerPersistRoutesAction Disable = new RouteServerPersistRoutesAction("disable");
+        /// <summary>
+        /// Constant Enable for RouteServerPersistRoutesAction
+        /// </summary>
+        public static readonly RouteServerPersistRoutesAction Enable = new RouteServerPersistRoutesAction("enable");
+        /// <summary>
+        /// Constant Reset for RouteServerPersistRoutesAction
+        /// </summary>
+        public static readonly RouteServerPersistRoutesAction Reset = new RouteServerPersistRoutesAction("reset");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteServerPersistRoutesAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteServerPersistRoutesAction FindValue(string value)
+        {
+            return FindValue<RouteServerPersistRoutesAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteServerPersistRoutesAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteServerPersistRoutesState.
+    /// </summary>
+    public class RouteServerPersistRoutesState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for RouteServerPersistRoutesState
+        /// </summary>
+        public static readonly RouteServerPersistRoutesState Disabled = new RouteServerPersistRoutesState("disabled");
+        /// <summary>
+        /// Constant Disabling for RouteServerPersistRoutesState
+        /// </summary>
+        public static readonly RouteServerPersistRoutesState Disabling = new RouteServerPersistRoutesState("disabling");
+        /// <summary>
+        /// Constant Enabled for RouteServerPersistRoutesState
+        /// </summary>
+        public static readonly RouteServerPersistRoutesState Enabled = new RouteServerPersistRoutesState("enabled");
+        /// <summary>
+        /// Constant Enabling for RouteServerPersistRoutesState
+        /// </summary>
+        public static readonly RouteServerPersistRoutesState Enabling = new RouteServerPersistRoutesState("enabling");
+        /// <summary>
+        /// Constant Modifying for RouteServerPersistRoutesState
+        /// </summary>
+        public static readonly RouteServerPersistRoutesState Modifying = new RouteServerPersistRoutesState("modifying");
+        /// <summary>
+        /// Constant Resetting for RouteServerPersistRoutesState
+        /// </summary>
+        public static readonly RouteServerPersistRoutesState Resetting = new RouteServerPersistRoutesState("resetting");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteServerPersistRoutesState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteServerPersistRoutesState FindValue(string value)
+        {
+            return FindValue<RouteServerPersistRoutesState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteServerPersistRoutesState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteServerPropagationState.
+    /// </summary>
+    public class RouteServerPropagationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for RouteServerPropagationState
+        /// </summary>
+        public static readonly RouteServerPropagationState Available = new RouteServerPropagationState("available");
+        /// <summary>
+        /// Constant Deleting for RouteServerPropagationState
+        /// </summary>
+        public static readonly RouteServerPropagationState Deleting = new RouteServerPropagationState("deleting");
+        /// <summary>
+        /// Constant Pending for RouteServerPropagationState
+        /// </summary>
+        public static readonly RouteServerPropagationState Pending = new RouteServerPropagationState("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteServerPropagationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteServerPropagationState FindValue(string value)
+        {
+            return FindValue<RouteServerPropagationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteServerPropagationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteServerRouteInstallationStatus.
+    /// </summary>
+    public class RouteServerRouteInstallationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Installed for RouteServerRouteInstallationStatus
+        /// </summary>
+        public static readonly RouteServerRouteInstallationStatus Installed = new RouteServerRouteInstallationStatus("installed");
+        /// <summary>
+        /// Constant Rejected for RouteServerRouteInstallationStatus
+        /// </summary>
+        public static readonly RouteServerRouteInstallationStatus Rejected = new RouteServerRouteInstallationStatus("rejected");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteServerRouteInstallationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteServerRouteInstallationStatus FindValue(string value)
+        {
+            return FindValue<RouteServerRouteInstallationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteServerRouteInstallationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteServerRouteStatus.
+    /// </summary>
+    public class RouteServerRouteStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InFib for RouteServerRouteStatus
+        /// </summary>
+        public static readonly RouteServerRouteStatus InFib = new RouteServerRouteStatus("in-fib");
+        /// <summary>
+        /// Constant InRib for RouteServerRouteStatus
+        /// </summary>
+        public static readonly RouteServerRouteStatus InRib = new RouteServerRouteStatus("in-rib");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteServerRouteStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteServerRouteStatus FindValue(string value)
+        {
+            return FindValue<RouteServerRouteStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteServerRouteStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteServerState.
+    /// </summary>
+    public class RouteServerState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for RouteServerState
+        /// </summary>
+        public static readonly RouteServerState Available = new RouteServerState("available");
+        /// <summary>
+        /// Constant Deleted for RouteServerState
+        /// </summary>
+        public static readonly RouteServerState Deleted = new RouteServerState("deleted");
+        /// <summary>
+        /// Constant Deleting for RouteServerState
+        /// </summary>
+        public static readonly RouteServerState Deleting = new RouteServerState("deleting");
+        /// <summary>
+        /// Constant Modifying for RouteServerState
+        /// </summary>
+        public static readonly RouteServerState Modifying = new RouteServerState("modifying");
+        /// <summary>
+        /// Constant Pending for RouteServerState
+        /// </summary>
+        public static readonly RouteServerState Pending = new RouteServerState("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteServerState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteServerState FindValue(string value)
+        {
+            return FindValue<RouteServerState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteServerState(string value)
         {
             return FindValue(value);
         }
@@ -23467,6 +24155,7 @@ namespace Amazon.EC2
 
 
     /// <summary>
+<<<<<<< HEAD
     /// Constants used for properties of type VpcEncryptionControlExclusionState.
     /// </summary>
     public class VpcEncryptionControlExclusionState : ConstantClass
@@ -23645,6 +24334,195 @@ namespace Amazon.EC2
 
 
     /// <summary>
+||||||| Commit version number update changes
+=======
+    /// Constants used for properties of type VpcEncryptionControlExclusionState.
+    /// </summary>
+    public class VpcEncryptionControlExclusionState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for VpcEncryptionControlExclusionState
+        /// </summary>
+        public static readonly VpcEncryptionControlExclusionState Disabled = new VpcEncryptionControlExclusionState("disabled");
+        /// <summary>
+        /// Constant Disabling for VpcEncryptionControlExclusionState
+        /// </summary>
+        public static readonly VpcEncryptionControlExclusionState Disabling = new VpcEncryptionControlExclusionState("disabling");
+        /// <summary>
+        /// Constant Enabled for VpcEncryptionControlExclusionState
+        /// </summary>
+        public static readonly VpcEncryptionControlExclusionState Enabled = new VpcEncryptionControlExclusionState("enabled");
+        /// <summary>
+        /// Constant Enabling for VpcEncryptionControlExclusionState
+        /// </summary>
+        public static readonly VpcEncryptionControlExclusionState Enabling = new VpcEncryptionControlExclusionState("enabling");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VpcEncryptionControlExclusionState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcEncryptionControlExclusionState FindValue(string value)
+        {
+            return FindValue<VpcEncryptionControlExclusionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcEncryptionControlExclusionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VpcEncryptionControlMode.
+    /// </summary>
+    public class VpcEncryptionControlMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Enforce for VpcEncryptionControlMode
+        /// </summary>
+        public static readonly VpcEncryptionControlMode Enforce = new VpcEncryptionControlMode("enforce");
+        /// <summary>
+        /// Constant Monitor for VpcEncryptionControlMode
+        /// </summary>
+        public static readonly VpcEncryptionControlMode Monitor = new VpcEncryptionControlMode("monitor");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VpcEncryptionControlMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcEncryptionControlMode FindValue(string value)
+        {
+            return FindValue<VpcEncryptionControlMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcEncryptionControlMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VpcEncryptionControlState.
+    /// </summary>
+    public class VpcEncryptionControlState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for VpcEncryptionControlState
+        /// </summary>
+        public static readonly VpcEncryptionControlState Available = new VpcEncryptionControlState("available");
+        /// <summary>
+        /// Constant Creating for VpcEncryptionControlState
+        /// </summary>
+        public static readonly VpcEncryptionControlState Creating = new VpcEncryptionControlState("creating");
+        /// <summary>
+        /// Constant Deleted for VpcEncryptionControlState
+        /// </summary>
+        public static readonly VpcEncryptionControlState Deleted = new VpcEncryptionControlState("deleted");
+        /// <summary>
+        /// Constant DeleteFailed for VpcEncryptionControlState
+        /// </summary>
+        public static readonly VpcEncryptionControlState DeleteFailed = new VpcEncryptionControlState("delete-failed");
+        /// <summary>
+        /// Constant Deleting for VpcEncryptionControlState
+        /// </summary>
+        public static readonly VpcEncryptionControlState Deleting = new VpcEncryptionControlState("deleting");
+        /// <summary>
+        /// Constant EnforceFailed for VpcEncryptionControlState
+        /// </summary>
+        public static readonly VpcEncryptionControlState EnforceFailed = new VpcEncryptionControlState("enforce-failed");
+        /// <summary>
+        /// Constant EnforceInProgress for VpcEncryptionControlState
+        /// </summary>
+        public static readonly VpcEncryptionControlState EnforceInProgress = new VpcEncryptionControlState("enforce-in-progress");
+        /// <summary>
+        /// Constant MonitorFailed for VpcEncryptionControlState
+        /// </summary>
+        public static readonly VpcEncryptionControlState MonitorFailed = new VpcEncryptionControlState("monitor-failed");
+        /// <summary>
+        /// Constant MonitorInProgress for VpcEncryptionControlState
+        /// </summary>
+        public static readonly VpcEncryptionControlState MonitorInProgress = new VpcEncryptionControlState("monitor-in-progress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VpcEncryptionControlState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcEncryptionControlState FindValue(string value)
+        {
+            return FindValue<VpcEncryptionControlState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcEncryptionControlState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
     /// Constants used for properties of type VpcEndpointType.
     /// </summary>
     public class VpcEndpointType : ConstantClass

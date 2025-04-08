@@ -56,6 +56,18 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("cacheReadInputTokens", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.CacheReadInputTokens = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("cacheWriteInputTokens", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.CacheWriteInputTokens = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inputTokens", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

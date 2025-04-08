@@ -83,8 +83,7 @@ namespace Amazon.Keyspaces.Model
         /// <para>
         ///  <c>regionList</c> - if the <c>replicationStrategy</c> is <c>MULTI_REGION</c>, the
         /// <c>regionList</c> requires the current Region and at least one additional Amazon Web
-        /// Services Region where the keyspace is going to be replicated in. The maximum number
-        /// of supported replication Regions including the current Region is six.
+        /// Services Region where the keyspace is going to be replicated in.
         /// </para>
         ///  </li> </ul>
         /// </summary>

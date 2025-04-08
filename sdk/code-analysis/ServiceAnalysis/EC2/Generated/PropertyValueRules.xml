@@ -437,6 +437,21 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeRouteServerEndpointsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeRouteServerPeersRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeRouteServersRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeRouteTablesRequest.MaxResults</property>
     <min>5</min>
     <max>100</max>
@@ -705,6 +720,11 @@
   <property-value-rule>
     <property>Amazon.EC2.Model.GetNetworkInsightsAccessScopeAnalysisFindingsRequest.MaxResults</property>
     <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetRouteServerRoutingDatabaseRequest.MaxResults</property>
+    <min>5</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>

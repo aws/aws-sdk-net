@@ -148,9 +148,33 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName(publicRequestParentActionGroupSignatureParamsKvp.Key);
                     var publicRequestParentActionGroupSignatureParamsValue = publicRequestParentActionGroupSignatureParamsKvp.Value;
 
+<<<<<<< HEAD
                         context.Writer.WriteStringValue(publicRequestParentActionGroupSignatureParamsValue);
                 }
                 context.Writer.WriteEndObject();
+||||||| Commit version number update changes
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetParentActionGroupSignatureParams())
+                {
+                    context.Writer.WritePropertyName("parentActionGroupSignatureParams");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestParentActionGroupSignatureParamsKvp in publicRequest.ParentActionGroupSignatureParams)
+                    {
+                        context.Writer.WritePropertyName(publicRequestParentActionGroupSignatureParamsKvp.Key);
+                        var publicRequestParentActionGroupSignatureParamsValue = publicRequestParentActionGroupSignatureParamsKvp.Value;
+
+                            context.Writer.Write(publicRequestParentActionGroupSignatureParamsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             }
 
             writer.WriteEndObject();

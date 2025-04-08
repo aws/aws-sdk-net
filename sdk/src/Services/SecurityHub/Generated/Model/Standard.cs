@@ -104,7 +104,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsArn. 
         /// <para>
-        /// The ARN of a standard.
+        /// The ARN of the standard.
         /// </para>
         /// </summary>
         public string StandardsArn

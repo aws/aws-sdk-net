@@ -65,6 +65,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetBridgeArn())
                 throw new AmazonMediaConnectException("Request object does not have required field BridgeArn set");
+<<<<<<< HEAD
             request.AddPathResource("{BridgeArn}", StringUtils.FromString(publicRequest.BridgeArn));
             request.ResourcePath = "/v1/bridges/{BridgeArn}/state";
 #if !NETFRAMEWORK
@@ -77,6 +78,15 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetDesiredState())
+||||||| Commit version number update changes
+            request.AddPathResource("{bridgeArn}", StringUtils.FromString(publicRequest.BridgeArn));
+            request.ResourcePath = "/v1/bridges/{bridgeArn}/state";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+=======
+            request.AddPathResource("{BridgeArn}", StringUtils.FromString(publicRequest.BridgeArn));
+            request.ResourcePath = "/v1/bridges/{BridgeArn}/state";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             {
                 context.Writer.WritePropertyName("desiredState");
                 context.Writer.WriteStringValue(publicRequest.DesiredState);

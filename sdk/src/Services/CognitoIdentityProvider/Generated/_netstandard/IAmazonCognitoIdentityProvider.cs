@@ -5068,6 +5068,17 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  </li> <li> 
         /// <para>
+<<<<<<< HEAD
+        /// The user's options for choice-based authentication with the <c>USER_AUTH</c> flow.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// Authorize this action with a signed-in user's access token. It must include the scope
+        /// <c>aws.cognito.signin.user.admin</c>.
+||||||| Commit version number update changes
+        /// The user's options in the <c>USER_AUTH</c> flow that they can select in a <c>SELECT_CHALLENGE</c>
+        /// response or request in a <c>PREFERRED_CHALLENGE</c>request.
+=======
         /// The user's options for choice-based authentication with the <c>USER_AUTH</c> flow.
         /// </para>
         ///  </li> </ol> 
@@ -5082,8 +5093,23 @@ namespace Amazon.CognitoIdentityProvider
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
         /// the Amazon Cognito user pools API and user pool endpoints</a>.
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
+        /// </para>
+<<<<<<< HEAD
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note>
+||||||| Commit version number update changes
+        ///  </li> </ol>
+=======
+        ///  </note>
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUserAuthFactors service method.</param>
         /// <param name="cancellationToken">
@@ -6357,8 +6383,31 @@ namespace Amazon.CognitoIdentityProvider
         /// Configures threat protection for a user pool or app client. Sets configuration for
         /// the following.
         /// 
+<<<<<<< HEAD
+        ///  <ul> <li> 
+||||||| Commit version number update changes
+        ///  
+=======
         ///  <ul> <li> 
         /// <para>
+        /// Responses to risks with adaptive authentication
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Responses to vulnerable passwords with compromised-credentials detection
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Notifications to users who have had risky activity detected
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IP-address denylist and allowlist
+        /// </para>
+        ///  </li> </ul> 
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
+        /// <para>
+<<<<<<< HEAD
         /// Responses to risks with adaptive authentication
         /// </para>
         ///  </li> <li> 
@@ -6382,6 +6431,18 @@ namespace Amazon.CognitoIdentityProvider
         /// of <c>UserPoolAddOns</c> in an <c>UpdateUserPool</c> request. To activate this setting,
         /// your user pool must be on the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html">
         /// Plus tier</a>.
+||||||| Commit version number update changes
+        /// To activate Amazon Cognito advanced security features, update the user pool to include
+        /// the <c>UserPoolAddOns</c> key<c>AdvancedSecurityMode</c>.
+=======
+        /// To set the risk configuration for the user pool to defaults, send this request with
+        /// only the <c>UserPoolId</c> parameter. To reset the threat protection settings of an
+        /// app client to be inherited from the user pool, send <c>UserPoolId</c> and <c>ClientId</c>
+        /// parameters only. To change threat protection to audit-only or off, update the value
+        /// of <c>UserPoolAddOns</c> in an <c>UpdateUserPool</c> request. To activate this setting,
+        /// your user pool must be on the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html">
+        /// Plus tier</a>.
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetRiskConfiguration service method.</param>
@@ -6437,10 +6498,38 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  <note> 
         /// <para>
+<<<<<<< HEAD
         /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+||||||| Commit version number update changes
+        /// To use this API, your user pool must have a domain associated with it. Otherwise,
+        /// there is no place to host the app's pages, and the service will throw an error.
+=======
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
+        /// </para>
+<<<<<<< HEAD
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+||||||| Commit version number update changes
+        ///  </note>
+=======
         ///  
         /// <para>
         ///  <b>Learn more</b> 
@@ -6456,6 +6545,7 @@ namespace Amazon.CognitoIdentityProvider
         /// the Amazon Cognito user pools API and user pool endpoints</a> 
         /// </para>
         ///  </li> </ul> </note>
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetUICustomization service method.</param>
         /// <param name="cancellationToken">

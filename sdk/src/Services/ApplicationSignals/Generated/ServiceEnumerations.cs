@@ -133,6 +133,60 @@ namespace Amazon.ApplicationSignals
 
 
     /// <summary>
+    /// Constants used for properties of type MetricSourceType.
+    /// </summary>
+    public class MetricSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CloudWatchMetric for MetricSourceType
+        /// </summary>
+        public static readonly MetricSourceType CloudWatchMetric = new MetricSourceType("CloudWatchMetric");
+        /// <summary>
+        /// Constant ServiceDependency for MetricSourceType
+        /// </summary>
+        public static readonly MetricSourceType ServiceDependency = new MetricSourceType("ServiceDependency");
+        /// <summary>
+        /// Constant ServiceOperation for MetricSourceType
+        /// </summary>
+        public static readonly MetricSourceType ServiceOperation = new MetricSourceType("ServiceOperation");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetricSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricSourceType FindValue(string value)
+        {
+            return FindValue<MetricSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ServiceLevelIndicatorComparisonOperator.
     /// </summary>
     public class ServiceLevelIndicatorComparisonOperator : ConstantClass

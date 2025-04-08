@@ -87,11 +87,31 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetEventPattern())
             {
                 context.Writer.WritePropertyName("EventPattern");
                 context.Writer.WriteStringValue(publicRequest.EventPattern);
             }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetRetentionDays())
+                {
+                    context.Writer.WritePropertyName("RetentionDays");
+                    context.Writer.Write(publicRequest.RetentionDays);
+                }
+=======
+                if(publicRequest.IsSetKmsKeyIdentifier())
+                {
+                    context.Writer.WritePropertyName("KmsKeyIdentifier");
+                    context.Writer.Write(publicRequest.KmsKeyIdentifier);
+                }
+
+                if(publicRequest.IsSetRetentionDays())
+                {
+                    context.Writer.WritePropertyName("RetentionDays");
+                    context.Writer.Write(publicRequest.RetentionDays);
+                }
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
             if(publicRequest.IsSetRetentionDays())
             {

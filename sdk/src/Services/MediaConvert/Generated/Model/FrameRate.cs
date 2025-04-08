@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// the calculated frame rate of the asset.
+    /// The frame rate of the video or audio track.
     /// </summary>
     public partial class FrameRate
     {
@@ -38,7 +38,9 @@ namespace Amazon.MediaConvert.Model
         private int? _numerator;
 
         /// <summary>
-        /// Gets and sets the property Denominator. the denominator of the frame rate of the asset.
+        /// Gets and sets the property Denominator. The denominator, or bottom number, in the
+        /// fractional frame rate. For example, if your frame rate is 24000 / 1001 (23.976 frames
+        /// per second), then the denominator would be 1001.
         /// </summary>
         public int? Denominator
         {
@@ -53,7 +55,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Numerator. the numerator of the frame rate of the asset.
+        /// Gets and sets the property Numerator. The numerator, or top number, in the fractional
+        /// frame rate. For example, if your frame rate is 24000 / 1001 (23.976 frames per second),
+        /// then the numerator would be 24000.
         /// </summary>
         public int? Numerator
         {

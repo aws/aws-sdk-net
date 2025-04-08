@@ -383,7 +383,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property RemoteNetworkConfig. 
         /// <para>
-        /// The configuration in the cluster for EKS Hybrid Nodes. You can't change or update
+        /// The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove
         /// this configuration after the cluster is created.
         /// </para>
         /// </summary>

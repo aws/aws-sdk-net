@@ -195,11 +195,34 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetParentIntentSignature())
             {
                 context.Writer.WritePropertyName("parentIntentSignature");
                 context.Writer.WriteStringValue(publicRequest.ParentIntentSignature);
             }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetQnAIntentConfiguration())
+                {
+                    context.Writer.WritePropertyName("qnAIntentConfiguration");
+                    context.Writer.WriteObjectStart();
+=======
+                if(publicRequest.IsSetQInConnectIntentConfiguration())
+                {
+                    context.Writer.WritePropertyName("qInConnectIntentConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = QInConnectIntentConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.QInConnectIntentConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetQnAIntentConfiguration())
+                {
+                    context.Writer.WritePropertyName("qnAIntentConfiguration");
+                    context.Writer.WriteObjectStart();
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
             if(publicRequest.IsSetQnAIntentConfiguration())
             {

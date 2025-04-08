@@ -56,6 +56,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("DependencyConfig", targetDepth))
+                {
+                    var unmarshaller = DependencyConfigUnmarshaller.Instance;
+                    unmarshalledObject.DependencyConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KeyAttributes", targetDepth))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

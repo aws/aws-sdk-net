@@ -64,6 +64,12 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
                     response.MemberAccountRateTypeSelections = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("standaloneAccountRateTypeSelections", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.StandaloneAccountRateTypeSelections = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

@@ -144,6 +144,10 @@ namespace Amazon.WAFV2.Model
         /// default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource
         /// type in the web ACL <c>AssociationConfig</c>, for additional processing fees. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amplify, use the CloudFront limit.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For information about how to handle oversized request bodies, see the <c>Body</c>
@@ -343,6 +347,10 @@ namespace Amazon.WAFV2.Model
         /// For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the
         /// default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource
         /// type in the web ACL <c>AssociationConfig</c>, for additional processing fees. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amplify, use the CloudFront limit.
         /// </para>
         ///  </li> </ul> 
         /// <para>

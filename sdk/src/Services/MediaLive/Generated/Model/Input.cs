@@ -47,7 +47,9 @@ namespace Amazon.MediaLive.Model
         private MulticastSettings _multicastSettings;
         private string _name;
         private string _roleArn;
+        private List<string> _sdiSources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Smpte2110ReceiverGroupSettings _smpte2110ReceiverGroupSettings;
         private List<InputSource> _sources = AWSConfigs.InitializeCollections ? new List<InputSource>() : null;
         private SrtSettings _srtSettings;
         private InputState _state;
@@ -264,6 +266,21 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SdiSources.
+        /// </summary>
+        public List<string> SdiSources
+        {
+            get { return this._sdiSources; }
+            set { this._sdiSources = value; }
+        }
+
+        // Check to see if SdiSources property is set
+        internal bool IsSetSdiSources()
+        {
+            return this._sdiSources != null && (this._sdiSources.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property SecurityGroups. A list of IDs for all the Input Security
         /// Groups attached to the input.
         /// </summary>
@@ -277,6 +294,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetSecurityGroups()
         {
             return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Smpte2110ReceiverGroupSettings. Include this parameter
+        /// if the input is a SMPTE 2110 input, to identify the stream sources for this input.
+        /// </summary>
+        public Smpte2110ReceiverGroupSettings Smpte2110ReceiverGroupSettings
+        {
+            get { return this._smpte2110ReceiverGroupSettings; }
+            set { this._smpte2110ReceiverGroupSettings = value; }
+        }
+
+        // Check to see if Smpte2110ReceiverGroupSettings property is set
+        internal bool IsSetSmpte2110ReceiverGroupSettings()
+        {
+            return this._smpte2110ReceiverGroupSettings != null;
         }
 
         /// <summary>

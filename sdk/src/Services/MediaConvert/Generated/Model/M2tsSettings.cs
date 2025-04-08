@@ -163,6 +163,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+<<<<<<< HEAD
         /// Gets and sets the property AudioPtsOffsetDelta. Manually specify the difference in
         /// PTS offset that will be applied to the audio track, in seconds or milliseconds, when
         /// you set PTS offset to Seconds or Milliseconds. Enter an integer from -10000 to 10000.
@@ -182,6 +183,28 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+||||||| Commit version number update changes
+=======
+        /// Gets and sets the property AudioPtsOffsetDelta. Manually specify the difference in
+        /// PTS offset that will be applied to the audio track, in seconds or milliseconds, when
+        /// you set PTS offset to Seconds or Milliseconds. Enter an integer from -10000 to 10000.
+        /// Leave blank to keep the default value 0.
+        /// </summary>
+        [AWSProperty(Min=-10000, Max=10000)]
+        public int AudioPtsOffsetDelta
+        {
+            get { return this._audioPtsOffsetDelta.GetValueOrDefault(); }
+            set { this._audioPtsOffsetDelta = value; }
+        }
+
+        // Check to see if AudioPtsOffsetDelta property is set
+        internal bool IsSetAudioPtsOffsetDelta()
+        {
+            return this._audioPtsOffsetDelta.HasValue; 
+        }
+
+        /// <summary>
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// Gets and sets the property Bitrate. Specify the output bitrate of the transport stream
         /// in bits per second. Setting to 0 lets the muxer automatically determine the appropriate
         /// bitrate. Other common values are 3750000, 7500000, and 15000000.

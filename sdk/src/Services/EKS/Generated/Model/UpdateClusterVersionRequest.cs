@@ -53,6 +53,7 @@ namespace Amazon.EKS.Model
     public partial class UpdateClusterVersionRequest : AmazonEKSRequest
     {
         private string _clientRequestToken;
+        private bool? _force;
         private string _name;
         private string _version;
 
@@ -73,6 +74,25 @@ namespace Amazon.EKS.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Force. 
+        /// <para>
+        /// Set this value to <c>true</c> to override upgrade-blocking readiness checks when updating
+        /// a cluster.
+        /// </para>
+        /// </summary>
+        public bool Force
+        {
+            get { return this._force.GetValueOrDefault(); }
+            set { this._force = value; }
+        }
+
+        // Check to see if Force property is set
+        internal bool IsSetForce()
+        {
+            return this._force.HasValue; 
         }
 
         /// <summary>

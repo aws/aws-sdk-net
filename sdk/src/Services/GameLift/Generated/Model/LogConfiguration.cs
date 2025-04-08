@@ -53,7 +53,8 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>S3</c> -- Store logs in an Amazon S3 bucket that you define.
+        ///  <c>S3</c> -- Store logs in an Amazon S3 bucket that you define. This bucket must
+        /// reside in the fleet's home Amazon Web Services Region.
         /// </para>
         ///  </li> <li> 
         /// <para>

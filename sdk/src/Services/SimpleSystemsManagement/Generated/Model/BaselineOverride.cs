@@ -38,6 +38,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<string> _approvedPatches = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PatchComplianceLevel _approvedPatchesComplianceLevel;
         private bool? _approvedPatchesEnableNonSecurity;
+        private PatchComplianceStatus _availableSecurityUpdatesComplianceStatus;
         private PatchFilterGroup _globalFilters;
         private OperatingSystem _operatingSystem;
         private List<string> _rejectedPatches = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -122,6 +123,31 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetApprovedPatchesEnableNonSecurity()
         {
             return this._approvedPatchesEnableNonSecurity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailableSecurityUpdatesComplianceStatus. 
+        /// <para>
+        /// Indicates whether managed nodes for which there are available security-related patches
+        /// that have not been approved by the baseline are being defined as <c>COMPLIANT</c>
+        /// or <c>NON_COMPLIANT</c>. This option is specified when the <c>CreatePatchBaseline</c>
+        /// or <c>UpdatePatchBaseline</c> commands are run.
+        /// </para>
+        ///  
+        /// <para>
+        /// Applies to Windows Server managed nodes only.
+        /// </para>
+        /// </summary>
+        public PatchComplianceStatus AvailableSecurityUpdatesComplianceStatus
+        {
+            get { return this._availableSecurityUpdatesComplianceStatus; }
+            set { this._availableSecurityUpdatesComplianceStatus = value; }
+        }
+
+        // Check to see if AvailableSecurityUpdatesComplianceStatus property is set
+        internal bool IsSetAvailableSecurityUpdatesComplianceStatus()
+        {
+            return this._availableSecurityUpdatesComplianceStatus != null;
         }
 
         /// <summary>

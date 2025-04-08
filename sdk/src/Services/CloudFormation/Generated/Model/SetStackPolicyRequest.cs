@@ -90,7 +90,7 @@ namespace Amazon.CloudFormation.Model
         /// but not both.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1350)]
+        [AWSProperty(Min=1, Max=5120)]
         public string StackPolicyURL
         {
             get { return this._stackPolicyURL; }

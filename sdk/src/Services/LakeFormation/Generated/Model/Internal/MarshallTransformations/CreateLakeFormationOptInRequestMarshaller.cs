@@ -97,6 +97,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
             if(publicRequest.IsSetResource())
             {
+<<<<<<< HEAD
                 context.Writer.WritePropertyName("Resource");
                 context.Writer.WriteStartObject();
 
@@ -104,6 +105,78 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.Resource, context);
 
                 context.Writer.WriteEndObject();
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetPrincipal())
+                {
+                    context.Writer.WritePropertyName("Principal");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataLakePrincipalMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Principal, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetResource())
+                {
+                    context.Writer.WritePropertyName("Resource");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ResourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Resource, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCondition())
+                {
+                    context.Writer.WritePropertyName("Condition");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ConditionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Condition, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetPrincipal())
+                {
+                    context.Writer.WritePropertyName("Principal");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataLakePrincipalMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Principal, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetResource())
+                {
+                    context.Writer.WritePropertyName("Resource");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ResourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Resource, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             }
 
             writer.WriteEndObject();

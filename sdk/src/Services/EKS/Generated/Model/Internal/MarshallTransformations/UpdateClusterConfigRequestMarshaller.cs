@@ -155,6 +155,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 
             if(publicRequest.IsSetUpgradePolicy())
             {
+<<<<<<< HEAD
                 context.Writer.WritePropertyName("upgradePolicy");
                 context.Writer.WriteStartObject();
 
@@ -162,6 +163,232 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.UpgradePolicy, context);
 
                 context.Writer.WriteEndObject();
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccessConfig())
+                {
+                    context.Writer.WritePropertyName("accessConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdateAccessConfigRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AccessConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetClientRequestToken())
+                {
+                    context.Writer.WritePropertyName("clientRequestToken");
+                    context.Writer.Write(publicRequest.ClientRequestToken);
+                }
+
+                else if(!(publicRequest.IsSetClientRequestToken()))
+                {
+                    context.Writer.WritePropertyName("clientRequestToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
+                if(publicRequest.IsSetComputeConfig())
+                {
+                    context.Writer.WritePropertyName("computeConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ComputeConfigRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ComputeConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetKubernetesNetworkConfig())
+                {
+                    context.Writer.WritePropertyName("kubernetesNetworkConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = KubernetesNetworkConfigRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.KubernetesNetworkConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetLogging())
+                {
+                    context.Writer.WritePropertyName("logging");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LoggingMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Logging, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetResourcesVpcConfig())
+                {
+                    context.Writer.WritePropertyName("resourcesVpcConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VpcConfigRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ResourcesVpcConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetStorageConfig())
+                {
+                    context.Writer.WritePropertyName("storageConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StorageConfigRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.StorageConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetUpgradePolicy())
+                {
+                    context.Writer.WritePropertyName("upgradePolicy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpgradePolicyRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UpgradePolicy, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetZonalShiftConfig())
+                {
+                    context.Writer.WritePropertyName("zonalShiftConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ZonalShiftConfigRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ZonalShiftConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccessConfig())
+                {
+                    context.Writer.WritePropertyName("accessConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdateAccessConfigRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AccessConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetClientRequestToken())
+                {
+                    context.Writer.WritePropertyName("clientRequestToken");
+                    context.Writer.Write(publicRequest.ClientRequestToken);
+                }
+
+                else if(!(publicRequest.IsSetClientRequestToken()))
+                {
+                    context.Writer.WritePropertyName("clientRequestToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
+                if(publicRequest.IsSetComputeConfig())
+                {
+                    context.Writer.WritePropertyName("computeConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ComputeConfigRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ComputeConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetKubernetesNetworkConfig())
+                {
+                    context.Writer.WritePropertyName("kubernetesNetworkConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = KubernetesNetworkConfigRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.KubernetesNetworkConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetLogging())
+                {
+                    context.Writer.WritePropertyName("logging");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LoggingMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Logging, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetRemoteNetworkConfig())
+                {
+                    context.Writer.WritePropertyName("remoteNetworkConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RemoteNetworkConfigRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RemoteNetworkConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetResourcesVpcConfig())
+                {
+                    context.Writer.WritePropertyName("resourcesVpcConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VpcConfigRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ResourcesVpcConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetStorageConfig())
+                {
+                    context.Writer.WritePropertyName("storageConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StorageConfigRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.StorageConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetUpgradePolicy())
+                {
+                    context.Writer.WritePropertyName("upgradePolicy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpgradePolicyRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UpgradePolicy, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetZonalShiftConfig())
+                {
+                    context.Writer.WritePropertyName("zonalShiftConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ZonalShiftConfigRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ZonalShiftConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             }
 
             if(publicRequest.IsSetZonalShiftConfig())

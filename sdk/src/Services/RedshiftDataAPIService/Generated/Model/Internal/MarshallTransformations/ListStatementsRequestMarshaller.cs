@@ -95,8 +95,104 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
 
             if(publicRequest.IsSetNextToken())
             {
+<<<<<<< HEAD
                 context.Writer.WritePropertyName("NextToken");
                 context.Writer.WriteStringValue(publicRequest.NextToken);
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetRoleLevel())
+                {
+                    context.Writer.WritePropertyName("RoleLevel");
+                    context.Writer.Write(publicRequest.RoleLevel);
+                }
+
+                if(publicRequest.IsSetStatementName())
+                {
+                    context.Writer.WritePropertyName("StatementName");
+                    context.Writer.Write(publicRequest.StatementName);
+                }
+
+                if(publicRequest.IsSetStatus())
+                {
+                    context.Writer.WritePropertyName("Status");
+                    context.Writer.Write(publicRequest.Status);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetClusterIdentifier())
+                {
+                    context.Writer.WritePropertyName("ClusterIdentifier");
+                    context.Writer.Write(publicRequest.ClusterIdentifier);
+                }
+
+                if(publicRequest.IsSetDatabase())
+                {
+                    context.Writer.WritePropertyName("Database");
+                    context.Writer.Write(publicRequest.Database);
+                }
+
+                if(publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetRoleLevel())
+                {
+                    context.Writer.WritePropertyName("RoleLevel");
+                    context.Writer.Write(publicRequest.RoleLevel);
+                }
+
+                if(publicRequest.IsSetStatementName())
+                {
+                    context.Writer.WritePropertyName("StatementName");
+                    context.Writer.Write(publicRequest.StatementName);
+                }
+
+                if(publicRequest.IsSetStatus())
+                {
+                    context.Writer.WritePropertyName("Status");
+                    context.Writer.Write(publicRequest.Status);
+                }
+
+                if(publicRequest.IsSetWorkgroupName())
+                {
+                    context.Writer.WritePropertyName("WorkgroupName");
+                    context.Writer.Write(publicRequest.WorkgroupName);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             }
 
             if(publicRequest.IsSetRoleLevel())

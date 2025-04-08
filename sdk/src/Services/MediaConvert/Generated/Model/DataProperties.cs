@@ -30,14 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Properties specific to data tracks.
+    /// Details about the media file's data track.
     /// </summary>
     public partial class DataProperties
     {
         private string _languageCode;
 
         /// <summary>
-        /// Gets and sets the property LanguageCode. the language code of the track
+        /// Gets and sets the property LanguageCode. The language code of the data track, in three
+        /// character ISO 639-3 format.
         /// </summary>
         public string LanguageCode
         {

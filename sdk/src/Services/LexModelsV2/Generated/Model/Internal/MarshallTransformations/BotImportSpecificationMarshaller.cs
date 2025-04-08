@@ -77,6 +77,17 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetErrorLogSettings())
+            {
+                context.Writer.WritePropertyName("errorLogSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ErrorLogSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ErrorLogSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetIdleSessionTTLInSeconds())
             {
                 context.Writer.WritePropertyName("idleSessionTTLInSeconds");

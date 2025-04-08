@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// The Amazon Web Services Cloud WAN core network that the Direct Connect attachment
-    /// is associated with.
+    /// The Amazon Web Services Cloud WAN core network that the Direct Connect gateway is
+    /// associated to. This is only returned when a Direct Connect gateway is associated to
+    /// a Cloud WAN core network.
     /// </summary>
     public partial class AssociatedCoreNetwork
     {
@@ -42,7 +43,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AttachmentId. 
         /// <para>
-        /// the ID of the Direct Connect attachment
+        /// the ID of the Direct Connect gateway attachment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=28)]
@@ -61,7 +62,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the Cloud WAN core network.
+        /// The ID of the Cloud WAN core network that the Direct Connect gateway is associated
+        /// to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=14, Max=30)]

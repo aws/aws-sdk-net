@@ -35,9 +35,29 @@ namespace Amazon.PaymentCryptography.Model
     /// </summary>
     public partial class ExportKeyMaterial
     {
+        private ExportDiffieHellmanTr31KeyBlock _diffieHellmanTr31KeyBlock;
         private ExportKeyCryptogram _keyCryptogram;
         private ExportTr31KeyBlock _tr31KeyBlock;
         private ExportTr34KeyBlock _tr34KeyBlock;
+
+        /// <summary>
+        /// Gets and sets the property DiffieHellmanTr31KeyBlock. 
+        /// <para>
+        /// Parameter information for key material export using the asymmetric ECDH key exchange
+        /// method.
+        /// </para>
+        /// </summary>
+        public ExportDiffieHellmanTr31KeyBlock DiffieHellmanTr31KeyBlock
+        {
+            get { return this._diffieHellmanTr31KeyBlock; }
+            set { this._diffieHellmanTr31KeyBlock = value; }
+        }
+
+        // Check to see if DiffieHellmanTr31KeyBlock property is set
+        internal bool IsSetDiffieHellmanTr31KeyBlock()
+        {
+            return this._diffieHellmanTr31KeyBlock != null;
+        }
 
         /// <summary>
         /// Gets and sets the property KeyCryptogram. 

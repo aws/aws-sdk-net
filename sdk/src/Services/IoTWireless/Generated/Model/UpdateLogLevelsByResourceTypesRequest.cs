@@ -31,8 +31,8 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateLogLevelsByResourceTypes operation.
-    /// Set default log level, or log levels by resource types. This can be for wireless device
-    /// log options or wireless gateways log options and is used to control the log messages
+    /// Set default log level, or log levels by resource types. This can be for wireless device,
+    /// wireless gateway, or FUOTA task log options, and is used to control the log messages
     /// that'll be displayed in CloudWatch.
     /// </summary>
     public partial class UpdateLogLevelsByResourceTypesRequest : AmazonIoTWirelessRequest

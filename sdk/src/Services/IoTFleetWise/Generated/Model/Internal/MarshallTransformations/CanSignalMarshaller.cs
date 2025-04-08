@@ -102,12 +102,22 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 }
             }
 
+<<<<<<< HEAD
             if(requestObject.IsSetSignalValueType())
             {
                 context.Writer.WritePropertyName("signalValueType");
                 context.Writer.WriteStringValue(requestObject.SignalValueType);
             }
 
+||||||| Commit version number update changes
+=======
+            if(requestObject.IsSetSignalValueType())
+            {
+                context.Writer.WritePropertyName("signalValueType");
+                context.Writer.Write(requestObject.SignalValueType);
+            }
+
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             if(requestObject.IsSetStartBit())
             {
                 context.Writer.WritePropertyName("startBit");

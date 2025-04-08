@@ -2602,8 +2602,8 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>TransformResources</c> - Identifies the ML compute instances for the transform
-        /// job.
+        ///  <c>TransformResources</c> - Identifies the ML compute instances and AMI image versions
+        /// for the transform job.
         /// </para>
         ///  </li> </ul> 
         /// <para>

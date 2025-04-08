@@ -130,10 +130,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     response.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("sdiSources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.SdiSources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("securityGroups", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.SecurityGroups = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("smpte2110ReceiverGroupSettings", targetDepth))
+                {
+                    var unmarshaller = Smpte2110ReceiverGroupSettingsUnmarshaller.Instance;
+                    response.Smpte2110ReceiverGroupSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sources", targetDepth))

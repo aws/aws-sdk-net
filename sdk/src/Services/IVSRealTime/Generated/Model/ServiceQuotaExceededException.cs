@@ -144,6 +144,7 @@ namespace Amazon.IVSRealTime.Model
 #endif
 
         /// <summary>
+<<<<<<< HEAD
         /// Gets and sets the property AccessControlAllowOrigin.
         /// </summary>
         public string AccessControlAllowOrigin
@@ -204,6 +205,69 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
+||||||| Commit version number update changes
+=======
+        /// Gets and sets the property AccessControlAllowOrigin.
+        /// </summary>
+        public string AccessControlAllowOrigin
+        {
+            get { return this._accessControlAllowOrigin; }
+            set { this._accessControlAllowOrigin = value; }
+        }
+
+        // Check to see if AccessControlAllowOrigin property is set
+        internal bool IsSetAccessControlAllowOrigin()
+        {
+            return !string.IsNullOrEmpty(this._accessControlAllowOrigin);
+        }
+
+        /// <summary>
+        /// Gets and sets the property AccessControlExposeHeaders.
+        /// </summary>
+        public string AccessControlExposeHeaders
+        {
+            get { return this._accessControlExposeHeaders; }
+            set { this._accessControlExposeHeaders = value; }
+        }
+
+        // Check to see if AccessControlExposeHeaders property is set
+        internal bool IsSetAccessControlExposeHeaders()
+        {
+            return !string.IsNullOrEmpty(this._accessControlExposeHeaders);
+        }
+
+        /// <summary>
+        /// Gets and sets the property CacheControl.
+        /// </summary>
+        public string CacheControl
+        {
+            get { return this._cacheControl; }
+            set { this._cacheControl = value; }
+        }
+
+        // Check to see if CacheControl property is set
+        internal bool IsSetCacheControl()
+        {
+            return !string.IsNullOrEmpty(this._cacheControl);
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentSecurityPolicy.
+        /// </summary>
+        public string ContentSecurityPolicy
+        {
+            get { return this._contentSecurityPolicy; }
+            set { this._contentSecurityPolicy = value; }
+        }
+
+        // Check to see if ContentSecurityPolicy property is set
+        internal bool IsSetContentSecurityPolicy()
+        {
+            return !string.IsNullOrEmpty(this._contentSecurityPolicy);
+        }
+
+        /// <summary>
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// Gets and sets the property ExceptionMessage. 
         /// <para>
         /// Request would cause a service quota to be exceeded.
@@ -221,6 +285,7 @@ namespace Amazon.IVSRealTime.Model
             return this._exceptionMessage != null;
         }
 
+<<<<<<< HEAD
         /// <summary>
         /// Gets and sets the property StrictTransportSecurity.
         /// </summary>
@@ -281,5 +346,68 @@ namespace Amazon.IVSRealTime.Model
             return this._xFrameOptions != null;
         }
 
+||||||| Commit version number update changes
+=======
+        /// <summary>
+        /// Gets and sets the property StrictTransportSecurity.
+        /// </summary>
+        public string StrictTransportSecurity
+        {
+            get { return this._strictTransportSecurity; }
+            set { this._strictTransportSecurity = value; }
+        }
+
+        // Check to see if StrictTransportSecurity property is set
+        internal bool IsSetStrictTransportSecurity()
+        {
+            return !string.IsNullOrEmpty(this._strictTransportSecurity);
+        }
+
+        /// <summary>
+        /// Gets and sets the property XAmznErrorType.
+        /// </summary>
+        public string XAmznErrorType
+        {
+            get { return this._xAmznErrorType; }
+            set { this._xAmznErrorType = value; }
+        }
+
+        // Check to see if XAmznErrorType property is set
+        internal bool IsSetXAmznErrorType()
+        {
+            return !string.IsNullOrEmpty(this._xAmznErrorType);
+        }
+
+        /// <summary>
+        /// Gets and sets the property XContentTypeOptions.
+        /// </summary>
+        public string XContentTypeOptions
+        {
+            get { return this._xContentTypeOptions; }
+            set { this._xContentTypeOptions = value; }
+        }
+
+        // Check to see if XContentTypeOptions property is set
+        internal bool IsSetXContentTypeOptions()
+        {
+            return !string.IsNullOrEmpty(this._xContentTypeOptions);
+        }
+
+        /// <summary>
+        /// Gets and sets the property XFrameOptions.
+        /// </summary>
+        public string XFrameOptions
+        {
+            get { return this._xFrameOptions; }
+            set { this._xFrameOptions = value; }
+        }
+
+        // Check to see if XFrameOptions property is set
+        internal bool IsSetXFrameOptions()
+        {
+            return !string.IsNullOrEmpty(this._xFrameOptions);
+        }
+
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
     }
 }

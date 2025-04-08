@@ -34,8 +34,48 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class AssetOptions
     {
+        private List<string> _excludedDataSetArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private QBusinessInsightsStatus _qBusinessInsightsStatus;
         private string _timezone;
         private DayOfTheWeek _weekStart;
+
+        /// <summary>
+        /// Gets and sets the property ExcludedDataSetArns. 
+        /// <para>
+        /// A list of dataset ARNS to exclude from Dashboard Q&amp;A.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=100)]
+        public List<string> ExcludedDataSetArns
+        {
+            get { return this._excludedDataSetArns; }
+            set { this._excludedDataSetArns = value; }
+        }
+
+        // Check to see if ExcludedDataSetArns property is set
+        internal bool IsSetExcludedDataSetArns()
+        {
+            return this._excludedDataSetArns != null && (this._excludedDataSetArns.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QBusinessInsightsStatus. 
+        /// <para>
+        /// Determines whether insight summaries from Amazon Q Business are allowed in Dashboard
+        /// Q&amp;A.
+        /// </para>
+        /// </summary>
+        public QBusinessInsightsStatus QBusinessInsightsStatus
+        {
+            get { return this._qBusinessInsightsStatus; }
+            set { this._qBusinessInsightsStatus = value; }
+        }
+
+        // Check to see if QBusinessInsightsStatus property is set
+        internal bool IsSetQBusinessInsightsStatus()
+        {
+            return this._qBusinessInsightsStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Timezone. 

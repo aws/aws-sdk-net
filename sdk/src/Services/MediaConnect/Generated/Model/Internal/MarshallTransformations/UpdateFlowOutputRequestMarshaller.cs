@@ -68,6 +68,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             request.AddPathResource("{FlowArn}", StringUtils.FromString(publicRequest.FlowArn));
             if (!publicRequest.IsSetOutputArn())
                 throw new AmazonMediaConnectException("Request object does not have required field OutputArn set");
+<<<<<<< HEAD
             request.AddPathResource("{OutputArn}", StringUtils.FromString(publicRequest.OutputArn));
             request.ResourcePath = "/v1/flows/{FlowArn}/outputs/{OutputArn}";
 #if !NETFRAMEWORK
@@ -84,6 +85,27 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("cidrAllowList");
                 context.Writer.WriteStartArray();
                 foreach(var publicRequestCidrAllowListListValue in publicRequest.CidrAllowList)
+||||||| Commit version number update changes
+            request.AddPathResource("{outputArn}", StringUtils.FromString(publicRequest.OutputArn));
+            request.ResourcePath = "/v1/flows/{flowArn}/outputs/{outputArn}";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCidrAllowList())
+=======
+            request.AddPathResource("{OutputArn}", StringUtils.FromString(publicRequest.OutputArn));
+            request.ResourcePath = "/v1/flows/{FlowArn}/outputs/{OutputArn}";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCidrAllowList())
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
                 {
                         context.Writer.WriteStringValue(publicRequestCidrAllowListListValue);
                 }
@@ -130,7 +152,31 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     var marshaller = MediaStreamOutputConfigurationRequestMarshaller.Instance;
                     marshaller.Marshall(publicRequestMediaStreamOutputConfigurationsListValue, context);
 
+<<<<<<< HEAD
                     context.Writer.WriteEndObject();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetOutputStatus())
+                {
+                    context.Writer.WritePropertyName("outputStatus");
+                    context.Writer.Write(publicRequest.OutputStatus);
+=======
+                if(publicRequest.IsSetNdiProgramName())
+                {
+                    context.Writer.WritePropertyName("ndiProgramName");
+                    context.Writer.Write(publicRequest.NdiProgramName);
+                }
+
+                if(publicRequest.IsSetNdiSpeedHqQuality())
+                {
+                    context.Writer.WritePropertyName("ndiSpeedHqQuality");
+                    context.Writer.Write(publicRequest.NdiSpeedHqQuality);
+                }
+
+                if(publicRequest.IsSetOutputStatus())
+                {
+                    context.Writer.WritePropertyName("outputStatus");
+                    context.Writer.Write(publicRequest.OutputStatus);
+>>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
                 }
                 context.Writer.WriteEndArray();
             }

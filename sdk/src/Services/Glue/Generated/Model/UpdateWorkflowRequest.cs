@@ -70,6 +70,7 @@ namespace Amazon.Glue.Model
         /// The description of the workflow.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=120000)]
         public string Description
         {
             get { return this._description; }

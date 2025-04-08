@@ -63,7 +63,7 @@ namespace Amazon.DirectoryServiceData.Model
         /// Gets and sets the property OtherAttributes. 
         /// <para>
         ///  One or more attributes to be returned for the group. For a list of supported attributes,
-        /// see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data-attributes.html">Directory
+        /// see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data_attributes.html">Directory
         /// Service Data Attributes</a>. 
         /// </para>
         /// </summary>

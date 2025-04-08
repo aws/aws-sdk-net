@@ -62,6 +62,12 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("FocDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.FocDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OrderedPhoneNumbers", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OrderedPhoneNumber, OrderedPhoneNumberUnmarshaller>(OrderedPhoneNumberUnmarshaller.Instance);

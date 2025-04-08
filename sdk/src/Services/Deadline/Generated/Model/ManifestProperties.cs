@@ -47,7 +47,7 @@ namespace Amazon.Deadline.Model
         /// The file system location name.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=64)]
         public string FileSystemLocationName
         {
             get { return this._fileSystemLocationName; }

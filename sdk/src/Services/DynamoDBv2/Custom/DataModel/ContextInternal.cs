@@ -1173,6 +1173,8 @@ namespace Amazon.DynamoDBv2.DataModel
                 hashKeyEntry = Document.DateTimeToEpochSeconds(hashKeyEntry, hashKeyProperty.AttributeName);
             if (storageConfig.AttributesToStoreAsEpochLong.Contains(hashKeyProperty.AttributeName))
                 hashKeyEntry = Document.DateTimeToEpochSecondsLong(hashKeyEntry, hashKeyProperty.AttributeName);
+            if (storageConfig.AttributesToStoreAsEpochLong.Contains(hashKeyProperty.AttributeName))
+                hashKeyEntry = Document.DateTimeToEpochSecondsLong(hashKeyEntry, hashKeyProperty.AttributeName);
             var hashKeyEntryAttributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion, flatConfig.IsEmptyStringValueEnabled);
             key[hashKeyProperty.AttributeName] = hashKeyEntry.ConvertToAttributeValue(hashKeyEntryAttributeConversionConfig);
 
@@ -1193,6 +1195,8 @@ namespace Amazon.DynamoDBv2.DataModel
                     rangeKeyEntry = Document.DateTimeToEpochSeconds(rangeKeyEntry, rangeKeyProperty.AttributeName);
                 if (storageConfig.AttributesToStoreAsEpochLong.Contains(rangeKeyProperty.AttributeName))
                     rangeKeyEntry = Document.DateTimeToEpochSecondsLong(rangeKeyEntry, rangeKeyProperty.AttributeName);
+                if (storageConfig.AttributesToStoreAsEpochLong.Contains(rangeKeyProperty.AttributeName))
+                    rangeKeyEntry = Document.DateTimeToEpochSecondsLong(rangeKeyEntry, rangeKeyProperty.AttributeName);
 
                 var rangeKeyEntryAttributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion, flatConfig.IsEmptyStringValueEnabled);
                 key[rangeKeyProperty.AttributeName] = rangeKeyEntry.ConvertToAttributeValue(rangeKeyEntryAttributeConversionConfig);
@@ -1206,6 +1210,7 @@ namespace Amazon.DynamoDBv2.DataModel
             ItemStorage keyAsStorage = ObjectToItemStorageHelper(keyObject, storageConfig, flatConfig, keysOnly: true, ignoreNullValues: true);
             if (storageConfig.HasVersion) // if version field is defined, it would have been returned, so remove before making the key
                 keyAsStorage.Document[storageConfig.VersionPropertyStorage.AttributeName] = null;
+            Key key = new Key(keyAsStorage.Document.ToAttributeMap(flatConfig.Conversion, storageConfig.AttributesToStoreAsEpoch, storageConfig.AttributesToStoreAsEpochLong, flatConfig.IsEmptyStringValueEnabled));
             Key key = new Key(keyAsStorage.Document.ToAttributeMap(flatConfig.Conversion, storageConfig.AttributesToStoreAsEpoch, storageConfig.AttributesToStoreAsEpochLong, flatConfig.IsEmptyStringValueEnabled));
             ValidateKey(key, storageConfig);
             return key;

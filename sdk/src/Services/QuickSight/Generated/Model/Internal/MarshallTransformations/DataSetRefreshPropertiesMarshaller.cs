@@ -46,6 +46,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetFailureConfiguration())
+            {
+                context.Writer.WritePropertyName("FailureConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RefreshFailureConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.FailureConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRefreshConfiguration())
             {
                 context.Writer.WritePropertyName("RefreshConfiguration");
