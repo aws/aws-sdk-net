@@ -47,15 +47,17 @@ namespace Amazon.DynamoDBv2
         ///
         /// This schema pre-dates support for native DynamoDB types such as L (list), M (map), BOOL, and NULL.
         /// Common .NET type mappings:
-        /// - Number types (byte, int, float, decimal, etc.) → DynamoDB N (number)
-        /// - string, char → S (string)
-        /// - bool → N ("0" for false, "1" for true)
-        /// - DateTime, Guid → S (string)
-        /// - MemoryStream, byte[] → B (binary)
-        /// - List, HashSet, array of numeric types → NS (number set)
-        /// - List, HashSet, array of string types → SS (string set)
-        /// - List, HashSet, array of binary types → BS (binary set)
-        /// - Dictionary{string, object} → M (map)
+        /// <ul>
+        /// <li><para>Number types (byte, int, float, decimal, etc.) → DynamoDB N (number)</para></li>
+        /// <li><para>string, char → S (string)</para></li>
+        /// <li><para>bool → N ("0" for false, "1" for true)</para></li>
+        /// <li><para>DateTime, Guid → S (string)</para></li>
+        /// <li><para>MemoryStream, byte[] → B (binary)</para></li>
+        /// <li><para>List, HashSet, array of numeric types → NS (number set)</para></li>
+        /// <li><para>List, HashSet, array of string types → SS (string set)</para></li>
+        /// <li><para>List, HashSet, array of binary types → BS (binary set)</para></li>
+        /// <li><para>Dictionary{string, object} → M (map)</para></li>
+        /// </ul>
         /// </summary>
         V1 = 0,
 
@@ -63,17 +65,18 @@ namespace Amazon.DynamoDBv2
         /// Enhanced conversion schema that supports native DynamoDB types including L (list), M (map), BOOL, and NULL.
         /// 
         /// Common .NET type mappings:
-        /// - Number types (byte, int, float, decimal, etc.) → DynamoDB N (number)
-        /// - string, char → S (string)
-        /// - bool → BOOL
-        /// - DateTime, Guid → S (string)
-        /// - MemoryStream, byte[] → B (binary)
-        /// - HashSet of numeric types → NS (number set)
-        /// - HashSet of string types → SS (string set)
-        /// - HashSet of binary types → BS (binary set)
-        /// - List, array (numeric, string, binary types) → L (list)
-        /// - Dictionary{string, object} → M (map)
-        ///
+        /// <ul>
+        /// <li><para>Number types (byte, int, float, decimal, etc.) → DynamoDB N (number)</para></li>
+        /// <li><para>string, char → S (string)</para></li>
+        /// <li><para>bool → BOOL</para></li>
+        /// <li><para>DateTime, Guid → S (string)</para></li>
+        /// <li><para>MemoryStream, byte[] → B (binary)</para></li>
+        /// <li><para>HashSet of numeric types → NS (number set)</para></li>
+        /// <li><para>HashSet of string types → SS (string set)</para></li>
+        /// <li><para>HashSet of binary types → BS (binary set)</para></li>
+        /// <li><para>List, array (numeric, string, binary types) → L (list)</para></li>
+        /// <li><para>Dictionary{string, object} → M (map)</para></li>
+        /// </ul>
         /// Recommended for applications that need full fidelity with native DynamoDB types.
         /// </summary>
         V2 = 1,
