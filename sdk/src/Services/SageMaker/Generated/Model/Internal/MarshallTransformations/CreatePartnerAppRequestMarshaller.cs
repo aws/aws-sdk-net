@@ -115,28 +115,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ExecutionRoleArn);
             }
 
-<<<<<<< HEAD
+            if(publicRequest.IsSetKmsKeyId())
+            {
+                context.Writer.WritePropertyName("KmsKeyId");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyId);
+            }
+
             if(publicRequest.IsSetMaintenanceConfig())
             {
                 context.Writer.WritePropertyName("MaintenanceConfig");
                 context.Writer.WriteStartObject();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetMaintenanceConfig())
-                {
-                    context.Writer.WritePropertyName("MaintenanceConfig");
-                    context.Writer.WriteObjectStart();
-=======
-                if(publicRequest.IsSetKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("KmsKeyId");
-                    context.Writer.Write(publicRequest.KmsKeyId);
-                }
-
-                if(publicRequest.IsSetMaintenanceConfig())
-                {
-                    context.Writer.WritePropertyName("MaintenanceConfig");
-                    context.Writer.WriteObjectStart();
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
                 var marshaller = PartnerAppMaintenanceConfigMarshaller.Instance;
                 marshaller.Marshall(publicRequest.MaintenanceConfig, context);

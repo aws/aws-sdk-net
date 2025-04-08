@@ -75,39 +75,17 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDeriveKeyUsage())
+            {
+                context.Writer.WritePropertyName("DeriveKeyUsage");
+                context.Writer.WriteStringValue(publicRequest.DeriveKeyUsage);
+            }
+
             if(publicRequest.IsSetEnabled())
             {
-<<<<<<< HEAD
                 context.Writer.WritePropertyName("Enabled");
                 context.Writer.WriteBooleanValue(publicRequest.Enabled.Value);
             }
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnabled())
-                {
-                    context.Writer.WritePropertyName("Enabled");
-                    context.Writer.Write(publicRequest.Enabled);
-                }
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeriveKeyUsage())
-                {
-                    context.Writer.WritePropertyName("DeriveKeyUsage");
-                    context.Writer.Write(publicRequest.DeriveKeyUsage);
-                }
-
-                if(publicRequest.IsSetEnabled())
-                {
-                    context.Writer.WritePropertyName("Enabled");
-                    context.Writer.Write(publicRequest.Enabled);
-                }
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
             if(publicRequest.IsSetExportable())
             {

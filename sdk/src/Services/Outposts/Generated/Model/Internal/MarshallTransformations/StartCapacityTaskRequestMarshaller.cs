@@ -76,71 +76,17 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAssetId())
+            {
+                context.Writer.WritePropertyName("AssetId");
+                context.Writer.WriteStringValue(publicRequest.AssetId);
+            }
+
             if(publicRequest.IsSetDryRun())
             {
-<<<<<<< HEAD
                 context.Writer.WritePropertyName("DryRun");
                 context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
             }
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDryRun())
-                {
-                    context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun);
-                }
-
-                if(publicRequest.IsSetInstancePools())
-                {
-                    context.Writer.WritePropertyName("InstancePools");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInstancePoolsListValue in publicRequest.InstancePools)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InstanceTypeCapacityMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInstancePoolsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssetId())
-                {
-                    context.Writer.WritePropertyName("AssetId");
-                    context.Writer.Write(publicRequest.AssetId);
-                }
-
-                if(publicRequest.IsSetDryRun())
-                {
-                    context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun);
-                }
-
-                if(publicRequest.IsSetInstancePools())
-                {
-                    context.Writer.WritePropertyName("InstancePools");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInstancePoolsListValue in publicRequest.InstancePools)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InstanceTypeCapacityMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInstancePoolsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
             if(publicRequest.IsSetInstancePools())
             {

@@ -3157,7 +3157,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<StartRemoteDeleteResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartRemoteMove
@@ -3208,7 +3207,6 @@ namespace Amazon.Transfer
 
             return InvokeAsync<StartRemoteMoveResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartServer

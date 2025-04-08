@@ -93,12 +93,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataQAEnabledOption())
             {
                 context.Writer.WritePropertyName("DataQAEnabledOption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataQAEnabledOptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataQAEnabledOption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExportToCSVOption())

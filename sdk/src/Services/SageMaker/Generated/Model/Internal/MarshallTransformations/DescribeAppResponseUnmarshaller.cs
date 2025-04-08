@@ -108,8 +108,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RecoveryMode", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.RecoveryMode = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    response.RecoveryMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResourceSpec", targetDepth))

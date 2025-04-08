@@ -49,7 +49,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIpAddressType())
             {
                 context.Writer.WritePropertyName("ipAddressType");
-                context.Writer.Write(requestObject.IpAddressType);
+                context.Writer.WriteStringValue(requestObject.IpAddressType);
             }
 
             if(requestObject.IsSetTypes())

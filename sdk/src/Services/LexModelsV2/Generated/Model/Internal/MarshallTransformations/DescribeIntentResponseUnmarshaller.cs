@@ -157,7 +157,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 if (context.TestExpression("qInConnectIntentConfiguration", targetDepth))
                 {
                     var unmarshaller = QInConnectIntentConfigurationUnmarshaller.Instance;
-                    response.QInConnectIntentConfiguration = unmarshaller.Unmarshall(context);
+                    response.QInConnectIntentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("qnAIntentConfiguration", targetDepth))

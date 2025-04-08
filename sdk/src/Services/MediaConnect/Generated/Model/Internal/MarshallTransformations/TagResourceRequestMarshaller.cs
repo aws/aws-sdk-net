@@ -65,7 +65,6 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetResourceArn())
                 throw new AmazonMediaConnectException("Request object does not have required field ResourceArn set");
-<<<<<<< HEAD
             request.AddPathResource("{ResourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
             request.ResourcePath = "/tags/{ResourceArn}";
 #if !NETFRAMEWORK
@@ -78,15 +77,6 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetTags())
-||||||| Commit version number update changes
-            request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
-            request.ResourcePath = "/tags/{resourceArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-=======
-            request.AddPathResource("{ResourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
-            request.ResourcePath = "/tags/{ResourceArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             {
                 context.Writer.WritePropertyName("tags");
                 context.Writer.WriteStartObject();

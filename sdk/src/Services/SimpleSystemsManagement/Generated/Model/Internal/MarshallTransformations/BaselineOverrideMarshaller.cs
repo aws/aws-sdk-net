@@ -83,7 +83,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvailableSecurityUpdatesComplianceStatus())
             {
                 context.Writer.WritePropertyName("AvailableSecurityUpdatesComplianceStatus");
-                context.Writer.Write(requestObject.AvailableSecurityUpdatesComplianceStatus);
+                context.Writer.WriteStringValue(requestObject.AvailableSecurityUpdatesComplianceStatus);
             }
 
             if(requestObject.IsSetGlobalFilters())

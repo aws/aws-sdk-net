@@ -33,16 +33,10 @@ namespace Amazon.WorkSpacesWeb
     public partial class AmazonWorkSpacesWebConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("WorkSpaces Web", "4.0.0.0");
 
         private static readonly AmazonWorkSpacesWebEndpointResolver EndpointResolver =
             new AmazonWorkSpacesWebEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("WorkSpaces Web", "3.7.403.6");
-=======
-            InternalSDKUtils.BuildUserAgentString("WorkSpaces Web", "3.7.403.32");
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
         private string _userAgent = UserAgentString;
         ///<summary>

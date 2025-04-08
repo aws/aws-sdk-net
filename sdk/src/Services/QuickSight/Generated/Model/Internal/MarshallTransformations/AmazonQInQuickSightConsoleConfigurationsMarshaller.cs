@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataQnA())
             {
                 context.Writer.WritePropertyName("DataQnA");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataQnAConfigurationsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataQnA, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataStories())
             {
                 context.Writer.WritePropertyName("DataStories");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataStoriesConfigurationsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataStories, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExecutiveSummary())
             {
                 context.Writer.WritePropertyName("ExecutiveSummary");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExecutiveSummaryConfigurationsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ExecutiveSummary, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGenerativeAuthoring())
             {
                 context.Writer.WritePropertyName("GenerativeAuthoring");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GenerativeAuthoringConfigurationsMarshaller.Instance;
                 marshaller.Marshall(requestObject.GenerativeAuthoring, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

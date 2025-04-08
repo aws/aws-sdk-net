@@ -49,7 +49,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCacheNamespace())
             {
                 context.Writer.WritePropertyName("cacheNamespace");
-                context.Writer.Write(requestObject.CacheNamespace);
+                context.Writer.WriteStringValue(requestObject.CacheNamespace);
             }
 
             if(requestObject.IsSetLocation())

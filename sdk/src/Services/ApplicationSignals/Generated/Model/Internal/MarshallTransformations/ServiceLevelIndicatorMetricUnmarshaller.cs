@@ -59,7 +59,7 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 if (context.TestExpression("DependencyConfig", targetDepth))
                 {
                     var unmarshaller = DependencyConfigUnmarshaller.Instance;
-                    unmarshalledObject.DependencyConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DependencyConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeyAttributes", targetDepth))

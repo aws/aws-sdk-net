@@ -81,37 +81,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetBlueprintVersion())
             {
-<<<<<<< HEAD
                 context.Writer.WritePropertyName("blueprintVersion");
                 context.Writer.WriteStringValue(publicRequest.BlueprintVersion);
             }
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBlueprintVersion())
-                {
-                    context.Writer.WritePropertyName("blueprintVersion");
-                    context.Writer.Write(publicRequest.BlueprintVersion);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
             if(publicRequest.IsSetDescription())
             {
@@ -147,35 +119,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     var marshaller = EnvironmentParameterMarshaller.Instance;
                     marshaller.Marshall(publicRequestUserParametersListValue, context);
 
-<<<<<<< HEAD
                     context.Writer.WriteEndObject();
                 }
                 context.Writer.WriteEndArray();
-||||||| Commit version number update changes
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetUserParameters())
-                {
-                    context.Writer.WritePropertyName("userParameters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUserParametersListValue in publicRequest.UserParameters)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EnvironmentParameterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestUserParametersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             }
 
             writer.WriteEndObject();

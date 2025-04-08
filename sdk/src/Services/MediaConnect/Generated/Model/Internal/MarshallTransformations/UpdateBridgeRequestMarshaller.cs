@@ -65,7 +65,6 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetBridgeArn())
                 throw new AmazonMediaConnectException("Request object does not have required field BridgeArn set");
-<<<<<<< HEAD
             request.AddPathResource("{BridgeArn}", StringUtils.FromString(publicRequest.BridgeArn));
             request.ResourcePath = "/v1/bridges/{BridgeArn}";
 #if !NETFRAMEWORK
@@ -100,15 +99,6 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             }
 
             if(publicRequest.IsSetSourceFailoverConfig())
-||||||| Commit version number update changes
-            request.AddPathResource("{bridgeArn}", StringUtils.FromString(publicRequest.BridgeArn));
-            request.ResourcePath = "/v1/bridges/{bridgeArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-=======
-            request.AddPathResource("{BridgeArn}", StringUtils.FromString(publicRequest.BridgeArn));
-            request.ResourcePath = "/v1/bridges/{BridgeArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             {
                 context.Writer.WritePropertyName("sourceFailoverConfig");
                 context.Writer.WriteStartObject();

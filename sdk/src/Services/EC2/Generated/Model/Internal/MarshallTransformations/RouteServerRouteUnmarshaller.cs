@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RouteServerRoute Object
     /// </summary>  
-    public class RouteServerRouteUnmarshaller : IUnmarshaller<RouteServerRoute, XmlUnmarshallerContext>, IUnmarshaller<RouteServerRoute, JsonUnmarshallerContext>
+    public class RouteServerRouteUnmarshaller : IXmlUnmarshaller<RouteServerRoute, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("med", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Med = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -122,17 +122,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RouteServerRoute Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RouteServerRouteUnmarshaller _instance = new RouteServerRouteUnmarshaller();        
 

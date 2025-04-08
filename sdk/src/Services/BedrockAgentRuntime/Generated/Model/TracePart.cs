@@ -148,7 +148,6 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-<<<<<<< HEAD
         /// Gets and sets the property EventTime. 
         /// <para>
         ///  The time of the trace. 
@@ -167,27 +166,6 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-||||||| Commit version number update changes
-=======
-        /// Gets and sets the property EventTime. 
-        /// <para>
-        ///  The time of the trace. 
-        /// </para>
-        /// </summary>
-        public DateTime EventTime
-        {
-            get { return this._eventTime.GetValueOrDefault(); }
-            set { this._eventTime = value; }
-        }
-
-        // Check to see if EventTime property is set
-        internal bool IsSetEventTime()
-        {
-            return this._eventTime.HasValue; 
-        }
-
-        /// <summary>
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// Gets and sets the property SessionId. 
         /// <para>
         /// The unique identifier of the session with the agent.

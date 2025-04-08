@@ -90,7 +90,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
-<<<<<<< HEAD
             if(publicRequest.IsSetGatewayVersion())
             {
                 context.Writer.WritePropertyName("gatewayVersion");
@@ -102,17 +101,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("tags");
                 context.Writer.WriteStartObject();
                 foreach (var publicRequestTagsKvp in publicRequest.Tags)
-||||||| Commit version number update changes
-                if(publicRequest.IsSetTags())
-=======
-                if(publicRequest.IsSetGatewayVersion())
-                {
-                    context.Writer.WritePropertyName("gatewayVersion");
-                    context.Writer.Write(publicRequest.GatewayVersion);
-                }
-
-                if(publicRequest.IsSetTags())
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
                 {
                     context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
                     var publicRequestTagsValue = publicRequestTagsKvp.Value;

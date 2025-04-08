@@ -79,9 +79,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Applies to Windows Server managed nodes only.
         /// </para>
         /// </summary>
-        public int InstancesWithAvailableSecurityUpdates
+        public int? InstancesWithAvailableSecurityUpdates
         {
-            get { return this._instancesWithAvailableSecurityUpdates.GetValueOrDefault(); }
+            get { return this._instancesWithAvailableSecurityUpdates; }
             set { this._instancesWithAvailableSecurityUpdates = value; }
         }
 

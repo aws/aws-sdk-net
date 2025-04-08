@@ -115,7 +115,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 if (context.TestExpression("ipAddressType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.IpAddressType = unmarshaller.Unmarshall(context);
+                    response.IpAddressType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))

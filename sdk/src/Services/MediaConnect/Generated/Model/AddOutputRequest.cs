@@ -208,7 +208,6 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-<<<<<<< HEAD
         /// Gets and sets the property NdiProgramName. 
         /// <para>
         ///  A suffix for the names of the NDI sources that the flow creates. If a custom name
@@ -252,55 +251,6 @@ namespace Amazon.MediaConnect.Model
         /// it is created. If you don't specify the outputStatus field in your request, MediaConnect
         /// sets it to ENABLED.
         /// </para>
-||||||| Commit version number update changes
-        /// Gets and sets the property OutputStatus. An indication of whether the new output should
-        /// be enabled or disabled as soon as it is created. If you don't specify the outputStatus
-        /// field in your request, MediaConnect sets it to ENABLED.
-=======
-        /// Gets and sets the property NdiProgramName. 
-        /// <para>
-        ///  A suffix for the names of the NDI sources that the flow creates. If a custom name
-        /// isn't specified, MediaConnect uses the output name. 
-        /// </para>
-        /// </summary>
-        public string NdiProgramName
-        {
-            get { return this._ndiProgramName; }
-            set { this._ndiProgramName = value; }
-        }
-
-        // Check to see if NdiProgramName property is set
-        internal bool IsSetNdiProgramName()
-        {
-            return this._ndiProgramName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property NdiSpeedHqQuality. 
-        /// <para>
-        /// A quality setting for the NDI Speed HQ encoder. 
-        /// </para>
-        /// </summary>
-        public int NdiSpeedHqQuality
-        {
-            get { return this._ndiSpeedHqQuality.GetValueOrDefault(); }
-            set { this._ndiSpeedHqQuality = value; }
-        }
-
-        // Check to see if NdiSpeedHqQuality property is set
-        internal bool IsSetNdiSpeedHqQuality()
-        {
-            return this._ndiSpeedHqQuality.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property OutputStatus. 
-        /// <para>
-        ///  An indication of whether the new output should be enabled or disabled as soon as
-        /// it is created. If you don't specify the outputStatus field in your request, MediaConnect
-        /// sets it to ENABLED.
-        /// </para>
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// </summary>
         public OutputStatus OutputStatus
         {

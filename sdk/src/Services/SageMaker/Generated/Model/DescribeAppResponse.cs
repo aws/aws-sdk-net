@@ -233,9 +233,9 @@ namespace Amazon.SageMaker.Model
         ///  Indicates whether the application is launched in recovery mode. 
         /// </para>
         /// </summary>
-        public bool RecoveryMode
+        public bool? RecoveryMode
         {
-            get { return this._recoveryMode.GetValueOrDefault(); }
+            get { return this._recoveryMode; }
             set { this._recoveryMode = value; }
         }
 

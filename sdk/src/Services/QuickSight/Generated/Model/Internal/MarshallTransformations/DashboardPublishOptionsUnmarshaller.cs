@@ -83,7 +83,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 if (context.TestExpression("DataQAEnabledOption", targetDepth))
                 {
                     var unmarshaller = DataQAEnabledOptionUnmarshaller.Instance;
-                    unmarshalledObject.DataQAEnabledOption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataQAEnabledOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExportToCSVOption", targetDepth))

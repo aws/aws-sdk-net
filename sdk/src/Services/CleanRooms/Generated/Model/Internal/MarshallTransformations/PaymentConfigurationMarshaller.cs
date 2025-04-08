@@ -46,7 +46,6 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
-<<<<<<< HEAD
             if(requestObject.IsSetJobCompute())
             {
                 context.Writer.WritePropertyName("jobCompute");
@@ -58,20 +57,6 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
-||||||| Commit version number update changes
-=======
-            if(requestObject.IsSetJobCompute())
-            {
-                context.Writer.WritePropertyName("jobCompute");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = JobComputePaymentConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.JobCompute, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             if(requestObject.IsSetMachineLearning())
             {
                 context.Writer.WritePropertyName("machineLearning");

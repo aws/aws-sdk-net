@@ -105,7 +105,6 @@ namespace Amazon.IoTFleetWise.Model
         }
 
         /// <summary>
-<<<<<<< HEAD
         /// Gets and sets the property IsSigned. 
         /// <para>
         /// Determines whether the message is signed (<c>true</c>) or not (<c>false</c>). If it's
@@ -127,30 +126,6 @@ namespace Amazon.IoTFleetWise.Model
         }
 
         /// <summary>
-||||||| Commit version number update changes
-=======
-        /// Gets and sets the property IsSigned. 
-        /// <para>
-        /// Determines whether the message is signed (<c>true</c>) or not (<c>false</c>). If it's
-        /// signed, the message can represent both positive and negative numbers. The <c>isSigned</c>
-        /// parameter only applies to the <c>INTEGER</c> raw signal type, and it doesn't affect
-        /// the <c>FLOATING_POINT</c> raw signal type. The default value is <c>false</c>.
-        /// </para>
-        /// </summary>
-        public bool IsSigned
-        {
-            get { return this._isSigned.GetValueOrDefault(); }
-            set { this._isSigned = value; }
-        }
-
-        // Check to see if IsSigned property is set
-        internal bool IsSetIsSigned()
-        {
-            return this._isSigned.HasValue; 
-        }
-
-        /// <summary>
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// Gets and sets the property Offset. 
         /// <para>
         /// The offset used to calculate the signal value. Combined with scaling, the calculation

@@ -95,7 +95,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 if (context.TestExpression("textIndexName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TextIndexName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TextIndexName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vectorIndexName", targetDepth))

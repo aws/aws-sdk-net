@@ -101,7 +101,7 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 if (context.TestExpression("MetricSourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MetricSourceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetricSourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))

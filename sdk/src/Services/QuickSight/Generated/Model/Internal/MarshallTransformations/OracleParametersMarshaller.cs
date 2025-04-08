@@ -67,7 +67,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseServiceName())
             {
                 context.Writer.WritePropertyName("UseServiceName");
-                context.Writer.Write(requestObject.UseServiceName);
+                context.Writer.WriteBooleanValue(requestObject.UseServiceName.Value);
             }
 
         }

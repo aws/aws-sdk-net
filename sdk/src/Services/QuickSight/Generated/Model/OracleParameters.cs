@@ -104,9 +104,9 @@ namespace Amazon.QuickSight.Model
         /// is set to <c>false</c>, the value is <c>SID</c>.
         /// </para>
         /// </summary>
-        public bool UseServiceName
+        public bool? UseServiceName
         {
-            get { return this._useServiceName.GetValueOrDefault(); }
+            get { return this._useServiceName; }
             set { this._useServiceName = value; }
         }
 

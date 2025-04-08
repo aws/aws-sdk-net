@@ -45,9 +45,9 @@ namespace Amazon.EC2.Model
         /// (16-bit ASN) or 4200000000–4294967294 (32-bit ASN) range.
         /// </para>
         /// </summary>
-        public long PeerAsn
+        public long? PeerAsn
         {
-            get { return this._peerAsn.GetValueOrDefault(); }
+            get { return this._peerAsn; }
             set { this._peerAsn = value; }
         }
 

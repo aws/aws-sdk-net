@@ -87,17 +87,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTransposedTableOptions())
             {
                 context.Writer.WritePropertyName("TransposedTableOptions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTransposedTableOptionsListValue in requestObject.TransposedTableOptions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TransposedTableOptionMarshaller.Instance;
                     marshaller.Marshall(requestObjectTransposedTableOptionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

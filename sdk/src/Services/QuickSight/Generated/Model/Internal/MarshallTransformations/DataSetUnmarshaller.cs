@@ -167,7 +167,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 if (context.TestExpression("UseAs", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UseAs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UseAs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

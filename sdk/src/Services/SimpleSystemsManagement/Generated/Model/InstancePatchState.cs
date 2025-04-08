@@ -73,9 +73,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Applies to Windows Server managed nodes only.
         /// </para>
         /// </summary>
-        public int AvailableSecurityUpdateCount
+        public int? AvailableSecurityUpdateCount
         {
-            get { return this._availableSecurityUpdateCount.GetValueOrDefault(); }
+            get { return this._availableSecurityUpdateCount; }
             set { this._availableSecurityUpdateCount = value; }
         }
 

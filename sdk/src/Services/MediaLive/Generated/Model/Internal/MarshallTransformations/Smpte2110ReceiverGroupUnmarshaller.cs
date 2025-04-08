@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Smpte2110ReceiverGroup Object
     /// </summary>  
-    public class Smpte2110ReceiverGroupUnmarshaller : IUnmarshaller<Smpte2110ReceiverGroup, XmlUnmarshallerContext>, IUnmarshaller<Smpte2110ReceiverGroup, JsonUnmarshallerContext>
+    public class Smpte2110ReceiverGroupUnmarshaller : IJsonUnmarshaller<Smpte2110ReceiverGroup, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Smpte2110ReceiverGroup IUnmarshaller<Smpte2110ReceiverGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Smpte2110ReceiverGroup Unmarshall(JsonUnmarshallerContext context)
+        public Smpte2110ReceiverGroup Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Smpte2110ReceiverGroup unmarshalledObject = new Smpte2110ReceiverGroup();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("sdpSettings", targetDepth))
                 {
                     var unmarshaller = Smpte2110ReceiverGroupSdpSettingsUnmarshaller.Instance;
-                    unmarshalledObject.SdpSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SdpSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -59,7 +59,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 if (context.TestExpression("FailureConfiguration", targetDepth))
                 {
                     var unmarshaller = RefreshFailureConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.FailureConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RefreshConfiguration", targetDepth))

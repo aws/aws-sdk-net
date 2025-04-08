@@ -83,9 +83,9 @@ namespace Amazon.EC2.Model
         /// (16-bit ASN) or 4200000000–4294967294 (32-bit ASN) range.
         /// </para>
         /// </summary>
-        public long AmazonSideAsn
+        public long? AmazonSideAsn
         {
-            get { return this._amazonSideAsn.GetValueOrDefault(); }
+            get { return this._amazonSideAsn; }
             set { this._amazonSideAsn = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.EC2.Model
         /// in 1 minute, you can increase the duration up to 5 minutes.
         /// </para>
         /// </summary>
-        public long PersistRoutesDuration
+        public long? PersistRoutesDuration
         {
-            get { return this._persistRoutesDuration.GetValueOrDefault(); }
+            get { return this._persistRoutesDuration; }
             set { this._persistRoutesDuration = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.EC2.Model
         /// Services.
         /// </para>
         /// </summary>
-        public bool SnsNotificationsEnabled
+        public bool? SnsNotificationsEnabled
         {
-            get { return this._snsNotificationsEnabled.GetValueOrDefault(); }
+            get { return this._snsNotificationsEnabled; }
             set { this._snsNotificationsEnabled = value; }
         }
 

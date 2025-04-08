@@ -55,12 +55,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataSetRefreshProperties())
             {
                 context.Writer.WritePropertyName("DataSetRefreshProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataSetRefreshPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataSetRefreshProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())

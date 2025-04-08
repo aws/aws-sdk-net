@@ -65,7 +65,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 if (context.TestExpression("DataSetRefreshProperties", targetDepth))
                 {
                     var unmarshaller = DataSetRefreshPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.DataSetRefreshProperties = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataSetRefreshProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))

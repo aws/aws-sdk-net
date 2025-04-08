@@ -135,51 +135,11 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
-<<<<<<< HEAD
             if(publicRequest.IsSetJobLogStatus())
             {
                 context.Writer.WritePropertyName("jobLogStatus");
                 context.Writer.WriteStringValue(publicRequest.JobLogStatus);
             }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetMembers())
-                {
-                    context.Writer.WritePropertyName("members");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMembersListValue in publicRequest.Members)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MemberSpecificationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMembersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-=======
-                if(publicRequest.IsSetJobLogStatus())
-                {
-                    context.Writer.WritePropertyName("jobLogStatus");
-                    context.Writer.Write(publicRequest.JobLogStatus);
-                }
-
-                if(publicRequest.IsSetMembers())
-                {
-                    context.Writer.WritePropertyName("members");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMembersListValue in publicRequest.Members)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MemberSpecificationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMembersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
             if(publicRequest.IsSetMembers())
             {

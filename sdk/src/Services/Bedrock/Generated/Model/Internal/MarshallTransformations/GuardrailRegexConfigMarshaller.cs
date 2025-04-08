@@ -61,13 +61,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInputAction())
             {
                 context.Writer.WritePropertyName("inputAction");
-                context.Writer.Write(requestObject.InputAction);
+                context.Writer.WriteStringValue(requestObject.InputAction);
             }
 
             if(requestObject.IsSetInputEnabled())
             {
                 context.Writer.WritePropertyName("inputEnabled");
-                context.Writer.Write(requestObject.InputEnabled);
+                context.Writer.WriteBooleanValue(requestObject.InputEnabled.Value);
             }
 
             if(requestObject.IsSetName())
@@ -79,13 +79,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOutputAction())
             {
                 context.Writer.WritePropertyName("outputAction");
-                context.Writer.Write(requestObject.OutputAction);
+                context.Writer.WriteStringValue(requestObject.OutputAction);
             }
 
             if(requestObject.IsSetOutputEnabled())
             {
                 context.Writer.WritePropertyName("outputEnabled");
-                context.Writer.Write(requestObject.OutputEnabled);
+                context.Writer.WriteBooleanValue(requestObject.OutputEnabled.Value);
             }
 
             if(requestObject.IsSetPattern())

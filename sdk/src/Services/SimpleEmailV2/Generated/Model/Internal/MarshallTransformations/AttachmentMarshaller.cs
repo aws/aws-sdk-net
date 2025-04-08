@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContentDescription())
             {
                 context.Writer.WritePropertyName("ContentDescription");
-                context.Writer.Write(requestObject.ContentDescription);
+                context.Writer.WriteStringValue(requestObject.ContentDescription);
             }
 
             if(requestObject.IsSetContentDisposition())
             {
                 context.Writer.WritePropertyName("ContentDisposition");
-                context.Writer.Write(requestObject.ContentDisposition);
+                context.Writer.WriteStringValue(requestObject.ContentDisposition);
             }
 
             if(requestObject.IsSetContentId())
             {
                 context.Writer.WritePropertyName("ContentId");
-                context.Writer.Write(requestObject.ContentId);
+                context.Writer.WriteStringValue(requestObject.ContentId);
             }
 
             if(requestObject.IsSetContentTransferEncoding())
             {
                 context.Writer.WritePropertyName("ContentTransferEncoding");
-                context.Writer.Write(requestObject.ContentTransferEncoding);
+                context.Writer.WriteStringValue(requestObject.ContentTransferEncoding);
             }
 
             if(requestObject.IsSetContentType())
             {
                 context.Writer.WritePropertyName("ContentType");
-                context.Writer.Write(requestObject.ContentType);
+                context.Writer.WriteStringValue(requestObject.ContentType);
             }
 
             if(requestObject.IsSetFileName())
             {
                 context.Writer.WritePropertyName("FileName");
-                context.Writer.Write(requestObject.FileName);
+                context.Writer.WriteStringValue(requestObject.FileName);
             }
 
             if(requestObject.IsSetRawContent())
             {
                 context.Writer.WritePropertyName("RawContent");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.RawContent));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.RawContent));
             }
 
         }

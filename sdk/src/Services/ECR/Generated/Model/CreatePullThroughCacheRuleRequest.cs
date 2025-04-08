@@ -159,74 +159,33 @@ namespace Amazon.ECR.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-<<<<<<< HEAD
-        /// Amazon ECR (<c>ecr</c>) – <c>dkr.ecr.&lt;region&gt;.amazonaws.com</c> 
-||||||| Commit version number update changes
-        /// Amazon ECR Public (<c>ecr-public</c>) - <c>public.ecr.aws</c> 
-=======
         /// Amazon ECR (<c>ecr</c>) – <c>&lt;accountId&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Amazon ECR Public (<c>ecr-public</c>) – <c>public.ecr.aws</c> 
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// </para>
         ///  </li> <li> 
         /// <para>
-<<<<<<< HEAD
-        /// Amazon ECR Public (<c>ecr-public</c>) – <c>public.ecr.aws</c> 
-||||||| Commit version number update changes
-        /// Docker Hub (<c>docker-hub</c>) - <c>registry-1.docker.io</c> 
-=======
         /// Docker Hub (<c>docker-hub</c>) – <c>registry-1.docker.io</c> 
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// </para>
         ///  </li> <li> 
         /// <para>
-<<<<<<< HEAD
-        /// Docker Hub (<c>docker-hub</c>) – <c>registry-1.docker.io</c> 
-||||||| Commit version number update changes
-        /// Quay (<c>quay</c>) - <c>quay.io</c> 
-=======
         /// GitHub Container Registry (<c>github-container-registry</c>) – <c>ghcr.io</c> 
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// </para>
         ///  </li> <li> 
         /// <para>
-<<<<<<< HEAD
-        /// GitHub Container Registry (<c>github-container-registry</c>) – <c>ghcr.io</c> 
-||||||| Commit version number update changes
-        /// Kubernetes (<c>k8s</c>) - <c>registry.k8s.io</c> 
-=======
         /// GitLab Container Registry (<c>gitlab-container-registry</c>) – <c>registry.gitlab.com</c>
         /// 
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// </para>
         ///  </li> <li> 
         /// <para>
-<<<<<<< HEAD
-        /// GitLab Container Registry (<c>gitlab-container-registry</c>) – <c>registry.gitlab.com</c>
-        /// 
-||||||| Commit version number update changes
-        /// GitHub Container Registry (<c>github-container-registry</c>) - <c>ghcr.io</c> 
-=======
-        /// Kubernetes (<c>k8s</c>) – <c>registry.k8s.io</c> 
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-<<<<<<< HEAD
         /// Kubernetes (<c>k8s</c>) – <c>registry.k8s.io</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Microsoft Azure Container Registry (<c>azure-container-registry</c>) – <c>&lt;custom&gt;.azurecr.io</c>
-||||||| Commit version number update changes
-        /// Microsoft Azure Container Registry (<c>azure-container-registry</c>) - <c>&lt;custom&gt;.azurecr.io</c>
-=======
-        /// Microsoft Azure Container Registry (<c>azure-container-registry</c>) – <c>&lt;custom&gt;.azurecr.io</c>
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// 
         /// </para>
         ///  </li> <li> 

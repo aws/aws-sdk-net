@@ -93,28 +93,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.DomainId);
             }
 
-<<<<<<< HEAD
+            if(publicRequest.IsSetRecoveryMode())
+            {
+                context.Writer.WritePropertyName("RecoveryMode");
+                context.Writer.WriteBooleanValue(publicRequest.RecoveryMode.Value);
+            }
+
             if(publicRequest.IsSetResourceSpec())
             {
                 context.Writer.WritePropertyName("ResourceSpec");
                 context.Writer.WriteStartObject();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetResourceSpec())
-                {
-                    context.Writer.WritePropertyName("ResourceSpec");
-                    context.Writer.WriteObjectStart();
-=======
-                if(publicRequest.IsSetRecoveryMode())
-                {
-                    context.Writer.WritePropertyName("RecoveryMode");
-                    context.Writer.Write(publicRequest.RecoveryMode);
-                }
-
-                if(publicRequest.IsSetResourceSpec())
-                {
-                    context.Writer.WritePropertyName("ResourceSpec");
-                    context.Writer.WriteObjectStart();
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
                 var marshaller = ResourceSpecMarshaller.Instance;
                 marshaller.Marshall(publicRequest.ResourceSpec, context);

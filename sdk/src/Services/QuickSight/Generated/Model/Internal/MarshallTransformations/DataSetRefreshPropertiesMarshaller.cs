@@ -49,12 +49,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFailureConfiguration())
             {
                 context.Writer.WritePropertyName("FailureConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RefreshFailureConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.FailureConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRefreshConfiguration())

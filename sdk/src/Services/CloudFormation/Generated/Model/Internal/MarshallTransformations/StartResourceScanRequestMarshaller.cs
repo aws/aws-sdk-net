@@ -65,19 +65,29 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetScanFilters())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ScanFilters)
+                    if (publicRequest.ScanFilters.Count == 0)
+                        request.Parameters.Add("ScanFilters", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetTypes())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Types)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ScanFilters)
+                         {
+                            if(publicRequestlistValue.IsSetTypes())
                             {
-                                request.Parameters.Add("ScanFilters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Types" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
-                                publicRequestlistValuelistValueIndex++;
+                                if (publicRequestlistValue.Types.Count == 0)
+                                    request.Parameters.Add("ScanFilters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Types", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Types)
+                                     {
+                                         request.Parameters.Add("ScanFilters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Types" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
                             }
-                        }
-                        publicRequestlistValueIndex++;
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

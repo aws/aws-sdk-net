@@ -35,13 +35,8 @@ namespace Amazon.BedrockAgent.Model
     public partial class StorageConfiguration
     {
         private MongoDbAtlasConfiguration _mongoDbAtlasConfiguration;
-<<<<<<< HEAD
-        private NeptuneAnalyticsConfiguration _neptuneAnalyticsConfiguration;
-||||||| Commit version number update changes
-=======
         private NeptuneAnalyticsConfiguration _neptuneAnalyticsConfiguration;
         private OpenSearchManagedClusterConfiguration _opensearchManagedClusterConfiguration;
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         private OpenSearchServerlessConfiguration _opensearchServerlessConfiguration;
         private PineconeConfiguration _pineconeConfiguration;
         private RdsConfiguration _rdsConfiguration;
@@ -67,29 +62,6 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-<<<<<<< HEAD
-        /// Gets and sets the property NeptuneAnalyticsConfiguration. 
-        /// <para>
-        /// Contains details about the Neptune Analytics configuration of the knowledge base in
-        /// Amazon Neptune. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-neptune.html">Create
-        /// a vector index in Amazon Neptune Analytics.</a>.
-        /// </para>
-        /// </summary>
-        public NeptuneAnalyticsConfiguration NeptuneAnalyticsConfiguration
-        {
-            get { return this._neptuneAnalyticsConfiguration; }
-            set { this._neptuneAnalyticsConfiguration = value; }
-        }
-
-        // Check to see if NeptuneAnalyticsConfiguration property is set
-        internal bool IsSetNeptuneAnalyticsConfiguration()
-        {
-            return this._neptuneAnalyticsConfiguration != null;
-        }
-
-        /// <summary>
-||||||| Commit version number update changes
-=======
         /// Gets and sets the property NeptuneAnalyticsConfiguration. 
         /// <para>
         /// Contains details about the Neptune Analytics configuration of the knowledge base in
@@ -130,7 +102,6 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// Gets and sets the property OpensearchServerlessConfiguration. 
         /// <para>
         /// Contains the storage configuration of the knowledge base in Amazon OpenSearch Service.

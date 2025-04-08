@@ -103,26 +103,10 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.WithFederation.Value);
             }
 
-<<<<<<< HEAD
             if(publicRequest.IsSetWithPrivilegedAccess())
             {
                 context.Writer.WritePropertyName("WithPrivilegedAccess");
                 context.Writer.WriteBooleanValue(publicRequest.WithPrivilegedAccess.Value);
-||||||| Commit version number update changes
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetWithPrivilegedAccess())
-                {
-                    context.Writer.WritePropertyName("WithPrivilegedAccess");
-                    context.Writer.Write(publicRequest.WithPrivilegedAccess);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             }
 
             writer.WriteEndObject();

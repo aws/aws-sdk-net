@@ -98,12 +98,6 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.JA4Fingerprint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JA4Fingerprint", targetDepth))
-                {
-                    var unmarshaller = JA4FingerprintUnmarshaller.Instance;
-                    unmarshalledObject.JA4Fingerprint = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("JsonBody", targetDepth))
                 {
                     var unmarshaller = JsonBodyUnmarshaller.Instance;
@@ -138,12 +132,6 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = UriFragmentUnmarshaller.Instance;
                     unmarshalledObject.UriFragment = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("UriFragment", targetDepth))
-                {
-                    var unmarshaller = UriFragmentUnmarshaller.Instance;
-                    unmarshalledObject.UriFragment = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UriPath", targetDepth))

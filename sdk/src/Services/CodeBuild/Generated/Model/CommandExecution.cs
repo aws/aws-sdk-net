@@ -73,9 +73,9 @@ namespace Amazon.CodeBuild.Model
         /// When the command execution process ended, expressed in Unix time format.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -220,9 +220,9 @@ namespace Amazon.CodeBuild.Model
         /// When the command execution process started, expressed in Unix time format.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -258,9 +258,9 @@ namespace Amazon.CodeBuild.Model
         /// format.
         /// </para>
         /// </summary>
-        public DateTime SubmitTime
+        public DateTime? SubmitTime
         {
-            get { return this._submitTime.GetValueOrDefault(); }
+            get { return this._submitTime; }
             set { this._submitTime = value; }
         }
 

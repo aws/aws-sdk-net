@@ -46,9 +46,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long PeerAsn
+        public long? PeerAsn
         {
-            get { return this._peerAsn.GetValueOrDefault(); }
+            get { return this._peerAsn; }
             set { this._peerAsn = value; }
         }
 

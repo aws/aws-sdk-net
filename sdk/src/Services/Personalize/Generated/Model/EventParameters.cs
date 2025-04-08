@@ -64,9 +64,9 @@ namespace Amazon.Personalize.Model
         /// threshold will be considered for solution creation.
         /// </para>
         /// </summary>
-        public double EventValueThreshold
+        public double? EventValueThreshold
         {
-            get { return this._eventValueThreshold.GetValueOrDefault(); }
+            get { return this._eventValueThreshold; }
             set { this._eventValueThreshold = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Personalize.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double Weight
+        public double? Weight
         {
-            get { return this._weight.GetValueOrDefault(); }
+            get { return this._weight; }
             set { this._weight = value; }
         }
 

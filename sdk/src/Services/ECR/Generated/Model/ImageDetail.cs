@@ -169,16 +169,8 @@ namespace Amazon.ECR.Model
         /// <para>
         /// Starting with Docker version 1.9, the Docker client compresses image layers before
         /// pushing them to a V2 Docker registry. The output of the <c>docker images</c> command
-<<<<<<< HEAD
-        /// shows the uncompressed image size. Therefore, Docker might return a larger image than
-        /// the image sizes returned by <a>DescribeImages</a>.
-||||||| Commit version number update changes
-        /// shows the uncompressed image size, so it may return a larger image size than the image
-        /// sizes returned by <a>DescribeImages</a>.
-=======
         /// shows the uncompressed image size. Therefore, Docker might return a larger image than
         /// the image shown in the Amazon Web Services Management Console.
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// </para>
         ///  </note>
         /// </summary>

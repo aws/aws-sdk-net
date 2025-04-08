@@ -97,7 +97,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIpAddressType())
             {
                 context.Writer.WritePropertyName("ipAddressType");
-                context.Writer.Write(requestObject.IpAddressType);
+                context.Writer.WriteStringValue(requestObject.IpAddressType);
             }
 
             if(requestObject.IsSetOwnershipVerificationCertificateArn())

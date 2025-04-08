@@ -68,17 +68,6 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetContextEnrichmentConfiguration())
-            {
-                context.Writer.WritePropertyName("contextEnrichmentConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ContextEnrichmentConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.ContextEnrichmentConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
             if(requestObject.IsSetCustomTransformationConfiguration())
             {
                 context.Writer.WritePropertyName("customTransformationConfiguration");

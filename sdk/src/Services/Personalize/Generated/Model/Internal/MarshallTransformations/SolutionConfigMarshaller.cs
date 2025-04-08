@@ -85,12 +85,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEventsConfig())
             {
                 context.Writer.WritePropertyName("eventsConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EventsConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.EventsConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEventValueThreshold())

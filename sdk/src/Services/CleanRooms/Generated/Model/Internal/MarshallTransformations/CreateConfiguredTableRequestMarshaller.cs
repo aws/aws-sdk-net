@@ -113,33 +113,10 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
-<<<<<<< HEAD
             if(publicRequest.IsSetTableReference())
             {
                 context.Writer.WritePropertyName("tableReference");
                 context.Writer.WriteStartObject();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetTableReference())
-                {
-                    context.Writer.WritePropertyName("tableReference");
-                    context.Writer.WriteObjectStart();
-=======
-                if(publicRequest.IsSetSelectedAnalysisMethods())
-                {
-                    context.Writer.WritePropertyName("selectedAnalysisMethods");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSelectedAnalysisMethodsListValue in publicRequest.SelectedAnalysisMethods)
-                    {
-                            context.Writer.Write(publicRequestSelectedAnalysisMethodsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTableReference())
-                {
-                    context.Writer.WritePropertyName("tableReference");
-                    context.Writer.WriteObjectStart();
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
                 var marshaller = TableReferenceMarshaller.Instance;
                 marshaller.Marshall(publicRequest.TableReference, context);

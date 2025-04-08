@@ -44,9 +44,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether routes are being persisted in the routing database.
         /// </para>
         /// </summary>
-        public bool AreRoutesPersisted
+        public bool? AreRoutesPersisted
         {
-            get { return this._areRoutesPersisted.GetValueOrDefault(); }
+            get { return this._areRoutesPersisted; }
             set { this._areRoutesPersisted = value; }
         }
 

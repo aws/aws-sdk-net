@@ -80,12 +80,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetErrorLogSettings())
             {
                 context.Writer.WritePropertyName("errorLogSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ErrorLogSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ErrorLogSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIdleSessionTTLInSeconds())

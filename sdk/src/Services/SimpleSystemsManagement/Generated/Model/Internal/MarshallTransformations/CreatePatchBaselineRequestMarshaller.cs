@@ -109,31 +109,17 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.ApprovedPatchesEnableNonSecurity.Value);
             }
 
-<<<<<<< HEAD
+            if(publicRequest.IsSetAvailableSecurityUpdatesComplianceStatus())
+            {
+                context.Writer.WritePropertyName("AvailableSecurityUpdatesComplianceStatus");
+                context.Writer.WriteStringValue(publicRequest.AvailableSecurityUpdatesComplianceStatus);
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("ClientToken");
                 context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-=======
-                if(publicRequest.IsSetAvailableSecurityUpdatesComplianceStatus())
-                {
-                    context.Writer.WritePropertyName("AvailableSecurityUpdatesComplianceStatus");
-                    context.Writer.Write(publicRequest.AvailableSecurityUpdatesComplianceStatus);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
             else if(!(publicRequest.IsSetClientToken()))
             {

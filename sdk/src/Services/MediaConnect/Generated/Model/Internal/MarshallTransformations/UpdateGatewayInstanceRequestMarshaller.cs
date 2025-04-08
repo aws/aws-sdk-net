@@ -65,7 +65,6 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetGatewayInstanceArn())
                 throw new AmazonMediaConnectException("Request object does not have required field GatewayInstanceArn set");
-<<<<<<< HEAD
             request.AddPathResource("{GatewayInstanceArn}", StringUtils.FromString(publicRequest.GatewayInstanceArn));
             request.ResourcePath = "/v1/gateway-instances/{GatewayInstanceArn}";
 #if !NETFRAMEWORK
@@ -78,15 +77,6 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetBridgePlacement())
-||||||| Commit version number update changes
-            request.AddPathResource("{gatewayInstanceArn}", StringUtils.FromString(publicRequest.GatewayInstanceArn));
-            request.ResourcePath = "/v1/gateway-instances/{gatewayInstanceArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-=======
-            request.AddPathResource("{GatewayInstanceArn}", StringUtils.FromString(publicRequest.GatewayInstanceArn));
-            request.ResourcePath = "/v1/gateway-instances/{GatewayInstanceArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             {
                 context.Writer.WritePropertyName("bridgePlacement");
                 context.Writer.WriteStringValue(publicRequest.BridgePlacement);

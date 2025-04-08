@@ -46,22 +46,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
-<<<<<<< HEAD
             if(requestObject.IsSetCoreDeviceOperatingSystem())
             {
                 context.Writer.WritePropertyName("coreDeviceOperatingSystem");
                 context.Writer.WriteStringValue(requestObject.CoreDeviceOperatingSystem);
             }
 
-||||||| Commit version number update changes
-=======
-            if(requestObject.IsSetCoreDeviceOperatingSystem())
-            {
-                context.Writer.WritePropertyName("coreDeviceOperatingSystem");
-                context.Writer.Write(requestObject.CoreDeviceOperatingSystem);
-            }
-
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             if(requestObject.IsSetCoreDeviceThingName())
             {
                 context.Writer.WritePropertyName("coreDeviceThingName");

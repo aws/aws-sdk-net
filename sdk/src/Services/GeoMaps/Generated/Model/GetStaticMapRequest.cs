@@ -203,7 +203,6 @@ namespace Amazon.GeoMaps.Model
         }
 
         /// <summary>
-<<<<<<< HEAD
         /// Gets and sets the property CropLabels. 
         /// <para>
         /// It is a flag that takes in true or false. It prevents the labels that are on the edge
@@ -223,28 +222,6 @@ namespace Amazon.GeoMaps.Model
         }
 
         /// <summary>
-||||||| Commit version number update changes
-=======
-        /// Gets and sets the property CropLabels. 
-        /// <para>
-        /// It is a flag that takes in true or false. It prevents the labels that are on the edge
-        /// of the image from being cut or obscured.
-        /// </para>
-        /// </summary>
-        public bool CropLabels
-        {
-            get { return this._cropLabels.GetValueOrDefault(); }
-            set { this._cropLabels = value; }
-        }
-
-        // Check to see if CropLabels property is set
-        internal bool IsSetCropLabels()
-        {
-            return this._cropLabels.HasValue; 
-        }
-
-        /// <summary>
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// Gets and sets the property FileName. 
         /// <para>
         /// The map scaling parameter to size the image, icons, and labels. It follows the pattern

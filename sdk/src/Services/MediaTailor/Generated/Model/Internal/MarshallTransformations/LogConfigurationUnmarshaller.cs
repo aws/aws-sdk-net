@@ -59,7 +59,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 if (context.TestExpression("AdsInteractionLog", targetDepth))
                 {
                     var unmarshaller = AdsInteractionLogUnmarshaller.Instance;
-                    unmarshalledObject.AdsInteractionLog = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AdsInteractionLog = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EnabledLoggingStrategies", targetDepth))
@@ -71,7 +71,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 if (context.TestExpression("ManifestServiceInteractionLog", targetDepth))
                 {
                     var unmarshaller = ManifestServiceInteractionLogUnmarshaller.Instance;
-                    unmarshalledObject.ManifestServiceInteractionLog = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManifestServiceInteractionLog = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PercentEnabled", targetDepth))

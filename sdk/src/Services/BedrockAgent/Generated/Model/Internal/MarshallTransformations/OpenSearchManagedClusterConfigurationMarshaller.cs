@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDomainArn())
             {
                 context.Writer.WritePropertyName("domainArn");
-                context.Writer.Write(requestObject.DomainArn);
+                context.Writer.WriteStringValue(requestObject.DomainArn);
             }
 
             if(requestObject.IsSetDomainEndpoint())
             {
                 context.Writer.WritePropertyName("domainEndpoint");
-                context.Writer.Write(requestObject.DomainEndpoint);
+                context.Writer.WriteStringValue(requestObject.DomainEndpoint);
             }
 
             if(requestObject.IsSetFieldMapping())
             {
                 context.Writer.WritePropertyName("fieldMapping");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OpenSearchManagedClusterFieldMappingMarshaller.Instance;
                 marshaller.Marshall(requestObject.FieldMapping, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVectorIndexName())
             {
                 context.Writer.WritePropertyName("vectorIndexName");
-                context.Writer.Write(requestObject.VectorIndexName);
+                context.Writer.WriteStringValue(requestObject.VectorIndexName);
             }
 
         }

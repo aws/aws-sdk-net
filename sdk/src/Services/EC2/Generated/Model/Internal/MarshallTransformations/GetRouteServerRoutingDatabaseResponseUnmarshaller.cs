@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("areRoutesPersisted", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.AreRoutesPersisted = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -94,7 +94,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
         private static GetRouteServerRoutingDatabaseResponseUnmarshaller _instance = new GetRouteServerRoutingDatabaseResponseUnmarshaller();        

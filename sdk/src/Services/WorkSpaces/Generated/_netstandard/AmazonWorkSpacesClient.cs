@@ -3482,50 +3482,6 @@ namespace Amazon.WorkSpaces
         }
         #endregion
         
-        #region  ModifyEndpointEncryptionMode
-
-        internal virtual ModifyEndpointEncryptionModeResponse ModifyEndpointEncryptionMode(ModifyEndpointEncryptionModeRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = ModifyEndpointEncryptionModeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ModifyEndpointEncryptionModeResponseUnmarshaller.Instance;
-
-            return Invoke<ModifyEndpointEncryptionModeResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// Modifies the endpoint encryption mode that allows you to configure the specified directory
-        /// between Standard TLS and FIPS 140-2 validated mode.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ModifyEndpointEncryptionMode service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ModifyEndpointEncryptionMode service method, as returned by WorkSpaces.</returns>
-        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
-        /// The user is not authorized to access a resource.
-        /// </exception>
-        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
-        /// This operation is not supported.
-        /// </exception>
-        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
-        /// The resource could not be found.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyEndpointEncryptionMode">REST API Reference for ModifyEndpointEncryptionMode Operation</seealso>
-        public virtual Task<ModifyEndpointEncryptionModeResponse> ModifyEndpointEncryptionModeAsync(ModifyEndpointEncryptionModeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = ModifyEndpointEncryptionModeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ModifyEndpointEncryptionModeResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ModifyEndpointEncryptionModeResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  ModifySamlProperties
 
         internal virtual ModifySamlPropertiesResponse ModifySamlProperties(ModifySamlPropertiesRequest request)

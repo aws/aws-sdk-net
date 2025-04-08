@@ -49,7 +49,7 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomerAWSAccountId())
             {
                 context.Writer.WritePropertyName("CustomerAWSAccountId");
-                context.Writer.Write(requestObject.CustomerAWSAccountId);
+                context.Writer.WriteStringValue(requestObject.CustomerAWSAccountId);
             }
 
             if(requestObject.IsSetCustomerIdentifier())

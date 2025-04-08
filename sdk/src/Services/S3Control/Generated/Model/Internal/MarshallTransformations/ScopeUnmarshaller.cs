@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Scope Object
     /// </summary>  
-    public class ScopeUnmarshaller : IUnmarshaller<Scope, XmlUnmarshallerContext>, IUnmarshaller<Scope, JsonUnmarshallerContext>
+    public class ScopeUnmarshaller : IXmlUnmarshaller<Scope, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -84,17 +84,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Scope Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static ScopeUnmarshaller _instance = new ScopeUnmarshaller();        
 
         /// <summary>

@@ -98,12 +98,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFirelensConfiguration())
             {
                 context.Writer.WritePropertyName("firelensConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FirelensConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.FirelensConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImage())

@@ -71,9 +71,9 @@ namespace Amazon.MediaConvert.Model
         /// you specify, depending on your source. For more information about QVBR quality levels,
         /// see: https://docs.aws.amazon.com/mediaconvert/latest/ug/qvbr-guidelines.html
         /// </summary>
-        public double MaxQualityLevel
+        public double? MaxQualityLevel
         {
-            get { return this._maxQualityLevel.GetValueOrDefault(); }
+            get { return this._maxQualityLevel; }
             set { this._maxQualityLevel = value; }
         }
 

@@ -71,12 +71,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIpv6Expression())
             {
                 context.Writer.WritePropertyName("Ipv6Expression");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IngressIpv6ExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Ipv6Expression, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStringExpression())

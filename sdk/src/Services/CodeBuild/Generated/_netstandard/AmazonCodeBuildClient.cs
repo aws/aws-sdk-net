@@ -416,7 +416,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<BatchGetCommandExecutionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  BatchGetFleets
@@ -597,7 +596,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<BatchGetSandboxesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateFleet
@@ -1517,7 +1515,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<ListCommandExecutionsForSandboxResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListCuratedEnvironmentImages
@@ -1772,7 +1769,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<ListSandboxesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSandboxesForProject
@@ -1812,7 +1808,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<ListSandboxesForProjectResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSharedProjects
@@ -2174,7 +2169,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<StartCommandExecutionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSandbox
@@ -2217,7 +2211,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<StartSandboxResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StartSandboxConnection
@@ -2257,7 +2250,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<StartSandboxConnectionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopBuild
@@ -2375,7 +2367,6 @@ namespace Amazon.CodeBuild
 
             return InvokeAsync<StopSandboxResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UpdateFleet

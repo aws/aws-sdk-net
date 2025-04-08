@@ -59,7 +59,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 if (context.TestExpression("customMetadataField", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomMetadataField = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomMetadataField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("metadataField", targetDepth))

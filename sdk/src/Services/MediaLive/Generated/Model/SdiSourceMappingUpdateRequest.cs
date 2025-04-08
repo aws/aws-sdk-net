@@ -46,9 +46,9 @@ namespace Amazon.MediaLive.Model
         /// node hardware, see the documentation for your node hardware. The numbering always
         /// starts at 1.
         /// </summary>
-        public int CardNumber
+        public int? CardNumber
         {
-            get { return this._cardNumber.GetValueOrDefault(); }
+            get { return this._cardNumber; }
             set { this._cardNumber = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.MediaLive.Model
         /// about how ports are identified on physical cards, see the documentation for your node
         /// hardware.
         /// </summary>
-        public int ChannelNumber
+        public int? ChannelNumber
         {
-            get { return this._channelNumber.GetValueOrDefault(); }
+            get { return this._channelNumber; }
             set { this._channelNumber = value; }
         }
 

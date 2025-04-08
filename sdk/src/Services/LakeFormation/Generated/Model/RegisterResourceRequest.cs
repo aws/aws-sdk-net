@@ -168,7 +168,6 @@ namespace Amazon.LakeFormation.Model
             return this._withFederation.HasValue; 
         }
 
-<<<<<<< HEAD
         /// <summary>
         /// Gets and sets the property WithPrivilegedAccess. 
         /// <para>
@@ -188,27 +187,5 @@ namespace Amazon.LakeFormation.Model
             return this._withPrivilegedAccess.HasValue; 
         }
 
-||||||| Commit version number update changes
-=======
-        /// <summary>
-        /// Gets and sets the property WithPrivilegedAccess. 
-        /// <para>
-        /// Grants the calling principal the permissions to perform all supported Lake Formation
-        /// operations on the registered data location. 
-        /// </para>
-        /// </summary>
-        public bool WithPrivilegedAccess
-        {
-            get { return this._withPrivilegedAccess.GetValueOrDefault(); }
-            set { this._withPrivilegedAccess = value; }
-        }
-
-        // Check to see if WithPrivilegedAccess property is set
-        internal bool IsSetWithPrivilegedAccess()
-        {
-            return this._withPrivilegedAccess.HasValue; 
-        }
-
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
     }
 }

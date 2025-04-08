@@ -73,73 +73,37 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdsInteractionLog())
+            {
+                context.Writer.WritePropertyName("AdsInteractionLog");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AdsInteractionLogMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AdsInteractionLog, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetEnabledLoggingStrategies())
             {
-<<<<<<< HEAD
                 context.Writer.WritePropertyName("EnabledLoggingStrategies");
                 context.Writer.WriteStartArray();
                 foreach(var publicRequestEnabledLoggingStrategiesListValue in publicRequest.EnabledLoggingStrategies)
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnabledLoggingStrategies())
-                {
-                    context.Writer.WritePropertyName("EnabledLoggingStrategies");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEnabledLoggingStrategiesListValue in publicRequest.EnabledLoggingStrategies)
-                    {
-                            context.Writer.Write(publicRequestEnabledLoggingStrategiesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetPercentEnabled())
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdsInteractionLog())
-                {
-                    context.Writer.WritePropertyName("AdsInteractionLog");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AdsInteractionLogMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AdsInteractionLog, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEnabledLoggingStrategies())
-                {
-                    context.Writer.WritePropertyName("EnabledLoggingStrategies");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEnabledLoggingStrategiesListValue in publicRequest.EnabledLoggingStrategies)
-                    {
-                            context.Writer.Write(publicRequestEnabledLoggingStrategiesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetManifestServiceInteractionLog())
-                {
-                    context.Writer.WritePropertyName("ManifestServiceInteractionLog");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ManifestServiceInteractionLogMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ManifestServiceInteractionLog, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPercentEnabled())
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
                 {
                         context.Writer.WriteStringValue(publicRequestEnabledLoggingStrategiesListValue);
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetManifestServiceInteractionLog())
+            {
+                context.Writer.WritePropertyName("ManifestServiceInteractionLog");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ManifestServiceInteractionLogMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ManifestServiceInteractionLog, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetPercentEnabled())

@@ -94,30 +94,18 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
                 {
                         context.Writer.WriteStringValue(publicRequestMemberAccountRateTypeSelectionsListValue);
                 }
-<<<<<<< HEAD
                 context.Writer.WriteEndArray();
-||||||| Commit version number update changes
+            }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-
-                if(publicRequest.IsSetStandaloneAccountRateTypeSelections())
+            if(publicRequest.IsSetStandaloneAccountRateTypeSelections())
+            {
+                context.Writer.WritePropertyName("standaloneAccountRateTypeSelections");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestStandaloneAccountRateTypeSelectionsListValue in publicRequest.StandaloneAccountRateTypeSelections)
                 {
-                    context.Writer.WritePropertyName("standaloneAccountRateTypeSelections");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStandaloneAccountRateTypeSelectionsListValue in publicRequest.StandaloneAccountRateTypeSelections)
-                    {
-                            context.Writer.Write(publicRequestStandaloneAccountRateTypeSelectionsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
+                        context.Writer.WriteStringValue(publicRequestStandaloneAccountRateTypeSelectionsListValue);
                 }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
+                context.Writer.WriteEndArray();
             }
 
             writer.WriteEndObject();

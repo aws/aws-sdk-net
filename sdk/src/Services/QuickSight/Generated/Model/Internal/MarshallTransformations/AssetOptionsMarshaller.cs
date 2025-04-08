@@ -49,18 +49,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExcludedDataSetArns())
             {
                 context.Writer.WritePropertyName("ExcludedDataSetArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludedDataSetArnsListValue in requestObject.ExcludedDataSetArns)
                 {
-                        context.Writer.Write(requestObjectExcludedDataSetArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectExcludedDataSetArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetQBusinessInsightsStatus())
             {
                 context.Writer.WritePropertyName("QBusinessInsightsStatus");
-                context.Writer.Write(requestObject.QBusinessInsightsStatus);
+                context.Writer.WriteStringValue(requestObject.QBusinessInsightsStatus);
             }
 
             if(requestObject.IsSetTimezone())

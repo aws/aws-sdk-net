@@ -118,9 +118,9 @@ namespace Amazon.CodeBuild.Model
         /// When the sandbox process ended, expressed in Unix time format.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -225,9 +225,9 @@ namespace Amazon.CodeBuild.Model
         /// The number of minutes a sandbox is allowed to be queued before it times out. 
         /// </para>
         /// </summary>
-        public int QueuedTimeoutInMinutes
+        public int? QueuedTimeoutInMinutes
         {
-            get { return this._queuedTimeoutInMinutes.GetValueOrDefault(); }
+            get { return this._queuedTimeoutInMinutes; }
             set { this._queuedTimeoutInMinutes = value; }
         }
 
@@ -243,9 +243,9 @@ namespace Amazon.CodeBuild.Model
         /// When the sandbox process was initially requested, expressed in Unix time format.
         /// </para>
         /// </summary>
-        public DateTime RequestTime
+        public DateTime? RequestTime
         {
-            get { return this._requestTime.GetValueOrDefault(); }
+            get { return this._requestTime; }
             set { this._requestTime = value; }
         }
 
@@ -352,9 +352,9 @@ namespace Amazon.CodeBuild.Model
         /// When the sandbox process started, expressed in Unix time format.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -389,9 +389,9 @@ namespace Amazon.CodeBuild.Model
         /// out this sandbox if it does not get marked as completed.
         /// </para>
         /// </summary>
-        public int TimeoutInMinutes
+        public int? TimeoutInMinutes
         {
-            get { return this._timeoutInMinutes.GetValueOrDefault(); }
+            get { return this._timeoutInMinutes; }
             set { this._timeoutInMinutes = value; }
         }
 

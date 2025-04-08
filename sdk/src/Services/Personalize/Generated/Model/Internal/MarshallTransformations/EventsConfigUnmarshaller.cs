@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EventsConfig Object
     /// </summary>  
-    public class EventsConfigUnmarshaller : IUnmarshaller<EventsConfig, XmlUnmarshallerContext>, IUnmarshaller<EventsConfig, JsonUnmarshallerContext>
+    public class EventsConfigUnmarshaller : IJsonUnmarshaller<EventsConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EventsConfig IUnmarshaller<EventsConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EventsConfig Unmarshall(JsonUnmarshallerContext context)
+        public EventsConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EventsConfig unmarshalledObject = new EventsConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("eventParametersList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EventParameters, EventParametersUnmarshaller>(EventParametersUnmarshaller.Instance);
-                    unmarshalledObject.EventParametersList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EventParameters, EventParametersUnmarshaller>(EventParametersUnmarshaller.Instance);
+                    unmarshalledObject.EventParametersList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

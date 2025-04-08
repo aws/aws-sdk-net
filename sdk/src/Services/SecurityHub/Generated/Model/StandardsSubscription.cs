@@ -61,7 +61,6 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-<<<<<<< HEAD
         /// Gets and sets the property StandardsControlsUpdatable. 
         /// <para>
         /// Indicates whether the controls associated with this standards subscription can be
@@ -97,37 +96,6 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-||||||| Commit version number update changes
-=======
-        /// Gets and sets the property StandardsControlsUpdatable. 
-        /// <para>
-        /// Specifies whether you can retrieve information about and configure individual controls
-        /// that apply to the standard. Possible values are:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>READY_FOR_UPDATES</c> - Controls in the standard can be retrieved and configured.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>NOT_READY_FOR_UPDATES</c> - Controls in the standard cannot be retrieved or configured.
-        /// </para>
-        ///  </li> </ul>
-        /// </summary>
-        public StandardsControlsUpdatable StandardsControlsUpdatable
-        {
-            get { return this._standardsControlsUpdatable; }
-            set { this._standardsControlsUpdatable = value; }
-        }
-
-        // Check to see if StandardsControlsUpdatable property is set
-        internal bool IsSetStandardsControlsUpdatable()
-        {
-            return this._standardsControlsUpdatable != null;
-        }
-
-        /// <summary>
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// Gets and sets the property StandardsInput. 
         /// <para>
         /// A key-value pair of input for the standard.

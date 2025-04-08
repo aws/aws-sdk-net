@@ -98,34 +98,11 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
-<<<<<<< HEAD
             if(publicRequest.IsSetFormat())
             {
                 context.Writer.WritePropertyName("format");
                 context.Writer.WriteStringValue(publicRequest.Format);
             }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetSource())
-                {
-                    context.Writer.WritePropertyName("source");
-                    context.Writer.WriteObjectStart();
-=======
-                if(publicRequest.IsSetSchema())
-                {
-                    context.Writer.WritePropertyName("schema");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AnalysisSchemaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Schema, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSource())
-                {
-                    context.Writer.WritePropertyName("source");
-                    context.Writer.WriteObjectStart();
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
             if(publicRequest.IsSetName())
             {

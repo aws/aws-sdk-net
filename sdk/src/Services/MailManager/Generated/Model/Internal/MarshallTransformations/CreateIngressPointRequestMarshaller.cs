@@ -103,36 +103,22 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.IngressPointName);
             }
 
-<<<<<<< HEAD
+            if(publicRequest.IsSetNetworkConfiguration())
+            {
+                context.Writer.WritePropertyName("NetworkConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NetworkConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NetworkConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetRuleSetId())
             {
                 context.Writer.WritePropertyName("RuleSetId");
                 context.Writer.WriteStringValue(publicRequest.RuleSetId);
             }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetRuleSetId())
-                {
-                    context.Writer.WritePropertyName("RuleSetId");
-                    context.Writer.Write(publicRequest.RuleSetId);
-                }
-=======
-                if(publicRequest.IsSetNetworkConfiguration())
-                {
-                    context.Writer.WritePropertyName("NetworkConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NetworkConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NetworkConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRuleSetId())
-                {
-                    context.Writer.WritePropertyName("RuleSetId");
-                    context.Writer.Write(publicRequest.RuleSetId);
-                }
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
             if(publicRequest.IsSetTags())
             {

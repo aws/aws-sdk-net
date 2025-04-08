@@ -79,7 +79,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if (context.TestExpression("AvailableSecurityUpdatesComplianceStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AvailableSecurityUpdatesComplianceStatus = unmarshaller.Unmarshall(context);
+                    response.AvailableSecurityUpdatesComplianceStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BaselineId", targetDepth))

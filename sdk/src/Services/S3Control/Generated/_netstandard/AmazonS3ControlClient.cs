@@ -1423,7 +1423,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<DeleteAccessPointScopeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteBucket
@@ -2991,7 +2990,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<GetAccessPointScopeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetBucket
@@ -4368,7 +4366,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<ListAccessPointsForDirectoryBucketsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAccessPointsForObjectLambda
@@ -5094,7 +5091,6 @@ namespace Amazon.S3Control
 
             return InvokeAsync<PutAccessPointScopeResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutBucketLifecycleConfiguration

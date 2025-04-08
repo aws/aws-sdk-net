@@ -150,31 +150,11 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Password);
             }
 
-<<<<<<< HEAD
             if(publicRequest.IsSetServerHostname())
             {
                 context.Writer.WritePropertyName("ServerHostname");
                 context.Writer.WriteStringValue(publicRequest.ServerHostname);
             }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetSubdirectory())
-                {
-                    context.Writer.WritePropertyName("Subdirectory");
-                    context.Writer.Write(publicRequest.Subdirectory);
-                }
-=======
-                if(publicRequest.IsSetServerHostname())
-                {
-                    context.Writer.WritePropertyName("ServerHostname");
-                    context.Writer.Write(publicRequest.ServerHostname);
-                }
-
-                if(publicRequest.IsSetSubdirectory())
-                {
-                    context.Writer.WritePropertyName("Subdirectory");
-                    context.Writer.Write(publicRequest.Subdirectory);
-                }
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
             if(publicRequest.IsSetSubdirectory())
             {

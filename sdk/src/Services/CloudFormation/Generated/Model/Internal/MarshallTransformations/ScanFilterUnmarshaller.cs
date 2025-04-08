@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ScanFilter Object
     /// </summary>  
-    public class ScanFilterUnmarshaller : IUnmarshaller<ScanFilter, XmlUnmarshallerContext>, IUnmarshaller<ScanFilter, JsonUnmarshallerContext>
+    public class ScanFilterUnmarshaller : IXmlUnmarshaller<ScanFilter, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -75,17 +75,6 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ScanFilter Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ScanFilterUnmarshaller _instance = new ScanFilterUnmarshaller();        
 

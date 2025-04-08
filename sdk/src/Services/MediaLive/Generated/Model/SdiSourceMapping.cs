@@ -42,9 +42,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property CardNumber. A number that uniquely identifies the SDI card
         /// on the node hardware.
         /// </summary>
-        public int CardNumber
+        public int? CardNumber
         {
-            get { return this._cardNumber.GetValueOrDefault(); }
+            get { return this._cardNumber; }
             set { this._cardNumber = value; }
         }
 
@@ -58,9 +58,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ChannelNumber. A number that uniquely identifies a port
         /// on the SDI card.
         /// </summary>
-        public int ChannelNumber
+        public int? ChannelNumber
         {
-            get { return this._channelNumber.GetValueOrDefault(); }
+            get { return this._channelNumber; }
             set { this._channelNumber = value; }
         }
 

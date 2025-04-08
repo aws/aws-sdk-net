@@ -49,7 +49,7 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMatchType())
             {
                 context.Writer.WritePropertyName("matchType");
-                context.Writer.Write(requestObject.MatchType);
+                context.Writer.WriteStringValue(requestObject.MatchType);
             }
 
             if(requestObject.IsSetSearchTerm())

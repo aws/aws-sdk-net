@@ -79,7 +79,6 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CatalogId);
             }
 
-<<<<<<< HEAD
             if(publicRequest.IsSetCondition())
             {
                 context.Writer.WritePropertyName("Condition");
@@ -87,40 +86,6 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
                 var marshaller = ConditionMarshaller.Instance;
                 marshaller.Marshall(publicRequest.Condition, context);
-||||||| Commit version number update changes
-                if(publicRequest.IsSetPermissions())
-                {
-                    context.Writer.WritePropertyName("Permissions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
-                    {
-                            context.Writer.Write(publicRequestPermissionsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-=======
-                if(publicRequest.IsSetCondition())
-                {
-                    context.Writer.WritePropertyName("Condition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConditionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Condition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPermissions())
-                {
-                    context.Writer.WritePropertyName("Permissions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
-                    {
-                            context.Writer.Write(publicRequestPermissionsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
                 context.Writer.WriteEndObject();
             }

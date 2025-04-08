@@ -5654,7 +5654,6 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-<<<<<<< HEAD
         /// Given a user pool ID, generates a comma-separated value (CSV) list populated with
         /// available user attributes in the user pool. This list is the header for the CSV file
         /// that determines the users in a user import job. Save the content of <c>CSVHeader</c>
@@ -5662,50 +5661,6 @@ namespace Amazon.CognitoIdentityProvider
         /// of users that you want to import. For more information about CSV user import, see
         /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-using-import-tool.html">Importing
         /// users from a CSV file</a>.
-||||||| Commit version number update changes
-        /// Gets the header information for the comma-separated value (CSV) file to be used as
-        /// input for the user import job.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetCSVHeader service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-=======
-        /// Given a user pool ID, generates a comma-separated value (CSV) list populated with
-        /// available user attributes in the user pool. This list is the header for the CSV file
-        /// that determines the users in a user import job. Save the content of <c>CSVHeader</c>
-        /// in the response as a <c>.csv</c> file and populate it with the usernames and attributes
-        /// of users that you want to import. For more information about CSV user import, see
-        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-using-import-tool.html">Importing
-        /// users from a CSV file</a>.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
-        /// for this API operation. For this operation, you must use IAM credentials to authorize
-        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Learn more</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
-        /// Amazon Web Services API Requests</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito user pools API and user pool endpoints</a> 
-        /// </para>
-        ///  </li> </ul> </note>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetCSVHeader service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// 
         ///  <note> 
         /// <para>
@@ -6407,17 +6362,6 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  </li> <li> 
         /// <para>
-<<<<<<< HEAD
-        /// The user's options for choice-based authentication with the <c>USER_AUTH</c> flow.
-        /// </para>
-        ///  </li> </ol> 
-        /// <para>
-        /// Authorize this action with a signed-in user's access token. It must include the scope
-        /// <c>aws.cognito.signin.user.admin</c>.
-||||||| Commit version number update changes
-        /// The user's options in the <c>USER_AUTH</c> flow that they can select in a <c>SELECT_CHALLENGE</c>
-        /// response or request in a <c>PREFERRED_CHALLENGE</c>request.
-=======
         /// The user's options for choice-based authentication with the <c>USER_AUTH</c> flow.
         /// </para>
         ///  </li> </ol> 
@@ -6432,23 +6376,8 @@ namespace Amazon.CognitoIdentityProvider
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
         /// the Amazon Cognito user pools API and user pool endpoints</a>.
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
-        /// </para>
-<<<<<<< HEAD
-        ///  <note> 
-        /// <para>
-        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
-        /// for this API operation. For this operation, you can't use IAM credentials to authorize
-        /// requests, and you can't grant IAM permissions in policies. For more information about
-        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note>
-||||||| Commit version number update changes
-        ///  </li> </ol>
-=======
-        ///  </note>
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUserAuthFactors service method.</param>
         /// <param name="cancellationToken">

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Smpte2110ReceiverGroupSdpSettings Object
     /// </summary>  
-    public class Smpte2110ReceiverGroupSdpSettingsUnmarshaller : IUnmarshaller<Smpte2110ReceiverGroupSdpSettings, XmlUnmarshallerContext>, IUnmarshaller<Smpte2110ReceiverGroupSdpSettings, JsonUnmarshallerContext>
+    public class Smpte2110ReceiverGroupSdpSettingsUnmarshaller : IJsonUnmarshaller<Smpte2110ReceiverGroupSdpSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Smpte2110ReceiverGroupSdpSettings IUnmarshaller<Smpte2110ReceiverGroupSdpSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Smpte2110ReceiverGroupSdpSettings Unmarshall(JsonUnmarshallerContext context)
+        public Smpte2110ReceiverGroupSdpSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Smpte2110ReceiverGroupSdpSettings unmarshalledObject = new Smpte2110ReceiverGroupSdpSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ancillarySdps", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<InputSdpLocation, InputSdpLocationUnmarshaller>(InputSdpLocationUnmarshaller.Instance);
-                    unmarshalledObject.AncillarySdps = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<InputSdpLocation, InputSdpLocationUnmarshaller>(InputSdpLocationUnmarshaller.Instance);
+                    unmarshalledObject.AncillarySdps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("audioSdps", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<InputSdpLocation, InputSdpLocationUnmarshaller>(InputSdpLocationUnmarshaller.Instance);
-                    unmarshalledObject.AudioSdps = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<InputSdpLocation, InputSdpLocationUnmarshaller>(InputSdpLocationUnmarshaller.Instance);
+                    unmarshalledObject.AudioSdps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("videoSdp", targetDepth))
                 {
                     var unmarshaller = InputSdpLocationUnmarshaller.Instance;
-                    unmarshalledObject.VideoSdp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VideoSdp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

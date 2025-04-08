@@ -123,35 +123,29 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
-<<<<<<< HEAD
             if(publicRequest.IsSetStateTemplatesToRemove())
             {
                 context.Writer.WritePropertyName("stateTemplatesToRemove");
                 context.Writer.WriteStartArray();
                 foreach(var publicRequestStateTemplatesToRemoveListValue in publicRequest.StateTemplatesToRemove)
-||||||| Commit version number update changes
-                if(publicRequest.IsSetVehicleName())
-=======
-                if(publicRequest.IsSetStateTemplatesToUpdate())
-                {
-                    context.Writer.WritePropertyName("stateTemplatesToUpdate");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStateTemplatesToUpdateListValue in publicRequest.StateTemplatesToUpdate)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = StateTemplateAssociationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestStateTemplatesToUpdateListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetVehicleName())
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
                 {
                         context.Writer.WriteStringValue(publicRequestStateTemplatesToRemoveListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetStateTemplatesToUpdate())
+            {
+                context.Writer.WritePropertyName("stateTemplatesToUpdate");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestStateTemplatesToUpdateListValue in publicRequest.StateTemplatesToUpdate)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StateTemplateAssociationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestStateTemplatesToUpdateListValue, context);
+
+                    context.Writer.WriteEndObject();
                 }
                 context.Writer.WriteEndArray();
             }

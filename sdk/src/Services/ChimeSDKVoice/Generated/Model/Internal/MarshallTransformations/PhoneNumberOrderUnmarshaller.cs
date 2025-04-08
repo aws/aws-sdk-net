@@ -64,8 +64,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FocDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.FocDate = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.FocDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OrderedPhoneNumbers", targetDepth))

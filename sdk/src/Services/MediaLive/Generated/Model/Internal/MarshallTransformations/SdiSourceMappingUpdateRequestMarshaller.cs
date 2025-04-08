@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCardNumber())
             {
                 context.Writer.WritePropertyName("cardNumber");
-                context.Writer.Write(requestObject.CardNumber);
+                context.Writer.WriteNumberValue(requestObject.CardNumber.Value);
             }
 
             if(requestObject.IsSetChannelNumber())
             {
                 context.Writer.WritePropertyName("channelNumber");
-                context.Writer.Write(requestObject.ChannelNumber);
+                context.Writer.WriteNumberValue(requestObject.ChannelNumber.Value);
             }
 
             if(requestObject.IsSetSdiSource())
             {
                 context.Writer.WritePropertyName("sdiSource");
-                context.Writer.Write(requestObject.SdiSource);
+                context.Writer.WriteStringValue(requestObject.SdiSource);
             }
 
         }

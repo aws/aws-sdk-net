@@ -1490,7 +1490,6 @@ namespace Amazon.EC2
 
             return InvokeAsync<AssociateRouteServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  AssociateRouteTable
@@ -5171,7 +5170,6 @@ namespace Amazon.EC2
 
             return InvokeAsync<CreateRouteServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRouteServerEndpoint
@@ -5217,7 +5215,6 @@ namespace Amazon.EC2
 
             return InvokeAsync<CreateRouteServerEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRouteServerPeer
@@ -5275,7 +5272,6 @@ namespace Amazon.EC2
 
             return InvokeAsync<CreateRouteServerPeerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateRouteTable
@@ -8530,7 +8526,6 @@ namespace Amazon.EC2
 
             return InvokeAsync<DeleteRouteServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRouteServerEndpoint
@@ -8571,7 +8566,6 @@ namespace Amazon.EC2
 
             return InvokeAsync<DeleteRouteServerEndpointResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRouteServerPeer
@@ -8625,7 +8619,6 @@ namespace Amazon.EC2
 
             return InvokeAsync<DeleteRouteServerPeerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteRouteTable
@@ -15126,7 +15119,6 @@ namespace Amazon.EC2
 
             return InvokeAsync<DescribeRouteServerEndpointsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRouteServerPeers
@@ -15184,7 +15176,6 @@ namespace Amazon.EC2
 
             return InvokeAsync<DescribeRouteServerPeersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRouteServers
@@ -15255,7 +15246,6 @@ namespace Amazon.EC2
 
             return InvokeAsync<DescribeRouteServersResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeRouteTables
@@ -18896,7 +18886,6 @@ namespace Amazon.EC2
 
             return InvokeAsync<DisableRouteServerPropagationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisableSerialConsoleAccess
@@ -19549,7 +19538,6 @@ namespace Amazon.EC2
 
             return InvokeAsync<DisassociateRouteServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DisassociateRouteTable
@@ -20417,7 +20405,6 @@ namespace Amazon.EC2
 
             return InvokeAsync<EnableRouteServerPropagationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  EnableSerialConsoleAccess
@@ -22273,7 +22260,6 @@ namespace Amazon.EC2
 
             return InvokeAsync<GetRouteServerAssociationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRouteServerPropagations
@@ -22344,7 +22330,6 @@ namespace Amazon.EC2
 
             return InvokeAsync<GetRouteServerPropagationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetRouteServerRoutingDatabase
@@ -22415,7 +22400,6 @@ namespace Amazon.EC2
 
             return InvokeAsync<GetRouteServerRoutingDatabaseResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetSecurityGroupsForVpc
@@ -25044,7 +25028,6 @@ namespace Amazon.EC2
 
             return InvokeAsync<ModifyRouteServerResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ModifySecurityGroupRules

@@ -45,9 +45,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=9999)]
-        public int ColumnIndex
+        public int? ColumnIndex
         {
-            get { return this._columnIndex.GetValueOrDefault(); }
+            get { return this._columnIndex; }
             set { this._columnIndex = value; }
         }
 

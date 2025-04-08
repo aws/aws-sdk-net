@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OpenSearchManagedClusterConfiguration Object
     /// </summary>  
-    public class OpenSearchManagedClusterConfigurationUnmarshaller : IUnmarshaller<OpenSearchManagedClusterConfiguration, XmlUnmarshallerContext>, IUnmarshaller<OpenSearchManagedClusterConfiguration, JsonUnmarshallerContext>
+    public class OpenSearchManagedClusterConfigurationUnmarshaller : IJsonUnmarshaller<OpenSearchManagedClusterConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OpenSearchManagedClusterConfiguration IUnmarshaller<OpenSearchManagedClusterConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OpenSearchManagedClusterConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public OpenSearchManagedClusterConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OpenSearchManagedClusterConfiguration unmarshalledObject = new OpenSearchManagedClusterConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("domainArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DomainArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("domainEndpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainEndpoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DomainEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fieldMapping", targetDepth))
                 {
                     var unmarshaller = OpenSearchManagedClusterFieldMappingUnmarshaller.Instance;
-                    unmarshalledObject.FieldMapping = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FieldMapping = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vectorIndexName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VectorIndexName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VectorIndexName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

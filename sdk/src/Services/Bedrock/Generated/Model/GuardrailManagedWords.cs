@@ -77,9 +77,9 @@ namespace Amazon.Bedrock.Model
         /// aren't charged for the evaluation. The evaluation doesn't appear in the response.
         /// </para>
         /// </summary>
-        public bool InputEnabled
+        public bool? InputEnabled
         {
-            get { return this._inputEnabled.GetValueOrDefault(); }
+            get { return this._inputEnabled; }
             set { this._inputEnabled = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.Bedrock.Model
         /// aren't charged for the evaluation. The evaluation doesn't appear in the response.
         /// </para>
         /// </summary>
-        public bool OutputEnabled
+        public bool? OutputEnabled
         {
-            get { return this._outputEnabled.GetValueOrDefault(); }
+            get { return this._outputEnabled; }
             set { this._outputEnabled = value; }
         }
 

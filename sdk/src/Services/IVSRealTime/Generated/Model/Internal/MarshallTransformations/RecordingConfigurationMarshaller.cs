@@ -63,17 +63,6 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetHlsConfiguration())
-            {
-                context.Writer.WritePropertyName("hlsConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CompositionRecordingHlsConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.HlsConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
         }
 
         /// <summary>

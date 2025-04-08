@@ -77,7 +77,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 if (context.TestExpression("eventsConfig", targetDepth))
                 {
                     var unmarshaller = EventsConfigUnmarshaller.Instance;
-                    unmarshalledObject.EventsConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EventsConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("eventValueThreshold", targetDepth))

@@ -71,13 +71,13 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 if (context.TestExpression("DependencyConfig", targetDepth))
                 {
                     var unmarshaller = DependencyConfigUnmarshaller.Instance;
-                    unmarshalledObject.DependencyConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DependencyConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EvaluationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EvaluationType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EvaluationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeyAttributes", targetDepth))
@@ -89,7 +89,7 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 if (context.TestExpression("MetricSourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MetricSourceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetricSourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))

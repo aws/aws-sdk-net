@@ -75,9 +75,9 @@ namespace Amazon.Bedrock.Model
         /// charged for the evaluation. The evaluation doesn't appear in the response.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

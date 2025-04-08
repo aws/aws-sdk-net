@@ -104,12 +104,6 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeviceTypeWorkSpacesThinClient = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceTypeWorkSpacesThinClient", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceTypeWorkSpacesThinClient = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("DeviceTypeZeroClient", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

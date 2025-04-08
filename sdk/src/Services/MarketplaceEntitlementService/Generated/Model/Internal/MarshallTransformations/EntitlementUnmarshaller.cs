@@ -59,7 +59,7 @@ namespace Amazon.MarketplaceEntitlementService.Model.Internal.MarshallTransforma
                 if (context.TestExpression("CustomerAWSAccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomerAWSAccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomerAWSAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CustomerIdentifier", targetDepth))

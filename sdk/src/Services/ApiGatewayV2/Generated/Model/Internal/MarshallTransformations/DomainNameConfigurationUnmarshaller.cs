@@ -107,7 +107,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 if (context.TestExpression("ipAddressType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ownershipVerificationCertificateArn", targetDepth))

@@ -136,12 +136,6 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     response.ResetAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResetAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.ResetAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Segment", targetDepth))
                 {
                     var unmarshaller = SegmentUnmarshaller.Instance;

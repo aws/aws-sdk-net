@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RouteServerBfdStatus Object
     /// </summary>  
-    public class RouteServerBfdStatusUnmarshaller : IUnmarshaller<RouteServerBfdStatus, XmlUnmarshallerContext>, IUnmarshaller<RouteServerBfdStatus, JsonUnmarshallerContext>
+    public class RouteServerBfdStatusUnmarshaller : IXmlUnmarshaller<RouteServerBfdStatus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RouteServerBfdStatus Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RouteServerBfdStatusUnmarshaller _instance = new RouteServerBfdStatusUnmarshaller();        
 

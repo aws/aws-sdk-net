@@ -143,7 +143,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 var marshaller = MulticastSettingsUpdateRequestMarshaller.Instance;
                 marshaller.Marshall(publicRequest.MulticastSettings, context);
 
-<<<<<<< HEAD
                 context.Writer.WriteEndObject();
             }
 
@@ -158,61 +157,28 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("roleArn");
                 context.Writer.WriteStringValue(publicRequest.RoleArn);
             }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetSources())
+
+            if(publicRequest.IsSetSdiSources())
+            {
+                context.Writer.WritePropertyName("sdiSources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSdiSourcesListValue in publicRequest.SdiSources)
                 {
-                    context.Writer.WritePropertyName("sources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSourcesListValue in publicRequest.Sources)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InputSourceRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSourcesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                        context.Writer.WriteStringValue(publicRequestSdiSourcesListValue);
                 }
-=======
-                if(publicRequest.IsSetSdiSources())
-                {
-                    context.Writer.WritePropertyName("sdiSources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSdiSourcesListValue in publicRequest.SdiSources)
-                    {
-                            context.Writer.Write(publicRequestSdiSourcesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
+                context.Writer.WriteEndArray();
+            }
 
-                if(publicRequest.IsSetSmpte2110ReceiverGroupSettings())
-                {
-                    context.Writer.WritePropertyName("smpte2110ReceiverGroupSettings");
-                    context.Writer.WriteObjectStart();
+            if(publicRequest.IsSetSmpte2110ReceiverGroupSettings())
+            {
+                context.Writer.WritePropertyName("smpte2110ReceiverGroupSettings");
+                context.Writer.WriteStartObject();
 
-                    var marshaller = Smpte2110ReceiverGroupSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Smpte2110ReceiverGroupSettings, context);
+                var marshaller = Smpte2110ReceiverGroupSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Smpte2110ReceiverGroupSettings, context);
 
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSources())
-                {
-                    context.Writer.WritePropertyName("sources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSourcesListValue in publicRequest.Sources)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InputSourceRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSourcesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
+                context.Writer.WriteEndObject();
+            }
 
             if(publicRequest.IsSetSources())
             {

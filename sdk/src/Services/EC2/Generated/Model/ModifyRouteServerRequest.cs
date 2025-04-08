@@ -72,10 +72,31 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyRouteServerRequest : AmazonEC2Request
     {
+        private bool? _dryRun;
         private RouteServerPersistRoutesAction _persistRoutes;
         private long? _persistRoutesDuration;
         private string _routeServerId;
         private bool? _snsNotificationsEnabled;
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// A check for whether you have the required permissions for the action without actually
+        /// making the request and provides an error response. If you have the required permissions,
+        /// the error response is <c>DryRunOperation</c>. Otherwise, it is <c>UnauthorizedOperation</c>.
+        /// </para>
+        /// </summary>
+        public bool? DryRun
+        {
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property PersistRoutes. 
@@ -126,9 +147,9 @@ namespace Amazon.EC2.Model
         /// in 1 minute, you can increase the duration up to 5 minutes.
         /// </para>
         /// </summary>
-        public long PersistRoutesDuration
+        public long? PersistRoutesDuration
         {
-            get { return this._persistRoutesDuration.GetValueOrDefault(); }
+            get { return this._persistRoutesDuration; }
             set { this._persistRoutesDuration = value; }
         }
 
@@ -165,9 +186,9 @@ namespace Amazon.EC2.Model
         /// Services.
         /// </para>
         /// </summary>
-        public bool SnsNotificationsEnabled
+        public bool? SnsNotificationsEnabled
         {
-            get { return this._snsNotificationsEnabled.GetValueOrDefault(); }
+            get { return this._snsNotificationsEnabled; }
             set { this._snsNotificationsEnabled = value; }
         }
 

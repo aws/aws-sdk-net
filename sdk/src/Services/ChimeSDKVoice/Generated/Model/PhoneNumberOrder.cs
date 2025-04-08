@@ -68,9 +68,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// null if a phone number order is not a porting order.
         /// </para>
         /// </summary>
-        public DateTime FocDate
+        public DateTime? FocDate
         {
-            get { return this._focDate.GetValueOrDefault(); }
+            get { return this._focDate; }
             set { this._focDate = value; }
         }
 

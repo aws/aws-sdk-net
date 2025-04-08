@@ -1538,7 +1538,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<CreateSdiSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateSignalMap
@@ -2521,7 +2520,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DeleteSdiSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteSignalMap
@@ -3479,7 +3477,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<DescribeSdiSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DescribeThumbnails
@@ -4691,7 +4688,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<ListSdiSourcesResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListSignalMaps
@@ -6739,7 +6735,6 @@ namespace Amazon.MediaLive
 
             return InvokeAsync<UpdateSdiSourceResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

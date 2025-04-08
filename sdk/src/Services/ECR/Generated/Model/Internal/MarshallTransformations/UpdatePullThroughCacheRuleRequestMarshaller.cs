@@ -81,31 +81,11 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CredentialArn);
             }
 
-<<<<<<< HEAD
             if(publicRequest.IsSetCustomRoleArn())
             {
                 context.Writer.WritePropertyName("customRoleArn");
                 context.Writer.WriteStringValue(publicRequest.CustomRoleArn);
             }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetEcrRepositoryPrefix())
-                {
-                    context.Writer.WritePropertyName("ecrRepositoryPrefix");
-                    context.Writer.Write(publicRequest.EcrRepositoryPrefix);
-                }
-=======
-                if(publicRequest.IsSetCustomRoleArn())
-                {
-                    context.Writer.WritePropertyName("customRoleArn");
-                    context.Writer.Write(publicRequest.CustomRoleArn);
-                }
-
-                if(publicRequest.IsSetEcrRepositoryPrefix())
-                {
-                    context.Writer.WritePropertyName("ecrRepositoryPrefix");
-                    context.Writer.Write(publicRequest.EcrRepositoryPrefix);
-                }
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
 
             if(publicRequest.IsSetEcrRepositoryPrefix())
             {

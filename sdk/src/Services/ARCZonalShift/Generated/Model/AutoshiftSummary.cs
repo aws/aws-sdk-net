@@ -85,15 +85,7 @@ namespace Amazon.ARCZonalShift.Model
         /// The time (in UTC) when the autoshift ended.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true)]
         public DateTime? EndTime
-||||||| Commit version number update changes
-        [AWSProperty(Required=true)]
-        public DateTime EndTime
-=======
-        public DateTime EndTime
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         {
             get { return this._endTime; }
             set { this._endTime = value; }

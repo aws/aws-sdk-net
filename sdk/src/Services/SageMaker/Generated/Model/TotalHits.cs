@@ -81,9 +81,9 @@ namespace Amazon.SageMaker.Model
         /// on the <c>Relation</c> field.
         /// </para>
         /// </summary>
-        public long Value
+        public long? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

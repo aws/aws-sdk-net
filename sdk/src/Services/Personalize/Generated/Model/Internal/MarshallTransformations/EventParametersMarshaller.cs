@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
@@ -51,32 +49,32 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEventType())
             {
                 context.Writer.WritePropertyName("eventType");
-                context.Writer.Write(requestObject.EventType);
+                context.Writer.WriteStringValue(requestObject.EventType);
             }
 
             if(requestObject.IsSetEventValueThreshold())
             {
                 context.Writer.WritePropertyName("eventValueThreshold");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.EventValueThreshold))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.EventValueThreshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.EventValueThreshold));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.EventValueThreshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.EventValueThreshold);
+                    context.Writer.WriteNumberValue(requestObject.EventValueThreshold.Value);
                 }
             }
 
             if(requestObject.IsSetWeight())
             {
                 context.Writer.WritePropertyName("weight");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Weight))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Weight.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Weight));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Weight.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Weight);
+                    context.Writer.WriteNumberValue(requestObject.Weight.Value);
                 }
             }
 

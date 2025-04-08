@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 {
@@ -51,59 +49,59 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificateAuthorityPublicKeyIdentifier())
             {
                 context.Writer.WritePropertyName("CertificateAuthorityPublicKeyIdentifier");
-                context.Writer.Write(requestObject.CertificateAuthorityPublicKeyIdentifier);
+                context.Writer.WriteStringValue(requestObject.CertificateAuthorityPublicKeyIdentifier);
             }
 
             if(requestObject.IsSetDerivationData())
             {
                 context.Writer.WritePropertyName("DerivationData");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DiffieHellmanDerivationDataMarshaller.Instance;
                 marshaller.Marshall(requestObject.DerivationData, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeriveKeyAlgorithm())
             {
                 context.Writer.WritePropertyName("DeriveKeyAlgorithm");
-                context.Writer.Write(requestObject.DeriveKeyAlgorithm);
+                context.Writer.WriteStringValue(requestObject.DeriveKeyAlgorithm);
             }
 
             if(requestObject.IsSetKeyBlockHeaders())
             {
                 context.Writer.WritePropertyName("KeyBlockHeaders");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KeyBlockHeadersMarshaller.Instance;
                 marshaller.Marshall(requestObject.KeyBlockHeaders, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKeyDerivationFunction())
             {
                 context.Writer.WritePropertyName("KeyDerivationFunction");
-                context.Writer.Write(requestObject.KeyDerivationFunction);
+                context.Writer.WriteStringValue(requestObject.KeyDerivationFunction);
             }
 
             if(requestObject.IsSetKeyDerivationHashAlgorithm())
             {
                 context.Writer.WritePropertyName("KeyDerivationHashAlgorithm");
-                context.Writer.Write(requestObject.KeyDerivationHashAlgorithm);
+                context.Writer.WriteStringValue(requestObject.KeyDerivationHashAlgorithm);
             }
 
             if(requestObject.IsSetPrivateKeyIdentifier())
             {
                 context.Writer.WritePropertyName("PrivateKeyIdentifier");
-                context.Writer.Write(requestObject.PrivateKeyIdentifier);
+                context.Writer.WriteStringValue(requestObject.PrivateKeyIdentifier);
             }
 
             if(requestObject.IsSetPublicKeyCertificate())
             {
                 context.Writer.WritePropertyName("PublicKeyCertificate");
-                context.Writer.Write(requestObject.PublicKeyCertificate);
+                context.Writer.WriteStringValue(requestObject.PublicKeyCertificate);
             }
 
         }

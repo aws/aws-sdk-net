@@ -41,9 +41,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property MediaIndex. The index of the media stream in the SDP file
         /// for one SMPTE 2110 stream.
         /// </summary>
-        public int MediaIndex
+        public int? MediaIndex
         {
-            get { return this._mediaIndex.GetValueOrDefault(); }
+            get { return this._mediaIndex; }
             set { this._mediaIndex = value; }
         }
 

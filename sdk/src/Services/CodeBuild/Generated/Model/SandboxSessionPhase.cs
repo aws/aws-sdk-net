@@ -65,9 +65,9 @@ namespace Amazon.CodeBuild.Model
         /// How long, in seconds, between the starting and ending times of the sandbox's phase.
         /// </para>
         /// </summary>
-        public long DurationInSeconds
+        public long? DurationInSeconds
         {
-            get { return this._durationInSeconds.GetValueOrDefault(); }
+            get { return this._durationInSeconds; }
             set { this._durationInSeconds = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.CodeBuild.Model
         /// When the sandbox phase ended, expressed in Unix time format.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.CodeBuild.Model
         /// When the sandbox phase started, expressed in Unix time format.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

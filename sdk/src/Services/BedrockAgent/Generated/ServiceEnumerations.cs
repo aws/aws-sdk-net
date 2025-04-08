@@ -2123,13 +2123,6 @@ namespace Amazon.BedrockAgent
         /// </summary>
         public static readonly KnowledgeBaseStorageType MONGO_DB_ATLAS = new KnowledgeBaseStorageType("MONGO_DB_ATLAS");
         /// <summary>
-<<<<<<< HEAD
-        /// Constant NEPTUNE_ANALYTICS for KnowledgeBaseStorageType
-        /// </summary>
-        public static readonly KnowledgeBaseStorageType NEPTUNE_ANALYTICS = new KnowledgeBaseStorageType("NEPTUNE_ANALYTICS");
-        /// <summary>
-||||||| Commit version number update changes
-=======
         /// Constant NEPTUNE_ANALYTICS for KnowledgeBaseStorageType
         /// </summary>
         public static readonly KnowledgeBaseStorageType NEPTUNE_ANALYTICS = new KnowledgeBaseStorageType("NEPTUNE_ANALYTICS");
@@ -2138,7 +2131,6 @@ namespace Amazon.BedrockAgent
         /// </summary>
         public static readonly KnowledgeBaseStorageType OPENSEARCH_MANAGED_CLUSTER = new KnowledgeBaseStorageType("OPENSEARCH_MANAGED_CLUSTER");
         /// <summary>
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// Constant OPENSEARCH_SERVERLESS for KnowledgeBaseStorageType
         /// </summary>
         public static readonly KnowledgeBaseStorageType OPENSEARCH_SERVERLESS = new KnowledgeBaseStorageType("OPENSEARCH_SERVERLESS");

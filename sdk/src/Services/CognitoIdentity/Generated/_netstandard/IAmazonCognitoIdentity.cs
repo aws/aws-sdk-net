@@ -102,31 +102,14 @@ namespace Amazon.CognitoIdentity
         /// <para>
         /// Digits: <c>www.digits.com</c> 
         /// </para>
-<<<<<<< HEAD
-        ///  </li> </ul> <important> 
-||||||| Commit version number update changes
-        ///  </li> </ul> 
-=======
         ///  </li> </ul> <important> 
         /// <para>
         /// If you don't provide a value for a parameter, Amazon Cognito sets it to its default
         /// value. 
         /// </para>
         ///  </important> 
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
-        /// <para>
-<<<<<<< HEAD
-        /// If you don't provide a value for a parameter, Amazon Cognito sets it to its default
-        /// value. 
-        /// </para>
-        ///  </important> 
         /// <para>
         /// You must use Amazon Web Services developer credentials to call this operation.
-||||||| Commit version number update changes
-        /// You must use AWS Developer credentials to call this API.
-=======
-        /// You must use Amazon Web Services developer credentials to call this operation.
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIdentityPool service method.</param>

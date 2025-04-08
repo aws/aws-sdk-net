@@ -68,12 +68,6 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     unmarshalledObject.PrecomputedInferenceSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("precomputedInferenceSource", targetDepth))
-                {
-                    var unmarshaller = EvaluationPrecomputedInferenceSourceUnmarshaller.Instance;
-                    unmarshalledObject.PrecomputedInferenceSource = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }

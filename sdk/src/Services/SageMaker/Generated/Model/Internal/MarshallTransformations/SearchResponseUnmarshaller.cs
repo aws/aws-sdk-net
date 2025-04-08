@@ -67,7 +67,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if (context.TestExpression("TotalHits", targetDepth))
                 {
                     var unmarshaller = TotalHitsUnmarshaller.Instance;
-                    response.TotalHits = unmarshaller.Unmarshall(context);
+                    response.TotalHits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

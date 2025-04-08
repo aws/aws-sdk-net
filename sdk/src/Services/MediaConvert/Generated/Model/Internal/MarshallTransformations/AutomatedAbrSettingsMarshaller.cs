@@ -55,13 +55,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxQualityLevel())
             {
                 context.Writer.WritePropertyName("maxQualityLevel");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.MaxQualityLevel))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MaxQualityLevel.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaxQualityLevel));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.MaxQualityLevel.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MaxQualityLevel);
+                    context.Writer.WriteNumberValue(requestObject.MaxQualityLevel.Value);
                 }
             }
 

@@ -77,7 +77,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 if (context.TestExpression("errorLogSettings", targetDepth))
                 {
                     var unmarshaller = ErrorLogSettingsUnmarshaller.Instance;
-                    unmarshalledObject.ErrorLogSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorLogSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("idleSessionTTLInSeconds", targetDepth))

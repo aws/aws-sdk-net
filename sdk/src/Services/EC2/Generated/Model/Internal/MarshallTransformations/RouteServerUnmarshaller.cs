@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RouteServer Object
     /// </summary>  
-    public class RouteServerUnmarshaller : IUnmarshaller<RouteServer, XmlUnmarshallerContext>, IUnmarshaller<RouteServer, JsonUnmarshallerContext>
+    public class RouteServerUnmarshaller : IXmlUnmarshaller<RouteServer, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -57,13 +57,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("amazonSideAsn", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.AmazonSideAsn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("persistRoutesDuration", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.PersistRoutesDuration = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -81,7 +81,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("snsNotificationsEnabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SnsNotificationsEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -117,17 +117,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RouteServer Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RouteServerUnmarshaller _instance = new RouteServerUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RouteServerBgpStatus Object
     /// </summary>  
-    public class RouteServerBgpStatusUnmarshaller : IUnmarshaller<RouteServerBgpStatus, XmlUnmarshallerContext>, IUnmarshaller<RouteServerBgpStatus, JsonUnmarshallerContext>
+    public class RouteServerBgpStatusUnmarshaller : IXmlUnmarshaller<RouteServerBgpStatus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RouteServerBgpStatus Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RouteServerBgpStatusUnmarshaller _instance = new RouteServerBgpStatusUnmarshaller();        
 

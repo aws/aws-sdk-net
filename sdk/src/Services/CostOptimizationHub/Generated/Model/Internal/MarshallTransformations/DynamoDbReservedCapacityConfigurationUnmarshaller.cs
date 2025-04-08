@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DynamoDbReservedCapacityConfiguration Object
     /// </summary>  
-    public class DynamoDbReservedCapacityConfigurationUnmarshaller : IUnmarshaller<DynamoDbReservedCapacityConfiguration, XmlUnmarshallerContext>, IUnmarshaller<DynamoDbReservedCapacityConfiguration, JsonUnmarshallerContext>
+    public class DynamoDbReservedCapacityConfigurationUnmarshaller : IJsonUnmarshaller<DynamoDbReservedCapacityConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DynamoDbReservedCapacityConfiguration IUnmarshaller<DynamoDbReservedCapacityConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DynamoDbReservedCapacityConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public DynamoDbReservedCapacityConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DynamoDbReservedCapacityConfiguration unmarshalledObject = new DynamoDbReservedCapacityConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("accountScope", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountScope = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("capacityUnits", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CapacityUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CapacityUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("monthlyRecurringCost", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MonthlyRecurringCost = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MonthlyRecurringCost = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("numberOfCapacityUnitsToPurchase", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfCapacityUnitsToPurchase = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfCapacityUnitsToPurchase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("paymentOption", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PaymentOption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PaymentOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("reservedInstancesRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReservedInstancesRegion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReservedInstancesRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("service", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Service = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Service = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("term", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Term = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Term = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("upfrontCost", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UpfrontCost = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpfrontCost = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RouteServerPeer Object
     /// </summary>  
-    public class RouteServerPeerUnmarshaller : IUnmarshaller<RouteServerPeer, XmlUnmarshallerContext>, IUnmarshaller<RouteServerPeer, JsonUnmarshallerContext>
+    public class RouteServerPeerUnmarshaller : IXmlUnmarshaller<RouteServerPeer, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -153,17 +153,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RouteServerPeer Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RouteServerPeerUnmarshaller _instance = new RouteServerPeerUnmarshaller();        
 

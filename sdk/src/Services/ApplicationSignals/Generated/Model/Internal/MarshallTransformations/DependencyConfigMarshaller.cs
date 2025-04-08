@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
 {
@@ -51,21 +49,21 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDependencyKeyAttributes())
             {
                 context.Writer.WritePropertyName("DependencyKeyAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectDependencyKeyAttributesKvp in requestObject.DependencyKeyAttributes)
                 {
                     context.Writer.WritePropertyName(requestObjectDependencyKeyAttributesKvp.Key);
                     var requestObjectDependencyKeyAttributesValue = requestObjectDependencyKeyAttributesKvp.Value;
 
-                        context.Writer.Write(requestObjectDependencyKeyAttributesValue);
+                        context.Writer.WriteStringValue(requestObjectDependencyKeyAttributesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDependencyOperationName())
             {
                 context.Writer.WritePropertyName("DependencyOperationName");
-                context.Writer.Write(requestObject.DependencyOperationName);
+                context.Writer.WriteStringValue(requestObject.DependencyOperationName);
             }
 
         }

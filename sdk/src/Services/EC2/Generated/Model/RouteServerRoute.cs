@@ -67,9 +67,9 @@ namespace Amazon.EC2.Model
         /// The Multi-Exit Discriminator (MED) value of the BGP route.
         /// </para>
         /// </summary>
-        public int Med
+        public int? Med
         {
-            get { return this._med.GetValueOrDefault(); }
+            get { return this._med; }
             set { this._med = value; }
         }
 

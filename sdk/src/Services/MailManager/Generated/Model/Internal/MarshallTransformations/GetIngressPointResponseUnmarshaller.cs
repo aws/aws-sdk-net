@@ -97,7 +97,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 if (context.TestExpression("NetworkConfiguration", targetDepth))
                 {
                     var unmarshaller = NetworkConfigurationUnmarshaller.Instance;
-                    response.NetworkConfiguration = unmarshaller.Unmarshall(context);
+                    response.NetworkConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RuleSetId", targetDepth))

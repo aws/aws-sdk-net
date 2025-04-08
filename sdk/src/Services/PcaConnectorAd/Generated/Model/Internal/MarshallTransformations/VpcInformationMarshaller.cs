@@ -46,22 +46,12 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
-<<<<<<< HEAD
             if(requestObject.IsSetIpAddressType())
             {
                 context.Writer.WritePropertyName("IpAddressType");
                 context.Writer.WriteStringValue(requestObject.IpAddressType);
             }
 
-||||||| Commit version number update changes
-=======
-            if(requestObject.IsSetIpAddressType())
-            {
-                context.Writer.WritePropertyName("IpAddressType");
-                context.Writer.Write(requestObject.IpAddressType);
-            }
-
->>>>>>> b6da6ace600c307cc9bd6dbf99b06a9d2b81da7e
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("SecurityGroupIds");
