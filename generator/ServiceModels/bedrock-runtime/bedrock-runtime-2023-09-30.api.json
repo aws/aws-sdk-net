@@ -42,8 +42,8 @@
       "output":{"shape":"ConverseResponse"},
       "errors":[
         {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
         {"shape":"ModelTimeoutException"},
         {"shape":"InternalServerException"},
         {"shape":"ServiceUnavailableException"},
@@ -63,8 +63,8 @@
       "output":{"shape":"ConverseStreamResponse"},
       "errors":[
         {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
         {"shape":"ModelTimeoutException"},
         {"shape":"InternalServerException"},
         {"shape":"ServiceUnavailableException"},
@@ -106,8 +106,31 @@
         {"shape":"InternalServerException"},
         {"shape":"ServiceUnavailableException"},
         {"shape":"ValidationException"},
-        {"shape":"ModelNotReadyException"},
         {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ModelNotReadyException"},
+        {"shape":"ModelErrorException"}
+      ]
+    },
+    "InvokeModelWithBidirectionalStream":{
+      "name":"InvokeModelWithBidirectionalStream",
+      "http":{
+        "method":"POST",
+        "requestUri":"/model/{modelId}/invoke-with-bidirectional-stream",
+        "responseCode":200
+      },
+      "input":{"shape":"InvokeModelWithBidirectionalStreamRequest"},
+      "output":{"shape":"InvokeModelWithBidirectionalStreamResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ModelTimeoutException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"ModelStreamErrorException"},
+        {"shape":"ValidationException"},
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ModelNotReadyException"},
         {"shape":"ModelErrorException"}
       ]
     },
@@ -129,8 +152,8 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ModelStreamErrorException"},
         {"shape":"ValidationException"},
-        {"shape":"ModelNotReadyException"},
         {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ModelNotReadyException"},
         {"shape":"ModelErrorException"}
       ]
     },
@@ -161,8 +184,8 @@
       "output":{"shape":"StartAsyncInvokeResponse"},
       "errors":[
         {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServerException"},
         {"shape":"ServiceUnavailableException"},
         {"shape":"ValidationException"},
@@ -310,6 +333,22 @@
       "type":"structure",
       "members":{
       }
+    },
+    "BidirectionalInputPayloadPart":{
+      "type":"structure",
+      "members":{
+        "bytes":{"shape":"PartBody"}
+      },
+      "event":true,
+      "sensitive":true
+    },
+    "BidirectionalOutputPayloadPart":{
+      "type":"structure",
+      "members":{
+        "bytes":{"shape":"PartBody"}
+      },
+      "event":true,
+      "sensitive":true
     },
     "Blob":{"type":"blob"},
     "Body":{
@@ -1426,6 +1465,50 @@
           "location":"header",
           "locationName":"X-Amzn-Bedrock-PerformanceConfig-Latency"
         }
+      },
+      "payload":"body"
+    },
+    "InvokeModelWithBidirectionalStreamInput":{
+      "type":"structure",
+      "members":{
+        "chunk":{"shape":"BidirectionalInputPayloadPart"}
+      },
+      "eventstream":true
+    },
+    "InvokeModelWithBidirectionalStreamOutput":{
+      "type":"structure",
+      "members":{
+        "chunk":{"shape":"BidirectionalOutputPayloadPart"},
+        "internalServerException":{"shape":"InternalServerException"},
+        "modelStreamErrorException":{"shape":"ModelStreamErrorException"},
+        "validationException":{"shape":"ValidationException"},
+        "throttlingException":{"shape":"ThrottlingException"},
+        "modelTimeoutException":{"shape":"ModelTimeoutException"},
+        "serviceUnavailableException":{"shape":"ServiceUnavailableException"}
+      },
+      "eventstream":true
+    },
+    "InvokeModelWithBidirectionalStreamRequest":{
+      "type":"structure",
+      "required":[
+        "modelId",
+        "body"
+      ],
+      "members":{
+        "modelId":{
+          "shape":"InvokeModelIdentifier",
+          "location":"uri",
+          "locationName":"modelId"
+        },
+        "body":{"shape":"InvokeModelWithBidirectionalStreamInput"}
+      },
+      "payload":"body"
+    },
+    "InvokeModelWithBidirectionalStreamResponse":{
+      "type":"structure",
+      "required":["body"],
+      "members":{
+        "body":{"shape":"InvokeModelWithBidirectionalStreamOutput"}
       },
       "payload":"body"
     },
