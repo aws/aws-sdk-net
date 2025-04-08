@@ -174,6 +174,12 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                     unmarshalledObject.UkraineAdditionalInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("uzbekistanAdditionalInfo", targetDepth))
+                {
+                    var unmarshaller = UzbekistanAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.UzbekistanAdditionalInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("vietnamAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = VietnamAdditionalInfoUnmarshaller.Instance;
