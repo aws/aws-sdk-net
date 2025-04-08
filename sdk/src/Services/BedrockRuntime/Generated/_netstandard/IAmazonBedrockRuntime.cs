@@ -464,6 +464,84 @@ namespace Amazon.BedrockRuntime
 
         #endregion
                 
+        #region  InvokeModelWithBidirectionalStream
+
+#if NET8_0_OR_GREATER
+
+
+        /// <summary>
+        /// Invoke the specified Amazon Bedrock model to run inference using the bidirectional
+        /// stream. The response is returned in a stream that remains open for 8 minutes. A single
+        /// session can contain multiple prompts and responses from the model. The prompts to
+        /// the model are provided as audio files and the model's responses are spoken back to
+        /// the user and transcribed.
+        /// 
+        ///  
+        /// <para>
+        /// It is possible for users to interrupt the model's response with a new prompt, which
+        /// will halt the response speech. The model will retain contextual awareness of the conversation
+        /// while pivoting to respond to the new prompt.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeModelWithBidirectionalStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the InvokeModelWithBidirectionalStream service method, as returned by BedrockRuntime.</returns>
+        /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
+        /// The request is denied because you do not have sufficient permissions to perform the
+        /// requested action. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
+        /// An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ModelErrorException">
+        /// The request failed due to an error while processing the model.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ModelNotReadyException">
+        /// The model specified in the request is not ready to serve inference requests. The AWS
+        /// SDK will automatically retry the operation up to 5 times. For information about configuring
+        /// automatic retries, see <a href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html">Retry
+        /// behavior</a> in the <i>AWS SDKs and Tools</i> reference guide.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ModelStreamErrorException">
+        /// An error occurred while streaming the response. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ModelTimeoutException">
+        /// The request took too long to process. Processing time exceeded the model timeout length.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-resource-not-found">ResourceNotFound</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ServiceQuotaExceededException">
+        /// Your request exceeds the service quota for your account. You can view your quotas
+        /// at <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/gs-request-quota.html">Viewing
+        /// service quotas</a>. You can resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ServiceUnavailableException">
+        /// The service isn't currently available. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
+        /// Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>.
+        /// For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For
+        /// troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/InvokeModelWithBidirectionalStream">REST API Reference for InvokeModelWithBidirectionalStream Operation</seealso>
+        Task<InvokeModelWithBidirectionalStreamResponse> InvokeModelWithBidirectionalStreamAsync(InvokeModelWithBidirectionalStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+#endif
+        #endregion
+                
         #region  InvokeModelWithResponseStream
 
 

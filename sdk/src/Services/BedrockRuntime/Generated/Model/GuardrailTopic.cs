@@ -64,9 +64,9 @@ namespace Amazon.BedrockRuntime.Model
         /// Indicates whether topic content that breaches the guardrail configuration is detected.
         /// </para>
         /// </summary>
-        public bool Detected
+        public bool? Detected
         {
-            get { return this._detected.GetValueOrDefault(); }
+            get { return this._detected; }
             set { this._detected = value; }
         }
 

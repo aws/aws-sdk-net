@@ -59,7 +59,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 if (context.TestExpression("actionReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActionReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActionReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inputAssessment", targetDepth))

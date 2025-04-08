@@ -58,8 +58,8 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("contentPolicyImageUnits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ContentPolicyImageUnits = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.ContentPolicyImageUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("contentPolicyUnits", targetDepth))

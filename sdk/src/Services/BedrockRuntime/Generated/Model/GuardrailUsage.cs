@@ -48,9 +48,9 @@ namespace Amazon.BedrockRuntime.Model
         /// The content policy image units processed by the guardrail.
         /// </para>
         /// </summary>
-        public int ContentPolicyImageUnits
+        public int? ContentPolicyImageUnits
         {
-            get { return this._contentPolicyImageUnits.GetValueOrDefault(); }
+            get { return this._contentPolicyImageUnits; }
             set { this._contentPolicyImageUnits = value; }
         }
 

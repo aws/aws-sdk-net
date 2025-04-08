@@ -47,9 +47,9 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int CacheReadInputTokens
+        public int? CacheReadInputTokens
         {
-            get { return this._cacheReadInputTokens.GetValueOrDefault(); }
+            get { return this._cacheReadInputTokens; }
             set { this._cacheReadInputTokens = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int CacheWriteInputTokens
+        public int? CacheWriteInputTokens
         {
-            get { return this._cacheWriteInputTokens.GetValueOrDefault(); }
+            get { return this._cacheWriteInputTokens; }
             set { this._cacheWriteInputTokens = value; }
         }
 

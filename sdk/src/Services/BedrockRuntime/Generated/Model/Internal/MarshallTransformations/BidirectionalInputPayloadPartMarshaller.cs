@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Tool Marshaller
+    /// BidirectionalInputPayloadPart Marshaller
     /// </summary>
-    public class ToolMarshaller : IRequestMarshaller<Tool, JsonMarshallerContext> 
+    public class BidirectionalInputPayloadPartMarshaller : IRequestMarshaller<BidirectionalInputPayloadPart, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,14 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Tool requestObject, JsonMarshallerContext context)
+        public void Marshall(BidirectionalInputPayloadPart requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCachePoint())
+            if(requestObject.IsSetBytes())
             {
-                context.Writer.WritePropertyName("cachePoint");
-                context.Writer.WriteStartObject();
-
-                var marshaller = CachePointBlockMarshaller.Instance;
-                marshaller.Marshall(requestObject.CachePoint, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetToolSpec())
-            {
-                context.Writer.WritePropertyName("toolSpec");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ToolSpecificationMarshaller.Instance;
-                marshaller.Marshall(requestObject.ToolSpec, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("bytes");
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Bytes));
             }
 
         }
@@ -73,7 +57,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ToolMarshaller Instance = new ToolMarshaller();
+        public readonly static BidirectionalInputPayloadPartMarshaller Instance = new BidirectionalInputPayloadPartMarshaller();
 
     }
 }

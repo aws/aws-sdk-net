@@ -70,8 +70,8 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("detected", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Detected = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.Detected = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("filterStrength", targetDepth))

@@ -49,12 +49,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCachePoint())
             {
                 context.Writer.WritePropertyName("cachePoint");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CachePointBlockMarshaller.Instance;
                 marshaller.Marshall(requestObject.CachePoint, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGuardContent())

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TokenUsage Object
+    /// Response Unmarshaller for BidirectionalOutputPayloadPart Object
     /// </summary>  
-    public class TokenUsageUnmarshaller : IJsonUnmarshaller<TokenUsage, JsonUnmarshallerContext>
+    public class BidirectionalOutputPayloadPartUnmarshaller : IJsonUnmarshaller<BidirectionalOutputPayloadPart, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TokenUsage Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public BidirectionalOutputPayloadPart Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            TokenUsage unmarshalledObject = new TokenUsage();
+            BidirectionalOutputPayloadPart unmarshalledObject = new BidirectionalOutputPayloadPart();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,10 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cacheReadInputTokens", targetDepth))
+                if (context.TestExpression("bytes", targetDepth))
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CacheReadInputTokens = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("cacheWriteInputTokens", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CacheWriteInputTokens = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("inputTokens", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.InputTokens = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("outputTokens", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.OutputTokens = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("totalTokens", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalTokens = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = MemoryStreamUnmarshaller.Instance;
+                    unmarshalledObject.Bytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +67,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static TokenUsageUnmarshaller _instance = new TokenUsageUnmarshaller();        
+        private static BidirectionalOutputPayloadPartUnmarshaller _instance = new BidirectionalOutputPayloadPartUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TokenUsageUnmarshaller Instance
+        public static BidirectionalOutputPayloadPartUnmarshaller Instance
         {
             get
             {

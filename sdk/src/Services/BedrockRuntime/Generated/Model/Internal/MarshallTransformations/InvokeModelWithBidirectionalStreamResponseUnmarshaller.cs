@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ApplyGuardrail operation
+    /// Response Unmarshaller for InvokeModelWithBidirectionalStream operation
     /// </summary>  
-    public class ApplyGuardrailResponseUnmarshaller : JsonResponseUnmarshaller
+    public class InvokeModelWithBidirectionalStreamResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,49 +46,8 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ApplyGuardrailResponse response = new ApplyGuardrailResponse();
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
-            {
-                if (context.TestExpression("action", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Action = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("actionReason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ActionReason = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("assessments", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<GuardrailAssessment, GuardrailAssessmentUnmarshaller>(GuardrailAssessmentUnmarshaller.Instance);
-                    response.Assessments = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("guardrailCoverage", targetDepth))
-                {
-                    var unmarshaller = GuardrailCoverageUnmarshaller.Instance;
-                    response.GuardrailCoverage = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("outputs", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<GuardrailOutputContent, GuardrailOutputContentUnmarshaller>(GuardrailOutputContentUnmarshaller.Instance);
-                    response.Outputs = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("usage", targetDepth))
-                {
-                    var unmarshaller = GuardrailUsageUnmarshaller.Instance;
-                    response.Usage = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-            }
+            InvokeModelWithBidirectionalStreamResponse response = new InvokeModelWithBidirectionalStreamResponse();
+            response.Body = new InvokeModelWithBidirectionalStreamOutput(context.Stream);
 
             return response;
         }
@@ -121,6 +80,22 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ModelErrorException"))
+                {
+                    return ModelErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ModelNotReadyException"))
+                {
+                    return ModelNotReadyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ModelStreamErrorException"))
+                {
+                    return ModelStreamErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ModelTimeoutException"))
+                {
+                    return ModelTimeoutExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -128,6 +103,10 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
                 {
                     return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
+                {
+                    return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -141,9 +120,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             return new AmazonBedrockRuntimeException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static ApplyGuardrailResponseUnmarshaller _instance = new ApplyGuardrailResponseUnmarshaller();        
+        private static InvokeModelWithBidirectionalStreamResponseUnmarshaller _instance = new InvokeModelWithBidirectionalStreamResponseUnmarshaller();        
 
-        internal static ApplyGuardrailResponseUnmarshaller GetInstance()
+        internal static InvokeModelWithBidirectionalStreamResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -151,7 +130,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ApplyGuardrailResponseUnmarshaller Instance
+        public static InvokeModelWithBidirectionalStreamResponseUnmarshaller Instance
         {
             get
             {
@@ -159,5 +138,19 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             }
         }
 
+        /// <summary>
+        /// Return false for reading the entire response
+        /// </summary>
+        /// <param name="response"></param>
+        /// <param name="readEntireResponse"></param>
+        /// <returns></returns>
+        protected override bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse)
+        {
+            return false;
+        }
+        /// <summary>
+        /// Specifies that the response should be streamed
+        /// </summary>
+        public override bool HasStreamingProperty => true;
     }
 }
