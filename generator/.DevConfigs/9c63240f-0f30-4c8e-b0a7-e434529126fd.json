@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "fix: Update auth resolver async flow to add user agent details after resolving identity"
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
