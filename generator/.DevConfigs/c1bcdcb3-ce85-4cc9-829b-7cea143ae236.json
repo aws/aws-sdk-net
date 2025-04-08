@@ -1,9 +1,0 @@
-{
-    "core": {
-      "changeLogMessages": [
-        "Enable error protocol tests and make headers case insensitive in test project"
-      ],
-      "type": "patch",
-      "updateMinimum": true
-    }
-  }
