@@ -1,0 +1,9 @@
+{
+    "core": {
+        "updateMinimum": true,
+        "type": "Patch",
+        "changeLogMessages": [
+            "Update SDK to respect `Profile` property set in the client config when resolving credentials."
+        ]
+    }
+}

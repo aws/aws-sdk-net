@@ -29,13 +29,11 @@ namespace Amazon.Runtime.Credentials
         public DefaultAWSTokenIdentityResolver() 
             => _tokenProvider = new AWSTokenProviderChain(new ProfileTokenProvider());
 
-        BaseIdentity IIdentityResolver.ResolveIdentity()
-        {
-            return ResolveIdentity();
-        }
+        BaseIdentity IIdentityResolver.ResolveIdentity(IClientConfig clientConfig) 
+            => ResolveIdentity(clientConfig: null);
 
         /// <inheritdoc/>
-        public AWSToken ResolveIdentity()
+        public AWSToken ResolveIdentity(IClientConfig clientConfig)
         {
 #if NETFRAMEWORK
             if (_tokenProvider.TryResolveToken(out var token))
@@ -56,14 +54,14 @@ namespace Amazon.Runtime.Credentials
 #endif
         }
 
-        async Task<BaseIdentity> IIdentityResolver.ResolveIdentityAsync(CancellationToken cancellationToken)
+        async Task<BaseIdentity> IIdentityResolver.ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken)
         {
-            var identity = await ResolveIdentityAsync(cancellationToken).ConfigureAwait(false);
+            var identity = await ResolveIdentityAsync(clientConfig, cancellationToken).ConfigureAwait(false);
             return identity;
         }
 
         /// <inheritdoc/>
-        public async Task<AWSToken> ResolveIdentityAsync(CancellationToken cancellationToken = default)
+        public async Task<AWSToken> ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken = default)
         {
             var tokenResponse = await _tokenProvider.TryResolveTokenAsync(cancellationToken).ConfigureAwait(false);
             if (tokenResponse.Success)

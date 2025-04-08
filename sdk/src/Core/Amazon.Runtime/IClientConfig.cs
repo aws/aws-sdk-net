@@ -53,9 +53,12 @@ namespace Amazon.Runtime
         string ServiceId { get; }
 
         /// <summary>
-        /// Specifies the profile to be used. When this is set on the ClientConfig and that config is passed to 
-        /// the service client constructor the sdk will try to find the credentials associated with the Profile.Name property
-        /// If set, this will override AWS_PROFILE and AWSConfigs.ProfileName.
+        /// Specifies the profile to be used. 
+        /// When this is set on the config passed to the service client constructor the SDK will try to find the 
+        /// credentials associated with the <see cref="Profile.Name"/> property.
+        /// 
+        /// <para />
+        /// If set, this will override <c>AWS_PROFILE</c> and <c>AWSConfigs.ProfileName</c>.
         /// </summary>
         Profile Profile { get; }
 

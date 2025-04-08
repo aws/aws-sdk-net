@@ -26,20 +26,22 @@ namespace Amazon.Runtime
     {
         private readonly AnonymousAWSCredentials _credentials = new();
 
-        BaseIdentity IIdentityResolver.ResolveIdentity() => _credentials;
+        BaseIdentity IIdentityResolver.ResolveIdentity(IClientConfig clientConfig) 
+            => _credentials;
 
         /// <summary>
         /// Resolves the identity by returning an instance of <see cref="AnonymousAWSCredentials"/>.
         /// </summary>
-        public AnonymousAWSCredentials ResolveIdentity() => _credentials;
+        public AnonymousAWSCredentials ResolveIdentity(IClientConfig clientConfig) 
+            => _credentials;
 
-        Task<BaseIdentity> IIdentityResolver.ResolveIdentityAsync(CancellationToken cancellationToken)
+        Task<BaseIdentity> IIdentityResolver.ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken)
             => Task.FromResult<BaseIdentity>(_credentials);
 
         /// <summary>
         /// Resolves the identity by returning an instance of <see cref="AnonymousAWSCredentials"/>.
         /// </summary>
-        public Task<AnonymousAWSCredentials> ResolveIdentityAsync(CancellationToken cancellationToken = default)
+        public Task<AnonymousAWSCredentials> ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken = default)
             => Task.FromResult(_credentials);
     }
 }

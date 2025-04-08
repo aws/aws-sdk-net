@@ -1,32 +1,26 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Moq;
+﻿using Amazon;
 using Amazon.Runtime;
+using Amazon.Runtime.CredentialManagement;
+using Amazon.Runtime.Credentials;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.SecurityToken;
 using Amazon.SecurityToken.Model;
-using Amazon.SSO.Internal;
-using System.Net;
-using Amazon;
-using Amazon.SecurityToken.SAML;
-using System.Net.Mail;
-using Amazon.Runtime.Credentials;
-using System.Security.Principal;
 using Amazon.SSO;
+using Amazon.SSO.Internal;
 using Amazon.SSO.Model;
-using Amazon.Runtime.CredentialManagement;
-using Amazon.CloudWatch;
-using System.Runtime.CompilerServices;
-using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using System;
 using System.IO;
-using Amazon.EC2.Model.Internal.MarshallTransformations;
-using System.Text.RegularExpressions;
+using System.Linq;
+using System.Net;
 using System.Runtime.InteropServices;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
 namespace AWSSDK.UnitTests
 {
     /// <summary>
@@ -35,7 +29,6 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class AccountIdBasedEndpointsTest
     {
-
         private static readonly string ProjectPath =
             Regex.Match(Directory.GetCurrentDirectory(), @"^.*?(?=\\bin\\)").Captures[0].Value;
 
@@ -89,10 +82,10 @@ namespace AWSSDK.UnitTests
             //doesn't matter what we pass in here since the assumerole call is mocked
             var actualCreds = testableAmazonStsClient.CredentialsFromAssumeRoleAuthentication("arn:aws:sts::123456789001:assumed-role/assume-role-integration-test-role/Name", "testSession", new AssumeRoleAWSCredentialsOptions());
 
-            Assert.AreEqual<string>("123456789001", actualCreds.AccountId);
-            Assert.AreEqual<string>("foo", actualCreds.AccessKey);
-            Assert.AreEqual<string>("bar", actualCreds.SecretKey);
-            Assert.AreEqual<string>("baz", actualCreds.Token);
+            Assert.AreEqual("123456789001", actualCreds.AccountId);
+            Assert.AreEqual("foo", actualCreds.AccessKey);
+            Assert.AreEqual("bar", actualCreds.SecretKey);
+            Assert.AreEqual("baz", actualCreds.Token);
         }
 
         //STS:2
@@ -118,10 +111,10 @@ namespace AWSSDK.UnitTests
 
             var testableAmazonStsClient = new TestableAmazonSTSClient(mockStsClient.Object);
             var actualCreds = testableAmazonStsClient.CredentialsFromSAMLAuthentication("foo", "bar", "fizz", TimeSpan.FromHours(1), null);
-            Assert.AreEqual<string>("123456789001", actualCreds.AccountId);
-            Assert.AreEqual<string>("foo", actualCreds.AccessKey);
-            Assert.AreEqual<string>("bar", actualCreds.SecretKey);
-            Assert.AreEqual<string>("baz", actualCreds.Token);
+            Assert.AreEqual("123456789001", actualCreds.AccountId);
+            Assert.AreEqual("foo", actualCreds.AccessKey);
+            Assert.AreEqual("bar", actualCreds.SecretKey);
+            Assert.AreEqual("baz", actualCreds.Token);
         }
 
         //STS:3
@@ -150,10 +143,10 @@ namespace AWSSDK.UnitTests
 
             var testableAmazonStsClient = new TestableAmazonSTSClient(mockStsClient.Object);
             var actualCreds = testableAmazonStsClient.CredentialsFromAssumeRoleWithWebIdentityAuthentication("token", "any-arn", "test-arn", null);
-            Assert.AreEqual<string>("123456789001", actualCreds.AccountId);
-            Assert.AreEqual<string>("foo", actualCreds.AccessKey);
-            Assert.AreEqual<string>("bar", actualCreds.SecretKey);
-            Assert.AreEqual<string>("baz", actualCreds.Token);
+            Assert.AreEqual("123456789001", actualCreds.AccountId);
+            Assert.AreEqual("foo", actualCreds.AccessKey);
+            Assert.AreEqual("bar", actualCreds.SecretKey);
+            Assert.AreEqual("baz", actualCreds.Token);
         }
         //STS:4 (SKIP) none of our credential providers call GetFederationToken and there is no point in asserting a mocked response returns what is expected
 
@@ -198,7 +191,7 @@ namespace AWSSDK.UnitTests
                 var testableAmazonStsClient = new TestableAmazonSTSClient(mockStsClient.Object);
                 var actualCreds = testableAmazonStsClient.CredentialsFromAssumeRoleWithWebIdentityAuthentication("token", "any-arn", "test-arn", null);
 
-                Assert.AreEqual<string>("123456789001", actualCreds.AccountId);
+                Assert.AreEqual("123456789001", actualCreds.AccountId);
             }
             finally
             {
@@ -241,10 +234,10 @@ namespace AWSSDK.UnitTests
                 getRoleCredentialsRequest.AccessToken,
           null);
 
-            Assert.AreEqual<string>("123456789001", credentials.AccountId);
-            Assert.AreEqual<string>("foo", credentials.AccessKey);
-            Assert.AreEqual<string>("bar", credentials.SecretKey);
-            Assert.AreEqual<string>("baz", credentials.Token);
+            Assert.AreEqual("123456789001", credentials.AccountId);
+            Assert.AreEqual("foo", credentials.AccessKey);
+            Assert.AreEqual("bar", credentials.SecretKey);
+            Assert.AreEqual("baz", credentials.Token);
         }
         /// <summary>
         /// SSO:2
@@ -319,10 +312,10 @@ namespace AWSSDK.UnitTests
                 mockStsClient.Setup(x => x.AssumeRole(It.IsAny<AssumeRoleRequest>())).Returns(expectedResponse);
                 var testableAmazonStsClient = new TestableAmazonSTSClient(mockStsClient.Object);
                 var actualCreds = testableAmazonStsClient.CredentialsFromAssumeRoleAuthentication("anything", "anything", null);
-                Assert.AreEqual<string>("123456789002", actualCreds.AccountId);
-                Assert.AreEqual<string>("foo", actualCreds.AccessKey);
-                Assert.AreEqual<string>("bar", actualCreds.SecretKey);
-                Assert.AreEqual<string>("baz", actualCreds.Token);
+                Assert.AreEqual("123456789002", actualCreds.AccountId);
+                Assert.AreEqual("foo", actualCreds.AccessKey);
+                Assert.AreEqual("bar", actualCreds.SecretKey);
+                Assert.AreEqual("baz", actualCreds.Token);
             }
         }
         private static string cfg2 = new StringBuilder()
@@ -368,10 +361,10 @@ namespace AWSSDK.UnitTests
                 mockStsClient.Setup(x => x.AssumeRole(It.IsAny<AssumeRoleRequest>())).Returns(expectedResponse);
                 var testableAmazonStsClient = new TestableAmazonSTSClient(mockStsClient.Object);
                 var actualCreds = testableAmazonStsClient.CredentialsFromAssumeRoleAuthentication("anything", "anything", null);
-                Assert.AreEqual<string>("123456789003", actualCreds.AccountId);
-                Assert.AreEqual<string>("foo", actualCreds.AccessKey);
-                Assert.AreEqual<string>("bar", actualCreds.SecretKey);
-                Assert.AreEqual<string>("baz", actualCreds.Token);
+                Assert.AreEqual("123456789003", actualCreds.AccountId);
+                Assert.AreEqual("foo", actualCreds.AccessKey);
+                Assert.AreEqual("bar", actualCreds.SecretKey);
+                Assert.AreEqual("baz", actualCreds.Token);
             }
         }
         private static string cfg3 = new StringBuilder()
@@ -421,10 +414,10 @@ namespace AWSSDK.UnitTests
                     mockStsClient.Setup(x => x.AssumeRole(It.IsAny<AssumeRoleRequest>())).Returns(expectedResponse);
                     var testableAmazonStsClient = new TestableAmazonSTSClient(mockStsClient.Object);
                     var actualCreds = testableAmazonStsClient.CredentialsFromAssumeRoleAuthentication("anything", "anything", null);
-                    Assert.AreEqual<string>("123456789003", actualCreds.AccountId);
-                    Assert.AreEqual<string>("foo", actualCreds.AccessKey);
-                    Assert.AreEqual<string>("bar", actualCreds.SecretKey);
-                    Assert.AreEqual<string>("baz", actualCreds.Token);
+                    Assert.AreEqual("123456789003", actualCreds.AccountId);
+                    Assert.AreEqual("foo", actualCreds.AccessKey);
+                    Assert.AreEqual("bar", actualCreds.SecretKey);
+                    Assert.AreEqual("baz", actualCreds.Token);
                 }
             }
             finally
@@ -453,35 +446,45 @@ namespace AWSSDK.UnitTests
             var beforeAwsAccessKeyId = Environment.GetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCESSKEY);
             var beforeAwsSecretAccessKey = Environment.GetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY);
 
-            using (var sharedCredentialsFile = new SharedCredentialsFileTestFixture(credentialsFileContents: null, configFileContents: cfg4))
+            try
             {
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCOUNT_ID, "123456789002");
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCESSKEY, "foo");
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY, "bar");
-                var chain = new CredentialProfileStoreChain(sharedCredentialsFile.ConfigFilePath);
-                chain.TryGetAWSCredentials("test-role", out AWSCredentials creds);
-                Assert.IsNotNull(creds);
-                Assert.IsInstanceOfType(creds, typeof(AssumeRoleWithWebIdentityCredentials));
 
-                var expectedResponse = new AssumeRoleWithWebIdentityResponse
+                using (var sharedCredentialsFile = new SharedCredentialsFileTestFixture(credentialsFileContents: null, configFileContents: cfg4))
                 {
-                    AssumedRoleUser = new AssumedRoleUser
-                    {
-                        Arn = "arn:aws:iam::123456789003:role"
-                    },
-                    Credentials = new Credentials
-                    {
-                        AccessKeyId = "foo",
-                        SecretAccessKey = "bar",
-                        SessionToken = "baz"
-                    }
-                };
+                    var chain = new CredentialProfileStoreChain(sharedCredentialsFile.ConfigFilePath);
+                    chain.TryGetAWSCredentials("test-role", out AWSCredentials creds);
+                    Assert.IsNotNull(creds);
+                    Assert.IsInstanceOfType(creds, typeof(AssumeRoleWithWebIdentityCredentials));
 
-                var mockStsClient = new Mock<IAmazonSecurityTokenService>();
-                mockStsClient.Setup(client => client.AssumeRoleWithWebIdentity(It.IsAny<AssumeRoleWithWebIdentityRequest>())).Returns(expectedResponse);
-                var testableAmazonStsClient = new TestableAmazonSTSClient(mockStsClient.Object);
-                var actualCreds = testableAmazonStsClient.CredentialsFromAssumeRoleWithWebIdentityAuthentication("any", "any", "any", null);
-                Assert.AreEqual<string>("123456789003", actualCreds.AccountId);
+                    var expectedResponse = new AssumeRoleWithWebIdentityResponse
+                    {
+                        AssumedRoleUser = new AssumedRoleUser
+                        {
+                            Arn = "arn:aws:iam::123456789003:role"
+                        },
+                        Credentials = new Credentials
+                        {
+                            AccessKeyId = "foo",
+                            SecretAccessKey = "bar",
+                            SessionToken = "baz"
+                        }
+                    };
+
+                    var mockStsClient = new Mock<IAmazonSecurityTokenService>();
+                    mockStsClient.Setup(client => client.AssumeRoleWithWebIdentity(It.IsAny<AssumeRoleWithWebIdentityRequest>())).Returns(expectedResponse);
+                    var testableAmazonStsClient = new TestableAmazonSTSClient(mockStsClient.Object);
+                    var actualCreds = testableAmazonStsClient.CredentialsFromAssumeRoleWithWebIdentityAuthentication("any", "any", "any", null);
+                    Assert.AreEqual("123456789003", actualCreds.AccountId);
+                }
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCOUNT_ID, beforeAwsAccountId);
+                Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCESSKEY, beforeAwsAccessKeyId);
+                Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY, beforeAwsSecretAccessKey);
             }
         }
 
@@ -503,10 +506,9 @@ namespace AWSSDK.UnitTests
                 chain.TryGetAWSCredentials("default", out AWSCredentials creds);
                 Assert.IsNotNull(creds);
                 var immutableCreds = creds.GetCredentials();
-                Assert.AreEqual<string>("123456789001", immutableCreds.AccountId);
-                Assert.AreEqual<string>("foo", immutableCreds.AccessKey);
-                Assert.AreEqual<string>("bar", immutableCreds.SecretKey);
-
+                Assert.AreEqual("123456789001", immutableCreds.AccountId);
+                Assert.AreEqual("foo", immutableCreds.AccessKey);
+                Assert.AreEqual("bar", immutableCreds.SecretKey);
             }
         }
 
@@ -527,8 +529,8 @@ namespace AWSSDK.UnitTests
                 chain.TryGetAWSCredentials("default", out AWSCredentials creds);
                 Assert.IsNotNull(creds);
                 var actualCreds = creds.GetCredentials();
-                Assert.AreEqual<string>("foo", actualCreds.AccessKey);
-                Assert.AreEqual<string>("bar", actualCreds.SecretKey);
+                Assert.AreEqual("foo", actualCreds.AccessKey);
+                Assert.AreEqual("bar", actualCreds.SecretKey);
                 Assert.IsNull(actualCreds.AccountId);
             }
         }
@@ -553,10 +555,10 @@ namespace AWSSDK.UnitTests
                 Assert.IsNotNull(creds);
                 var actualCreds = creds.GetCredentials();
 
-                Assert.AreEqual<string>("foo", actualCreds.AccessKey);
-                Assert.AreEqual<string>("bar", actualCreds.SecretKey);
-                Assert.AreEqual<string>("baz", actualCreds.Token);
-                Assert.AreEqual<string>("123456789001", actualCreds.AccountId);
+                Assert.AreEqual("foo", actualCreds.AccessKey);
+                Assert.AreEqual("bar", actualCreds.SecretKey);
+                Assert.AreEqual("baz", actualCreds.Token);
+                Assert.AreEqual("123456789001", actualCreds.AccountId);
             }
         }
 
@@ -579,9 +581,9 @@ namespace AWSSDK.UnitTests
                 Assert.IsNotNull(creds);
                 var actualCreds = creds.GetCredentials();
 
-                Assert.AreEqual<string>("foo", actualCreds.AccessKey);
-                Assert.AreEqual<string>("bar", actualCreds.SecretKey);
-                Assert.AreEqual<string>("baz", actualCreds.Token);
+                Assert.AreEqual("foo", actualCreds.AccessKey);
+                Assert.AreEqual("bar", actualCreds.SecretKey);
+                Assert.AreEqual("baz", actualCreds.Token);
                 Assert.IsNull(actualCreds.AccountId);
             }
         }
@@ -593,9 +595,9 @@ namespace AWSSDK.UnitTests
         public void StaticCredsWithAcctIdWorks()
         {
             var creds = new ImmutableCredentials("foo", "bar", null, "123456789001");
-            Assert.AreEqual<string>("123456789001", creds.AccountId);
-            Assert.AreEqual<string>("foo", creds.AccessKey);
-            Assert.AreEqual<string>("bar", creds.SecretKey);
+            Assert.AreEqual("123456789001", creds.AccountId);
+            Assert.AreEqual("foo", creds.AccessKey);
+            Assert.AreEqual("bar", creds.SecretKey);
         }
 
         /// <summary>
@@ -606,8 +608,8 @@ namespace AWSSDK.UnitTests
         public void StaticCredsWithNoAcctIdWorks()
         {
             var creds = new ImmutableCredentials("foo", "bar", null);
-            Assert.AreEqual<string>("foo", creds.AccessKey);
-            Assert.AreEqual<string>("bar", creds.SecretKey);
+            Assert.AreEqual("foo", creds.AccessKey);
+            Assert.AreEqual("bar", creds.SecretKey);
             Assert.IsNull(creds.AccountId);
         }
 
@@ -620,10 +622,10 @@ namespace AWSSDK.UnitTests
         {
             var temp = new SessionAWSCredentials("foo", "bar", "baz", "123456789001");
             var creds = temp.GetCredentials();
-            Assert.AreEqual<string>("123456789001", creds.AccountId);
-            Assert.AreEqual<string>("foo", creds.AccessKey);
-            Assert.AreEqual<string>("bar", creds.SecretKey);
-            Assert.AreEqual<string>("baz", creds.Token);
+            Assert.AreEqual("123456789001", creds.AccountId);
+            Assert.AreEqual("foo", creds.AccessKey);
+            Assert.AreEqual("bar", creds.SecretKey);
+            Assert.AreEqual("baz", creds.Token);
         }
 
         /// <summary>
@@ -641,12 +643,13 @@ namespace AWSSDK.UnitTests
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCOUNT_ID, "123456789001");
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCESSKEY, "foo");
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY, "bar");
-                DefaultAWSCredentialsIdentityResolver resolver = new DefaultAWSCredentialsIdentityResolver();
-                AWSCredentials creds = resolver.ResolveIdentity();
-                var actualCreds = creds.GetCredentials();
-                Assert.AreEqual<string>("123456789001", actualCreds.AccountId);
-                Assert.AreEqual<string>("foo", actualCreds.AccessKey);
-                Assert.AreEqual<string>("bar", actualCreds.SecretKey);
+                
+                var envCredentials = new EnvironmentVariablesAWSCredentials();
+                var immutableCredentials = envCredentials.GetCredentials();
+
+                Assert.AreEqual("123456789001", immutableCredentials.AccountId);
+                Assert.AreEqual("foo", immutableCredentials.AccessKey);
+                Assert.AreEqual("bar", immutableCredentials.SecretKey);
             }
             finally
             {
@@ -669,12 +672,13 @@ namespace AWSSDK.UnitTests
             {
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCESSKEY, "foo");
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY, "bar");
-                DefaultAWSCredentialsIdentityResolver resolver = new DefaultAWSCredentialsIdentityResolver();
-                AWSCredentials creds = resolver.ResolveIdentity();
-                var actualCreds = creds.GetCredentials();
-                Assert.IsNull(actualCreds.AccountId);
-                Assert.AreEqual<string>("foo", actualCreds.AccessKey);
-                Assert.AreEqual<string>("bar", actualCreds.SecretKey);
+
+                var envCredentials = new EnvironmentVariablesAWSCredentials();
+                var immutableCredentials = envCredentials.GetCredentials();
+
+                Assert.IsNull(immutableCredentials.AccountId);
+                Assert.AreEqual("foo", immutableCredentials.AccessKey);
+                Assert.AreEqual("bar", immutableCredentials.SecretKey);
             }
             finally
             {
@@ -700,20 +704,21 @@ namespace AWSSDK.UnitTests
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCESSKEY, "foo");
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY, "bar");
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SESSION_TOKEN, "baz");
-                DefaultAWSCredentialsIdentityResolver resolver = new DefaultAWSCredentialsIdentityResolver();
-                AWSCredentials creds = resolver.ResolveIdentity();
-                var actualCreds = creds.GetCredentials();
-                Assert.AreEqual<string>("123456789001", actualCreds.AccountId);
-                Assert.AreEqual<string>("foo", actualCreds.AccessKey);
-                Assert.AreEqual<string>("bar", actualCreds.SecretKey);
-                Assert.AreEqual<string>("baz", actualCreds.Token);
+
+                var envCredentials = new EnvironmentVariablesAWSCredentials();
+                var immutableCredentials = envCredentials.GetCredentials();
+
+                Assert.AreEqual("123456789001", immutableCredentials.AccountId);
+                Assert.AreEqual("foo", immutableCredentials.AccessKey);
+                Assert.AreEqual("bar", immutableCredentials.SecretKey);
+                Assert.AreEqual("baz", immutableCredentials.Token);
             }
             finally
             {
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCOUNT_ID, beforeAwsAccountId);
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCESSKEY, beforeAwsAccessKeyId);
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY, beforeAwsSecretAccessKey);
-                Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY, beforeSessionToken);
+                Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SESSION_TOKEN, beforeSessionToken);
             }
         }
 
@@ -732,19 +737,20 @@ namespace AWSSDK.UnitTests
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCESSKEY, "foo");
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY, "bar");
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SESSION_TOKEN, "baz");
-                DefaultAWSCredentialsIdentityResolver resolver = new DefaultAWSCredentialsIdentityResolver();
-                AWSCredentials creds = resolver.ResolveIdentity();
-                var actualCreds = creds.GetCredentials();
-                Assert.IsNull(actualCreds.AccountId);
-                Assert.AreEqual<string>("foo", actualCreds.AccessKey);
-                Assert.AreEqual<string>("bar", actualCreds.SecretKey);
-                Assert.AreEqual<string>("baz", actualCreds.Token);
+
+                var envCredentials = new EnvironmentVariablesAWSCredentials();
+                var immutableCredentials = envCredentials.GetCredentials();
+
+                Assert.IsNull(immutableCredentials.AccountId);
+                Assert.AreEqual("foo", immutableCredentials.AccessKey);
+                Assert.AreEqual("bar", immutableCredentials.SecretKey);
+                Assert.AreEqual("baz", immutableCredentials.Token);
             }
             finally
             {
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCESSKEY, beforeAwsAccessKeyId);
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY, beforeAwsSecretAccessKey);
-                Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY, beforeSessionToken);
+                Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SESSION_TOKEN, beforeSessionToken);
             }
         }
 
@@ -764,12 +770,12 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ProcessCredentialsProviderWithAccountIdWorks()
         {
-            ProcessCredentialVersion1 processCreds = JsonSerializerHelper.Deserialize<ProcessCredentialVersion1>(process1, ProcessCredentialVersion1JsonSerializerContexts.Default);
+            ProcessCredentialVersion1 processCreds = JsonSerializerHelper.Deserialize<ProcessCredentialVersion1>(process1, JsonSerializerContext.Default);
             ImmutableCredentials immutableCreds = new ImmutableCredentials(processCreds.AccessKeyId, processCreds.SecretAccessKey, processCreds.SessionToken, processCreds.AccountId);
-            Assert.AreEqual<string>("123456789001", immutableCreds.AccountId);
-            Assert.AreEqual<string>("foo", immutableCreds.AccessKey);
-            Assert.AreEqual<string>("bar", immutableCreds.SecretKey);
-            Assert.AreEqual<string>("baz", immutableCreds.Token);
+            Assert.AreEqual("123456789001", immutableCreds.AccountId);
+            Assert.AreEqual("foo", immutableCreds.AccessKey);
+            Assert.AreEqual("bar", immutableCreds.SecretKey);
+            Assert.AreEqual("baz", immutableCreds.Token);
         }
         private static string process2 = new StringBuilder()
             .AppendLine("{\"Version\": 1,")
@@ -789,9 +795,9 @@ namespace AWSSDK.UnitTests
             ProcessCredentialVersion1 processCreds = JsonSerializerHelper.Deserialize<ProcessCredentialVersion1>(process2, ProcessCredentialVersion1JsonSerializerContexts.Default);
             ImmutableCredentials immutableCreds = new ImmutableCredentials(processCreds.AccessKeyId, processCreds.SecretAccessKey, processCreds.SessionToken, processCreds.AccountId);
             Assert.IsNull(immutableCreds.AccountId);
-            Assert.AreEqual<string>("foo", immutableCreds.AccessKey);
-            Assert.AreEqual<string>("bar", immutableCreds.SecretKey);
-            Assert.AreEqual<string>("baz", immutableCreds.Token);
+            Assert.AreEqual("foo", immutableCreds.AccessKey);
+            Assert.AreEqual("bar", immutableCreds.SecretKey);
+            Assert.AreEqual("baz", immutableCreds.Token);
         }
 
         /// <summary>
@@ -827,10 +833,10 @@ namespace AWSSDK.UnitTests
                     WriteLinuxProcessCredentialScript(processScript);
 
                 ImmutableCredentials immutableCreds = creds.GetCredentials();
-                Assert.AreEqual<string>("foo", immutableCreds.AccessKey);
-                Assert.AreEqual<string>("bar", immutableCreds.SecretKey);
-                Assert.AreEqual<string>("baz", immutableCreds.Token);
-                Assert.AreEqual<string>("123456789002", immutableCreds.AccountId);
+                Assert.AreEqual("foo", immutableCreds.AccessKey);
+                Assert.AreEqual("bar", immutableCreds.SecretKey);
+                Assert.AreEqual("baz", immutableCreds.Token);
+                Assert.AreEqual("123456789002", immutableCreds.AccountId);
             }
         }
 
@@ -867,10 +873,10 @@ namespace AWSSDK.UnitTests
                 Assert.IsInstanceOfType(creds, typeof(ProcessAWSCredentials));
 
                 var immutableCreds = creds.GetCredentials();
-                Assert.AreEqual<string>("foo", immutableCreds.AccessKey);
-                Assert.AreEqual<string>("bar", immutableCreds.SecretKey);
-                Assert.AreEqual<string>("baz", immutableCreds.Token);
-                Assert.AreEqual<string>("123456789002", immutableCreds.AccountId);
+                Assert.AreEqual("foo", immutableCreds.AccessKey);
+                Assert.AreEqual("bar", immutableCreds.SecretKey);
+                Assert.AreEqual("baz", immutableCreds.Token);
+                Assert.AreEqual("123456789002", immutableCreds.AccountId);
             }
         }
 
@@ -904,10 +910,10 @@ namespace AWSSDK.UnitTests
                 chain.TryGetAWSCredentials("process-role", out AWSCredentials creds);
                 Assert.IsInstanceOfType(creds, typeof(ProcessAWSCredentials));
                 var immutableCreds = creds.GetCredentials();
-                Assert.AreEqual<string>("foo", immutableCreds.AccessKey);
-                Assert.AreEqual<string>("bar", immutableCreds.SecretKey);
-                Assert.AreEqual<string>("baz", immutableCreds.Token);
-                Assert.AreEqual<string>("123456789001", immutableCreds.AccountId);
+                Assert.AreEqual("foo", immutableCreds.AccessKey);
+                Assert.AreEqual("bar", immutableCreds.SecretKey);
+                Assert.AreEqual("baz", immutableCreds.Token);
+                Assert.AreEqual("123456789001", immutableCreds.AccountId);
             }
         }
 
@@ -941,9 +947,9 @@ namespace AWSSDK.UnitTests
                 Assert.IsInstanceOfType(creds, typeof(ProcessAWSCredentials));
 
                 var immutableCreds = creds.GetCredentials();
-                Assert.AreEqual<string>("foo", immutableCreds.AccessKey);
-                Assert.AreEqual<string>("bar", immutableCreds.SecretKey);
-                Assert.AreEqual<string>("baz", immutableCreds.Token);
+                Assert.AreEqual("foo", immutableCreds.AccessKey);
+                Assert.AreEqual("bar", immutableCreds.SecretKey);
+                Assert.AreEqual("baz", immutableCreds.Token);
                 Assert.IsNull(immutableCreds.AccountId);
             }
         }
@@ -978,13 +984,12 @@ namespace AWSSDK.UnitTests
                 chain.TryGetAWSCredentials("process-role", out AWSCredentials creds);
                 Assert.IsInstanceOfType(creds, typeof(ProcessAWSCredentials));
                 var immutableCreds = creds.GetCredentials();
-                Assert.AreEqual<string>("foo", immutableCreds.AccessKey);
-                Assert.AreEqual<string>("bar", immutableCreds.SecretKey);
-                Assert.AreEqual<string>("", immutableCreds.Token);
-                Assert.AreEqual<string>("123456789001", immutableCreds.AccountId);
+                Assert.AreEqual("foo", immutableCreds.AccessKey);
+                Assert.AreEqual("bar", immutableCreds.SecretKey);
+                Assert.AreEqual("", immutableCreds.Token);
+                Assert.AreEqual("123456789001", immutableCreds.AccountId);
             }
         }
-
 
         private static void WriteLinuxProcessCredentialScript(ProcessScript processScript)
         {
@@ -1045,7 +1050,6 @@ namespace AWSSDK.UnitTests
     // to return the correct immutable credentials so I went with this path
     // instead of creating a testable credential inheriting from the base class. The test cases explicitly call out
     // API call. It isn't an exact 1:1 mapping of the logic, but it does the important part of making the API call.
-
     // A testable implementation of ICoreAmazonSTS which can accept an injected mocked client
     public class TestableAmazonSTSClient : ICoreAmazonSTS
     {

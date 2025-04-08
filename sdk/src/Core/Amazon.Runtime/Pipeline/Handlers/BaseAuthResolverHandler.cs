@@ -103,7 +103,7 @@ namespace Amazon.Runtime.Internal
                     }
 
                     var identityResolver = scheme.GetIdentityResolver(clientConfig.IdentityResolverConfiguration);
-                    executionContext.RequestContext.Identity = identityResolver.ResolveIdentity();
+                    executionContext.RequestContext.Identity = identityResolver.ResolveIdentity(clientConfig);
 
                     if (executionContext.RequestContext.Identity != null)
                     {
@@ -183,7 +183,7 @@ namespace Amazon.Runtime.Internal
 
                     var identityResolver = scheme.GetIdentityResolver(clientConfig.IdentityResolverConfiguration);
                     executionContext.RequestContext.Identity = await identityResolver
-                        .ResolveIdentityAsync(cancellationToken)
+                        .ResolveIdentityAsync(clientConfig, cancellationToken)
                         .ConfigureAwait(false);
 
                     if (executionContext.RequestContext.Identity != null)
