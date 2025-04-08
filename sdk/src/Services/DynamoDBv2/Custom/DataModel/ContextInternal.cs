@@ -538,13 +538,13 @@ namespace Amazon.DynamoDBv2.DataModel
                 Document document = entry as Document;
                 if (document != null)
                 {
-                    if (TryFromMap(targetType, document, flatConfig, propertyStorage.DerivedTypeKeysDictionary, out output))
+                    if (TryFromMap(targetType, document, flatConfig, propertyStorage, out output))
                         return output;
 
                     var typeAttributeName = flatConfig.DerivedTypeAttributeName;//"$type"; 
                     var derivedType = document.ContainsKey(typeAttributeName) ? document[typeAttributeName].AsString() : null;
 
-                    if (derivedType != null && propertyStorage.DerivedTypeKeysDictionary.TryGetValue(derivedType, out var value))
+                    if (derivedType != null && propertyStorage.TryGetDerivedType(derivedType, out var value))
                     {
                         targetType = value;
                     }
@@ -554,7 +554,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
                 DynamoDBList list = entry as DynamoDBList;
                 if (list != null &&
-                    TryFromList(targetType, list, flatConfig, propertyStorage.DerivedTypeKeysDictionary, out output))
+                    TryFromList(targetType, list, flatConfig, propertyStorage, out output))
                 {
                     return output;
                 }
@@ -565,17 +565,17 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
         private bool TryFromList([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig,
-            Dictionary<string, Type> derivedTypeKeysDictionary, out object output)
+            SimplePropertyStorage parentPropertyStorage, out object output)
         {
             return targetType.IsArray ?
-                 TryFromListToArray(targetType, list, flatConfig, derivedTypeKeysDictionary, out output) : //targetType is Array
-                 TryFromListToIList(targetType, list, flatConfig, derivedTypeKeysDictionary, out output) ; //targetType is IList or has Add method.
+                 TryFromListToArray(targetType, list, flatConfig, parentPropertyStorage, out output) : //targetType is Array
+                 TryFromListToIList(targetType, list, flatConfig, parentPropertyStorage, out output) ; //targetType is IList or has Add method.
         }
 
         [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2062",
             Justification = "The user's type has been annotated with InternalConstants.DataModelModeledType with the public API into the library. At this point the type will not be trimmed.")]
 
-        private bool TryFromListToIList([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig,Dictionary<string, Type> derivedTypeKeysDictionary, out object output)
+        private bool TryFromListToIList([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, SimplePropertyStorage parentPropertyStorage, out object output)
         {
             if ((!Utils.ImplementsInterface(targetType, typeof(ICollection<>)) &&
                 !Utils.ImplementsInterface(targetType, typeof(IList))) ||
@@ -589,7 +589,7 @@ namespace Amazon.DynamoDBv2.DataModel
             var collection = Utils.Instantiate(targetType);
             IList ilist = collection as IList;
             bool useIListInterface = ilist != null;
-            var propertyStorage = new SimplePropertyStorage(elementType, derivedTypeKeysDictionary);
+            var propertyStorage = new SimplePropertyStorage(elementType, parentPropertyStorage);
 
             MethodInfo collectionAdd = null;
             if (!useIListInterface)
@@ -611,7 +611,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return true;
         }
 
-        private bool TryFromListToArray([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, Dictionary<string, Type> derivedTypeKeysDictionary, out object output)
+        private bool TryFromListToArray([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, SimplePropertyStorage parentPropertyStorage, out object output)
         {
             if (!Utils.CanInstantiateArray(targetType))
             {
@@ -621,7 +621,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var elementType = Utils.GetElementType(targetType);
             var array = (Array)Utils.InstantiateArray(targetType,list.Entries.Count);
-            var propertyStorage = new SimplePropertyStorage(elementType, derivedTypeKeysDictionary);
+            var propertyStorage = new SimplePropertyStorage(elementType, parentPropertyStorage);
 
             for (int i = 0; i < list.Entries.Count; i++)
             {
@@ -636,7 +636,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2067",
             Justification = "The user's type has been annotated with InternalConstants.DataModelModeledType with the public API into the library. At this point the type will not be trimmed.")]
-        private bool TryFromMap([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, Document map, DynamoDBFlatConfig flatConfig, Dictionary<string, Type> derivedTypeKeysDictionary, out object output)
+        private bool TryFromMap([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, Document map, DynamoDBFlatConfig flatConfig, SimplePropertyStorage parentPropertyStorage, out object output)
         {
             output = null;
 
@@ -649,7 +649,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var dictionary = Utils.Instantiate(targetType);
             var idictionary = dictionary as IDictionary;
-            var propertyStorage = new SimplePropertyStorage(valueType, derivedTypeKeysDictionary);
+            var propertyStorage = new SimplePropertyStorage(valueType, parentPropertyStorage);
 
             foreach (var kvp in map)
             {
@@ -668,6 +668,9 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             return ToDynamoDBEntry(propertyStorage, value, flatConfig, canReturnScalarInsteadOfList: false);
         }
+
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2072",
+            Justification = "The user's type has been annotated with InternalConstants.DataModelModeledType with the public API into the library. At this point the type will not be trimmed.")]
         private DynamoDBEntry ToDynamoDBEntry(SimplePropertyStorage propertyStorage, object value, DynamoDBFlatConfig flatConfig, bool canReturnScalarInsteadOfList)
         {
             if (value == null)
@@ -685,9 +688,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
             Type type;
             string typeDiscriminator = null;
-            if (propertyStorage.DerivedTypesDictionary.ContainsKey(value.GetType()))
+            if (propertyStorage.TryGetDerivedTypeDiscriminator(value.GetType(), out var td))
             {
-                typeDiscriminator = propertyStorage.DerivedTypesDictionary[value.GetType()];
+                typeDiscriminator = td;
                 type = value.GetType();
             }
             else
@@ -707,11 +710,11 @@ namespace Amazon.DynamoDBv2.DataModel
             else
             {
                 Document map;
-                if (TryToMap(value, type, flatConfig, propertyStorage.DerivedTypesDictionary, out map))
+                if (TryToMap(value, type, flatConfig, propertyStorage, out map))
                     return map;
 
                 DynamoDBList list;
-                if (TryToList(value, type, flatConfig, propertyStorage.DerivedTypesDictionary, out list))
+                if (TryToList(value, type, flatConfig, propertyStorage, out list))
                     return list;
 
                 return SerializeToDocument(value, type, flatConfig, typeDiscriminator);
@@ -721,7 +724,7 @@ namespace Amazon.DynamoDBv2.DataModel
         [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2067",
             Justification = "The user's type has been annotated with InternalConstants.DataModelModeledType with the public API into the library. At this point the type will not be trimmed.")]
         private bool TryToMap(object value, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type, DynamoDBFlatConfig flatConfig,
-            Dictionary<Type, string> derivedTypesDictionary, out Document output)
+            SimplePropertyStorage parentPropertyStorage, out Document output)
         {
             output = null;
 
@@ -734,7 +737,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 return false;
 
             output = new Document();
-            SimplePropertyStorage propertyStorage = new SimplePropertyStorage(valueType,derivedTypesDictionary);
+            SimplePropertyStorage propertyStorage = new SimplePropertyStorage(valueType, parentPropertyStorage);
 
             foreach (object keyValue in idictionary.Keys)
             {
@@ -755,7 +758,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         private bool TryToList(object value, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)] Type type, DynamoDBFlatConfig flatConfig,
-            Dictionary<Type, string> derivedTypesDictionary, out DynamoDBList output)
+            SimplePropertyStorage parentPropertyStoragey, out DynamoDBList output)
         {
             if (!Utils.ImplementsInterface(type, typeof(ICollection<>)))
             {
@@ -774,7 +777,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             Type elementType = Utils.GetElementType(type);
 
-            SimplePropertyStorage propertyStorage = new SimplePropertyStorage(elementType,derivedTypesDictionary);
+            SimplePropertyStorage propertyStorage = new SimplePropertyStorage(elementType, parentPropertyStoragey);
             output = new DynamoDBList();
             foreach (var item in enumerable)
             {
