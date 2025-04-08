@@ -909,12 +909,12 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeTapeArchivesRequest.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeTapeArchivesResponse.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeTapeRecoveryPointsRequest.GatewayARN</property>
@@ -928,7 +928,7 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeTapeRecoveryPointsRequest.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeTapeRecoveryPointsResponse.GatewayARN</property>
@@ -938,7 +938,7 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeTapeRecoveryPointsResponse.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeTapesRequest.GatewayARN</property>
@@ -952,12 +952,12 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeTapesRequest.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeTapesResponse.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeUploadBufferRequest.GatewayARN</property>
@@ -981,7 +981,7 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeVTLDevicesRequest.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeVTLDevicesResponse.GatewayARN</property>
@@ -991,7 +991,7 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeVTLDevicesResponse.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeWorkingStorageRequest.GatewayARN</property>
@@ -1086,12 +1086,12 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListCacheReportsRequest.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListCacheReportsResponse.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListFileSharesRequest.GatewayARN</property>
@@ -1105,17 +1105,17 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListFileSharesRequest.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListFileSharesResponse.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListFileSharesResponse.NextMarker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListFileSystemAssociationsRequest.GatewayARN</property>
@@ -1129,17 +1129,17 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListFileSystemAssociationsRequest.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListFileSystemAssociationsResponse.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListFileSystemAssociationsResponse.NextMarker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListGatewaysRequest.Limit</property>
@@ -1148,12 +1148,12 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListGatewaysRequest.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListGatewaysResponse.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListLocalDisksRequest.GatewayARN</property>
@@ -1172,7 +1172,7 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListTagsForResourceRequest.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListTagsForResourceRequest.ResourceARN</property>
@@ -1182,7 +1182,7 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListTagsForResourceResponse.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListTagsForResourceResponse.ResourceARN</property>
@@ -1196,12 +1196,12 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListTapePoolsRequest.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListTapePoolsResponse.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListTapesRequest.Limit</property>
@@ -1210,12 +1210,12 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListTapesRequest.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListTapesResponse.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListVolumeInitiatorsRequest.VolumeARN</property>
@@ -1245,7 +1245,7 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListVolumesRequest.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListVolumesResponse.GatewayARN</property>
@@ -1255,7 +1255,7 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListVolumesResponse.Marker</property>
     <min>1</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.NotifyWhenUploadedRequest.FileShareARN</property>

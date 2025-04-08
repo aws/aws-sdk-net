@@ -39,6 +39,10 @@ namespace Amazon.StorageGateway
         /// </summary>
         public static readonly ActiveDirectoryStatus DETACHED = new ActiveDirectoryStatus("DETACHED");
         /// <summary>
+        /// Constant INSUFFICIENT_PERMISSIONS for ActiveDirectoryStatus
+        /// </summary>
+        public static readonly ActiveDirectoryStatus INSUFFICIENT_PERMISSIONS = new ActiveDirectoryStatus("INSUFFICIENT_PERMISSIONS");
+        /// <summary>
         /// Constant JOINED for ActiveDirectoryStatus
         /// </summary>
         public static readonly ActiveDirectoryStatus JOINED = new ActiveDirectoryStatus("JOINED");

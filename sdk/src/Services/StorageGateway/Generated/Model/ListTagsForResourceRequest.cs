@@ -66,7 +66,7 @@ namespace Amazon.StorageGateway.Model
         /// of tags.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=2000)]
         public string Marker
         {
             get { return this._marker; }
