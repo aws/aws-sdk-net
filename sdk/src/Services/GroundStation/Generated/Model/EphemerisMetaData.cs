@@ -49,7 +49,7 @@ namespace Amazon.GroundStation.Model
         /// This field is not populated for default ephemerides from Space Track.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=36, Max=36)]
         public string EphemerisId
         {
             get { return this._ephemerisId; }

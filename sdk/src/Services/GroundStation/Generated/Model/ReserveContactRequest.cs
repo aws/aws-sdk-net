@@ -86,7 +86,7 @@ namespace Amazon.GroundStation.Model
         /// ARN of a mission profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=89, Max=138)]
         public string MissionProfileArn
         {
             get { return this._missionProfileArn; }
@@ -105,7 +105,7 @@ namespace Amazon.GroundStation.Model
         /// ARN of a satellite
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=82, Max=132)]
         public string SatelliteArn
         {
             get { return this._satelliteArn; }

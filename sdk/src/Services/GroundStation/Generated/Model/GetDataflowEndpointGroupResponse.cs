@@ -91,6 +91,7 @@ namespace Amazon.GroundStation.Model
         /// ARN of a dataflow endpoint group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=97, Max=146)]
         public string DataflowEndpointGroupArn
         {
             get { return this._dataflowEndpointGroupArn; }
@@ -109,7 +110,7 @@ namespace Amazon.GroundStation.Model
         /// UUID of a dataflow endpoint group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=36, Max=36)]
         public string DataflowEndpointGroupId
         {
             get { return this._dataflowEndpointGroupId; }

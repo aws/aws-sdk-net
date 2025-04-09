@@ -137,7 +137,7 @@ namespace Amazon.GroundStation.Model
         /// UUID of a mission profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string MissionProfileId
         {
             get { return this._missionProfileId; }
@@ -211,6 +211,7 @@ namespace Amazon.GroundStation.Model
         /// ARN of a tracking <c>Config</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=82, Max=424)]
         public string TrackingConfigArn
         {
             get { return this._trackingConfigArn; }

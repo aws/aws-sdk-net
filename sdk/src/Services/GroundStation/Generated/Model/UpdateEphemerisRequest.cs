@@ -66,7 +66,7 @@ namespace Amazon.GroundStation.Model
         /// The AWS Ground Station ephemeris ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string EphemerisId
         {
             get { return this._ephemerisId; }

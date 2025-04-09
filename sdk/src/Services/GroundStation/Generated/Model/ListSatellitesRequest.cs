@@ -44,7 +44,7 @@ namespace Amazon.GroundStation.Model
         /// Maximum number of satellites returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -87,7 +87,7 @@ namespace Amazon.GroundStation.Model
         /// The AWS Ground Station ephemeris ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=36, Max=36)]
         public string EphemerisId
         {
             get { return this._ephemerisId; }
@@ -174,7 +174,7 @@ namespace Amazon.GroundStation.Model
         /// The AWS Ground Station satellite ID associated with ephemeris.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=36, Max=36)]
         public string SatelliteId
         {
             get { return this._satelliteId; }

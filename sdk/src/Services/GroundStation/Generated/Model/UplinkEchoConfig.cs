@@ -49,7 +49,7 @@ namespace Amazon.GroundStation.Model
         /// ARN of an uplink <c>Config</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=82, Max=424)]
         public string AntennaUplinkConfigArn
         {
             get { return this._antennaUplinkConfigArn; }
