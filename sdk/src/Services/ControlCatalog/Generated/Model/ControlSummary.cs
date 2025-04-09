@@ -35,8 +35,12 @@ namespace Amazon.ControlCatalog.Model
     public partial class ControlSummary
     {
         private string _arn;
+        private ControlBehavior _behavior;
+        private DateTime? _createTime;
         private string _description;
+        private ImplementationSummary _implementation;
         private string _name;
+        private ControlSeverity _severity;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -55,6 +59,43 @@ namespace Amazon.ControlCatalog.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Behavior. 
+        /// <para>
+        /// An enumerated type, with the following possible values:
+        /// </para>
+        /// </summary>
+        public ControlBehavior Behavior
+        {
+            get { return this._behavior; }
+            set { this._behavior = value; }
+        }
+
+        // Check to see if Behavior property is set
+        internal bool IsSetBehavior()
+        {
+            return this._behavior != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateTime. 
+        /// <para>
+        /// A timestamp that notes the time when the control was released (start of its life)
+        /// as a governance capability in Amazon Web Services.
+        /// </para>
+        /// </summary>
+        public DateTime CreateTime
+        {
+            get { return this._createTime.GetValueOrDefault(); }
+            set { this._createTime = value; }
+        }
+
+        // Check to see if CreateTime property is set
+        internal bool IsSetCreateTime()
+        {
+            return this._createTime.HasValue; 
         }
 
         /// <summary>
@@ -78,6 +119,24 @@ namespace Amazon.ControlCatalog.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Implementation. 
+        /// <para>
+        /// An object of type <c>ImplementationSummary</c> that describes how the control is implemented.
+        /// </para>
+        /// </summary>
+        public ImplementationSummary Implementation
+        {
+            get { return this._implementation; }
+            set { this._implementation = value; }
+        }
+
+        // Check to see if Implementation property is set
+        internal bool IsSetImplementation()
+        {
+            return this._implementation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The display name of the control.
@@ -94,6 +153,24 @@ namespace Amazon.ControlCatalog.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Severity. 
+        /// <para>
+        /// An enumerated type, with the following possible values:
+        /// </para>
+        /// </summary>
+        public ControlSeverity Severity
+        {
+            get { return this._severity; }
+            set { this._severity = value; }
+        }
+
+        // Check to see if Severity property is set
+        internal bool IsSetSeverity()
+        {
+            return this._severity != null;
         }
 
     }

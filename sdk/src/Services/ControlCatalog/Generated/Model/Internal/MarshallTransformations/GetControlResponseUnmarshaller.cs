@@ -64,6 +64,12 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
                     response.Behavior = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CreateTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.CreateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -92,6 +98,12 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = RegionConfigurationUnmarshaller.Instance;
                     response.RegionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Severity", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Severity = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

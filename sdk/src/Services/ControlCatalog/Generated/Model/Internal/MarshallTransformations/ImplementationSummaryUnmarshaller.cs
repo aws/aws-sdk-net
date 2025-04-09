@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ControlSummary Object
+    /// Response Unmarshaller for ImplementationSummary Object
     /// </summary>  
-    public class ControlSummaryUnmarshaller : IUnmarshaller<ControlSummary, XmlUnmarshallerContext>, IUnmarshaller<ControlSummary, JsonUnmarshallerContext>
+    public class ImplementationSummaryUnmarshaller : IUnmarshaller<ImplementationSummary, XmlUnmarshallerContext>, IUnmarshaller<ImplementationSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ControlSummary IUnmarshaller<ControlSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ImplementationSummary IUnmarshaller<ImplementationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ControlSummary Unmarshall(JsonUnmarshallerContext context)
+        public ImplementationSummary Unmarshall(JsonUnmarshallerContext context)
         {
-            ControlSummary unmarshalledObject = new ControlSummary();
+            ImplementationSummary unmarshalledObject = new ImplementationSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,46 +66,16 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Identifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Identifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Behavior", targetDepth))
+                if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Behavior = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CreateTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Implementation", targetDepth))
-                {
-                    var unmarshaller = ImplementationSummaryUnmarshaller.Instance;
-                    unmarshalledObject.Implementation = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Severity", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Severity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -113,12 +83,12 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
         }
 
 
-        private static ControlSummaryUnmarshaller _instance = new ControlSummaryUnmarshaller();        
+        private static ImplementationSummaryUnmarshaller _instance = new ImplementationSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ControlSummaryUnmarshaller Instance
+        public static ImplementationSummaryUnmarshaller Instance
         {
             get
             {

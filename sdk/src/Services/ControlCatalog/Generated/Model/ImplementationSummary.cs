@@ -30,42 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlCatalog.Model
 {
     /// <summary>
-    /// An object that describes the implementation type for a control.
-    /// 
-    ///  
-    /// <para>
-    /// Our <c>ImplementationDetails</c> <c>Type</c> format has three required segments:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <c>SERVICE-PROVIDER::SERVICE-NAME::RESOURCE-NAME</c> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// For example, <c>AWS::Config::ConfigRule</c> <b>or</b> <c>AWS::SecurityHub::SecurityControl</c>
-    /// resources have the format with three required segments.
-    /// </para>
-    ///  
-    /// <para>
-    /// Our <c>ImplementationDetails</c> <c>Type</c> format has an optional fourth segment,
-    /// which is present for applicable implementation types. The format is as follows: 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <c>SERVICE-PROVIDER::SERVICE-NAME::RESOURCE-NAME::RESOURCE-TYPE-DESCRIPTION</c> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// For example, <c>AWS::Organizations::Policy::SERVICE_CONTROL_POLICY</c> <b>or</b> <c>AWS::CloudFormation::Type::HOOK</c>
-    /// have the format with four segments.
-    /// </para>
-    ///  
-    /// <para>
-    /// Although the format is similar, the values for the <c>Type</c> field do not match
-    /// any Amazon Web Services CloudFormation values.
-    /// </para>
+    /// A summary of how the control is implemented, including the Amazon Web Services service
+    /// that enforces the control and its service-specific identifier. For example, the value
+    /// of this field could indicate that the control is implemented as an Amazon Web Services
+    /// Config Rule or an Amazon Web Services Security Hub control.
     /// </summary>
-    public partial class ImplementationDetails
+    public partial class ImplementationSummary
     {
         private string _identifier;
         private string _type;
@@ -73,9 +43,8 @@ namespace Amazon.ControlCatalog.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// A service-specific identifier for the control, assigned by the service that implemented
-        /// the control. For example, this identifier could be an Amazon Web Services Config Rule
-        /// ID or a Security Hub Control ID.
+        /// The identifier originally assigned by the Amazon Web Services service that implements
+        /// the control. For example, <c>CODEPIPELINE_DEPLOYMENT_COUNT_CHECK</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -94,7 +63,10 @@ namespace Amazon.ControlCatalog.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// A string that describes a control's implementation type.
+        /// A string that represents the Amazon Web Services service that implements this control.
+        /// For example, a value of <c>AWS::Config::ConfigRule</c> indicates that the control
+        /// is implemented by Amazon Web Services Config, and <c>AWS::SecurityHub::SecurityControl</c>
+        /// indicates implementation by Amazon Web Services Security Hub.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=7, Max=2048)]
