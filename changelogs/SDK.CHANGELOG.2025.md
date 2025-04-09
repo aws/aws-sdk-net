@@ -1,3 +1,13 @@
+### 4.0.0.0-preview.13 (2025-04-09 16:44 UTC)
+* BedrockRuntime (4.0.0.0)
+	* Add support for [Amazon Nova Sonic: Human-like voice conversations for generative AI applications](https://aws.amazon.com/blogs/aws/introducing-amazon-nova-sonic-human-like-voice-conversations-for-generative-ai-applications/) (note: Only available in .NET 8 and later)
+* DynamoDBv2 (4.0.0.0)
+	* Allow to set DynamoDBEntryConversion per table.
+* Core 4.0.0.0
+	* Enable error protocol tests and make headers case insensitive in test project
+	* Update auth resolver async flow to add user agent details after resolving identity
+	* All services packages updated to require new Core
+
 ### 4.0.0.0-preview.12 (2025-04-04 17:58 UTC)
 * Kinesis (4.0.0.0)
 	* Add the bi-directional streaming operation SubscribeToShard.
