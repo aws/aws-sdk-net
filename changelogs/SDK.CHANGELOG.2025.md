@@ -1,3 +1,18 @@
+### 3.7.1020.0 (2025-04-09 18:36 UTC)
+* ControlCatalog (3.7.403.0)
+	* The GetControl API now surfaces a control's Severity, CreateTime, and Identifier for a control's Implementation. The ListControls API now surfaces a control's Behavior, Severity, CreateTime, and Identifier for a control's Implementation.
+* DynamoDBv2 (3.7.406.19)
+	* Documentation update for secondary indexes and Create_Table.
+* Glue (3.7.416.0)
+	* The TableOptimizer APIs in AWS Glue now return the DpuHours field in each TableOptimizerRun, providing clients visibility to the DPU-hours used for billing in managed Apache Iceberg table compaction optimization.
+* GroundStation (3.7.401.0)
+	* Support tagging Agents and adjust input field validations
+* Transfer (3.7.407.0)
+	* This launch includes 2 enhancements to SFTP connectors user-experience: 1) Customers can self-serve concurrent connections setting for their connectors, and 2) Customers can discover the public host key of remote servers using their SFTP connectors.
+* Core 3.7.402.37
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1019.0 (2025-04-08 18:53 UTC)
 * BedrockRuntime (3.7.418.0)
 	* This release introduces our latest bedrock runtime API, InvokeModelWithBidirectionalStream. The API supports both input and output streams and is supported by only HTTP2.0.

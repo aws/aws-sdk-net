@@ -32,7 +32,7 @@ namespace Amazon.TaxSettings
     public partial class AmazonTaxSettingsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("TaxSettings", "3.7.405.0");
+            InternalSDKUtils.BuildUserAgentString("TaxSettings", "3.7.405.1");
 
         private string _userAgent = UserAgentString;
         ///<summary>
