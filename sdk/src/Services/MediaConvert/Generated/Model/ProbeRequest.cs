@@ -31,15 +31,17 @@ namespace Amazon.MediaConvert.Model
 {
     /// <summary>
     /// Container for the parameters to the Probe operation.
-    /// The Probe operation analyzes the provided media file and returns comprehensive metadata
-    /// about its container format, tracks, and any encountered errors.
+    /// Use Probe to obtain detailed information about your input media files. Probe returns
+    /// a JSON that includes container, codec, frame rate, resolution, track count, audio
+    /// layout, captions, and more. You can use this information to learn more about your
+    /// media files, or to help make decisions while automating your transcoding workflow.
     /// </summary>
     public partial class ProbeRequest : AmazonMediaConvertRequest
     {
         private List<ProbeInputFile> _inputFiles = AWSConfigs.InitializeCollections ? new List<ProbeInputFile>() : null;
 
         /// <summary>
-        /// Gets and sets the property InputFiles. The list of input media files to be probed.
+        /// Gets and sets the property InputFiles. Specify a media file to probe.
         /// </summary>
         public List<ProbeInputFile> InputFiles
         {

@@ -37,8 +37,7 @@ namespace Amazon.MediaConvert.Model
         private List<ProbeResult> _probeResults = AWSConfigs.InitializeCollections ? new List<ProbeResult>() : null;
 
         /// <summary>
-        /// Gets and sets the property ProbeResults. List of probe results for the input media
-        /// file(s).
+        /// Gets and sets the property ProbeResults. Probe results for your media file.
         /// </summary>
         public List<ProbeResult> ProbeResults
         {

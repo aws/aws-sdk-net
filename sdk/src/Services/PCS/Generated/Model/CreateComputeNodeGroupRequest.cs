@@ -127,7 +127,7 @@ namespace Amazon.PCS.Model
         /// A name to identify the cluster. Example: <c>MyCluster</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=25)]
+        [AWSProperty(Required=true, Min=3, Max=25)]
         public string ComputeNodeGroupName
         {
             get { return this._computeNodeGroupName; }

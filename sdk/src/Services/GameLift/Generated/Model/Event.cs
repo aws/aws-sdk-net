@@ -239,7 +239,8 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <c>InitSDK()</c>
         /// within the time expected (5 minutes). Check your game session log to see why <c>InitSDK()</c>
-        /// was not called in time.
+        /// was not called in time. This event is not emitted for managed container fleets and
+        /// Anywhere fleets unless they're deployed with the Amazon GameLift Agent.
         /// </para>
         ///  </li> <li> 
         /// <para>

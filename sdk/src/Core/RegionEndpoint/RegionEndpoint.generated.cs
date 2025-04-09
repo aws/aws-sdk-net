@@ -242,5 +242,10 @@ namespace Amazon
         /// The US ISOF SOUTH endpoint.
         /// </summary>
         public static readonly RegionEndpoint USIsofSouth1 = GetRegionEndpoint("us-isof-south-1", "US ISOF SOUTH", "aws-iso-f", "csp.hci.ic.gov", @"^us\-isof\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
+
+        /// <summary>
+        /// The EU (Germany) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint EUSCDeEast1 = GetRegionEndpoint("eusc-de-east-1", "EU (Germany)", "aws-eusc", "amazonaws.eu", @"^eusc\-(de)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
     }
 }

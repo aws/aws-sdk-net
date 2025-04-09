@@ -34,12 +34,31 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class GuardrailUsage
     {
+        private int? _contentPolicyImageUnits;
         private int? _contentPolicyUnits;
         private int? _contextualGroundingPolicyUnits;
         private int? _sensitiveInformationPolicyFreeUnits;
         private int? _sensitiveInformationPolicyUnits;
         private int? _topicPolicyUnits;
         private int? _wordPolicyUnits;
+
+        /// <summary>
+        /// Gets and sets the property ContentPolicyImageUnits. 
+        /// <para>
+        /// The content policy image units processed by the guardrail.
+        /// </para>
+        /// </summary>
+        public int? ContentPolicyImageUnits
+        {
+            get { return this._contentPolicyImageUnits; }
+            set { this._contentPolicyImageUnits = value; }
+        }
+
+        // Check to see if ContentPolicyImageUnits property is set
+        internal bool IsSetContentPolicyImageUnits()
+        {
+            return this._contentPolicyImageUnits.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ContentPolicyUnits. 

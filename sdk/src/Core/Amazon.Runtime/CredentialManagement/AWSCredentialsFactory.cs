@@ -204,6 +204,9 @@ namespace Amazon.Runtime.CredentialManagement
                 {
                     case CredentialProfileType.Basic:
                         awsCredentials = new BasicAWSCredentials(options.AccessKey, options.SecretKey, options.AwsAccountId);
+
+                        // CREDENTIALS_PROFILE already implies static credentials so we can remove the redundant CREDENTIALS_CODE feature ID.
+                        awsCredentials.FeatureIdSources.Remove(UserAgentFeatureId.CREDENTIALS_CODE);
                         awsCredentials.FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_PROFILE);
                         break;
                     case CredentialProfileType.Session:

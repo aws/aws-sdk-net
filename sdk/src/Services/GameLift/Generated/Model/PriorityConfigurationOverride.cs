@@ -32,18 +32,18 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// An alternate list of prioritized locations for use with a game session queue. When
     /// this property is included in a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>
-    /// request, this list overrides the queue's default location prioritization, as defined
-    /// in the queue's <a href="gamelift/latest/apireference/API_PriorityConfiguration.html">PriorityConfiguration</a>
-    /// setting (<i>LocationOrder</i>). This property overrides the queue's default priority
-    /// list for individual placement requests only. Use this property only with queues that
-    /// have a <c>PriorityConfiguration</c> setting that prioritizes first. 
+    /// request, the alternate list overrides the queue's default location priorities, as
+    /// defined in the queue's <a href="gamelift/latest/apireference/API_PriorityConfiguration.html">PriorityConfiguration</a>
+    /// setting (<i>LocationOrder</i>). The override is valid for an individual placement
+    /// request only. Use this property only with queues that have a <c>PriorityConfiguration</c>
+    /// setting that prioritizes <c>LOCATION</c> first. 
     /// 
     ///  <note> 
     /// <para>
     /// A priority configuration override list does not override a queue's FilterConfiguration
     /// setting, if the queue has one. Filter configurations are used to limit placements
     /// to a subset of the locations in a queue's destinations. If the override list includes
-    /// a location that's not included in the FilterConfiguration allowed list, Amazon GameLift
+    /// a location that's not on in the <c>FilterConfiguration</c> allowed list, Amazon GameLift
     /// won't attempt to place a game session there.
     /// </para>
     ///  </note>
@@ -78,21 +78,19 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlacementFallbackStrategy. 
         /// <para>
-        /// Instructions for how to use the override list if the first round of placement attempts
-        /// fails. The first round is a failure if Amazon GameLift searches all listed locations,
-        /// in all of the queue's destinations, without finding an available hosting resource
-        /// for a new game session. Valid strategies include: 
+        /// Instructions for how to proceed if placement fails in every location on the priority
+        /// override list. Valid strategies include: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>DEFAULT_AFTER_SINGLE_PASS</c> -- After the first round of placement attempts,
-        /// discard the override list and use the queue's default location priority list. Continue
-        /// to use the queue's default list until the placement request times out.
+        ///  <c>DEFAULT_AFTER_SINGLE_PASS</c> -- After attempting to place a new game session
+        /// in every location on the priority override list, try to place a game session in queue's
+        /// other locations. This is the default behavior.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>NONE</c> -- Continue to use the override list for all rounds of placement attempts
-        /// until the placement request times out.
+        ///  <c>NONE</c> -- Limit placements to locations on the priority override list only.
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>

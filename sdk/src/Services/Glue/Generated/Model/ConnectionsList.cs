@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
         /// A list of connections used by the job.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public List<string> Connections
         {
             get { return this._connections; }

@@ -36,7 +36,11 @@ namespace Amazon.Bedrock.Model
     {
         private GuardrailSensitiveInformationAction _action;
         private string _description;
+        private GuardrailSensitiveInformationAction _inputAction;
+        private bool? _inputEnabled;
         private string _name;
+        private GuardrailSensitiveInformationAction _outputAction;
+        private bool? _outputEnabled;
         private string _pattern;
 
         /// <summary>
@@ -78,6 +82,53 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InputAction. 
+        /// <para>
+        /// Specifies the action to take when harmful content is detected in the input. Supported
+        /// values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>BLOCK</c> – Block the content and replace it with blocked messaging.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NONE</c> – Take no action but return detection information in the trace response.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public GuardrailSensitiveInformationAction InputAction
+        {
+            get { return this._inputAction; }
+            set { this._inputAction = value; }
+        }
+
+        // Check to see if InputAction property is set
+        internal bool IsSetInputAction()
+        {
+            return this._inputAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputEnabled. 
+        /// <para>
+        /// Specifies whether to enable guardrail evaluation on the input. When disabled, you
+        /// aren't charged for the evaluation. The evaluation doesn't appear in the response.
+        /// </para>
+        /// </summary>
+        public bool? InputEnabled
+        {
+            get { return this._inputEnabled; }
+            set { this._inputEnabled = value; }
+        }
+
+        // Check to see if InputEnabled property is set
+        internal bool IsSetInputEnabled()
+        {
+            return this._inputEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the regular expression to configure for the guardrail.
@@ -94,6 +145,53 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputAction. 
+        /// <para>
+        /// Specifies the action to take when harmful content is detected in the output. Supported
+        /// values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>BLOCK</c> – Block the content and replace it with blocked messaging.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NONE</c> – Take no action but return detection information in the trace response.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public GuardrailSensitiveInformationAction OutputAction
+        {
+            get { return this._outputAction; }
+            set { this._outputAction = value; }
+        }
+
+        // Check to see if OutputAction property is set
+        internal bool IsSetOutputAction()
+        {
+            return this._outputAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputEnabled. 
+        /// <para>
+        /// Specifies whether to enable guardrail evaluation on the output. When disabled, you
+        /// aren't charged for the evaluation. The evaluation doesn't appear in the response.
+        /// </para>
+        /// </summary>
+        public bool? OutputEnabled
+        {
+            get { return this._outputEnabled; }
+            set { this._outputEnabled = value; }
+        }
+
+        // Check to see if OutputEnabled property is set
+        internal bool IsSetOutputEnabled()
+        {
+            return this._outputEnabled.HasValue; 
         }
 
         /// <summary>

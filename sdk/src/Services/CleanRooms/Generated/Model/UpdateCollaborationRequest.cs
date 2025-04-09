@@ -35,9 +35,28 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class UpdateCollaborationRequest : AmazonCleanRoomsRequest
     {
+        private AnalyticsEngine _analyticsEngine;
         private string _collaborationIdentifier;
         private string _description;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property AnalyticsEngine. 
+        /// <para>
+        /// The analytics engine.
+        /// </para>
+        /// </summary>
+        public AnalyticsEngine AnalyticsEngine
+        {
+            get { return this._analyticsEngine; }
+            set { this._analyticsEngine = value; }
+        }
+
+        // Check to see if AnalyticsEngine property is set
+        internal bool IsSetAnalyticsEngine()
+        {
+            return this._analyticsEngine != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CollaborationIdentifier. 

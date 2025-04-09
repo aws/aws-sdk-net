@@ -2127,6 +2127,10 @@ namespace Amazon.BedrockAgent
         /// </summary>
         public static readonly KnowledgeBaseStorageType NEPTUNE_ANALYTICS = new KnowledgeBaseStorageType("NEPTUNE_ANALYTICS");
         /// <summary>
+        /// Constant OPENSEARCH_MANAGED_CLUSTER for KnowledgeBaseStorageType
+        /// </summary>
+        public static readonly KnowledgeBaseStorageType OPENSEARCH_MANAGED_CLUSTER = new KnowledgeBaseStorageType("OPENSEARCH_MANAGED_CLUSTER");
+        /// <summary>
         /// Constant OPENSEARCH_SERVERLESS for KnowledgeBaseStorageType
         /// </summary>
         public static readonly KnowledgeBaseStorageType OPENSEARCH_SERVERLESS = new KnowledgeBaseStorageType("OPENSEARCH_SERVERLESS");

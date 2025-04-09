@@ -85,6 +85,14 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Paginator for ListCommandExecutionsForSandbox operation
+        ///</summary>
+        public IListCommandExecutionsForSandboxPaginator ListCommandExecutionsForSandbox(ListCommandExecutionsForSandboxRequest request) 
+        {
+            return new ListCommandExecutionsForSandboxPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListFleets operation
         ///</summary>
         public IListFleetsPaginator ListFleets(ListFleetsRequest request) 
@@ -122,6 +130,22 @@ namespace Amazon.CodeBuild.Model
         public IListReportsForReportGroupPaginator ListReportsForReportGroup(ListReportsForReportGroupRequest request) 
         {
             return new ListReportsForReportGroupPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSandboxes operation
+        ///</summary>
+        public IListSandboxesPaginator ListSandboxes(ListSandboxesRequest request) 
+        {
+            return new ListSandboxesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSandboxesForProject operation
+        ///</summary>
+        public IListSandboxesForProjectPaginator ListSandboxesForProject(ListSandboxesForProjectRequest request) 
+        {
+            return new ListSandboxesForProjectPaginator(this.client, request);
         }
 
         /// <summary>

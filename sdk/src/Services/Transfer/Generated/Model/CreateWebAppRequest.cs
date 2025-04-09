@@ -39,6 +39,7 @@ namespace Amazon.Transfer.Model
         private string _accessEndpoint;
         private WebAppIdentityProviderDetails _identityProviderDetails;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private WebAppEndpointPolicy _webAppEndpointPolicy;
         private WebAppUnits _webAppUnits;
 
         /// <summary>
@@ -47,6 +48,12 @@ namespace Amazon.Transfer.Model
         /// The <c>AccessEndpoint</c> is the URL that you provide to your users for them to interact
         /// with the Transfer Family web app. You can specify a custom URL or use the default
         /// value.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before you enter a custom URL for this parameter, follow the steps described in <a
+        /// href="https://docs.aws.amazon.com/transfer/latest/userguide/webapp-customize.html">Update
+        /// your access endpoint with a custom URL</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -67,6 +74,11 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// You can provide a structure that contains the details for the identity provider to
         /// use with your web app.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more details about this parameter, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/webapp-identity-center.html">Configure
+        /// your identity provider for Transfer Family web apps</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -99,6 +111,30 @@ namespace Amazon.Transfer.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebAppEndpointPolicy. 
+        /// <para>
+        ///  Setting for the type of endpoint policy for the web app. The default value is <c>STANDARD</c>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are creating the web app in an Amazon Web Services GovCloud (US) Region, you
+        /// can set this parameter to <c>FIPS</c>.
+        /// </para>
+        /// </summary>
+        public WebAppEndpointPolicy WebAppEndpointPolicy
+        {
+            get { return this._webAppEndpointPolicy; }
+            set { this._webAppEndpointPolicy = value; }
+        }
+
+        // Check to see if WebAppEndpointPolicy property is set
+        internal bool IsSetWebAppEndpointPolicy()
+        {
+            return this._webAppEndpointPolicy != null;
         }
 
         /// <summary>

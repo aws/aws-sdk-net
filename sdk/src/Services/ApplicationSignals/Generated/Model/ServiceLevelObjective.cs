@@ -47,6 +47,7 @@ namespace Amazon.ApplicationSignals.Model
         private EvaluationType _evaluationType;
         private Goal _goal;
         private DateTime? _lastUpdatedTime;
+        private MetricSourceType _metricSourceType;
         private string _name;
         private RequestBasedServiceLevelIndicator _requestBasedSli;
         private ServiceLevelIndicator _sli;
@@ -182,6 +183,37 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetLastUpdatedTime()
         {
             return this._lastUpdatedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricSourceType. 
+        /// <para>
+        /// Displays the SLI metric source type for this SLO. Supported types are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Service operation
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Service dependency
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CloudWatch metric
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public MetricSourceType MetricSourceType
+        {
+            get { return this._metricSourceType; }
+            set { this._metricSourceType = value; }
+        }
+
+        // Check to see if MetricSourceType property is set
+        internal bool IsSetMetricSourceType()
+        {
+            return this._metricSourceType != null;
         }
 
         /// <summary>

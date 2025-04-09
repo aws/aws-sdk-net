@@ -31,13 +31,38 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCompute operation.
-    /// Retrieves properties for a compute resource in an Amazon GameLift fleet. To get a
-    /// list of all computes in a fleet, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html</a>.
+    /// Retrieves properties for a specific compute resource in an Amazon GameLift fleet.
+    /// You can list all computes in a fleet by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">ListCompute</a>.
     /// 
     /// 
     ///  
     /// <para>
-    /// To request information on a specific compute, provide the fleet ID and compute name.
+    ///  <b>Request options</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// Provide the fleet ID and compute name. The compute name varies depending on the type
+    /// of fleet.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// For a compute in a managed EC2 fleet, provide an instance ID. Each instance in the
+    /// fleet is a compute.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For a compute in a managed container fleet, provide a compute name. In a container
+    /// fleet, each game server container group on a fleet instance is assigned a compute
+    /// name.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For a compute in an Anywhere fleet, provide a registered compute name. Anywhere fleet
+    /// computes are created when you register a hosting resource with the fleet.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Results</b> 
     /// </para>
     ///  
     /// <para>
@@ -47,11 +72,11 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// For managed EC2 fleets, this operation returns information about the EC2 instance.
+    /// For a managed EC2 fleet, this operation returns information about the EC2 instance.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For Anywhere fleets, this operation returns information about the registered compute.
+    /// For an Anywhere fleet, this operation returns information about the registered compute.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -63,9 +88,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ComputeName. 
         /// <para>
-        /// The unique identifier of the compute resource to retrieve properties for. For an Anywhere
-        /// fleet compute, use the registered compute name. For an EC2 fleet instance, use the
-        /// instance ID. 
+        /// The unique identifier of the compute resource to retrieve properties for. For a managed
+        /// container fleet or Anywhere fleet, use a compute name. For an EC2 fleet, use an instance
+        /// ID. To retrieve a fleet's compute identifiers, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">ListCompute</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

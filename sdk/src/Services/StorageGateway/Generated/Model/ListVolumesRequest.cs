@@ -95,7 +95,7 @@ namespace Amazon.StorageGateway.Model
         /// Obtain the marker from the response of a previous List iSCSI Volumes request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=2000)]
         public string Marker
         {
             get { return this._marker; }

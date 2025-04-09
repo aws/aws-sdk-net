@@ -103,6 +103,17 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.IngressPointName);
             }
 
+            if(publicRequest.IsSetNetworkConfiguration())
+            {
+                context.Writer.WritePropertyName("NetworkConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NetworkConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NetworkConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetRuleSetId())
             {
                 context.Writer.WritePropertyName("RuleSetId");

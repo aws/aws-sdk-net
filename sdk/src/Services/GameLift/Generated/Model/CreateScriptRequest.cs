@@ -31,10 +31,11 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateScript operation.
-    /// Creates a new script record for your Realtime Servers script. Realtime scripts are
-    /// JavaScript that provide configuration settings and optional custom game logic for
-    /// your game. The script is deployed when you create a Realtime Servers fleet to host
-    /// your game sessions. Script logic is executed during an active game session. 
+    /// Creates a new script record for your Amazon GameLift Realtime script. Realtime scripts
+    /// are JavaScript that provide configuration settings and optional custom game logic
+    /// for your game. The script is deployed when you create a Amazon GameLift Realtime fleet
+    /// to host your game sessions. Script logic is executed during an active game session.
+    /// 
     /// 
     ///  
     /// <para>
@@ -68,7 +69,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-    /// GameLift Realtime Servers</a> 
+    /// GameLift Amazon GameLift Realtime</a> 
     /// </para>
     ///  
     /// <para>

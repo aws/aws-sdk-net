@@ -588,6 +588,10 @@
     <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.FlowTraceNodeActionEvent.NodeName</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.FlowTraceNodeInputEvent.NodeName</property>
     <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
   </property-value-rule>

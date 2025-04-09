@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLiftStreams.Model
 {
     /// <summary>
-    /// Represents the Amazon GameLift Streams application that a stream group hosts.
+    /// Represents the default Amazon GameLift Streams application that a stream group hosts.
     /// </summary>
     public partial class DefaultApplication
     {
@@ -41,9 +41,9 @@ namespace Amazon.GameLiftStreams.Model
         /// Gets and sets the property Arn. 
         /// <para>
         /// An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
-        /// Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource.
-        /// Format example: ARN-<c>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</c>
-        /// or ID-<c>1AB2C3De4</c>. 
+        /// Resource Name (ARN)</a> that uniquely identifies the application resource. Format
+        /// example: <c>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</c>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -62,14 +62,7 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The default application of the stream group.
-        /// </para>
-        ///  
-        /// <para>
-        /// This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
-        /// Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format
-        /// example: ARN-<c>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</c>
-        /// or ID-<c>9ZY8X7Wv6</c>. 
+        /// An ID that uniquely identifies the application resource. For example: <c>a-9ZY8X7Wv6</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]

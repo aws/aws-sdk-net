@@ -46,7 +46,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AppConfigs. 
         /// <para>
-        /// Configurations of the OpenSearch Application, inlcuding admin configuration.
+        /// Configuration settings for the OpenSearch application, including administrative options.
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]
@@ -81,7 +81,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Timestamp when the OpenSearch Application was created.
+        /// The timestamp indicating when the OpenSearch application was created.
         /// </para>
         /// </summary>
         public DateTime? CreatedAt
@@ -99,7 +99,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DataSources. 
         /// <para>
-        /// Data sources associated with the created OpenSearch Application.
+        /// The data sources linked to the OpenSearch application.
         /// </para>
         /// </summary>
         public List<DataSource> DataSources
@@ -117,7 +117,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property IamIdentityCenterOptions. 
         /// <para>
-        /// Settings of IAM Identity Center for the created OpenSearch Application.
+        /// The IAM Identity Center settings configured for the OpenSearch application.
         /// </para>
         /// </summary>
         public IamIdentityCenterOptions IamIdentityCenterOptions
@@ -135,7 +135,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Unique identifier for the created OpenSearch Application.
+        /// The unique identifier assigned to the OpenSearch application.
         /// </para>
         /// </summary>
         public string Id
@@ -153,7 +153,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the created OpenSearch Application.
+        /// The name of the OpenSearch application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=30)]

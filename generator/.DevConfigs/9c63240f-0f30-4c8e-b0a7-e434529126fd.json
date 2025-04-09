@@ -1,9 +1,26 @@
 {
-  "core": {
-    "changeLogMessages": [
-      "fix: Update auth resolver async flow to add user agent details after resolving identity"
+    "core": {
+        "changeLogMessages": [
+            "Update auth resolver async flow to add user agent details after resolving identity",
+            "Enable error protocol tests and make headers case insensitive in test project"
+        ],
+        "updateMinimum": true
+    },
+    "services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "patch",
+            "changeLogMessages": [
+                "Allow to set DynamoDBEntryConversion per table."
+            ]
+        },
+        {
+            "serviceName": "BedrockRuntime",
+            "type": "patch",
+            "changeLogMessages": [
+                "Add support for [Amazon Nova Sonic: Human-like voice conversations for generative AI applications](https://aws.amazon.com/blogs/aws/introducing-amazon-nova-sonic-human-like-voice-conversations-for-generative-ai-applications/) (note: Only available in .NET 8 and later)"
+            ]
+        }
     ],
-    "type": "patch",
-    "updateMinimum": true
-  }
+    "overrideVersion": "4.0.0.0"
 }

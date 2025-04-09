@@ -35,10 +35,30 @@ namespace Amazon.ApplicationSignals.Model
     /// </summary>
     public partial class ServiceLevelIndicatorMetric
     {
+        private DependencyConfig _dependencyConfig;
         private Dictionary<string, string> _keyAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<MetricDataQuery> _metricDataQueries = AWSConfigs.InitializeCollections ? new List<MetricDataQuery>() : null;
         private ServiceLevelIndicatorMetricType _metricType;
         private string _operationName;
+
+        /// <summary>
+        /// Gets and sets the property DependencyConfig. 
+        /// <para>
+        /// Identifies the dependency using the <c>DependencyKeyAttributes</c> and <c>DependencyOperationName</c>.
+        /// 
+        /// </para>
+        /// </summary>
+        public DependencyConfig DependencyConfig
+        {
+            get { return this._dependencyConfig; }
+            set { this._dependencyConfig = value; }
+        }
+
+        // Check to see if DependencyConfig property is set
+        internal bool IsSetDependencyConfig()
+        {
+            return this._dependencyConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property KeyAttributes. 

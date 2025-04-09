@@ -31,7 +31,8 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApplication operation.
-    /// Creates an OpenSearch Application.
+    /// Creates an OpenSearch UI application. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/application.html">Using
+    /// the OpenSearch user interface in Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class CreateApplicationRequest : AmazonOpenSearchServiceRequest
     {
@@ -45,7 +46,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AppConfigs. 
         /// <para>
-        /// Configurations of the OpenSearch Application, inlcuding admin configuration.
+        /// Configuration settings for the OpenSearch application, including administrative options.
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]
@@ -64,7 +65,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique client idempotency token. It will be auto generated if not provided.
+        /// Unique, case-sensitive identifier to ensure idempotency of the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -83,7 +84,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DataSources. 
         /// <para>
-        /// Data sources to be associated with the OpenSearch Application.
+        /// The data sources to link to the OpenSearch application.
         /// </para>
         /// </summary>
         public List<DataSource> DataSources
@@ -101,7 +102,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property IamIdentityCenterOptions. 
         /// <para>
-        /// Settings of IAM Identity Center for the OpenSearch Application.
+        /// Configuration settings for integrating Amazon Web Services IAM Identity Center with
+        /// the OpenSearch application.
         /// </para>
         /// </summary>
         public IamIdentityCenterOptionsInput IamIdentityCenterOptions
@@ -119,8 +121,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the OpenSearch Appication to create. Application names are unique across the
-        /// applications owned by an account within an Amazon Web Services Region.
+        /// The unique name of the OpenSearch application. Names must be unique within an Amazon
+        /// Web Services Region for each account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=30)]

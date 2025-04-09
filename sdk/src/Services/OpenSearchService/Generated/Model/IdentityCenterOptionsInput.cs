@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Container for IAM Identity Center Options settings.
+    /// Configuration settings for enabling and managing IAM Identity Center.
     /// </summary>
     public partial class IdentityCenterOptionsInput
     {
@@ -42,7 +42,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property EnabledAPIAccess. 
         /// <para>
-        /// True to enable IAM Identity Center for API access in Amazon OpenSearch Service.
+        /// Indicates whether IAM Identity Center is enabled for API access in Amazon OpenSearch
+        /// Service.
         /// </para>
         /// </summary>
         public bool? EnabledAPIAccess
@@ -60,8 +61,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property IdentityCenterInstanceARN. 
         /// <para>
-        /// The ARN for IAM Identity Center Instance which will be used for IAM Identity Center
-        /// Application creation.
+        /// The ARN of the IAM Identity Center instance used to create an OpenSearch UI application
+        /// that uses IAM Identity Center for authentication.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -80,8 +81,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property RolesKey. 
         /// <para>
-        /// Specify the attribute that contains the backend role (groupName, groupID) of IAM Identity
-        /// Center
+        /// Specifies the attribute that contains the backend role identifier (such as group name
+        /// or group ID) in IAM Identity Center.
         /// </para>
         /// </summary>
         public RolesKeyIdCOption RolesKey
@@ -99,8 +100,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property SubjectKey. 
         /// <para>
-        /// Specify the attribute that contains the subject (username, userID, email) of IAM Identity
-        /// Center.
+        /// Specifies the attribute that contains the subject identifier (such as username, user
+        /// ID, or email) in IAM Identity Center.
         /// </para>
         /// </summary>
         public SubjectKeyIdCOption SubjectKey

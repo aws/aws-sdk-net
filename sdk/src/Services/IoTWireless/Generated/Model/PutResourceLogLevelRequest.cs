@@ -31,9 +31,8 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the PutResourceLogLevel operation.
-    /// Sets the log-level override for a resource-ID and resource-type. This option can be
-    /// specified for a wireless gateway or a wireless device. A limit of 200 log level override
-    /// can be set per account.
+    /// Sets the log-level override for a resource ID and resource type. A limit of 200 log
+    /// level override can be set per account.
     /// </summary>
     public partial class PutResourceLogLevelRequest : AmazonIoTWirelessRequest
     {
@@ -76,7 +75,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of the resource, which can be <c>WirelessDevice</c>, <c>WirelessGateway</c>,
+        /// The type of resource, which can be <c>WirelessDevice</c>, <c>WirelessGateway</c>,
         /// or <c>FuotaTask</c>.
         /// </para>
         /// </summary>

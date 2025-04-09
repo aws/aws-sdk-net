@@ -171,8 +171,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property EndpointConfiguration. 
         /// <para>
-        /// The endpoint configuration of this DomainName showing the endpoint types of the domain
-        /// name. 
+        /// The endpoint configuration of this DomainName showing the endpoint types and IP address
+        /// types of the domain name. 
         /// </para>
         /// </summary>
         public EndpointConfiguration EndpointConfiguration

@@ -97,6 +97,17 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetStandaloneAccountRateTypeSelections())
+            {
+                context.Writer.WritePropertyName("standaloneAccountRateTypeSelections");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestStandaloneAccountRateTypeSelectionsListValue in publicRequest.StandaloneAccountRateTypeSelections)
+                {
+                        context.Writer.WriteStringValue(publicRequestStandaloneAccountRateTypeSelectionsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

@@ -52,6 +52,19 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.MaxAbrBitrate.Value);
             }
 
+            if(requestObject.IsSetMaxQualityLevel())
+            {
+                context.Writer.WritePropertyName("maxQualityLevel");
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MaxQualityLevel.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.MaxQualityLevel.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(requestObject.MaxQualityLevel.Value);
+                }
+            }
+
             if(requestObject.IsSetMaxRenditions())
             {
                 context.Writer.WritePropertyName("maxRenditions");

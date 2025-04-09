@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Container for specifying configuration of any node type.
+    /// Configuration options for defining the setup of any node type within the cluster.
     /// </summary>
     public partial class NodeConfig
     {
@@ -41,7 +41,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The number of nodes of a particular node type in the cluster.
+        /// The number of nodes of a specific type within the cluster.
         /// </para>
         /// </summary>
         public int? Count
@@ -59,7 +59,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// A boolean that indicates whether a particular node type is enabled or not.
+        /// A boolean value indicating whether a specific node type is active or inactive.
         /// </para>
         /// </summary>
         public bool? Enabled
@@ -77,7 +77,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The instance type of a particular node type in the cluster.
+        /// The instance type of a particular node within the cluster.
         /// </para>
         /// </summary>
         public OpenSearchPartitionInstanceType Type

@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
-    /// The log options for fuota tasks and can be used to set log levels for a specific type
-    /// of fuota task.
+    /// The log options for FUOTA tasks and can be used to set log levels for a specific type
+    /// of FUOTA task.
     /// </summary>
     public partial class FuotaTaskLogOption
     {
@@ -73,7 +73,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The fuota task type.
+        /// The FUOTA task type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

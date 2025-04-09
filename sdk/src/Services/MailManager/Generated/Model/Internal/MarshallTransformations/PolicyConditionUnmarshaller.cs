@@ -68,6 +68,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.IpExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Ipv6Expression", targetDepth))
+                {
+                    var unmarshaller = IngressIpv6ExpressionUnmarshaller.Instance;
+                    unmarshalledObject.Ipv6Expression = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("StringExpression", targetDepth))
                 {
                     var unmarshaller = IngressStringExpressionUnmarshaller.Instance;

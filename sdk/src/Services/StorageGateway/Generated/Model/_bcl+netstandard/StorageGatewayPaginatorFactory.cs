@@ -69,6 +69,14 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
+        /// Paginator for ListCacheReports operation
+        ///</summary>
+        public IListCacheReportsPaginator ListCacheReports(ListCacheReportsRequest request) 
+        {
+            return new ListCacheReportsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListFileShares operation
         ///</summary>
         public IListFileSharesPaginator ListFileShares(ListFileSharesRequest request) 

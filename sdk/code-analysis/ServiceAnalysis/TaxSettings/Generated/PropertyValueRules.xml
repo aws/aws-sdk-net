@@ -514,6 +514,10 @@
     <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TaxSettings.Model.UzbekistanAdditionalInfo.VatRegistrationNumber</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TaxSettings.Model.ValidationExceptionField.Name</property>
     <pattern>^(?!\s*$)[\s\S]+$</pattern>
   </property-value-rule>

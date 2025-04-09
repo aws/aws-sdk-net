@@ -53,6 +53,7 @@ namespace Amazon.QuickSight.Model
         private RowLevelPermissionDataSet _rowLevelPermissionDataSet;
         private RowLevelPermissionTagConfiguration _rowLevelPermissionTagConfiguration;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private DataSetUseAs _useAs;
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
@@ -373,6 +374,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseAs. 
+        /// <para>
+        /// The usage of the dataset. <c>RLS_RULES</c> must be specified for RLS permission datasets.
+        /// </para>
+        /// </summary>
+        public DataSetUseAs UseAs
+        {
+            get { return this._useAs; }
+            set { this._useAs = value; }
+        }
+
+        // Check to see if UseAs property is set
+        internal bool IsSetUseAs()
+        {
+            return this._useAs != null;
         }
 
     }

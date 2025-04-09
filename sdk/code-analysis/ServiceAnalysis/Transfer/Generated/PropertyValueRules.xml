@@ -925,6 +925,48 @@
     <pattern>[0-9a-zA-Z./-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.StartRemoteDeleteRequest.ConnectorId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>c-([0-9a-f]{17})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.StartRemoteDeleteRequest.DeletePath</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>(.)+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.StartRemoteDeleteResponse.DeleteId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[0-9a-zA-Z./-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.StartRemoteMoveRequest.ConnectorId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>c-([0-9a-f]{17})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.StartRemoteMoveRequest.SourcePath</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>(.)+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.StartRemoteMoveRequest.TargetPath</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>(.)+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.StartRemoteMoveResponse.MoveId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[0-9a-zA-Z./-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.StartServerRequest.ServerId</property>
     <min>19</min>
     <max>19</max>

@@ -31,7 +31,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
     /// An internal error has occurred. Retry your request. If the problem persists, post
-    /// a message with details on the AWS forums.
+    /// a message with details on the Amazon Web Services forums.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

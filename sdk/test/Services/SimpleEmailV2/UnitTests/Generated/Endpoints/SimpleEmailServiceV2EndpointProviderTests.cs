@@ -762,7 +762,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["Region"] = "us-west-2";
             var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://abc123.456def.endpoints.email.api.aws", endpoint.URL);
+            Assert.AreEqual("https://abc123.456def.endpoints.email.global.api.aws", endpoint.URL);
         }
 
         [TestMethod]

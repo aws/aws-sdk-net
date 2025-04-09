@@ -25,6 +25,124 @@ namespace Amazon.PaymentCryptography
 {
 
     /// <summary>
+    /// Constants used for properties of type DeriveKeyUsage.
+    /// </summary>
+    public class DeriveKeyUsage : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TR31_B0_BASE_DERIVATION_KEY for DeriveKeyUsage
+        /// </summary>
+        public static readonly DeriveKeyUsage TR31_B0_BASE_DERIVATION_KEY = new DeriveKeyUsage("TR31_B0_BASE_DERIVATION_KEY");
+        /// <summary>
+        /// Constant TR31_C0_CARD_VERIFICATION_KEY for DeriveKeyUsage
+        /// </summary>
+        public static readonly DeriveKeyUsage TR31_C0_CARD_VERIFICATION_KEY = new DeriveKeyUsage("TR31_C0_CARD_VERIFICATION_KEY");
+        /// <summary>
+        /// Constant TR31_D0_SYMMETRIC_DATA_ENCRYPTION_KEY for DeriveKeyUsage
+        /// </summary>
+        public static readonly DeriveKeyUsage TR31_D0_SYMMETRIC_DATA_ENCRYPTION_KEY = new DeriveKeyUsage("TR31_D0_SYMMETRIC_DATA_ENCRYPTION_KEY");
+        /// <summary>
+        /// Constant TR31_E0_EMV_MKEY_APP_CRYPTOGRAMS for DeriveKeyUsage
+        /// </summary>
+        public static readonly DeriveKeyUsage TR31_E0_EMV_MKEY_APP_CRYPTOGRAMS = new DeriveKeyUsage("TR31_E0_EMV_MKEY_APP_CRYPTOGRAMS");
+        /// <summary>
+        /// Constant TR31_E1_EMV_MKEY_CONFIDENTIALITY for DeriveKeyUsage
+        /// </summary>
+        public static readonly DeriveKeyUsage TR31_E1_EMV_MKEY_CONFIDENTIALITY = new DeriveKeyUsage("TR31_E1_EMV_MKEY_CONFIDENTIALITY");
+        /// <summary>
+        /// Constant TR31_E2_EMV_MKEY_INTEGRITY for DeriveKeyUsage
+        /// </summary>
+        public static readonly DeriveKeyUsage TR31_E2_EMV_MKEY_INTEGRITY = new DeriveKeyUsage("TR31_E2_EMV_MKEY_INTEGRITY");
+        /// <summary>
+        /// Constant TR31_E4_EMV_MKEY_DYNAMIC_NUMBERS for DeriveKeyUsage
+        /// </summary>
+        public static readonly DeriveKeyUsage TR31_E4_EMV_MKEY_DYNAMIC_NUMBERS = new DeriveKeyUsage("TR31_E4_EMV_MKEY_DYNAMIC_NUMBERS");
+        /// <summary>
+        /// Constant TR31_E5_EMV_MKEY_CARD_PERSONALIZATION for DeriveKeyUsage
+        /// </summary>
+        public static readonly DeriveKeyUsage TR31_E5_EMV_MKEY_CARD_PERSONALIZATION = new DeriveKeyUsage("TR31_E5_EMV_MKEY_CARD_PERSONALIZATION");
+        /// <summary>
+        /// Constant TR31_E6_EMV_MKEY_OTHER for DeriveKeyUsage
+        /// </summary>
+        public static readonly DeriveKeyUsage TR31_E6_EMV_MKEY_OTHER = new DeriveKeyUsage("TR31_E6_EMV_MKEY_OTHER");
+        /// <summary>
+        /// Constant TR31_K0_KEY_ENCRYPTION_KEY for DeriveKeyUsage
+        /// </summary>
+        public static readonly DeriveKeyUsage TR31_K0_KEY_ENCRYPTION_KEY = new DeriveKeyUsage("TR31_K0_KEY_ENCRYPTION_KEY");
+        /// <summary>
+        /// Constant TR31_K1_KEY_BLOCK_PROTECTION_KEY for DeriveKeyUsage
+        /// </summary>
+        public static readonly DeriveKeyUsage TR31_K1_KEY_BLOCK_PROTECTION_KEY = new DeriveKeyUsage("TR31_K1_KEY_BLOCK_PROTECTION_KEY");
+        /// <summary>
+        /// Constant TR31_M1_ISO_9797_1_MAC_KEY for DeriveKeyUsage
+        /// </summary>
+        public static readonly DeriveKeyUsage TR31_M1_ISO_9797_1_MAC_KEY = new DeriveKeyUsage("TR31_M1_ISO_9797_1_MAC_KEY");
+        /// <summary>
+        /// Constant TR31_M3_ISO_9797_3_MAC_KEY for DeriveKeyUsage
+        /// </summary>
+        public static readonly DeriveKeyUsage TR31_M3_ISO_9797_3_MAC_KEY = new DeriveKeyUsage("TR31_M3_ISO_9797_3_MAC_KEY");
+        /// <summary>
+        /// Constant TR31_M6_ISO_9797_5_CMAC_KEY for DeriveKeyUsage
+        /// </summary>
+        public static readonly DeriveKeyUsage TR31_M6_ISO_9797_5_CMAC_KEY = new DeriveKeyUsage("TR31_M6_ISO_9797_5_CMAC_KEY");
+        /// <summary>
+        /// Constant TR31_M7_HMAC_KEY for DeriveKeyUsage
+        /// </summary>
+        public static readonly DeriveKeyUsage TR31_M7_HMAC_KEY = new DeriveKeyUsage("TR31_M7_HMAC_KEY");
+        /// <summary>
+        /// Constant TR31_P0_PIN_ENCRYPTION_KEY for DeriveKeyUsage
+        /// </summary>
+        public static readonly DeriveKeyUsage TR31_P0_PIN_ENCRYPTION_KEY = new DeriveKeyUsage("TR31_P0_PIN_ENCRYPTION_KEY");
+        /// <summary>
+        /// Constant TR31_P1_PIN_GENERATION_KEY for DeriveKeyUsage
+        /// </summary>
+        public static readonly DeriveKeyUsage TR31_P1_PIN_GENERATION_KEY = new DeriveKeyUsage("TR31_P1_PIN_GENERATION_KEY");
+        /// <summary>
+        /// Constant TR31_V1_IBM3624_PIN_VERIFICATION_KEY for DeriveKeyUsage
+        /// </summary>
+        public static readonly DeriveKeyUsage TR31_V1_IBM3624_PIN_VERIFICATION_KEY = new DeriveKeyUsage("TR31_V1_IBM3624_PIN_VERIFICATION_KEY");
+        /// <summary>
+        /// Constant TR31_V2_VISA_PIN_VERIFICATION_KEY for DeriveKeyUsage
+        /// </summary>
+        public static readonly DeriveKeyUsage TR31_V2_VISA_PIN_VERIFICATION_KEY = new DeriveKeyUsage("TR31_V2_VISA_PIN_VERIFICATION_KEY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeriveKeyUsage(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeriveKeyUsage FindValue(string value)
+        {
+            return FindValue<DeriveKeyUsage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeriveKeyUsage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type KeyAlgorithm.
     /// </summary>
     public class KeyAlgorithm : ConstantClass
@@ -50,6 +168,10 @@ namespace Amazon.PaymentCryptography
         /// Constant ECC_NIST_P384 for KeyAlgorithm
         /// </summary>
         public static readonly KeyAlgorithm ECC_NIST_P384 = new KeyAlgorithm("ECC_NIST_P384");
+        /// <summary>
+        /// Constant ECC_NIST_P521 for KeyAlgorithm
+        /// </summary>
+        public static readonly KeyAlgorithm ECC_NIST_P521 = new KeyAlgorithm("ECC_NIST_P521");
         /// <summary>
         /// Constant RSA_2048 for KeyAlgorithm
         /// </summary>
@@ -208,6 +330,110 @@ namespace Amazon.PaymentCryptography
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KeyClass(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KeyDerivationFunction.
+    /// </summary>
+    public class KeyDerivationFunction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANSI_X963 for KeyDerivationFunction
+        /// </summary>
+        public static readonly KeyDerivationFunction ANSI_X963 = new KeyDerivationFunction("ANSI_X963");
+        /// <summary>
+        /// Constant NIST_SP800 for KeyDerivationFunction
+        /// </summary>
+        public static readonly KeyDerivationFunction NIST_SP800 = new KeyDerivationFunction("NIST_SP800");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KeyDerivationFunction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KeyDerivationFunction FindValue(string value)
+        {
+            return FindValue<KeyDerivationFunction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KeyDerivationFunction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KeyDerivationHashAlgorithm.
+    /// </summary>
+    public class KeyDerivationHashAlgorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SHA_256 for KeyDerivationHashAlgorithm
+        /// </summary>
+        public static readonly KeyDerivationHashAlgorithm SHA_256 = new KeyDerivationHashAlgorithm("SHA_256");
+        /// <summary>
+        /// Constant SHA_384 for KeyDerivationHashAlgorithm
+        /// </summary>
+        public static readonly KeyDerivationHashAlgorithm SHA_384 = new KeyDerivationHashAlgorithm("SHA_384");
+        /// <summary>
+        /// Constant SHA_512 for KeyDerivationHashAlgorithm
+        /// </summary>
+        public static readonly KeyDerivationHashAlgorithm SHA_512 = new KeyDerivationHashAlgorithm("SHA_512");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KeyDerivationHashAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KeyDerivationHashAlgorithm FindValue(string value)
+        {
+            return FindValue<KeyDerivationHashAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KeyDerivationHashAlgorithm(string value)
         {
             return FindValue(value);
         }
@@ -566,6 +792,68 @@ namespace Amazon.PaymentCryptography
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KeyUsage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SymmetricKeyAlgorithm.
+    /// </summary>
+    public class SymmetricKeyAlgorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AES_128 for SymmetricKeyAlgorithm
+        /// </summary>
+        public static readonly SymmetricKeyAlgorithm AES_128 = new SymmetricKeyAlgorithm("AES_128");
+        /// <summary>
+        /// Constant AES_192 for SymmetricKeyAlgorithm
+        /// </summary>
+        public static readonly SymmetricKeyAlgorithm AES_192 = new SymmetricKeyAlgorithm("AES_192");
+        /// <summary>
+        /// Constant AES_256 for SymmetricKeyAlgorithm
+        /// </summary>
+        public static readonly SymmetricKeyAlgorithm AES_256 = new SymmetricKeyAlgorithm("AES_256");
+        /// <summary>
+        /// Constant TDES_2KEY for SymmetricKeyAlgorithm
+        /// </summary>
+        public static readonly SymmetricKeyAlgorithm TDES_2KEY = new SymmetricKeyAlgorithm("TDES_2KEY");
+        /// <summary>
+        /// Constant TDES_3KEY for SymmetricKeyAlgorithm
+        /// </summary>
+        public static readonly SymmetricKeyAlgorithm TDES_3KEY = new SymmetricKeyAlgorithm("TDES_3KEY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SymmetricKeyAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SymmetricKeyAlgorithm FindValue(string value)
+        {
+            return FindValue<SymmetricKeyAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SymmetricKeyAlgorithm(string value)
         {
             return FindValue(value);
         }

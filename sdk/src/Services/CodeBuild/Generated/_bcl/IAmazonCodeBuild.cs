@@ -156,6 +156,40 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  BatchGetCommandExecutions
+
+
+        /// <summary>
+        /// Gets information about the command executions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCommandExecutions service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetCommandExecutions service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetCommandExecutions">REST API Reference for BatchGetCommandExecutions Operation</seealso>
+        BatchGetCommandExecutionsResponse BatchGetCommandExecutions(BatchGetCommandExecutionsRequest request);
+
+
+
+        /// <summary>
+        /// Gets information about the command executions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCommandExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetCommandExecutions service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetCommandExecutions">REST API Reference for BatchGetCommandExecutions Operation</seealso>
+        Task<BatchGetCommandExecutionsResponse> BatchGetCommandExecutionsAsync(BatchGetCommandExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  BatchGetFleets
 
 
@@ -289,6 +323,40 @@ namespace Amazon.CodeBuild
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetReports">REST API Reference for BatchGetReports Operation</seealso>
         Task<BatchGetReportsResponse> BatchGetReportsAsync(BatchGetReportsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchGetSandboxes
+
+
+        /// <summary>
+        /// Gets information about the sandbox status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSandboxes service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetSandboxes service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetSandboxes">REST API Reference for BatchGetSandboxes Operation</seealso>
+        BatchGetSandboxesResponse BatchGetSandboxes(BatchGetSandboxesRequest request);
+
+
+
+        /// <summary>
+        /// Gets information about the sandbox status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSandboxes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetSandboxes service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetSandboxes">REST API Reference for BatchGetSandboxes Operation</seealso>
+        Task<BatchGetSandboxesResponse> BatchGetSandboxesAsync(BatchGetSandboxesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1216,6 +1284,46 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  ListCommandExecutionsForSandbox
+
+
+        /// <summary>
+        /// Gets a list of command executions for a sandbox.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCommandExecutionsForSandbox service method.</param>
+        /// 
+        /// <returns>The response from the ListCommandExecutionsForSandbox service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCommandExecutionsForSandbox">REST API Reference for ListCommandExecutionsForSandbox Operation</seealso>
+        ListCommandExecutionsForSandboxResponse ListCommandExecutionsForSandbox(ListCommandExecutionsForSandboxRequest request);
+
+
+
+        /// <summary>
+        /// Gets a list of command executions for a sandbox.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCommandExecutionsForSandbox service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCommandExecutionsForSandbox service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCommandExecutionsForSandbox">REST API Reference for ListCommandExecutionsForSandbox Operation</seealso>
+        Task<ListCommandExecutionsForSandboxResponse> ListCommandExecutionsForSandboxAsync(ListCommandExecutionsForSandboxRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListCuratedEnvironmentImages
 
 
@@ -1421,6 +1529,80 @@ namespace Amazon.CodeBuild
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReportsForReportGroup">REST API Reference for ListReportsForReportGroup Operation</seealso>
         Task<ListReportsForReportGroupResponse> ListReportsForReportGroupAsync(ListReportsForReportGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListSandboxes
+
+
+        /// <summary>
+        /// Gets a list of sandboxes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSandboxes service method.</param>
+        /// 
+        /// <returns>The response from the ListSandboxes service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSandboxes">REST API Reference for ListSandboxes Operation</seealso>
+        ListSandboxesResponse ListSandboxes(ListSandboxesRequest request);
+
+
+
+        /// <summary>
+        /// Gets a list of sandboxes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSandboxes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSandboxes service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSandboxes">REST API Reference for ListSandboxes Operation</seealso>
+        Task<ListSandboxesResponse> ListSandboxesAsync(ListSandboxesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListSandboxesForProject
+
+
+        /// <summary>
+        /// Gets a list of sandboxes for a given project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSandboxesForProject service method.</param>
+        /// 
+        /// <returns>The response from the ListSandboxesForProject service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSandboxesForProject">REST API Reference for ListSandboxesForProject Operation</seealso>
+        ListSandboxesForProjectResponse ListSandboxesForProject(ListSandboxesForProjectRequest request);
+
+
+
+        /// <summary>
+        /// Gets a list of sandboxes for a given project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSandboxesForProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSandboxesForProject service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSandboxesForProject">REST API Reference for ListSandboxesForProject Operation</seealso>
+        Task<ListSandboxesForProjectResponse> ListSandboxesForProjectAsync(ListSandboxesForProjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1764,6 +1946,132 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  StartCommandExecution
+
+
+        /// <summary>
+        /// Starts a command execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCommandExecution service method.</param>
+        /// 
+        /// <returns>The response from the StartCommandExecution service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartCommandExecution">REST API Reference for StartCommandExecution Operation</seealso>
+        StartCommandExecutionResponse StartCommandExecution(StartCommandExecutionRequest request);
+
+
+
+        /// <summary>
+        /// Starts a command execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCommandExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartCommandExecution service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartCommandExecution">REST API Reference for StartCommandExecution Operation</seealso>
+        Task<StartCommandExecutionResponse> StartCommandExecutionAsync(StartCommandExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartSandbox
+
+
+        /// <summary>
+        /// Starts a sandbox.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSandbox service method.</param>
+        /// 
+        /// <returns>The response from the StartSandbox service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.AccountSuspendedException">
+        /// The CodeBuild access has been suspended for the calling Amazon Web Services account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartSandbox">REST API Reference for StartSandbox Operation</seealso>
+        StartSandboxResponse StartSandbox(StartSandboxRequest request);
+
+
+
+        /// <summary>
+        /// Starts a sandbox.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSandbox service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartSandbox service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.AccountSuspendedException">
+        /// The CodeBuild access has been suspended for the calling Amazon Web Services account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartSandbox">REST API Reference for StartSandbox Operation</seealso>
+        Task<StartSandboxResponse> StartSandboxAsync(StartSandboxRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartSandboxConnection
+
+
+        /// <summary>
+        /// Starts a sandbox connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSandboxConnection service method.</param>
+        /// 
+        /// <returns>The response from the StartSandboxConnection service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartSandboxConnection">REST API Reference for StartSandboxConnection Operation</seealso>
+        StartSandboxConnectionResponse StartSandboxConnection(StartSandboxConnectionRequest request);
+
+
+
+        /// <summary>
+        /// Starts a sandbox connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSandboxConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartSandboxConnection service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartSandboxConnection">REST API Reference for StartSandboxConnection Operation</seealso>
+        Task<StartSandboxConnectionResponse> StartSandboxConnectionAsync(StartSandboxConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StopBuild
 
 
@@ -1841,6 +2149,46 @@ namespace Amazon.CodeBuild
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuildBatch">REST API Reference for StopBuildBatch Operation</seealso>
         Task<StopBuildBatchResponse> StopBuildBatchAsync(StopBuildBatchRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopSandbox
+
+
+        /// <summary>
+        /// Stops a sandbox.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopSandbox service method.</param>
+        /// 
+        /// <returns>The response from the StopSandbox service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopSandbox">REST API Reference for StopSandbox Operation</seealso>
+        StopSandboxResponse StopSandbox(StopSandboxRequest request);
+
+
+
+        /// <summary>
+        /// Stops a sandbox.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopSandbox service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopSandbox service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopSandbox">REST API Reference for StopSandbox Operation</seealso>
+        Task<StopSandboxResponse> StopSandboxAsync(StopSandboxRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

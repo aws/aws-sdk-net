@@ -41,6 +41,7 @@ namespace Amazon.BedrockAgent.Model
         private string _endpoint;
         private string _endpointServiceName;
         private MongoDbAtlasFieldMapping _fieldMapping;
+        private string _textIndexName;
         private string _vectorIndexName;
 
         /// <summary>
@@ -157,6 +158,26 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetFieldMapping()
         {
             return this._fieldMapping != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TextIndexName. 
+        /// <para>
+        /// The name of the text search index in the MongoDB collection. This is required for
+        /// using the hybrid search feature.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string TextIndexName
+        {
+            get { return this._textIndexName; }
+            set { this._textIndexName = value; }
+        }
+
+        // Check to see if TextIndexName property is set
+        internal bool IsSetTextIndexName()
+        {
+            return this._textIndexName != null;
         }
 
         /// <summary>

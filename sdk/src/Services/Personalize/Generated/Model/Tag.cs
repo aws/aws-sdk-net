@@ -47,7 +47,7 @@ namespace Amazon.Personalize.Model
         /// like a category for more specific tag values.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string TagKey
         {
             get { return this._tagKey; }
@@ -67,7 +67,7 @@ namespace Amazon.Personalize.Model
         /// within a tag category (key).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=256)]
         public string TagValue
         {
             get { return this._tagValue; }

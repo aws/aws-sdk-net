@@ -57,7 +57,7 @@ namespace Amazon.GameLiftStreams.Model
         ///  
         /// <para>
         /// This value is a Amazon Resource Name (ARN) that uniquely identifies the stream group
-        /// resource. Format example: <c>1AB2C3De4</c>. 
+        /// resource. Format example: <c>sg-1AB2C3De4</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

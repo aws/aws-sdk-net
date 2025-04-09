@@ -63,6 +63,33 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientRequestToken", StringUtils.FromString(publicRequest.ClientRequestToken));
                 }
+                if(publicRequest.IsSetScanFilters())
+                {
+                    if (publicRequest.ScanFilters.Count == 0)
+                        request.Parameters.Add("ScanFilters", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ScanFilters)
+                         {
+                            if(publicRequestlistValue.IsSetTypes())
+                            {
+                                if (publicRequestlistValue.Types.Count == 0)
+                                    request.Parameters.Add("ScanFilters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Types", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Types)
+                                     {
+                                         request.Parameters.Add("ScanFilters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Types" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
+                    }
+                }
             }
             return request;
         }

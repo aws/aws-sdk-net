@@ -1045,6 +1045,14 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly ResourceRecordSetRegion UsEast2 = new ResourceRecordSetRegion("us-east-2");
         /// <summary>
+        /// Constant UsGovEast1 for ResourceRecordSetRegion
+        /// </summary>
+        public static readonly ResourceRecordSetRegion UsGovEast1 = new ResourceRecordSetRegion("us-gov-east-1");
+        /// <summary>
+        /// Constant UsGovWest1 for ResourceRecordSetRegion
+        /// </summary>
+        public static readonly ResourceRecordSetRegion UsGovWest1 = new ResourceRecordSetRegion("us-gov-west-1");
+        /// <summary>
         /// Constant UsWest1 for ResourceRecordSetRegion
         /// </summary>
         public static readonly ResourceRecordSetRegion UsWest1 = new ResourceRecordSetRegion("us-west-1");

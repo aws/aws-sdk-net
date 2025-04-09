@@ -397,6 +397,21 @@ namespace Amazon.EC2.Model
         IDescribeReservedInstancesOfferingsPaginator DescribeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeRouteServerEndpoints operation
+        ///</summary>
+        IDescribeRouteServerEndpointsPaginator DescribeRouteServerEndpoints(DescribeRouteServerEndpointsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeRouteServerPeers operation
+        ///</summary>
+        IDescribeRouteServerPeersPaginator DescribeRouteServerPeers(DescribeRouteServerPeersRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeRouteServers operation
+        ///</summary>
+        IDescribeRouteServersPaginator DescribeRouteServers(DescribeRouteServersRequest request);
+
+        /// <summary>
         /// Paginator for DescribeRouteTables operation
         ///</summary>
         IDescribeRouteTablesPaginator DescribeRouteTables(DescribeRouteTablesRequest request);

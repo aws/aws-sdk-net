@@ -4140,7 +4140,7 @@ namespace Amazon.QConnect
 
 
         /// <summary>
-        /// Removes the AI Agent that is set for use by defafult on an Amazon Q in Connect Assistant.
+        /// Removes the AI Agent that is set for use by default on an Amazon Q in Connect Assistant.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveAssistantAIAgent service method.</param>
         /// 
@@ -4163,7 +4163,7 @@ namespace Amazon.QConnect
 
 
         /// <summary>
-        /// Removes the AI Agent that is set for use by defafult on an Amazon Q in Connect Assistant.
+        /// Removes the AI Agent that is set for use by default on an Amazon Q in Connect Assistant.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveAssistantAIAgent service method.</param>
         /// <param name="cancellationToken">
@@ -4986,7 +4986,7 @@ namespace Amazon.QConnect
 
 
         /// <summary>
-        /// Updates the AI Agent that is set for use by defafult on an Amazon Q in Connect Assistant.
+        /// Updates the AI Agent that is set for use by default on an Amazon Q in Connect Assistant.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssistantAIAgent service method.</param>
         /// 
@@ -5009,7 +5009,7 @@ namespace Amazon.QConnect
 
 
         /// <summary>
-        /// Updates the AI Agent that is set for use by defafult on an Amazon Q in Connect Assistant.
+        /// Updates the AI Agent that is set for use by default on an Amazon Q in Connect Assistant.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssistantAIAgent service method.</param>
         /// <param name="cancellationToken">

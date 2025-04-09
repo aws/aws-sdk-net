@@ -4092,6 +4092,9 @@ namespace Amazon.ChimeSDKVoice
         /// </param>
         /// 
         /// <returns>The response from the ValidateE911Address service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// You don't have the permissions needed to run this action.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>

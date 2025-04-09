@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Basic information of the OpenSearch Application.
+    /// Basic details of an OpenSearch application.
     /// </summary>
     public partial class ApplicationSummary
     {
@@ -61,7 +61,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Timestamp at which an OpenSearch Application was created.
+        /// The timestamp when an OpenSearch application was created.
         /// </para>
         /// </summary>
         public DateTime? CreatedAt
@@ -79,7 +79,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
-        /// Endpoint URL of an OpenSearch Application.
+        /// The endpoint URL of an OpenSearch application.
         /// </para>
         /// </summary>
         public string Endpoint
@@ -97,7 +97,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Unique identifier for an OpenSearch application.
+        /// The unique identifier of an OpenSearch application.
         /// </para>
         /// </summary>
         public string Id
@@ -115,7 +115,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// Timestamp at which an OpenSearch Application was last updated.
+        /// The timestamp of the last update to an OpenSearch application.
         /// </para>
         /// </summary>
         public DateTime? LastUpdatedAt
@@ -133,7 +133,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of an OpenSearch Application.
+        /// The name of an OpenSearch application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=30)]
@@ -152,8 +152,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Status of an OpenSearch Application. Possible values are <c>CREATING</c>, <c>UPDATING</c>,<c>
-        /// DELETING</c>, <c>FAILED</c>, <c>ACTIVE</c>, and <c>DELETED</c>.
+        /// The current status of an OpenSearch application. Possible values: <c>CREATING</c>,
+        /// <c>UPDATING</c>, <c>DELETING</c>, <c>FAILED</c>, <c>ACTIVE</c>, and <c>DELETED</c>.
         /// </para>
         /// </summary>
         public ApplicationStatus Status

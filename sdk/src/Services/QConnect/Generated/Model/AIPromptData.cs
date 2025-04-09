@@ -169,7 +169,7 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property ModelId. 
         /// <para>
-        /// The identifier of the model used for this AI Prompt. Model Ids supported are: <c>CLAUDE_3_HAIKU_20240307_V1</c>.
+        /// The identifier of the model used for this AI Prompt. Model Ids supported are: <c>anthropic.claude-3-haiku-20240307-v1:0</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

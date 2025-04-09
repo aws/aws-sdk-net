@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgent.Model
     {
         private MongoDbAtlasConfiguration _mongoDbAtlasConfiguration;
         private NeptuneAnalyticsConfiguration _neptuneAnalyticsConfiguration;
+        private OpenSearchManagedClusterConfiguration _opensearchManagedClusterConfiguration;
         private OpenSearchServerlessConfiguration _opensearchServerlessConfiguration;
         private PineconeConfiguration _pineconeConfiguration;
         private RdsConfiguration _rdsConfiguration;
@@ -78,6 +79,26 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetNeptuneAnalyticsConfiguration()
         {
             return this._neptuneAnalyticsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpensearchManagedClusterConfiguration. 
+        /// <para>
+        /// Contains details about the storage configuration of the knowledge base in OpenSearch
+        /// Managed Cluster. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-osm.html">Create
+        /// a vector index in Amazon OpenSearch Service</a>.
+        /// </para>
+        /// </summary>
+        public OpenSearchManagedClusterConfiguration OpensearchManagedClusterConfiguration
+        {
+            get { return this._opensearchManagedClusterConfiguration; }
+            set { this._opensearchManagedClusterConfiguration = value; }
+        }
+
+        // Check to see if OpensearchManagedClusterConfiguration property is set
+        internal bool IsSetOpensearchManagedClusterConfiguration()
+        {
+            return this._opensearchManagedClusterConfiguration != null;
         }
 
         /// <summary>

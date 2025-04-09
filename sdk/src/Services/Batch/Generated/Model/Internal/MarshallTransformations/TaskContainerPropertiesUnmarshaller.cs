@@ -80,6 +80,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Essential = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("firelensConfiguration", targetDepth))
+                {
+                    var unmarshaller = FirelensConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.FirelensConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("image", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

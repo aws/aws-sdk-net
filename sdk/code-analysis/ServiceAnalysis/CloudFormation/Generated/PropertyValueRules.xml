@@ -94,7 +94,7 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.CreateChangeSetRequest.TemplateURL</property>
     <min>1</min>
-    <max>1024</max>
+    <max>5120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.CreateChangeSetResponse.Id</property>
@@ -130,7 +130,7 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.CreateStackRequest.StackPolicyURL</property>
     <min>1</min>
-    <max>1350</max>
+    <max>5120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.CreateStackRequest.TemplateBody</property>
@@ -139,7 +139,7 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.CreateStackRequest.TemplateURL</property>
     <min>1</min>
-    <max>1024</max>
+    <max>5120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.CreateStackRequest.TimeoutInMinutes</property>
@@ -191,7 +191,7 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.CreateStackSetRequest.TemplateURL</property>
     <min>1</min>
-    <max>1024</max>
+    <max>5120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.DeactivateTypeRequest.Arn</property>
@@ -626,7 +626,7 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.EstimateTemplateCostRequest.TemplateURL</property>
     <min>1</min>
-    <max>1024</max>
+    <max>5120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.ExecuteChangeSetRequest.ChangeSetName</property>
@@ -685,7 +685,7 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.GetTemplateSummaryRequest.TemplateURL</property>
     <min>1</min>
-    <max>1024</max>
+    <max>5120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.GetTemplateSummaryResponse.Description</property>
@@ -1186,7 +1186,7 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.SetStackPolicyRequest.StackPolicyURL</property>
     <min>1</min>
-    <max>1350</max>
+    <max>5120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.SetTypeConfigurationRequest.Configuration</property>
@@ -1322,12 +1322,12 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.UpdateStackRequest.StackPolicyDuringUpdateURL</property>
     <min>1</min>
-    <max>1350</max>
+    <max>5120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.UpdateStackRequest.StackPolicyURL</property>
     <min>1</min>
-    <max>1350</max>
+    <max>5120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.UpdateStackRequest.TemplateBody</property>
@@ -1336,7 +1336,7 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.UpdateStackRequest.TemplateURL</property>
     <min>1</min>
-    <max>1024</max>
+    <max>5120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.UpdateStackInstancesRequest.OperationId</property>
@@ -1383,7 +1383,7 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.UpdateStackSetRequest.TemplateURL</property>
     <min>1</min>
-    <max>1024</max>
+    <max>5120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.UpdateStackSetResponse.OperationId</property>
@@ -1403,7 +1403,7 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.ValidateTemplateRequest.TemplateURL</property>
     <min>1</min>
-    <max>1024</max>
+    <max>5120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.ValidateTemplateResponse.Description</property>
@@ -1619,7 +1619,7 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackDefinition.TemplateURL</property>
     <min>1</min>
-    <max>1024</max>
+    <max>5120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackEvent.ClientRequestToken</property>

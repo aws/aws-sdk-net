@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// The configuration in the cluster for EKS Hybrid Nodes. You can't change or update
+    /// The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove
     /// this configuration after the cluster is created.
     /// </summary>
     public partial class RemoteNetworkConfigRequest

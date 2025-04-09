@@ -34,9 +34,49 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class TokenUsage
     {
+        private int? _cacheReadInputTokens;
+        private int? _cacheWriteInputTokens;
         private int? _inputTokens;
         private int? _outputTokens;
         private int? _totalTokens;
+
+        /// <summary>
+        /// Gets and sets the property CacheReadInputTokens. 
+        /// <para>
+        /// The number of input tokens read from the cache for the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? CacheReadInputTokens
+        {
+            get { return this._cacheReadInputTokens; }
+            set { this._cacheReadInputTokens = value; }
+        }
+
+        // Check to see if CacheReadInputTokens property is set
+        internal bool IsSetCacheReadInputTokens()
+        {
+            return this._cacheReadInputTokens.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CacheWriteInputTokens. 
+        /// <para>
+        /// The number of input tokens written to the cache for the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? CacheWriteInputTokens
+        {
+            get { return this._cacheWriteInputTokens; }
+            set { this._cacheWriteInputTokens = value; }
+        }
+
+        // Check to see if CacheWriteInputTokens property is set
+        internal bool IsSetCacheWriteInputTokens()
+        {
+            return this._cacheWriteInputTokens.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property InputTokens. 

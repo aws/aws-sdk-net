@@ -90,8 +90,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property BucketRegion. 
         /// <para>
-        /// The Amazon Web Services Region of the Amazon S3 bucket associated with the file share
-        /// for which you want to generate the cache report.
+        /// The Amazon Web Services Region of the Amazon S3 bucket where you want to save the
+        /// cache report.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]
@@ -187,7 +187,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property LocationARN. 
         /// <para>
-        /// The ARN of the Amazon S3 bucket where the cache report will be saved.
+        /// The ARN of the Amazon S3 bucket where you want to save the cache report.
         /// </para>
         ///  <note> 
         /// <para>

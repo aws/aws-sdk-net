@@ -42,6 +42,7 @@ namespace Amazon.ApiGatewayV2.Model
         private string _description;
         private bool? _disableExecuteApiEndpoint;
         private bool? _disableSchemaValidation;
+        private IpAddressType _ipAddressType;
         private string _name;
         private string _routeKey;
         private string _routeSelectionExpression;
@@ -184,6 +185,24 @@ namespace Amazon.ApiGatewayV2.Model
         internal bool IsSetDisableSchemaValidation()
         {
             return this._disableSchemaValidation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address types that can invoke your API or domain name.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>

@@ -46,6 +46,17 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDiffieHellmanTr31KeyBlock())
+            {
+                context.Writer.WritePropertyName("DiffieHellmanTr31KeyBlock");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ImportDiffieHellmanTr31KeyBlockMarshaller.Instance;
+                marshaller.Marshall(requestObject.DiffieHellmanTr31KeyBlock, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetKeyCryptogram())
             {
                 context.Writer.WritePropertyName("KeyCryptogram");

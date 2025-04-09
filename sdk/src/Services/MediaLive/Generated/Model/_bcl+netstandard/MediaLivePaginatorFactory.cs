@@ -181,6 +181,14 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Paginator for ListSdiSources operation
+        ///</summary>
+        public IListSdiSourcesPaginator ListSdiSources(ListSdiSourcesRequest request) 
+        {
+            return new ListSdiSourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSignalMaps operation
         ///</summary>
         public IListSignalMapsPaginator ListSignalMaps(ListSignalMapsRequest request) 

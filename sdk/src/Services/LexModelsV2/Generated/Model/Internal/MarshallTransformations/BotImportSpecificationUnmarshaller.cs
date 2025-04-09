@@ -74,6 +74,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataPrivacy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("errorLogSettings", targetDepth))
+                {
+                    var unmarshaller = ErrorLogSettingsUnmarshaller.Instance;
+                    unmarshalledObject.ErrorLogSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("idleSessionTTLInSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

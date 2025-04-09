@@ -222,6 +222,17 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetUzbekistanAdditionalInfo())
+            {
+                context.Writer.WritePropertyName("uzbekistanAdditionalInfo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UzbekistanAdditionalInfoMarshaller.Instance;
+                marshaller.Marshall(requestObject.UzbekistanAdditionalInfo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetVietnamAdditionalInfo())
             {
                 context.Writer.WritePropertyName("vietnamAdditionalInfo");

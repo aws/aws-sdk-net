@@ -60,7 +60,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property FairsharePolicy. 
         /// <para>
-        /// The fair share policy.
+        /// The fair-share policy scheduling details.
         /// </para>
         /// </summary>
         public FairsharePolicy FairsharePolicy

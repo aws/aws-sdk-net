@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The vending options for a package to determine if the package can be used by other
-    /// users.
+    /// Configuration options for determining whether a package can be made available for
+    /// use by other users.
     /// </summary>
     public partial class PackageVendingOptions
     {
@@ -40,8 +40,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property VendingEnabled. 
         /// <para>
-        /// This indicates whether vending is enabled for the package to determine if package
-        /// can be used by other users. 
+        /// Indicates whether the package vending feature is enabled, allowing the package to
+        /// be used by other users.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

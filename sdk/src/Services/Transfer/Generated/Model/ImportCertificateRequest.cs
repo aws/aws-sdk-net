@@ -33,6 +33,17 @@ namespace Amazon.Transfer.Model
     /// Container for the parameters to the ImportCertificate operation.
     /// Imports the signing and encryption certificates that you need to create local (AS2)
     /// profiles and partner profiles.
+    /// 
+    ///  
+    /// <para>
+    /// You can import both the certificate and its chain in the <c>Certificate</c> parameter.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// If you use the <c>Certificate</c> parameter to upload both the certificate and its
+    /// chain, don't use the <c>CertificateChain</c> parameter.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ImportCertificateRequest : AmazonTransferRequest
     {
@@ -48,7 +59,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ActiveDate. 
         /// <para>
-        /// An optional date that specifies when the certificate becomes active.
+        /// An optional date that specifies when the certificate becomes active. If you do not
+        /// specify a value, <c>ActiveDate</c> takes the same value as <c>NotBeforeDate</c>, which
+        /// is specified by the CA. 
         /// </para>
         /// </summary>
         public DateTime? ActiveDate
@@ -74,7 +87,13 @@ namespace Amazon.Transfer.Model
         /// For the SDK, specify the raw content of a certificate file. For example, <c>--certificate
         /// "`cat encryption-cert.pem`"</c>.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// You can provide both the certificate and its chain in this parameter, without needing
+        /// to use the <c>CertificateChain</c> parameter. If you use this parameter for both the
+        /// certificate and its chain, do not use the <c>CertificateChain</c> parameter.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=16384)]
         public string Certificate
@@ -131,7 +150,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property InactiveDate. 
         /// <para>
-        /// An optional date that specifies when the certificate becomes inactive.
+        /// An optional date that specifies when the certificate becomes inactive. If you do not
+        /// specify a value, <c>InactiveDate</c> takes the same value as <c>NotAfterDate</c>,
+        /// which is specified by the CA.
         /// </para>
         /// </summary>
         public DateTime? InactiveDate
@@ -149,7 +170,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property PrivateKey. <ul> <li> 
         /// <para>
-        /// For the CLI, provide a file path for a private key in URI format.For example, <c>--private-key
+        /// For the CLI, provide a file path for a private key in URI format. For example, <c>--private-key
         /// file://encryption-key.pem</c>. Alternatively, you can provide the raw content of the
         /// private key file.
         /// </para>

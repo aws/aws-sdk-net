@@ -366,7 +366,7 @@ namespace Amazon.GameLiftStreams
         /// When you associate, or link, an application with a stream group, then Amazon GameLift
         /// Streams can launch the application using the stream group's allocated compute resources.
         /// The stream group must be in <c>ACTIVE</c> status. You can reverse this action by using
-        /// <a>DisassociateApplications</a>.
+        /// <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_DisassociateApplications.html">DisassociateApplications</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateApplications service method.</param>
         /// <param name="cancellationToken">
@@ -443,7 +443,8 @@ namespace Amazon.GameLiftStreams
         ///  If the request is successful, Amazon GameLift Streams begins to create an application
         /// and sets the status to <c>INITIALIZED</c>. When an application reaches <c>READY</c>
         /// status, you can use the application to set up stream groups and start streams. To
-        /// track application status, call <a>GetApplication</a>. 
+        /// track application status, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetApplication.html">GetApplication</a>.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
@@ -525,13 +526,14 @@ namespace Amazon.GameLiftStreams
         /// de-allocate when the session has terminated. This offers a cost control measure at
         /// the expense of a greater startup time (typically under 5 minutes). &lt;/p&gt; &lt;/li&gt;
         /// &lt;/ul&gt; &lt;p&gt; To adjust the capacity of any &lt;code&gt;ACTIVE&lt;/code&gt;
-        /// stream group, call &lt;a&gt;UpdateStreamGroup&lt;/a&gt;. &lt;/p&gt; &lt;p&gt; If the
-        /// request is successful, Amazon GameLift Streams begins creating the stream group. Amazon
-        /// GameLift Streams assigns a unique ID to the stream group resource and sets the status
-        /// to &lt;code&gt;ACTIVATING&lt;/code&gt;. When the stream group reaches &lt;code&gt;ACTIVE&lt;/code&gt;
-        /// status, you can start stream sessions by using &lt;a&gt;StartStreamSession&lt;/a&gt;.
-        /// To check the stream group's status, call &lt;a&gt;GetStreamGroup&lt;/a&gt;. &lt;/p&gt;
-        /// </c></pre>
+        /// stream group, call &lt;a href=&quot;https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html&quot;&gt;UpdateStreamGroup&lt;/a&gt;.
+        /// &lt;/p&gt; &lt;p&gt; If the request is successful, Amazon GameLift Streams begins
+        /// creating the stream group. Amazon GameLift Streams assigns a unique ID to the stream
+        /// group resource and sets the status to &lt;code&gt;ACTIVATING&lt;/code&gt;. When the
+        /// stream group reaches &lt;code&gt;ACTIVE&lt;/code&gt; status, you can start stream
+        /// sessions by using &lt;a href=&quot;https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_StartStreamSession.html&quot;&gt;StartStreamSession&lt;/a&gt;.
+        /// To check the stream group's status, call &lt;a href=&quot;https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamGroup.html&quot;&gt;GetStreamGroup&lt;/a&gt;.
+        /// &lt;/p&gt; </c></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStreamGroup service method.</param>
         /// <param name="cancellationToken">
@@ -549,6 +551,10 @@ namespace Amazon.GameLiftStreams
         /// </exception>
         /// <exception cref="Amazon.GameLiftStreams.Model.InternalServerException">
         /// The service encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ResourceNotFoundException">
+        /// The resource specified in the request was not found. Correct the request before you
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.GameLiftStreams.Model.ServiceQuotaExceededException">
         /// The request would cause the resource to exceed an allowed service quota. Resolve the
@@ -686,18 +692,18 @@ namespace Amazon.GameLiftStreams
         ///  </li> <li> 
         /// <para>
         /// The application is not the default application of any stream groups. You must first
-        /// delete the stream group by using <a>DeleteStreamGroup</a>.
+        /// delete the stream group by using <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_DeleteStreamGroup.html">DeleteStreamGroup</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// The application is not linked to any stream groups. You must first unlink the stream
-        /// group by using <a>DisassociateApplications</a>.
+        /// group by using <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_DisassociateApplications.html">DisassociateApplications</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  An application is not streaming in any ongoing stream session. You must wait until
-        /// the client ends the stream session or call <a>TerminateStreamSession</a> to end the
-        /// stream. 
+        /// the client ends the stream session or call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TerminateStreamSession.html">TerminateStreamSession</a>
+        /// to end the stream. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -763,9 +769,10 @@ namespace Amazon.GameLiftStreams
         /// To delete a stream group, specify the unique stream group identifier. During the deletion
         /// process, the stream group's status is <c>DELETING</c>. This operation stops streams
         /// in progress and prevents new streams from starting. As a best practice, before deleting
-        /// the stream group, call <a>ListStreamSessions</a> to check for streams in progress
-        /// and take action to stop them. When you delete a stream group, any application associations
-        /// referring to that stream group are automatically removed.
+        /// the stream group, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListStreamSessions.html">ListStreamSessions</a>
+        /// to check for streams in progress and take action to stop them. When you delete a stream
+        /// group, any application associations referring to that stream group are automatically
+        /// removed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStreamGroup service method.</param>
         /// <param name="cancellationToken">
@@ -831,7 +838,7 @@ namespace Amazon.GameLiftStreams
         ///  
         /// <para>
         ///  You can only disassociate an application if it's not a default application of the
-        /// stream group. Check <c>DefaultApplicationIdentifier</c> by calling <a>GetStreamGroup</a>.
+        /// stream group. Check <c>DefaultApplicationIdentifier</c> by calling <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamGroup.html">GetStreamGroup</a>.
         /// 
         /// </para>
         /// </summary>
@@ -1311,13 +1318,13 @@ namespace Amazon.GameLiftStreams
         /// <para>
         /// In the returned list of stream sessions, the <c>ExportFilesMetadata</c> property only
         /// shows the <c>Status</c> value. To get the <c>OutpurUri</c> and <c>StatusReason</c>
-        /// values, use <a>GetStreamSession</a>.
+        /// values, use <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a>.
         /// </para>
         ///  
         /// <para>
         /// We don't recommend using this operation to regularly check stream session statuses
         /// because it's costly. Instead, to check status updates for a specific stream session,
-        /// use <a>GetStreamSession</a>.
+        /// use <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStreamSessionsByAccount service method.</param>
@@ -1504,7 +1511,7 @@ namespace Amazon.GameLiftStreams
         /// To start a new stream session, specify a stream group and application ID, along with
         /// the transport protocol and signal request settings to use with the stream. You must
         /// have associated at least one application to the stream group before starting a stream
-        /// session, either when creating the stream group, or by using <a>AssociateApplications</a>.
+        /// session, either when creating the stream group, or by using <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_AssociateApplications.html">AssociateApplications</a>.
         /// </para>
         ///  
         /// <para>
@@ -1553,6 +1560,10 @@ namespace Amazon.GameLiftStreams
         /// </exception>
         /// <exception cref="Amazon.GameLiftStreams.Model.InternalServerException">
         /// The service encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ResourceNotFoundException">
+        /// The resource specified in the request was not found. Correct the request before you
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.GameLiftStreams.Model.ThrottlingException">
         /// The request was denied due to request throttling. Retry the request after the suggested

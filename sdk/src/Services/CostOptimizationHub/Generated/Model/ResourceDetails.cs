@@ -35,6 +35,7 @@ namespace Amazon.CostOptimizationHub.Model
     public partial class ResourceDetails
     {
         private ComputeSavingsPlans _computeSavingsPlans;
+        private DynamoDbReservedCapacity _dynamoDbReservedCapacity;
         private EbsVolume _ebsVolume;
         private Ec2AutoScalingGroup _ec2AutoScalingGroup;
         private Ec2Instance _ec2Instance;
@@ -43,6 +44,7 @@ namespace Amazon.CostOptimizationHub.Model
         private EcsService _ecsService;
         private ElastiCacheReservedInstances _elastiCacheReservedInstances;
         private LambdaFunction _lambdaFunction;
+        private MemoryDbReservedInstances _memoryDbReservedInstances;
         private OpenSearchReservedInstances _openSearchReservedInstances;
         private RdsDbInstance _rdsDbInstance;
         private RdsDbInstanceStorage _rdsDbInstanceStorage;
@@ -66,6 +68,24 @@ namespace Amazon.CostOptimizationHub.Model
         internal bool IsSetComputeSavingsPlans()
         {
             return this._computeSavingsPlans != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DynamoDbReservedCapacity. 
+        /// <para>
+        /// The DynamoDB reserved capacity recommendation details.
+        /// </para>
+        /// </summary>
+        public DynamoDbReservedCapacity DynamoDbReservedCapacity
+        {
+            get { return this._dynamoDbReservedCapacity; }
+            set { this._dynamoDbReservedCapacity = value; }
+        }
+
+        // Check to see if DynamoDbReservedCapacity property is set
+        internal bool IsSetDynamoDbReservedCapacity()
+        {
+            return this._dynamoDbReservedCapacity != null;
         }
 
         /// <summary>
@@ -210,6 +230,24 @@ namespace Amazon.CostOptimizationHub.Model
         internal bool IsSetLambdaFunction()
         {
             return this._lambdaFunction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MemoryDbReservedInstances. 
+        /// <para>
+        /// The MemoryDB reserved instances recommendation details.
+        /// </para>
+        /// </summary>
+        public MemoryDbReservedInstances MemoryDbReservedInstances
+        {
+            get { return this._memoryDbReservedInstances; }
+            set { this._memoryDbReservedInstances = value; }
+        }
+
+        // Check to see if MemoryDbReservedInstances property is set
+        internal bool IsSetMemoryDbReservedInstances()
+        {
+            return this._memoryDbReservedInstances != null;
         }
 
         /// <summary>

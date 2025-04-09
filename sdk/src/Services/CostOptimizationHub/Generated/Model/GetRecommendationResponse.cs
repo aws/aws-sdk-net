@@ -61,7 +61,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account that the recommendation is for.
+        /// The account to which the recommendation applies.
         /// </para>
         /// </summary>
         public string AccountId

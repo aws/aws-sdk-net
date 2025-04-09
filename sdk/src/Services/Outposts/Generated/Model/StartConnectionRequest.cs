@@ -58,7 +58,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property AssetId. 
         /// <para>
-        ///  The ID of the Outpost server. 
+        ///  The ID of the Outpost server.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

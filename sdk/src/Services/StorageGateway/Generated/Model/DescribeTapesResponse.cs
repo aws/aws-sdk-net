@@ -48,7 +48,7 @@ namespace Amazon.StorageGateway.Model
         /// If a response does not contain a marker, then there are no more results to be retrieved.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=2000)]
         public string Marker
         {
             get { return this._marker; }

@@ -80,10 +80,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Deleted stacks: You must specify the unique stack ID.
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Default: There is no default value.
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string StackName
         {

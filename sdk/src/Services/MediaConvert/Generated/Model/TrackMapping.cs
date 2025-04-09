@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Track mapping information.
+    /// An array containing track mapping information.
     /// </summary>
     public partial class TrackMapping
     {
@@ -39,7 +39,8 @@ namespace Amazon.MediaConvert.Model
         private List<int> _videoTrackIndexes = AWSConfigs.InitializeCollections ? new List<int>() : null;
 
         /// <summary>
-        /// Gets and sets the property AudioTrackIndexes. The indexes of the audio tracks.
+        /// Gets and sets the property AudioTrackIndexes. The index numbers of the audio tracks
+        /// in your media file.
         /// </summary>
         public List<int> AudioTrackIndexes
         {
@@ -54,7 +55,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DataTrackIndexes. The indexes of the data tracks.
+        /// Gets and sets the property DataTrackIndexes. The index numbers of the data tracks
+        /// in your media file.
         /// </summary>
         public List<int> DataTrackIndexes
         {
@@ -69,7 +71,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VideoTrackIndexes. The indexes of the video tracks.
+        /// Gets and sets the property VideoTrackIndexes. The index numbers of the video tracks
+        /// in your media file.
         /// </summary>
         public List<int> VideoTrackIndexes
         {

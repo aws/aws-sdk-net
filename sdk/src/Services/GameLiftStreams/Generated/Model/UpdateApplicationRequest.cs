@@ -53,8 +53,7 @@ namespace Amazon.GameLiftStreams.Model
         /// Gets and sets the property ApplicationLogOutputUri. 
         /// <para>
         /// An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save
-        /// application logs. Use the following format for the URI: <c>s3://[bucket name]/[prefix]</c>.
-        /// Required if you specify one or more <c>LogPaths</c>.
+        /// application logs. Required if you specify one or more <c>ApplicationLogPaths</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -82,9 +81,9 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         /// Locations of log files that your content generates during a stream session. Enter
         /// path values that are relative to the <c>ApplicationSourceUri</c> location. You can
-        /// specify up to 10 log locations. Amazon GameLift Streams uploads designated log files
-        /// to the Amazon S3 bucket that you specify in <c>ApplicationLogOutputUri</c> at the
-        /// end of a stream session. To retrieve stored log files, call <a>GetStreamSession</a>
+        /// specify up to 10 log paths. Amazon GameLift Streams uploads designated log files to
+        /// the Amazon S3 bucket that you specify in <c>ApplicationLogOutputUri</c> at the end
+        /// of a stream session. To retrieve stored log files, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a>
         /// and get the <c>LogFileLocationUri</c>.
         /// </para>
         /// </summary>
@@ -125,8 +124,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         /// An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
         /// Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format
-        /// example: ARN-<c>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</c>
-        /// or ID-<c>9ZY8X7Wv6</c>. 
+        /// example: ARN-<c>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</c>
+        /// or ID-<c>a-9ZY8X7Wv6</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Container for specifying node type.
+    /// Configuration settings for defining the node type within a cluster.
     /// </summary>
     public partial class NodeOption
     {
@@ -40,7 +40,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NodeConfig. 
         /// <para>
-        /// Container for specifying configuration of any node type.
+        /// Configuration options for defining the setup of any node type.
         /// </para>
         /// </summary>
         public NodeConfig NodeConfig
@@ -58,7 +58,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NodeType. 
         /// <para>
-        /// Container for node type like coordinating.
+        /// Defines the type of node, such as coordinating nodes.
         /// </para>
         /// </summary>
         public NodeOptionsNodeType NodeType

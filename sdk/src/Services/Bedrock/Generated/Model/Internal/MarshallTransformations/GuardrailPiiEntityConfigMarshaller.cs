@@ -52,6 +52,30 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Action);
             }
 
+            if(requestObject.IsSetInputAction())
+            {
+                context.Writer.WritePropertyName("inputAction");
+                context.Writer.WriteStringValue(requestObject.InputAction);
+            }
+
+            if(requestObject.IsSetInputEnabled())
+            {
+                context.Writer.WritePropertyName("inputEnabled");
+                context.Writer.WriteBooleanValue(requestObject.InputEnabled.Value);
+            }
+
+            if(requestObject.IsSetOutputAction())
+            {
+                context.Writer.WritePropertyName("outputAction");
+                context.Writer.WriteStringValue(requestObject.OutputAction);
+            }
+
+            if(requestObject.IsSetOutputEnabled())
+            {
+                context.Writer.WritePropertyName("outputEnabled");
+                context.Writer.WriteBooleanValue(requestObject.OutputEnabled.Value);
+            }
+
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");

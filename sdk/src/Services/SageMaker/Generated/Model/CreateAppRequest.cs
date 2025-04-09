@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         private string _appName;
         private AppType _appType;
         private string _domainId;
+        private bool? _recoveryMode;
         private ResourceSpec _resourceSpec;
         private string _spaceName;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -101,6 +102,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDomainId()
         {
             return this._domainId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecoveryMode. 
+        /// <para>
+        ///  Indicates whether the application is launched in recovery mode. 
+        /// </para>
+        /// </summary>
+        public bool? RecoveryMode
+        {
+            get { return this._recoveryMode; }
+            set { this._recoveryMode = value; }
+        }
+
+        // Check to see if RecoveryMode property is set
+        internal bool IsSetRecoveryMode()
+        {
+            return this._recoveryMode.HasValue; 
         }
 
         /// <summary>

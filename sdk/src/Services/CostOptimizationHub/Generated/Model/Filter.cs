@@ -50,7 +50,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// The account that the recommendation is for.
+        /// The account to which the recommendation applies.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

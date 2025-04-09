@@ -407,12 +407,12 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PriorityConfigurationOverride. 
         /// <para>
-        /// A prioritized list of locations to use with a game session placement request and instructions
-        /// on how to use it. This list overrides a queue's prioritized location list for a single
-        /// game session placement request only. The list can include Amazon Web Services Regions,
-        /// local zones, and custom locations (for Anywhere fleets). The fallback strategy instructs
-        /// Amazon GameLift to use the override list for the first placement attempt only or for
-        /// all placement attempts.
+        /// An alternative priority list of locations that's included with a game session placement
+        /// request. When provided, the list overrides a queue's location order list for this
+        /// game session placement request only. The list might include Amazon Web Services Regions,
+        /// local zones, and custom locations (for Anywhere fleets). The fallback strategy tells
+        /// Amazon GameLift what action to take (if any) in the event that it failed to place
+        /// a new game session. 
         /// </para>
         /// </summary>
         public PriorityConfigurationOverride PriorityConfigurationOverride

@@ -57,6 +57,11 @@ namespace Amazon.CodeBuild.Model
         IListBuildsForProjectPaginator ListBuildsForProject(ListBuildsForProjectRequest request);
 
         /// <summary>
+        /// Paginator for ListCommandExecutionsForSandbox operation
+        ///</summary>
+        IListCommandExecutionsForSandboxPaginator ListCommandExecutionsForSandbox(ListCommandExecutionsForSandboxRequest request);
+
+        /// <summary>
         /// Paginator for ListFleets operation
         ///</summary>
         IListFleetsPaginator ListFleets(ListFleetsRequest request);
@@ -80,6 +85,16 @@ namespace Amazon.CodeBuild.Model
         /// Paginator for ListReportsForReportGroup operation
         ///</summary>
         IListReportsForReportGroupPaginator ListReportsForReportGroup(ListReportsForReportGroupRequest request);
+
+        /// <summary>
+        /// Paginator for ListSandboxes operation
+        ///</summary>
+        IListSandboxesPaginator ListSandboxes(ListSandboxesRequest request);
+
+        /// <summary>
+        /// Paginator for ListSandboxesForProject operation
+        ///</summary>
+        IListSandboxesForProjectPaginator ListSandboxesForProject(ListSandboxesForProjectRequest request);
 
         /// <summary>
         /// Paginator for ListSharedProjects operation

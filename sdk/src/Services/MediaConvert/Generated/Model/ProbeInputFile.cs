@@ -37,8 +37,8 @@ namespace Amazon.MediaConvert.Model
         private string _fileUrl;
 
         /// <summary>
-        /// Gets and sets the property FileUrl. The URI to your input file(s) that is stored in
-        /// Amazon S3 or on an HTTP(S) server.
+        /// Gets and sets the property FileUrl. Specify the S3, HTTP, or HTTPS URL for your media
+        /// file.
         /// </summary>
         public string FileUrl
         {

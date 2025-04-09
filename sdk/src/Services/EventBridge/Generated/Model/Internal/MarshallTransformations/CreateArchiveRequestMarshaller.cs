@@ -99,6 +99,12 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.EventSourceArn);
             }
 
+            if(publicRequest.IsSetKmsKeyIdentifier())
+            {
+                context.Writer.WritePropertyName("KmsKeyIdentifier");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyIdentifier);
+            }
+
             if(publicRequest.IsSetRetentionDays())
             {
                 context.Writer.WritePropertyName("RetentionDays");

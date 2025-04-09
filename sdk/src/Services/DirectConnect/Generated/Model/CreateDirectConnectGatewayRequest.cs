@@ -43,6 +43,7 @@ namespace Amazon.DirectConnect.Model
     {
         private long? _amazonSideAsn;
         private string _directConnectGatewayName;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AmazonSideAsn. 
@@ -81,6 +82,25 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetDirectConnectGatewayName()
         {
             return this._directConnectGatewayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The key-value pair tags associated with the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -87,6 +87,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientRequestToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetForce())
+            {
+                context.Writer.WritePropertyName("force");
+                context.Writer.WriteBooleanValue(publicRequest.Force.Value);
+            }
+
             if(publicRequest.IsSetVersion())
             {
                 context.Writer.WritePropertyName("version");

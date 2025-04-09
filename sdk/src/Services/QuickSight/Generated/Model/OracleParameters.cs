@@ -37,6 +37,7 @@ namespace Amazon.QuickSight.Model
         private string _database;
         private string _host;
         private int? _port;
+        private bool? _useServiceName;
 
         /// <summary>
         /// Gets and sets the property Database. 
@@ -93,6 +94,26 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseServiceName. 
+        /// <para>
+        /// A Boolean value that indicates whether the <c>Database</c> uses a service name or
+        /// an SID. If this value is left blank, the default value is <c>SID</c>. If this value
+        /// is set to <c>false</c>, the value is <c>SID</c>.
+        /// </para>
+        /// </summary>
+        public bool? UseServiceName
+        {
+            get { return this._useServiceName; }
+            set { this._useServiceName = value; }
+        }
+
+        // Check to see if UseServiceName property is set
+        internal bool IsSetUseServiceName()
+        {
+            return this._useServiceName.HasValue; 
         }
 
     }

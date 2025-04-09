@@ -87,11 +87,31 @@ namespace Amazon.PaymentCryptography.Model
     /// </summary>
     public partial class CreateKeyRequest : AmazonPaymentCryptographyRequest
     {
+        private DeriveKeyUsage _deriveKeyUsage;
         private bool? _enabled;
         private bool? _exportable;
         private KeyAttributes _keyAttributes;
         private KeyCheckValueAlgorithm _keyCheckValueAlgorithm;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Gets and sets the property DeriveKeyUsage. 
+        /// <para>
+        /// The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of the TR-31
+        /// spec.
+        /// </para>
+        /// </summary>
+        public DeriveKeyUsage DeriveKeyUsage
+        {
+            get { return this._deriveKeyUsage; }
+            set { this._deriveKeyUsage = value; }
+        }
+
+        // Check to see if DeriveKeyUsage property is set
+        internal bool IsSetDeriveKeyUsage()
+        {
+            return this._deriveKeyUsage != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Enabled. 

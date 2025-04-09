@@ -38,6 +38,12 @@ namespace Amazon.CloudFormation.Model
     /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack
     /// set operation options</a>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    ///  <c>StackSetOperationPreferences</c> don't apply to <c>AutoDeployment</c>, even if
+    /// it's enabled.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class StackSetOperationPreferences
     {
@@ -255,11 +261,6 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The order of the Regions where you want to perform the stack operation.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <c>RegionOrder</c> isn't followed if <c>AutoDeployment</c> is enabled.
-        /// </para>
-        ///  </note>
         /// </summary>
         public List<string> RegionOrder
         {

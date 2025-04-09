@@ -75,6 +75,12 @@
     <property>Amazon.EventBridge.Model.CreateArchiveRequest.EventSourceArn</property>
     <min>1</min>
     <max>1600</max>
+    <pattern>^arn:aws([a-z]|\-)*:events:([a-z]|\d|\-)*:([0-9]{12})?:.+\/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.CreateArchiveRequest.KmsKeyIdentifier</property>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9_\-/:]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.CreateArchiveRequest.RetentionDays</property>
@@ -156,6 +162,7 @@
   <property-value-rule>
     <property>Amazon.EventBridge.Model.CreateEventBusRequest.KmsKeyIdentifier</property>
     <max>2048</max>
+    <pattern>^[a-zA-Z0-9_\-/:]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.CreateEventBusRequest.Name</property>
@@ -170,6 +177,7 @@
   <property-value-rule>
     <property>Amazon.EventBridge.Model.CreateEventBusResponse.KmsKeyIdentifier</property>
     <max>2048</max>
+    <pattern>^[a-zA-Z0-9_\-/:]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.CreatePartnerEventSourceRequest.Account</property>
@@ -331,6 +339,12 @@
     <property>Amazon.EventBridge.Model.DescribeArchiveResponse.EventSourceArn</property>
     <min>1</min>
     <max>1600</max>
+    <pattern>^arn:aws([a-z]|\-)*:events:([a-z]|\d|\-)*:([0-9]{12})?:.+\/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.DescribeArchiveResponse.KmsKeyIdentifier</property>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9_\-/:]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.DescribeArchiveResponse.RetentionDays</property>
@@ -441,6 +455,7 @@
   <property-value-rule>
     <property>Amazon.EventBridge.Model.DescribeEventBusResponse.KmsKeyIdentifier</property>
     <max>2048</max>
+    <pattern>^[a-zA-Z0-9_\-/:]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.DescribeEventSourceRequest.Name</property>
@@ -469,6 +484,7 @@
     <property>Amazon.EventBridge.Model.DescribeReplayResponse.EventSourceArn</property>
     <min>1</min>
     <max>1600</max>
+    <pattern>^arn:aws([a-z]|\-)*:events:([a-z]|\d|\-)*:([0-9]{12})?:.+\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.DescribeReplayResponse.ReplayArn</property>
@@ -598,6 +614,7 @@
     <property>Amazon.EventBridge.Model.ListArchivesRequest.EventSourceArn</property>
     <min>1</min>
     <max>1600</max>
+    <pattern>^arn:aws([a-z]|\-)*:events:([a-z]|\d|\-)*:([0-9]{12})?:.+\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.ListArchivesRequest.Limit</property>
@@ -756,6 +773,7 @@
     <property>Amazon.EventBridge.Model.ListReplaysRequest.EventSourceArn</property>
     <min>1</min>
     <max>1600</max>
+    <pattern>^arn:aws([a-z]|\-)*:events:([a-z]|\d|\-)*:([0-9]{12})?:.+\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.ListReplaysRequest.Limit</property>
@@ -972,6 +990,7 @@
     <property>Amazon.EventBridge.Model.StartReplayRequest.EventSourceArn</property>
     <min>1</min>
     <max>1600</max>
+    <pattern>^arn:aws([a-z]|\-)*:events:([a-z]|\d|\-)*:([0-9]{12})?:.+\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.StartReplayRequest.ReplayName</property>
@@ -1051,6 +1070,11 @@
   <property-value-rule>
     <property>Amazon.EventBridge.Model.UpdateArchiveRequest.EventPattern</property>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.UpdateArchiveRequest.KmsKeyIdentifier</property>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9_\-/:]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.UpdateArchiveRequest.RetentionDays</property>
@@ -1138,6 +1162,7 @@
   <property-value-rule>
     <property>Amazon.EventBridge.Model.UpdateEventBusRequest.KmsKeyIdentifier</property>
     <max>2048</max>
+    <pattern>^[a-zA-Z0-9_\-/:]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.UpdateEventBusRequest.Name</property>
@@ -1152,6 +1177,7 @@
   <property-value-rule>
     <property>Amazon.EventBridge.Model.UpdateEventBusResponse.KmsKeyIdentifier</property>
     <max>2048</max>
+    <pattern>^[a-zA-Z0-9_\-/:]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.UpdateEventBusResponse.Name</property>
@@ -1202,6 +1228,7 @@
     <property>Amazon.EventBridge.Model.Archive.EventSourceArn</property>
     <min>1</min>
     <max>1600</max>
+    <pattern>^arn:aws([a-z]|\-)*:events:([a-z]|\d|\-)*:([0-9]{12})?:.+\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.Archive.RetentionDays</property>
@@ -1513,6 +1540,7 @@
     <property>Amazon.EventBridge.Model.Replay.EventSourceArn</property>
     <min>1</min>
     <max>1600</max>
+    <pattern>^arn:aws([a-z]|\-)*:events:([a-z]|\d|\-)*:([0-9]{12})?:.+\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.Replay.ReplayName</property>

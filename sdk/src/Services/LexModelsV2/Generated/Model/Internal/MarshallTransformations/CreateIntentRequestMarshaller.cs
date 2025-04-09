@@ -198,6 +198,17 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ParentIntentSignature);
             }
 
+            if(publicRequest.IsSetQInConnectIntentConfiguration())
+            {
+                context.Writer.WritePropertyName("qInConnectIntentConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = QInConnectIntentConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.QInConnectIntentConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetQnAIntentConfiguration())
             {
                 context.Writer.WritePropertyName("qnAIntentConfiguration");

@@ -75,6 +75,7 @@ namespace AWSSDKDocSamples.Amazon.SSOOIDC.Generated
             });
 
             string accessToken = response.AccessToken;
+            AwsAdditionalDetails awsAdditionalDetails = response.AwsAdditionalDetails;
             int expiresIn = response.ExpiresIn;
             string idToken = response.IdToken;
             string issuedTokenType = response.IssuedTokenType;
@@ -120,6 +121,7 @@ namespace AWSSDKDocSamples.Amazon.SSOOIDC.Generated
             });
 
             string accessToken = response.AccessToken;
+            AwsAdditionalDetails awsAdditionalDetails = response.AwsAdditionalDetails;
             int expiresIn = response.ExpiresIn;
             string idToken = response.IdToken;
             string issuedTokenType = response.IssuedTokenType;
@@ -145,6 +147,7 @@ namespace AWSSDKDocSamples.Amazon.SSOOIDC.Generated
             });
 
             string accessToken = response.AccessToken;
+            AwsAdditionalDetails awsAdditionalDetails = response.AwsAdditionalDetails;
             int expiresIn = response.ExpiresIn;
             string idToken = response.IdToken;
             string issuedTokenType = response.IssuedTokenType;

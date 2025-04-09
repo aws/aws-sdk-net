@@ -95,6 +95,11 @@ namespace Amazon.WAFV2.Model
         /// For an Amazon Web Services Verified Access instance: <c>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i>
         /// </c> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For an Amplify application: <c>arn:<i>partition</i>:amplify:<i>region</i>:<i>account-id</i>:apps/<i>app-id</i>
+        /// </c> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

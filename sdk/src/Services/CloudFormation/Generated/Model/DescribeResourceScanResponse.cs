@@ -40,6 +40,7 @@ namespace Amazon.CloudFormation.Model
         private int? _resourcesRead;
         private int? _resourcesScanned;
         private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<ScanFilter> _scanFilters = AWSConfigs.InitializeCollections ? new List<ScanFilter>() : null;
         private DateTime? _startTime;
         private ResourceScanStatus _status;
         private string _statusReason;
@@ -104,7 +105,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ResourcesRead. 
         /// <para>
         /// The number of resources that were read. This is only available for scans with a <c>Status</c>
-        /// set to <c>COMPLETE</c>, <c>EXPIRED</c>, or <c>FAILED </c>.
+        /// set to <c>COMPLETE</c>, <c>EXPIRED</c>, or <c>FAILED</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -163,6 +164,25 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ScanFilters. 
+        /// <para>
+        /// The scan filters that were used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<ScanFilter> ScanFilters
+        {
+            get { return this._scanFilters; }
+            set { this._scanFilters = value; }
+        }
+
+        // Check to see if ScanFilters property is set
+        internal bool IsSetScanFilters()
+        {
+            return this._scanFilters != null && (this._scanFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
         /// The time that the resource scan was started.
@@ -185,7 +205,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Status of the resource scan.
         /// </para>
-        ///  <dl> <dt> INPROGRESS </dt> <dd> 
+        ///  <dl> <dt> IN_PROGRESS </dt> <dd> 
         /// <para>
         /// The resource scan is still in progress.
         /// </para>

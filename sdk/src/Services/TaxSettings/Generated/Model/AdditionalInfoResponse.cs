@@ -54,6 +54,7 @@ namespace Amazon.TaxSettings.Model
         private SpainAdditionalInfo _spainAdditionalInfo;
         private TurkeyAdditionalInfo _turkeyAdditionalInfo;
         private UkraineAdditionalInfo _ukraineAdditionalInfo;
+        private UzbekistanAdditionalInfo _uzbekistanAdditionalInfo;
         private VietnamAdditionalInfo _vietnamAdditionalInfo;
 
         /// <summary>
@@ -380,6 +381,24 @@ namespace Amazon.TaxSettings.Model
         internal bool IsSetUkraineAdditionalInfo()
         {
             return this._ukraineAdditionalInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UzbekistanAdditionalInfo. 
+        /// <para>
+        ///  Additional tax information associated with your TRN in Uzbekistan. 
+        /// </para>
+        /// </summary>
+        public UzbekistanAdditionalInfo UzbekistanAdditionalInfo
+        {
+            get { return this._uzbekistanAdditionalInfo; }
+            set { this._uzbekistanAdditionalInfo = value; }
+        }
+
+        // Check to see if UzbekistanAdditionalInfo property is set
+        internal bool IsSetUzbekistanAdditionalInfo()
+        {
+            return this._uzbekistanAdditionalInfo != null;
         }
 
         /// <summary>

@@ -500,7 +500,7 @@ namespace Amazon.CloudFormation.Model
         /// associated with the stack will be used.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1350)]
+        [AWSProperty(Min=1, Max=5120)]
         public string StackPolicyDuringUpdateURL
         {
             get { return this._stackPolicyDuringUpdateURL; }
@@ -528,7 +528,7 @@ namespace Amazon.CloudFormation.Model
         /// policy that is associated with the stack is unchanged.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1350)]
+        [AWSProperty(Min=1, Max=5120)]
         public string StackPolicyURL
         {
             get { return this._stackPolicyURL; }
@@ -604,7 +604,7 @@ namespace Amazon.CloudFormation.Model
         /// <c>TemplateURL</c>, or set the <c>UsePreviousTemplate</c> to <c>true</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=5120)]
         public string TemplateURL
         {
             get { return this._templateURL; }

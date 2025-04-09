@@ -55,7 +55,14 @@ namespace Amazon.Batch.Model
         /// Jobs that are running on Fargate resources are restricted to the <c>awslogs</c> and
         /// <c>splunk</c> log drivers.
         /// </para>
-        ///  </note> <dl> <dt>awslogs</dt> <dd> 
+        ///  </note> <dl> <dt>awsfirelens</dt> <dd> 
+        /// <para>
+        /// Specifies the firelens logging driver. For more information on configuring Firelens,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Send
+        /// Amazon ECS logs to an Amazon Web Services service or Amazon Web Services Partner</a>
+        /// in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  </dd> <dt>awslogs</dt> <dd> 
         /// <para>
         /// Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
         /// href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using

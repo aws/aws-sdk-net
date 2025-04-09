@@ -45,6 +45,7 @@ namespace Amazon.BedrockRuntime.Model
         private List<GuardrailContentBlock> _content = AWSConfigs.InitializeCollections ? new List<GuardrailContentBlock>() : null;
         private string _guardrailIdentifier;
         private string _guardrailVersion;
+        private GuardrailOutputScope _outputScope;
         private GuardrailContentSource _source;
 
         /// <summary>
@@ -102,6 +103,32 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetGuardrailVersion()
         {
             return this._guardrailVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputScope. 
+        /// <para>
+        /// Specifies the scope of the output that you get in the response. Set to <c>FULL</c>
+        /// to return the entire output, including any detected and non-detected entries in the
+        /// response for enhanced debugging.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that the full output scope doesn't apply to word filters or regex in sensitive
+        /// information filters. It does apply to all other filtering policies, including sensitive
+        /// information with filters that can detect personally identifiable information (PII).
+        /// </para>
+        /// </summary>
+        public GuardrailOutputScope OutputScope
+        {
+            get { return this._outputScope; }
+            set { this._outputScope = value; }
+        }
+
+        // Check to see if OutputScope property is set
+        internal bool IsSetOutputScope()
+        {
+            return this._outputScope != null;
         }
 
         /// <summary>

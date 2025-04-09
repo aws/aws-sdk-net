@@ -160,6 +160,236 @@
 	* Updated DateTime handling to use UTC instead of local times.
 	* All services packages updated to require new Core
 
+### 3.7.1019.0 (2025-04-08 18:53 UTC)
+* BedrockRuntime (3.7.418.0)
+	* This release introduces our latest bedrock runtime API, InvokeModelWithBidirectionalStream. The API supports both input and output streams and is supported by only HTTP2.0.
+* CostExplorer (3.7.406.0)
+	* This release supports Pagination traits on Cost Anomaly Detection APIs.
+* CostOptimizationHub (3.7.404.0)
+	* This release adds resource type "MemoryDbReservedInstances" and resource type "DynamoDbReservedCapacity" to the GetRecommendation, ListRecommendations, and ListRecommendationSummaries APIs to support new MemoryDB and DynamoDB RI recommendations.
+* IoTFleetWise (3.7.406.0)
+	* This release adds the option to update the strategy of state templates already associated to a vehicle, without the need to remove and re-add them.
+* SecurityHub (3.7.403.20)
+	* Documentation updates for AWS Security Hub.
+* StorageGateway (3.7.404.0)
+	* Added new ActiveDirectoryStatus value, ListCacheReports paginator, and support for longer pagination tokens.
+* TaxSettings (3.7.405.0)
+	* Uzbekistan Launch on TaxSettings Page
+* Core 3.7.402.36
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1018.0 (2025-04-07 18:46 UTC)
+* Bedrock (3.7.418.0)
+	* New options for how to handle harmful content detected by Amazon Bedrock Guardrails.
+* BedrockRuntime (3.7.417.0)
+	* New options for how to handle harmful content detected by Amazon Bedrock Guardrails.
+* CodeBuild (3.7.416.0)
+	* AWS CodeBuild now offers an enhanced debugging experience.
+* Glue (3.7.415.0)
+	* Add input validations for multiple Glue APIs
+* MediaLive (3.7.415.0)
+	* AWS Elemental MediaLive now supports SDI inputs to MediaLive Anywhere Channels in workflows that use AWS SDKs.
+* Personalize (3.7.402.0)
+	* Add support for eventsConfig for CreateSolution, UpdateSolution, DescribeSolution, DescribeSolutionVersion. Add support for GetSolutionMetrics to return weighted NDCG metrics when eventsConfig is enabled for the solution.
+* Transfer (3.7.406.0)
+	* This launch enables customers to manage contents of their remote directories, by deleting old files or moving files to archive folders in remote servers once they have been retrieved. Customers will be able to automate the process using event-driven architecture.
+
+### 3.7.1017.0 (2025-04-04 18:38 UTC)
+* DirectoryServiceData (3.7.400.108)
+	* Doc only update - fixed broken links.
+* EC2 (3.7.437.5)
+	* Doc-only updates for Amazon EC2
+* EventBridge (3.7.403.0)
+	* Amazon EventBridge adds support for customer-managed keys on Archives and validations for two fields: eventSourceArn and kmsKeyIdentifier.
+* S3Control (3.7.407.5)
+	* Updated max size of Prefixes parameter of Scope data type.
+* Core 3.7.402.35
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1016.0 (2025-04-03 18:28 UTC)
+* BedrockAgent (3.7.424.0)
+	* Added optional "customMetadataField" for Amazon Aurora knowledge bases, allowing single-column metadata. Also added optional "textIndexName" for MongoDB Atlas knowledge bases, enabling hybrid search support.
+* ChimeSDKVoice (3.7.402.0)
+	* Added FOC date as an attribute of PhoneNumberOrder, added AccessDeniedException as a possible return type of ValidateE911Address
+* MailManager (3.7.407.0)
+	* Add support for Dual_Stack and PrivateLink types of IngressPoint. For configuration requests, SES Mail Manager will now accept both IPv4/IPv6 dual-stack endpoints and AWS PrivateLink VPC endpoints for email receiving.
+* OpenSearchService (3.7.404.70)
+	* Improve descriptions for various API commands and data types.
+* Route53 (3.7.407.0)
+	* Added us-gov-east-1 and us-gov-west-1 as valid Latency Based Routing regions for change-resource-record-sets.
+* SageMaker (3.7.435.0)
+	* Adds support for i3en, m7i, r7i instance types for SageMaker Hyperpod
+* SimpleEmailV2 (3.7.410.0)
+	* This release enables customers to provide attachments in the SESv2 SendEmail and SendBulkEmail APIs.
+* TranscribeService (3.7.403.0)
+	* This Feature Adds Support for the "zh-HK" Locale for Batch Operations
+* Core 3.7.402.34
+	* Updating endpoints.json file.
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1015.1 (2025-04-03 00:38 UTC)
+* Core 3.7.402.33
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1015.0 (2025-04-02 18:31 UTC)
+* ApplicationSignals (3.7.406.0)
+	* Application Signals now supports creating Service Level Objectives on service dependencies. Users can now create or update SLOs on discovered service dependencies to monitor their standard application metrics.
+* CodeBuild (3.7.415.0)
+	* This release adds support for environment type WINDOWS_SERVER_2022_CONTAINER in ProjectEnvironment
+* ECR (3.7.410.15)
+	* Fix for customer issues related to AWS account ID and size limitation for token.
+* ECS (3.7.408.62)
+	* This is an Amazon ECS documentation only update to address various tickets.
+* LexModelsV2 (3.7.403.0)
+	* Release feature of errorlogging for lex bot, customer can config this feature in bot version to generate log for error exception which helps debug
+* MediaLive (3.7.414.0)
+	* Added support for SMPTE 2110 inputs when running a channel in a MediaLive Anywhere cluster. This feature enables ingestion of SMPTE 2110-compliant video, audio, and ancillary streams by reading SDP files that AWS Elemental MediaLive can retrieve from a network source.
+* Core 3.7.402.32
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1014.0 (2025-04-01 18:25 UTC)
+* CleanRooms (3.7.405.0)
+	* This release adds support for updating the analytics engine of a collaboration.
+* SageMaker (3.7.434.0)
+	* Added tagging support for SageMaker notebook instance lifecycle configurations
+* Core 3.7.402.31
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1013.0 (2025-03-31 18:45 UTC)
+* BedrockRuntime (3.7.416.0)
+	* Add Prompt Caching support to Converse and ConverseStream APIs
+* Deadline (3.7.405.0)
+	* With this release you can use a new field to specify the search term match type. Search term match types currently support fuzzy and contains matching.
+* EC2 (3.7.437.0)
+	* Release VPC Route Server, a new feature allowing dynamic routing in VPCs.
+* EKS (3.7.414.0)
+	* Add support for updating RemoteNetworkConfig for hybrid nodes on EKS UpdateClusterConfig API
+* MarketplaceEntitlementService (3.7.402.0)
+	* Add support for Marketplace Entitlement Service dual-stack endpoints.
+* Outposts (3.7.406.0)
+	* Enabling Asset Level Capacity Management feature, which allows customers to create a Capacity Task for a single Asset on their active Outpost.
+* S3 (3.7.416.0)
+	* Amazon S3 adds support for S3 Access Points for directory buckets in AWS Dedicated Local Zones
+* S3Control (3.7.407.0)
+	* Amazon S3 adds support for S3 Access Points for directory buckets in AWS Dedicated Local Zones
+* SimpleEmailV2 (3.7.409.0)
+	* Add dual-stack support to global endpoints.
+* Transfer (3.7.405.0)
+	* Add WebAppEndpointPolicy support for WebApps
+* Core 3.7.402.30
+	* Fixed an issue where property keys in credentials/config file were incorrectly considered as case-sensitive.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1012.0 (2025-03-28 18:26 UTC)
+* APIGateway (3.7.402.0)
+	* Adds support for setting the IP address type to allow dual-stack or IPv4 address types to invoke your APIs or domain names.
+* ApiGatewayV2 (3.7.402.0)
+	* Adds support for setting the IP address type to allow dual-stack or IPv4 address types to invoke your APIs or domain names.
+* AWSMarketplaceMetering (3.7.402.0)
+	* Add support for Marketplace Metering Service dual-stack endpoints.
+* BedrockRuntime (3.7.415.0)
+	* Launching Multi-modality Content Filter for Amazon Bedrock Guardrails.
+* CodeBuild (3.7.414.0)
+	* This release adds support for cacheNamespace in ProjectCache
+* ECS (3.7.408.59)
+	* This is an Amazon ECS documentation only release that addresses tickets.
+* NetworkManager (3.7.402.0)
+	* Add support for NetworkManager Dualstack endpoints.
+* PaymentCryptography (3.7.403.0)
+	* The service adds support for transferring AES-256 and other keys between the service and other service providers and HSMs. This feature uses ECDH to derive a one-time key transport key to enable these secure key exchanges.
+* QuickSight (3.7.414.0)
+	* RLS permission dataset with userAs: RLS_RULES flag, Q in QuickSight/Threshold Alerts/Schedules/Snapshots in QS embedding, toggle dataset refresh email alerts via API, transposed table with options: column width, type and index, toggle Q&A on dashboards, Oracle Service Name when creating data source.
+* SageMaker (3.7.433.0)
+	* TransformAmiVersion for Batch Transform and SageMaker Search Service Aggregate Search API Extension
+* Core 3.7.402.29
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1011.0 (2025-03-27 18:32 UTC)
+* Batch (3.7.406.0)
+	* This release will enable two features: Firelens log driver, and Execute Command on Batch jobs on ECS. Both features will be passed through to ECS.
+* BCMPricingCalculator (3.7.404.0)
+	* Added standaloneAccountRateTypeSelections for GetPreferences and UpdatePreferences APIs. Added STALE enum value to status attribute in GetBillScenario and UpdateBillScenario APIs.
+* BedrockAgentRuntime (3.7.424.0)
+	* bedrock flow now support node action trace.
+* CloudFormation (3.7.403.0)
+	* Adding support for the new parameter "ScanFilters" in the CloudFormation StartResourceScan API. When this parameter is included, the StartResourceScan API will initiate a scan limited to the resource types specified by the parameter.
+* DataZone (3.7.411.0)
+	* This release adds new action type of Create Listing Changeset for the Metadata Enforcement Rule feature.
+* EKS (3.7.413.0)
+	* Added support for BOTTLEROCKET FIPS AMIs to AMI types in US regions.
+* GameLift (3.7.405.0)
+	* Amazon GameLift Servers add support for additional instance types.
+* IdentityManagement (3.7.405.0)
+	* Update IAM dual-stack endpoints for BJS, IAD and PDT partitions
+* SageMaker (3.7.432.0)
+	* add: recovery mode for SageMaker Studio apps
+* SSOOIDC (3.7.401.0)
+	* This release adds AwsAdditionalDetails in the CreateTokenWithIAM API response.
+* Core 3.7.402.28
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1010.0 (2025-03-26 19:20 UTC)
+* ARCZonalShift (3.7.401.0)
+	* Add new shiftType field for ARC zonal shifts.
+* DirectConnect (3.7.402.0)
+	* With this release, AWS Direct Connect allows you to tag your Direct Connect gateways. Tags are metadata that you can create and use to manage your Direct Connect gateways. For more information about tagging, see AWS Tagging Strategies.
+* MediaConvert (3.7.411.0)
+	* This release adds a configurable Quality Level setting for the top rendition of Auto ABR jobs
+* MediaTailor (3.7.403.0)
+	* Add support for log filtering which allow customers to filter out selected event types from logs.
+* Polly (3.7.403.0)
+	* Added support for the new voice - Jihye (ko-KR). Jihye is available as a Neural voice only.
+* RDS (3.7.410.59)
+	* Add note about the Availability Zone where RDS restores the DB cluster for the RestoreDBClusterToPointInTime operation.
+* WAFV2 (3.7.406.0)
+	* This release adds the ability to associate an AWS WAF v2 web ACL with an AWS Amplify App.
+* Core 3.7.402.27
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1009.0 (2025-03-25 20:24 UTC)
+* AWSMarketplaceMetering (3.7.401.0)
+	* This release enhances the BatchMeterUsage API to support new field CustomerAWSAccountId in request and response and making CustomerIdentifier optional. CustomerAWSAccountId or CustomerIdentifier must be provided in request but not both.
+* BedrockAgent (3.7.423.0)
+	* Adding support for Amazon OpenSearch Managed clusters as a vector database in Knowledge Bases for Amazon Bedrock
+* EKS (3.7.412.0)
+	* Added support to override upgrade-blocking readiness checks via force flag when updating a cluster.
+* GameLiftStreams (3.7.401.0)
+	* Minor updates to improve developer experience.
+* Keyspaces (3.7.403.0)
+	* Removing replication region limitation for Amazon Keyspaces Multi-Region Replication APIs.
+* MarketplaceEntitlementService (3.7.401.0)
+	* This release enhances the GetEntitlements API to support new filter CUSTOMER_AWS_ACCOUNT_ID in request and CustomerAWSAccountId field in response.
+* SageMaker (3.7.431.0)
+	* This release adds support for customer-managed KMS keys in Amazon SageMaker Partner AI Apps
+* WorkSpacesThinClient (3.7.403.0)
+	* Deprecate tags field in Get API responses
+* Core 3.7.402.26
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1008.0 (2025-03-24 18:21 UTC)
+* IoTWireless (3.7.402.0)
+	* Mark EutranCid under LteNmr optional.
+* PCS (3.7.401.0)
+	* ClusterName/ClusterIdentifier, ComputeNodeGroupName/ComputeNodeGroupIdentifier, and QueueName/QueueIdentifier can now have 10 characters, and a minimum of 3 characters. The TagResource API action can now return ServiceQuotaExceededException.
+* QConnect (3.7.404.52)
+	* Provides the correct value for supported model ID.
+* SimpleSystemsManagement (3.7.404.0)
+	* This release adds the AvailableSecurityUpdatesComplianceStatus field to patch baseline operations, as well as the AvailableSecurityUpdateCount and InstancesWithAvailableSecurityUpdates to patch state operations. Applies to Windows Server managed nodes only.
+* Core 3.7.402.25
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1007.0 (2025-03-21 18:25 UTC)
 * Bedrock (3.7.417.0)
 	* A CustomModelUnit(CMU) is an abstract view of the hardware utilization that Bedrock needs to host a a single copy of your custom imported model. Bedrock determines the number of CMUs that a model copy needs when you import the custom model. You can use CMUs to estimate the cost of Inference's.

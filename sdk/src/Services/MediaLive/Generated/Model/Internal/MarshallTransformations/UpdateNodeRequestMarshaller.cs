@@ -91,6 +91,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Role);
             }
 
+            if(publicRequest.IsSetSdiSourceMappings())
+            {
+                context.Writer.WritePropertyName("sdiSourceMappings");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSdiSourceMappingsListValue in publicRequest.SdiSourceMappings)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SdiSourceMappingUpdateRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSdiSourceMappingsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

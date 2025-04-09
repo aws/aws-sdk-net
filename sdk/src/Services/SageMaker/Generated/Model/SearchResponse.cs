@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _nextToken;
         private List<SearchRecord> _results = AWSConfigs.InitializeCollections ? new List<SearchRecord>() : null;
+        private TotalHits _totalHits;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,6 +74,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetResults()
         {
             return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalHits. 
+        /// <para>
+        /// The total number of matching results.
+        /// </para>
+        /// </summary>
+        public TotalHits TotalHits
+        {
+            get { return this._totalHits; }
+            set { this._totalHits = value; }
+        }
+
+        // Check to see if TotalHits property is set
+        internal bool IsSetTotalHits()
+        {
+            return this._totalHits != null;
         }
 
     }

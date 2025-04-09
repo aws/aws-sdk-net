@@ -76,6 +76,12 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAssetId())
+            {
+                context.Writer.WritePropertyName("AssetId");
+                context.Writer.WriteStringValue(publicRequest.AssetId);
+            }
+
             if(publicRequest.IsSetDryRun())
             {
                 context.Writer.WritePropertyName("DryRun");

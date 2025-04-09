@@ -37,10 +37,10 @@ namespace Amazon.ARCZonalShift.Model
     /// 
     ///  
     /// <para>
-    /// If the status is <c>ENABLED</c>, Route 53 ARC includes all autoshift events when you
-    /// use the EventBridge pattern <c>Autoshift In Progress</c>. When the status is <c>DISABLED</c>,
-    /// Route 53 ARC includes only autoshift events for autoshifts when one or more of your
-    /// resources is included in the autoshift.
+    /// If the status is <c>ENABLED</c>, ARC includes all autoshift events when you use the
+    /// EventBridge pattern <c>Autoshift In Progress</c>. When the status is <c>DISABLED</c>,
+    /// ARC includes only autoshift events for autoshifts when one or more of your resources
+    /// is included in the autoshift.
     /// </para>
     ///  
     /// <para>
@@ -57,10 +57,9 @@ namespace Amazon.ARCZonalShift.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status to set for autoshift observer notification. If the status is <c>ENABLED</c>,
-        /// Route 53 ARC includes all autoshift events when you use the Amazon EventBridge pattern
-        /// <c>Autoshift In Progress</c>. When the status is <c>DISABLED</c>, Route 53 ARC includes
-        /// only autoshift events for autoshifts when one or more of your resources is included
-        /// in the autoshift. 
+        /// ARC includes all autoshift events when you use the Amazon EventBridge pattern <c>Autoshift
+        /// In Progress</c>. When the status is <c>DISABLED</c>, ARC includes only autoshift events
+        /// for autoshifts when one or more of your resources is included in the autoshift. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
