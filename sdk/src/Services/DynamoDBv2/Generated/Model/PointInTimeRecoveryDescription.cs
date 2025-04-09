@@ -108,8 +108,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// The number of preceding days for which continuous backups are taken and maintained.
         /// Your table data is only recoverable to any point-in-time from within the configured
-        /// recovery period. This parameter is optional. If no value is provided, the value will
-        /// default to 35.
+        /// recovery period. This parameter is optional.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=35)]
