@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SftpConnectorConfig Object
+    /// Response Unmarshaller for SftpConnectorConnectionDetails Object
     /// </summary>  
-    public class SftpConnectorConfigUnmarshaller : IUnmarshaller<SftpConnectorConfig, XmlUnmarshallerContext>, IUnmarshaller<SftpConnectorConfig, JsonUnmarshallerContext>
+    public class SftpConnectorConnectionDetailsUnmarshaller : IUnmarshaller<SftpConnectorConnectionDetails, XmlUnmarshallerContext>, IUnmarshaller<SftpConnectorConnectionDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SftpConnectorConfig IUnmarshaller<SftpConnectorConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SftpConnectorConnectionDetails IUnmarshaller<SftpConnectorConnectionDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public SftpConnectorConfig Unmarshall(JsonUnmarshallerContext context)
+        public SftpConnectorConnectionDetails Unmarshall(JsonUnmarshallerContext context)
         {
-            SftpConnectorConfig unmarshalledObject = new SftpConnectorConfig();
+            SftpConnectorConnectionDetails unmarshalledObject = new SftpConnectorConnectionDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("MaxConcurrentConnections", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxConcurrentConnections = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TrustedHostKeys", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.TrustedHostKeys = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UserSecretId", targetDepth))
+                if (context.TestExpression("HostKey", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserSecretId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HostKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         }
 
 
-        private static SftpConnectorConfigUnmarshaller _instance = new SftpConnectorConfigUnmarshaller();        
+        private static SftpConnectorConnectionDetailsUnmarshaller _instance = new SftpConnectorConnectionDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SftpConnectorConfigUnmarshaller Instance
+        public static SftpConnectorConnectionDetailsUnmarshaller Instance
         {
             get
             {
