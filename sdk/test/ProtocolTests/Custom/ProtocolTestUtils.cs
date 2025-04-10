@@ -131,16 +131,6 @@ namespace AWSSDK.ProtocolTests.Utils
             public IPipelineHandler InnerHandler { get; set; }
             public IPipelineHandler OuterHandler { get; set; }
 
-            public void AsyncCallback(IAsyncExecutionContext executionContext)
-            {
-            }
-
-            public IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-            {
-                return null;
-            }
-
-
             public virtual System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
                 where T : AmazonWebServiceResponse, new()
             {

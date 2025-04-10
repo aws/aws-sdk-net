@@ -161,29 +161,6 @@ namespace AWSSDK.UnitTests
             return executionContext;
         }
 
-        private AsyncExecutionContext CreateAsyncExecutionContextForListBuckets()
-        {
-            var listBucketsRequest = new ListBucketsRequest();
-            var executionContext = new AsyncExecutionContext(            
-                new AsyncRequestContext(true, new NullSigner())
-                {
-                    ClientConfig = new AmazonS3Config(),
-                    Marshaller = new ListBucketsRequestMarshaller(),
-                    OriginalRequest = listBucketsRequest,
-                    Request = new ListBucketsRequestMarshaller().Marshall(listBucketsRequest),
-                    Unmarshaller = new ListBucketsResponseUnmarshaller()
-                },
-                new AsyncResponseContext()
-            );
-
-            // Create and set the internal ServiceMetadata via reflection
-            var serviceMetaData = Assembly.GetAssembly(executionContext.GetType()).CreateInstance("Amazon.Runtime.Internal.ServiceMetadata");
-            executionContext.RequestContext.GetType().GetProperty("ServiceMetaData").SetValue(executionContext.RequestContext, serviceMetaData);
-
-            executionContext.RequestContext.Request.Endpoint = new Uri(@"http://ListBuckets");
-            return executionContext;
-        }
-
         /// <summary>
         /// Not thread safe, initialize once for each test.
         /// </summary>
