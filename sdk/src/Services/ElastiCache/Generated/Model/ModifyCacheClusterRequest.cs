@@ -55,6 +55,7 @@ namespace Amazon.ElastiCache.Model
         private string _notificationTopicStatus;
         private int? _numCacheNodes;
         private string _preferredMaintenanceWindow;
+        private ScaleConfig _scaleConfig;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _snapshotRetentionLimit;
         private string _snapshotWindow;
@@ -358,8 +359,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// Modifies the engine listed in a cluster message. The options are redis, memcached
-        /// or valkey.
+        /// The engine type used by the cache cluster. The options are valkey, memcached or redis.
         /// </para>
         /// </summary>
         public string Engine
@@ -732,6 +732,25 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetPreferredMaintenanceWindow()
         {
             return this._preferredMaintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScaleConfig. 
+        /// <para>
+        /// Configures horizontal or vertical scaling for Memcached clusters, specifying the scaling
+        /// percentage and interval.
+        /// </para>
+        /// </summary>
+        public ScaleConfig ScaleConfig
+        {
+            get { return this._scaleConfig; }
+            set { this._scaleConfig = value; }
+        }
+
+        // Check to see if ScaleConfig property is set
+        internal bool IsSetScaleConfig()
+        {
+            return this._scaleConfig != null;
         }
 
         /// <summary>

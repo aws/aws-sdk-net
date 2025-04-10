@@ -187,6 +187,17 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PreferredMaintenanceWindow", StringUtils.FromString(publicRequest.PreferredMaintenanceWindow));
                 }
+                if(publicRequest.IsSetScaleConfig())
+                {
+                    if(publicRequest.ScaleConfig.IsSetScaleIntervalMinutes())
+                    {
+                        request.Parameters.Add("ScaleConfig" + "." + "ScaleIntervalMinutes", StringUtils.FromInt(publicRequest.ScaleConfig.ScaleIntervalMinutes));
+                    }
+                    if(publicRequest.ScaleConfig.IsSetScalePercentage())
+                    {
+                        request.Parameters.Add("ScaleConfig" + "." + "ScalePercentage", StringUtils.FromInt(publicRequest.ScaleConfig.ScalePercentage));
+                    }
+                }
                 if(publicRequest.IsSetSecurityGroupIds())
                 {
                     int publicRequestlistValueIndex = 1;
