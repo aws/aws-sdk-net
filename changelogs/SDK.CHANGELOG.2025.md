@@ -1,3 +1,21 @@
+### 3.7.1021.0 (2025-04-10 18:26 UTC)
+* ApplicationAutoScaling (3.7.403.0)
+	* Application Auto Scaling now supports horizontal scaling for Elasticache Memcached self-designed clusters using target tracking scaling policies and scheduled scaling.
+* ElastiCache (3.7.403.0)
+	* AWS ElastiCache SDK now supports using MemcachedUpgradeConfig parameter with ModifyCacheCluster API to enable updating Memcached cache node types. Please refer to updated AWS ElastiCache public documentation for detailed information on API usage and implementation.
+* MainframeModernization (3.7.403.0)
+	* Introduce three new APIs: CreateDataSetExportTask, GetDataSetExportTask and ListDataSetExportHistory. Add support for batch restart for Blu Age applications.
+* MediaLive (3.7.416.0)
+	* AWS Elemental MediaLive / Features : Add support for CMAF Ingest CaptionLanguageMappings, TimedMetadataId3 settings, and Link InputResolution.
+* QBusiness (3.7.412.0)
+	* Adds functionality to enable/disable a new Q Business Hallucination Reduction feature. If enabled, Q Business will detect and attempt to remove Hallucinations from certain Chat requests.
+* QuickSight (3.7.415.0)
+	* Add support to analysis and sheet level highlighting in QuickSight.
+* Core 3.7.402.38
+	* Updating endpoints.json file.
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1020.0 (2025-04-09 18:36 UTC)
 * ControlCatalog (3.7.403.0)
 	* The GetControl API now surfaces a control's Severity, CreateTime, and Identifier for a control's Implementation. The ListControls API now surfaces a control's Behavior, Severity, CreateTime, and Identifier for a control's Implementation.
