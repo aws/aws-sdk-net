@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AssetOptions Object
+    /// Response Unmarshaller for VisualHighlightOperation Object
     /// </summary>  
-    public class AssetOptionsUnmarshaller : IUnmarshaller<AssetOptions, XmlUnmarshallerContext>, IUnmarshaller<AssetOptions, JsonUnmarshallerContext>
+    public class VisualHighlightOperationUnmarshaller : IUnmarshaller<VisualHighlightOperation, XmlUnmarshallerContext>, IUnmarshaller<VisualHighlightOperation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AssetOptions IUnmarshaller<AssetOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        VisualHighlightOperation IUnmarshaller<VisualHighlightOperation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AssetOptions Unmarshall(JsonUnmarshallerContext context)
+        public VisualHighlightOperation Unmarshall(JsonUnmarshallerContext context)
         {
-            AssetOptions unmarshalledObject = new AssetOptions();
+            VisualHighlightOperation unmarshalledObject = new VisualHighlightOperation();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CustomActionDefaults", targetDepth))
-                {
-                    var unmarshaller = VisualCustomActionDefaultsUnmarshaller.Instance;
-                    unmarshalledObject.CustomActionDefaults = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExcludedDataSetArns", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ExcludedDataSetArns = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("QBusinessInsightsStatus", targetDepth))
+                if (context.TestExpression("Trigger", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QBusinessInsightsStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Timezone", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Timezone = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("WeekStart", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WeekStart = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Trigger = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +77,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static AssetOptionsUnmarshaller _instance = new AssetOptionsUnmarshaller();        
+        private static VisualHighlightOperationUnmarshaller _instance = new VisualHighlightOperationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AssetOptionsUnmarshaller Instance
+        public static VisualHighlightOperationUnmarshaller Instance
         {
             get
             {
