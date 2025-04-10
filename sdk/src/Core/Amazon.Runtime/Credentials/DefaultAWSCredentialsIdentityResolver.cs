@@ -108,11 +108,11 @@ namespace Amazon.Runtime.Credentials
             return InternalGetCredentials();
         }
 
-        async Task<BaseIdentity> IIdentityResolver.ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken) => 
-            await Task.Run(() => ResolveIdentity(clientConfig), cancellationToken).ConfigureAwait(false);
+        Task<BaseIdentity> IIdentityResolver.ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken) =>
+            Task.FromResult<BaseIdentity>(ResolveIdentity(clientConfig));
 
-        public async Task<AWSCredentials> ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken = default) => 
-            await Task.Run(() => ResolveIdentity(clientConfig), cancellationToken).ConfigureAwait(false);
+        public Task<AWSCredentials> ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken = default) =>
+            Task.FromResult(ResolveIdentity(clientConfig));
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "We need to catch all exceptions to be able to move the the next generator.")]
         private AWSCredentials InternalGetCredentials()
