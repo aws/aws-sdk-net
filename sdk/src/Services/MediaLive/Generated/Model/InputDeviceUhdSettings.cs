@@ -42,6 +42,7 @@ namespace Amazon.MediaLive.Model
         private InputDeviceState _deviceState;
         private double? _framerate;
         private int? _height;
+        private string _inputResolution;
         private int? _latencyMs;
         private int? _maxBitrate;
         private InputDeviceMediaConnectSettings _mediaconnectSettings;
@@ -156,6 +157,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetHeight()
         {
             return this._height.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputResolution. The resolution of the Link device's source
+        /// (HD or UHD). This value determines MediaLive resource allocation and billing for this
+        /// input.
+        /// </summary>
+        public string InputResolution
+        {
+            get { return this._inputResolution; }
+            set { this._inputResolution = value; }
+        }
+
+        // Check to see if InputResolution property is set
+        internal bool IsSetInputResolution()
+        {
+            return this._inputResolution != null;
         }
 
         /// <summary>

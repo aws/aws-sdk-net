@@ -108,6 +108,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.Height = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inputResolution", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InputResolution = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("latencyMs", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

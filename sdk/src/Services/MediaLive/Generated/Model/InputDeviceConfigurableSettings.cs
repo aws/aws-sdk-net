@@ -37,6 +37,7 @@ namespace Amazon.MediaLive.Model
         private List<InputDeviceConfigurableAudioChannelPairConfig> _audioChannelPairs = AWSConfigs.InitializeCollections ? new List<InputDeviceConfigurableAudioChannelPairConfig>() : null;
         private InputDeviceCodec _codec;
         private InputDeviceConfiguredInput _configuredInput;
+        private string _inputResolution;
         private int? _latencyMs;
         private int? _maxBitrate;
         private InputDeviceMediaConnectConfigurableSettings _mediaconnectSettings;
@@ -93,6 +94,24 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetConfiguredInput()
         {
             return this._configuredInput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputResolution. Choose the resolution of the Link device's
+        /// source (HD or UHD). Make sure the resolution matches the current source from the device.
+        /// This value determines MediaLive resource allocation and billing for this input. Only
+        /// UHD devices can specify this parameter.
+        /// </summary>
+        public string InputResolution
+        {
+            get { return this._inputResolution; }
+            set { this._inputResolution = value; }
+        }
+
+        // Check to see if InputResolution property is set
+        internal bool IsSetInputResolution()
+        {
+            return this._inputResolution != null;
         }
 
         /// <summary>

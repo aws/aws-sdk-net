@@ -66,6 +66,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("captionLanguageMappings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CmafIngestCaptionLanguageMapping, CmafIngestCaptionLanguageMappingUnmarshaller>(CmafIngestCaptionLanguageMappingUnmarshaller.Instance);
+                    unmarshalledObject.CaptionLanguageMappings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("destination", targetDepth))
                 {
                     var unmarshaller = OutputLocationRefUnmarshaller.Instance;
@@ -136,6 +142,24 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.SendDelayMs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timedMetadataId3Frame", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimedMetadataId3Frame = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timedMetadataId3Period", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TimedMetadataId3Period = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timedMetadataPassthrough", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimedMetadataPassthrough = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

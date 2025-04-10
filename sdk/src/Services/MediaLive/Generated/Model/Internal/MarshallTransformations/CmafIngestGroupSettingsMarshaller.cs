@@ -48,6 +48,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCaptionLanguageMappings())
+            {
+                context.Writer.WritePropertyName("captionLanguageMappings");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCaptionLanguageMappingsListValue in requestObject.CaptionLanguageMappings)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CmafIngestCaptionLanguageMappingMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCaptionLanguageMappingsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("destination");
@@ -123,6 +139,24 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("sendDelayMs");
                 context.Writer.Write(requestObject.SendDelayMs);
+            }
+
+            if(requestObject.IsSetTimedMetadataId3Frame())
+            {
+                context.Writer.WritePropertyName("timedMetadataId3Frame");
+                context.Writer.Write(requestObject.TimedMetadataId3Frame);
+            }
+
+            if(requestObject.IsSetTimedMetadataId3Period())
+            {
+                context.Writer.WritePropertyName("timedMetadataId3Period");
+                context.Writer.Write(requestObject.TimedMetadataId3Period);
+            }
+
+            if(requestObject.IsSetTimedMetadataPassthrough())
+            {
+                context.Writer.WritePropertyName("timedMetadataPassthrough");
+                context.Writer.Write(requestObject.TimedMetadataPassthrough);
             }
 
         }
