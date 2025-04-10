@@ -414,6 +414,81 @@ namespace Amazon.MainframeModernization
 
         #endregion
         
+        #region  CreateDataSetExportTask
+
+        /// <summary>
+        /// Starts a data set export task for a specific application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataSetExportTask service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataSetExportTask service method, as returned by MainframeModernization.</returns>
+        /// <exception cref="Amazon.MainframeModernization.Model.AccessDeniedException">
+        /// The account or role doesn't have the right permissions to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ConflictException">
+        /// The parameters provided in the request conflict with existing resources.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ServiceQuotaExceededException">
+        /// One or more quotas for Amazon Web Services Mainframe Modernization exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ThrottlingException">
+        /// The number of requests made exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ValidationException">
+        /// One or more parameters provided in the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CreateDataSetExportTask">REST API Reference for CreateDataSetExportTask Operation</seealso>
+        public virtual CreateDataSetExportTaskResponse CreateDataSetExportTask(CreateDataSetExportTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataSetExportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataSetExportTaskResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataSetExportTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDataSetExportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataSetExportTask operation on AmazonMainframeModernizationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDataSetExportTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CreateDataSetExportTask">REST API Reference for CreateDataSetExportTask Operation</seealso>
+        public virtual IAsyncResult BeginCreateDataSetExportTask(CreateDataSetExportTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataSetExportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataSetExportTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDataSetExportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDataSetExportTask.</param>
+        /// 
+        /// <returns>Returns a  CreateDataSetExportTaskResult from MainframeModernization.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CreateDataSetExportTask">REST API Reference for CreateDataSetExportTask Operation</seealso>
+        public virtual CreateDataSetExportTaskResponse EndCreateDataSetExportTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDataSetExportTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateDataSetImportTask
 
         /// <summary>
@@ -1136,6 +1211,76 @@ namespace Amazon.MainframeModernization
 
         #endregion
         
+        #region  GetDataSetExportTask
+
+        /// <summary>
+        /// Gets the status of a data set import task initiated with the <a>CreateDataSetExportTask</a>
+        /// operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataSetExportTask service method.</param>
+        /// 
+        /// <returns>The response from the GetDataSetExportTask service method, as returned by MainframeModernization.</returns>
+        /// <exception cref="Amazon.MainframeModernization.Model.AccessDeniedException">
+        /// The account or role doesn't have the right permissions to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ThrottlingException">
+        /// The number of requests made exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ValidationException">
+        /// One or more parameters provided in the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetDataSetExportTask">REST API Reference for GetDataSetExportTask Operation</seealso>
+        public virtual GetDataSetExportTaskResponse GetDataSetExportTask(GetDataSetExportTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataSetExportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataSetExportTaskResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataSetExportTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataSetExportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataSetExportTask operation on AmazonMainframeModernizationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataSetExportTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetDataSetExportTask">REST API Reference for GetDataSetExportTask Operation</seealso>
+        public virtual IAsyncResult BeginGetDataSetExportTask(GetDataSetExportTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataSetExportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataSetExportTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDataSetExportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataSetExportTask.</param>
+        /// 
+        /// <returns>Returns a  GetDataSetExportTaskResult from MainframeModernization.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetDataSetExportTask">REST API Reference for GetDataSetExportTask Operation</seealso>
+        public virtual GetDataSetExportTaskResponse EndGetDataSetExportTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDataSetExportTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetDataSetImportTask
 
         /// <summary>
@@ -1753,6 +1898,75 @@ namespace Amazon.MainframeModernization
         public virtual ListBatchJobRestartPointsResponse EndListBatchJobRestartPoints(IAsyncResult asyncResult)
         {
             return EndInvoke<ListBatchJobRestartPointsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDataSetExportHistory
+
+        /// <summary>
+        /// Lists the data set exports for the specified application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataSetExportHistory service method.</param>
+        /// 
+        /// <returns>The response from the ListDataSetExportHistory service method, as returned by MainframeModernization.</returns>
+        /// <exception cref="Amazon.MainframeModernization.Model.AccessDeniedException">
+        /// The account or role doesn't have the right permissions to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ThrottlingException">
+        /// The number of requests made exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ValidationException">
+        /// One or more parameters provided in the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListDataSetExportHistory">REST API Reference for ListDataSetExportHistory Operation</seealso>
+        public virtual ListDataSetExportHistoryResponse ListDataSetExportHistory(ListDataSetExportHistoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataSetExportHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataSetExportHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataSetExportHistoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDataSetExportHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDataSetExportHistory operation on AmazonMainframeModernizationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDataSetExportHistory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListDataSetExportHistory">REST API Reference for ListDataSetExportHistory Operation</seealso>
+        public virtual IAsyncResult BeginListDataSetExportHistory(ListDataSetExportHistoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataSetExportHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataSetExportHistoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDataSetExportHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDataSetExportHistory.</param>
+        /// 
+        /// <returns>Returns a  ListDataSetExportHistoryResult from MainframeModernization.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListDataSetExportHistory">REST API Reference for ListDataSetExportHistory Operation</seealso>
+        public virtual ListDataSetExportHistoryResponse EndListDataSetExportHistory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDataSetExportHistoryResponse>(asyncResult);
         }
 
         #endregion

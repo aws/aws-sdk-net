@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JobStepRestartMarker Object
+    /// Response Unmarshaller for DataSetExportTask Object
     /// </summary>  
-    public class JobStepRestartMarkerUnmarshaller : IUnmarshaller<JobStepRestartMarker, XmlUnmarshallerContext>, IUnmarshaller<JobStepRestartMarker, JsonUnmarshallerContext>
+    public class DataSetExportTaskUnmarshaller : IUnmarshaller<DataSetExportTask, XmlUnmarshallerContext>, IUnmarshaller<DataSetExportTask, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        JobStepRestartMarker IUnmarshaller<JobStepRestartMarker, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DataSetExportTask IUnmarshaller<DataSetExportTask, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public JobStepRestartMarker Unmarshall(JsonUnmarshallerContext context)
+        public DataSetExportTask Unmarshall(JsonUnmarshallerContext context)
         {
-            JobStepRestartMarker unmarshalledObject = new JobStepRestartMarker();
+            DataSetExportTask unmarshalledObject = new DataSetExportTask();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,28 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("fromProcStep", targetDepth))
+                if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FromProcStep = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("fromStep", targetDepth))
+                if (context.TestExpression("statusReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FromStep = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("skip", targetDepth))
+                if (context.TestExpression("summary", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Skip = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DataSetExportSummaryUnmarshaller.Instance;
+                    unmarshalledObject.Summary = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("stepCheckpoint", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.StepCheckpoint = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("toProcStep", targetDepth))
+                if (context.TestExpression("taskId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ToProcStep = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("toStep", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ToStep = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +95,12 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         }
 
 
-        private static JobStepRestartMarkerUnmarshaller _instance = new JobStepRestartMarkerUnmarshaller();        
+        private static DataSetExportTaskUnmarshaller _instance = new DataSetExportTaskUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JobStepRestartMarkerUnmarshaller Instance
+        public static DataSetExportTaskUnmarshaller Instance
         {
             get
             {

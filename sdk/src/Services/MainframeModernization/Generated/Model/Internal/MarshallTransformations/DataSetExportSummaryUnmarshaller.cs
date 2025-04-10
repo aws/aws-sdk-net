@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JobStep Object
+    /// Response Unmarshaller for DataSetExportSummary Object
     /// </summary>  
-    public class JobStepUnmarshaller : IUnmarshaller<JobStep, XmlUnmarshallerContext>, IUnmarshaller<JobStep, JsonUnmarshallerContext>
+    public class DataSetExportSummaryUnmarshaller : IUnmarshaller<DataSetExportSummary, XmlUnmarshallerContext>, IUnmarshaller<DataSetExportSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        JobStep IUnmarshaller<JobStep, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DataSetExportSummary IUnmarshaller<DataSetExportSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public JobStep Unmarshall(JsonUnmarshallerContext context)
+        public DataSetExportSummary Unmarshall(JsonUnmarshallerContext context)
         {
-            JobStep unmarshalledObject = new JobStep();
+            DataSetExportSummary unmarshalledObject = new DataSetExportSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,58 +66,34 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("procStepName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProcStepName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("procStepNumber", targetDepth))
+                if (context.TestExpression("failed", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ProcStepNumber = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Failed = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("stepCheckpoint", targetDepth))
+                if (context.TestExpression("inProgress", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.StepCheckpoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InProgress = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("stepCheckpointStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StepCheckpointStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("stepCheckpointTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StepCheckpointTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("stepCondCode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StepCondCode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("stepName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StepName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("stepNumber", targetDepth))
+                if (context.TestExpression("pending", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.StepNumber = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Pending = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("stepRestartable", targetDepth))
+                if (context.TestExpression("succeeded", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.StepRestartable = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Succeeded = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("total", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Total = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -125,12 +101,12 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         }
 
 
-        private static JobStepUnmarshaller _instance = new JobStepUnmarshaller();        
+        private static DataSetExportSummaryUnmarshaller _instance = new DataSetExportSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JobStepUnmarshaller Instance
+        public static DataSetExportSummaryUnmarshaller Instance
         {
             get
             {

@@ -47,6 +47,11 @@ namespace Amazon.MainframeModernization.Model
         IListBatchJobExecutionsPaginator ListBatchJobExecutions(ListBatchJobExecutionsRequest request);
 
         /// <summary>
+        /// Paginator for ListDataSetExportHistory operation
+        ///</summary>
+        IListDataSetExportHistoryPaginator ListDataSetExportHistory(ListDataSetExportHistoryRequest request);
+
+        /// <summary>
         /// Paginator for ListDataSetImportHistory operation
         ///</summary>
         IListDataSetImportHistoryPaginator ListDataSetImportHistory(ListDataSetImportHistoryRequest request);

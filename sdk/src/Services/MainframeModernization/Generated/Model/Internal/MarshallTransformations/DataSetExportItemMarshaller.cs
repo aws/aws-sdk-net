@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// JobStepRestartMarker Marshaller
+    /// DataSetExportItem Marshaller
     /// </summary>
-    public class JobStepRestartMarkerMarshaller : IRequestMarshaller<JobStepRestartMarker, JsonMarshallerContext> 
+    public class DataSetExportItemMarshaller : IRequestMarshaller<DataSetExportItem, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,44 +44,25 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(JobStepRestartMarker requestObject, JsonMarshallerContext context)
+        public void Marshall(DataSetExportItem requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetFromProcStep())
+            if(requestObject.IsSetDatasetName())
             {
-                context.Writer.WritePropertyName("fromProcStep");
-                context.Writer.Write(requestObject.FromProcStep);
+                context.Writer.WritePropertyName("datasetName");
+                context.Writer.Write(requestObject.DatasetName);
             }
 
-            if(requestObject.IsSetFromStep())
+            if(requestObject.IsSetExternalLocation())
             {
-                context.Writer.WritePropertyName("fromStep");
-                context.Writer.Write(requestObject.FromStep);
-            }
+                context.Writer.WritePropertyName("externalLocation");
+                context.Writer.WriteObjectStart();
 
-            if(requestObject.IsSetSkip())
-            {
-                context.Writer.WritePropertyName("skip");
-                context.Writer.Write(requestObject.Skip);
-            }
+                var marshaller = ExternalLocationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ExternalLocation, context);
 
-            if(requestObject.IsSetStepCheckpoint())
-            {
-                context.Writer.WritePropertyName("stepCheckpoint");
-                context.Writer.Write(requestObject.StepCheckpoint);
-            }
-
-            if(requestObject.IsSetToProcStep())
-            {
-                context.Writer.WritePropertyName("toProcStep");
-                context.Writer.Write(requestObject.ToProcStep);
-            }
-
-            if(requestObject.IsSetToStep())
-            {
-                context.Writer.WritePropertyName("toStep");
-                context.Writer.Write(requestObject.ToStep);
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -89,7 +70,7 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static JobStepRestartMarkerMarshaller Instance = new JobStepRestartMarkerMarshaller();
+        public readonly static DataSetExportItemMarshaller Instance = new DataSetExportItemMarshaller();
 
     }
 }
