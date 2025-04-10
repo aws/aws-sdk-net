@@ -53,38 +53,69 @@ namespace Amazon.Runtime.Credentials
 #endif
                 () => new EnvironmentVariablesAWSCredentials(), // Look for credentials set in environment vars.
                 () => AssumeRoleWithWebIdentityCredentials.FromEnvironmentVariables(),
-                () => GetAWSCredentials(_credentialProfileChain),
+                () => GetProfileCredentials(_credentialProfileChain),
                 () => ContainerEC2CredentialsWrapper(), // either get ECS / EKS credentials or instance profile credentials
             };
         }
 
+        #region Helper methods for migration from FallbackCredentialsFactory
+
         /// <summary>
         /// Search the environment for configured AWS credentials. The search includes
         /// environment variables, "default" AWS credentials profiles and EC2 instance metadata.
         /// </summary>
+        /// <param name="clientConfig">
+        /// Optional config object that can be used to specify a different profile programatically (via the <see cref="Profile"/> property).
+        /// </param>
         /// <returns>AWSCredentials that can be used when creating AWS service clients.</returns>
-        public static AWSCredentials GetCredentials()
+        public static AWSCredentials GetCredentials(IClientConfig clientConfig = null)
         {
-            return _defaultInstance.Value.ResolveIdentity();
+            return _defaultInstance.Value.ResolveIdentity(clientConfig);
         }
 
         /// <summary>
         /// Search the environment for configured AWS credentials. The search includes
         /// environment variables, "default" AWS credentials profiles and EC2 instance metadata.
         /// </summary>
+        /// <param name="clientConfig">
+        /// Optional config object that can be used to specify a different profile programatically (via the <see cref="Profile"/> property).
+        /// </param>
         /// <returns>AWSCredentials that can be used when creating AWS service clients.</returns>
-        public static Task<AWSCredentials> GetCredentialsAsync()
+        public static Task<AWSCredentials> GetCredentialsAsync(IClientConfig clientConfig = null)
         {
-            return _defaultInstance.Value.ResolveIdentityAsync();
+            return _defaultInstance.Value.ResolveIdentityAsync(clientConfig);
         }
 
-        BaseIdentity IIdentityResolver.ResolveIdentity()
+        #endregion
+
+        BaseIdentity IIdentityResolver.ResolveIdentity(IClientConfig clientConfig) 
+            => ResolveIdentity(clientConfig);
+
+        public AWSCredentials ResolveIdentity(IClientConfig clientConfig)
         {
-            return ResolveIdentity();
+            var profile = clientConfig?.Profile;
+            if (profile != null)
+            {
+                var source = new CredentialProfileStoreChain(profile.Location);
+                if (source.TryGetProfile(profile.Name, out CredentialProfile storedProfile))
+                {
+                    return storedProfile.GetAWSCredentials(source, true);
+                }
+
+                throw new AmazonClientException($"Unable to find the \"{profile.Name}\" profile specified in the client configuration.");
+            }
+
+            return InternalGetCredentials();
         }
+
+        Task<BaseIdentity> IIdentityResolver.ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken) =>
+            Task.FromResult<BaseIdentity>(ResolveIdentity(clientConfig));
+
+        public Task<AWSCredentials> ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken = default) =>
+            Task.FromResult(ResolveIdentity(clientConfig));
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "We need to catch all exceptions to be able to move the the next generator.")]
-        public AWSCredentials ResolveIdentity()
+        private AWSCredentials InternalGetCredentials()
         {
             var hasEnvironmentChanged = false;
 
@@ -95,7 +126,7 @@ namespace Amazon.Runtime.Credentials
                 {
                     hasEnvironmentChanged = _lastKnownEnvironmentState.HasEnvironmentChanged();
                     if (!hasEnvironmentChanged)
-                    { 
+                    {
                         return _cachedCredentials;
                     }
                 }
@@ -155,18 +186,16 @@ namespace Amazon.Runtime.Credentials
                     return _cachedCredentials;
                 }
 
-                using (StringWriter writer = new StringWriter(CultureInfo.InvariantCulture))
+                using var writer = new StringWriter(CultureInfo.InvariantCulture);
+                writer.WriteLine("Failed to resolve AWS credentials. The credential providers used to search for credentials returned the following errors:");
+                writer.WriteLine();
+                for (int i = 0; i < errors.Count; i++)
                 {
-                    writer.WriteLine("Failed to resolve AWS credentials. The credential providers used to search for credentials returned the following errors:");
-                    writer.WriteLine();
-                    for (int i = 0; i < errors.Count; i++)
-                    {
-                        Exception e = errors[i];
-                        writer.WriteLine("Exception {0} of {1}: {2}", i + 1, errors.Count, e.Message);
-                    }
-
-                    throw new AmazonClientException(writer.ToString());
+                    Exception e = errors[i];
+                    writer.WriteLine("Exception {0} of {1}: {2}", i + 1, errors.Count, e.Message);
                 }
+
+                throw new AmazonClientException(writer.ToString());
             }
             finally
             {
@@ -174,18 +203,7 @@ namespace Amazon.Runtime.Credentials
             }
         }
 
-        async Task<BaseIdentity> IIdentityResolver.ResolveIdentityAsync(CancellationToken cancellationToken)
-        {
-            var identity = await ResolveIdentityAsync(cancellationToken).ConfigureAwait(false);
-            return identity;
-        }
-
-        public async Task<AWSCredentials> ResolveIdentityAsync(CancellationToken cancellationToken = default)
-        {
-            return await Task.Run(() => ResolveIdentity(), cancellationToken).ConfigureAwait(false);
-        }
-
-        private static AWSCredentials GetAWSCredentials(ICredentialProfileSource source)
+        private static AWSCredentials GetProfileCredentials(ICredentialProfileSource source)
         {
             var profileName = GetProfileName();
             if (source.TryGetProfile(profileName, out CredentialProfile profile))

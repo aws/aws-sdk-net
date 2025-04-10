@@ -104,10 +104,4 @@ This project file should not be used as part of a release pipeline.
         <None Remove="Custom\obj\**" />
         <Compile Remove="Custom\obj\**" />
     </ItemGroup>
-
-    <ItemGroup>
-      <None Update="Custom\Runtime\Credentials\AccountIdEndpointTests\accountid-source-testcases.json">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-    </ItemGroup>
 </Project>

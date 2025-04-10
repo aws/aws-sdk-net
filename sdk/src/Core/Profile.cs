@@ -1,18 +1,38 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
+/*
+* Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* 
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+* 
+*  http://aws.amazon.com/apache2.0
+* 
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+using Amazon.Runtime;
 using System.Text;
 
 namespace Amazon
 {
     /// <summary>
-    /// Represents a profile in the configuration file. For example in ~/.aws/config
+    /// Represents a profile in the configuration file. For example in ~/.aws/config:
+    /// <code>
     /// [profile foo]
     /// name = value
+    /// 
     /// Profile profile = new Profile("foo");
-    /// When this is set on the ClientConfig and that config is passed to 
-    /// the service client constructor the sdk will try to find the credentials associated with the Profile.Name property
-    /// If set, this will override AWS_PROFILE and AWSConfigs.ProfileName.
+    /// </code>
+    /// 
+    /// When this is set on the <see cref="IClientConfig"/> and that config is passed to 
+    /// the service client constructor the SDK will try to find the credentials associated with the <see cref="Name"/> property.
+    /// 
+    /// <para />
+    /// 
+    /// If set, this will override <c>AWS_PROFILE</c> and <c>AWSConfigs.ProfileName</c>.
     /// </summary>
     public class Profile
     {

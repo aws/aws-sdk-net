@@ -58,7 +58,7 @@ namespace AWSSDK.UnitTests.DSQL
             originalIdentityResolvers = field.GetValue(null) as Dictionary<Type, IIdentityResolver>;
 
             var mockIdentityResolver = new Mock<IIdentityResolver>();
-            mockIdentityResolver.Setup(i => i.ResolveIdentity()).Returns(BasicCredentials);
+            mockIdentityResolver.Setup(i => i.ResolveIdentity(null)).Returns(BasicCredentials);
 
             field.SetValue(null, new Dictionary<Type, IIdentityResolver>()
             {
