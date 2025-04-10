@@ -16,7 +16,7 @@ using System;
 using System.Reflection;
 using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
-
+using AWSSDK.Extensions.NETCore.Setup;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -34,17 +34,23 @@ namespace Amazon.Extensions.NETCore.Setup
         private static readonly Type[] EMPTY_TYPES = Array.Empty<Type>();
         private static readonly object[] EMPTY_PARAMETERS = Array.Empty<object>();
 
-        private Type _serviceInterfaceType;
-        private AWSOptions _awsOptions;
+        private readonly Type _serviceInterfaceType;
+        private readonly AWSOptions _awsOptions;
+        private readonly IAWSCredentialsFactory _credentialsFactory;
+        private readonly ILoggerFactory _loggerFactory;
+        private readonly IConfiguration _configuration;
 
         /// <summary>
         /// Constructs an instance of the ClientFactory
         /// </summary>
         /// <param name="type">The type object for the Amazon service client interface, for example IAmazonS3.</param>
-        internal ClientFactory(Type type, AWSOptions awsOptions)
+        internal ClientFactory(Type type, AWSOptions awsOptions, IAWSCredentialsFactory credentialsFactory, ILoggerFactory loggerFactory, IConfiguration configuration)
         {
             _serviceInterfaceType = type;
             _awsOptions = awsOptions;
+            _credentialsFactory = credentialsFactory;
+            _loggerFactory = loggerFactory;
+            _configuration = configuration;
         }
 
         /// <summary>
@@ -53,24 +59,22 @@ namespace Amazon.Extensions.NETCore.Setup
         /// </summary>
         /// <param name="provider">The dependency injection provider.</param>
         /// <returns>The AWS service client</returns>
-        internal object CreateServiceClient(IServiceProvider provider)
+        internal object CreateServiceClient()
         {
-            var loggerFactory = provider.GetService<Microsoft.Extensions.Logging.ILoggerFactory>();
-            var logger = loggerFactory?.CreateLogger("AWSSDK");
+            var logger = _loggerFactory?.CreateLogger("AWSSDK");
 
-            var options = _awsOptions ?? provider.GetService<AWSOptions>();
-            if(options == null)
+            var options = _awsOptions;
+            if(_awsOptions == null)
             {
-                var configuration = provider.GetService<IConfiguration>();
-                if(configuration != null)
+                if(_configuration != null)
                 {
-                    options = configuration.GetAWSOptions();
+                    options = _configuration.GetAWSOptions();
                     if (options != null)
                         logger?.LogInformation("Found AWS options in IConfiguration");
                 }
             }
 
-            return CreateServiceClient(logger, _serviceInterfaceType, options);
+            return CreateServiceClient(logger, _serviceInterfaceType, options, _credentialsFactory);
         }
 
         /// <summary>
@@ -79,10 +83,10 @@ namespace Amazon.Extensions.NETCore.Setup
         /// </summary>
         /// <param name="provider">The dependency injection provider.</param>
         /// <returns>The AWS service client</returns>
-        internal static IAmazonService CreateServiceClient(ILogger logger, Type serviceInterfaceType, AWSOptions options)
+        internal static IAmazonService CreateServiceClient(ILogger logger, Type serviceInterfaceType, AWSOptions options, IAWSCredentialsFactory credentialsFactory)
         {
             PerformGlobalConfig(logger, options);
-            var credentials = CreateCredentials(logger, options);
+            var credentials = credentialsFactory.Create();
 
             if (!string.IsNullOrEmpty(options?.SessionRoleArn))
             {
@@ -158,51 +162,6 @@ namespace Amazon.Extensions.NETCore.Setup
             }
 
             return constructor.Invoke(new object[] { credentials, config }) as AmazonServiceClient;
-        }
-
-        /// <summary>
-        /// Creates the AWSCredentials using either the profile indicated from the AWSOptions object
-        /// of the SDK fallback credentials search.
-        /// </summary>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        private static AWSCredentials CreateCredentials(ILogger logger, AWSOptions options)
-        {
-            if (options != null)
-            {
-                if (options.Credentials != null)
-                {
-                    logger?.LogInformation("Using AWS credentials specified with the AWSOptions.Credentials property");
-                    return options.Credentials;
-                }
-                if (!string.IsNullOrEmpty(options.Profile))
-                {
-                    var chain = new CredentialProfileStoreChain(options.ProfilesLocation);
-                    AWSCredentials result;
-                    if (chain.TryGetAWSCredentials(options.Profile, out result))
-                    {
-                        logger?.LogInformation($"Found AWS credentials for the profile {options.Profile}");
-                        return result;
-                    }
-                    else
-                    {
-                        logger?.LogInformation($"Failed to find AWS credentials for the profile {options.Profile}");
-                    }
-                }
-            }
-
-            var credentials = FallbackCredentialsFactory.GetCredentials();
-            if (credentials == null)
-            {
-                logger?.LogError("Last effort to find AWS Credentials with AWS SDK's default credential search failed");
-                throw new AmazonClientException("Failed to find AWS Credentials for constructing AWS service client");
-            }
-            else
-            {
-                logger?.LogInformation("Found credentials using the AWS SDK's default credential search");
-            }
-
-            return credentials;
         }
 
         /// <summary>
