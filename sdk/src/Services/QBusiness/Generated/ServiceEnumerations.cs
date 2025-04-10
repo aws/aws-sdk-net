@@ -1313,6 +1313,56 @@ namespace Amazon.QBusiness
 
 
     /// <summary>
+    /// Constants used for properties of type HallucinationReductionControl.
+    /// </summary>
+    public class HallucinationReductionControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for HallucinationReductionControl
+        /// </summary>
+        public static readonly HallucinationReductionControl DISABLED = new HallucinationReductionControl("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for HallucinationReductionControl
+        /// </summary>
+        public static readonly HallucinationReductionControl ENABLED = new HallucinationReductionControl("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HallucinationReductionControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HallucinationReductionControl FindValue(string value)
+        {
+            return FindValue<HallucinationReductionControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HallucinationReductionControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IdentityType.
     /// </summary>
     public class IdentityType : ConstantClass
@@ -2782,6 +2832,56 @@ namespace Amazon.QBusiness
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SubscriptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SystemMessageType.
+    /// </summary>
+    public class SystemMessageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GROUNDED_RESPONSE for SystemMessageType
+        /// </summary>
+        public static readonly SystemMessageType GROUNDED_RESPONSE = new SystemMessageType("GROUNDED_RESPONSE");
+        /// <summary>
+        /// Constant RESPONSE for SystemMessageType
+        /// </summary>
+        public static readonly SystemMessageType RESPONSE = new SystemMessageType("RESPONSE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SystemMessageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SystemMessageType FindValue(string value)
+        {
+            return FindValue<SystemMessageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SystemMessageType(string value)
         {
             return FindValue(value);
         }

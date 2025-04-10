@@ -1363,6 +1363,7 @@
       "errors":[
         {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServerException"},
+        {"shape":"ConflictException"},
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"},
@@ -3506,7 +3507,8 @@
         "blockedPhrases":{"shape":"BlockedPhrasesConfiguration"},
         "topicConfigurations":{"shape":"TopicConfigurations"},
         "creatorModeConfiguration":{"shape":"AppliedCreatorModeConfiguration"},
-        "nextToken":{"shape":"NextToken"}
+        "nextToken":{"shape":"NextToken"},
+        "hallucinationReductionConfiguration":{"shape":"HallucinationReductionConfiguration"}
       }
     },
     "GetDataAccessorRequest":{
@@ -3910,6 +3912,19 @@
     "GroupSummaryList":{
       "type":"list",
       "member":{"shape":"GroupSummary"}
+    },
+    "HallucinationReductionConfiguration":{
+      "type":"structure",
+      "members":{
+        "hallucinationReductionControl":{"shape":"HallucinationReductionControl"}
+      }
+    },
+    "HallucinationReductionControl":{
+      "type":"string",
+      "enum":[
+        "ENABLED",
+        "DISABLED"
+      ]
     },
     "HookConfiguration":{
       "type":"structure",
@@ -5852,6 +5867,13 @@
       "min":0,
       "pattern":"\\P{C}*"
     },
+    "SystemMessageType":{
+      "type":"string",
+      "enum":[
+        "RESPONSE",
+        "GROUNDED_RESPONSE"
+      ]
+    },
     "Tag":{
       "type":"structure",
       "required":[
@@ -5923,6 +5945,7 @@
     "TextOutputEvent":{
       "type":"structure",
       "members":{
+        "systemMessageType":{"shape":"SystemMessageType"},
         "conversationId":{"shape":"ConversationId"},
         "userMessageId":{"shape":"MessageId"},
         "systemMessageId":{"shape":"MessageId"},
@@ -6070,7 +6093,8 @@
         "blockedPhrasesConfigurationUpdate":{"shape":"BlockedPhrasesConfigurationUpdate"},
         "topicConfigurationsToCreateOrUpdate":{"shape":"TopicConfigurations"},
         "topicConfigurationsToDelete":{"shape":"TopicConfigurations"},
-        "creatorModeConfiguration":{"shape":"CreatorModeConfiguration"}
+        "creatorModeConfiguration":{"shape":"CreatorModeConfiguration"},
+        "hallucinationReductionConfiguration":{"shape":"HallucinationReductionConfiguration"}
       }
     },
     "UpdateChatControlsConfigurationResponse":{
