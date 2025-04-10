@@ -147,6 +147,10 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  <c>StepScaling</c>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon
         /// Keyspaces, Amazon MSK, Amazon ElastiCache, or Neptune.
         /// </para>
+        ///  
+        /// <para>
+        ///  <c>PredictiveScaling</c>—Only supported for Amazon ECS
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public PolicyType PolicyType
@@ -262,6 +266,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// Amazon ElastiCache replication group - The resource type is <c>replication-group</c>
         /// and the unique identifier is the replication group name. Example: <c>replication-group/mycluster</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon ElastiCache cache cluster - The resource type is <c>cache-cluster</c> and the
+        /// unique identifier is the cache cluster name. Example: <c>cache-cluster/mycluster</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -386,6 +395,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         ///  <c>kafka:broker-storage:VolumeSize</c> - The provisioned volume size (in GiB) for
         /// brokers in an Amazon MSK cluster.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>elasticache:cache-cluster:Nodes</c> - The number of nodes for an Amazon ElastiCache
+        /// cache cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>

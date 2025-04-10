@@ -204,6 +204,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Amazon ElastiCache cache cluster - The resource type is <c>cache-cluster</c> and the
+        /// unique identifier is the cache cluster name. Example: <c>cache-cluster/mycluster</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Neptune cluster - The resource type is <c>cluster</c> and the unique identifier is
         /// the cluster name. Example: <c>cluster:mycluster</c>.
         /// </para>
@@ -326,6 +331,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         ///  <c>kafka:broker-storage:VolumeSize</c> - The provisioned volume size (in GiB) for
         /// brokers in an Amazon MSK cluster.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>elasticache:cache-cluster:Nodes</c> - The number of nodes for an Amazon ElastiCache
+        /// cache cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
