@@ -1,3 +1,24 @@
+### 3.7.1022.0 (2025-04-11 18:28 UTC)
+* AWSMarketplaceMetering (3.7.403.0)
+	* Add support for Marketplace Metering Service dual-stack endpoints for CN regions
+* ConnectContactLens (3.7.401.0)
+	* Making sentiment optional for ListRealtimeContactAnalysisSegments Response depending on conversational analytics configuration
+* DataZone (3.7.412.0)
+	* Raise hard limit of authorized principals per SubscriptionTarget from 10 to 20.
+* Detective (3.7.401.0)
+	* Add support for Detective DualStack endpoints
+* DynamoDBv2 (3.7.406.21)
+	* Doc only update for API descriptions.
+* MarketplaceEntitlementService (3.7.403.0)
+	* Add support for Marketplace Entitlement Service dual-stack endpoints for CN and GOV regions
+* PCS (3.7.402.0)
+	* Changed the minimum length of clusterIdentifier, computeNodeGroupIdentifier, and queueIdentifier to 3.
+* VerifiedPermissions (3.7.403.0)
+	* Adds deletion protection support to policy stores. Deletion protection is disabled by default, can be enabled via the CreatePolicyStore or UpdatePolicyStore APIs, and is visible in GetPolicyStore.
+* Core 3.7.402.39
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1021.0 (2025-04-10 18:26 UTC)
 * ApplicationAutoScaling (3.7.403.0)
 	* Application Auto Scaling now supports horizontal scaling for Elasticache Memcached self-designed clusters using target tracking scaling policies and scheduled scaling.
