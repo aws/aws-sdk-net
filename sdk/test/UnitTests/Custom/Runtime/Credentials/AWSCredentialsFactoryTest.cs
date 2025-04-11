@@ -493,7 +493,7 @@ namespace AWSSDK.UnitTests
 
             AssertExtensions.ExpectException(() =>
                     AWSCredentialsFactory.GetAWSCredentials(SsoProfileMissingFields, ProfileStore),
-                typeof(ArgumentNullException)); 
+                typeof(InvalidDataException)); 
         }
 
         [TestMethod]
