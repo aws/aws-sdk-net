@@ -80,6 +80,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetDeletionProtection())
+                {
+                    context.Writer.WritePropertyName("deletionProtection");
+                    context.Writer.Write(publicRequest.DeletionProtection);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");

@@ -69,6 +69,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDeletionProtection())
+                {
+                    context.Writer.WritePropertyName("deletionProtection");
+                    context.Writer.Write(publicRequest.DeletionProtection);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");

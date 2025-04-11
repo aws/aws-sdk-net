@@ -36,6 +36,7 @@ namespace Amazon.VerifiedPermissions.Model
     {
         private string _arn;
         private DateTime? _createdDate;
+        private DeletionProtection _deletionProtection;
         private string _description;
         private DateTime? _lastUpdatedDate;
         private string _policyStoreId;
@@ -77,6 +78,29 @@ namespace Amazon.VerifiedPermissions.Model
         internal bool IsSetCreatedDate()
         {
             return this._createdDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// Specifies whether the policy store can be deleted. If enabled, the policy store can't
+        /// be deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default state is <c>DISABLED</c>.
+        /// </para>
+        /// </summary>
+        public DeletionProtection DeletionProtection
+        {
+            get { return this._deletionProtection; }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection != null;
         }
 
         /// <summary>

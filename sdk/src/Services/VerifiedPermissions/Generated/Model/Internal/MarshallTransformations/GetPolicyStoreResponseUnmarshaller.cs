@@ -64,6 +64,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                     response.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deletionProtection", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DeletionProtection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
