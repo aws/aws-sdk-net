@@ -8503,8 +8503,26 @@
             ]
           },
           "endpoints": {
-            "ap-northeast-1": {},
-            "ap-northeast-2": {},
+            "ap-northeast-1": {
+              "variants": [
+                {
+                  "hostname": "comprehend.ap-northeast-1.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
+            "ap-northeast-2": {
+              "variants": [
+                {
+                  "hostname": "comprehend.ap-northeast-2.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
             "ap-south-1": {
               "variants": [
                 {
@@ -8515,8 +8533,26 @@
                 }
               ]
             },
-            "ap-southeast-1": {},
-            "ap-southeast-2": {},
+            "ap-southeast-1": {
+              "variants": [
+                {
+                  "hostname": "comprehend.ap-southeast-1.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
+            "ap-southeast-2": {
+              "variants": [
+                {
+                  "hostname": "comprehend.ap-southeast-2.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
             "ca-central-1": {
               "variants": [
                 {
@@ -8524,12 +8560,52 @@
                   "tags": [
                     "fips"
                   ]
+                },
+                {
+                  "hostname": "comprehend-fips.ca-central-1.api.aws",
+                  "tags": [
+                    "dualstack",
+                    "fips"
+                  ]
+                },
+                {
+                  "hostname": "comprehend.ca-central-1.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
                 }
               ]
             },
-            "eu-central-1": {},
-            "eu-west-1": {},
-            "eu-west-2": {},
+            "eu-central-1": {
+              "variants": [
+                {
+                  "hostname": "comprehend.eu-central-1.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
+            "eu-west-1": {
+              "variants": [
+                {
+                  "hostname": "comprehend.eu-west-1.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
+            "eu-west-2": {
+              "variants": [
+                {
+                  "hostname": "comprehend.eu-west-2.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
             "fips-ca-central-1": {
               "credentialScope": {
                 "region": "ca-central-1"
@@ -8565,6 +8641,19 @@
                   "tags": [
                     "fips"
                   ]
+                },
+                {
+                  "hostname": "comprehend-fips.us-east-1.api.aws",
+                  "tags": [
+                    "dualstack",
+                    "fips"
+                  ]
+                },
+                {
+                  "hostname": "comprehend.us-east-1.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
                 }
               ]
             },
@@ -8597,6 +8686,19 @@
                   "hostname": "comprehend-fips.us-west-2.amazonaws.com",
                   "tags": [
                     "fips"
+                  ]
+                },
+                {
+                  "hostname": "comprehend-fips.us-west-2.api.aws",
+                  "tags": [
+                    "dualstack",
+                    "fips"
+                  ]
+                },
+                {
+                  "hostname": "comprehend.us-west-2.api.aws",
+                  "tags": [
+                    "dualstack"
                   ]
                 }
               ]
@@ -27011,17 +27113,75 @@
         },
         "rekognition": {
           "endpoints": {
-            "ap-northeast-1": {},
-            "ap-northeast-2": {},
-            "ap-south-1": {},
-            "ap-southeast-1": {},
-            "ap-southeast-2": {},
+            "ap-northeast-1": {
+              "variants": [
+                {
+                  "hostname": "rekognition.ap-northeast-1.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
+            "ap-northeast-2": {
+              "variants": [
+                {
+                  "hostname": "rekognition.ap-northeast-2.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
+            "ap-south-1": {
+              "variants": [
+                {
+                  "hostname": "rekognition.ap-south-1.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
+            "ap-southeast-1": {
+              "variants": [
+                {
+                  "hostname": "rekognition.ap-southeast-1.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
+            "ap-southeast-2": {
+              "variants": [
+                {
+                  "hostname": "rekognition.ap-southeast-2.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
             "ca-central-1": {
               "variants": [
                 {
                   "hostname": "rekognition-fips.ca-central-1.amazonaws.com",
                   "tags": [
                     "fips"
+                  ]
+                },
+                {
+                  "hostname": "rekognition-fips.ca-central-1.api.aws",
+                  "tags": [
+                    "dualstack",
+                    "fips"
+                  ]
+                },
+                {
+                  "hostname": "rekognition.ca-central-1.api.aws",
+                  "tags": [
+                    "dualstack"
                   ]
                 }
               ]
@@ -27033,11 +27193,56 @@
               "deprecated": true,
               "hostname": "rekognition-fips.ca-central-1.amazonaws.com"
             },
-            "eu-central-1": {},
-            "eu-south-2": {},
-            "eu-west-1": {},
-            "eu-west-2": {},
-            "il-central-1": {},
+            "eu-central-1": {
+              "variants": [
+                {
+                  "hostname": "rekognition.eu-central-1.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
+            "eu-south-2": {
+              "variants": [
+                {
+                  "hostname": "rekognition.eu-south-2.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
+            "eu-west-1": {
+              "variants": [
+                {
+                  "hostname": "rekognition.eu-west-1.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
+            "eu-west-2": {
+              "variants": [
+                {
+                  "hostname": "rekognition.eu-west-2.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
+            "il-central-1": {
+              "variants": [
+                {
+                  "hostname": "rekognition.il-central-1.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
             "rekognition-fips.ca-central-1": {
               "credentialScope": {
                 "region": "ca-central-1"
@@ -27150,6 +27355,19 @@
                   "tags": [
                     "fips"
                   ]
+                },
+                {
+                  "hostname": "rekognition-fips.us-east-1.api.aws",
+                  "tags": [
+                    "dualstack",
+                    "fips"
+                  ]
+                },
+                {
+                  "hostname": "rekognition.us-east-1.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
                 }
               ]
             },
@@ -27166,6 +27384,19 @@
                   "hostname": "rekognition-fips.us-east-2.amazonaws.com",
                   "tags": [
                     "fips"
+                  ]
+                },
+                {
+                  "hostname": "rekognition-fips.us-east-2.api.aws",
+                  "tags": [
+                    "dualstack",
+                    "fips"
+                  ]
+                },
+                {
+                  "hostname": "rekognition.us-east-2.api.aws",
+                  "tags": [
+                    "dualstack"
                   ]
                 }
               ]
@@ -27184,6 +27415,19 @@
                   "tags": [
                     "fips"
                   ]
+                },
+                {
+                  "hostname": "rekognition-fips.us-west-1.api.aws",
+                  "tags": [
+                    "dualstack",
+                    "fips"
+                  ]
+                },
+                {
+                  "hostname": "rekognition.us-west-1.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
                 }
               ]
             },
@@ -27200,6 +27444,19 @@
                   "hostname": "rekognition-fips.us-west-2.amazonaws.com",
                   "tags": [
                     "fips"
+                  ]
+                },
+                {
+                  "hostname": "rekognition-fips.us-west-2.api.aws",
+                  "tags": [
+                    "dualstack",
+                    "fips"
+                  ]
+                },
+                {
+                  "hostname": "rekognition.us-west-2.api.aws",
+                  "tags": [
+                    "dualstack"
                   ]
                 }
               ]
@@ -27430,6 +27687,8 @@
             "ap-southeast-2": {},
             "ap-southeast-3": {},
             "ap-southeast-4": {},
+            "ap-southeast-5": {},
+            "ap-southeast-7": {},
             "ca-central-1": {
               "variants": [
                 {
@@ -27517,6 +27776,7 @@
             "il-central-1": {},
             "me-central-1": {},
             "me-south-1": {},
+            "mx-central-1": {},
             "sa-east-1": {},
             "us-east-1": {
               "variants": [
@@ -43146,6 +43406,19 @@
                   "tags": [
                     "fips"
                   ]
+                },
+                {
+                  "hostname": "comprehend-fips.us-gov-west-1.api.aws",
+                  "tags": [
+                    "dualstack",
+                    "fips"
+                  ]
+                },
+                {
+                  "hostname": "comprehend.us-gov-west-1.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
                 }
               ]
             }
@@ -46786,6 +47059,19 @@
                   "hostname": "rekognition-fips.us-gov-west-1.amazonaws.com",
                   "tags": [
                     "fips"
+                  ]
+                },
+                {
+                  "hostname": "rekognition-fips.us-gov-west-1.api.aws",
+                  "tags": [
+                    "dualstack",
+                    "fips"
+                  ]
+                },
+                {
+                  "hostname": "rekognition.us-gov-west-1.api.aws",
+                  "tags": [
+                    "dualstack"
                   ]
                 }
               ]
