@@ -22,7 +22,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.CreateComputeNodeGroupRequest.ClusterIdentifier</property>
-    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{3,40})</pattern>
+    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{2,40})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.CreateComputeNodeGroupRequest.ComputeNodeGroupName</property>
@@ -41,7 +41,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.CreateQueueRequest.ClusterIdentifier</property>
-    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{3,40})</pattern>
+    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{2,40})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.CreateQueueRequest.QueueName</property>
@@ -56,7 +56,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.DeleteClusterRequest.ClusterIdentifier</property>
-    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{3,40})</pattern>
+    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{2,40})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.DeleteComputeNodeGroupRequest.ClientToken</property>
@@ -65,11 +65,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.DeleteComputeNodeGroupRequest.ClusterIdentifier</property>
-    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{3,40})</pattern>
+    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{2,40})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.DeleteComputeNodeGroupRequest.ComputeNodeGroupIdentifier</property>
-    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{3,25})</pattern>
+    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{2,25})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.DeleteQueueRequest.ClientToken</property>
@@ -78,31 +78,31 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.DeleteQueueRequest.ClusterIdentifier</property>
-    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{3,40})</pattern>
+    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{2,40})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.DeleteQueueRequest.QueueIdentifier</property>
-    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{3,25})</pattern>
+    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{2,25})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.GetClusterRequest.ClusterIdentifier</property>
-    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{3,40})</pattern>
+    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{2,40})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.GetComputeNodeGroupRequest.ClusterIdentifier</property>
-    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{3,40})</pattern>
+    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{2,40})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.GetComputeNodeGroupRequest.ComputeNodeGroupIdentifier</property>
-    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{3,25})</pattern>
+    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{2,25})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.GetQueueRequest.ClusterIdentifier</property>
-    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{3,40})</pattern>
+    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{2,40})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.GetQueueRequest.QueueIdentifier</property>
-    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{3,25})</pattern>
+    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{2,25})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.ListClustersRequest.MaxResults</property>
@@ -111,7 +111,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.ListComputeNodeGroupsRequest.ClusterIdentifier</property>
-    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{3,40})</pattern>
+    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{2,40})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.ListComputeNodeGroupsRequest.MaxResults</property>
@@ -120,7 +120,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.ListQueuesRequest.ClusterIdentifier</property>
-    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{3,40})</pattern>
+    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{2,40})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.ListQueuesRequest.MaxResults</property>
@@ -141,7 +141,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.RegisterComputeNodeGroupInstanceRequest.ClusterIdentifier</property>
-    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{3,40})</pattern>
+    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{2,40})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.TagResourceRequest.ResourceArn</property>
@@ -166,11 +166,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.UpdateComputeNodeGroupRequest.ClusterIdentifier</property>
-    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{3,40})</pattern>
+    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{2,40})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.UpdateComputeNodeGroupRequest.ComputeNodeGroupIdentifier</property>
-    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{3,25})</pattern>
+    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{2,25})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.UpdateComputeNodeGroupRequest.IamInstanceProfileArn</property>
@@ -183,11 +183,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.UpdateQueueRequest.ClusterIdentifier</property>
-    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{3,40})</pattern>
+    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{2,40})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.UpdateQueueRequest.QueueIdentifier</property>
-    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{3,25})</pattern>
+    <pattern>(pcs_[a-zA-Z0-9]+|[A-Za-z][A-Za-z0-9-]{2,25})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PCS.Model.ClusterSlurmConfiguration.ScaleDownIdleTimeInSeconds</property>
