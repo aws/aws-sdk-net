@@ -31,7 +31,8 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Represents the warm throughput value (in read units per second and write units per
-    /// second) of the base table.
+    /// second) of the table. Warm throughput is applicable for DynamoDB Standard-IA tables
+    /// and specifies the minimum provisioned capacity maintained for immediate data access.
     /// </summary>
     public partial class TableWarmThroughputDescription
     {
@@ -61,7 +62,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Represents warm throughput value of the base table..
+        /// Represents warm throughput value of the base table.
         /// </para>
         /// </summary>
         public TableStatus Status
