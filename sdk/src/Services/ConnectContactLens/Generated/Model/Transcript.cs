@@ -182,7 +182,6 @@ namespace Amazon.ConnectContactLens.Model
         /// The sentiment detected for this piece of transcript.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public SentimentValue Sentiment
         {
             get { return this._sentiment; }
