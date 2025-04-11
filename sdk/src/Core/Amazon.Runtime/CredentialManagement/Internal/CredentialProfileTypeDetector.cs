@@ -106,83 +106,107 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                     {
                         new HashSet<string> { RoleArn, SourceProfile },
                         new HashSet<string> { RoleArn, SourceProfile, AwsAccountId },
+                        new HashSet<string> { RoleArn, SourceProfile, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl },
+                        new HashSet<string> { RoleArn, SourceProfile, AwsAccountId, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl },
                     }
                 },
                 {
                     CredentialProfileType.AssumeRoleMFA, new List<HashSet<string>>()
                     {
                         new HashSet<string> { MfaSerial, RoleArn, SourceProfile },
+                        new HashSet<string> { MfaSerial, RoleArn, SourceProfile, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl },
                         new HashSet<string> { MfaSerial, RoleArn, SourceProfile, AwsAccountId },
+                        new HashSet<string> { MfaSerial, RoleArn, SourceProfile, AwsAccountId, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl },
                     }
                 },
                 {
                     CredentialProfileType.AssumeRoleMFASessionName, new List<HashSet<string>>()
                     {
                         new HashSet<string> { MfaSerial, RoleArn, SourceProfile, RoleSessionName },
+                        new HashSet<string> { MfaSerial, RoleArn, SourceProfile, RoleSessionName, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl },
                         new HashSet<string> { MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId },
+                        new HashSet<string> { MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl }
                     }
                 },
                 {
                     CredentialProfileType.AssumeRoleExternalMFA, new List<HashSet<string>>()
                     {
-                        new HashSet<string> { ExternalID, RoleArn, SourceProfile, MfaSerial }
+                        new HashSet<string> { ExternalID, RoleArn, SourceProfile, MfaSerial },
+                        new HashSet<string> { ExternalID, RoleArn, SourceProfile, MfaSerial, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl }
                     }
                 },
                 {
                     CredentialProfileType.AssumeRoleExternal, new List<HashSet<string>>()
                     {
                         new HashSet<string> { ExternalID, RoleArn, SourceProfile },
+                        new HashSet<string> { ExternalID, RoleArn, SourceProfile, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl },
                         new HashSet<string> { ExternalID, RoleArn, SourceProfile, AwsAccountId },
+                        new HashSet<string> { ExternalID, RoleArn, SourceProfile, AwsAccountId, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl}
                     }
                 },
                 {
                     CredentialProfileType.AssumeRoleSessionName, new List<HashSet<string>>()
                     {
                         new HashSet<string> { RoleArn, SourceProfile, RoleSessionName },
+                        new HashSet<string> { RoleArn, SourceProfile, RoleSessionName, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl},
                         new HashSet<string> { RoleArn, SourceProfile, RoleSessionName, AwsAccountId },
+                        new HashSet<string> { RoleArn, SourceProfile, RoleSessionName, AwsAccountId, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl },
                     }
                 },
                 {
                     CredentialProfileType.AssumeRoleExternalSessionName, new List<HashSet<string>>()
                     {
                         new HashSet<string> { ExternalID, RoleArn, SourceProfile, RoleSessionName },
+                        new HashSet<string> { ExternalID, RoleArn, SourceProfile, RoleSessionName, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl },
                         new HashSet<string> { ExternalID, RoleArn, SourceProfile, RoleSessionName, AwsAccountId },
+                        new HashSet<string> { ExternalID, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl },
                     }
                 },
                 {
                     CredentialProfileType.AssumeRoleExternalMFASessionName, new List<HashSet<string>>()
                     {
                         new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName },
+                        new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl },
                         new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId },
+                        new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl },
                     }
                 },
                 { 
                     CredentialProfileType.AssumeRoleCredentialSource, new List<HashSet<string>>() 
                     { 
                         new HashSet<string> { RoleArn, CredentialSource },
-                        new HashSet<string> { RoleArn, CredentialSource, AwsAccountId }
+                        new HashSet<string> { RoleArn, CredentialSource, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl },
+                        new HashSet<string> { RoleArn, CredentialSource, AwsAccountId },
+                        new HashSet<string> { RoleArn, CredentialSource, AwsAccountId, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl }
                     } 
                 },
                 {
                     CredentialProfileType.AssumeRoleCredentialSourceSessionName, new List<HashSet<string>>()
                     {
                         new HashSet<string> { RoleArn, CredentialSource, RoleSessionName },
+                        new HashSet<string> { RoleArn, CredentialSource, RoleSessionName, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl },
                         new HashSet<string> { RoleArn, CredentialSource, RoleSessionName, AwsAccountId},
+                        new HashSet<string> { RoleArn, CredentialSource, RoleSessionName, AwsAccountId, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl },
                     }
                 },
                 { 
                     CredentialProfileType.AssumeRoleWithWebIdentity, new List<HashSet<string>>() 
                     {
                         new HashSet<string> { RoleArn, WebIdentityTokenFile },
+                        new HashSet<string> { RoleArn, WebIdentityTokenFile, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl },
                         new HashSet<string> { RoleArn, WebIdentityTokenFile, CredentialSource },
+                        new HashSet<string> { RoleArn, WebIdentityTokenFile, CredentialSource, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl },
                         new HashSet<string> { RoleArn, WebIdentityTokenFile, CredentialSource, AwsAccountId },
+                        new HashSet<string> { RoleArn, WebIdentityTokenFile, CredentialSource, AwsAccountId, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl },
                     } 
                 },
                 { 
                     CredentialProfileType.AssumeRoleWithWebIdentitySessionName, new List<HashSet<string>>() 
                     { 
                         new HashSet<string> { RoleArn, WebIdentityTokenFile, RoleSessionName },
-                        new HashSet<string> { RoleArn, WebIdentityTokenFile, RoleSessionName, AwsAccountId } ,
+                        new HashSet<string> { RoleArn, WebIdentityTokenFile, RoleSessionName, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl },
+                        new HashSet<string> { RoleArn, WebIdentityTokenFile, RoleSessionName, AwsAccountId },
+                        new HashSet<string> { RoleArn, WebIdentityTokenFile, RoleSessionName, AwsAccountId, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl } ,
                     } 
                 },
                 { 
@@ -253,13 +277,16 @@ namespace Amazon.Runtime.CredentialManagement.Internal
 
             HashSet<string> propertyNames = GetPropertyNames(profileOptions);
 
+            //SPEC: if sso_account_id or sso_role_name exist credentials MUST be resolved by the sso credential provider.
+            if (propertyNames.Contains(SsoAccountId) || propertyNames.Contains(SsoRoleName))
+                return CredentialProfileType.SSO;
 
             // brute force algorithm - but it's a very small set
             foreach (var pair in TypePropertyDictionary)
             {
                 foreach (var item in pair.Value)
                 {
-                    if (item.IsSubsetOf(propertyNames))
+                    if (item.SetEquals(propertyNames))
                     {
                         profileType = pair.Key;
                     }
