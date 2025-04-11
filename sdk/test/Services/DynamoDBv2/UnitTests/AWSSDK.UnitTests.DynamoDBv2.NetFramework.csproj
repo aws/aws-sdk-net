@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
    <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
     <TargetFramework>net472</TargetFramework>
@@ -34,6 +34,7 @@
   <PropertyGroup Condition="'$(TargetFramework)' != 'net8.0'">
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
+	
   <ItemGroup>
     <Compile Remove="**/obj/**"/>
     <None Remove="**/obj/**" />
