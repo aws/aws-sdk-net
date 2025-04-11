@@ -49,7 +49,7 @@ internal sealed partial class BedrockEmbeddingGenerator : IEmbeddingGenerator<st
         _modelId = modelId;
         _dimensions = dimensions;
 
-        _metadata = new(AmazonBedrockRuntimeExtensions.ProviderName, modelId: modelId, dimensions: dimensions);
+        _metadata = new(AmazonBedrockRuntimeExtensions.ProviderName, defaultModelId: modelId, defaultModelDimensions: dimensions);
     }
 
     public void Dispose()

@@ -26,8 +26,8 @@ public class BedrockEmbeddingGeneratorTests
 
         Assert.NotNull(generator);
         Assert.Equal("aws.bedrock", generator.GetService<EmbeddingGeneratorMetadata>()?.ProviderName);
-        Assert.Equal(modelId, generator.GetService<EmbeddingGeneratorMetadata>()?.ModelId);
-        Assert.Equal(dimensions, generator.GetService<EmbeddingGeneratorMetadata>()?.Dimensions);
+        Assert.Equal(modelId, generator.GetService<EmbeddingGeneratorMetadata>()?.DefaultModelId);
+        Assert.Equal(dimensions, generator.GetService<EmbeddingGeneratorMetadata>()?.DefaultModelDimensions);
     }
 
     [Fact]
