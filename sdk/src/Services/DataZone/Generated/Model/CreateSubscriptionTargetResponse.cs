@@ -75,7 +75,7 @@ namespace Amazon.DataZone.Model
         /// The authorised principals of the subscription target.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
+        [AWSProperty(Required=true, Min=1, Max=20)]
         public List<string> AuthorizedPrincipals
         {
             get { return this._authorizedPrincipals; }
