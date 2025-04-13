@@ -21,6 +21,7 @@ using System.Xml.Linq;
 using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Credentials.Internal;
+using AWSSDK.Extensions.NETCore.Setup;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -83,7 +84,8 @@ namespace Amazon.Extensions.NETCore.Setup
         internal IAmazonService CreateServiceClient(ILogger logger, AWSOptions options)
         {
             PerformGlobalConfig(logger, options);
-            var credentials = CreateCredentials(logger, options);
+            var credentialsFactory = options.CredentialsFactory ?? new DefaultAWSCredentialsFactory(options, logger);
+            var credentials = credentialsFactory.Create();
 
             if (!string.IsNullOrEmpty(options?.SessionRoleArn))
             {
@@ -163,52 +165,6 @@ namespace Amazon.Extensions.NETCore.Setup
 
             return constructor.Invoke(new object[] { credentials, config }) as AmazonServiceClient;
 #endif
-        }
-
-        /// <summary>
-        /// Creates the AWSCredentials using either the profile indicated from the AWSOptions object
-        /// of the SDK fallback credentials search.
-        /// </summary>
-        /// <param name="logger"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        private static AWSCredentials CreateCredentials(ILogger logger, AWSOptions options)
-        {
-            if (options != null)
-            {
-                if (options.Credentials != null)
-                {
-                    logger?.LogInformation("Using AWS credentials specified with the AWSOptions.Credentials property");
-                    return options.Credentials;
-                }
-                if (!string.IsNullOrEmpty(options.Profile))
-                {
-                    var chain = new CredentialProfileStoreChain(options.ProfilesLocation);
-                    AWSCredentials result;
-                    if (chain.TryGetAWSCredentials(options.Profile, out result))
-                    {
-                        logger?.LogInformation($"Found AWS credentials for the profile {options.Profile}");
-                        return result;
-                    }
-                    else
-                    {
-                        logger?.LogInformation($"Failed to find AWS credentials for the profile {options.Profile}");
-                    }
-                }
-            }
-
-            var credentials = DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
-            if (credentials == null)
-            {
-                logger?.LogError("Last effort to find AWS Credentials with AWS SDK's default credential search failed");
-                throw new AmazonClientException("Failed to find AWS Credentials for constructing AWS service client");
-            }
-            else
-            {
-                logger?.LogInformation("Found credentials using the AWS SDK's default credential search");
-            }
-
-            return credentials;
         }
 
         /// <summary>

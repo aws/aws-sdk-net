@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime;
-
+using AWSSDK.Extensions.NETCore.Setup;
 using Microsoft.Extensions.Logging;
 
 namespace Amazon.Extensions.NETCore.Setup
@@ -54,6 +54,11 @@ namespace Amazon.Extensions.NETCore.Setup
         /// A unique identifier that is used by third parties for the assumed session using the SessionRoleArn.
         /// </summary>
         public string ExternalId { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public IAWSCredentialsFactory CredentialsFactory { get; set; }
 
         /// <summary>
         /// AWS Credentials used for creating service clients. If this is set it overrides the Profile property.
