@@ -15,11 +15,11 @@ namespace AWSSDK.Extensions.NETCore.Setup
         /// </summary>
         /// <typeparam name="T">The service interface that a service client will be created for.</typeparam>
         /// <returns>The service client that implements the service interface.</returns>
-        public static T CreateServiceClient<T>(this AWSOptions options, IAWSCredentialsFactory credentialsFactory = null)
+        public static T CreateServiceClient<T>(this AWSOptions options)
             where T : class, IAmazonService
         {
-            credentialsFactory = credentialsFactory ?? new DefaultAWSCredentialsFactory(options);
-            var clientFactory = new ClientFactory<T>(options, credentialsFactory, null);
+            var credentials = new DefaultAWSCredentials(options, null);
+            var clientFactory = new ClientFactory<T>(options, credentials, null);
 
             return clientFactory.CreateServiceClient() as T;
         }

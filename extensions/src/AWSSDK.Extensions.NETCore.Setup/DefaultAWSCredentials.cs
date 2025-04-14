@@ -9,36 +9,34 @@ namespace AWSSDK.Extensions.NETCore.Setup
     /// <summary>
     ///
     /// </summary>
-    public class DefaultAWSCredentialsFactory : IAWSCredentialsFactory
+    public class DefaultAWSCredentials : AWSCredentials
     {
         private readonly AWSOptions _options;
         private readonly ILogger _logger;
 
         /// <summary>
-        /// Creates the AWSCredentials using either the profile indicated from the AWSOptions object
-        /// of the SDK fallback credentials search.
+        ///
         /// </summary>
+        /// <param name="awsOptions"></param>
         /// <param name="logger"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public DefaultAWSCredentialsFactory(AWSOptions options, ILogger logger = null)
+        public DefaultAWSCredentials(AWSOptions awsOptions, ILogger logger)
         {
-            _options = options;
+            _options = awsOptions;
             _logger = logger;
         }
 
         /// <summary>
-        /// Creates the AWSCredentials using either AWSOptions.Credentials, AWSOptions.Profile + AWSOptions.ProfilesLocation,
-        /// or the SDK fallback credentials search.
+        ///
         /// </summary>
-        public AWSCredentials Create()
+        /// <returns></returns>
+        public override ImmutableCredentials GetCredentials()
         {
             if (_options != null)
             {
                 if (_options.Credentials != null)
                 {
                     _logger?.LogInformation("Using AWS credentials specified with the AWSOptions.Credentials property");
-                    return _options.Credentials;
+                    return _options.Credentials.GetCredentials();
                 }
                 if (!string.IsNullOrEmpty(_options.Profile))
                 {
@@ -47,7 +45,7 @@ namespace AWSSDK.Extensions.NETCore.Setup
                     if (chain.TryGetAWSCredentials(_options.Profile, out result))
                     {
                         _logger?.LogInformation($"Found AWS credentials for the profile {_options.Profile}");
-                        return result;
+                        return result.GetCredentials();
                     }
                     else
                     {
@@ -67,7 +65,7 @@ namespace AWSSDK.Extensions.NETCore.Setup
                 _logger?.LogInformation("Found credentials using the AWS SDK's default credential search");
             }
 
-            return credentials;
+            return credentials.GetCredentials();
         }
     }
 }

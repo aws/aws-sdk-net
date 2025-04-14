@@ -38,19 +38,19 @@ namespace Amazon.Extensions.NETCore.Setup
         private static readonly object[] EMPTY_PARAMETERS = Array.Empty<object>();
 
         private readonly AWSOptions _options;
-        private readonly IAWSCredentialsFactory _credentialsFactory;
+        private readonly AWSCredentials _credentials;
         private readonly ILogger _logger;
 
         /// <summary>
         /// Constructs an instance of the ClientFactory
         /// </summary>
         /// <param name="awsOptions">The AWS options used for creating service clients.</param>
-        /// <param name="credentialsFactory"></param>
+        /// <param name="credentials"></param>
         /// <param name="logger"></param>
-        internal ClientFactory(AWSOptions awsOptions, IAWSCredentialsFactory credentialsFactory, ILogger logger)
+        internal ClientFactory(AWSOptions awsOptions, AWSCredentials credentials, ILogger logger)
         {
             _options = awsOptions ?? throw new ArgumentNullException(nameof(awsOptions));
-            _credentialsFactory = credentialsFactory ?? throw new ArgumentNullException(nameof(credentialsFactory));
+            _credentials = credentials ?? throw new ArgumentNullException(nameof(credentials));
             _logger = logger;
         }
 
@@ -58,10 +58,10 @@ namespace Amazon.Extensions.NETCore.Setup
         /// Creates the AWS service client that implements the service client interface.
         /// </summary>
         /// <returns>The AWS service client</returns>
-        internal IAmazonService CreateServiceClient(AWSCredentials credentials = null)
+        internal IAmazonService CreateServiceClient()
         {
             PerformGlobalConfig(_logger, _options);
-            credentials = credentials ?? _credentialsFactory.Create();
+            var credentials = _credentials;
 
             if (!string.IsNullOrEmpty(_options?.SessionRoleArn))
             {
