@@ -69,6 +69,20 @@ namespace Microsoft.Extensions.DependencyInjection
         ///
         /// </summary>
         /// <param name="collection"></param>
+        /// <param name="lifetime"></param>
+        /// <returns></returns>
+        public static IServiceCollection AddAWSCredentialsFactory(
+            this IServiceCollection collection,
+            ServiceLifetime lifetime = ServiceLifetime.Singleton)
+        {
+            collection.Add(new ServiceDescriptor(typeof(IAWSCredentialsFactory), CreateDefaultCredentialsFactory, lifetime));
+            return collection;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="collection"></param>
         /// <param name="implementationFactory"></param>
         /// <param name="lifetime"></param>
         /// <returns></returns>
@@ -92,6 +106,20 @@ namespace Microsoft.Extensions.DependencyInjection
             IAWSCredentialsFactory credentials)
         {
             collection.Add(new ServiceDescriptor(typeof(IAWSCredentialsFactory), credentials));
+            return collection;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="collection"></param>
+        /// <param name="lifetime"></param>
+        /// <returns></returns>
+        public static IServiceCollection TryAddAWSCredentialsFactory(
+            this IServiceCollection collection,
+            ServiceLifetime lifetime = ServiceLifetime.Singleton)
+        {
+            collection.TryAdd(new ServiceDescriptor(typeof(IAWSCredentialsFactory), CreateDefaultCredentialsFactory, lifetime));
             return collection;
         }
 
@@ -249,9 +277,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
         public static IServiceCollection AddKeyedAWSService<T>(this IServiceCollection collection, object serviceKey, AWSOptions options, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
         {
-            object Factory(IServiceProvider sp, object key) => new ClientFactory<T>(options, sp.GetService<IAWSCredentialsFactory>(), sp.GetService<ILogger>()).CreateServiceClient();
-
-            var descriptor = new ServiceDescriptor(typeof(T), serviceKey, Factory, lifetime);
+            var descriptor = new ServiceDescriptor(typeof(T), serviceKey, (sp, _) => CreateServiceClient<T>(options, sp), lifetime);
             collection.Add(descriptor);
             return collection;
         }
@@ -284,9 +310,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
         public static IServiceCollection TryAddKeyedAWSService<T>(this IServiceCollection collection, object serviceKey, AWSOptions options, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
         {
-            object Factory(IServiceProvider sp, object key) => new ClientFactory<T>(options, sp.GetService<IAWSCredentialsFactory>(), sp.GetService<ILogger>()).CreateServiceClient();
-
-            var descriptor = new ServiceDescriptor(typeof(T), serviceKey, Factory, lifetime);
+            var descriptor = new ServiceDescriptor(typeof(T), serviceKey, (sp, _) => CreateServiceClient<T>(options, sp), lifetime);
             collection.TryAdd(descriptor);
             return collection;
         }
@@ -301,6 +325,12 @@ namespace Microsoft.Extensions.DependencyInjection
             var factory = new ClientFactory<T>(awsOptions, credentialsFactory, logger);
 
             return factory.CreateServiceClient();
+        }
+
+        private static IAWSCredentialsFactory CreateDefaultCredentialsFactory(IServiceProvider sp)
+        {
+            var options = sp.GetService<AWSOptions>() ?? new AWSOptions();
+            return new DefaultAWSCredentialsFactory(options, sp.GetService<ILogger>());
         }
     }
 }
