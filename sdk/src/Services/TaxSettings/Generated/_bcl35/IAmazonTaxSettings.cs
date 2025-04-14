@@ -219,6 +219,53 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        ///  <b>Indonesia</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PutTaxRegistration</c>: The use of this operation to submit tax information is
+        /// subject to the <a href="http://aws.amazon.com/service-terms/">Amazon Web Services
+        /// service terms</a>. By submitting, you’re providing consent for Amazon Web Services
+        /// to validate NIK, NPWP, and NITKU data, provided by you with the Directorate General
+        /// of Taxes of Indonesia in accordance with the Minister of Finance Regulation (PMK)
+        /// Number 112/PMK.03/2022.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>BatchPutTaxRegistration</c>: The use of this operation to submit tax information
+        /// is subject to the <a href="http://aws.amazon.com/service-terms/">Amazon Web Services
+        /// service terms</a>. By submitting, you’re providing consent for Amazon Web Services
+        /// to validate NIK, NPWP, and NITKU data, provided by you with the Directorate General
+        /// of Taxes of Indonesia in accordance with the Minister of Finance Regulation (PMK)
+        /// Number 112/PMK.03/2022, through our third-party partner PT Achilles Advanced Management
+        /// (OnlinePajak).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must specify the <c>taxRegistrationNumberType</c> in the <c>indonesiaAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you specify <c>decisionNumber</c>, you must specify the <c>ppnExceptionDesignationCode</c>
+        /// in the <c>indonesiaAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
+        /// object. If the <c>taxRegistrationNumberType</c> is set to NPWP or NITKU, valid values
+        /// for <c>ppnExceptionDesignationCode</c> are either <c>01</c>, <c>02</c>, <c>03</c>,
+        /// <c>07</c>, or <c>08</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For other <c>taxRegistrationNumberType</c> values, <c>ppnExceptionDesignationCode</c>
+        /// must be either <c>01</c>, <c>07</c>, or <c>08</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>ppnExceptionDesignationCode</c> is <c>07</c>, you must specify the <c>decisionNumber</c>
+        /// in the <c>indonesiaAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
+        /// object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>Kenya</b> 
         /// </para>
         ///  <ul> <li> 
@@ -1117,6 +1164,53 @@ namespace Amazon.TaxSettings
         ///  <ul> <li> 
         /// <para>
         /// The valid <c>personType</c> values are <c>Physical Person</c> and <c>Business</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Indonesia</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PutTaxRegistration</c>: The use of this operation to submit tax information is
+        /// subject to the <a href="http://aws.amazon.com/service-terms/">Amazon Web Services
+        /// service terms</a>. By submitting, you’re providing consent for Amazon Web Services
+        /// to validate NIK, NPWP, and NITKU data, provided by you with the Directorate General
+        /// of Taxes of Indonesia in accordance with the Minister of Finance Regulation (PMK)
+        /// Number 112/PMK.03/2022.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>BatchPutTaxRegistration</c>: The use of this operation to submit tax information
+        /// is subject to the <a href="http://aws.amazon.com/service-terms/">Amazon Web Services
+        /// service terms</a>. By submitting, you’re providing consent for Amazon Web Services
+        /// to validate NIK, NPWP, and NITKU data, provided by you with the Directorate General
+        /// of Taxes of Indonesia in accordance with the Minister of Finance Regulation (PMK)
+        /// Number 112/PMK.03/2022, through our third-party partner PT Achilles Advanced Management
+        /// (OnlinePajak).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must specify the <c>taxRegistrationNumberType</c> in the <c>indonesiaAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you specify <c>decisionNumber</c>, you must specify the <c>ppnExceptionDesignationCode</c>
+        /// in the <c>indonesiaAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
+        /// object. If the <c>taxRegistrationNumberType</c> is set to NPWP or NITKU, valid values
+        /// for <c>ppnExceptionDesignationCode</c> are either <c>01</c>, <c>02</c>, <c>03</c>,
+        /// <c>07</c>, or <c>08</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For other <c>taxRegistrationNumberType</c> values, <c>ppnExceptionDesignationCode</c>
+        /// must be either <c>01</c>, <c>07</c>, or <c>08</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>ppnExceptionDesignationCode</c> is <c>07</c>, you must specify the <c>decisionNumber</c>
+        /// in the <c>indonesiaAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
+        /// object.
         /// </para>
         ///  </li> </ul> 
         /// <para>
