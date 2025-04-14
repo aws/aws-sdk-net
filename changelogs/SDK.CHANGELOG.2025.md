@@ -1,3 +1,12 @@
+### 3.7.1023.0 (2025-04-14 18:18 UTC)
+* EntityResolution (3.7.402.0)
+	* This is to add new metrics to our GetIdMappingJob API and also update uniqueId naming for batchDeleteUniqueIds API to be more accurate
+* TaxSettings (3.7.406.0)
+	* Indonesia SOR Tax Registration Launch
+* Core 3.7.402.40
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1022.0 (2025-04-11 18:28 UTC)
 * AWSMarketplaceMetering (3.7.403.0)
 	* Add support for Marketplace Metering Service dual-stack endpoints for CN regions

@@ -32,7 +32,7 @@ namespace Amazon.DatabaseMigrationService
     public partial class AmazonDatabaseMigrationServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Database Migration Service", "3.7.408.29");
+            InternalSDKUtils.BuildUserAgentString("Database Migration Service", "3.7.408.30");
 
         private string _userAgent = UserAgentString;
         ///<summary>
