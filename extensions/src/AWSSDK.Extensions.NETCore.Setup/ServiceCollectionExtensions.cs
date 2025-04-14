@@ -390,7 +390,7 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             var logger = sp.GetService<ILogger>();
             var awsOptions = options ?? sp.GetService<AWSOptions>() ?? new AWSOptions();
-            var credentialsFactory = sp.GetService<AWSCredentials>() ?? sp.CreateDefaultAWSCredentials(options);
+            var credentialsFactory = sp.GetService<AWSCredentials>() ?? sp.CreateDefaultAWSCredentials(awsOptions);
 
             var factory = new ClientFactory<T>(awsOptions, credentialsFactory, logger);
 
