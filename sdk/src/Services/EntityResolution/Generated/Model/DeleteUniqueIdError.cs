@@ -62,7 +62,7 @@ namespace Amazon.EntityResolution.Model
         /// The unique ID that could not be deleted.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=760)]
+        [AWSProperty(Required=true, Min=1, Max=780)]
         public string UniqueId
         {
             get { return this._uniqueId; }
