@@ -24,7 +24,7 @@ public class BedrockChatClientTests
 
         Assert.NotNull(client);
         Assert.Equal("aws.bedrock", client.GetService<ChatClientMetadata>()?.ProviderName);
-        Assert.Equal(modelId, client.GetService<ChatClientMetadata>()?.ModelId);
+        Assert.Equal(modelId, client.GetService<ChatClientMetadata>()?.DefaultModelId);
     }
 
     [Fact]
