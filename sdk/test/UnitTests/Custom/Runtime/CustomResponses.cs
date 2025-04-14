@@ -62,9 +62,13 @@ namespace AWSSDK.UnitTests
             AmazonServiceClient client,
             Func<HttpHandlerTests.MockHttpRequest, HttpWebResponse> responseCreator)
         {
+#if BCL
             var requestFactory = new HttpHandlerTests.MockHttpRequestFactory();
             requestFactory.ResponseCreator = responseCreator;
             ReplaceHttpRequestHandler(client, requestFactory);
+#else
+            throw new NotImplementedException();
+#endif
         }
 
         public static void ReplaceHttpRequestHandler<T>(

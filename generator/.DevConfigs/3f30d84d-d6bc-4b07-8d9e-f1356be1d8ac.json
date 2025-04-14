@@ -1,0 +1,8 @@
+
+{
+  "core": {
+    "changeLogMessages": ["Enable MockHttpRequestFactory in non netframework targets"],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}
