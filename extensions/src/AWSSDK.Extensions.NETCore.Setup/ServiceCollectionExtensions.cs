@@ -400,7 +400,7 @@ namespace Microsoft.Extensions.DependencyInjection
         private static AWSCredentials CreateDefaultAWSCredentials(this IServiceProvider sp, AWSOptions options = null)
         {
             options = options ?? sp.GetService<AWSOptions>() ?? new AWSOptions();
-            return sp.GetService<AWSCredentials>() ?? new DefaultAWSCredentials(options, sp.GetService<ILogger>());
+            return new DefaultAWSCredentials(options, sp.GetService<ILogger>());
         }
     }
 }
