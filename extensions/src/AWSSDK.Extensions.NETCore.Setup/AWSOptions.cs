@@ -106,7 +106,7 @@ namespace Amazon.Extensions.NETCore.Setup
         /// <returns>The service client that implements the service interface.</returns>
         public T CreateServiceClient<T>() where T : class, IAmazonService
         {
-            return new ClientFactory<T>(this).CreateServiceClient((ILogger)null, this) as T;
+            return new ClientFactory<T>(this, CredentialsFactory, (ILogger)null).CreateServiceClient() as T;
         }
 
         /// <summary>

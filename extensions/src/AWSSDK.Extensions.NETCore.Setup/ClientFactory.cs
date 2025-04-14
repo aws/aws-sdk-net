@@ -37,69 +37,45 @@ namespace Amazon.Extensions.NETCore.Setup
         private static readonly Type[] EMPTY_TYPES = Array.Empty<Type>();
         private static readonly object[] EMPTY_PARAMETERS = Array.Empty<object>();
 
-        private AWSOptions _awsOptions;
+        private readonly AWSOptions _options;
+        private readonly IAWSCredentialsFactory _credentialsFactory;
+        private readonly ILogger _logger;
 
         /// <summary>
         /// Constructs an instance of the ClientFactory
         /// </summary>
         /// <param name="awsOptions">The AWS options used for creating service clients.</param>
-        internal ClientFactory(AWSOptions awsOptions)
+        /// <param name="credentialsFactory"></param>
+        /// <param name="logger"></param>
+        internal ClientFactory(AWSOptions awsOptions, IAWSCredentialsFactory credentialsFactory, ILogger logger)
         {
-            _awsOptions = awsOptions;
+            _options = awsOptions ?? throw new ArgumentNullException(nameof(awsOptions));
+            _credentialsFactory = credentialsFactory ?? throw new ArgumentNullException(nameof(credentialsFactory));
+            _logger = logger;
         }
 
         /// <summary>
-        /// Creates the AWS service client that implements the service client interface. The AWSOptions object
-        /// will be searched for in the IServiceProvider.
+        /// Creates the AWS service client that implements the service client interface.
         /// </summary>
-        /// <param name="provider">The dependency injection provider.</param>
         /// <returns>The AWS service client</returns>
-        internal object CreateServiceClient(IServiceProvider provider)
+        internal IAmazonService CreateServiceClient()
         {
-            var loggerFactory = provider.GetService<Microsoft.Extensions.Logging.ILoggerFactory>();
-            var logger = loggerFactory?.CreateLogger("AWSSDK");
+            PerformGlobalConfig(_logger, _options);
+            var credentials = _credentialsFactory.Create();
 
-            var options = _awsOptions ?? provider.GetService<AWSOptions>();
-            if(options == null)
+            if (!string.IsNullOrEmpty(_options?.SessionRoleArn))
             {
-                var configuration = provider.GetService<IConfiguration>();
-                if(configuration != null)
+                if (string.IsNullOrEmpty(_options?.ExternalId))
                 {
-                    options = configuration.GetAWSOptions();
-                    if (options != null)
-                        logger?.LogInformation("Found AWS options in IConfiguration");
-                }
-            }
-
-            return CreateServiceClient(logger, options);
-        }
-
-        /// <summary>
-        /// Creates the AWS service client that implements the service client interface. The AWSOptions object
-        /// will be searched for in the IServiceProvider.
-        /// </summary>
-        /// <param name="logger">Logger instance for writing diagnostic logs.</param>
-        /// <param name="options">The AWS options used for creating the service client.</param>
-        /// <returns>The AWS service client</returns>
-        internal IAmazonService CreateServiceClient(ILogger logger, AWSOptions options)
-        {
-            PerformGlobalConfig(logger, options);
-            var credentialsFactory = options.CredentialsFactory ?? new DefaultAWSCredentialsFactory(options, logger);
-            var credentials = credentialsFactory.Create();
-
-            if (!string.IsNullOrEmpty(options?.SessionRoleArn))
-            {
-                if (string.IsNullOrEmpty(options?.ExternalId))
-                {
-                    credentials = new AssumeRoleAWSCredentials(credentials, options.SessionRoleArn, options.SessionName);
+                    credentials = new AssumeRoleAWSCredentials(credentials, _options.SessionRoleArn, _options.SessionName);
                 }
                 else
                 {
-                    credentials = new AssumeRoleAWSCredentials(credentials, options.SessionRoleArn, options.SessionName, new AssumeRoleAWSCredentialsOptions() { ExternalId = options.ExternalId });
+                    credentials = new AssumeRoleAWSCredentials(credentials, _options.SessionRoleArn, _options.SessionName, new AssumeRoleAWSCredentialsOptions() { ExternalId = _options.ExternalId });
                 }
             }
 
-            var config = CreateConfig(options);
+            var config = CreateConfig(_options);
             var client = CreateClient(credentials, config);
             return client as IAmazonService;
         }
