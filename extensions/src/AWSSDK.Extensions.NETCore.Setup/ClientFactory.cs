@@ -58,10 +58,10 @@ namespace Amazon.Extensions.NETCore.Setup
         /// Creates the AWS service client that implements the service client interface.
         /// </summary>
         /// <returns>The AWS service client</returns>
-        internal IAmazonService CreateServiceClient()
+        internal IAmazonService CreateServiceClient(AWSCredentials credentials = null)
         {
             PerformGlobalConfig(_logger, _options);
-            var credentials = _credentialsFactory.Create();
+            credentials = credentials ?? _credentialsFactory.Create();
 
             if (!string.IsNullOrEmpty(_options?.SessionRoleArn))
             {
