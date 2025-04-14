@@ -56,11 +56,6 @@ namespace Amazon.Extensions.NETCore.Setup
         public string ExternalId { get; set; }
 
         /// <summary>
-        ///
-        /// </summary>
-        public IAWSCredentialsFactory CredentialsFactory { get; set; }
-
-        /// <summary>
         /// AWS Credentials used for creating service clients. If this is set it overrides the Profile property.
         /// </summary>
         public AWSCredentials Credentials { get; set; }
@@ -96,18 +91,6 @@ namespace Amazon.Extensions.NETCore.Setup
         /// the service client through this package.
         /// </summary>
         public LoggingSetting Logging { get; set; }
-
-        /// <summary>
-        /// Create a service client for the specified service interface using the options set in this instance.
-        /// For example if T is set to IAmazonS3 then the AmazonS3ServiceClient which implements IAmazonS3 is created
-        /// and returned.
-        /// </summary>
-        /// <typeparam name="T">The service interface that a service client will be created for.</typeparam>
-        /// <returns>The service client that implements the service interface.</returns>
-        public T CreateServiceClient<T>() where T : class, IAmazonService
-        {
-            return new ClientFactory<T>(this, CredentialsFactory, (ILogger)null).CreateServiceClient() as T;
-        }
 
         /// <summary>
         /// Container for logging settings of the SDK
