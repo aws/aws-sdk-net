@@ -34,7 +34,6 @@
   <PropertyGroup Condition="'$(TargetFramework)' != 'net8.0'">
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
-	
   <ItemGroup>
     <Compile Remove="**/obj/**"/>
     <None Remove="**/obj/**" />
