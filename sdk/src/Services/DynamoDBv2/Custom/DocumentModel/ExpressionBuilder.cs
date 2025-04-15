@@ -135,7 +135,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="nameBuilder">The <see cref="NameBuilder"/> representing the attribute name.</param>
         /// <param name="setExpressionBuilder">The <see cref="SetValueBuilder"/> representing the value to set.</param>
         /// <returns>The current <see cref="UpdateExpressionBuilder"/> instance for chaining additional operations.</returns>
-        public UpdateExpressionBuilder Set(NameBuilder nameBuilder, SetValueBuilder setExpressionBuilder)
+        public UpdateExpressionBuilder Set(NameBuilder nameBuilder, OperandBuilder setExpressionBuilder)
         {
             if (!OperationBuilders.TryGetValue(OperationModeSet, out var ops))
             {
@@ -292,7 +292,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (node.FormatedExpression.EndsWith(", "))
             {
                 node.FormatedExpression = node.FormatedExpression.Substring(0, node.FormatedExpression.Length - 2);
-
             }
 
             return node;
@@ -593,21 +592,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 ConditionMode.Contains =>
                     ContainsBuildCondition(node),
 
-                ConditionMode.Parentheses =>
-                    ParenthesesBuildCondition(node),
-
                 ConditionMode.Unset =>
                     throw new InvalidOperationException("ConditionBuilder"),
 
                 _ =>
                     throw new InvalidOperationException($"Build condition error: unsupported mode: {_conditionMode}")
             };
-        }
-
-        private ExpressionNode ParenthesesBuildCondition(ExpressionNode node)
-        {
-            node.FormatedExpression = "( $c )";
-            return node;
         }
 
         private Queue<ExpressionNode> BuildChildNodes()
@@ -1077,9 +1067,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Default constructor for ValueBuilder.
         /// </summary>
         /// <param name="value"></param>
-        public ValueBuilder(DynamoDBEntry value)
+        internal ValueBuilder(DynamoDBEntry value)
         {
             _value = value;
+        }
+
+        /// <summary>
+        /// Creates a new instance of ValueBuilder with the specified value.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static ValueBuilder New(DynamoDBEntry value)
+        {
+            return new ValueBuilder(value);
         }
 
         /// <summary>
@@ -1282,7 +1282,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         And,
         Or,
         Not,
-        Parentheses,
 
         // Function-based Conditions
         Between,

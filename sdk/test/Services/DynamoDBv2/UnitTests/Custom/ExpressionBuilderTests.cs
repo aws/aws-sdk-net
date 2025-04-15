@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet.UnitTests
         public void BuildForAddOperation_ShouldReturnExpression()
         {
             var builder = UpdateExpressionBuilder.New();
-            builder.Add(NameBuilder.New("test"), new ValueBuilder(10));
+            builder.Add(NameBuilder.New("Garbage"), ValueBuilder.New("asdf"));
 
             var expressionTree = builder.Build();
 
@@ -60,7 +60,7 @@ namespace AWSSDK_DotNet.UnitTests
         public void BuildForDeleteOperation_ShouldReturnExpression()
         {
             var builder = UpdateExpressionBuilder.New();
-            builder.Delete(NameBuilder.New("test"), new ValueBuilder(10));
+            builder.Delete(NameBuilder.New("test"), ValueBuilder.New(10));
 
             var expressionTree = builder.Build();
 
@@ -75,7 +75,6 @@ namespace AWSSDK_DotNet.UnitTests
         {
             var builder = UpdateExpressionBuilder.New();
             builder.Remove(NameBuilder.New(""));
-
             builder.Build();
         }
 
@@ -89,6 +88,7 @@ namespace AWSSDK_DotNet.UnitTests
                 Set(NameBuilder.New("test2"),
                     SetValueBuilder.New().WithValue(20).Minus(30)).
                 Build();
+
             Assert.AreEqual("SET #0 = :0 + :1, #1 = :2 - :3\n", updateExpression.ExpressionStatement);
             Assert.AreEqual(2, updateExpression.ExpressionAttributeNames.Count);
             Assert.AreEqual("test", updateExpression.ExpressionAttributeNames["#0"]);
@@ -105,6 +105,7 @@ namespace AWSSDK_DotNet.UnitTests
                     SetValueBuilder.New().WithValue(10).Plus(20)).
                 Remove(NameBuilder.New("test2")).
                 Build();
+
             Assert.AreEqual(updateExpression.ExpressionStatement, "SET #0 = :0 + :1\nREMOVE #1\n");
             Assert.AreEqual(2, updateExpression.ExpressionAttributeNames.Count);
             Assert.AreEqual(2, updateExpression.ExpressionAttributeValues.Count);
@@ -128,9 +129,8 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void NameBuilderConstructor_WhenCalled_CreatesValidInstance()
         {
-
             var nameBuilder = NameBuilder.New("test");
-            // Assert
+
             Assert.IsNotNull(nameBuilder);
             Assert.IsInstanceOfType(nameBuilder, typeof(OperandBuilder));
         }
@@ -139,11 +139,9 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void Complex_Attribute_Paths_Should_Build_Correctly()
         {
-            // Arrange
             var nameBuilder = NameBuilder.New("parent.child[0].attribute");
-
-            // Act & Assert
             var node = nameBuilder.AttributeExists().Build();
+
             Assert.AreEqual("attribute_exists (#0.#1[0].#2)", node.ExpressionStatement);
             Assert.AreEqual(0, node.ExpressionAttributeValues.Count);
             Assert.AreEqual(3, node.ExpressionAttributeNames.Count);
@@ -153,15 +151,11 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void BuildNameBuilder_WithSpecialCharacters_Should_Build_Correctly()
         {
-            // Arrange
-            string attributeName = "Test#Attribute-Name.123";
-
+            var attributeName = "Test#Attribute-Name.123";
             var nameBuilder = NameBuilder.New(attributeName);
 
-            // Act
             var result = nameBuilder.AttributeExists().Build();
 
-            // Assert
             Assert.IsNotNull(result);
             Assert.AreEqual("attribute_exists (#0.#1)", result.ExpressionStatement);
         }
@@ -170,14 +164,11 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void BuildNameBuilder_Equal_WithValue_ReturnsCondition()
         {
-            // Arrange
             var nameBuilder = NameBuilder.New("TestAttribute");
 
-            // Act
             var result = nameBuilder.Equal(10);
             var resultNode = result.Build();
 
-            // Assert
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("#0 = :0", resultNode.ExpressionStatement);
         }
@@ -186,14 +177,11 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void BuildNameBuilder_NotEqual_WithValue_ReturnsCondition()
         {
-            // Arrange
             var nameBuilder = NameBuilder.New("TestAttribute");
 
-            // Act
             var result = nameBuilder.NotEqual(10);
             var resultNode = result.Build();
 
-            // Assert
             Assert.IsNotNull(result);
             Assert.AreEqual("#0 <> :0", resultNode.ExpressionStatement);
         }
@@ -202,14 +190,11 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void BuildNameBuilder_GreaterThan_WithValue_ReturnsCondition()
         {
-            // Arrange
             var nameBuilder = NameBuilder.New("TestAttribute");
 
-            // Act
             var result = nameBuilder.GreaterThan(10);
             var resultNode = result.Build();
 
-            // Assert
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("#0 > :0", resultNode.ExpressionStatement);
         }
@@ -218,12 +203,11 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void BuildNameBuilder_GreaterThanOrEqual_WithValue_ReturnsCondition()
         {
-            // Arrange
             var nameBuilder = NameBuilder.New("TestAttribute");
-            // Act
+
             var result = nameBuilder.GreaterThanOrEqual(10);
             var resultNode = result.Build();
-            // Assert
+
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("#0 >= :0", resultNode.ExpressionStatement);
         }
@@ -232,12 +216,11 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void BuildNameBuilder_LessThan_WithValue_ReturnsCondition()
         {
-            // Arrange
             var nameBuilder = NameBuilder.New("TestAttribute");
-            // Act
+
             var result = nameBuilder.LessThan(10);
             var resultNode = result.Build();
-            // Assert
+
             Assert.IsNotNull(result);
             Assert.AreEqual("#0 < :0", resultNode.ExpressionStatement);
         }
@@ -246,12 +229,11 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void BuildNameBuilder_LessThanOrEqual_WithValue_ReturnsCondition()
         {
-            // Arrange
             var nameBuilder = NameBuilder.New("TestAttribute");
-            // Act
+
             var result = nameBuilder.LessThanOrEqual(10);
             var resultNode = result.Build();
-            // Assert
+
             Assert.IsNotNull(result);
             Assert.AreEqual("#0 <= :0", resultNode.ExpressionStatement);
         }
@@ -260,14 +242,12 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void BuildNameBuilder_Between_WithValue_ReturnsCondition()
         {
-            // Arrange
             var nameBuilder = NameBuilder.New("TestAttribute");
-            // Act
+
             var result = nameBuilder.Between(10, 20);
             var resultNode = result.Build();
-            // Assert
-            Assert.IsNotNull(result);
 
+            Assert.IsNotNull(result);
             Assert.AreEqual("#0 BETWEEN :0 AND :1", resultNode.ExpressionStatement);
         }
 
@@ -275,12 +255,11 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void BuildNameBuilder_In_WithValue_ReturnsCondition()
         {
-            // Arrange
             var nameBuilder = NameBuilder.New("TestAttribute");
-            // Act
+
             var result = nameBuilder.In(10, 20, 30);
             var resultNode = result.Build();
-            // Assert
+
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("#0 IN (:0, :1, :2)", resultNode.ExpressionStatement);
         }
@@ -289,12 +268,11 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void BuildNameBuilder_BeginsWith_WithValue_ReturnsCondition()
         {
-            // Arrange
             var nameBuilder = NameBuilder.New("TestAttribute");
-            // Act
+
             var result = nameBuilder.BeginsWith("test");
             var resultNode = result.Build();
-            // Assert
+
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("begins_with (#0, :0)", resultNode.ExpressionStatement);
         }
@@ -303,12 +281,11 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void BuildNameBuilder_Contains_WithValue_ReturnsCondition()
         {
-            // Arrange
             var nameBuilder = NameBuilder.New("TestAttribute");
-            // Act
+
             var result = nameBuilder.Contains("test");
             var resultNode = result.Build();
-            // Assert
+
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("contains (#0, :0)", resultNode.ExpressionStatement);
         }
@@ -317,12 +294,11 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void BuildNameBuilder_AttributeExists_ReturnsCondition()
         {
-            // Arrange
             var nameBuilder = NameBuilder.New("TestAttribute");
-            // Act
+            
             var result = nameBuilder.AttributeExists();
             var resultNode = result.Build();
-            // Assert
+            
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("attribute_exists (#0)", resultNode.ExpressionStatement);
         }
@@ -331,12 +307,11 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void BuildNameBuilder_AttributeNotExists_ReturnsCondition()
         {
-            // Arrange
             var nameBuilder = NameBuilder.New("TestAttribute");
-            // Act
+            
             var result = nameBuilder.AttributeNotExists();
             var resultNode = result.Build();
-            // Assert
+            
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("attribute_not_exists (#0)", resultNode.ExpressionStatement);
         }
@@ -345,12 +320,11 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void BuildNameBuilder_AttributeType_ReturnsCondition()
         {
-            // Arrange
             var nameBuilder = NameBuilder.New("TestAttribute");
-            // Act
+            
             var result = nameBuilder.AttributeType(DynamoDBAttributeType.B);
             var resultNode = result.Build();
-            // Assert
+            
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("attribute_type (#0, :0)", resultNode.ExpressionStatement);
         }
@@ -359,12 +333,12 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void ConditionExpressionBuilder_And_ReturnsCondition()
         {
-            // Act
-            var result = ConditionExpressionBuilder.And(NameBuilder.New("Attribute1").Equal(10),
+            var result = ConditionExpressionBuilder.
+                And(NameBuilder.New("Attribute1").Equal(10),
                 NameBuilder.New("Attribute2").Equal(10));
 
             var resultNode = result.Build();
-            // Assert
+            
             Assert.IsNotNull(result);
             Assert.AreEqual("(#0 = :0) AND (#1 = :1)", resultNode.ExpressionStatement);
         }
@@ -373,14 +347,14 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void ConditionExpressionBuilder_And_Multiple_ReturnsCondition()
         {
-            // Act
+            
             var result = ConditionExpressionBuilder.And(NameBuilder.New("Attribute1").Equal(10),
                 NameBuilder.New("Attribute2").Equal(10),
                 NameBuilder.New("Attribute3").Equal(10),
                 NameBuilder.New("Attribute4").Equal(10));
 
             var resultNode = result.Build();
-            // Assert
+            
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("(#0 = :0) AND (#1 = :1) AND (#2 = :2) AND (#3 = :3)", resultNode.ExpressionStatement);
         }
@@ -389,12 +363,11 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void ConditionExpressionBuilder_Or_ReturnsCondition()
         {
-            // Act
             var result = ConditionExpressionBuilder.Or(NameBuilder.New("Attribute1").Equal(10),
                 NameBuilder.New("Attribute2").Equal(20));
 
             var resultNode = result.Build();
-            // Assert
+            
             Assert.IsNotNull(result);
             Assert.AreEqual("(#0 = :0) OR (#1 = :1)", resultNode.ExpressionStatement);
         }
@@ -403,13 +376,13 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void ConditionExpressionBuilder_Or_Multiple_ReturnsCondition()
         {
-            // Act
             var result = ConditionExpressionBuilder.Or(NameBuilder.New("Attribute1").Equal(10),
                 NameBuilder.New("Attribute2").Equal(20),
                 NameBuilder.New("Attribute3").Equal(30),
                 NameBuilder.New("Attribute4").Equal(40));
+
             var resultNode = result.Build();
-            // Assert
+            
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("(#0 = :0) OR (#1 = :1) OR (#2 = :2) OR (#3 = :3)", resultNode.ExpressionStatement);
         }
@@ -418,13 +391,13 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void ConditionExpressionBuilder_AndNestedOr_ReturnsCondition()
         {
-            // Act
-            var result = ConditionExpressionBuilder.And(NameBuilder.New("Attribute1").Equal(10),
+            var result = ConditionExpressionBuilder.
+                And(NameBuilder.New("Attribute1").Equal(10),
                 ConditionExpressionBuilder.Or(NameBuilder.New("Attribute2").Equal(20),
                     NameBuilder.New("Attribute3").Equal(30)));
 
             var resultNode = result.Build();
-            // Assert
+            
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("(#0 = :0) AND ((#1 = :1) OR (#2 = :2))", resultNode.ExpressionStatement);
         }
@@ -433,13 +406,13 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void ConditionExpressionBuilder_AndOr_ReturnsCondition()
         {
-            // Act
-            var result = ConditionExpressionBuilder.And(NameBuilder.New("Attribute1").Equal(10),
+            var result = ConditionExpressionBuilder.
+                And(NameBuilder.New("Attribute1").Equal(10),
                 NameBuilder.New("Attribute2").Equal(20)).Or(
                     NameBuilder.New("Attribute3").Equal(30));
 
             var resultNode = result.Build();
-            // Assert
+            
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("((#0 = :0) AND (#1 = :1)) OR (#2 = :2)", resultNode.ExpressionStatement);
         }
@@ -448,10 +421,11 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void ConditionExpressionBuilder_Not_ReturnsCondition()
         {
-            // Act
-            var result = ConditionExpressionBuilder.Not(NameBuilder.New("Attribute1").Equal(10));
+            var result = ConditionExpressionBuilder.
+                Not(NameBuilder.New("Attribute1").Equal(10));
+            
             var resultNode = result.Build();
-            // Assert
+            
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("NOT (#0 = :0)", resultNode.ExpressionStatement);
         }
