@@ -231,6 +231,11 @@
             ]
         }
     },
+    "shapeSubstitutions":{
+        "AccessControlPolicy":{
+            "renameShape": "S3AccessControlList"
+        }
+    },
     "operationModifiers": {
         "CreateBucket": {
             "name": "PutBucket"

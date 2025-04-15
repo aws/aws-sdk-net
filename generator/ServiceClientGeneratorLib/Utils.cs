@@ -438,5 +438,18 @@ namespace ServiceClientGenerator
 
             return parts;
         }
+
+        /// <summary>
+        /// Loads a JsonData object for data in a given file.
+        /// </summary>
+        /// <param name="path">Path to the JSON file.</param>
+        /// <returns>JsonData corresponding to JSON in the file.</returns>
+        public static JsonData LoadJsonFromFile(string path)
+        {
+            JsonData data;
+            using (var reader = new StreamReader(path))
+                data = JsonMapper.ToObject(reader);
+            return data;
+        }
     }
 }

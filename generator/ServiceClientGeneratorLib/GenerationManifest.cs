@@ -101,8 +101,8 @@ namespace ServiceClientGenerator
                         new FileReader(),
                         new DefaultConfigurationParser()));
 
-            var manifest = LoadJsonFromFile(options.Manifest);
-            var versionsManifest = LoadJsonFromFile(options.Versions);
+            var manifest = Utils.LoadJsonFromFile(options.Manifest);
+            var versionsManifest = Utils.LoadJsonFromFile(options.Versions);
 
             generationManifest.CoreFileVersion = versionsManifest["CoreVersion"].ToString();
             generationManifest.CoreVersion = Utils.GetVersion(versionsManifest["OverrideCoreVersion"]?.ToString() ?? generationManifest.CoreFileVersion);
@@ -152,7 +152,7 @@ namespace ServiceClientGenerator
                 string metadataJsonFile = Utils.PathCombineAlt(serviceDirectory, "metadata.json");
                 if (File.Exists(metadataJsonFile))
                 {
-                    JsonData metadataNode = LoadJsonFromFile(metadataJsonFile);
+                    JsonData metadataNode = Utils.LoadJsonFromFile(metadataJsonFile);
 
                     var activeNode = metadataNode[ModelsSectionKeys.ActiveKey];
                     if (activeNode != null
@@ -470,18 +470,7 @@ namespace ServiceClientGenerator
             return customizationFile;
         }
 
-        /// <summary>
-        /// Loads a JsonData object for data in a given file.
-        /// </summary>
-        /// <param name="path">Path to the JSON file.</param>
-        /// <returns>JsonData corresponding to JSON in the file.</returns>
-        private static JsonData LoadJsonFromFile(string path)
-        {
-            JsonData data;
-            using (var reader = new StreamReader(path))
-                data = JsonMapper.ToObject(reader);
-            return data;
-        }
+
 
         private readonly IDefaultConfigurationController _defaultConfigurationController;
         private GenerationManifest(IDefaultConfigurationController defaultConfigurationController)

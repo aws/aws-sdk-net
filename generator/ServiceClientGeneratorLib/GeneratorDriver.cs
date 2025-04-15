@@ -197,9 +197,30 @@ namespace ServiceClientGenerator
                 ExecuteProjectFileGenerators();
                 // The AmazonS3RetryPolicy simply populates the static list of requests to retry for a status code of 200 which returns an exception.
                 ExecuteGenerator(new AmazonS3RetryPolicy(), "AmazonS3RetryPolicy.cs");
+                //var s3FileName = "s3-2006-03-01.normal.json";
+                //var tempS3Path = Path.Combine("C:","temp", s3FileName);
+                //var tempS3CustomizationPath = Path.Combine("C:", "temp", "s3.customizations.json");
+                //ServiceModel tempS3Model = new ServiceModel(tempS3Path, tempS3CustomizationPath);
+                //IEnumerable<Operation> generatedS3Operations;
+                //if (CanGenerateS3(tempS3Model, this.Configuration.ServiceModel, out generatedS3Operations))
+                //{
+                //    // Generates the Request, Response, Marshaller, Unmarshaller, and Exception objects for a given client operation
+                //    foreach (var operation in generatedS3Operations)
+                //    {
+                //        GenerateRequest(operation);
+                //        GenerateResponse(operation);
+                //        GenerateRequestMarshaller(operation);
+                //        GenerateResponseUnmarshaller(operation);
+                //        GenerateEndpointDiscoveryMarshaller(operation);
+                //        GenerateExceptions(operation);
+                //        GenerateStructures(operation);
+                //    }
+                //}
+                //return;
+                //var s3Driver = new GeneratorDriver()
+                // In reality we will download from raw github content but just for the sake of this POC let's just use the file I created in temp
+                
                 //string url = "https://raw.githubusercontent.com/aws/aws-sdk-net/refs/heads/main/generator/ServiceModels/s3/s3-2006-03-01.normal.json";
-                //string outputFile = "temp-s3.json";
-                //var outputDirectory = Path.Join(Path.GetTempPath(), outputFile);
 
 
                 //using HttpClient client = new HttpClient();
@@ -290,6 +311,32 @@ namespace ServiceClientGenerator
                 ExecuteExampleGenerator(new ExampleMetadata(), servicename + ".GeneratedSamples.extra.xml");
             }
         }
+
+        private bool CanGenerateS3(ServiceModel tempS3Model, ServiceModel serviceModel, out IEnumerable<Operation> operations)
+        {
+            // get operations that are in temp but not in the current model
+            
+            var newOperations = tempS3Model.Operations.Except(serviceModel.Operations).ToList();
+            operations = newOperations;
+            if (newOperations.Count > 0)
+            {
+                var shapes = serviceModel.Shapes;
+                foreach (var operation in newOperations)
+                {
+                    foreach (var member in operation.RequestStructure.Members)
+                    {
+                        if (shapes.Contains(member.Shape))
+                            return false;
+                    }
+                }
+            }
+            operations = newOperations;
+            return true;
+            // Is it a new operation
+            // if yes, then is the input and output new shape?
+            // if yes then does the input and output target shapes that are also new?
+        }
+        
 
         /// <summary>
         /// Generates the request class for the operation.

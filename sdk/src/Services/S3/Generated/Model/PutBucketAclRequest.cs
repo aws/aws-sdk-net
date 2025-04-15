@@ -279,7 +279,7 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class PutBucketAclRequest : AmazonS3Request
     {
-        private AccessControlPolicy _accessControlPolicy;
+        private S3AccessControlList _accessControlPolicy;
         private BucketCannedACL _acl;
         private string _bucketName;
         private ChecksumAlgorithm _checksumAlgorithm;
@@ -297,7 +297,7 @@ namespace Amazon.S3.Model
         /// Contains the elements that set the ACL permissions for an object per grantee.
         /// </para>
         /// </summary>
-        public AccessControlPolicy AccessControlPolicy
+        public S3AccessControlList AccessControlPolicy
         {
             get { return this._accessControlPolicy; }
             set { this._accessControlPolicy = value; }

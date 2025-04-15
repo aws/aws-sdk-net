@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Json.LitJson;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-
+using ServiceClientGenerator.DefaultConfiguration;
 namespace ServiceClientGenerator
 {
     public class Program
@@ -37,8 +38,33 @@ namespace ServiceClientGenerator
             {
                 if (options.CompileCustomizations) // Compile all servicename.customizations*.json files into one json file in bin
                     CustomizationCompiler.CompileServiceCustomizations(options);
-
+                //var s3FileName = "s3-2006-03-01.normal.json";
+                //var tempS3Path = Path.Combine("C:","temp", s3FileName);
+                //string metadataJsonFile = Path.Combine("C:","temp", "metadata.json");
                 var generationManifest = GenerationManifest.Load(options);
+                //JsonData metadataNode = Utils.LoadJsonFromFile(metadataJsonFile);
+
+                //var testS3GenerationManifest =
+                //    new GenerationManifest(
+                //        new DefaultConfigurationController(
+                //            new FileReader(),
+                //            new DefaultConfigurationParser()));
+
+                //var manifest = Utils.LoadJsonFromFile(options.Manifest);
+                //var versionsManifest = Utils.LoadJsonFromFile(options.Versions);
+                //var testS3Config = new ServiceConfiguration
+                //{
+                //    ModelName = "tests3",
+                //    ModelPath = tempS3Path,
+                //    PaginatorsPath = null,
+                //    Namespace = Utils.JsonDataToString(metadataNode["namespace"]), // Namespace of the service if it's different from basename
+                //    ClassNameOverride = Utils.JsonDataToString(metadataNode["base-name"]),
+                //    DefaultRegion = Utils.JsonDataToString(metadataNode["default-region"]),
+                //    GenerateConstructors =  false, // A way to prevent generating basic constructors
+                //    IsTestService = false
+                //};
+                //var testS3GeneratorDriver = new GeneratorDriver(testS3Config, null, null);
+
 
                 if (string.IsNullOrEmpty(options.SelfServiceModel))
                 {

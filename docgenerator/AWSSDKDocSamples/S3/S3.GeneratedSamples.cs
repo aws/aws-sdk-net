@@ -997,7 +997,7 @@ namespace AWSSDKDocSamples.Amazon.S3.Generated
             var client = new AmazonS3Client();
             var response = client.PutObjectAcl(new PutObjectAclRequest 
             {
-                AccessControlPolicy = new AccessControlPolicy {  },
+                AccessControlPolicy = new S3AccessControlList {  },
                 GrantFullControl = "emailaddress=user1@example.com,emailaddress=user2@example.com",
                 GrantRead = "uri=http://acs.amazonaws.com/groups/global/AllUsers",
                 Key = "HappyFace.jpg"
