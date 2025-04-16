@@ -4501,6 +4501,7 @@
                 }
               ]
             },
+            "ap-southeast-7": {},
             "ca-central-1": {
               "variants": [
                 {
@@ -4699,6 +4700,7 @@
                 }
               ]
             },
+            "mx-central-1": {},
             "sa-east-1": {
               "variants": [
                 {
@@ -25668,6 +25670,18 @@
             }
           }
         },
+        "query.timestream": {
+          "endpoints": {
+            "ap-northeast-1": {},
+            "ap-south-1": {},
+            "ap-southeast-2": {},
+            "eu-central-1": {},
+            "eu-west-1": {},
+            "us-east-1": {},
+            "us-east-2": {},
+            "us-west-2": {}
+          }
+        },
         "quicksight": {
           "endpoints": {
             "af-south-1": {},
@@ -28889,6 +28903,7 @@
         "rum": {
           "endpoints": {
             "af-south-1": {},
+            "ap-east-1": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -28907,6 +28922,7 @@
             "eu-west-1": {},
             "eu-west-2": {},
             "eu-west-3": {},
+            "il-central-1": {},
             "me-central-1": {},
             "me-south-1": {},
             "sa-east-1": {},
@@ -37624,6 +37640,7 @@
             "il-central-1": {},
             "me-central-1": {},
             "me-south-1": {},
+            "mx-central-1": {},
             "sa-east-1": {},
             "us-east-1": {
               "variants": [
@@ -47104,6 +47121,11 @@
             }
           }
         },
+        "query.timestream": {
+          "endpoints": {
+            "us-gov-west-1": {}
+          }
+        },
         "quicksight": {
           "endpoints": {
             "us-gov-east-1": {},
@@ -52291,6 +52313,11 @@
             "eu-isoe-west-1": {}
           }
         },
+        "dms": {
+          "endpoints": {
+            "eu-isoe-west-1": {}
+          }
+        },
         "ds": {
           "endpoints": {
             "eu-isoe-west-1": {}
@@ -52400,6 +52427,11 @@
           }
         },
         "glue": {
+          "endpoints": {
+            "eu-isoe-west-1": {}
+          }
+        },
+        "kinesis": {
           "endpoints": {
             "eu-isoe-west-1": {}
           }
@@ -52561,6 +52593,11 @@
           "partitionEndpoint": "aws-iso-e-global"
         },
         "scheduler": {
+          "endpoints": {
+            "eu-isoe-west-1": {}
+          }
+        },
+        "secretsmanager": {
           "endpoints": {
             "eu-isoe-west-1": {}
           }
