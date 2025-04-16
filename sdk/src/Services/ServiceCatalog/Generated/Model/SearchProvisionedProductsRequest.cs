@@ -74,7 +74,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property AccessLevelFilter. 
         /// <para>
-        /// The access level to use to obtain results. The default is <c>User</c>.
+        /// The access level to use to obtain results. The default is <c>Account</c>.
         /// </para>
         /// </summary>
         public AccessLevelFilter AccessLevelFilter
