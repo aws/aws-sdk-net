@@ -39,6 +39,7 @@ namespace Amazon.EventBridge.Model
         private UpdateConnectionAuthRequestParameters _authParameters;
         private string _description;
         private ConnectivityResourceParameters _invocationConnectivityParameters;
+        private string _kmsKeyIdentifier;
         private string _name;
 
         /// <summary>
@@ -117,6 +118,37 @@ namespace Amazon.EventBridge.Model
         internal bool IsSetInvocationConnectivityParameters()
         {
             return this._invocationConnectivityParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyIdentifier. 
+        /// <para>
+        /// The identifier of the KMS customer managed key for EventBridge to use, if you choose
+        /// to use a customer managed key to encrypt this connection. The identifier can be the
+        /// key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify a customer managed key identifier, EventBridge uses an Amazon
+        /// Web Services owned key to encrypt the connection.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html">Identify
+        /// and view keys</a> in the <i>Key Management Service Developer Guide</i>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string KmsKeyIdentifier
+        {
+            get { return this._kmsKeyIdentifier; }
+            set { this._kmsKeyIdentifier = value; }
+        }
+
+        // Check to see if KmsKeyIdentifier property is set
+        internal bool IsSetKmsKeyIdentifier()
+        {
+            return this._kmsKeyIdentifier != null;
         }
 
         /// <summary>

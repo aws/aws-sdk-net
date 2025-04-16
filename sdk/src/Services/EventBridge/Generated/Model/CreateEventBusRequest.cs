@@ -118,10 +118,19 @@ namespace Amazon.EventBridge.Model
         ///  <note> 
         /// <para>
         /// Schema discovery is not supported for event buses encrypted using a customer managed
-        /// key. EventBridge returns an error if you call <c> <a href="https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers.html#CreateDiscoverer">CreateDiscoverer</a>
+        /// key. EventBridge returns an error if: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You call <c> <a href="https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers.html#CreateDiscoverer">CreateDiscoverer</a>
         /// </c> on an event bus set to use a customer managed key for encryption.
         /// </para>
-        ///  
+        ///  </li> <li> 
+        /// <para>
+        /// You call <c> <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdatedEventBus.html">UpdatedEventBus</a>
+        /// </c> to set a customer managed key on an event bus with schema discovery enabled.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// To enable schema discovery on an event bus, choose to use an Amazon Web Services owned
         /// key. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption-event-bus-cmkey.html">Encrypting
