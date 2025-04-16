@@ -826,7 +826,7 @@
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.FieldValueUnion.StringValue</property>
     <min>0</min>
-    <max>1500</max>
+    <max>3000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.FileContent.FileArn</property>
@@ -930,6 +930,39 @@
     <property>Amazon.ConnectCases.Model.SearchRelatedItemsResponseItem.RelatedItemId</property>
     <min>1</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.SlaConfiguration.FieldId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.SlaConfiguration.Name</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^.*[\S]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.SlaFilter.Name</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^.*[\S]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.SlaInputConfiguration.FieldId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.SlaInputConfiguration.Name</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^.*[\S]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.SlaInputConfiguration.TargetSlaMinutes</property>
+    <min>1</min>
+    <max>129600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.Sort.FieldId</property>

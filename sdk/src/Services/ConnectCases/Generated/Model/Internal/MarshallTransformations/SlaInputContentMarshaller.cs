@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RelatedItemInputContent Marshaller
+    /// SlaInputContent Marshaller
     /// </summary>
-    public class RelatedItemInputContentMarshaller : IRequestMarshaller<RelatedItemInputContent, JsonMarshallerContext> 
+    public class SlaInputContentMarshaller : IRequestMarshaller<SlaInputContent, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,50 +44,17 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RelatedItemInputContent requestObject, JsonMarshallerContext context)
+        public void Marshall(SlaInputContent requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetComment())
+            if(requestObject.IsSetSlaInputConfiguration())
             {
-                context.Writer.WritePropertyName("comment");
+                context.Writer.WritePropertyName("slaInputConfiguration");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = CommentContentMarshaller.Instance;
-                marshaller.Marshall(requestObject.Comment, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetContact())
-            {
-                context.Writer.WritePropertyName("contact");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ContactMarshaller.Instance;
-                marshaller.Marshall(requestObject.Contact, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetFile())
-            {
-                context.Writer.WritePropertyName("file");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = FileContentMarshaller.Instance;
-                marshaller.Marshall(requestObject.File, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetSla())
-            {
-                context.Writer.WritePropertyName("sla");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SlaInputContentMarshaller.Instance;
-                marshaller.Marshall(requestObject.Sla, context);
+                var marshaller = SlaInputConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SlaInputConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -97,7 +64,7 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RelatedItemInputContentMarshaller Instance = new RelatedItemInputContentMarshaller();
+        public readonly static SlaInputContentMarshaller Instance = new SlaInputContentMarshaller();
 
     }
 }

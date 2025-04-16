@@ -258,11 +258,17 @@ namespace Amazon.ConnectCases
         /// <para>
         /// The following fields are required when creating a case:
         /// </para>
-        ///  <pre><c> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You
-        /// must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account
-        /// ID:domains/your_profiles_domain_name/profiles/profile_ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt;
-        /// &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
-        /// </c></pre>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>customer_id</c> - You must provide the full customer profile ARN in this format:
+        /// <c>arn:aws:profile:your_AWS_Region:your_AWS_account ID:domains/your_profiles_domain_name/profiles/profile_ID</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>title</c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCase service method.</param>
         /// 
@@ -404,7 +410,7 @@ namespace Amazon.ConnectCases
         /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/required-permissions-iam-cases.html#onboard-cases-iam">Onboard
         /// to Cases</a>.
         /// </para>
-        ///  <pre><c> &lt;/important&gt; </c></pre>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
         /// 
@@ -853,10 +859,13 @@ namespace Amazon.ConnectCases
         /// <summary>
         /// Deletes a Cases domain.
         /// 
-        ///  <pre><c> &lt;note&gt; &lt;p&gt;After deleting your domain you must disassociate the
-        /// deleted domain from your Amazon Connect instance with another API call before being
-        /// able to use Cases again with this Amazon Connect instance. See &lt;a href=&quot;https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html&quot;&gt;DeleteIntegrationAssociation&lt;/a&gt;.&lt;/p&gt;
-        /// &lt;/note&gt; </c></pre>
+        ///  <note> 
+        /// <para>
+        /// After deleting your domain you must disassociate the deleted domain from your Amazon
+        /// Connect instance with another API call before being able to use Cases again with this
+        /// Amazon Connect instance. See <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html">DeleteIntegrationAssociation</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomain service method.</param>
         /// 
@@ -1047,12 +1056,23 @@ namespace Amazon.ConnectCases
         /// <summary>
         /// Deletes a layout from a cases template. You can delete up to 100 layouts per domain.
         /// 
-        ///  <pre><c> &lt;p&gt;After a layout is deleted:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You
-        /// can still retrieve the layout by calling &lt;code&gt;GetLayout&lt;/code&gt;.&lt;/p&gt;
-        /// &lt;/li&gt; &lt;li&gt; &lt;p&gt;You cannot update a deleted layout by calling &lt;code&gt;UpdateLayout&lt;/code&gt;;
-        /// it throws a &lt;code&gt;ValidationException&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt;
-        /// &lt;p&gt;Deleted layouts are not included in the &lt;code&gt;ListLayouts&lt;/code&gt;
-        /// response.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </c></pre>
+        ///  
+        /// <para>
+        /// After a layout is deleted:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can still retrieve the layout by calling <c>GetLayout</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot update a deleted layout by calling <c>UpdateLayout</c>; it throws a <c>ValidationException</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Deleted layouts are not included in the <c>ListLayouts</c> response.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLayout service method.</param>
         /// 
@@ -1116,12 +1136,27 @@ namespace Amazon.ConnectCases
         /// <summary>
         /// Deletes a cases template. You can delete up to 100 templates per domain.
         /// 
-        ///  <pre><c> &lt;p&gt;After a cases template is deleted:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;
-        /// &lt;p&gt;You can still retrieve the template by calling &lt;code&gt;GetTemplate&lt;/code&gt;.&lt;/p&gt;
-        /// &lt;/li&gt; &lt;li&gt; &lt;p&gt;You cannot update the template. &lt;/p&gt; &lt;/li&gt;
-        /// &lt;li&gt; &lt;p&gt;You cannot create a case by using the deleted template.&lt;/p&gt;
-        /// &lt;/li&gt; &lt;li&gt; &lt;p&gt;Deleted templates are not included in the &lt;code&gt;ListTemplates&lt;/code&gt;
-        /// response.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </c></pre>
+        ///  
+        /// <para>
+        /// After a cases template is deleted:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can still retrieve the template by calling <c>GetTemplate</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot update the template. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot create a case by using the deleted template.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Deleted templates are not included in the <c>ListTemplates</c> response.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTemplate service method.</param>
         /// 
@@ -2039,6 +2074,11 @@ namespace Amazon.ConnectCases
         /// <returns>The response from the PutCaseEventConfiguration service method, as returned by ConnectCases.</returns>
         /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
         /// We couldn't process your request because of an issue with the server. Try again later.

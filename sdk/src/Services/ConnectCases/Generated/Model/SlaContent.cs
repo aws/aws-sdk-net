@@ -30,38 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDomain operation.
-    /// Deletes a Cases domain.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// After deleting your domain you must disassociate the deleted domain from your Amazon
-    /// Connect instance with another API call before being able to use Cases again with this
-    /// Amazon Connect instance. See <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html">DeleteIntegrationAssociation</a>.
-    /// </para>
-    ///  </note>
+    /// Represents the content of an SLA to be returned to agents.
     /// </summary>
-    public partial class DeleteDomainRequest : AmazonConnectCasesRequest
+    public partial class SlaContent
     {
-        private string _domainId;
+        private SlaConfiguration _slaConfiguration;
 
         /// <summary>
-        /// Gets and sets the property DomainId. 
+        /// Gets and sets the property SlaConfiguration. 
         /// <para>
-        /// The unique identifier of the Cases domain. 
+        /// Represents an SLA configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=500)]
-        public string DomainId
+        [AWSProperty(Required=true)]
+        public SlaConfiguration SlaConfiguration
         {
-            get { return this._domainId; }
-            set { this._domainId = value; }
+            get { return this._slaConfiguration; }
+            set { this._slaConfiguration = value; }
         }
 
-        // Check to see if DomainId property is set
-        internal bool IsSetDomainId()
+        // Check to see if SlaConfiguration property is set
+        internal bool IsSetSlaConfiguration()
         {
-            return this._domainId != null;
+            return this._slaConfiguration != null;
         }
 
     }

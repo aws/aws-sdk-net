@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RelatedItemTypeFilter Marshaller
+    /// SlaInputConfiguration Marshaller
     /// </summary>
-    public class RelatedItemTypeFilterMarshaller : IRequestMarshaller<RelatedItemTypeFilter, JsonMarshallerContext> 
+    public class SlaInputConfigurationMarshaller : IRequestMarshaller<SlaInputConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,52 +44,48 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RelatedItemTypeFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(SlaInputConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetComment())
+            if(requestObject.IsSetFieldId())
             {
-                context.Writer.WritePropertyName("comment");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CommentFilterMarshaller.Instance;
-                marshaller.Marshall(requestObject.Comment, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("fieldId");
+                context.Writer.Write(requestObject.FieldId);
             }
 
-            if(requestObject.IsSetContact())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("contact");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ContactFilterMarshaller.Instance;
-                marshaller.Marshall(requestObject.Contact, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("name");
+                context.Writer.Write(requestObject.Name);
             }
 
-            if(requestObject.IsSetFile())
+            if(requestObject.IsSetTargetFieldValues())
             {
-                context.Writer.WritePropertyName("file");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("targetFieldValues");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTargetFieldValuesListValue in requestObject.TargetFieldValues)
+                {
+                    context.Writer.WriteObjectStart();
 
-                var marshaller = FileFilterMarshaller.Instance;
-                marshaller.Marshall(requestObject.File, context);
+                    var marshaller = FieldValueUnionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTargetFieldValuesListValue, context);
 
-                context.Writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetSla())
+            if(requestObject.IsSetTargetSlaMinutes())
             {
-                context.Writer.WritePropertyName("sla");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("targetSlaMinutes");
+                context.Writer.Write(requestObject.TargetSlaMinutes);
+            }
 
-                var marshaller = SlaFilterMarshaller.Instance;
-                marshaller.Marshall(requestObject.Sla, context);
-
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetType())
+            {
+                context.Writer.WritePropertyName("type");
+                context.Writer.Write(requestObject.Type);
             }
 
         }
@@ -97,7 +93,7 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RelatedItemTypeFilterMarshaller Instance = new RelatedItemTypeFilterMarshaller();
+        public readonly static SlaInputConfigurationMarshaller Instance = new SlaInputConfigurationMarshaller();
 
     }
 }

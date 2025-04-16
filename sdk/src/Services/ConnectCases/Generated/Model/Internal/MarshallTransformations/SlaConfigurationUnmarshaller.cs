@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RelatedItemContent Object
+    /// Response Unmarshaller for SlaConfiguration Object
     /// </summary>  
-    public class RelatedItemContentUnmarshaller : IUnmarshaller<RelatedItemContent, XmlUnmarshallerContext>, IUnmarshaller<RelatedItemContent, JsonUnmarshallerContext>
+    public class SlaConfigurationUnmarshaller : IUnmarshaller<SlaConfiguration, XmlUnmarshallerContext>, IUnmarshaller<SlaConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RelatedItemContent IUnmarshaller<RelatedItemContent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SlaConfiguration IUnmarshaller<SlaConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public RelatedItemContent Unmarshall(JsonUnmarshallerContext context)
+        public SlaConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            RelatedItemContent unmarshalledObject = new RelatedItemContent();
+            SlaConfiguration unmarshalledObject = new SlaConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,46 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("comment", targetDepth))
+                if (context.TestExpression("completionTime", targetDepth))
                 {
-                    var unmarshaller = CommentContentUnmarshaller.Instance;
-                    unmarshalledObject.Comment = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CompletionTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("contact", targetDepth))
+                if (context.TestExpression("fieldId", targetDepth))
                 {
-                    var unmarshaller = ContactContentUnmarshaller.Instance;
-                    unmarshalledObject.Contact = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FieldId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("file", targetDepth))
+                if (context.TestExpression("name", targetDepth))
                 {
-                    var unmarshaller = FileContentUnmarshaller.Instance;
-                    unmarshalledObject.File = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sla", targetDepth))
+                if (context.TestExpression("status", targetDepth))
                 {
-                    var unmarshaller = SlaContentUnmarshaller.Instance;
-                    unmarshalledObject.Sla = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("targetFieldValues", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FieldValueUnion, FieldValueUnionUnmarshaller>(FieldValueUnionUnmarshaller.Instance);
+                    unmarshalledObject.TargetFieldValues = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("targetTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.TargetTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +113,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         }
 
 
-        private static RelatedItemContentUnmarshaller _instance = new RelatedItemContentUnmarshaller();        
+        private static SlaConfigurationUnmarshaller _instance = new SlaConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RelatedItemContentUnmarshaller Instance
+        public static SlaConfigurationUnmarshaller Instance
         {
             get
             {

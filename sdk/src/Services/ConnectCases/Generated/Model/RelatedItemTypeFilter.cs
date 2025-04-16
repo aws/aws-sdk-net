@@ -37,6 +37,7 @@ namespace Amazon.ConnectCases.Model
         private CommentFilter _comment;
         private ContactFilter _contact;
         private FileFilter _file;
+        private SlaFilter _sla;
 
         /// <summary>
         /// Gets and sets the property Comment. 
@@ -90,6 +91,24 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetFile()
         {
             return this._file != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sla. 
+        /// <para>
+        ///  Filter for related items of type <c>SLA</c>.
+        /// </para>
+        /// </summary>
+        public SlaFilter Sla
+        {
+            get { return this._sla; }
+            set { this._sla = value; }
+        }
+
+        // Check to see if Sla property is set
+        internal bool IsSetSla()
+        {
+            return this._sla != null;
         }
 
     }
