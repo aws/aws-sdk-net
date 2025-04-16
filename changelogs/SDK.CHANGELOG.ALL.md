@@ -1,3 +1,23 @@
+### 3.7.1024.0 (2025-04-16 18:29 UTC)
+* ConnectCases (3.7.402.0)
+	* This feature provides capabilities to help track and meet service level agreements (SLAs) on cases programmatically. It allows configuring a new related item of type `Sla` on a case using CreateRelatedItem API and provides the ability to search for this new related item using SearchRelatedItems API.
+* DSQL (3.7.402.0)
+	* Added GetClusterEndpointService API. The new API allows retrieving endpoint service name specific to a cluster.
+* EKS (3.7.415.0)
+	* Added support for new AL2023 ARM64 NVIDIA AMIs to the supported AMITypes.
+* EventBridge (3.7.404.0)
+	* Adding support for KmsKeyIdentifer in CreateConnection, UpdateConnection and DescribeConnection APIs
+* ResourceGroups (3.7.402.0)
+	* Resource Groups: TagSyncTasks can be created with ResourceQuery
+* S3Tables (3.7.402.0)
+	* S3 Tables now supports setting encryption configurations on table buckets and tables. Encryption configurations can use server side encryption using AES256 or KMS customer-managed keys.
+* ServiceCatalog (3.7.400.135)
+	* Updated default value for the access-level-filter in SearchProvisionedProducts API to Account. For access to userLevel or roleLevel, the user must provide access-level-filter parameter.
+* Core 3.7.402.41
+	* Added pagination attribute for Paginator methods
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1023.0 (2025-04-14 18:18 UTC)
 * EntityResolution (3.7.402.0)
 	* This is to add new metrics to our GetIdMappingJob API and also update uniqueId naming for batchDeleteUniqueIds API to be more accurate

@@ -32,7 +32,7 @@ namespace Amazon.VerifiedPermissions
     public partial class AmazonVerifiedPermissionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("VerifiedPermissions", "3.7.403.1");
+            InternalSDKUtils.BuildUserAgentString("VerifiedPermissions", "3.7.403.2");
 
         private string _userAgent = UserAgentString;
         ///<summary>
