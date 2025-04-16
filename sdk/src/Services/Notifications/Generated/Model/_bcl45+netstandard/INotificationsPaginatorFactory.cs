@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the notifications-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Notifications.Model
@@ -29,46 +30,91 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Paginator for ListChannels operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListChannelsPaginator ListChannels(ListChannelsRequest request);
 
         /// <summary>
         /// Paginator for ListEventRules operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEventRulesPaginator ListEventRules(ListEventRulesRequest request);
 
         /// <summary>
         /// Paginator for ListManagedNotificationChannelAssociations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListManagedNotificationChannelAssociationsPaginator ListManagedNotificationChannelAssociations(ListManagedNotificationChannelAssociationsRequest request);
 
         /// <summary>
         /// Paginator for ListManagedNotificationChildEvents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListManagedNotificationChildEventsPaginator ListManagedNotificationChildEvents(ListManagedNotificationChildEventsRequest request);
 
         /// <summary>
         /// Paginator for ListManagedNotificationConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListManagedNotificationConfigurationsPaginator ListManagedNotificationConfigurations(ListManagedNotificationConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListManagedNotificationEvents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListManagedNotificationEventsPaginator ListManagedNotificationEvents(ListManagedNotificationEventsRequest request);
 
         /// <summary>
         /// Paginator for ListNotificationConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListNotificationConfigurationsPaginator ListNotificationConfigurations(ListNotificationConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListNotificationEvents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListNotificationEventsPaginator ListNotificationEvents(ListNotificationEventsRequest request);
 
         /// <summary>
         /// Paginator for ListNotificationHubs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListNotificationHubsPaginator ListNotificationHubs(ListNotificationHubsRequest request);
     }
 }

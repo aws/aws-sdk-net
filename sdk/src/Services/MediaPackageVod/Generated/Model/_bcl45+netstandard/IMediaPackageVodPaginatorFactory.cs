@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the mediapackage-vod-2018-11-07.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageVod.Model
@@ -29,16 +30,31 @@ namespace Amazon.MediaPackageVod.Model
         /// <summary>
         /// Paginator for ListAssets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAssetsPaginator ListAssets(ListAssetsRequest request);
 
         /// <summary>
         /// Paginator for ListPackagingConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPackagingConfigurationsPaginator ListPackagingConfigurations(ListPackagingConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListPackagingGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPackagingGroupsPaginator ListPackagingGroups(ListPackagingGroupsRequest request);
     }
 }

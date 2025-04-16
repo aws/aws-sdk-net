@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the lookoutequipment-2020-12-15.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutEquipment.Model
@@ -29,56 +30,111 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Paginator for ListDataIngestionJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDataIngestionJobsPaginator ListDataIngestionJobs(ListDataIngestionJobsRequest request);
 
         /// <summary>
         /// Paginator for ListDatasets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDatasetsPaginator ListDatasets(ListDatasetsRequest request);
 
         /// <summary>
         /// Paginator for ListInferenceEvents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListInferenceEventsPaginator ListInferenceEvents(ListInferenceEventsRequest request);
 
         /// <summary>
         /// Paginator for ListInferenceExecutions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListInferenceExecutionsPaginator ListInferenceExecutions(ListInferenceExecutionsRequest request);
 
         /// <summary>
         /// Paginator for ListInferenceSchedulers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListInferenceSchedulersPaginator ListInferenceSchedulers(ListInferenceSchedulersRequest request);
 
         /// <summary>
         /// Paginator for ListLabelGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLabelGroupsPaginator ListLabelGroups(ListLabelGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListLabels operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLabelsPaginator ListLabels(ListLabelsRequest request);
 
         /// <summary>
         /// Paginator for ListModels operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListModelsPaginator ListModels(ListModelsRequest request);
 
         /// <summary>
         /// Paginator for ListModelVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListModelVersionsPaginator ListModelVersions(ListModelVersionsRequest request);
 
         /// <summary>
         /// Paginator for ListRetrainingSchedulers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRetrainingSchedulersPaginator ListRetrainingSchedulers(ListRetrainingSchedulersRequest request);
 
         /// <summary>
         /// Paginator for ListSensorStatistics operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSensorStatisticsPaginator ListSensorStatistics(ListSensorStatisticsRequest request);
     }
 }

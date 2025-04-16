@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the discovery-2015-11-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationDiscoveryService.Model
@@ -29,36 +30,71 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Paginator for DescribeAgents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeAgentsPaginator DescribeAgents(DescribeAgentsRequest request);
 
         /// <summary>
         /// Paginator for DescribeContinuousExports operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeContinuousExportsPaginator DescribeContinuousExports(DescribeContinuousExportsRequest request);
 
         /// <summary>
         /// Paginator for DescribeExportConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeExportConfigurationsPaginator DescribeExportConfigurations(DescribeExportConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for DescribeExportTasks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeExportTasksPaginator DescribeExportTasks(DescribeExportTasksRequest request);
 
         /// <summary>
         /// Paginator for DescribeImportTasks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeImportTasksPaginator DescribeImportTasks(DescribeImportTasksRequest request);
 
         /// <summary>
         /// Paginator for DescribeTags operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeTagsPaginator DescribeTags(DescribeTagsRequest request);
 
         /// <summary>
         /// Paginator for ListConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListConfigurationsPaginator ListConfigurations(ListConfigurationsRequest request);
     }
 }

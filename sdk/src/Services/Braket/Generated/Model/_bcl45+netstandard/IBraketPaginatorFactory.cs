@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the braket-2019-09-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Braket.Model
@@ -29,16 +30,31 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Paginator for SearchDevices operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         ISearchDevicesPaginator SearchDevices(SearchDevicesRequest request);
 
         /// <summary>
         /// Paginator for SearchJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         ISearchJobsPaginator SearchJobs(SearchJobsRequest request);
 
         /// <summary>
         /// Paginator for SearchQuantumTasks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         ISearchQuantumTasksPaginator SearchQuantumTasks(SearchQuantumTasksRequest request);
     }
 }

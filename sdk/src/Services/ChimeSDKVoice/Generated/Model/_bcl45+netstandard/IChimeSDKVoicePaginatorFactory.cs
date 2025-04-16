@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the chime-sdk-voice-2022-08-03.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKVoice.Model
@@ -29,51 +30,101 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Paginator for ListPhoneNumberOrders operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPhoneNumberOrdersPaginator ListPhoneNumberOrders(ListPhoneNumberOrdersRequest request);
 
         /// <summary>
         /// Paginator for ListPhoneNumbers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPhoneNumbersPaginator ListPhoneNumbers(ListPhoneNumbersRequest request);
 
         /// <summary>
         /// Paginator for ListProxySessions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProxySessionsPaginator ListProxySessions(ListProxySessionsRequest request);
 
         /// <summary>
         /// Paginator for ListSipMediaApplications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSipMediaApplicationsPaginator ListSipMediaApplications(ListSipMediaApplicationsRequest request);
 
         /// <summary>
         /// Paginator for ListSipRules operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSipRulesPaginator ListSipRules(ListSipRulesRequest request);
 
         /// <summary>
         /// Paginator for ListVoiceConnectorGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListVoiceConnectorGroupsPaginator ListVoiceConnectorGroups(ListVoiceConnectorGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListVoiceConnectors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListVoiceConnectorsPaginator ListVoiceConnectors(ListVoiceConnectorsRequest request);
 
         /// <summary>
         /// Paginator for ListVoiceProfileDomains operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListVoiceProfileDomainsPaginator ListVoiceProfileDomains(ListVoiceProfileDomainsRequest request);
 
         /// <summary>
         /// Paginator for ListVoiceProfiles operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListVoiceProfilesPaginator ListVoiceProfiles(ListVoiceProfilesRequest request);
 
         /// <summary>
         /// Paginator for SearchAvailablePhoneNumbers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         ISearchAvailablePhoneNumbersPaginator SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request);
     }
 }

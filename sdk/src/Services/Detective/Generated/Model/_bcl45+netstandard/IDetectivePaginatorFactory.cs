@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the detective-2018-10-26.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Detective.Model
@@ -29,26 +30,51 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Paginator for ListDatasourcePackages operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDatasourcePackagesPaginator ListDatasourcePackages(ListDatasourcePackagesRequest request);
 
         /// <summary>
         /// Paginator for ListGraphs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListGraphsPaginator ListGraphs(ListGraphsRequest request);
 
         /// <summary>
         /// Paginator for ListInvitations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListInvitationsPaginator ListInvitations(ListInvitationsRequest request);
 
         /// <summary>
         /// Paginator for ListMembers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMembersPaginator ListMembers(ListMembersRequest request);
 
         /// <summary>
         /// Paginator for ListOrganizationAdminAccounts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListOrganizationAdminAccountsPaginator ListOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest request);
     }
 }

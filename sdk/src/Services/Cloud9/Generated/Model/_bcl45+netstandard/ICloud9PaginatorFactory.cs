@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the cloud9-2017-09-23.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Cloud9.Model
@@ -29,11 +30,21 @@ namespace Amazon.Cloud9.Model
         /// <summary>
         /// Paginator for DescribeEnvironmentMemberships operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeEnvironmentMembershipsPaginator DescribeEnvironmentMemberships(DescribeEnvironmentMembershipsRequest request);
 
         /// <summary>
         /// Paginator for ListEnvironments operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEnvironmentsPaginator ListEnvironments(ListEnvironmentsRequest request);
     }
 }

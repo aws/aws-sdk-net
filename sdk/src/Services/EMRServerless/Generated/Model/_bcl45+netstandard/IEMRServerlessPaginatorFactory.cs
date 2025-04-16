@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the emr-serverless-2021-07-13.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRServerless.Model
@@ -29,16 +30,31 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Paginator for ListApplications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
 
         /// <summary>
         /// Paginator for ListJobRunAttempts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListJobRunAttemptsPaginator ListJobRunAttempts(ListJobRunAttemptsRequest request);
 
         /// <summary>
         /// Paginator for ListJobRuns operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListJobRunsPaginator ListJobRuns(ListJobRunsRequest request);
     }
 }

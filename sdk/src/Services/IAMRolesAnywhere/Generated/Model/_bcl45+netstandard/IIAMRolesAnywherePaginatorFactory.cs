@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the rolesanywhere-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IAMRolesAnywhere.Model
@@ -29,21 +30,41 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <summary>
         /// Paginator for ListCrls operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCrlsPaginator ListCrls(ListCrlsRequest request);
 
         /// <summary>
         /// Paginator for ListProfiles operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProfilesPaginator ListProfiles(ListProfilesRequest request);
 
         /// <summary>
         /// Paginator for ListSubjects operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSubjectsPaginator ListSubjects(ListSubjectsRequest request);
 
         /// <summary>
         /// Paginator for ListTrustAnchors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTrustAnchorsPaginator ListTrustAnchors(ListTrustAnchorsRequest request);
     }
 }

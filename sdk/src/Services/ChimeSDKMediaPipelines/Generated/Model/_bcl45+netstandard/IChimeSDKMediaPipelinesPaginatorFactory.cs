@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the chime-sdk-media-pipelines-2021-07-15.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMediaPipelines.Model
@@ -29,21 +30,41 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Paginator for ListMediaCapturePipelines operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMediaCapturePipelinesPaginator ListMediaCapturePipelines(ListMediaCapturePipelinesRequest request);
 
         /// <summary>
         /// Paginator for ListMediaInsightsPipelineConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMediaInsightsPipelineConfigurationsPaginator ListMediaInsightsPipelineConfigurations(ListMediaInsightsPipelineConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListMediaPipelineKinesisVideoStreamPools operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMediaPipelineKinesisVideoStreamPoolsPaginator ListMediaPipelineKinesisVideoStreamPools(ListMediaPipelineKinesisVideoStreamPoolsRequest request);
 
         /// <summary>
         /// Paginator for ListMediaPipelines operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMediaPipelinesPaginator ListMediaPipelines(ListMediaPipelinesRequest request);
     }
 }

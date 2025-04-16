@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the fsx-2018-03-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model
@@ -29,51 +30,101 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Paginator for DescribeBackups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeBackupsPaginator DescribeBackups(DescribeBackupsRequest request);
 
         /// <summary>
         /// Paginator for DescribeDataRepositoryAssociations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeDataRepositoryAssociationsPaginator DescribeDataRepositoryAssociations(DescribeDataRepositoryAssociationsRequest request);
 
         /// <summary>
         /// Paginator for DescribeDataRepositoryTasks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeDataRepositoryTasksPaginator DescribeDataRepositoryTasks(DescribeDataRepositoryTasksRequest request);
 
         /// <summary>
         /// Paginator for DescribeFileCaches operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeFileCachesPaginator DescribeFileCaches(DescribeFileCachesRequest request);
 
         /// <summary>
         /// Paginator for DescribeFileSystemAliases operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeFileSystemAliasesPaginator DescribeFileSystemAliases(DescribeFileSystemAliasesRequest request);
 
         /// <summary>
         /// Paginator for DescribeFileSystems operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeFileSystemsPaginator DescribeFileSystems(DescribeFileSystemsRequest request);
 
         /// <summary>
         /// Paginator for DescribeSnapshots operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeSnapshotsPaginator DescribeSnapshots(DescribeSnapshotsRequest request);
 
         /// <summary>
         /// Paginator for DescribeStorageVirtualMachines operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeStorageVirtualMachinesPaginator DescribeStorageVirtualMachines(DescribeStorageVirtualMachinesRequest request);
 
         /// <summary>
         /// Paginator for DescribeVolumes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeVolumesPaginator DescribeVolumes(DescribeVolumesRequest request);
 
         /// <summary>
         /// Paginator for ListTagsForResource operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request);
     }
 }

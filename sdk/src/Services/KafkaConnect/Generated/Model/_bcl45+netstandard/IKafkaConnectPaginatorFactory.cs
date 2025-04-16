@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the kafkaconnect-2021-09-14.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KafkaConnect.Model
@@ -29,21 +30,41 @@ namespace Amazon.KafkaConnect.Model
         /// <summary>
         /// Paginator for ListConnectorOperations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListConnectorOperationsPaginator ListConnectorOperations(ListConnectorOperationsRequest request);
 
         /// <summary>
         /// Paginator for ListConnectors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListConnectorsPaginator ListConnectors(ListConnectorsRequest request);
 
         /// <summary>
         /// Paginator for ListCustomPlugins operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCustomPluginsPaginator ListCustomPlugins(ListCustomPluginsRequest request);
 
         /// <summary>
         /// Paginator for ListWorkerConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWorkerConfigurationsPaginator ListWorkerConfigurations(ListWorkerConfigurationsRequest request);
     }
 }

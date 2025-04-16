@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the iotdeviceadvisor-2020-09-18.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTDeviceAdvisor.Model
@@ -29,11 +30,21 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Paginator for ListSuiteDefinitions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSuiteDefinitionsPaginator ListSuiteDefinitions(ListSuiteDefinitionsRequest request);
 
         /// <summary>
         /// Paginator for ListSuiteRuns operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSuiteRunsPaginator ListSuiteRuns(ListSuiteRunsRequest request);
     }
 }

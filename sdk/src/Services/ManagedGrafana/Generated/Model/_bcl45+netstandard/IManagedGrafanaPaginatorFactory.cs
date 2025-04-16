@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the grafana-2020-08-18.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedGrafana.Model
@@ -29,26 +30,51 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Paginator for ListPermissions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPermissionsPaginator ListPermissions(ListPermissionsRequest request);
 
         /// <summary>
         /// Paginator for ListVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListVersionsPaginator ListVersions(ListVersionsRequest request);
 
         /// <summary>
         /// Paginator for ListWorkspaces operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWorkspacesPaginator ListWorkspaces(ListWorkspacesRequest request);
 
         /// <summary>
         /// Paginator for ListWorkspaceServiceAccounts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWorkspaceServiceAccountsPaginator ListWorkspaceServiceAccounts(ListWorkspaceServiceAccountsRequest request);
 
         /// <summary>
         /// Paginator for ListWorkspaceServiceAccountTokens operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWorkspaceServiceAccountTokensPaginator ListWorkspaceServiceAccountTokens(ListWorkspaceServiceAccountTokensRequest request);
     }
 }

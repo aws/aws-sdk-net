@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the codestar-connections-2019-12-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeStarconnections.Model
@@ -29,21 +30,41 @@ namespace Amazon.CodeStarconnections.Model
         /// <summary>
         /// Paginator for ListConnections operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListConnectionsPaginator ListConnections(ListConnectionsRequest request);
 
         /// <summary>
         /// Paginator for ListHosts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListHostsPaginator ListHosts(ListHostsRequest request);
 
         /// <summary>
         /// Paginator for ListRepositoryLinks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRepositoryLinksPaginator ListRepositoryLinks(ListRepositoryLinksRequest request);
 
         /// <summary>
         /// Paginator for ListSyncConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSyncConfigurationsPaginator ListSyncConfigurations(ListSyncConfigurationsRequest request);
     }
 }

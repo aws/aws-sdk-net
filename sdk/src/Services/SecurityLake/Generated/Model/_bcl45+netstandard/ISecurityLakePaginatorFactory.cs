@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the securitylake-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityLake.Model
@@ -29,21 +30,41 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Paginator for GetDataLakeSources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetDataLakeSourcesPaginator GetDataLakeSources(GetDataLakeSourcesRequest request);
 
         /// <summary>
         /// Paginator for ListDataLakeExceptions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDataLakeExceptionsPaginator ListDataLakeExceptions(ListDataLakeExceptionsRequest request);
 
         /// <summary>
         /// Paginator for ListLogSources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLogSourcesPaginator ListLogSources(ListLogSourcesRequest request);
 
         /// <summary>
         /// Paginator for ListSubscribers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSubscribersPaginator ListSubscribers(ListSubscribersRequest request);
     }
 }

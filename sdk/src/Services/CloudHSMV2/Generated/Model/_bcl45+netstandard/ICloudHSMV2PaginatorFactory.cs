@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the cloudhsmv2-2017-04-28.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudHSMV2.Model
@@ -29,16 +30,31 @@ namespace Amazon.CloudHSMV2.Model
         /// <summary>
         /// Paginator for DescribeBackups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeBackupsPaginator DescribeBackups(DescribeBackupsRequest request);
 
         /// <summary>
         /// Paginator for DescribeClusters operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeClustersPaginator DescribeClusters(DescribeClustersRequest request);
 
         /// <summary>
         /// Paginator for ListTags operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTagsPaginator ListTags(ListTagsRequest request);
     }
 }

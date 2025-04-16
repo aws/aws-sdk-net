@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the tnb-2008-10-21.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Tnb.Model
@@ -29,26 +30,51 @@ namespace Amazon.Tnb.Model
         /// <summary>
         /// Paginator for ListSolFunctionInstances operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSolFunctionInstancesPaginator ListSolFunctionInstances(ListSolFunctionInstancesRequest request);
 
         /// <summary>
         /// Paginator for ListSolFunctionPackages operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSolFunctionPackagesPaginator ListSolFunctionPackages(ListSolFunctionPackagesRequest request);
 
         /// <summary>
         /// Paginator for ListSolNetworkInstances operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSolNetworkInstancesPaginator ListSolNetworkInstances(ListSolNetworkInstancesRequest request);
 
         /// <summary>
         /// Paginator for ListSolNetworkOperations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSolNetworkOperationsPaginator ListSolNetworkOperations(ListSolNetworkOperationsRequest request);
 
         /// <summary>
         /// Paginator for ListSolNetworkPackages operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSolNetworkPackagesPaginator ListSolNetworkPackages(ListSolNetworkPackagesRequest request);
     }
 }

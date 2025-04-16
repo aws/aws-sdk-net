@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the budgets-2016-10-20.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Budgets.Model
@@ -29,41 +30,81 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Paginator for DescribeBudgetActionHistories operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeBudgetActionHistoriesPaginator DescribeBudgetActionHistories(DescribeBudgetActionHistoriesRequest request);
 
         /// <summary>
         /// Paginator for DescribeBudgetActionsForAccount operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeBudgetActionsForAccountPaginator DescribeBudgetActionsForAccount(DescribeBudgetActionsForAccountRequest request);
 
         /// <summary>
         /// Paginator for DescribeBudgetActionsForBudget operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeBudgetActionsForBudgetPaginator DescribeBudgetActionsForBudget(DescribeBudgetActionsForBudgetRequest request);
 
         /// <summary>
         /// Paginator for DescribeBudgetNotificationsForAccount operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeBudgetNotificationsForAccountPaginator DescribeBudgetNotificationsForAccount(DescribeBudgetNotificationsForAccountRequest request);
 
         /// <summary>
         /// Paginator for DescribeBudgetPerformanceHistory operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeBudgetPerformanceHistoryPaginator DescribeBudgetPerformanceHistory(DescribeBudgetPerformanceHistoryRequest request);
 
         /// <summary>
         /// Paginator for DescribeBudgets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeBudgetsPaginator DescribeBudgets(DescribeBudgetsRequest request);
 
         /// <summary>
         /// Paginator for DescribeNotificationsForBudget operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeNotificationsForBudgetPaginator DescribeNotificationsForBudget(DescribeNotificationsForBudgetRequest request);
 
         /// <summary>
         /// Paginator for DescribeSubscribersForNotification operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeSubscribersForNotificationPaginator DescribeSubscribersForNotification(DescribeSubscribersForNotificationRequest request);
     }
 }

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the invoicing-2024-12-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Invoicing.Model
@@ -29,6 +30,11 @@ namespace Amazon.Invoicing.Model
         /// <summary>
         /// Paginator for ListInvoiceUnits operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListInvoiceUnitsPaginator ListInvoiceUnits(ListInvoiceUnitsRequest request);
     }
 }

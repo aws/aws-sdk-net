@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the rbin-2021-06-15.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RecycleBin.Model
@@ -29,6 +30,11 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Paginator for ListRules operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRulesPaginator ListRules(ListRulesRequest request);
     }
 }

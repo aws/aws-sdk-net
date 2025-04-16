@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the osis-2022-01-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OSIS.Model
@@ -29,6 +30,11 @@ namespace Amazon.OSIS.Model
         /// <summary>
         /// Paginator for ListPipelines operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPipelinesPaginator ListPipelines(ListPipelinesRequest request);
     }
 }

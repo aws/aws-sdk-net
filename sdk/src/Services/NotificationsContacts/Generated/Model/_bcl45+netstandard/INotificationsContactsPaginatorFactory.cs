@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the notificationscontacts-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NotificationsContacts.Model
@@ -29,6 +30,11 @@ namespace Amazon.NotificationsContacts.Model
         /// <summary>
         /// Paginator for ListEmailContacts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEmailContactsPaginator ListEmailContacts(ListEmailContactsRequest request);
     }
 }

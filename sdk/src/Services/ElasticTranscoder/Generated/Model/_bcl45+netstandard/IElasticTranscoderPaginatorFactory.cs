@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticTranscoder.Model
@@ -29,21 +30,41 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Paginator for ListJobsByPipeline operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "PageToken" },
+            
+            OutputToken = new[] { "NextPageToken" }
+        )]
         IListJobsByPipelinePaginator ListJobsByPipeline(ListJobsByPipelineRequest request);
 
         /// <summary>
         /// Paginator for ListJobsByStatus operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "PageToken" },
+            
+            OutputToken = new[] { "NextPageToken" }
+        )]
         IListJobsByStatusPaginator ListJobsByStatus(ListJobsByStatusRequest request);
 
         /// <summary>
         /// Paginator for ListPipelines operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "PageToken" },
+            
+            OutputToken = new[] { "NextPageToken" }
+        )]
         IListPipelinesPaginator ListPipelines(ListPipelinesRequest request);
 
         /// <summary>
         /// Paginator for ListPresets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "PageToken" },
+            
+            OutputToken = new[] { "NextPageToken" }
+        )]
         IListPresetsPaginator ListPresets(ListPresetsRequest request);
     }
 }

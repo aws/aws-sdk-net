@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the arc-zonal-shift-2022-10-30.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ARCZonalShift.Model
@@ -29,16 +30,31 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Paginator for ListAutoshifts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAutoshiftsPaginator ListAutoshifts(ListAutoshiftsRequest request);
 
         /// <summary>
         /// Paginator for ListManagedResources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListManagedResourcesPaginator ListManagedResources(ListManagedResourcesRequest request);
 
         /// <summary>
         /// Paginator for ListZonalShifts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListZonalShiftsPaginator ListZonalShifts(ListZonalShiftsRequest request);
     }
 }

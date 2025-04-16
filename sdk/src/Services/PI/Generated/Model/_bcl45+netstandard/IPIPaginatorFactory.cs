@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the pi-2018-02-27.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PI.Model
@@ -29,26 +30,51 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Paginator for DescribeDimensionKeys operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeDimensionKeysPaginator DescribeDimensionKeys(DescribeDimensionKeysRequest request);
 
         /// <summary>
         /// Paginator for GetResourceMetrics operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetResourceMetricsPaginator GetResourceMetrics(GetResourceMetricsRequest request);
 
         /// <summary>
         /// Paginator for ListAvailableResourceDimensions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAvailableResourceDimensionsPaginator ListAvailableResourceDimensions(ListAvailableResourceDimensionsRequest request);
 
         /// <summary>
         /// Paginator for ListAvailableResourceMetrics operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAvailableResourceMetricsPaginator ListAvailableResourceMetrics(ListAvailableResourceMetricsRequest request);
 
         /// <summary>
         /// Paginator for ListPerformanceAnalysisReports operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPerformanceAnalysisReportsPaginator ListPerformanceAnalysisReports(ListPerformanceAnalysisReportsRequest request);
     }
 }

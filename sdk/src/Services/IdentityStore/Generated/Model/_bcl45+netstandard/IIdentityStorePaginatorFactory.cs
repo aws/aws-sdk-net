@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the identitystore-2020-06-15.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityStore.Model
@@ -29,21 +30,41 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Paginator for ListGroupMemberships operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListGroupMembershipsPaginator ListGroupMemberships(ListGroupMembershipsRequest request);
 
         /// <summary>
         /// Paginator for ListGroupMembershipsForMember operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListGroupMembershipsForMemberPaginator ListGroupMembershipsForMember(ListGroupMembershipsForMemberRequest request);
 
         /// <summary>
         /// Paginator for ListGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListGroupsPaginator ListGroups(ListGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListUsers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListUsersPaginator ListUsers(ListUsersRequest request);
     }
 }

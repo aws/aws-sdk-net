@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the redshift-data-2019-12-20.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RedshiftDataAPIService.Model
@@ -29,36 +30,71 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// <summary>
         /// Paginator for DescribeTable operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeTablePaginator DescribeTable(DescribeTableRequest request);
 
         /// <summary>
         /// Paginator for GetStatementResult operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetStatementResultPaginator GetStatementResult(GetStatementResultRequest request);
 
         /// <summary>
         /// Paginator for GetStatementResultV2 operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetStatementResultV2Paginator GetStatementResultV2(GetStatementResultV2Request request);
 
         /// <summary>
         /// Paginator for ListDatabases operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDatabasesPaginator ListDatabases(ListDatabasesRequest request);
 
         /// <summary>
         /// Paginator for ListSchemas operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSchemasPaginator ListSchemas(ListSchemasRequest request);
 
         /// <summary>
         /// Paginator for ListStatements operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListStatementsPaginator ListStatements(ListStatementsRequest request);
 
         /// <summary>
         /// Paginator for ListTables operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTablesPaginator ListTables(ListTablesRequest request);
     }
 }

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the appflow-2020-08-23.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model
@@ -29,26 +30,51 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Paginator for DescribeConnectorProfiles operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeConnectorProfilesPaginator DescribeConnectorProfiles(DescribeConnectorProfilesRequest request);
 
         /// <summary>
         /// Paginator for DescribeConnectors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeConnectorsPaginator DescribeConnectors(DescribeConnectorsRequest request);
 
         /// <summary>
         /// Paginator for DescribeFlowExecutionRecords operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeFlowExecutionRecordsPaginator DescribeFlowExecutionRecords(DescribeFlowExecutionRecordsRequest request);
 
         /// <summary>
         /// Paginator for ListConnectors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListConnectorsPaginator ListConnectors(ListConnectorsRequest request);
 
         /// <summary>
         /// Paginator for ListFlows operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFlowsPaginator ListFlows(ListFlowsRequest request);
     }
 }

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the codeguru-reviewer-2019-09-19.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeGuruReviewer.Model
@@ -29,21 +30,41 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Paginator for ListCodeReviews operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCodeReviewsPaginator ListCodeReviews(ListCodeReviewsRequest request);
 
         /// <summary>
         /// Paginator for ListRecommendationFeedback operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRecommendationFeedbackPaginator ListRecommendationFeedback(ListRecommendationFeedbackRequest request);
 
         /// <summary>
         /// Paginator for ListRecommendations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRecommendationsPaginator ListRecommendations(ListRecommendationsRequest request);
 
         /// <summary>
         /// Paginator for ListRepositoryAssociations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRepositoryAssociationsPaginator ListRepositoryAssociations(ListRepositoryAssociationsRequest request);
     }
 }

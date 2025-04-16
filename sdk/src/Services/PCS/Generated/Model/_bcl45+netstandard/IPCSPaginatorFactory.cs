@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the pcs-2023-02-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PCS.Model
@@ -29,16 +30,31 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Paginator for ListClusters operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListClustersPaginator ListClusters(ListClustersRequest request);
 
         /// <summary>
         /// Paginator for ListComputeNodeGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListComputeNodeGroupsPaginator ListComputeNodeGroups(ListComputeNodeGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListQueues operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListQueuesPaginator ListQueues(ListQueuesRequest request);
     }
 }

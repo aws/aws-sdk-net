@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the qapps-2023-11-27.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QApps.Model
@@ -29,11 +30,21 @@ namespace Amazon.QApps.Model
         /// <summary>
         /// Paginator for ListLibraryItems operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLibraryItemsPaginator ListLibraryItems(ListLibraryItemsRequest request);
 
         /// <summary>
         /// Paginator for ListQApps operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListQAppsPaginator ListQApps(ListQAppsRequest request);
     }
 }

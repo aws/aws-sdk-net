@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the bedrock-2023-04-20.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model
@@ -29,61 +30,121 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Paginator for ListCustomModels operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCustomModelsPaginator ListCustomModels(ListCustomModelsRequest request);
 
         /// <summary>
         /// Paginator for ListEvaluationJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEvaluationJobsPaginator ListEvaluationJobs(ListEvaluationJobsRequest request);
 
         /// <summary>
         /// Paginator for ListGuardrails operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListGuardrailsPaginator ListGuardrails(ListGuardrailsRequest request);
 
         /// <summary>
         /// Paginator for ListImportedModels operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListImportedModelsPaginator ListImportedModels(ListImportedModelsRequest request);
 
         /// <summary>
         /// Paginator for ListInferenceProfiles operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListInferenceProfilesPaginator ListInferenceProfiles(ListInferenceProfilesRequest request);
 
         /// <summary>
         /// Paginator for ListMarketplaceModelEndpoints operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMarketplaceModelEndpointsPaginator ListMarketplaceModelEndpoints(ListMarketplaceModelEndpointsRequest request);
 
         /// <summary>
         /// Paginator for ListModelCopyJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListModelCopyJobsPaginator ListModelCopyJobs(ListModelCopyJobsRequest request);
 
         /// <summary>
         /// Paginator for ListModelCustomizationJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListModelCustomizationJobsPaginator ListModelCustomizationJobs(ListModelCustomizationJobsRequest request);
 
         /// <summary>
         /// Paginator for ListModelImportJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListModelImportJobsPaginator ListModelImportJobs(ListModelImportJobsRequest request);
 
         /// <summary>
         /// Paginator for ListModelInvocationJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListModelInvocationJobsPaginator ListModelInvocationJobs(ListModelInvocationJobsRequest request);
 
         /// <summary>
         /// Paginator for ListPromptRouters operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPromptRoutersPaginator ListPromptRouters(ListPromptRoutersRequest request);
 
         /// <summary>
         /// Paginator for ListProvisionedModelThroughputs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProvisionedModelThroughputsPaginator ListProvisionedModelThroughputs(ListProvisionedModelThroughputsRequest request);
     }
 }

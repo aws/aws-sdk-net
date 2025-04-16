@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the servicecatalog-appregistry-2020-06-24.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppRegistry.Model
@@ -29,26 +30,51 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Paginator for ListApplications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
 
         /// <summary>
         /// Paginator for ListAssociatedAttributeGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAssociatedAttributeGroupsPaginator ListAssociatedAttributeGroups(ListAssociatedAttributeGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListAssociatedResources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAssociatedResourcesPaginator ListAssociatedResources(ListAssociatedResourcesRequest request);
 
         /// <summary>
         /// Paginator for ListAttributeGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAttributeGroupsPaginator ListAttributeGroups(ListAttributeGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListAttributeGroupsForApplication operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAttributeGroupsForApplicationPaginator ListAttributeGroupsForApplication(ListAttributeGroupsForApplicationRequest request);
     }
 }

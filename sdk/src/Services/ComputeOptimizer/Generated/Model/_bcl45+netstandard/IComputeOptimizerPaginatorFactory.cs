@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the compute-optimizer-2019-11-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model
@@ -29,26 +30,51 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Paginator for DescribeRecommendationExportJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeRecommendationExportJobsPaginator DescribeRecommendationExportJobs(DescribeRecommendationExportJobsRequest request);
 
         /// <summary>
         /// Paginator for GetEnrollmentStatusesForOrganization operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetEnrollmentStatusesForOrganizationPaginator GetEnrollmentStatusesForOrganization(GetEnrollmentStatusesForOrganizationRequest request);
 
         /// <summary>
         /// Paginator for GetLambdaFunctionRecommendations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetLambdaFunctionRecommendationsPaginator GetLambdaFunctionRecommendations(GetLambdaFunctionRecommendationsRequest request);
 
         /// <summary>
         /// Paginator for GetRecommendationPreferences operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetRecommendationPreferencesPaginator GetRecommendationPreferences(GetRecommendationPreferencesRequest request);
 
         /// <summary>
         /// Paginator for GetRecommendationSummaries operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetRecommendationSummariesPaginator GetRecommendationSummaries(GetRecommendationSummariesRequest request);
     }
 }

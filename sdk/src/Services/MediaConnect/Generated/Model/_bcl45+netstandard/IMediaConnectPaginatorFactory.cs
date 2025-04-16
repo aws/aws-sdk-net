@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the mediaconnect-2018-11-14.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model
@@ -29,36 +30,71 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Paginator for ListBridges operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListBridgesPaginator ListBridges(ListBridgesRequest request);
 
         /// <summary>
         /// Paginator for ListEntitlements operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEntitlementsPaginator ListEntitlements(ListEntitlementsRequest request);
 
         /// <summary>
         /// Paginator for ListFlows operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFlowsPaginator ListFlows(ListFlowsRequest request);
 
         /// <summary>
         /// Paginator for ListGatewayInstances operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListGatewayInstancesPaginator ListGatewayInstances(ListGatewayInstancesRequest request);
 
         /// <summary>
         /// Paginator for ListGateways operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListGatewaysPaginator ListGateways(ListGatewaysRequest request);
 
         /// <summary>
         /// Paginator for ListOfferings operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListOfferingsPaginator ListOfferings(ListOfferingsRequest request);
 
         /// <summary>
         /// Paginator for ListReservations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListReservationsPaginator ListReservations(ListReservationsRequest request);
     }
 }

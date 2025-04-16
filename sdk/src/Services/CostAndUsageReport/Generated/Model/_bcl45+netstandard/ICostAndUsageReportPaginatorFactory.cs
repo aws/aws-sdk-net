@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the cur-2017-01-06.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostAndUsageReport.Model
@@ -29,6 +30,11 @@ namespace Amazon.CostAndUsageReport.Model
         /// <summary>
         /// Paginator for DescribeReportDefinitions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeReportDefinitionsPaginator DescribeReportDefinitions(DescribeReportDefinitionsRequest request);
     }
 }

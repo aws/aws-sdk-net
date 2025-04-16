@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the iotfleethub-2020-11-03.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetHub.Model
@@ -29,6 +30,11 @@ namespace Amazon.IoTFleetHub.Model
         /// <summary>
         /// Paginator for ListApplications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
     }
 }

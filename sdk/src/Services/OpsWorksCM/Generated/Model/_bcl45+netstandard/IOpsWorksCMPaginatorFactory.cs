@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the opsworkscm-2016-11-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpsWorksCM.Model
@@ -29,21 +30,41 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Paginator for DescribeBackups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeBackupsPaginator DescribeBackups(DescribeBackupsRequest request);
 
         /// <summary>
         /// Paginator for DescribeEvents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeEventsPaginator DescribeEvents(DescribeEventsRequest request);
 
         /// <summary>
         /// Paginator for DescribeServers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeServersPaginator DescribeServers(DescribeServersRequest request);
 
         /// <summary>
         /// Paginator for ListTagsForResource operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request);
     }
 }

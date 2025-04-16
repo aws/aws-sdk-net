@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the sqs-2012-11-05.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SQS.Model
@@ -29,11 +30,21 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Paginator for ListDeadLetterSourceQueues operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDeadLetterSourceQueuesPaginator ListDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest request);
 
         /// <summary>
         /// Paginator for ListQueues operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListQueuesPaginator ListQueues(ListQueuesRequest request);
     }
 }

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the opensearchserverless-2021-11-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpenSearchServerless.Model
@@ -29,31 +30,61 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Paginator for ListAccessPolicies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAccessPoliciesPaginator ListAccessPolicies(ListAccessPoliciesRequest request);
 
         /// <summary>
         /// Paginator for ListCollections operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCollectionsPaginator ListCollections(ListCollectionsRequest request);
 
         /// <summary>
         /// Paginator for ListLifecyclePolicies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLifecyclePoliciesPaginator ListLifecyclePolicies(ListLifecyclePoliciesRequest request);
 
         /// <summary>
         /// Paginator for ListSecurityConfigs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSecurityConfigsPaginator ListSecurityConfigs(ListSecurityConfigsRequest request);
 
         /// <summary>
         /// Paginator for ListSecurityPolicies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSecurityPoliciesPaginator ListSecurityPolicies(ListSecurityPoliciesRequest request);
 
         /// <summary>
         /// Paginator for ListVpcEndpoints operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListVpcEndpointsPaginator ListVpcEndpoints(ListVpcEndpointsRequest request);
     }
 }

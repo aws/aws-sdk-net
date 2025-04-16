@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the rum-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchRUM.Model
@@ -29,21 +30,41 @@ namespace Amazon.CloudWatchRUM.Model
         /// <summary>
         /// Paginator for BatchGetRumMetricDefinitions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IBatchGetRumMetricDefinitionsPaginator BatchGetRumMetricDefinitions(BatchGetRumMetricDefinitionsRequest request);
 
         /// <summary>
         /// Paginator for GetAppMonitorData operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetAppMonitorDataPaginator GetAppMonitorData(GetAppMonitorDataRequest request);
 
         /// <summary>
         /// Paginator for ListAppMonitors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAppMonitorsPaginator ListAppMonitors(ListAppMonitorsRequest request);
 
         /// <summary>
         /// Paginator for ListRumMetricsDestinations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRumMetricsDestinationsPaginator ListRumMetricsDestinations(ListRumMetricsDestinationsRequest request);
     }
 }

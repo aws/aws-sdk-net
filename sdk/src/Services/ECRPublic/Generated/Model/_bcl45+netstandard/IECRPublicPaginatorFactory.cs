@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the ecr-public-2020-10-30.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECRPublic.Model
@@ -29,21 +30,41 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Paginator for DescribeImages operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeImagesPaginator DescribeImages(DescribeImagesRequest request);
 
         /// <summary>
         /// Paginator for DescribeImageTags operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeImageTagsPaginator DescribeImageTags(DescribeImageTagsRequest request);
 
         /// <summary>
         /// Paginator for DescribeRegistries operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeRegistriesPaginator DescribeRegistries(DescribeRegistriesRequest request);
 
         /// <summary>
         /// Paginator for DescribeRepositories operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeRepositoriesPaginator DescribeRepositories(DescribeRepositoriesRequest request);
     }
 }

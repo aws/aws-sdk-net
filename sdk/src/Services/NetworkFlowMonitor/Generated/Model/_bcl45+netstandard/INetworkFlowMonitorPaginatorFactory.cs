@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the networkflowmonitor-2023-04-19.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFlowMonitor.Model
@@ -29,26 +30,51 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <summary>
         /// Paginator for GetQueryResultsMonitorTopContributors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetQueryResultsMonitorTopContributorsPaginator GetQueryResultsMonitorTopContributors(GetQueryResultsMonitorTopContributorsRequest request);
 
         /// <summary>
         /// Paginator for GetQueryResultsWorkloadInsightsTopContributors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetQueryResultsWorkloadInsightsTopContributorsPaginator GetQueryResultsWorkloadInsightsTopContributors(GetQueryResultsWorkloadInsightsTopContributorsRequest request);
 
         /// <summary>
         /// Paginator for GetQueryResultsWorkloadInsightsTopContributorsData operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetQueryResultsWorkloadInsightsTopContributorsDataPaginator GetQueryResultsWorkloadInsightsTopContributorsData(GetQueryResultsWorkloadInsightsTopContributorsDataRequest request);
 
         /// <summary>
         /// Paginator for ListMonitors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMonitorsPaginator ListMonitors(ListMonitorsRequest request);
 
         /// <summary>
         /// Paginator for ListScopes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListScopesPaginator ListScopes(ListScopesRequest request);
     }
 }

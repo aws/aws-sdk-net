@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the gameliftstreams-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLiftStreams.Model
@@ -29,21 +30,41 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Paginator for ListApplications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
 
         /// <summary>
         /// Paginator for ListStreamGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListStreamGroupsPaginator ListStreamGroups(ListStreamGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListStreamSessions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListStreamSessionsPaginator ListStreamSessions(ListStreamSessionsRequest request);
 
         /// <summary>
         /// Paginator for ListStreamSessionsByAccount operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListStreamSessionsByAccountPaginator ListStreamSessionsByAccount(ListStreamSessionsByAccountRequest request);
     }
 }

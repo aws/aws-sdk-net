@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the ivschat-2020-07-14.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Ivschat.Model
@@ -29,11 +30,21 @@ namespace Amazon.Ivschat.Model
         /// <summary>
         /// Paginator for ListLoggingConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLoggingConfigurationsPaginator ListLoggingConfigurations(ListLoggingConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListRooms operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRoomsPaginator ListRooms(ListRoomsRequest request);
     }
 }

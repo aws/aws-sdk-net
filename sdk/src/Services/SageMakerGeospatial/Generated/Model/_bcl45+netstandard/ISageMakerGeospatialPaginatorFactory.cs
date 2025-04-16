@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the sagemaker-geospatial-2020-05-27.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerGeospatial.Model
@@ -29,21 +30,41 @@ namespace Amazon.SageMakerGeospatial.Model
         /// <summary>
         /// Paginator for ListEarthObservationJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEarthObservationJobsPaginator ListEarthObservationJobs(ListEarthObservationJobsRequest request);
 
         /// <summary>
         /// Paginator for ListRasterDataCollections operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRasterDataCollectionsPaginator ListRasterDataCollections(ListRasterDataCollectionsRequest request);
 
         /// <summary>
         /// Paginator for ListVectorEnrichmentJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListVectorEnrichmentJobsPaginator ListVectorEnrichmentJobs(ListVectorEnrichmentJobsRequest request);
 
         /// <summary>
         /// Paginator for SearchRasterDataCollection operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         ISearchRasterDataCollectionPaginator SearchRasterDataCollection(SearchRasterDataCollectionRequest request);
     }
 }

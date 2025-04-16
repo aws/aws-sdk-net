@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the scheduler-2021-06-30.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Scheduler.Model
@@ -29,11 +30,21 @@ namespace Amazon.Scheduler.Model
         /// <summary>
         /// Paginator for ListScheduleGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListScheduleGroupsPaginator ListScheduleGroups(ListScheduleGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListSchedules operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSchedulesPaginator ListSchedules(ListSchedulesRequest request);
     }
 }

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the emr-containers-2020-10-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRContainers.Model
@@ -29,26 +30,51 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Paginator for ListJobRuns operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListJobRunsPaginator ListJobRuns(ListJobRunsRequest request);
 
         /// <summary>
         /// Paginator for ListJobTemplates operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListJobTemplatesPaginator ListJobTemplates(ListJobTemplatesRequest request);
 
         /// <summary>
         /// Paginator for ListManagedEndpoints operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListManagedEndpointsPaginator ListManagedEndpoints(ListManagedEndpointsRequest request);
 
         /// <summary>
         /// Paginator for ListSecurityConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSecurityConfigurationsPaginator ListSecurityConfigurations(ListSecurityConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListVirtualClusters operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListVirtualClustersPaginator ListVirtualClusters(ListVirtualClustersRequest request);
     }
 }

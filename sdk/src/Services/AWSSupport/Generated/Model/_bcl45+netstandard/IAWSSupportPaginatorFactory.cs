@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the support-2013-04-15.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AWSSupport.Model
@@ -29,11 +30,21 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Paginator for DescribeCases operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeCasesPaginator DescribeCases(DescribeCasesRequest request);
 
         /// <summary>
         /// Paginator for DescribeCommunications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeCommunicationsPaginator DescribeCommunications(DescribeCommunicationsRequest request);
     }
 }

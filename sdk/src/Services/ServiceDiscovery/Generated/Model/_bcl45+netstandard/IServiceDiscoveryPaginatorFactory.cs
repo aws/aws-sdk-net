@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the servicediscovery-2017-03-14.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServiceDiscovery.Model
@@ -29,26 +30,51 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Paginator for GetInstancesHealthStatus operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetInstancesHealthStatusPaginator GetInstancesHealthStatus(GetInstancesHealthStatusRequest request);
 
         /// <summary>
         /// Paginator for ListInstances operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListInstancesPaginator ListInstances(ListInstancesRequest request);
 
         /// <summary>
         /// Paginator for ListNamespaces operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListNamespacesPaginator ListNamespaces(ListNamespacesRequest request);
 
         /// <summary>
         /// Paginator for ListOperations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListOperationsPaginator ListOperations(ListOperationsRequest request);
 
         /// <summary>
         /// Paginator for ListServices operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListServicesPaginator ListServices(ListServicesRequest request);
     }
 }

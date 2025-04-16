@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the iotanalytics-2017-11-27.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTAnalytics.Model
@@ -29,26 +30,51 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Paginator for ListChannels operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListChannelsPaginator ListChannels(ListChannelsRequest request);
 
         /// <summary>
         /// Paginator for ListDatasetContents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDatasetContentsPaginator ListDatasetContents(ListDatasetContentsRequest request);
 
         /// <summary>
         /// Paginator for ListDatasets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDatasetsPaginator ListDatasets(ListDatasetsRequest request);
 
         /// <summary>
         /// Paginator for ListDatastores operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDatastoresPaginator ListDatastores(ListDatastoresRequest request);
 
         /// <summary>
         /// Paginator for ListPipelines operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPipelinesPaginator ListPipelines(ListPipelinesRequest request);
     }
 }

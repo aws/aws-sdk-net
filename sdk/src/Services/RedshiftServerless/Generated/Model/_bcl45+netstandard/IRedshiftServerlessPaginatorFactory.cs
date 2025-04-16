@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the redshift-serverless-2021-04-21.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RedshiftServerless.Model
@@ -29,61 +30,121 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Paginator for ListCustomDomainAssociations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCustomDomainAssociationsPaginator ListCustomDomainAssociations(ListCustomDomainAssociationsRequest request);
 
         /// <summary>
         /// Paginator for ListEndpointAccess operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEndpointAccessPaginator ListEndpointAccess(ListEndpointAccessRequest request);
 
         /// <summary>
         /// Paginator for ListManagedWorkgroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListManagedWorkgroupsPaginator ListManagedWorkgroups(ListManagedWorkgroupsRequest request);
 
         /// <summary>
         /// Paginator for ListNamespaces operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListNamespacesPaginator ListNamespaces(ListNamespacesRequest request);
 
         /// <summary>
         /// Paginator for ListRecoveryPoints operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRecoveryPointsPaginator ListRecoveryPoints(ListRecoveryPointsRequest request);
 
         /// <summary>
         /// Paginator for ListScheduledActions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListScheduledActionsPaginator ListScheduledActions(ListScheduledActionsRequest request);
 
         /// <summary>
         /// Paginator for ListSnapshotCopyConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSnapshotCopyConfigurationsPaginator ListSnapshotCopyConfigurations(ListSnapshotCopyConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListSnapshots operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSnapshotsPaginator ListSnapshots(ListSnapshotsRequest request);
 
         /// <summary>
         /// Paginator for ListTableRestoreStatus operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTableRestoreStatusPaginator ListTableRestoreStatus(ListTableRestoreStatusRequest request);
 
         /// <summary>
         /// Paginator for ListTracks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTracksPaginator ListTracks(ListTracksRequest request);
 
         /// <summary>
         /// Paginator for ListUsageLimits operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListUsageLimitsPaginator ListUsageLimits(ListUsageLimitsRequest request);
 
         /// <summary>
         /// Paginator for ListWorkgroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWorkgroupsPaginator ListWorkgroups(ListWorkgroupsRequest request);
     }
 }

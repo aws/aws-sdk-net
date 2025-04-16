@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the chatbot-2017-10-11.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chatbot.Model
@@ -29,46 +30,91 @@ namespace Amazon.Chatbot.Model
         /// <summary>
         /// Paginator for DescribeChimeWebhookConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeChimeWebhookConfigurationsPaginator DescribeChimeWebhookConfigurations(DescribeChimeWebhookConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for DescribeSlackChannelConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeSlackChannelConfigurationsPaginator DescribeSlackChannelConfigurations(DescribeSlackChannelConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for DescribeSlackUserIdentities operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeSlackUserIdentitiesPaginator DescribeSlackUserIdentities(DescribeSlackUserIdentitiesRequest request);
 
         /// <summary>
         /// Paginator for DescribeSlackWorkspaces operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeSlackWorkspacesPaginator DescribeSlackWorkspaces(DescribeSlackWorkspacesRequest request);
 
         /// <summary>
         /// Paginator for ListAssociations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAssociationsPaginator ListAssociations(ListAssociationsRequest request);
 
         /// <summary>
         /// Paginator for ListCustomActions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCustomActionsPaginator ListCustomActions(ListCustomActionsRequest request);
 
         /// <summary>
         /// Paginator for ListMicrosoftTeamsChannelConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMicrosoftTeamsChannelConfigurationsPaginator ListMicrosoftTeamsChannelConfigurations(ListMicrosoftTeamsChannelConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListMicrosoftTeamsConfiguredTeams operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMicrosoftTeamsConfiguredTeamsPaginator ListMicrosoftTeamsConfiguredTeams(ListMicrosoftTeamsConfiguredTeamsRequest request);
 
         /// <summary>
         /// Paginator for ListMicrosoftTeamsUserIdentities operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMicrosoftTeamsUserIdentitiesPaginator ListMicrosoftTeamsUserIdentities(ListMicrosoftTeamsUserIdentitiesRequest request);
     }
 }

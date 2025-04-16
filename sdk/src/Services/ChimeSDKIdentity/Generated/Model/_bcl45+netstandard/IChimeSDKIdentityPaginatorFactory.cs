@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the chime-sdk-identity-2021-04-20.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKIdentity.Model
@@ -29,26 +30,51 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Paginator for ListAppInstanceAdmins operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAppInstanceAdminsPaginator ListAppInstanceAdmins(ListAppInstanceAdminsRequest request);
 
         /// <summary>
         /// Paginator for ListAppInstanceBots operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAppInstanceBotsPaginator ListAppInstanceBots(ListAppInstanceBotsRequest request);
 
         /// <summary>
         /// Paginator for ListAppInstances operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAppInstancesPaginator ListAppInstances(ListAppInstancesRequest request);
 
         /// <summary>
         /// Paginator for ListAppInstanceUserEndpoints operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAppInstanceUserEndpointsPaginator ListAppInstanceUserEndpoints(ListAppInstanceUserEndpointsRequest request);
 
         /// <summary>
         /// Paginator for ListAppInstanceUsers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAppInstanceUsersPaginator ListAppInstanceUsers(ListAppInstanceUsersRequest request);
     }
 }

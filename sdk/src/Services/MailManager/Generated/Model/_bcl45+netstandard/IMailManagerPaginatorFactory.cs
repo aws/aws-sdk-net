@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the mailmanager-2023-10-17.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model
@@ -29,61 +30,121 @@ namespace Amazon.MailManager.Model
         /// <summary>
         /// Paginator for ListAddonInstances operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAddonInstancesPaginator ListAddonInstances(ListAddonInstancesRequest request);
 
         /// <summary>
         /// Paginator for ListAddonSubscriptions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAddonSubscriptionsPaginator ListAddonSubscriptions(ListAddonSubscriptionsRequest request);
 
         /// <summary>
         /// Paginator for ListAddressListImportJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAddressListImportJobsPaginator ListAddressListImportJobs(ListAddressListImportJobsRequest request);
 
         /// <summary>
         /// Paginator for ListAddressLists operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAddressListsPaginator ListAddressLists(ListAddressListsRequest request);
 
         /// <summary>
         /// Paginator for ListArchiveExports operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListArchiveExportsPaginator ListArchiveExports(ListArchiveExportsRequest request);
 
         /// <summary>
         /// Paginator for ListArchives operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListArchivesPaginator ListArchives(ListArchivesRequest request);
 
         /// <summary>
         /// Paginator for ListArchiveSearches operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListArchiveSearchesPaginator ListArchiveSearches(ListArchiveSearchesRequest request);
 
         /// <summary>
         /// Paginator for ListIngressPoints operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListIngressPointsPaginator ListIngressPoints(ListIngressPointsRequest request);
 
         /// <summary>
         /// Paginator for ListMembersOfAddressList operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMembersOfAddressListPaginator ListMembersOfAddressList(ListMembersOfAddressListRequest request);
 
         /// <summary>
         /// Paginator for ListRelays operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRelaysPaginator ListRelays(ListRelaysRequest request);
 
         /// <summary>
         /// Paginator for ListRuleSets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRuleSetsPaginator ListRuleSets(ListRuleSetsRequest request);
 
         /// <summary>
         /// Paginator for ListTrafficPolicies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTrafficPoliciesPaginator ListTrafficPolicies(ListTrafficPoliciesRequest request);
     }
 }

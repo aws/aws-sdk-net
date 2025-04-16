@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the migrationhub-config-2019-06-30.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubConfig.Model
@@ -29,6 +30,11 @@ namespace Amazon.MigrationHubConfig.Model
         /// <summary>
         /// Paginator for DescribeHomeRegionControls operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeHomeRegionControlsPaginator DescribeHomeRegionControls(DescribeHomeRegionControlsRequest request);
     }
 }

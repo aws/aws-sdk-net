@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the xray-2016-04-12.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.XRay.Model
@@ -29,61 +30,121 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Paginator for BatchGetTraces operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IBatchGetTracesPaginator BatchGetTraces(BatchGetTracesRequest request);
 
         /// <summary>
         /// Paginator for GetGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetGroupsPaginator GetGroups(GetGroupsRequest request);
 
         /// <summary>
         /// Paginator for GetInsightEvents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetInsightEventsPaginator GetInsightEvents(GetInsightEventsRequest request);
 
         /// <summary>
         /// Paginator for GetInsightSummaries operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetInsightSummariesPaginator GetInsightSummaries(GetInsightSummariesRequest request);
 
         /// <summary>
         /// Paginator for GetSamplingRules operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetSamplingRulesPaginator GetSamplingRules(GetSamplingRulesRequest request);
 
         /// <summary>
         /// Paginator for GetSamplingStatisticSummaries operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetSamplingStatisticSummariesPaginator GetSamplingStatisticSummaries(GetSamplingStatisticSummariesRequest request);
 
         /// <summary>
         /// Paginator for GetServiceGraph operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetServiceGraphPaginator GetServiceGraph(GetServiceGraphRequest request);
 
         /// <summary>
         /// Paginator for GetTimeSeriesServiceStatistics operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetTimeSeriesServiceStatisticsPaginator GetTimeSeriesServiceStatistics(GetTimeSeriesServiceStatisticsRequest request);
 
         /// <summary>
         /// Paginator for GetTraceGraph operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetTraceGraphPaginator GetTraceGraph(GetTraceGraphRequest request);
 
         /// <summary>
         /// Paginator for GetTraceSummaries operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetTraceSummariesPaginator GetTraceSummaries(GetTraceSummariesRequest request);
 
         /// <summary>
         /// Paginator for ListResourcePolicies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListResourcePoliciesPaginator ListResourcePolicies(ListResourcePoliciesRequest request);
 
         /// <summary>
         /// Paginator for ListTagsForResource operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request);
     }
 }

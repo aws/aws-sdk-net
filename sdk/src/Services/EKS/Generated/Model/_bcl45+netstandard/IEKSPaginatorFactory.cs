@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the eks-2017-11-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model
@@ -29,71 +30,141 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Paginator for DescribeAddonVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeAddonVersionsPaginator DescribeAddonVersions(DescribeAddonVersionsRequest request);
 
         /// <summary>
         /// Paginator for DescribeClusterVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeClusterVersionsPaginator DescribeClusterVersions(DescribeClusterVersionsRequest request);
 
         /// <summary>
         /// Paginator for ListAccessEntries operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAccessEntriesPaginator ListAccessEntries(ListAccessEntriesRequest request);
 
         /// <summary>
         /// Paginator for ListAccessPolicies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAccessPoliciesPaginator ListAccessPolicies(ListAccessPoliciesRequest request);
 
         /// <summary>
         /// Paginator for ListAddons operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAddonsPaginator ListAddons(ListAddonsRequest request);
 
         /// <summary>
         /// Paginator for ListAssociatedAccessPolicies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAssociatedAccessPoliciesPaginator ListAssociatedAccessPolicies(ListAssociatedAccessPoliciesRequest request);
 
         /// <summary>
         /// Paginator for ListClusters operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListClustersPaginator ListClusters(ListClustersRequest request);
 
         /// <summary>
         /// Paginator for ListEksAnywhereSubscriptions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEksAnywhereSubscriptionsPaginator ListEksAnywhereSubscriptions(ListEksAnywhereSubscriptionsRequest request);
 
         /// <summary>
         /// Paginator for ListFargateProfiles operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFargateProfilesPaginator ListFargateProfiles(ListFargateProfilesRequest request);
 
         /// <summary>
         /// Paginator for ListIdentityProviderConfigs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListIdentityProviderConfigsPaginator ListIdentityProviderConfigs(ListIdentityProviderConfigsRequest request);
 
         /// <summary>
         /// Paginator for ListInsights operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListInsightsPaginator ListInsights(ListInsightsRequest request);
 
         /// <summary>
         /// Paginator for ListNodegroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListNodegroupsPaginator ListNodegroups(ListNodegroupsRequest request);
 
         /// <summary>
         /// Paginator for ListPodIdentityAssociations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPodIdentityAssociationsPaginator ListPodIdentityAssociations(ListPodIdentityAssociationsRequest request);
 
         /// <summary>
         /// Paginator for ListUpdates operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListUpdatesPaginator ListUpdates(ListUpdatesRequest request);
     }
 }

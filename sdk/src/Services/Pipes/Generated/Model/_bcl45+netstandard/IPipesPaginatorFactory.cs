@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the pipes-2015-10-07.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model
@@ -29,6 +30,11 @@ namespace Amazon.Pipes.Model
         /// <summary>
         /// Paginator for ListPipes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPipesPaginator ListPipes(ListPipesRequest request);
     }
 }
