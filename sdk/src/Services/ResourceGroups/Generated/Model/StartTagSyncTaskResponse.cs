@@ -36,6 +36,7 @@ namespace Amazon.ResourceGroups.Model
     {
         private string _groupArn;
         private string _groupName;
+        private ResourceQuery _resourceQuery;
         private string _roleArn;
         private string _tagKey;
         private string _tagValue;
@@ -78,6 +79,21 @@ namespace Amazon.ResourceGroups.Model
         internal bool IsSetGroupName()
         {
             return this._groupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceQuery.
+        /// </summary>
+        public ResourceQuery ResourceQuery
+        {
+            get { return this._resourceQuery; }
+            set { this._resourceQuery = value; }
+        }
+
+        // Check to see if ResourceQuery property is set
+        internal bool IsSetResourceQuery()
+        {
+            return this._resourceQuery != null;
         }
 
         /// <summary>

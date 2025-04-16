@@ -73,6 +73,17 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Group);
                 }
 
+                if(publicRequest.IsSetResourceQuery())
+                {
+                    context.Writer.WritePropertyName("ResourceQuery");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ResourceQueryMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ResourceQuery, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("RoleArn");

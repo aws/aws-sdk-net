@@ -81,7 +81,7 @@ namespace Amazon.ResourceGroups.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>AWS::AppRegistry::ApplicationResourceGroups</c> 
+        ///  <c>AWS::AppRegistry::ApplicationResourceGroup</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>

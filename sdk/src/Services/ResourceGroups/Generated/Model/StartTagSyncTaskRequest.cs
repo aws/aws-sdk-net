@@ -32,8 +32,17 @@ namespace Amazon.ResourceGroups.Model
     /// <summary>
     /// Container for the parameters to the StartTagSyncTask operation.
     /// Creates a new tag-sync task to onboard and sync resources tagged with a specific tag
-    /// key-value pair to an application. 
+    /// key-value pair to an application. To start a tag-sync task, you need a <a href="https://docs.aws.amazon.com/servicecatalog/latest/arguide/app-tag-sync.html#tag-sync-role">resource
+    /// tagging role</a>. The resource tagging role grants permissions to tag and untag applications
+    /// resources and must include a trust policy that allows Resource Groups to assume the
+    /// role and perform resource tagging tasks on your behalf. 
     /// 
+    ///  
+    /// <para>
+    /// For instructions on creating a tag-sync task, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/arguide/app-tag-sync.html#create-tag-sync">Create
+    /// a tag-sync using the Resource Groups API</a> in the <i>Amazon Web Services Service
+    /// Catalog AppRegistry Administrator Guide</i>. 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Minimum permissions</b> 
@@ -59,6 +68,7 @@ namespace Amazon.ResourceGroups.Model
     public partial class StartTagSyncTaskRequest : AmazonResourceGroupsRequest
     {
         private string _group;
+        private ResourceQuery _resourceQuery;
         private string _roleArn;
         private string _tagKey;
         private string _tagValue;
@@ -81,6 +91,64 @@ namespace Amazon.ResourceGroups.Model
         internal bool IsSetGroup()
         {
             return this._group != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceQuery. 
+        /// <para>
+        /// The query you can use to create the tag-sync task. With this method, all resources
+        /// matching the query are added to the specified application group. A <c>ResourceQuery</c>
+        /// specifies both a query <c>Type</c> and a <c>Query</c> string as JSON string objects.
+        /// For more information on defining a resource query for a tag-sync task, see the tag-based
+        /// query type in <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#getting_started-query_types">
+        /// Types of resource group queries</a> in <i>Resource Groups User Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When using the <c>ResourceQuery</c> parameter, you cannot use the <c>TagKey</c> and
+        /// <c>TagValue</c> parameters. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you combine all of the elements together into a single string, any double quotes
+        /// that are embedded inside another double quote pair must be escaped by preceding the
+        /// embedded double quote with a backslash character (\). For example, a complete <c>ResourceQuery</c>
+        /// parameter must be formatted like the following CLI parameter example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>--resource-query '{"Type":"TAG_FILTERS_1_0","Query":"{\"ResourceTypeFilters\":[\"AWS::AllSupported\"],\"TagFilters\":[{\"Key\":\"Stage\",\"Values\":[\"Test\"]}]}"}'</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// In the preceding example, all of the double quote characters in the value part of
+        /// the <c>Query</c> element must be escaped because the value itself is surrounded by
+        /// double quotes. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-quoting-strings.html">Quoting
+        /// strings</a> in the <i>Command Line Interface User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the complete list of resource types that you can use in the array value for <c>ResourceTypeFilters</c>,
+        /// see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/supported-resources.html">Resources
+        /// you can use with Resource Groups and Tag Editor</a> in the <i>Resource Groups User
+        /// Guide</i>. For example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>"ResourceTypeFilters":["AWS::S3::Bucket", "AWS::EC2::Instance"]</c> 
+        /// </para>
+        /// </summary>
+        public ResourceQuery ResourceQuery
+        {
+            get { return this._resourceQuery; }
+            set { this._resourceQuery = value; }
+        }
+
+        // Check to see if ResourceQuery property is set
+        internal bool IsSetResourceQuery()
+        {
+            return this._resourceQuery != null;
         }
 
         /// <summary>
@@ -110,8 +178,14 @@ namespace Amazon.ResourceGroups.Model
         /// If a resource with this tag is later untagged, the tag-sync task removes the resource
         /// from the application. 
         /// </para>
+        ///  
+        /// <para>
+        /// When using the <c>TagKey</c> parameter, you must also specify the <c>TagValue</c>
+        /// parameter. If you specify a tag key-value pair, you can't use the <c>ResourceQuery</c>
+        /// parameter. 
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string TagKey
         {
             get { return this._tagKey; }
@@ -131,8 +205,14 @@ namespace Amazon.ResourceGroups.Model
         /// application. If a resource with this tag is later untagged, the tag-sync task removes
         /// the resource from the application. 
         /// </para>
+        ///  
+        /// <para>
+        /// When using the <c>TagValue</c> parameter, you must also specify the <c>TagKey</c>
+        /// parameter. If you specify a tag key-value pair, you can't use the <c>ResourceQuery</c>
+        /// parameter. 
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string TagValue
         {
             get { return this._tagValue; }

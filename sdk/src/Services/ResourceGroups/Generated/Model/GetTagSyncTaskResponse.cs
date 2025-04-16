@@ -38,6 +38,7 @@ namespace Amazon.ResourceGroups.Model
         private string _errorMessage;
         private string _groupArn;
         private string _groupName;
+        private ResourceQuery _resourceQuery;
         private string _roleArn;
         private TagSyncTaskStatus _status;
         private string _tagKey;
@@ -118,6 +119,21 @@ namespace Amazon.ResourceGroups.Model
         internal bool IsSetGroupName()
         {
             return this._groupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceQuery.
+        /// </summary>
+        public ResourceQuery ResourceQuery
+        {
+            get { return this._resourceQuery; }
+            set { this._resourceQuery = value; }
+        }
+
+        // Check to see if ResourceQuery property is set
+        internal bool IsSetResourceQuery()
+        {
+            return this._resourceQuery != null;
         }
 
         /// <summary>
