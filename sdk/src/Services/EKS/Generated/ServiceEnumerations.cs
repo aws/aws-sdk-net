@@ -249,6 +249,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly AMITypes AL2_x86_64_GPU = new AMITypes("AL2_x86_64_GPU");
         /// <summary>
+        /// Constant AL2023_ARM_64_NVIDIA for AMITypes
+        /// </summary>
+        public static readonly AMITypes AL2023_ARM_64_NVIDIA = new AMITypes("AL2023_ARM_64_NVIDIA");
+        /// <summary>
         /// Constant AL2023_ARM_64_STANDARD for AMITypes
         /// </summary>
         public static readonly AMITypes AL2023_ARM_64_STANDARD = new AMITypes("AL2023_ARM_64_STANDARD");
