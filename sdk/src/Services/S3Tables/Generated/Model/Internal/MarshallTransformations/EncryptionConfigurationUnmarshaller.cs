@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NamespaceSummary Object
+    /// Response Unmarshaller for EncryptionConfiguration Object
     /// </summary>  
-    public class NamespaceSummaryUnmarshaller : IUnmarshaller<NamespaceSummary, XmlUnmarshallerContext>, IUnmarshaller<NamespaceSummary, JsonUnmarshallerContext>
+    public class EncryptionConfigurationUnmarshaller : IUnmarshaller<EncryptionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<EncryptionConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        NamespaceSummary IUnmarshaller<NamespaceSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EncryptionConfiguration IUnmarshaller<EncryptionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public NamespaceSummary Unmarshall(JsonUnmarshallerContext context)
+        public EncryptionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            NamespaceSummary unmarshalledObject = new NamespaceSummary();
+            EncryptionConfiguration unmarshalledObject = new EncryptionConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,16 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("createdAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("createdBy", targetDepth))
+                if (context.TestExpression("kmsKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CreatedBy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("namespace", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("namespaceId", targetDepth))
+                if (context.TestExpression("sseAlgorithm", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NamespaceId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ownerAccountId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OwnerAccountId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tableBucketId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TableBucketId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SseAlgorithm = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +83,12 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         }
 
 
-        private static NamespaceSummaryUnmarshaller _instance = new NamespaceSummaryUnmarshaller();        
+        private static EncryptionConfigurationUnmarshaller _instance = new EncryptionConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NamespaceSummaryUnmarshaller Instance
+        public static EncryptionConfigurationUnmarshaller Instance
         {
             get
             {

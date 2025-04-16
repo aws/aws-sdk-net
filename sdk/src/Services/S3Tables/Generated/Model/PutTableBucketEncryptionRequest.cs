@@ -30,36 +30,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Tables.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateTableBucket operation.
-    /// Creates a table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets-create.html">Creating
-    /// a table bucket</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+    /// Container for the parameters to the PutTableBucketEncryption operation.
+    /// Sets the encryption configuration for a table bucket.
     /// 
-    ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+    ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// You must have the <c>s3tables:CreateTableBucket</c> permission to use this operation.
-    /// 
+    /// You must have the <c>s3tables:PutTableBucketEncryption</c> permission to use this
+    /// operation.
     /// </para>
-    ///  </li> <li> 
+    ///  <note> 
     /// <para>
-    /// If you use this operation with the optional <c>encryptionConfiguration</c> parameter
-    /// you must have the <c>s3tables:PutTableBucketEncryption</c> permission.
+    /// If you choose SSE-KMS encryption you must grant the S3 Tables maintenance principal
+    /// access to your KMS key. For more information, see <a href="AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions
+    /// requirements for S3 Tables SSE-KMS encryption</a> 
     /// </para>
-    ///  </li> </ul> </dd> </dl>
+    ///  </note> </dd> </dl>
     /// </summary>
-    public partial class CreateTableBucketRequest : AmazonS3TablesRequest
+    public partial class PutTableBucketEncryptionRequest : AmazonS3TablesRequest
     {
         private EncryptionConfiguration _encryptionConfiguration;
-        private string _name;
+        private string _tableBucketARN;
 
         /// <summary>
         /// Gets and sets the property EncryptionConfiguration. 
         /// <para>
-        /// The encryption configuration to use for the table bucket. This configuration specifies
-        /// the default encryption settings that will be applied to all tables created in this
-        /// bucket unless overridden at the table level. The configuration includes the encryption
-        /// algorithm and, if using SSE-KMS, the KMS key to use.
+        /// The encryption configuration to apply to the table bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EncryptionConfiguration EncryptionConfiguration
         {
             get { return this._encryptionConfiguration; }
@@ -73,22 +71,22 @@ namespace Amazon.S3Tables.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property TableBucketARN. 
         /// <para>
-        /// The name for the table bucket.
+        /// The Amazon Resource Name (ARN) of the table bucket.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=63)]
-        public string Name
+        [AWSProperty(Required=true)]
+        public string TableBucketARN
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._tableBucketARN; }
+            set { this._tableBucketARN = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if TableBucketARN property is set
+        internal bool IsSetTableBucketARN()
         {
-            return this._name != null;
+            return this._tableBucketARN != null;
         }
 
     }

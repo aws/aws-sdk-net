@@ -70,10 +70,22 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
                     response.Namespace = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("namespaceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NamespaceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ownerAccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OwnerAccountId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tableBucketId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TableBucketId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

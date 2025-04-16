@@ -40,9 +40,9 @@ namespace Amazon.S3Tables
     /// href="https://parquet.apache.org/docs/">Apache Parquet</a> format and related metadata.
     /// This data is stored inside an S3 table as a subresource. All tables in a table bucket
     /// are stored in the <a href="https://iceberg.apache.org/docs/latest/">Apache Iceberg</a>
-    /// table format. Through integration with the <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/glue/latest/dg/catalog-and-crawler.html">AWS
-    /// Glue Data Catalog</a> you can interact with your tables using AWS analytics services,
-    /// such as <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/athena/">Amazon
+    /// table format. Through integration with the <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/glue/latest/dg/catalog-and-crawler.html">Amazon
+    /// Web Services Glue Data Catalog</a> you can interact with your tables using Amazon
+    /// Web Services analytics services, such as <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/athena/">Amazon
     /// Athena</a> and <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/redshift/">Amazon
     /// Redshift</a>. Amazon S3 manages maintenance of your tables through automatic file
     /// compaction and snapshot management. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets.html">Amazon
@@ -363,14 +363,23 @@ namespace Amazon.S3Tables
         /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-create.html">Creating
         /// an Amazon S3 table</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// 
-        ///  <dl> <dt>Permissions</dt> <dd> 
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         /// You must have the <c>s3tables:CreateTable</c> permission to use this operation. 
         /// </para>
-        ///  <note> 
+        ///  </li> <li> 
         /// <para>
-        /// Additionally, you must have the <c>s3tables:PutTableData</c> permission to use this
-        /// operation with the optional <c>metadata</c> request parameter. 
+        /// If you use this operation with the optional <c>metadata</c> request parameter you
+        /// must have the <c>s3tables:PutTableData</c> permission. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you use this operation with the optional <c>encryptionConfiguration</c> request
+        /// parameter you must have the <c>s3tables:PutTableEncryption</c> permission. 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Additionally, 
         /// </para>
         ///  </note> </dd> </dl>
         /// </summary>
@@ -448,12 +457,17 @@ namespace Amazon.S3Tables
         /// Creates a table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets-create.html">Creating
         /// a table bucket</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// 
-        ///  <dl> <dt>Permissions</dt> <dd> 
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         /// You must have the <c>s3tables:CreateTableBucket</c> permission to use this operation.
         /// 
         /// </para>
-        ///  </dd> </dl>
+        ///  </li> <li> 
+        /// <para>
+        /// If you use this operation with the optional <c>encryptionConfiguration</c> parameter
+        /// you must have the <c>s3tables:PutTableBucketEncryption</c> permission.
+        /// </para>
+        ///  </li> </ul> </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTableBucket service method.</param>
         /// 
@@ -761,6 +775,86 @@ namespace Amazon.S3Tables
         public virtual DeleteTableBucketResponse EndDeleteTableBucket(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTableBucketResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTableBucketEncryption
+
+        /// <summary>
+        /// Deletes the encryption configuration for a table bucket.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:DeleteTableBucketEncryption</c> permission to use this
+        /// operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTableBucketEncryption service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTableBucketEncryption service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTableBucketEncryption">REST API Reference for DeleteTableBucketEncryption Operation</seealso>
+        public virtual DeleteTableBucketEncryptionResponse DeleteTableBucketEncryption(DeleteTableBucketEncryptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTableBucketEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTableBucketEncryptionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTableBucketEncryptionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTableBucketEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTableBucketEncryption operation on AmazonS3TablesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTableBucketEncryption
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTableBucketEncryption">REST API Reference for DeleteTableBucketEncryption Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTableBucketEncryption(DeleteTableBucketEncryptionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTableBucketEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTableBucketEncryptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTableBucketEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTableBucketEncryption.</param>
+        /// 
+        /// <returns>Returns a  DeleteTableBucketEncryptionResult from S3Tables.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTableBucketEncryption">REST API Reference for DeleteTableBucketEncryption Operation</seealso>
+        public virtual DeleteTableBucketEncryptionResponse EndDeleteTableBucketEncryption(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTableBucketEncryptionResponse>(asyncResult);
         }
 
         #endregion
@@ -1178,6 +1272,85 @@ namespace Amazon.S3Tables
 
         #endregion
         
+        #region  GetTableBucketEncryption
+
+        /// <summary>
+        /// Gets the encryption configuration for a table bucket.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableBucketEncryption</c> permission to use this
+        /// operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableBucketEncryption service method.</param>
+        /// 
+        /// <returns>The response from the GetTableBucketEncryption service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketEncryption">REST API Reference for GetTableBucketEncryption Operation</seealso>
+        public virtual GetTableBucketEncryptionResponse GetTableBucketEncryption(GetTableBucketEncryptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTableBucketEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTableBucketEncryptionResponseUnmarshaller.Instance;
+
+            return Invoke<GetTableBucketEncryptionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTableBucketEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTableBucketEncryption operation on AmazonS3TablesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTableBucketEncryption
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketEncryption">REST API Reference for GetTableBucketEncryption Operation</seealso>
+        public virtual IAsyncResult BeginGetTableBucketEncryption(GetTableBucketEncryptionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTableBucketEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTableBucketEncryptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTableBucketEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTableBucketEncryption.</param>
+        /// 
+        /// <returns>Returns a  GetTableBucketEncryptionResult from S3Tables.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketEncryption">REST API Reference for GetTableBucketEncryption Operation</seealso>
+        public virtual GetTableBucketEncryptionResponse EndGetTableBucketEncryption(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTableBucketEncryptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetTableBucketMaintenanceConfiguration
 
         /// <summary>
@@ -1337,6 +1510,84 @@ namespace Amazon.S3Tables
         public virtual GetTableBucketPolicyResponse EndGetTableBucketPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTableBucketPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetTableEncryption
+
+        /// <summary>
+        /// Gets the encryption configuration for a table.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableEncryption</c> permission to use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableEncryption service method.</param>
+        /// 
+        /// <returns>The response from the GetTableEncryption service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableEncryption">REST API Reference for GetTableEncryption Operation</seealso>
+        public virtual GetTableEncryptionResponse GetTableEncryption(GetTableEncryptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTableEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTableEncryptionResponseUnmarshaller.Instance;
+
+            return Invoke<GetTableEncryptionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTableEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTableEncryption operation on AmazonS3TablesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTableEncryption
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableEncryption">REST API Reference for GetTableEncryption Operation</seealso>
+        public virtual IAsyncResult BeginGetTableEncryption(GetTableEncryptionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTableEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTableEncryptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTableEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTableEncryption.</param>
+        /// 
+        /// <returns>Returns a  GetTableEncryptionResult from S3Tables.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableEncryption">REST API Reference for GetTableEncryption Operation</seealso>
+        public virtual GetTableEncryptionResponse EndGetTableEncryption(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTableEncryptionResponse>(asyncResult);
         }
 
         #endregion
@@ -1909,6 +2160,92 @@ namespace Amazon.S3Tables
         public virtual ListTablesResponse EndListTables(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTablesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutTableBucketEncryption
+
+        /// <summary>
+        /// Sets the encryption configuration for a table bucket.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:PutTableBucketEncryption</c> permission to use this
+        /// operation.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you choose SSE-KMS encryption you must grant the S3 Tables maintenance principal
+        /// access to your KMS key. For more information, see <a href="AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions
+        /// requirements for S3 Tables SSE-KMS encryption</a> 
+        /// </para>
+        ///  </note> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTableBucketEncryption service method.</param>
+        /// 
+        /// <returns>The response from the PutTableBucketEncryption service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketEncryption">REST API Reference for PutTableBucketEncryption Operation</seealso>
+        public virtual PutTableBucketEncryptionResponse PutTableBucketEncryption(PutTableBucketEncryptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTableBucketEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTableBucketEncryptionResponseUnmarshaller.Instance;
+
+            return Invoke<PutTableBucketEncryptionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutTableBucketEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutTableBucketEncryption operation on AmazonS3TablesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutTableBucketEncryption
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketEncryption">REST API Reference for PutTableBucketEncryption Operation</seealso>
+        public virtual IAsyncResult BeginPutTableBucketEncryption(PutTableBucketEncryptionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTableBucketEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTableBucketEncryptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutTableBucketEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutTableBucketEncryption.</param>
+        /// 
+        /// <returns>Returns a  PutTableBucketEncryptionResult from S3Tables.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketEncryption">REST API Reference for PutTableBucketEncryption Operation</seealso>
+        public virtual PutTableBucketEncryptionResponse EndPutTableBucketEncryption(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutTableBucketEncryptionResponse>(asyncResult);
         }
 
         #endregion

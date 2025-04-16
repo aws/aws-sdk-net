@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetTableBucket operation
+    /// Response Unmarshaller for GetTableBucketEncryption operation
     /// </summary>  
-    public class GetTableBucketResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetTableBucketEncryptionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,40 +46,16 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetTableBucketResponse response = new GetTableBucketResponse();
+            GetTableBucketEncryptionResponse response = new GetTableBucketEncryptionResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("encryptionConfiguration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("createdAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ownerAccountId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.OwnerAccountId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tableBucketId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TableBucketId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
+                    response.EncryptionConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -113,10 +89,6 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
                 {
                     return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ForbiddenException"))
                 {
                     return ForbiddenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -137,9 +109,9 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             return new AmazonS3TablesException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetTableBucketResponseUnmarshaller _instance = new GetTableBucketResponseUnmarshaller();        
+        private static GetTableBucketEncryptionResponseUnmarshaller _instance = new GetTableBucketEncryptionResponseUnmarshaller();        
 
-        internal static GetTableBucketResponseUnmarshaller GetInstance()
+        internal static GetTableBucketEncryptionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -147,7 +119,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetTableBucketResponseUnmarshaller Instance
+        public static GetTableBucketEncryptionResponseUnmarshaller Instance
         {
             get
             {

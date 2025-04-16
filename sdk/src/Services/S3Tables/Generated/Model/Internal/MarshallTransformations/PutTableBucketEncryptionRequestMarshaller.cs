@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateTable Request Marshaller
+    /// PutTableBucketEncryption Request Marshaller
     /// </summary>       
-    public class CreateTableRequestMarshaller : IMarshaller<IRequest, CreateTableRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutTableBucketEncryptionRequestMarshaller : IMarshaller<IRequest, PutTableBucketEncryptionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateTableRequest)input);
+            return this.Marshall((PutTableBucketEncryptionRequest)input);
         }
 
         /// <summary>
@@ -53,20 +53,17 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateTableRequest publicRequest)
+        public IRequest Marshall(PutTableBucketEncryptionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.S3Tables");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "PUT";
 
-            if (!publicRequest.IsSetNamespace())
-                throw new AmazonS3TablesException("Request object does not have required field Namespace set");
-            request.AddPathResource("{namespace}", StringUtils.FromString(publicRequest.Namespace));
             if (!publicRequest.IsSetTableBucketARN())
                 throw new AmazonS3TablesException("Request object does not have required field TableBucketARN set");
             request.AddPathResource("{tableBucketARN}", StringUtils.FromString(publicRequest.TableBucketARN));
-            request.ResourcePath = "/tables/{tableBucketARN}/{namespace}";
+            request.ResourcePath = "/buckets/{tableBucketARN}/encryption";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -84,29 +81,6 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFormat())
-                {
-                    context.Writer.WritePropertyName("format");
-                    context.Writer.Write(publicRequest.Format);
-                }
-
-                if(publicRequest.IsSetMetadata())
-                {
-                    context.Writer.WritePropertyName("metadata");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TableMetadataMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Metadata, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -115,9 +89,9 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateTableRequestMarshaller _instance = new CreateTableRequestMarshaller();        
+        private static PutTableBucketEncryptionRequestMarshaller _instance = new PutTableBucketEncryptionRequestMarshaller();        
 
-        internal static CreateTableRequestMarshaller GetInstance()
+        internal static PutTableBucketEncryptionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -125,7 +99,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateTableRequestMarshaller Instance
+        public static PutTableBucketEncryptionRequestMarshaller Instance
         {
             get
             {

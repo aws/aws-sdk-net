@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateTableBucket Request Marshaller
+    /// GetTableBucketEncryption Request Marshaller
     /// </summary>       
-    public class CreateTableBucketRequestMarshaller : IMarshaller<IRequest, CreateTableBucketRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetTableBucketEncryptionRequestMarshaller : IMarshaller<IRequest, GetTableBucketEncryptionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateTableBucketRequest)input);
+            return this.Marshall((GetTableBucketEncryptionRequest)input);
         }
 
         /// <summary>
@@ -53,48 +53,22 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateTableBucketRequest publicRequest)
+        public IRequest Marshall(GetTableBucketEncryptionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.S3Tables");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "GET";
 
-            request.ResourcePath = "/buckets";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEncryptionConfiguration())
-                {
-                    context.Writer.WritePropertyName("encryptionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
+            if (!publicRequest.IsSetTableBucketARN())
+                throw new AmazonS3TablesException("Request object does not have required field TableBucketARN set");
+            request.AddPathResource("{tableBucketARN}", StringUtils.FromString(publicRequest.TableBucketARN));
+            request.ResourcePath = "/buckets/{tableBucketARN}/encryption";
 
             return request;
         }
-        private static CreateTableBucketRequestMarshaller _instance = new CreateTableBucketRequestMarshaller();        
+        private static GetTableBucketEncryptionRequestMarshaller _instance = new GetTableBucketEncryptionRequestMarshaller();        
 
-        internal static CreateTableBucketRequestMarshaller GetInstance()
+        internal static GetTableBucketEncryptionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -102,7 +76,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateTableBucketRequestMarshaller Instance
+        public static GetTableBucketEncryptionRequestMarshaller Instance
         {
             get
             {

@@ -38,6 +38,7 @@ namespace Amazon.S3Tables.Model
         private DateTime? _createdAt;
         private string _name;
         private string _ownerAccountId;
+        private string _tableBucketId;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -113,6 +114,24 @@ namespace Amazon.S3Tables.Model
         internal bool IsSetOwnerAccountId()
         {
             return this._ownerAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TableBucketId. 
+        /// <para>
+        /// The unique identifier of the table bucket.
+        /// </para>
+        /// </summary>
+        public string TableBucketId
+        {
+            get { return this._tableBucketId; }
+            set { this._tableBucketId = value; }
+        }
+
+        // Check to see if TableBucketId property is set
+        internal bool IsSetTableBucketId()
+        {
+            return this._tableBucketId != null;
         }
 
     }
