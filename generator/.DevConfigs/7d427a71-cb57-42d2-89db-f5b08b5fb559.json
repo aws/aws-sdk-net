@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Add observability feature IDs to User Agent header"
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}
