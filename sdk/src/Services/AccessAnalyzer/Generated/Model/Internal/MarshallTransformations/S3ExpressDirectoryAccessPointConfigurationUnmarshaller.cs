@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for S3ExpressDirectoryBucketConfiguration Object
+    /// Response Unmarshaller for S3ExpressDirectoryAccessPointConfiguration Object
     /// </summary>  
-    public class S3ExpressDirectoryBucketConfigurationUnmarshaller : IUnmarshaller<S3ExpressDirectoryBucketConfiguration, XmlUnmarshallerContext>, IUnmarshaller<S3ExpressDirectoryBucketConfiguration, JsonUnmarshallerContext>
+    public class S3ExpressDirectoryAccessPointConfigurationUnmarshaller : IUnmarshaller<S3ExpressDirectoryAccessPointConfiguration, XmlUnmarshallerContext>, IUnmarshaller<S3ExpressDirectoryAccessPointConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        S3ExpressDirectoryBucketConfiguration IUnmarshaller<S3ExpressDirectoryBucketConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        S3ExpressDirectoryAccessPointConfiguration IUnmarshaller<S3ExpressDirectoryAccessPointConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public S3ExpressDirectoryBucketConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public S3ExpressDirectoryAccessPointConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            S3ExpressDirectoryBucketConfiguration unmarshalledObject = new S3ExpressDirectoryBucketConfiguration();
+            S3ExpressDirectoryAccessPointConfiguration unmarshalledObject = new S3ExpressDirectoryAccessPointConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("accessPoints", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, S3ExpressDirectoryAccessPointConfiguration, StringUnmarshaller, S3ExpressDirectoryAccessPointConfigurationUnmarshaller>(StringUnmarshaller.Instance, S3ExpressDirectoryAccessPointConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.AccessPoints = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("bucketPolicy", targetDepth))
+                if (context.TestExpression("accessPointPolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BucketPolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccessPointPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("networkOrigin", targetDepth))
+                {
+                    var unmarshaller = NetworkOriginConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.NetworkOrigin = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         }
 
 
-        private static S3ExpressDirectoryBucketConfigurationUnmarshaller _instance = new S3ExpressDirectoryBucketConfigurationUnmarshaller();        
+        private static S3ExpressDirectoryAccessPointConfigurationUnmarshaller _instance = new S3ExpressDirectoryAccessPointConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static S3ExpressDirectoryBucketConfigurationUnmarshaller Instance
+        public static S3ExpressDirectoryAccessPointConfigurationUnmarshaller Instance
         {
             get
             {

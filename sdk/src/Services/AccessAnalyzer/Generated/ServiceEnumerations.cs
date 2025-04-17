@@ -81,6 +81,26 @@ namespace Amazon.AccessAnalyzer
     {
 
         /// <summary>
+        /// Constant AWSApiGatewayRestApi for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSApiGatewayRestApi = new AccessCheckResourceType("AWS::ApiGateway::RestApi");
+        /// <summary>
+        /// Constant AWSBackupBackupVault for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSBackupBackupVault = new AccessCheckResourceType("AWS::Backup::BackupVault");
+        /// <summary>
+        /// Constant AWSCloudTrailDashboard for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSCloudTrailDashboard = new AccessCheckResourceType("AWS::CloudTrail::Dashboard");
+        /// <summary>
+        /// Constant AWSCloudTrailEventDataStore for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSCloudTrailEventDataStore = new AccessCheckResourceType("AWS::CloudTrail::EventDataStore");
+        /// <summary>
+        /// Constant AWSCodeArtifactDomain for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSCodeArtifactDomain = new AccessCheckResourceType("AWS::CodeArtifact::Domain");
+        /// <summary>
         /// Constant AWSDynamoDBStream for AccessCheckResourceType
         /// </summary>
         public static readonly AccessCheckResourceType AWSDynamoDBStream = new AccessCheckResourceType("AWS::DynamoDB::Stream");
@@ -125,6 +145,10 @@ namespace Amazon.AccessAnalyzer
         /// </summary>
         public static readonly AccessCheckResourceType AWSS3Bucket = new AccessCheckResourceType("AWS::S3::Bucket");
         /// <summary>
+        /// Constant AWSS3ExpressAccessPoint for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSS3ExpressAccessPoint = new AccessCheckResourceType("AWS::S3Express::AccessPoint");
+        /// <summary>
         /// Constant AWSS3ExpressDirectoryBucket for AccessCheckResourceType
         /// </summary>
         public static readonly AccessCheckResourceType AWSS3ExpressDirectoryBucket = new AccessCheckResourceType("AWS::S3Express::DirectoryBucket");
@@ -140,6 +164,14 @@ namespace Amazon.AccessAnalyzer
         /// Constant AWSS3OutpostsBucket for AccessCheckResourceType
         /// </summary>
         public static readonly AccessCheckResourceType AWSS3OutpostsBucket = new AccessCheckResourceType("AWS::S3Outposts::Bucket");
+        /// <summary>
+        /// Constant AWSS3TablesTable for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSS3TablesTable = new AccessCheckResourceType("AWS::S3Tables::Table");
+        /// <summary>
+        /// Constant AWSS3TablesTableBucket for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSS3TablesTableBucket = new AccessCheckResourceType("AWS::S3Tables::TableBucket");
         /// <summary>
         /// Constant AWSSecretsManagerSecret for AccessCheckResourceType
         /// </summary>

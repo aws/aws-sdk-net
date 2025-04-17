@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// S3ExpressDirectoryBucketConfiguration Marshaller
+    /// S3ExpressDirectoryAccessPointConfiguration Marshaller
     /// </summary>
-    public class S3ExpressDirectoryBucketConfigurationMarshaller : IRequestMarshaller<S3ExpressDirectoryBucketConfiguration, JsonMarshallerContext> 
+    public class S3ExpressDirectoryAccessPointConfigurationMarshaller : IRequestMarshaller<S3ExpressDirectoryAccessPointConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,33 +44,25 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3ExpressDirectoryBucketConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(S3ExpressDirectoryAccessPointConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAccessPoints())
+            if(requestObject.IsSetAccessPointPolicy())
             {
-                context.Writer.WritePropertyName("accessPoints");
-                context.Writer.WriteObjectStart();
-                foreach (var requestObjectAccessPointsKvp in requestObject.AccessPoints)
-                {
-                    context.Writer.WritePropertyName(requestObjectAccessPointsKvp.Key);
-                    var requestObjectAccessPointsValue = requestObjectAccessPointsKvp.Value;
-
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3ExpressDirectoryAccessPointConfigurationMarshaller.Instance;
-                    marshaller.Marshall(requestObjectAccessPointsValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("accessPointPolicy");
+                context.Writer.Write(requestObject.AccessPointPolicy);
             }
 
-            if(requestObject.IsSetBucketPolicy())
+            if(requestObject.IsSetNetworkOrigin())
             {
-                context.Writer.WritePropertyName("bucketPolicy");
-                context.Writer.Write(requestObject.BucketPolicy);
+                context.Writer.WritePropertyName("networkOrigin");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = NetworkOriginConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.NetworkOrigin, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -78,7 +70,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static S3ExpressDirectoryBucketConfigurationMarshaller Instance = new S3ExpressDirectoryBucketConfigurationMarshaller();
+        public readonly static S3ExpressDirectoryAccessPointConfigurationMarshaller Instance = new S3ExpressDirectoryAccessPointConfigurationMarshaller();
 
     }
 }
