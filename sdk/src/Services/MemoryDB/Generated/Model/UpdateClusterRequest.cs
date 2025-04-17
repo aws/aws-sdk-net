@@ -41,6 +41,7 @@ namespace Amazon.MemoryDB.Model
         private string _description;
         private string _engine;
         private string _engineVersion;
+        private IpDiscovery _ipDiscovery;
         private string _maintenanceWindow;
         private string _nodeType;
         private string _parameterGroupName;
@@ -145,6 +146,29 @@ namespace Amazon.MemoryDB.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpDiscovery. 
+        /// <para>
+        /// The mechanism for discovering IP addresses for the cluster discovery protocol. Valid
+        /// values are 'ipv4' or 'ipv6'. When set to 'ipv4', cluster discovery functions such
+        /// as cluster slots, cluster shards, and cluster nodes will return IPv4 addresses for
+        /// cluster nodes. When set to 'ipv6', the cluster discovery functions return IPv6 addresses
+        /// for cluster nodes. The value must be compatible with the NetworkType parameter. If
+        /// not specified, the default is 'ipv4'.
+        /// </para>
+        /// </summary>
+        public IpDiscovery IpDiscovery
+        {
+            get { return this._ipDiscovery; }
+            set { this._ipDiscovery = value; }
+        }
+
+        // Check to see if IpDiscovery property is set
+        internal bool IsSetIpDiscovery()
+        {
+            return this._ipDiscovery != null;
         }
 
         /// <summary>

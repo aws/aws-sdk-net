@@ -111,6 +111,12 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EngineVersion);
                 }
 
+                if(publicRequest.IsSetIpDiscovery())
+                {
+                    context.Writer.WritePropertyName("IpDiscovery");
+                    context.Writer.Write(publicRequest.IpDiscovery);
+                }
+
                 if(publicRequest.IsSetKmsKeyId())
                 {
                     context.Writer.WritePropertyName("KmsKeyId");
@@ -127,6 +133,12 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("MultiRegionClusterName");
                     context.Writer.Write(publicRequest.MultiRegionClusterName);
+                }
+
+                if(publicRequest.IsSetNetworkType())
+                {
+                    context.Writer.WritePropertyName("NetworkType");
+                    context.Writer.Write(publicRequest.NetworkType);
                 }
 
                 if(publicRequest.IsSetNodeType())

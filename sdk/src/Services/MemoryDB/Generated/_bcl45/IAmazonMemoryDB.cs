@@ -1968,6 +1968,14 @@ namespace Amazon.MemoryDB
         /// key and value are case-sensitive. You can use tags to categorize and track your MemoryDB
         /// resources. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging
         /// your MemoryDB resources</a>.
+        /// 
+        ///  
+        /// <para>
+        /// When you add or remove tags from multi region clusters, you might not immediately
+        /// see the latest effective tags in the ListTags API response due to it being eventually
+        /// consistent specifically for multi region clusters. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging
+        /// your MemoryDB resources</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// 
@@ -2015,6 +2023,14 @@ namespace Amazon.MemoryDB
         /// key and value are case-sensitive. You can use tags to categorize and track your MemoryDB
         /// resources. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging
         /// your MemoryDB resources</a>.
+        /// 
+        ///  
+        /// <para>
+        /// When you add or remove tags from multi region clusters, you might not immediately
+        /// see the latest effective tags in the ListTags API response due to it being eventually
+        /// consistent specifically for multi region clusters. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging
+        /// your MemoryDB resources</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// <param name="cancellationToken">
@@ -2198,15 +2214,21 @@ namespace Amazon.MemoryDB
 
 
         /// <summary>
-        /// A tag is a key-value pair where the key and value are case-sensitive. You can use
-        /// tags to categorize and track all your MemoryDB resources. When you add or remove tags
-        /// on clusters, those actions will be replicated to all nodes in the cluster. For more
-        /// information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/iam.resourcelevelpermissions.html">Resource-level
-        /// permissions</a>.
+        /// Use this operation to add tags to a resource. A tag is a key-value pair where the
+        /// key and value are case-sensitive. You can use tags to categorize and track all your
+        /// MemoryDB resources. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging
+        /// your MemoryDB resources</a>.
         /// 
         ///  
         /// <para>
-        /// For example, you can use cost-allocation tags to your MemoryDB resources, Amazon generates
+        /// When you add tags to multi region clusters, you might not immediately see the latest
+        /// effective tags in the ListTags API response due to it being eventually consistent
+        /// specifically for multi region clusters. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging
+        /// your MemoryDB resources</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify cost-allocation tags for your MemoryDB resources, Amazon generates
         /// a cost allocation report as a comma-separated value (CSV) file with your usage and
         /// costs aggregated by your tags. You can apply tags that represent business categories
         /// (such as cost centers, application names, or owners) to organize your costs across
@@ -2262,15 +2284,21 @@ namespace Amazon.MemoryDB
 
 
         /// <summary>
-        /// A tag is a key-value pair where the key and value are case-sensitive. You can use
-        /// tags to categorize and track all your MemoryDB resources. When you add or remove tags
-        /// on clusters, those actions will be replicated to all nodes in the cluster. For more
-        /// information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/iam.resourcelevelpermissions.html">Resource-level
-        /// permissions</a>.
+        /// Use this operation to add tags to a resource. A tag is a key-value pair where the
+        /// key and value are case-sensitive. You can use tags to categorize and track all your
+        /// MemoryDB resources. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging
+        /// your MemoryDB resources</a>.
         /// 
         ///  
         /// <para>
-        /// For example, you can use cost-allocation tags to your MemoryDB resources, Amazon generates
+        /// When you add tags to multi region clusters, you might not immediately see the latest
+        /// effective tags in the ListTags API response due to it being eventually consistent
+        /// specifically for multi region clusters. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging
+        /// your MemoryDB resources</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify cost-allocation tags for your MemoryDB resources, Amazon generates
         /// a cost allocation report as a comma-separated value (CSV) file with your usage and
         /// costs aggregated by your tags. You can apply tags that represent business categories
         /// (such as cost centers, application names, or owners) to organize your costs across
@@ -2332,7 +2360,27 @@ namespace Amazon.MemoryDB
 
 
         /// <summary>
-        /// Use this operation to remove tags on a resource.
+        /// Use this operation to remove tags on a resource. A tag is a key-value pair where the
+        /// key and value are case-sensitive. You can use tags to categorize and track all your
+        /// MemoryDB resources. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging
+        /// your MemoryDB resources</a>.
+        /// 
+        ///  
+        /// <para>
+        /// When you remove tags from multi region clusters, you might not immediately see the
+        /// latest effective tags in the ListTags API response due to it being eventually consistent
+        /// specifically for multi region clusters. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging
+        /// your MemoryDB resources</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify cost-allocation tags for your MemoryDB resources, Amazon generates
+        /// a cost allocation report as a comma-separated value (CSV) file with your usage and
+        /// costs aggregated by your tags. You can apply tags that represent business categories
+        /// (such as cost centers, application names, or owners) to organize your costs across
+        /// multiple services. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/tagging.html">Using
+        /// Cost Allocation Tags</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -2382,7 +2430,27 @@ namespace Amazon.MemoryDB
 
 
         /// <summary>
-        /// Use this operation to remove tags on a resource.
+        /// Use this operation to remove tags on a resource. A tag is a key-value pair where the
+        /// key and value are case-sensitive. You can use tags to categorize and track all your
+        /// MemoryDB resources. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging
+        /// your MemoryDB resources</a>.
+        /// 
+        ///  
+        /// <para>
+        /// When you remove tags from multi region clusters, you might not immediately see the
+        /// latest effective tags in the ListTags API response due to it being eventually consistent
+        /// specifically for multi region clusters. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging
+        /// your MemoryDB resources</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify cost-allocation tags for your MemoryDB resources, Amazon generates
+        /// a cost allocation report as a comma-separated value (CSV) file with your usage and
+        /// costs aggregated by your tags. You can apply tags that represent business categories
+        /// (such as cost centers, application names, or owners) to organize your costs across
+        /// multiple services. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/tagging.html">Using
+        /// Cost Allocation Tags</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
