@@ -2318,8 +2318,8 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// A service deployment happens when you release a software update for the service. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployments.html">Amazon
-        /// ECS service deployments</a>.
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployment.html">View
+        /// service history using Amazon ECS service deployments</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeServiceDeployments service method.</param>
@@ -2380,8 +2380,8 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// A service deployment happens when you release a software update for the service. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployments.html">Amazon
-        /// ECS service deployments</a>.
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployment.html">View
+        /// service history using Amazon ECS service deployments</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeServiceDeployments service method.</param>

@@ -2711,6 +2711,10 @@ namespace Amazon.ECS
         /// </summary>
         public static readonly SettingName ContainerInstanceLongArnFormat = new SettingName("containerInstanceLongArnFormat");
         /// <summary>
+        /// Constant DefaultLogDriverMode for SettingName
+        /// </summary>
+        public static readonly SettingName DefaultLogDriverMode = new SettingName("defaultLogDriverMode");
+        /// <summary>
         /// Constant FargateFIPSMode for SettingName
         /// </summary>
         public static readonly SettingName FargateFIPSMode = new SettingName("fargateFIPSMode");
