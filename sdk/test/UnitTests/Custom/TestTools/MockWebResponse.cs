@@ -7,11 +7,13 @@ using AWSSDK_DotNet.UnitTests;
 using System.Net;
 using System.Reflection;
 using System.IO;
+using System.Net.Http;
 
 namespace AWSSDK.UnitTests
 {
     public class MockWebResponse
     {
+#if NETFRAMEWORK
         public static HttpWebResponse CreateFromResource(string resourceName)
         {
             var rawResponse = Utils.GetResourceText(resourceName);
@@ -21,9 +23,33 @@ namespace AWSSDK.UnitTests
 
             return Create(statusCode, response.Headers, response.Body);
         }
+#else
+        public static HttpResponseMessage CreateFromResource(string resourceName)
+        {
+            var rawResponse = Utils.GetResourceText(resourceName);
+
+            var response = ParseRawReponse(rawResponse);
+            var statusCode = ParseStatusCode(response.StatusLine);
+            var httpResponseMessage = new HttpResponseMessage(statusCode);
+
+            if (response.Headers != null)
+            {
+                foreach (var header in response.Headers)
+                {
+                    httpResponseMessage.Headers.TryAddWithoutValidation(header.Key, header.Value);
+                }
+            }
+
+            var body = response.Body ?? string.Empty;
+            var responseBodyStream = Utils.CreateStreamFromString(body);
+
+            httpResponseMessage.Content = new StreamContent(responseBodyStream);
+            return httpResponseMessage;
+        }
+#endif
 
         public static HttpWebResponse Create(HttpStatusCode statusCode,
-            IDictionary<string,string> headers, string body = null)
+            IDictionary<string, string> headers, string body = null)
         {
             var type = typeof(HttpWebResponse);
             var assembly = Assembly.GetAssembly(type);
