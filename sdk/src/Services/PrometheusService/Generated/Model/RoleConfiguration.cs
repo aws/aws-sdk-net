@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// To configure roles that allows users to write to an Amazon Managed Service for Prometheus
-    /// workspace in a different account.
+    /// Use this structure to enable cross-account access, so that you can use a target account
+    /// to access Prometheus metrics from source accounts.
     /// </summary>
     public partial class RoleConfiguration
     {
@@ -41,7 +41,9 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property SourceRoleArn. 
         /// <para>
-        /// A ARN identifying the source role configuration.
+        /// The Amazon Resource Name (ARN) of the role used in the source account to enable cross-account
+        /// scraping. For information about the contents of this policy, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#cross-account-remote-write">Cross-account
+        /// setup</a>.
         /// </para>
         /// </summary>
         public string SourceRoleArn
@@ -59,7 +61,9 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property TargetRoleArn. 
         /// <para>
-        /// A ARN identifying the target role configuration.
+        /// The Amazon Resource Name (ARN) of the role used in the target account to enable cross-account
+        /// scraping. For information about the contents of this policy, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#cross-account-remote-write">Cross-account
+        /// setup</a>.
         /// </para>
         /// </summary>
         public string TargetRoleArn

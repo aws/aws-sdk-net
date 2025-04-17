@@ -1400,6 +1400,77 @@ namespace Amazon.PrometheusService
 
         #endregion
         
+        #region  DescribeWorkspaceConfiguration
+
+        /// <summary>
+        /// Use this operation to return information about the configuration of a workspace. The
+        /// configuration details returned include workspace configuration status, label set limits,
+        /// and retention period.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWorkspaceConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeWorkspaceConfiguration">REST API Reference for DescribeWorkspaceConfiguration Operation</seealso>
+        public virtual DescribeWorkspaceConfigurationResponse DescribeWorkspaceConfiguration(DescribeWorkspaceConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWorkspaceConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeWorkspaceConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceConfiguration operation on AmazonPrometheusServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWorkspaceConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeWorkspaceConfiguration">REST API Reference for DescribeWorkspaceConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDescribeWorkspaceConfiguration(DescribeWorkspaceConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeWorkspaceConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWorkspaceConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DescribeWorkspaceConfigurationResult from PrometheusService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeWorkspaceConfiguration">REST API Reference for DescribeWorkspaceConfiguration Operation</seealso>
+        public virtual DescribeWorkspaceConfigurationResponse EndDescribeWorkspaceConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeWorkspaceConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetDefaultScraperConfiguration
 
         /// <summary>
@@ -2274,6 +2345,88 @@ namespace Amazon.PrometheusService
         public virtual UpdateWorkspaceAliasResponse EndUpdateWorkspaceAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateWorkspaceAliasResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateWorkspaceConfiguration
+
+        /// <summary>
+        /// Use this operation to create or update the label sets, label set limits, and retention
+        /// period of a workspace.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify at least one of <c>limitsPerLabelSet</c> or <c>retentionPeriodInDays</c>
+        /// for the request to be valid.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWorkspaceConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Completing the request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateWorkspaceConfiguration">REST API Reference for UpdateWorkspaceConfiguration Operation</seealso>
+        public virtual UpdateWorkspaceConfigurationResponse UpdateWorkspaceConfiguration(UpdateWorkspaceConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkspaceConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWorkspaceConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceConfiguration operation on AmazonPrometheusServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateWorkspaceConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateWorkspaceConfiguration">REST API Reference for UpdateWorkspaceConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateWorkspaceConfiguration(UpdateWorkspaceConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateWorkspaceConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateWorkspaceConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateWorkspaceConfigurationResult from PrometheusService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateWorkspaceConfiguration">REST API Reference for UpdateWorkspaceConfiguration Operation</seealso>
+        public virtual UpdateWorkspaceConfigurationResponse EndUpdateWorkspaceConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateWorkspaceConfigurationResponse>(asyncResult);
         }
 
         #endregion

@@ -211,6 +211,12 @@
     <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PrometheusService.Model.DescribeWorkspaceConfigurationRequest.WorkspaceId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PrometheusService.Model.ListRuleGroupsNamespacesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -365,12 +371,32 @@
     <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PrometheusService.Model.UpdateWorkspaceConfigurationRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.UpdateWorkspaceConfigurationRequest.RetentionPeriodInDays</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.UpdateWorkspaceConfigurationRequest.WorkspaceId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PrometheusService.Model.AmpConfiguration.WorkspaceArn</property>
     <pattern>^arn:aws[-a-z]*:aps:[-a-z0-9]+:[0-9]{12}:workspace/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.EksConfiguration.ClusterArn</property>
     <pattern>^arn:aws[-a-z]*:eks:[-a-z0-9]+:[0-9]{12}:cluster/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.LimitsPerLabelSetEntry.MaxSeries</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.LoggingConfigurationMetadata.LogGroupArn</property>
@@ -442,6 +468,10 @@
     <property>Amazon.PrometheusService.Model.ScraperSummary.StatusReason</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.WorkspaceConfigurationDescription.RetentionPeriodInDays</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.WorkspaceDescription.Alias</property>

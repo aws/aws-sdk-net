@@ -169,7 +169,11 @@ namespace Amazon.PrometheusService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleConfiguration.
+        /// Gets and sets the property RoleConfiguration. 
+        /// <para>
+        /// This structure displays information about the IAM roles used for cross-account scraping
+        /// configuration.
+        /// </para>
         /// </summary>
         public RoleConfiguration RoleConfiguration
         {

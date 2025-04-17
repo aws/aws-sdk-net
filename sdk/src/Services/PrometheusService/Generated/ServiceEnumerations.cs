@@ -351,6 +351,60 @@ namespace Amazon.PrometheusService
 
 
     /// <summary>
+    /// Constants used for properties of type WorkspaceConfigurationStatusCode.
+    /// </summary>
+    public class WorkspaceConfigurationStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for WorkspaceConfigurationStatusCode
+        /// </summary>
+        public static readonly WorkspaceConfigurationStatusCode ACTIVE = new WorkspaceConfigurationStatusCode("ACTIVE");
+        /// <summary>
+        /// Constant UPDATE_FAILED for WorkspaceConfigurationStatusCode
+        /// </summary>
+        public static readonly WorkspaceConfigurationStatusCode UPDATE_FAILED = new WorkspaceConfigurationStatusCode("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for WorkspaceConfigurationStatusCode
+        /// </summary>
+        public static readonly WorkspaceConfigurationStatusCode UPDATING = new WorkspaceConfigurationStatusCode("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkspaceConfigurationStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkspaceConfigurationStatusCode FindValue(string value)
+        {
+            return FindValue<WorkspaceConfigurationStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkspaceConfigurationStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type WorkspaceStatusCode.
     /// </summary>
     public class WorkspaceStatusCode : ConstantClass
