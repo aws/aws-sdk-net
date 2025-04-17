@@ -33,14 +33,14 @@ namespace Amazon.Omics.Model
     /// Container for the parameters to the CreateRunCache operation.
     /// You can create a run cache to save the task outputs from completed tasks in a run
     /// for a private workflow. Subsequent runs use the task outputs from the cache, rather
-    /// than computing the task outputs again. You specify an Amazon S3 location where HealthOmics
-    /// saves the cached data. This data must be immediately accessible (not in an archived
-    /// state).
+    /// than computing the task outputs again. You specify an Amazon S3 location where Amazon
+    /// Web Services HealthOmics saves the cached data. This data must be immediately accessible
+    /// (not in an archived state).
     /// 
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-cache-create.html">Creating
-    /// a run cache</a> in the AWS HealthOmics User Guide.
+    /// a run cache</a> in the Amazon Web Services HealthOmics User Guide.
     /// </para>
     /// </summary>
     public partial class CreateRunCacheRequest : AmazonOmicsRequest
@@ -79,7 +79,7 @@ namespace Amazon.Omics.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html#run-cache-behavior">Run
-        /// cache behavior</a> in the AWS HealthOmics User Guide.
+        /// cache behavior</a> in the Amazon Web Services HealthOmics User Guide.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -98,8 +98,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property CacheBucketOwnerId. 
         /// <para>
-        /// The AWS account ID of the expected owner of the S3 bucket for the run cache. If not
-        /// provided, your account ID is set as the owner of the bucket.
+        /// The Amazon Web Services account ID of the expected owner of the S3 bucket for the
+        /// run cache. If not provided, your account ID is set as the owner of the bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -176,8 +176,9 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// A unique request token, to ensure idempotency. If you don't specify a token, HealthOmics
-        /// automatically generates a universally unique identifier (UUID) for the request.
+        /// A unique request token, to ensure idempotency. If you don't specify a token, Amazon
+        /// Web Services HealthOmics automatically generates a universally unique identifier (UUID)
+        /// for the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

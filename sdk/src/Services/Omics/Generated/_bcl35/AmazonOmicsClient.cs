@@ -1090,14 +1090,14 @@ namespace Amazon.Omics
         /// <summary>
         /// You can create a run cache to save the task outputs from completed tasks in a run
         /// for a private workflow. Subsequent runs use the task outputs from the cache, rather
-        /// than computing the task outputs again. You specify an Amazon S3 location where HealthOmics
-        /// saves the cached data. This data must be immediately accessible (not in an archived
-        /// state).
+        /// than computing the task outputs again. You specify an Amazon S3 location where Amazon
+        /// Web Services HealthOmics saves the cached data. This data must be immediately accessible
+        /// (not in an archived state).
         /// 
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-cache-create.html">Creating
-        /// a run cache</a> in the AWS HealthOmics User Guide.
+        /// a run cache</a> in the Amazon Web Services HealthOmics User Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRunCache service method.</param>
@@ -1497,7 +1497,42 @@ namespace Amazon.Omics
         #region  CreateWorkflow
 
         /// <summary>
-        /// Creates a workflow.
+        /// Creates a private workflow.Private workflows depend on a variety of resources that
+        /// you create and configure before creating the workflow:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>Input data</i>: Input data for the workflow, stored in an S3 bucket or a Amazon
+        /// Web Services HealthOmics sequence store. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Workflow definition files</i>: Define your workflow in one or more workflow definition
+        /// files, written in WDL, Nextflow, or CWL. The workflow definition specifies the inputs
+        /// and outputs for runs that use the workflow. It also includes specifications for the
+        /// runs and run tasks for your workflow, including compute and memory requirements.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Parameter template files</i>: Define run parameters using a parameter template
+        /// file (written in JSON). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>ECR container images</i>: Create one or more container images for the workflow.
+        /// Store the images in a private ECR repository.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// (Optional) <i>Sentieon licenses</i>: Request a Sentieon license if you plan to use
+        /// Sentieon software in a private workflow.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/creating-private-workflows.html">Creating
+        /// or updating a private workflow in Amazon Web Services HealthOmics</a> in the Amazon
+        /// Web Services HealthOmics User Guide.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkflow service method.</param>
         /// 
@@ -1568,6 +1603,107 @@ namespace Amazon.Omics
         public virtual CreateWorkflowResponse EndCreateWorkflow(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateWorkflowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateWorkflowVersion
+
+        /// <summary>
+        /// Creates a new workflow version for the workflow that you specify with the <c>workflowId</c>
+        /// parameter.
+        /// 
+        ///  
+        /// <para>
+        /// When you create a new version of a workflow, you need to specify the configuration
+        /// for the new version. It doesn't inherit any configuration values from the workflow.
+        /// </para>
+        ///  
+        /// <para>
+        /// Provide a version name that is unique for this workflow. You cannot change the name
+        /// after HealthOmics creates the version.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Don’t include any personally identifiable information (PII) in the version name. Version
+        /// names appear in the workflow version ARN.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
+        /// versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services HealthOmics
+        /// User Guide.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkflowVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateWorkflowVersion service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateWorkflowVersion">REST API Reference for CreateWorkflowVersion Operation</seealso>
+        public virtual CreateWorkflowVersionResponse CreateWorkflowVersion(CreateWorkflowVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkflowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkflowVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWorkflowVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateWorkflowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkflowVersion operation on AmazonOmicsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateWorkflowVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateWorkflowVersion">REST API Reference for CreateWorkflowVersion Operation</seealso>
+        public virtual IAsyncResult BeginCreateWorkflowVersion(CreateWorkflowVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkflowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkflowVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateWorkflowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateWorkflowVersion.</param>
+        /// 
+        /// <returns>Returns a  CreateWorkflowVersionResult from Omics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateWorkflowVersion">REST API Reference for CreateWorkflowVersion Operation</seealso>
+        public virtual CreateWorkflowVersionResponse EndCreateWorkflowVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateWorkflowVersionResponse>(asyncResult);
         }
 
         #endregion
@@ -1955,7 +2091,7 @@ namespace Amazon.Omics
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-cache-delete.html">Deleting
-        /// a run cache</a> in the AWS HealthOmics User Guide.
+        /// a run cache</a> in the Amazon Web Services HealthOmics User Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRunCache service method.</param>
@@ -2482,6 +2618,92 @@ namespace Amazon.Omics
         public virtual DeleteWorkflowResponse EndDeleteWorkflow(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteWorkflowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteWorkflowVersion
+
+        /// <summary>
+        /// Deletes a workflow version. Deleting a workflow version doesn't affect any ongoing
+        /// runs that are using the workflow version.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
+        /// versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services HealthOmics
+        /// User Guide.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkflowVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWorkflowVersion service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteWorkflowVersion">REST API Reference for DeleteWorkflowVersion Operation</seealso>
+        public virtual DeleteWorkflowVersionResponse DeleteWorkflowVersion(DeleteWorkflowVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkflowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkflowVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkflowVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWorkflowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkflowVersion operation on AmazonOmicsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWorkflowVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteWorkflowVersion">REST API Reference for DeleteWorkflowVersion Operation</seealso>
+        public virtual IAsyncResult BeginDeleteWorkflowVersion(DeleteWorkflowVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkflowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkflowVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteWorkflowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteWorkflowVersion.</param>
+        /// 
+        /// <returns>Returns a  DeleteWorkflowVersionResult from Omics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteWorkflowVersion">REST API Reference for DeleteWorkflowVersion Operation</seealso>
+        public virtual DeleteWorkflowVersionResponse EndDeleteWorkflowVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteWorkflowVersionResponse>(asyncResult);
         }
 
         #endregion
@@ -3361,10 +3583,11 @@ namespace Amazon.Omics
         /// </para>
         ///  
         /// <para>
-        /// HealthOmics stores a fixed number of runs that are available to the console and API.
-        /// If GetRun doesn't return the requested run, you can find run logs for all runs in
-        /// the CloudWatch logs. For more information about viewing the run logs, see <a href="https://docs.aws.amazon.com/omics/latest/dev/cloudwatch-logs.html">CloudWatch
-        /// logs</a> in the <i>AWS HealthOmics User Guide</i>.
+        /// Amazon Web Services HealthOmics stores a fixed number of runs that are available to
+        /// the console and API. If GetRun doesn't return the requested run, you can find run
+        /// logs for all runs in the CloudWatch logs. For more information about viewing the run
+        /// logs, see <a href="https://docs.aws.amazon.com/omics/latest/dev/cloudwatch-logs.html">CloudWatch
+        /// logs</a> in the <i>in the Amazon Web Services HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRun service method.</param>
@@ -3448,7 +3671,8 @@ namespace Amazon.Omics
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-call-caching.html">Call
-        /// caching for HealthOmics runs</a> in the AWS HealthOmics User Guide.
+        /// caching for Amazon Web Services HealthOmics runs</a> in the Amazon Web Services HealthOmics
+        /// User Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRunCache service method.</param>
@@ -4122,6 +4346,86 @@ namespace Amazon.Omics
         public virtual GetWorkflowResponse EndGetWorkflow(IAsyncResult asyncResult)
         {
             return EndInvoke<GetWorkflowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetWorkflowVersion
+
+        /// <summary>
+        /// Gets information about a workflow version. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
+        /// versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services HealthOmics
+        /// User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflowVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetWorkflowVersion service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetWorkflowVersion">REST API Reference for GetWorkflowVersion Operation</seealso>
+        public virtual GetWorkflowVersionResponse GetWorkflowVersion(GetWorkflowVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetWorkflowVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetWorkflowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflowVersion operation on AmazonOmicsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetWorkflowVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetWorkflowVersion">REST API Reference for GetWorkflowVersion Operation</seealso>
+        public virtual IAsyncResult BeginGetWorkflowVersion(GetWorkflowVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetWorkflowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetWorkflowVersion.</param>
+        /// 
+        /// <returns>Returns a  GetWorkflowVersionResult from Omics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetWorkflowVersion">REST API Reference for GetWorkflowVersion Operation</seealso>
+        public virtual GetWorkflowVersionResponse EndGetWorkflowVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetWorkflowVersionResponse>(asyncResult);
         }
 
         #endregion
@@ -5155,11 +5459,11 @@ namespace Amazon.Omics
         /// 
         ///  
         /// <para>
-        /// HealthOmics stores a fixed number of runs that are available to the console and API.
-        /// If the ListRuns response doesn't include specific runs that you expected, you can
-        /// find run logs for all runs in the CloudWatch logs. For more information about viewing
-        /// the run logs, see <a href="https://docs.aws.amazon.com/omics/latest/dev/cloudwatch-logs.html">CloudWatch
-        /// logs</a> in the <i>AWS HealthOmics User Guide</i>.
+        /// Amazon Web Services HealthOmics stores a fixed number of runs that are available to
+        /// the console and API. If the ListRuns response doesn't include specific runs that you
+        /// expected, you can find run logs for all runs in the CloudWatch logs. For more information
+        /// about viewing the run logs, see <a href="https://docs.aws.amazon.com/omics/latest/dev/cloudwatch-logs.html">CloudWatch
+        /// logs</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRuns service method.</param>
@@ -5752,6 +6056,87 @@ namespace Amazon.Omics
 
         #endregion
         
+        #region  ListWorkflowVersions
+
+        /// <summary>
+        /// Lists the workflow versions for the specified workflow. For more information, see
+        /// <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
+        /// versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services HealthOmics
+        /// User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkflowVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListWorkflowVersions service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListWorkflowVersions">REST API Reference for ListWorkflowVersions Operation</seealso>
+        public virtual ListWorkflowVersionsResponse ListWorkflowVersions(ListWorkflowVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkflowVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkflowVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkflowVersionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWorkflowVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkflowVersions operation on AmazonOmicsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWorkflowVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListWorkflowVersions">REST API Reference for ListWorkflowVersions Operation</seealso>
+        public virtual IAsyncResult BeginListWorkflowVersions(ListWorkflowVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkflowVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkflowVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWorkflowVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWorkflowVersions.</param>
+        /// 
+        /// <returns>Returns a  ListWorkflowVersionsResult from Omics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListWorkflowVersions">REST API Reference for ListWorkflowVersions Operation</seealso>
+        public virtual ListWorkflowVersionsResponse EndListWorkflowVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListWorkflowVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutS3AccessPolicy
 
         /// <summary>
@@ -6203,27 +6588,23 @@ namespace Amazon.Omics
         #region  StartRun
 
         /// <summary>
-        /// Starts a workflow run. To duplicate a run, specify the run's ID and a role ARN. The
-        /// remaining parameters are copied from the previous run.
+        /// Starts a new run or duplicates an existing run.
         /// 
         ///  
         /// <para>
-        /// StartRun will not support re-run for a workflow that is shared with you.
+        /// For a new run, specify a unique <c>requestId</c>, the <c>workflowId</c>, and a role
+        /// ARN. If you're using static run storage (the default), specify the required <c>storageCapacity</c>.
         /// </para>
         ///  
         /// <para>
-        /// HealthOmics stores a fixed number of runs that are available to the console and API.
-        /// By default, HealthOmics doesn't any remove any runs. If HealthOmics reaches the maximum
-        /// number of runs, you must manually remove runs. To have older runs removed automatically,
-        /// set the retention mode to <c>REMOVE</c>.
+        /// You duplicate a run by specifing a unique <c>requestId</c>, the <c>runID</c> of the
+        /// run to duplicate, and a role ARN.
         /// </para>
         ///  
         /// <para>
-        /// By default, the run uses STATIC storage. For STATIC storage, set the <c>storageCapacity</c>
-        /// field. You can set the storage type to DYNAMIC. You do not set <c>storageCapacity</c>,
-        /// because HealthOmics dynamically scales the storage up or down as required. For more
-        /// information about static and dynamic storage, see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running
-        /// workflows</a> in the <i>AWS HealthOmics User Guide</i>.
+        /// For more information about the optional parameters in the StartRun request, see <a
+        /// href="https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html">Starting a
+        /// run</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartRun service method.</param>
@@ -6968,7 +7349,8 @@ namespace Amazon.Omics
         #region  UpdateWorkflow
 
         /// <summary>
-        /// Updates a workflow.
+        /// Updates information about a workflow. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/update-private-workflow.html">Update
+        /// a private workflow</a> in the Amazon Web Services HealthOmics User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWorkflow service method.</param>
         /// 
@@ -7039,6 +7421,86 @@ namespace Amazon.Omics
         public virtual UpdateWorkflowResponse EndUpdateWorkflow(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateWorkflowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateWorkflowVersion
+
+        /// <summary>
+        /// Updates information about the workflow version. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
+        /// versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services HealthOmics
+        /// User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkflowVersion service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWorkflowVersion service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateWorkflowVersion">REST API Reference for UpdateWorkflowVersion Operation</seealso>
+        public virtual UpdateWorkflowVersionResponse UpdateWorkflowVersion(UpdateWorkflowVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkflowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkflowVersionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkflowVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWorkflowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkflowVersion operation on AmazonOmicsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateWorkflowVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateWorkflowVersion">REST API Reference for UpdateWorkflowVersion Operation</seealso>
+        public virtual IAsyncResult BeginUpdateWorkflowVersion(UpdateWorkflowVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkflowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkflowVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateWorkflowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateWorkflowVersion.</param>
+        /// 
+        /// <returns>Returns a  UpdateWorkflowVersionResult from Omics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateWorkflowVersion">REST API Reference for UpdateWorkflowVersion Operation</seealso>
+        public virtual UpdateWorkflowVersionResponse EndUpdateWorkflowVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateWorkflowVersionResponse>(asyncResult);
         }
 
         #endregion

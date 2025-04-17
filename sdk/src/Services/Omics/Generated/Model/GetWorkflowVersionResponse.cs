@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Omics.Model
 {
     /// <summary>
-    /// This is the response object from the GetWorkflow operation.
+    /// This is the response object from the GetWorkflowVersion operation.
     /// </summary>
-    public partial class GetWorkflowResponse : AmazonWebServiceResponse
+    public partial class GetWorkflowVersionResponse : AmazonWebServiceResponse
     {
         private Accelerators _accelerators;
         private string _arn;
@@ -41,10 +41,8 @@ namespace Amazon.Omics.Model
         private string _description;
         private string _digest;
         private WorkflowEngine _engine;
-        private string _id;
         private string _main;
         private Dictionary<string, string> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
-        private string _name;
         private Dictionary<string, WorkflowParameter> _parameterTemplate = AWSConfigs.InitializeCollections ? new Dictionary<string, WorkflowParameter>() : null;
         private WorkflowStatus _status;
         private string _statusMessage;
@@ -53,11 +51,14 @@ namespace Amazon.Omics.Model
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private WorkflowType _type;
         private string _uuid;
+        private string _versionName;
+        private string _workflowBucketOwnerId;
+        private string _workflowId;
 
         /// <summary>
         /// Gets and sets the property Accelerators. 
         /// <para>
-        /// The computational accelerator specified to run the workflow. 
+        /// The accelerator for this workflow version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -76,7 +77,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The workflow's ARN.
+        /// ARN of the workflow version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -95,7 +96,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// When the workflow was created.
+        /// When the workflow version was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -113,7 +114,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Definition. 
         /// <para>
-        /// The workflow's definition.
+        /// Definition of the workflow version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -132,7 +133,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The workflow's description.
+        /// Description of the workflow version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -151,7 +152,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Digest. 
         /// <para>
-        /// The workflow's digest.
+        /// The workflow version's digest.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -170,7 +171,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The workflow's engine.
+        /// The workflow engine for this workflow version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -184,25 +185,6 @@ namespace Amazon.Omics.Model
         internal bool IsSetEngine()
         {
             return this._engine != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Id. 
-        /// <para>
-        /// The workflow's ID.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=18)]
-        public string Id
-        {
-            get { return this._id; }
-            set { this._id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this._id != null;
         }
 
         /// <summary>
@@ -227,7 +209,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// Gets metadata for the workflow.
+        /// The metadata for the workflow version.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Metadata
@@ -243,28 +225,9 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The workflow's name.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property ParameterTemplate. 
         /// <para>
-        /// The workflow's parameter template.
+        /// The parameter template for the workflow version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -283,7 +246,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The workflow's status.
+        /// The workflow version status
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -302,7 +265,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// The workflow's status message.
+        /// The workflow version status message
         /// </para>
         /// </summary>
         public string StatusMessage
@@ -320,8 +283,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property StorageCapacity. 
         /// <para>
-        /// The default static storage capacity (in gibibytes) for runs that use this workflow
-        /// or workflow version.
+        /// The default run storage capacity for static storage.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]
@@ -340,7 +302,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// The default storage type for runs using this workflow.
+        /// The default storage type for the run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -359,7 +321,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The workflow's tags.
+        /// The workflow version tags
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -377,7 +339,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The workflow's type.
+        /// The workflow version type
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -396,7 +358,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Uuid. 
         /// <para>
-        /// The universally unique identifier (UUID) value for this workflow.
+        /// The universally unique identifier (UUID) value for this workflow version
         /// </para>
         /// </summary>
         public string Uuid
@@ -409,6 +371,62 @@ namespace Amazon.Omics.Model
         internal bool IsSetUuid()
         {
             return this._uuid != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionName. 
+        /// <para>
+        /// The workflow version name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string VersionName
+        {
+            get { return this._versionName; }
+            set { this._versionName = value; }
+        }
+
+        // Check to see if VersionName property is set
+        internal bool IsSetVersionName()
+        {
+            return this._versionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowBucketOwnerId. 
+        /// <para>
+        /// Amazon Web Services Id of the owner of the bucket.
+        /// </para>
+        /// </summary>
+        public string WorkflowBucketOwnerId
+        {
+            get { return this._workflowBucketOwnerId; }
+            set { this._workflowBucketOwnerId = value; }
+        }
+
+        // Check to see if WorkflowBucketOwnerId property is set
+        internal bool IsSetWorkflowBucketOwnerId()
+        {
+            return this._workflowBucketOwnerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowId. 
+        /// <para>
+        /// The workflow's ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=18)]
+        public string WorkflowId
+        {
+            get { return this._workflowId; }
+            set { this._workflowId = value; }
+        }
+
+        // Check to see if WorkflowId property is set
+        internal bool IsSetWorkflowId()
+        {
+            return this._workflowId != null;
         }
 
     }

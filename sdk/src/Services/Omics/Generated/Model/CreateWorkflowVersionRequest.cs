@@ -30,45 +30,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Omics.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateWorkflow operation.
-    /// Creates a private workflow.Private workflows depend on a variety of resources that
-    /// you create and configure before creating the workflow:
+    /// Container for the parameters to the CreateWorkflowVersion operation.
+    /// Creates a new workflow version for the workflow that you specify with the <c>workflowId</c>
+    /// parameter.
     /// 
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <i>Input data</i>: Input data for the workflow, stored in an S3 bucket or a Amazon
-    /// Web Services HealthOmics sequence store. 
+    /// When you create a new version of a workflow, you need to specify the configuration
+    /// for the new version. It doesn't inherit any configuration values from the workflow.
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <i>Workflow definition files</i>: Define your workflow in one or more workflow definition
-    /// files, written in WDL, Nextflow, or CWL. The workflow definition specifies the inputs
-    /// and outputs for runs that use the workflow. It also includes specifications for the
-    /// runs and run tasks for your workflow, including compute and memory requirements.
+    /// Provide a version name that is unique for this workflow. You cannot change the name
+    /// after HealthOmics creates the version.
     /// </para>
-    ///  </li> <li> 
+    ///  <note> 
     /// <para>
-    ///  <i>Parameter template files</i>: Define run parameters using a parameter template
-    /// file (written in JSON). 
+    /// Don’t include any personally identifiable information (PII) in the version name. Version
+    /// names appear in the workflow version ARN.
     /// </para>
-    ///  </li> <li> 
+    ///  </note> 
     /// <para>
-    ///  <i>ECR container images</i>: Create one or more container images for the workflow.
-    /// Store the images in a private ECR repository.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// (Optional) <i>Sentieon licenses</i>: Request a Sentieon license if you plan to use
-    /// Sentieon software in a private workflow.
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/creating-private-workflows.html">Creating
-    /// or updating a private workflow in Amazon Web Services HealthOmics</a> in the Amazon
-    /// Web Services HealthOmics User Guide.
+    /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
+    /// versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services HealthOmics
+    /// User Guide.
     /// </para>
     /// </summary>
-    public partial class CreateWorkflowRequest : AmazonOmicsRequest
+    public partial class CreateWorkflowVersionRequest : AmazonOmicsRequest
     {
         private Accelerators _accelerators;
         private string _definitionUri;
@@ -76,17 +64,19 @@ namespace Amazon.Omics.Model
         private string _description;
         private WorkflowEngine _engine;
         private string _main;
-        private string _name;
         private Dictionary<string, WorkflowParameter> _parameterTemplate = AWSConfigs.InitializeCollections ? new Dictionary<string, WorkflowParameter>() : null;
         private string _requestId;
         private int? _storageCapacity;
         private StorageType _storageType;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _versionName;
+        private string _workflowBucketOwnerId;
+        private string _workflowId;
 
         /// <summary>
         /// Gets and sets the property Accelerators. 
         /// <para>
-        /// The computational accelerator specified to run the workflow.
+        /// The computational accelerator for this workflow version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -105,7 +95,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property DefinitionUri. 
         /// <para>
-        /// The URI of a definition for the workflow.
+        /// The URI specifies the location of the workflow definition for this workflow version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -124,7 +114,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property DefinitionZip. 
         /// <para>
-        /// A ZIP archive for the workflow.
+        /// A zip archive containing the workflow definition for this workflow version.
         /// </para>
         /// </summary>
         public MemoryStream DefinitionZip
@@ -142,7 +132,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the workflow.
+        /// A description for this workflow version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -161,7 +151,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The workflow engine for the workflow.
+        /// The workflow engine for this workflow version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -180,7 +170,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Main. 
         /// <para>
-        /// The path of the main definition file for the workflow.
+        /// The path of the main definition file for this workflow version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -197,28 +187,10 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// A name for the workflow.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property ParameterTemplate. 
         /// <para>
-        /// A parameter template for the workflow.
+        /// The parameter template defines the input parameters for runs that use this workflow
+        /// version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -276,7 +248,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        ///  The default storage type for runs that use this workflow. STATIC storage allocates
+        /// The default storage type for runs that use this workflow. STATIC storage allocates
         /// a fixed amount of storage. DYNAMIC storage dynamically scales the storage up or down,
         /// based on file system utilization. For more information about static and dynamic storage,
         /// see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running
@@ -299,7 +271,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags for the workflow.
+        /// Optional tags to associate with this workflow version.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -312,6 +284,72 @@ namespace Amazon.Omics.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionName. 
+        /// <para>
+        /// A name for the workflow version. Provide a version name that is unique for this workflow.
+        /// You cannot change the name after HealthOmics creates the version. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The version name must start with a letter or number and it can include upper-case
+        /// and lower-case letters, numbers, hyphens, periods and underscores. The maximum length
+        /// is 64 characters. You can use a simple naming scheme, such as version1, version2,
+        /// version3. You can also match your workflow versions with your own internal versioning
+        /// conventions, such as 2.7.0, 2.7.1, 2.7.2.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string VersionName
+        {
+            get { return this._versionName; }
+            set { this._versionName = value; }
+        }
+
+        // Check to see if VersionName property is set
+        internal bool IsSetVersionName()
+        {
+            return this._versionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowBucketOwnerId. 
+        /// <para>
+        /// Amazon Web Services Id of the owner of the S3 bucket that contains the workflow definition.
+        /// You need to specify this parameter if your account is not the bucket owner.
+        /// </para>
+        /// </summary>
+        public string WorkflowBucketOwnerId
+        {
+            get { return this._workflowBucketOwnerId; }
+            set { this._workflowBucketOwnerId = value; }
+        }
+
+        // Check to see if WorkflowBucketOwnerId property is set
+        internal bool IsSetWorkflowBucketOwnerId()
+        {
+            return this._workflowBucketOwnerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowId. 
+        /// <para>
+        /// The ID of the workflow where you are creating the new version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=18)]
+        public string WorkflowId
+        {
+            get { return this._workflowId; }
+            set { this._workflowId = value; }
+        }
+
+        // Check to see if WorkflowId property is set
+        internal bool IsSetWorkflowId()
+        {
+            return this._workflowId != null;
         }
 
     }

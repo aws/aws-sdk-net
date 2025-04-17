@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RunListItem Object
+    /// Response Unmarshaller for WorkflowVersionListItem Object
     /// </summary>  
-    public class RunListItemUnmarshaller : IUnmarshaller<RunListItem, XmlUnmarshallerContext>, IUnmarshaller<RunListItem, JsonUnmarshallerContext>
+    public class WorkflowVersionListItemUnmarshaller : IUnmarshaller<WorkflowVersionListItem, XmlUnmarshallerContext>, IUnmarshaller<WorkflowVersionListItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RunListItem IUnmarshaller<RunListItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        WorkflowVersionListItem IUnmarshaller<WorkflowVersionListItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public RunListItem Unmarshall(JsonUnmarshallerContext context)
+        public WorkflowVersionListItem Unmarshall(JsonUnmarshallerContext context)
         {
-            RunListItem unmarshalledObject = new RunListItem();
+            WorkflowVersionListItem unmarshalledObject = new WorkflowVersionListItem();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -78,28 +78,22 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("digest", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Digest = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("priority", targetDepth))
+                if (context.TestExpression("metadata", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("startTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
@@ -108,22 +102,16 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("stopTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StopTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("storageCapacity", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.StorageCapacity = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("storageType", targetDepth))
+                if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StorageType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("versionName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VersionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("workflowId", targetDepth))
@@ -132,23 +120,17 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     unmarshalledObject.WorkflowId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("workflowVersionName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkflowVersionName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
 
-        private static RunListItemUnmarshaller _instance = new RunListItemUnmarshaller();        
+        private static WorkflowVersionListItemUnmarshaller _instance = new WorkflowVersionListItemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RunListItemUnmarshaller Instance
+        public static WorkflowVersionListItemUnmarshaller Instance
         {
             get
             {

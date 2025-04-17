@@ -68,6 +68,8 @@ namespace Amazon.Omics.Model
         private string _workflowId;
         private string _workflowOwnerId;
         private WorkflowType _workflowType;
+        private string _workflowUuid;
+        private string _workflowVersionName;
 
         /// <summary>
         /// Gets and sets the property Accelerators. 
@@ -204,7 +206,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The workflow engine version.
+        /// The actual Nextflow engine version that Amazon Web Services HealthOmics used for the
+        /// run. The other workflow definition languages don't provide a value for this field.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -704,6 +707,43 @@ namespace Amazon.Omics.Model
         internal bool IsSetWorkflowType()
         {
             return this._workflowType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowUuid. 
+        /// <para>
+        /// The universally unique identifier (UUID) value for the workflow.
+        /// </para>
+        /// </summary>
+        public string WorkflowUuid
+        {
+            get { return this._workflowUuid; }
+            set { this._workflowUuid = value; }
+        }
+
+        // Check to see if WorkflowUuid property is set
+        internal bool IsSetWorkflowUuid()
+        {
+            return this._workflowUuid != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowVersionName. 
+        /// <para>
+        /// The workflow version name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string WorkflowVersionName
+        {
+            get { return this._workflowVersionName; }
+            set { this._workflowVersionName = value; }
+        }
+
+        // Check to see if WorkflowVersionName property is set
+        internal bool IsSetWorkflowVersionName()
+        {
+            return this._workflowVersionName != null;
         }
 
     }

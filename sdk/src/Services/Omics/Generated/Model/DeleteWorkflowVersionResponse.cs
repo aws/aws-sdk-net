@@ -30,38 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Omics.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetRunCache operation.
-    /// Retrieve the details for the specified run cache.
-    /// 
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-call-caching.html">Call
-    /// caching for Amazon Web Services HealthOmics runs</a> in the Amazon Web Services HealthOmics
-    /// User Guide.
-    /// </para>
+    /// This is the response object from the DeleteWorkflowVersion operation.
     /// </summary>
-    public partial class GetRunCacheRequest : AmazonOmicsRequest
+    public partial class DeleteWorkflowVersionResponse : AmazonWebServiceResponse
     {
-        private string _id;
-
-        /// <summary>
-        /// Gets and sets the property Id. 
-        /// <para>
-        /// The identifier of the run cache to retrieve.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=18)]
-        public string Id
-        {
-            get { return this._id; }
-            set { this._id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this._id != null;
-        }
 
     }
 }

@@ -30,20 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Omics.Model
 {
     /// <summary>
-    /// This is the response object from the CreateWorkflow operation.
+    /// This is the response object from the CreateWorkflowVersion operation.
     /// </summary>
-    public partial class CreateWorkflowResponse : AmazonWebServiceResponse
+    public partial class CreateWorkflowVersionResponse : AmazonWebServiceResponse
     {
         private string _arn;
-        private string _id;
         private WorkflowStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _uuid;
+        private string _versionName;
+        private string _workflowId;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The workflow's ARN.
+        /// ARN of the workflow version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -60,28 +61,9 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. 
-        /// <para>
-        /// The workflow's ID.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=18)]
-        public string Id
-        {
-            get { return this._id; }
-            set { this._id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this._id != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The workflow's status.
+        /// The workflow version status.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -100,7 +82,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The workflow's tags.
+        /// The workflow version's tags.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -118,7 +100,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Uuid. 
         /// <para>
-        /// The universally unique identifier (UUID) value for this workflow.
+        /// The universally unique identifier (UUID) value for this workflow version.
         /// </para>
         /// </summary>
         public string Uuid
@@ -131,6 +113,44 @@ namespace Amazon.Omics.Model
         internal bool IsSetUuid()
         {
             return this._uuid != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionName. 
+        /// <para>
+        /// The workflow version name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string VersionName
+        {
+            get { return this._versionName; }
+            set { this._versionName = value; }
+        }
+
+        // Check to see if VersionName property is set
+        internal bool IsSetVersionName()
+        {
+            return this._versionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowId. 
+        /// <para>
+        /// The workflow's ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=18)]
+        public string WorkflowId
+        {
+            get { return this._workflowId; }
+            set { this._workflowId = value; }
+        }
+
+        // Check to see if WorkflowId property is set
+        internal bool IsSetWorkflowId()
+        {
+            return this._workflowId != null;
         }
 
     }

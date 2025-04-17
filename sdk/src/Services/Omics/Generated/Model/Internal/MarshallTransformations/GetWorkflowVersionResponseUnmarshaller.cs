@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetWorkflow operation
+    /// Response Unmarshaller for GetWorkflowVersion operation
     /// </summary>  
-    public class GetWorkflowResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetWorkflowVersionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetWorkflowResponse response = new GetWorkflowResponse();
+            GetWorkflowVersionResponse response = new GetWorkflowVersionResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -94,12 +94,6 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.Engine = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("main", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -110,12 +104,6 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Metadata = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("parameterTemplate", targetDepth))
@@ -164,6 +152,24 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Uuid = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("versionName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VersionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowBucketOwnerId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.WorkflowBucketOwnerId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.WorkflowId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -225,9 +231,9 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             return new AmazonOmicsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetWorkflowResponseUnmarshaller _instance = new GetWorkflowResponseUnmarshaller();        
+        private static GetWorkflowVersionResponseUnmarshaller _instance = new GetWorkflowVersionResponseUnmarshaller();        
 
-        internal static GetWorkflowResponseUnmarshaller GetInstance()
+        internal static GetWorkflowVersionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -235,7 +241,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetWorkflowResponseUnmarshaller Instance
+        public static GetWorkflowVersionResponseUnmarshaller Instance
         {
             get
             {

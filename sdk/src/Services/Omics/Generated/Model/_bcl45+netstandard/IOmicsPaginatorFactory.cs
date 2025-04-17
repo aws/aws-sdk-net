@@ -236,5 +236,15 @@ namespace Amazon.Omics.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListWorkflowsPaginator ListWorkflows(ListWorkflowsRequest request);
+
+        /// <summary>
+        /// Paginator for ListWorkflowVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "StartingToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListWorkflowVersionsPaginator ListWorkflowVersions(ListWorkflowVersionsRequest request);
     }
 }

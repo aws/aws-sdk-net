@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateWorkflow operation
+    /// Response Unmarshaller for ListWorkflowVersions operation
     /// </summary>  
-    public class CreateWorkflowResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListWorkflowVersionsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,40 +46,22 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateWorkflowResponse response = new CreateWorkflowResponse();
+            ListWorkflowVersionsResponse response = new ListWorkflowVersionsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("items", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<WorkflowVersionListItem, WorkflowVersionListItemUnmarshaller>(WorkflowVersionListItemUnmarshaller.Instance);
+                    response.Items = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("uuid", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Uuid = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -141,9 +123,9 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             return new AmazonOmicsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateWorkflowResponseUnmarshaller _instance = new CreateWorkflowResponseUnmarshaller();        
+        private static ListWorkflowVersionsResponseUnmarshaller _instance = new ListWorkflowVersionsResponseUnmarshaller();        
 
-        internal static CreateWorkflowResponseUnmarshaller GetInstance()
+        internal static ListWorkflowVersionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -151,7 +133,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateWorkflowResponseUnmarshaller Instance
+        public static ListWorkflowVersionsResponseUnmarshaller Instance
         {
             get
             {

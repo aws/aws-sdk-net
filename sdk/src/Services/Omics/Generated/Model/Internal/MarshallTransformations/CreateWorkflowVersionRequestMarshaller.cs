@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StartRun Request Marshaller
+    /// CreateWorkflowVersion Request Marshaller
     /// </summary>       
-    public class StartRunRequestMarshaller : IMarshaller<IRequest, StartRunRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateWorkflowVersionRequestMarshaller : IMarshaller<IRequest, CreateWorkflowVersionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((StartRunRequest)input);
+            return this.Marshall((CreateWorkflowVersionRequest)input);
         }
 
         /// <summary>
@@ -53,60 +53,76 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(StartRunRequest publicRequest)
+        public IRequest Marshall(CreateWorkflowVersionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Omics");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-11-28";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/run";
+            if (!publicRequest.IsSetWorkflowId())
+                throw new AmazonOmicsException("Request object does not have required field WorkflowId set");
+            request.AddPathResource("{workflowId}", StringUtils.FromString(publicRequest.WorkflowId));
+            request.ResourcePath = "/workflow/{workflowId}/version";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCacheBehavior())
+                if(publicRequest.IsSetAccelerators())
                 {
-                    context.Writer.WritePropertyName("cacheBehavior");
-                    context.Writer.Write(publicRequest.CacheBehavior);
+                    context.Writer.WritePropertyName("accelerators");
+                    context.Writer.Write(publicRequest.Accelerators);
                 }
 
-                if(publicRequest.IsSetCacheId())
+                if(publicRequest.IsSetDefinitionUri())
                 {
-                    context.Writer.WritePropertyName("cacheId");
-                    context.Writer.Write(publicRequest.CacheId);
+                    context.Writer.WritePropertyName("definitionUri");
+                    context.Writer.Write(publicRequest.DefinitionUri);
                 }
 
-                if(publicRequest.IsSetLogLevel())
+                if(publicRequest.IsSetDefinitionZip())
                 {
-                    context.Writer.WritePropertyName("logLevel");
-                    context.Writer.Write(publicRequest.LogLevel);
+                    context.Writer.WritePropertyName("definitionZip");
+                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.DefinitionZip));
                 }
 
-                if(publicRequest.IsSetName())
+                if(publicRequest.IsSetDescription())
                 {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
                 }
 
-                if(publicRequest.IsSetOutputUri())
+                if(publicRequest.IsSetEngine())
                 {
-                    context.Writer.WritePropertyName("outputUri");
-                    context.Writer.Write(publicRequest.OutputUri);
+                    context.Writer.WritePropertyName("engine");
+                    context.Writer.Write(publicRequest.Engine);
                 }
 
-                if(publicRequest.IsSetParameters())
+                if(publicRequest.IsSetMain())
                 {
-                    context.Writer.WritePropertyName("parameters");
-                    Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.Parameters);
+                    context.Writer.WritePropertyName("main");
+                    context.Writer.Write(publicRequest.Main);
                 }
 
-                if(publicRequest.IsSetPriority())
+                if(publicRequest.IsSetParameterTemplate())
                 {
-                    context.Writer.WritePropertyName("priority");
-                    context.Writer.Write(publicRequest.Priority);
+                    context.Writer.WritePropertyName("parameterTemplate");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestParameterTemplateKvp in publicRequest.ParameterTemplate)
+                    {
+                        context.Writer.WritePropertyName(publicRequestParameterTemplateKvp.Key);
+                        var publicRequestParameterTemplateValue = publicRequestParameterTemplateKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WorkflowParameterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestParameterTemplateValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetRequestId())
@@ -120,30 +136,6 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("requestId");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
-                if(publicRequest.IsSetRetentionMode())
-                {
-                    context.Writer.WritePropertyName("retentionMode");
-                    context.Writer.Write(publicRequest.RetentionMode);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetRunGroupId())
-                {
-                    context.Writer.WritePropertyName("runGroupId");
-                    context.Writer.Write(publicRequest.RunGroupId);
-                }
-
-                if(publicRequest.IsSetRunId())
-                {
-                    context.Writer.WritePropertyName("runId");
-                    context.Writer.Write(publicRequest.RunId);
-                }
-
                 if(publicRequest.IsSetStorageCapacity())
                 {
                     context.Writer.WritePropertyName("storageCapacity");
@@ -170,28 +162,16 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWorkflowId())
+                if(publicRequest.IsSetVersionName())
                 {
-                    context.Writer.WritePropertyName("workflowId");
-                    context.Writer.Write(publicRequest.WorkflowId);
+                    context.Writer.WritePropertyName("versionName");
+                    context.Writer.Write(publicRequest.VersionName);
                 }
 
-                if(publicRequest.IsSetWorkflowOwnerId())
+                if(publicRequest.IsSetWorkflowBucketOwnerId())
                 {
-                    context.Writer.WritePropertyName("workflowOwnerId");
-                    context.Writer.Write(publicRequest.WorkflowOwnerId);
-                }
-
-                if(publicRequest.IsSetWorkflowType())
-                {
-                    context.Writer.WritePropertyName("workflowType");
-                    context.Writer.Write(publicRequest.WorkflowType);
-                }
-
-                if(publicRequest.IsSetWorkflowVersionName())
-                {
-                    context.Writer.WritePropertyName("workflowVersionName");
-                    context.Writer.Write(publicRequest.WorkflowVersionName);
+                    context.Writer.WritePropertyName("workflowBucketOwnerId");
+                    context.Writer.Write(publicRequest.WorkflowBucketOwnerId);
                 }
 
                 writer.WriteObjectEnd();
@@ -204,9 +184,9 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static StartRunRequestMarshaller _instance = new StartRunRequestMarshaller();        
+        private static CreateWorkflowVersionRequestMarshaller _instance = new CreateWorkflowVersionRequestMarshaller();        
 
-        internal static StartRunRequestMarshaller GetInstance()
+        internal static CreateWorkflowVersionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -214,7 +194,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartRunRequestMarshaller Instance
+        public static CreateWorkflowVersionRequestMarshaller Instance
         {
             get
             {

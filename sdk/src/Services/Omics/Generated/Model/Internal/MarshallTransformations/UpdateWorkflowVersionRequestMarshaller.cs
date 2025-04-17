@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateWorkflow Request Marshaller
+    /// UpdateWorkflowVersion Request Marshaller
     /// </summary>       
-    public class UpdateWorkflowRequestMarshaller : IMarshaller<IRequest, UpdateWorkflowRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateWorkflowVersionRequestMarshaller : IMarshaller<IRequest, UpdateWorkflowVersionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateWorkflowRequest)input);
+            return this.Marshall((UpdateWorkflowVersionRequest)input);
         }
 
         /// <summary>
@@ -53,17 +53,20 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateWorkflowRequest publicRequest)
+        public IRequest Marshall(UpdateWorkflowVersionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Omics");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-11-28";
             request.HttpMethod = "POST";
 
-            if (!publicRequest.IsSetId())
-                throw new AmazonOmicsException("Request object does not have required field Id set");
-            request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
-            request.ResourcePath = "/workflow/{id}";
+            if (!publicRequest.IsSetVersionName())
+                throw new AmazonOmicsException("Request object does not have required field VersionName set");
+            request.AddPathResource("{versionName}", StringUtils.FromString(publicRequest.VersionName));
+            if (!publicRequest.IsSetWorkflowId())
+                throw new AmazonOmicsException("Request object does not have required field WorkflowId set");
+            request.AddPathResource("{workflowId}", StringUtils.FromString(publicRequest.WorkflowId));
+            request.ResourcePath = "/workflow/{workflowId}/version/{versionName}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -74,12 +77,6 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("description");
                     context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
                 }
 
                 if(publicRequest.IsSetStorageCapacity())
@@ -104,9 +101,9 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateWorkflowRequestMarshaller _instance = new UpdateWorkflowRequestMarshaller();        
+        private static UpdateWorkflowVersionRequestMarshaller _instance = new UpdateWorkflowVersionRequestMarshaller();        
 
-        internal static UpdateWorkflowRequestMarshaller GetInstance()
+        internal static UpdateWorkflowVersionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -114,7 +111,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateWorkflowRequestMarshaller Instance
+        public static UpdateWorkflowVersionRequestMarshaller Instance
         {
             get
             {

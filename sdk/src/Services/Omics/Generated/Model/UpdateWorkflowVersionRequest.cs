@@ -30,22 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Omics.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateWorkflow operation.
-    /// Updates information about a workflow. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/update-private-workflow.html">Update
-    /// a private workflow</a> in the Amazon Web Services HealthOmics User Guide.
+    /// Container for the parameters to the UpdateWorkflowVersion operation.
+    /// Updates information about the workflow version. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
+    /// versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services HealthOmics
+    /// User Guide.
     /// </summary>
-    public partial class UpdateWorkflowRequest : AmazonOmicsRequest
+    public partial class UpdateWorkflowVersionRequest : AmazonOmicsRequest
     {
         private string _description;
-        private string _id;
-        private string _name;
         private int? _storageCapacity;
         private StorageType _storageType;
+        private string _versionName;
+        private string _workflowId;
 
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the workflow.
+        /// Description of the workflow version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -62,48 +63,10 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. 
-        /// <para>
-        /// The workflow's ID.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=18)]
-        public string Id
-        {
-            get { return this._id; }
-            set { this._id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this._id != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// A name for the workflow.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property StorageCapacity. 
         /// <para>
         /// The default static storage capacity (in gibibytes) for runs that use this workflow
-        /// or workflow version. 
+        /// or workflow version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]
@@ -126,7 +89,7 @@ namespace Amazon.Omics.Model
         /// a fixed amount of storage. DYNAMIC storage dynamically scales the storage up or down,
         /// based on file system utilization. For more information about static and dynamic storage,
         /// see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running
-        /// workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>. 
+        /// workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -140,6 +103,44 @@ namespace Amazon.Omics.Model
         internal bool IsSetStorageType()
         {
             return this._storageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionName. 
+        /// <para>
+        /// The name of the workflow version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string VersionName
+        {
+            get { return this._versionName; }
+            set { this._versionName = value; }
+        }
+
+        // Check to see if VersionName property is set
+        internal bool IsSetVersionName()
+        {
+            return this._versionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowId. 
+        /// <para>
+        /// The workflow's ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=18)]
+        public string WorkflowId
+        {
+            get { return this._workflowId; }
+            set { this._workflowId = value; }
+        }
+
+        // Check to see if WorkflowId property is set
+        internal bool IsSetWorkflowId()
+        {
+            return this._workflowId != null;
         }
 
     }

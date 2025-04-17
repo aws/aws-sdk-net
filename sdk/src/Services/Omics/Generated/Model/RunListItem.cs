@@ -45,6 +45,7 @@ namespace Amazon.Omics.Model
         private int? _storageCapacity;
         private StorageType _storageType;
         private string _workflowId;
+        private string _workflowVersionName;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -251,6 +252,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetWorkflowId()
         {
             return this._workflowId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowVersionName. 
+        /// <para>
+        /// The name of the workflow version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string WorkflowVersionName
+        {
+            get { return this._workflowVersionName; }
+            set { this._workflowVersionName = value; }
+        }
+
+        // Check to see if WorkflowVersionName property is set
+        internal bool IsSetWorkflowVersionName()
+        {
+            return this._workflowVersionName != null;
         }
 
     }

@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetWorkflow operation
+    /// Response Unmarshaller for CreateWorkflowVersion operation
     /// </summary>  
-    public class GetWorkflowResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateWorkflowVersionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,82 +46,16 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetWorkflowResponse response = new GetWorkflowResponse();
+            CreateWorkflowVersionResponse response = new CreateWorkflowVersionResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("accelerators", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Accelerators = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("creationTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("definition", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Definition = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("digest", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Digest = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("engine", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Engine = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("main", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Main = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("metadata", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Metadata = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("parameterTemplate", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, WorkflowParameter, StringUnmarshaller, WorkflowParameterUnmarshaller>(StringUnmarshaller.Instance, WorkflowParameterUnmarshaller.Instance);
-                    response.ParameterTemplate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
@@ -130,40 +64,28 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("statusMessage", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StatusMessage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("storageCapacity", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.StorageCapacity = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("storageType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StorageType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Type = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("uuid", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Uuid = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("versionName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VersionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.WorkflowId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -225,9 +147,9 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             return new AmazonOmicsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetWorkflowResponseUnmarshaller _instance = new GetWorkflowResponseUnmarshaller();        
+        private static CreateWorkflowVersionResponseUnmarshaller _instance = new CreateWorkflowVersionResponseUnmarshaller();        
 
-        internal static GetWorkflowResponseUnmarshaller GetInstance()
+        internal static CreateWorkflowVersionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -235,7 +157,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetWorkflowResponseUnmarshaller Instance
+        public static CreateWorkflowVersionResponseUnmarshaller Instance
         {
             get
             {
