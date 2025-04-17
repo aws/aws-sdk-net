@@ -72,7 +72,7 @@ namespace Amazon.IoTFleetWise.Model
         /// The number of positions to shift bits in the message.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Min=0, Max=2147483647)]
         public int BitRightShift
         {
             get { return this._bitRightShift.GetValueOrDefault(); }
@@ -151,7 +151,7 @@ namespace Amazon.IoTFleetWise.Model
         /// The diagnostic code used to request data from a vehicle for this signal.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Required=true, Min=0, Max=2147483647)]
         public int Pid
         {
             get { return this._pid.GetValueOrDefault(); }
@@ -170,7 +170,7 @@ namespace Amazon.IoTFleetWise.Model
         /// The length of the requested data.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=2147483647)]
         public int PidResponseLength
         {
             get { return this._pidResponseLength.GetValueOrDefault(); }
@@ -208,7 +208,7 @@ namespace Amazon.IoTFleetWise.Model
         /// The mode of operation (diagnostic service) in a message.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Required=true, Min=0, Max=2147483647)]
         public int ServiceMode
         {
             get { return this._serviceMode.GetValueOrDefault(); }
@@ -245,7 +245,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Indicates the beginning of the message.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Required=true, Min=0, Max=2147483647)]
         public int StartByte
         {
             get { return this._startByte.GetValueOrDefault(); }

@@ -62,7 +62,7 @@ namespace Amazon.IoTFleetWise.Model
         /// A number of time units.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=2147483647)]
         public int Value
         {
             get { return this._value.GetValueOrDefault(); }

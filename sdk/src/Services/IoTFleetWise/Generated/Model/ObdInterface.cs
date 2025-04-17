@@ -48,7 +48,7 @@ namespace Amazon.IoTFleetWise.Model
         /// The maximum number message requests per diagnostic trouble code per second.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Min=0, Max=2147483647)]
         public int DtcRequestIntervalSeconds
         {
             get { return this._dtcRequestIntervalSeconds.GetValueOrDefault(); }
@@ -123,7 +123,7 @@ namespace Amazon.IoTFleetWise.Model
         /// The maximum number message requests per second.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Min=0, Max=2147483647)]
         public int PidRequestIntervalSeconds
         {
             get { return this._pidRequestIntervalSeconds.GetValueOrDefault(); }
@@ -142,7 +142,7 @@ namespace Amazon.IoTFleetWise.Model
         /// The ID of the message requesting vehicle data.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Required=true, Min=0, Max=2147483647)]
         public int RequestMessageId
         {
             get { return this._requestMessageId.GetValueOrDefault(); }

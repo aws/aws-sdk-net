@@ -111,7 +111,7 @@ namespace Amazon.IoTFleetWise.Model
         /// How many bytes of data are in the message.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Required=true, Min=0, Max=2147483647)]
         public int Length
         {
             get { return this._length.GetValueOrDefault(); }
@@ -130,7 +130,7 @@ namespace Amazon.IoTFleetWise.Model
         /// The ID of the message.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Required=true, Min=0, Max=2147483647)]
         public int MessageId
         {
             get { return this._messageId.GetValueOrDefault(); }
@@ -214,7 +214,7 @@ namespace Amazon.IoTFleetWise.Model
         /// the LSB instead and pass it as the <c>startBit</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Required=true, Min=0, Max=2147483647)]
         public int StartBit
         {
             get { return this._startBit.GetValueOrDefault(); }

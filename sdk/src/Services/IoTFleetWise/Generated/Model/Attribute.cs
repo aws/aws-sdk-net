@@ -185,7 +185,7 @@ namespace Amazon.IoTFleetWise.Model
         /// an attribute might be <c>Vehicle.Body.Engine.Type</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=150)]
         public string FullyQualifiedName
         {
             get { return this._fullyQualifiedName; }
