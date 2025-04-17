@@ -66,7 +66,7 @@ namespace Amazon.Bedrock.Model
         ///  
         /// <para>
         /// For knowledge base evaluation jobs that evaluate retrieval only, valid values are
-        /// "<c>Builtin.ContextRelevance</c>", "<c>Builtin.ContextConverage</c>".
+        /// "<c>Builtin.ContextRelevance</c>", "<c>Builtin.ContextCoverage</c>".
         /// </para>
         ///  
         /// <para>
@@ -92,7 +92,7 @@ namespace Amazon.Bedrock.Model
         /// parameter specified in <c>HumanEvaluationCustomMetric</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=15)]
+        [AWSProperty(Required=true, Min=1, Max=25)]
         public List<string> MetricNames
         {
             get { return this._metricNames; }

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AutomatedEvaluationConfig Object
+    /// Response Unmarshaller for RatingScaleItem Object
     /// </summary>  
-    public class AutomatedEvaluationConfigUnmarshaller : IUnmarshaller<AutomatedEvaluationConfig, XmlUnmarshallerContext>, IUnmarshaller<AutomatedEvaluationConfig, JsonUnmarshallerContext>
+    public class RatingScaleItemUnmarshaller : IUnmarshaller<RatingScaleItem, XmlUnmarshallerContext>, IUnmarshaller<RatingScaleItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AutomatedEvaluationConfig IUnmarshaller<AutomatedEvaluationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RatingScaleItem IUnmarshaller<RatingScaleItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutomatedEvaluationConfig Unmarshall(JsonUnmarshallerContext context)
+        public RatingScaleItem Unmarshall(JsonUnmarshallerContext context)
         {
-            AutomatedEvaluationConfig unmarshalledObject = new AutomatedEvaluationConfig();
+            RatingScaleItem unmarshalledObject = new RatingScaleItem();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("customMetricConfig", targetDepth))
+                if (context.TestExpression("definition", targetDepth))
                 {
-                    var unmarshaller = AutomatedEvaluationCustomMetricConfigUnmarshaller.Instance;
-                    unmarshalledObject.CustomMetricConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Definition = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("datasetMetricConfigs", targetDepth))
+                if (context.TestExpression("value", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EvaluationDatasetMetricConfig, EvaluationDatasetMetricConfigUnmarshaller>(EvaluationDatasetMetricConfigUnmarshaller.Instance);
-                    unmarshalledObject.DatasetMetricConfigs = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("evaluatorModelConfig", targetDepth))
-                {
-                    var unmarshaller = EvaluatorModelConfigUnmarshaller.Instance;
-                    unmarshalledObject.EvaluatorModelConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = RatingScaleItemValueUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         }
 
 
-        private static AutomatedEvaluationConfigUnmarshaller _instance = new AutomatedEvaluationConfigUnmarshaller();        
+        private static RatingScaleItemUnmarshaller _instance = new RatingScaleItemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AutomatedEvaluationConfigUnmarshaller Instance
+        public static RatingScaleItemUnmarshaller Instance
         {
             get
             {

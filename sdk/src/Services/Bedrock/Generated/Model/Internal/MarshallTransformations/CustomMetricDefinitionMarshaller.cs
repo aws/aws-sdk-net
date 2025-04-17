@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AutomatedEvaluationConfig Marshaller
+    /// CustomMetricDefinition Marshaller
     /// </summary>
-    public class AutomatedEvaluationConfigMarshaller : IRequestMarshaller<AutomatedEvaluationConfig, JsonMarshallerContext> 
+    public class CustomMetricDefinitionMarshaller : IRequestMarshaller<CustomMetricDefinition, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,46 +44,36 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AutomatedEvaluationConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(CustomMetricDefinition requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCustomMetricConfig())
+            if(requestObject.IsSetInstructions())
             {
-                context.Writer.WritePropertyName("customMetricConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AutomatedEvaluationCustomMetricConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.CustomMetricConfig, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("instructions");
+                context.Writer.Write(requestObject.Instructions);
             }
 
-            if(requestObject.IsSetDatasetMetricConfigs())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("datasetMetricConfigs");
+                context.Writer.WritePropertyName("name");
+                context.Writer.Write(requestObject.Name);
+            }
+
+            if(requestObject.IsSetRatingScale())
+            {
+                context.Writer.WritePropertyName("ratingScale");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectDatasetMetricConfigsListValue in requestObject.DatasetMetricConfigs)
+                foreach(var requestObjectRatingScaleListValue in requestObject.RatingScale)
                 {
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = EvaluationDatasetMetricConfigMarshaller.Instance;
-                    marshaller.Marshall(requestObjectDatasetMetricConfigsListValue, context);
+                    var marshaller = RatingScaleItemMarshaller.Instance;
+                    marshaller.Marshall(requestObjectRatingScaleListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetEvaluatorModelConfig())
-            {
-                context.Writer.WritePropertyName("evaluatorModelConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EvaluatorModelConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.EvaluatorModelConfig, context);
-
-                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -91,7 +81,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AutomatedEvaluationConfigMarshaller Instance = new AutomatedEvaluationConfigMarshaller();
+        public readonly static CustomMetricDefinitionMarshaller Instance = new CustomMetricDefinitionMarshaller();
 
     }
 }

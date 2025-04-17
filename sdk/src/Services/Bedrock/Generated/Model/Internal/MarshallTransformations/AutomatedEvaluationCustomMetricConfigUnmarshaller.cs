@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AutomatedEvaluationConfig Object
+    /// Response Unmarshaller for AutomatedEvaluationCustomMetricConfig Object
     /// </summary>  
-    public class AutomatedEvaluationConfigUnmarshaller : IUnmarshaller<AutomatedEvaluationConfig, XmlUnmarshallerContext>, IUnmarshaller<AutomatedEvaluationConfig, JsonUnmarshallerContext>
+    public class AutomatedEvaluationCustomMetricConfigUnmarshaller : IUnmarshaller<AutomatedEvaluationCustomMetricConfig, XmlUnmarshallerContext>, IUnmarshaller<AutomatedEvaluationCustomMetricConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AutomatedEvaluationConfig IUnmarshaller<AutomatedEvaluationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AutomatedEvaluationCustomMetricConfig IUnmarshaller<AutomatedEvaluationCustomMetricConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutomatedEvaluationConfig Unmarshall(JsonUnmarshallerContext context)
+        public AutomatedEvaluationCustomMetricConfig Unmarshall(JsonUnmarshallerContext context)
         {
-            AutomatedEvaluationConfig unmarshalledObject = new AutomatedEvaluationConfig();
+            AutomatedEvaluationCustomMetricConfig unmarshalledObject = new AutomatedEvaluationCustomMetricConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,21 +66,15 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("customMetricConfig", targetDepth))
+                if (context.TestExpression("customMetrics", targetDepth))
                 {
-                    var unmarshaller = AutomatedEvaluationCustomMetricConfigUnmarshaller.Instance;
-                    unmarshalledObject.CustomMetricConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("datasetMetricConfigs", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<EvaluationDatasetMetricConfig, EvaluationDatasetMetricConfigUnmarshaller>(EvaluationDatasetMetricConfigUnmarshaller.Instance);
-                    unmarshalledObject.DatasetMetricConfigs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<AutomatedEvaluationCustomMetricSource, AutomatedEvaluationCustomMetricSourceUnmarshaller>(AutomatedEvaluationCustomMetricSourceUnmarshaller.Instance);
+                    unmarshalledObject.CustomMetrics = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("evaluatorModelConfig", targetDepth))
                 {
-                    var unmarshaller = EvaluatorModelConfigUnmarshaller.Instance;
+                    var unmarshaller = CustomMetricEvaluatorModelConfigUnmarshaller.Instance;
                     unmarshalledObject.EvaluatorModelConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,12 +83,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         }
 
 
-        private static AutomatedEvaluationConfigUnmarshaller _instance = new AutomatedEvaluationConfigUnmarshaller();        
+        private static AutomatedEvaluationCustomMetricConfigUnmarshaller _instance = new AutomatedEvaluationCustomMetricConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AutomatedEvaluationConfigUnmarshaller Instance
+        public static AutomatedEvaluationCustomMetricConfigUnmarshaller Instance
         {
             get
             {
