@@ -1,3 +1,26 @@
+### 3.7.1025.0 (2025-04-17 18:22 UTC)
+* AccessAnalyzer (3.7.404.0)
+	* Added new resource types to evaluate for public access in resource policies and added support for S3 directory bucket access points.
+* AutoScaling (3.7.407.79)
+	* Doc only update for EC2 Auto Scaling.
+* Bedrock (3.7.419.0)
+	* With this release, Bedrock Evaluation will now support custom metrics for evaluation.
+* Connect (3.7.420.0)
+	* This release adds following capabilities to Contact Lens Rules APIs 1/ 'ASSIGN_SLA' action and  '$.Case.TemplateId' comparison value for 'OnCaseCreate' and 'OnCaseUpdate' event sources 2/ 'OnSlaBreach' Cases event source which supports '$.RelatedItem.SlaConfiguration.Name' comparison value
+* ECS (3.7.409.0)
+	* Adds a new AccountSetting - defaultLogDriverMode for ECS.
+* IoTFleetWise (3.7.407.0)
+	* We've added stricter parameter validations to AWS IoT FleetWise signal catalog, model manifest, and decoder manifest APIs.
+* MemoryDB (3.7.403.0)
+	* Added support for IPv6 and dual stack for Valkey and Redis clusters. Customers can now launch new Valkey and Redis clusters with IPv6 and dual stack networking support.
+* Omics (3.7.404.0)
+	* Add versioning for HealthOmics workflows
+* PrometheusService (3.7.403.0)
+	* Add Workspace Configuration APIs for Amazon Prometheus
+* Core 3.7.402.42
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1024.0 (2025-04-16 18:29 UTC)
 * ConnectCases (3.7.402.0)
 	* This feature provides capabilities to help track and meet service level agreements (SLAs) on cases programmatically. It allows configuring a new related item of type `Sla` on a case using CreateRelatedItem API and provides the ability to search for this new related item using SearchRelatedItems API.

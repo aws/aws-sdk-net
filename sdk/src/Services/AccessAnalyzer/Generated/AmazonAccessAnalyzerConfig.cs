@@ -32,7 +32,7 @@ namespace Amazon.AccessAnalyzer
     public partial class AmazonAccessAnalyzerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AccessAnalyzer", "3.7.403.40");
+            InternalSDKUtils.BuildUserAgentString("AccessAnalyzer", "3.7.404.0");
 
         private string _userAgent = UserAgentString;
         ///<summary>
