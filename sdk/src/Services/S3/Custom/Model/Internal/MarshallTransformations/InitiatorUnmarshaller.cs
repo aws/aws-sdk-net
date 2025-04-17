@@ -44,7 +44,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("DisplayName", targetDepth))
                     {
-                        initiator.DisplayName = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        initiator.DisplayNameBlah = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }

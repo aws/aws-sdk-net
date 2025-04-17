@@ -40,7 +40,7 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public string DisplayName
+        public string DisplayNameBlah
         {
             get { return this.displayName; }
             set { this.displayName = value; }
