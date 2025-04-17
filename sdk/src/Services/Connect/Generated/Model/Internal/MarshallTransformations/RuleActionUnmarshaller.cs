@@ -78,6 +78,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssignContactCategoryAction = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AssignSlaAction", targetDepth))
+                {
+                    var unmarshaller = AssignSlaActionDefinitionUnmarshaller.Instance;
+                    unmarshalledObject.AssignSlaAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreateCaseAction", targetDepth))
                 {
                     var unmarshaller = CreateCaseActionDefinitionUnmarshaller.Instance;

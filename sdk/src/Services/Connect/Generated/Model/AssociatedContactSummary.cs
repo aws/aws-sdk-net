@@ -102,7 +102,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property DisconnectTimestamp. 
         /// <para>
-        /// The timestamp when the customer endpoint disconnected from Amazon Connect.
+        /// The date and time that the customer endpoint disconnected from the current contact,
+        /// in UTC time. In transfer scenarios, the DisconnectTimestamp of the previous contact
+        /// indicates the date and time when that contact ended.
         /// </para>
         /// </summary>
         public DateTime DisconnectTimestamp
