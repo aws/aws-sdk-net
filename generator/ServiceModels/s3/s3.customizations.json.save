@@ -42,6 +42,22 @@
                 }
             ]
         },
+        "CreateMultipartUploadOutput": {
+            "modify": [
+                {
+                    "SSECustomerKeyMD5": { "emitPropertyName": "ServerSideEncryptionCustomerProvidedKeyMD5" }
+                },
+                {
+                    "SSECustomerAlgorithm": { "emitPropertyName": "ServerSideEncryptionCustomerMethod" }
+                },
+                {
+                    "ServerSideEncryption": { "emitPropertyName": "ServerSideEncryptionMethod" }
+                },
+                {
+                    "SSEKMSKeyId": { "emitPropertyName": "ServerSideEncryptionKeyManagementServiceKeyId" }
+                }
+            ]
+        },
         "CompleteMultipartUploadRequest": {
             "exclude": [
                 "MultipartUpload"
@@ -53,12 +69,38 @@
                         "originalMember": "MultipartUpload"
                     }
                 }
+            ],
+            "modify": [
+                {
+                    "ACL": { "emitPropertyName": "CannedACL" }
+                },
+                {
+                    "Tagging": { "emitPropertyName": "TagSet" }
+                },
+                {
+                    "SSECustomerKeyMD5": { "emitPropertyName": "ServerSideEncryptionCustomerProvidedKeyMD5" }
+                },
+                {
+                    "SSECustomerKey": { "emitPropertyName": "ServerSideEncryptionCustomerProvidedKey" }
+                },
+                {
+                    "SSECustomerAlgorithm": { "emitPropertyName": "ServerSideEncryptionCustomerMethod" }
+                },
+                {
+                    "ServerSideEncryption": { "emitPropertyName": "ServerSideEncryptionMethod" }
+                },
+                {
+                    "SSEKMSKeyId": { "emitPropertyName": "ServerSideEncryptionKeyManagementServiceKeyId" }
+                }
             ]
         },
         "CopyObjectRequest": {
             "modify": [
                 {
                     "Bucket": { "emitPropertyName": "DestinationBucket" }
+                },
+                {
+                    "ServerSideEncryption": { "emitPropertyName": "ServerSideEncryptionMethod" }
                 }
             ],
             "exclude": [
@@ -95,6 +137,49 @@
                 }
             ]
         },
+        "CopyObjectOutput": {
+            "modify": [
+                {
+                    "CopySourceVersionId": { "emitPropertyName": "SourceVersionId" }
+                }
+            ]
+        },
+        "DeleteObjectsOutput": {
+            "modify": [
+                {
+                    "Deleted": { "emitPropertyName": "DeletedObjects" }
+                }
+            ]
+        },
+        "GetObjectOutput": {
+            "modify": [
+                {
+                    "Body": { "emitPropertyName": "ResponseStream" }
+                }
+            ]
+        },
+        "GetObjectRequest": {
+            "modify": [
+                {
+                    "Range": { "emitPropertyName": "ByteRange" }
+                },
+                {
+                    "SSECustomerKeyMD5": { "emitPropertyName": "ServerSideEncryptionCustomerProvidedKeyMD5" }
+                },
+                {
+                    "SSECustomerKey": { "emitPropertyName": "ServerSideEncryptionCustomerProvidedKey" }
+                },
+                {
+                    "SSECustomerAlgorithm": { "emitPropertyName": "ServerSideEncryptionCustomerMethod" }
+                },
+                {
+                    "IfModifiedSince": { "emitPropertyName": "ModifiedSinceDate" }
+                },
+                {
+                    "IfUnmodifiedSince": { "emitPropertyName": "UnmodifiedSinceDate" }
+                }
+            ]
+        },
         "DeleteObjectsRequest": {
             "exclude": [
                 "Delete"
@@ -113,10 +198,31 @@
                 }
             ]
         },
+        "HeadObjectOutput": {
+            "modify": [
+                {
+                    "ServerSideEncryption": { "emitPropertyName": "ServerSideEncryptionMethod" }
+                }
+            ]
+        },
         "LifecycleRule": {
             "modify": [
                 {
                     "Prefix": { "deprecatedMessage": "This property is deprecated. Use Filter instead." }
+                }
+            ]
+        },
+        "ListMultipartUploadsOutput": {
+            "modify": [
+                {
+                    "Uploads": { "emitPropertyName": "MultipartUploads" }
+                }
+            ]
+        },
+        "ListObjectsOutput": {
+            "modify": [
+                {
+                    "Contents": { "emitPropertyName": "S3Objects" }
                 }
             ]
         },
@@ -158,10 +264,18 @@
                 }
             ]
         },
+        
         "QueueConfigurationDeprecated": {
             "modify": [
                 {
                     "Event": { "deprecatedMessage": "This property is deprecated. Use Events instead." }
+                }
+            ]
+        },
+        "ReplicationRule": {
+            "modify": [
+                {
+                    "Prefix": { "deprecatedMessage": "This property is deprecated." }
                 }
             ]
         },
@@ -176,10 +290,61 @@
                 }
             ]
         },
+        "ServerSideEncryption": {
+            "modify": [
+                {
+                    "AES256": { "emitPropertyName": "AES256" }
+                },
+                {
+                    "aws:kms": { "emitPropertyName": "AWSKMS" }
+                }
+            ]
+        },
+        "StorageClass": {
+            "modify": [
+                {
+                    "STANDARD": { "emitPropertyName": "Standard" }
+                },
+                {
+                    "REDUCED_REDUNDANCY": { "emitPropertyName": "ReducedRedundancy" }
+                },
+                {
+                    "GLACIER": { "emitPropertyName": "Glacier" }
+                },
+                {
+                    "STANDARD_IA": { "emitPropertyName": "StandardInfrequentAccess" }
+                },
+                {
+                    "ONEZONE_IA": { "emitPropertyName": "OneZoneInfrequentAccess" }
+                },
+                {
+                    "INTELLIGENT_TIERING": { "emitPropertyName": "IntelligentTiering" }
+                },
+                {
+                    "DEEP_ARCHIVE": { "emitPropertyName": "DeepArchive" }
+                }
+            ]
+        },
         "TopicConfigurationDeprecated": {
             "modify": [
                 {
                     "Event": { "deprecatedMessage": "This property is deprecated. Use Events instead." }
+                }
+            ]
+        },
+        "UploadPartRequest": {
+            "modify": [
+                {
+                    "Body": { "emitPropertyName": "InputStream" }
+                },
+                {
+                    "SSECustomerKeyMD5": { "emitPropertyName": "ServerSideEncryptionCustomerProvidedKeyMD5" }
+                },
+                {
+                    "SSECustomerKey": { "emitPropertyName": "ServerSideEncryptionCustomerProvidedKey" }
+                },
+                {
+                    "SSECustomerAlgorithm": { "emitPropertyName": "ServerSideEncryptionCustomerMethod" }
                 }
             ]
         },
@@ -224,9 +389,30 @@
             ]
         },
         "PutObjectRequest":{
-            "modify":[
+            "modify": [
                 {
-                    "SSECustomerKey" : {"emitPropertyName":"ServerSideEncryptionCustomerProvidedKey"}
+                    "Body": { "emitPropertyName": "InputStream" }
+                },
+                {
+                    "ACL": { "emitPropertyName": "CannedACL" }
+                },
+                {
+                    "Tagging": { "emitPropertyName": "TagSet" }
+                },
+                {
+                    "SSECustomerKeyMD5": { "emitPropertyName": "ServerSideEncryptionCustomerProvidedKeyMD5" }
+                },
+                {
+                    "SSECustomerKey": { "emitPropertyName": "ServerSideEncryptionCustomerProvidedKey" }
+                },
+                {
+                    "SSECustomerAlgorithm": { "emitPropertyName": "ServerSideEncryptionCustomerMethod" }
+                },
+                {
+                    "ServerSideEncryption": { "emitPropertyName": "ServerSideEncryptionMethod" }
+                },
+                {
+                    "SSEKMSKeyId": { "emitPropertyName": "ServerSideEncryptionKeyManagementServiceKeyId" }
                 }
             ]
         }
@@ -234,9 +420,6 @@
     "shapeSubstitutions":{
         "AccessControlPolicy":{
             "renameShape": "S3AccessControlList"
-        },
-        "Destination":{
-            "renameShape":"ReplicationDestination"
         }
     },
     "operationModifiers": {
