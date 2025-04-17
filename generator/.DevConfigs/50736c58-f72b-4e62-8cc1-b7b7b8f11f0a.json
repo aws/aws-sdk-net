@@ -1,0 +1,18 @@
+{
+    "core": {
+        "changeLogMessages": [
+            "Update documentation for the `AWSConfigs.InitializeCollections` property to specify the correct default value for V4 (and how to restore the V3 behavior)"
+        ],
+        "type": "patch",
+        "updateMinimum": true
+    },
+    "services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "patch",
+            "changeLogMessages": [
+                "Update paginators to handle scenarios where the token is a collection (that's null by default in V4)"
+            ]
+        }
+    ]
+}

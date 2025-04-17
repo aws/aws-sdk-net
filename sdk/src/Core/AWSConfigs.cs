@@ -277,17 +277,20 @@ namespace Amazon
         public const string InitializeCollectionsKey = "AWSInitializeCollections";
 
         /// <summary>
-        /// When true the collections used on the service API request and response objects are initialized
+        /// When <c>true</c> the collections used on the service API request and response objects are initialized
         /// to an empty collection. The collections are sent as part of requests when a collection is non-empty.
-        /// 
-        /// Setting InitializeCollections to false means all collections used on the service API request and 
+        /// <para />
+        /// Setting InitializeCollections to <c>false</c> means all collections used on the service API request and 
         /// response objects are initialized to null. The collections are sent as part of requests when
         /// the collection non-null including an empty collection.
+        /// <para />
+        /// The default value is <c>false</c>. 
         /// 
-        /// The default value is true. In the next major version of the SDK the default will change to false.
-        /// This will improve performance not creating unnecessary collection instances and provide more
-        /// control when the collection is sent to the service.
+        /// This was changed in V4 of the SDK to improve performance by not creating unnecessary 
+        /// collection instances and provide more control when the collection is sent to the service.
         /// 
+        /// You can set this value to <c>true</c> to revert to the collection initialization behavior of V3.
+        /// <para />
         /// Setting this property is not thread safe and should only be set at application startup.
         /// </summary>
         public static bool InitializeCollections
