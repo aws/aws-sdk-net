@@ -85,7 +85,7 @@ namespace Amazon.DynamoDBv2.Model
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (exclusiveStartKey.Count > 0);
+            while (exclusiveStartKey?.Count > 0);
         }
 #endif
     }
