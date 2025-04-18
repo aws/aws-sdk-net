@@ -78,6 +78,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModelApprovalStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelLifeCycle", targetDepth))
+                {
+                    var unmarshaller = ModelLifeCycleUnmarshaller.Instance;
+                    unmarshalledObject.ModelLifeCycle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModelPackageArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
