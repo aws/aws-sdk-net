@@ -62,7 +62,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property Services. 
         /// <para>
-        /// The list of the Amazon Web Service names and service codes.
+        /// The list of the Amazon Web Services service names and service codes.
         /// </para>
         /// </summary>
         public List<ServiceInfo> Services

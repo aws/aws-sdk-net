@@ -100,6 +100,12 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ServiceCode);
                 }
 
+                if(publicRequest.IsSetSupportCaseAllowed())
+                {
+                    context.Writer.WritePropertyName("SupportCaseAllowed");
+                    context.Writer.Write(publicRequest.SupportCaseAllowed);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

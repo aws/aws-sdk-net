@@ -44,6 +44,12 @@ namespace Amazon.ServiceQuotas
     /// of resources that you can create in your Amazon Web Services account. For more information,
     /// see the <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/">Service
     /// Quotas User Guide</a>.
+    /// 
+    ///  
+    /// <para>
+    /// You need Amazon Web Services CLI version 2.13.20 or higher to view and manage resource-level
+    /// quotas such as <c>Instances per domain</c> for Amazon OpenSearch Service.
+    /// </para>
     /// </summary>
     public partial class AmazonServiceQuotasClient : AmazonServiceClient, IAmazonServiceQuotas
     {
@@ -814,9 +820,9 @@ namespace Amazon.ServiceQuotas
 
 
         /// <summary>
-        /// Retrieves the applied quota value for the specified quota. For some quotas, only the
-        /// default values are available. If the applied quota value is not available for a quota,
-        /// the quota is not retrieved.
+        /// Retrieves the applied quota value for the specified account-level or resource-level
+        /// quota. For some quotas, only the default values are available. If the applied quota
+        /// value is not available for a quota, the quota is not retrieved.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceQuota service method.</param>
         /// 
@@ -849,9 +855,9 @@ namespace Amazon.ServiceQuotas
 
 
         /// <summary>
-        /// Retrieves the applied quota value for the specified quota. For some quotas, only the
-        /// default values are available. If the applied quota value is not available for a quota,
-        /// the quota is not retrieved.
+        /// Retrieves the applied quota value for the specified account-level or resource-level
+        /// quota. For some quotas, only the default values are available. If the applied quota
+        /// value is not available for a quota, the quota is not retrieved.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceQuota service method.</param>
         /// <param name="cancellationToken">
@@ -992,8 +998,8 @@ namespace Amazon.ServiceQuotas
 
 
         /// <summary>
-        /// Lists the default values for the quotas for the specified Amazon Web Service. A default
-        /// value does not reflect any quota increases.
+        /// Lists the default values for the quotas for the specified Amazon Web Services service.
+        /// A default value does not reflect any quota increases.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAWSDefaultServiceQuotas service method.</param>
         /// 
@@ -1029,8 +1035,8 @@ namespace Amazon.ServiceQuotas
 
 
         /// <summary>
-        /// Lists the default values for the quotas for the specified Amazon Web Service. A default
-        /// value does not reflect any quota increases.
+        /// Lists the default values for the quotas for the specified Amazon Web Services service.
+        /// A default value does not reflect any quota increases.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAWSDefaultServiceQuotas service method.</param>
         /// <param name="cancellationToken">
@@ -1073,7 +1079,9 @@ namespace Amazon.ServiceQuotas
 
 
         /// <summary>
-        /// Retrieves the quota increase requests for the specified Amazon Web Service.
+        /// Retrieves the quota increase requests for the specified Amazon Web Services service.
+        /// Filter responses to return quota requests at either the account level, resource level,
+        /// or all levels. Responses include any open or closed requests within 90 days.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRequestedServiceQuotaChangeHistory service method.</param>
         /// 
@@ -1109,7 +1117,9 @@ namespace Amazon.ServiceQuotas
 
 
         /// <summary>
-        /// Retrieves the quota increase requests for the specified Amazon Web Service.
+        /// Retrieves the quota increase requests for the specified Amazon Web Services service.
+        /// Filter responses to return quota requests at either the account level, resource level,
+        /// or all levels. Responses include any open or closed requests within 90 days.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRequestedServiceQuotaChangeHistory service method.</param>
         /// <param name="cancellationToken">
@@ -1152,7 +1162,8 @@ namespace Amazon.ServiceQuotas
 
 
         /// <summary>
-        /// Retrieves the quota increase requests for the specified quota.
+        /// Retrieves the quota increase requests for the specified quota. Filter responses to
+        /// return quota requests at either the account level, resource level, or all levels.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRequestedServiceQuotaChangeHistoryByQuota service method.</param>
         /// 
@@ -1188,7 +1199,8 @@ namespace Amazon.ServiceQuotas
 
 
         /// <summary>
-        /// Retrieves the quota increase requests for the specified quota.
+        /// Retrieves the quota increase requests for the specified quota. Filter responses to
+        /// return quota requests at either the account level, resource level, or all levels.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRequestedServiceQuotaChangeHistoryByQuota service method.</param>
         /// <param name="cancellationToken">
@@ -1324,9 +1336,10 @@ namespace Amazon.ServiceQuotas
 
 
         /// <summary>
-        /// Lists the applied quota values for the specified Amazon Web Service. For some quotas,
-        /// only the default values are available. If the applied quota value is not available
-        /// for a quota, the quota is not retrieved.
+        /// Lists the applied quota values for the specified Amazon Web Services service. For
+        /// some quotas, only the default values are available. If the applied quota value is
+        /// not available for a quota, the quota is not retrieved. Filter responses to return
+        /// applied quota values at either the account level, resource level, or all levels.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceQuotas service method.</param>
         /// 
@@ -1362,9 +1375,10 @@ namespace Amazon.ServiceQuotas
 
 
         /// <summary>
-        /// Lists the applied quota values for the specified Amazon Web Service. For some quotas,
-        /// only the default values are available. If the applied quota value is not available
-        /// for a quota, the quota is not retrieved.
+        /// Lists the applied quota values for the specified Amazon Web Services service. For
+        /// some quotas, only the default values are available. If the applied quota value is
+        /// not available for a quota, the quota is not retrieved. Filter responses to return
+        /// applied quota values at either the account level, resource level, or all levels.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceQuotas service method.</param>
         /// <param name="cancellationToken">
@@ -1407,7 +1421,8 @@ namespace Amazon.ServiceQuotas
 
 
         /// <summary>
-        /// Lists the names and codes for the Amazon Web Services integrated with Service Quotas.
+        /// Lists the names and codes for the Amazon Web Services services integrated with Service
+        /// Quotas.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServices service method.</param>
         /// 
@@ -1440,7 +1455,8 @@ namespace Amazon.ServiceQuotas
 
 
         /// <summary>
-        /// Lists the names and codes for the Amazon Web Services integrated with Service Quotas.
+        /// Lists the names and codes for the Amazon Web Services services integrated with Service
+        /// Quotas.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServices service method.</param>
         /// <param name="cancellationToken">
@@ -1660,7 +1676,8 @@ namespace Amazon.ServiceQuotas
 
 
         /// <summary>
-        /// Submits a quota increase request for the specified quota.
+        /// Submits a quota increase request for the specified quota at the account or resource
+        /// level.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestServiceQuotaIncrease service method.</param>
         /// 
@@ -1706,7 +1723,8 @@ namespace Amazon.ServiceQuotas
 
 
         /// <summary>
-        /// Submits a quota increase request for the specified quota.
+        /// Submits a quota increase request for the specified quota at the account or resource
+        /// level.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestServiceQuotaIncrease service method.</param>
         /// <param name="cancellationToken">

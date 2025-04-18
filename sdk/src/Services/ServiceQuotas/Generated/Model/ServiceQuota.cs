@@ -35,6 +35,7 @@ namespace Amazon.ServiceQuotas.Model
     public partial class ServiceQuota
     {
         private bool? _adjustable;
+        private string _description;
         private ErrorReason _errorReason;
         private bool? _globalQuota;
         private QuotaPeriod _period;
@@ -65,6 +66,25 @@ namespace Amazon.ServiceQuotas.Model
         internal bool IsSetAdjustable()
         {
             return this._adjustable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The quota description. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=350)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
         }
 
         /// <summary>
@@ -124,7 +144,8 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property QuotaAppliedAtLevel. 
         /// <para>
-        /// Specifies at which level of granularity that the quota value is applied.
+        /// Filters the response to return applied quota values for the <c>ACCOUNT</c>, <c>RESOURCE</c>,
+        /// or <c>ALL</c> levels. <c>ACCOUNT</c> is the default.
         /// </para>
         /// </summary>
         public AppliedLevelEnum QuotaAppliedAtLevel
