@@ -50889,6 +50889,12 @@
             }
           }
         },
+        "servicediscovery": {
+          "endpoints": {
+            "us-iso-east-1": {},
+            "us-iso-west-1": {}
+          }
+        },
         "snowball": {
           "endpoints": {
             "us-iso-east-1": {},
@@ -51931,6 +51937,11 @@
             "us-isob-east-1-fips": {
               "deprecated": true
             }
+          }
+        },
+        "servicediscovery": {
+          "endpoints": {
+            "us-isob-east-1": {}
           }
         },
         "snowball": {
