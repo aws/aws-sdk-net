@@ -1,3 +1,14 @@
+### 3.7.1026.0 (2025-04-18 18:16 UTC)
+* QConnect (3.7.405.0)
+	* This release adds support for the following capabilities: Chunking generative answer replies from Amazon Q in Connect. Integration support for the use of additional LLM models with Amazon Q in Connect.
+* SageMaker (3.7.436.0)
+	* This release adds a new Neuron driver option in InferenceAmiVersion parameter for ProductionVariant. Additionally, it adds support for fetching model lifecycle status in the ListModelPackages API. Users can now use this API to view the lifecycle stage of models that have been shared with them.
+* ServiceQuotas (3.7.401.0)
+	* Add new optional SupportCaseAllowed query parameter to the RequestServiceQuotaIncrease API
+* Core 3.7.402.43
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1025.0 (2025-04-17 18:22 UTC)
 * AccessAnalyzer (3.7.404.0)
 	* Added new resource types to evaluate for public access in resource policies and added support for S3 directory bucket access points.

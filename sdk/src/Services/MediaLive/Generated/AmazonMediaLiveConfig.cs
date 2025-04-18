@@ -32,7 +32,7 @@ namespace Amazon.MediaLive
     public partial class AmazonMediaLiveConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MediaLive", "3.7.416.4");
+            InternalSDKUtils.BuildUserAgentString("MediaLive", "3.7.416.5");
 
         private string _userAgent = UserAgentString;
         ///<summary>

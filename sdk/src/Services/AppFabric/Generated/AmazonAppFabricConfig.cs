@@ -32,7 +32,7 @@ namespace Amazon.AppFabric
     public partial class AmazonAppFabricConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AppFabric", "3.7.400.136");
+            InternalSDKUtils.BuildUserAgentString("AppFabric", "3.7.400.137");
 
         private string _userAgent = UserAgentString;
         ///<summary>
