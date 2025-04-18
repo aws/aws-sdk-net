@@ -18,6 +18,7 @@ namespace Amazon.Runtime.Internal.UserAgent
     /// <summary>
     /// Represents the unique metric identifiers for SDK features tracked under User Agent 2.1 (UA2.1).
     /// </summary>
+    [ConstantClassComparer(ConstantClassComparerKind.Ordinal)]
     public class UserAgentFeatureId : ConstantClass
     {
         /// <summary>

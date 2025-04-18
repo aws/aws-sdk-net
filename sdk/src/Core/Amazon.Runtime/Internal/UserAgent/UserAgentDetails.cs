@@ -58,6 +58,14 @@ namespace Amazon.Runtime.Internal.UserAgent
         }
 
         /// <summary>
+        /// Returns the user agent components that were explicitly added via AddUserAgentComponent,
+        /// </summary>
+        public string GetCustomUserAgentComponents()
+        {
+            return _userAgentBuilder.ToString().Trim();
+        }
+
+        /// <summary>
         /// Appends the metrics user-agent to the existing user-agent and returns the full string.
         /// </summary>
         /// <returns>The final user-agent string including metrics data.</returns>

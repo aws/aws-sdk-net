@@ -75,7 +75,8 @@ namespace Amazon.Runtime.Internal
     public class RequestContext : IRequestContext
     {
         private IServiceMetadata _serviceMetadata;
-        IDictionary<string, object> _contextAttributes;
+        private IDictionary<string, object> _contextAttributes;
+        private UserAgentDetails _userAgentDetails;
 
         public RequestContext(bool enableMetric)
             : this(enableMetric, null)
@@ -104,7 +105,24 @@ namespace Amazon.Runtime.Internal
         public InvokeOptionsBase Options { get; set; }
         public ISigner Signer { get; set; }
         public BaseIdentity Identity { get; set; }
-        public UserAgentDetails UserAgentDetails { get => ((IAmazonWebServiceRequest)OriginalRequest).UserAgentDetails; }
+        public UserAgentDetails UserAgentDetails
+        {
+            get
+            {
+                if (_userAgentDetails != null)
+                    return _userAgentDetails;
+
+                _userAgentDetails = new UserAgentDetails();
+
+                _userAgentDetails.AddUserAgentComponent(((IAmazonWebServiceRequest)OriginalRequest).UserAgentDetails.GetCustomUserAgentComponents());
+                foreach (var featureId in ((IAmazonWebServiceRequest)OriginalRequest).UserAgentDetails.TrackedFeatureIds)
+                {
+                    _userAgentDetails.AddFeature(featureId);
+                }
+
+                return _userAgentDetails;
+            }
+        }
 
         public System.Threading.CancellationToken CancellationToken { get; set; }
 

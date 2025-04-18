@@ -35,6 +35,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace AWSSDK.UnitTests
 {
@@ -115,6 +116,26 @@ namespace AWSSDK.UnitTests
             var metricsSection = userAgentHeader.Split(' ').First(part => part.StartsWith("m/")).Remove(0, 2);
 
             Assert.IsTrue(metricsSection.Contains(UserAgentFeatureId.PAGINATOR.Value));
+        }
+
+        [TestMethod]
+        public void RunningMultipleRequestsUsingTheSameRequestObject_ShouldntDuplicateTheUserAgentDetails()
+        {
+            var listObjectsV2Request = new ListObjectsV2Request
+            {
+                BucketName = "test"
+            };
+
+            RunMockRequest(listObjectsV2Request, new AmazonS3Config(), ListObjectsV2RequestMarshaller.Instance, ListObjectsV2ResponseUnmarshaller.Instance);
+            RunMockRequest(listObjectsV2Request, new AmazonS3Config(), ListObjectsV2RequestMarshaller.Instance, ListObjectsV2ResponseUnmarshaller.Instance);
+            var request = RunMockRequest(listObjectsV2Request, new AmazonS3Config(), ListObjectsV2RequestMarshaller.Instance, ListObjectsV2ResponseUnmarshaller.Instance);
+
+            request.Headers.TryGetValue(HeaderKeys.UserAgentHeader, out string userAgentHeader);
+            Assert.IsNotNull(userAgentHeader);
+
+            Assert.AreEqual(Regex.Matches(userAgentHeader, "md/ClientSync").Count, 1);
+            Assert.AreEqual(Regex.Matches(userAgentHeader, "cfg/init-coll#").Count, 1);
+            Assert.AreEqual(Regex.Matches(userAgentHeader, "aws-sdk-dotnet-framework/").Count, 1);
         }
 
         [DataTestMethod]

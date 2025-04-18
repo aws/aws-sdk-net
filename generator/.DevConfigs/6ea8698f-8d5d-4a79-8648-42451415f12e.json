@@ -1,0 +1,10 @@
+
+{
+ "core": {
+    "changeLogMessages": [
+      "fix: User-Agent header is growing when reusing the request object"
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
