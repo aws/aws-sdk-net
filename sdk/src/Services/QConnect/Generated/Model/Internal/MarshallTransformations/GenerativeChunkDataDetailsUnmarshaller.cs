@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DataDetails Object
+    /// Response Unmarshaller for GenerativeChunkDataDetails Object
     /// </summary>  
-    public class DataDetailsUnmarshaller : IUnmarshaller<DataDetails, XmlUnmarshallerContext>, IUnmarshaller<DataDetails, JsonUnmarshallerContext>
+    public class GenerativeChunkDataDetailsUnmarshaller : IUnmarshaller<GenerativeChunkDataDetails, XmlUnmarshallerContext>, IUnmarshaller<GenerativeChunkDataDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DataDetails IUnmarshaller<DataDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GenerativeChunkDataDetails IUnmarshaller<GenerativeChunkDataDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public DataDetails Unmarshall(JsonUnmarshallerContext context)
+        public GenerativeChunkDataDetails Unmarshall(JsonUnmarshallerContext context)
         {
-            DataDetails unmarshalledObject = new DataDetails();
+            GenerativeChunkDataDetails unmarshalledObject = new GenerativeChunkDataDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,22 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("contentData", targetDepth))
+                if (context.TestExpression("completion", targetDepth))
                 {
-                    var unmarshaller = ContentDataDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ContentData = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Completion = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("generativeChunkData", targetDepth))
+                if (context.TestExpression("nextChunkToken", targetDepth))
                 {
-                    var unmarshaller = GenerativeChunkDataDetailsUnmarshaller.Instance;
-                    unmarshalledObject.GenerativeChunkData = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NextChunkToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("generativeData", targetDepth))
+                if (context.TestExpression("references", targetDepth))
                 {
-                    var unmarshaller = GenerativeDataDetailsUnmarshaller.Instance;
-                    unmarshalledObject.GenerativeData = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("intentDetectedData", targetDepth))
-                {
-                    var unmarshaller = IntentDetectedDataDetailsUnmarshaller.Instance;
-                    unmarshalledObject.IntentDetectedData = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceContentData", targetDepth))
-                {
-                    var unmarshaller = SourceContentDataDetailsUnmarshaller.Instance;
-                    unmarshalledObject.SourceContentData = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<DataSummary, DataSummaryUnmarshaller>(DataSummaryUnmarshaller.Instance);
+                    unmarshalledObject.References = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +89,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         }
 
 
-        private static DataDetailsUnmarshaller _instance = new DataDetailsUnmarshaller();        
+        private static GenerativeChunkDataDetailsUnmarshaller _instance = new GenerativeChunkDataDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DataDetailsUnmarshaller Instance
+        public static GenerativeChunkDataDetailsUnmarshaller Instance
         {
             get
             {

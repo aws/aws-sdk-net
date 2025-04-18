@@ -30,30 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QConnect.Model
 {
     /// <summary>
-    /// The configuration for a prompt template that supports full textual prompt configuration
-    /// using a YAML prompt.
+    /// The configuration for a <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_SendMessage.html">SendMessage</a>
+    /// request.
     /// </summary>
-    public partial class TextFullAIPromptEditTemplateConfiguration
+    public partial class MessageConfiguration
     {
-        private string _text;
+        private bool? _generateFillerMessage;
 
         /// <summary>
-        /// Gets and sets the property Text. 
+        /// Gets and sets the property GenerateFillerMessage. 
         /// <para>
-        /// The YAML text for the AI Prompt template.
+        /// Generates a filler response when tool selection is <c>QUESTION</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1000000)]
-        public string Text
+        public bool GenerateFillerMessage
         {
-            get { return this._text; }
-            set { this._text = value; }
+            get { return this._generateFillerMessage.GetValueOrDefault(); }
+            set { this._generateFillerMessage = value; }
         }
 
-        // Check to see if Text property is set
-        internal bool IsSetText()
+        // Check to see if GenerateFillerMessage property is set
+        internal bool IsSetGenerateFillerMessage()
         {
-            return this._text != null;
+            return this._generateFillerMessage.HasValue; 
         }
 
     }

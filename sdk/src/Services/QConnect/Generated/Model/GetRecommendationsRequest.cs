@@ -51,6 +51,7 @@ namespace Amazon.QConnect.Model
     {
         private string _assistantId;
         private int? _maxResults;
+        private string _nextChunkToken;
         private string _sessionId;
         private int? _waitTimeSeconds;
 
@@ -91,6 +92,26 @@ namespace Amazon.QConnect.Model
         internal bool IsSetMaxResults()
         {
             return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextChunkToken. 
+        /// <para>
+        /// The token for the next set of chunks. Use the value returned in the previous response
+        /// in the next request to retrieve the next set of chunks.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string NextChunkToken
+        {
+            get { return this._nextChunkToken; }
+            set { this._nextChunkToken = value; }
+        }
+
+        // Check to see if NextChunkToken property is set
+        internal bool IsSetNextChunkToken()
+        {
+            return this._nextChunkToken != null;
         }
 
         /// <summary>

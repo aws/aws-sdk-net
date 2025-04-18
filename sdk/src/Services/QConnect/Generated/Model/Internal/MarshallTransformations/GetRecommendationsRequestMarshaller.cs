@@ -69,6 +69,9 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
+            if (publicRequest.IsSetNextChunkToken())
+                request.Parameters.Add("nextChunkToken", StringUtils.FromString(publicRequest.NextChunkToken));
+            
             if (publicRequest.IsSetWaitTimeSeconds())
                 request.Parameters.Add("waitTimeSeconds", StringUtils.FromInt(publicRequest.WaitTimeSeconds));
             request.ResourcePath = "/assistants/{assistantId}/sessions/{sessionId}/recommendations";

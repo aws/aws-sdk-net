@@ -90,6 +90,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("origin", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Origin = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sessionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

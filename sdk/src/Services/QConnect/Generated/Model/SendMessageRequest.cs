@@ -37,6 +37,7 @@ namespace Amazon.QConnect.Model
     {
         private string _assistantId;
         private string _clientToken;
+        private MessageConfiguration _configuration;
         private ConversationContext _conversationContext;
         private MessageInput _message;
         private string _sessionId;
@@ -80,6 +81,25 @@ namespace Amazon.QConnect.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// The configuration of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_SendMessage.html">SendMessage</a>
+        /// request.
+        /// </para>
+        /// </summary>
+        public MessageConfiguration Configuration
+        {
+            get { return this._configuration; }
+            set { this._configuration = value; }
+        }
+
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
+        {
+            return this._configuration != null;
         }
 
         /// <summary>
