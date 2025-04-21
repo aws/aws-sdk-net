@@ -30,21 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// For single prefetch, describes how and when that MediaTailor places prefetched ads
-    /// into upcoming ad breaks.
+    /// The settings that determine how and when MediaTailor places prefetched ads into upcoming
+    /// ad breaks for recurring prefetch scedules.
     /// </summary>
-    public partial class PrefetchConsumption
+    public partial class RecurringConsumption
     {
         private List<AvailMatchingCriteria> _availMatchingCriteria = AWSConfigs.InitializeCollections ? new List<AvailMatchingCriteria>() : null;
-        private DateTime? _endTime;
-        private DateTime? _startTime;
+        private int? _retrievedAdExpirationSeconds;
 
         /// <summary>
         /// Gets and sets the property AvailMatchingCriteria. 
         /// <para>
-        /// If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that
-        /// match specific dynamic variables, such as <c>scte.event_id</c>, set the avail matching
-        /// criteria.
+        /// The configuration for the dynamic variables that determine which ad breaks that MediaTailor
+        /// inserts prefetched ads in.
         /// </para>
         /// </summary>
         public List<AvailMatchingCriteria> AvailMatchingCriteria
@@ -60,45 +58,21 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndTime. 
+        /// Gets and sets the property RetrievedAdExpirationSeconds. 
         /// <para>
-        /// The time when MediaTailor no longer considers the prefetched ads for use in an ad
-        /// break. MediaTailor automatically deletes prefetch schedules no less than seven days
-        /// after the end time. If you'd like to manually delete the prefetch schedule, you can
-        /// call <c>DeletePrefetchSchedule</c>.
+        /// The number of seconds that an ad is available for insertion after it was prefetched.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public DateTime EndTime
+        public int RetrievedAdExpirationSeconds
         {
-            get { return this._endTime.GetValueOrDefault(); }
-            set { this._endTime = value; }
+            get { return this._retrievedAdExpirationSeconds.GetValueOrDefault(); }
+            set { this._retrievedAdExpirationSeconds = value; }
         }
 
-        // Check to see if EndTime property is set
-        internal bool IsSetEndTime()
+        // Check to see if RetrievedAdExpirationSeconds property is set
+        internal bool IsSetRetrievedAdExpirationSeconds()
         {
-            return this._endTime.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property StartTime. 
-        /// <para>
-        /// The time when prefetched ads are considered for use in an ad break. If you don't specify
-        /// <c>StartTime</c>, the prefetched ads are available after MediaTailor retrieves them
-        /// from the ad decision server.
-        /// </para>
-        /// </summary>
-        public DateTime StartTime
-        {
-            get { return this._startTime.GetValueOrDefault(); }
-            set { this._startTime = value; }
-        }
-
-        // Check to see if StartTime property is set
-        internal bool IsSetStartTime()
-        {
-            return this._startTime.HasValue; 
+            return this._retrievedAdExpirationSeconds.HasValue; 
         }
 
     }

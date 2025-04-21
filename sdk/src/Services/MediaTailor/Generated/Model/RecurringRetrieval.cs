@@ -30,30 +30,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// A complex type that contains settings governing when MediaTailor prefetches ads, and
-    /// which dynamic variables that MediaTailor includes in the request to the ad decision
-    /// server.
+    /// With recurring prefetch, MediaTailor automatically prefetches ads for every avail
+    /// that occurs during the retrieval window. The following configurations describe the
+    /// MediaTailor behavior when prefetching ads for a live event.
     /// </summary>
-    public partial class PrefetchRetrieval
+    public partial class RecurringRetrieval
     {
+        private int? _delayAfterAvailEndSeconds;
         private Dictionary<string, string> _dynamicVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
-        private DateTime? _endTime;
-        private DateTime? _startTime;
         private TrafficShapingRetrievalWindow _trafficShapingRetrievalWindow;
         private TrafficShapingType _trafficShapingType;
 
         /// <summary>
+        /// Gets and sets the property DelayAfterAvailEndSeconds. 
+        /// <para>
+        /// The number of seconds that MediaTailor waits after an ad avail before prefetching
+        /// ads for the next avail. If not set, the default is 0 (no delay).
+        /// </para>
+        /// </summary>
+        public int DelayAfterAvailEndSeconds
+        {
+            get { return this._delayAfterAvailEndSeconds.GetValueOrDefault(); }
+            set { this._delayAfterAvailEndSeconds = value; }
+        }
+
+        // Check to see if DelayAfterAvailEndSeconds property is set
+        internal bool IsSetDelayAfterAvailEndSeconds()
+        {
+            return this._delayAfterAvailEndSeconds.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DynamicVariables. 
         /// <para>
-        /// The dynamic variables to use for substitution during prefetch requests to the ad decision
-        /// server (ADS).
-        /// </para>
-        ///  
-        /// <para>
-        /// You initially configure <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic
-        /// variables</a> for the ADS URL when you set up your playback configuration. When you
-        /// specify <c>DynamicVariables</c> for prefetch retrieval, MediaTailor includes the dynamic
-        /// variables in the request to the ADS.
+        /// The dynamic variables to use for substitution during prefetch requests to the ADS.
         /// </para>
         /// </summary>
         public Dictionary<string, string> DynamicVariables
@@ -66,46 +76,6 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetDynamicVariables()
         {
             return this._dynamicVariables != null && (this._dynamicVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property EndTime. 
-        /// <para>
-        /// The time when prefetch retrieval ends for the ad break. Prefetching will be attempted
-        /// for manifest requests that occur at or before this time.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public DateTime EndTime
-        {
-            get { return this._endTime.GetValueOrDefault(); }
-            set { this._endTime = value; }
-        }
-
-        // Check to see if EndTime property is set
-        internal bool IsSetEndTime()
-        {
-            return this._endTime.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property StartTime. 
-        /// <para>
-        /// The time when prefetch retrievals can start for this break. Ad prefetching will be
-        /// attempted for manifest requests that occur at or after this time. Defaults to the
-        /// current time. If not specified, the prefetch retrieval starts as soon as possible.
-        /// </para>
-        /// </summary>
-        public DateTime StartTime
-        {
-            get { return this._startTime.GetValueOrDefault(); }
-            set { this._startTime = value; }
-        }
-
-        // Check to see if StartTime property is set
-        internal bool IsSetStartTime()
-        {
-            return this._startTime.HasValue; 
         }
 
         /// <summary>

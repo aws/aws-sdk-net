@@ -82,6 +82,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetScheduleType())
+                {
+                    context.Writer.WritePropertyName("ScheduleType");
+                    context.Writer.Write(publicRequest.ScheduleType);
+                }
+
                 if(publicRequest.IsSetStreamId())
                 {
                     context.Writer.WritePropertyName("StreamId");

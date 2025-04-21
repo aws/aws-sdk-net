@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PrefetchRetrieval Object
+    /// Response Unmarshaller for RecurringPrefetchConfiguration Object
     /// </summary>  
-    public class PrefetchRetrievalUnmarshaller : IUnmarshaller<PrefetchRetrieval, XmlUnmarshallerContext>, IUnmarshaller<PrefetchRetrieval, JsonUnmarshallerContext>
+    public class RecurringPrefetchConfigurationUnmarshaller : IUnmarshaller<RecurringPrefetchConfiguration, XmlUnmarshallerContext>, IUnmarshaller<RecurringPrefetchConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PrefetchRetrieval IUnmarshaller<PrefetchRetrieval, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RecurringPrefetchConfiguration IUnmarshaller<RecurringPrefetchConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public PrefetchRetrieval Unmarshall(JsonUnmarshallerContext context)
+        public RecurringPrefetchConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            PrefetchRetrieval unmarshalledObject = new PrefetchRetrieval();
+            RecurringPrefetchConfiguration unmarshalledObject = new RecurringPrefetchConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,22 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DynamicVariables", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.DynamicVariables = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("EndTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RecurringConsumption", targetDepth))
+                {
+                    var unmarshaller = RecurringConsumptionUnmarshaller.Instance;
+                    unmarshalledObject.RecurringConsumption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RecurringRetrieval", targetDepth))
+                {
+                    var unmarshaller = RecurringRetrievalUnmarshaller.Instance;
+                    unmarshalledObject.RecurringRetrieval = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartTime", targetDepth))
@@ -84,29 +90,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TrafficShapingRetrievalWindow", targetDepth))
-                {
-                    var unmarshaller = TrafficShapingRetrievalWindowUnmarshaller.Instance;
-                    unmarshalledObject.TrafficShapingRetrievalWindow = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TrafficShapingType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrafficShapingType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
 
-        private static PrefetchRetrievalUnmarshaller _instance = new PrefetchRetrievalUnmarshaller();        
+        private static RecurringPrefetchConfigurationUnmarshaller _instance = new RecurringPrefetchConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PrefetchRetrievalUnmarshaller Instance
+        public static RecurringPrefetchConfigurationUnmarshaller Instance
         {
             get
             {

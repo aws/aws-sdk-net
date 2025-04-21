@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PrefetchRetrieval Object
+    /// Response Unmarshaller for TrafficShapingRetrievalWindow Object
     /// </summary>  
-    public class PrefetchRetrievalUnmarshaller : IUnmarshaller<PrefetchRetrieval, XmlUnmarshallerContext>, IUnmarshaller<PrefetchRetrieval, JsonUnmarshallerContext>
+    public class TrafficShapingRetrievalWindowUnmarshaller : IUnmarshaller<TrafficShapingRetrievalWindow, XmlUnmarshallerContext>, IUnmarshaller<TrafficShapingRetrievalWindow, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PrefetchRetrieval IUnmarshaller<PrefetchRetrieval, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TrafficShapingRetrievalWindow IUnmarshaller<TrafficShapingRetrievalWindow, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public PrefetchRetrieval Unmarshall(JsonUnmarshallerContext context)
+        public TrafficShapingRetrievalWindow Unmarshall(JsonUnmarshallerContext context)
         {
-            PrefetchRetrieval unmarshalledObject = new PrefetchRetrieval();
+            TrafficShapingRetrievalWindow unmarshalledObject = new TrafficShapingRetrievalWindow();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DynamicVariables", targetDepth))
+                if (context.TestExpression("RetrievalWindowDurationSeconds", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.DynamicVariables = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EndTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StartTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TrafficShapingRetrievalWindow", targetDepth))
-                {
-                    var unmarshaller = TrafficShapingRetrievalWindowUnmarshaller.Instance;
-                    unmarshalledObject.TrafficShapingRetrievalWindow = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TrafficShapingType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrafficShapingType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RetrievalWindowDurationSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +77,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         }
 
 
-        private static PrefetchRetrievalUnmarshaller _instance = new PrefetchRetrievalUnmarshaller();        
+        private static TrafficShapingRetrievalWindowUnmarshaller _instance = new TrafficShapingRetrievalWindowUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PrefetchRetrievalUnmarshaller Instance
+        public static TrafficShapingRetrievalWindowUnmarshaller Instance
         {
             get
             {

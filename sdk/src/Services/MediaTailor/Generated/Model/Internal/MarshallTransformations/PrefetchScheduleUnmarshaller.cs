@@ -90,10 +90,22 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     unmarshalledObject.PlaybackConfigurationName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RecurringPrefetchConfiguration", targetDepth))
+                {
+                    var unmarshaller = RecurringPrefetchConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.RecurringPrefetchConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Retrieval", targetDepth))
                 {
                     var unmarshaller = PrefetchRetrievalUnmarshaller.Instance;
                     unmarshalledObject.Retrieval = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ScheduleType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScheduleType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StreamId", targetDepth))

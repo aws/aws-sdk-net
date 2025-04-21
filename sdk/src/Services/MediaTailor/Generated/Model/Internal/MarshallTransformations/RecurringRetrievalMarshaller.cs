@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PrefetchRetrieval Marshaller
+    /// RecurringRetrieval Marshaller
     /// </summary>
-    public class PrefetchRetrievalMarshaller : IRequestMarshaller<PrefetchRetrieval, JsonMarshallerContext> 
+    public class RecurringRetrievalMarshaller : IRequestMarshaller<RecurringRetrieval, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,10 +44,16 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PrefetchRetrieval requestObject, JsonMarshallerContext context)
+        public void Marshall(RecurringRetrieval requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDelayAfterAvailEndSeconds())
+            {
+                context.Writer.WritePropertyName("DelayAfterAvailEndSeconds");
+                context.Writer.Write(requestObject.DelayAfterAvailEndSeconds);
+            }
+
             if(requestObject.IsSetDynamicVariables())
             {
                 context.Writer.WritePropertyName("DynamicVariables");
@@ -60,18 +66,6 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectDynamicVariablesValue);
                 }
                 context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetEndTime())
-            {
-                context.Writer.WritePropertyName("EndTime");
-                context.Writer.Write(requestObject.EndTime);
-            }
-
-            if(requestObject.IsSetStartTime())
-            {
-                context.Writer.WritePropertyName("StartTime");
-                context.Writer.Write(requestObject.StartTime);
             }
 
             if(requestObject.IsSetTrafficShapingRetrievalWindow())
@@ -96,7 +90,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static PrefetchRetrievalMarshaller Instance = new PrefetchRetrievalMarshaller();
+        public readonly static RecurringRetrievalMarshaller Instance = new RecurringRetrievalMarshaller();
 
     }
 }
