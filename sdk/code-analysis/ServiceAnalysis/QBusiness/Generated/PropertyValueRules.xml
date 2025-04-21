@@ -135,6 +135,35 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QBusiness.Model.CheckDocumentAccessRequest.ApplicationId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.CheckDocumentAccessRequest.DataSourceId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.CheckDocumentAccessRequest.DocumentId</property>
+    <min>1</min>
+    <max>1825</max>
+    <pattern>\P{C}*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.CheckDocumentAccessRequest.IndexId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.CheckDocumentAccessRequest.UserId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateApplicationRequest.ClientToken</property>
     <min>1</min>
     <max>100</max>
@@ -1976,6 +2005,17 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QBusiness.Model.AssociatedGroup.Name</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>\P{C}*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.AssociatedUser.Id</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QBusiness.Model.Attachment.AttachmentId</property>
     <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
@@ -2259,6 +2299,17 @@
     <property>Amazon.QBusiness.Model.Document.Title</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.DocumentAclGroup.Name</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>\P{C}*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.DocumentAclUser.Id</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DocumentAttribute.Name</property>
