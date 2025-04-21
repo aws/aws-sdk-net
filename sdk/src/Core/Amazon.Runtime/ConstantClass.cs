@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 using Amazon.Util.Internal;
@@ -35,6 +36,7 @@ namespace Amazon.Runtime
     /// Base class for constant class that holds the value that will be sent to AWS for the static constants.
     /// </summary>
     [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicFields)]
+    [ConstantClassComparer(ConstantClassComparerKind.OrdinalIgnoreCase)]
     public class ConstantClass
     {
         static readonly object staticFieldsLock = new object();
@@ -119,7 +121,14 @@ namespace Amazon.Runtime
             {
                 if (staticFields.ContainsKey(type)) return;
 
-                var map = new Dictionary<string, ConstantClass>(StringComparer.OrdinalIgnoreCase);
+                var comparer = StringComparer.OrdinalIgnoreCase;
+                var comparerAttr = type.GetCustomAttribute<ConstantClassComparerAttribute>();
+                if (comparerAttr != null)
+                {
+                    comparer = GetStringComparerFromKind(comparerAttr.ComparerKind);
+                }
+
+                var map = new Dictionary<string, ConstantClass>(comparer);
 
                 foreach (var fieldInfo in type.GetFields())
                 {
@@ -136,6 +145,19 @@ namespace Amazon.Runtime
 
                 // swap in the new dictionary
                 staticFields = newDictionary;
+            }
+        }
+
+        private static StringComparer GetStringComparerFromKind(ConstantClassComparerKind comparerKind)
+        {
+            switch (comparerKind)
+            {
+                case ConstantClassComparerKind.Ordinal:
+                    return StringComparer.Ordinal;
+                case ConstantClassComparerKind.OrdinalIgnoreCase:
+                    return StringComparer.OrdinalIgnoreCase;
+                default:
+                    return StringComparer.OrdinalIgnoreCase;
             }
         }
 
@@ -245,5 +267,30 @@ namespace Amazon.Runtime
         {
             return !(a == b);
         }
+    }
+
+    /// <summary>
+    /// Indicates the type of <see cref="ConstantClassComparerKind"/> to use when indexing constants
+    /// in a <see cref="ConstantClass"/>-derived type.
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Class)]
+    public sealed class ConstantClassComparerAttribute : Attribute
+    {
+        public ConstantClassComparerKind ComparerKind { get; }
+
+        public ConstantClassComparerAttribute(ConstantClassComparerKind comparerKind)
+        {
+            ComparerKind = comparerKind;
+        }
+    }
+
+    /// <summary>
+    /// Specifies the kind of string comparison to use when indexing constant values
+    /// in a <see cref="ConstantClass"/>-derived type.
+    /// </summary>
+    public enum ConstantClassComparerKind
+    {
+        Ordinal,
+        OrdinalIgnoreCase,
     }
 }
