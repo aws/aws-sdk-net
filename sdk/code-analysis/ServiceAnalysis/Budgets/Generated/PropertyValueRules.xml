@@ -619,4 +619,10 @@
     <max>2147483647</max>
     <pattern>(.*[\n\r\t\f\ ]?)*</pattern>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.TagValues.Key</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
 </property-value-rules>

@@ -81,6 +81,12 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.BudgetName);
                 }
 
+                if(publicRequest.IsSetShowFilterExpression())
+                {
+                    context.Writer.WritePropertyName("ShowFilterExpression");
+                    context.Writer.Write(publicRequest.ShowFilterExpression);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
