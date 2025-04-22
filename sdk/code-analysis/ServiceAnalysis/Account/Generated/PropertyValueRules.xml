@@ -36,6 +36,20 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Account.Model.GetAccountInformationRequest.AccountId</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.GetAccountInformationResponse.AccountId</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.GetAccountInformationResponse.AccountName</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[ -;=?-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Account.Model.GetAlternateContactRequest.AccountId</property>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
@@ -79,6 +93,16 @@
     <property>Amazon.Account.Model.ListRegionsRequest.NextToken</property>
     <min>0</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.PutAccountNameRequest.AccountId</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.PutAccountNameRequest.AccountName</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[ -;=?-~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.PutAlternateContactRequest.AccountId</property>

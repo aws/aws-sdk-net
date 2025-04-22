@@ -30,28 +30,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Account.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisableRegion operation.
-    /// Disables (opts-out) a particular Region for an account.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// The act of disabling a Region will remove all IAM access to any resources that reside
-    /// in that Region.
-    /// </para>
-    ///  </note>
+    /// This is the response object from the GetAccountInformation operation.
     /// </summary>
-    public partial class DisableRegionRequest : AmazonAccountRequest
+    public partial class GetAccountInformationResponse : AmazonWebServiceResponse
     {
+        private DateTime? _accountCreatedDate;
         private string _accountId;
-        private string _regionName;
+        private string _accountName;
+
+        /// <summary>
+        /// Gets and sets the property AccountCreatedDate. 
+        /// <para>
+        /// The date and time the account was created.
+        /// </para>
+        /// </summary>
+        public DateTime AccountCreatedDate
+        {
+            get { return this._accountCreatedDate.GetValueOrDefault(); }
+            set { this._accountCreatedDate = value; }
+        }
+
+        // Check to see if AccountCreatedDate property is set
+        internal bool IsSetAccountCreatedDate()
+        {
+            return this._accountCreatedDate.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
         /// Specifies the 12-digit account ID number of the Amazon Web Services account that you
-        /// want to access or modify with this operation. If you don't specify this parameter,
-        /// it defaults to the Amazon Web Services account of the identity used to call the operation.
-        /// To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's
+        /// want to access or modify with this operation. To use this parameter, the caller must
+        /// be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's
         /// management account</a> or a delegated administrator account. The specified account
         /// ID must be a member account in the same organization. The organization must have <a
         /// href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
@@ -59,17 +69,16 @@ namespace Amazon.Account.Model
         /// access</a> enabled for the Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#delegated-admin">delegated
         /// admin</a> account assigned.
         /// </para>
+        ///  
+        /// <para>
+        /// This operation can only be called from the management account or the delegated administrator
+        /// account of an organization for a member account.
+        /// </para>
         ///  <note> 
         /// <para>
-        /// The management account can't specify its own <c>AccountId</c>. It must call the operation
-        /// in standalone context by not including the <c>AccountId</c> parameter.
+        /// The management account can't specify its own <c>AccountId</c>.
         /// </para>
-        ///  </note> 
-        /// <para>
-        /// To call this operation on an account that is not a member of an organization, don't
-        /// specify this parameter. Instead, call the operation using an identity belonging to
-        /// the account whose contacts you wish to retrieve or modify.
-        /// </para>
+        ///  </note>
         /// </summary>
         public string AccountId
         {
@@ -84,26 +93,22 @@ namespace Amazon.Account.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RegionName. 
+        /// Gets and sets the property AccountName. 
         /// <para>
-        /// Specifies the Region-code for a given Region name (for example, <c>af-south-1</c>).
-        /// When you disable a Region, Amazon Web Services performs actions to deactivate that
-        /// Region in your account, such as destroying IAM resources in the Region. This process
-        /// takes a few minutes for most accounts, but this can take several hours. You cannot
-        /// enable the Region until the disabling process is fully completed.
+        /// The name of the account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
-        public string RegionName
+        [AWSProperty(Sensitive=true, Min=1, Max=50)]
+        public string AccountName
         {
-            get { return this._regionName; }
-            set { this._regionName = value; }
+            get { return this._accountName; }
+            set { this._accountName = value; }
         }
 
-        // Check to see if RegionName property is set
-        internal bool IsSetRegionName()
+        // Check to see if AccountName property is set
+        internal bool IsSetAccountName()
         {
-            return this._regionName != null;
+            return this._accountName != null;
         }
 
     }

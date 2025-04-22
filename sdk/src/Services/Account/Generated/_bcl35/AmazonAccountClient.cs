@@ -281,7 +281,8 @@ namespace Amazon.Account
         /// <exception cref="Amazon.Account.Model.ConflictException">
         /// The request could not be processed because of a conflict in the current status of
         /// the resource. For example, this happens if you try to enable a Region that is currently
-        /// being disabled (in a status of DISABLING).
+        /// being disabled (in a status of DISABLING) or if you try to change an account’s root
+        /// user email to an email address which is already in use.
         /// </exception>
         /// <exception cref="Amazon.Account.Model.InternalServerException">
         /// The operation failed because of an error internal to Amazon Web Services. Try your
@@ -452,7 +453,8 @@ namespace Amazon.Account
         /// <exception cref="Amazon.Account.Model.ConflictException">
         /// The request could not be processed because of a conflict in the current status of
         /// the resource. For example, this happens if you try to enable a Region that is currently
-        /// being disabled (in a status of DISABLING).
+        /// being disabled (in a status of DISABLING) or if you try to change an account’s root
+        /// user email to an email address which is already in use.
         /// </exception>
         /// <exception cref="Amazon.Account.Model.InternalServerException">
         /// The operation failed because of an error internal to Amazon Web Services. Try your
@@ -526,7 +528,8 @@ namespace Amazon.Account
         /// <exception cref="Amazon.Account.Model.ConflictException">
         /// The request could not be processed because of a conflict in the current status of
         /// the resource. For example, this happens if you try to enable a Region that is currently
-        /// being disabled (in a status of DISABLING).
+        /// being disabled (in a status of DISABLING) or if you try to change an account’s root
+        /// user email to an email address which is already in use.
         /// </exception>
         /// <exception cref="Amazon.Account.Model.InternalServerException">
         /// The operation failed because of an error internal to Amazon Web Services. Try your
@@ -581,6 +584,77 @@ namespace Amazon.Account
         public virtual EnableRegionResponse EndEnableRegion(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableRegionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAccountInformation
+
+        /// <summary>
+        /// Retrieves information about the specified account including its account name, account
+        /// ID, and account creation date and time. To use this API, an IAM user or role must
+        /// have the <c>account:GetAccountInformation</c> IAM permission.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountInformation service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountInformation service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetAccountInformation">REST API Reference for GetAccountInformation Operation</seealso>
+        public virtual GetAccountInformationResponse GetAccountInformation(GetAccountInformationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountInformationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountInformationResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccountInformationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountInformation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountInformation operation on AmazonAccountClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccountInformation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetAccountInformation">REST API Reference for GetAccountInformation Operation</seealso>
+        public virtual IAsyncResult BeginGetAccountInformation(GetAccountInformationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountInformationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountInformationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccountInformation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccountInformation.</param>
+        /// 
+        /// <returns>Returns a  GetAccountInformationResult from Account.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetAccountInformation">REST API Reference for GetAccountInformation Operation</seealso>
+        public virtual GetAccountInformationResponse EndGetAccountInformation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAccountInformationResponse>(asyncResult);
         }
 
         #endregion
@@ -961,6 +1035,76 @@ namespace Amazon.Account
 
         #endregion
         
+        #region  PutAccountName
+
+        /// <summary>
+        /// Updates the account name of the specified account. To use this API, IAM principals
+        /// must have the <c>account:PutAccountName</c> IAM permission.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountName service method.</param>
+        /// 
+        /// <returns>The response from the PutAccountName service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutAccountName">REST API Reference for PutAccountName Operation</seealso>
+        public virtual PutAccountNameResponse PutAccountName(PutAccountNameRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountNameResponseUnmarshaller.Instance;
+
+            return Invoke<PutAccountNameResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAccountName operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountName operation on AmazonAccountClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAccountName
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutAccountName">REST API Reference for PutAccountName Operation</seealso>
+        public virtual IAsyncResult BeginPutAccountName(PutAccountNameRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountNameResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAccountName operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAccountName.</param>
+        /// 
+        /// <returns>Returns a  PutAccountNameResult from Account.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutAccountName">REST API Reference for PutAccountName Operation</seealso>
+        public virtual PutAccountNameResponse EndPutAccountName(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutAccountNameResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutAlternateContact
 
         /// <summary>
@@ -1135,7 +1279,8 @@ namespace Amazon.Account
         /// <exception cref="Amazon.Account.Model.ConflictException">
         /// The request could not be processed because of a conflict in the current status of
         /// the resource. For example, this happens if you try to enable a Region that is currently
-        /// being disabled (in a status of DISABLING).
+        /// being disabled (in a status of DISABLING) or if you try to change an account’s root
+        /// user email to an email address which is already in use.
         /// </exception>
         /// <exception cref="Amazon.Account.Model.InternalServerException">
         /// The operation failed because of an error internal to Amazon Web Services. Try your
