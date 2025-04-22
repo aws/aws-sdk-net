@@ -88,6 +88,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private List<string> _logoutURLs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PreventUserExistenceErrorTypes _preventUserExistenceErrors;
         private List<string> _readAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private RefreshTokenRotationType _refreshTokenRotation;
         private int? _refreshTokenValidity;
         private List<string> _supportedIdentityProviders = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TokenValidityUnitsType _tokenValidityUnits;
@@ -644,6 +645,26 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetReadAttributes()
         {
             return this._readAttributes != null && (this._readAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RefreshTokenRotation. 
+        /// <para>
+        /// The configuration of your app client for refresh token rotation. When enabled, your
+        /// app client issues new ID, access, and refresh tokens when users renew their sessions
+        /// with refresh tokens. When disabled, token refresh issues only ID and access tokens.
+        /// </para>
+        /// </summary>
+        public RefreshTokenRotationType RefreshTokenRotation
+        {
+            get { return this._refreshTokenRotation; }
+            set { this._refreshTokenRotation = value; }
+        }
+
+        // Check to see if RefreshTokenRotation property is set
+        internal bool IsSetRefreshTokenRotation()
+        {
+            return this._refreshTokenRotation != null;
         }
 
         /// <summary>

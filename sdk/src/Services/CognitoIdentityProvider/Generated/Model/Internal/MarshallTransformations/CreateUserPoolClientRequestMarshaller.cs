@@ -206,6 +206,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetRefreshTokenRotation())
+                {
+                    context.Writer.WritePropertyName("RefreshTokenRotation");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RefreshTokenRotationTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RefreshTokenRotation, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRefreshTokenValidity())
                 {
                     context.Writer.WritePropertyName("RefreshTokenValidity");

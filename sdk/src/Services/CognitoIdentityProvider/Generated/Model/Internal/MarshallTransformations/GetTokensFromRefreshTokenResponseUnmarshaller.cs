@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateUserPoolClient operation
+    /// Response Unmarshaller for GetTokensFromRefreshToken operation
     /// </summary>  
-    public class CreateUserPoolClientResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetTokensFromRefreshTokenResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,16 +46,16 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateUserPoolClientResponse response = new CreateUserPoolClientResponse();
+            GetTokensFromRefreshTokenResponse response = new GetTokensFromRefreshTokenResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("UserPoolClient", targetDepth))
+                if (context.TestExpression("AuthenticationResult", targetDepth))
                 {
-                    var unmarshaller = UserPoolClientTypeUnmarshaller.Instance;
-                    response.UserPoolClient = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AuthenticationResultTypeUnmarshaller.Instance;
+                    response.AuthenticationResult = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -81,49 +81,57 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("FeatureUnavailableInTierException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ForbiddenException"))
                 {
-                    return FeatureUnavailableInTierExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ForbiddenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalErrorException"))
                 {
                     return InternalErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOAuthFlowException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidLambdaResponseException"))
                 {
-                    return InvalidOAuthFlowExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidLambdaResponseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-                {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NotAuthorizedException"))
                 {
                     return NotAuthorizedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("RefreshTokenReuseException"))
+                {
+                    return RefreshTokenReuseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ScopeDoesNotExistException"))
-                {
-                    return ScopeDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
                 {
                     return TooManyRequestsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UnexpectedLambdaException"))
+                {
+                    return UnexpectedLambdaExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UserLambdaValidationException"))
+                {
+                    return UserLambdaValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UserNotFoundException"))
+                {
+                    return UserNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonCognitoIdentityProviderException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateUserPoolClientResponseUnmarshaller _instance = new CreateUserPoolClientResponseUnmarshaller();        
+        private static GetTokensFromRefreshTokenResponseUnmarshaller _instance = new GetTokensFromRefreshTokenResponseUnmarshaller();        
 
-        internal static CreateUserPoolClientResponseUnmarshaller GetInstance()
+        internal static GetTokensFromRefreshTokenResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -131,7 +139,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateUserPoolClientResponseUnmarshaller Instance
+        public static GetTokensFromRefreshTokenResponseUnmarshaller Instance
         {
             get
             {

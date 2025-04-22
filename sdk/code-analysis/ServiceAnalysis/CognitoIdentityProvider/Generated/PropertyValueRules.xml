@@ -996,6 +996,28 @@
     <max>131072</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.GetTokensFromRefreshTokenRequest.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.GetTokensFromRefreshTokenRequest.ClientSecret</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w+]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.GetTokensFromRefreshTokenRequest.DeviceKey</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>[\w-]+_[0-9a-f-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.GetTokensFromRefreshTokenRequest.RefreshToken</property>
+    <pattern>[A-Za-z0-9-_=.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.GetUICustomizationRequest.ClientId</property>
     <min>1</min>
     <max>128</max>
@@ -2215,6 +2237,11 @@
     <property>Amazon.CognitoIdentityProvider.Model.RecoveryOptionType.Priority</property>
     <min>1</min>
     <max>2</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.RefreshTokenRotationType.RetryGracePeriodSeconds</property>
+    <min>0</min>
+    <max>60</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ResourceServerScopeType.ScopeDescription</property>
