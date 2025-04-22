@@ -78,6 +78,26 @@ namespace Amazon.RedshiftServerless.Model
         IListRecoveryPointsPaginator ListRecoveryPoints(ListRecoveryPointsRequest request);
 
         /// <summary>
+        /// Paginator for ListReservationOfferings operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListReservationOfferingsPaginator ListReservationOfferings(ListReservationOfferingsRequest request);
+
+        /// <summary>
+        /// Paginator for ListReservations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListReservationsPaginator ListReservations(ListReservationsRequest request);
+
+        /// <summary>
         /// Paginator for ListScheduledActions operation
         ///</summary>
         [AWSPaginator(

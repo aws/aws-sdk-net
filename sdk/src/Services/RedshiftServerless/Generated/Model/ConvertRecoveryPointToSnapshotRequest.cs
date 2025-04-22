@@ -32,7 +32,7 @@ namespace Amazon.RedshiftServerless.Model
     /// <summary>
     /// Container for the parameters to the ConvertRecoveryPointToSnapshot operation.
     /// Converts a recovery point to a snapshot. For more information about recovery points
-    /// and snapshots, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery.html">Working
+    /// and snapshots, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery-points.html">Working
     /// with snapshots and recovery points</a>.
     /// </summary>
     public partial class ConvertRecoveryPointToSnapshotRequest : AmazonRedshiftServerlessRequest

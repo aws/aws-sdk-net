@@ -77,6 +77,22 @@ namespace Amazon.RedshiftServerless.Model
         }
 
         /// <summary>
+        /// Paginator for ListReservationOfferings operation
+        ///</summary>
+        public IListReservationOfferingsPaginator ListReservationOfferings(ListReservationOfferingsRequest request) 
+        {
+            return new ListReservationOfferingsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListReservations operation
+        ///</summary>
+        public IListReservationsPaginator ListReservations(ListReservationsRequest request) 
+        {
+            return new ListReservationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListScheduledActions operation
         ///</summary>
         public IListScheduledActionsPaginator ListScheduledActions(ListScheduledActionsRequest request) 

@@ -285,7 +285,7 @@ namespace Amazon.RedshiftServerless
 
         /// <summary>
         /// Converts a recovery point to a snapshot. For more information about recovery points
-        /// and snapshots, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery.html">Working
+        /// and snapshots, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery-points.html">Working
         /// with snapshots and recovery points</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConvertRecoveryPointToSnapshot service method.</param>
@@ -565,6 +565,83 @@ namespace Amazon.RedshiftServerless
 
         #endregion
         
+        #region  CreateReservation
+
+        /// <summary>
+        /// Creates an Amazon Redshift Serverless reservation, which gives you the option to commit
+        /// to a specified number of Redshift Processing Units (RPUs) for a year at a discount
+        /// from Serverless on-demand (OD) rates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReservation service method.</param>
+        /// 
+        /// <returns>The response from the CreateReservation service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ServiceQuotaExceededException">
+        /// The service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.TooManyTagsException">
+        /// The request exceeded the number of tags allowed for a resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateReservation">REST API Reference for CreateReservation Operation</seealso>
+        public virtual CreateReservationResponse CreateReservation(CreateReservationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateReservationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateReservationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReservation operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateReservation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateReservation">REST API Reference for CreateReservation Operation</seealso>
+        public virtual IAsyncResult BeginCreateReservation(CreateReservationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateReservationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateReservation.</param>
+        /// 
+        /// <returns>Returns a  CreateReservationResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateReservation">REST API Reference for CreateReservation Operation</seealso>
+        public virtual CreateReservationResponse EndCreateReservation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateReservationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateScheduledAction
 
         /// <summary>
@@ -637,7 +714,7 @@ namespace Amazon.RedshiftServerless
 
         /// <summary>
         /// Creates a snapshot of all databases in a namespace. For more information about snapshots,
-        /// see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery.html">
+        /// see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery-points.html">
         /// Working with snapshots and recovery points</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
@@ -1896,6 +1973,141 @@ namespace Amazon.RedshiftServerless
 
         #endregion
         
+        #region  GetReservation
+
+        /// <summary>
+        /// Gets an Amazon Redshift Serverless reservation. A reservation gives you the option
+        /// to commit to a specified number of Redshift Processing Units (RPUs) for a year at
+        /// a discount from Serverless on-demand (OD) rates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReservation service method.</param>
+        /// 
+        /// <returns>The response from the GetReservation service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetReservation">REST API Reference for GetReservation Operation</seealso>
+        public virtual GetReservationResponse GetReservation(GetReservationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReservationResponseUnmarshaller.Instance;
+
+            return Invoke<GetReservationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetReservation operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetReservation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetReservation">REST API Reference for GetReservation Operation</seealso>
+        public virtual IAsyncResult BeginGetReservation(GetReservationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReservationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetReservation.</param>
+        /// 
+        /// <returns>Returns a  GetReservationResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetReservation">REST API Reference for GetReservation Operation</seealso>
+        public virtual GetReservationResponse EndGetReservation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetReservationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetReservationOffering
+
+        /// <summary>
+        /// Returns the reservation offering. The offering determines the payment schedule for
+        /// the reservation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReservationOffering service method.</param>
+        /// 
+        /// <returns>The response from the GetReservationOffering service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetReservationOffering">REST API Reference for GetReservationOffering Operation</seealso>
+        public virtual GetReservationOfferingResponse GetReservationOffering(GetReservationOfferingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReservationOfferingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReservationOfferingResponseUnmarshaller.Instance;
+
+            return Invoke<GetReservationOfferingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetReservationOffering operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetReservationOffering operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetReservationOffering
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetReservationOffering">REST API Reference for GetReservationOffering Operation</seealso>
+        public virtual IAsyncResult BeginGetReservationOffering(GetReservationOfferingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReservationOfferingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReservationOfferingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetReservationOffering operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetReservationOffering.</param>
+        /// 
+        /// <returns>Returns a  GetReservationOfferingResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetReservationOffering">REST API Reference for GetReservationOffering Operation</seealso>
+        public virtual GetReservationOfferingResponse EndGetReservationOffering(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetReservationOfferingResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetResourcePolicy
 
         /// <summary>
@@ -2657,6 +2869,132 @@ namespace Amazon.RedshiftServerless
         public virtual ListRecoveryPointsResponse EndListRecoveryPoints(IAsyncResult asyncResult)
         {
             return EndInvoke<ListRecoveryPointsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListReservationOfferings
+
+        /// <summary>
+        /// Returns the current reservation offerings in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReservationOfferings service method.</param>
+        /// 
+        /// <returns>The response from the ListReservationOfferings service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListReservationOfferings">REST API Reference for ListReservationOfferings Operation</seealso>
+        public virtual ListReservationOfferingsResponse ListReservationOfferings(ListReservationOfferingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReservationOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReservationOfferingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListReservationOfferingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReservationOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReservationOfferings operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListReservationOfferings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListReservationOfferings">REST API Reference for ListReservationOfferings Operation</seealso>
+        public virtual IAsyncResult BeginListReservationOfferings(ListReservationOfferingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReservationOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReservationOfferingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListReservationOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListReservationOfferings.</param>
+        /// 
+        /// <returns>Returns a  ListReservationOfferingsResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListReservationOfferings">REST API Reference for ListReservationOfferings Operation</seealso>
+        public virtual ListReservationOfferingsResponse EndListReservationOfferings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListReservationOfferingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListReservations
+
+        /// <summary>
+        /// Returns a list of Reservation objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReservations service method.</param>
+        /// 
+        /// <returns>The response from the ListReservations service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListReservations">REST API Reference for ListReservations Operation</seealso>
+        public virtual ListReservationsResponse ListReservations(ListReservationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReservationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReservationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListReservationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReservations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReservations operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListReservations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListReservations">REST API Reference for ListReservations Operation</seealso>
+        public virtual IAsyncResult BeginListReservations(ListReservationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReservationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReservationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListReservations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListReservations.</param>
+        /// 
+        /// <returns>Returns a  ListReservationsResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListReservations">REST API Reference for ListReservations Operation</seealso>
+        public virtual ListReservationsResponse EndListReservations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListReservationsResponse>(asyncResult);
         }
 
         #endregion
