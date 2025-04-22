@@ -629,6 +629,18 @@ namespace Amazon.EntityResolution
         /// </summary>
         public static readonly SchemaAttributeType EMAIL_ADDRESS = new SchemaAttributeType("EMAIL_ADDRESS");
         /// <summary>
+        /// Constant IPV4 for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType IPV4 = new SchemaAttributeType("IPV4");
+        /// <summary>
+        /// Constant IPV6 for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType IPV6 = new SchemaAttributeType("IPV6");
+        /// <summary>
+        /// Constant MAID for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType MAID = new SchemaAttributeType("MAID");
+        /// <summary>
         /// Constant NAME for SchemaAttributeType
         /// </summary>
         public static readonly SchemaAttributeType NAME = new SchemaAttributeType("NAME");
