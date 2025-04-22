@@ -122,6 +122,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         request.Parameters.Add("ClientLoginBannerOptions" + "." + "Enabled", StringUtils.FromBool(publicRequest.ClientLoginBannerOptions.Enabled));
                     }
                 }
+                if(publicRequest.IsSetClientRouteEnforcementOptions())
+                {
+                    if(publicRequest.ClientRouteEnforcementOptions.IsSetEnforced())
+                    {
+                        request.Parameters.Add("ClientRouteEnforcementOptions" + "." + "Enforced", StringUtils.FromBool(publicRequest.ClientRouteEnforcementOptions.Enforced));
+                    }
+                }
                 if(publicRequest.IsSetClientToken())
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));

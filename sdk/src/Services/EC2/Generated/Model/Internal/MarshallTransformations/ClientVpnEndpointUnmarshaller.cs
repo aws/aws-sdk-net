@@ -95,6 +95,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ClientLoginBannerOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("clientRouteEnforcementOptions", targetDepth))
+                    {
+                        var unmarshaller = ClientRouteEnforcementResponseOptionsUnmarshaller.Instance;
+                        unmarshalledObject.ClientRouteEnforcementOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("clientVpnEndpointId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

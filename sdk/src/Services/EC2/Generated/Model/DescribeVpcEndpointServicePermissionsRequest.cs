@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeVpcEndpointServicePermissions operation.
     /// Describes the principals (service consumers) that are permitted to discover your VPC
-    /// endpoint service.
+    /// endpoint service. Principal ARNs with path components aren't supported.
     /// </summary>
     public partial class DescribeVpcEndpointServicePermissionsRequest : AmazonEC2Request
     {
