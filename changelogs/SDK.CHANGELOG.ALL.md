@@ -1,3 +1,19 @@
+### 3.7.1028.0 (2025-04-22 18:42 UTC)
+* Account (3.7.402.0)
+	* AWS Account Management now supports account name update via IAM principals.
+* CognitoIdentityProvider (3.7.408.0)
+	* This release adds refresh token rotation.
+* EC2 (3.7.438.0)
+	* Added support for  ClientRouteEnforcementOptions flag in CreateClientVpnEndpoint and ModifyClientVpnEndpoint requests and DescribeClientVpnEndpoints responses
+* EntityResolution (3.7.403.0)
+	* To expand support for matching records using digital identifiers with TransUnion
+* MQ (3.7.401.0)
+	* You can now delete Amazon MQ broker configurations using the DeleteConfiguration API. For more information, see Configurations in the Amazon MQ API Reference.
+* RedshiftServerless (3.7.404.0)
+	* Provides new and updated API members to support the Redshift Serverless reservations feature.
+* S3Control (3.7.408.0)
+	* Fix endpoint resolution test cases
+
 ### 3.7.1027.0 (2025-04-21 18:22 UTC)
 * ARCZonalShift (3.7.402.0)
 	* Updates to documentation and exception types for Zonal Autoshift
