@@ -570,6 +570,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ComputeConfiguration.InstanceType</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.DebugSession.SessionTarget</property>
     <min>1</min>
   </property-value-rule>

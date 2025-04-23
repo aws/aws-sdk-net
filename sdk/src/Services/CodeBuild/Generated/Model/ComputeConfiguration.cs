@@ -31,11 +31,12 @@ namespace Amazon.CodeBuild.Model
 {
     /// <summary>
     /// Contains compute attributes. These attributes only need be specified when your project's
-    /// or fleet's <c>computeType</c> is set to <c>ATTRIBUTE_BASED_COMPUTE</c>.
+    /// or fleet's <c>computeType</c> is set to <c>ATTRIBUTE_BASED_COMPUTE</c> or <c>CUSTOM_INSTANCE_TYPE</c>.
     /// </summary>
     public partial class ComputeConfiguration
     {
         private long? _disk;
+        private string _instanceType;
         private MachineType _machineType;
         private long? _memory;
         private long? _vCpu;
@@ -56,6 +57,25 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetDisk()
         {
             return this._disk.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The EC2 instance type to be launched in your fleet.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
         }
 
         /// <summary>

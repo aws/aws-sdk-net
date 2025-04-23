@@ -81,7 +81,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// The type of scope for a GitHub or GitLab webhook.
+        /// The type of scope for a GitHub or GitLab webhook. The scope default is GITHUB_ORGANIZATION.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
