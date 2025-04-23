@@ -2595,6 +2595,10 @@ namespace Amazon.ECS
         /// </summary>
         public static readonly ServiceDeploymentStatus ROLLBACK_IN_PROGRESS = new ServiceDeploymentStatus("ROLLBACK_IN_PROGRESS");
         /// <summary>
+        /// Constant ROLLBACK_REQUESTED for ServiceDeploymentStatus
+        /// </summary>
+        public static readonly ServiceDeploymentStatus ROLLBACK_REQUESTED = new ServiceDeploymentStatus("ROLLBACK_REQUESTED");
+        /// <summary>
         /// Constant ROLLBACK_SUCCESSFUL for ServiceDeploymentStatus
         /// </summary>
         public static readonly ServiceDeploymentStatus ROLLBACK_SUCCESSFUL = new ServiceDeploymentStatus("ROLLBACK_SUCCESSFUL");
@@ -2918,6 +2922,56 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StabilityStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StopServiceDeploymentStopType.
+    /// </summary>
+    public class StopServiceDeploymentStopType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ABORT for StopServiceDeploymentStopType
+        /// </summary>
+        public static readonly StopServiceDeploymentStopType ABORT = new StopServiceDeploymentStopType("ABORT");
+        /// <summary>
+        /// Constant ROLLBACK for StopServiceDeploymentStopType
+        /// </summary>
+        public static readonly StopServiceDeploymentStopType ROLLBACK = new StopServiceDeploymentStopType("ROLLBACK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StopServiceDeploymentStopType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StopServiceDeploymentStopType FindValue(string value)
+        {
+            return FindValue<StopServiceDeploymentStopType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StopServiceDeploymentStopType(string value)
         {
             return FindValue(value);
         }

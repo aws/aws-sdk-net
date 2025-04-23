@@ -171,6 +171,11 @@ namespace Amazon.ECS.Model
         /// The short name or full Amazon Resource Name (ARN) of the cluster to run your task
         /// on. If you do not specify a cluster, the default cluster is assumed.
         /// </para>
+        ///  
+        /// <para>
+        /// Each account receives a default cluster the first time you use the service, but you
+        /// may also create other clusters.
+        /// </para>
         /// </summary>
         public string Cluster
         {

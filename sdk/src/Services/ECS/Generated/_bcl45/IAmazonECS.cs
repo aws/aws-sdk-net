@@ -5397,6 +5397,198 @@ namespace Amazon.ECS
 
         #endregion
         
+        #region  StopServiceDeployment
+
+
+        /// <summary>
+        /// Stops an ongoing service deployment.
+        /// 
+        ///  
+        /// <para>
+        /// The following stop types are avaiable:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ROLLBACK - This option rolls back the service deployment to the previous service revision.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this option even if you didn't configure the service deployment for the
+        /// rollback option. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/stop-service-deployment.html">Stopping
+        /// Amazon ECS service deployments</a> in the <i>Amazon Elastic Container Service Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopServiceDeployment service method.</param>
+        /// 
+        /// <returns>The response from the StopServiceDeployment service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ConflictException">
+        /// The <c>RunTask</c> request could not be processed due to conflicts. The provided <c>clientToken</c>
+        /// is already in use with a different <c>RunTask</c> request. The <c>resourceIds</c>
+        /// are the existing task ARNs which are already associated with the <c>clientToken</c>.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// To fix this issue:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Run <c>RunTask</c> with a unique <c>clientToken</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Run <c>RunTask</c> with the <c>clientToken</c> and the original set of parameters
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceDeploymentNotFoundException">
+        /// The service deploy ARN that you specified in the <c>StopServiceDeployment</c> doesn't
+        /// exist. You can use <c>ListServiceDeployments</c> to retrieve the service deployment
+        /// ARNs.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopServiceDeployment">REST API Reference for StopServiceDeployment Operation</seealso>
+        StopServiceDeploymentResponse StopServiceDeployment(StopServiceDeploymentRequest request);
+
+
+
+        /// <summary>
+        /// Stops an ongoing service deployment.
+        /// 
+        ///  
+        /// <para>
+        /// The following stop types are avaiable:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ROLLBACK - This option rolls back the service deployment to the previous service revision.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this option even if you didn't configure the service deployment for the
+        /// rollback option. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/stop-service-deployment.html">Stopping
+        /// Amazon ECS service deployments</a> in the <i>Amazon Elastic Container Service Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopServiceDeployment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopServiceDeployment service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ConflictException">
+        /// The <c>RunTask</c> request could not be processed due to conflicts. The provided <c>clientToken</c>
+        /// is already in use with a different <c>RunTask</c> request. The <c>resourceIds</c>
+        /// are the existing task ARNs which are already associated with the <c>clientToken</c>.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// To fix this issue:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Run <c>RunTask</c> with a unique <c>clientToken</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Run <c>RunTask</c> with the <c>clientToken</c> and the original set of parameters
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceDeploymentNotFoundException">
+        /// The service deploy ARN that you specified in the <c>StopServiceDeployment</c> doesn't
+        /// exist. You can use <c>ListServiceDeployments</c> to retrieve the service deployment
+        /// ARNs.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopServiceDeployment">REST API Reference for StopServiceDeployment Operation</seealso>
+        Task<StopServiceDeploymentResponse> StopServiceDeploymentAsync(StopServiceDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StopTask
 
 
