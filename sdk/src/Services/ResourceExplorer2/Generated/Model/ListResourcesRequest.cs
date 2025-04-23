@@ -43,7 +43,29 @@ namespace Amazon.ResourceExplorer2.Model
         private string _viewArn;
 
         /// <summary>
-        /// Gets and sets the property Filters.
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// An array of strings that specify which resources are included in the results of queries
+        /// made using this view. When you use this view in a <a>Search</a> operation, the filter
+        /// string is combined with the search's <c>QueryString</c> parameter using a logical
+        /// <c>AND</c> operator.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about the supported syntax, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html">Search
+        /// query reference for Resource Explorer</a> in the <i>Amazon Web Services Resource Explorer
+        /// User Guide</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// This query string in the context of this operation supports only <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters">filter
+        /// prefixes</a> with optional <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators">operators</a>.
+        /// It doesn't support free-form text. For example, the string <c>region:us* service:ec2
+        /// -tag:stage=prod</c> includes all Amazon EC2 resources in any Amazon Web Services Region
+        /// that begins with the letters <c>us</c> and is <i>not</i> tagged with a key <c>Stage</c>
+        /// that has the value <c>prod</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public SearchFilter Filters
@@ -98,6 +120,12 @@ namespace Amazon.ResourceExplorer2.Model
         /// indicate where the output should continue from. The pagination tokens expire after
         /// 24 hours.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <c>ListResources</c> operation does not generate a <c>NextToken</c> if you set
+        /// <c>MaxResults</c> to 1000. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string NextToken
