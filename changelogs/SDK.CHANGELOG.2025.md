@@ -1,3 +1,14 @@
+### 3.7.1029.0 (2025-04-23 18:17 UTC)
+* CodeBuild (3.7.417.0)
+	* Add support for custom instance type for reserved capacity fleets
+* ECS (3.7.410.0)
+	* Add support to roll back an In_Progress ECS Service Deployment
+* ResourceExplorer2 (3.7.402.92)
+	* Documentation-only update for CreateView option correction
+* Core 3.7.402.44
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1028.0 (2025-04-22 18:42 UTC)
 * Account (3.7.402.0)
 	* AWS Account Management now supports account name update via IAM principals.

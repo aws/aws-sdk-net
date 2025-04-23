@@ -32,7 +32,7 @@ namespace Amazon.WorkSpaces
     public partial class AmazonWorkSpacesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("WorkSpaces", "3.7.410.29");
+            InternalSDKUtils.BuildUserAgentString("WorkSpaces", "3.7.410.30");
 
         private string _userAgent = UserAgentString;
         ///<summary>
