@@ -37,6 +37,7 @@ namespace Amazon.AppSync.Model
     {
         private string _apiId;
         private string _codeHandlers;
+        private HandlerConfigs _handlerConfigs;
         private string _name;
         private List<AuthMode> _publishAuthModes = AWSConfigs.InitializeCollections ? new List<AuthMode>() : null;
         private List<AuthMode> _subscribeAuthModes = AWSConfigs.InitializeCollections ? new List<AuthMode>() : null;
@@ -79,6 +80,24 @@ namespace Amazon.AppSync.Model
         internal bool IsSetCodeHandlers()
         {
             return this._codeHandlers != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HandlerConfigs. 
+        /// <para>
+        /// The configuration for the <c>OnPublish</c> and <c>OnSubscribe</c> handlers.
+        /// </para>
+        /// </summary>
+        public HandlerConfigs HandlerConfigs
+        {
+            get { return this._handlerConfigs; }
+            set { this._handlerConfigs = value; }
+        }
+
+        // Check to see if HandlerConfigs property is set
+        internal bool IsSetHandlerConfigs()
+        {
+            return this._handlerConfigs != null;
         }
 
         /// <summary>
