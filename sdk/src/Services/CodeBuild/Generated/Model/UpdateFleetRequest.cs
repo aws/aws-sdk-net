@@ -74,7 +74,6 @@ namespace Amazon.CodeBuild.Model
         /// of builds that can run in parallel.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
         public int BaseCapacity
         {
             get { return this._baseCapacity.GetValueOrDefault(); }

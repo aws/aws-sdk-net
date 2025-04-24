@@ -45,7 +45,6 @@ namespace Amazon.CodeBuild.Model
         /// The desired number of instances in the ﬂeet when auto-scaling.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
         public int DesiredCapacity
         {
             get { return this._desiredCapacity.GetValueOrDefault(); }
@@ -64,7 +63,6 @@ namespace Amazon.CodeBuild.Model
         /// The maximum number of instances in the ﬂeet when auto-scaling.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
         public int MaxCapacity
         {
             get { return this._maxCapacity.GetValueOrDefault(); }

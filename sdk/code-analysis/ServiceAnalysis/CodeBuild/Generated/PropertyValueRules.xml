@@ -5,10 +5,6 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.CodeBuild.Model.CreateFleetRequest.BaseCapacity</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.CodeBuild.Model.CreateFleetRequest.FleetServiceRole</property>
     <min>1</min>
   </property-value-rule>
@@ -349,10 +345,6 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.CodeBuild.Model.UpdateFleetRequest.BaseCapacity</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.CodeBuild.Model.UpdateFleetRequest.FleetServiceRole</property>
     <min>1</min>
   </property-value-rule>
@@ -590,10 +582,6 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.CodeBuild.Model.Fleet.BaseCapacity</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.CodeBuild.Model.Fleet.FleetServiceRole</property>
     <min>1</min>
   </property-value-rule>
@@ -731,18 +719,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.SandboxSession.ResolvedSourceVersion</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.CodeBuild.Model.ScalingConfigurationInput.MaxCapacity</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.CodeBuild.Model.ScalingConfigurationOutput.DesiredCapacity</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.CodeBuild.Model.ScalingConfigurationOutput.MaxCapacity</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
