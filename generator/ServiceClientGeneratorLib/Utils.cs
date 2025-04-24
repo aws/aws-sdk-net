@@ -252,7 +252,7 @@ namespace ServiceClientGenerator
                 if (nestedMember == "[]")
                 {
                     // Flatten the nested lists into a single list using LINQ SelectMany
-                    mainPathBuilder.Append($"SelectMany(element => element)");
+                    mainPathBuilder.Append($"SelectMany(element => element).Where(element => element != null)");
                     continue;
                 }
 
