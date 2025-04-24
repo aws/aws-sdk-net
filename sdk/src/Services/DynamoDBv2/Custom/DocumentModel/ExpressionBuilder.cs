@@ -53,13 +53,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>An <see cref="Expression"/> object representing the constructed expression.</returns>
         public Expression Build()
         {
-            var expressionTree = BuildExpressionTree();
+            var expressionTree = BuildExpressionTree(out string expressionType);
 
             var aliasList = new KeyAttributeAliasList();
 
             var expression = new Expression()
             {
-                ExpressionStatement = expressionTree.BuildExpressionString(aliasList)
+                ExpressionStatement = expressionTree.BuildExpressionString(aliasList, expressionType)
             };
 
             if (aliasList.NamesList != null && aliasList.NamesList.Count != 0)
@@ -67,7 +67,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 var namesDictionary = new Dictionary<string, string>();
                 for (int i = 0; i < aliasList.NamesList.Count; i++)
                 {
-                    namesDictionary[$"#{i}"] = aliasList.NamesList[i];
+                    namesDictionary[$"#{expressionType}{i}"] = aliasList.NamesList[i];
                 }
 
                 expression.ExpressionAttributeNames = namesDictionary;
@@ -78,7 +78,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 var values = new Dictionary<string, DynamoDBEntry>();
                 for (int i = 0; i < aliasList.ValuesList.Count; i++)
                 {
-                    values[$":{i}"] = aliasList.ValuesList[i];
+                    values[$":{expressionType}{i}"] = aliasList.ValuesList[i];
                 }
 
                 expression.ExpressionAttributeValues = values;
@@ -90,8 +90,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <summary>
         /// Builds the expression tree for the current expression builder. 
         /// </summary>
+        /// <param name="s"></param>
         /// <returns></returns>
-        internal abstract ExpressionNode BuildExpressionTree();
+        internal abstract ExpressionNode BuildExpressionTree(out string s);
     }
 
     /// <summary>
@@ -223,10 +224,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <summary>
         /// Builds the expression tree for the update expression based on the operations provided.
         /// </summary>
+        /// <param name="s"></param>
         /// <returns>An <see cref="ExpressionNode"/> representing the constructed update expression tree.</returns>
         /// <exception cref="InvalidOperationException">Thrown if no operations are defined in the update expression.</exception>
-        internal override ExpressionNode BuildExpressionTree()
+        internal override ExpressionNode BuildExpressionTree(out string s)
         {
+            s = "U";
             var resultNode = new ExpressionNode
             {
                 Children = new Queue<ExpressionNode>()
@@ -545,9 +548,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return condition;
         }
 
-        ///<inheritdoc/>
-        internal override ExpressionNode BuildExpressionTree()
+        /// <param name="s"></param>
+        /// <inheritdoc/>
+        internal override ExpressionNode BuildExpressionTree(out string s)
         {
+            s = "C";
             var childNodes = BuildChildNodes();
 
             var node = new ExpressionNode
@@ -609,7 +614,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 ExpressionNode node;
                 try
                 {
-                    node = condition.BuildExpressionTree();
+                    node = condition.BuildExpressionTree(out _);
                 }
                 catch (Exception ex)
                 {
@@ -1509,8 +1514,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Builds the final expression string for this node, including attribute aliases.
         /// </summary>
         /// <param name="aliasList">A list of attribute aliases for names and values.</param>
+        /// <param name="expressionType"></param>
         /// <returns>The constructed expression string.</returns>
-        internal string BuildExpressionString(KeyAttributeAliasList aliasList)
+        internal string BuildExpressionString(KeyAttributeAliasList aliasList, string expressionType)
         {
             var result = new StringBuilder();
             int i = 0;
@@ -1528,7 +1534,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                                     throw new InvalidOperationException("Missing name for $n");
 
                                 string name = Names.Pop();
-                                string alias = $"#{aliasList.NamesList.Count}";
+                                string alias = $"#{expressionType}{aliasList.NamesList.Count}";
                                 aliasList.NamesList.Add(name);
                                 result.Append(alias);
                                 break;
@@ -1539,7 +1545,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                                     throw new InvalidOperationException("Missing value for $v");
 
                                 var val = Values.Pop();
-                                string alias = $":{aliasList.ValuesList.Count}";
+                                string alias = $":{expressionType}{aliasList.ValuesList.Count}";
                                 aliasList.ValuesList.Add(val);
                                 result.Append(alias);
                                 break;
@@ -1550,7 +1556,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                                     throw new InvalidOperationException("Missing child for $c");
 
                                 var child = Children.Dequeue();
-                                string subExpr = child.BuildExpressionString(aliasList);
+                                string subExpr = child.BuildExpressionString(aliasList, expressionType);
                                 result.Append(subExpr);
                                 break;
                             }
