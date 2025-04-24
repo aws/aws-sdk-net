@@ -284,6 +284,11 @@ namespace Amazon.DynamoDBv2.Internal
                 result.ResourceArnList = request.TransactItems?.Select(element => element?.Get?.TableName);
                 return result;
             }
+            if (requestContext.RequestName == "TransactWriteItemsRequest") {
+                var request = (TransactWriteItemsRequest)requestContext.OriginalRequest;
+                result.ResourceArnList = request.TransactItems?.Select(element => new [] { element?.ConditionCheck?.TableName, element?.Put?.TableName, element?.Delete?.TableName, element?.Update?.TableName })?.SelectMany(element => element).Where(element => element != null);
+                return result;
+            }
             if (requestContext.RequestName == "UntagResourceRequest") {
                 var request = (UntagResourceRequest)requestContext.OriginalRequest;
                 result.ResourceArn = request.ResourceArn;
