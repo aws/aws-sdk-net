@@ -30,41 +30,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockDataAutomation.Model
 {
     /// <summary>
-    /// Override Configuration of Document
+    /// Configuration to enable/disable processing of modality
     /// </summary>
-    public partial class DocumentOverrideConfiguration
+    public partial class ModalityProcessingConfiguration
     {
-        private ModalityProcessingConfiguration _modalityProcessing;
-        private SplitterConfiguration _splitter;
+        private State _state;
 
         /// <summary>
-        /// Gets and sets the property ModalityProcessing.
+        /// Gets and sets the property State.
         /// </summary>
-        public ModalityProcessingConfiguration ModalityProcessing
+        public State State
         {
-            get { return this._modalityProcessing; }
-            set { this._modalityProcessing = value; }
+            get { return this._state; }
+            set { this._state = value; }
         }
 
-        // Check to see if ModalityProcessing property is set
-        internal bool IsSetModalityProcessing()
+        // Check to see if State property is set
+        internal bool IsSetState()
         {
-            return this._modalityProcessing != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Splitter.
-        /// </summary>
-        public SplitterConfiguration Splitter
-        {
-            get { return this._splitter; }
-            set { this._splitter = value; }
-        }
-
-        // Check to see if Splitter property is set
-        internal bool IsSetSplitter()
-        {
-            return this._splitter != null;
+            return this._state != null;
         }
 
     }

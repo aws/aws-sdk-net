@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DocumentOverrideConfiguration Marshaller
+    /// VideoOverrideConfiguration Marshaller
     /// </summary>
-    public class DocumentOverrideConfigurationMarshaller : IRequestMarshaller<DocumentOverrideConfiguration, JsonMarshallerContext> 
+    public class VideoOverrideConfigurationMarshaller : IRequestMarshaller<VideoOverrideConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DocumentOverrideConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(VideoOverrideConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -59,23 +59,12 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetSplitter())
-            {
-                context.Writer.WritePropertyName("splitter");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SplitterConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Splitter, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static DocumentOverrideConfigurationMarshaller Instance = new DocumentOverrideConfigurationMarshaller();
+        public readonly static VideoOverrideConfigurationMarshaller Instance = new VideoOverrideConfigurationMarshaller();
 
     }
 }

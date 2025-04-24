@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OverrideConfiguration Object
+    /// Response Unmarshaller for VideoOverrideConfiguration Object
     /// </summary>  
-    public class OverrideConfigurationUnmarshaller : IUnmarshaller<OverrideConfiguration, XmlUnmarshallerContext>, IUnmarshaller<OverrideConfiguration, JsonUnmarshallerContext>
+    public class VideoOverrideConfigurationUnmarshaller : IUnmarshaller<VideoOverrideConfiguration, XmlUnmarshallerContext>, IUnmarshaller<VideoOverrideConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OverrideConfiguration IUnmarshaller<OverrideConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        VideoOverrideConfiguration IUnmarshaller<VideoOverrideConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public OverrideConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public VideoOverrideConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            OverrideConfiguration unmarshalledObject = new OverrideConfiguration();
+            VideoOverrideConfiguration unmarshalledObject = new VideoOverrideConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("audio", targetDepth))
+                if (context.TestExpression("modalityProcessing", targetDepth))
                 {
-                    var unmarshaller = AudioOverrideConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Audio = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("document", targetDepth))
-                {
-                    var unmarshaller = DocumentOverrideConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Document = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("image", targetDepth))
-                {
-                    var unmarshaller = ImageOverrideConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Image = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("modalityRouting", targetDepth))
-                {
-                    var unmarshaller = ModalityRoutingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ModalityRouting = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("video", targetDepth))
-                {
-                    var unmarshaller = VideoOverrideConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Video = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ModalityProcessingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ModalityProcessing = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +77,12 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         }
 
 
-        private static OverrideConfigurationUnmarshaller _instance = new OverrideConfigurationUnmarshaller();        
+        private static VideoOverrideConfigurationUnmarshaller _instance = new VideoOverrideConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OverrideConfigurationUnmarshaller Instance
+        public static VideoOverrideConfigurationUnmarshaller Instance
         {
             get
             {

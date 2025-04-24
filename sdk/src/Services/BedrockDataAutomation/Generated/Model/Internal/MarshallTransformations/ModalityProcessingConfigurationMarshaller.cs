@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DocumentOverrideConfiguration Marshaller
+    /// ModalityProcessingConfiguration Marshaller
     /// </summary>
-    public class DocumentOverrideConfigurationMarshaller : IRequestMarshaller<DocumentOverrideConfiguration, JsonMarshallerContext> 
+    public class ModalityProcessingConfigurationMarshaller : IRequestMarshaller<ModalityProcessingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,30 +44,14 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DocumentOverrideConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ModalityProcessingConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetModalityProcessing())
+            if(requestObject.IsSetState())
             {
-                context.Writer.WritePropertyName("modalityProcessing");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ModalityProcessingConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.ModalityProcessing, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetSplitter())
-            {
-                context.Writer.WritePropertyName("splitter");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SplitterConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Splitter, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("state");
+                context.Writer.Write(requestObject.State);
             }
 
         }
@@ -75,7 +59,7 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static DocumentOverrideConfigurationMarshaller Instance = new DocumentOverrideConfigurationMarshaller();
+        public readonly static ModalityProcessingConfigurationMarshaller Instance = new ModalityProcessingConfigurationMarshaller();
 
     }
 }

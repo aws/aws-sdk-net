@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DocumentOverrideConfiguration Marshaller
+    /// ModalityRoutingConfiguration Marshaller
     /// </summary>
-    public class DocumentOverrideConfigurationMarshaller : IRequestMarshaller<DocumentOverrideConfiguration, JsonMarshallerContext> 
+    public class ModalityRoutingConfigurationMarshaller : IRequestMarshaller<ModalityRoutingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,30 +44,32 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DocumentOverrideConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ModalityRoutingConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetModalityProcessing())
+            if(requestObject.IsSetJpeg())
             {
-                context.Writer.WritePropertyName("modalityProcessing");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ModalityProcessingConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.ModalityProcessing, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("jpeg");
+                context.Writer.Write(requestObject.Jpeg);
             }
 
-            if(requestObject.IsSetSplitter())
+            if(requestObject.IsSetMov())
             {
-                context.Writer.WritePropertyName("splitter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("mov");
+                context.Writer.Write(requestObject.Mov);
+            }
 
-                var marshaller = SplitterConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Splitter, context);
+            if(requestObject.IsSetMp4())
+            {
+                context.Writer.WritePropertyName("mp4");
+                context.Writer.Write(requestObject.Mp4);
+            }
 
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetPng())
+            {
+                context.Writer.WritePropertyName("png");
+                context.Writer.Write(requestObject.Png);
             }
 
         }
@@ -75,7 +77,7 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static DocumentOverrideConfigurationMarshaller Instance = new DocumentOverrideConfigurationMarshaller();
+        public readonly static ModalityRoutingConfigurationMarshaller Instance = new ModalityRoutingConfigurationMarshaller();
 
     }
 }

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OverrideConfiguration Object
+    /// Response Unmarshaller for ModalityRoutingConfiguration Object
     /// </summary>  
-    public class OverrideConfigurationUnmarshaller : IUnmarshaller<OverrideConfiguration, XmlUnmarshallerContext>, IUnmarshaller<OverrideConfiguration, JsonUnmarshallerContext>
+    public class ModalityRoutingConfigurationUnmarshaller : IUnmarshaller<ModalityRoutingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ModalityRoutingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OverrideConfiguration IUnmarshaller<OverrideConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ModalityRoutingConfiguration IUnmarshaller<ModalityRoutingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public OverrideConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ModalityRoutingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            OverrideConfiguration unmarshalledObject = new OverrideConfiguration();
+            ModalityRoutingConfiguration unmarshalledObject = new ModalityRoutingConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,28 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("audio", targetDepth))
+                if (context.TestExpression("jpeg", targetDepth))
                 {
-                    var unmarshaller = AudioOverrideConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Audio = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Jpeg = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("document", targetDepth))
+                if (context.TestExpression("mov", targetDepth))
                 {
-                    var unmarshaller = DocumentOverrideConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Document = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Mov = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("image", targetDepth))
+                if (context.TestExpression("mp4", targetDepth))
                 {
-                    var unmarshaller = ImageOverrideConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Image = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Mp4 = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("modalityRouting", targetDepth))
+                if (context.TestExpression("png", targetDepth))
                 {
-                    var unmarshaller = ModalityRoutingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ModalityRouting = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("video", targetDepth))
-                {
-                    var unmarshaller = VideoOverrideConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Video = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Png = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +95,12 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         }
 
 
-        private static OverrideConfigurationUnmarshaller _instance = new OverrideConfigurationUnmarshaller();        
+        private static ModalityRoutingConfigurationUnmarshaller _instance = new ModalityRoutingConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OverrideConfigurationUnmarshaller Instance
+        public static ModalityRoutingConfigurationUnmarshaller Instance
         {
             get
             {

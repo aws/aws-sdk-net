@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OverrideConfiguration Object
+    /// Response Unmarshaller for ModalityProcessingConfiguration Object
     /// </summary>  
-    public class OverrideConfigurationUnmarshaller : IUnmarshaller<OverrideConfiguration, XmlUnmarshallerContext>, IUnmarshaller<OverrideConfiguration, JsonUnmarshallerContext>
+    public class ModalityProcessingConfigurationUnmarshaller : IUnmarshaller<ModalityProcessingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ModalityProcessingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OverrideConfiguration IUnmarshaller<OverrideConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ModalityProcessingConfiguration IUnmarshaller<ModalityProcessingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public OverrideConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ModalityProcessingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            OverrideConfiguration unmarshalledObject = new OverrideConfiguration();
+            ModalityProcessingConfiguration unmarshalledObject = new ModalityProcessingConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("audio", targetDepth))
+                if (context.TestExpression("state", targetDepth))
                 {
-                    var unmarshaller = AudioOverrideConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Audio = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("document", targetDepth))
-                {
-                    var unmarshaller = DocumentOverrideConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Document = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("image", targetDepth))
-                {
-                    var unmarshaller = ImageOverrideConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Image = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("modalityRouting", targetDepth))
-                {
-                    var unmarshaller = ModalityRoutingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ModalityRouting = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("video", targetDepth))
-                {
-                    var unmarshaller = VideoOverrideConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Video = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +77,12 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         }
 
 
-        private static OverrideConfigurationUnmarshaller _instance = new OverrideConfigurationUnmarshaller();        
+        private static ModalityProcessingConfigurationUnmarshaller _instance = new ModalityProcessingConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OverrideConfigurationUnmarshaller Instance
+        public static ModalityProcessingConfigurationUnmarshaller Instance
         {
             get
             {

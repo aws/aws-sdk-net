@@ -30,12 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockDataAutomation.Model
 {
     /// <summary>
-    /// Override Configuration of Document
+    /// Override Configuration of Audio
     /// </summary>
-    public partial class DocumentOverrideConfiguration
+    public partial class AudioOverrideConfiguration
     {
         private ModalityProcessingConfiguration _modalityProcessing;
-        private SplitterConfiguration _splitter;
 
         /// <summary>
         /// Gets and sets the property ModalityProcessing.
@@ -50,21 +49,6 @@ namespace Amazon.BedrockDataAutomation.Model
         internal bool IsSetModalityProcessing()
         {
             return this._modalityProcessing != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Splitter.
-        /// </summary>
-        public SplitterConfiguration Splitter
-        {
-            get { return this._splitter; }
-            set { this._splitter = value; }
-        }
-
-        // Check to see if Splitter property is set
-        internal bool IsSetSplitter()
-        {
-            return this._splitter != null;
         }
 
     }
