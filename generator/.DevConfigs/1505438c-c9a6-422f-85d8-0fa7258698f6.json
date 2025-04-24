@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Update HttpRequestMessageFactory to correctly set the Content-Length header"
-    ],
-    "type": "patch",
-    "updateMinimum": true
-  }
-}

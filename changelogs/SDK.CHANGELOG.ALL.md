@@ -1,3 +1,24 @@
+### 3.7.1030.0 (2025-04-24 21:38 UTC)
+* AppRunner (3.7.401.0)
+	* AWS App Runner adds Node.js 22 runtime.
+* AppSync (3.7.408.0)
+	* Add data source support to Event APIs
+* BedrockDataAutomation (3.7.402.0)
+	* Added support for modality routing and modality enablement on CreateDataAutomationProject and UpdateDataAutomationProject APIs
+* CodeBuild (3.7.418.0)
+	* Remove redundant validation check.
+* DynamoDBv2 (3.7.407.0)
+	* Add support for ARN-sourced account endpoint generation for TransactWriteItems. This will generate account endpoints for DynamoDB TransactWriteItems requests using ARN-sourced account ID when available.
+* ECS (3.7.410.1)
+	* Documentation only release for Amazon ECS
+* PCS (3.7.402.6)
+	* Documentation-only update: added valid values for the version property of the Scheduler and SchedulerRequest data types.
+* RDS (3.7.411.0)
+	* This Amazon RDS release adds support for managed master user passwords for Oracle CDBs.
+* Core 3.7.402.45
+	* Update HttpRequestMessageFactory to correctly set the Content-Length header
+	* All services packages updated to require new Core
+
 ### 3.7.1029.0 (2025-04-23 18:17 UTC)
 * CodeBuild (3.7.417.0)
 	* Add support for custom instance type for reserved capacity fleets
