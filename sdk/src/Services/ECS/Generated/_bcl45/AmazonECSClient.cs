@@ -5766,6 +5766,25 @@ namespace Amazon.ECS
         /// an accurate response. Apply an exponential backoff algorithm starting with a couple
         /// of seconds of wait time, and increase gradually up to about five minutes of wait time.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you get a <c>ConflictException</c> error, the <c>RunTask</c> request could not
+        /// be processed due to conflicts. The provided <c>clientToken</c> is already in use with
+        /// a different <c>RunTask</c> request. The <c>resourceIds</c> are the existing task ARNs
+        /// which are already associated with the <c>clientToken</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To fix this issue:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Run <c>RunTask</c> with a unique <c>clientToken</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Run <c>RunTask</c> with the <c>clientToken</c> and the original set of parameters
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RunTask service method.</param>
@@ -5801,24 +5820,8 @@ namespace Amazon.ECS
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ConflictException">
-        /// The <c>RunTask</c> request could not be processed due to conflicts. The provided <c>clientToken</c>
-        /// is already in use with a different <c>RunTask</c> request. The <c>resourceIds</c>
-        /// are the existing task ARNs which are already associated with the <c>clientToken</c>.
-        /// 
-        /// 
-        ///  
-        /// <para>
-        /// To fix this issue:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Run <c>RunTask</c> with a unique <c>clientToken</c>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Run <c>RunTask</c> with the <c>clientToken</c> and the original set of parameters
-        /// </para>
-        ///  </li> </ul>
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -5910,6 +5913,25 @@ namespace Amazon.ECS
         /// an accurate response. Apply an exponential backoff algorithm starting with a couple
         /// of seconds of wait time, and increase gradually up to about five minutes of wait time.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you get a <c>ConflictException</c> error, the <c>RunTask</c> request could not
+        /// be processed due to conflicts. The provided <c>clientToken</c> is already in use with
+        /// a different <c>RunTask</c> request. The <c>resourceIds</c> are the existing task ARNs
+        /// which are already associated with the <c>clientToken</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To fix this issue:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Run <c>RunTask</c> with a unique <c>clientToken</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Run <c>RunTask</c> with the <c>clientToken</c> and the original set of parameters
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RunTask service method.</param>
@@ -5948,24 +5970,8 @@ namespace Amazon.ECS
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ConflictException">
-        /// The <c>RunTask</c> request could not be processed due to conflicts. The provided <c>clientToken</c>
-        /// is already in use with a different <c>RunTask</c> request. The <c>resourceIds</c>
-        /// are the existing task ARNs which are already associated with the <c>clientToken</c>.
-        /// 
-        /// 
-        ///  
-        /// <para>
-        /// To fix this issue:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Run <c>RunTask</c> with a unique <c>clientToken</c>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Run <c>RunTask</c> with the <c>clientToken</c> and the original set of parameters
-        /// </para>
-        ///  </li> </ul>
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -6170,26 +6176,11 @@ namespace Amazon.ECS
         /// <summary>
         /// Stops an ongoing service deployment.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// The following stop types are avaiable:
+        /// StopServiceDeployment isn't currently supported.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// ROLLBACK - This option rolls back the service deployment to the previous service revision.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use this option even if you didn't configure the service deployment for the
-        /// rollback option. 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/stop-service-deployment.html">Stopping
-        /// Amazon ECS service deployments</a> in the <i>Amazon Elastic Container Service Developer
-        /// Guide</i>.
-        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopServiceDeployment service method.</param>
         /// 
@@ -6216,24 +6207,8 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ConflictException">
-        /// The <c>RunTask</c> request could not be processed due to conflicts. The provided <c>clientToken</c>
-        /// is already in use with a different <c>RunTask</c> request. The <c>resourceIds</c>
-        /// are the existing task ARNs which are already associated with the <c>clientToken</c>.
-        /// 
-        /// 
-        ///  
-        /// <para>
-        /// To fix this issue:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Run <c>RunTask</c> with a unique <c>clientToken</c>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Run <c>RunTask</c> with the <c>clientToken</c> and the original set of parameters
-        /// </para>
-        ///  </li> </ul>
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -6269,26 +6244,11 @@ namespace Amazon.ECS
         /// <summary>
         /// Stops an ongoing service deployment.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// The following stop types are avaiable:
+        /// StopServiceDeployment isn't currently supported.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// ROLLBACK - This option rolls back the service deployment to the previous service revision.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use this option even if you didn't configure the service deployment for the
-        /// rollback option. 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/stop-service-deployment.html">Stopping
-        /// Amazon ECS service deployments</a> in the <i>Amazon Elastic Container Service Developer
-        /// Guide</i>.
-        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopServiceDeployment service method.</param>
         /// <param name="cancellationToken">
@@ -6318,24 +6278,8 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ConflictException">
-        /// The <c>RunTask</c> request could not be processed due to conflicts. The provided <c>clientToken</c>
-        /// is already in use with a different <c>RunTask</c> request. The <c>resourceIds</c>
-        /// are the existing task ARNs which are already associated with the <c>clientToken</c>.
-        /// 
-        /// 
-        ///  
-        /// <para>
-        /// To fix this issue:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Run <c>RunTask</c> with a unique <c>clientToken</c>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Run <c>RunTask</c> with the <c>clientToken</c> and the original set of parameters
-        /// </para>
-        ///  </li> </ul>
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
