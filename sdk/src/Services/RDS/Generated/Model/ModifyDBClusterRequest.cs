@@ -226,7 +226,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically
+        /// upgrading the minor engine version</a>.
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade

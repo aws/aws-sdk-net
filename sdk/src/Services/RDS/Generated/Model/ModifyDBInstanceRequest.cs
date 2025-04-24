@@ -266,6 +266,11 @@ namespace Amazon.RDS.Model
         /// For an RDS Custom DB instance, don't enable this setting. Otherwise, the operation
         /// returns an error.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically
+        /// upgrading the minor engine version</a>.
+        /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
         {
@@ -1410,6 +1415,16 @@ namespace Amazon.RDS.Model
         /// Can't manage the master user password with Amazon Web Services Secrets Manager if
         /// <c>MasterUserPassword</c> is specified.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't specify for RDS for Oracle CDB instances in the multi-tenant configuration.
+        /// Use <c>ModifyTenantDatabase</c> instead.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't specify the parameters <c>ManageMasterUserPassword</c> and <c>MultiTenant</c>
+        /// in the same operation.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public bool ManageMasterUserPassword
@@ -1448,12 +1463,24 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon Aurora (The password for the master user is managed by the DB cluster. For
-        /// more information, see <c>ModifyDBCluster</c>.)
+        /// Amazon Aurora
+        /// </para>
+        ///  
+        /// <para>
+        /// The password for the master user is managed by the DB cluster. For more information,
+        /// see <c>ModifyDBCluster</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// RDS Custom
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RDS for Oracle CDBs in the multi-tenant configuration
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify the master password in <c>ModifyTenantDatabase</c> instead.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2215,7 +2242,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// This setting is valid only if the master user password is managed by RDS in Amazon
-        /// Web Services Secrets Manager for the DB cluster. The secret value contains the updated
+        /// Web Services Secrets Manager for the DB instance. The secret value contains the updated
         /// password.
         /// </para>
         ///  

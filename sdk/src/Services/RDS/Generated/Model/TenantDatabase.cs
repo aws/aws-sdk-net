@@ -40,6 +40,7 @@ namespace Amazon.RDS.Model
         private string _dbiResourceId;
         private bool? _deletionProtection;
         private string _masterUsername;
+        private MasterUserSecret _masterUserSecret;
         private string _ncharCharacterSetName;
         private TenantDatabasePendingModifiedValues _pendingModifiedValues;
         private string _status;
@@ -137,6 +138,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetMasterUsername()
         {
             return this._masterUsername != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MasterUserSecret.
+        /// </summary>
+        public MasterUserSecret MasterUserSecret
+        {
+            get { return this._masterUserSecret; }
+            set { this._masterUserSecret = value; }
+        }
+
+        // Check to see if MasterUserSecret property is set
+        internal bool IsSetMasterUserSecret()
+        {
+            return this._masterUserSecret != null;
         }
 
         /// <summary>
