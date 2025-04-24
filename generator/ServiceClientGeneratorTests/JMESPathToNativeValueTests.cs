@@ -148,7 +148,7 @@ namespace ServiceClientGeneratorTests
 
             var nativeValue = ServiceClientGenerator.Utils.JMESPathToNativeValue("listOfUnions[*][string, object.key][]", topShape);
 
-            Assert.Equal("ListOfUnions?.Select(element => new [] { element?.String, element?.Object?.Key })?.SelectMany(element => element)", nativeValue);
+            Assert.Equal("ListOfUnions?.Select(element => new [] { element?.String, element?.Object?.Key })?.SelectMany(element => element).Where(element => element != null)", nativeValue);
         }
 
         [Fact]
