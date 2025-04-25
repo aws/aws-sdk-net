@@ -65,7 +65,7 @@ namespace Amazon.MarketplaceDeployment.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        /// The catalog related to the request. Fixed value: <c>AWS Marketplace</c> 
+        /// The catalog related to the request. Fixed value: <c>AWSMarketplace</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -86,6 +86,12 @@ namespace Amazon.MarketplaceDeployment.Model
         /// <para>
         /// The idempotency token for deployment parameters. A unique identifier for the new version.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This field is not required if you're calling using an AWS SDK. Otherwise, a <c>clientToken</c>
+        /// must be provided with the request.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=32, Max=64)]
         public string ClientToken

@@ -31,6 +31,14 @@ namespace Amazon.MarketplaceDeployment.Model
 {
     /// <summary>
     /// The shape containing the requested deployment parameter name and secretString.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// To support AWS CloudFormation dynamic references to this resource using Quick Launch,
+    /// this value must match a parameter defined in the CloudFormation templated provided
+    /// to buyers.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeploymentParameterInput
     {
