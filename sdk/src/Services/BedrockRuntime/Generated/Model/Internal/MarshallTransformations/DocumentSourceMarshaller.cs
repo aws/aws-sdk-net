@@ -54,6 +54,17 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 context.Writer.Write(StringUtils.FromMemoryStream(requestObject.Bytes));
             }
 
+            if(requestObject.IsSetS3Location())
+            {
+                context.Writer.WritePropertyName("s3Location");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3LocationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3Location, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
