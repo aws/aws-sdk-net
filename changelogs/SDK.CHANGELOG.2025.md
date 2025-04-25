@@ -1,3 +1,14 @@
+### 3.7.1031.0 (2025-04-25 18:20 UTC)
+* BedrockRuntime (3.7.419.0)
+	* You can now reference images and documents stored in Amazon S3 when using InvokeModel and Converse APIs with Amazon Nova Lite and Nova Pro. This enables direct integration of S3-stored multimedia assets in your model requests without manual downloading or base64 encoding.
+* ECS (3.7.410.2)
+	* Documentation only release for Amazon ECS.
+* MarketplaceDeployment (3.7.400.140)
+	* Doc only update for the AWS Marketplace Deployment Service that fixes several customer-reported issues.
+* Core 3.7.402.46
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1030.0 (2025-04-24 21:38 UTC)
 * AppRunner (3.7.401.0)
 	* AWS App Runner adds Node.js 22 runtime.
