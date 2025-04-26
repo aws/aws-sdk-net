@@ -1,9 +1,0 @@
-{
-    "core": {
-        "changeLogMessages": [
-            "Remove unused internal legacy .NET Framework 3.5 code."
-        ],
-		"type": "Patch",
-        "updateMinimum": true
-    }
-}

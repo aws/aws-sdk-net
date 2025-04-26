@@ -1,9 +1,0 @@
-{
-    "core": {
-      "changeLogMessages": [
-        "[Breaking Change] Allow source_profile to be used in conjunction with sso_session. If the profile specified via source_profile has sso_session, and the sso_session section is correctly configured, credentials will be retrieved from sso. The sso credentials will then be used to assume the role specified in the original profile. Previous behavior was that it assumed the role specified in source_profile, which does not follow the assume role profile chaining pattern."
-      ],
-      "type": "patch",
-      "updateMinimum": true
-    }
-  }

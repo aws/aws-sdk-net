@@ -1,9 +1,24 @@
 {
     "core": {
         "updateMinimum": true,
-        "type": "Patch",
         "changeLogMessages": [
-            "Update SDK to respect `Profile` property set in the client config when resolving credentials."
+            "Update SDK to respect `Profile` property set in the client config when resolving credentials.",
+            "fix: User-Agent header is growing when reusing the request object",
+            "Add observability feature IDs to User Agent header",
+            "Remove unused internal legacy .NET Framework 3.5 code.",
+            "Update documentation for the `AWSConfigs.InitializeCollections` property to specify the correct default value for V4 (and how to restore the V3 behavior)",
+            "[Breaking Change] Allow source_profile to be used in conjunction with sso_session. If the profile specified via source_profile has sso_session, and the sso_session section is correctly configured, credentials will be retrieved from sso. The sso credentials will then be used to assume the role specified in the original profile. Previous behavior was that it assumed the role specified in source_profile, which does not follow the assume role profile chaining pattern."
         ]
-    }
+    },
+    "services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "patch",
+            "changeLogMessages": [
+                "Update paginators to handle scenarios where the token is a collection (that's null by default in V4)",
+                "Fixed trim warnings in Object Persistence high level library introduced by PR adding polymorphic support."
+            ]
+        }
+    ],
+    "overrideVersion": "4.0.0.0"
 }
