@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the kinesis-video-archived-media-2017-09-30.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisVideoArchivedMedia.Model
@@ -29,11 +30,21 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Paginator for GetImages operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetImagesPaginator GetImages(GetImagesRequest request);
 
         /// <summary>
         /// Paginator for ListFragments operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFragmentsPaginator ListFragments(ListFragmentsRequest request);
     }
 }

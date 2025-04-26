@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the voice-id-2021-09-27.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VoiceID.Model
@@ -29,31 +30,61 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Paginator for ListDomains operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDomainsPaginator ListDomains(ListDomainsRequest request);
 
         /// <summary>
         /// Paginator for ListFraudsterRegistrationJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFraudsterRegistrationJobsPaginator ListFraudsterRegistrationJobs(ListFraudsterRegistrationJobsRequest request);
 
         /// <summary>
         /// Paginator for ListFraudsters operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFraudstersPaginator ListFraudsters(ListFraudstersRequest request);
 
         /// <summary>
         /// Paginator for ListSpeakerEnrollmentJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSpeakerEnrollmentJobsPaginator ListSpeakerEnrollmentJobs(ListSpeakerEnrollmentJobsRequest request);
 
         /// <summary>
         /// Paginator for ListSpeakers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSpeakersPaginator ListSpeakers(ListSpeakersRequest request);
 
         /// <summary>
         /// Paginator for ListWatchlists operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWatchlistsPaginator ListWatchlists(ListWatchlistsRequest request);
     }
 }

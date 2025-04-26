@@ -3199,6 +3199,110 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type CmafTimedMetadataId3Frame.
+    /// </summary>
+    public class CmafTimedMetadataId3Frame : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for CmafTimedMetadataId3Frame
+        /// </summary>
+        public static readonly CmafTimedMetadataId3Frame NONE = new CmafTimedMetadataId3Frame("NONE");
+        /// <summary>
+        /// Constant PRIV for CmafTimedMetadataId3Frame
+        /// </summary>
+        public static readonly CmafTimedMetadataId3Frame PRIV = new CmafTimedMetadataId3Frame("PRIV");
+        /// <summary>
+        /// Constant TDRL for CmafTimedMetadataId3Frame
+        /// </summary>
+        public static readonly CmafTimedMetadataId3Frame TDRL = new CmafTimedMetadataId3Frame("TDRL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafTimedMetadataId3Frame(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafTimedMetadataId3Frame FindValue(string value)
+        {
+            return FindValue<CmafTimedMetadataId3Frame>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafTimedMetadataId3Frame(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CmafTimedMetadataPassthrough.
+    /// </summary>
+    public class CmafTimedMetadataPassthrough : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CmafTimedMetadataPassthrough
+        /// </summary>
+        public static readonly CmafTimedMetadataPassthrough DISABLED = new CmafTimedMetadataPassthrough("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for CmafTimedMetadataPassthrough
+        /// </summary>
+        public static readonly CmafTimedMetadataPassthrough ENABLED = new CmafTimedMetadataPassthrough("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafTimedMetadataPassthrough(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafTimedMetadataPassthrough FindValue(string value)
+        {
+            return FindValue<CmafTimedMetadataPassthrough>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafTimedMetadataPassthrough(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ColorSpace.
     /// </summary>
     public class ColorSpace : ConstantClass

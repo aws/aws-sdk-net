@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the wisdom-2020-10-19.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectWisdomService.Model
@@ -29,51 +30,101 @@ namespace Amazon.ConnectWisdomService.Model
         /// <summary>
         /// Paginator for ListAssistantAssociations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAssistantAssociationsPaginator ListAssistantAssociations(ListAssistantAssociationsRequest request);
 
         /// <summary>
         /// Paginator for ListAssistants operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAssistantsPaginator ListAssistants(ListAssistantsRequest request);
 
         /// <summary>
         /// Paginator for ListContents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListContentsPaginator ListContents(ListContentsRequest request);
 
         /// <summary>
         /// Paginator for ListImportJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListImportJobsPaginator ListImportJobs(ListImportJobsRequest request);
 
         /// <summary>
         /// Paginator for ListKnowledgeBases operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListKnowledgeBasesPaginator ListKnowledgeBases(ListKnowledgeBasesRequest request);
 
         /// <summary>
         /// Paginator for ListQuickResponses operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListQuickResponsesPaginator ListQuickResponses(ListQuickResponsesRequest request);
 
         /// <summary>
         /// Paginator for QueryAssistant operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IQueryAssistantPaginator QueryAssistant(QueryAssistantRequest request);
 
         /// <summary>
         /// Paginator for SearchContent operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         ISearchContentPaginator SearchContent(SearchContentRequest request);
 
         /// <summary>
         /// Paginator for SearchQuickResponses operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         ISearchQuickResponsesPaginator SearchQuickResponses(SearchQuickResponsesRequest request);
 
         /// <summary>
         /// Paginator for SearchSessions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         ISearchSessionsPaginator SearchSessions(SearchSessionsRequest request);
     }
 }

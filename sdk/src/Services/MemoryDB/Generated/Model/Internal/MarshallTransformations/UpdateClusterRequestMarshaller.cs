@@ -105,11 +105,31 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.EngineVersion);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetMaintenanceWindow())
             {
                 context.Writer.WritePropertyName("MaintenanceWindow");
                 context.Writer.WriteStringValue(publicRequest.MaintenanceWindow);
             }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetMaintenanceWindow())
+                {
+                    context.Writer.WritePropertyName("MaintenanceWindow");
+                    context.Writer.Write(publicRequest.MaintenanceWindow);
+                }
+=======
+                if(publicRequest.IsSetIpDiscovery())
+                {
+                    context.Writer.WritePropertyName("IpDiscovery");
+                    context.Writer.Write(publicRequest.IpDiscovery);
+                }
+
+                if(publicRequest.IsSetMaintenanceWindow())
+                {
+                    context.Writer.WritePropertyName("MaintenanceWindow");
+                    context.Writer.Write(publicRequest.MaintenanceWindow);
+                }
+>>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
             if(publicRequest.IsSetNodeType())
             {

@@ -100,6 +100,12 @@ namespace Amazon.DynamoDBv2.Model
     /// read. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations">Working
     /// with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    ///  <c>BatchGetItem</c> will result in a <c>ValidationException</c> if the same key is
+    /// specified multiple times.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class BatchGetItemRequest : AmazonDynamoDBRequest
     {

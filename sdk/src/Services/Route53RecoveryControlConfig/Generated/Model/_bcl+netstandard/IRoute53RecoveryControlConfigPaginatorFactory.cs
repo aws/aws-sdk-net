@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the route53-recovery-control-config-2020-11-02.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Route53RecoveryControlConfig.Model
@@ -29,26 +30,51 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// <summary>
         /// Paginator for ListAssociatedRoute53HealthChecks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAssociatedRoute53HealthChecksPaginator ListAssociatedRoute53HealthChecks(ListAssociatedRoute53HealthChecksRequest request);
 
         /// <summary>
         /// Paginator for ListClusters operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListClustersPaginator ListClusters(ListClustersRequest request);
 
         /// <summary>
         /// Paginator for ListControlPanels operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListControlPanelsPaginator ListControlPanels(ListControlPanelsRequest request);
 
         /// <summary>
         /// Paginator for ListRoutingControls operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRoutingControlsPaginator ListRoutingControls(ListRoutingControlsRequest request);
 
         /// <summary>
         /// Paginator for ListSafetyRules operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSafetyRulesPaginator ListSafetyRules(ListSafetyRulesRequest request);
     }
 }

@@ -39,11 +39,31 @@ namespace Amazon.AccessAnalyzer.Model
     /// S3 bucket policy, the access preview assumes an directory bucket without a policy.
     /// To propose deletion of an existing bucket policy, you can specify an empty string.
     /// For more information about Amazon S3 directory bucket policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-example-bucket-policies.html">Example
-    /// directory bucket policies for S3 Express One Zone</a>.
+    /// bucket policies for directory buckets</a> in the Amazon Simple Storage Service User
+    /// Guide.
     /// </summary>
     public partial class S3ExpressDirectoryBucketConfiguration
     {
+        private Dictionary<string, S3ExpressDirectoryAccessPointConfiguration> _accessPoints = AWSConfigs.InitializeCollections ? new Dictionary<string, S3ExpressDirectoryAccessPointConfiguration>() : null;
         private string _bucketPolicy;
+
+        /// <summary>
+        /// Gets and sets the property AccessPoints. 
+        /// <para>
+        /// The proposed access points for the Amazon S3 directory bucket.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, S3ExpressDirectoryAccessPointConfiguration> AccessPoints
+        {
+            get { return this._accessPoints; }
+            set { this._accessPoints = value; }
+        }
+
+        // Check to see if AccessPoints property is set
+        internal bool IsSetAccessPoints()
+        {
+            return this._accessPoints != null && (this._accessPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property BucketPolicy. 

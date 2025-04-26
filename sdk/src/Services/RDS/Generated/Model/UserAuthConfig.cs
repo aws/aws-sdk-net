@@ -64,8 +64,22 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ClientPasswordAuthType. 
         /// <para>
-        /// The type of authentication the proxy uses for connections from clients.
+        /// The type of authentication the proxy uses for connections from clients. The following
+        /// values are defaults for the corresponding engines:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// RDS for MySQL: <c>MYSQL_CACHING_SHA2_PASSWORD</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RDS for SQL Server: <c>SQL_SERVER_AUTHENTICATION</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RDS for PostgreSQL: <c>POSTGRES_SCRAM_SHA2_256</c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ClientPasswordAuthType ClientPasswordAuthType
         {

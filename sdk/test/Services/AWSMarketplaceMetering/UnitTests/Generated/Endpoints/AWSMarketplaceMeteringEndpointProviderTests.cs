@@ -173,7 +173,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonAWSMarketplaceMeteringEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://metering.marketplace.cn-northwest-1.api.amazonwebservices.com.cn", endpoint.URL);
+            Assert.AreEqual("https://metering-marketplace.cn-northwest-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
 
         [TestMethod]
@@ -233,7 +233,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonAWSMarketplaceMeteringEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://metering.marketplace.us-gov-west-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://metering-marketplace.us-gov-west-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]

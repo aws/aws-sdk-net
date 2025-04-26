@@ -72,6 +72,23 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartTime.Value)));
             }
 
+            if(requestObject.IsSetTrafficShapingRetrievalWindow())
+            {
+                context.Writer.WritePropertyName("TrafficShapingRetrievalWindow");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TrafficShapingRetrievalWindowMarshaller.Instance;
+                marshaller.Marshall(requestObject.TrafficShapingRetrievalWindow, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetTrafficShapingType())
+            {
+                context.Writer.WritePropertyName("TrafficShapingType");
+                context.Writer.Write(requestObject.TrafficShapingType);
+            }
+
         }
 
         /// <summary>

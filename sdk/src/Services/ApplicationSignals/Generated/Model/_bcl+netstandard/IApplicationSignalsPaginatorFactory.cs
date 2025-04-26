@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the application-signals-2024-04-15.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationSignals.Model
@@ -29,31 +30,61 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Paginator for ListServiceDependencies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListServiceDependenciesPaginator ListServiceDependencies(ListServiceDependenciesRequest request);
 
         /// <summary>
         /// Paginator for ListServiceDependents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListServiceDependentsPaginator ListServiceDependents(ListServiceDependentsRequest request);
 
         /// <summary>
         /// Paginator for ListServiceLevelObjectiveExclusionWindows operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListServiceLevelObjectiveExclusionWindowsPaginator ListServiceLevelObjectiveExclusionWindows(ListServiceLevelObjectiveExclusionWindowsRequest request);
 
         /// <summary>
         /// Paginator for ListServiceLevelObjectives operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListServiceLevelObjectivesPaginator ListServiceLevelObjectives(ListServiceLevelObjectivesRequest request);
 
         /// <summary>
         /// Paginator for ListServiceOperations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListServiceOperationsPaginator ListServiceOperations(ListServiceOperationsRequest request);
 
         /// <summary>
         /// Paginator for ListServices operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListServicesPaginator ListServices(ListServicesRequest request);
     }
 }

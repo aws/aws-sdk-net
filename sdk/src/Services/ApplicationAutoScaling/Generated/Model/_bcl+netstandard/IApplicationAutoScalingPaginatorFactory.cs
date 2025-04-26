@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the application-autoscaling-2016-02-06.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationAutoScaling.Model
@@ -29,21 +30,41 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Paginator for DescribeScalableTargets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeScalableTargetsPaginator DescribeScalableTargets(DescribeScalableTargetsRequest request);
 
         /// <summary>
         /// Paginator for DescribeScalingActivities operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeScalingActivitiesPaginator DescribeScalingActivities(DescribeScalingActivitiesRequest request);
 
         /// <summary>
         /// Paginator for DescribeScalingPolicies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeScalingPoliciesPaginator DescribeScalingPolicies(DescribeScalingPoliciesRequest request);
 
         /// <summary>
         /// Paginator for DescribeScheduledActions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeScheduledActionsPaginator DescribeScheduledActions(DescribeScheduledActionsRequest request);
     }
 }

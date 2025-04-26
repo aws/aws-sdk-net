@@ -43,9 +43,11 @@ namespace Amazon.MemoryDB.Model
         private string _description;
         private string _engine;
         private string _engineVersion;
+        private IpDiscovery _ipDiscovery;
         private string _kmsKeyId;
         private string _maintenanceWindow;
         private string _multiRegionClusterName;
+        private NetworkType _networkType;
         private string _nodeType;
         private int? _numReplicasPerShard;
         private int? _numShards;
@@ -195,6 +197,29 @@ namespace Amazon.MemoryDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpDiscovery. 
+        /// <para>
+        /// The mechanism for discovering IP addresses for the cluster discovery protocol. Valid
+        /// values are 'ipv4' or 'ipv6'. When set to 'ipv4', cluster discovery functions such
+        /// as cluster slots, cluster shards, and cluster nodes return IPv4 addresses for cluster
+        /// nodes. When set to 'ipv6', the cluster discovery functions return IPv6 addresses for
+        /// cluster nodes. The value must be compatible with the NetworkType parameter. If not
+        /// specified, the default is 'ipv4'.
+        /// </para>
+        /// </summary>
+        public IpDiscovery IpDiscovery
+        {
+            get { return this._ipDiscovery; }
+            set { this._ipDiscovery = value; }
+        }
+
+        // Check to see if IpDiscovery property is set
+        internal bool IsSetIpDiscovery()
+        {
+            return this._ipDiscovery != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The ID of the KMS key used to encrypt the cluster.
@@ -284,6 +309,28 @@ namespace Amazon.MemoryDB.Model
         internal bool IsSetMultiRegionClusterName()
         {
             return this._multiRegionClusterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// Specifies the IP address type for the cluster. Valid values are 'ipv4', 'ipv6', or
+        /// 'dual_stack'. When set to 'ipv4', the cluster will only be accessible via IPv4 addresses.
+        /// When set to 'ipv6', the cluster will only be accessible via IPv6 addresses. When set
+        /// to 'dual_stack', the cluster will be accessible via both IPv4 and IPv6 addresses.
+        /// If not specified, the default is 'ipv4'.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

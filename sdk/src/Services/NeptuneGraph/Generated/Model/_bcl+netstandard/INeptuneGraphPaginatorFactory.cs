@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the neptune-graph-2023-11-29.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NeptuneGraph.Model
@@ -29,26 +30,51 @@ namespace Amazon.NeptuneGraph.Model
         /// <summary>
         /// Paginator for ListExportTasks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListExportTasksPaginator ListExportTasks(ListExportTasksRequest request);
 
         /// <summary>
         /// Paginator for ListGraphs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListGraphsPaginator ListGraphs(ListGraphsRequest request);
 
         /// <summary>
         /// Paginator for ListGraphSnapshots operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListGraphSnapshotsPaginator ListGraphSnapshots(ListGraphSnapshotsRequest request);
 
         /// <summary>
         /// Paginator for ListImportTasks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListImportTasksPaginator ListImportTasks(ListImportTasksRequest request);
 
         /// <summary>
         /// Paginator for ListPrivateGraphEndpoints operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPrivateGraphEndpointsPaginator ListPrivateGraphEndpoints(ListPrivateGraphEndpointsRequest request);
     }
 }

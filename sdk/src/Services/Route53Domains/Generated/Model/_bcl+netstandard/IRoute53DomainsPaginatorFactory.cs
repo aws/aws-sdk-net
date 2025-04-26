@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the route53domains-2014-05-15.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Route53Domains.Model
@@ -29,21 +30,41 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Paginator for ListDomains operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextPageMarker" }
+        )]
         IListDomainsPaginator ListDomains(ListDomainsRequest request);
 
         /// <summary>
         /// Paginator for ListOperations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextPageMarker" }
+        )]
         IListOperationsPaginator ListOperations(ListOperationsRequest request);
 
         /// <summary>
         /// Paginator for ListPrices operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextPageMarker" }
+        )]
         IListPricesPaginator ListPrices(ListPricesRequest request);
 
         /// <summary>
         /// Paginator for ViewBilling operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextPageMarker" }
+        )]
         IViewBillingPaginator ViewBilling(ViewBillingRequest request);
     }
 }

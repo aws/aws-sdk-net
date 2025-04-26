@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the ebs-2019-11-02.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EBS.Model
@@ -29,11 +30,21 @@ namespace Amazon.EBS.Model
         /// <summary>
         /// Paginator for ListChangedBlocks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListChangedBlocksPaginator ListChangedBlocks(ListChangedBlocksRequest request);
 
         /// <summary>
         /// Paginator for ListSnapshotBlocks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSnapshotBlocksPaginator ListSnapshotBlocks(ListSnapshotBlocksRequest request);
     }
 }

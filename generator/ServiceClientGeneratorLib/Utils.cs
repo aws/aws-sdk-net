@@ -224,7 +224,7 @@ namespace ServiceClientGenerator
             {
                 if (mainPathBuilder.Length > 0)
                 {
-                    mainPathBuilder.Append('.');
+                    mainPathBuilder.Append("?.");
                 }
 
                 var nestedMember = originalNestedMember;
@@ -252,7 +252,7 @@ namespace ServiceClientGenerator
                 if (nestedMember == "[]")
                 {
                     // Flatten the nested lists into a single list using LINQ SelectMany
-                    mainPathBuilder.Append($"SelectMany(element => element)");
+                    mainPathBuilder.Append($"SelectMany(element => element).Where(element => element != null)");
                     continue;
                 }
 
@@ -271,8 +271,8 @@ namespace ServiceClientGenerator
                     var multiSelectExpressions = SplitMultiSelectExpression(nestedMember.Substring(1, nestedMember.Length - 2));
 
                     // Skip element. since we will create an array rather than selecting a property of the element
-                    if (mainPathBuilder.ToString().EndsWith("element."))
-                        mainPathBuilder.Length -= "element.".Length;
+                    if (mainPathBuilder.ToString().EndsWith("element?."))
+                        mainPathBuilder.Length -= "element?.".Length;
 
                     mainPathBuilder.Append("new [] { ");
                     for (int i = 0; i < multiSelectExpressions.Count; i++)
@@ -281,7 +281,7 @@ namespace ServiceClientGenerator
                         var expressionValue = JMESPathToNativeValue(expr, currentShape);
 
                         // Append the expression as part of the new anonymous object
-                        mainPathBuilder.Append($"element.{expressionValue}");
+                        mainPathBuilder.Append($"element?.{expressionValue}");
 
                         if (i < multiSelectExpressions.Count - 1)
                         {
@@ -309,7 +309,7 @@ namespace ServiceClientGenerator
 
                 if (mapMatch.Success)
                 {
-                    mainPathBuilder.Append(".Keys.ToList()");
+                    mainPathBuilder.Append("?.Keys.ToList()");
                 }
 
                 currentShape = currentMember.Shape;

@@ -81,8 +81,115 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetClientToken())
             {
+<<<<<<< HEAD
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(publicRequest.ClientToken);
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
+                }
+
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
+                if(publicRequest.IsSetConversationContext())
+                {
+                    context.Writer.WritePropertyName("conversationContext");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ConversationContextMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ConversationContext, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetMessage())
+                {
+                    context.Writer.WritePropertyName("message");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MessageInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Message, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetType())
+                {
+                    context.Writer.WritePropertyName("type");
+                    context.Writer.Write(publicRequest.Type);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
+                }
+
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
+                if(publicRequest.IsSetConfiguration())
+                {
+                    context.Writer.WritePropertyName("configuration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MessageConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Configuration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetConversationContext())
+                {
+                    context.Writer.WritePropertyName("conversationContext");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ConversationContextMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ConversationContext, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetMessage())
+                {
+                    context.Writer.WritePropertyName("message");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MessageInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Message, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetType())
+                {
+                    context.Writer.WritePropertyName("type");
+                    context.Writer.Write(publicRequest.Type);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
             }
 
             else if(!(publicRequest.IsSetClientToken()))

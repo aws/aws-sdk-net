@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
-    /// Information about an Amazon Web Service.
+    /// Information about an Amazon Web Services service.
     /// </summary>
     public partial class ServiceInfo
     {

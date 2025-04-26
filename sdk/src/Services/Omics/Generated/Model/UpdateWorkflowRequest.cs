@@ -31,13 +31,16 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateWorkflow operation.
-    /// Updates a workflow.
+    /// Updates information about a workflow. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/update-private-workflow.html">Update
+    /// a private workflow</a> in the Amazon Web Services HealthOmics User Guide.
     /// </summary>
     public partial class UpdateWorkflowRequest : AmazonOmicsRequest
     {
         private string _description;
         private string _id;
         private string _name;
+        private int? _storageCapacity;
+        private StorageType _storageType;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -94,6 +97,49 @@ namespace Amazon.Omics.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageCapacity. 
+        /// <para>
+        /// The default static storage capacity (in gibibytes) for runs that use this workflow
+        /// or workflow version. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100000)]
+        public int StorageCapacity
+        {
+            get { return this._storageCapacity.GetValueOrDefault(); }
+            set { this._storageCapacity = value; }
+        }
+
+        // Check to see if StorageCapacity property is set
+        internal bool IsSetStorageCapacity()
+        {
+            return this._storageCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// The default storage type for runs that use this workflow. STATIC storage allocates
+        /// a fixed amount of storage. DYNAMIC storage dynamically scales the storage up or down,
+        /// based on file system utilization. For more information about static and dynamic storage,
+        /// see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running
+        /// workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public StorageType StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
         }
 
     }

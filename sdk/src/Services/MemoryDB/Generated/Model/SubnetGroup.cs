@@ -52,6 +52,7 @@ namespace Amazon.MemoryDB.Model
         private string _description;
         private string _name;
         private List<Subnet> _subnets = AWSConfigs.InitializeCollections ? new List<Subnet>() : null;
+        private List<string> _supportedNetworkTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -124,6 +125,26 @@ namespace Amazon.MemoryDB.Model
         internal bool IsSetSubnets()
         {
             return this._subnets != null && (this._subnets.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedNetworkTypes. 
+        /// <para>
+        /// The network types supported by this subnet group. Returns an array of strings that
+        /// can include 'ipv4', 'ipv6', or both, indicating the IP address types that can be used
+        /// for clusters deployed in this subnet group.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedNetworkTypes
+        {
+            get { return this._supportedNetworkTypes; }
+            set { this._supportedNetworkTypes = value; }
+        }
+
+        // Check to see if SupportedNetworkTypes property is set
+        internal bool IsSetSupportedNetworkTypes()
+        {
+            return this._supportedNetworkTypes != null && (this._supportedNetworkTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

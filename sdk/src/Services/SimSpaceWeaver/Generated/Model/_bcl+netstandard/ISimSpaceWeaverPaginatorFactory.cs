@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the simspaceweaver-2022-10-28.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimSpaceWeaver.Model
@@ -29,11 +30,21 @@ namespace Amazon.SimSpaceWeaver.Model
         /// <summary>
         /// Paginator for ListApps operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAppsPaginator ListApps(ListAppsRequest request);
 
         /// <summary>
         /// Paginator for ListSimulations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSimulationsPaginator ListSimulations(ListSimulationsRequest request);
     }
 }

@@ -43,6 +43,7 @@ namespace Amazon.TaxSettings.Model
         private GeorgiaAdditionalInfo _georgiaAdditionalInfo;
         private GreeceAdditionalInfo _greeceAdditionalInfo;
         private IndiaAdditionalInfo _indiaAdditionalInfo;
+        private IndonesiaAdditionalInfo _indonesiaAdditionalInfo;
         private IsraelAdditionalInfo _israelAdditionalInfo;
         private ItalyAdditionalInfo _italyAdditionalInfo;
         private KenyaAdditionalInfo _kenyaAdditionalInfo;
@@ -183,6 +184,24 @@ namespace Amazon.TaxSettings.Model
         internal bool IsSetIndiaAdditionalInfo()
         {
             return this._indiaAdditionalInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IndonesiaAdditionalInfo. 
+        /// <para>
+        /// Additional tax information associated with your TRN in Indonesia.
+        /// </para>
+        /// </summary>
+        public IndonesiaAdditionalInfo IndonesiaAdditionalInfo
+        {
+            get { return this._indonesiaAdditionalInfo; }
+            set { this._indonesiaAdditionalInfo = value; }
+        }
+
+        // Check to see if IndonesiaAdditionalInfo property is set
+        internal bool IsSetIndonesiaAdditionalInfo()
+        {
+            return this._indonesiaAdditionalInfo != null;
         }
 
         /// <summary>

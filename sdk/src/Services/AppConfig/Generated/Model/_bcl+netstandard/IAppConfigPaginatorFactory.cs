@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the appconfig-2019-10-09.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppConfig.Model
@@ -29,41 +30,81 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Paginator for ListApplications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
 
         /// <summary>
         /// Paginator for ListConfigurationProfiles operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListConfigurationProfilesPaginator ListConfigurationProfiles(ListConfigurationProfilesRequest request);
 
         /// <summary>
         /// Paginator for ListDeployments operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDeploymentsPaginator ListDeployments(ListDeploymentsRequest request);
 
         /// <summary>
         /// Paginator for ListDeploymentStrategies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDeploymentStrategiesPaginator ListDeploymentStrategies(ListDeploymentStrategiesRequest request);
 
         /// <summary>
         /// Paginator for ListEnvironments operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEnvironmentsPaginator ListEnvironments(ListEnvironmentsRequest request);
 
         /// <summary>
         /// Paginator for ListExtensionAssociations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListExtensionAssociationsPaginator ListExtensionAssociations(ListExtensionAssociationsRequest request);
 
         /// <summary>
         /// Paginator for ListExtensions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListExtensionsPaginator ListExtensions(ListExtensionsRequest request);
 
         /// <summary>
         /// Paginator for ListHostedConfigurationVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListHostedConfigurationVersionsPaginator ListHostedConfigurationVersions(ListHostedConfigurationVersionsRequest request);
     }
 }

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the transcribe-2017-10-26.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeService.Model
@@ -29,46 +30,91 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Paginator for ListCallAnalyticsCategories operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCallAnalyticsCategoriesPaginator ListCallAnalyticsCategories(ListCallAnalyticsCategoriesRequest request);
 
         /// <summary>
         /// Paginator for ListCallAnalyticsJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCallAnalyticsJobsPaginator ListCallAnalyticsJobs(ListCallAnalyticsJobsRequest request);
 
         /// <summary>
         /// Paginator for ListLanguageModels operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLanguageModelsPaginator ListLanguageModels(ListLanguageModelsRequest request);
 
         /// <summary>
         /// Paginator for ListMedicalScribeJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMedicalScribeJobsPaginator ListMedicalScribeJobs(ListMedicalScribeJobsRequest request);
 
         /// <summary>
         /// Paginator for ListMedicalTranscriptionJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMedicalTranscriptionJobsPaginator ListMedicalTranscriptionJobs(ListMedicalTranscriptionJobsRequest request);
 
         /// <summary>
         /// Paginator for ListMedicalVocabularies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMedicalVocabulariesPaginator ListMedicalVocabularies(ListMedicalVocabulariesRequest request);
 
         /// <summary>
         /// Paginator for ListTranscriptionJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTranscriptionJobsPaginator ListTranscriptionJobs(ListTranscriptionJobsRequest request);
 
         /// <summary>
         /// Paginator for ListVocabularies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListVocabulariesPaginator ListVocabularies(ListVocabulariesRequest request);
 
         /// <summary>
         /// Paginator for ListVocabularyFilters operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListVocabularyFiltersPaginator ListVocabularyFilters(ListVocabularyFiltersRequest request);
     }
 }

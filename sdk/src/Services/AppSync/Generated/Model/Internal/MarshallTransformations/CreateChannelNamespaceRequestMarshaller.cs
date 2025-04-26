@@ -82,11 +82,36 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CodeHandlers);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+=======
+                if(publicRequest.IsSetHandlerConfigs())
+                {
+                    context.Writer.WritePropertyName("handlerConfigs");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = HandlerConfigsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.HandlerConfigs, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+>>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
             if(publicRequest.IsSetPublishAuthModes())
             {

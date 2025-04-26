@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the states-2016-11-23.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.StepFunctions.Model
@@ -29,26 +30,51 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Paginator for GetExecutionHistory operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetExecutionHistoryPaginator GetExecutionHistory(GetExecutionHistoryRequest request);
 
         /// <summary>
         /// Paginator for ListActivities operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListActivitiesPaginator ListActivities(ListActivitiesRequest request);
 
         /// <summary>
         /// Paginator for ListExecutions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListExecutionsPaginator ListExecutions(ListExecutionsRequest request);
 
         /// <summary>
         /// Paginator for ListMapRuns operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMapRunsPaginator ListMapRuns(ListMapRunsRequest request);
 
         /// <summary>
         /// Paginator for ListStateMachines operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListStateMachinesPaginator ListStateMachines(ListStateMachinesRequest request);
     }
 }

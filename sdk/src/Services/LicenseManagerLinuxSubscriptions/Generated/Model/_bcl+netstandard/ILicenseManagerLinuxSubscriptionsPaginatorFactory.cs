@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the license-manager-linux-subscriptions-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LicenseManagerLinuxSubscriptions.Model
@@ -29,16 +30,31 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model
         /// <summary>
         /// Paginator for ListLinuxSubscriptionInstances operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLinuxSubscriptionInstancesPaginator ListLinuxSubscriptionInstances(ListLinuxSubscriptionInstancesRequest request);
 
         /// <summary>
         /// Paginator for ListLinuxSubscriptions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLinuxSubscriptionsPaginator ListLinuxSubscriptions(ListLinuxSubscriptionsRequest request);
 
         /// <summary>
         /// Paginator for ListRegisteredSubscriptionProviders operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRegisteredSubscriptionProvidersPaginator ListRegisteredSubscriptionProviders(ListRegisteredSubscriptionProvidersRequest request);
     }
 }

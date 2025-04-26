@@ -1890,6 +1890,10 @@ namespace Amazon.VerifiedPermissions
         /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
         /// The request failed because of an internal error. Try your request again later
         /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.InvalidStateException">
+        /// The policy store can't be deleted because deletion protection is enabled. To delete
+        /// this policy store, disable deletion protection.
+        /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.ThrottlingException">
         /// The request failed because it exceeded a throttling quota.
         /// </exception>

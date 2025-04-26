@@ -151,11 +151,23 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.StorageCapacity.Value);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
                 context.Writer.WriteStartObject();
                 foreach (var publicRequestTagsKvp in publicRequest.Tags)
+||||||| Commit version number update changes
+                if(publicRequest.IsSetTags())
+=======
+                if(publicRequest.IsSetStorageType())
+                {
+                    context.Writer.WritePropertyName("storageType");
+                    context.Writer.Write(publicRequest.StorageType);
+                }
+
+                if(publicRequest.IsSetTags())
+>>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
                 {
                     context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
                     var publicRequestTagsValue = publicRequestTagsKvp.Value;

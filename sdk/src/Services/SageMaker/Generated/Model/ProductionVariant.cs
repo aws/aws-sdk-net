@@ -201,6 +201,14 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// NVIDIA Container Toolkit with disabled CUDA-compat mounting
         /// </para>
+        ///  </li> </ul> </dd> <dt>al2-ami-sagemaker-inference-neuron-2</dt> <dd> <ul> <li> 
+        /// <para>
+        /// Accelerator: Inferentia2 and Trainium
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Neuron driver version: 2.19
+        /// </para>
         ///  </li> </ul> </dd> </dl>
         /// </summary>
         public ProductionVariantInferenceAmiVersion InferenceAmiVersion

@@ -38,6 +38,7 @@ namespace Amazon.QConnect.Model
         private string _description;
         private SessionIntegrationConfiguration _integrationConfiguration;
         private string _name;
+        private Origin _origin;
         private string _sessionArn;
         private string _sessionId;
         private TagFilter _tagFilter;
@@ -116,6 +117,26 @@ namespace Amazon.QConnect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Origin. 
+        /// <para>
+        /// The origin of the Session to be listed. <c>SYSTEM</c> for a default Session created
+        /// by Amazon Q in Connect or <c>CUSTOMER</c> for a Session created by calling <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_CreateSession.html">CreateSession</a>
+        /// API.
+        /// </para>
+        /// </summary>
+        public Origin Origin
+        {
+            get { return this._origin; }
+            set { this._origin = value; }
+        }
+
+        // Check to see if Origin property is set
+        internal bool IsSetOrigin()
+        {
+            return this._origin != null;
         }
 
         /// <summary>

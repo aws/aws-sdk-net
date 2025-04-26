@@ -65,7 +65,8 @@ namespace Amazon.Account
         /// <exception cref="Amazon.Account.Model.ConflictException">
         /// The request could not be processed because of a conflict in the current status of
         /// the resource. For example, this happens if you try to enable a Region that is currently
-        /// being disabled (in a status of DISABLING).
+        /// being disabled (in a status of DISABLING) or if you try to change an account’s root
+        /// user email to an email address which is already in use.
         /// </exception>
         /// <exception cref="Amazon.Account.Model.InternalServerException">
         /// The operation failed because of an error internal to Amazon Web Services. Try your
@@ -164,7 +165,8 @@ namespace Amazon.Account
         /// <exception cref="Amazon.Account.Model.ConflictException">
         /// The request could not be processed because of a conflict in the current status of
         /// the resource. For example, this happens if you try to enable a Region that is currently
-        /// being disabled (in a status of DISABLING).
+        /// being disabled (in a status of DISABLING) or if you try to change an account’s root
+        /// user email to an email address which is already in use.
         /// </exception>
         /// <exception cref="Amazon.Account.Model.InternalServerException">
         /// The operation failed because of an error internal to Amazon Web Services. Try your
@@ -202,7 +204,8 @@ namespace Amazon.Account
         /// <exception cref="Amazon.Account.Model.ConflictException">
         /// The request could not be processed because of a conflict in the current status of
         /// the resource. For example, this happens if you try to enable a Region that is currently
-        /// being disabled (in a status of DISABLING).
+        /// being disabled (in a status of DISABLING) or if you try to change an account’s root
+        /// user email to an email address which is already in use.
         /// </exception>
         /// <exception cref="Amazon.Account.Model.InternalServerException">
         /// The operation failed because of an error internal to Amazon Web Services. Try your
@@ -217,6 +220,41 @@ namespace Amazon.Account
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/EnableRegion">REST API Reference for EnableRegion Operation</seealso>
         Task<EnableRegionResponse> EnableRegionAsync(EnableRegionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAccountInformation
+
+
+
+        /// <summary>
+        /// Retrieves information about the specified account including its account name, account
+        /// ID, and account creation date and time. To use this API, an IAM user or role must
+        /// have the <c>account:GetAccountInformation</c> IAM permission.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountInformation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccountInformation service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetAccountInformation">REST API Reference for GetAccountInformation Operation</seealso>
+        Task<GetAccountInformationResponse> GetAccountInformationAsync(GetAccountInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -416,6 +454,40 @@ namespace Amazon.Account
 
         #endregion
                 
+        #region  PutAccountName
+
+
+
+        /// <summary>
+        /// Updates the account name of the specified account. To use this API, IAM principals
+        /// must have the <c>account:PutAccountName</c> IAM permission.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountName service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAccountName service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutAccountName">REST API Reference for PutAccountName Operation</seealso>
+        Task<PutAccountNameResponse> PutAccountNameAsync(PutAccountNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  PutAlternateContact
 
 
@@ -523,7 +595,8 @@ namespace Amazon.Account
         /// <exception cref="Amazon.Account.Model.ConflictException">
         /// The request could not be processed because of a conflict in the current status of
         /// the resource. For example, this happens if you try to enable a Region that is currently
-        /// being disabled (in a status of DISABLING).
+        /// being disabled (in a status of DISABLING) or if you try to change an account’s root
+        /// user email to an email address which is already in use.
         /// </exception>
         /// <exception cref="Amazon.Account.Model.InternalServerException">
         /// The operation failed because of an error internal to Amazon Web Services. Try your

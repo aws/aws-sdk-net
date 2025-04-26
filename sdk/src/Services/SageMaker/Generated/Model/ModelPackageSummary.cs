@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     {
         private DateTime? _creationTime;
         private ModelApprovalStatus _modelApprovalStatus;
+        private ModelLifeCycle _modelLifeCycle;
         private string _modelPackageArn;
         private string _modelPackageDescription;
         private string _modelPackageGroupName;
@@ -91,6 +92,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelApprovalStatus()
         {
             return this._modelApprovalStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelLifeCycle.
+        /// </summary>
+        public ModelLifeCycle ModelLifeCycle
+        {
+            get { return this._modelLifeCycle; }
+            set { this._modelLifeCycle = value; }
+        }
+
+        // Check to see if ModelLifeCycle property is set
+        internal bool IsSetModelLifeCycle()
+        {
+            return this._modelLifeCycle != null;
         }
 
         /// <summary>

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the pca-connector-ad-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PcaConnectorAd.Model
@@ -29,26 +30,51 @@ namespace Amazon.PcaConnectorAd.Model
         /// <summary>
         /// Paginator for ListConnectors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListConnectorsPaginator ListConnectors(ListConnectorsRequest request);
 
         /// <summary>
         /// Paginator for ListDirectoryRegistrations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDirectoryRegistrationsPaginator ListDirectoryRegistrations(ListDirectoryRegistrationsRequest request);
 
         /// <summary>
         /// Paginator for ListServicePrincipalNames operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListServicePrincipalNamesPaginator ListServicePrincipalNames(ListServicePrincipalNamesRequest request);
 
         /// <summary>
         /// Paginator for ListTemplateGroupAccessControlEntries operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTemplateGroupAccessControlEntriesPaginator ListTemplateGroupAccessControlEntries(ListTemplateGroupAccessControlEntriesRequest request);
 
         /// <summary>
         /// Paginator for ListTemplates operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTemplatesPaginator ListTemplates(ListTemplatesRequest request);
     }
 }

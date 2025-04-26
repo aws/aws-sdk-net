@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the cloudfront-keyvaluestore-2022-07-26.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFrontKeyValueStore.Model
@@ -29,6 +30,11 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Paginator for ListKeys operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListKeysPaginator ListKeys(ListKeysRequest request);
     }
 }

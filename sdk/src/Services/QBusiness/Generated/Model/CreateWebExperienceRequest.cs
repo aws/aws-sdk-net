@@ -155,11 +155,15 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property Origins. 
         /// <para>
         /// Sets the website domain origins that are allowed to embed the Amazon Q Business web
-        /// experience. <pre><c> The &lt;i&gt;domain origin&lt;/i&gt; refers to the base URL for
-        /// accessing a website including the protocol (&lt;code&gt;http/https&lt;/code&gt;),
-        /// the domain name, and the port number (if specified). &lt;/p&gt; &lt;note&gt; &lt;p&gt;You
-        /// must only submit a &lt;i&gt;base URL&lt;/i&gt; and not a full path. For example, &lt;code&gt;https://docs.aws.amazon.com&lt;/code&gt;.&lt;/p&gt;
-        /// &lt;/note&gt; </c></pre>
+        /// experience. The <i>domain origin</i> refers to the base URL for accessing a website
+        /// including the protocol (<c>http/https</c>), the domain name, and the port number (if
+        /// specified). 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must only submit a <i>base URL</i> and not a full path. For example, <c>https://docs.aws.amazon.com</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
         public List<string> Origins

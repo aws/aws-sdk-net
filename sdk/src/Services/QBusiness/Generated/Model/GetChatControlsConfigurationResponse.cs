@@ -36,6 +36,7 @@ namespace Amazon.QBusiness.Model
     {
         private BlockedPhrasesConfiguration _blockedPhrases;
         private AppliedCreatorModeConfiguration _creatorModeConfiguration;
+        private HallucinationReductionConfiguration _hallucinationReductionConfiguration;
         private string _nextToken;
         private AppliedOrchestrationConfiguration _orchestrationConfiguration;
         private ResponseScope _responseScope;
@@ -75,6 +76,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetCreatorModeConfiguration()
         {
             return this._creatorModeConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HallucinationReductionConfiguration. 
+        /// <para>
+        ///  The hallucination reduction settings for your application.
+        /// </para>
+        /// </summary>
+        public HallucinationReductionConfiguration HallucinationReductionConfiguration
+        {
+            get { return this._hallucinationReductionConfiguration; }
+            set { this._hallucinationReductionConfiguration = value; }
+        }
+
+        // Check to see if HallucinationReductionConfiguration property is set
+        internal bool IsSetHallucinationReductionConfiguration()
+        {
+            return this._hallucinationReductionConfiguration != null;
         }
 
         /// <summary>

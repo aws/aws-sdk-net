@@ -38,8 +38,11 @@ namespace Amazon.RDS.Model
     public partial class ModifyTenantDatabaseRequest : AmazonRDSRequest
     {
         private string _dbInstanceIdentifier;
+        private bool? _manageMasterUserPassword;
         private string _masterUserPassword;
+        private string _masterUserSecretKmsKeyId;
         private string _newTenantDBName;
+        private bool? _rotateMasterUserPassword;
         private string _tenantDBName;
 
         /// <summary>
@@ -69,6 +72,55 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBInstanceIdentifier()
         {
             return this._dbInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManageMasterUserPassword. 
+        /// <para>
+        /// Specifies whether to manage the master user password with Amazon Web Services Secrets
+        /// Manager.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the tenant database doesn't manage the master user password with Amazon Web Services
+        /// Secrets Manager, you can turn on this management. In this case, you can't specify
+        /// <c>MasterUserPassword</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the tenant database already manages the master user password with Amazon Web Services
+        /// Secrets Manager, and you specify that the master user password is not managed with
+        /// Amazon Web Services Secrets Manager, then you must specify <c>MasterUserPassword</c>.
+        /// In this case, Amazon RDS deletes the secret and uses the new password for the master
+        /// user specified by <c>MasterUserPassword</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+        /// management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User
+        /// Guide.</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Can't manage the master user password with Amazon Web Services Secrets Manager if
+        /// <c>MasterUserPassword</c> is specified.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool ManageMasterUserPassword
+        {
+            get { return this._manageMasterUserPassword.GetValueOrDefault(); }
+            set { this._manageMasterUserPassword = value; }
+        }
+
+        // Check to see if ManageMasterUserPassword property is set
+        internal bool IsSetManageMasterUserPassword()
+        {
+            return this._manageMasterUserPassword.HasValue; 
         }
 
         /// <summary>
@@ -115,6 +167,81 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MasterUserSecretKmsKeyId. 
+        /// <para>
+        /// The Amazon Web Services KMS key identifier to encrypt a secret that is automatically
+        /// generated and managed in Amazon Web Services Secrets Manager.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is valid only if both of the following conditions are met:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The tenant database doesn't manage the master user password in Amazon Web Services
+        /// Secrets Manager.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the tenant database already manages the master user password in Amazon Web Services
+        /// Secrets Manager, you can't change the KMS key used to encrypt the secret.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You're turning on <c>ManageMasterUserPassword</c> to manage the master user password
+        /// in Amazon Web Services Secrets Manager.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you're turning on <c>ManageMasterUserPassword</c> and don't specify <c>MasterUserSecretKmsKeyId</c>,
+        /// then the <c>aws/secretsmanager</c> KMS key is used to encrypt the secret. If the secret
+        /// is in a different Amazon Web Services account, then you can't use the <c>aws/secretsmanager</c>
+        /// KMS key to encrypt the secret, and you must use a self-managed KMS key.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The Amazon Web Services KMS key identifier is any of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Key ARN
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Key ID
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias ARN
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias name for the KMS key
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To use a KMS key in a different Amazon Web Services account, specify the key ARN or
+        /// alias ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// A default KMS key exists for your Amazon Web Services account. Your Amazon Web Services
+        /// account has a different default KMS key for each Amazon Web Services Region.
+        /// </para>
+        /// </summary>
+        public string MasterUserSecretKmsKeyId
+        {
+            get { return this._masterUserSecretKmsKeyId; }
+            set { this._masterUserSecretKmsKeyId = value; }
+        }
+
+        // Check to see if MasterUserSecretKmsKeyId property is set
+        internal bool IsSetMasterUserSecretKmsKeyId()
+        {
+            return this._masterUserSecretKmsKeyId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NewTenantDBName. 
         /// <para>
         /// The new name of the tenant database when renaming a tenant database. This parameter
@@ -144,6 +271,46 @@ namespace Amazon.RDS.Model
         internal bool IsSetNewTenantDBName()
         {
             return this._newTenantDBName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RotateMasterUserPassword. 
+        /// <para>
+        /// Specifies whether to rotate the secret managed by Amazon Web Services Secrets Manager
+        /// for the master user password.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is valid only if the master user password is managed by RDS in Amazon
+        /// Web Services Secrets Manager for the DB instance. The secret value contains the updated
+        /// password.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+        /// management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User
+        /// Guide.</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must apply the change immediately when rotating the master user password.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool RotateMasterUserPassword
+        {
+            get { return this._rotateMasterUserPassword.GetValueOrDefault(); }
+            set { this._rotateMasterUserPassword = value; }
+        }
+
+        // Check to see if RotateMasterUserPassword property is set
+        internal bool IsSetRotateMasterUserPassword()
+        {
+            return this._rotateMasterUserPassword.HasValue; 
         }
 
         /// <summary>

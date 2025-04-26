@@ -585,6 +585,60 @@ namespace Amazon.MediaTailor
 
 
     /// <summary>
+    /// Constants used for properties of type ListPrefetchScheduleType.
+    /// </summary>
+    public class ListPrefetchScheduleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ListPrefetchScheduleType
+        /// </summary>
+        public static readonly ListPrefetchScheduleType ALL = new ListPrefetchScheduleType("ALL");
+        /// <summary>
+        /// Constant RECURRING for ListPrefetchScheduleType
+        /// </summary>
+        public static readonly ListPrefetchScheduleType RECURRING = new ListPrefetchScheduleType("RECURRING");
+        /// <summary>
+        /// Constant SINGLE for ListPrefetchScheduleType
+        /// </summary>
+        public static readonly ListPrefetchScheduleType SINGLE = new ListPrefetchScheduleType("SINGLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListPrefetchScheduleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListPrefetchScheduleType FindValue(string value)
+        {
+            return FindValue<ListPrefetchScheduleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListPrefetchScheduleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LoggingStrategy.
     /// </summary>
     public class LoggingStrategy : ConstantClass
@@ -1101,6 +1155,56 @@ namespace Amazon.MediaTailor
 
 
     /// <summary>
+    /// Constants used for properties of type PrefetchScheduleType.
+    /// </summary>
+    public class PrefetchScheduleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RECURRING for PrefetchScheduleType
+        /// </summary>
+        public static readonly PrefetchScheduleType RECURRING = new PrefetchScheduleType("RECURRING");
+        /// <summary>
+        /// Constant SINGLE for PrefetchScheduleType
+        /// </summary>
+        public static readonly PrefetchScheduleType SINGLE = new PrefetchScheduleType("SINGLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PrefetchScheduleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PrefetchScheduleType FindValue(string value)
+        {
+            return FindValue<PrefetchScheduleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PrefetchScheduleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RelativePosition.
     /// </summary>
     public class RelativePosition : ConstantClass
@@ -1298,6 +1402,52 @@ namespace Amazon.MediaTailor
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Tier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrafficShapingType.
+    /// </summary>
+    public class TrafficShapingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RETRIEVAL_WINDOW for TrafficShapingType
+        /// </summary>
+        public static readonly TrafficShapingType RETRIEVAL_WINDOW = new TrafficShapingType("RETRIEVAL_WINDOW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrafficShapingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrafficShapingType FindValue(string value)
+        {
+            return FindValue<TrafficShapingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrafficShapingType(string value)
         {
             return FindValue(value);
         }

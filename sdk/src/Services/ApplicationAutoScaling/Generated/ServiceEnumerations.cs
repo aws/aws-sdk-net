@@ -257,6 +257,14 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly MetricType ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage = new MetricType("ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage");
         /// <summary>
+        /// Constant ElastiCacheDatabaseMemoryUsagePercentage for MetricType
+        /// </summary>
+        public static readonly MetricType ElastiCacheDatabaseMemoryUsagePercentage = new MetricType("ElastiCacheDatabaseMemoryUsagePercentage");
+        /// <summary>
+        /// Constant ElastiCacheEngineCPUUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType ElastiCacheEngineCPUUtilization = new MetricType("ElastiCacheEngineCPUUtilization");
+        /// <summary>
         /// Constant ElastiCachePrimaryEngineCPUUtilization for MetricType
         /// </summary>
         public static readonly MetricType ElastiCachePrimaryEngineCPUUtilization = new MetricType("ElastiCachePrimaryEngineCPUUtilization");
@@ -552,6 +560,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant EcsServiceDesiredCount for ScalableDimension
         /// </summary>
         public static readonly ScalableDimension EcsServiceDesiredCount = new ScalableDimension("ecs:service:DesiredCount");
+        /// <summary>
+        /// Constant ElasticacheCacheClusterNodes for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension ElasticacheCacheClusterNodes = new ScalableDimension("elasticache:cache-cluster:Nodes");
         /// <summary>
         /// Constant ElasticacheReplicationGroupNodeGroups for ScalableDimension
         /// </summary>

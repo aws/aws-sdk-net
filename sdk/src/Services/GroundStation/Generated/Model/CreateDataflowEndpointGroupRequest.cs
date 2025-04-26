@@ -99,8 +99,12 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property EndpointDetails. 
         /// <para>
-        /// Endpoint details of each endpoint in the dataflow endpoint group.
-        /// </para>
+        /// Endpoint details of each endpoint in the dataflow endpoint group. <pre><c> All dataflow
+        /// endpoints within a single dataflow endpoint group must be of the same type. You cannot
+        /// mix &lt;a href=&quot;https://docs.aws.amazon.com/ground-station/latest/APIReference/API_AwsGroundStationAgentEndpoint.html&quot;&gt;
+        /// AWS Ground Station Agent endpoints&lt;/a&gt; with &lt;a href=&quot;https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DataflowEndpoint.html&quot;&gt;Dataflow
+        /// endpoints&lt;/a&gt; in the same group. If your use case requires both types of endpoints,
+        /// you must create separate dataflow endpoint groups for each type. &lt;/p&gt; </c></pre>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=500)]
         public List<EndpointDetails> EndpointDetails

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the b2bi-2022-06-23.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.B2bi.Model
@@ -29,21 +30,41 @@ namespace Amazon.B2bi.Model
         /// <summary>
         /// Paginator for ListCapabilities operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCapabilitiesPaginator ListCapabilities(ListCapabilitiesRequest request);
 
         /// <summary>
         /// Paginator for ListPartnerships operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPartnershipsPaginator ListPartnerships(ListPartnershipsRequest request);
 
         /// <summary>
         /// Paginator for ListProfiles operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProfilesPaginator ListProfiles(ListProfilesRequest request);
 
         /// <summary>
         /// Paginator for ListTransformers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTransformersPaginator ListTransformers(ListTransformersRequest request);
     }
 }

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the security-ir-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityIR.Model
@@ -29,21 +30,41 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Paginator for ListCaseEdits operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCaseEditsPaginator ListCaseEdits(ListCaseEditsRequest request);
 
         /// <summary>
         /// Paginator for ListCases operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCasesPaginator ListCases(ListCasesRequest request);
 
         /// <summary>
         /// Paginator for ListComments operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCommentsPaginator ListComments(ListCommentsRequest request);
 
         /// <summary>
         /// Paginator for ListMemberships operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMembershipsPaginator ListMemberships(ListMembershipsRequest request);
     }
 }

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the codestar-notifications-2019-10-15.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeStarNotifications.Model
@@ -29,16 +30,31 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Paginator for ListEventTypes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEventTypesPaginator ListEventTypes(ListEventTypesRequest request);
 
         /// <summary>
         /// Paginator for ListNotificationRules operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListNotificationRulesPaginator ListNotificationRules(ListNotificationRulesRequest request);
 
         /// <summary>
         /// Paginator for ListTargets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTargetsPaginator ListTargets(ListTargetsRequest request);
     }
 }

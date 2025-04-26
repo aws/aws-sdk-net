@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the sms-2016-10-24.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServerMigrationService.Model
@@ -29,21 +30,41 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Paginator for GetConnectors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetConnectorsPaginator GetConnectors(GetConnectorsRequest request);
 
         /// <summary>
         /// Paginator for GetReplicationJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetReplicationJobsPaginator GetReplicationJobs(GetReplicationJobsRequest request);
 
         /// <summary>
         /// Paginator for GetReplicationRuns operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetReplicationRunsPaginator GetReplicationRuns(GetReplicationRunsRequest request);
 
         /// <summary>
         /// Paginator for GetServers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetServersPaginator GetServers(GetServersRequest request);
     }
 }

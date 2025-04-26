@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the amplifyuibuilder-2021-08-11.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model
@@ -29,36 +30,71 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Paginator for ExportComponents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IExportComponentsPaginator ExportComponents(ExportComponentsRequest request);
 
         /// <summary>
         /// Paginator for ExportForms operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IExportFormsPaginator ExportForms(ExportFormsRequest request);
 
         /// <summary>
         /// Paginator for ExportThemes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IExportThemesPaginator ExportThemes(ExportThemesRequest request);
 
         /// <summary>
         /// Paginator for ListCodegenJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCodegenJobsPaginator ListCodegenJobs(ListCodegenJobsRequest request);
 
         /// <summary>
         /// Paginator for ListComponents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListComponentsPaginator ListComponents(ListComponentsRequest request);
 
         /// <summary>
         /// Paginator for ListForms operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFormsPaginator ListForms(ListFormsRequest request);
 
         /// <summary>
         /// Paginator for ListThemes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListThemesPaginator ListThemes(ListThemesRequest request);
     }
 }

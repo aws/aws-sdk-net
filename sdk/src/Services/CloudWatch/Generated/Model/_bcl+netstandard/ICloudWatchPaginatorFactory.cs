@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model
@@ -29,46 +30,91 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Paginator for DescribeAlarmHistory operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeAlarmHistoryPaginator DescribeAlarmHistory(DescribeAlarmHistoryRequest request);
 
         /// <summary>
         /// Paginator for DescribeAlarms operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeAlarmsPaginator DescribeAlarms(DescribeAlarmsRequest request);
 
         /// <summary>
         /// Paginator for DescribeAnomalyDetectors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeAnomalyDetectorsPaginator DescribeAnomalyDetectors(DescribeAnomalyDetectorsRequest request);
 
         /// <summary>
         /// Paginator for DescribeInsightRules operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeInsightRulesPaginator DescribeInsightRules(DescribeInsightRulesRequest request);
 
         /// <summary>
         /// Paginator for GetMetricData operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxDatapoints",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetMetricDataPaginator GetMetricData(GetMetricDataRequest request);
 
         /// <summary>
         /// Paginator for ListDashboards operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDashboardsPaginator ListDashboards(ListDashboardsRequest request);
 
         /// <summary>
         /// Paginator for ListManagedInsightRules operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListManagedInsightRulesPaginator ListManagedInsightRules(ListManagedInsightRulesRequest request);
 
         /// <summary>
         /// Paginator for ListMetrics operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMetricsPaginator ListMetrics(ListMetricsRequest request);
 
         /// <summary>
         /// Paginator for ListMetricStreams operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMetricStreamsPaginator ListMetricStreams(ListMetricStreamsRequest request);
     }
 }

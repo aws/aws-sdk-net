@@ -124,7 +124,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Gets and sets the property SnapshotArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring
-        /// from Amazon Redshift Serverless to a provisioned cluster. Must not be specified at
+        /// from a provisioned cluster to Amazon Redshift Serverless. Must not be specified at
         /// the same time as <c>snapshotName</c>.
         /// </para>
         ///  

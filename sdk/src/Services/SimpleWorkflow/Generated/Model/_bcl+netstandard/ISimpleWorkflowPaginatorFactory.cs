@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleWorkflow.Model
@@ -29,36 +30,71 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Paginator for GetWorkflowExecutionHistory operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextPageToken" },
+            LimitKey = "MaximumPageSize",
+            OutputToken = new[] { "History.NextPageToken" }
+        )]
         IGetWorkflowExecutionHistoryPaginator GetWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest request);
 
         /// <summary>
         /// Paginator for ListActivityTypes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextPageToken" },
+            LimitKey = "MaximumPageSize",
+            OutputToken = new[] { "ActivityTypeInfos.NextPageToken" }
+        )]
         IListActivityTypesPaginator ListActivityTypes(ListActivityTypesRequest request);
 
         /// <summary>
         /// Paginator for ListClosedWorkflowExecutions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextPageToken" },
+            LimitKey = "MaximumPageSize",
+            OutputToken = new[] { "WorkflowExecutionInfos.NextPageToken" }
+        )]
         IListClosedWorkflowExecutionsPaginator ListClosedWorkflowExecutions(ListClosedWorkflowExecutionsRequest request);
 
         /// <summary>
         /// Paginator for ListDomains operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextPageToken" },
+            LimitKey = "MaximumPageSize",
+            OutputToken = new[] { "DomainInfos.NextPageToken" }
+        )]
         IListDomainsPaginator ListDomains(ListDomainsRequest request);
 
         /// <summary>
         /// Paginator for ListOpenWorkflowExecutions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextPageToken" },
+            LimitKey = "MaximumPageSize",
+            OutputToken = new[] { "WorkflowExecutionInfos.NextPageToken" }
+        )]
         IListOpenWorkflowExecutionsPaginator ListOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest request);
 
         /// <summary>
         /// Paginator for ListWorkflowTypes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextPageToken" },
+            LimitKey = "MaximumPageSize",
+            OutputToken = new[] { "WorkflowTypeInfos.NextPageToken" }
+        )]
         IListWorkflowTypesPaginator ListWorkflowTypes(ListWorkflowTypesRequest request);
 
         /// <summary>
         /// Paginator for PollForDecisionTask operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextPageToken" },
+            LimitKey = "MaximumPageSize",
+            OutputToken = new[] { "DecisionTask.NextPageToken" }
+        )]
         IPollForDecisionTaskPaginator PollForDecisionTask(PollForDecisionTaskRequest request);
     }
 }

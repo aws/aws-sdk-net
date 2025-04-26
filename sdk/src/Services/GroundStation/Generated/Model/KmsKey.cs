@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// AWS Key Management Service (KMS) Key.
+    /// KMS key info.
     /// </summary>
     public partial class KmsKey
     {

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the iottwinmaker-2021-11-29.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTTwinMaker.Model
@@ -29,61 +30,121 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Paginator for ExecuteQuery operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IExecuteQueryPaginator ExecuteQuery(ExecuteQueryRequest request);
 
         /// <summary>
         /// Paginator for GetPropertyValue operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetPropertyValuePaginator GetPropertyValue(GetPropertyValueRequest request);
 
         /// <summary>
         /// Paginator for GetPropertyValueHistory operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetPropertyValueHistoryPaginator GetPropertyValueHistory(GetPropertyValueHistoryRequest request);
 
         /// <summary>
         /// Paginator for ListComponents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListComponentsPaginator ListComponents(ListComponentsRequest request);
 
         /// <summary>
         /// Paginator for ListComponentTypes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListComponentTypesPaginator ListComponentTypes(ListComponentTypesRequest request);
 
         /// <summary>
         /// Paginator for ListEntities operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEntitiesPaginator ListEntities(ListEntitiesRequest request);
 
         /// <summary>
         /// Paginator for ListMetadataTransferJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMetadataTransferJobsPaginator ListMetadataTransferJobs(ListMetadataTransferJobsRequest request);
 
         /// <summary>
         /// Paginator for ListProperties operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPropertiesPaginator ListProperties(ListPropertiesRequest request);
 
         /// <summary>
         /// Paginator for ListScenes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListScenesPaginator ListScenes(ListScenesRequest request);
 
         /// <summary>
         /// Paginator for ListSyncJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSyncJobsPaginator ListSyncJobs(ListSyncJobsRequest request);
 
         /// <summary>
         /// Paginator for ListSyncResources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSyncResourcesPaginator ListSyncResources(ListSyncResourcesRequest request);
 
         /// <summary>
         /// Paginator for ListWorkspaces operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWorkspacesPaginator ListWorkspaces(ListWorkspacesRequest request);
     }
 }

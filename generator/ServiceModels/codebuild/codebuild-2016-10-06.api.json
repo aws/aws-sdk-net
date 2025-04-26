@@ -767,14 +767,12 @@
   "shapes":{
     "AccountLimitExceededException":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "exception":true
     },
     "AccountSuspendedException":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "exception":true
     },
     "ArtifactNamespace":{
@@ -1298,7 +1296,8 @@
         "vCpu":{"shape":"WrapperLong"},
         "memory":{"shape":"WrapperLong"},
         "disk":{"shape":"WrapperLong"},
-        "machineType":{"shape":"MachineType"}
+        "machineType":{"shape":"MachineType"},
+        "instanceType":{"shape":"NonEmptyString"}
       }
     },
     "ComputeType":{
@@ -1314,7 +1313,8 @@
         "BUILD_LAMBDA_4GB",
         "BUILD_LAMBDA_8GB",
         "BUILD_LAMBDA_10GB",
-        "ATTRIBUTE_BASED_COMPUTE"
+        "ATTRIBUTE_BASED_COMPUTE",
+        "CUSTOM_INSTANCE_TYPE"
       ]
     },
     "ComputeTypesAllowed":{
@@ -1463,8 +1463,7 @@
     },
     "DeleteFleetOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteProjectInput":{
       "type":"structure",
@@ -1475,8 +1474,7 @@
     },
     "DeleteProjectOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteReportGroupInput":{
       "type":"structure",
@@ -1488,8 +1486,7 @@
     },
     "DeleteReportGroupOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteReportInput":{
       "type":"structure",
@@ -1500,8 +1497,7 @@
     },
     "DeleteReportOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteResourcePolicyInput":{
       "type":"structure",
@@ -1512,8 +1508,7 @@
     },
     "DeleteResourcePolicyOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteSourceCredentialsInput":{
       "type":"structure",
@@ -1537,8 +1532,7 @@
     },
     "DeleteWebhookOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DescribeCodeCoveragesInput":{
       "type":"structure",
@@ -1703,10 +1697,7 @@
       "max":100,
       "min":1
     },
-    "FleetCapacity":{
-      "type":"integer",
-      "min":1
-    },
+    "FleetCapacity":{"type":"integer"},
     "FleetContextCode":{
       "type":"string",
       "enum":[
@@ -1909,8 +1900,7 @@
     },
     "InvalidInputException":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "exception":true
     },
     "InvalidateProjectCacheInput":{
@@ -1922,8 +1912,7 @@
     },
     "InvalidateProjectCacheOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "KeyInput":{
       "type":"string",
@@ -2028,8 +2017,7 @@
     },
     "ListCuratedEnvironmentImagesInput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "ListCuratedEnvironmentImagesOutput":{
       "type":"structure",
@@ -2184,8 +2172,7 @@
     },
     "ListSourceCredentialsInput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "ListSourceCredentialsOutput":{
       "type":"structure",
@@ -2244,8 +2231,7 @@
     },
     "OAuthProviderException":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "exception":true
     },
     "PageSize":{
@@ -2698,14 +2684,12 @@
     },
     "ResourceAlreadyExistsException":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "exception":true
     },
     "ResourceNotFoundException":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "exception":true
     },
     "RetryBuildBatchInput":{

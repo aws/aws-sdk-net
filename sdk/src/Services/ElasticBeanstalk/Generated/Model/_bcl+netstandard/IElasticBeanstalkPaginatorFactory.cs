@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticBeanstalk.Model
@@ -29,21 +30,41 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Paginator for DescribeEnvironmentManagedActionHistory operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeEnvironmentManagedActionHistoryPaginator DescribeEnvironmentManagedActionHistory(DescribeEnvironmentManagedActionHistoryRequest request);
 
         /// <summary>
         /// Paginator for DescribeEvents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeEventsPaginator DescribeEvents(DescribeEventsRequest request);
 
         /// <summary>
         /// Paginator for ListPlatformBranches operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPlatformBranchesPaginator ListPlatformBranches(ListPlatformBranchesRequest request);
 
         /// <summary>
         /// Paginator for ListPlatformVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPlatformVersionsPaginator ListPlatformVersions(ListPlatformVersionsRequest request);
     }
 }

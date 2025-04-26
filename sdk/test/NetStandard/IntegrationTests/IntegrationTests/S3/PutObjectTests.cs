@@ -189,8 +189,10 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         /// <summary>
         /// Reported in https://github.com/aws/aws-sdk-net/issues/3629
         /// </summary>
-        [Fact]
-        public async Task TestResetStreamPosition()
+        [Theory]
+        [InlineData(true)]
+        [InlineData(false)]
+        public async Task TestResetStreamPosition(bool useChunkEncoding)
         {
             var memoryStream = new MemoryStream();
             long offset;
@@ -214,7 +216,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 AutoResetStreamPosition = false,
                 AutoCloseStream = !memoryStream.CanSeek,
                 InputStream = memoryStream.CanSeek ? memoryStream : AmazonS3Util.MakeStreamSeekable(memoryStream),
-                UseChunkEncoding = false,
+                UseChunkEncoding = useChunkEncoding,
             };
 
             var putResponse = await Client.PutObjectAsync(putRequest);

@@ -170,6 +170,196 @@
 	* Updated DateTime handling to use UTC instead of local times.
 	* All services packages updated to require new Core
 
+### 3.7.1031.0 (2025-04-25 18:20 UTC)
+* BedrockRuntime (3.7.419.0)
+	* You can now reference images and documents stored in Amazon S3 when using InvokeModel and Converse APIs with Amazon Nova Lite and Nova Pro. This enables direct integration of S3-stored multimedia assets in your model requests without manual downloading or base64 encoding.
+* ECS (3.7.410.2)
+	* Documentation only release for Amazon ECS.
+* MarketplaceDeployment (3.7.400.140)
+	* Doc only update for the AWS Marketplace Deployment Service that fixes several customer-reported issues.
+* Core 3.7.402.46
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1030.0 (2025-04-24 21:38 UTC)
+* AppRunner (3.7.401.0)
+	* AWS App Runner adds Node.js 22 runtime.
+* AppSync (3.7.408.0)
+	* Add data source support to Event APIs
+* BedrockDataAutomation (3.7.402.0)
+	* Added support for modality routing and modality enablement on CreateDataAutomationProject and UpdateDataAutomationProject APIs
+* CodeBuild (3.7.418.0)
+	* Remove redundant validation check.
+* DynamoDBv2 (3.7.407.0)
+	* Add support for ARN-sourced account endpoint generation for TransactWriteItems. This will generate account endpoints for DynamoDB TransactWriteItems requests using ARN-sourced account ID when available.
+* ECS (3.7.410.1)
+	* Documentation only release for Amazon ECS
+* PCS (3.7.402.6)
+	* Documentation-only update: added valid values for the version property of the Scheduler and SchedulerRequest data types.
+* RDS (3.7.411.0)
+	* This Amazon RDS release adds support for managed master user passwords for Oracle CDBs.
+* Core 3.7.402.45
+	* Update HttpRequestMessageFactory to correctly set the Content-Length header
+	* All services packages updated to require new Core
+
+### 3.7.1029.0 (2025-04-23 18:17 UTC)
+* CodeBuild (3.7.417.0)
+	* Add support for custom instance type for reserved capacity fleets
+* ECS (3.7.410.0)
+	* Add support to roll back an In_Progress ECS Service Deployment
+* ResourceExplorer2 (3.7.402.92)
+	* Documentation-only update for CreateView option correction
+* Core 3.7.402.44
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1028.0 (2025-04-22 18:42 UTC)
+* Account (3.7.402.0)
+	* AWS Account Management now supports account name update via IAM principals.
+* CognitoIdentityProvider (3.7.408.0)
+	* This release adds refresh token rotation.
+* EC2 (3.7.438.0)
+	* Added support for  ClientRouteEnforcementOptions flag in CreateClientVpnEndpoint and ModifyClientVpnEndpoint requests and DescribeClientVpnEndpoints responses
+* EntityResolution (3.7.403.0)
+	* To expand support for matching records using digital identifiers with TransUnion
+* MQ (3.7.401.0)
+	* You can now delete Amazon MQ broker configurations using the DeleteConfiguration API. For more information, see Configurations in the Amazon MQ API Reference.
+* RedshiftServerless (3.7.404.0)
+	* Provides new and updated API members to support the Redshift Serverless reservations feature.
+* S3Control (3.7.408.0)
+	* Fix endpoint resolution test cases
+
+### 3.7.1027.0 (2025-04-21 18:22 UTC)
+* ARCZonalShift (3.7.402.0)
+	* Updates to documentation and exception types for Zonal Autoshift
+* Budgets (3.7.403.0)
+	* Releasing the new Budget FilterExpression and Metrics fields to support more granular filtering options. These new fields are intended to replace CostFilters and CostTypes, which are deprecated as of 2025/18/04.
+* KinesisFirehose (3.7.402.53)
+	* Documentation update regarding the number of streams you can create using the CreateDeliveryStream API.
+* MediaTailor (3.7.404.0)
+	* Added support for Recurring Prefetch and Traffic Shaping on both Single and Recurring Prefetch. ListPrefetchSchedules now return single prefetchs by default and can be provided scheduleType of SINGLE, RECURRING, AND ALL.
+* QBusiness (3.7.413.0)
+	* The CheckDocumentAccess API for Amazon Q Business is a self-service debugging API that allows administrators to verify document access permissions and review Access Control List (ACL) configurations.
+* SecurityHub (3.7.403.28)
+	* Minor documentation update for the GetConfigurationPolicyAssociation example
+
+### 3.7.1026.0 (2025-04-18 18:16 UTC)
+* QConnect (3.7.405.0)
+	* This release adds support for the following capabilities: Chunking generative answer replies from Amazon Q in Connect. Integration support for the use of additional LLM models with Amazon Q in Connect.
+* SageMaker (3.7.436.0)
+	* This release adds a new Neuron driver option in InferenceAmiVersion parameter for ProductionVariant. Additionally, it adds support for fetching model lifecycle status in the ListModelPackages API. Users can now use this API to view the lifecycle stage of models that have been shared with them.
+* ServiceQuotas (3.7.401.0)
+	* Add new optional SupportCaseAllowed query parameter to the RequestServiceQuotaIncrease API
+* Core 3.7.402.43
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1025.0 (2025-04-17 18:22 UTC)
+* AccessAnalyzer (3.7.404.0)
+	* Added new resource types to evaluate for public access in resource policies and added support for S3 directory bucket access points.
+* AutoScaling (3.7.407.79)
+	* Doc only update for EC2 Auto Scaling.
+* Bedrock (3.7.419.0)
+	* With this release, Bedrock Evaluation will now support custom metrics for evaluation.
+* Connect (3.7.420.0)
+	* This release adds following capabilities to Contact Lens Rules APIs 1/ 'ASSIGN_SLA' action and  '$.Case.TemplateId' comparison value for 'OnCaseCreate' and 'OnCaseUpdate' event sources 2/ 'OnSlaBreach' Cases event source which supports '$.RelatedItem.SlaConfiguration.Name' comparison value
+* ECS (3.7.409.0)
+	* Adds a new AccountSetting - defaultLogDriverMode for ECS.
+* IoTFleetWise (3.7.407.0)
+	* We've added stricter parameter validations to AWS IoT FleetWise signal catalog, model manifest, and decoder manifest APIs.
+* MemoryDB (3.7.403.0)
+	* Added support for IPv6 and dual stack for Valkey and Redis clusters. Customers can now launch new Valkey and Redis clusters with IPv6 and dual stack networking support.
+* Omics (3.7.404.0)
+	* Add versioning for HealthOmics workflows
+* PrometheusService (3.7.403.0)
+	* Add Workspace Configuration APIs for Amazon Prometheus
+* Core 3.7.402.42
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1024.0 (2025-04-16 18:29 UTC)
+* ConnectCases (3.7.402.0)
+	* This feature provides capabilities to help track and meet service level agreements (SLAs) on cases programmatically. It allows configuring a new related item of type `Sla` on a case using CreateRelatedItem API and provides the ability to search for this new related item using SearchRelatedItems API.
+* DSQL (3.7.402.0)
+	* Added GetClusterEndpointService API. The new API allows retrieving endpoint service name specific to a cluster.
+* EKS (3.7.415.0)
+	* Added support for new AL2023 ARM64 NVIDIA AMIs to the supported AMITypes.
+* EventBridge (3.7.404.0)
+	* Adding support for KmsKeyIdentifer in CreateConnection, UpdateConnection and DescribeConnection APIs
+* ResourceGroups (3.7.402.0)
+	* Resource Groups: TagSyncTasks can be created with ResourceQuery
+* S3Tables (3.7.402.0)
+	* S3 Tables now supports setting encryption configurations on table buckets and tables. Encryption configurations can use server side encryption using AES256 or KMS customer-managed keys.
+* ServiceCatalog (3.7.400.135)
+	* Updated default value for the access-level-filter in SearchProvisionedProducts API to Account. For access to userLevel or roleLevel, the user must provide access-level-filter parameter.
+* Core 3.7.402.41
+	* Added pagination attribute for Paginator methods
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1023.0 (2025-04-14 18:18 UTC)
+* EntityResolution (3.7.402.0)
+	* This is to add new metrics to our GetIdMappingJob API and also update uniqueId naming for batchDeleteUniqueIds API to be more accurate
+* TaxSettings (3.7.406.0)
+	* Indonesia SOR Tax Registration Launch
+* Core 3.7.402.40
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1022.0 (2025-04-11 18:28 UTC)
+* AWSMarketplaceMetering (3.7.403.0)
+	* Add support for Marketplace Metering Service dual-stack endpoints for CN regions
+* ConnectContactLens (3.7.401.0)
+	* Making sentiment optional for ListRealtimeContactAnalysisSegments Response depending on conversational analytics configuration
+* DataZone (3.7.412.0)
+	* Raise hard limit of authorized principals per SubscriptionTarget from 10 to 20.
+* Detective (3.7.401.0)
+	* Add support for Detective DualStack endpoints
+* DynamoDBv2 (3.7.406.21)
+	* Doc only update for API descriptions.
+* MarketplaceEntitlementService (3.7.403.0)
+	* Add support for Marketplace Entitlement Service dual-stack endpoints for CN and GOV regions
+* PCS (3.7.402.0)
+	* Changed the minimum length of clusterIdentifier, computeNodeGroupIdentifier, and queueIdentifier to 3.
+* VerifiedPermissions (3.7.403.0)
+	* Adds deletion protection support to policy stores. Deletion protection is disabled by default, can be enabled via the CreatePolicyStore or UpdatePolicyStore APIs, and is visible in GetPolicyStore.
+* Core 3.7.402.39
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1021.0 (2025-04-10 18:26 UTC)
+* ApplicationAutoScaling (3.7.403.0)
+	* Application Auto Scaling now supports horizontal scaling for Elasticache Memcached self-designed clusters using target tracking scaling policies and scheduled scaling.
+* ElastiCache (3.7.403.0)
+	* AWS ElastiCache SDK now supports using MemcachedUpgradeConfig parameter with ModifyCacheCluster API to enable updating Memcached cache node types. Please refer to updated AWS ElastiCache public documentation for detailed information on API usage and implementation.
+* MainframeModernization (3.7.403.0)
+	* Introduce three new APIs: CreateDataSetExportTask, GetDataSetExportTask and ListDataSetExportHistory. Add support for batch restart for Blu Age applications.
+* MediaLive (3.7.416.0)
+	* AWS Elemental MediaLive / Features : Add support for CMAF Ingest CaptionLanguageMappings, TimedMetadataId3 settings, and Link InputResolution.
+* QBusiness (3.7.412.0)
+	* Adds functionality to enable/disable a new Q Business Hallucination Reduction feature. If enabled, Q Business will detect and attempt to remove Hallucinations from certain Chat requests.
+* QuickSight (3.7.415.0)
+	* Add support to analysis and sheet level highlighting in QuickSight.
+* Core 3.7.402.38
+	* Updating endpoints.json file.
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1020.0 (2025-04-09 18:36 UTC)
+* ControlCatalog (3.7.403.0)
+	* The GetControl API now surfaces a control's Severity, CreateTime, and Identifier for a control's Implementation. The ListControls API now surfaces a control's Behavior, Severity, CreateTime, and Identifier for a control's Implementation.
+* DynamoDBv2 (3.7.406.19)
+	* Documentation update for secondary indexes and Create_Table.
+* Glue (3.7.416.0)
+	* The TableOptimizer APIs in AWS Glue now return the DpuHours field in each TableOptimizerRun, providing clients visibility to the DPU-hours used for billing in managed Apache Iceberg table compaction optimization.
+* GroundStation (3.7.401.0)
+	* Support tagging Agents and adjust input field validations
+* Transfer (3.7.407.0)
+	* This launch includes 2 enhancements to SFTP connectors user-experience: 1) Customers can self-serve concurrent connections setting for their connectors, and 2) Customers can discover the public host key of remote servers using their SFTP connectors.
+* Core 3.7.402.37
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1019.0 (2025-04-08 18:53 UTC)
 * BedrockRuntime (3.7.418.0)
 	* This release introduces our latest bedrock runtime API, InvokeModelWithBidirectionalStream. The API supports both input and output streams and is supported by only HTTP2.0.

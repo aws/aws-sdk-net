@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the codedeploy-2014-10-06.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model
@@ -29,31 +30,61 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Paginator for ListApplicationRevisions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationRevisionsPaginator ListApplicationRevisions(ListApplicationRevisionsRequest request);
 
         /// <summary>
         /// Paginator for ListApplications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
 
         /// <summary>
         /// Paginator for ListDeploymentConfigs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDeploymentConfigsPaginator ListDeploymentConfigs(ListDeploymentConfigsRequest request);
 
         /// <summary>
         /// Paginator for ListDeploymentGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDeploymentGroupsPaginator ListDeploymentGroups(ListDeploymentGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListDeploymentInstances operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDeploymentInstancesPaginator ListDeploymentInstances(ListDeploymentInstancesRequest request);
 
         /// <summary>
         /// Paginator for ListDeployments operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDeploymentsPaginator ListDeployments(ListDeploymentsRequest request);
     }
 }

@@ -94,8 +94,16 @@ namespace Amazon.GroundStation.Model
         /// Maximum number of contacts returned.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Min=0, Max=100)]
         public int? MaxResults
+||||||| Commit version number update changes
+        [AWSProperty(Min=0, Max=100)]
+        public int MaxResults
+=======
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
+>>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
         {
             get { return this._maxResults; }
             set { this._maxResults = value; }
@@ -113,6 +121,7 @@ namespace Amazon.GroundStation.Model
         /// ARN of a mission profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=89, Max=138)]
         public string MissionProfileArn
         {
             get { return this._missionProfileArn; }
@@ -151,6 +160,7 @@ namespace Amazon.GroundStation.Model
         /// ARN of a satellite.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=82, Max=132)]
         public string SatelliteArn
         {
             get { return this._satelliteArn; }

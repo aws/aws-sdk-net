@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the cognito-identity-2014-06-30.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentity.Model
@@ -29,6 +30,11 @@ namespace Amazon.CognitoIdentity.Model
         /// <summary>
         /// Paginator for ListIdentityPools operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListIdentityPoolsPaginator ListIdentityPools(ListIdentityPoolsRequest request);
     }
 }

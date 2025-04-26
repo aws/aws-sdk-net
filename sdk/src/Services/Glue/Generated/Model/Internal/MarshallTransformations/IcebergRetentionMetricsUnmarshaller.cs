@@ -56,6 +56,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("DpuHours", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.DpuHours = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("JobDurationInHour", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;

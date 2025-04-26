@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the entitlement.marketplace-2017-01-11.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceEntitlementService.Model
@@ -29,6 +30,11 @@ namespace Amazon.MarketplaceEntitlementService.Model
         /// <summary>
         /// Paginator for GetEntitlements operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetEntitlementsPaginator GetEntitlements(GetEntitlementsRequest request);
     }
 }

@@ -1629,7 +1629,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         public void ListRegionalBuckets_OutpostId_with_fips_in_CN_Test()
         {
             var parameters = new S3ControlEndpointParameters();
-            parameters["AccountId"] = "0123456789012";
+            parameters["AccountId"] = "012345678912";
             parameters["OutpostId"] = "op-123";
             parameters["Region"] = "cn-north-1";
             parameters["RequiresAccountId"] = true;
@@ -1647,7 +1647,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         public void ListRegionalBuckets_invalid_OutpostId_Test()
         {
             var parameters = new S3ControlEndpointParameters();
-            parameters["AccountId"] = "0123456789012";
+            parameters["AccountId"] = "012345678912";
             parameters["OutpostId"] = "?outpost/invalid+";
             parameters["Region"] = "us-west-1";
             parameters["RequiresAccountId"] = true;
@@ -1661,12 +1661,12 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("bucket ARN with mismatched accountId")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: the accountId specified in the ARN (`999999`) does not match the parameter (`0123456789012`)")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: the accountId specified in the ARN (`999999`) does not match the parameter (`012345678912`)")]
         public void Bucket_ARN_with_mismatched_accountId_Test()
         {
             var parameters = new S3ControlEndpointParameters();
             parameters["Bucket"] = "arn:aws:s3-outposts:us-west-2:999999:outpost:op-01234567890123456:bucket:mybucket";
-            parameters["AccountId"] = "0123456789012";
+            parameters["AccountId"] = "012345678912";
             parameters["Region"] = "us-west-2";
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;

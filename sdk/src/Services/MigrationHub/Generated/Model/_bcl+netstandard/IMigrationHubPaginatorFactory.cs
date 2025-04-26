@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the AWSMigrationHub-2017-05-31.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHub.Model
@@ -29,36 +30,71 @@ namespace Amazon.MigrationHub.Model
         /// <summary>
         /// Paginator for ListApplicationStates operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationStatesPaginator ListApplicationStates(ListApplicationStatesRequest request);
 
         /// <summary>
         /// Paginator for ListCreatedArtifacts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCreatedArtifactsPaginator ListCreatedArtifacts(ListCreatedArtifactsRequest request);
 
         /// <summary>
         /// Paginator for ListDiscoveredResources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDiscoveredResourcesPaginator ListDiscoveredResources(ListDiscoveredResourcesRequest request);
 
         /// <summary>
         /// Paginator for ListMigrationTasks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMigrationTasksPaginator ListMigrationTasks(ListMigrationTasksRequest request);
 
         /// <summary>
         /// Paginator for ListMigrationTaskUpdates operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMigrationTaskUpdatesPaginator ListMigrationTaskUpdates(ListMigrationTaskUpdatesRequest request);
 
         /// <summary>
         /// Paginator for ListProgressUpdateStreams operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProgressUpdateStreamsPaginator ListProgressUpdateStreams(ListProgressUpdateStreamsRequest request);
 
         /// <summary>
         /// Paginator for ListSourceResources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSourceResourcesPaginator ListSourceResources(ListSourceResourcesRequest request);
     }
 }

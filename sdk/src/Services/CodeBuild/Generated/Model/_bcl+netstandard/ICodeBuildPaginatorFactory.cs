@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the codebuild-2016-10-06.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model
@@ -29,81 +30,161 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Paginator for DescribeCodeCoverages operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeCodeCoveragesPaginator DescribeCodeCoverages(DescribeCodeCoveragesRequest request);
 
         /// <summary>
         /// Paginator for DescribeTestCases operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeTestCasesPaginator DescribeTestCases(DescribeTestCasesRequest request);
 
         /// <summary>
         /// Paginator for ListBuildBatches operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListBuildBatchesPaginator ListBuildBatches(ListBuildBatchesRequest request);
 
         /// <summary>
         /// Paginator for ListBuildBatchesForProject operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListBuildBatchesForProjectPaginator ListBuildBatchesForProject(ListBuildBatchesForProjectRequest request);
 
         /// <summary>
         /// Paginator for ListBuilds operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListBuildsPaginator ListBuilds(ListBuildsRequest request);
 
         /// <summary>
         /// Paginator for ListBuildsForProject operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListBuildsForProjectPaginator ListBuildsForProject(ListBuildsForProjectRequest request);
 
         /// <summary>
         /// Paginator for ListCommandExecutionsForSandbox operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCommandExecutionsForSandboxPaginator ListCommandExecutionsForSandbox(ListCommandExecutionsForSandboxRequest request);
 
         /// <summary>
         /// Paginator for ListFleets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFleetsPaginator ListFleets(ListFleetsRequest request);
 
         /// <summary>
         /// Paginator for ListProjects operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProjectsPaginator ListProjects(ListProjectsRequest request);
 
         /// <summary>
         /// Paginator for ListReportGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListReportGroupsPaginator ListReportGroups(ListReportGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListReports operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListReportsPaginator ListReports(ListReportsRequest request);
 
         /// <summary>
         /// Paginator for ListReportsForReportGroup operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListReportsForReportGroupPaginator ListReportsForReportGroup(ListReportsForReportGroupRequest request);
 
         /// <summary>
         /// Paginator for ListSandboxes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSandboxesPaginator ListSandboxes(ListSandboxesRequest request);
 
         /// <summary>
         /// Paginator for ListSandboxesForProject operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSandboxesForProjectPaginator ListSandboxesForProject(ListSandboxesForProjectRequest request);
 
         /// <summary>
         /// Paginator for ListSharedProjects operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSharedProjectsPaginator ListSharedProjects(ListSharedProjectsRequest request);
 
         /// <summary>
         /// Paginator for ListSharedReportGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSharedReportGroupsPaginator ListSharedReportGroups(ListSharedReportGroupsRequest request);
     }
 }

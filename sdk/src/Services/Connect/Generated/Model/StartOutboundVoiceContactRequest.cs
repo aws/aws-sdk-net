@@ -193,8 +193,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the voice contact that is shown to an agent in the Contact Control
-        /// Panel (CCP).
+        /// A description of the voice contact that appears in the agent's snapshot in the CCP
+        /// logs. For more information about CCP logs, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/download-ccp-logs.html">Download
+        /// and review CCP logs</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4096)]

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the appintegrations-2020-07-29.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppIntegrationsService.Model
@@ -29,31 +30,61 @@ namespace Amazon.AppIntegrationsService.Model
         /// <summary>
         /// Paginator for ListApplicationAssociations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationAssociationsPaginator ListApplicationAssociations(ListApplicationAssociationsRequest request);
 
         /// <summary>
         /// Paginator for ListApplications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
 
         /// <summary>
         /// Paginator for ListDataIntegrationAssociations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDataIntegrationAssociationsPaginator ListDataIntegrationAssociations(ListDataIntegrationAssociationsRequest request);
 
         /// <summary>
         /// Paginator for ListDataIntegrations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDataIntegrationsPaginator ListDataIntegrations(ListDataIntegrationsRequest request);
 
         /// <summary>
         /// Paginator for ListEventIntegrationAssociations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEventIntegrationAssociationsPaginator ListEventIntegrationAssociations(ListEventIntegrationAssociationsRequest request);
 
         /// <summary>
         /// Paginator for ListEventIntegrations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEventIntegrationsPaginator ListEventIntegrations(ListEventIntegrationsRequest request);
     }
 }

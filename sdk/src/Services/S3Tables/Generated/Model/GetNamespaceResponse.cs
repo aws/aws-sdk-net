@@ -37,7 +37,9 @@ namespace Amazon.S3Tables.Model
         private DateTime? _createdAt;
         private string _createdBy;
         private List<string> _awsNamespace = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _namespaceId;
         private string _ownerAccountId;
+        private string _tableBucketId;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -97,6 +99,24 @@ namespace Amazon.S3Tables.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NamespaceId. 
+        /// <para>
+        /// The unique identifier of the namespace.
+        /// </para>
+        /// </summary>
+        public string NamespaceId
+        {
+            get { return this._namespaceId; }
+            set { this._namespaceId = value; }
+        }
+
+        // Check to see if NamespaceId property is set
+        internal bool IsSetNamespaceId()
+        {
+            return this._namespaceId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OwnerAccountId. 
         /// <para>
         /// The ID of the account that owns the namespcace.
@@ -113,6 +133,24 @@ namespace Amazon.S3Tables.Model
         internal bool IsSetOwnerAccountId()
         {
             return this._ownerAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TableBucketId. 
+        /// <para>
+        /// The unique identifier of the table bucket containing this namespace.
+        /// </para>
+        /// </summary>
+        public string TableBucketId
+        {
+            get { return this._tableBucketId; }
+            set { this._tableBucketId = value; }
+        }
+
+        // Check to see if TableBucketId property is set
+        internal bool IsSetTableBucketId()
+        {
+            return this._tableBucketId != null;
         }
 
     }

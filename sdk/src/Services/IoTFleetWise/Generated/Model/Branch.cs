@@ -103,7 +103,7 @@ namespace Amazon.IoTFleetWise.Model
         /// branch might be <c>Vehicle.Body.Engine</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=150)]
         public string FullyQualifiedName
         {
             get { return this._fullyQualifiedName; }

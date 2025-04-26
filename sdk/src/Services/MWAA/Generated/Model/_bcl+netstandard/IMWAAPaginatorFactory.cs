@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the mwaa-2020-07-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MWAA.Model
@@ -29,6 +30,11 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Paginator for ListEnvironments operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEnvironmentsPaginator ListEnvironments(ListEnvironmentsRequest request);
     }
 }

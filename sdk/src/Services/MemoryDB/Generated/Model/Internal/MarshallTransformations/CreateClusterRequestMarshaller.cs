@@ -117,11 +117,31 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.EngineVersion);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");
                 context.Writer.WriteStringValue(publicRequest.KmsKeyId);
             }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    context.Writer.WritePropertyName("KmsKeyId");
+                    context.Writer.Write(publicRequest.KmsKeyId);
+                }
+=======
+                if(publicRequest.IsSetIpDiscovery())
+                {
+                    context.Writer.WritePropertyName("IpDiscovery");
+                    context.Writer.Write(publicRequest.IpDiscovery);
+                }
+
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    context.Writer.WritePropertyName("KmsKeyId");
+                    context.Writer.Write(publicRequest.KmsKeyId);
+                }
+>>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
             if(publicRequest.IsSetMaintenanceWindow())
             {
@@ -135,11 +155,31 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.MultiRegionClusterName);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetNodeType())
             {
                 context.Writer.WritePropertyName("NodeType");
                 context.Writer.WriteStringValue(publicRequest.NodeType);
             }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetNodeType())
+                {
+                    context.Writer.WritePropertyName("NodeType");
+                    context.Writer.Write(publicRequest.NodeType);
+                }
+=======
+                if(publicRequest.IsSetNetworkType())
+                {
+                    context.Writer.WritePropertyName("NetworkType");
+                    context.Writer.Write(publicRequest.NetworkType);
+                }
+
+                if(publicRequest.IsSetNodeType())
+                {
+                    context.Writer.WritePropertyName("NodeType");
+                    context.Writer.Write(publicRequest.NodeType);
+                }
+>>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
             if(publicRequest.IsSetNumReplicasPerShard())
             {

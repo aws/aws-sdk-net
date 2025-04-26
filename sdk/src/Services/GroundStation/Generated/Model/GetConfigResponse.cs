@@ -47,7 +47,7 @@ namespace Amazon.GroundStation.Model
         /// ARN of a <c>Config</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=82, Max=424)]
         public string ConfigArn
         {
             get { return this._configArn; }

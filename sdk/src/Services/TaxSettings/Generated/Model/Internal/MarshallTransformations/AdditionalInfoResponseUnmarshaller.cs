@@ -98,6 +98,12 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                     unmarshalledObject.IndiaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("indonesiaAdditionalInfo", targetDepth))
+                {
+                    var unmarshaller = IndonesiaAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.IndonesiaAdditionalInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("israelAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = IsraelAdditionalInfoUnmarshaller.Instance;

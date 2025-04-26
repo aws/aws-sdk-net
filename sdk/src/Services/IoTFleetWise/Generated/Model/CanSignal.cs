@@ -111,8 +111,16 @@ namespace Amazon.IoTFleetWise.Model
         /// How many bytes of data are in the message.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true, Min=0)]
         public int? Length
+||||||| Commit version number update changes
+        [AWSProperty(Required=true, Min=0)]
+        public int Length
+=======
+        [AWSProperty(Required=true, Min=0, Max=2147483647)]
+        public int Length
+>>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
         {
             get { return this._length; }
             set { this._length = value; }
@@ -130,8 +138,16 @@ namespace Amazon.IoTFleetWise.Model
         /// The ID of the message.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true, Min=0)]
         public int? MessageId
+||||||| Commit version number update changes
+        [AWSProperty(Required=true, Min=0)]
+        public int MessageId
+=======
+        [AWSProperty(Required=true, Min=0, Max=2147483647)]
+        public int MessageId
+>>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
         {
             get { return this._messageId; }
             set { this._messageId = value; }
@@ -214,8 +230,16 @@ namespace Amazon.IoTFleetWise.Model
         /// the LSB instead and pass it as the <c>startBit</c>.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true, Min=0)]
         public int? StartBit
+||||||| Commit version number update changes
+        [AWSProperty(Required=true, Min=0)]
+        public int StartBit
+=======
+        [AWSProperty(Required=true, Min=0, Max=2147483647)]
+        public int StartBit
+>>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
         {
             get { return this._startBit; }
             set { this._startBit = value; }

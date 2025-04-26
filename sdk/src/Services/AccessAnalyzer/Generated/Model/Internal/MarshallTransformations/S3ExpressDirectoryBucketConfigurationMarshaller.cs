@@ -46,6 +46,25 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAccessPoints())
+            {
+                context.Writer.WritePropertyName("accessPoints");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectAccessPointsKvp in requestObject.AccessPoints)
+                {
+                    context.Writer.WritePropertyName(requestObjectAccessPointsKvp.Key);
+                    var requestObjectAccessPointsValue = requestObjectAccessPointsKvp.Value;
+
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = S3ExpressDirectoryAccessPointConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAccessPointsValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetBucketPolicy())
             {
                 context.Writer.WritePropertyName("bucketPolicy");

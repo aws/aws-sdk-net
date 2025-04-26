@@ -81,7 +81,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property StoreId. 
         /// <para>
-        /// The AWS-generated Sequence Store or Reference Store ID.
+        /// The Amazon Web Services-generated Sequence Store or Reference Store ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=36)]

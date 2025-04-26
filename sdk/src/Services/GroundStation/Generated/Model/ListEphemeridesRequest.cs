@@ -68,8 +68,16 @@ namespace Amazon.GroundStation.Model
         /// Maximum number of ephemerides to return.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Min=0, Max=100)]
         public int? MaxResults
+||||||| Commit version number update changes
+        [AWSProperty(Min=0, Max=100)]
+        public int MaxResults
+=======
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
+>>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
         {
             get { return this._maxResults; }
             set { this._maxResults = value; }
@@ -106,7 +114,7 @@ namespace Amazon.GroundStation.Model
         /// The AWS Ground Station satellite ID to list ephemeris for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string SatelliteId
         {
             get { return this._satelliteId; }

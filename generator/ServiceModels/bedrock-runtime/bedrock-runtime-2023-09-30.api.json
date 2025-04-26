@@ -659,7 +659,8 @@
     "DocumentSource":{
       "type":"structure",
       "members":{
-        "bytes":{"shape":"DocumentSourceBytesBlob"}
+        "bytes":{"shape":"DocumentSourceBytesBlob"},
+        "s3Location":{"shape":"S3Location"}
       },
       "union":true
     },
@@ -1335,7 +1336,8 @@
     "ImageSource":{
       "type":"structure",
       "members":{
-        "bytes":{"shape":"ImageSourceBytesBlob"}
+        "bytes":{"shape":"ImageSourceBytesBlob"},
+        "s3Location":{"shape":"S3Location"}
       },
       "union":true
     },

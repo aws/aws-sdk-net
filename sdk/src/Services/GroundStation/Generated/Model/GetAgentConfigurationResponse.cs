@@ -43,7 +43,7 @@ namespace Amazon.GroundStation.Model
         /// UUID of agent.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=36, Max=36)]
         public string AgentId
         {
             get { return this._agentId; }

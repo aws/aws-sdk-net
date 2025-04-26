@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the sso-2019-06-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSO.Model
@@ -29,11 +30,21 @@ namespace Amazon.SSO.Model
         /// <summary>
         /// Paginator for ListAccountRoles operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAccountRolesPaginator ListAccountRoles(ListAccountRolesRequest request);
 
         /// <summary>
         /// Paginator for ListAccounts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAccountsPaginator ListAccounts(ListAccountsRequest request);
     }
 }

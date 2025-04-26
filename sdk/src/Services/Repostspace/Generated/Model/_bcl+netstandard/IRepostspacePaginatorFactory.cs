@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the repostspace-2022-05-13.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Repostspace.Model
@@ -29,6 +30,11 @@ namespace Amazon.Repostspace.Model
         /// <summary>
         /// Paginator for ListSpaces operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSpacesPaginator ListSpaces(ListSpacesRequest request);
     }
 }

@@ -46,16 +46,16 @@ namespace Amazon.ServiceQuotas.Model
         /// <para>
         ///  <c>DEPENDENCY_ACCESS_DENIED_ERROR</c> - The caller does not have the required permissions
         /// to complete the action. To resolve the error, you must have permission to access the
-        /// Amazon Web Service or quota.
+        /// Amazon Web Services service or quota.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>DEPENDENCY_THROTTLING_ERROR</c> - The Amazon Web Service is throttling Service
-        /// Quotas. 
+        ///  <c>DEPENDENCY_THROTTLING_ERROR</c> - The Amazon Web Services service is throttling
+        /// Service Quotas. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>DEPENDENCY_SERVICE_ERROR</c> - The Amazon Web Service is not available.
+        ///  <c>DEPENDENCY_SERVICE_ERROR</c> - The Amazon Web Services service is not available.
         /// </para>
         ///  </li> <li> 
         /// <para>

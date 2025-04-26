@@ -36,9 +36,18 @@ namespace Amazon.Budgets.Model
     ///  <important> 
     /// <para>
     /// Only one of <c>BudgetLimit</c> or <c>PlannedBudgetLimits</c> can be present in the
-    /// syntax at one time. Use the syntax that matches your case. The Request Syntax section
-    /// shows the <c>BudgetLimit</c> syntax. For <c>PlannedBudgetLimits</c>, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples">Examples</a>
-    /// section. 
+    /// syntax at one time. Use the syntax that matches your use case. The Request Syntax
+    /// section shows the <c>BudgetLimit</c> syntax. For <c>PlannedBudgetLimits</c>, see the
+    /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples">Examples</a>
+    /// section.
+    /// </para>
+    ///  
+    /// <para>
+    /// Similarly, only one set of filter and metric selections can be present in the syntax
+    /// at one time. Either <c>FilterExpression</c> and <c>Metrics</c> or <c>CostFilters</c>
+    /// and <c>CostTypes</c>, not both or a different combination. We recommend using <c>FilterExpression</c>
+    /// and <c>Metrics</c> as they provide more flexible and powerful filtering capabilities.
+    /// The Request Syntax section shows the <c>FilterExpression</c>/<c>Metrics</c> syntax.
     /// </para>
     ///  </important>
     /// </summary>

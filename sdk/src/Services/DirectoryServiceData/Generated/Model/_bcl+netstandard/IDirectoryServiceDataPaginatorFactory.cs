@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the directory-service-data-2023-05-31.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DirectoryServiceData.Model
@@ -29,31 +30,61 @@ namespace Amazon.DirectoryServiceData.Model
         /// <summary>
         /// Paginator for ListGroupMembers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListGroupMembersPaginator ListGroupMembers(ListGroupMembersRequest request);
 
         /// <summary>
         /// Paginator for ListGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListGroupsPaginator ListGroups(ListGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListGroupsForMember operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListGroupsForMemberPaginator ListGroupsForMember(ListGroupsForMemberRequest request);
 
         /// <summary>
         /// Paginator for ListUsers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListUsersPaginator ListUsers(ListUsersRequest request);
 
         /// <summary>
         /// Paginator for SearchGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         ISearchGroupsPaginator SearchGroups(SearchGroupsRequest request);
 
         /// <summary>
         /// Paginator for SearchUsers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         ISearchUsersPaginator SearchUsers(SearchUsersRequest request);
     }
 }

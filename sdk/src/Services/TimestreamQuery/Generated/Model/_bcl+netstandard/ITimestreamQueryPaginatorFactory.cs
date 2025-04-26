@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the timestream-query-2018-11-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamQuery.Model
@@ -29,16 +30,31 @@ namespace Amazon.TimestreamQuery.Model
         /// <summary>
         /// Paginator for ListScheduledQueries operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListScheduledQueriesPaginator ListScheduledQueries(ListScheduledQueriesRequest request);
 
         /// <summary>
         /// Paginator for ListTagsForResource operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request);
 
         /// <summary>
         /// Paginator for Query operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxRows",
+            OutputToken = new[] { "NextToken" }
+        )]
         IQueryPaginator Query(QueryRequest request);
     }
 }

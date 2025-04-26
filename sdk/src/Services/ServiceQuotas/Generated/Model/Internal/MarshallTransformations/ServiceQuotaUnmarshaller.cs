@@ -62,6 +62,12 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
                     unmarshalledObject.Adjustable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ErrorReason", targetDepth))
                 {
                     var unmarshaller = ErrorReasonUnmarshaller.Instance;

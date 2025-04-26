@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the workdocs-2016-05-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkDocs.Model
@@ -29,51 +30,101 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Paginator for DescribeActivities operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "Marker" }
+        )]
         IDescribeActivitiesPaginator DescribeActivities(DescribeActivitiesRequest request);
 
         /// <summary>
         /// Paginator for DescribeComments operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "Marker" }
+        )]
         IDescribeCommentsPaginator DescribeComments(DescribeCommentsRequest request);
 
         /// <summary>
         /// Paginator for DescribeDocumentVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "Marker" }
+        )]
         IDescribeDocumentVersionsPaginator DescribeDocumentVersions(DescribeDocumentVersionsRequest request);
 
         /// <summary>
         /// Paginator for DescribeFolderContents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "Marker" }
+        )]
         IDescribeFolderContentsPaginator DescribeFolderContents(DescribeFolderContentsRequest request);
 
         /// <summary>
         /// Paginator for DescribeGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "Marker" }
+        )]
         IDescribeGroupsPaginator DescribeGroups(DescribeGroupsRequest request);
 
         /// <summary>
         /// Paginator for DescribeNotificationSubscriptions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "Marker" }
+        )]
         IDescribeNotificationSubscriptionsPaginator DescribeNotificationSubscriptions(DescribeNotificationSubscriptionsRequest request);
 
         /// <summary>
         /// Paginator for DescribeResourcePermissions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "Marker" }
+        )]
         IDescribeResourcePermissionsPaginator DescribeResourcePermissions(DescribeResourcePermissionsRequest request);
 
         /// <summary>
         /// Paginator for DescribeRootFolders operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "Marker" }
+        )]
         IDescribeRootFoldersPaginator DescribeRootFolders(DescribeRootFoldersRequest request);
 
         /// <summary>
         /// Paginator for DescribeUsers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "Marker" }
+        )]
         IDescribeUsersPaginator DescribeUsers(DescribeUsersRequest request);
 
         /// <summary>
         /// Paginator for SearchResources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "Marker" }
+        )]
         ISearchResourcesPaginator SearchResources(SearchResourcesRequest request);
     }
 }

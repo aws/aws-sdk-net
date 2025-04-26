@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the serverlessrepo-2017-09-08.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServerlessApplicationRepository.Model
@@ -29,16 +30,31 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Paginator for ListApplicationDependencies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationDependenciesPaginator ListApplicationDependencies(ListApplicationDependenciesRequest request);
 
         /// <summary>
         /// Paginator for ListApplications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
 
         /// <summary>
         /// Paginator for ListApplicationVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationVersionsPaginator ListApplicationVersions(ListApplicationVersionsRequest request);
     }
 }

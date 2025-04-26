@@ -44,6 +44,7 @@ namespace Amazon.GroundStation.Model
     {
         private AgentDetails _agentDetails;
         private DiscoveryData _discoveryData;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AgentDetails. 
@@ -81,6 +82,24 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetDiscoveryData()
         {
             return this._discoveryData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags assigned to an <c>Agent</c>.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

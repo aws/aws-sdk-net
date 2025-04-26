@@ -50,7 +50,7 @@ namespace ServiceClientGeneratorTests
 
             var nativeValue = ServiceClientGenerator.Utils.JMESPathToNativeValue("nested.listOfObjects[*]", topShape);
 
-            Assert.Equal("Nested.ListOfObjects.Select(element => element)", nativeValue);
+            Assert.Equal("Nested?.ListOfObjects?.Select(element => element)", nativeValue);
         }
 
         [Fact]
@@ -70,7 +70,7 @@ namespace ServiceClientGeneratorTests
 
             var nativeValue = ServiceClientGenerator.Utils.JMESPathToNativeValue("nested.map*", topShape);
 
-            Assert.Equal("Nested.Map.Values.Select(element => element)", nativeValue);
+            Assert.Equal("Nested?.Map?.Values.Select(element => element)", nativeValue);
         }
 
         [Fact]
@@ -90,7 +90,7 @@ namespace ServiceClientGeneratorTests
 
             var nativeValue = ServiceClientGenerator.Utils.JMESPathToNativeValue("nested.keys(map)", topShape);
 
-            Assert.Equal("Nested.Map.Keys.ToList()", nativeValue);
+            Assert.Equal("Nested?.Map?.Keys.ToList()", nativeValue);
         }
 
         [Fact]
@@ -130,7 +130,7 @@ namespace ServiceClientGeneratorTests
 
             var nativeValue = ServiceClientGenerator.Utils.JMESPathToNativeValue("list[*].inner", topShape);
 
-            Assert.Equal("List.Select(element => element.Inner)", nativeValue);
+            Assert.Equal("List?.Select(element => element?.Inner)", nativeValue);
         }
 
         [Fact]
@@ -148,7 +148,7 @@ namespace ServiceClientGeneratorTests
 
             var nativeValue = ServiceClientGenerator.Utils.JMESPathToNativeValue("listOfUnions[*][string, object.key][]", topShape);
 
-            Assert.Equal("ListOfUnions.Select(element => new [] { element.String, element.Object.Key }).SelectMany(element => element)", nativeValue);
+            Assert.Equal("ListOfUnions?.Select(element => new [] { element?.String, element?.Object?.Key })?.SelectMany(element => element).Where(element => element != null)", nativeValue);
         }
 
         [Fact]

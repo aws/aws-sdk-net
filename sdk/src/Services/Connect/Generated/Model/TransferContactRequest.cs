@@ -43,7 +43,7 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Transfer is supported for only <c>TASK</c> and <c>EMAIL</c> contacts.
+    /// Transfer is only supported for <c>TASK</c> and <c>EMAIL</c> contacts.
     /// </para>
     ///  </li> <li> 
     /// <para>

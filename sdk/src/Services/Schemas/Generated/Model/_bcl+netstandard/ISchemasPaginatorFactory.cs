@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the schemas-2019-12-02.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Schemas.Model
@@ -29,26 +30,51 @@ namespace Amazon.Schemas.Model
         /// <summary>
         /// Paginator for ListDiscoverers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDiscoverersPaginator ListDiscoverers(ListDiscoverersRequest request);
 
         /// <summary>
         /// Paginator for ListRegistries operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRegistriesPaginator ListRegistries(ListRegistriesRequest request);
 
         /// <summary>
         /// Paginator for ListSchemas operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSchemasPaginator ListSchemas(ListSchemasRequest request);
 
         /// <summary>
         /// Paginator for ListSchemaVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSchemaVersionsPaginator ListSchemaVersions(ListSchemaVersionsRequest request);
 
         /// <summary>
         /// Paginator for SearchSchemas operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         ISearchSchemasPaginator SearchSchemas(SearchSchemasRequest request);
     }
 }

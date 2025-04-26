@@ -38,6 +38,7 @@ namespace Amazon.MediaTailor.Model
         private int? _maxResults;
         private string _nextToken;
         private string _playbackConfigurationName;
+        private ListPrefetchScheduleType _scheduleType;
         private string _streamId;
 
         /// <summary>
@@ -111,6 +112,27 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetPlaybackConfigurationName()
         {
             return this._playbackConfigurationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduleType. 
+        /// <para>
+        /// The type of prefetch schedules that you want to list. <c>SINGLE</c> indicates that
+        /// you want to list the configured single prefetch schedules. <c>RECURRING</c> indicates
+        /// that you want to list the configured recurring prefetch schedules. <c>ALL</c> indicates
+        /// that you want to list all configured prefetch schedules.
+        /// </para>
+        /// </summary>
+        public ListPrefetchScheduleType ScheduleType
+        {
+            get { return this._scheduleType; }
+            set { this._scheduleType = value; }
+        }
+
+        // Check to see if ScheduleType property is set
+        internal bool IsSetScheduleType()
+        {
+            return this._scheduleType != null;
         }
 
         /// <summary>

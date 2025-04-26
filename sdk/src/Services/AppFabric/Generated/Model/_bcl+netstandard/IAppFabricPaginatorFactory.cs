@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the appfabric-2023-05-19.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppFabric.Model
@@ -29,21 +30,41 @@ namespace Amazon.AppFabric.Model
         /// <summary>
         /// Paginator for ListAppAuthorizations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAppAuthorizationsPaginator ListAppAuthorizations(ListAppAuthorizationsRequest request);
 
         /// <summary>
         /// Paginator for ListAppBundles operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAppBundlesPaginator ListAppBundles(ListAppBundlesRequest request);
 
         /// <summary>
         /// Paginator for ListIngestionDestinations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListIngestionDestinationsPaginator ListIngestionDestinations(ListIngestionDestinationsRequest request);
 
         /// <summary>
         /// Paginator for ListIngestions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListIngestionsPaginator ListIngestions(ListIngestionsRequest request);
     }
 }

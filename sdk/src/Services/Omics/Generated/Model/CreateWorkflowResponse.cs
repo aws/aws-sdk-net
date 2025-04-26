@@ -38,6 +38,7 @@ namespace Amazon.Omics.Model
         private string _id;
         private WorkflowStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _uuid;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -112,6 +113,24 @@ namespace Amazon.Omics.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Uuid. 
+        /// <para>
+        /// The universally unique identifier (UUID) value for this workflow.
+        /// </para>
+        /// </summary>
+        public string Uuid
+        {
+            get { return this._uuid; }
+            set { this._uuid = value; }
+        }
+
+        // Check to see if Uuid property is set
+        internal bool IsSetUuid()
+        {
+            return this._uuid != null;
         }
 
     }

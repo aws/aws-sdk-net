@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the freetier-2023-09-07.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FreeTier.Model
@@ -29,6 +30,11 @@ namespace Amazon.FreeTier.Model
         /// <summary>
         /// Paginator for GetFreeTierUsage operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetFreeTierUsagePaginator GetFreeTierUsage(GetFreeTierUsageRequest request);
     }
 }

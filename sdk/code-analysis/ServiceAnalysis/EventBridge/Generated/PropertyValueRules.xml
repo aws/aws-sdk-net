@@ -103,6 +103,11 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EventBridge.Model.CreateConnectionRequest.KmsKeyIdentifier</property>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9_\-/:]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EventBridge.Model.CreateConnectionRequest.Name</property>
     <min>1</min>
     <max>64</max>
@@ -371,6 +376,11 @@
     <property>Amazon.EventBridge.Model.DescribeConnectionResponse.Description</property>
     <max>512</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.DescribeConnectionResponse.KmsKeyIdentifier</property>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9_\-/:]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.DescribeConnectionResponse.Name</property>
@@ -1095,6 +1105,11 @@
     <property>Amazon.EventBridge.Model.UpdateConnectionRequest.Description</property>
     <max>512</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.UpdateConnectionRequest.KmsKeyIdentifier</property>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9_\-/:]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.UpdateConnectionRequest.Name</property>

@@ -32,13 +32,15 @@ namespace Amazon.Account.Model
     /// <summary>
     /// The request could not be processed because of a conflict in the current status of
     /// the resource. For example, this happens if you try to enable a Region that is currently
-    /// being disabled (in a status of DISABLING).
+    /// being disabled (in a status of DISABLING) or if you try to change an account’s root
+    /// user email to an email address which is already in use.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ConflictException : AmazonAccountException
     {
+        private string _requestErrorType;
 
         /// <summary>
         /// Constructs a new ConflictException with the specified error
@@ -100,6 +102,7 @@ namespace Amazon.Account.Model
         protected ConflictException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.RequestErrorType = (string)info.GetValue("RequestErrorType", typeof(string));
         }
 
         /// <summary>
@@ -115,8 +118,27 @@ namespace Amazon.Account.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("RequestErrorType", this.RequestErrorType);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property RequestErrorType. 
+        /// <para>
+        /// The value populated to the <c>x-amzn-ErrorType</c> response header by API Gateway.
+        /// </para>
+        /// </summary>
+        public string RequestErrorType
+        {
+            get { return this._requestErrorType; }
+            set { this._requestErrorType = value; }
+        }
+
+        // Check to see if RequestErrorType property is set
+        internal bool IsSetRequestErrorType()
+        {
+            return !string.IsNullOrEmpty(this._requestErrorType);
+        }
 
     }
 }

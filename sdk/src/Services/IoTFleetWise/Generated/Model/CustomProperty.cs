@@ -144,7 +144,7 @@ namespace Amazon.IoTFleetWise.Model
         /// name of a custom property might be <c>ComplexDataTypes.VehicleDataTypes.SVMCamera.FPS</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=150)]
         public string FullyQualifiedName
         {
             get { return this._fullyQualifiedName; }

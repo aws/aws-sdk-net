@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the ce-2017-10-25.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model
@@ -29,41 +30,81 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Paginator for GetAnomalies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextPageToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextPageToken" }
+        )]
         IGetAnomaliesPaginator GetAnomalies(GetAnomaliesRequest request);
 
         /// <summary>
         /// Paginator for GetAnomalyMonitors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextPageToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextPageToken" }
+        )]
         IGetAnomalyMonitorsPaginator GetAnomalyMonitors(GetAnomalyMonitorsRequest request);
 
         /// <summary>
         /// Paginator for GetAnomalySubscriptions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextPageToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextPageToken" }
+        )]
         IGetAnomalySubscriptionsPaginator GetAnomalySubscriptions(GetAnomalySubscriptionsRequest request);
 
         /// <summary>
         /// Paginator for GetSavingsPlansCoverage operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetSavingsPlansCoveragePaginator GetSavingsPlansCoverage(GetSavingsPlansCoverageRequest request);
 
         /// <summary>
         /// Paginator for GetSavingsPlansUtilizationDetails operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetSavingsPlansUtilizationDetailsPaginator GetSavingsPlansUtilizationDetails(GetSavingsPlansUtilizationDetailsRequest request);
 
         /// <summary>
         /// Paginator for ListCostAllocationTagBackfillHistory operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCostAllocationTagBackfillHistoryPaginator ListCostAllocationTagBackfillHistory(ListCostAllocationTagBackfillHistoryRequest request);
 
         /// <summary>
         /// Paginator for ListCostAllocationTags operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCostAllocationTagsPaginator ListCostAllocationTags(ListCostAllocationTagsRequest request);
 
         /// <summary>
         /// Paginator for ListCostCategoryDefinitions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCostCategoryDefinitionsPaginator ListCostCategoryDefinitions(ListCostCategoryDefinitionsRequest request);
     }
 }

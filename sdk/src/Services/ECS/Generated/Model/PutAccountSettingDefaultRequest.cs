@@ -146,6 +146,17 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>defaultLogDriverMode</c> -Amazon ECS supports setting a default delivery mode
+        /// of log messages from a container to the <c>logDriver</c> that you specify in the container's
+        /// <c>logConfiguration</c>. The delivery mode affects application stability when the
+        /// flow of logs from the container to the log driver is interrupted. The <c>defaultLogDriverMode</c>
+        /// setting supports two values: <c>blocking</c> and <c>non-blocking</c>. If you don't
+        /// specify a delivery mode in your container definition's <c>logConfiguration</c>, the
+        /// mode you specify using this account setting will be used as the default. For more
+        /// information about log delivery modes, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_LogConfiguration.html">LogConfiguration</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>guardDutyActivate</c> - The <c>guardDutyActivate</c> parameter is read-only in
         /// Amazon ECS and indicates whether Amazon ECS Runtime Monitoring is enabled or disabled
         /// by your security administrator in your Amazon ECS account. Amazon GuardDuty controls

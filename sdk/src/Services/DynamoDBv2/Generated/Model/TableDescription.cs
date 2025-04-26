@@ -266,7 +266,9 @@ namespace Amazon.DynamoDBv2.Model
         /// projected into the secondary index. The total count of attributes provided in <c>NonKeyAttributes</c>,
         /// summed across all of the secondary indexes, must not exceed 100. If you project the
         /// same attribute into two different indexes, this counts as two distinct attributes
-        /// when determining the total.
+        /// when determining the total. This limit only applies when you specify the ProjectionType
+        /// of <c>INCLUDE</c>. You still can specify the ProjectionType of <c>ALL</c> to project
+        /// all attributes from the source table, even if the table has more than 100 attributes.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -487,7 +489,9 @@ namespace Amazon.DynamoDBv2.Model
         /// projected into the secondary index. The total count of attributes provided in <c>NonKeyAttributes</c>,
         /// summed across all of the secondary indexes, must not exceed 100. If you project the
         /// same attribute into two different indexes, this counts as two distinct attributes
-        /// when determining the total.
+        /// when determining the total. This limit only applies when you specify the ProjectionType
+        /// of <c>INCLUDE</c>. You still can specify the ProjectionType of <c>ALL</c> to project
+        /// all attributes from the source table, even if the table has more than 100 attributes.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>

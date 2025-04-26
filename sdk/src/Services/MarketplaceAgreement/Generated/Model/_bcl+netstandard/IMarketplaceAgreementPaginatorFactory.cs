@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the marketplace-agreement-2020-03-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model
@@ -29,11 +30,21 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Paginator for GetAgreementTerms operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetAgreementTermsPaginator GetAgreementTerms(GetAgreementTermsRequest request);
 
         /// <summary>
         /// Paginator for SearchAgreements operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         ISearchAgreementsPaginator SearchAgreements(SearchAgreementsRequest request);
     }
 }

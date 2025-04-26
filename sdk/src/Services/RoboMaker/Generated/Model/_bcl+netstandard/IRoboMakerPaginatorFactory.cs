@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the robomaker-2018-06-29.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RoboMaker.Model
@@ -29,56 +30,111 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Paginator for ListDeploymentJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDeploymentJobsPaginator ListDeploymentJobs(ListDeploymentJobsRequest request);
 
         /// <summary>
         /// Paginator for ListFleets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFleetsPaginator ListFleets(ListFleetsRequest request);
 
         /// <summary>
         /// Paginator for ListRobotApplications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRobotApplicationsPaginator ListRobotApplications(ListRobotApplicationsRequest request);
 
         /// <summary>
         /// Paginator for ListRobots operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRobotsPaginator ListRobots(ListRobotsRequest request);
 
         /// <summary>
         /// Paginator for ListSimulationApplications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSimulationApplicationsPaginator ListSimulationApplications(ListSimulationApplicationsRequest request);
 
         /// <summary>
         /// Paginator for ListSimulationJobBatches operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSimulationJobBatchesPaginator ListSimulationJobBatches(ListSimulationJobBatchesRequest request);
 
         /// <summary>
         /// Paginator for ListSimulationJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSimulationJobsPaginator ListSimulationJobs(ListSimulationJobsRequest request);
 
         /// <summary>
         /// Paginator for ListWorldExportJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWorldExportJobsPaginator ListWorldExportJobs(ListWorldExportJobsRequest request);
 
         /// <summary>
         /// Paginator for ListWorldGenerationJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWorldGenerationJobsPaginator ListWorldGenerationJobs(ListWorldGenerationJobsRequest request);
 
         /// <summary>
         /// Paginator for ListWorlds operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWorldsPaginator ListWorlds(ListWorldsRequest request);
 
         /// <summary>
         /// Paginator for ListWorldTemplates operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWorldTemplatesPaginator ListWorldTemplates(ListWorldTemplatesRequest request);
     }
 }

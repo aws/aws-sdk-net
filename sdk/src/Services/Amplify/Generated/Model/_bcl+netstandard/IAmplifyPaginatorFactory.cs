@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the amplify-2017-07-25.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Amplify.Model
@@ -29,21 +30,41 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Paginator for ListApps operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAppsPaginator ListApps(ListAppsRequest request);
 
         /// <summary>
         /// Paginator for ListBranches operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListBranchesPaginator ListBranches(ListBranchesRequest request);
 
         /// <summary>
         /// Paginator for ListDomainAssociations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDomainAssociationsPaginator ListDomainAssociations(ListDomainAssociationsRequest request);
 
         /// <summary>
         /// Paginator for ListJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListJobsPaginator ListJobs(ListJobsRequest request);
     }
 }

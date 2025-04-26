@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model
@@ -29,71 +30,141 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Paginator for DescribeConfigurationTemplates operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeConfigurationTemplatesPaginator DescribeConfigurationTemplates(DescribeConfigurationTemplatesRequest request);
 
         /// <summary>
         /// Paginator for DescribeDeliveries operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeDeliveriesPaginator DescribeDeliveries(DescribeDeliveriesRequest request);
 
         /// <summary>
         /// Paginator for DescribeDeliveryDestinations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeDeliveryDestinationsPaginator DescribeDeliveryDestinations(DescribeDeliveryDestinationsRequest request);
 
         /// <summary>
         /// Paginator for DescribeDeliverySources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeDeliverySourcesPaginator DescribeDeliverySources(DescribeDeliverySourcesRequest request);
 
         /// <summary>
         /// Paginator for DescribeDestinations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeDestinationsPaginator DescribeDestinations(DescribeDestinationsRequest request);
 
         /// <summary>
         /// Paginator for DescribeLogGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeLogGroupsPaginator DescribeLogGroups(DescribeLogGroupsRequest request);
 
         /// <summary>
         /// Paginator for DescribeLogStreams operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeLogStreamsPaginator DescribeLogStreams(DescribeLogStreamsRequest request);
 
         /// <summary>
         /// Paginator for DescribeMetricFilters operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeMetricFiltersPaginator DescribeMetricFilters(DescribeMetricFiltersRequest request);
 
         /// <summary>
         /// Paginator for DescribeSubscriptionFilters operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeSubscriptionFiltersPaginator DescribeSubscriptionFilters(DescribeSubscriptionFiltersRequest request);
 
         /// <summary>
         /// Paginator for FilterLogEvents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IFilterLogEventsPaginator FilterLogEvents(FilterLogEventsRequest request);
 
         /// <summary>
         /// Paginator for GetLogEvents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextForwardToken" }
+        )]
         IGetLogEventsPaginator GetLogEvents(GetLogEventsRequest request);
 
         /// <summary>
         /// Paginator for ListAnomalies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAnomaliesPaginator ListAnomalies(ListAnomaliesRequest request);
 
         /// <summary>
         /// Paginator for ListLogAnomalyDetectors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLogAnomalyDetectorsPaginator ListLogAnomalyDetectors(ListLogAnomalyDetectorsRequest request);
 
         /// <summary>
         /// Paginator for ListLogGroupsForQuery operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLogGroupsForQueryPaginator ListLogGroupsForQuery(ListLogGroupsForQueryRequest request);
     }
 }

@@ -42,7 +42,7 @@ namespace Amazon.EntityResolution.Model
         ///  The unique ID of the deleted item.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=760)]
+        [AWSProperty(Required=true, Min=1, Max=780)]
         public string UniqueId
         {
             get { return this._uniqueId; }

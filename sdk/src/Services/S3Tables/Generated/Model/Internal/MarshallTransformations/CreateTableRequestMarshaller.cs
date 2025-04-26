@@ -81,9 +81,52 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetFormat())
             {
+<<<<<<< HEAD
                 context.Writer.WritePropertyName("format");
                 context.Writer.WriteStringValue(publicRequest.Format);
             }
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetFormat())
+                {
+                    context.Writer.WritePropertyName("format");
+                    context.Writer.Write(publicRequest.Format);
+                }
+
+                if(publicRequest.IsSetMetadata())
+                {
+                    context.Writer.WritePropertyName("metadata");
+                    context.Writer.WriteObjectStart();
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEncryptionConfiguration())
+                {
+                    context.Writer.WritePropertyName("encryptionConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EncryptionConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetFormat())
+                {
+                    context.Writer.WritePropertyName("format");
+                    context.Writer.Write(publicRequest.Format);
+                }
+
+                if(publicRequest.IsSetMetadata())
+                {
+                    context.Writer.WritePropertyName("metadata");
+                    context.Writer.WriteObjectStart();
+>>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
             if(publicRequest.IsSetMetadata())
             {

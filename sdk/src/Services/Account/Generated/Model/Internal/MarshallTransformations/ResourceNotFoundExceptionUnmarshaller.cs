@@ -70,9 +70,19 @@ namespace Amazon.Account.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             if (context.Stream.Length > 0)
             {
+<<<<<<< HEAD
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
                 }
+||||||| Commit version number update changes
+=======
+                if (context.TestExpression("x-amzn-ErrorType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RequestErrorType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+>>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
             }
           
             return unmarshalledObject;

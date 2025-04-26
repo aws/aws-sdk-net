@@ -49,8 +49,10 @@ namespace Amazon.Omics.Model
         private WorkflowStatus _status;
         private string _statusMessage;
         private int? _storageCapacity;
+        private StorageType _storageType;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private WorkflowType _type;
+        private string _uuid;
 
         /// <summary>
         /// Gets and sets the property Accelerators. 
@@ -225,7 +227,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// Gets metadata for workflow.
+        /// Gets metadata for the workflow.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Metadata
@@ -318,7 +320,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property StorageCapacity. 
         /// <para>
-        /// The workflow's default run storage capacity in gibibytes.
+        /// The default static storage capacity (in gibibytes) for runs that use this workflow
+        /// or workflow version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]
@@ -332,6 +335,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetStorageCapacity()
         {
             return this._storageCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// The default storage type for runs using this workflow.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public StorageType StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
         }
 
         /// <summary>
@@ -369,6 +391,24 @@ namespace Amazon.Omics.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Uuid. 
+        /// <para>
+        /// The universally unique identifier (UUID) value for this workflow.
+        /// </para>
+        /// </summary>
+        public string Uuid
+        {
+            get { return this._uuid; }
+            set { this._uuid = value; }
+        }
+
+        // Check to see if Uuid property is set
+        internal bool IsSetUuid()
+        {
+            return this._uuid != null;
         }
 
     }

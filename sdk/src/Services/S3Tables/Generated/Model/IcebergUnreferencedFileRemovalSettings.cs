@@ -41,8 +41,8 @@ namespace Amazon.S3Tables.Model
         /// <summary>
         /// Gets and sets the property NonCurrentDays. 
         /// <para>
-        /// The number of days an object has to be non-current before it is deleted. <pre><c>&lt;/p&gt;
-        /// </c></pre>
+        /// The number of days an object has to be non-current before it is deleted.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
         public int? NonCurrentDays
@@ -61,7 +61,7 @@ namespace Amazon.S3Tables.Model
         /// Gets and sets the property UnreferencedDays. 
         /// <para>
         /// The number of days an object has to be unreferenced before it is marked as non-current.
-        /// <pre><c> &lt;/p&gt; </c></pre>
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
         public int? UnreferencedDays

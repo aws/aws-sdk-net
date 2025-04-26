@@ -34,7 +34,23 @@ namespace Amazon.BedrockDataAutomation.Model
     /// </summary>
     public partial class DocumentOverrideConfiguration
     {
+        private ModalityProcessingConfiguration _modalityProcessing;
         private SplitterConfiguration _splitter;
+
+        /// <summary>
+        /// Gets and sets the property ModalityProcessing.
+        /// </summary>
+        public ModalityProcessingConfiguration ModalityProcessing
+        {
+            get { return this._modalityProcessing; }
+            set { this._modalityProcessing = value; }
+        }
+
+        // Check to see if ModalityProcessing property is set
+        internal bool IsSetModalityProcessing()
+        {
+            return this._modalityProcessing != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Splitter.

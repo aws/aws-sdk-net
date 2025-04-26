@@ -37,6 +37,7 @@ namespace Amazon.Account.Model
     #endif
     public partial class ResourceNotFoundException : AmazonAccountException
     {
+        private string _requestErrorType;
 
         /// <summary>
         /// Constructs a new ResourceNotFoundException with the specified error
@@ -98,6 +99,7 @@ namespace Amazon.Account.Model
         protected ResourceNotFoundException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.RequestErrorType = (string)info.GetValue("RequestErrorType", typeof(string));
         }
 
         /// <summary>
@@ -113,8 +115,27 @@ namespace Amazon.Account.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("RequestErrorType", this.RequestErrorType);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property RequestErrorType. 
+        /// <para>
+        /// The value populated to the <c>x-amzn-ErrorType</c> response header by API Gateway.
+        /// </para>
+        /// </summary>
+        public string RequestErrorType
+        {
+            get { return this._requestErrorType; }
+            set { this._requestErrorType = value; }
+        }
+
+        // Check to see if RequestErrorType property is set
+        internal bool IsSetRequestErrorType()
+        {
+            return !string.IsNullOrEmpty(this._requestErrorType);
+        }
 
     }
 }

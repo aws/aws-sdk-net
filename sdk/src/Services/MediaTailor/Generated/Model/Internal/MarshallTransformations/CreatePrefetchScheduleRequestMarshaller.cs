@@ -92,6 +92,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
             if(publicRequest.IsSetRetrieval())
             {
+<<<<<<< HEAD
                 context.Writer.WritePropertyName("Retrieval");
                 context.Writer.WriteStartObject();
 
@@ -105,6 +106,96 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("StreamId");
                 context.Writer.WriteStringValue(publicRequest.StreamId);
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetConsumption())
+                {
+                    context.Writer.WritePropertyName("Consumption");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PrefetchConsumptionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Consumption, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetRetrieval())
+                {
+                    context.Writer.WritePropertyName("Retrieval");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PrefetchRetrievalMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Retrieval, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetStreamId())
+                {
+                    context.Writer.WritePropertyName("StreamId");
+                    context.Writer.Write(publicRequest.StreamId);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetConsumption())
+                {
+                    context.Writer.WritePropertyName("Consumption");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PrefetchConsumptionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Consumption, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetRecurringPrefetchConfiguration())
+                {
+                    context.Writer.WritePropertyName("RecurringPrefetchConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RecurringPrefetchConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RecurringPrefetchConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetRetrieval())
+                {
+                    context.Writer.WritePropertyName("Retrieval");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PrefetchRetrievalMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Retrieval, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetScheduleType())
+                {
+                    context.Writer.WritePropertyName("ScheduleType");
+                    context.Writer.Write(publicRequest.ScheduleType);
+                }
+
+                if(publicRequest.IsSetStreamId())
+                {
+                    context.Writer.WritePropertyName("StreamId");
+                    context.Writer.Write(publicRequest.StreamId);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
             }
 
             writer.WriteEndObject();

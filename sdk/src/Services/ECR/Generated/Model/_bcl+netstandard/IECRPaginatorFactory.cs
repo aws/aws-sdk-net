@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the ecr-2015-09-21.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECR.Model
@@ -29,36 +30,71 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Paginator for DescribeImages operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeImagesPaginator DescribeImages(DescribeImagesRequest request);
 
         /// <summary>
         /// Paginator for DescribeImageScanFindings operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeImageScanFindingsPaginator DescribeImageScanFindings(DescribeImageScanFindingsRequest request);
 
         /// <summary>
         /// Paginator for DescribePullThroughCacheRules operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribePullThroughCacheRulesPaginator DescribePullThroughCacheRules(DescribePullThroughCacheRulesRequest request);
 
         /// <summary>
         /// Paginator for DescribeRepositories operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeRepositoriesPaginator DescribeRepositories(DescribeRepositoriesRequest request);
 
         /// <summary>
         /// Paginator for DescribeRepositoryCreationTemplates operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeRepositoryCreationTemplatesPaginator DescribeRepositoryCreationTemplates(DescribeRepositoryCreationTemplatesRequest request);
 
         /// <summary>
         /// Paginator for GetLifecyclePolicyPreview operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetLifecyclePolicyPreviewPaginator GetLifecyclePolicyPreview(GetLifecyclePolicyPreviewRequest request);
 
         /// <summary>
         /// Paginator for ListImages operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListImagesPaginator ListImages(ListImagesRequest request);
     }
 }

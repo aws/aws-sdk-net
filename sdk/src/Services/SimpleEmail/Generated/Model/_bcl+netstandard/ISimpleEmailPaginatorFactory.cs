@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmail.Model
@@ -29,11 +30,21 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Paginator for ListCustomVerificationEmailTemplates operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCustomVerificationEmailTemplatesPaginator ListCustomVerificationEmailTemplates(ListCustomVerificationEmailTemplatesRequest request);
 
         /// <summary>
         /// Paginator for ListIdentities operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListIdentitiesPaginator ListIdentities(ListIdentitiesRequest request);
     }
 }

@@ -68,6 +68,18 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                     unmarshalledObject.FromStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("skip", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Skip = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stepCheckpoint", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.StepCheckpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("toProcStep", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -19564,6 +19564,10 @@ namespace Amazon.EC2
         /// Constant Nlb for ServiceManaged
         /// </summary>
         public static readonly ServiceManaged Nlb = new ServiceManaged("nlb");
+        /// <summary>
+        /// Constant Rnat for ServiceManaged
+        /// </summary>
+        public static readonly ServiceManaged Rnat = new ServiceManaged("rnat");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

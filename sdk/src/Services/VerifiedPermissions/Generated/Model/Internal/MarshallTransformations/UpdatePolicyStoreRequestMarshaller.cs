@@ -77,9 +77,49 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetDescription())
             {
+<<<<<<< HEAD
                 context.Writer.WritePropertyName("description");
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetPolicyStoreId())
+                {
+                    context.Writer.WritePropertyName("policyStoreId");
+                    context.Writer.Write(publicRequest.PolicyStoreId);
+                }
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDeletionProtection())
+                {
+                    context.Writer.WritePropertyName("deletionProtection");
+                    context.Writer.Write(publicRequest.DeletionProtection);
+                }
+
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetPolicyStoreId())
+                {
+                    context.Writer.WritePropertyName("policyStoreId");
+                    context.Writer.Write(publicRequest.PolicyStoreId);
+                }
+>>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
             if(publicRequest.IsSetPolicyStoreId())
             {

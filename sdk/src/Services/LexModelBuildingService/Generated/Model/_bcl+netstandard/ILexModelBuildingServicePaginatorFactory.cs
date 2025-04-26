@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the lex-models-2017-04-19.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelBuildingService.Model
@@ -29,56 +30,111 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Paginator for GetBotAliases operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetBotAliasesPaginator GetBotAliases(GetBotAliasesRequest request);
 
         /// <summary>
         /// Paginator for GetBotChannelAssociations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetBotChannelAssociationsPaginator GetBotChannelAssociations(GetBotChannelAssociationsRequest request);
 
         /// <summary>
         /// Paginator for GetBots operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetBotsPaginator GetBots(GetBotsRequest request);
 
         /// <summary>
         /// Paginator for GetBotVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetBotVersionsPaginator GetBotVersions(GetBotVersionsRequest request);
 
         /// <summary>
         /// Paginator for GetBuiltinIntents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetBuiltinIntentsPaginator GetBuiltinIntents(GetBuiltinIntentsRequest request);
 
         /// <summary>
         /// Paginator for GetBuiltinSlotTypes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetBuiltinSlotTypesPaginator GetBuiltinSlotTypes(GetBuiltinSlotTypesRequest request);
 
         /// <summary>
         /// Paginator for GetIntents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetIntentsPaginator GetIntents(GetIntentsRequest request);
 
         /// <summary>
         /// Paginator for GetIntentVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetIntentVersionsPaginator GetIntentVersions(GetIntentVersionsRequest request);
 
         /// <summary>
         /// Paginator for GetMigrations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetMigrationsPaginator GetMigrations(GetMigrationsRequest request);
 
         /// <summary>
         /// Paginator for GetSlotTypes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetSlotTypesPaginator GetSlotTypes(GetSlotTypesRequest request);
 
         /// <summary>
         /// Paginator for GetSlotTypeVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetSlotTypeVersionsPaginator GetSlotTypeVersions(GetSlotTypeVersionsRequest request);
     }
 }

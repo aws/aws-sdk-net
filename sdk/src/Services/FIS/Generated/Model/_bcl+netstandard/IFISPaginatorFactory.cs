@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the fis-2020-12-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FIS.Model
@@ -29,31 +30,61 @@ namespace Amazon.FIS.Model
         /// <summary>
         /// Paginator for ListActions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListActionsPaginator ListActions(ListActionsRequest request);
 
         /// <summary>
         /// Paginator for ListExperimentResolvedTargets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListExperimentResolvedTargetsPaginator ListExperimentResolvedTargets(ListExperimentResolvedTargetsRequest request);
 
         /// <summary>
         /// Paginator for ListExperiments operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListExperimentsPaginator ListExperiments(ListExperimentsRequest request);
 
         /// <summary>
         /// Paginator for ListExperimentTemplates operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListExperimentTemplatesPaginator ListExperimentTemplates(ListExperimentTemplatesRequest request);
 
         /// <summary>
         /// Paginator for ListTargetAccountConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTargetAccountConfigurationsPaginator ListTargetAccountConfigurations(ListTargetAccountConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListTargetResourceTypes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTargetResourceTypesPaginator ListTargetResourceTypes(ListTargetResourceTypesRequest request);
     }
 }

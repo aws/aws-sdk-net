@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the cost-optimization-hub-2022-07-26.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostOptimizationHub.Model
@@ -29,16 +30,31 @@ namespace Amazon.CostOptimizationHub.Model
         /// <summary>
         /// Paginator for ListEnrollmentStatuses operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEnrollmentStatusesPaginator ListEnrollmentStatuses(ListEnrollmentStatusesRequest request);
 
         /// <summary>
         /// Paginator for ListRecommendations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRecommendationsPaginator ListRecommendations(ListRecommendationsRequest request);
 
         /// <summary>
         /// Paginator for ListRecommendationSummaries operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRecommendationSummariesPaginator ListRecommendationSummaries(ListRecommendationSummariesRequest request);
     }
 }

@@ -58,6 +58,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     response.ConnectorId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("SftpConnectionDetails", targetDepth))
+                {
+                    var unmarshaller = SftpConnectorConnectionDetailsUnmarshaller.Instance;
+                    response.SftpConnectionDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

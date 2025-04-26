@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the controltower-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ControlTower.Model
@@ -29,31 +30,61 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Paginator for ListBaselines operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListBaselinesPaginator ListBaselines(ListBaselinesRequest request);
 
         /// <summary>
         /// Paginator for ListControlOperations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListControlOperationsPaginator ListControlOperations(ListControlOperationsRequest request);
 
         /// <summary>
         /// Paginator for ListEnabledBaselines operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEnabledBaselinesPaginator ListEnabledBaselines(ListEnabledBaselinesRequest request);
 
         /// <summary>
         /// Paginator for ListEnabledControls operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEnabledControlsPaginator ListEnabledControls(ListEnabledControlsRequest request);
 
         /// <summary>
         /// Paginator for ListLandingZoneOperations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLandingZoneOperationsPaginator ListLandingZoneOperations(ListLandingZoneOperationsRequest request);
 
         /// <summary>
         /// Paginator for ListLandingZones operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLandingZonesPaginator ListLandingZones(ListLandingZonesRequest request);
     }
 }

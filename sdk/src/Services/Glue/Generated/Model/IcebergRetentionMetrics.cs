@@ -34,11 +34,30 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class IcebergRetentionMetrics
     {
+        private double? _dpuHours;
         private double? _jobDurationInHour;
         private long? _numberOfDataFilesDeleted;
         private int? _numberOfDpus;
         private long? _numberOfManifestFilesDeleted;
         private long? _numberOfManifestListsDeleted;
+
+        /// <summary>
+        /// Gets and sets the property DpuHours. 
+        /// <para>
+        /// The number of DPU hours consumed by the job.
+        /// </para>
+        /// </summary>
+        public double DpuHours
+        {
+            get { return this._dpuHours.GetValueOrDefault(); }
+            set { this._dpuHours = value; }
+        }
+
+        // Check to see if DpuHours property is set
+        internal bool IsSetDpuHours()
+        {
+            return this._dpuHours.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property JobDurationInHour. 
@@ -79,7 +98,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfDpus. 
         /// <para>
-        /// The number of DPU hours consumed by the job.
+        /// The number of DPUs consumed by the job, rounded up to the nearest whole number.
         /// </para>
         /// </summary>
         public int? NumberOfDpus

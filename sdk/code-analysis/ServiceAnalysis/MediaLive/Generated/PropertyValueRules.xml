@@ -1027,6 +1027,16 @@
     <max>86400</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.CmafIngestCaptionLanguageMapping.CaptionChannel</property>
+    <min>1</min>
+    <max>4</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.CmafIngestCaptionLanguageMapping.LanguageCode</property>
+    <min>3</min>
+    <max>3</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.CmafIngestGroupSettings.Id3NameModifier</property>
     <max>100</max>
   </property-value-rule>
@@ -1050,6 +1060,11 @@
     <property>Amazon.MediaLive.Model.CmafIngestGroupSettings.SendDelayMs</property>
     <min>0</min>
     <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.CmafIngestGroupSettings.TimedMetadataId3Period</property>
+    <min>0</min>
+    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.CreateCloudWatchAlarmTemplateGroupRequestContent.Description</property>

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the connect-contact-lens-2020-08-21.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectContactLens.Model
@@ -29,6 +30,11 @@ namespace Amazon.ConnectContactLens.Model
         /// <summary>
         /// Paginator for ListRealtimeContactAnalysisSegments operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRealtimeContactAnalysisSegmentsPaginator ListRealtimeContactAnalysisSegments(ListRealtimeContactAnalysisSegmentsRequest request);
     }
 }

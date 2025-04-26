@@ -164,6 +164,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Default: Inherits the value from the source DB instance.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically
+        /// upgrading the minor engine version</a>.
+        /// </para>
         /// </summary>
         public bool? AutoMinorVersionUpgrade
         {

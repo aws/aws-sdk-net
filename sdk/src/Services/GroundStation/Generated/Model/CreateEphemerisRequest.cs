@@ -175,7 +175,7 @@ namespace Amazon.GroundStation.Model
         /// AWS Ground Station satellite ID for this ephemeris.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string SatelliteId
         {
             get { return this._satelliteId; }

@@ -52,6 +52,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.Disk.Value);
             }
 
+            if(requestObject.IsSetInstanceType())
+            {
+                context.Writer.WritePropertyName("instanceType");
+                context.Writer.Write(requestObject.InstanceType);
+            }
+
             if(requestObject.IsSetMachineType())
             {
                 context.Writer.WritePropertyName("machineType");

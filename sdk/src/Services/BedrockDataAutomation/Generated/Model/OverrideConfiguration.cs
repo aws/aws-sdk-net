@@ -34,7 +34,26 @@ namespace Amazon.BedrockDataAutomation.Model
     /// </summary>
     public partial class OverrideConfiguration
     {
+        private AudioOverrideConfiguration _audio;
         private DocumentOverrideConfiguration _document;
+        private ImageOverrideConfiguration _image;
+        private ModalityRoutingConfiguration _modalityRouting;
+        private VideoOverrideConfiguration _video;
+
+        /// <summary>
+        /// Gets and sets the property Audio.
+        /// </summary>
+        public AudioOverrideConfiguration Audio
+        {
+            get { return this._audio; }
+            set { this._audio = value; }
+        }
+
+        // Check to see if Audio property is set
+        internal bool IsSetAudio()
+        {
+            return this._audio != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Document.
@@ -49,6 +68,51 @@ namespace Amazon.BedrockDataAutomation.Model
         internal bool IsSetDocument()
         {
             return this._document != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Image.
+        /// </summary>
+        public ImageOverrideConfiguration Image
+        {
+            get { return this._image; }
+            set { this._image = value; }
+        }
+
+        // Check to see if Image property is set
+        internal bool IsSetImage()
+        {
+            return this._image != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModalityRouting.
+        /// </summary>
+        public ModalityRoutingConfiguration ModalityRouting
+        {
+            get { return this._modalityRouting; }
+            set { this._modalityRouting = value; }
+        }
+
+        // Check to see if ModalityRouting property is set
+        internal bool IsSetModalityRouting()
+        {
+            return this._modalityRouting != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Video.
+        /// </summary>
+        public VideoOverrideConfiguration Video
+        {
+            get { return this._video; }
+            set { this._video = value; }
+        }
+
+        // Check to see if Video property is set
+        internal bool IsSetVideo()
+        {
+            return this._video != null;
         }
 
     }

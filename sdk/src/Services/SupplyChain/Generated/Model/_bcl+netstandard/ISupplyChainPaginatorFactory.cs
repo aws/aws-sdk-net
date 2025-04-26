@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the supplychain-2024-01-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SupplyChain.Model
@@ -29,16 +30,31 @@ namespace Amazon.SupplyChain.Model
         /// <summary>
         /// Paginator for ListDataIntegrationFlows operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDataIntegrationFlowsPaginator ListDataIntegrationFlows(ListDataIntegrationFlowsRequest request);
 
         /// <summary>
         /// Paginator for ListDataLakeDatasets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDataLakeDatasetsPaginator ListDataLakeDatasets(ListDataLakeDatasetsRequest request);
 
         /// <summary>
         /// Paginator for ListInstances operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListInstancesPaginator ListInstances(ListInstancesRequest request);
     }
 }

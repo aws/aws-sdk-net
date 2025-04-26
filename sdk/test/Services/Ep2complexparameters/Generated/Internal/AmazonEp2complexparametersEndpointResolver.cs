@@ -60,17 +60,17 @@ namespace Amazon.Ep2complexparameters.Internal
             }
             if (requestContext.RequestName == "ListOfObjectsOperationRequest") {
                 var request = (ListOfObjectsOperationRequest)requestContext.OriginalRequest;
-                result.stringArrayParam = request.Nested.ListOfObjects.Select(element => element.Key);
+                result.stringArrayParam = request.Nested?.ListOfObjects?.Select(element => element?.Key);
                 return result;
             }
             if (requestContext.RequestName == "ListOfUnionsOperationRequest") {
                 var request = (ListOfUnionsOperationRequest)requestContext.OriginalRequest;
-                result.stringArrayParam = request.ListOfUnions.Select(element => new [] { element.String, element.Object.Key }).SelectMany(element => element);
+                result.stringArrayParam = request.ListOfUnions?.Select(element => new [] { element?.String, element?.Object?.Key })?.SelectMany(element => element).Where(element => element != null);
                 return result;
             }
             if (requestContext.RequestName == "MapOperationRequest") {
                 var request = (MapOperationRequest)requestContext.OriginalRequest;
-                result.stringArrayParam = request.Map.Keys.ToList();
+                result.stringArrayParam = request.Map?.Keys.ToList();
                 return result;
             }
             if (requestContext.RequestName == "StaticContextOperationRequest") {

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the lakeformation-2017-03-31.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LakeFormation.Model
@@ -29,66 +30,131 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Paginator for GetEffectivePermissionsForPath operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetEffectivePermissionsForPathPaginator GetEffectivePermissionsForPath(GetEffectivePermissionsForPathRequest request);
 
         /// <summary>
         /// Paginator for GetTableObjects operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetTableObjectsPaginator GetTableObjects(GetTableObjectsRequest request);
 
         /// <summary>
         /// Paginator for GetWorkUnits operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetWorkUnitsPaginator GetWorkUnits(GetWorkUnitsRequest request);
 
         /// <summary>
         /// Paginator for ListDataCellsFilter operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDataCellsFilterPaginator ListDataCellsFilter(ListDataCellsFilterRequest request);
 
         /// <summary>
         /// Paginator for ListLakeFormationOptIns operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLakeFormationOptInsPaginator ListLakeFormationOptIns(ListLakeFormationOptInsRequest request);
 
         /// <summary>
         /// Paginator for ListLFTagExpressions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLFTagExpressionsPaginator ListLFTagExpressions(ListLFTagExpressionsRequest request);
 
         /// <summary>
         /// Paginator for ListLFTags operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLFTagsPaginator ListLFTags(ListLFTagsRequest request);
 
         /// <summary>
         /// Paginator for ListPermissions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPermissionsPaginator ListPermissions(ListPermissionsRequest request);
 
         /// <summary>
         /// Paginator for ListResources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListResourcesPaginator ListResources(ListResourcesRequest request);
 
         /// <summary>
         /// Paginator for ListTableStorageOptimizers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTableStorageOptimizersPaginator ListTableStorageOptimizers(ListTableStorageOptimizersRequest request);
 
         /// <summary>
         /// Paginator for ListTransactions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTransactionsPaginator ListTransactions(ListTransactionsRequest request);
 
         /// <summary>
         /// Paginator for SearchDatabasesByLFTags operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         ISearchDatabasesByLFTagsPaginator SearchDatabasesByLFTags(SearchDatabasesByLFTagsRequest request);
 
         /// <summary>
         /// Paginator for SearchTablesByLFTags operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         ISearchTablesByLFTagsPaginator SearchTablesByLFTags(SearchTablesByLFTagsRequest request);
     }
 }

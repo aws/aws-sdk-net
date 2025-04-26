@@ -105,7 +105,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property DefaultRouteTableAssociation. 
         /// <para>
         /// Indicates whether resource attachments are automatically associated with the default
-        /// association route table.
+        /// association route table. Enabled by default. If <c>defaultRouteTableAssociation</c>
+        /// is set to <c>enable</c>, Amazon Web Services Transit Gateway will create the default
+        /// transit gateway route table.
         /// </para>
         /// </summary>
         public DefaultRouteTableAssociationValue DefaultRouteTableAssociation
@@ -124,7 +126,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property DefaultRouteTablePropagation. 
         /// <para>
         /// Indicates whether resource attachments automatically propagate routes to the default
-        /// propagation route table.
+        /// propagation route table. Enabled by default. If <c>defaultRouteTablePropagation</c>
+        /// is set to <c>enable</c>, Amazon Web Services Transit Gateway will create the default
+        /// transit gateway route table.
         /// </para>
         /// </summary>
         public DefaultRouteTablePropagationValue DefaultRouteTablePropagation

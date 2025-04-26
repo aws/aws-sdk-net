@@ -74,6 +74,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                     unmarshalledObject.File = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("sla", targetDepth))
+                {
+                    var unmarshaller = SlaContentUnmarshaller.Instance;
+                    unmarshalledObject.Sla = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

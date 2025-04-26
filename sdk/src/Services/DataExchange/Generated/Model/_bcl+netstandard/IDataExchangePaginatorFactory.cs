@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the dataexchange-2017-07-25.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataExchange.Model
@@ -29,36 +30,71 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Paginator for ListDataGrants operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDataGrantsPaginator ListDataGrants(ListDataGrantsRequest request);
 
         /// <summary>
         /// Paginator for ListDataSetRevisions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDataSetRevisionsPaginator ListDataSetRevisions(ListDataSetRevisionsRequest request);
 
         /// <summary>
         /// Paginator for ListDataSets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDataSetsPaginator ListDataSets(ListDataSetsRequest request);
 
         /// <summary>
         /// Paginator for ListEventActions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEventActionsPaginator ListEventActions(ListEventActionsRequest request);
 
         /// <summary>
         /// Paginator for ListJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListJobsPaginator ListJobs(ListJobsRequest request);
 
         /// <summary>
         /// Paginator for ListReceivedDataGrants operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListReceivedDataGrantsPaginator ListReceivedDataGrants(ListReceivedDataGrantsRequest request);
 
         /// <summary>
         /// Paginator for ListRevisionAssets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRevisionAssetsPaginator ListRevisionAssets(ListRevisionAssetsRequest request);
     }
 }

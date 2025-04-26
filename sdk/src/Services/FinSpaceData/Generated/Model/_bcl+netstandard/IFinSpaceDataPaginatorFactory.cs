@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the finspace-data-2020-07-13.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FinSpaceData.Model
@@ -29,26 +30,51 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Paginator for ListChangesets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListChangesetsPaginator ListChangesets(ListChangesetsRequest request);
 
         /// <summary>
         /// Paginator for ListDatasets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDatasetsPaginator ListDatasets(ListDatasetsRequest request);
 
         /// <summary>
         /// Paginator for ListDataViews operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDataViewsPaginator ListDataViews(ListDataViewsRequest request);
 
         /// <summary>
         /// Paginator for ListPermissionGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPermissionGroupsPaginator ListPermissionGroups(ListPermissionGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListUsers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListUsersPaginator ListUsers(ListUsersRequest request);
     }
 }

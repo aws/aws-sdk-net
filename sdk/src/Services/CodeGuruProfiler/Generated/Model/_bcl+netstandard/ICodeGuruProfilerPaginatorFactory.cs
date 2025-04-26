@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the codeguruprofiler-2019-07-18.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeGuruProfiler.Model
@@ -29,21 +30,41 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Paginator for GetFindingsReportAccountSummary operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetFindingsReportAccountSummaryPaginator GetFindingsReportAccountSummary(GetFindingsReportAccountSummaryRequest request);
 
         /// <summary>
         /// Paginator for ListFindingsReports operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFindingsReportsPaginator ListFindingsReports(ListFindingsReportsRequest request);
 
         /// <summary>
         /// Paginator for ListProfileTimes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProfileTimesPaginator ListProfileTimes(ListProfileTimesRequest request);
 
         /// <summary>
         /// Paginator for ListProfilingGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProfilingGroupsPaginator ListProfilingGroups(ListProfilingGroupsRequest request);
     }
 }

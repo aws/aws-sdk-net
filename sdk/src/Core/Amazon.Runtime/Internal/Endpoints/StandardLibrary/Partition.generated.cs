@@ -137,6 +137,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 implicitGlobalRegion = "eu-isoe-west-1"
             };
             _partitionsByRegex.Add(@"^eu\-isoe\-\w+\-\d+$", aws_iso_e);
+            _partitionsByRegionName.Add("aws-iso-e-global", aws_iso_e);
             _partitionsByRegionName.Add("eu-isoe-west-1", aws_iso_e);
 
             var aws_iso_f = new PartitionAttributesShape

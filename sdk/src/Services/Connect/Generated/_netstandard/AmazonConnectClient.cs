@@ -1595,12 +1595,13 @@ namespace Amazon.Connect
         /// <summary>
         /// <important> 
         /// <para>
-        /// Only the EMAIL channel is supported. The supported initiation methods are: OUTBOUND,
-        /// AGENT_REPLY, and FLOW.
+        /// Only the EMAIL and VOICE channels are supported. The supported initiation methods
+        /// for EMAIL are: OUTBOUND, AGENT_REPLY, and FLOW. For VOICE the supported initiation
+        /// methods are TRANSFER and the subtype connect:ExternalAudio. 
         /// </para>
         ///  </important> 
         /// <para>
-        /// Creates a new EMAIL contact. 
+        /// Creates a new EMAIL or VOICE contact. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContact service method.</param>
@@ -12720,19 +12721,20 @@ namespace Amazon.Connect
 
         /// <summary>
         /// When a contact is being recorded, this API suspends recording whatever is selected
-        /// in the flow configuration: call, screen, or both. If only call recording or only screen
-        /// recording is enabled, then it would be suspended. For example, you might suspend the
-        /// screen recording while collecting sensitive information, such as a credit card number.
-        /// Then use ResumeContactRecording to restart recording the screen.
+        /// in the flow configuration: call (IVR or agent), screen, or both. If only call recording
+        /// or only screen recording is enabled, then it would be suspended. For example, you
+        /// might suspend the screen recording while collecting sensitive information, such as
+        /// a credit card number. Then use <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ResumeContactRecording.html">ResumeContactRecording</a>
+        /// to restart recording the screen.
         /// 
         ///  
         /// <para>
         /// The period of time that the recording is suspended is filled with silence in the final
-        /// recording.
+        /// recording. 
         /// </para>
         ///  
         /// <para>
-        /// Voice and screen recordings are supported.
+        ///  Voice (IVR, agent) and screen recordings are supported.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SuspendContactRecording service method.</param>
@@ -12899,7 +12901,7 @@ namespace Amazon.Connect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Transfer is supported for only <c>TASK</c> and <c>EMAIL</c> contacts.
+        /// Transfer is only supported for <c>TASK</c> and <c>EMAIL</c> contacts.
         /// </para>
         ///  </li> <li> 
         /// <para>

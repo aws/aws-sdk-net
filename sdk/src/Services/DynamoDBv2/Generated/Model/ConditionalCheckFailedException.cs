@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// A condition specified in the operation could not be evaluated.
+    /// A condition specified in the operation failed to be evaluated.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -33,10 +33,16 @@ namespace Amazon.WorkSpacesThinClient
     public partial class AmazonWorkSpacesThinClientConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("WorkSpaces Thin Client", "4.0.0.0");
 
         private static readonly AmazonWorkSpacesThinClientEndpointResolver EndpointResolver =
             new AmazonWorkSpacesThinClientEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("WorkSpaces Thin Client", "3.7.403.10");
+=======
+            InternalSDKUtils.BuildUserAgentString("WorkSpaces Thin Client", "3.7.403.20");
+>>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

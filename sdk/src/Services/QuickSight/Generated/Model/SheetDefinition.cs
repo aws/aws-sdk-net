@@ -37,6 +37,7 @@ namespace Amazon.QuickSight.Model
     public partial class SheetDefinition
     {
         private SheetContentType _contentType;
+        private VisualCustomActionDefaults _customActionDefaults;
         private string _description;
         private List<FilterControl> _filterControls = AWSConfigs.InitializeCollections ? new List<FilterControl>() : null;
         private List<SheetImage> _images = AWSConfigs.InitializeCollections ? new List<SheetImage>() : null;
@@ -74,6 +75,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetContentType()
         {
             return this._contentType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomActionDefaults. 
+        /// <para>
+        /// A list of visual custom actions for the sheet.
+        /// </para>
+        /// </summary>
+        public VisualCustomActionDefaults CustomActionDefaults
+        {
+            get { return this._customActionDefaults; }
+            set { this._customActionDefaults = value; }
+        }
+
+        // Check to see if CustomActionDefaults property is set
+        internal bool IsSetCustomActionDefaults()
+        {
+            return this._customActionDefaults != null;
         }
 
         /// <summary>

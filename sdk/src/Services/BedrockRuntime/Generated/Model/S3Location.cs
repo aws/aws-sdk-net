@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// A storage location in an S3 bucket.
+    /// A storage location in an Amazon S3 bucket.
     /// </summary>
     public partial class S3Location
     {

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the workspaces-thin-client-2023-08-22.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpacesThinClient.Model
@@ -29,16 +30,31 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// <summary>
         /// Paginator for ListDevices operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDevicesPaginator ListDevices(ListDevicesRequest request);
 
         /// <summary>
         /// Paginator for ListEnvironments operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEnvironmentsPaginator ListEnvironments(ListEnvironmentsRequest request);
 
         /// <summary>
         /// Paginator for ListSoftwareSets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSoftwareSetsPaginator ListSoftwareSets(ListSoftwareSetsRequest request);
     }
 }

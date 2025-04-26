@@ -53,7 +53,7 @@ namespace Amazon.GroundStation.Model
         /// UUID of agent to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string AgentId
         {
             get { return this._agentId; }
@@ -110,7 +110,7 @@ namespace Amazon.GroundStation.Model
         /// GUID of agent task.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string TaskId
         {
             get { return this._taskId; }

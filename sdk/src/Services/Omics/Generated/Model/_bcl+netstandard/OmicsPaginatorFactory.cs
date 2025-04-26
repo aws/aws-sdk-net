@@ -203,5 +203,13 @@ namespace Amazon.Omics.Model
         {
             return new ListWorkflowsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListWorkflowVersions operation
+        ///</summary>
+        public IListWorkflowVersionsPaginator ListWorkflowVersions(ListWorkflowVersionsRequest request) 
+        {
+            return new ListWorkflowVersionsPaginator(this.client, request);
+        }
     }
 }

@@ -101,6 +101,17 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetIndonesiaAdditionalInfo())
+            {
+                context.Writer.WritePropertyName("indonesiaAdditionalInfo");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = IndonesiaAdditionalInfoMarshaller.Instance;
+                marshaller.Marshall(requestObject.IndonesiaAdditionalInfo, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetIsraelAdditionalInfo())
             {
                 context.Writer.WritePropertyName("israelAdditionalInfo");

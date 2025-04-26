@@ -3102,6 +3102,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.TenantDatabaseAlreadyExistsException">
         /// You attempted to either create a tenant database that already exists or modify a tenant
         /// database to use the name of an existing tenant database.
@@ -3130,6 +3133,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.TenantDatabaseAlreadyExistsException">
         /// You attempted to either create a tenant database that already exists or modify a tenant
@@ -9428,6 +9434,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.TenantDatabaseAlreadyExistsException">
         /// You attempted to either create a tenant database that already exists or modify a tenant
         /// database to use the name of an existing tenant database.
@@ -9456,6 +9465,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.TenantDatabaseAlreadyExistsException">
         /// You attempted to either create a tenant database that already exists or modify a tenant

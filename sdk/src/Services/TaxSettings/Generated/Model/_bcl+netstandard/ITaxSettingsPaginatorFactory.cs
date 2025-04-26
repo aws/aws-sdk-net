@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the taxsettings-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TaxSettings.Model
@@ -29,16 +30,31 @@ namespace Amazon.TaxSettings.Model
         /// <summary>
         /// Paginator for ListSupplementalTaxRegistrations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSupplementalTaxRegistrationsPaginator ListSupplementalTaxRegistrations(ListSupplementalTaxRegistrationsRequest request);
 
         /// <summary>
         /// Paginator for ListTaxExemptions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTaxExemptionsPaginator ListTaxExemptions(ListTaxExemptionsRequest request);
 
         /// <summary>
         /// Paginator for ListTaxRegistrations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTaxRegistrationsPaginator ListTaxRegistrations(ListTaxRegistrationsRequest request);
     }
 }

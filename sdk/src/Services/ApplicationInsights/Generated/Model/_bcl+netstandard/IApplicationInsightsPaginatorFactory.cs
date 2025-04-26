@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the application-insights-2018-11-25.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationInsights.Model
@@ -29,36 +30,71 @@ namespace Amazon.ApplicationInsights.Model
         /// <summary>
         /// Paginator for ListApplications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
 
         /// <summary>
         /// Paginator for ListComponents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListComponentsPaginator ListComponents(ListComponentsRequest request);
 
         /// <summary>
         /// Paginator for ListConfigurationHistory operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListConfigurationHistoryPaginator ListConfigurationHistory(ListConfigurationHistoryRequest request);
 
         /// <summary>
         /// Paginator for ListLogPatterns operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLogPatternsPaginator ListLogPatterns(ListLogPatternsRequest request);
 
         /// <summary>
         /// Paginator for ListLogPatternSets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLogPatternSetsPaginator ListLogPatternSets(ListLogPatternSetsRequest request);
 
         /// <summary>
         /// Paginator for ListProblems operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProblemsPaginator ListProblems(ListProblemsRequest request);
 
         /// <summary>
         /// Paginator for ListWorkloads operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWorkloadsPaginator ListWorkloads(ListWorkloadsRequest request);
     }
 }

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the connectcampaigns-2021-01-30.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignService.Model
@@ -29,6 +30,11 @@ namespace Amazon.ConnectCampaignService.Model
         /// <summary>
         /// Paginator for ListCampaigns operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCampaignsPaginator ListCampaigns(ListCampaignsRequest request);
     }
 }

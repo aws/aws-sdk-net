@@ -33,10 +33,16 @@ namespace Amazon.IoTEvents
     public partial class AmazonIoTEventsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("IoT Events", "4.0.0.0");
 
         private static readonly AmazonIoTEventsEndpointResolver EndpointResolver =
             new AmazonIoTEventsEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("IoT Events", "3.7.400.130");
+=======
+            InternalSDKUtils.BuildUserAgentString("IoT Events", "3.7.400.140");
+>>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

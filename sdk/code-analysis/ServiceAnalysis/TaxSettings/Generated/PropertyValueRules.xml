@@ -291,6 +291,14 @@
     <pattern>^[A-Z]{5}[0-9]{4}[A-Z]{1}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TaxSettings.Model.IndonesiaAdditionalInfo.DecisionNumber</property>
+    <pattern>^([a-zA-Z0-9/.\-]{0,200})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.IndonesiaAdditionalInfo.PpnExceptionDesignationCode</property>
+    <pattern>^(01|02|03|07|08)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TaxSettings.Model.InternalServerException.ErrorCode</property>
     <min>0</min>
     <max>50</max>

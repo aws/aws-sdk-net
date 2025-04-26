@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the provisioned throughput settings for a specified table or index. The
-    /// settings can be modified using the <c>UpdateTable</c> operation.
+    /// Represents the provisioned throughput settings for the specified global secondary
+    /// index. You must use <c>ProvisionedThroughput</c> or <c>OnDemandThroughput</c> based
+    /// on your table’s capacity mode.
     /// 
     ///  
     /// <para>

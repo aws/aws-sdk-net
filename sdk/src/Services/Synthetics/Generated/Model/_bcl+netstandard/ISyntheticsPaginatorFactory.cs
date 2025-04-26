@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the synthetics-2017-10-11.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Synthetics.Model
@@ -29,36 +30,71 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Paginator for DescribeCanaries operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeCanariesPaginator DescribeCanaries(DescribeCanariesRequest request);
 
         /// <summary>
         /// Paginator for DescribeCanariesLastRun operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeCanariesLastRunPaginator DescribeCanariesLastRun(DescribeCanariesLastRunRequest request);
 
         /// <summary>
         /// Paginator for DescribeRuntimeVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeRuntimeVersionsPaginator DescribeRuntimeVersions(DescribeRuntimeVersionsRequest request);
 
         /// <summary>
         /// Paginator for GetCanaryRuns operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetCanaryRunsPaginator GetCanaryRuns(GetCanaryRunsRequest request);
 
         /// <summary>
         /// Paginator for ListAssociatedGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAssociatedGroupsPaginator ListAssociatedGroups(ListAssociatedGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListGroupResources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListGroupResourcesPaginator ListGroupResources(ListGroupResourcesRequest request);
 
         /// <summary>
         /// Paginator for ListGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListGroupsPaginator ListGroups(ListGroupsRequest request);
     }
 }

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the inspector2-2020-06-08.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model
@@ -29,76 +30,151 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Paginator for GetCisScanResultDetails operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetCisScanResultDetailsPaginator GetCisScanResultDetails(GetCisScanResultDetailsRequest request);
 
         /// <summary>
         /// Paginator for ListAccountPermissions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAccountPermissionsPaginator ListAccountPermissions(ListAccountPermissionsRequest request);
 
         /// <summary>
         /// Paginator for ListCisScanConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCisScanConfigurationsPaginator ListCisScanConfigurations(ListCisScanConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListCisScanResultsAggregatedByChecks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCisScanResultsAggregatedByChecksPaginator ListCisScanResultsAggregatedByChecks(ListCisScanResultsAggregatedByChecksRequest request);
 
         /// <summary>
         /// Paginator for ListCisScanResultsAggregatedByTargetResource operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCisScanResultsAggregatedByTargetResourcePaginator ListCisScanResultsAggregatedByTargetResource(ListCisScanResultsAggregatedByTargetResourceRequest request);
 
         /// <summary>
         /// Paginator for ListCisScans operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCisScansPaginator ListCisScans(ListCisScansRequest request);
 
         /// <summary>
         /// Paginator for ListCoverage operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCoveragePaginator ListCoverage(ListCoverageRequest request);
 
         /// <summary>
         /// Paginator for ListCoverageStatistics operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCoverageStatisticsPaginator ListCoverageStatistics(ListCoverageStatisticsRequest request);
 
         /// <summary>
         /// Paginator for ListDelegatedAdminAccounts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDelegatedAdminAccountsPaginator ListDelegatedAdminAccounts(ListDelegatedAdminAccountsRequest request);
 
         /// <summary>
         /// Paginator for ListFilters operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFiltersPaginator ListFilters(ListFiltersRequest request);
 
         /// <summary>
         /// Paginator for ListFindingAggregations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFindingAggregationsPaginator ListFindingAggregations(ListFindingAggregationsRequest request);
 
         /// <summary>
         /// Paginator for ListFindings operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFindingsPaginator ListFindings(ListFindingsRequest request);
 
         /// <summary>
         /// Paginator for ListMembers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMembersPaginator ListMembers(ListMembersRequest request);
 
         /// <summary>
         /// Paginator for ListUsageTotals operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListUsageTotalsPaginator ListUsageTotals(ListUsageTotalsRequest request);
 
         /// <summary>
         /// Paginator for SearchVulnerabilities operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         ISearchVulnerabilitiesPaginator SearchVulnerabilities(SearchVulnerabilitiesRequest request);
     }
 }

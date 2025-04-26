@@ -1165,6 +1165,106 @@ namespace Amazon.AppSync
 
 
     /// <summary>
+    /// Constants used for properties of type HandlerBehavior.
+    /// </summary>
+    public class HandlerBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CODE for HandlerBehavior
+        /// </summary>
+        public static readonly HandlerBehavior CODE = new HandlerBehavior("CODE");
+        /// <summary>
+        /// Constant DIRECT for HandlerBehavior
+        /// </summary>
+        public static readonly HandlerBehavior DIRECT = new HandlerBehavior("DIRECT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HandlerBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HandlerBehavior FindValue(string value)
+        {
+            return FindValue<HandlerBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HandlerBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InvokeType.
+    /// </summary>
+    public class InvokeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EVENT for InvokeType
+        /// </summary>
+        public static readonly InvokeType EVENT = new InvokeType("EVENT");
+        /// <summary>
+        /// Constant REQUEST_RESPONSE for InvokeType
+        /// </summary>
+        public static readonly InvokeType REQUEST_RESPONSE = new InvokeType("REQUEST_RESPONSE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InvokeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InvokeType FindValue(string value)
+        {
+            return FindValue<InvokeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InvokeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MergeType.
     /// </summary>
     public class MergeType : ConstantClass
