@@ -1132,7 +1132,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<DescribeWorkspaceConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetDefaultScraperConfiguration
@@ -1820,7 +1819,6 @@ namespace Amazon.PrometheusService
 
             return InvokeAsync<UpdateWorkspaceConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region DetermineServiceOperationEndpoint

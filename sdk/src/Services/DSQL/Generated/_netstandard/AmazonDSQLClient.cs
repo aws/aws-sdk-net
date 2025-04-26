@@ -575,7 +575,6 @@ namespace Amazon.DSQL
 
             return InvokeAsync<GetVpcEndpointServiceNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListClusters

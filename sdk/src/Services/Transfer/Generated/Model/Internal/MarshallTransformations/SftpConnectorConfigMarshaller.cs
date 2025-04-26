@@ -49,7 +49,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxConcurrentConnections())
             {
                 context.Writer.WritePropertyName("MaxConcurrentConnections");
-                context.Writer.Write(requestObject.MaxConcurrentConnections);
+                context.Writer.WriteNumberValue(requestObject.MaxConcurrentConnections.Value);
             }
 
             if(requestObject.IsSetTrustedHostKeys())

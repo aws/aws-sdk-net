@@ -25047,7 +25047,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the principals (service consumers) that are permitted to discover your VPC
-        /// endpoint service.
+        /// endpoint service. Principal ARNs with path components aren't supported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointServicePermissions service method.</param>
         /// 
@@ -25065,7 +25065,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the principals (service consumers) that are permitted to discover your VPC
-        /// endpoint service.
+        /// endpoint service. Principal ARNs with path components aren't supported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointServicePermissions service method.</param>
         /// <param name="cancellationToken">
@@ -36624,7 +36624,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Modifies the permissions for your VPC endpoint service. You can add or remove permissions
         /// for service consumers (Amazon Web Services accounts, users, and IAM roles) to connect
-        /// to your endpoint service.
+        /// to your endpoint service. Principal ARNs with path components aren't supported.
         /// 
         ///  
         /// <para>
@@ -36650,7 +36650,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Modifies the permissions for your VPC endpoint service. You can add or remove permissions
         /// for service consumers (Amazon Web Services accounts, users, and IAM roles) to connect
-        /// to your endpoint service.
+        /// to your endpoint service. Principal ARNs with path components aren't supported.
         /// 
         ///  
         /// <para>

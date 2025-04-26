@@ -77,7 +77,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
                 if (context.TestExpression("namespaceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NamespaceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NamespaceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ownerAccountId", targetDepth))
@@ -89,7 +89,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
                 if (context.TestExpression("tableBucketId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TableBucketId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TableBucketId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

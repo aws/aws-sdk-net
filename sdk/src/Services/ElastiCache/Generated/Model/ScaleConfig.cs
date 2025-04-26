@@ -45,9 +45,9 @@ namespace Amazon.ElastiCache.Model
         /// for a Memcached cluster.
         /// </para>
         /// </summary>
-        public int ScaleIntervalMinutes
+        public int? ScaleIntervalMinutes
         {
-            get { return this._scaleIntervalMinutes.GetValueOrDefault(); }
+            get { return this._scaleIntervalMinutes; }
             set { this._scaleIntervalMinutes = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.ElastiCache.Model
         /// nodes or vertically by increasing resources.
         /// </para>
         /// </summary>
-        public int ScalePercentage
+        public int? ScalePercentage
         {
-            get { return this._scalePercentage.GetValueOrDefault(); }
+            get { return this._scalePercentage; }
             set { this._scalePercentage = value; }
         }
 

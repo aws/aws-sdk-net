@@ -75,54 +75,20 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetGroup())
             {
-<<<<<<< HEAD
                 context.Writer.WritePropertyName("Group");
                 context.Writer.WriteStringValue(publicRequest.Group);
             }
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGroup())
-                {
-                    context.Writer.WritePropertyName("Group");
-                    context.Writer.Write(publicRequest.Group);
-                }
 
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGroup())
-                {
-                    context.Writer.WritePropertyName("Group");
-                    context.Writer.Write(publicRequest.Group);
-                }
+            if(publicRequest.IsSetResourceQuery())
+            {
+                context.Writer.WritePropertyName("ResourceQuery");
+                context.Writer.WriteStartObject();
 
-                if(publicRequest.IsSetResourceQuery())
-                {
-                    context.Writer.WritePropertyName("ResourceQuery");
-                    context.Writer.WriteObjectStart();
+                var marshaller = ResourceQueryMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ResourceQuery, context);
 
-                    var marshaller = ResourceQueryMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ResourceQuery, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
+                context.Writer.WriteEndObject();
+            }
 
             if(publicRequest.IsSetRoleArn())
             {

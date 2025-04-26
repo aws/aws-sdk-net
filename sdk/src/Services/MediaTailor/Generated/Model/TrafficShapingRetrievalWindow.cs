@@ -46,9 +46,9 @@ namespace Amazon.MediaTailor.Model
         /// ADS. 
         /// </para>
         /// </summary>
-        public int RetrievalWindowDurationSeconds
+        public int? RetrievalWindowDurationSeconds
         {
-            get { return this._retrievalWindowDurationSeconds.GetValueOrDefault(); }
+            get { return this._retrievalWindowDurationSeconds; }
             set { this._retrievalWindowDurationSeconds = value; }
         }
 

@@ -754,7 +754,6 @@ namespace Amazon.QBusiness
 
             return InvokeAsync<CheckDocumentAccessResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateApplication

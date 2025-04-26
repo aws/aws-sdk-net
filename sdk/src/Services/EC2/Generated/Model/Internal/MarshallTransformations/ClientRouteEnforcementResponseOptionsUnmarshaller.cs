@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ClientRouteEnforcementResponseOptions Object
     /// </summary>  
-    public class ClientRouteEnforcementResponseOptionsUnmarshaller : IUnmarshaller<ClientRouteEnforcementResponseOptions, XmlUnmarshallerContext>, IUnmarshaller<ClientRouteEnforcementResponseOptions, JsonUnmarshallerContext>
+    public class ClientRouteEnforcementResponseOptionsUnmarshaller : IXmlUnmarshaller<ClientRouteEnforcementResponseOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("enforced", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Enforced = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ClientRouteEnforcementResponseOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ClientRouteEnforcementResponseOptionsUnmarshaller _instance = new ClientRouteEnforcementResponseOptionsUnmarshaller();        
 

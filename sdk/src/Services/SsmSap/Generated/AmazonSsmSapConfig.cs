@@ -33,16 +33,10 @@ namespace Amazon.SsmSap
     public partial class AmazonSsmSapConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Ssm Sap", "4.0.0.0");
 
         private static readonly AmazonSsmSapEndpointResolver EndpointResolver =
             new AmazonSsmSapEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Ssm Sap", "3.7.402.63");
-=======
-            InternalSDKUtils.BuildUserAgentString("Ssm Sap", "3.7.402.73");
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

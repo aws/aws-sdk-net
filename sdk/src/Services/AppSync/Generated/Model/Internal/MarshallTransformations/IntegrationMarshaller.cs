@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataSourceName())
             {
                 context.Writer.WritePropertyName("dataSourceName");
-                context.Writer.Write(requestObject.DataSourceName);
+                context.Writer.WriteStringValue(requestObject.DataSourceName);
             }
 
             if(requestObject.IsSetLambdaConfig())
             {
                 context.Writer.WritePropertyName("lambdaConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LambdaConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.LambdaConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

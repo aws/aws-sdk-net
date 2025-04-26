@@ -58,8 +58,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaxConcurrentConnections", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxConcurrentConnections = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MaxConcurrentConnections = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TrustedHostKeys", targetDepth))

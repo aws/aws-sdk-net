@@ -6165,7 +6165,6 @@ namespace Amazon.CognitoIdentityProvider
 
             return InvokeAsync<GetTokensFromRefreshTokenResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetUICustomization

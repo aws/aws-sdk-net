@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CustomMetricDefinition Object
     /// </summary>  
-    public class CustomMetricDefinitionUnmarshaller : IUnmarshaller<CustomMetricDefinition, XmlUnmarshallerContext>, IUnmarshaller<CustomMetricDefinition, JsonUnmarshallerContext>
+    public class CustomMetricDefinitionUnmarshaller : IJsonUnmarshaller<CustomMetricDefinition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CustomMetricDefinition IUnmarshaller<CustomMetricDefinition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomMetricDefinition Unmarshall(JsonUnmarshallerContext context)
+        public CustomMetricDefinition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CustomMetricDefinition unmarshalledObject = new CustomMetricDefinition();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("instructions", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Instructions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Instructions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ratingScale", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RatingScaleItem, RatingScaleItemUnmarshaller>(RatingScaleItemUnmarshaller.Instance);
-                    unmarshalledObject.RatingScale = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RatingScaleItem, RatingScaleItemUnmarshaller>(RatingScaleItemUnmarshaller.Instance);
+                    unmarshalledObject.RatingScale = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

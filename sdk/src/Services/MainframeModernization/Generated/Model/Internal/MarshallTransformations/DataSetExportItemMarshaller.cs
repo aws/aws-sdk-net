@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatasetName())
             {
                 context.Writer.WritePropertyName("datasetName");
-                context.Writer.Write(requestObject.DatasetName);
+                context.Writer.WriteStringValue(requestObject.DatasetName);
             }
 
             if(requestObject.IsSetExternalLocation())
             {
                 context.Writer.WritePropertyName("externalLocation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExternalLocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ExternalLocation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

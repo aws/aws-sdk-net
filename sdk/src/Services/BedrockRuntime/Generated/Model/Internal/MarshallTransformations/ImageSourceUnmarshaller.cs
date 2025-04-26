@@ -65,7 +65,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 if (context.TestExpression("s3Location", targetDepth))
                 {
                     var unmarshaller = S3LocationUnmarshaller.Instance;
-                    unmarshalledObject.S3Location = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

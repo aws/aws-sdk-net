@@ -33,16 +33,10 @@ namespace Amazon.Synthetics
     public partial class AmazonSyntheticsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("synthetics", "4.0.0.0");
 
         private static readonly AmazonSyntheticsEndpointResolver EndpointResolver =
             new AmazonSyntheticsEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("synthetics", "3.7.403.65");
-=======
-            InternalSDKUtils.BuildUserAgentString("synthetics", "3.7.403.75");
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

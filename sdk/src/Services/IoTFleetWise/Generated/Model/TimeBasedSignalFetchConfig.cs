@@ -42,16 +42,8 @@ namespace Amazon.IoTFleetWise.Model
         /// The frequency with which the signal fetch will be executed.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true, Min=1)]
-        public long? ExecutionFrequencyMs
-||||||| Commit version number update changes
-        [AWSProperty(Required=true, Min=1)]
-        public long ExecutionFrequencyMs
-=======
         [AWSProperty(Required=true, Min=1, Max=9223372036854775807)]
-        public long ExecutionFrequencyMs
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
+        public long? ExecutionFrequencyMs
         {
             get { return this._executionFrequencyMs; }
             set { this._executionFrequencyMs = value; }

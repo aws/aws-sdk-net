@@ -33,16 +33,10 @@ namespace Amazon.ACMPCA
     public partial class AmazonACMPCAConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("ACM PCA", "4.0.0.0");
 
         private static readonly AmazonACMPCAEndpointResolver EndpointResolver =
             new AmazonACMPCAEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("ACM PCA", "3.7.402.18");
-=======
-            InternalSDKUtils.BuildUserAgentString("ACM PCA", "3.7.402.28");
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

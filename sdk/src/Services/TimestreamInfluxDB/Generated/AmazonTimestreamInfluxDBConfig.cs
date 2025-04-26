@@ -33,16 +33,10 @@ namespace Amazon.TimestreamInfluxDB
     public partial class AmazonTimestreamInfluxDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Timestream InfluxDB", "4.0.0.0");
 
         private static readonly AmazonTimestreamInfluxDBEndpointResolver EndpointResolver =
             new AmazonTimestreamInfluxDBEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Timestream InfluxDB", "3.7.406.34");
-=======
-            InternalSDKUtils.BuildUserAgentString("Timestream InfluxDB", "3.7.406.44");
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

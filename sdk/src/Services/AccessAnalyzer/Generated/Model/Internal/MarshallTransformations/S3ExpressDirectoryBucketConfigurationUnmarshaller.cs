@@ -58,8 +58,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("accessPoints", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, S3ExpressDirectoryAccessPointConfiguration, StringUnmarshaller, S3ExpressDirectoryAccessPointConfigurationUnmarshaller>(StringUnmarshaller.Instance, S3ExpressDirectoryAccessPointConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.AccessPoints = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, S3ExpressDirectoryAccessPointConfiguration, StringUnmarshaller, S3ExpressDirectoryAccessPointConfigurationUnmarshaller>(StringUnmarshaller.Instance, S3ExpressDirectoryAccessPointConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.AccessPoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("bucketPolicy", targetDepth))

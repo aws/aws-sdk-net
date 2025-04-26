@@ -33,16 +33,10 @@ namespace Amazon.LocationService
     public partial class AmazonLocationServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Location", "4.0.0.0");
 
         private static readonly AmazonLocationServiceEndpointResolver EndpointResolver =
             new AmazonLocationServiceEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Location", "3.7.401.33");
-=======
-            InternalSDKUtils.BuildUserAgentString("Location", "3.7.401.43");
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

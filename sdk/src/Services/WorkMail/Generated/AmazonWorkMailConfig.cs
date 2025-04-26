@@ -33,16 +33,10 @@ namespace Amazon.WorkMail
     public partial class AmazonWorkMailConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("WorkMail", "4.0.0.0");
 
         private static readonly AmazonWorkMailEndpointResolver EndpointResolver =
             new AmazonWorkMailEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("WorkMail", "3.7.401.87");
-=======
-            InternalSDKUtils.BuildUserAgentString("WorkMail", "3.7.401.97");
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

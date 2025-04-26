@@ -59,7 +59,7 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
                 if (context.TestExpression("modalityProcessing", targetDepth))
                 {
                     var unmarshaller = ModalityProcessingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ModalityProcessing = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModalityProcessing = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("splitter", targetDepth))

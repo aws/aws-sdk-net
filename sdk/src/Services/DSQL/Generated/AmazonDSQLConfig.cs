@@ -33,16 +33,10 @@ namespace Amazon.DSQL
     public partial class AmazonDSQLConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("DSQL", "4.0.0.0");
 
         private static readonly AmazonDSQLEndpointResolver EndpointResolver =
             new AmazonDSQLEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("DSQL", "3.7.401.70");
-=======
-            InternalSDKUtils.BuildUserAgentString("DSQL", "3.7.402.5");
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

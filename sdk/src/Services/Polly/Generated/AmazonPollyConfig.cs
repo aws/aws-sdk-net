@@ -33,16 +33,10 @@ namespace Amazon.Polly
     public partial class AmazonPollyConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Polly", "4.0.0.0");
 
         private static readonly AmazonPollyEndpointResolver EndpointResolver =
             new AmazonPollyEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Polly", "3.7.403.9");
-=======
-            InternalSDKUtils.BuildUserAgentString("Polly", "3.7.403.19");
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

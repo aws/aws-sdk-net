@@ -534,7 +534,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<CreateReservationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  CreateScheduledAction
@@ -1514,7 +1513,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<GetReservationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetReservationOffering
@@ -1561,7 +1559,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<GetReservationOfferingResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetResourcePolicy
@@ -2117,7 +2114,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<ListReservationOfferingsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListReservations
@@ -2160,7 +2156,6 @@ namespace Amazon.RedshiftServerless
 
             return InvokeAsync<ListReservationsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListScheduledActions

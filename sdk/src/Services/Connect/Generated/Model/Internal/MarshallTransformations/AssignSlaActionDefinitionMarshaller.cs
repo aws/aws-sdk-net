@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCaseSlaConfiguration())
             {
                 context.Writer.WritePropertyName("CaseSlaConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CaseSlaConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CaseSlaConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSlaAssignmentType())
             {
                 context.Writer.WritePropertyName("SlaAssignmentType");
-                context.Writer.Write(requestObject.SlaAssignmentType);
+                context.Writer.WriteStringValue(requestObject.SlaAssignmentType);
             }
 
         }

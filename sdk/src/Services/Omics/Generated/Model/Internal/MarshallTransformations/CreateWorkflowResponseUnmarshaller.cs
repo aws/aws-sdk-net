@@ -79,7 +79,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 if (context.TestExpression("uuid", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Uuid = unmarshaller.Unmarshall(context);
+                    response.Uuid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -63,9 +63,9 @@ namespace Amazon.MediaTailor.Model
         /// The number of seconds that an ad is available for insertion after it was prefetched.
         /// </para>
         /// </summary>
-        public int RetrievedAdExpirationSeconds
+        public int? RetrievedAdExpirationSeconds
         {
-            get { return this._retrievedAdExpirationSeconds.GetValueOrDefault(); }
+            get { return this._retrievedAdExpirationSeconds; }
             set { this._retrievedAdExpirationSeconds = value; }
         }
 

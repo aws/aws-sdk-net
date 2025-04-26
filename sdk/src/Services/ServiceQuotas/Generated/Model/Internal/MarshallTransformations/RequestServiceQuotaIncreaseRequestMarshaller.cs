@@ -100,26 +100,16 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.QuotaCode);
             }
 
-<<<<<<< HEAD
             if(publicRequest.IsSetServiceCode())
             {
                 context.Writer.WritePropertyName("ServiceCode");
                 context.Writer.WriteStringValue(publicRequest.ServiceCode);
-||||||| Commit version number update changes
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetSupportCaseAllowed())
-                {
-                    context.Writer.WritePropertyName("SupportCaseAllowed");
-                    context.Writer.Write(publicRequest.SupportCaseAllowed);
-                }
+            }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
+            if(publicRequest.IsSetSupportCaseAllowed())
+            {
+                context.Writer.WritePropertyName("SupportCaseAllowed");
+                context.Writer.WriteBooleanValue(publicRequest.SupportCaseAllowed.Value);
             }
 
             writer.WriteEndObject();

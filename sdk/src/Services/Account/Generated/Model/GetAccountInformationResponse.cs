@@ -44,9 +44,9 @@ namespace Amazon.Account.Model
         /// The date and time the account was created.
         /// </para>
         /// </summary>
-        public DateTime AccountCreatedDate
+        public DateTime? AccountCreatedDate
         {
-            get { return this._accountCreatedDate.GetValueOrDefault(); }
+            get { return this._accountCreatedDate; }
             set { this._accountCreatedDate = value; }
         }
 

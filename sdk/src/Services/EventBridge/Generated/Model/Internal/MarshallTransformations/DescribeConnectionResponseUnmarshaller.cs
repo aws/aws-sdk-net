@@ -97,7 +97,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 if (context.TestExpression("KmsKeyIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.KmsKeyIdentifier = unmarshaller.Unmarshall(context);
+                    response.KmsKeyIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastAuthorizedTime", targetDepth))

@@ -94,9 +94,9 @@ namespace Amazon.Budgets.Model
         /// to the budget, such as Amazon Web Services services or tags that are being tracked.
         /// </para>
         /// </summary>
-        public bool ShowFilterExpression
+        public bool? ShowFilterExpression
         {
-            get { return this._showFilterExpression.GetValueOrDefault(); }
+            get { return this._showFilterExpression; }
             set { this._showFilterExpression = value; }
         }
 

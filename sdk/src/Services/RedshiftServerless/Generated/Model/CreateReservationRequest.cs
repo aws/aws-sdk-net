@@ -48,9 +48,9 @@ namespace Amazon.RedshiftServerless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Capacity
+        public int? Capacity
         {
-            get { return this._capacity.GetValueOrDefault(); }
+            get { return this._capacity; }
             set { this._capacity = value; }
         }
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKmsKeyArn())
             {
                 context.Writer.WritePropertyName("kmsKeyArn");
-                context.Writer.Write(requestObject.KmsKeyArn);
+                context.Writer.WriteStringValue(requestObject.KmsKeyArn);
             }
 
             if(requestObject.IsSetSseAlgorithm())
             {
                 context.Writer.WritePropertyName("sseAlgorithm");
-                context.Writer.Write(requestObject.SseAlgorithm);
+                context.Writer.WriteStringValue(requestObject.SseAlgorithm);
             }
 
         }

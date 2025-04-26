@@ -62,16 +62,8 @@ namespace Amazon.IoTFleetWise.Model
         /// A number of time units.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true, Min=1)]
-        public int? Value
-||||||| Commit version number update changes
-        [AWSProperty(Required=true, Min=1)]
-        public int Value
-=======
         [AWSProperty(Required=true, Min=1, Max=2147483647)]
-        public int Value
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
+        public int? Value
         {
             get { return this._value; }
             set { this._value = value; }

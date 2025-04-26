@@ -50,16 +50,10 @@ namespace Amazon.Detective.Internal
         {
             var config = (AmazonDetectiveConfig)requestContext.ClientConfig;
             var result = new DetectiveEndpointParameters();
-<<<<<<< HEAD
-            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
-||||||| Commit version number update changes
-            result.Region = config.RegionEndpoint?.SystemName;
-=======
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
 
 
             // The region needs to be determined from the ServiceURL if not set.

@@ -69,9 +69,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=60)]
-        public int RetryGracePeriodSeconds
+        public int? RetryGracePeriodSeconds
         {
-            get { return this._retryGracePeriodSeconds.GetValueOrDefault(); }
+            get { return this._retryGracePeriodSeconds; }
             set { this._retryGracePeriodSeconds = value; }
         }
 

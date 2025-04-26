@@ -125,7 +125,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 if (context.TestExpression("workflowVersionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkflowVersionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WorkflowVersionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

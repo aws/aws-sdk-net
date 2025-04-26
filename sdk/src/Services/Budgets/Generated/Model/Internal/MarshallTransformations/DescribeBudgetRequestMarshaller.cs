@@ -81,26 +81,16 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.AccountId);
             }
 
-<<<<<<< HEAD
             if(publicRequest.IsSetBudgetName())
             {
                 context.Writer.WritePropertyName("BudgetName");
                 context.Writer.WriteStringValue(publicRequest.BudgetName);
-||||||| Commit version number update changes
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetShowFilterExpression())
-                {
-                    context.Writer.WritePropertyName("ShowFilterExpression");
-                    context.Writer.Write(publicRequest.ShowFilterExpression);
-                }
+            }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
+            if(publicRequest.IsSetShowFilterExpression())
+            {
+                context.Writer.WritePropertyName("ShowFilterExpression");
+                context.Writer.WriteBooleanValue(publicRequest.ShowFilterExpression.Value);
             }
 
             writer.WriteEndObject();

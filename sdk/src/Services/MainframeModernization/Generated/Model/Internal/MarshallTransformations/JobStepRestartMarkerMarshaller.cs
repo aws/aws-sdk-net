@@ -61,13 +61,13 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSkip())
             {
                 context.Writer.WritePropertyName("skip");
-                context.Writer.Write(requestObject.Skip);
+                context.Writer.WriteBooleanValue(requestObject.Skip.Value);
             }
 
             if(requestObject.IsSetStepCheckpoint())
             {
                 context.Writer.WritePropertyName("stepCheckpoint");
-                context.Writer.Write(requestObject.StepCheckpoint);
+                context.Writer.WriteNumberValue(requestObject.StepCheckpoint.Value);
             }
 
             if(requestObject.IsSetToProcStep())

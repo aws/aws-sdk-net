@@ -33,16 +33,10 @@ namespace Amazon.ResourceGroups
     public partial class AmazonResourceGroupsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Resource Groups", "4.0.0.0");
 
         private static readonly AmazonResourceGroupsEndpointResolver EndpointResolver =
             new AmazonResourceGroupsEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Resource Groups", "3.7.401.104");
-=======
-            InternalSDKUtils.BuildUserAgentString("Resource Groups", "3.7.402.5");
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

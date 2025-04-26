@@ -82,31 +82,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
             }
 
-<<<<<<< HEAD
             if(publicRequest.IsSetNextToken())
             {
                 context.Writer.WritePropertyName("NextToken");
                 context.Writer.WriteStringValue(publicRequest.NextToken);
             }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetStreamId())
-                {
-                    context.Writer.WritePropertyName("StreamId");
-                    context.Writer.Write(publicRequest.StreamId);
-                }
-=======
-                if(publicRequest.IsSetScheduleType())
-                {
-                    context.Writer.WritePropertyName("ScheduleType");
-                    context.Writer.Write(publicRequest.ScheduleType);
-                }
 
-                if(publicRequest.IsSetStreamId())
-                {
-                    context.Writer.WritePropertyName("StreamId");
-                    context.Writer.Write(publicRequest.StreamId);
-                }
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
+            if(publicRequest.IsSetScheduleType())
+            {
+                context.Writer.WritePropertyName("ScheduleType");
+                context.Writer.WriteStringValue(publicRequest.ScheduleType);
+            }
 
             if(publicRequest.IsSetStreamId())
             {

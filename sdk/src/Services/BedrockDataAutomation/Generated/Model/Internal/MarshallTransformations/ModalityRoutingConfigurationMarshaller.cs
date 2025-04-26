@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetJpeg())
             {
                 context.Writer.WritePropertyName("jpeg");
-                context.Writer.Write(requestObject.Jpeg);
+                context.Writer.WriteStringValue(requestObject.Jpeg);
             }
 
             if(requestObject.IsSetMov())
             {
                 context.Writer.WritePropertyName("mov");
-                context.Writer.Write(requestObject.Mov);
+                context.Writer.WriteStringValue(requestObject.Mov);
             }
 
             if(requestObject.IsSetMp4())
             {
                 context.Writer.WritePropertyName("mp4");
-                context.Writer.Write(requestObject.Mp4);
+                context.Writer.WriteStringValue(requestObject.Mp4);
             }
 
             if(requestObject.IsSetPng())
             {
                 context.Writer.WritePropertyName("png");
-                context.Writer.Write(requestObject.Png);
+                context.Writer.WriteStringValue(requestObject.Png);
             }
 
         }

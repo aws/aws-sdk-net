@@ -49,12 +49,12 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudio())
             {
                 context.Writer.WritePropertyName("audio");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AudioOverrideConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Audio, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDocument())
@@ -71,34 +71,34 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetImage())
             {
                 context.Writer.WritePropertyName("image");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ImageOverrideConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Image, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetModalityRouting())
             {
                 context.Writer.WritePropertyName("modalityRouting");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ModalityRoutingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ModalityRouting, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVideo())
             {
                 context.Writer.WritePropertyName("video");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VideoOverrideConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Video, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

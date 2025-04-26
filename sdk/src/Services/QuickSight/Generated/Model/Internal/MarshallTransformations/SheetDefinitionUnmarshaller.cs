@@ -65,7 +65,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 if (context.TestExpression("CustomActionDefaults", targetDepth))
                 {
                     var unmarshaller = VisualCustomActionDefaultsUnmarshaller.Instance;
-                    unmarshalledObject.CustomActionDefaults = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomActionDefaults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Description", targetDepth))

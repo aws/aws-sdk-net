@@ -79,7 +79,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
                 if (context.TestExpression("tableBucketId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.TableBucketId = unmarshaller.Unmarshall(context);
+                    response.TableBucketId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

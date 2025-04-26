@@ -87,9 +87,9 @@ namespace Amazon.MainframeModernization.Model
         /// Web Services Blu Age application batch job.
         /// </para>
         /// </summary>
-        public int StepCheckpoint
+        public int? StepCheckpoint
         {
-            get { return this._stepCheckpoint.GetValueOrDefault(); }
+            get { return this._stepCheckpoint; }
             set { this._stepCheckpoint = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.MainframeModernization.Model
         /// job.
         /// </para>
         /// </summary>
-        public DateTime StepCheckpointTime
+        public DateTime? StepCheckpointTime
         {
-            get { return this._stepCheckpointTime.GetValueOrDefault(); }
+            get { return this._stepCheckpointTime; }
             set { this._stepCheckpointTime = value; }
         }
 

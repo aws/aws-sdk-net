@@ -212,36 +212,22 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
-<<<<<<< HEAD
+            if(publicRequest.IsSetRefreshTokenRotation())
+            {
+                context.Writer.WritePropertyName("RefreshTokenRotation");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RefreshTokenRotationTypeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RefreshTokenRotation, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetRefreshTokenValidity())
             {
                 context.Writer.WritePropertyName("RefreshTokenValidity");
                 context.Writer.WriteNumberValue(publicRequest.RefreshTokenValidity.Value);
             }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetRefreshTokenValidity())
-                {
-                    context.Writer.WritePropertyName("RefreshTokenValidity");
-                    context.Writer.Write(publicRequest.RefreshTokenValidity);
-                }
-=======
-                if(publicRequest.IsSetRefreshTokenRotation())
-                {
-                    context.Writer.WritePropertyName("RefreshTokenRotation");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RefreshTokenRotationTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RefreshTokenRotation, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRefreshTokenValidity())
-                {
-                    context.Writer.WritePropertyName("RefreshTokenValidity");
-                    context.Writer.Write(publicRequest.RefreshTokenValidity);
-                }
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
             if(publicRequest.IsSetSupportedIdentityProviders())
             {

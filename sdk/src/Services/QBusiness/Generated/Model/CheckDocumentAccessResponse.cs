@@ -65,9 +65,9 @@ namespace Amazon.QBusiness.Model
         /// either direct access or transitive access via groups and aliases attached to the document.
         /// </para>
         /// </summary>
-        public bool HasAccess
+        public bool? HasAccess
         {
-            get { return this._hasAccess.GetValueOrDefault(); }
+            get { return this._hasAccess; }
             set { this._hasAccess = value; }
         }
 

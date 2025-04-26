@@ -74,15 +74,7 @@ namespace Amazon.CodeBuild.Model
         /// of builds that can run in parallel.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=1)]
         public int? BaseCapacity
-||||||| Commit version number update changes
-        [AWSProperty(Min=1)]
-        public int BaseCapacity
-=======
-        public int BaseCapacity
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
         {
             get { return this._baseCapacity; }
             set { this._baseCapacity = value; }

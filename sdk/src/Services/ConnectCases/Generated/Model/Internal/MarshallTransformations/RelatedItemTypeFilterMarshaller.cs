@@ -82,12 +82,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSla())
             {
                 context.Writer.WritePropertyName("sla");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SlaFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.Sla, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

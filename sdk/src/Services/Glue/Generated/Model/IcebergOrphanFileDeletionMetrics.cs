@@ -45,9 +45,9 @@ namespace Amazon.Glue.Model
         /// The number of DPU hours consumed by the job.
         /// </para>
         /// </summary>
-        public double DpuHours
+        public double? DpuHours
         {
-            get { return this._dpuHours.GetValueOrDefault(); }
+            get { return this._dpuHours; }
             set { this._dpuHours = value; }
         }
 

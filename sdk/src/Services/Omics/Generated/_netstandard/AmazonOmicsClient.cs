@@ -1327,7 +1327,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<CreateWorkflowVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteAnnotationStore
@@ -2055,7 +2054,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<DeleteWorkflowVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAnnotationImportJob
@@ -3295,7 +3293,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<GetWorkflowVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  ListAnnotationImportJobs
@@ -4520,7 +4517,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<ListWorkflowVersionsResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutS3AccessPolicy
@@ -5511,7 +5507,6 @@ namespace Amazon.Omics
 
             return InvokeAsync<UpdateWorkflowVersionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  UploadReadSetPart

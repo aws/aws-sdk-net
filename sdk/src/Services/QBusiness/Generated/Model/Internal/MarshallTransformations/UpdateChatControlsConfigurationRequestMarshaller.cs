@@ -109,33 +109,21 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
-<<<<<<< HEAD
+            if(publicRequest.IsSetHallucinationReductionConfiguration())
+            {
+                context.Writer.WritePropertyName("hallucinationReductionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HallucinationReductionConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.HallucinationReductionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetOrchestrationConfiguration())
             {
                 context.Writer.WritePropertyName("orchestrationConfiguration");
                 context.Writer.WriteStartObject();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetOrchestrationConfiguration())
-                {
-                    context.Writer.WritePropertyName("orchestrationConfiguration");
-                    context.Writer.WriteObjectStart();
-=======
-                if(publicRequest.IsSetHallucinationReductionConfiguration())
-                {
-                    context.Writer.WritePropertyName("hallucinationReductionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HallucinationReductionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HallucinationReductionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOrchestrationConfiguration())
-                {
-                    context.Writer.WritePropertyName("orchestrationConfiguration");
-                    context.Writer.WriteObjectStart();
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
                 var marshaller = OrchestrationConfigurationMarshaller.Instance;
                 marshaller.Marshall(publicRequest.OrchestrationConfiguration, context);

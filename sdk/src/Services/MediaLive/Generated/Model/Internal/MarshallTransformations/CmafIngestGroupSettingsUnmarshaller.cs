@@ -58,8 +58,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("captionLanguageMappings", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CmafIngestCaptionLanguageMapping, CmafIngestCaptionLanguageMappingUnmarshaller>(CmafIngestCaptionLanguageMappingUnmarshaller.Instance);
-                    unmarshalledObject.CaptionLanguageMappings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CmafIngestCaptionLanguageMapping, CmafIngestCaptionLanguageMappingUnmarshaller>(CmafIngestCaptionLanguageMappingUnmarshaller.Instance);
+                    unmarshalledObject.CaptionLanguageMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("destination", targetDepth))
@@ -137,19 +137,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 if (context.TestExpression("timedMetadataId3Frame", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimedMetadataId3Frame = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimedMetadataId3Frame = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timedMetadataId3Period", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.TimedMetadataId3Period = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.TimedMetadataId3Period = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timedMetadataPassthrough", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimedMetadataPassthrough = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimedMetadataPassthrough = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

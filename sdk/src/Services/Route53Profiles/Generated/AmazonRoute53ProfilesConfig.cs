@@ -33,16 +33,10 @@ namespace Amazon.Route53Profiles
     public partial class AmazonRoute53ProfilesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Route53Profiles", "4.0.0.0");
 
         private static readonly AmazonRoute53ProfilesEndpointResolver EndpointResolver =
             new AmazonRoute53ProfilesEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Route53Profiles", "3.7.400.130");
-=======
-            InternalSDKUtils.BuildUserAgentString("Route53Profiles", "3.7.400.140");
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

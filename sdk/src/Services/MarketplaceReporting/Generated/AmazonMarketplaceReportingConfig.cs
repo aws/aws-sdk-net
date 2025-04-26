@@ -33,16 +33,10 @@ namespace Amazon.MarketplaceReporting
     public partial class AmazonMarketplaceReportingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Marketplace Reporting", "4.0.0.0");
 
         private static readonly AmazonMarketplaceReportingEndpointResolver EndpointResolver =
             new AmazonMarketplaceReportingEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Marketplace Reporting", "3.7.400.101");
-=======
-            InternalSDKUtils.BuildUserAgentString("Marketplace Reporting", "3.7.400.111");
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -145,7 +145,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 if (context.TestExpression("storageType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.StorageType = unmarshaller.Unmarshall(context);
+                    response.StorageType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
@@ -163,7 +163,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 if (context.TestExpression("uuid", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Uuid = unmarshaller.Unmarshall(context);
+                    response.Uuid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -77,7 +77,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInputResolution())
             {
                 context.Writer.WritePropertyName("inputResolution");
-                context.Writer.Write(requestObject.InputResolution);
+                context.Writer.WriteStringValue(requestObject.InputResolution);
             }
 
             if(requestObject.IsSetLatencyMs())

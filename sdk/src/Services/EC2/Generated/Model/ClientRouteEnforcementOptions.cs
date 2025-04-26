@@ -61,9 +61,9 @@ namespace Amazon.EC2.Model
         /// Default value: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool Enforced
+        public bool? Enforced
         {
-            get { return this._enforced.GetValueOrDefault(); }
+            get { return this._enforced; }
             set { this._enforced = value; }
         }
 

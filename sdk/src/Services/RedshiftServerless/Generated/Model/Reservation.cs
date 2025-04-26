@@ -50,9 +50,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The number of Redshift Processing Units (RPUs) to reserve.
         /// </para>
         /// </summary>
-        public int Capacity
+        public int? Capacity
         {
-            get { return this._capacity.GetValueOrDefault(); }
+            get { return this._capacity; }
             set { this._capacity = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.RedshiftServerless.Model
         /// date that you specify.
         /// </para>
         /// </summary>
-        public DateTime EndDate
+        public DateTime? EndDate
         {
-            get { return this._endDate.GetValueOrDefault(); }
+            get { return this._endDate; }
             set { this._endDate = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.RedshiftServerless.Model
         /// the reservation to start when you created the reservation.
         /// </para>
         /// </summary>
-        public DateTime StartDate
+        public DateTime? StartDate
         {
-            get { return this._startDate.GetValueOrDefault(); }
+            get { return this._startDate; }
             set { this._startDate = value; }
         }
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFeature())
             {
                 context.Writer.WritePropertyName("Feature");
-                context.Writer.Write(requestObject.Feature);
+                context.Writer.WriteStringValue(requestObject.Feature);
             }
 
             if(requestObject.IsSetRetryGracePeriodSeconds())
             {
                 context.Writer.WritePropertyName("RetryGracePeriodSeconds");
-                context.Writer.Write(requestObject.RetryGracePeriodSeconds);
+                context.Writer.WriteNumberValue(requestObject.RetryGracePeriodSeconds.Value);
             }
 
         }

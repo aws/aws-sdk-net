@@ -67,7 +67,7 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                 if (context.TestExpression("deletionProtection", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DeletionProtection = unmarshaller.Unmarshall(context);
+                    response.DeletionProtection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("description", targetDepth))

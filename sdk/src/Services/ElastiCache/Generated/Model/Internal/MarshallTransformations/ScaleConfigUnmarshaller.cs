@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ScaleConfig Object
     /// </summary>  
-    public class ScaleConfigUnmarshaller : IUnmarshaller<ScaleConfig, XmlUnmarshallerContext>, IUnmarshaller<ScaleConfig, JsonUnmarshallerContext>
+    public class ScaleConfigUnmarshaller : IXmlUnmarshaller<ScaleConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -57,13 +57,13 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("ScaleIntervalMinutes", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.ScaleIntervalMinutes = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ScalePercentage", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.ScalePercentage = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -76,17 +76,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ScaleConfig Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ScaleConfigUnmarshaller _instance = new ScaleConfigUnmarshaller();        
 

@@ -302,9 +302,9 @@ namespace Amazon.MediaLive.Model
         /// in the output, specify the frequency for the frame, in seconds.
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
-        public int TimedMetadataId3Period
+        public int? TimedMetadataId3Period
         {
-            get { return this._timedMetadataId3Period.GetValueOrDefault(); }
+            get { return this._timedMetadataId3Period; }
             set { this._timedMetadataId3Period = value; }
         }
 

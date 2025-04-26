@@ -67,7 +67,7 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                 if (context.TestExpression("ResourceQuery", targetDepth))
                 {
                     var unmarshaller = ResourceQueryUnmarshaller.Instance;
-                    response.ResourceQuery = unmarshaller.Unmarshall(context);
+                    response.ResourceQuery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RoleArn", targetDepth))

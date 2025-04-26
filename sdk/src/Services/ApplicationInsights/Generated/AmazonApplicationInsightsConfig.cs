@@ -33,16 +33,10 @@ namespace Amazon.ApplicationInsights
     public partial class AmazonApplicationInsightsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Application Insights", "4.0.0.0");
 
         private static readonly AmazonApplicationInsightsEndpointResolver EndpointResolver =
             new AmazonApplicationInsightsEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Application Insights", "3.7.401.94");
-=======
-            InternalSDKUtils.BuildUserAgentString("Application Insights", "3.7.401.104");
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

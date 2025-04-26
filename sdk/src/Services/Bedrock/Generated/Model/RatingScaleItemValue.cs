@@ -44,9 +44,9 @@ namespace Amazon.Bedrock.Model
         /// scale.
         /// </para>
         /// </summary>
-        public float FloatValue
+        public float? FloatValue
         {
-            get { return this._floatValue.GetValueOrDefault(); }
+            get { return this._floatValue; }
             set { this._floatValue = value; }
         }
 

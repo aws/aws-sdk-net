@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if (context.TestExpression("ModelLifeCycle", targetDepth))
                 {
                     var unmarshaller = ModelLifeCycleUnmarshaller.Instance;
-                    unmarshalledObject.ModelLifeCycle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelLifeCycle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelPackageArn", targetDepth))

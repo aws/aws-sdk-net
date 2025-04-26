@@ -124,12 +124,12 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFilterExpression())
             {
                 context.Writer.WritePropertyName("FilterExpression");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.FilterExpression, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLastUpdatedTime())
@@ -141,12 +141,12 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMetrics())
             {
                 context.Writer.WritePropertyName("Metrics");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMetricsListValue in requestObject.Metrics)
                 {
-                        context.Writer.Write(requestObjectMetricsListValue);
+                        context.Writer.WriteStringValue(requestObjectMetricsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPlannedBudgetLimits())

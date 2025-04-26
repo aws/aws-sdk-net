@@ -81,7 +81,7 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidStateException"))
                 {
-                    return InvalidStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {

@@ -188,26 +188,16 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.WorkflowOwnerId);
             }
 
-<<<<<<< HEAD
             if(publicRequest.IsSetWorkflowType())
             {
                 context.Writer.WritePropertyName("workflowType");
                 context.Writer.WriteStringValue(publicRequest.WorkflowType);
-||||||| Commit version number update changes
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetWorkflowVersionName())
-                {
-                    context.Writer.WritePropertyName("workflowVersionName");
-                    context.Writer.Write(publicRequest.WorkflowVersionName);
-                }
+            }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
+            if(publicRequest.IsSetWorkflowVersionName())
+            {
+                context.Writer.WritePropertyName("workflowVersionName");
+                context.Writer.WriteStringValue(publicRequest.WorkflowVersionName);
             }
 
             writer.WriteEndObject();

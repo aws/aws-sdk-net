@@ -161,9 +161,9 @@ namespace Amazon.EntityResolution.Model
         /// value, they would count as one unique record in this metric. 
         /// </para>
         /// </summary>
-        public int UniqueRecordsLoaded
+        public int? UniqueRecordsLoaded
         {
-            get { return this._uniqueRecordsLoaded.GetValueOrDefault(); }
+            get { return this._uniqueRecordsLoaded; }
             set { this._uniqueRecordsLoaded = value; }
         }
 

@@ -49,12 +49,12 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetModalityProcessing())
             {
                 context.Writer.WritePropertyName("modalityProcessing");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ModalityProcessingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ModalityProcessing, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSplitter())

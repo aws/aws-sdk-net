@@ -70,9 +70,9 @@ namespace Amazon.Omics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]
-        public int StorageCapacity
+        public int? StorageCapacity
         {
-            get { return this._storageCapacity.GetValueOrDefault(); }
+            get { return this._storageCapacity; }
             set { this._storageCapacity = value; }
         }
 

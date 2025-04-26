@@ -33,16 +33,10 @@ namespace Amazon.Deadline
     public partial class AmazonDeadlineConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("deadline", "4.0.0.0");
 
         private static readonly AmazonDeadlineEndpointResolver EndpointResolver =
             new AmazonDeadlineEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("deadline", "3.7.405.6");
-=======
-            InternalSDKUtils.BuildUserAgentString("deadline", "3.7.405.16");
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

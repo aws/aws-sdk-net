@@ -134,7 +134,7 @@ namespace Amazon.Account.Model
         // Check to see if RequestErrorType property is set
         internal bool IsSetRequestErrorType()
         {
-            return !string.IsNullOrEmpty(this._requestErrorType);
+            return this._requestErrorType != null;
         }
 
     }

@@ -709,7 +709,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<DeleteTableBucketEncryptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTableBucketPolicy
@@ -1076,7 +1075,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<GetTableBucketEncryptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTableBucketMaintenanceConfiguration
@@ -1255,7 +1253,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<GetTableEncryptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetTableMaintenanceConfiguration
@@ -1746,7 +1743,6 @@ namespace Amazon.S3Tables
 
             return InvokeAsync<PutTableBucketEncryptionResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutTableBucketMaintenanceConfiguration

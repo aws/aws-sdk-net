@@ -50,9 +50,9 @@ namespace Amazon.PrometheusService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long MaxSeries
+        public long? MaxSeries
         {
-            get { return this._maxSeries.GetValueOrDefault(); }
+            get { return this._maxSeries; }
             set { this._maxSeries = value; }
         }
 

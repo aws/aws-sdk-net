@@ -623,7 +623,6 @@ namespace Amazon.MQ
 
             return InvokeAsync<DeleteConfigurationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  DeleteTags

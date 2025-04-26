@@ -77,13 +77,13 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 if (context.TestExpression("TrafficShapingRetrievalWindow", targetDepth))
                 {
                     var unmarshaller = TrafficShapingRetrievalWindowUnmarshaller.Instance;
-                    unmarshalledObject.TrafficShapingRetrievalWindow = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TrafficShapingRetrievalWindow = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TrafficShapingType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrafficShapingType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TrafficShapingType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

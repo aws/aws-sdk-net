@@ -70,20 +70,20 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("stepCheckpoint", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.StepCheckpoint = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.StepCheckpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("stepCheckpointStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StepCheckpointStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StepCheckpointStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("stepCheckpointTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StepCheckpointTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StepCheckpointTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("stepCondCode", targetDepth))

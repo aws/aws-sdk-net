@@ -61,7 +61,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 if (context.TestExpression("SftpConnectionDetails", targetDepth))
                 {
                     var unmarshaller = SftpConnectorConnectionDetailsUnmarshaller.Instance;
-                    response.SftpConnectionDetails = unmarshaller.Unmarshall(context);
+                    response.SftpConnectionDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))

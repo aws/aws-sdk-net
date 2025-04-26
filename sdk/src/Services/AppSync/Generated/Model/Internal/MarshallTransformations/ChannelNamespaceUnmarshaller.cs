@@ -83,7 +83,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 if (context.TestExpression("handlerConfigs", targetDepth))
                 {
                     var unmarshaller = HandlerConfigsUnmarshaller.Instance;
-                    unmarshalledObject.HandlerConfigs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HandlerConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastModified", targetDepth))

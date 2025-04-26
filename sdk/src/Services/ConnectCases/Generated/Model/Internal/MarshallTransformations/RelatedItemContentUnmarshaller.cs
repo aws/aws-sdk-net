@@ -77,7 +77,7 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 if (context.TestExpression("sla", targetDepth))
                 {
                     var unmarshaller = SlaContentUnmarshaller.Instance;
-                    unmarshalledObject.Sla = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Sla = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

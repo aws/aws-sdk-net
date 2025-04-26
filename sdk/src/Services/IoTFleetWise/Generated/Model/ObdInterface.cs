@@ -48,16 +48,8 @@ namespace Amazon.IoTFleetWise.Model
         /// The maximum number message requests per diagnostic trouble code per second.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=0)]
-        public int? DtcRequestIntervalSeconds
-||||||| Commit version number update changes
-        [AWSProperty(Min=0)]
-        public int DtcRequestIntervalSeconds
-=======
         [AWSProperty(Min=0, Max=2147483647)]
-        public int DtcRequestIntervalSeconds
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
+        public int? DtcRequestIntervalSeconds
         {
             get { return this._dtcRequestIntervalSeconds; }
             set { this._dtcRequestIntervalSeconds = value; }
@@ -131,16 +123,8 @@ namespace Amazon.IoTFleetWise.Model
         /// The maximum number message requests per second.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=0)]
-        public int? PidRequestIntervalSeconds
-||||||| Commit version number update changes
-        [AWSProperty(Min=0)]
-        public int PidRequestIntervalSeconds
-=======
         [AWSProperty(Min=0, Max=2147483647)]
-        public int PidRequestIntervalSeconds
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
+        public int? PidRequestIntervalSeconds
         {
             get { return this._pidRequestIntervalSeconds; }
             set { this._pidRequestIntervalSeconds = value; }
@@ -158,16 +142,8 @@ namespace Amazon.IoTFleetWise.Model
         /// The ID of the message requesting vehicle data.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true, Min=0)]
-        public int? RequestMessageId
-||||||| Commit version number update changes
-        [AWSProperty(Required=true, Min=0)]
-        public int RequestMessageId
-=======
         [AWSProperty(Required=true, Min=0, Max=2147483647)]
-        public int RequestMessageId
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
+        public int? RequestMessageId
         {
             get { return this._requestMessageId; }
             set { this._requestMessageId = value; }

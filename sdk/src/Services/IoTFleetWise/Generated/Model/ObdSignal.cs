@@ -72,16 +72,8 @@ namespace Amazon.IoTFleetWise.Model
         /// The number of positions to shift bits in the message.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=0)]
-        public int? BitRightShift
-||||||| Commit version number update changes
-        [AWSProperty(Min=0)]
-        public int BitRightShift
-=======
         [AWSProperty(Min=0, Max=2147483647)]
-        public int BitRightShift
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
+        public int? BitRightShift
         {
             get { return this._bitRightShift; }
             set { this._bitRightShift = value; }
@@ -159,16 +151,8 @@ namespace Amazon.IoTFleetWise.Model
         /// The diagnostic code used to request data from a vehicle for this signal.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true, Min=0)]
-        public int? Pid
-||||||| Commit version number update changes
-        [AWSProperty(Required=true, Min=0)]
-        public int Pid
-=======
         [AWSProperty(Required=true, Min=0, Max=2147483647)]
-        public int Pid
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
+        public int? Pid
         {
             get { return this._pid; }
             set { this._pid = value; }
@@ -186,16 +170,8 @@ namespace Amazon.IoTFleetWise.Model
         /// The length of the requested data.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true, Min=1)]
-        public int? PidResponseLength
-||||||| Commit version number update changes
-        [AWSProperty(Required=true, Min=1)]
-        public int PidResponseLength
-=======
         [AWSProperty(Required=true, Min=1, Max=2147483647)]
-        public int PidResponseLength
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
+        public int? PidResponseLength
         {
             get { return this._pidResponseLength; }
             set { this._pidResponseLength = value; }
@@ -232,16 +208,8 @@ namespace Amazon.IoTFleetWise.Model
         /// The mode of operation (diagnostic service) in a message.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true, Min=0)]
-        public int? ServiceMode
-||||||| Commit version number update changes
-        [AWSProperty(Required=true, Min=0)]
-        public int ServiceMode
-=======
         [AWSProperty(Required=true, Min=0, Max=2147483647)]
-        public int ServiceMode
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
+        public int? ServiceMode
         {
             get { return this._serviceMode; }
             set { this._serviceMode = value; }
@@ -277,16 +245,8 @@ namespace Amazon.IoTFleetWise.Model
         /// Indicates the beginning of the message.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true, Min=0)]
-        public int? StartByte
-||||||| Commit version number update changes
-        [AWSProperty(Required=true, Min=0)]
-        public int StartByte
-=======
         [AWSProperty(Required=true, Min=0, Max=2147483647)]
-        public int StartByte
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
+        public int? StartByte
         {
             get { return this._startByte; }
             set { this._startByte = value; }

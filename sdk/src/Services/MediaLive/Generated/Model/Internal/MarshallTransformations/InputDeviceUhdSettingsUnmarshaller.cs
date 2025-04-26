@@ -101,7 +101,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 if (context.TestExpression("inputResolution", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InputResolution = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InputResolution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("latencyMs", targetDepth))

@@ -135,9 +135,9 @@ namespace Amazon.ServiceQuotas.Model
         /// the request status to <c>Not approved</c>. 
         /// </para>
         /// </summary>
-        public bool SupportCaseAllowed
+        public bool? SupportCaseAllowed
         {
-            get { return this._supportCaseAllowed.GetValueOrDefault(); }
+            get { return this._supportCaseAllowed; }
             set { this._supportCaseAllowed = value; }
         }
 

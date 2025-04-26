@@ -79,7 +79,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 if (context.TestExpression("RecurringPrefetchConfiguration", targetDepth))
                 {
                     var unmarshaller = RecurringPrefetchConfigurationUnmarshaller.Instance;
-                    response.RecurringPrefetchConfiguration = unmarshaller.Unmarshall(context);
+                    response.RecurringPrefetchConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Retrieval", targetDepth))
@@ -91,7 +91,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 if (context.TestExpression("ScheduleType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ScheduleType = unmarshaller.Unmarshall(context);
+                    response.ScheduleType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StreamId", targetDepth))

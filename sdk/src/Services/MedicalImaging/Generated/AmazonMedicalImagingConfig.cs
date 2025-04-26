@@ -33,16 +33,10 @@ namespace Amazon.MedicalImaging
     public partial class AmazonMedicalImagingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Medical Imaging", "4.0.0.0");
 
         private static readonly AmazonMedicalImagingEndpointResolver EndpointResolver =
             new AmazonMedicalImagingEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Medical Imaging", "3.7.400.130");
-=======
-            InternalSDKUtils.BuildUserAgentString("Medical Imaging", "3.7.400.140");
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

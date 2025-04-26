@@ -45,15 +45,7 @@ namespace Amazon.CodeBuild.Model
         /// The desired number of instances in the ﬂeet when auto-scaling.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=1)]
         public int? DesiredCapacity
-||||||| Commit version number update changes
-        [AWSProperty(Min=1)]
-        public int DesiredCapacity
-=======
-        public int DesiredCapacity
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
         {
             get { return this._desiredCapacity; }
             set { this._desiredCapacity = value; }
@@ -71,15 +63,7 @@ namespace Amazon.CodeBuild.Model
         /// The maximum number of instances in the ﬂeet when auto-scaling.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=1)]
         public int? MaxCapacity
-||||||| Commit version number update changes
-        [AWSProperty(Min=1)]
-        public int MaxCapacity
-=======
-        public int MaxCapacity
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
         {
             get { return this._maxCapacity; }
             set { this._maxCapacity = value; }

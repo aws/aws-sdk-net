@@ -71,7 +71,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 if (context.TestExpression("AssignSlaAction", targetDepth))
                 {
                     var unmarshaller = AssignSlaActionDefinitionUnmarshaller.Instance;
-                    unmarshalledObject.AssignSlaAction = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AssignSlaAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreateCaseAction", targetDepth))

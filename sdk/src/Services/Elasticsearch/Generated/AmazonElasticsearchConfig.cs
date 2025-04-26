@@ -33,16 +33,10 @@ namespace Amazon.Elasticsearch
     public partial class AmazonElasticsearchConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Elasticsearch Service", "4.0.0.0");
 
         private static readonly AmazonElasticsearchEndpointResolver EndpointResolver =
             new AmazonElasticsearchEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Elasticsearch Service", "3.7.400.130");
-=======
-            InternalSDKUtils.BuildUserAgentString("Elasticsearch Service", "3.7.400.140");
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

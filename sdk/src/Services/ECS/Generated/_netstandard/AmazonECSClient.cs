@@ -3834,7 +3834,6 @@ namespace Amazon.ECS
 
             return InvokeAsync<StopServiceDeploymentResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  StopTask

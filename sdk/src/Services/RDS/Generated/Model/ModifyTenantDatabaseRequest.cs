@@ -111,9 +111,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool ManageMasterUserPassword
+        public bool? ManageMasterUserPassword
         {
-            get { return this._manageMasterUserPassword.GetValueOrDefault(); }
+            get { return this._manageMasterUserPassword; }
             set { this._manageMasterUserPassword = value; }
         }
 
@@ -301,9 +301,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool RotateMasterUserPassword
+        public bool? RotateMasterUserPassword
         {
-            get { return this._rotateMasterUserPassword.GetValueOrDefault(); }
+            get { return this._rotateMasterUserPassword; }
             set { this._rotateMasterUserPassword = value; }
         }
 

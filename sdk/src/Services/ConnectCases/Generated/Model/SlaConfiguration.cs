@@ -48,9 +48,9 @@ namespace Amazon.ConnectCases.Model
         /// Time at which an SLA was completed.
         /// </para>
         /// </summary>
-        public DateTime CompletionTime
+        public DateTime? CompletionTime
         {
-            get { return this._completionTime.GetValueOrDefault(); }
+            get { return this._completionTime; }
             set { this._completionTime = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.ConnectCases.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime TargetTime
+        public DateTime? TargetTime
         {
-            get { return this._targetTime.GetValueOrDefault(); }
+            get { return this._targetTime; }
             set { this._targetTime = value; }
         }
 

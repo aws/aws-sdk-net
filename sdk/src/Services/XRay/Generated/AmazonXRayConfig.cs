@@ -33,16 +33,10 @@ namespace Amazon.XRay
     public partial class AmazonXRayConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("XRay", "4.0.0.0");
 
         private static readonly AmazonXRayEndpointResolver EndpointResolver =
             new AmazonXRayEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("XRay", "3.7.401.74");
-=======
-            InternalSDKUtils.BuildUserAgentString("XRay", "3.7.401.84");
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

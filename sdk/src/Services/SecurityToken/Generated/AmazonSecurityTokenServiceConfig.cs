@@ -33,16 +33,10 @@ namespace Amazon.SecurityToken
     public partial class AmazonSecurityTokenServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("STS", "4.0.0.0");
 
         private static readonly AmazonSecurityTokenServiceEndpointResolver EndpointResolver =
             new AmazonSecurityTokenServiceEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("STS", "3.7.401.79");
-=======
-            InternalSDKUtils.BuildUserAgentString("STS", "3.7.401.89");
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

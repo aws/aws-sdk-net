@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VideoOverrideConfiguration Object
     /// </summary>  
-    public class VideoOverrideConfigurationUnmarshaller : IUnmarshaller<VideoOverrideConfiguration, XmlUnmarshallerContext>, IUnmarshaller<VideoOverrideConfiguration, JsonUnmarshallerContext>
+    public class VideoOverrideConfigurationUnmarshaller : IJsonUnmarshaller<VideoOverrideConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        VideoOverrideConfiguration IUnmarshaller<VideoOverrideConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VideoOverrideConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public VideoOverrideConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             VideoOverrideConfiguration unmarshalledObject = new VideoOverrideConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("modalityProcessing", targetDepth))
                 {
                     var unmarshaller = ModalityProcessingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ModalityProcessing = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModalityProcessing = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

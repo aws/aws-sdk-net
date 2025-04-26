@@ -93,9 +93,9 @@ namespace Amazon.PrometheusService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int RetentionPeriodInDays
+        public int? RetentionPeriodInDays
         {
-            get { return this._retentionPeriodInDays.GetValueOrDefault(); }
+            get { return this._retentionPeriodInDays; }
             set { this._retentionPeriodInDays = value; }
         }
 

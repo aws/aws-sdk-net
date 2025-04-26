@@ -49,17 +49,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCaptionLanguageMappings())
             {
                 context.Writer.WritePropertyName("captionLanguageMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCaptionLanguageMappingsListValue in requestObject.CaptionLanguageMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CmafIngestCaptionLanguageMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectCaptionLanguageMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDestination())
@@ -142,19 +142,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimedMetadataId3Frame())
             {
                 context.Writer.WritePropertyName("timedMetadataId3Frame");
-                context.Writer.Write(requestObject.TimedMetadataId3Frame);
+                context.Writer.WriteStringValue(requestObject.TimedMetadataId3Frame);
             }
 
             if(requestObject.IsSetTimedMetadataId3Period())
             {
                 context.Writer.WritePropertyName("timedMetadataId3Period");
-                context.Writer.Write(requestObject.TimedMetadataId3Period);
+                context.Writer.WriteNumberValue(requestObject.TimedMetadataId3Period.Value);
             }
 
             if(requestObject.IsSetTimedMetadataPassthrough())
             {
                 context.Writer.WritePropertyName("timedMetadataPassthrough");
-                context.Writer.Write(requestObject.TimedMetadataPassthrough);
+                context.Writer.WriteStringValue(requestObject.TimedMetadataPassthrough);
             }
 
         }

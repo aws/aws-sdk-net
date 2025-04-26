@@ -259,13 +259,13 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 if (context.TestExpression("workflowUuid", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.WorkflowUuid = unmarshaller.Unmarshall(context);
+                    response.WorkflowUuid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("workflowVersionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.WorkflowVersionName = unmarshaller.Unmarshall(context);
+                    response.WorkflowVersionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

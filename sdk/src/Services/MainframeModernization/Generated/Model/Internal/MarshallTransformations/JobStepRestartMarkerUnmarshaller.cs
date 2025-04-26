@@ -70,14 +70,14 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("skip", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Skip = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.Skip = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("stepCheckpoint", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.StepCheckpoint = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.StepCheckpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("toProcStep", targetDepth))

@@ -94,8 +94,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("uniqueRecordsLoaded", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.UniqueRecordsLoaded = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.UniqueRecordsLoaded = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

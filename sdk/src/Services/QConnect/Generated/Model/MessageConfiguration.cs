@@ -43,9 +43,9 @@ namespace Amazon.QConnect.Model
         /// Generates a filler response when tool selection is <c>QUESTION</c>.
         /// </para>
         /// </summary>
-        public bool GenerateFillerMessage
+        public bool? GenerateFillerMessage
         {
-            get { return this._generateFillerMessage.GetValueOrDefault(); }
+            get { return this._generateFillerMessage; }
             set { this._generateFillerMessage = value; }
         }
 

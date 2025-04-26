@@ -33,16 +33,10 @@ namespace Amazon.LexModelsV2
     public partial class AmazonLexModelsV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Lex Models V2", "4.0.0.0");
 
         private static readonly AmazonLexModelsV2EndpointResolver EndpointResolver =
             new AmazonLexModelsV2EndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Lex Models V2", "3.7.403.4");
-=======
-            InternalSDKUtils.BuildUserAgentString("Lex Models V2", "3.7.403.14");
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

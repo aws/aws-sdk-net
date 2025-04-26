@@ -119,7 +119,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 if (context.TestExpression("IpDiscovery", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IpDiscovery = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IpDiscovery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KmsKeyId", targetDepth))
@@ -149,7 +149,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 if (context.TestExpression("NetworkType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NetworkType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NodeType", targetDepth))

@@ -83,7 +83,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 if (context.TestExpression("origin", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Origin = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Origin = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sessionArn", targetDepth))

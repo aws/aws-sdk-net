@@ -70,8 +70,8 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SupportedNetworkTypes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SupportedNetworkTypes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedNetworkTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

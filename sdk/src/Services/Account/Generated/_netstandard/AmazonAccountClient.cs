@@ -551,7 +551,6 @@ namespace Amazon.Account
 
             return InvokeAsync<GetAccountInformationResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  GetAlternateContact
@@ -872,7 +871,6 @@ namespace Amazon.Account
 
             return InvokeAsync<PutAccountNameResponse>(request, options, cancellationToken);
         }
-
         #endregion
         
         #region  PutAlternateContact

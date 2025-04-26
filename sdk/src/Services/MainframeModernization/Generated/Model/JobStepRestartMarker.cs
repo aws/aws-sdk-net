@@ -85,9 +85,9 @@ namespace Amazon.MainframeModernization.Model
         /// Web Services Blu Age application batch job.
         /// </para>
         /// </summary>
-        public bool Skip
+        public bool? Skip
         {
-            get { return this._skip.GetValueOrDefault(); }
+            get { return this._skip; }
             set { this._skip = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.MainframeModernization.Model
         /// Web Services Blu Age application batch job.
         /// </para>
         /// </summary>
-        public int StepCheckpoint
+        public int? StepCheckpoint
         {
-            get { return this._stepCheckpoint.GetValueOrDefault(); }
+            get { return this._stepCheckpoint; }
             set { this._stepCheckpoint = value; }
         }
 

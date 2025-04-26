@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndTime())
             {
                 context.Writer.WritePropertyName("EndTime");
-                context.Writer.Write(requestObject.EndTime);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.EndTime.Value)));
             }
 
             if(requestObject.IsSetRecurringConsumption())
             {
                 context.Writer.WritePropertyName("RecurringConsumption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RecurringConsumptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.RecurringConsumption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRecurringRetrieval())
             {
                 context.Writer.WritePropertyName("RecurringRetrieval");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RecurringRetrievalMarshaller.Instance;
                 marshaller.Marshall(requestObject.RecurringRetrieval, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("StartTime");
-                context.Writer.Write(requestObject.StartTime);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartTime.Value)));
             }
 
         }

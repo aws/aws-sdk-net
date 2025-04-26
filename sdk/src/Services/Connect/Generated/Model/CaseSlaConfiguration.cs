@@ -106,9 +106,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=129600)]
-        public long TargetSlaMinutes
+        public long? TargetSlaMinutes
         {
-            get { return this._targetSlaMinutes.GetValueOrDefault(); }
+            get { return this._targetSlaMinutes; }
             set { this._targetSlaMinutes = value; }
         }
 

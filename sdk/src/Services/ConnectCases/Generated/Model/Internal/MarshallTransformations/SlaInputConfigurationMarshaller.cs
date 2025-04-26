@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFieldId())
             {
                 context.Writer.WritePropertyName("fieldId");
-                context.Writer.Write(requestObject.FieldId);
+                context.Writer.WriteStringValue(requestObject.FieldId);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetTargetFieldValues())
             {
                 context.Writer.WritePropertyName("targetFieldValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetFieldValuesListValue in requestObject.TargetFieldValues)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FieldValueUnionMarshaller.Instance;
                     marshaller.Marshall(requestObjectTargetFieldValuesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTargetSlaMinutes())
             {
                 context.Writer.WritePropertyName("targetSlaMinutes");
-                context.Writer.Write(requestObject.TargetSlaMinutes);
+                context.Writer.WriteNumberValue(requestObject.TargetSlaMinutes.Value);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

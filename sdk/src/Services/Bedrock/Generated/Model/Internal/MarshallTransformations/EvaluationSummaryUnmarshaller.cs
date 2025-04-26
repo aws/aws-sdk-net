@@ -70,8 +70,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("customMetricsEvaluatorModelIdentifiers", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.CustomMetricsEvaluatorModelIdentifiers = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CustomMetricsEvaluatorModelIdentifiers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("evaluationTaskTypes", targetDepth))

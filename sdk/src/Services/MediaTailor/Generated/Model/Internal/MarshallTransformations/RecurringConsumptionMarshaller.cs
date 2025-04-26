@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvailMatchingCriteria())
             {
                 context.Writer.WritePropertyName("AvailMatchingCriteria");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAvailMatchingCriteriaListValue in requestObject.AvailMatchingCriteria)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AvailMatchingCriteriaMarshaller.Instance;
                     marshaller.Marshall(requestObjectAvailMatchingCriteriaListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRetrievedAdExpirationSeconds())
             {
                 context.Writer.WritePropertyName("RetrievedAdExpirationSeconds");
-                context.Writer.Write(requestObject.RetrievedAdExpirationSeconds);
+                context.Writer.WriteNumberValue(requestObject.RetrievedAdExpirationSeconds.Value);
             }
 
         }

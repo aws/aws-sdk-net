@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DocumentAclCondition Object
     /// </summary>  
-    public class DocumentAclConditionUnmarshaller : IUnmarshaller<DocumentAclCondition, XmlUnmarshallerContext>, IUnmarshaller<DocumentAclCondition, JsonUnmarshallerContext>
+    public class DocumentAclConditionUnmarshaller : IJsonUnmarshaller<DocumentAclCondition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DocumentAclCondition IUnmarshaller<DocumentAclCondition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DocumentAclCondition Unmarshall(JsonUnmarshallerContext context)
+        public DocumentAclCondition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DocumentAclCondition unmarshalledObject = new DocumentAclCondition();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("groups", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DocumentAclGroup, DocumentAclGroupUnmarshaller>(DocumentAclGroupUnmarshaller.Instance);
-                    unmarshalledObject.Groups = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DocumentAclGroup, DocumentAclGroupUnmarshaller>(DocumentAclGroupUnmarshaller.Instance);
+                    unmarshalledObject.Groups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("memberRelation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MemberRelation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MemberRelation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("users", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DocumentAclUser, DocumentAclUserUnmarshaller>(DocumentAclUserUnmarshaller.Instance);
-                    unmarshalledObject.Users = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DocumentAclUser, DocumentAclUserUnmarshaller>(DocumentAclUserUnmarshaller.Instance);
+                    unmarshalledObject.Users = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

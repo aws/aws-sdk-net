@@ -33,16 +33,10 @@ namespace Amazon.CloudFormation
     public partial class AmazonCloudFormationConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("CloudFormation", "4.0.0.0");
 
         private static readonly AmazonCloudFormationEndpointResolver EndpointResolver =
             new AmazonCloudFormationEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("CloudFormation", "3.7.403.8");
-=======
-            InternalSDKUtils.BuildUserAgentString("CloudFormation", "3.7.403.18");
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

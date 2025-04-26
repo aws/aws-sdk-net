@@ -53,9 +53,9 @@ namespace Amazon.Transfer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxConcurrentConnections
+        public int? MaxConcurrentConnections
         {
-            get { return this._maxConcurrentConnections.GetValueOrDefault(); }
+            get { return this._maxConcurrentConnections; }
             set { this._maxConcurrentConnections = value; }
         }
 

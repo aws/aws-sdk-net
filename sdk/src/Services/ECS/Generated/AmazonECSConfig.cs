@@ -33,16 +33,10 @@ namespace Amazon.ECS
     public partial class AmazonECSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("ECS", "4.0.0.0");
 
         private static readonly AmazonECSEndpointResolver EndpointResolver =
             new AmazonECSEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("ECS", "3.7.408.66");
-=======
-            InternalSDKUtils.BuildUserAgentString("ECS", "3.7.410.2");
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

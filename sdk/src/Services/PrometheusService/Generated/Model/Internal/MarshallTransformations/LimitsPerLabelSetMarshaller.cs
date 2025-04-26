@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
 {
@@ -51,26 +49,26 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLabelSet())
             {
                 context.Writer.WritePropertyName("labelSet");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectLabelSetKvp in requestObject.LabelSet)
                 {
                     context.Writer.WritePropertyName(requestObjectLabelSetKvp.Key);
                     var requestObjectLabelSetValue = requestObjectLabelSetKvp.Value;
 
-                        context.Writer.Write(requestObjectLabelSetValue);
+                        context.Writer.WriteStringValue(requestObjectLabelSetValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLimits())
             {
                 context.Writer.WritePropertyName("limits");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LimitsPerLabelSetEntryMarshaller.Instance;
                 marshaller.Marshall(requestObject.Limits, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

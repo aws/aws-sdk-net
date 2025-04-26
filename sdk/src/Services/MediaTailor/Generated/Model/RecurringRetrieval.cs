@@ -48,9 +48,9 @@ namespace Amazon.MediaTailor.Model
         /// ads for the next avail. If not set, the default is 0 (no delay).
         /// </para>
         /// </summary>
-        public int DelayAfterAvailEndSeconds
+        public int? DelayAfterAvailEndSeconds
         {
-            get { return this._delayAfterAvailEndSeconds.GetValueOrDefault(); }
+            get { return this._delayAfterAvailEndSeconds; }
             set { this._delayAfterAvailEndSeconds = value; }
         }
 

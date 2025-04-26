@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
@@ -51,38 +49,38 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDelayAfterAvailEndSeconds())
             {
                 context.Writer.WritePropertyName("DelayAfterAvailEndSeconds");
-                context.Writer.Write(requestObject.DelayAfterAvailEndSeconds);
+                context.Writer.WriteNumberValue(requestObject.DelayAfterAvailEndSeconds.Value);
             }
 
             if(requestObject.IsSetDynamicVariables())
             {
                 context.Writer.WritePropertyName("DynamicVariables");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectDynamicVariablesKvp in requestObject.DynamicVariables)
                 {
                     context.Writer.WritePropertyName(requestObjectDynamicVariablesKvp.Key);
                     var requestObjectDynamicVariablesValue = requestObjectDynamicVariablesKvp.Value;
 
-                        context.Writer.Write(requestObjectDynamicVariablesValue);
+                        context.Writer.WriteStringValue(requestObjectDynamicVariablesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTrafficShapingRetrievalWindow())
             {
                 context.Writer.WritePropertyName("TrafficShapingRetrievalWindow");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TrafficShapingRetrievalWindowMarshaller.Instance;
                 marshaller.Marshall(requestObject.TrafficShapingRetrievalWindow, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTrafficShapingType())
             {
                 context.Writer.WritePropertyName("TrafficShapingType");
-                context.Writer.Write(requestObject.TrafficShapingType);
+                context.Writer.WriteStringValue(requestObject.TrafficShapingType);
             }
 
         }

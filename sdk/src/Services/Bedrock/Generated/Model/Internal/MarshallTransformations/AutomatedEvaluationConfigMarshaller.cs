@@ -49,12 +49,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomMetricConfig())
             {
                 context.Writer.WritePropertyName("customMetricConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutomatedEvaluationCustomMetricConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomMetricConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDatasetMetricConfigs())

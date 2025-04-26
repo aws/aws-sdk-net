@@ -33,16 +33,10 @@ namespace Amazon.CloudDirectory
     public partial class AmazonCloudDirectoryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("CloudDirectory", "4.0.0.0");
 
         private static readonly AmazonCloudDirectoryEndpointResolver EndpointResolver =
             new AmazonCloudDirectoryEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("CloudDirectory", "3.7.400.131");
-=======
-            InternalSDKUtils.BuildUserAgentString("CloudDirectory", "3.7.400.141");
->>>>>>> bcc442e12cc015138c506095ec7e21230ccd4f2e
 
         private string _userAgent = UserAgentString;
         ///<summary>

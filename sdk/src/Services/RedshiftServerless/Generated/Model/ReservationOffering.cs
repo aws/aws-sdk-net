@@ -66,9 +66,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The duration, in seconds, for which the reservation reserves the RPUs.
         /// </para>
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The rate you are charged for each hour the reservation is active.
         /// </para>
         /// </summary>
-        public double HourlyCharge
+        public double? HourlyCharge
         {
-            get { return this._hourlyCharge.GetValueOrDefault(); }
+            get { return this._hourlyCharge; }
             set { this._hourlyCharge = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The up-front price you are charged for the reservation.
         /// </para>
         /// </summary>
-        public double UpfrontCharge
+        public double? UpfrontCharge
         {
-            get { return this._upfrontCharge.GetValueOrDefault(); }
+            get { return this._upfrontCharge; }
             set { this._upfrontCharge = value; }
         }
 
