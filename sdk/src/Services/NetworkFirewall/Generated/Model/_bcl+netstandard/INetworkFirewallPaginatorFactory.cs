@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the network-firewall-2020-11-12.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFirewall.Model
@@ -29,46 +30,91 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Paginator for GetAnalysisReportResults operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetAnalysisReportResultsPaginator GetAnalysisReportResults(GetAnalysisReportResultsRequest request);
 
         /// <summary>
         /// Paginator for ListAnalysisReports operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAnalysisReportsPaginator ListAnalysisReports(ListAnalysisReportsRequest request);
 
         /// <summary>
         /// Paginator for ListFirewallPolicies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFirewallPoliciesPaginator ListFirewallPolicies(ListFirewallPoliciesRequest request);
 
         /// <summary>
         /// Paginator for ListFirewalls operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFirewallsPaginator ListFirewalls(ListFirewallsRequest request);
 
         /// <summary>
         /// Paginator for ListFlowOperationResults operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFlowOperationResultsPaginator ListFlowOperationResults(ListFlowOperationResultsRequest request);
 
         /// <summary>
         /// Paginator for ListFlowOperations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFlowOperationsPaginator ListFlowOperations(ListFlowOperationsRequest request);
 
         /// <summary>
         /// Paginator for ListRuleGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRuleGroupsPaginator ListRuleGroups(ListRuleGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListTagsForResource operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request);
 
         /// <summary>
         /// Paginator for ListTLSInspectionConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTLSInspectionConfigurationsPaginator ListTLSInspectionConfigurations(ListTLSInspectionConfigurationsRequest request);
     }
 }

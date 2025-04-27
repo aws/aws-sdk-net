@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the backupsearch-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BackupSearch.Model
@@ -29,21 +30,41 @@ namespace Amazon.BackupSearch.Model
         /// <summary>
         /// Paginator for ListSearchJobBackups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSearchJobBackupsPaginator ListSearchJobBackups(ListSearchJobBackupsRequest request);
 
         /// <summary>
         /// Paginator for ListSearchJobResults operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSearchJobResultsPaginator ListSearchJobResults(ListSearchJobResultsRequest request);
 
         /// <summary>
         /// Paginator for ListSearchJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSearchJobsPaginator ListSearchJobs(ListSearchJobsRequest request);
 
         /// <summary>
         /// Paginator for ListSearchResultExportJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSearchResultExportJobsPaginator ListSearchResultExportJobs(ListSearchResultExportJobsRequest request);
     }
 }

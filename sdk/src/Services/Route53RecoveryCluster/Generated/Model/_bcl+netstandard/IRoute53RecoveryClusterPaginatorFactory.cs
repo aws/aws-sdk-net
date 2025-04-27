@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the route53-recovery-cluster-2019-12-02.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Route53RecoveryCluster.Model
@@ -29,6 +30,11 @@ namespace Amazon.Route53RecoveryCluster.Model
         /// <summary>
         /// Paginator for ListRoutingControls operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRoutingControlsPaginator ListRoutingControls(ListRoutingControlsRequest request);
     }
 }

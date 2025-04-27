@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the chime-sdk-messaging-2021-05-15.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMessaging.Model
@@ -29,56 +30,111 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Paginator for ListChannelBans operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListChannelBansPaginator ListChannelBans(ListChannelBansRequest request);
 
         /// <summary>
         /// Paginator for ListChannelFlows operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListChannelFlowsPaginator ListChannelFlows(ListChannelFlowsRequest request);
 
         /// <summary>
         /// Paginator for ListChannelMemberships operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListChannelMembershipsPaginator ListChannelMemberships(ListChannelMembershipsRequest request);
 
         /// <summary>
         /// Paginator for ListChannelMembershipsForAppInstanceUser operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListChannelMembershipsForAppInstanceUserPaginator ListChannelMembershipsForAppInstanceUser(ListChannelMembershipsForAppInstanceUserRequest request);
 
         /// <summary>
         /// Paginator for ListChannelMessages operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListChannelMessagesPaginator ListChannelMessages(ListChannelMessagesRequest request);
 
         /// <summary>
         /// Paginator for ListChannelModerators operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListChannelModeratorsPaginator ListChannelModerators(ListChannelModeratorsRequest request);
 
         /// <summary>
         /// Paginator for ListChannels operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListChannelsPaginator ListChannels(ListChannelsRequest request);
 
         /// <summary>
         /// Paginator for ListChannelsAssociatedWithChannelFlow operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListChannelsAssociatedWithChannelFlowPaginator ListChannelsAssociatedWithChannelFlow(ListChannelsAssociatedWithChannelFlowRequest request);
 
         /// <summary>
         /// Paginator for ListChannelsModeratedByAppInstanceUser operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListChannelsModeratedByAppInstanceUserPaginator ListChannelsModeratedByAppInstanceUser(ListChannelsModeratedByAppInstanceUserRequest request);
 
         /// <summary>
         /// Paginator for ListSubChannels operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSubChannelsPaginator ListSubChannels(ListSubChannelsRequest request);
 
         /// <summary>
         /// Paginator for SearchChannels operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         ISearchChannelsPaginator SearchChannels(SearchChannelsRequest request);
     }
 }

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the fms-2018-01-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model
@@ -29,41 +30,81 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Paginator for ListAdminAccountsForOrganization operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAdminAccountsForOrganizationPaginator ListAdminAccountsForOrganization(ListAdminAccountsForOrganizationRequest request);
 
         /// <summary>
         /// Paginator for ListAdminsManagingAccount operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAdminsManagingAccountPaginator ListAdminsManagingAccount(ListAdminsManagingAccountRequest request);
 
         /// <summary>
         /// Paginator for ListAppsLists operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAppsListsPaginator ListAppsLists(ListAppsListsRequest request);
 
         /// <summary>
         /// Paginator for ListComplianceStatus operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListComplianceStatusPaginator ListComplianceStatus(ListComplianceStatusRequest request);
 
         /// <summary>
         /// Paginator for ListMemberAccounts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMemberAccountsPaginator ListMemberAccounts(ListMemberAccountsRequest request);
 
         /// <summary>
         /// Paginator for ListPolicies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPoliciesPaginator ListPolicies(ListPoliciesRequest request);
 
         /// <summary>
         /// Paginator for ListProtocolsLists operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProtocolsListsPaginator ListProtocolsLists(ListProtocolsListsRequest request);
 
         /// <summary>
         /// Paginator for ListThirdPartyFirewallFirewallPolicies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListThirdPartyFirewallFirewallPoliciesPaginator ListThirdPartyFirewallFirewallPolicies(ListThirdPartyFirewallFirewallPoliciesRequest request);
     }
 }

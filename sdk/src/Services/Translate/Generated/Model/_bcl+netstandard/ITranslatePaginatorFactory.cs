@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the translate-2017-07-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Translate.Model
@@ -29,21 +30,41 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Paginator for ListLanguages operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLanguagesPaginator ListLanguages(ListLanguagesRequest request);
 
         /// <summary>
         /// Paginator for ListParallelData operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListParallelDataPaginator ListParallelData(ListParallelDataRequest request);
 
         /// <summary>
         /// Paginator for ListTerminologies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTerminologiesPaginator ListTerminologies(ListTerminologiesRequest request);
 
         /// <summary>
         /// Paginator for ListTextTranslationJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTextTranslationJobsPaginator ListTextTranslationJobs(ListTextTranslationJobsRequest request);
     }
 }

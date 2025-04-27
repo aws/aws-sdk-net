@@ -37,7 +37,7 @@ namespace Amazon.Budgets.Model
     /// <para>
     /// The Request Syntax section shows the <c>BudgetLimit</c> syntax. For <c>PlannedBudgetLimits</c>,
     /// see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudget.html#API_DescribeBudget_Examples">Examples</a>
-    /// section. 
+    /// section.
     /// </para>
     ///  </important>
     /// </summary>
@@ -45,6 +45,7 @@ namespace Amazon.Budgets.Model
     {
         private string _accountId;
         private string _budgetName;
+        private bool? _showFilterExpression;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -83,6 +84,26 @@ namespace Amazon.Budgets.Model
         internal bool IsSetBudgetName()
         {
             return this._budgetName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShowFilterExpression. 
+        /// <para>
+        /// Specifies whether the response includes the filter expression associated with the
+        /// budget. By showing the filter expression, you can see detailed filtering logic applied
+        /// to the budget, such as Amazon Web Services services or tags that are being tracked.
+        /// </para>
+        /// </summary>
+        public bool? ShowFilterExpression
+        {
+            get { return this._showFilterExpression; }
+            set { this._showFilterExpression = value; }
+        }
+
+        // Check to see if ShowFilterExpression property is set
+        internal bool IsSetShowFilterExpression()
+        {
+            return this._showFilterExpression.HasValue; 
         }
 
     }

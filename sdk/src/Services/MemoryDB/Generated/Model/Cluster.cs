@@ -44,10 +44,12 @@ namespace Amazon.MemoryDB.Model
         private string _engine;
         private string _enginePatchVersion;
         private string _engineVersion;
+        private IpDiscovery _ipDiscovery;
         private string _kmsKeyId;
         private string _maintenanceWindow;
         private string _multiRegionClusterName;
         private string _name;
+        private NetworkType _networkType;
         private string _nodeType;
         private int? _numberOfShards;
         private string _parameterGroupName;
@@ -249,6 +251,26 @@ namespace Amazon.MemoryDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpDiscovery. 
+        /// <para>
+        /// The mechanism that the cluster uses to discover IP addresses. Returns 'ipv4' when
+        /// DNS endpoints resolve to IPv4 addresses, or 'ipv6' when DNS endpoints resolve to IPv6
+        /// addresses.
+        /// </para>
+        /// </summary>
+        public IpDiscovery IpDiscovery
+        {
+            get { return this._ipDiscovery; }
+            set { this._ipDiscovery = value; }
+        }
+
+        // Check to see if IpDiscovery property is set
+        internal bool IsSetIpDiscovery()
+        {
+            return this._ipDiscovery != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The ID of the KMS key used to encrypt the cluster
@@ -321,6 +343,25 @@ namespace Amazon.MemoryDB.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The IP address type for the cluster. Returns 'ipv4' for IPv4 only, 'ipv6' for IPv6
+        /// only, or 'dual-stack' if the cluster supports both IPv4 and IPv6 addressing.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

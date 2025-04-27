@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the migration-hub-refactor-spaces-2021-10-26.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubRefactorSpaces.Model
@@ -29,26 +30,51 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Paginator for ListApplications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
 
         /// <summary>
         /// Paginator for ListEnvironments operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEnvironmentsPaginator ListEnvironments(ListEnvironmentsRequest request);
 
         /// <summary>
         /// Paginator for ListEnvironmentVpcs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEnvironmentVpcsPaginator ListEnvironmentVpcs(ListEnvironmentVpcsRequest request);
 
         /// <summary>
         /// Paginator for ListRoutes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRoutesPaginator ListRoutes(ListRoutesRequest request);
 
         /// <summary>
         /// Paginator for ListServices operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListServicesPaginator ListServices(ListServicesRequest request);
     }
 }

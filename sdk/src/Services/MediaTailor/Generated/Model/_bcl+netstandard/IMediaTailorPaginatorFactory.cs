@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the mediatailor-2018-04-23.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model
@@ -29,41 +30,81 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Paginator for GetChannelSchedule operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetChannelSchedulePaginator GetChannelSchedule(GetChannelScheduleRequest request);
 
         /// <summary>
         /// Paginator for ListAlerts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAlertsPaginator ListAlerts(ListAlertsRequest request);
 
         /// <summary>
         /// Paginator for ListChannels operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListChannelsPaginator ListChannels(ListChannelsRequest request);
 
         /// <summary>
         /// Paginator for ListLiveSources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLiveSourcesPaginator ListLiveSources(ListLiveSourcesRequest request);
 
         /// <summary>
         /// Paginator for ListPlaybackConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPlaybackConfigurationsPaginator ListPlaybackConfigurations(ListPlaybackConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListPrefetchSchedules operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPrefetchSchedulesPaginator ListPrefetchSchedules(ListPrefetchSchedulesRequest request);
 
         /// <summary>
         /// Paginator for ListSourceLocations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSourceLocationsPaginator ListSourceLocations(ListSourceLocationsRequest request);
 
         /// <summary>
         /// Paginator for ListVodSources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListVodSourcesPaginator ListVodSources(ListVodSourcesRequest request);
     }
 }

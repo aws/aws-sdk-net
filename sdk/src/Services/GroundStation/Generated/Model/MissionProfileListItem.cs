@@ -45,6 +45,7 @@ namespace Amazon.GroundStation.Model
         /// ARN of a mission profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=89, Max=138)]
         public string MissionProfileArn
         {
             get { return this._missionProfileArn; }
@@ -63,7 +64,7 @@ namespace Amazon.GroundStation.Model
         /// UUID of a mission profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=36, Max=36)]
         public string MissionProfileId
         {
             get { return this._missionProfileId; }

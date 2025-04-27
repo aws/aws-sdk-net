@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the elasticmapreduce-2009-03-31.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model
@@ -29,61 +30,121 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Paginator for ListBootstrapActions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            
+            OutputToken = new[] { "Marker" }
+        )]
         IListBootstrapActionsPaginator ListBootstrapActions(ListBootstrapActionsRequest request);
 
         /// <summary>
         /// Paginator for ListClusters operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            
+            OutputToken = new[] { "Marker" }
+        )]
         IListClustersPaginator ListClusters(ListClustersRequest request);
 
         /// <summary>
         /// Paginator for ListInstanceFleets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            
+            OutputToken = new[] { "Marker" }
+        )]
         IListInstanceFleetsPaginator ListInstanceFleets(ListInstanceFleetsRequest request);
 
         /// <summary>
         /// Paginator for ListInstanceGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            
+            OutputToken = new[] { "Marker" }
+        )]
         IListInstanceGroupsPaginator ListInstanceGroups(ListInstanceGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListInstances operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            
+            OutputToken = new[] { "Marker" }
+        )]
         IListInstancesPaginator ListInstances(ListInstancesRequest request);
 
         /// <summary>
         /// Paginator for ListNotebookExecutions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            
+            OutputToken = new[] { "Marker" }
+        )]
         IListNotebookExecutionsPaginator ListNotebookExecutions(ListNotebookExecutionsRequest request);
 
         /// <summary>
         /// Paginator for ListReleaseLabels operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListReleaseLabelsPaginator ListReleaseLabels(ListReleaseLabelsRequest request);
 
         /// <summary>
         /// Paginator for ListSecurityConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            
+            OutputToken = new[] { "Marker" }
+        )]
         IListSecurityConfigurationsPaginator ListSecurityConfigurations(ListSecurityConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListSteps operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            
+            OutputToken = new[] { "Marker" }
+        )]
         IListStepsPaginator ListSteps(ListStepsRequest request);
 
         /// <summary>
         /// Paginator for ListStudios operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            
+            OutputToken = new[] { "Marker" }
+        )]
         IListStudiosPaginator ListStudios(ListStudiosRequest request);
 
         /// <summary>
         /// Paginator for ListStudioSessionMappings operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            
+            OutputToken = new[] { "Marker" }
+        )]
         IListStudioSessionMappingsPaginator ListStudioSessionMappings(ListStudioSessionMappingsRequest request);
 
         /// <summary>
         /// Paginator for ListSupportedInstanceTypes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            
+            OutputToken = new[] { "Marker" }
+        )]
         IListSupportedInstanceTypesPaginator ListSupportedInstanceTypes(ListSupportedInstanceTypesRequest request);
     }
 }

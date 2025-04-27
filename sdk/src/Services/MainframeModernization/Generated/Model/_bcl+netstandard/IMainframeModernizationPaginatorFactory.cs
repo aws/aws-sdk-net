@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the m2-2021-04-28.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MainframeModernization.Model
@@ -29,46 +30,101 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Paginator for ListApplications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
 
         /// <summary>
         /// Paginator for ListApplicationVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationVersionsPaginator ListApplicationVersions(ListApplicationVersionsRequest request);
 
         /// <summary>
         /// Paginator for ListBatchJobDefinitions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListBatchJobDefinitionsPaginator ListBatchJobDefinitions(ListBatchJobDefinitionsRequest request);
 
         /// <summary>
         /// Paginator for ListBatchJobExecutions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListBatchJobExecutionsPaginator ListBatchJobExecutions(ListBatchJobExecutionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDataSetExportHistory operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDataSetExportHistoryPaginator ListDataSetExportHistory(ListDataSetExportHistoryRequest request);
 
         /// <summary>
         /// Paginator for ListDataSetImportHistory operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDataSetImportHistoryPaginator ListDataSetImportHistory(ListDataSetImportHistoryRequest request);
 
         /// <summary>
         /// Paginator for ListDataSets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDataSetsPaginator ListDataSets(ListDataSetsRequest request);
 
         /// <summary>
         /// Paginator for ListDeployments operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDeploymentsPaginator ListDeployments(ListDeploymentsRequest request);
 
         /// <summary>
         /// Paginator for ListEngineVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEngineVersionsPaginator ListEngineVersions(ListEngineVersionsRequest request);
 
         /// <summary>
         /// Paginator for ListEnvironments operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEnvironmentsPaginator ListEnvironments(ListEnvironmentsRequest request);
     }
 }

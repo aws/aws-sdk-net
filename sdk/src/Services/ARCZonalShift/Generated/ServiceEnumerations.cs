@@ -463,6 +463,10 @@ namespace Amazon.ARCZonalShift
     {
 
         /// <summary>
+        /// Constant AutoshiftUpdateNotAllowed for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason AutoshiftUpdateNotAllowed = new ValidationExceptionReason("AutoshiftUpdateNotAllowed");
+        /// <summary>
         /// Constant FISExperimentUpdateNotAllowed for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason FISExperimentUpdateNotAllowed = new ValidationExceptionReason("FISExperimentUpdateNotAllowed");

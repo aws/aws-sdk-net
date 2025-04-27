@@ -4131,6 +4131,22 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.CaseSlaConfiguration.FieldId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CaseSlaConfiguration.Name</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^.*[\S]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CaseSlaConfiguration.TargetSlaMinutes</property>
+    <min>1</min>
+    <max>129600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ChatEvent.Content</property>
     <min>1</min>
     <max>16384</max>

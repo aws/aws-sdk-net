@@ -36,6 +36,8 @@ namespace Amazon.MainframeModernization.Model
     {
         private string _fromProcStep;
         private string _fromStep;
+        private bool? _skip;
+        private int? _stepCheckpoint;
         private string _toProcStep;
         private string _toStep;
 
@@ -74,6 +76,44 @@ namespace Amazon.MainframeModernization.Model
         internal bool IsSetFromStep()
         {
             return this._fromStep != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Skip. 
+        /// <para>
+        /// The step-level checkpoint timestamp (creation or last modification) for an Amazon
+        /// Web Services Blu Age application batch job.
+        /// </para>
+        /// </summary>
+        public bool? Skip
+        {
+            get { return this._skip; }
+            set { this._skip = value; }
+        }
+
+        // Check to see if Skip property is set
+        internal bool IsSetSkip()
+        {
+            return this._skip.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StepCheckpoint. 
+        /// <para>
+        /// Skip selected step and issue a restart from immediate successor step for an Amazon
+        /// Web Services Blu Age application batch job.
+        /// </para>
+        /// </summary>
+        public int? StepCheckpoint
+        {
+            get { return this._stepCheckpoint; }
+            set { this._stepCheckpoint = value; }
+        }
+
+        // Check to see if StepCheckpoint property is set
+        internal bool IsSetStepCheckpoint()
+        {
+            return this._stepCheckpoint.HasValue; 
         }
 
         /// <summary>

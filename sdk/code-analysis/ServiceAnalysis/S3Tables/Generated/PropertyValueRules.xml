@@ -81,6 +81,10 @@
     <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Tables.Model.DeleteTableBucketEncryptionRequest.TableBucketARN</property>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Tables.Model.DeleteTableBucketPolicyRequest.TableBucketARN</property>
     <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
   </property-value-rule>
@@ -204,6 +208,10 @@
     <pattern>[0-9].*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableBucketEncryptionRequest.TableBucketARN</property>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Tables.Model.GetTableBucketMaintenanceConfigurationRequest.TableBucketARN</property>
     <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
   </property-value-rule>
@@ -219,6 +227,22 @@
     <property>Amazon.S3Tables.Model.GetTableBucketPolicyResponse.ResourcePolicy</property>
     <min>1</min>
     <max>20480</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableEncryptionRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[0-9a-z_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableEncryptionRequest.Namespace</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[0-9a-z_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableEncryptionRequest.TableBucketARN</property>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Tables.Model.GetTableMaintenanceConfigurationRequest.Name</property>
@@ -391,6 +415,10 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Tables.Model.PutTableBucketEncryptionRequest.TableBucketARN</property>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Tables.Model.PutTableBucketMaintenanceConfigurationRequest.TableBucketARN</property>
     <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
   </property-value-rule>
@@ -520,6 +548,12 @@
     <property>Amazon.S3Tables.Model.UpdateTableMetadataLocationResponse.VersionToken</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.EncryptionConfiguration.KmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>(arn:aws[-a-z0-9]*:kms:[-a-z0-9]*:[0-9]{12}:key/.+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Tables.Model.IcebergCompactionSettings.TargetFileSizeMB</property>

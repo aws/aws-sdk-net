@@ -45,11 +45,17 @@ namespace Amazon.ConnectCases.Model
     /// <para>
     /// The following fields are required when creating a case:
     /// </para>
-    ///  <pre><c> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You
-    /// must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account
-    /// ID:domains/your_profiles_domain_name/profiles/profile_ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt;
-    /// &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
-    /// </c></pre>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>customer_id</c> - You must provide the full customer profile ARN in this format:
+    /// <c>arn:aws:profile:your_AWS_Region:your_AWS_account ID:domains/your_profiles_domain_name/profiles/profile_ID</c>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>title</c> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateCaseRequest : AmazonConnectCasesRequest
     {

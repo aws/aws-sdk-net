@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the signer-2017-08-25.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Signer.Model
@@ -29,16 +30,31 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Paginator for ListSigningJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSigningJobsPaginator ListSigningJobs(ListSigningJobsRequest request);
 
         /// <summary>
         /// Paginator for ListSigningPlatforms operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSigningPlatformsPaginator ListSigningPlatforms(ListSigningPlatformsRequest request);
 
         /// <summary>
         /// Paginator for ListSigningProfiles operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSigningProfilesPaginator ListSigningProfiles(ListSigningProfilesRequest request);
     }
 }

@@ -34,10 +34,29 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class AssetOptions
     {
+        private VisualCustomActionDefaults _customActionDefaults;
         private List<string> _excludedDataSetArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private QBusinessInsightsStatus _qBusinessInsightsStatus;
         private string _timezone;
         private DayOfTheWeek _weekStart;
+
+        /// <summary>
+        /// Gets and sets the property CustomActionDefaults. 
+        /// <para>
+        /// A list of visual custom actions for the analysis.
+        /// </para>
+        /// </summary>
+        public VisualCustomActionDefaults CustomActionDefaults
+        {
+            get { return this._customActionDefaults; }
+            set { this._customActionDefaults = value; }
+        }
+
+        // Check to see if CustomActionDefaults property is set
+        internal bool IsSetCustomActionDefaults()
+        {
+            return this._customActionDefaults != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExcludedDataSetArns. 

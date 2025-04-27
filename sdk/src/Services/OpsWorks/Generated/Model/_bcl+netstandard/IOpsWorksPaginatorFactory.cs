@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpsWorks.Model
@@ -29,6 +30,11 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Paginator for DescribeEcsClusters operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeEcsClustersPaginator DescribeEcsClusters(DescribeEcsClustersRequest request);
     }
 }

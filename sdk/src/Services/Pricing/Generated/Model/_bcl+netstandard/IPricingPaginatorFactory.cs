@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the pricing-2017-10-15.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pricing.Model
@@ -29,21 +30,41 @@ namespace Amazon.Pricing.Model
         /// <summary>
         /// Paginator for DescribeServices operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeServicesPaginator DescribeServices(DescribeServicesRequest request);
 
         /// <summary>
         /// Paginator for GetAttributeValues operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetAttributeValuesPaginator GetAttributeValues(GetAttributeValuesRequest request);
 
         /// <summary>
         /// Paginator for GetProducts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetProductsPaginator GetProducts(GetProductsRequest request);
 
         /// <summary>
         /// Paginator for ListPriceLists operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPriceListsPaginator ListPriceLists(ListPriceListsRequest request);
     }
 }

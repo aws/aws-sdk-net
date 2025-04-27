@@ -49,7 +49,7 @@ namespace Amazon.ResourceExplorer2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>Tags</c> 
+        ///  <c>tags</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

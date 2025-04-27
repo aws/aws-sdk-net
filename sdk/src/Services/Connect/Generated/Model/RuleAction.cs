@@ -36,6 +36,7 @@ namespace Amazon.Connect.Model
     {
         private ActionType _actionType;
         private AssignContactCategoryActionDefinition _assignContactCategoryAction;
+        private AssignSlaActionDefinition _assignSlaAction;
         private CreateCaseActionDefinition _createCaseAction;
         private EndAssociatedTasksActionDefinition _endAssociatedTasksAction;
         private EventBridgeActionDefinition _eventBridgeAction;
@@ -86,6 +87,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetAssignContactCategoryAction()
         {
             return this._assignContactCategoryAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssignSlaAction. 
+        /// <para>
+        /// Information about the assign SLA action.
+        /// </para>
+        /// </summary>
+        public AssignSlaActionDefinition AssignSlaAction
+        {
+            get { return this._assignSlaAction; }
+            set { this._assignSlaAction = value; }
+        }
+
+        // Check to see if AssignSlaAction property is set
+        internal bool IsSetAssignSlaAction()
+        {
+            return this._assignSlaAction != null;
         }
 
         /// <summary>

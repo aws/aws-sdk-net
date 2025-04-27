@@ -35,6 +35,7 @@ namespace Amazon.BedrockRuntime.Model
     public partial class DocumentSource
     {
         private MemoryStream _bytes;
+        private S3Location _s3Location;
 
         /// <summary>
         /// Gets and sets the property Bytes. 
@@ -54,6 +55,26 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetBytes()
         {
             return this._bytes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3Location. 
+        /// <para>
+        /// The location of a document object in an Amazon S3 bucket. To see which models support
+        /// S3 uploads, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html">Supported
+        /// models and features for Converse</a>.
+        /// </para>
+        /// </summary>
+        public S3Location S3Location
+        {
+            get { return this._s3Location; }
+            set { this._s3Location = value; }
+        }
+
+        // Check to see if S3Location property is set
+        internal bool IsSetS3Location()
+        {
+            return this._s3Location != null;
         }
 
     }

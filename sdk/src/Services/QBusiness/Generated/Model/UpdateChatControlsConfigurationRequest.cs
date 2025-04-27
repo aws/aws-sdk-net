@@ -39,6 +39,7 @@ namespace Amazon.QBusiness.Model
         private BlockedPhrasesConfigurationUpdate _blockedPhrasesConfigurationUpdate;
         private string _clientToken;
         private CreatorModeConfiguration _creatorModeConfiguration;
+        private HallucinationReductionConfiguration _hallucinationReductionConfiguration;
         private OrchestrationConfiguration _orchestrationConfiguration;
         private ResponseScope _responseScope;
         private List<TopicConfiguration> _topicConfigurationsToCreateOrUpdate = AWSConfigs.InitializeCollections ? new List<TopicConfiguration>() : null;
@@ -117,6 +118,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetCreatorModeConfiguration()
         {
             return this._creatorModeConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HallucinationReductionConfiguration. 
+        /// <para>
+        ///  The hallucination reduction settings for your application.
+        /// </para>
+        /// </summary>
+        public HallucinationReductionConfiguration HallucinationReductionConfiguration
+        {
+            get { return this._hallucinationReductionConfiguration; }
+            set { this._hallucinationReductionConfiguration = value; }
+        }
+
+        // Check to see if HallucinationReductionConfiguration property is set
+        internal bool IsSetHallucinationReductionConfiguration()
+        {
+            return this._hallucinationReductionConfiguration != null;
         }
 
         /// <summary>

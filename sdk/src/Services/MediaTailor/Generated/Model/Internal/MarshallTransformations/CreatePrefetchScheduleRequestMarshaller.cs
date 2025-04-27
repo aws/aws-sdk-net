@@ -90,6 +90,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetRecurringPrefetchConfiguration())
+            {
+                context.Writer.WritePropertyName("RecurringPrefetchConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RecurringPrefetchConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RecurringPrefetchConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetRetrieval())
             {
                 context.Writer.WritePropertyName("Retrieval");
@@ -99,6 +110,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.Retrieval, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetScheduleType())
+            {
+                context.Writer.WritePropertyName("ScheduleType");
+                context.Writer.WriteStringValue(publicRequest.ScheduleType);
             }
 
             if(publicRequest.IsSetStreamId())

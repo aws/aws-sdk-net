@@ -194,6 +194,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.WorkflowType);
             }
 
+            if(publicRequest.IsSetWorkflowVersionName())
+            {
+                context.Writer.WritePropertyName("workflowVersionName");
+                context.Writer.WriteStringValue(publicRequest.WorkflowVersionName);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

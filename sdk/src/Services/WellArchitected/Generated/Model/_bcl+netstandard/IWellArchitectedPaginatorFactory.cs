@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the wellarchitected-2020-03-31.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WellArchitected.Model
@@ -29,96 +30,191 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Paginator for GetConsolidatedReport operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetConsolidatedReportPaginator GetConsolidatedReport(GetConsolidatedReportRequest request);
 
         /// <summary>
         /// Paginator for ListAnswers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAnswersPaginator ListAnswers(ListAnswersRequest request);
 
         /// <summary>
         /// Paginator for ListCheckDetails operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCheckDetailsPaginator ListCheckDetails(ListCheckDetailsRequest request);
 
         /// <summary>
         /// Paginator for ListCheckSummaries operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCheckSummariesPaginator ListCheckSummaries(ListCheckSummariesRequest request);
 
         /// <summary>
         /// Paginator for ListLenses operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLensesPaginator ListLenses(ListLensesRequest request);
 
         /// <summary>
         /// Paginator for ListLensReviewImprovements operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLensReviewImprovementsPaginator ListLensReviewImprovements(ListLensReviewImprovementsRequest request);
 
         /// <summary>
         /// Paginator for ListLensReviews operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLensReviewsPaginator ListLensReviews(ListLensReviewsRequest request);
 
         /// <summary>
         /// Paginator for ListLensShares operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLensSharesPaginator ListLensShares(ListLensSharesRequest request);
 
         /// <summary>
         /// Paginator for ListMilestones operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMilestonesPaginator ListMilestones(ListMilestonesRequest request);
 
         /// <summary>
         /// Paginator for ListNotifications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListNotificationsPaginator ListNotifications(ListNotificationsRequest request);
 
         /// <summary>
         /// Paginator for ListProfileNotifications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProfileNotificationsPaginator ListProfileNotifications(ListProfileNotificationsRequest request);
 
         /// <summary>
         /// Paginator for ListProfiles operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProfilesPaginator ListProfiles(ListProfilesRequest request);
 
         /// <summary>
         /// Paginator for ListProfileShares operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProfileSharesPaginator ListProfileShares(ListProfileSharesRequest request);
 
         /// <summary>
         /// Paginator for ListReviewTemplateAnswers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListReviewTemplateAnswersPaginator ListReviewTemplateAnswers(ListReviewTemplateAnswersRequest request);
 
         /// <summary>
         /// Paginator for ListReviewTemplates operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListReviewTemplatesPaginator ListReviewTemplates(ListReviewTemplatesRequest request);
 
         /// <summary>
         /// Paginator for ListShareInvitations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListShareInvitationsPaginator ListShareInvitations(ListShareInvitationsRequest request);
 
         /// <summary>
         /// Paginator for ListTemplateShares operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTemplateSharesPaginator ListTemplateShares(ListTemplateSharesRequest request);
 
         /// <summary>
         /// Paginator for ListWorkloads operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWorkloadsPaginator ListWorkloads(ListWorkloadsRequest request);
 
         /// <summary>
         /// Paginator for ListWorkloadShares operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWorkloadSharesPaginator ListWorkloadShares(ListWorkloadSharesRequest request);
     }
 }

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the lookoutvision-2020-11-20.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutforVision.Model
@@ -29,21 +30,41 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Paginator for ListDatasetEntries operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDatasetEntriesPaginator ListDatasetEntries(ListDatasetEntriesRequest request);
 
         /// <summary>
         /// Paginator for ListModelPackagingJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListModelPackagingJobsPaginator ListModelPackagingJobs(ListModelPackagingJobsRequest request);
 
         /// <summary>
         /// Paginator for ListModels operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListModelsPaginator ListModels(ListModelsRequest request);
 
         /// <summary>
         /// Paginator for ListProjects operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProjectsPaginator ListProjects(ListProjectsRequest request);
     }
 }

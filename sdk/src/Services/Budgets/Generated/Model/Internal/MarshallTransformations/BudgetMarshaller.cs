@@ -121,10 +121,32 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetFilterExpression())
+            {
+                context.Writer.WritePropertyName("FilterExpression");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ExpressionMarshaller.Instance;
+                marshaller.Marshall(requestObject.FilterExpression, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetLastUpdatedTime())
             {
                 context.Writer.WritePropertyName("LastUpdatedTime");
                 context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.LastUpdatedTime.Value)));
+            }
+
+            if(requestObject.IsSetMetrics())
+            {
+                context.Writer.WritePropertyName("Metrics");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectMetricsListValue in requestObject.Metrics)
+                {
+                        context.Writer.WriteStringValue(requestObjectMetricsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPlannedBudgetLimits())

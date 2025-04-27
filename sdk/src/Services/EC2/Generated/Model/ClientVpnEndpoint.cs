@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
         private string _clientCidrBlock;
         private ClientConnectResponseOptions _clientConnectOptions;
         private ClientLoginBannerResponseOptions _clientLoginBannerOptions;
+        private ClientRouteEnforcementResponseOptions _clientRouteEnforcementOptions;
         private string _clientVpnEndpointId;
         private ConnectionLogResponseOptions _connectionLogOptions;
         private string _creationTime;
@@ -150,6 +151,34 @@ namespace Amazon.EC2.Model
         internal bool IsSetClientLoginBannerOptions()
         {
             return this._clientLoginBannerOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientRouteEnforcementOptions. 
+        /// <para>
+        /// Client route enforcement is a feature of the Client VPN service that helps enforce
+        /// administrator defined routes on devices connected through the VPN. T his feature helps
+        /// improve your security posture by ensuring that network traffic originating from a
+        /// connected client is not inadvertently sent outside the VPN tunnel.
+        /// </para>
+        ///  
+        /// <para>
+        /// Client route enforcement works by monitoring the route table of a connected device
+        /// for routing policy changes to the VPN connection. If the feature detects any VPN routing
+        /// policy modifications, it will automatically force an update to the route table, reverting
+        /// it back to the expected route configurations.
+        /// </para>
+        /// </summary>
+        public ClientRouteEnforcementResponseOptions ClientRouteEnforcementOptions
+        {
+            get { return this._clientRouteEnforcementOptions; }
+            set { this._clientRouteEnforcementOptions = value; }
+        }
+
+        // Check to see if ClientRouteEnforcementOptions property is set
+        internal bool IsSetClientRouteEnforcementOptions()
+        {
+            return this._clientRouteEnforcementOptions != null;
         }
 
         /// <summary>

@@ -43,8 +43,10 @@ namespace Amazon.S3Tables.Model
         private string _modifiedBy;
         private string _name;
         private List<string> _awsNamespace = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _namespaceId;
         private string _ownerAccountId;
         private string _tablearn;
+        private string _tableBucketId;
         private TableType _type;
         private string _versionToken;
         private string _warehouseLocation;
@@ -220,6 +222,24 @@ namespace Amazon.S3Tables.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NamespaceId. 
+        /// <para>
+        /// The unique identifier of the namespace containing this table.
+        /// </para>
+        /// </summary>
+        public string NamespaceId
+        {
+            get { return this._namespaceId; }
+            set { this._namespaceId = value; }
+        }
+
+        // Check to see if NamespaceId property is set
+        internal bool IsSetNamespaceId()
+        {
+            return this._namespaceId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OwnerAccountId. 
         /// <para>
         /// The ID of the account that owns the table.
@@ -255,6 +275,24 @@ namespace Amazon.S3Tables.Model
         internal bool IsSetTableARN()
         {
             return this._tablearn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TableBucketId. 
+        /// <para>
+        /// The unique identifier of the table bucket containing this table.
+        /// </para>
+        /// </summary>
+        public string TableBucketId
+        {
+            get { return this._tableBucketId; }
+            set { this._tableBucketId = value; }
+        }
+
+        // Check to see if TableBucketId property is set
+        internal bool IsSetTableBucketId()
+        {
+            return this._tableBucketId != null;
         }
 
         /// <summary>

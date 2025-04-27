@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing <c>FieldName</c>, <c>Type</c>, <c>GroupName</c>, <c>MatchKey</c>,
-    /// <c>Hashing</c>, and <c>SubType</c>.
+    /// A configuration object for defining input data fields in Entity Resolution. The <c>SchemaInputAttribute</c>
+    /// specifies how individual fields in your input data should be processed and matched.
     /// </summary>
     public partial class SchemaInputAttribute
     {
@@ -69,8 +69,8 @@ namespace Amazon.EntityResolution.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, when working with columns such as <c>first_name</c>, <c>middle_name</c>,
-        /// and <c>last_name</c>, assigning them a common <c>groupName</c> will prompt Entity
+        /// For example, when working with columns such as <c>NAME_FIRST</c>, <c>NAME_MIDDLE</c>,
+        /// and <c>NAME_LAST</c>, assigning them a common <c>groupName</c> will prompt Entity
         /// Resolution to concatenate them into a single value.
         /// </para>
         /// </summary>
@@ -90,9 +90,15 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property Hashed. 
         /// <para>
-        ///  Indicates if the column values are hashed in the schema input. If the value is set
-        /// to <c>TRUE</c>, the column values are hashed. If the value is set to <c>FALSE</c>,
-        /// the column values are cleartext.
+        ///  Indicates if the column values are hashed in the schema input. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is set to <c>TRUE</c>, the column values are hashed. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is set to <c>FALSE</c>, the column values are cleartext.
         /// </para>
         /// </summary>
         public bool? Hashed
@@ -163,6 +169,48 @@ namespace Amazon.EntityResolution.Model
         /// <para>
         /// The type of the attribute, selected from a list of values.
         /// </para>
+        ///  
+        /// <para>
+        /// LiveRamp supports: <c>NAME</c> | <c>NAME_FIRST</c> | <c>NAME_MIDDLE</c> | <c>NAME_LAST</c>
+        /// | <c>ADDRESS</c> | <c>ADDRESS_STREET1</c> | <c>ADDRESS_STREET2</c> | <c>ADDRESS_STREET3</c>
+        /// | <c>ADDRESS_CITY</c> | <c>ADDRESS_STATE</c> | <c>ADDRESS_COUNTRY</c> | <c>ADDRESS_POSTALCODE</c>
+        /// | <c>PHONE</c> | <c>PHONE_NUMBER</c> | <c>EMAIL_ADDRESS</c> | <c>UNIQUE_ID</c> | <c>PROVIDER_ID</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// TransUnion supports: <c>NAME</c> | <c>NAME_FIRST</c> | <c>NAME_LAST</c> | <c>ADDRESS</c>
+        /// | <c>ADDRESS_CITY</c> | <c>ADDRESS_STATE</c> | <c>ADDRESS_COUNTRY</c> | <c>ADDRESS_POSTALCODE</c>
+        /// | <c>PHONE_NUMBER</c> | <c>EMAIL_ADDRESS</c> | <c>UNIQUE_ID</c> | <c>IPV4</c> | <c>IPV6</c>
+        /// | <c>MAID</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Unified ID 2.0 supports: <c>PHONE_NUMBER</c> | <c>EMAIL_ADDRESS</c> | <c>UNIQUE_ID</c>
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Normalization is only supported for <c>NAME</c>, <c>ADDRESS</c>, <c>PHONE</c>, and
+        /// <c>EMAIL_ADDRESS</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to normalize <c>NAME_FIRST</c>, <c>NAME_MIDDLE</c>, and <c>NAME_LAST</c>,
+        /// you must group them by assigning them to the <c>NAME</c> <c>groupName</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to normalize <c>ADDRESS_STREET1</c>, <c>ADDRESS_STREET2</c>, <c>ADDRESS_STREET3</c>,
+        /// <c>ADDRESS_CITY</c>, <c>ADDRESS_STATE</c>, <c>ADDRESS_COUNTRY</c>, and <c>ADDRESS_POSTALCODE</c>,
+        /// you must group them by assigning them to the <c>ADDRESS</c> <c>groupName</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to normalize <c>PHONE_NUMBER</c> and <c>PHONE_COUNTRYCODE</c>, you must
+        /// group them by assigning them to the <c>PHONE</c> <c>groupName</c>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public SchemaAttributeType Type

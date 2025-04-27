@@ -63,13 +63,25 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(publicRequest.DBInstanceIdentifier));
                 }
+                if(publicRequest.IsSetManageMasterUserPassword())
+                {
+                    request.Parameters.Add("ManageMasterUserPassword", StringUtils.FromBool(publicRequest.ManageMasterUserPassword));
+                }
                 if(publicRequest.IsSetMasterUserPassword())
                 {
                     request.Parameters.Add("MasterUserPassword", StringUtils.FromString(publicRequest.MasterUserPassword));
                 }
+                if(publicRequest.IsSetMasterUserSecretKmsKeyId())
+                {
+                    request.Parameters.Add("MasterUserSecretKmsKeyId", StringUtils.FromString(publicRequest.MasterUserSecretKmsKeyId));
+                }
                 if(publicRequest.IsSetNewTenantDBName())
                 {
                     request.Parameters.Add("NewTenantDBName", StringUtils.FromString(publicRequest.NewTenantDBName));
+                }
+                if(publicRequest.IsSetRotateMasterUserPassword())
+                {
+                    request.Parameters.Add("RotateMasterUserPassword", StringUtils.FromBool(publicRequest.RotateMasterUserPassword));
                 }
                 if(publicRequest.IsSetTenantDBName())
                 {

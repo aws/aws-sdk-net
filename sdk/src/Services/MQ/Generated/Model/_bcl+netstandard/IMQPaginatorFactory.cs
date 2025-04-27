@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the mq-2017-11-27.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MQ.Model
@@ -29,6 +30,11 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Paginator for ListBrokers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListBrokersPaginator ListBrokers(ListBrokersRequest request);
     }
 }

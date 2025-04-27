@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model
@@ -29,41 +30,81 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Paginator for ListGatewayRoutes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListGatewayRoutesPaginator ListGatewayRoutes(ListGatewayRoutesRequest request);
 
         /// <summary>
         /// Paginator for ListMeshes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMeshesPaginator ListMeshes(ListMeshesRequest request);
 
         /// <summary>
         /// Paginator for ListRoutes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRoutesPaginator ListRoutes(ListRoutesRequest request);
 
         /// <summary>
         /// Paginator for ListTagsForResource operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request);
 
         /// <summary>
         /// Paginator for ListVirtualGateways operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListVirtualGatewaysPaginator ListVirtualGateways(ListVirtualGatewaysRequest request);
 
         /// <summary>
         /// Paginator for ListVirtualNodes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListVirtualNodesPaginator ListVirtualNodes(ListVirtualNodesRequest request);
 
         /// <summary>
         /// Paginator for ListVirtualRouters operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListVirtualRoutersPaginator ListVirtualRouters(ListVirtualRoutersRequest request);
 
         /// <summary>
         /// Paginator for ListVirtualServices operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListVirtualServicesPaginator ListVirtualServices(ListVirtualServicesRequest request);
     }
 }

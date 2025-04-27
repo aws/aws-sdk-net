@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the internetmonitor-2021-06-03.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.InternetMonitor.Model
@@ -29,21 +30,41 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Paginator for GetQueryResults operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetQueryResultsPaginator GetQueryResults(GetQueryResultsRequest request);
 
         /// <summary>
         /// Paginator for ListHealthEvents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListHealthEventsPaginator ListHealthEvents(ListHealthEventsRequest request);
 
         /// <summary>
         /// Paginator for ListInternetEvents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListInternetEventsPaginator ListInternetEvents(ListInternetEventsRequest request);
 
         /// <summary>
         /// Paginator for ListMonitors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMonitorsPaginator ListMonitors(ListMonitorsRequest request);
     }
 }

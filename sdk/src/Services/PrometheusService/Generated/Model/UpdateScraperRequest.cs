@@ -108,7 +108,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property RoleConfiguration. 
         /// <para>
-        /// The scraper role configuration for the workspace.
+        /// Use this structure to enable cross-account access, so that you can use a target account
+        /// to access Prometheus metrics from source accounts.
         /// </para>
         /// </summary>
         public RoleConfiguration RoleConfiguration

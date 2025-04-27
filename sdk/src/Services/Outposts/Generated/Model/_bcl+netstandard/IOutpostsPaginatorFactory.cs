@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the outposts-2019-12-03.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Outposts.Model
@@ -29,51 +30,101 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Paginator for GetOutpostInstanceTypes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetOutpostInstanceTypesPaginator GetOutpostInstanceTypes(GetOutpostInstanceTypesRequest request);
 
         /// <summary>
         /// Paginator for GetOutpostSupportedInstanceTypes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetOutpostSupportedInstanceTypesPaginator GetOutpostSupportedInstanceTypes(GetOutpostSupportedInstanceTypesRequest request);
 
         /// <summary>
         /// Paginator for ListAssetInstances operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAssetInstancesPaginator ListAssetInstances(ListAssetInstancesRequest request);
 
         /// <summary>
         /// Paginator for ListAssets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAssetsPaginator ListAssets(ListAssetsRequest request);
 
         /// <summary>
         /// Paginator for ListBlockingInstancesForCapacityTask operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListBlockingInstancesForCapacityTaskPaginator ListBlockingInstancesForCapacityTask(ListBlockingInstancesForCapacityTaskRequest request);
 
         /// <summary>
         /// Paginator for ListCapacityTasks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCapacityTasksPaginator ListCapacityTasks(ListCapacityTasksRequest request);
 
         /// <summary>
         /// Paginator for ListCatalogItems operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCatalogItemsPaginator ListCatalogItems(ListCatalogItemsRequest request);
 
         /// <summary>
         /// Paginator for ListOrders operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListOrdersPaginator ListOrders(ListOrdersRequest request);
 
         /// <summary>
         /// Paginator for ListOutposts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListOutpostsPaginator ListOutposts(ListOutpostsRequest request);
 
         /// <summary>
         /// Paginator for ListSites operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSitesPaginator ListSites(ListSitesRequest request);
     }
 }

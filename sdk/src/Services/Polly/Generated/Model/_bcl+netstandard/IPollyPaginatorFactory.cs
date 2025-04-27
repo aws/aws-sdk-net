@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the polly-2016-06-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Polly.Model
@@ -29,6 +30,11 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Paginator for ListSpeechSynthesisTasks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSpeechSynthesisTasksPaginator ListSpeechSynthesisTasks(ListSpeechSynthesisTasksRequest request);
     }
 }

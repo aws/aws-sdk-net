@@ -31,9 +31,10 @@ namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
     /// Container for the parameters to the ListServiceQuotas operation.
-    /// Lists the applied quota values for the specified Amazon Web Service. For some quotas,
-    /// only the default values are available. If the applied quota value is not available
-    /// for a quota, the quota is not retrieved.
+    /// Lists the applied quota values for the specified Amazon Web Services service. For
+    /// some quotas, only the default values are available. If the applied quota value is
+    /// not available for a quota, the quota is not retrieved. Filter responses to return
+    /// applied quota values at either the account level, resource level, or all levels.
     /// </summary>
     public partial class ListServiceQuotasRequest : AmazonServiceQuotasRequest
     {
@@ -99,7 +100,8 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property QuotaAppliedAtLevel. 
         /// <para>
-        /// Specifies at which level of granularity that the quota value is applied.
+        /// Filters the response to return applied quota values for the <c>ACCOUNT</c>, <c>RESOURCE</c>,
+        /// or <c>ALL</c> levels. <c>ACCOUNT</c> is the default.
         /// </para>
         /// </summary>
         public AppliedLevelEnum QuotaAppliedAtLevel

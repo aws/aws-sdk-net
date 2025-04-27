@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the customer-profiles-2020-08-15.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model
@@ -29,31 +30,61 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Paginator for GetSimilarProfiles operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetSimilarProfilesPaginator GetSimilarProfiles(GetSimilarProfilesRequest request);
 
         /// <summary>
         /// Paginator for ListEventStreams operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEventStreamsPaginator ListEventStreams(ListEventStreamsRequest request);
 
         /// <summary>
         /// Paginator for ListEventTriggers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEventTriggersPaginator ListEventTriggers(ListEventTriggersRequest request);
 
         /// <summary>
         /// Paginator for ListObjectTypeAttributes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListObjectTypeAttributesPaginator ListObjectTypeAttributes(ListObjectTypeAttributesRequest request);
 
         /// <summary>
         /// Paginator for ListRuleBasedMatches operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRuleBasedMatchesPaginator ListRuleBasedMatches(ListRuleBasedMatchesRequest request);
 
         /// <summary>
         /// Paginator for ListSegmentDefinitions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSegmentDefinitionsPaginator ListSegmentDefinitions(ListSegmentDefinitionsRequest request);
     }
 }

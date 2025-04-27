@@ -31,7 +31,7 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Throughput exceeds the current throughput quota for your account. Please contact <a
-    /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+    /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
     /// quota increase.
     /// </summary>
     #if !NETSTANDARD

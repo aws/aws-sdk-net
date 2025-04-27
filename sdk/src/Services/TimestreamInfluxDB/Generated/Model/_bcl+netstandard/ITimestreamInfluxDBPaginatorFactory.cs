@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the timestream-influxdb-2023-01-27.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamInfluxDB.Model
@@ -29,21 +30,41 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Paginator for ListDbClusters operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDbClustersPaginator ListDbClusters(ListDbClustersRequest request);
 
         /// <summary>
         /// Paginator for ListDbInstances operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDbInstancesPaginator ListDbInstances(ListDbInstancesRequest request);
 
         /// <summary>
         /// Paginator for ListDbInstancesForCluster operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDbInstancesForClusterPaginator ListDbInstancesForCluster(ListDbInstancesForClusterRequest request);
 
         /// <summary>
         /// Paginator for ListDbParameterGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDbParameterGroupsPaginator ListDbParameterGroups(ListDbParameterGroupsRequest request);
     }
 }

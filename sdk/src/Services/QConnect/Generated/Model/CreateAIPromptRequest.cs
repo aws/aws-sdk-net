@@ -52,6 +52,16 @@ namespace Amazon.QConnect.Model
         /// <para>
         /// The API Format of the AI Prompt.
         /// </para>
+        ///  
+        /// <para>
+        /// Recommended values: <c>MESSAGES | TEXT_COMPLETIONS</c> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The values <c>ANTHROPIC_CLAUDE_MESSAGES | ANTHROPIC_CLAUDE_TEXT_COMPLETIONS</c> will
+        /// be deprecated.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public AIPromptAPIFormat ApiFormat
@@ -130,8 +140,7 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property ModelId. 
         /// <para>
-        /// The identifier of the model used for this AI Prompt. Model Ids supported are: <c>anthropic.claude-3-haiku-20240307-v1:0</c>
-        /// 
+        /// The identifier of the model used for this AI Prompt.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

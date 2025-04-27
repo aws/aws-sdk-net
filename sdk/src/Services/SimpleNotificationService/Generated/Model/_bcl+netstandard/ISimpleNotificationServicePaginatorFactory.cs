@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleNotificationService.Model
@@ -29,41 +30,81 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Paginator for ListEndpointsByPlatformApplication operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEndpointsByPlatformApplicationPaginator ListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request);
 
         /// <summary>
         /// Paginator for ListOriginationNumbers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListOriginationNumbersPaginator ListOriginationNumbers(ListOriginationNumbersRequest request);
 
         /// <summary>
         /// Paginator for ListPhoneNumbersOptedOut operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPhoneNumbersOptedOutPaginator ListPhoneNumbersOptedOut(ListPhoneNumbersOptedOutRequest request);
 
         /// <summary>
         /// Paginator for ListPlatformApplications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPlatformApplicationsPaginator ListPlatformApplications(ListPlatformApplicationsRequest request);
 
         /// <summary>
         /// Paginator for ListSMSSandboxPhoneNumbers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSMSSandboxPhoneNumbersPaginator ListSMSSandboxPhoneNumbers(ListSMSSandboxPhoneNumbersRequest request);
 
         /// <summary>
         /// Paginator for ListSubscriptions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSubscriptionsPaginator ListSubscriptions(ListSubscriptionsRequest request);
 
         /// <summary>
         /// Paginator for ListSubscriptionsByTopic operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSubscriptionsByTopicPaginator ListSubscriptionsByTopic(ListSubscriptionsByTopicRequest request);
 
         /// <summary>
         /// Paginator for ListTopics operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTopicsPaginator ListTopics(ListTopicsRequest request);
     }
 }

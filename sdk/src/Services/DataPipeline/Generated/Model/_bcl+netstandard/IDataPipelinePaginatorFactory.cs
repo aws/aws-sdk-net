@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataPipeline.Model
@@ -29,16 +30,31 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Paginator for DescribeObjects operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            
+            OutputToken = new[] { "Marker" }
+        )]
         IDescribeObjectsPaginator DescribeObjects(DescribeObjectsRequest request);
 
         /// <summary>
         /// Paginator for ListPipelines operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            
+            OutputToken = new[] { "Marker" }
+        )]
         IListPipelinesPaginator ListPipelines(ListPipelinesRequest request);
 
         /// <summary>
         /// Paginator for QueryObjects operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "Marker" }
+        )]
         IQueryObjectsPaginator QueryObjects(QueryObjectsRequest request);
     }
 }

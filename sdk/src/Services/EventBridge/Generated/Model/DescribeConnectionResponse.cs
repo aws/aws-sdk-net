@@ -41,6 +41,7 @@ namespace Amazon.EventBridge.Model
         private DateTime? _creationTime;
         private string _description;
         private DescribeConnectionConnectivityParameters _invocationConnectivityParameters;
+        private string _kmsKeyIdentifier;
         private DateTime? _lastAuthorizedTime;
         private DateTime? _lastModifiedTime;
         private string _name;
@@ -179,6 +180,31 @@ namespace Amazon.EventBridge.Model
         internal bool IsSetInvocationConnectivityParameters()
         {
             return this._invocationConnectivityParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyIdentifier. 
+        /// <para>
+        /// The identifier of the KMS customer managed key for EventBridge to use to encrypt the
+        /// connection, if one has been specified.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-connections.html">Encrypting
+        /// connections</a> in the <i>Amazon EventBridge User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string KmsKeyIdentifier
+        {
+            get { return this._kmsKeyIdentifier; }
+            set { this._kmsKeyIdentifier = value; }
+        }
+
+        // Check to see if KmsKeyIdentifier property is set
+        internal bool IsSetKmsKeyIdentifier()
+        {
+            return this._kmsKeyIdentifier != null;
         }
 
         /// <summary>

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the resource-groups-2017-11-27.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ResourceGroups.Model
@@ -29,26 +30,51 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Paginator for ListGroupingStatuses operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListGroupingStatusesPaginator ListGroupingStatuses(ListGroupingStatusesRequest request);
 
         /// <summary>
         /// Paginator for ListGroupResources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListGroupResourcesPaginator ListGroupResources(ListGroupResourcesRequest request);
 
         /// <summary>
         /// Paginator for ListGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListGroupsPaginator ListGroups(ListGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListTagSyncTasks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTagSyncTasksPaginator ListTagSyncTasks(ListTagSyncTasksRequest request);
 
         /// <summary>
         /// Paginator for SearchResources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         ISearchResourcesPaginator SearchResources(SearchResourcesRequest request);
     }
 }

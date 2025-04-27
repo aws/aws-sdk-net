@@ -35,24 +35,61 @@ namespace Amazon.S3Tables.Model
     /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-create.html">Creating
     /// an Amazon S3 table</a> in the <i>Amazon Simple Storage Service User Guide</i>.
     /// 
-    ///  <dl> <dt>Permissions</dt> <dd> 
+    ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
     /// <para>
     /// You must have the <c>s3tables:CreateTable</c> permission to use this operation. 
     /// </para>
-    ///  <note> 
+    ///  </li> <li> 
     /// <para>
-    /// Additionally, you must have the <c>s3tables:PutTableData</c> permission to use this
-    /// operation with the optional <c>metadata</c> request parameter. 
+    /// If you use this operation with the optional <c>metadata</c> request parameter you
+    /// must have the <c>s3tables:PutTableData</c> permission. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you use this operation with the optional <c>encryptionConfiguration</c> request
+    /// parameter you must have the <c>s3tables:PutTableEncryption</c> permission. 
+    /// </para>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// Additionally, 
     /// </para>
     ///  </note> </dd> </dl>
     /// </summary>
     public partial class CreateTableRequest : AmazonS3TablesRequest
     {
+        private EncryptionConfiguration _encryptionConfiguration;
         private OpenTableFormat _format;
         private TableMetadata _metadata;
         private string _name;
         private string _awsNamespace;
         private string _tableBucketARN;
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// The encryption configuration to use for the table. This configuration specifies the
+        /// encryption algorithm and, if using SSE-KMS, the KMS key to use for encrypting the
+        /// table. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you choose SSE-KMS encryption you must grant the S3 Tables maintenance principal
+        /// access to your KMS key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions
+        /// requirements for S3 Tables SSE-KMS encryption</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Format. 

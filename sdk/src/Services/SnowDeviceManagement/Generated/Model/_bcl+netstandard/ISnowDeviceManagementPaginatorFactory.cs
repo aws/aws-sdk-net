@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the snow-device-management-2021-08-04.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SnowDeviceManagement.Model
@@ -29,21 +30,41 @@ namespace Amazon.SnowDeviceManagement.Model
         /// <summary>
         /// Paginator for ListDeviceResources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDeviceResourcesPaginator ListDeviceResources(ListDeviceResourcesRequest request);
 
         /// <summary>
         /// Paginator for ListDevices operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDevicesPaginator ListDevices(ListDevicesRequest request);
 
         /// <summary>
         /// Paginator for ListExecutions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListExecutionsPaginator ListExecutions(ListExecutionsRequest request);
 
         /// <summary>
         /// Paginator for ListTasks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTasksPaginator ListTasks(ListTasksRequest request);
     }
 }

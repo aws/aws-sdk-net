@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the bedrock-data-automation-2023-07-26.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockDataAutomation.Model
@@ -29,11 +30,21 @@ namespace Amazon.BedrockDataAutomation.Model
         /// <summary>
         /// Paginator for ListBlueprints operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListBlueprintsPaginator ListBlueprints(ListBlueprintsRequest request);
 
         /// <summary>
         /// Paginator for ListDataAutomationProjects operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDataAutomationProjectsPaginator ListDataAutomationProjects(ListDataAutomationProjectsRequest request);
     }
 }

@@ -704,6 +704,10 @@ namespace Amazon.CodeBuild
         /// Constant BUILD_LAMBDA_8GB for ComputeType
         /// </summary>
         public static readonly ComputeType BUILD_LAMBDA_8GB = new ComputeType("BUILD_LAMBDA_8GB");
+        /// <summary>
+        /// Constant CUSTOM_INSTANCE_TYPE for ComputeType
+        /// </summary>
+        public static readonly ComputeType CUSTOM_INSTANCE_TYPE = new ComputeType("CUSTOM_INSTANCE_TYPE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the sagemaker-a2i-runtime-2019-11-07.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AugmentedAIRuntime.Model
@@ -29,6 +30,11 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <summary>
         /// Paginator for ListHumanLoops operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListHumanLoopsPaginator ListHumanLoops(ListHumanLoopsRequest request);
     }
 }

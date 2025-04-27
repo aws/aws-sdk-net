@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the launch-wizard-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LaunchWizard.Model
@@ -29,21 +30,41 @@ namespace Amazon.LaunchWizard.Model
         /// <summary>
         /// Paginator for ListDeploymentEvents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDeploymentEventsPaginator ListDeploymentEvents(ListDeploymentEventsRequest request);
 
         /// <summary>
         /// Paginator for ListDeployments operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDeploymentsPaginator ListDeployments(ListDeploymentsRequest request);
 
         /// <summary>
         /// Paginator for ListWorkloadDeploymentPatterns operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWorkloadDeploymentPatternsPaginator ListWorkloadDeploymentPatterns(ListWorkloadDeploymentPatternsRequest request);
 
         /// <summary>
         /// Paginator for ListWorkloads operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWorkloadsPaginator ListWorkloads(ListWorkloadsRequest request);
     }
 }

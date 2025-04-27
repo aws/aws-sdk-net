@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the elasticloadbalancing-2012-06-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticLoadBalancing.Model
@@ -29,6 +30,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Paginator for DescribeLoadBalancers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            
+            OutputToken = new[] { "NextMarker" }
+        )]
         IDescribeLoadBalancersPaginator DescribeLoadBalancers(DescribeLoadBalancersRequest request);
     }
 }

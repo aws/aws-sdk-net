@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glacier.Model
@@ -29,16 +30,31 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Paginator for ListJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "Marker" }
+        )]
         IListJobsPaginator ListJobs(ListJobsRequest request);
 
         /// <summary>
         /// Paginator for ListParts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "Marker" }
+        )]
         IListPartsPaginator ListParts(ListPartsRequest request);
 
         /// <summary>
         /// Paginator for ListVaults operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "Marker" }
+        )]
         IListVaultsPaginator ListVaults(ListVaultsRequest request);
     }
 }

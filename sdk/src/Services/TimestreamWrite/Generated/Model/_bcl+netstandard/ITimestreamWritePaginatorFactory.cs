@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the timestream-write-2018-11-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamWrite.Model
@@ -29,16 +30,31 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Paginator for ListBatchLoadTasks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListBatchLoadTasksPaginator ListBatchLoadTasks(ListBatchLoadTasksRequest request);
 
         /// <summary>
         /// Paginator for ListDatabases operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDatabasesPaginator ListDatabases(ListDatabasesRequest request);
 
         /// <summary>
         /// Paginator for ListTables operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTablesPaginator ListTables(ListTablesRequest request);
     }
 }

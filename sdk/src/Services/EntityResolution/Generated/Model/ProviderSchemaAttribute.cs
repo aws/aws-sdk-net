@@ -100,6 +100,26 @@ namespace Amazon.EntityResolution.Model
         /// <para>
         /// The type of the provider schema attribute.
         /// </para>
+        ///  
+        /// <para>
+        /// LiveRamp supports: <c>NAME</c> | <c>NAME_FIRST</c> | <c>NAME_MIDDLE</c> | <c>NAME_LAST</c>
+        /// | <c>ADDRESS</c> | <c>ADDRESS_STREET1</c> | <c>ADDRESS_STREET2</c> | <c>ADDRESS_STREET3</c>
+        /// | <c>ADDRESS_CITY</c> | <c>ADDRESS_STATE</c> | <c>ADDRESS_COUNTRY</c> | <c>ADDRESS_POSTALCODE</c>
+        /// | <c>PHONE</c> | <c>PHONE_NUMBER</c> | <c>EMAIL_ADDRESS</c> | <c>UNIQUE_ID</c> | <c>PROVIDER_ID</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// TransUnion supports: <c>NAME</c> | <c>NAME_FIRST</c> | <c>NAME_LAST</c> | <c>ADDRESS</c>
+        /// | <c>ADDRESS_CITY</c> | <c>ADDRESS_STATE</c> | <c>ADDRESS_COUNTRY</c> | <c>ADDRESS_POSTALCODE</c>
+        /// | <c>PHONE_NUMBER</c> | <c>EMAIL_ADDRESS</c> | <c>UNIQUE_ID</c> | <c>DATE</c> | <c>IPV4</c>
+        /// | <c>IPV6</c> | <c>MAID</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Unified ID 2.0 supports: <c>PHONE_NUMBER</c> | <c>EMAIL_ADDRESS</c> | <c>UNIQUE_ID</c>
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public SchemaAttributeType Type

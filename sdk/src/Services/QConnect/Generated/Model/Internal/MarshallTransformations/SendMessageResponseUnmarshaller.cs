@@ -52,6 +52,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("configuration", targetDepth))
+                {
+                    var unmarshaller = MessageConfigurationUnmarshaller.Instance;
+                    response.Configuration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("nextMessageToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the medical-imaging-2023-07-19.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MedicalImaging.Model
@@ -29,21 +30,41 @@ namespace Amazon.MedicalImaging.Model
         /// <summary>
         /// Paginator for ListDatastores operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDatastoresPaginator ListDatastores(ListDatastoresRequest request);
 
         /// <summary>
         /// Paginator for ListDICOMImportJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDICOMImportJobsPaginator ListDICOMImportJobs(ListDICOMImportJobsRequest request);
 
         /// <summary>
         /// Paginator for ListImageSetVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListImageSetVersionsPaginator ListImageSetVersions(ListImageSetVersionsRequest request);
 
         /// <summary>
         /// Paginator for SearchImageSets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         ISearchImageSetsPaginator SearchImageSets(SearchImageSetsRequest request);
     }
 }

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the ecs-2014-11-13.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model
@@ -29,46 +30,91 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Paginator for ListAccountSettings operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAccountSettingsPaginator ListAccountSettings(ListAccountSettingsRequest request);
 
         /// <summary>
         /// Paginator for ListAttributes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAttributesPaginator ListAttributes(ListAttributesRequest request);
 
         /// <summary>
         /// Paginator for ListClusters operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListClustersPaginator ListClusters(ListClustersRequest request);
 
         /// <summary>
         /// Paginator for ListContainerInstances operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListContainerInstancesPaginator ListContainerInstances(ListContainerInstancesRequest request);
 
         /// <summary>
         /// Paginator for ListServices operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListServicesPaginator ListServices(ListServicesRequest request);
 
         /// <summary>
         /// Paginator for ListServicesByNamespace operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListServicesByNamespacePaginator ListServicesByNamespace(ListServicesByNamespaceRequest request);
 
         /// <summary>
         /// Paginator for ListTaskDefinitionFamilies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTaskDefinitionFamiliesPaginator ListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request);
 
         /// <summary>
         /// Paginator for ListTaskDefinitions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTaskDefinitionsPaginator ListTaskDefinitions(ListTaskDefinitionsRequest request);
 
         /// <summary>
         /// Paginator for ListTasks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTasksPaginator ListTasks(ListTasksRequest request);
     }
 }

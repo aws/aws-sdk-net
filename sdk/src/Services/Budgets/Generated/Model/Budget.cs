@@ -52,7 +52,9 @@ namespace Amazon.Budgets.Model
         private CalculatedSpend _calculatedSpend;
         private Dictionary<string, List<string>> _costFilters = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private CostTypes _costTypes;
+        private Expression _filterExpression;
         private DateTime? _lastUpdatedTime;
+        private List<string> _metrics = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, Spend> _plannedBudgetLimits = AWSConfigs.InitializeCollections ? new Dictionary<string, Spend>() : null;
         private TimePeriod _timePeriod;
         private TimeUnit _timeUnit;
@@ -193,6 +195,7 @@ namespace Amazon.Budgets.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [Obsolete("CostFilters lack support for newer dimensions and filtering options. Please consider using the new 'FilterExpression' field.")]
         public Dictionary<string, List<string>> CostFilters
         {
             get { return this._costFilters; }
@@ -216,6 +219,7 @@ namespace Amazon.Budgets.Model
         /// and <c>SAVINGS_PLANS_COVERAGE</c> budgets do not have <c>CostTypes</c>.
         /// </para>
         /// </summary>
+        [Obsolete("CostTypes lack support for newer record type dimensions and filtering options. Please consider using the new 'Metrics' field.")]
         public CostTypes CostTypes
         {
             get { return this._costTypes; }
@@ -226,6 +230,24 @@ namespace Amazon.Budgets.Model
         internal bool IsSetCostTypes()
         {
             return this._costTypes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterExpression. 
+        /// <para>
+        /// The filtering dimensions for the budget and their corresponding values.
+        /// </para>
+        /// </summary>
+        public Expression FilterExpression
+        {
+            get { return this._filterExpression; }
+            set { this._filterExpression = value; }
+        }
+
+        // Check to see if FilterExpression property is set
+        internal bool IsSetFilterExpression()
+        {
+            return this._filterExpression != null;
         }
 
         /// <summary>
@@ -244,6 +266,25 @@ namespace Amazon.Budgets.Model
         internal bool IsSetLastUpdatedTime()
         {
             return this._lastUpdatedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metrics. 
+        /// <para>
+        /// The definition for how the budget data is aggregated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<string> Metrics
+        {
+            get { return this._metrics; }
+            set { this._metrics = value; }
+        }
+
+        // Check to see if Metrics property is set
+        internal bool IsSetMetrics()
+        {
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -309,7 +350,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// The period of time that's covered by a budget. You setthe start date and end date.
+        /// The period of time that's covered by a budget. You set the start date and end date.
         /// The start date must come before the end date. The end date must come before <c>06/15/87
         /// 00:00 UTC</c>. 
         /// </para>

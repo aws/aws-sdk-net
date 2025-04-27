@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the acm-pca-2017-08-22.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model
@@ -29,16 +30,31 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Paginator for ListCertificateAuthorities operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCertificateAuthoritiesPaginator ListCertificateAuthorities(ListCertificateAuthoritiesRequest request);
 
         /// <summary>
         /// Paginator for ListPermissions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPermissionsPaginator ListPermissions(ListPermissionsRequest request);
 
         /// <summary>
         /// Paginator for ListTags operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTagsPaginator ListTags(ListTagsRequest request);
     }
 }

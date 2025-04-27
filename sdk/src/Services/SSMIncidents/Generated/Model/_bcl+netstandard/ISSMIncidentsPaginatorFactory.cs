@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the ssm-incidents-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMIncidents.Model
@@ -29,36 +30,71 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Paginator for GetResourcePolicies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetResourcePoliciesPaginator GetResourcePolicies(GetResourcePoliciesRequest request);
 
         /// <summary>
         /// Paginator for ListIncidentFindings operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListIncidentFindingsPaginator ListIncidentFindings(ListIncidentFindingsRequest request);
 
         /// <summary>
         /// Paginator for ListIncidentRecords operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListIncidentRecordsPaginator ListIncidentRecords(ListIncidentRecordsRequest request);
 
         /// <summary>
         /// Paginator for ListRelatedItems operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRelatedItemsPaginator ListRelatedItems(ListRelatedItemsRequest request);
 
         /// <summary>
         /// Paginator for ListReplicationSets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListReplicationSetsPaginator ListReplicationSets(ListReplicationSetsRequest request);
 
         /// <summary>
         /// Paginator for ListResponsePlans operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListResponsePlansPaginator ListResponsePlans(ListResponsePlansRequest request);
 
         /// <summary>
         /// Paginator for ListTimelineEvents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTimelineEventsPaginator ListTimelineEvents(ListTimelineEventsRequest request);
     }
 }

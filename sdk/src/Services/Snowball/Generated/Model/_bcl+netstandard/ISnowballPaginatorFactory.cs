@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the snowball-2016-06-30.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model
@@ -29,36 +30,71 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Paginator for DescribeAddresses operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeAddressesPaginator DescribeAddresses(DescribeAddressesRequest request);
 
         /// <summary>
         /// Paginator for ListClusterJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListClusterJobsPaginator ListClusterJobs(ListClusterJobsRequest request);
 
         /// <summary>
         /// Paginator for ListClusters operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListClustersPaginator ListClusters(ListClustersRequest request);
 
         /// <summary>
         /// Paginator for ListCompatibleImages operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCompatibleImagesPaginator ListCompatibleImages(ListCompatibleImagesRequest request);
 
         /// <summary>
         /// Paginator for ListJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListJobsPaginator ListJobs(ListJobsRequest request);
 
         /// <summary>
         /// Paginator for ListLongTermPricing operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLongTermPricingPaginator ListLongTermPricing(ListLongTermPricingRequest request);
 
         /// <summary>
         /// Paginator for ListPickupLocations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPickupLocationsPaginator ListPickupLocations(ListPickupLocationsRequest request);
     }
 }

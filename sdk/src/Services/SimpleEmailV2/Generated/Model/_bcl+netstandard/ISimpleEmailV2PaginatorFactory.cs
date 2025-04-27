@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the sesv2-2019-09-27.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model
@@ -29,76 +30,151 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Paginator for GetDedicatedIps operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetDedicatedIpsPaginator GetDedicatedIps(GetDedicatedIpsRequest request);
 
         /// <summary>
         /// Paginator for ListConfigurationSets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListConfigurationSetsPaginator ListConfigurationSets(ListConfigurationSetsRequest request);
 
         /// <summary>
         /// Paginator for ListContactLists operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListContactListsPaginator ListContactLists(ListContactListsRequest request);
 
         /// <summary>
         /// Paginator for ListContacts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListContactsPaginator ListContacts(ListContactsRequest request);
 
         /// <summary>
         /// Paginator for ListCustomVerificationEmailTemplates operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCustomVerificationEmailTemplatesPaginator ListCustomVerificationEmailTemplates(ListCustomVerificationEmailTemplatesRequest request);
 
         /// <summary>
         /// Paginator for ListDedicatedIpPools operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDedicatedIpPoolsPaginator ListDedicatedIpPools(ListDedicatedIpPoolsRequest request);
 
         /// <summary>
         /// Paginator for ListDeliverabilityTestReports operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDeliverabilityTestReportsPaginator ListDeliverabilityTestReports(ListDeliverabilityTestReportsRequest request);
 
         /// <summary>
         /// Paginator for ListDomainDeliverabilityCampaigns operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDomainDeliverabilityCampaignsPaginator ListDomainDeliverabilityCampaigns(ListDomainDeliverabilityCampaignsRequest request);
 
         /// <summary>
         /// Paginator for ListEmailIdentities operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEmailIdentitiesPaginator ListEmailIdentities(ListEmailIdentitiesRequest request);
 
         /// <summary>
         /// Paginator for ListEmailTemplates operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEmailTemplatesPaginator ListEmailTemplates(ListEmailTemplatesRequest request);
 
         /// <summary>
         /// Paginator for ListExportJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListExportJobsPaginator ListExportJobs(ListExportJobsRequest request);
 
         /// <summary>
         /// Paginator for ListImportJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListImportJobsPaginator ListImportJobs(ListImportJobsRequest request);
 
         /// <summary>
         /// Paginator for ListMultiRegionEndpoints operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMultiRegionEndpointsPaginator ListMultiRegionEndpoints(ListMultiRegionEndpointsRequest request);
 
         /// <summary>
         /// Paginator for ListRecommendations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRecommendationsPaginator ListRecommendations(ListRecommendationsRequest request);
 
         /// <summary>
         /// Paginator for ListSuppressedDestinations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSuppressedDestinationsPaginator ListSuppressedDestinations(ListSuppressedDestinationsRequest request);
     }
 }

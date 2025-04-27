@@ -41,6 +41,7 @@ namespace Amazon.ElastiCache.Model
         private string _engineVersion;
         private List<PendingLogDeliveryConfiguration> _logDeliveryConfigurations = AWSConfigs.InitializeCollections ? new List<PendingLogDeliveryConfiguration>() : null;
         private int? _numCacheNodes;
+        private ScaleConfig _scaleConfig;
         private bool? _transitEncryptionEnabled;
         private TransitEncryptionMode _transitEncryptionMode;
 
@@ -161,6 +162,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetNumCacheNodes()
         {
             return this._numCacheNodes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScaleConfig. 
+        /// <para>
+        /// The scaling configuration changes that are pending for the Memcached cluster.
+        /// </para>
+        /// </summary>
+        public ScaleConfig ScaleConfig
+        {
+            get { return this._scaleConfig; }
+            set { this._scaleConfig = value; }
+        }
+
+        // Check to see if ScaleConfig property is set
+        internal bool IsSetScaleConfig()
+        {
+            return this._scaleConfig != null;
         }
 
         /// <summary>

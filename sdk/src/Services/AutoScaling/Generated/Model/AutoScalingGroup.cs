@@ -544,7 +544,10 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property NewInstancesProtectedFromScaleIn. 
         /// <para>
         /// Indicates whether newly launched instances are protected from termination by Amazon
-        /// EC2 Auto Scaling when scaling in.
+        /// EC2 Auto Scaling when scaling in. For more information about preventing instances
+        /// from terminating on scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Use
+        /// instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// 
         /// </para>
         /// </summary>
         public bool? NewInstancesProtectedFromScaleIn

@@ -308,6 +308,11 @@ namespace Amazon.RDS.Model
         /// If you create an RDS Custom DB instance, you must set <c>AutoMinorVersionUpgrade</c>
         /// to <c>false</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically
+        /// upgrading the minor engine version</a>.
+        /// </para>
         /// </summary>
         public bool? AutoMinorVersionUpgrade
         {

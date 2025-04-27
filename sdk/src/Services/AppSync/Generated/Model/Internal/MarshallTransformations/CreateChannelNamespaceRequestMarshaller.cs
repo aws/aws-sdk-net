@@ -82,6 +82,17 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CodeHandlers);
             }
 
+            if(publicRequest.IsSetHandlerConfigs())
+            {
+                context.Writer.WritePropertyName("handlerConfigs");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HandlerConfigsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.HandlerConfigs, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

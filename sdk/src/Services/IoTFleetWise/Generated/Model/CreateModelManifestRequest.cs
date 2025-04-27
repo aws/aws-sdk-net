@@ -92,7 +92,7 @@ namespace Amazon.IoTFleetWise.Model
         ///  A list of nodes, which are a general abstraction of signals. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=500)]
         public List<string> Nodes
         {
             get { return this._nodes; }

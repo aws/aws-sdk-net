@@ -52,6 +52,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ContentType);
             }
 
+            if(requestObject.IsSetCustomActionDefaults())
+            {
+                context.Writer.WritePropertyName("CustomActionDefaults");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VisualCustomActionDefaultsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomActionDefaults, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");

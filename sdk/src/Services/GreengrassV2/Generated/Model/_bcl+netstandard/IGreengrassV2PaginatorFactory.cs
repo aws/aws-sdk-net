@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the greengrassv2-2020-11-30.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GreengrassV2.Model
@@ -29,36 +30,71 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Paginator for ListClientDevicesAssociatedWithCoreDevice operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListClientDevicesAssociatedWithCoreDevicePaginator ListClientDevicesAssociatedWithCoreDevice(ListClientDevicesAssociatedWithCoreDeviceRequest request);
 
         /// <summary>
         /// Paginator for ListComponents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListComponentsPaginator ListComponents(ListComponentsRequest request);
 
         /// <summary>
         /// Paginator for ListComponentVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListComponentVersionsPaginator ListComponentVersions(ListComponentVersionsRequest request);
 
         /// <summary>
         /// Paginator for ListCoreDevices operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCoreDevicesPaginator ListCoreDevices(ListCoreDevicesRequest request);
 
         /// <summary>
         /// Paginator for ListDeployments operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDeploymentsPaginator ListDeployments(ListDeploymentsRequest request);
 
         /// <summary>
         /// Paginator for ListEffectiveDeployments operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEffectiveDeploymentsPaginator ListEffectiveDeployments(ListEffectiveDeploymentsRequest request);
 
         /// <summary>
         /// Paginator for ListInstalledComponents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListInstalledComponentsPaginator ListInstalledComponents(ListInstalledComponentsRequest request);
     }
 }

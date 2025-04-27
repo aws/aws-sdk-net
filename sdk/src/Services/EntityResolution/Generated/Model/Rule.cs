@@ -45,7 +45,7 @@ namespace Amazon.EntityResolution.Model
         /// all of the <c>MatchingKeys</c> match.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=15)]
+        [AWSProperty(Required=true, Min=0, Max=15)]
         public List<string> MatchingKeys
         {
             get { return this._matchingKeys; }

@@ -31,7 +31,8 @@ namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
     /// Container for the parameters to the ListServices operation.
-    /// Lists the names and codes for the Amazon Web Services integrated with Service Quotas.
+    /// Lists the names and codes for the Amazon Web Services services integrated with Service
+    /// Quotas.
     /// </summary>
     public partial class ListServicesRequest : AmazonServiceQuotasRequest
     {

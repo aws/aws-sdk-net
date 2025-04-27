@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the paginators-test-2022-03-14.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaginatorsTest.Model
@@ -29,6 +30,11 @@ namespace Amazon.PaginatorsTest.Model
         /// <summary>
         /// Paginator for TestPaginator operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         ITestPaginatorPaginator TestPaginator(TestPaginatorRequest request);
     }
 }

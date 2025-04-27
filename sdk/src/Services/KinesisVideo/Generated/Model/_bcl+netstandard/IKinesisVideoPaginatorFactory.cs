@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the kinesisvideo-2017-09-30.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisVideo.Model
@@ -29,21 +30,41 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Paginator for DescribeMappedResourceConfiguration operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeMappedResourceConfigurationPaginator DescribeMappedResourceConfiguration(DescribeMappedResourceConfigurationRequest request);
 
         /// <summary>
         /// Paginator for ListEdgeAgentConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEdgeAgentConfigurationsPaginator ListEdgeAgentConfigurations(ListEdgeAgentConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListSignalingChannels operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSignalingChannelsPaginator ListSignalingChannels(ListSignalingChannelsRequest request);
 
         /// <summary>
         /// Paginator for ListStreams operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListStreamsPaginator ListStreams(ListStreamsRequest request);
     }
 }

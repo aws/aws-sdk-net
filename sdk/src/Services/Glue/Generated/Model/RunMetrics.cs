@@ -84,7 +84,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfDpus. 
         /// <para>
-        /// The number of DPU hours consumed by the job.
+        /// The number of DPUs consumed by the job, rounded up to the nearest whole number.
         /// </para>
         /// </summary>
         public string NumberOfDpus

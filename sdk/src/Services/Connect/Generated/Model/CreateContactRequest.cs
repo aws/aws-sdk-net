@@ -33,12 +33,13 @@ namespace Amazon.Connect.Model
     /// Container for the parameters to the CreateContact operation.
     /// <important> 
     /// <para>
-    /// Only the EMAIL channel is supported. The supported initiation methods are: OUTBOUND,
-    /// AGENT_REPLY, and FLOW.
+    /// Only the EMAIL and VOICE channels are supported. The supported initiation methods
+    /// for EMAIL are: OUTBOUND, AGENT_REPLY, and FLOW. For VOICE the supported initiation
+    /// methods are TRANSFER and the subtype connect:ExternalAudio. 
     /// </para>
     ///  </important> 
     /// <para>
-    /// Creates a new EMAIL contact. 
+    /// Creates a new EMAIL or VOICE contact. 
     /// </para>
     /// </summary>
     public partial class CreateContactRequest : AmazonConnectRequest
@@ -89,8 +90,9 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// CreateContact only supports the EMAIL channel. The following information that states
-        /// other channels are supported is incorrect. We are working to update this topic.
+        /// CreateContact only supports the EMAIL and VOICE channels. The following information
+        /// that states other channels are supported is incorrect. We are working to update this
+        /// topic.
         /// </para>
         ///  </important>
         /// </summary>
@@ -191,9 +193,20 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// CreateContact only supports the following initiation methods: OUTBOUND, AGENT_REPLY,
-        /// and FLOW. The following information that states other initiation methods are supported
-        /// is incorrect. We are working to update this topic.
+        /// CreateContact only supports the following initiation methods: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For EMAIL: OUTBOUND, AGENT_REPLY, and FLOW. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For VOICE: TRANSFER and the subtype connect:ExternalAudio. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following information that states other initiation methods are supported is incorrect.
+        /// We are working to update this topic.
         /// </para>
         ///  </important>
         /// </summary>
@@ -294,8 +307,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property RelatedContactId. 
         /// <para>
-        /// The unique identifier for an Amazon Connect contact. This identifier is related to
-        /// the contact starting.
+        /// The identifier of the contact in this instance of Amazon Connect. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

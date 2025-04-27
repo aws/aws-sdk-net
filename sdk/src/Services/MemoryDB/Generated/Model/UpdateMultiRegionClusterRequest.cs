@@ -152,7 +152,8 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property UpdateStrategy. 
         /// <para>
-        /// Whether to force the update even if it may cause data loss.
+        /// The strategy to use for the update operation. Supported values are "coordinated" or
+        /// "uncoordinated".
         /// </para>
         /// </summary>
         public UpdateStrategy UpdateStrategy

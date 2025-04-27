@@ -36,6 +36,7 @@ namespace Amazon.Bedrock.Model
     {
         private ApplicationType _applicationType;
         private DateTime? _creationTime;
+        private List<string> _customMetricsEvaluatorModelIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _evaluationTaskTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _evaluatorModelIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private EvaluationInferenceConfigSummary _inferenceConfigSummary;
@@ -82,6 +83,26 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomMetricsEvaluatorModelIdentifiers. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) of the models used to compute custom metrics in an
+        /// Amazon Bedrock evaluation job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<string> CustomMetricsEvaluatorModelIdentifiers
+        {
+            get { return this._customMetricsEvaluatorModelIdentifiers; }
+            set { this._customMetricsEvaluatorModelIdentifiers = value; }
+        }
+
+        // Check to see if CustomMetricsEvaluatorModelIdentifiers property is set
+        internal bool IsSetCustomMetricsEvaluatorModelIdentifiers()
+        {
+            return this._customMetricsEvaluatorModelIdentifiers != null && (this._customMetricsEvaluatorModelIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the codeguru-security-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeGuruSecurity.Model
@@ -29,16 +30,31 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Paginator for GetFindings operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetFindingsPaginator GetFindings(GetFindingsRequest request);
 
         /// <summary>
         /// Paginator for ListFindingsMetrics operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFindingsMetricsPaginator ListFindingsMetrics(ListFindingsMetricsRequest request);
 
         /// <summary>
         /// Paginator for ListScans operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListScansPaginator ListScans(ListScansRequest request);
     }
 }

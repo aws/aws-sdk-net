@@ -67,7 +67,29 @@ namespace Amazon.ControlCatalog.Model
     /// </summary>
     public partial class ImplementationDetails
     {
+        private string _identifier;
         private string _type;
+
+        /// <summary>
+        /// Gets and sets the property Identifier. 
+        /// <para>
+        /// A service-specific identifier for the control, assigned by the service that implemented
+        /// the control. For example, this identifier could be an Amazon Web Services Config Rule
+        /// ID or a Security Hub Control ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Identifier
+        {
+            get { return this._identifier; }
+            set { this._identifier = value; }
+        }
+
+        // Check to see if Identifier property is set
+        internal bool IsSetIdentifier()
+        {
+            return this._identifier != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Type. 

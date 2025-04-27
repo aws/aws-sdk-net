@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the managedblockchain-2018-09-24.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedBlockchain.Model
@@ -29,36 +30,71 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Paginator for ListAccessors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAccessorsPaginator ListAccessors(ListAccessorsRequest request);
 
         /// <summary>
         /// Paginator for ListInvitations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListInvitationsPaginator ListInvitations(ListInvitationsRequest request);
 
         /// <summary>
         /// Paginator for ListMembers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMembersPaginator ListMembers(ListMembersRequest request);
 
         /// <summary>
         /// Paginator for ListNetworks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListNetworksPaginator ListNetworks(ListNetworksRequest request);
 
         /// <summary>
         /// Paginator for ListNodes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListNodesPaginator ListNodes(ListNodesRequest request);
 
         /// <summary>
         /// Paginator for ListProposals operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProposalsPaginator ListProposals(ListProposalsRequest request);
 
         /// <summary>
         /// Paginator for ListProposalVotes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProposalVotesPaginator ListProposalVotes(ListProposalVotesRequest request);
     }
 }

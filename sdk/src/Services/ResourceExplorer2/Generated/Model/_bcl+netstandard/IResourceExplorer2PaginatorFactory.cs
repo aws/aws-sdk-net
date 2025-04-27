@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the resource-explorer-2-2022-07-28.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ResourceExplorer2.Model
@@ -29,36 +30,71 @@ namespace Amazon.ResourceExplorer2.Model
         /// <summary>
         /// Paginator for ListIndexes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListIndexesPaginator ListIndexes(ListIndexesRequest request);
 
         /// <summary>
         /// Paginator for ListIndexesForMembers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListIndexesForMembersPaginator ListIndexesForMembers(ListIndexesForMembersRequest request);
 
         /// <summary>
         /// Paginator for ListManagedViews operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListManagedViewsPaginator ListManagedViews(ListManagedViewsRequest request);
 
         /// <summary>
         /// Paginator for ListResources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListResourcesPaginator ListResources(ListResourcesRequest request);
 
         /// <summary>
         /// Paginator for ListSupportedResourceTypes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSupportedResourceTypesPaginator ListSupportedResourceTypes(ListSupportedResourceTypesRequest request);
 
         /// <summary>
         /// Paginator for ListViews operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListViewsPaginator ListViews(ListViewsRequest request);
 
         /// <summary>
         /// Paginator for Search operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         ISearchPaginator Search(SearchRequest request);
     }
 }

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the ssm-sap-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SsmSap.Model
@@ -29,26 +30,51 @@ namespace Amazon.SsmSap.Model
         /// <summary>
         /// Paginator for ListApplications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
 
         /// <summary>
         /// Paginator for ListComponents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListComponentsPaginator ListComponents(ListComponentsRequest request);
 
         /// <summary>
         /// Paginator for ListDatabases operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDatabasesPaginator ListDatabases(ListDatabasesRequest request);
 
         /// <summary>
         /// Paginator for ListOperationEvents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListOperationEventsPaginator ListOperationEvents(ListOperationEventsRequest request);
 
         /// <summary>
         /// Paginator for ListOperations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListOperationsPaginator ListOperations(ListOperationsRequest request);
     }
 }

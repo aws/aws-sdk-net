@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing <c>InputRecords</c>, <c>RecordsNotProcessed</c>, <c>TotalRecordsProcessed</c>,
-    /// <c>TotalMappedRecords</c>, <c>TotalMappedSourceRecords</c>, and <c>TotalMappedTargetRecords</c>.
+    /// An object that contains metrics about an ID mapping job, including counts of input
+    /// records, processed records, and mapped records between source and target identifiers.
     /// </summary>
     public partial class IdMappingJobMetrics
     {
@@ -41,6 +41,7 @@ namespace Amazon.EntityResolution.Model
         private int? _totalMappedSourceRecords;
         private int? _totalMappedTargetRecords;
         private int? _totalRecordsProcessed;
+        private int? _uniqueRecordsLoaded;
 
         /// <summary>
         /// Gets and sets the property InputRecords. 
@@ -148,6 +149,28 @@ namespace Amazon.EntityResolution.Model
         internal bool IsSetTotalRecordsProcessed()
         {
             return this._totalRecordsProcessed.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UniqueRecordsLoaded. 
+        /// <para>
+        /// The number of records remaining after loading and aggregating duplicate records. Duplicates
+        /// are determined by the field marked as UNIQUE_ID in your schema mapping - records sharing
+        /// the same value in this field are considered duplicates. For example, if you specified
+        /// "customer_id" as a UNIQUE_ID field and had three records with the same customer_id
+        /// value, they would count as one unique record in this metric. 
+        /// </para>
+        /// </summary>
+        public int? UniqueRecordsLoaded
+        {
+            get { return this._uniqueRecordsLoaded; }
+            set { this._uniqueRecordsLoaded = value; }
+        }
+
+        // Check to see if UniqueRecordsLoaded property is set
+        internal bool IsSetUniqueRecordsLoaded()
+        {
+            return this._uniqueRecordsLoaded.HasValue; 
         }
 
     }

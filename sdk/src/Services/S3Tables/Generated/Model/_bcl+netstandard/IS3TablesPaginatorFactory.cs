@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the s3tables-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.S3Tables.Model
@@ -29,16 +30,31 @@ namespace Amazon.S3Tables.Model
         /// <summary>
         /// Paginator for ListNamespaces operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "ContinuationToken" },
+            LimitKey = "MaxNamespaces",
+            OutputToken = new[] { "ContinuationToken" }
+        )]
         IListNamespacesPaginator ListNamespaces(ListNamespacesRequest request);
 
         /// <summary>
         /// Paginator for ListTableBuckets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "ContinuationToken" },
+            LimitKey = "MaxBuckets",
+            OutputToken = new[] { "ContinuationToken" }
+        )]
         IListTableBucketsPaginator ListTableBuckets(ListTableBucketsRequest request);
 
         /// <summary>
         /// Paginator for ListTables operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "ContinuationToken" },
+            LimitKey = "MaxTables",
+            OutputToken = new[] { "ContinuationToken" }
+        )]
         IListTablesPaginator ListTables(ListTablesRequest request);
     }
 }

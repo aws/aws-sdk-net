@@ -57,7 +57,7 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon ElastiCache for Redis clusters (replication groups)
+    /// Amazon ElastiCache replication groups (Redis OSS and Valkey) and Memcached clusters
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -869,7 +869,8 @@ namespace Amazon.ApplicationAutoScaling
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-        /// tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
+        /// tracking scaling policies</a>, <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
+        /// scaling policies</a>, and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/aas-create-predictive-scaling-policy.html">Predictive
         /// scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         ///  <note> 
@@ -951,7 +952,8 @@ namespace Amazon.ApplicationAutoScaling
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-        /// tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
+        /// tracking scaling policies</a>, <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
+        /// scaling policies</a>, and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/aas-create-predictive-scaling-policy.html">Predictive
         /// scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         ///  <note> 

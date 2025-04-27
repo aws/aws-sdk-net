@@ -46,6 +46,17 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetModalityProcessing())
+            {
+                context.Writer.WritePropertyName("modalityProcessing");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ModalityProcessingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ModalityProcessing, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSplitter())
             {
                 context.Writer.WritePropertyName("splitter");

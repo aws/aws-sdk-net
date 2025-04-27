@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the chime-sdk-meetings-2021-07-15.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMeetings.Model
@@ -29,6 +30,11 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// <summary>
         /// Paginator for ListAttendees operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAttendeesPaginator ListAttendees(ListAttendeesRequest request);
     }
 }

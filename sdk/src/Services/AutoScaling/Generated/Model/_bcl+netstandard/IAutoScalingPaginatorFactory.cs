@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScaling.Model
@@ -29,66 +30,131 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Paginator for DescribeAutoScalingGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeAutoScalingGroupsPaginator DescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest request);
 
         /// <summary>
         /// Paginator for DescribeAutoScalingInstances operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeAutoScalingInstancesPaginator DescribeAutoScalingInstances(DescribeAutoScalingInstancesRequest request);
 
         /// <summary>
         /// Paginator for DescribeInstanceRefreshes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeInstanceRefreshesPaginator DescribeInstanceRefreshes(DescribeInstanceRefreshesRequest request);
 
         /// <summary>
         /// Paginator for DescribeLaunchConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeLaunchConfigurationsPaginator DescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for DescribeLoadBalancers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeLoadBalancersPaginator DescribeLoadBalancers(DescribeLoadBalancersRequest request);
 
         /// <summary>
         /// Paginator for DescribeLoadBalancerTargetGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeLoadBalancerTargetGroupsPaginator DescribeLoadBalancerTargetGroups(DescribeLoadBalancerTargetGroupsRequest request);
 
         /// <summary>
         /// Paginator for DescribeNotificationConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeNotificationConfigurationsPaginator DescribeNotificationConfigurations(DescribeNotificationConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for DescribePolicies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribePoliciesPaginator DescribePolicies(DescribePoliciesRequest request);
 
         /// <summary>
         /// Paginator for DescribeScalingActivities operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeScalingActivitiesPaginator DescribeScalingActivities(DescribeScalingActivitiesRequest request);
 
         /// <summary>
         /// Paginator for DescribeScheduledActions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeScheduledActionsPaginator DescribeScheduledActions(DescribeScheduledActionsRequest request);
 
         /// <summary>
         /// Paginator for DescribeTags operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeTagsPaginator DescribeTags(DescribeTagsRequest request);
 
         /// <summary>
         /// Paginator for DescribeTrafficSources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeTrafficSourcesPaginator DescribeTrafficSources(DescribeTrafficSourcesRequest request);
 
         /// <summary>
         /// Paginator for DescribeWarmPool operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeWarmPoolPaginator DescribeWarmPool(DescribeWarmPoolRequest request);
     }
 }

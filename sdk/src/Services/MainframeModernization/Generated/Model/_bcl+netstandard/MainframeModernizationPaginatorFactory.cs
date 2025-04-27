@@ -69,6 +69,14 @@ namespace Amazon.MainframeModernization.Model
         }
 
         /// <summary>
+        /// Paginator for ListDataSetExportHistory operation
+        ///</summary>
+        public IListDataSetExportHistoryPaginator ListDataSetExportHistory(ListDataSetExportHistoryRequest request) 
+        {
+            return new ListDataSetExportHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDataSetImportHistory operation
         ///</summary>
         public IListDataSetImportHistoryPaginator ListDataSetImportHistory(ListDataSetImportHistoryRequest request) 

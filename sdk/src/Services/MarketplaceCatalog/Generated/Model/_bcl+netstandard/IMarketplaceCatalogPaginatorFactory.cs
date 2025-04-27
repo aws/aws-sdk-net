@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the marketplace-catalog-2018-09-17.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceCatalog.Model
@@ -29,11 +30,21 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Paginator for ListChangeSets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListChangeSetsPaginator ListChangeSets(ListChangeSetsRequest request);
 
         /// <summary>
         /// Paginator for ListEntities operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEntitiesPaginator ListEntities(ListEntitiesRequest request);
     }
 }

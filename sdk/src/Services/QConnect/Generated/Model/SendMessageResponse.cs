@@ -34,8 +34,28 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class SendMessageResponse : AmazonWebServiceResponse
     {
+        private MessageConfiguration _configuration;
         private string _nextMessageToken;
         private string _requestMessageId;
+
+        /// <summary>
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// The configuration of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_SendMessage.html">SendMessage</a>
+        /// request.
+        /// </para>
+        /// </summary>
+        public MessageConfiguration Configuration
+        {
+            get { return this._configuration; }
+            set { this._configuration = value; }
+        }
+
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
+        {
+            return this._configuration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property NextMessageToken. 

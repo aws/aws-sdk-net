@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the health-2016-08-04.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AWSHealth.Model
@@ -29,36 +30,71 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Paginator for DescribeAffectedAccountsForOrganization operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeAffectedAccountsForOrganizationPaginator DescribeAffectedAccountsForOrganization(DescribeAffectedAccountsForOrganizationRequest request);
 
         /// <summary>
         /// Paginator for DescribeAffectedEntities operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeAffectedEntitiesPaginator DescribeAffectedEntities(DescribeAffectedEntitiesRequest request);
 
         /// <summary>
         /// Paginator for DescribeAffectedEntitiesForOrganization operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeAffectedEntitiesForOrganizationPaginator DescribeAffectedEntitiesForOrganization(DescribeAffectedEntitiesForOrganizationRequest request);
 
         /// <summary>
         /// Paginator for DescribeEventAggregates operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeEventAggregatesPaginator DescribeEventAggregates(DescribeEventAggregatesRequest request);
 
         /// <summary>
         /// Paginator for DescribeEvents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeEventsPaginator DescribeEvents(DescribeEventsRequest request);
 
         /// <summary>
         /// Paginator for DescribeEventsForOrganization operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeEventsForOrganizationPaginator DescribeEventsForOrganization(DescribeEventsForOrganizationRequest request);
 
         /// <summary>
         /// Paginator for DescribeEventTypes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeEventTypesPaginator DescribeEventTypes(DescribeEventTypesRequest request);
     }
 }

@@ -64,6 +64,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     response.CreatorModeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("hallucinationReductionConfiguration", targetDepth))
+                {
+                    var unmarshaller = HallucinationReductionConfigurationUnmarshaller.Instance;
+                    response.HallucinationReductionConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

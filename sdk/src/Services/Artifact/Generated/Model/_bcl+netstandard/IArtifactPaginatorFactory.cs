@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the artifact-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Artifact.Model
@@ -29,11 +30,21 @@ namespace Amazon.Artifact.Model
         /// <summary>
         /// Paginator for ListCustomerAgreements operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCustomerAgreementsPaginator ListCustomerAgreements(ListCustomerAgreementsRequest request);
 
         /// <summary>
         /// Paginator for ListReports operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListReportsPaginator ListReports(ListReportsRequest request);
     }
 }

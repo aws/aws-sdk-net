@@ -79,6 +79,17 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSla())
+            {
+                context.Writer.WritePropertyName("sla");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SlaInputContentMarshaller.Instance;
+                marshaller.Marshall(requestObject.Sla, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

@@ -31,9 +31,9 @@ namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
     /// Container for the parameters to the GetServiceQuota operation.
-    /// Retrieves the applied quota value for the specified quota. For some quotas, only the
-    /// default values are available. If the applied quota value is not available for a quota,
-    /// the quota is not retrieved.
+    /// Retrieves the applied quota value for the specified account-level or resource-level
+    /// quota. For some quotas, only the default values are available. If the applied quota
+    /// value is not available for a quota, the quota is not retrieved.
     /// </summary>
     public partial class GetServiceQuotaRequest : AmazonServiceQuotasRequest
     {
@@ -44,9 +44,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ContextId. 
         /// <para>
-        /// Specifies the Amazon Web Services account or resource to which the quota applies.
-        /// The value in this field depends on the context scope associated with the specified
-        /// service quota.
+        /// Specifies the resource with an Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         public string ContextId

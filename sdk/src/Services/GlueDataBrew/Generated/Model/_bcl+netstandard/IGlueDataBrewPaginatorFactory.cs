@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the databrew-2017-07-25.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model
@@ -29,41 +30,81 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Paginator for ListDatasets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDatasetsPaginator ListDatasets(ListDatasetsRequest request);
 
         /// <summary>
         /// Paginator for ListJobRuns operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListJobRunsPaginator ListJobRuns(ListJobRunsRequest request);
 
         /// <summary>
         /// Paginator for ListJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListJobsPaginator ListJobs(ListJobsRequest request);
 
         /// <summary>
         /// Paginator for ListProjects operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProjectsPaginator ListProjects(ListProjectsRequest request);
 
         /// <summary>
         /// Paginator for ListRecipes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRecipesPaginator ListRecipes(ListRecipesRequest request);
 
         /// <summary>
         /// Paginator for ListRecipeVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRecipeVersionsPaginator ListRecipeVersions(ListRecipeVersionsRequest request);
 
         /// <summary>
         /// Paginator for ListRulesets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRulesetsPaginator ListRulesets(ListRulesetsRequest request);
 
         /// <summary>
         /// Paginator for ListSchedules operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSchedulesPaginator ListSchedules(ListSchedulesRequest request);
     }
 }

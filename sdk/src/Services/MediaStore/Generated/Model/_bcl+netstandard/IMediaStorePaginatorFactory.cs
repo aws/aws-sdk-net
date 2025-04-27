@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the mediastore-2017-09-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaStore.Model
@@ -29,6 +30,11 @@ namespace Amazon.MediaStore.Model
         /// <summary>
         /// Paginator for ListContainers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListContainersPaginator ListContainers(ListContainersRequest request);
     }
 }

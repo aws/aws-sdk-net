@@ -174,7 +174,7 @@ namespace Amazon.IoTFleetWise.Model
         /// an actuator might be <c>Vehicle.Front.Left.Door.Lock</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=150)]
         public string FullyQualifiedName
         {
             get { return this._fullyQualifiedName; }

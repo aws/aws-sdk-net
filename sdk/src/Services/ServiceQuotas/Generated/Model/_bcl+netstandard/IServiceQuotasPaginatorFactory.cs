@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the service-quotas-2019-06-24.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServiceQuotas.Model
@@ -29,31 +30,61 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Paginator for ListAWSDefaultServiceQuotas operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAWSDefaultServiceQuotasPaginator ListAWSDefaultServiceQuotas(ListAWSDefaultServiceQuotasRequest request);
 
         /// <summary>
         /// Paginator for ListRequestedServiceQuotaChangeHistory operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRequestedServiceQuotaChangeHistoryPaginator ListRequestedServiceQuotaChangeHistory(ListRequestedServiceQuotaChangeHistoryRequest request);
 
         /// <summary>
         /// Paginator for ListRequestedServiceQuotaChangeHistoryByQuota operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRequestedServiceQuotaChangeHistoryByQuotaPaginator ListRequestedServiceQuotaChangeHistoryByQuota(ListRequestedServiceQuotaChangeHistoryByQuotaRequest request);
 
         /// <summary>
         /// Paginator for ListServiceQuotaIncreaseRequestsInTemplate operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListServiceQuotaIncreaseRequestsInTemplatePaginator ListServiceQuotaIncreaseRequestsInTemplate(ListServiceQuotaIncreaseRequestsInTemplateRequest request);
 
         /// <summary>
         /// Paginator for ListServiceQuotas operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListServiceQuotasPaginator ListServiceQuotas(ListServiceQuotasRequest request);
 
         /// <summary>
         /// Paginator for ListServices operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListServicesPaginator ListServices(ListServicesRequest request);
     }
 }

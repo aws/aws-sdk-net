@@ -34,6 +34,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class CmafIngestGroupSettings
     {
+        private List<CmafIngestCaptionLanguageMapping> _captionLanguageMappings = AWSConfigs.InitializeCollections ? new List<CmafIngestCaptionLanguageMapping>() : null;
         private OutputLocationRef _destination;
         private CmafId3Behavior _id3Behavior;
         private string _id3NameModifier;
@@ -46,6 +47,25 @@ namespace Amazon.MediaLive.Model
         private int? _segmentLength;
         private CmafIngestSegmentLengthUnits _segmentLengthUnits;
         private int? _sendDelayMs;
+        private CmafTimedMetadataId3Frame _timedMetadataId3Frame;
+        private int? _timedMetadataId3Period;
+        private CmafTimedMetadataPassthrough _timedMetadataPassthrough;
+
+        /// <summary>
+        /// Gets and sets the property CaptionLanguageMappings. An array that identifies the languages
+        /// in the four caption channels in the embedded captions.
+        /// </summary>
+        public List<CmafIngestCaptionLanguageMapping> CaptionLanguageMappings
+        {
+            get { return this._captionLanguageMappings; }
+            set { this._captionLanguageMappings = value; }
+        }
+
+        // Check to see if CaptionLanguageMappings property is set
+        internal bool IsSetCaptionLanguageMappings()
+        {
+            return this._captionLanguageMappings != null && (this._captionLanguageMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Destination. A HTTP destination for the tracks
@@ -259,6 +279,55 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetSendDelayMs()
         {
             return this._sendDelayMs.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimedMetadataId3Frame. Set to none if you don't want to
+        /// insert a timecode in the output. Otherwise choose the frame type for the timecode.
+        /// </summary>
+        public CmafTimedMetadataId3Frame TimedMetadataId3Frame
+        {
+            get { return this._timedMetadataId3Frame; }
+            set { this._timedMetadataId3Frame = value; }
+        }
+
+        // Check to see if TimedMetadataId3Frame property is set
+        internal bool IsSetTimedMetadataId3Frame()
+        {
+            return this._timedMetadataId3Frame != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimedMetadataId3Period. If you set up to insert a timecode
+        /// in the output, specify the frequency for the frame, in seconds.
+        /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
+        public int? TimedMetadataId3Period
+        {
+            get { return this._timedMetadataId3Period; }
+            set { this._timedMetadataId3Period = value; }
+        }
+
+        // Check to see if TimedMetadataId3Period property is set
+        internal bool IsSetTimedMetadataId3Period()
+        {
+            return this._timedMetadataId3Period.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimedMetadataPassthrough. Set to enabled to pass through
+        /// ID3 metadata from the input sources.
+        /// </summary>
+        public CmafTimedMetadataPassthrough TimedMetadataPassthrough
+        {
+            get { return this._timedMetadataPassthrough; }
+            set { this._timedMetadataPassthrough = value; }
+        }
+
+        // Check to see if TimedMetadataPassthrough property is set
+        internal bool IsSetTimedMetadataPassthrough()
+        {
+            return this._timedMetadataPassthrough != null;
         }
 
     }

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the iotwireless-2020-11-22.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model
@@ -29,56 +30,111 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Paginator for ListDestinations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDestinationsPaginator ListDestinations(ListDestinationsRequest request);
 
         /// <summary>
         /// Paginator for ListDeviceProfiles operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDeviceProfilesPaginator ListDeviceProfiles(ListDeviceProfilesRequest request);
 
         /// <summary>
         /// Paginator for ListFuotaTasks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFuotaTasksPaginator ListFuotaTasks(ListFuotaTasksRequest request);
 
         /// <summary>
         /// Paginator for ListMulticastGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMulticastGroupsPaginator ListMulticastGroups(ListMulticastGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListMulticastGroupsByFuotaTask operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMulticastGroupsByFuotaTaskPaginator ListMulticastGroupsByFuotaTask(ListMulticastGroupsByFuotaTaskRequest request);
 
         /// <summary>
         /// Paginator for ListNetworkAnalyzerConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListNetworkAnalyzerConfigurationsPaginator ListNetworkAnalyzerConfigurations(ListNetworkAnalyzerConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListPositionConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPositionConfigurationsPaginator ListPositionConfigurations(ListPositionConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListQueuedMessages operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListQueuedMessagesPaginator ListQueuedMessages(ListQueuedMessagesRequest request);
 
         /// <summary>
         /// Paginator for ListServiceProfiles operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListServiceProfilesPaginator ListServiceProfiles(ListServiceProfilesRequest request);
 
         /// <summary>
         /// Paginator for ListWirelessDevices operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWirelessDevicesPaginator ListWirelessDevices(ListWirelessDevicesRequest request);
 
         /// <summary>
         /// Paginator for ListWirelessGateways operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWirelessGatewaysPaginator ListWirelessGateways(ListWirelessGatewaysRequest request);
     }
 }

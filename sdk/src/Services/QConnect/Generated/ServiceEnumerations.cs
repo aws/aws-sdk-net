@@ -138,6 +138,14 @@ namespace Amazon.QConnect
         /// Constant ANTHROPIC_CLAUDE_TEXT_COMPLETIONS for AIPromptAPIFormat
         /// </summary>
         public static readonly AIPromptAPIFormat ANTHROPIC_CLAUDE_TEXT_COMPLETIONS = new AIPromptAPIFormat("ANTHROPIC_CLAUDE_TEXT_COMPLETIONS");
+        /// <summary>
+        /// Constant MESSAGES for AIPromptAPIFormat
+        /// </summary>
+        public static readonly AIPromptAPIFormat MESSAGES = new AIPromptAPIFormat("MESSAGES");
+        /// <summary>
+        /// Constant TEXT_COMPLETIONS for AIPromptAPIFormat
+        /// </summary>
+        public static readonly AIPromptAPIFormat TEXT_COMPLETIONS = new AIPromptAPIFormat("TEXT_COMPLETIONS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2335,13 +2343,29 @@ namespace Amazon.QConnect
     {
 
         /// <summary>
+        /// Constant BLOCKED_GENERATIVE_ANSWER_CHUNK for QueryResultType
+        /// </summary>
+        public static readonly QueryResultType BLOCKED_GENERATIVE_ANSWER_CHUNK = new QueryResultType("BLOCKED_GENERATIVE_ANSWER_CHUNK");
+        /// <summary>
+        /// Constant BLOCKED_INTENT_ANSWER_CHUNK for QueryResultType
+        /// </summary>
+        public static readonly QueryResultType BLOCKED_INTENT_ANSWER_CHUNK = new QueryResultType("BLOCKED_INTENT_ANSWER_CHUNK");
+        /// <summary>
         /// Constant GENERATIVE_ANSWER for QueryResultType
         /// </summary>
         public static readonly QueryResultType GENERATIVE_ANSWER = new QueryResultType("GENERATIVE_ANSWER");
         /// <summary>
+        /// Constant GENERATIVE_ANSWER_CHUNK for QueryResultType
+        /// </summary>
+        public static readonly QueryResultType GENERATIVE_ANSWER_CHUNK = new QueryResultType("GENERATIVE_ANSWER_CHUNK");
+        /// <summary>
         /// Constant INTENT_ANSWER for QueryResultType
         /// </summary>
         public static readonly QueryResultType INTENT_ANSWER = new QueryResultType("INTENT_ANSWER");
+        /// <summary>
+        /// Constant INTENT_ANSWER_CHUNK for QueryResultType
+        /// </summary>
+        public static readonly QueryResultType INTENT_ANSWER_CHUNK = new QueryResultType("INTENT_ANSWER_CHUNK");
         /// <summary>
         /// Constant KNOWLEDGE_CONTENT for QueryResultType
         /// </summary>
@@ -2667,6 +2691,14 @@ namespace Amazon.QConnect
     {
 
         /// <summary>
+        /// Constant BLOCKED_GENERATIVE_ANSWER_CHUNK for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType BLOCKED_GENERATIVE_ANSWER_CHUNK = new RecommendationType("BLOCKED_GENERATIVE_ANSWER_CHUNK");
+        /// <summary>
+        /// Constant BLOCKED_INTENT_ANSWER_CHUNK for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType BLOCKED_INTENT_ANSWER_CHUNK = new RecommendationType("BLOCKED_INTENT_ANSWER_CHUNK");
+        /// <summary>
         /// Constant DETECTED_INTENT for RecommendationType
         /// </summary>
         public static readonly RecommendationType DETECTED_INTENT = new RecommendationType("DETECTED_INTENT");
@@ -2675,9 +2707,17 @@ namespace Amazon.QConnect
         /// </summary>
         public static readonly RecommendationType GENERATIVE_ANSWER = new RecommendationType("GENERATIVE_ANSWER");
         /// <summary>
+        /// Constant GENERATIVE_ANSWER_CHUNK for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType GENERATIVE_ANSWER_CHUNK = new RecommendationType("GENERATIVE_ANSWER_CHUNK");
+        /// <summary>
         /// Constant GENERATIVE_RESPONSE for RecommendationType
         /// </summary>
         public static readonly RecommendationType GENERATIVE_RESPONSE = new RecommendationType("GENERATIVE_RESPONSE");
+        /// <summary>
+        /// Constant INTENT_ANSWER_CHUNK for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType INTENT_ANSWER_CHUNK = new RecommendationType("INTENT_ANSWER_CHUNK");
         /// <summary>
         /// Constant KNOWLEDGE_CONTENT for RecommendationType
         /// </summary>

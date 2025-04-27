@@ -103,7 +103,7 @@ namespace Amazon.IoTFleetWise.Model
         /// name of a custom structure might be <c>ComplexDataTypes.VehicleDataTypes.SVMCamera</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=150)]
         public string FullyQualifiedName
         {
             get { return this._fullyQualifiedName; }
