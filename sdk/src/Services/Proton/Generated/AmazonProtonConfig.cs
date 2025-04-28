@@ -32,7 +32,7 @@ namespace Amazon.Proton
     public partial class AmazonProtonConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Proton", "3.7.400.140");
+            InternalSDKUtils.BuildUserAgentString("Proton", "3.7.400.141");
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -32,7 +32,7 @@ namespace Amazon.PinpointSMSVoice
     public partial class AmazonPinpointSMSVoiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Pinpoint SMS Voice", "3.7.400.140");
+            InternalSDKUtils.BuildUserAgentString("Pinpoint SMS Voice", "3.7.400.141");
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -1,3 +1,18 @@
+### 3.7.1032.0 (2025-04-28 18:16 UTC)
+* BedrockRuntime (3.7.420.0)
+	* This release adds native h2 support for the bedrock runtime API, the support is only limited to SDKs that support h2 requests natively.
+* CertificateManager (3.7.401.0)
+	* Add support for file-based HTTP domain control validation, available through Amazon CloudFront.
+* CloudFront (3.7.405.0)
+	* Add distribution tenant, connection group, and multi-tenant distribution APIs to the CloudFront SDK.
+* DynamoDBv2 (3.7.407.2)
+	* Doc only update for GSI descriptions.
+* Imagebuilder (3.7.404.0)
+	* Add integration with SSM Parameter Store to Image Builder.
+* Core 3.7.402.47
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1031.0 (2025-04-25 18:20 UTC)
 * BedrockRuntime (3.7.419.0)
 	* You can now reference images and documents stored in Amazon S3 when using InvokeModel and Converse APIs with Amazon Nova Lite and Nova Pro. This enables direct integration of S3-stored multimedia assets in your model requests without manual downloading or base64 encoding.
