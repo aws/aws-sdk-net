@@ -132,6 +132,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.KeyUsages = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ManagedBy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ManagedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NotAfter", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

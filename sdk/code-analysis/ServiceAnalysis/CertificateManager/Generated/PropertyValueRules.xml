@@ -143,7 +143,7 @@
     <property>Amazon.CertificateManager.Model.RequestCertificateRequest.DomainName</property>
     <min>1</min>
     <max>253</max>
-    <pattern>^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$</pattern>
+    <pattern>(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CertificateManager.Model.RequestCertificateRequest.IdempotencyToken</property>
@@ -167,13 +167,13 @@
     <property>Amazon.CertificateManager.Model.ResendValidationEmailRequest.Domain</property>
     <min>1</min>
     <max>253</max>
-    <pattern>^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$</pattern>
+    <pattern>(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CertificateManager.Model.ResendValidationEmailRequest.ValidationDomain</property>
     <min>1</min>
     <max>253</max>
-    <pattern>^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$</pattern>
+    <pattern>(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CertificateManager.Model.UpdateCertificateOptionsRequest.CertificateArn</property>
@@ -197,7 +197,7 @@
     <property>Amazon.CertificateManager.Model.CertificateDetail.DomainName</property>
     <min>1</min>
     <max>253</max>
-    <pattern>^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$</pattern>
+    <pattern>(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CertificateManager.Model.CertificateSummary.CertificateArn</property>
@@ -209,31 +209,31 @@
     <property>Amazon.CertificateManager.Model.CertificateSummary.DomainName</property>
     <min>1</min>
     <max>253</max>
-    <pattern>^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$</pattern>
+    <pattern>(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CertificateManager.Model.DomainValidation.DomainName</property>
     <min>1</min>
     <max>253</max>
-    <pattern>^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$</pattern>
+    <pattern>(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CertificateManager.Model.DomainValidation.ValidationDomain</property>
     <min>1</min>
     <max>253</max>
-    <pattern>^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$</pattern>
+    <pattern>(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CertificateManager.Model.DomainValidationOption.DomainName</property>
     <min>1</min>
     <max>253</max>
-    <pattern>^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$</pattern>
+    <pattern>(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CertificateManager.Model.DomainValidationOption.ValidationDomain</property>
     <min>1</min>
     <max>253</max>
-    <pattern>^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$</pattern>
+    <pattern>(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CertificateManager.Model.ExpiryEventsConfiguration.DaysBeforeExpiry</property>

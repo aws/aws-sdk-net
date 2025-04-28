@@ -45,6 +45,7 @@ namespace Amazon.CertificateManager.Model
         private DateTime? _issuedAt;
         private KeyAlgorithm _keyAlgorithm;
         private List<string> _keyUsages = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private CertificateManagedBy _managedBy;
         private DateTime? _notAfter;
         private DateTime? _notBefore;
         private RenewalEligibility _renewalEligibility;
@@ -162,11 +163,12 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property HasAdditionalSubjectAlternativeNames. 
         /// <para>
-        /// When called by <a>ListCertificates</a>, indicates whether the full list of subject
-        /// alternative names has been included in the response. If false, the response includes
-        /// all of the subject alternative names included in the certificate. If true, the response
-        /// only includes the first 100 subject alternative names included in the certificate.
-        /// To display the full list of subject alternative names, use <a>DescribeCertificate</a>.
+        /// When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>,
+        /// indicates whether the full list of subject alternative names has been included in
+        /// the response. If false, the response includes all of the subject alternative names
+        /// included in the certificate. If true, the response only includes the first 100 subject
+        /// alternative names included in the certificate. To display the full list of subject
+        /// alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.
         /// </para>
         /// </summary>
         public bool HasAdditionalSubjectAlternativeNames
@@ -273,6 +275,25 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetKeyUsages()
         {
             return this._keyUsages != null && (this._keyUsages.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedBy. 
+        /// <para>
+        /// Identifies the Amazon Web Services service that manages the certificate issued by
+        /// ACM.
+        /// </para>
+        /// </summary>
+        public CertificateManagedBy ManagedBy
+        {
+            get { return this._managedBy; }
+            set { this._managedBy = value; }
+        }
+
+        // Check to see if ManagedBy property is set
+        internal bool IsSetManagedBy()
+        {
+            return this._managedBy != null;
         }
 
         /// <summary>
@@ -389,9 +410,9 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         ///  
         /// <para>
-        /// When called by <a>ListCertificates</a>, this parameter will only return the first
-        /// 100 subject alternative names included in the certificate. To display the full list
-        /// of subject alternative names, use <a>DescribeCertificate</a>.
+        /// When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>,
+        /// this parameter will only return the first 100 subject alternative names included in
+        /// the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

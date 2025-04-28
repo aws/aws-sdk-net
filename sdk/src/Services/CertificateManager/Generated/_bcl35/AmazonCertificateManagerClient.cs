@@ -42,6 +42,8 @@ namespace Amazon.CertificateManager
     /// Web Services-based websites and applications. For more information about using ACM,
     /// see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
     /// User Guide</a>.
+    /// 
+    /// 
     /// </para>
     /// </summary>
     public partial class AmazonCertificateManagerClient : AmazonServiceClient, IAmazonCertificateManager
@@ -993,17 +995,10 @@ namespace Amazon.CertificateManager
         #region  ListCertificates
 
         /// <summary>
-        /// Retrieves a list of certificate ARNs and domain names. By default, the API returns
-        /// RSA_2048 certificates. To return all certificates in the account, include the <c>keyType</c>
-        /// filter with the values <c>[RSA_1024, RSA_2048, RSA_3072, RSA_4096, EC_prime256v1,
-        /// EC_secp384r1, EC_secp521r1]</c>.
-        /// 
-        ///  
-        /// <para>
-        /// In addition to <c>keyType</c>, you can also filter by the <c>CertificateStatuses</c>,
-        /// <c>keyUsage</c>, and <c>extendedKeyUsage</c> attributes on the certificate. For more
-        /// information, see <a>Filters</a>.
-        /// </para>
+        /// Retrieves a list of certificate ARNs and domain names. You can request that only certificates
+        /// that match a specific status be listed. You can also filter by specific attributes
+        /// of the certificate. Default filtering returns only <c>RSA_2048</c> certificates. For
+        /// more information, see <a>Filters</a>.
         /// </summary>
         /// 
         /// <returns>The response from the ListCertificates service method, as returned by CertificateManager.</returns>
@@ -1020,17 +1015,10 @@ namespace Amazon.CertificateManager
         }
 
         /// <summary>
-        /// Retrieves a list of certificate ARNs and domain names. By default, the API returns
-        /// RSA_2048 certificates. To return all certificates in the account, include the <c>keyType</c>
-        /// filter with the values <c>[RSA_1024, RSA_2048, RSA_3072, RSA_4096, EC_prime256v1,
-        /// EC_secp384r1, EC_secp521r1]</c>.
-        /// 
-        ///  
-        /// <para>
-        /// In addition to <c>keyType</c>, you can also filter by the <c>CertificateStatuses</c>,
-        /// <c>keyUsage</c>, and <c>extendedKeyUsage</c> attributes on the certificate. For more
-        /// information, see <a>Filters</a>.
-        /// </para>
+        /// Retrieves a list of certificate ARNs and domain names. You can request that only certificates
+        /// that match a specific status be listed. You can also filter by specific attributes
+        /// of the certificate. Default filtering returns only <c>RSA_2048</c> certificates. For
+        /// more information, see <a>Filters</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCertificates service method.</param>
         /// 
@@ -1324,6 +1312,10 @@ namespace Amazon.CertificateManager
         /// <returns>The response from the RenewCertificate service method, as returned by CertificateManager.</returns>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.RequestInProgressException">
+        /// The certificate request is in process and the certificate in your account has not
+        /// yet been issued.
         /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account or the caller's

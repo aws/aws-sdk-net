@@ -25,6 +25,52 @@ namespace Amazon.CertificateManager
 {
 
     /// <summary>
+    /// Constants used for properties of type CertificateManagedBy.
+    /// </summary>
+    public class CertificateManagedBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOUDFRONT for CertificateManagedBy
+        /// </summary>
+        public static readonly CertificateManagedBy CLOUDFRONT = new CertificateManagedBy("CLOUDFRONT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CertificateManagedBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CertificateManagedBy FindValue(string value)
+        {
+            return FindValue<CertificateManagedBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CertificateManagedBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CertificateStatus.
     /// </summary>
     public class CertificateStatus : ConstantClass
@@ -805,6 +851,10 @@ namespace Amazon.CertificateManager
         /// </summary>
         public static readonly RevocationReason SUPERCEDED = new RevocationReason("SUPERCEDED");
         /// <summary>
+        /// Constant SUPERSEDED for RevocationReason
+        /// </summary>
+        public static readonly RevocationReason SUPERSEDED = new RevocationReason("SUPERSEDED");
+        /// <summary>
         /// Constant UNSPECIFIED for RevocationReason
         /// </summary>
         public static readonly RevocationReason UNSPECIFIED = new RevocationReason("UNSPECIFIED");
@@ -954,6 +1004,10 @@ namespace Amazon.CertificateManager
         /// Constant EMAIL for ValidationMethod
         /// </summary>
         public static readonly ValidationMethod EMAIL = new ValidationMethod("EMAIL");
+        /// <summary>
+        /// Constant HTTP for ValidationMethod
+        /// </summary>
+        public static readonly ValidationMethod HTTP = new ValidationMethod("HTTP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
