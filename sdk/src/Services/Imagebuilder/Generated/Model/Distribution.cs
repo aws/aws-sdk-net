@@ -41,6 +41,7 @@ namespace Amazon.Imagebuilder.Model
         private List<string> _licenseConfigurationArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _region;
         private S3ExportConfiguration _s3ExportConfiguration;
+        private List<SsmParameterConfiguration> _ssmParameterConfigurations = AWSConfigs.InitializeCollections ? new List<SsmParameterConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property AmiDistributionConfiguration. 
@@ -173,6 +174,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetS3ExportConfiguration()
         {
             return this._s3ExportConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SsmParameterConfigurations. 
+        /// <para>
+        /// Contains settings to update Amazon Web Services Systems Manager (SSM) Parameter Store
+        /// Parameters with output AMI IDs from the build by target Region.
+        /// </para>
+        /// </summary>
+        public List<SsmParameterConfiguration> SsmParameterConfigurations
+        {
+            get { return this._ssmParameterConfigurations; }
+            set { this._ssmParameterConfigurations = value; }
+        }
+
+        // Check to see if SsmParameterConfigurations property is set
+        internal bool IsSetSsmParameterConfigurations()
+        {
+            return this._ssmParameterConfigurations != null && (this._ssmParameterConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

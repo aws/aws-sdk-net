@@ -128,6 +128,22 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSsmParameterConfigurations())
+            {
+                context.Writer.WritePropertyName("ssmParameterConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectSsmParameterConfigurationsListValue in requestObject.SsmParameterConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SsmParameterConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSsmParameterConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
         }
 
         /// <summary>
