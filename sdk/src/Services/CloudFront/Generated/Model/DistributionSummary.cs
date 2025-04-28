@@ -40,10 +40,12 @@ namespace Amazon.CloudFront.Model
         private string _arn;
         private CacheBehaviors _cacheBehaviors;
         private string _comment;
+        private ConnectionMode _connectionMode;
         private CustomErrorResponses _customErrorResponses;
         private DefaultCacheBehavior _defaultCacheBehavior;
         private string _domainName;
         private bool? _enabled;
+        private string _eTag;
         private HttpVersion _httpVersion;
         private string _id;
         private bool? _isIPV6Enabled;
@@ -186,6 +188,24 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConnectionMode. 
+        /// <para>
+        /// The connection mode to filter distributions by.
+        /// </para>
+        /// </summary>
+        public ConnectionMode ConnectionMode
+        {
+            get { return this._connectionMode; }
+            set { this._connectionMode = value; }
+        }
+
+        // Check to see if ConnectionMode property is set
+        internal bool IsSetConnectionMode()
+        {
+            return this._connectionMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CustomErrorResponses. 
         /// <para>
         /// A complex type that contains zero or more <c>CustomErrorResponses</c> elements.
@@ -261,6 +281,24 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ETag. 
+        /// <para>
+        /// The current version of the distribution.
+        /// </para>
+        /// </summary>
+        public string ETag
+        {
+            get { return this._eTag; }
+            set { this._eTag = value; }
+        }
+
+        // Check to see if ETag property is set
+        internal bool IsSetETag()
+        {
+            return this._eTag != null;
         }
 
         /// <summary>
