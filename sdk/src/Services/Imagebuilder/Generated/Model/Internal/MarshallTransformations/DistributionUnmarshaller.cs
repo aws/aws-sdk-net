@@ -108,6 +108,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3ExportConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ssmParameterConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SsmParameterConfiguration, SsmParameterConfigurationUnmarshaller>(SsmParameterConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.SsmParameterConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
