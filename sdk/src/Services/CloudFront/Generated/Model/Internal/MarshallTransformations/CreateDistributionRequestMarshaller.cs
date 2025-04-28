@@ -384,6 +384,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     if(publicRequest.DistributionConfig.IsSetComment())
                         xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.DistributionConfig.Comment));
 
+                    if(publicRequest.DistributionConfig.IsSetConnectionMode())
+                        xmlWriter.WriteElementString("ConnectionMode", StringUtils.FromString(publicRequest.DistributionConfig.ConnectionMode));
+
                     if(publicRequest.DistributionConfig.IsSetContinuousDeploymentPolicyId())
                         xmlWriter.WriteElementString("ContinuousDeploymentPolicyId", StringUtils.FromString(publicRequest.DistributionConfig.ContinuousDeploymentPolicyId));
 
@@ -973,6 +976,47 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     if(publicRequest.DistributionConfig.IsSetStaging())
                         xmlWriter.WriteElementString("Staging", StringUtils.FromBool(publicRequest.DistributionConfig.Staging));
 
+                    if (publicRequest.DistributionConfig.TenantConfig != null)
+                    {
+                        xmlWriter.WriteStartElement("TenantConfig");
+                        var publicRequestDistributionConfigTenantConfigParameterDefinitions = publicRequest.DistributionConfig.TenantConfig.ParameterDefinitions;
+                        if (publicRequestDistributionConfigTenantConfigParameterDefinitions != null && (publicRequestDistributionConfigTenantConfigParameterDefinitions.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        {
+                            xmlWriter.WriteStartElement("ParameterDefinitions");
+                            foreach (var publicRequestDistributionConfigTenantConfigParameterDefinitionsValue in publicRequestDistributionConfigTenantConfigParameterDefinitions) 
+                            {
+                            if (publicRequestDistributionConfigTenantConfigParameterDefinitionsValue != null)
+                            {
+                                xmlWriter.WriteStartElement("member");
+                                if (publicRequestDistributionConfigTenantConfigParameterDefinitionsValue.Definition != null)
+                                {
+                                    xmlWriter.WriteStartElement("Definition");
+                                    if (publicRequestDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema != null)
+                                    {
+                                        xmlWriter.WriteStartElement("StringSchema");
+                                        if(publicRequestDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.IsSetComment())
+                                            xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequestDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.Comment));                 
+
+                                        if(publicRequestDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.IsSetDefaultValue())
+                                            xmlWriter.WriteElementString("DefaultValue", StringUtils.FromString(publicRequestDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.DefaultValue));                 
+
+                                        if(publicRequestDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.IsSetRequired())
+                                            xmlWriter.WriteElementString("Required", StringUtils.FromBool(publicRequestDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.Required));                 
+
+                                        xmlWriter.WriteEndElement();
+                                    }
+                                    xmlWriter.WriteEndElement();
+                                }
+                                if(publicRequestDistributionConfigTenantConfigParameterDefinitionsValue.IsSetName())
+                                    xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequestDistributionConfigTenantConfigParameterDefinitionsValue.Name));                 
+
+                                xmlWriter.WriteEndElement();
+                            }
+                            }            
+                            xmlWriter.WriteEndElement();            
+                        }
+                        xmlWriter.WriteEndElement();
+                    }
                     if (publicRequest.DistributionConfig.ViewerCertificate != null)
                     {
                         xmlWriter.WriteStartElement("ViewerCertificate");

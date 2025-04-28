@@ -102,6 +102,72 @@ namespace Amazon.CloudFront
 
         #endregion
                 
+        #region  AssociateDistributionTenantWebACL
+
+
+
+        /// <summary>
+        /// Associates the WAF web ACL with a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDistributionTenantWebACL service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateDistributionTenantWebACL service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateDistributionTenantWebACL">REST API Reference for AssociateDistributionTenantWebACL Operation</seealso>
+        Task<AssociateDistributionTenantWebACLResponse> AssociateDistributionTenantWebACLAsync(AssociateDistributionTenantWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  AssociateDistributionWebACL
+
+
+
+        /// <summary>
+        /// Associates the WAF web ACL with a distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDistributionWebACL service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateDistributionWebACL service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateDistributionWebACL">REST API Reference for AssociateDistributionWebACL Operation</seealso>
+        Task<AssociateDistributionWebACLResponse> AssociateDistributionWebACLAsync(AssociateDistributionWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CopyDistribution
 
 
@@ -544,6 +610,42 @@ namespace Amazon.CloudFront
 
         #endregion
                 
+        #region  CreateConnectionGroup
+
+
+
+        /// <summary>
+        /// Creates a connection group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConnectionGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateConnectionGroup">REST API Reference for CreateConnectionGroup Operation</seealso>
+        Task<CreateConnectionGroupResponse> CreateConnectionGroupAsync(CreateConnectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateContinuousDeploymentPolicy
 
 
@@ -622,6 +724,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
         /// The caller reference you attempted to create the distribution with is associated with
         /// another distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
         /// The entity was not found.
@@ -855,6 +960,48 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
         Task<CreateDistributionResponse> CreateDistributionAsync(CreateDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateDistributionTenant
+
+
+
+        /// <summary>
+        /// Creates a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDistributionTenant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidAssociationException">
+        /// The specified CloudFront resource can't be associated.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionTenant">REST API Reference for CreateDistributionTenant Operation</seealso>
+        Task<CreateDistributionTenantResponse> CreateDistributionTenantAsync(CreateDistributionTenantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1316,6 +1463,48 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
         Task<CreateInvalidationResponse> CreateInvalidationAsync(CreateInvalidationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateInvalidationForDistributionTenant
+
+
+
+        /// <summary>
+        /// Creates an invalidation for a distribution tenant. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating
+        /// files</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInvalidationForDistributionTenant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateInvalidationForDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.BatchTooLargeException">
+        /// Invalidation batch specified is too large.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyInvalidationsInProgressException">
+        /// You have exceeded the maximum number of allowable InProgress invalidation batch requests,
+        /// or invalidation objects.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateInvalidationForDistributionTenant">REST API Reference for CreateInvalidationForDistributionTenant Operation</seealso>
+        Task<CreateInvalidationForDistributionTenantResponse> CreateInvalidationForDistributionTenantAsync(CreateInvalidationForDistributionTenantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2057,6 +2246,42 @@ namespace Amazon.CloudFront
 
         #endregion
                 
+        #region  DeleteConnectionGroup
+
+
+
+        /// <summary>
+        /// Deletes a connection group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConnectionGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceNotDisabledException">
+        /// The specified CloudFront resource hasn't been disabled yet.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteConnectionGroup">REST API Reference for DeleteConnectionGroup Operation</seealso>
+        Task<DeleteConnectionGroupResponse> DeleteConnectionGroupAsync(DeleteConnectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteContinuousDeploymentPolicy
 
 
@@ -2128,6 +2353,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
+        /// Cannot delete this resource because it is in use.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         Task<DeleteDistributionResponse> DeleteDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -2158,8 +2386,51 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
+        /// Cannot delete this resource because it is in use.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         Task<DeleteDistributionResponse> DeleteDistributionAsync(DeleteDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteDistributionTenant
+
+
+
+        /// <summary>
+        /// Deletes a distribution tenant. If you use this API operation to delete a distribution
+        /// tenant that is currently enabled, the request will fail.
+        /// 
+        ///  
+        /// <para>
+        /// To delete a distribution tenant, you must first disable the distribution tenant by
+        /// using the <c>UpdateDistributionTenant</c> API operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDistributionTenant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceNotDisabledException">
+        /// The specified CloudFront resource hasn't been disabled yet.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistributionTenant">REST API Reference for DeleteDistributionTenant Operation</seealso>
+        Task<DeleteDistributionTenantResponse> DeleteDistributionTenantAsync(DeleteDistributionTenantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2872,6 +3143,72 @@ namespace Amazon.CloudFront
 
         #endregion
                 
+        #region  DisassociateDistributionTenantWebACL
+
+
+
+        /// <summary>
+        /// Disassociates a distribution tenant from the WAF web ACL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDistributionTenantWebACL service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateDistributionTenantWebACL service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DisassociateDistributionTenantWebACL">REST API Reference for DisassociateDistributionTenantWebACL Operation</seealso>
+        Task<DisassociateDistributionTenantWebACLResponse> DisassociateDistributionTenantWebACLAsync(DisassociateDistributionTenantWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DisassociateDistributionWebACL
+
+
+
+        /// <summary>
+        /// Disassociates a distribution from the WAF web ACL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDistributionWebACL service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateDistributionWebACL service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DisassociateDistributionWebACL">REST API Reference for DisassociateDistributionWebACL Operation</seealso>
+        Task<DisassociateDistributionWebACLResponse> DisassociateDistributionWebACLAsync(DisassociateDistributionWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetAnycastIpList
 
 
@@ -3058,6 +3395,54 @@ namespace Amazon.CloudFront
 
         #endregion
                 
+        #region  GetConnectionGroup
+
+
+
+        /// <summary>
+        /// Gets information about a connection group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConnectionGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionGroup">REST API Reference for GetConnectionGroup Operation</seealso>
+        Task<GetConnectionGroupResponse> GetConnectionGroupAsync(GetConnectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetConnectionGroupByRoutingEndpoint
+
+
+
+        /// <summary>
+        /// Gets information about a connection group by using the endpoint that you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectionGroupByRoutingEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConnectionGroupByRoutingEndpoint service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionGroupByRoutingEndpoint">REST API Reference for GetConnectionGroupByRoutingEndpoint Operation</seealso>
+        Task<GetConnectionGroupByRoutingEndpointResponse> GetConnectionGroupByRoutingEndpointAsync(GetConnectionGroupByRoutingEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetContinuousDeploymentPolicy
 
 
@@ -3188,6 +3573,54 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
         Task<GetDistributionConfigResponse> GetDistributionConfigAsync(GetDistributionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetDistributionTenant
+
+
+
+        /// <summary>
+        /// Gets information about a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDistributionTenant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionTenant">REST API Reference for GetDistributionTenant Operation</seealso>
+        Task<GetDistributionTenantResponse> GetDistributionTenantAsync(GetDistributionTenantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetDistributionTenantByDomain
+
+
+
+        /// <summary>
+        /// Gets information about a distribution tenant by the associated domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDistributionTenantByDomain service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDistributionTenantByDomain service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionTenantByDomain">REST API Reference for GetDistributionTenantByDomain Operation</seealso>
+        Task<GetDistributionTenantByDomainResponse> GetDistributionTenantByDomainAsync(GetDistributionTenantByDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3345,6 +3778,33 @@ namespace Amazon.CloudFront
 
         #endregion
                 
+        #region  GetInvalidationForDistributionTenant
+
+
+
+        /// <summary>
+        /// Gets information about a specific invalidation for a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvalidationForDistributionTenant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInvalidationForDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchInvalidationException">
+        /// The specified invalidation does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetInvalidationForDistributionTenant">REST API Reference for GetInvalidationForDistributionTenant Operation</seealso>
+        Task<GetInvalidationForDistributionTenantResponse> GetInvalidationForDistributionTenantAsync(GetInvalidationForDistributionTenantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetKeyGroup
 
 
@@ -3401,6 +3861,30 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetKeyGroupConfig">REST API Reference for GetKeyGroupConfig Operation</seealso>
         Task<GetKeyGroupConfigResponse> GetKeyGroupConfigAsync(GetKeyGroupConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetManagedCertificateDetails
+
+
+
+        /// <summary>
+        /// Gets details about the CloudFront managed ACM certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedCertificateDetails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetManagedCertificateDetails service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetManagedCertificateDetails">REST API Reference for GetManagedCertificateDetails Operation</seealso>
+        Task<GetManagedCertificateDetailsResponse> GetManagedCertificateDetailsAsync(GetManagedCertificateDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3984,6 +4468,33 @@ namespace Amazon.CloudFront
 
         #endregion
                 
+        #region  ListConnectionGroups
+
+
+
+        /// <summary>
+        /// Lists the connection groups in your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectionGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConnectionGroups service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConnectionGroups">REST API Reference for ListConnectionGroups Operation</seealso>
+        Task<ListConnectionGroupsResponse> ListConnectionGroupsAsync(ListConnectionGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListContinuousDeploymentPolicies
 
 
@@ -4120,6 +4631,30 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByCachePolicyId">REST API Reference for ListDistributionsByCachePolicyId Operation</seealso>
         Task<ListDistributionsByCachePolicyIdResponse> ListDistributionsByCachePolicyIdAsync(ListDistributionsByCachePolicyIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDistributionsByConnectionMode
+
+
+
+        /// <summary>
+        /// Lists the distributions by the connection mode that you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByConnectionMode service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDistributionsByConnectionMode service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByConnectionMode">REST API Reference for ListDistributionsByConnectionMode Operation</seealso>
+        Task<ListDistributionsByConnectionModeResponse> ListDistributionsByConnectionModeAsync(ListDistributionsByConnectionModeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -4324,6 +4859,99 @@ namespace Amazon.CloudFront
 
         #endregion
                 
+        #region  ListDistributionTenants
+
+
+
+        /// <summary>
+        /// Lists the distribution tenants in your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionTenants service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDistributionTenants service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionTenants">REST API Reference for ListDistributionTenants Operation</seealso>
+        Task<ListDistributionTenantsResponse> ListDistributionTenantsAsync(ListDistributionTenantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDistributionTenantsByCustomization
+
+
+
+        /// <summary>
+        /// Lists distribution tenants by the customization that you specify.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify either the <c>CertificateArn</c> parameter or <c>WebACLArn</c> parameter,
+        /// but not both in the same request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionTenantsByCustomization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDistributionTenantsByCustomization service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionTenantsByCustomization">REST API Reference for ListDistributionTenantsByCustomization Operation</seealso>
+        Task<ListDistributionTenantsByCustomizationResponse> ListDistributionTenantsByCustomizationAsync(ListDistributionTenantsByCustomizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDomainConflicts
+
+
+
+        /// <summary>
+        /// Lists existing domain associations that conflict with the domain that you specify.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this API operation when transferring domains to identify potential domain
+        /// conflicts. Domain conflicts must be resolved first before they can be moved.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainConflicts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDomainConflicts service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDomainConflicts">REST API Reference for ListDomainConflicts Operation</seealso>
+        Task<ListDomainConflictsResponse> ListDomainConflictsAsync(ListDomainConflictsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListFieldLevelEncryptionConfigs
 
 
@@ -4430,6 +5058,33 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
         Task<ListInvalidationsResponse> ListInvalidationsAsync(ListInvalidationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListInvalidationsForDistributionTenant
+
+
+
+        /// <summary>
+        /// Lists the invalidations for a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvalidationsForDistributionTenant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInvalidationsForDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListInvalidationsForDistributionTenant">REST API Reference for ListInvalidationsForDistributionTenant Operation</seealso>
+        Task<ListInvalidationsForDistributionTenantResponse> ListInvalidationsForDistributionTenantAsync(ListInvalidationsForDistributionTenantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -5044,6 +5699,48 @@ namespace Amazon.CloudFront
 
         #endregion
                 
+        #region  UpdateConnectionGroup
+
+
+
+        /// <summary>
+        /// Updates a connection group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConnectionGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
+        /// Cannot delete this resource because it is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateConnectionGroup">REST API Reference for UpdateConnectionGroup Operation</seealso>
+        Task<UpdateConnectionGroupResponse> UpdateConnectionGroupAsync(UpdateConnectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateContinuousDeploymentPolicy
 
 
@@ -5410,6 +6107,51 @@ namespace Amazon.CloudFront
 
         #endregion
                 
+        #region  UpdateDistributionTenant
+
+
+
+        /// <summary>
+        /// Updates a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDistributionTenant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidAssociationException">
+        /// The specified CloudFront resource can't be associated.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistributionTenant">REST API Reference for UpdateDistributionTenant Operation</seealso>
+        Task<UpdateDistributionTenantResponse> UpdateDistributionTenantAsync(UpdateDistributionTenantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateDistributionWithStagingConfig
 
 
@@ -5681,6 +6423,42 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistributionWithStagingConfig">REST API Reference for UpdateDistributionWithStagingConfig Operation</seealso>
         Task<UpdateDistributionWithStagingConfigResponse> UpdateDistributionWithStagingConfigAsync(UpdateDistributionWithStagingConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateDomainAssociation
+
+
+
+        /// <summary>
+        /// Moves a domain from its current distribution or distribution tenant to another one.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDomainAssociation service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDomainAssociation">REST API Reference for UpdateDomainAssociation Operation</seealso>
+        Task<UpdateDomainAssociationResponse> UpdateDomainAssociationAsync(UpdateDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -6347,6 +7125,36 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateVpcOrigin">REST API Reference for UpdateVpcOrigin Operation</seealso>
         Task<UpdateVpcOriginResponse> UpdateVpcOriginAsync(UpdateVpcOriginRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  VerifyDnsConfiguration
+
+
+
+        /// <summary>
+        /// Verify the DNS configuration for your domain names. This API operation checks whether
+        /// your domain name points to the correct routing endpoint of the connection group, such
+        /// as d111111abcdef8.cloudfront.net. You can use this API operation to troubleshoot and
+        /// resolve DNS configuration issues.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyDnsConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the VerifyDnsConfiguration service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/VerifyDnsConfiguration">REST API Reference for VerifyDnsConfiguration Operation</seealso>
+        Task<VerifyDnsConfigurationResponse> VerifyDnsConfigurationAsync(VerifyDnsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

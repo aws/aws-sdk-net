@@ -45,6 +45,14 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
+        /// Paginator for ListConnectionGroups operation
+        ///</summary>
+        public IListConnectionGroupsPaginator ListConnectionGroups(ListConnectionGroupsRequest request) 
+        {
+            return new ListConnectionGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDistributions operation
         ///</summary>
         public IListDistributionsPaginator ListDistributions(ListDistributionsRequest request) 
@@ -53,11 +61,51 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
+        /// Paginator for ListDistributionsByConnectionMode operation
+        ///</summary>
+        public IListDistributionsByConnectionModePaginator ListDistributionsByConnectionMode(ListDistributionsByConnectionModeRequest request) 
+        {
+            return new ListDistributionsByConnectionModePaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDistributionTenants operation
+        ///</summary>
+        public IListDistributionTenantsPaginator ListDistributionTenants(ListDistributionTenantsRequest request) 
+        {
+            return new ListDistributionTenantsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDistributionTenantsByCustomization operation
+        ///</summary>
+        public IListDistributionTenantsByCustomizationPaginator ListDistributionTenantsByCustomization(ListDistributionTenantsByCustomizationRequest request) 
+        {
+            return new ListDistributionTenantsByCustomizationPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDomainConflicts operation
+        ///</summary>
+        public IListDomainConflictsPaginator ListDomainConflicts(ListDomainConflictsRequest request) 
+        {
+            return new ListDomainConflictsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListInvalidations operation
         ///</summary>
         public IListInvalidationsPaginator ListInvalidations(ListInvalidationsRequest request) 
         {
             return new ListInvalidationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListInvalidationsForDistributionTenant operation
+        ///</summary>
+        public IListInvalidationsForDistributionTenantPaginator ListInvalidationsForDistributionTenant(ListInvalidationsForDistributionTenantRequest request) 
+        {
+            return new ListInvalidationsForDistributionTenantPaginator(this.client, request);
         }
 
         /// <summary>

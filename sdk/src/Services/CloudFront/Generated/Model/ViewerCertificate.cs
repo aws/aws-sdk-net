@@ -333,7 +333,7 @@ namespace Amazon.CloudFront.Model
         ///  <c>static-ip</c> - Do not specify this value unless your distribution has been enabled
         /// for this feature by the CloudFront team. If you have a use case that requires static
         /// IP addresses for a distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon
-        /// Web ServicesSupport Center</a>.
+        /// Web Services Support Center</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

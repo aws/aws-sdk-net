@@ -7,6 +7,10 @@
     <pattern>[a-zA-Z0-9-_]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFront.Model.CreateDistributionTenantRequest.Name</property>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-.]{1,126}[a-zA-Z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFront.Model.CreateFunctionRequest.FunctionCode</property>
     <min>1</min>
     <max>40960</max>
@@ -129,9 +133,31 @@
     <pattern>[a-z]{2}-[a-z]+-\d</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFront.Model.Parameter.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFront.Model.Parameter.Value</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFront.Model.ParameterDefinition.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFront.Model.ResponseHeadersPolicyServerTimingHeadersConfig.SamplingRate</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFront.Model.StringSchemaConfig.DefaultValue</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFront.Model.Tag.Key</property>

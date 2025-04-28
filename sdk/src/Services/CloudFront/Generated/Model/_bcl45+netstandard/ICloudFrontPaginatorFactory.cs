@@ -38,6 +38,16 @@ namespace Amazon.CloudFront.Model
         IListCloudFrontOriginAccessIdentitiesPaginator ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request);
 
         /// <summary>
+        /// Paginator for ListConnectionGroups operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
+        IListConnectionGroupsPaginator ListConnectionGroups(ListConnectionGroupsRequest request);
+
+        /// <summary>
         /// Paginator for ListDistributions operation
         ///</summary>
         [AWSPaginator(
@@ -48,6 +58,46 @@ namespace Amazon.CloudFront.Model
         IListDistributionsPaginator ListDistributions(ListDistributionsRequest request);
 
         /// <summary>
+        /// Paginator for ListDistributionsByConnectionMode operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "DistributionList.NextMarker" }
+        )]
+        IListDistributionsByConnectionModePaginator ListDistributionsByConnectionMode(ListDistributionsByConnectionModeRequest request);
+
+        /// <summary>
+        /// Paginator for ListDistributionTenants operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
+        IListDistributionTenantsPaginator ListDistributionTenants(ListDistributionTenantsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDistributionTenantsByCustomization operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
+        IListDistributionTenantsByCustomizationPaginator ListDistributionTenantsByCustomization(ListDistributionTenantsByCustomizationRequest request);
+
+        /// <summary>
+        /// Paginator for ListDomainConflicts operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
+        IListDomainConflictsPaginator ListDomainConflicts(ListDomainConflictsRequest request);
+
+        /// <summary>
         /// Paginator for ListInvalidations operation
         ///</summary>
         [AWSPaginator(
@@ -56,6 +106,16 @@ namespace Amazon.CloudFront.Model
             OutputToken = new[] { "InvalidationList.NextMarker" }
         )]
         IListInvalidationsPaginator ListInvalidations(ListInvalidationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListInvalidationsForDistributionTenant operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "InvalidationList.NextMarker" }
+        )]
+        IListInvalidationsForDistributionTenantPaginator ListInvalidationsForDistributionTenant(ListInvalidationsForDistributionTenantRequest request);
 
         /// <summary>
         /// Paginator for ListKeyValueStores operation

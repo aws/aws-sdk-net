@@ -388,6 +388,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         if(publicRequest.DistributionConfigWithTags.DistributionConfig.IsSetComment())
                             xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.DistributionConfigWithTags.DistributionConfig.Comment));                 
 
+                        if(publicRequest.DistributionConfigWithTags.DistributionConfig.IsSetConnectionMode())
+                            xmlWriter.WriteElementString("ConnectionMode", StringUtils.FromString(publicRequest.DistributionConfigWithTags.DistributionConfig.ConnectionMode));                 
+
                         if(publicRequest.DistributionConfigWithTags.DistributionConfig.IsSetContinuousDeploymentPolicyId())
                             xmlWriter.WriteElementString("ContinuousDeploymentPolicyId", StringUtils.FromString(publicRequest.DistributionConfigWithTags.DistributionConfig.ContinuousDeploymentPolicyId));                 
 
@@ -977,6 +980,47 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         if(publicRequest.DistributionConfigWithTags.DistributionConfig.IsSetStaging())
                             xmlWriter.WriteElementString("Staging", StringUtils.FromBool(publicRequest.DistributionConfigWithTags.DistributionConfig.Staging));                 
 
+                        if (publicRequest.DistributionConfigWithTags.DistributionConfig.TenantConfig != null)
+                        {
+                            xmlWriter.WriteStartElement("TenantConfig");
+                            var publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitions = publicRequest.DistributionConfigWithTags.DistributionConfig.TenantConfig.ParameterDefinitions;
+                            if (publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitions != null && (publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitions.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            {
+                                xmlWriter.WriteStartElement("ParameterDefinitions");
+                                foreach (var publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue in publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitions) 
+                                {
+                                if (publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue != null)
+                                {
+                                    xmlWriter.WriteStartElement("member");
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition != null)
+                                    {
+                                        xmlWriter.WriteStartElement("Definition");
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema != null)
+                                        {
+                                            xmlWriter.WriteStartElement("StringSchema");
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.IsSetComment())
+                                                xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.Comment));                 
+
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.IsSetDefaultValue())
+                                                xmlWriter.WriteElementString("DefaultValue", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.DefaultValue));                 
+
+                                            if(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.IsSetRequired())
+                                                xmlWriter.WriteElementString("Required", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Definition.StringSchema.Required));                 
+
+                                            xmlWriter.WriteEndElement();
+                                        }
+                                        xmlWriter.WriteEndElement();
+                                    }
+                                    if(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.IsSetName())
+                                        xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigTenantConfigParameterDefinitionsValue.Name));                 
+
+                                    xmlWriter.WriteEndElement();
+                                }
+                                }            
+                                xmlWriter.WriteEndElement();            
+                            }
+                            xmlWriter.WriteEndElement();
+                        }
                         if (publicRequest.DistributionConfigWithTags.DistributionConfig.ViewerCertificate != null)
                         {
                             xmlWriter.WriteStartElement("ViewerCertificate");

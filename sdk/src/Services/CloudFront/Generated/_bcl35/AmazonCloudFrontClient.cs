@@ -359,6 +359,144 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  AssociateDistributionTenantWebACL
+
+        /// <summary>
+        /// Associates the WAF web ACL with a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDistributionTenantWebACL service method.</param>
+        /// 
+        /// <returns>The response from the AssociateDistributionTenantWebACL service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateDistributionTenantWebACL">REST API Reference for AssociateDistributionTenantWebACL Operation</seealso>
+        public virtual AssociateDistributionTenantWebACLResponse AssociateDistributionTenantWebACL(AssociateDistributionTenantWebACLRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateDistributionTenantWebACLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDistributionTenantWebACLResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateDistributionTenantWebACLResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateDistributionTenantWebACL operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDistributionTenantWebACL operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateDistributionTenantWebACL
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateDistributionTenantWebACL">REST API Reference for AssociateDistributionTenantWebACL Operation</seealso>
+        public virtual IAsyncResult BeginAssociateDistributionTenantWebACL(AssociateDistributionTenantWebACLRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateDistributionTenantWebACLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDistributionTenantWebACLResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateDistributionTenantWebACL operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateDistributionTenantWebACL.</param>
+        /// 
+        /// <returns>Returns a  AssociateDistributionTenantWebACLResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateDistributionTenantWebACL">REST API Reference for AssociateDistributionTenantWebACL Operation</seealso>
+        public virtual AssociateDistributionTenantWebACLResponse EndAssociateDistributionTenantWebACL(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateDistributionTenantWebACLResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AssociateDistributionWebACL
+
+        /// <summary>
+        /// Associates the WAF web ACL with a distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDistributionWebACL service method.</param>
+        /// 
+        /// <returns>The response from the AssociateDistributionWebACL service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateDistributionWebACL">REST API Reference for AssociateDistributionWebACL Operation</seealso>
+        public virtual AssociateDistributionWebACLResponse AssociateDistributionWebACL(AssociateDistributionWebACLRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateDistributionWebACLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDistributionWebACLResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateDistributionWebACLResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateDistributionWebACL operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDistributionWebACL operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateDistributionWebACL
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateDistributionWebACL">REST API Reference for AssociateDistributionWebACL Operation</seealso>
+        public virtual IAsyncResult BeginAssociateDistributionWebACL(AssociateDistributionWebACLRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateDistributionWebACLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDistributionWebACLResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateDistributionWebACL operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateDistributionWebACL.</param>
+        /// 
+        /// <returns>Returns a  AssociateDistributionWebACLResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateDistributionWebACL">REST API Reference for AssociateDistributionWebACL Operation</seealso>
+        public virtual AssociateDistributionWebACLResponse EndAssociateDistributionWebACL(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateDistributionWebACLResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CopyDistribution
 
         /// <summary>
@@ -945,6 +1083,78 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  CreateConnectionGroup
+
+        /// <summary>
+        /// Creates a connection group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectionGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnectionGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateConnectionGroup">REST API Reference for CreateConnectionGroup Operation</seealso>
+        public virtual CreateConnectionGroupResponse CreateConnectionGroup(CreateConnectionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConnectionGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConnectionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectionGroup operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConnectionGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateConnectionGroup">REST API Reference for CreateConnectionGroup Operation</seealso>
+        public virtual IAsyncResult BeginCreateConnectionGroup(CreateConnectionGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectionGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateConnectionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConnectionGroup.</param>
+        /// 
+        /// <returns>Returns a  CreateConnectionGroupResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateConnectionGroup">REST API Reference for CreateConnectionGroup Operation</seealso>
+        public virtual CreateConnectionGroupResponse EndCreateConnectionGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateConnectionGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateContinuousDeploymentPolicy
 
         /// <summary>
@@ -1054,6 +1264,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
         /// The caller reference you attempted to create the distribution with is associated with
         /// another distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
         /// The entity was not found.
@@ -1327,6 +1540,84 @@ namespace Amazon.CloudFront
         public virtual CreateDistributionResponse EndCreateDistribution(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDistributionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateDistributionTenant
+
+        /// <summary>
+        /// Creates a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDistributionTenant service method.</param>
+        /// 
+        /// <returns>The response from the CreateDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidAssociationException">
+        /// The specified CloudFront resource can't be associated.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionTenant">REST API Reference for CreateDistributionTenant Operation</seealso>
+        public virtual CreateDistributionTenantResponse CreateDistributionTenant(CreateDistributionTenantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDistributionTenantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDistributionTenantResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDistributionTenantResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDistributionTenant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDistributionTenant operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDistributionTenant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionTenant">REST API Reference for CreateDistributionTenant Operation</seealso>
+        public virtual IAsyncResult BeginCreateDistributionTenant(CreateDistributionTenantRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDistributionTenantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDistributionTenantResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDistributionTenant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDistributionTenant.</param>
+        /// 
+        /// <returns>Returns a  CreateDistributionTenantResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionTenant">REST API Reference for CreateDistributionTenant Operation</seealso>
+        public virtual CreateDistributionTenantResponse EndCreateDistributionTenant(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDistributionTenantResponse>(asyncResult);
         }
 
         #endregion
@@ -1968,6 +2259,84 @@ namespace Amazon.CloudFront
         public virtual CreateInvalidationResponse EndCreateInvalidation(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateInvalidationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateInvalidationForDistributionTenant
+
+        /// <summary>
+        /// Creates an invalidation for a distribution tenant. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating
+        /// files</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInvalidationForDistributionTenant service method.</param>
+        /// 
+        /// <returns>The response from the CreateInvalidationForDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.BatchTooLargeException">
+        /// Invalidation batch specified is too large.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyInvalidationsInProgressException">
+        /// You have exceeded the maximum number of allowable InProgress invalidation batch requests,
+        /// or invalidation objects.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateInvalidationForDistributionTenant">REST API Reference for CreateInvalidationForDistributionTenant Operation</seealso>
+        public virtual CreateInvalidationForDistributionTenantResponse CreateInvalidationForDistributionTenant(CreateInvalidationForDistributionTenantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInvalidationForDistributionTenantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInvalidationForDistributionTenantResponseUnmarshaller.Instance;
+
+            return Invoke<CreateInvalidationForDistributionTenantResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateInvalidationForDistributionTenant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateInvalidationForDistributionTenant operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInvalidationForDistributionTenant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateInvalidationForDistributionTenant">REST API Reference for CreateInvalidationForDistributionTenant Operation</seealso>
+        public virtual IAsyncResult BeginCreateInvalidationForDistributionTenant(CreateInvalidationForDistributionTenantRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInvalidationForDistributionTenantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInvalidationForDistributionTenantResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateInvalidationForDistributionTenant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInvalidationForDistributionTenant.</param>
+        /// 
+        /// <returns>Returns a  CreateInvalidationForDistributionTenantResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateInvalidationForDistributionTenant">REST API Reference for CreateInvalidationForDistributionTenant Operation</seealso>
+        public virtual CreateInvalidationForDistributionTenantResponse EndCreateInvalidationForDistributionTenant(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateInvalidationForDistributionTenantResponse>(asyncResult);
         }
 
         #endregion
@@ -3213,6 +3582,78 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  DeleteConnectionGroup
+
+        /// <summary>
+        /// Deletes a connection group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectionGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnectionGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceNotDisabledException">
+        /// The specified CloudFront resource hasn't been disabled yet.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteConnectionGroup">REST API Reference for DeleteConnectionGroup Operation</seealso>
+        public virtual DeleteConnectionGroupResponse DeleteConnectionGroup(DeleteConnectionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConnectionGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConnectionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectionGroup operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConnectionGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteConnectionGroup">REST API Reference for DeleteConnectionGroup Operation</seealso>
+        public virtual IAsyncResult BeginDeleteConnectionGroup(DeleteConnectionGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectionGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConnectionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConnectionGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteConnectionGroupResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteConnectionGroup">REST API Reference for DeleteConnectionGroup Operation</seealso>
+        public virtual DeleteConnectionGroupResponse EndDeleteConnectionGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteConnectionGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteContinuousDeploymentPolicy
 
         /// <summary>
@@ -3316,6 +3757,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
+        /// Cannot delete this resource because it is in use.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         public virtual DeleteDistributionResponse DeleteDistribution()
         {
@@ -3343,6 +3787,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
+        /// Cannot delete this resource because it is in use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         public virtual DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request)
@@ -3386,6 +3833,82 @@ namespace Amazon.CloudFront
         public virtual DeleteDistributionResponse EndDeleteDistribution(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDistributionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteDistributionTenant
+
+        /// <summary>
+        /// Deletes a distribution tenant. If you use this API operation to delete a distribution
+        /// tenant that is currently enabled, the request will fail.
+        /// 
+        ///  
+        /// <para>
+        /// To delete a distribution tenant, you must first disable the distribution tenant by
+        /// using the <c>UpdateDistributionTenant</c> API operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDistributionTenant service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceNotDisabledException">
+        /// The specified CloudFront resource hasn't been disabled yet.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistributionTenant">REST API Reference for DeleteDistributionTenant Operation</seealso>
+        public virtual DeleteDistributionTenantResponse DeleteDistributionTenant(DeleteDistributionTenantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDistributionTenantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDistributionTenantResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDistributionTenantResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDistributionTenant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDistributionTenant operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDistributionTenant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistributionTenant">REST API Reference for DeleteDistributionTenant Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDistributionTenant(DeleteDistributionTenantRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDistributionTenantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDistributionTenantResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDistributionTenant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDistributionTenant.</param>
+        /// 
+        /// <returns>Returns a  DeleteDistributionTenantResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistributionTenant">REST API Reference for DeleteDistributionTenant Operation</seealso>
+        public virtual DeleteDistributionTenantResponse EndDeleteDistributionTenant(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDistributionTenantResponse>(asyncResult);
         }
 
         #endregion
@@ -4638,6 +5161,144 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  DisassociateDistributionTenantWebACL
+
+        /// <summary>
+        /// Disassociates a distribution tenant from the WAF web ACL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDistributionTenantWebACL service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateDistributionTenantWebACL service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DisassociateDistributionTenantWebACL">REST API Reference for DisassociateDistributionTenantWebACL Operation</seealso>
+        public virtual DisassociateDistributionTenantWebACLResponse DisassociateDistributionTenantWebACL(DisassociateDistributionTenantWebACLRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateDistributionTenantWebACLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateDistributionTenantWebACLResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateDistributionTenantWebACLResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateDistributionTenantWebACL operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDistributionTenantWebACL operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateDistributionTenantWebACL
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DisassociateDistributionTenantWebACL">REST API Reference for DisassociateDistributionTenantWebACL Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateDistributionTenantWebACL(DisassociateDistributionTenantWebACLRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateDistributionTenantWebACLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateDistributionTenantWebACLResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateDistributionTenantWebACL operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateDistributionTenantWebACL.</param>
+        /// 
+        /// <returns>Returns a  DisassociateDistributionTenantWebACLResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DisassociateDistributionTenantWebACL">REST API Reference for DisassociateDistributionTenantWebACL Operation</seealso>
+        public virtual DisassociateDistributionTenantWebACLResponse EndDisassociateDistributionTenantWebACL(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateDistributionTenantWebACLResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateDistributionWebACL
+
+        /// <summary>
+        /// Disassociates a distribution from the WAF web ACL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDistributionWebACL service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateDistributionWebACL service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DisassociateDistributionWebACL">REST API Reference for DisassociateDistributionWebACL Operation</seealso>
+        public virtual DisassociateDistributionWebACLResponse DisassociateDistributionWebACL(DisassociateDistributionWebACLRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateDistributionWebACLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateDistributionWebACLResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateDistributionWebACLResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateDistributionWebACL operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDistributionWebACL operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateDistributionWebACL
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DisassociateDistributionWebACL">REST API Reference for DisassociateDistributionWebACL Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateDistributionWebACL(DisassociateDistributionWebACLRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateDistributionWebACLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateDistributionWebACLResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateDistributionWebACL operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateDistributionWebACL.</param>
+        /// 
+        /// <returns>Returns a  DisassociateDistributionWebACLResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DisassociateDistributionWebACL">REST API Reference for DisassociateDistributionWebACL Operation</seealso>
+        public virtual DisassociateDistributionWebACLResponse EndDisassociateDistributionWebACL(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateDistributionWebACLResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetAnycastIpList
 
         /// <summary>
@@ -5002,6 +5663,126 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  GetConnectionGroup
+
+        /// <summary>
+        /// Gets information about a connection group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectionGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetConnectionGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionGroup">REST API Reference for GetConnectionGroup Operation</seealso>
+        public virtual GetConnectionGroupResponse GetConnectionGroup(GetConnectionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetConnectionGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConnectionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectionGroup operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConnectionGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionGroup">REST API Reference for GetConnectionGroup Operation</seealso>
+        public virtual IAsyncResult BeginGetConnectionGroup(GetConnectionGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectionGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetConnectionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConnectionGroup.</param>
+        /// 
+        /// <returns>Returns a  GetConnectionGroupResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionGroup">REST API Reference for GetConnectionGroup Operation</seealso>
+        public virtual GetConnectionGroupResponse EndGetConnectionGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetConnectionGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetConnectionGroupByRoutingEndpoint
+
+        /// <summary>
+        /// Gets information about a connection group by using the endpoint that you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectionGroupByRoutingEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the GetConnectionGroupByRoutingEndpoint service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionGroupByRoutingEndpoint">REST API Reference for GetConnectionGroupByRoutingEndpoint Operation</seealso>
+        public virtual GetConnectionGroupByRoutingEndpointResponse GetConnectionGroupByRoutingEndpoint(GetConnectionGroupByRoutingEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectionGroupByRoutingEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectionGroupByRoutingEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<GetConnectionGroupByRoutingEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConnectionGroupByRoutingEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectionGroupByRoutingEndpoint operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConnectionGroupByRoutingEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionGroupByRoutingEndpoint">REST API Reference for GetConnectionGroupByRoutingEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginGetConnectionGroupByRoutingEndpoint(GetConnectionGroupByRoutingEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectionGroupByRoutingEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectionGroupByRoutingEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetConnectionGroupByRoutingEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConnectionGroupByRoutingEndpoint.</param>
+        /// 
+        /// <returns>Returns a  GetConnectionGroupByRoutingEndpointResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionGroupByRoutingEndpoint">REST API Reference for GetConnectionGroupByRoutingEndpoint Operation</seealso>
+        public virtual GetConnectionGroupByRoutingEndpointResponse EndGetConnectionGroupByRoutingEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetConnectionGroupByRoutingEndpointResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetContinuousDeploymentPolicy
 
         /// <summary>
@@ -5273,6 +6054,126 @@ namespace Amazon.CloudFront
         public virtual GetDistributionConfigResponse EndGetDistributionConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDistributionConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDistributionTenant
+
+        /// <summary>
+        /// Gets information about a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDistributionTenant service method.</param>
+        /// 
+        /// <returns>The response from the GetDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionTenant">REST API Reference for GetDistributionTenant Operation</seealso>
+        public virtual GetDistributionTenantResponse GetDistributionTenant(GetDistributionTenantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDistributionTenantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDistributionTenantResponseUnmarshaller.Instance;
+
+            return Invoke<GetDistributionTenantResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDistributionTenant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDistributionTenant operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDistributionTenant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionTenant">REST API Reference for GetDistributionTenant Operation</seealso>
+        public virtual IAsyncResult BeginGetDistributionTenant(GetDistributionTenantRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDistributionTenantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDistributionTenantResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDistributionTenant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDistributionTenant.</param>
+        /// 
+        /// <returns>Returns a  GetDistributionTenantResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionTenant">REST API Reference for GetDistributionTenant Operation</seealso>
+        public virtual GetDistributionTenantResponse EndGetDistributionTenant(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDistributionTenantResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDistributionTenantByDomain
+
+        /// <summary>
+        /// Gets information about a distribution tenant by the associated domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDistributionTenantByDomain service method.</param>
+        /// 
+        /// <returns>The response from the GetDistributionTenantByDomain service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionTenantByDomain">REST API Reference for GetDistributionTenantByDomain Operation</seealso>
+        public virtual GetDistributionTenantByDomainResponse GetDistributionTenantByDomain(GetDistributionTenantByDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDistributionTenantByDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDistributionTenantByDomainResponseUnmarshaller.Instance;
+
+            return Invoke<GetDistributionTenantByDomainResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDistributionTenantByDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDistributionTenantByDomain operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDistributionTenantByDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionTenantByDomain">REST API Reference for GetDistributionTenantByDomain Operation</seealso>
+        public virtual IAsyncResult BeginGetDistributionTenantByDomain(GetDistributionTenantByDomainRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDistributionTenantByDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDistributionTenantByDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDistributionTenantByDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDistributionTenantByDomain.</param>
+        /// 
+        /// <returns>Returns a  GetDistributionTenantByDomainResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionTenantByDomain">REST API Reference for GetDistributionTenantByDomain Operation</seealso>
+        public virtual GetDistributionTenantByDomainResponse EndGetDistributionTenantByDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDistributionTenantByDomainResponse>(asyncResult);
         }
 
         #endregion
@@ -5647,6 +6548,69 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  GetInvalidationForDistributionTenant
+
+        /// <summary>
+        /// Gets information about a specific invalidation for a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvalidationForDistributionTenant service method.</param>
+        /// 
+        /// <returns>The response from the GetInvalidationForDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchInvalidationException">
+        /// The specified invalidation does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetInvalidationForDistributionTenant">REST API Reference for GetInvalidationForDistributionTenant Operation</seealso>
+        public virtual GetInvalidationForDistributionTenantResponse GetInvalidationForDistributionTenant(GetInvalidationForDistributionTenantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInvalidationForDistributionTenantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInvalidationForDistributionTenantResponseUnmarshaller.Instance;
+
+            return Invoke<GetInvalidationForDistributionTenantResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInvalidationForDistributionTenant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInvalidationForDistributionTenant operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInvalidationForDistributionTenant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetInvalidationForDistributionTenant">REST API Reference for GetInvalidationForDistributionTenant Operation</seealso>
+        public virtual IAsyncResult BeginGetInvalidationForDistributionTenant(GetInvalidationForDistributionTenantRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInvalidationForDistributionTenantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInvalidationForDistributionTenantResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetInvalidationForDistributionTenant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInvalidationForDistributionTenant.</param>
+        /// 
+        /// <returns>Returns a  GetInvalidationForDistributionTenantResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetInvalidationForDistributionTenant">REST API Reference for GetInvalidationForDistributionTenant Operation</seealso>
+        public virtual GetInvalidationForDistributionTenantResponse EndGetInvalidationForDistributionTenant(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetInvalidationForDistributionTenantResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetKeyGroup
 
         /// <summary>
@@ -5774,6 +6738,66 @@ namespace Amazon.CloudFront
         public virtual GetKeyGroupConfigResponse EndGetKeyGroupConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<GetKeyGroupConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetManagedCertificateDetails
+
+        /// <summary>
+        /// Gets details about the CloudFront managed ACM certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedCertificateDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetManagedCertificateDetails service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetManagedCertificateDetails">REST API Reference for GetManagedCertificateDetails Operation</seealso>
+        public virtual GetManagedCertificateDetailsResponse GetManagedCertificateDetails(GetManagedCertificateDetailsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedCertificateDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedCertificateDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<GetManagedCertificateDetailsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetManagedCertificateDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedCertificateDetails operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetManagedCertificateDetails
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetManagedCertificateDetails">REST API Reference for GetManagedCertificateDetails Operation</seealso>
+        public virtual IAsyncResult BeginGetManagedCertificateDetails(GetManagedCertificateDetailsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedCertificateDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedCertificateDetailsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetManagedCertificateDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetManagedCertificateDetails.</param>
+        /// 
+        /// <returns>Returns a  GetManagedCertificateDetailsResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetManagedCertificateDetails">REST API Reference for GetManagedCertificateDetails Operation</seealso>
+        public virtual GetManagedCertificateDetailsResponse EndGetManagedCertificateDetails(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetManagedCertificateDetailsResponse>(asyncResult);
         }
 
         #endregion
@@ -6967,6 +7991,69 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListConnectionGroups
+
+        /// <summary>
+        /// Lists the connection groups in your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectionGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListConnectionGroups service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConnectionGroups">REST API Reference for ListConnectionGroups Operation</seealso>
+        public virtual ListConnectionGroupsResponse ListConnectionGroups(ListConnectionGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConnectionGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectionGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConnectionGroupsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConnectionGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectionGroups operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConnectionGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConnectionGroups">REST API Reference for ListConnectionGroups Operation</seealso>
+        public virtual IAsyncResult BeginListConnectionGroups(ListConnectionGroupsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConnectionGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectionGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConnectionGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConnectionGroups.</param>
+        /// 
+        /// <returns>Returns a  ListConnectionGroupsResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConnectionGroups">REST API Reference for ListConnectionGroups Operation</seealso>
+        public virtual ListConnectionGroupsResponse EndListConnectionGroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListConnectionGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListContinuousDeploymentPolicies
 
         /// <summary>
@@ -7245,6 +8332,66 @@ namespace Amazon.CloudFront
         public virtual ListDistributionsByCachePolicyIdResponse EndListDistributionsByCachePolicyId(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDistributionsByCachePolicyIdResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDistributionsByConnectionMode
+
+        /// <summary>
+        /// Lists the distributions by the connection mode that you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByConnectionMode service method.</param>
+        /// 
+        /// <returns>The response from the ListDistributionsByConnectionMode service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByConnectionMode">REST API Reference for ListDistributionsByConnectionMode Operation</seealso>
+        public virtual ListDistributionsByConnectionModeResponse ListDistributionsByConnectionMode(ListDistributionsByConnectionModeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributionsByConnectionModeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionsByConnectionModeResponseUnmarshaller.Instance;
+
+            return Invoke<ListDistributionsByConnectionModeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDistributionsByConnectionMode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByConnectionMode operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDistributionsByConnectionMode
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByConnectionMode">REST API Reference for ListDistributionsByConnectionMode Operation</seealso>
+        public virtual IAsyncResult BeginListDistributionsByConnectionMode(ListDistributionsByConnectionModeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributionsByConnectionModeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionsByConnectionModeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDistributionsByConnectionMode operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDistributionsByConnectionMode.</param>
+        /// 
+        /// <returns>Returns a  ListDistributionsByConnectionModeResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByConnectionMode">REST API Reference for ListDistributionsByConnectionMode Operation</seealso>
+        public virtual ListDistributionsByConnectionModeResponse EndListDistributionsByConnectionMode(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDistributionsByConnectionModeResponse>(asyncResult);
         }
 
         #endregion
@@ -7666,6 +8813,207 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListDistributionTenants
+
+        /// <summary>
+        /// Lists the distribution tenants in your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionTenants service method.</param>
+        /// 
+        /// <returns>The response from the ListDistributionTenants service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionTenants">REST API Reference for ListDistributionTenants Operation</seealso>
+        public virtual ListDistributionTenantsResponse ListDistributionTenants(ListDistributionTenantsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributionTenantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionTenantsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDistributionTenantsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDistributionTenants operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionTenants operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDistributionTenants
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionTenants">REST API Reference for ListDistributionTenants Operation</seealso>
+        public virtual IAsyncResult BeginListDistributionTenants(ListDistributionTenantsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributionTenantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionTenantsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDistributionTenants operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDistributionTenants.</param>
+        /// 
+        /// <returns>Returns a  ListDistributionTenantsResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionTenants">REST API Reference for ListDistributionTenants Operation</seealso>
+        public virtual ListDistributionTenantsResponse EndListDistributionTenants(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDistributionTenantsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDistributionTenantsByCustomization
+
+        /// <summary>
+        /// Lists distribution tenants by the customization that you specify.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify either the <c>CertificateArn</c> parameter or <c>WebACLArn</c> parameter,
+        /// but not both in the same request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionTenantsByCustomization service method.</param>
+        /// 
+        /// <returns>The response from the ListDistributionTenantsByCustomization service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionTenantsByCustomization">REST API Reference for ListDistributionTenantsByCustomization Operation</seealso>
+        public virtual ListDistributionTenantsByCustomizationResponse ListDistributionTenantsByCustomization(ListDistributionTenantsByCustomizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributionTenantsByCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionTenantsByCustomizationResponseUnmarshaller.Instance;
+
+            return Invoke<ListDistributionTenantsByCustomizationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDistributionTenantsByCustomization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionTenantsByCustomization operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDistributionTenantsByCustomization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionTenantsByCustomization">REST API Reference for ListDistributionTenantsByCustomization Operation</seealso>
+        public virtual IAsyncResult BeginListDistributionTenantsByCustomization(ListDistributionTenantsByCustomizationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributionTenantsByCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionTenantsByCustomizationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDistributionTenantsByCustomization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDistributionTenantsByCustomization.</param>
+        /// 
+        /// <returns>Returns a  ListDistributionTenantsByCustomizationResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionTenantsByCustomization">REST API Reference for ListDistributionTenantsByCustomization Operation</seealso>
+        public virtual ListDistributionTenantsByCustomizationResponse EndListDistributionTenantsByCustomization(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDistributionTenantsByCustomizationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDomainConflicts
+
+        /// <summary>
+        /// Lists existing domain associations that conflict with the domain that you specify.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this API operation when transferring domains to identify potential domain
+        /// conflicts. Domain conflicts must be resolved first before they can be moved.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainConflicts service method.</param>
+        /// 
+        /// <returns>The response from the ListDomainConflicts service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDomainConflicts">REST API Reference for ListDomainConflicts Operation</seealso>
+        public virtual ListDomainConflictsResponse ListDomainConflicts(ListDomainConflictsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainConflictsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainConflictsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDomainConflictsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDomainConflicts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainConflicts operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDomainConflicts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDomainConflicts">REST API Reference for ListDomainConflicts Operation</seealso>
+        public virtual IAsyncResult BeginListDomainConflicts(ListDomainConflictsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainConflictsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainConflictsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDomainConflicts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDomainConflicts.</param>
+        /// 
+        /// <returns>Returns a  ListDomainConflictsResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDomainConflicts">REST API Reference for ListDomainConflicts Operation</seealso>
+        public virtual ListDomainConflictsResponse EndListDomainConflicts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDomainConflictsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListFieldLevelEncryptionConfigs
 
         /// <summary>
@@ -7915,6 +9263,69 @@ namespace Amazon.CloudFront
         public virtual ListInvalidationsResponse EndListInvalidations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListInvalidationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListInvalidationsForDistributionTenant
+
+        /// <summary>
+        /// Lists the invalidations for a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvalidationsForDistributionTenant service method.</param>
+        /// 
+        /// <returns>The response from the ListInvalidationsForDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListInvalidationsForDistributionTenant">REST API Reference for ListInvalidationsForDistributionTenant Operation</seealso>
+        public virtual ListInvalidationsForDistributionTenantResponse ListInvalidationsForDistributionTenant(ListInvalidationsForDistributionTenantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInvalidationsForDistributionTenantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInvalidationsForDistributionTenantResponseUnmarshaller.Instance;
+
+            return Invoke<ListInvalidationsForDistributionTenantResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInvalidationsForDistributionTenant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInvalidationsForDistributionTenant operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInvalidationsForDistributionTenant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListInvalidationsForDistributionTenant">REST API Reference for ListInvalidationsForDistributionTenant Operation</seealso>
+        public virtual IAsyncResult BeginListInvalidationsForDistributionTenant(ListInvalidationsForDistributionTenantRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInvalidationsForDistributionTenantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInvalidationsForDistributionTenantResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInvalidationsForDistributionTenant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInvalidationsForDistributionTenant.</param>
+        /// 
+        /// <returns>Returns a  ListInvalidationsForDistributionTenantResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListInvalidationsForDistributionTenant">REST API Reference for ListInvalidationsForDistributionTenant Operation</seealso>
+        public virtual ListInvalidationsForDistributionTenantResponse EndListInvalidationsForDistributionTenant(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListInvalidationsForDistributionTenantResponse>(asyncResult);
         }
 
         #endregion
@@ -9105,6 +10516,84 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  UpdateConnectionGroup
+
+        /// <summary>
+        /// Updates a connection group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectionGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnectionGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
+        /// Cannot delete this resource because it is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateConnectionGroup">REST API Reference for UpdateConnectionGroup Operation</seealso>
+        public virtual UpdateConnectionGroupResponse UpdateConnectionGroup(UpdateConnectionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConnectionGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConnectionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectionGroup operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConnectionGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateConnectionGroup">REST API Reference for UpdateConnectionGroup Operation</seealso>
+        public virtual IAsyncResult BeginUpdateConnectionGroup(UpdateConnectionGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectionGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateConnectionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConnectionGroup.</param>
+        /// 
+        /// <returns>Returns a  UpdateConnectionGroupResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateConnectionGroup">REST API Reference for UpdateConnectionGroup Operation</seealso>
+        public virtual UpdateConnectionGroupResponse EndUpdateConnectionGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateConnectionGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateContinuousDeploymentPolicy
 
         /// <summary>
@@ -9543,6 +11032,87 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  UpdateDistributionTenant
+
+        /// <summary>
+        /// Updates a distribution tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDistributionTenant service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDistributionTenant service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidAssociationException">
+        /// The specified CloudFront resource can't be associated.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistributionTenant">REST API Reference for UpdateDistributionTenant Operation</seealso>
+        public virtual UpdateDistributionTenantResponse UpdateDistributionTenant(UpdateDistributionTenantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDistributionTenantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDistributionTenantResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDistributionTenantResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDistributionTenant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDistributionTenant operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDistributionTenant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistributionTenant">REST API Reference for UpdateDistributionTenant Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDistributionTenant(UpdateDistributionTenantRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDistributionTenantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDistributionTenantResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDistributionTenant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDistributionTenant.</param>
+        /// 
+        /// <returns>Returns a  UpdateDistributionTenantResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistributionTenant">REST API Reference for UpdateDistributionTenant Operation</seealso>
+        public virtual UpdateDistributionTenantResponse EndUpdateDistributionTenant(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDistributionTenantResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateDistributionWithStagingConfig
 
         /// <summary>
@@ -9849,6 +11419,78 @@ namespace Amazon.CloudFront
         public virtual UpdateDistributionWithStagingConfigResponse EndUpdateDistributionWithStagingConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDistributionWithStagingConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateDomainAssociation
+
+        /// <summary>
+        /// Moves a domain from its current distribution or distribution tenant to another one.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainAssociation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDomainAssociation service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDomainAssociation">REST API Reference for UpdateDomainAssociation Operation</seealso>
+        public virtual UpdateDomainAssociationResponse UpdateDomainAssociation(UpdateDomainAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDomainAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDomainAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDomainAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainAssociation operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDomainAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDomainAssociation">REST API Reference for UpdateDomainAssociation Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDomainAssociation(UpdateDomainAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDomainAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDomainAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDomainAssociation.</param>
+        /// 
+        /// <returns>Returns a  UpdateDomainAssociationResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDomainAssociation">REST API Reference for UpdateDomainAssociation Operation</seealso>
+        public virtual UpdateDomainAssociationResponse EndUpdateDomainAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDomainAssociationResponse>(asyncResult);
         }
 
         #endregion
@@ -10947,6 +12589,72 @@ namespace Amazon.CloudFront
         public virtual UpdateVpcOriginResponse EndUpdateVpcOrigin(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateVpcOriginResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  VerifyDnsConfiguration
+
+        /// <summary>
+        /// Verify the DNS configuration for your domain names. This API operation checks whether
+        /// your domain name points to the correct routing endpoint of the connection group, such
+        /// as d111111abcdef8.cloudfront.net. You can use this API operation to troubleshoot and
+        /// resolve DNS configuration issues.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyDnsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the VerifyDnsConfiguration service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/VerifyDnsConfiguration">REST API Reference for VerifyDnsConfiguration Operation</seealso>
+        public virtual VerifyDnsConfigurationResponse VerifyDnsConfiguration(VerifyDnsConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = VerifyDnsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = VerifyDnsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<VerifyDnsConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the VerifyDnsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the VerifyDnsConfiguration operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndVerifyDnsConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/VerifyDnsConfiguration">REST API Reference for VerifyDnsConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginVerifyDnsConfiguration(VerifyDnsConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = VerifyDnsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = VerifyDnsConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  VerifyDnsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifyDnsConfiguration.</param>
+        /// 
+        /// <returns>Returns a  VerifyDnsConfigurationResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/VerifyDnsConfiguration">REST API Reference for VerifyDnsConfiguration Operation</seealso>
+        public virtual VerifyDnsConfigurationResponse EndVerifyDnsConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<VerifyDnsConfigurationResponse>(asyncResult);
         }
 
         #endregion

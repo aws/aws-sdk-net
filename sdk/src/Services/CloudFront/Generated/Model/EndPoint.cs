@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Contains information about the Amazon Kinesis data stream where you are sending real-time
+    /// Contains information about the Amazon Kinesis data stream where you're sending real-time
     /// log data in a real-time log configuration.
     /// </summary>
     public partial class EndPoint
@@ -42,7 +42,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property KinesisStreamConfig. 
         /// <para>
         /// Contains information about the Amazon Kinesis data stream where you are sending real-time
-        /// log data.
+        /// log data in a real-time log configuration.
         /// </para>
         /// </summary>
         public KinesisStreamConfig KinesisStreamConfig

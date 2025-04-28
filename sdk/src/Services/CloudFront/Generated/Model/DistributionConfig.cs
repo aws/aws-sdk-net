@@ -39,6 +39,7 @@ namespace Amazon.CloudFront.Model
         private CacheBehaviors _cacheBehaviors;
         private string _callerReference;
         private string _comment;
+        private ConnectionMode _connectionMode;
         private string _continuousDeploymentPolicyId;
         private CustomErrorResponses _customErrorResponses;
         private DefaultCacheBehavior _defaultCacheBehavior;
@@ -52,6 +53,7 @@ namespace Amazon.CloudFront.Model
         private PriceClass _priceClass;
         private Restrictions _restrictions;
         private bool? _staging;
+        private TenantConfig _tenantConfig;
         private ViewerCertificate _viewerCertificate;
         private string _webACLId;
 
@@ -173,6 +175,24 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetComment()
         {
             return this._comment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionMode. 
+        /// <para>
+        /// The connection mode to filter distributions by.
+        /// </para>
+        /// </summary>
+        public ConnectionMode ConnectionMode
+        {
+            get { return this._connectionMode; }
+            set { this._connectionMode = value; }
+        }
+
+        // Check to see if ConnectionMode property is set
+        internal bool IsSetConnectionMode()
+        {
+            return this._connectionMode != null;
         }
 
         /// <summary>
@@ -541,6 +561,24 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetStaging()
         {
             return this._staging.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TenantConfig. 
+        /// <para>
+        /// A distribution tenant configuration.
+        /// </para>
+        /// </summary>
+        public TenantConfig TenantConfig
+        {
+            get { return this._tenantConfig; }
+            set { this._tenantConfig = value; }
+        }
+
+        // Check to see if TenantConfig property is set
+        internal bool IsSetTenantConfig()
+        {
+            return this._tenantConfig != null;
         }
 
         /// <summary>
