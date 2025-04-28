@@ -1,3 +1,25 @@
+### 4.0.0.0 (2025-04-28 18:14 UTC)
+* BedrockRuntime (4.0.0.0)
+	* This release adds native h2 support for the bedrock runtime API, the support is only limited to SDKs that support h2 requests natively.
+* CertificateManager (4.0.0.0)
+	* Add support for file-based HTTP domain control validation, available through Amazon CloudFront.
+* CloudFront (4.0.0.0)
+	* Add distribution tenant, connection group, and multi-tenant distribution APIs to the CloudFront SDK.
+* DynamoDBv2 (4.0.0.0)
+	* Doc only update for GSI descriptions.
+	* Update paginators to handle scenarios where the token is a collection (that's null by default in V4)
+	* Fixed trim warnings in Object Persistence high level library introduced by PR adding polymorphic support.
+* Imagebuilder (4.0.0.0)
+	* Add integration with SSM Parameter Store to Image Builder.
+* Core 4.0.0.0
+	* [Breaking Change] Allow source_profile to be used in conjunction with sso_session. If the profile specified via source_profile has sso_session, and the sso_session section is correctly configured, credentials will be retrieved from sso. The sso credentials will then be used to assume the role specified in the original profile. Previous behavior was that it assumed the role specified in source_profile, which does not follow the assume role profile chaining pattern.
+	* Add observability feature IDs to User Agent header
+	* fix: User-Agent header is growing when reusing the request object
+	* Remove unused internal legacy .NET Framework 3.5 code.
+	* Update documentation for the `AWSConfigs.InitializeCollections` property to specify the correct default value for V4 (and how to restore the V3 behavior)
+	* Update SDK to respect `Profile` property set in the client config when resolving credentials.
+	* All services packages updated to require new Core
+
 ### 4.0.0.0-preview.13 (2025-04-09 16:44 UTC)
 * BedrockRuntime (4.0.0.0)
 	* Add support for [Amazon Nova Sonic: Human-like voice conversations for generative AI applications](https://aws.amazon.com/blogs/aws/introducing-amazon-nova-sonic-human-like-voice-conversations-for-generative-ai-applications/) (note: Only available in .NET 8 and later)
