@@ -62,6 +62,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("HttpRedirect", targetDepth))
+                {
+                    var unmarshaller = HttpRedirectUnmarshaller.Instance;
+                    unmarshalledObject.HttpRedirect = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ResourceRecord", targetDepth))
                 {
                     var unmarshaller = ResourceRecordUnmarshaller.Instance;

@@ -48,6 +48,7 @@ namespace Amazon.CertificateManager.Model
         private string _issuer;
         private KeyAlgorithm _keyAlgorithm;
         private List<KeyUsage> _keyUsages = AWSConfigs.InitializeCollections ? new List<KeyUsage>() : null;
+        private CertificateManagedBy _managedBy;
         private DateTime? _notAfter;
         private DateTime? _notBefore;
         private CertificateOptions _options;
@@ -317,6 +318,25 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetKeyUsages()
         {
             return this._keyUsages != null && (this._keyUsages.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedBy. 
+        /// <para>
+        /// Identifies the Amazon Web Services service that manages the certificate issued by
+        /// ACM.
+        /// </para>
+        /// </summary>
+        public CertificateManagedBy ManagedBy
+        {
+            get { return this._managedBy; }
+            set { this._managedBy = value; }
+        }
+
+        // Check to see if ManagedBy property is set
+        internal bool IsSetManagedBy()
+        {
+            return this._managedBy != null;
         }
 
         /// <summary>
