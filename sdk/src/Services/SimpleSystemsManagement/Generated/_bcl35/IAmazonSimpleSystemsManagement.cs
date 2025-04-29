@@ -4422,6 +4422,62 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  GetAccessToken
+
+
+        /// <summary>
+        /// Returns a credentials set to be used with just-in-time node access.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessToken service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessToken service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AccessDeniedException">
+        /// The requester doesn't have permissions to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because the service is throttling requests.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ValidationException">
+        /// The request isn't valid. Verify that you entered valid contents for the command and
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAccessToken">REST API Reference for GetAccessToken Operation</seealso>
+        GetAccessTokenResponse GetAccessToken(GetAccessTokenRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccessToken operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessToken operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessToken
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAccessToken">REST API Reference for GetAccessToken Operation</seealso>
+        IAsyncResult BeginGetAccessToken(GetAccessTokenRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccessToken operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessToken.</param>
+        /// 
+        /// <returns>Returns a  GetAccessTokenResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAccessToken">REST API Reference for GetAccessToken Operation</seealso>
+        GetAccessTokenResponse EndGetAccessToken(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetAutomationExecution
 
 
@@ -8527,6 +8583,67 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>Returns a  SendCommandResult from SimpleSystemsManagement.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">REST API Reference for SendCommand Operation</seealso>
         SendCommandResponse EndSendCommand(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartAccessRequest
+
+
+        /// <summary>
+        /// Starts the workflow for just-in-time node access sessions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAccessRequest service method.</param>
+        /// 
+        /// <returns>The response from the StartAccessRequest service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AccessDeniedException">
+        /// The requester doesn't have permissions to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ServiceQuotaExceededException">
+        /// The request exceeds the service quota. Service quotas, also referred to as limits,
+        /// are the maximum number of service resources or operations for your Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because the service is throttling requests.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ValidationException">
+        /// The request isn't valid. Verify that you entered valid contents for the command and
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAccessRequest">REST API Reference for StartAccessRequest Operation</seealso>
+        StartAccessRequestResponse StartAccessRequest(StartAccessRequestRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAccessRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAccessRequest operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartAccessRequest
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAccessRequest">REST API Reference for StartAccessRequest Operation</seealso>
+        IAsyncResult BeginStartAccessRequest(StartAccessRequestRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartAccessRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartAccessRequest.</param>
+        /// 
+        /// <returns>Returns a  StartAccessRequestResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAccessRequest">REST API Reference for StartAccessRequest Operation</seealso>
+        StartAccessRequestResponse EndStartAccessRequest(IAsyncResult asyncResult);
 
         #endregion
         
