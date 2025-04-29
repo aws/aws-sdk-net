@@ -31,8 +31,8 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Configuration information required to setup hallucination reduction. For more information,
-    /// see <a href="amazonq/latest/qbusiness-ug/hallucination-reduction.html">hallucination
-    /// reduction</a>.
+    /// see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/hallucination-reduction.html">
+    /// hallucination reduction</a>.
     /// 
     ///  <note> 
     /// <para>

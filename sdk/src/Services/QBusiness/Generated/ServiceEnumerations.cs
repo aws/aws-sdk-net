@@ -1369,6 +1369,10 @@ namespace Amazon.QBusiness
     {
 
         /// <summary>
+        /// Constant ANONYMOUS for IdentityType
+        /// </summary>
+        public static readonly IdentityType ANONYMOUS = new IdentityType("ANONYMOUS");
+        /// <summary>
         /// Constant AWS_IAM_IDC for IdentityType
         /// </summary>
         public static readonly IdentityType AWS_IAM_IDC = new IdentityType("AWS_IAM_IDC");

@@ -164,6 +164,29 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QBusiness.Model.CreateAnonymousWebExperienceUrlRequest.ApplicationId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.CreateAnonymousWebExperienceUrlRequest.SessionDurationInMinutes</property>
+    <min>15</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.CreateAnonymousWebExperienceUrlRequest.WebExperienceId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.CreateAnonymousWebExperienceUrlResponse.AnonymousUrl</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>(https?|ftp|file)://([^\s]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateApplicationRequest.ClientToken</property>
     <min>1</min>
     <max>100</max>

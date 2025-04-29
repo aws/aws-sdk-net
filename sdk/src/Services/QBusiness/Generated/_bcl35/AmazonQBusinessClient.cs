@@ -816,6 +816,84 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  CreateAnonymousWebExperienceUrl
+
+        /// <summary>
+        /// Creates a unique URL for anonymous Amazon Q Business web experience. This URL can
+        /// only be used once and must be used within 5 minutes after it's generated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnonymousWebExperienceUrl service method.</param>
+        /// 
+        /// <returns>The response from the CreateAnonymousWebExperienceUrl service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
+        /// You have exceeded the set limits for your Amazon Q Business service.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateAnonymousWebExperienceUrl">REST API Reference for CreateAnonymousWebExperienceUrl Operation</seealso>
+        public virtual CreateAnonymousWebExperienceUrlResponse CreateAnonymousWebExperienceUrl(CreateAnonymousWebExperienceUrlRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAnonymousWebExperienceUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAnonymousWebExperienceUrlResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAnonymousWebExperienceUrlResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAnonymousWebExperienceUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnonymousWebExperienceUrl operation on AmazonQBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAnonymousWebExperienceUrl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateAnonymousWebExperienceUrl">REST API Reference for CreateAnonymousWebExperienceUrl Operation</seealso>
+        public virtual IAsyncResult BeginCreateAnonymousWebExperienceUrl(CreateAnonymousWebExperienceUrlRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAnonymousWebExperienceUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAnonymousWebExperienceUrlResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAnonymousWebExperienceUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAnonymousWebExperienceUrl.</param>
+        /// 
+        /// <returns>Returns a  CreateAnonymousWebExperienceUrlResult from QBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateAnonymousWebExperienceUrl">REST API Reference for CreateAnonymousWebExperienceUrl Operation</seealso>
+        public virtual CreateAnonymousWebExperienceUrlResponse EndCreateAnonymousWebExperienceUrl(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAnonymousWebExperienceUrlResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateApplication
 
         /// <summary>
