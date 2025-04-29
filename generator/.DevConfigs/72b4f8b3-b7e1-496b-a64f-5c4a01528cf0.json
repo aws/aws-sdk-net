@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "patch",
+            "changeLogMessages": [
+                "Update endpoint resolver to handle anonymous credentials when trying to retrieve account IDs"
+            ]
+        }
+    ]
+}

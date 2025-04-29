@@ -54,7 +54,7 @@ namespace Amazon.DynamoDBv2.Internal
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
-            result.AccountId = requestContext.Identity is AWSCredentials credentials ? credentials.GetCredentials().AccountId : null;
+            result.AccountId = requestContext.Identity is AWSCredentials credentials ? credentials.GetCredentials()?.AccountId : null;
             result.AccountIdEndpointMode = config.AccountIdEndpointMode.ToString().ToLower();
 
 

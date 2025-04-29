@@ -25,7 +25,7 @@ namespace ServiceClientGenerator.Generators.Endpoints
                 case "AWS::S3::DisableMultiRegionAccessPoints": return "config.DisableMultiregionAccessPoints";
                 case "AWS::S3::UseGlobalEndpoint": return "config.USEast1RegionalEndpointValue == S3UsEast1RegionalEndpointValue.Legacy";
                 case "AWS::STS::UseGlobalEndpoint": return "false";
-                case "AWS::Auth::AccountId": return "requestContext.Identity is AWSCredentials credentials ? credentials.GetCredentials().AccountId : null";
+                case "AWS::Auth::AccountId": return "requestContext.Identity is AWSCredentials credentials ? credentials.GetCredentials()?.AccountId : null";
                 case "AWS::Auth::AccountIdEndpointMode": return "config.AccountIdEndpointMode.ToString().ToLower()";
                 default: throw new Exception("Unknown builtIn");
             }
