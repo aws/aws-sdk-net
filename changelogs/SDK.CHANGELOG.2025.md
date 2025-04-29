@@ -1,3 +1,24 @@
+### 3.7.1033.0 (2025-04-29 20:03 UTC)
+* ConnectCases (3.7.403.0)
+	* Introduces CustomEntity as part of the UserUnion data type. This field is used to indicate the entity who is performing the API action.
+* Kinesis (3.7.403.0)
+	* Amazon KDS now supports tagging and attribute-based access control (ABAC) for enhanced fan-out consumers.
+* PinpointSMSVoiceV2 (3.7.405.0)
+	* AWS End User Messaging has added MONITOR and FILTER functionality to SMS Protect.
+* QBusiness (3.7.414.0)
+	* Add support for anonymous user access for Q Business applications
+* SageMaker (3.7.437.0)
+	* Introduced support for P5en instance types on SageMaker Studio for JupyterLab and CodeEditor applications.
+* SageMakerMetrics (3.7.402.0)
+	* SageMaker Metrics Service now supports FIPS endpoint in all US and Canada Commercial regions.
+* SimpleSystemsManagement (3.7.405.0)
+	* This release adds support for just-In-time node access in AWS Systems Manager. Just-in-time node access enables customers to move towards zero standing privileges by requiring operators to request access and obtain approval before remotely connecting to nodes managed by the SSM Agent.
+* SSMGuiConnect (3.7.400.0)
+	* This release adds API support for the connection recording GUI Connect feature of AWS Systems Manager
+* Core 3.7.402.48
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1032.0 (2025-04-28 18:16 UTC)
 * BedrockRuntime (3.7.420.0)
 	* This release adds native h2 support for the bedrock runtime API, the support is only limited to SDKs that support h2 requests natively.
