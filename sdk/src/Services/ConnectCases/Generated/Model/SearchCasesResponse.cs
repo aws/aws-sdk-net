@@ -44,7 +44,7 @@ namespace Amazon.ConnectCases.Model
         /// <c>Fields</c> where each field is a complex union structure. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=25)]
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public List<SearchCasesResponseItem> Cases
         {
             get { return this._cases; }

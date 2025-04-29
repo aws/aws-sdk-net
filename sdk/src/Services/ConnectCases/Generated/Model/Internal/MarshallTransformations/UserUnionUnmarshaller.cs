@@ -66,6 +66,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("customEntity", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomEntity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("userArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

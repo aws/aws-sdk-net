@@ -48,6 +48,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCustomEntity())
+            {
+                context.Writer.WritePropertyName("customEntity");
+                context.Writer.Write(requestObject.CustomEntity);
+            }
+
             if(requestObject.IsSetUserArn())
             {
                 context.Writer.WritePropertyName("userArn");
