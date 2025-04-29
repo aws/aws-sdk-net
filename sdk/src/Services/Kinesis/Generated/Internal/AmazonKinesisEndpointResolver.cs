@@ -184,6 +184,12 @@ namespace Amazon.Kinesis.Internal
                 result.StreamARN = request.StreamARN;
                 return result;
             }
+            if (requestContext.RequestName == "ListTagsForResourceRequest") {
+                result.OperationType = "control";
+                var request = (ListTagsForResourceRequest)requestContext.OriginalRequest;
+                result.ResourceARN = request.ResourceARN;
+                return result;
+            }
             if (requestContext.RequestName == "ListTagsForStreamRequest") {
                 result.OperationType = "control";
                 var request = (ListTagsForStreamRequest)requestContext.OriginalRequest;
@@ -242,6 +248,18 @@ namespace Amazon.Kinesis.Internal
                 result.OperationType = "control";
                 var request = (StopStreamEncryptionRequest)requestContext.OriginalRequest;
                 result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "TagResourceRequest") {
+                result.OperationType = "control";
+                var request = (TagResourceRequest)requestContext.OriginalRequest;
+                result.ResourceARN = request.ResourceARN;
+                return result;
+            }
+            if (requestContext.RequestName == "UntagResourceRequest") {
+                result.OperationType = "control";
+                var request = (UntagResourceRequest)requestContext.OriginalRequest;
+                result.ResourceARN = request.ResourceARN;
                 return result;
             }
             if (requestContext.RequestName == "UpdateShardCountRequest") {

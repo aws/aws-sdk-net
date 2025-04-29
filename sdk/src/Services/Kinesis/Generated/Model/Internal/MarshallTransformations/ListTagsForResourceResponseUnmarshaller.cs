@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetRecords operation
+    /// Response Unmarshaller for ListTagsForResource operation
     /// </summary>  
-    public class GetRecordsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListTagsForResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,34 +46,16 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetRecordsResponse response = new GetRecordsResponse();
+            ListTagsForResourceResponse response = new ListTagsForResourceResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ChildShards", targetDepth))
+                if (context.TestExpression("Tags", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ChildShard, ChildShardUnmarshaller>(ChildShardUnmarshaller.Instance);
-                    response.ChildShards = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MillisBehindLatest", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    response.MillisBehindLatest = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NextShardIterator", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextShardIterator = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Records", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Record, RecordUnmarshaller>(RecordUnmarshaller.Instance);
-                    response.Records = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -103,45 +85,17 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ExpiredIteratorException"))
-                {
-                    return ExpiredIteratorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailureException"))
-                {
-                    return InternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgumentException"))
                 {
                     return InvalidArgumentExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("KMSAccessDeniedException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
                 {
-                    return KMSAccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("KMSDisabledException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
                 {
-                    return KMSDisabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("KMSInvalidStateException"))
-                {
-                    return KMSInvalidStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("KMSNotFoundException"))
-                {
-                    return KMSNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("KMSOptInRequired"))
-                {
-                    return KMSOptInRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("KMSThrottlingException"))
-                {
-                    return KMSThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ProvisionedThroughputExceededException"))
-                {
-                    return ProvisionedThroughputExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
@@ -151,9 +105,9 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             return new AmazonKinesisException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetRecordsResponseUnmarshaller _instance = new GetRecordsResponseUnmarshaller();        
+        private static ListTagsForResourceResponseUnmarshaller _instance = new ListTagsForResourceResponseUnmarshaller();        
 
-        internal static GetRecordsResponseUnmarshaller GetInstance()
+        internal static ListTagsForResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -161,7 +115,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetRecordsResponseUnmarshaller Instance
+        public static ListTagsForResourceResponseUnmarshaller Instance
         {
             get
             {

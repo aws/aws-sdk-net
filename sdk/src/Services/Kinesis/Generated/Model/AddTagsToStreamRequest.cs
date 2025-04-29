@@ -97,7 +97,8 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A set of up to 10 key-value pairs to use to create the tags.
+        /// A set of up to 50 key-value pairs to use to create the tags. A tag consists of a required
+        /// key and an optional value. You can add up to 50 tags per resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

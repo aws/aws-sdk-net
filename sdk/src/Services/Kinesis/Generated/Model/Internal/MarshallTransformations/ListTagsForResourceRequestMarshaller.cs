@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RegisterStreamConsumer Request Marshaller
+    /// ListTagsForResource Request Marshaller
     /// </summary>       
-    public class RegisterStreamConsumerRequestMarshaller : IMarshaller<IRequest, RegisterStreamConsumerRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListTagsForResourceRequestMarshaller : IMarshaller<IRequest, ListTagsForResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((RegisterStreamConsumerRequest)input);
+            return this.Marshall((ListTagsForResourceRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(RegisterStreamConsumerRequest publicRequest)
+        public IRequest Marshall(ListTagsForResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Kinesis");
-            string target = "Kinesis_20131202.RegisterStreamConsumer";
+            string target = "Kinesis_20131202.ListTagsForResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-12-02";
@@ -69,30 +69,10 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConsumerName())
+                if(publicRequest.IsSetResourceARN())
                 {
-                    context.Writer.WritePropertyName("ConsumerName");
-                    context.Writer.Write(publicRequest.ConsumerName);
-                }
-
-                if(publicRequest.IsSetStreamARN())
-                {
-                    context.Writer.WritePropertyName("StreamARN");
-                    context.Writer.Write(publicRequest.StreamARN);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("ResourceARN");
+                    context.Writer.Write(publicRequest.ResourceARN);
                 }
 
                 writer.WriteObjectEnd();
@@ -103,9 +83,9 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static RegisterStreamConsumerRequestMarshaller _instance = new RegisterStreamConsumerRequestMarshaller();        
+        private static ListTagsForResourceRequestMarshaller _instance = new ListTagsForResourceRequestMarshaller();        
 
-        internal static RegisterStreamConsumerRequestMarshaller GetInstance()
+        internal static ListTagsForResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -113,7 +93,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RegisterStreamConsumerRequestMarshaller Instance
+        public static ListTagsForResourceRequestMarshaller Instance
         {
             get
             {

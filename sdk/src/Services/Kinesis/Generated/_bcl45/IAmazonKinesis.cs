@@ -213,10 +213,12 @@ namespace Amazon.Kinesis
         ///  
         /// <para>
         /// You can add tags to the stream when making a <c>CreateStream</c> request by setting
-        /// the <c>Tags</c> parameter. If you pass <c>Tags</c> parameter, in addition to having
-        /// <c>kinesis:createStream</c> permission, you must also have <c>kinesis:addTagsToStream</c>
-        /// permission for the stream that will be created. Tags will take effect from the <c>CREATING</c>
-        /// status of the stream. 
+        /// the <c>Tags</c> parameter. If you pass the <c>Tags</c> parameter, in addition to having
+        /// the <c>kinesis:CreateStream</c> permission, you must also have the <c>kinesis:AddTagsToStream</c>
+        /// permission for the stream that will be created. The <c>kinesis:TagResource</c> permission
+        /// won’t work to tag streams on creation. Tags will take effect from the <c>CREATING</c>
+        /// status of the stream, but you can't make any updates to the tags until the stream
+        /// is in <c>ACTIVE</c> state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStream service method.</param>
@@ -304,10 +306,12 @@ namespace Amazon.Kinesis
         ///  
         /// <para>
         /// You can add tags to the stream when making a <c>CreateStream</c> request by setting
-        /// the <c>Tags</c> parameter. If you pass <c>Tags</c> parameter, in addition to having
-        /// <c>kinesis:createStream</c> permission, you must also have <c>kinesis:addTagsToStream</c>
-        /// permission for the stream that will be created. Tags will take effect from the <c>CREATING</c>
-        /// status of the stream. 
+        /// the <c>Tags</c> parameter. If you pass the <c>Tags</c> parameter, in addition to having
+        /// the <c>kinesis:CreateStream</c> permission, you must also have the <c>kinesis:AddTagsToStream</c>
+        /// permission for the stream that will be created. The <c>kinesis:TagResource</c> permission
+        /// won’t work to tag streams on creation. Tags will take effect from the <c>CREATING</c>
+        /// status of the stream, but you can't make any updates to the tags until the stream
+        /// is in <c>ACTIVE</c> state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStream service method.</param>
@@ -1424,6 +1428,9 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ExpiredIteratorException">
         /// The provided iterator exceeds the maximum age allowed.
         /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -1556,6 +1563,9 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ExpiredIteratorException">
         /// The provided iterator exceeds the maximum age allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
@@ -1755,6 +1765,9 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
         /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -1841,6 +1854,9 @@ namespace Amazon.Kinesis
         /// <returns>The response from the GetShardIterator service method, as returned by Kinesis.</returns>
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
@@ -2428,6 +2444,86 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// List all tags added to the specified Kinesis resource. Each tag is a label consisting
+        /// of a user-defined key and value. Tags can help you manage, identify, organize, search
+        /// for, and filter resources.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about tagging Kinesis resources, see <a href="https://docs.aws.amazon.com/streams/latest/dev/tagging.html">Tag
+        /// your Amazon Kinesis Data Streams resources</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+
+        /// <summary>
+        /// List all tags added to the specified Kinesis resource. Each tag is a label consisting
+        /// of a user-defined key and value. Tags can help you manage, identify, organize, search
+        /// for, and filter resources.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about tagging Kinesis resources, see <a href="https://docs.aws.amazon.com/streams/latest/dev/tagging.html">Tag
+        /// your Amazon Kinesis Data Streams resources</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListTagsForStream
 
 
@@ -2769,6 +2865,9 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
         /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -2890,6 +2989,9 @@ namespace Amazon.Kinesis
         /// <returns>The response from the PutRecord service method, as returned by Kinesis.</returns>
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
@@ -3039,6 +3141,9 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
         /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -3186,6 +3291,9 @@ namespace Amazon.Kinesis
         /// <returns>The response from the PutRecords service method, as returned by Kinesis.</returns>
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
@@ -3358,6 +3466,14 @@ namespace Amazon.Kinesis
         /// 
         ///  
         /// <para>
+        /// You can add tags to the registered consumer when making a <c>RegisterStreamConsumer</c>
+        /// request by setting the <c>Tags</c> parameter. If you pass the <c>Tags</c> parameter,
+        /// in addition to having the <c>kinesis:RegisterStreamConsumer</c> permission, you must
+        /// also have the <c>kinesis:TagResource</c> permission for the consumer that will be
+        /// registered. Tags will take effect from the <c>CREATING</c> status of the consumer.
+        /// </para>
+        ///  
+        /// <para>
         /// You can register up to 20 consumers per stream. A given consumer can only be registered
         /// with one stream at a time.
         /// </para>
@@ -3404,6 +3520,14 @@ namespace Amazon.Kinesis
         /// you subscribe to. This rate is unaffected by the total number of consumers that read
         /// from the same stream.
         /// 
+        ///  
+        /// <para>
+        /// You can add tags to the registered consumer when making a <c>RegisterStreamConsumer</c>
+        /// request by setting the <c>Tags</c> parameter. If you pass the <c>Tags</c> parameter,
+        /// in addition to having the <c>kinesis:RegisterStreamConsumer</c> permission, you must
+        /// also have the <c>kinesis:TagResource</c> permission for the consumer that will be
+        /// registered. Tags will take effect from the <c>CREATING</c> status of the consumer.
+        /// </para>
         ///  
         /// <para>
         /// You can register up to 20 consumers per stream. A given consumer can only be registered
@@ -4045,6 +4169,140 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StopStreamEncryption">REST API Reference for StopStreamEncryption Operation</seealso>
         Task<StopStreamEncryptionResponse> StopStreamEncryptionAsync(StopStreamEncryptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Adds or updates tags for the specified Kinesis resource. Each tag is a label consisting
+        /// of a user-defined key and value. Tags can help you manage, identify, organize, search
+        /// for, and filter resources. You can assign up to 50 tags to a Kinesis resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Adds or updates tags for the specified Kinesis resource. Each tag is a label consisting
+        /// of a user-defined key and value. Tags can help you manage, identify, organize, search
+        /// for, and filter resources. You can assign up to 50 tags to a Kinesis resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes tags from the specified Kinesis resource. Removed tags are deleted and can't
+        /// be recovered after this operation completes successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Removes tags from the specified Kinesis resource. Removed tags are deleted and can't
+        /// be recovered after this operation completes successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
