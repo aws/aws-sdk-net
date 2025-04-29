@@ -1,0 +1,10 @@
+
+{
+  "core": {
+    "changeLogMessages": [
+      "chore: Move AWSSDK.Extensions.Bedrock.MEAI to a preview version "
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}
