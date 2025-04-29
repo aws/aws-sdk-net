@@ -1,3 +1,25 @@
+### 4.0.1.0 (2025-04-29 20:03 UTC)
+* ConnectCases (4.0.1.0)
+	* Introduces CustomEntity as part of the UserUnion data type. This field is used to indicate the entity who is performing the API action.
+* DynamoDBv2 (4.0.0.1)
+	* Update endpoint resolver to handle anonymous credentials when trying to retrieve account IDs
+* Kinesis (4.0.1.0)
+	* Amazon KDS now supports tagging and attribute-based access control (ABAC) for enhanced fan-out consumers.
+* PinpointSMSVoiceV2 (4.0.1.0)
+	* AWS End User Messaging has added MONITOR and FILTER functionality to SMS Protect.
+* QBusiness (4.0.1.0)
+	* Add support for anonymous user access for Q Business applications
+* SageMaker (4.0.1.0)
+	* Introduced support for P5en instance types on SageMaker Studio for JupyterLab and CodeEditor applications.
+* SageMakerMetrics (4.0.1.0)
+	* SageMaker Metrics Service now supports FIPS endpoint in all US and Canada Commercial regions.
+* SimpleSystemsManagement (4.0.1.0)
+	* This release adds support for just-In-time node access in AWS Systems Manager. Just-in-time node access enables customers to move towards zero standing privileges by requiring operators to request access and obtain approval before remotely connecting to nodes managed by the SSM Agent.
+* SSMGuiConnect (4.0.0.0)
+	* This release adds API support for the connection recording GUI Connect feature of AWS Systems Manager
+* Core 4.0.0.1
+	* chore: Move AWSSDK.Extensions.Bedrock.MEAI to a preview version 
+
 ### 4.0.0.0 (2025-04-28 18:14 UTC)
 * BedrockRuntime (4.0.0.0)
 	* This release adds native h2 support for the bedrock runtime API, the support is only limited to SDKs that support h2 requests natively.
