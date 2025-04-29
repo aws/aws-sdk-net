@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.SSMGuiConnect.Model.DeleteConnectionRecordingPreferencesRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMGuiConnect.Model.DeleteConnectionRecordingPreferencesResponse.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMGuiConnect.Model.GetConnectionRecordingPreferencesResponse.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMGuiConnect.Model.UpdateConnectionRecordingPreferencesRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMGuiConnect.Model.UpdateConnectionRecordingPreferencesResponse.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMGuiConnect.Model.ConnectionRecordingPreferences.KMSKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMGuiConnect.Model.S3Bucket.BucketName</property>
+    <pattern>(?=^.{3,63}$)(?!^(\d+\.)+\d+$)(^(([a-z0-9]|[a-z0-9][a-z0-9\-]*[a-z0-9])\.)*([a-z0-9]|[a-z0-9][a-z0-9\-]*[a-z0-9])$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMGuiConnect.Model.S3Bucket.BucketOwner</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+</property-value-rules>
