@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             catch (AmazonRedshiftException e)
             {
                 // This test does not work for VPC by default accounts so skip the test.
-                if (!string.Equals(e.Message, "VPC-by-Default customers cannot use cluster security groups"))
+                if (!string.Equals(e.Message, "Amazon Redshift has discontinued cluster security groups. For security group configuration, associate VPC security groups when creating or modifying your cluster."))
                     throw;
             }
             finally
