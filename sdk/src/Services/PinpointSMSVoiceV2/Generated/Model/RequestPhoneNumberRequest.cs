@@ -109,8 +109,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property MessageType. 
         /// <para>
-        /// The type of message. Valid values are TRANSACTIONAL for messages that are critical
-        /// or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.
+        /// The type of message. Valid values are <c>TRANSACTIONAL</c> for messages that are critical
+        /// or time-sensitive and <c>PROMOTIONAL</c> for messages that aren't critical or time-sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -150,6 +150,11 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Gets and sets the property NumberType. 
         /// <para>
         /// The type of phone number to request.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you request a <c>SIMULATOR</c> phone number, you must set <b>MessageType</b>
+        /// as <c>TRANSACTIONAL</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

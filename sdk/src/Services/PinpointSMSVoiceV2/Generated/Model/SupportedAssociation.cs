@@ -52,8 +52,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ASSOCIATE_ON_APPROVAL</c> This applies to all short code registrations. The short
-        /// code will be automatically provisioned once the registration is approved.
+        ///  <c>ASSOCIATE_ON_APPROVAL</c> This applies to all sender ID registrations. The sender
+        /// ID will be automatically provisioned once the registration is approved.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -31,9 +31,10 @@ namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateProtectConfigurationCountryRuleSet operation.
-    /// Update a country rule set to <c>ALLOW</c> or <c>BLOCK</c> messages to be sent to the
-    /// specified destination counties. You can update one or multiple countries at a time.
-    /// The updates are only applied to the specified NumberCapability type.
+    /// Update a country rule set to <c>ALLOW</c>, <c>BLOCK</c>, <c>MONITOR</c>, or <c>FILTER</c>
+    /// messages to be sent to the specified destination counties. You can update one or multiple
+    /// countries at a time. The updates are only applied to the specified NumberCapability
+    /// type.
     /// </summary>
     public partial class UpdateProtectConfigurationCountryRuleSetRequest : AmazonPinpointSMSVoiceV2Request
     {
@@ -48,6 +49,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// for the requested NumberCapability. The Key is the two-letter ISO country code. For
         /// a list of supported ISO country codes, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-sms-by-country.html">Supported
         /// countries and regions (SMS channel)</a> in the AWS End User Messaging SMS User Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, to set the United States as allowed and Canada as blocked, the <c>CountryRuleSetUpdates</c>
+        /// would be formatted as: <c>"CountryRuleSetUpdates": { "US" : { "ProtectStatus": "ALLOW"
+        /// } "CA" : { "ProtectStatus": "BLOCK" } }</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

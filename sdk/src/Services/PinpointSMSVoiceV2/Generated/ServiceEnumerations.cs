@@ -1938,6 +1938,14 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant BLOCK for ProtectStatus
         /// </summary>
         public static readonly ProtectStatus BLOCK = new ProtectStatus("BLOCK");
+        /// <summary>
+        /// Constant FILTER for ProtectStatus
+        /// </summary>
+        public static readonly ProtectStatus FILTER = new ProtectStatus("FILTER");
+        /// <summary>
+        /// Constant MONITOR for ProtectStatus
+        /// </summary>
+        public static readonly ProtectStatus MONITOR = new ProtectStatus("MONITOR");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
