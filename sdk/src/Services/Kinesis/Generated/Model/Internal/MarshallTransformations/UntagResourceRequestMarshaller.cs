@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RegisterStreamConsumer Request Marshaller
+    /// UntagResource Request Marshaller
     /// </summary>       
-    public class RegisterStreamConsumerRequestMarshaller : IMarshaller<IRequest, RegisterStreamConsumerRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UntagResourceRequestMarshaller : IMarshaller<IRequest, UntagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((RegisterStreamConsumerRequest)input);
+            return this.Marshall((UntagResourceRequest)input);
         }
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(RegisterStreamConsumerRequest publicRequest)
+        public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Kinesis");
-            string target = "Kinesis_20131202.RegisterStreamConsumer";
+            string target = "Kinesis_20131202.UntagResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-12-02";
@@ -75,30 +75,21 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetConsumerName())
+            if(publicRequest.IsSetResourceARN())
             {
-                context.Writer.WritePropertyName("ConsumerName");
-                context.Writer.WriteStringValue(publicRequest.ConsumerName);
+                context.Writer.WritePropertyName("ResourceARN");
+                context.Writer.WriteStringValue(publicRequest.ResourceARN);
             }
 
-            if(publicRequest.IsSetStreamARN())
+            if(publicRequest.IsSetTagKeys())
             {
-                context.Writer.WritePropertyName("StreamARN");
-                context.Writer.WriteStringValue(publicRequest.StreamARN);
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                context.Writer.WritePropertyName("TagKeys");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagKeysListValue in publicRequest.TagKeys)
                 {
-                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                        context.Writer.WriteStringValue(publicRequestTagKeysListValue);
                 }
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndArray();
             }
 
             writer.WriteEndObject();
@@ -114,9 +105,9 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static RegisterStreamConsumerRequestMarshaller _instance = new RegisterStreamConsumerRequestMarshaller();        
+        private static UntagResourceRequestMarshaller _instance = new UntagResourceRequestMarshaller();        
 
-        internal static RegisterStreamConsumerRequestMarshaller GetInstance()
+        internal static UntagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -124,7 +115,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RegisterStreamConsumerRequestMarshaller Instance
+        public static UntagResourceRequestMarshaller Instance
         {
             get
             {
