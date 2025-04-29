@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
-    /// Provides details on a RuleSetNumberOverride.
+    /// Provides details on phone number rule overrides for a protect configuration.
     /// </summary>
     public partial class ProtectConfigurationRuleSetNumberOverride
     {

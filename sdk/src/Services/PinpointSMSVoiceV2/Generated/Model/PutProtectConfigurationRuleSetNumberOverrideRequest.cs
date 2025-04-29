@@ -31,7 +31,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
     /// Container for the parameters to the PutProtectConfigurationRuleSetNumberOverride operation.
-    /// Create or update a RuleSetNumberOverride and associate it with a protect configuration.
+    /// Create or update a phone number rule override and associate it with a protect configuration.
     /// </summary>
     public partial class PutProtectConfigurationRuleSetNumberOverrideRequest : AmazonPinpointSMSVoiceV2Request
     {
