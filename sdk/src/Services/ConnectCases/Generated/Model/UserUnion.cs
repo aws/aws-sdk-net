@@ -30,11 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// Represents the identity of the person who performed the action.
+    /// Represents the entity that performed the action.
     /// </summary>
     public partial class UserUnion
     {
+        private string _customEntity;
         private string _userArn;
+
+        /// <summary>
+        /// Gets and sets the property CustomEntity. 
+        /// <para>
+        /// Any provided entity.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=500)]
+        public string CustomEntity
+        {
+            get { return this._customEntity; }
+            set { this._customEntity = value; }
+        }
+
+        // Check to see if CustomEntity property is set
+        internal bool IsSetCustomEntity()
+        {
+            return this._customEntity != null;
+        }
 
         /// <summary>
         /// Gets and sets the property UserArn. 
