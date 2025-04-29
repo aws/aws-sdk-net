@@ -80,6 +80,10 @@ namespace Amazon.SageMakerMetrics.Internal
                     {
                         if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                         {
+                            if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws"))
+                            {
+                                return new Endpoint(Interpolate(@"https://metrics-fips.sagemaker.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
                             return new Endpoint(Interpolate(@"https://metrics.sagemaker-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
