@@ -387,7 +387,7 @@ namespace Amazon.BedrockAgent.Model
         /// before the timeout.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=60, Max=3600)]
+        [AWSProperty(Required=true, Min=60, Max=5400)]
         public int IdleSessionTTLInSeconds
         {
             get { return this._idleSessionTTLInSeconds.GetValueOrDefault(); }

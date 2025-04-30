@@ -81,6 +81,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetInlineCode())
+            {
+                context.Writer.WritePropertyName("inlineCode");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InlineCodeFlowNodeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.InlineCode, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInput())
             {
                 context.Writer.WritePropertyName("input");
