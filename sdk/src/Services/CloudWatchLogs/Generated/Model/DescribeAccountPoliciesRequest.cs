@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To see subscription filter policies, you must have the <c>logs:DescrubeSubscriptionFilters</c>
+    /// To see subscription filter policies, you must have the <c>logs:DescribeSubscriptionFilters</c>
     /// and <c>logs:DescribeAccountPolicies</c> permissions.
     /// </para>
     ///  </li> <li> 

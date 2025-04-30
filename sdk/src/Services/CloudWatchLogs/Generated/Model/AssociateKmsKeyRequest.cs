@@ -86,8 +86,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </important> <note> 
     /// <para>
-    /// CloudWatch Logs supports only symmetric KMS keys. Do not use an associate an asymmetric
-    /// KMS key with your log group or query results. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+    /// CloudWatch Logs supports only symmetric KMS keys. Do not associate an asymmetric KMS
+    /// key with your log group or query results. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
     /// Symmetric and Asymmetric Keys</a>.
     /// </para>
     ///  </note> 
