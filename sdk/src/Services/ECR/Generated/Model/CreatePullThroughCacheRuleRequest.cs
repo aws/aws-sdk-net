@@ -159,8 +159,7 @@ namespace Amazon.ECR.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon ECR (<c>ecr</c>) – <c>&lt;accountId&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com</c>
-        /// 
+        /// Amazon ECR (<c>ecr</c>) – <c>dkr.ecr.&lt;region&gt;.amazonaws.com</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
