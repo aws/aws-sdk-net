@@ -1224,7 +1224,7 @@ namespace Amazon.BedrockAgentRuntime
         /// <para>
         /// Sends a prompt for the agent to process and respond to. Note the following fields
         /// for the request:
-        /// </para>
+        /// 
         ///  <ul> <li> 
         /// <para>
         /// To continue the same conversation with an agent, use the same <c>sessionId</c> value
@@ -1276,6 +1276,7 @@ namespace Amazon.BedrockAgentRuntime
         /// Errors are also surfaced in the response.
         /// </para>
         ///  </li> </ul>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeAgent service method.</param>
         /// 
@@ -1333,7 +1334,7 @@ namespace Amazon.BedrockAgentRuntime
         /// <para>
         /// Sends a prompt for the agent to process and respond to. Note the following fields
         /// for the request:
-        /// </para>
+        /// 
         ///  <ul> <li> 
         /// <para>
         /// To continue the same conversation with an agent, use the same <c>sessionId</c> value
@@ -1385,6 +1386,7 @@ namespace Amazon.BedrockAgentRuntime
         /// Errors are also surfaced in the response.
         /// </para>
         ///  </li> </ul>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeAgent service method.</param>
         /// <param name="cancellationToken">

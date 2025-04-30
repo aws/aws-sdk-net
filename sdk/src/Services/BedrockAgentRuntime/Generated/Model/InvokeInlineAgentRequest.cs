@@ -67,10 +67,12 @@ namespace Amazon.BedrockAgentRuntime.Model
     {
         private List<AgentActionGroup> _actionGroups = AWSConfigs.InitializeCollections ? new List<AgentActionGroup>() : null;
         private AgentCollaboration _agentCollaboration;
+        private string _agentName;
         private InlineBedrockModelConfigurations _bedrockModelConfigurations;
         private List<CollaboratorConfiguration> _collaboratorConfigurations = AWSConfigs.InitializeCollections ? new List<CollaboratorConfiguration>() : null;
         private List<Collaborator> _collaborators = AWSConfigs.InitializeCollections ? new List<Collaborator>() : null;
         private string _customerEncryptionKeyArn;
+        private CustomOrchestration _customOrchestration;
         private bool? _enableTrace;
         private bool? _endSession;
         private string _foundationModel;
@@ -80,6 +82,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _inputText;
         private string _instruction;
         private List<KnowledgeBase> _knowledgeBases = AWSConfigs.InitializeCollections ? new List<KnowledgeBase>() : null;
+        private OrchestrationType _orchestrationType;
         private PromptOverrideConfiguration _promptOverrideConfiguration;
         private string _sessionId;
         private StreamingConfigurations _streamingConfigurations;
@@ -121,6 +124,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetAgentCollaboration()
         {
             return this._agentCollaboration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AgentName. 
+        /// <para>
+        /// The name for the agent.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string AgentName
+        {
+            get { return this._agentName; }
+            set { this._agentName = value; }
+        }
+
+        // Check to see if AgentName property is set
+        internal bool IsSetAgentName()
+        {
+            return this._agentName != null;
         }
 
         /// <summary>
@@ -199,11 +221,30 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomOrchestration. 
+        /// <para>
+        /// Contains details of the custom orchestration configured for the agent. 
+        /// </para>
+        /// </summary>
+        public CustomOrchestration CustomOrchestration
+        {
+            get { return this._customOrchestration; }
+            set { this._customOrchestration = value; }
+        }
+
+        // Check to see if CustomOrchestration property is set
+        internal bool IsSetCustomOrchestration()
+        {
+            return this._customOrchestration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EnableTrace. 
         /// <para>
         ///  Specifies whether to turn on the trace or not to track the agent's reasoning process.
         /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html">Using
-        /// trace</a>. <pre><c> &lt;/p&gt; </c></pre>
+        /// trace</a>. 
+        /// </para>
         /// </summary>
         public bool? EnableTrace
         {
@@ -390,6 +431,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetKnowledgeBases()
         {
             return this._knowledgeBases != null && (this._knowledgeBases.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrchestrationType. 
+        /// <para>
+        /// Specifies the type of orchestration strategy for the agent. This is set to DEFAULT
+        /// orchestration type, by default. 
+        /// </para>
+        /// </summary>
+        public OrchestrationType OrchestrationType
+        {
+            get { return this._orchestrationType; }
+            set { this._orchestrationType = value; }
+        }
+
+        // Check to see if OrchestrationType property is set
+        internal bool IsSetOrchestrationType()
+        {
+            return this._orchestrationType != null;
         }
 
         /// <summary>
