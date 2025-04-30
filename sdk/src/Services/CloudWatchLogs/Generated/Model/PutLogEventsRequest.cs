@@ -73,7 +73,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Each log event can be no larger than 256 KB.
+    /// Each log event can be no larger than 1 MB.
     /// </para>
     ///  </li> <li> 
     /// <para>

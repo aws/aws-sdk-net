@@ -141,8 +141,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// CloudWatch Logs supports only symmetric KMS keys. Do not use an associate an asymmetric
-        /// KMS key with your log group or query results. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+        /// CloudWatch Logs supports only symmetric KMS keys. Do not associate an asymmetric KMS
+        /// key with your log group or query results. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
         /// Symmetric and Asymmetric Keys</a>.
         /// </para>
         ///  </note> 
@@ -406,7 +406,7 @@ namespace Amazon.CloudWatchLogs
         ///  <note> 
         /// <para>
         /// We recommend that you don't regularly export to Amazon S3 as a way to continuously
-        /// archive your logs. For that use case, we instaed recommend that you use subscriptions.
+        /// archive your logs. For that use case, we instead recommend that you use subscriptions.
         /// For more information about subscriptions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html">Real-time
         /// processing of log data with subscriptions</a>.
         /// </para>
@@ -1831,7 +1831,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To see subscription filter policies, you must have the <c>logs:DescrubeSubscriptionFilters</c>
+        /// To see subscription filter policies, you must have the <c>logs:DescribeSubscriptionFilters</c>
         /// and <c>logs:DescribeAccountPolicies</c> permissions.
         /// </para>
         ///  </li> <li> 
@@ -5071,7 +5071,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Each log event can be no larger than 256 KB.
+        /// Each log event can be no larger than 1 MB.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5723,7 +5723,12 @@ namespace Amazon.CloudWatchLogs
         /// object is returned when the session times out, after it has been kept open for three
         /// hours.
         /// </para>
-        ///  </li> </ul> <important> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The <c>StartLiveTail</c> API routes requests to <c>streaming-logs.<i>Region</i>.amazonaws.com</c>
+        /// using SDK host prefix injection. VPC endpoint support is not available for this API.
+        /// </para>
+        ///  </note> <important> 
         /// <para>
         /// You can end a session before it times out by closing the session stream or by closing
         /// the client that is receiving the stream. The session also ends if the established
