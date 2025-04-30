@@ -101,6 +101,17 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetPublishToSns())
+            {
+                context.Writer.WritePropertyName("PublishToSns");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SnsActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.PublishToSns, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetRelay())
             {
                 context.Writer.WritePropertyName("Relay");

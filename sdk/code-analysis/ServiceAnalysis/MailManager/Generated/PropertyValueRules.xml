@@ -1083,6 +1083,18 @@
     <pattern>^[a-zA-Z0-9:_/+=,@.#-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MailManager.Model.SnsAction.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9:_/+=,@.#-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MailManager.Model.SnsAction.TopicArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):sns:[a-z]{2}-[a-z]+-\d{1}:\d{12}:[\w\-]{1,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MailManager.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
