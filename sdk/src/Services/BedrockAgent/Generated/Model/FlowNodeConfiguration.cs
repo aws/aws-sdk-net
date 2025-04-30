@@ -38,6 +38,7 @@ namespace Amazon.BedrockAgent.Model
         private AgentFlowNodeConfiguration _agent;
         private CollectorFlowNodeConfiguration _collector;
         private ConditionFlowNodeConfiguration _condition;
+        private InlineCodeFlowNodeConfiguration _inlineCode;
         private InputFlowNodeConfiguration _input;
         private IteratorFlowNodeConfiguration _iterator;
         private KnowledgeBaseFlowNodeConfiguration _knowledgeBase;
@@ -89,7 +90,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Condition. 
         /// <para>
-        /// Contains configurations for a Condition node in your flow. Defines conditions that
+        /// Contains configurations for a condition node in your flow. Defines conditions that
         /// lead to different branches of the flow.
         /// </para>
         /// </summary>
@@ -103,6 +104,26 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetCondition()
         {
             return this._condition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InlineCode. 
+        /// <para>
+        /// Contains configurations for an inline code node in your flow. Inline code nodes let
+        /// you write and execute code directly within your flow, enabling data transformations,
+        /// custom logic, and integrations without needing an external Lambda function.
+        /// </para>
+        /// </summary>
+        public InlineCodeFlowNodeConfiguration InlineCode
+        {
+            get { return this._inlineCode; }
+            set { this._inlineCode = value; }
+        }
+
+        // Check to see if InlineCode property is set
+        internal bool IsSetInlineCode()
+        {
+            return this._inlineCode != null;
         }
 
         /// <summary>
@@ -249,7 +270,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Retrieval. 
         /// <para>
-        /// Contains configurations for a Retrieval node in your flow. Retrieves data from an
+        /// Contains configurations for a retrieval node in your flow. Retrieves data from an
         /// Amazon S3 location and returns it as the output.
         /// </para>
         /// </summary>
@@ -268,7 +289,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Storage. 
         /// <para>
-        /// Contains configurations for a Storage node in your flow. Stores an input in an Amazon
+        /// Contains configurations for a storage node in your flow. Stores an input in an Amazon
         /// S3 location.
         /// </para>
         /// </summary>

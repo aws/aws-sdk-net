@@ -184,7 +184,7 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>PRE_PROCESSING</c> – <c>ENABLED</c> 
+        ///  <c>PRE_PROCESSING</c> – <c>DISABLED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>

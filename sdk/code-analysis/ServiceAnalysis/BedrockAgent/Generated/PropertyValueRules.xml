@@ -80,7 +80,7 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.CreateAgentRequest.IdleSessionTTLInSeconds</property>
     <min>60</min>
-    <max>3600</max>
+    <max>5400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.CreateAgentRequest.Instruction</property>
@@ -1276,7 +1276,7 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.UpdateAgentRequest.IdleSessionTTLInSeconds</property>
     <min>60</min>
-    <max>3600</max>
+    <max>5400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.UpdateAgentRequest.Instruction</property>
@@ -1628,7 +1628,7 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.Agent.IdleSessionTTLInSeconds</property>
     <min>60</min>
-    <max>3600</max>
+    <max>5400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.Agent.Instruction</property>
@@ -1873,7 +1873,7 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.AgentVersion.IdleSessionTTLInSeconds</property>
     <min>60</min>
-    <max>3600</max>
+    <max>5400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.AgentVersion.Instruction</property>
@@ -2224,6 +2224,11 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.IngestionJobSummary.KnowledgeBaseId</property>
     <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.InlineCodeFlowNodeConfiguration.Code</property>
+    <min>1</min>
+    <max>5000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.KendraKnowledgeBaseConfiguration.KendraIndexArn</property>

@@ -74,6 +74,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.Condition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("inlineCode", targetDepth))
+                {
+                    var unmarshaller = InlineCodeFlowNodeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.InlineCode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("input", targetDepth))
                 {
                     var unmarshaller = InputFlowNodeConfigurationUnmarshaller.Instance;
