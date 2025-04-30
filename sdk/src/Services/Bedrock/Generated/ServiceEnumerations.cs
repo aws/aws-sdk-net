@@ -1467,6 +1467,72 @@ namespace Amazon.Bedrock
 
 
     /// <summary>
+    /// Constants used for properties of type JobStatusDetails.
+    /// </summary>
+    public class JobStatusDetails : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Completed for JobStatusDetails
+        /// </summary>
+        public static readonly JobStatusDetails Completed = new JobStatusDetails("Completed");
+        /// <summary>
+        /// Constant Failed for JobStatusDetails
+        /// </summary>
+        public static readonly JobStatusDetails Failed = new JobStatusDetails("Failed");
+        /// <summary>
+        /// Constant InProgress for JobStatusDetails
+        /// </summary>
+        public static readonly JobStatusDetails InProgress = new JobStatusDetails("InProgress");
+        /// <summary>
+        /// Constant NotStarted for JobStatusDetails
+        /// </summary>
+        public static readonly JobStatusDetails NotStarted = new JobStatusDetails("NotStarted");
+        /// <summary>
+        /// Constant Stopped for JobStatusDetails
+        /// </summary>
+        public static readonly JobStatusDetails Stopped = new JobStatusDetails("Stopped");
+        /// <summary>
+        /// Constant Stopping for JobStatusDetails
+        /// </summary>
+        public static readonly JobStatusDetails Stopping = new JobStatusDetails("Stopping");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobStatusDetails(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobStatusDetails FindValue(string value)
+        {
+            return FindValue<JobStatusDetails>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobStatusDetails(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ModelCopyJobStatus.
     /// </summary>
     public class ModelCopyJobStatus : ConstantClass

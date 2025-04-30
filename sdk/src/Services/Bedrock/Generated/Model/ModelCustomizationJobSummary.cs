@@ -44,6 +44,7 @@ namespace Amazon.Bedrock.Model
         private string _jobName;
         private DateTime? _lastModifiedTime;
         private ModelCustomizationJobStatus _status;
+        private StatusDetails _statusDetails;
 
         /// <summary>
         /// Gets and sets the property BaseModelArn. 
@@ -232,6 +233,24 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusDetails. 
+        /// <para>
+        /// Details about the status of the data processing sub-task of the job.
+        /// </para>
+        /// </summary>
+        public StatusDetails StatusDetails
+        {
+            get { return this._statusDetails; }
+            set { this._statusDetails = value; }
+        }
+
+        // Check to see if StatusDetails property is set
+        internal bool IsSetStatusDetails()
+        {
+            return this._statusDetails != null;
         }
 
     }
