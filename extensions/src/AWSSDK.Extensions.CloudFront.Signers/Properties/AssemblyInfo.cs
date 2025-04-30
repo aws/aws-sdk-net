@@ -15,9 +15,5 @@ using System.Runtime.InteropServices;
 // COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
-#if NETFRAMEWORK
 [assembly: AssemblyVersion("4.0")]
-#else
-[assembly: AssemblyVersion("4.0.0.0")]
-#endif
 [assembly: AssemblyFileVersion("4.0.0.0")]
