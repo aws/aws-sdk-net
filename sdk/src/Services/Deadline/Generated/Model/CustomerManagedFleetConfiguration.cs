@@ -36,6 +36,7 @@ namespace Amazon.Deadline.Model
     {
         private AutoScalingMode _mode;
         private string _storageProfileId;
+        private TagPropagationMode _tagPropagationMode;
         private CustomerManagedWorkerCapabilities _workerCapabilities;
 
         /// <summary>
@@ -73,6 +74,35 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStorageProfileId()
         {
             return this._storageProfileId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagPropagationMode. 
+        /// <para>
+        /// Specifies whether tags associated with a fleet are attached to workers when the worker
+        /// is launched. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When the <c>tagPropagationMode</c> is set to <c>PROPAGATE_TAGS_TO_WORKERS_AT_LAUNCH</c>
+        /// any tag associated with a fleet is attached to workers when they launch. If the tags
+        /// for a fleet change, the tags associated with running workers <b>do not</b> change.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify <c>tagPropagationMode</c>, the default is <c>NO_PROPAGATION</c>.
+        /// </para>
+        /// </summary>
+        public TagPropagationMode TagPropagationMode
+        {
+            get { return this._tagPropagationMode; }
+            set { this._tagPropagationMode = value; }
+        }
+
+        // Check to see if TagPropagationMode property is set
+        internal bool IsSetTagPropagationMode()
+        {
+            return this._tagPropagationMode != null;
         }
 
         /// <summary>

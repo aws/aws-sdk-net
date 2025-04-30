@@ -283,7 +283,7 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateJobRequest.Template</property>
     <min>1</min>
-    <max>300000</max>
+    <max>1000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateJobResponse.JobId</property>

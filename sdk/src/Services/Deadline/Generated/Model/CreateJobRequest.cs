@@ -297,7 +297,7 @@ namespace Amazon.Deadline.Model
         /// The job template to use for this job.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=300000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1000000)]
         public string Template
         {
             get { return this._template; }
