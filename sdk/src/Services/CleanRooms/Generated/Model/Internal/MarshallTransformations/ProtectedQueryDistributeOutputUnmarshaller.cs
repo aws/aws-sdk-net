@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ProtectedQueryOutputConfiguration Object
+    /// Response Unmarshaller for ProtectedQueryDistributeOutput Object
     /// </summary>  
-    public class ProtectedQueryOutputConfigurationUnmarshaller : IJsonUnmarshaller<ProtectedQueryOutputConfiguration, JsonUnmarshallerContext>
+    public class ProtectedQueryDistributeOutputUnmarshaller : IJsonUnmarshaller<ProtectedQueryDistributeOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProtectedQueryOutputConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ProtectedQueryDistributeOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ProtectedQueryOutputConfiguration unmarshalledObject = new ProtectedQueryOutputConfiguration();
+            ProtectedQueryDistributeOutput unmarshalledObject = new ProtectedQueryDistributeOutput();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,21 +56,15 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("distribute", targetDepth))
+                if (context.TestExpression("memberList", targetDepth))
                 {
-                    var unmarshaller = ProtectedQueryDistributeOutputConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Distribute = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("member", targetDepth))
-                {
-                    var unmarshaller = ProtectedQueryMemberOutputConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Member = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<ProtectedQuerySingleMemberOutput, ProtectedQuerySingleMemberOutputUnmarshaller>(ProtectedQuerySingleMemberOutputUnmarshaller.Instance);
+                    unmarshalledObject.MemberList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("s3", targetDepth))
                 {
-                    var unmarshaller = ProtectedQueryS3OutputConfigurationUnmarshaller.Instance;
+                    var unmarshaller = ProtectedQueryS3OutputUnmarshaller.Instance;
                     unmarshalledObject.S3 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
@@ -79,12 +73,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         }
 
 
-        private static ProtectedQueryOutputConfigurationUnmarshaller _instance = new ProtectedQueryOutputConfigurationUnmarshaller();        
+        private static ProtectedQueryDistributeOutputUnmarshaller _instance = new ProtectedQueryDistributeOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProtectedQueryOutputConfigurationUnmarshaller Instance
+        public static ProtectedQueryDistributeOutputUnmarshaller Instance
         {
             get
             {

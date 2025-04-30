@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ProtectedQueryOutputConfiguration Marshaller
+    /// ProtectedQueryDistributeOutputConfiguration Marshaller
     /// </summary>
-    public class ProtectedQueryOutputConfigurationMarshaller : IRequestMarshaller<ProtectedQueryOutputConfiguration, JsonMarshallerContext> 
+    public class ProtectedQueryDistributeOutputConfigurationMarshaller : IRequestMarshaller<ProtectedQueryDistributeOutputConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,41 +42,24 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ProtectedQueryOutputConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ProtectedQueryDistributeOutputConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDistribute())
+            if(requestObject.IsSetLocations())
             {
-                context.Writer.WritePropertyName("distribute");
-                context.Writer.WriteStartObject();
+                context.Writer.WritePropertyName("locations");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectLocationsListValue in requestObject.Locations)
+                {
+                    context.Writer.WriteStartObject();
 
-                var marshaller = ProtectedQueryDistributeOutputConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Distribute, context);
+                    var marshaller = ProtectedQueryDistributeOutputConfigurationLocationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLocationsListValue, context);
 
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetMember())
-            {
-                context.Writer.WritePropertyName("member");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ProtectedQueryMemberOutputConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Member, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetS3())
-            {
-                context.Writer.WritePropertyName("s3");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ProtectedQueryS3OutputConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3, context);
-
-                context.Writer.WriteEndObject();
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
         }
@@ -84,7 +67,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ProtectedQueryOutputConfigurationMarshaller Instance = new ProtectedQueryOutputConfigurationMarshaller();
+        public readonly static ProtectedQueryDistributeOutputConfigurationMarshaller Instance = new ProtectedQueryDistributeOutputConfigurationMarshaller();
 
     }
 }

@@ -50,7 +50,7 @@ namespace Amazon.CleanRooms.Model
         /// rules.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=225)]
+        [AWSProperty(Required=true, Min=1)]
         public List<string> AllowedColumns
         {
             get { return this._allowedColumns; }

@@ -30,37 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// Contains configuration details for protected query output.
+    /// Specifies where you'll distribute the results of your protected query. You must configure
+    /// either an S3 destination or a collaboration member destination.
     /// </summary>
-    public partial class ProtectedQueryOutputConfiguration
+    public partial class ProtectedQueryDistributeOutputConfigurationLocation
     {
-        private ProtectedQueryDistributeOutputConfiguration _distribute;
         private ProtectedQueryMemberOutputConfiguration _member;
         private ProtectedQueryS3OutputConfiguration _s3;
 
         /// <summary>
-        /// Gets and sets the property Distribute. 
-        /// <para>
-        ///  Required configuration for a protected query with a <c>distribute</c> output type.
-        /// </para>
-        /// </summary>
-        public ProtectedQueryDistributeOutputConfiguration Distribute
-        {
-            get { return this._distribute; }
-            set { this._distribute = value; }
-        }
-
-        // Check to see if Distribute property is set
-        internal bool IsSetDistribute()
-        {
-            return this._distribute != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Member. 
-        /// <para>
-        ///  Required configuration for a protected query with a <c>member</c> output type.
-        /// </para>
+        /// Gets and sets the property Member.
         /// </summary>
         public ProtectedQueryMemberOutputConfiguration Member
         {
@@ -75,10 +54,7 @@ namespace Amazon.CleanRooms.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3. 
-        /// <para>
-        /// Required configuration for a protected query with an <c>s3</c> output type.
-        /// </para>
+        /// Gets and sets the property S3.
         /// </summary>
         public ProtectedQueryS3OutputConfiguration S3
         {
