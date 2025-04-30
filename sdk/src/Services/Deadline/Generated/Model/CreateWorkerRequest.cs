@@ -42,6 +42,7 @@ namespace Amazon.Deadline.Model
         private string _farmId;
         private string _fleetId;
         private HostPropertiesRequest _hostProperties;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -116,6 +117,25 @@ namespace Amazon.Deadline.Model
         internal bool IsSetHostProperties()
         {
             return this._hostProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Each tag consists of a tag key and a tag value. Tag keys and values are both required,
+        /// but tag values can be empty strings.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

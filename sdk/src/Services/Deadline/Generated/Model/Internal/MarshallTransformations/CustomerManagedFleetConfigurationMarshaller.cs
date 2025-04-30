@@ -60,6 +60,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.StorageProfileId);
             }
 
+            if(requestObject.IsSetTagPropagationMode())
+            {
+                context.Writer.WritePropertyName("tagPropagationMode");
+                context.Writer.Write(requestObject.TagPropagationMode);
+            }
+
             if(requestObject.IsSetWorkerCapabilities())
             {
                 context.Writer.WritePropertyName("workerCapabilities");

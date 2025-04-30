@@ -78,6 +78,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                     unmarshalledObject.StorageProfileId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("tagPropagationMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TagPropagationMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("workerCapabilities", targetDepth))
                 {
                     var unmarshaller = CustomerManagedWorkerCapabilitiesUnmarshaller.Instance;
