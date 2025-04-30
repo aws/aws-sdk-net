@@ -170,10 +170,6 @@ namespace Amazon.EC2.Model
         /// <c>enableDnsHostnames</c> and <c>enableDnsSupport</c>. Use <a>ModifyVpcAttribute</a>
         /// to set the VPC attributes.
         /// </para>
-        ///  
-        /// <para>
-        /// Default: <c>true</c> 
-        /// </para>
         /// </summary>
         public bool? PrivateDnsEnabled
         {

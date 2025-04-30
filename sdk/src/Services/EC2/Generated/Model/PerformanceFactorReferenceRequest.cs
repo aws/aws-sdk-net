@@ -104,7 +104,11 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// If you specify an unsupported instance family as a value for baseline performance,
-        /// the API returns an empty response for and an exception for , , , and .
+        /// the API returns an empty response for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements">GetInstanceTypesFromInstanceRequirements</a>
+        /// and an exception for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>,
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet">RequestSpotFleet</a>,
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyFleet">ModifyFleet</a>,
+        /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySpotFleetRequest">ModifySpotFleetRequest</a>.
         /// </para>
         /// </summary>
         public string InstanceFamily

@@ -30,14 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Client route enforcement is a feature of the Client VPN service that helps enforce
-    /// administrator defined routes on devices connected through the VPN. T his feature helps
-    /// improve your security posture by ensuring that network traffic originating from a
-    /// connected client is not inadvertently sent outside the VPN tunnel.
+    /// Client Route Enforcement is a feature of Client VPN that helps enforce administrator
+    /// defined routes on devices connected through the VPN. This feature helps improve your
+    /// security posture by ensuring that network traffic originating from a connected client
+    /// is not inadvertently sent outside the VPN tunnel.
     /// 
     ///  
     /// <para>
-    /// Client route enforcement works by monitoring the route table of a connected device
+    /// Client Route Enforcement works by monitoring the route table of a connected device
     /// for routing policy changes to the VPN connection. If the feature detects any VPN routing
     /// policy modifications, it will automatically force an update to the route table, reverting
     /// it back to the expected route configurations.
@@ -50,7 +50,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Enforced. 
         /// <para>
-        /// Enable or disable the client route enforcement feature.
+        /// Enable or disable Client Route Enforcement. The state can either be <c>true</c> (enabled)
+        /// or <c>false</c> (disabled). The default is <c>false</c>.
         /// </para>
         ///  
         /// <para>
