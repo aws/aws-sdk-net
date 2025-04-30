@@ -45,6 +45,7 @@ namespace Amazon.EC2.Model
         private string _ipamArn;
         private string _ipamId;
         private string _ipamRegion;
+        private IpamMeteredAccount _meteredAccount;
         private List<IpamOperatingRegion> _operatingRegions = AWSConfigs.InitializeCollections ? new List<IpamOperatingRegion>() : null;
         private string _ownerId;
         private string _privateDefaultScopeId;
@@ -182,6 +183,41 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpamRegion()
         {
             return this._ipamRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MeteredAccount. 
+        /// <para>
+        /// A metered account is an Amazon Web Services account that is charged for active IP
+        /// addresses managed in IPAM. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/ipam-enable-cost-distro.html">Enable
+        /// cost distribution</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ipam-owner</c> (default): The Amazon Web Services account which owns the IPAM
+        /// is charged for all active IP addresses managed in IPAM.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>resource-owner</c>: The Amazon Web Services account that owns the IP address is
+        /// charged for the active IP address.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public IpamMeteredAccount MeteredAccount
+        {
+            get { return this._meteredAccount; }
+            set { this._meteredAccount = value; }
+        }
+
+        // Check to see if MeteredAccount property is set
+        internal bool IsSetMeteredAccount()
+        {
+            return this._meteredAccount != null;
         }
 
         /// <summary>

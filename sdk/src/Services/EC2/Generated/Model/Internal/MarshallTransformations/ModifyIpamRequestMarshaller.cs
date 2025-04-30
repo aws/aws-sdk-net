@@ -83,6 +83,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("IpamId", StringUtils.FromString(publicRequest.IpamId));
                 }
+                if(publicRequest.IsSetMeteredAccount())
+                {
+                    request.Parameters.Add("MeteredAccount", StringUtils.FromString(publicRequest.MeteredAccount));
+                }
                 if(publicRequest.IsSetRemoveOperatingRegions())
                 {
                     int publicRequestlistValueIndex = 1;

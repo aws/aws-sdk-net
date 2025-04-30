@@ -85,12 +85,14 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is not returned by .
+        /// This parameter is not returned by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute">DescribeImageAttribute</a>.
         /// </para>
         ///  
         /// <para>
-        /// For and , whether you can include this parameter, and the allowed values differ depending
-        /// on the type of block device mapping you are creating.
+        /// For <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage">CreateImage</a>
+        /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RegisterImage">RegisterImage</a>,
+        /// whether you can include this parameter, and the allowed values differ depending on
+        /// the type of block device mapping you are creating.
         /// </para>
         ///  <ul> <li> 
         /// <para>

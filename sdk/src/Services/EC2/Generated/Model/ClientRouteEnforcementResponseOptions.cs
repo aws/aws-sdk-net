@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The current status of client route enforcement. The state will either be <c>true</c>
-    /// (enabled) or <c>false</c> (disabled).
+    /// The current status of Client Route Enforcement.
     /// </summary>
     public partial class ClientRouteEnforcementResponseOptions
     {
@@ -40,7 +39,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Enforced. 
         /// <para>
-        /// Status of the client route enforcement feature.
+        /// Status of the client route enforcement feature, indicating whether Client Route Enforcement
+        /// is <c>true</c> (enabled) or <c>false</c> (disabled).
         /// </para>
         ///  
         /// <para>

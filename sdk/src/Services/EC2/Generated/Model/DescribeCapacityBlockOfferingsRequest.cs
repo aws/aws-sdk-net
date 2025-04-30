@@ -38,18 +38,8 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// To search for an available Capacity Block offering, you specify a reservation duration
-    /// and instance count. You must select one of the following options.
+    /// and instance count.
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// For reservation durations<b> 1-day increments up 14 days and 7-day increments up to
-    /// 182 days total</b> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// For instance count<b> 1, 2, 4, 8, 16, 32, or 64 instances</b> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class DescribeCapacityBlockOfferingsRequest : AmazonEC2Request
     {
@@ -64,7 +54,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CapacityDurationHours. 
         /// <para>
-        /// The number of hours for which to reserve Capacity Block.
+        /// The reservation duration for the Capacity Block, in hours. You must specify the duration
+        /// in 1-day increments up 14 days, and in 7-day increments up to 182 days.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -101,7 +92,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceCount. 
         /// <para>
-        /// The number of instances for which to reserve capacity.
+        /// The number of instances for which to reserve capacity. Each Capacity Block can have
+        /// up to 64 instances, and you can have up to 256 instances across Capacity Blocks.
         /// </para>
         /// </summary>
         public int InstanceCount
