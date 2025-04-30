@@ -88,6 +88,10 @@ namespace Amazon.ECRPublic.Internal
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                         {
+                            if (Equals("aws", GetAttr(refs["PartitionResult"], "name")))
+                            {
+                                return new Endpoint(Interpolate(@"https://ecr-public.{Region}.api.aws", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
                             return new Endpoint(Interpolate(@"https://api.ecr-public.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
