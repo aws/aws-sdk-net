@@ -32,7 +32,7 @@ namespace Amazon.CodeBuild
     public partial class AmazonCodeBuildConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CodeBuild", "3.7.418.3");
+            InternalSDKUtils.BuildUserAgentString("CodeBuild", "3.7.418.4");
 
         private string _userAgent = UserAgentString;
         ///<summary>
