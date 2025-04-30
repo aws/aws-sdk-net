@@ -154,6 +154,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     response.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("statusDetails", targetDepth))
+                {
+                    var unmarshaller = StatusDetailsUnmarshaller.Instance;
+                    response.StatusDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("trainingDataConfig", targetDepth))
                 {
                     var unmarshaller = TrainingDataConfigUnmarshaller.Instance;

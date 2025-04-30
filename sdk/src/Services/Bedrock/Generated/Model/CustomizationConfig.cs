@@ -39,7 +39,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property DistillationConfig. 
         /// <para>
-        /// The distillation configuration for the custom model.
+        /// The Distillation configuration for the custom model.
         /// </para>
         /// </summary>
         public DistillationConfig DistillationConfig

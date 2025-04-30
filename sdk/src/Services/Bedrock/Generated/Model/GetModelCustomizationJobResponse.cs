@@ -51,6 +51,7 @@ namespace Amazon.Bedrock.Model
         private string _outputModelName;
         private string _roleArn;
         private ModelCustomizationJobStatus _status;
+        private StatusDetails _statusDetails;
         private TrainingDataConfig _trainingDataConfig;
         private TrainingMetrics _trainingMetrics;
         private ValidationDataConfig _validationDataConfig;
@@ -376,6 +377,25 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusDetails. 
+        /// <para>
+        /// For a Distillation job, the details about the statuses of the sub-tasks of the customization
+        /// job. 
+        /// </para>
+        /// </summary>
+        public StatusDetails StatusDetails
+        {
+            get { return this._statusDetails; }
+            set { this._statusDetails = value; }
+        }
+
+        // Check to see if StatusDetails property is set
+        internal bool IsSetStatusDetails()
+        {
+            return this._statusDetails != null;
         }
 
         /// <summary>
