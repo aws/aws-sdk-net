@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ProtectedQueryOutputConfiguration Marshaller
+    /// ProtectedQueryDistributeOutputConfigurationLocation Marshaller
     /// </summary>
-    public class ProtectedQueryOutputConfigurationMarshaller : IRequestMarshaller<ProtectedQueryOutputConfiguration, JsonMarshallerContext> 
+    public class ProtectedQueryDistributeOutputConfigurationLocationMarshaller : IRequestMarshaller<ProtectedQueryDistributeOutputConfigurationLocation, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,21 +44,10 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ProtectedQueryOutputConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ProtectedQueryDistributeOutputConfigurationLocation requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDistribute())
-            {
-                context.Writer.WritePropertyName("distribute");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ProtectedQueryDistributeOutputConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Distribute, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
             if(requestObject.IsSetMember())
             {
                 context.Writer.WritePropertyName("member");
@@ -86,7 +75,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ProtectedQueryOutputConfigurationMarshaller Instance = new ProtectedQueryOutputConfigurationMarshaller();
+        public readonly static ProtectedQueryDistributeOutputConfigurationLocationMarshaller Instance = new ProtectedQueryDistributeOutputConfigurationLocationMarshaller();
 
     }
 }

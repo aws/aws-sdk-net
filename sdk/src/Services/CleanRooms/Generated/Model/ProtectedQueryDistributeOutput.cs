@@ -30,45 +30,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// Contains details about the protected query output.
+    /// Contains the output information for a protected query with a distribute output configuration.
+    /// 
+    ///  
+    /// <para>
+    ///  This output type allows query results to be distributed to multiple receivers, including
+    /// S3 and collaboration members. It is only available for queries using the Spark analytics
+    /// engine.
+    /// </para>
     /// </summary>
-    public partial class ProtectedQueryOutput
+    public partial class ProtectedQueryDistributeOutput
     {
-        private ProtectedQueryDistributeOutput _distribute;
         private List<ProtectedQuerySingleMemberOutput> _memberList = AWSConfigs.InitializeCollections ? new List<ProtectedQuerySingleMemberOutput>() : null;
         private ProtectedQueryS3Output _s3;
 
         /// <summary>
-        /// Gets and sets the property Distribute. 
-        /// <para>
-        /// Contains output information for protected queries that use a <c>distribute</c> output
-        /// type. This output type lets you send query results to multiple locations - either
-        /// to S3 or to collaboration members. 
-        /// </para>
-        ///  <note> 
-        /// <para>
-        ///  You can only use the <c>distribute</c> output type with the Spark analytics engine.
-        /// 
-        /// </para>
-        ///  </note>
-        /// </summary>
-        public ProtectedQueryDistributeOutput Distribute
-        {
-            get { return this._distribute; }
-            set { this._distribute = value; }
-        }
-
-        // Check to see if Distribute property is set
-        internal bool IsSetDistribute()
-        {
-            return this._distribute != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property MemberList. 
         /// <para>
-        /// The list of member Amazon Web Services account(s) that received the results of the
-        /// query. 
+        ///  Contains the output results for each member location specified in the distribute
+        /// output configuration. Each entry provides details about the result distribution to
+        /// a specific collaboration member. 
         /// </para>
         /// </summary>
         public List<ProtectedQuerySingleMemberOutput> MemberList
@@ -84,10 +65,7 @@ namespace Amazon.CleanRooms.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3. 
-        /// <para>
-        /// If present, the output for a protected query with an <c>S3</c> output type.
-        /// </para>
+        /// Gets and sets the property S3.
         /// </summary>
         public ProtectedQueryS3Output S3
         {

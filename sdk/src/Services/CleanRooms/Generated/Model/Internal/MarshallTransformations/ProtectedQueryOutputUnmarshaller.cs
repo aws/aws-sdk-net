@@ -66,6 +66,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("distribute", targetDepth))
+                {
+                    var unmarshaller = ProtectedQueryDistributeOutputUnmarshaller.Instance;
+                    unmarshalledObject.Distribute = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("memberList", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ProtectedQuerySingleMemberOutput, ProtectedQuerySingleMemberOutputUnmarshaller>(ProtectedQuerySingleMemberOutputUnmarshaller.Instance);

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ProtectedQueryOutputConfiguration Object
+    /// Response Unmarshaller for ProtectedQueryDistributeOutputConfiguration Object
     /// </summary>  
-    public class ProtectedQueryOutputConfigurationUnmarshaller : IUnmarshaller<ProtectedQueryOutputConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ProtectedQueryOutputConfiguration, JsonUnmarshallerContext>
+    public class ProtectedQueryDistributeOutputConfigurationUnmarshaller : IUnmarshaller<ProtectedQueryDistributeOutputConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ProtectedQueryDistributeOutputConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ProtectedQueryOutputConfiguration IUnmarshaller<ProtectedQueryOutputConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ProtectedQueryDistributeOutputConfiguration IUnmarshaller<ProtectedQueryDistributeOutputConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProtectedQueryOutputConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ProtectedQueryDistributeOutputConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            ProtectedQueryOutputConfiguration unmarshalledObject = new ProtectedQueryOutputConfiguration();
+            ProtectedQueryDistributeOutputConfiguration unmarshalledObject = new ProtectedQueryDistributeOutputConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("distribute", targetDepth))
+                if (context.TestExpression("locations", targetDepth))
                 {
-                    var unmarshaller = ProtectedQueryDistributeOutputConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Distribute = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("member", targetDepth))
-                {
-                    var unmarshaller = ProtectedQueryMemberOutputConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Member = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("s3", targetDepth))
-                {
-                    var unmarshaller = ProtectedQueryS3OutputConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.S3 = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ProtectedQueryDistributeOutputConfigurationLocation, ProtectedQueryDistributeOutputConfigurationLocationUnmarshaller>(ProtectedQueryDistributeOutputConfigurationLocationUnmarshaller.Instance);
+                    unmarshalledObject.Locations = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         }
 
 
-        private static ProtectedQueryOutputConfigurationUnmarshaller _instance = new ProtectedQueryOutputConfigurationUnmarshaller();        
+        private static ProtectedQueryDistributeOutputConfigurationUnmarshaller _instance = new ProtectedQueryDistributeOutputConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProtectedQueryOutputConfigurationUnmarshaller Instance
+        public static ProtectedQueryDistributeOutputConfigurationUnmarshaller Instance
         {
             get
             {
