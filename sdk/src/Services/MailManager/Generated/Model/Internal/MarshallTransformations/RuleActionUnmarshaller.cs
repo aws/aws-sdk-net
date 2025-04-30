@@ -96,6 +96,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.Drop = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PublishToSns", targetDepth))
+                {
+                    var unmarshaller = SnsActionUnmarshaller.Instance;
+                    unmarshalledObject.PublishToSns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Relay", targetDepth))
                 {
                     var unmarshaller = RelayActionUnmarshaller.Instance;
