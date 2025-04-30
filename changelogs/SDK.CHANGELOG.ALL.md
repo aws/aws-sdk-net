@@ -1,3 +1,28 @@
+### 4.0.2.0 (2025-04-30 18:35 UTC)
+* Bedrock (4.0.1.0)
+	* You can now specify a cross region inference profile as a teacher model for the CreateModelCustomizationJob API. Additionally, the GetModelCustomizationJob API has been enhanced to return the sub-task statuses of a customization job within the StatusDetails response field.
+* BedrockAgent (4.0.1.0)
+	* Features:    Add inline code node to prompt flow
+* BedrockAgentRuntime (4.0.1.0)
+	* Support for Custom Orchestration within InlineAgents
+* CleanRooms (4.0.1.0)
+	* This release adds support for ProtectedQuery results to be delivered to more than one collaboration member via the new distribute output configuration in StartProtectedQuery.
+* CloudWatchLogs (4.0.1.0)
+	* CloudWatch Logs supports "DELIVERY" log class. This log class is used only for delivering AWS Lambda logs to Amazon S3 or Amazon Data Firehose.
+* Deadline (4.0.1.0)
+	* Adds support for tag management on workers and tag inheritance from fleets to their associated workers.
+* EC2 (4.0.1.0)
+	* Launch of cost distribution feature for IPAM owners to distribute costs to internal teams.
+* ECR (4.0.1.0)
+	* Adds dualstack support for Amazon Elastic Container Registry (Amazon ECR).
+* ECRPublic (4.0.1.0)
+	* Adds dualstack support for Amazon Elastic Container Registry Public (Amazon ECR Public).
+* MailManager (4.0.1.0)
+	* Introducing new RuleSet rule PublishToSns action, which allows customers to publish email notifications to an Amazon SNS topic. New PublishToSns action enables customers to easily integrate their email workflows via Amazon SNS, allowing them to notify other systems about important email events.
+* Core 4.0.0.2
+	* Set assembly version for all targets to fixed 4.0 version number to avoid binding issues. The assembly file version should be used to understand the version of the assembly.
+	* All services packages updated to require new Core
+
 ### 4.0.1.0 (2025-04-29 20:03 UTC)
 * ConnectCases (4.0.1.0)
 	* Introduces CustomEntity as part of the UserUnion data type. This field is used to indicate the entity who is performing the API action.
