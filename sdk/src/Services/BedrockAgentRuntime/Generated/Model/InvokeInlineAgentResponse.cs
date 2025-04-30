@@ -41,7 +41,8 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Completion. 
         /// <para>
-        ///  <pre><c> &lt;/p&gt; </c></pre>
+        /// The inline agent's response to the user prompt. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public InlineAgentResponseStream Completion

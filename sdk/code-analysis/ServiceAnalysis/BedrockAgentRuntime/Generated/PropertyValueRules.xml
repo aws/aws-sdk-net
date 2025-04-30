@@ -212,6 +212,10 @@
     <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.InvokeInlineAgentRequest.AgentName</property>
+    <pattern>^([0-9a-zA-Z][_-]?){1,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.InvokeInlineAgentRequest.CustomerEncryptionKeyArn</property>
     <min>1</min>
     <max>2048</max>
@@ -687,6 +691,10 @@
     <property>Amazon.BedrockAgentRuntime.Model.InlineAgentPayloadPart.Bytes</property>
     <min>0</min>
     <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.InlineAgentTracePart.CollaboratorName</property>
+    <pattern>^([0-9a-zA-Z][_-]?){1,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.InlineAgentTracePart.SessionId</property>

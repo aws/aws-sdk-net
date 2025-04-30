@@ -66,6 +66,24 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("callerChain", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Caller, CallerUnmarshaller>(CallerUnmarshaller.Instance);
+                    unmarshalledObject.CallerChain = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("collaboratorName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CollaboratorName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("eventTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.EventTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sessionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

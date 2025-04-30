@@ -43,8 +43,66 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class InlineAgentTracePart
         : IEventStreamEvent
     {
+        private List<Caller> _callerChain = AWSConfigs.InitializeCollections ? new List<Caller>() : null;
+        private string _collaboratorName;
+        private DateTime? _eventTime;
         private string _sessionId;
         private Trace _trace;
+
+        /// <summary>
+        /// Gets and sets the property CallerChain. 
+        /// <para>
+        /// The caller chain for the trace part.
+        /// </para>
+        /// </summary>
+        public List<Caller> CallerChain
+        {
+            get { return this._callerChain; }
+            set { this._callerChain = value; }
+        }
+
+        // Check to see if CallerChain property is set
+        internal bool IsSetCallerChain()
+        {
+            return this._callerChain != null && (this._callerChain.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CollaboratorName. 
+        /// <para>
+        /// The collaborator name for the trace part.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string CollaboratorName
+        {
+            get { return this._collaboratorName; }
+            set { this._collaboratorName = value; }
+        }
+
+        // Check to see if CollaboratorName property is set
+        internal bool IsSetCollaboratorName()
+        {
+            return this._collaboratorName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventTime. 
+        /// <para>
+        /// The time that trace occurred. 
+        /// </para>
+        /// </summary>
+        public DateTime EventTime
+        {
+            get { return this._eventTime.GetValueOrDefault(); }
+            set { this._eventTime = value; }
+        }
+
+        // Check to see if EventTime property is set
+        internal bool IsSetEventTime()
+        {
+            return this._eventTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property SessionId. 
