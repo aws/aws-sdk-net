@@ -1,0 +1,9 @@
+{
+    "core": {
+        "changeLogMessages": [
+            "Set assembly version for all targets to fixed 4.0 version number to avoid binding issues. The assembly file version should be used to understand the version of the assembly."
+        ],
+		"type": "Patch",
+        "updateMinimum": true
+    }
+}
