@@ -59,10 +59,11 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// Do not include any security-sensitive information including account access IDs, secrets
-    /// or tokens in any hyperparameter field. If the use of security-sensitive credentials
-    /// are detected, SageMaker will reject your training job request and return an exception
-    /// error.
+    /// Do not include any security-sensitive information including account access IDs, secrets,
+    /// or tokens in any hyperparameter fields. As part of the shared responsibility model,
+    /// you are responsible for any potential exposure, unauthorized access, or compromise
+    /// of your sensitive data if caused by security-sensitive information included in the
+    /// request hyperparameter variable or plain text fields.
     /// </para>
     ///  </important> </li> <li> 
     /// <para>
@@ -103,7 +104,15 @@ namespace Amazon.SageMaker.Model
     /// <para>
     ///  <c>Environment</c> - The environment variables to set in the Docker container.
     /// </para>
-    ///  </li> <li> 
+    ///  <important> 
+    /// <para>
+    /// Do not include any security-sensitive information including account access IDs, secrets,
+    /// or tokens in any environment fields. As part of the shared responsibility model, you
+    /// are responsible for any potential exposure, unauthorized access, or compromise of
+    /// your sensitive data if caused by security-sensitive information included in the request
+    /// environment variable or plain text fields.
+    /// </para>
+    ///  </important> </li> <li> 
     /// <para>
     ///  <c>RetryStrategy</c> - The number of times to retry the job when the job fails due
     /// to an <c>InternalServerError</c>.
@@ -297,6 +306,15 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The environment variables to set in the Docker container.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Do not include any security-sensitive information including account access IDs, secrets,
+        /// or tokens in any environment fields. As part of the shared responsibility model, you
+        /// are responsible for any potential exposure, unauthorized access, or compromise of
+        /// your sensitive data if caused by security-sensitive information included in the request
+        /// environment variable or plain text fields.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Max=100)]
         public Dictionary<string, string> Environment
@@ -342,10 +360,11 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// Do not include any security-sensitive information including account access IDs, secrets
-        /// or tokens in any hyperparameter field. If the use of security-sensitive credentials
-        /// are detected, SageMaker will reject your training job request and return an exception
-        /// error.
+        /// Do not include any security-sensitive information including account access IDs, secrets,
+        /// or tokens in any hyperparameter fields. As part of the shared responsibility model,
+        /// you are responsible for any potential exposure, unauthorized access, or compromise
+        /// of your sensitive data if caused by any security-sensitive information included in
+        /// the request hyperparameter variable or plain text fields.
         /// </para>
         ///  </important>
         /// </summary>
@@ -631,6 +650,15 @@ namespace Amazon.SageMaker.Model
         /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
         /// Amazon Web Services Resources</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Do not include any security-sensitive information including account access IDs, secrets,
+        /// or tokens in any tags. As part of the shared responsibility model, you are responsible
+        /// for any potential exposure, unauthorized access, or compromise of your sensitive data
+        /// if caused by any security-sensitive information included in the request tag variable
+        /// or plain text fields.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags

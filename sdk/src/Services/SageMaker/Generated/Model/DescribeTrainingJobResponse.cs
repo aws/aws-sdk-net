@@ -304,6 +304,15 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The environment variables to set in the Docker container.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Do not include any security-sensitive information including account access IDs, secrets,
+        /// or tokens in any environment fields. As part of the shared responsibility model, you
+        /// are responsible for any potential exposure, unauthorized access, or compromise of
+        /// your sensitive data if caused by security-sensitive information included in the request
+        /// environment variable or plain text fields.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Max=100)]
         public Dictionary<string, string> Environment

@@ -7209,6 +7209,12 @@
     <pattern>^(?!\s*$).+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.AlarmDetails.AlarmName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.AlgorithmSpecification.AlgorithmName</property>
     <min>1</min>
     <max>170</max>
@@ -7659,6 +7665,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CapacitySize.Value</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacitySizeConfig.Value</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -8310,6 +8320,11 @@
     <property>Amazon.SageMaker.Model.DeployedImage.SpecifiedImage</property>
     <max>255</max>
     <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DeploymentConfiguration.WaitIntervalInSeconds</property>
+    <min>0</min>
+    <max>3600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeploymentStage.StageName</property>
@@ -11757,6 +11772,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ScheduledUpdateConfig.ScheduleExpression</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.SelectedStep.StepName</property>
     <max>256</max>
   </property-value-rule>
@@ -12517,6 +12537,12 @@
     <property>Amazon.SageMaker.Model.UiTemplateInfo.Url</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateClusterSoftwareInstanceGroupSpecification.InstanceGroupName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.USD.Cents</property>

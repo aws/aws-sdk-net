@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClusterNodeSummary Object
+    /// Response Unmarshaller for AlarmDetails Object
     /// </summary>  
-    public class ClusterNodeSummaryUnmarshaller : IUnmarshaller<ClusterNodeSummary, XmlUnmarshallerContext>, IUnmarshaller<ClusterNodeSummary, JsonUnmarshallerContext>
+    public class AlarmDetailsUnmarshaller : IUnmarshaller<AlarmDetails, XmlUnmarshallerContext>, IUnmarshaller<AlarmDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ClusterNodeSummary IUnmarshaller<ClusterNodeSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AlarmDetails IUnmarshaller<AlarmDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClusterNodeSummary Unmarshall(JsonUnmarshallerContext context)
+        public AlarmDetails Unmarshall(JsonUnmarshallerContext context)
         {
-            ClusterNodeSummary unmarshalledObject = new ClusterNodeSummary();
+            AlarmDetails unmarshalledObject = new AlarmDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("InstanceGroupName", targetDepth))
+                if (context.TestExpression("AlarmName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceGroupName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InstanceId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InstanceStatus", targetDepth))
-                {
-                    var unmarshaller = ClusterInstanceStatusDetailsUnmarshaller.Instance;
-                    unmarshalledObject.InstanceStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InstanceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastSoftwareUpdateTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastSoftwareUpdateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LaunchTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LaunchTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AlarmName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +77,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ClusterNodeSummaryUnmarshaller _instance = new ClusterNodeSummaryUnmarshaller();        
+        private static AlarmDetailsUnmarshaller _instance = new AlarmDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClusterNodeSummaryUnmarshaller Instance
+        public static AlarmDetailsUnmarshaller Instance
         {
             get
             {

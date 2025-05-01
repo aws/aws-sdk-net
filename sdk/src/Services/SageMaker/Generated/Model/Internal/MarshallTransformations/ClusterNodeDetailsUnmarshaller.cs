@@ -96,6 +96,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastSoftwareUpdateTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastSoftwareUpdateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LaunchTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

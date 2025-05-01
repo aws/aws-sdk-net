@@ -75,6 +75,33 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClusterName);
                 }
 
+                if(publicRequest.IsSetDeploymentConfig())
+                {
+                    context.Writer.WritePropertyName("DeploymentConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DeploymentConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeploymentConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetInstanceGroups())
+                {
+                    context.Writer.WritePropertyName("InstanceGroups");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestInstanceGroupsListValue in publicRequest.InstanceGroups)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpdateClusterSoftwareInstanceGroupSpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestInstanceGroupsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

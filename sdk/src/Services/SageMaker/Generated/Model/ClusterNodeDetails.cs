@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private ClusterInstanceStatusDetails _instanceStatus;
         private List<ClusterInstanceStorageConfig> _instanceStorageConfigs = AWSConfigs.InitializeCollections ? new List<ClusterInstanceStorageConfig>() : null;
         private ClusterInstanceType _instanceType;
+        private DateTime? _lastSoftwareUpdateTime;
         private DateTime? _launchTime;
         private ClusterLifeCycleConfig _lifeCycleConfig;
         private VpcConfig _overrideVpcConfig;
@@ -140,6 +141,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastSoftwareUpdateTime. 
+        /// <para>
+        /// The time of when the cluster was last updated.
+        /// </para>
+        /// </summary>
+        public DateTime LastSoftwareUpdateTime
+        {
+            get { return this._lastSoftwareUpdateTime.GetValueOrDefault(); }
+            set { this._lastSoftwareUpdateTime = value; }
+        }
+
+        // Check to see if LastSoftwareUpdateTime property is set
+        internal bool IsSetLastSoftwareUpdateTime()
+        {
+            return this._lastSoftwareUpdateTime.HasValue; 
         }
 
         /// <summary>

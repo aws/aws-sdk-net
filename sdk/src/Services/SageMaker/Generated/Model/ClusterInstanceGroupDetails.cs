@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         private ClusterLifeCycleConfig _lifeCycleConfig;
         private List<string> _onStartDeepHealthChecks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VpcConfig _overrideVpcConfig;
+        private ScheduledUpdateConfig _scheduledUpdateConfig;
         private InstanceGroupStatus _status;
         private int? _targetCount;
         private int? _threadsPerCore;
@@ -199,6 +200,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetOverrideVpcConfig()
         {
             return this._overrideVpcConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduledUpdateConfig. 
+        /// <para>
+        /// The configuration object of the schedule that SageMaker follows when updating the
+        /// AMI.
+        /// </para>
+        /// </summary>
+        public ScheduledUpdateConfig ScheduledUpdateConfig
+        {
+            get { return this._scheduledUpdateConfig; }
+            set { this._scheduledUpdateConfig = value; }
+        }
+
+        // Check to see if ScheduledUpdateConfig property is set
+        internal bool IsSetScheduledUpdateConfig()
+        {
+            return this._scheduledUpdateConfig != null;
         }
 
         /// <summary>

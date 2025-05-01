@@ -121,6 +121,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetScheduledUpdateConfig())
+            {
+                context.Writer.WritePropertyName("ScheduledUpdateConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ScheduledUpdateConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ScheduledUpdateConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetThreadsPerCore())
             {
                 context.Writer.WritePropertyName("ThreadsPerCore");

@@ -11773,6 +11773,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type NodeUnavailabilityType.
+    /// </summary>
+    public class NodeUnavailabilityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CAPACITY_PERCENTAGE for NodeUnavailabilityType
+        /// </summary>
+        public static readonly NodeUnavailabilityType CAPACITY_PERCENTAGE = new NodeUnavailabilityType("CAPACITY_PERCENTAGE");
+        /// <summary>
+        /// Constant INSTANCE_COUNT for NodeUnavailabilityType
+        /// </summary>
+        public static readonly NodeUnavailabilityType INSTANCE_COUNT = new NodeUnavailabilityType("INSTANCE_COUNT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodeUnavailabilityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodeUnavailabilityType FindValue(string value)
+        {
+            return FindValue<NodeUnavailabilityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodeUnavailabilityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NotebookInstanceAcceleratorType.
     /// </summary>
     public class NotebookInstanceAcceleratorType : ConstantClass

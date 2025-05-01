@@ -39,6 +39,7 @@ namespace Amazon.SageMaker.Model
         private string _instanceId;
         private ClusterInstanceStatusDetails _instanceStatus;
         private ClusterInstanceType _instanceType;
+        private DateTime? _lastSoftwareUpdateTime;
         private DateTime? _launchTime;
 
         /// <summary>
@@ -115,6 +116,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastSoftwareUpdateTime. 
+        /// <para>
+        /// The time of when SageMaker last updated the software of the instances in the cluster.
+        /// </para>
+        /// </summary>
+        public DateTime LastSoftwareUpdateTime
+        {
+            get { return this._lastSoftwareUpdateTime.GetValueOrDefault(); }
+            set { this._lastSoftwareUpdateTime = value; }
+        }
+
+        // Check to see if LastSoftwareUpdateTime property is set
+        internal bool IsSetLastSoftwareUpdateTime()
+        {
+            return this._lastSoftwareUpdateTime.HasValue; 
         }
 
         /// <summary>

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClusterNodeSummary Object
+    /// Response Unmarshaller for DeploymentConfiguration Object
     /// </summary>  
-    public class ClusterNodeSummaryUnmarshaller : IUnmarshaller<ClusterNodeSummary, XmlUnmarshallerContext>, IUnmarshaller<ClusterNodeSummary, JsonUnmarshallerContext>
+    public class DeploymentConfigurationUnmarshaller : IUnmarshaller<DeploymentConfiguration, XmlUnmarshallerContext>, IUnmarshaller<DeploymentConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ClusterNodeSummary IUnmarshaller<ClusterNodeSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DeploymentConfiguration IUnmarshaller<DeploymentConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClusterNodeSummary Unmarshall(JsonUnmarshallerContext context)
+        public DeploymentConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            ClusterNodeSummary unmarshalledObject = new ClusterNodeSummary();
+            DeploymentConfiguration unmarshalledObject = new DeploymentConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("InstanceGroupName", targetDepth))
+                if (context.TestExpression("AutoRollbackConfiguration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceGroupName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<AlarmDetails, AlarmDetailsUnmarshaller>(AlarmDetailsUnmarshaller.Instance);
+                    unmarshalledObject.AutoRollbackConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("InstanceId", targetDepth))
+                if (context.TestExpression("RollingUpdatePolicy", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = RollingDeploymentPolicyUnmarshaller.Instance;
+                    unmarshalledObject.RollingUpdatePolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("InstanceStatus", targetDepth))
+                if (context.TestExpression("WaitIntervalInSeconds", targetDepth))
                 {
-                    var unmarshaller = ClusterInstanceStatusDetailsUnmarshaller.Instance;
-                    unmarshalledObject.InstanceStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InstanceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastSoftwareUpdateTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastSoftwareUpdateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LaunchTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LaunchTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.WaitIntervalInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +89,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ClusterNodeSummaryUnmarshaller _instance = new ClusterNodeSummaryUnmarshaller();        
+        private static DeploymentConfigurationUnmarshaller _instance = new DeploymentConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClusterNodeSummaryUnmarshaller Instance
+        public static DeploymentConfigurationUnmarshaller Instance
         {
             get
             {

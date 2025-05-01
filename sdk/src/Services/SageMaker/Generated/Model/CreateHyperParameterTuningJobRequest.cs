@@ -46,10 +46,11 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// Do not include any security-sensitive information including account access IDs, secrets
-    /// or tokens in any hyperparameter field. If the use of security-sensitive credentials
-    /// are detected, SageMaker will reject your training job request and return an exception
-    /// error.
+    /// Do not include any security-sensitive information including account access IDs, secrets,
+    /// or tokens in any hyperparameter fields. As part of the shared responsibility model,
+    /// you are responsible for any potential exposure, unauthorized access, or compromise
+    /// of your sensitive data if caused by any security-sensitive information included in
+    /// the request hyperparameter variable or plain text fields..
     /// </para>
     ///  </important>
     /// </summary>
