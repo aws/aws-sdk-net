@@ -715,6 +715,21 @@ when {
             #endregion
         }
 
+        public void VerifiedPermissionsListTagsForResource()
+        {
+            #region example-1
+
+            var client = new AmazonVerifiedPermissionsClient();
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            {
+                ResourceArn = "C7v5xMplfFH3i3e4Jrzb1a"
+            });
+
+            Dictionary<string, string> tags = response.Tags;
+
+            #endregion
+        }
+
         public void VerifiedPermissionsPutSchema()
         {
             #region example-1
@@ -730,6 +745,42 @@ when {
             DateTime lastUpdatedDate = response.LastUpdatedDate;
             List<string> namespaces = response.Namespaces;
             string policyStoreId = response.PolicyStoreId;
+
+            #endregion
+        }
+
+        public void VerifiedPermissionsTagResource()
+        {
+            #region example-1
+
+            var client = new AmazonVerifiedPermissionsClient();
+            var response = client.TagResource(new TagResourceRequest 
+            {
+                ResourceArn = "C7v5xMplfFH3i3e4Jrzb1a",
+                Tags = new Dictionary<string, string> {
+                    { "key1", "value1" },
+                    { "key2", "value2" }
+                }
+            });
+
+
+            #endregion
+        }
+
+        public void VerifiedPermissionsUntagResource()
+        {
+            #region example-1
+
+            var client = new AmazonVerifiedPermissionsClient();
+            var response = client.UntagResource(new UntagResourceRequest 
+            {
+                ResourceArn = "C7v5xMplfFH3i3e4Jrzb1a",
+                TagKeys = new List<string> {
+                    "key1",
+                    "key2"
+                }
+            });
+
 
             #endregion
         }

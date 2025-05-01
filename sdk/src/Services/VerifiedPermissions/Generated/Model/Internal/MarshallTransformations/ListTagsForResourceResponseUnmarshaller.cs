@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetPolicyStore operation
+    /// Response Unmarshaller for ListTagsForResource operation
     /// </summary>  
-    public class GetPolicyStoreResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListTagsForResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,64 +46,16 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetPolicyStoreResponse response = new GetPolicyStoreResponse();
+            ListTagsForResourceResponse response = new ListTagsForResourceResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("cedarVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.CedarVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("createdDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("deletionProtection", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DeletionProtection = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastUpdatedDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastUpdatedDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("policyStoreId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.PolicyStoreId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("validationSettings", targetDepth))
-                {
-                    var unmarshaller = ValidationSettingsUnmarshaller.Instance;
-                    response.ValidationSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -153,9 +105,9 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             return new AmazonVerifiedPermissionsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetPolicyStoreResponseUnmarshaller _instance = new GetPolicyStoreResponseUnmarshaller();        
+        private static ListTagsForResourceResponseUnmarshaller _instance = new ListTagsForResourceResponseUnmarshaller();        
 
-        internal static GetPolicyStoreResponseUnmarshaller GetInstance()
+        internal static ListTagsForResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -163,7 +115,7 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetPolicyStoreResponseUnmarshaller Instance
+        public static ListTagsForResourceResponseUnmarshaller Instance
         {
             get
             {

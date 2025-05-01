@@ -36,6 +36,7 @@ namespace Amazon.VerifiedPermissions.Model
     public partial class GetPolicyStoreRequest : AmazonVerifiedPermissionsRequest
     {
         private string _policyStoreId;
+        private bool? _tags;
 
         /// <summary>
         /// Gets and sets the property PolicyStoreId. 
@@ -54,6 +55,32 @@ namespace Amazon.VerifiedPermissions.Model
         internal bool IsSetPolicyStoreId()
         {
             return this._policyStoreId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Specifies whether to return the tags that are attached to the policy store. If this
+        /// parameter is included in the API call, the tags are returned, otherwise they are not
+        /// returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If this parameter is included in the API call but there are no tags attached to the
+        /// policy store, the <c>tags</c> response parameter is omitted from the response.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool Tags
+        {
+            get { return this._tags.GetValueOrDefault(); }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags.HasValue; 
         }
 
     }

@@ -6213,6 +6213,264 @@ namespace Amazon.VerifiedPermissions
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Returns the tags associated with the specified Amazon Verified Permissions resource.
+        /// In Verified Permissions, policy stores can be tagged.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by VerifiedPermissions.</returns>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
+        /// The request failed because of an internal error. Try your request again later
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ResourceNotFoundException">
+        /// The request failed because it references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ThrottlingException">
+        /// The request failed because it exceeded a throttling quota.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ValidationException">
+        /// The request failed because one or more input parameters don't satisfy their constraint
+        /// requirements. The output is provided as a list of fields and a reason for each field
+        /// that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The possible reasons include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>UnrecognizedEntityType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an entity type that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnrecognizedActionId</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action id that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>InvalidActionApplication</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action that, according to the schema, doesn't support the specified
+        /// principal and resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnexpectedType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy included an operand that isn't a valid type for the specified operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IncompatibleTypes</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MissingAttribute</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that isn't specified in
+        /// the schema. Test for the existence of the attribute first before attempting to access
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnsafeOptionalAttributeAccess</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that is optional and isn't
+        /// guaranteed to be present. Test for the existence of the attribute first before attempting
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ImpossiblePolicy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar has determined that a policy condition always evaluates to false. If the policy
+        /// is always false, it can never apply to any query, and so it can never affect an authorization
+        /// decision.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>WrongNumberArguments</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy references an extension type with the wrong number of arguments.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FunctionArgumentValidationError</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar couldn't parse the argument passed to an extension type. For example, a string
+        /// that is to be parsed as an IPv4 address can contain only digits and the period character.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+
+        /// <summary>
+        /// Returns the tags associated with the specified Amazon Verified Permissions resource.
+        /// In Verified Permissions, policy stores can be tagged.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by VerifiedPermissions.</returns>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
+        /// The request failed because of an internal error. Try your request again later
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ResourceNotFoundException">
+        /// The request failed because it references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ThrottlingException">
+        /// The request failed because it exceeded a throttling quota.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ValidationException">
+        /// The request failed because one or more input parameters don't satisfy their constraint
+        /// requirements. The output is provided as a list of fields and a reason for each field
+        /// that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The possible reasons include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>UnrecognizedEntityType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an entity type that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnrecognizedActionId</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action id that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>InvalidActionApplication</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action that, according to the schema, doesn't support the specified
+        /// principal and resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnexpectedType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy included an operand that isn't a valid type for the specified operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IncompatibleTypes</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MissingAttribute</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that isn't specified in
+        /// the schema. Test for the existence of the attribute first before attempting to access
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnsafeOptionalAttributeAccess</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that is optional and isn't
+        /// guaranteed to be present. Test for the existence of the attribute first before attempting
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ImpossiblePolicy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar has determined that a policy condition always evaluates to false. If the policy
+        /// is always false, it can never apply to any query, and so it can never affect an authorization
+        /// decision.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>WrongNumberArguments</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy references an extension type with the wrong number of arguments.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FunctionArgumentValidationError</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar couldn't parse the argument passed to an extension type. For example, a string
+        /// that is to be parsed as an IPv4 address can contain only digits and the period character.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutSchema
 
 
@@ -6504,6 +6762,568 @@ namespace Amazon.VerifiedPermissions
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/PutSchema">REST API Reference for PutSchema Operation</seealso>
         Task<PutSchemaResponse> PutSchemaAsync(PutSchemaRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Assigns one or more tags (key-value pairs) to the specified Amazon Verified Permissions
+        /// resource. Tags can help you organize and categorize your resources. You can also use
+        /// them to scope user permissions by granting a user permission to access or change only
+        /// resources with certain tag values. In Verified Permissions, policy stores can be tagged.
+        /// 
+        ///  
+        /// <para>
+        /// Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly
+        /// as strings of characters.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the TagResource action with a resource that already has tags. If you specify
+        /// a new tag key, this tag is appended to the list of tags associated with the resource.
+        /// If you specify a tag key that is already associated with the resource, the new tag
+        /// value that you specify replaces the previous value for that tag.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can associate as many as 50 tags with a resource.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by VerifiedPermissions.</returns>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
+        /// The request failed because of an internal error. Try your request again later
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ResourceNotFoundException">
+        /// The request failed because it references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ThrottlingException">
+        /// The request failed because it exceeded a throttling quota.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.TooManyTagsException">
+        /// No more tags be added because the limit (50) has been reached. To add new tags, use
+        /// <c>UntagResource</c> to remove existing tags.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ValidationException">
+        /// The request failed because one or more input parameters don't satisfy their constraint
+        /// requirements. The output is provided as a list of fields and a reason for each field
+        /// that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The possible reasons include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>UnrecognizedEntityType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an entity type that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnrecognizedActionId</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action id that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>InvalidActionApplication</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action that, according to the schema, doesn't support the specified
+        /// principal and resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnexpectedType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy included an operand that isn't a valid type for the specified operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IncompatibleTypes</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MissingAttribute</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that isn't specified in
+        /// the schema. Test for the existence of the attribute first before attempting to access
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnsafeOptionalAttributeAccess</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that is optional and isn't
+        /// guaranteed to be present. Test for the existence of the attribute first before attempting
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ImpossiblePolicy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar has determined that a policy condition always evaluates to false. If the policy
+        /// is always false, it can never apply to any query, and so it can never affect an authorization
+        /// decision.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>WrongNumberArguments</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy references an extension type with the wrong number of arguments.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FunctionArgumentValidationError</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar couldn't parse the argument passed to an extension type. For example, a string
+        /// that is to be parsed as an IPv4 address can contain only digits and the period character.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Assigns one or more tags (key-value pairs) to the specified Amazon Verified Permissions
+        /// resource. Tags can help you organize and categorize your resources. You can also use
+        /// them to scope user permissions by granting a user permission to access or change only
+        /// resources with certain tag values. In Verified Permissions, policy stores can be tagged.
+        /// 
+        ///  
+        /// <para>
+        /// Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly
+        /// as strings of characters.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the TagResource action with a resource that already has tags. If you specify
+        /// a new tag key, this tag is appended to the list of tags associated with the resource.
+        /// If you specify a tag key that is already associated with the resource, the new tag
+        /// value that you specify replaces the previous value for that tag.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can associate as many as 50 tags with a resource.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by VerifiedPermissions.</returns>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
+        /// The request failed because of an internal error. Try your request again later
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ResourceNotFoundException">
+        /// The request failed because it references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ThrottlingException">
+        /// The request failed because it exceeded a throttling quota.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.TooManyTagsException">
+        /// No more tags be added because the limit (50) has been reached. To add new tags, use
+        /// <c>UntagResource</c> to remove existing tags.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ValidationException">
+        /// The request failed because one or more input parameters don't satisfy their constraint
+        /// requirements. The output is provided as a list of fields and a reason for each field
+        /// that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The possible reasons include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>UnrecognizedEntityType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an entity type that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnrecognizedActionId</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action id that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>InvalidActionApplication</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action that, according to the schema, doesn't support the specified
+        /// principal and resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnexpectedType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy included an operand that isn't a valid type for the specified operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IncompatibleTypes</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MissingAttribute</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that isn't specified in
+        /// the schema. Test for the existence of the attribute first before attempting to access
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnsafeOptionalAttributeAccess</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that is optional and isn't
+        /// guaranteed to be present. Test for the existence of the attribute first before attempting
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ImpossiblePolicy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar has determined that a policy condition always evaluates to false. If the policy
+        /// is always false, it can never apply to any query, and so it can never affect an authorization
+        /// decision.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>WrongNumberArguments</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy references an extension type with the wrong number of arguments.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FunctionArgumentValidationError</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar couldn't parse the argument passed to an extension type. For example, a string
+        /// that is to be parsed as an IPv4 address can contain only digits and the period character.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes one or more tags from the specified Amazon Verified Permissions resource.
+        /// In Verified Permissions, policy stores can be tagged.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by VerifiedPermissions.</returns>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
+        /// The request failed because of an internal error. Try your request again later
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ResourceNotFoundException">
+        /// The request failed because it references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ThrottlingException">
+        /// The request failed because it exceeded a throttling quota.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ValidationException">
+        /// The request failed because one or more input parameters don't satisfy their constraint
+        /// requirements. The output is provided as a list of fields and a reason for each field
+        /// that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The possible reasons include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>UnrecognizedEntityType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an entity type that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnrecognizedActionId</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action id that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>InvalidActionApplication</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action that, according to the schema, doesn't support the specified
+        /// principal and resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnexpectedType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy included an operand that isn't a valid type for the specified operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IncompatibleTypes</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MissingAttribute</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that isn't specified in
+        /// the schema. Test for the existence of the attribute first before attempting to access
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnsafeOptionalAttributeAccess</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that is optional and isn't
+        /// guaranteed to be present. Test for the existence of the attribute first before attempting
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ImpossiblePolicy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar has determined that a policy condition always evaluates to false. If the policy
+        /// is always false, it can never apply to any query, and so it can never affect an authorization
+        /// decision.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>WrongNumberArguments</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy references an extension type with the wrong number of arguments.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FunctionArgumentValidationError</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar couldn't parse the argument passed to an extension type. For example, a string
+        /// that is to be parsed as an IPv4 address can contain only digits and the period character.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Removes one or more tags from the specified Amazon Verified Permissions resource.
+        /// In Verified Permissions, policy stores can be tagged.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by VerifiedPermissions.</returns>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
+        /// The request failed because of an internal error. Try your request again later
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ResourceNotFoundException">
+        /// The request failed because it references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ThrottlingException">
+        /// The request failed because it exceeded a throttling quota.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ValidationException">
+        /// The request failed because one or more input parameters don't satisfy their constraint
+        /// requirements. The output is provided as a list of fields and a reason for each field
+        /// that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The possible reasons include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>UnrecognizedEntityType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an entity type that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnrecognizedActionId</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action id that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>InvalidActionApplication</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action that, according to the schema, doesn't support the specified
+        /// principal and resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnexpectedType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy included an operand that isn't a valid type for the specified operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IncompatibleTypes</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MissingAttribute</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that isn't specified in
+        /// the schema. Test for the existence of the attribute first before attempting to access
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnsafeOptionalAttributeAccess</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that is optional and isn't
+        /// guaranteed to be present. Test for the existence of the attribute first before attempting
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ImpossiblePolicy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar has determined that a policy condition always evaluates to false. If the policy
+        /// is always false, it can never apply to any query, and so it can never affect an authorization
+        /// decision.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>WrongNumberArguments</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy references an extension type with the wrong number of arguments.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FunctionArgumentValidationError</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar couldn't parse the argument passed to an extension type. For example, a string
+        /// that is to be parsed as an IPv4 address can contain only digits and the period character.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
