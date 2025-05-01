@@ -104,6 +104,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.OverrideVpcConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ScheduledUpdateConfig", targetDepth))
+                {
+                    var unmarshaller = ScheduledUpdateConfigUnmarshaller.Instance;
+                    unmarshalledObject.ScheduledUpdateConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

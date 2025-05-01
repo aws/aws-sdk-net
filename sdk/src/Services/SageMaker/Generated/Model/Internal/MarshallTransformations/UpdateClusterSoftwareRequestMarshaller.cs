@@ -81,6 +81,33 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ClusterName);
             }
 
+            if(publicRequest.IsSetDeploymentConfig())
+            {
+                context.Writer.WritePropertyName("DeploymentConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeploymentConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DeploymentConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetInstanceGroups())
+            {
+                context.Writer.WritePropertyName("InstanceGroups");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestInstanceGroupsListValue in publicRequest.InstanceGroups)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = UpdateClusterSoftwareInstanceGroupSpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestInstanceGroupsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

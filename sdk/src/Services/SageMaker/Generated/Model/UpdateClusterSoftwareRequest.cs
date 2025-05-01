@@ -46,6 +46,8 @@ namespace Amazon.SageMaker.Model
     public partial class UpdateClusterSoftwareRequest : AmazonSageMakerRequest
     {
         private string _clusterName;
+        private DeploymentConfiguration _deploymentConfig;
+        private List<UpdateClusterSoftwareInstanceGroupSpecification> _instanceGroups = AWSConfigs.InitializeCollections ? new List<UpdateClusterSoftwareInstanceGroupSpecification>() : null;
 
         /// <summary>
         /// Gets and sets the property ClusterName. 
@@ -65,6 +67,43 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetClusterName()
         {
             return this._clusterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentConfig. 
+        /// <para>
+        /// The configuration to use when updating the AMI versions.
+        /// </para>
+        /// </summary>
+        public DeploymentConfiguration DeploymentConfig
+        {
+            get { return this._deploymentConfig; }
+            set { this._deploymentConfig = value; }
+        }
+
+        // Check to see if DeploymentConfig property is set
+        internal bool IsSetDeploymentConfig()
+        {
+            return this._deploymentConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceGroups. 
+        /// <para>
+        /// The array of instance groups for which to update AMI versions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public List<UpdateClusterSoftwareInstanceGroupSpecification> InstanceGroups
+        {
+            get { return this._instanceGroups; }
+            set { this._instanceGroups = value; }
+        }
+
+        // Check to see if InstanceGroups property is set
+        internal bool IsSetInstanceGroups()
+        {
+            return this._instanceGroups != null && (this._instanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
