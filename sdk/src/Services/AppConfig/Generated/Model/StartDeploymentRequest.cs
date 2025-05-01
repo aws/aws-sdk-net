@@ -149,7 +149,7 @@ namespace Amazon.AppConfig.Model
         /// with <c>PRE_START_DEPLOYMENT</c> actions.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
+        [AWSProperty(Sensitive=true, Min=1, Max=10)]
         public Dictionary<string, string> DynamicExtensionParameters
         {
             get { return this._dynamicExtensionParameters; }
