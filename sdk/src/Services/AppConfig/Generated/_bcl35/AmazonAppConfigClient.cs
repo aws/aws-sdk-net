@@ -48,7 +48,7 @@ namespace Amazon.AppConfig
     /// 
     ///  <note> 
     /// <para>
-    /// AppConfig is a capability of Amazon Web Services Systems Manager.
+    /// AppConfig is a tool in Amazon Web Services Systems Manager.
     /// </para>
     ///  </note> 
     /// <para>

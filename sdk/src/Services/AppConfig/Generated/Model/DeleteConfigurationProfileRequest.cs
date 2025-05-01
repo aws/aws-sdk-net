@@ -87,9 +87,8 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property DeletionProtectionCheck. 
         /// <para>
-        /// A parameter to configure deletion protection. If enabled, deletion protection prevents
-        /// a user from deleting a configuration profile if your application has called either
-        /// <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a>
+        /// A parameter to configure deletion protection. Deletion protection prevents a user
+        /// from deleting a configuration profile if your application has called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a>
         /// or for the configuration profile during the specified interval. 
         /// </para>
         ///  
@@ -100,7 +99,7 @@ namespace Amazon.AppConfig.Model
         /// <para>
         ///  <c>BYPASS</c>: Instructs AppConfig to bypass the deletion protection check and delete
         /// a configuration profile even if deletion protection would have otherwise prevented
-        /// it. 
+        /// it.
         /// </para>
         ///  </li> <li> 
         /// <para>

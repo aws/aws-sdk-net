@@ -149,6 +149,13 @@ namespace Amazon.AppConfig.Model
         /// The ARN of an IAM role with permission to access the configuration at the specified
         /// <c>LocationUri</c>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// A retrieval role ARN is not required for configurations stored in CodePipeline or
+        /// the AppConfig hosted configuration store. It is required for all other sources that
+        /// store your configuration. 
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
         public string RetrievalRoleArn
