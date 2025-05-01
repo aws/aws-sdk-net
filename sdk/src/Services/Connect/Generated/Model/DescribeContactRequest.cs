@@ -39,8 +39,8 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  <important> <ul> <li> 
     /// <para>
-    ///  <c>CustomerEndpoint</c> and <c>SystemEndpoint</c> are only populated for EMAIL contacts.
-    /// 
+    ///  <c>SystemEndpoint</c> is not populated for contacts with initiation method of MONITOR,
+    /// QUEUE_TRANSFER, or CALLBACK
     /// </para>
     ///  </li> <li> 
     /// <para>

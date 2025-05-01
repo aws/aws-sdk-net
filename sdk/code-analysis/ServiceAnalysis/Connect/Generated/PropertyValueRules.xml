@@ -3941,6 +3941,14 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AgentInfo.AfterContactWorkDuration</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AgentInfo.AgentInitiatedHoldDuration</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AgentInfo.AgentPauseDurationInSeconds</property>
     <min>0</min>
   </property-value-rule>
@@ -4248,6 +4256,16 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactDataRequest.RequestIdentifier</property>
     <max>80</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ContactDetails.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ContactDetails.Name</property>
+    <min>0</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlow.FlowContentSha256</property>
@@ -5221,6 +5239,21 @@
     <property>Amazon.Connect.Model.RealTimeContactAnalysisTranscriptItemWithContent.Id</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RecordingInfo.FragmentStartNumber</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RecordingInfo.FragmentStopNumber</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RecordingInfo.Location</property>
+    <min>0</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Reference.Arn</property>

@@ -34,12 +34,96 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class AgentInfo
     {
+        private int? _afterContactWorkDuration;
+        private DateTime? _afterContactWorkEndTimestamp;
+        private DateTime? _afterContactWorkStartTimestamp;
+        private int? _agentInitiatedHoldDuration;
         private int? _agentPauseDurationInSeconds;
         private ParticipantCapabilities _capabilities;
         private DateTime? _connectedToAgentTimestamp;
         private DeviceInfo _deviceInfo;
         private HierarchyGroups _hierarchyGroups;
         private string _id;
+        private List<StateTransition> _stateTransitions = AWSConfigs.InitializeCollections ? new List<StateTransition>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AfterContactWorkDuration. 
+        /// <para>
+        /// The difference in time, in whole seconds, between <c>AfterContactWorkStartTimestamp</c>
+        /// and <c>AfterContactWorkEndTimestamp</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? AfterContactWorkDuration
+        {
+            get { return this._afterContactWorkDuration; }
+            set { this._afterContactWorkDuration = value; }
+        }
+
+        // Check to see if AfterContactWorkDuration property is set
+        internal bool IsSetAfterContactWorkDuration()
+        {
+            return this._afterContactWorkDuration.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AfterContactWorkEndTimestamp. 
+        /// <para>
+        /// The date and time when the agent ended After Contact Work for the contact, in UTC
+        /// time. In cases when agent finishes doing <c>AfterContactWork</c> for chat contacts
+        /// and switches their activity status to offline or equivalent without clearing the contact
+        /// in CCP, discrepancies may be noticed for <c>AfterContactWorkEndTimestamp</c>.
+        /// </para>
+        /// </summary>
+        public DateTime? AfterContactWorkEndTimestamp
+        {
+            get { return this._afterContactWorkEndTimestamp; }
+            set { this._afterContactWorkEndTimestamp = value; }
+        }
+
+        // Check to see if AfterContactWorkEndTimestamp property is set
+        internal bool IsSetAfterContactWorkEndTimestamp()
+        {
+            return this._afterContactWorkEndTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AfterContactWorkStartTimestamp. 
+        /// <para>
+        /// The date and time when the agent started doing After Contact Work for the contact,
+        /// in UTC time.
+        /// </para>
+        /// </summary>
+        public DateTime? AfterContactWorkStartTimestamp
+        {
+            get { return this._afterContactWorkStartTimestamp; }
+            set { this._afterContactWorkStartTimestamp = value; }
+        }
+
+        // Check to see if AfterContactWorkStartTimestamp property is set
+        internal bool IsSetAfterContactWorkStartTimestamp()
+        {
+            return this._afterContactWorkStartTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AgentInitiatedHoldDuration. 
+        /// <para>
+        /// The total hold duration in seconds initiated by the agent.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? AgentInitiatedHoldDuration
+        {
+            get { return this._agentInitiatedHoldDuration; }
+            set { this._agentInitiatedHoldDuration = value; }
+        }
+
+        // Check to see if AgentInitiatedHoldDuration property is set
+        internal bool IsSetAgentInitiatedHoldDuration()
+        {
+            return this._agentInitiatedHoldDuration.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AgentPauseDurationInSeconds. 
@@ -146,6 +230,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateTransitions. 
+        /// <para>
+        /// List of <c>StateTransition</c> for a supervisor.
+        /// </para>
+        /// </summary>
+        public List<StateTransition> StateTransitions
+        {
+            get { return this._stateTransitions; }
+            set { this._stateTransitions = value; }
+        }
+
+        // Check to see if StateTransitions property is set
+        internal bool IsSetStateTransitions()
+        {
+            return this._stateTransitions != null && (this._stateTransitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

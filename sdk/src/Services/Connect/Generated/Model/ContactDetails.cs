@@ -30,22 +30,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Contains information about a real-time metric. For a description of each metric, see
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-    /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// A map of string key/value pairs that contain user-defined attributes which are lightly
+    /// typed within the contact. This object is used only for task contacts.
     /// </summary>
-    public partial class CurrentMetric
+    public partial class ContactDetails
     {
-        private CurrentMetricName _name;
-        private Unit _unit;
+        private string _description;
+        private string _name;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// Teh description of the contact details.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the metric.
+        /// The name of the contact details.
         /// </para>
         /// </summary>
-        public CurrentMetricName Name
+        [AWSProperty(Min=0, Max=1024)]
+        public string Name
         {
             get { return this._name; }
             set { this._name = value; }
@@ -55,24 +74,6 @@ namespace Amazon.Connect.Model
         internal bool IsSetName()
         {
             return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Unit. 
-        /// <para>
-        /// The unit for the metric.
-        /// </para>
-        /// </summary>
-        public Unit Unit
-        {
-            get { return this._unit; }
-            set { this._unit = value; }
-        }
-
-        // Check to see if Unit property is set
-        internal bool IsSetUnit()
-        {
-            return this._unit != null;
         }
 
     }
