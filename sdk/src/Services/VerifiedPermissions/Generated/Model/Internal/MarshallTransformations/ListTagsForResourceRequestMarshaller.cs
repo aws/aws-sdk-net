@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetPolicyStore Request Marshaller
+    /// ListTagsForResource Request Marshaller
     /// </summary>       
-    public class GetPolicyStoreRequestMarshaller : IMarshaller<IRequest, GetPolicyStoreRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListTagsForResourceRequestMarshaller : IMarshaller<IRequest, ListTagsForResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetPolicyStoreRequest)input);
+            return this.Marshall((ListTagsForResourceRequest)input);
         }
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetPolicyStoreRequest publicRequest)
+        public IRequest Marshall(ListTagsForResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.VerifiedPermissions");
-            string target = "VerifiedPermissions.GetPolicyStore";
+            string target = "VerifiedPermissions.ListTagsForResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-12-01";
@@ -75,16 +75,10 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetPolicyStoreId())
+            if(publicRequest.IsSetResourceArn())
             {
-                context.Writer.WritePropertyName("policyStoreId");
-                context.Writer.WriteStringValue(publicRequest.PolicyStoreId);
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("tags");
-                context.Writer.WriteBooleanValue(publicRequest.Tags.Value);
+                context.Writer.WritePropertyName("resourceArn");
+                context.Writer.WriteStringValue(publicRequest.ResourceArn);
             }
 
             writer.WriteEndObject();
@@ -100,9 +94,9 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetPolicyStoreRequestMarshaller _instance = new GetPolicyStoreRequestMarshaller();        
+        private static ListTagsForResourceRequestMarshaller _instance = new ListTagsForResourceRequestMarshaller();        
 
-        internal static GetPolicyStoreRequestMarshaller GetInstance()
+        internal static ListTagsForResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -110,7 +104,7 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetPolicyStoreRequestMarshaller Instance
+        public static ListTagsForResourceRequestMarshaller Instance
         {
             get
             {

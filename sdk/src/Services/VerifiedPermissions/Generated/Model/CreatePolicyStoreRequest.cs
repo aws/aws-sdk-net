@@ -52,6 +52,7 @@ namespace Amazon.VerifiedPermissions.Model
         private string _clientToken;
         private DeletionProtection _deletionProtection;
         private string _description;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ValidationSettings _validationSettings;
 
         /// <summary>
@@ -135,6 +136,25 @@ namespace Amazon.VerifiedPermissions.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The list of key-value pairs to associate with the policy store.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
