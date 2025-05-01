@@ -1,7 +1,7 @@
 
 {
     "NewServiceVersion" : "4.0.0.0",
-    "ProductVersion"    : "4.0.2.0",
+    "ProductVersion"    : "4.0.3.0",
     "CoreVersion"       : "4.0.0.2",
     "OverrideCoreVersion" : "4.0",
     "DefaultToPreview"    : false,
@@ -932,7 +932,7 @@
             "InPreview"               : false
         },
         "SageMaker"                       : {
-            "Version" : "4.0.1.1",
+            "Version" : "4.0.2.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.0.2"
@@ -1044,7 +1044,7 @@
             "InPreview"               : false
         },
         "Connect"                         : {
-            "Version" : "4.0.0.1",
+            "Version" : "4.0.1.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.0.2"
@@ -1572,7 +1572,7 @@
             "InPreview"               : false
         },
         "AppConfig"                       : {
-            "Version" : "4.0.0.1",
+            "Version" : "4.0.1.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.0.2"
@@ -2700,7 +2700,7 @@
             "InPreview"               : false
         },
         "VerifiedPermissions"                 : {
-            "Version" : "4.0.0.1",
+            "Version" : "4.0.1.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.0.2"

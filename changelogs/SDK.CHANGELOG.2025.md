@@ -1,3 +1,13 @@
+### 4.0.3.0 (2025-05-01 19:35 UTC)
+* AppConfig (4.0.1.0)
+	* Adding waiter support for deployments and environments; documentation updates
+* Connect (4.0.1.0)
+	* This release adds the following fields to DescribeContact: DisconnectReason, AgentInitiatedHoldDuration, AfterContactWorkStartTimestamp, AfterContactWorkEndTimestamp, AfterContactWorkDuration, StateTransitions, Recordings, ContactDetails, ContactEvaluations, Attributes
+* SageMaker (4.0.2.0)
+	* Feature - Adding support for Scheduled and Rolling Update Software in Sagemaker Hyperpod.
+* VerifiedPermissions (4.0.1.0)
+	* Amazon Verified Permissions / Features : Adds support for tagging policy stores.
+
 ### 4.0.2.0 (2025-04-30 18:35 UTC)
 * Bedrock (4.0.1.0)
 	* You can now specify a cross region inference profile as a teacher model for the CreateModelCustomizationJob API. Additionally, the GetModelCustomizationJob API has been enhanced to return the sub-task statuses of a customization job within the StatusDetails response field.
