@@ -90,6 +90,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Attributes", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Attributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Campaign", targetDepth))
                 {
                     var unmarshaller = CampaignUnmarshaller.Instance;
@@ -112,6 +118,18 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContactAssociationId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ContactDetails", targetDepth))
+                {
+                    var unmarshaller = ContactDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ContactDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ContactEvaluations", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, ContactEvaluation, StringUnmarshaller, ContactEvaluationUnmarshaller>(StringUnmarshaller.Instance, ContactEvaluationUnmarshaller.Instance);
+                    unmarshalledObject.ContactEvaluations = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Customer", targetDepth))
@@ -148,6 +166,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DisconnectDetailsUnmarshaller.Instance;
                     unmarshalledObject.DisconnectDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DisconnectReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DisconnectReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DisconnectTimestamp", targetDepth))
@@ -232,6 +256,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.QueueTimeAdjustmentSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Recordings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<RecordingInfo, RecordingInfoUnmarshaller>(RecordingInfoUnmarshaller.Instance);
+                    unmarshalledObject.Recordings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RelatedContactId", targetDepth))

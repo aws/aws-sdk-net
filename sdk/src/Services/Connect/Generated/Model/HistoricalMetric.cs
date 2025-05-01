@@ -31,8 +31,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Contains information about a historical metric. For a description of each metric,
-    /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
-    /// Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
+    /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
     /// </summary>
     public partial class HistoricalMetric
     {

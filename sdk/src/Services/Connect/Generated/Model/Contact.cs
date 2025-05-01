@@ -38,16 +38,20 @@ namespace Amazon.Connect.Model
         private AgentInfo _agentInfo;
         private AnsweringMachineDetectionStatus _answeringMachineDetectionStatus;
         private string _arn;
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Campaign _campaign;
         private Channel _channel;
         private DateTime? _connectedToSystemTimestamp;
         private string _contactAssociationId;
+        private ContactDetails _contactDetails;
+        private Dictionary<string, ContactEvaluation> _contactEvaluations = AWSConfigs.InitializeCollections ? new Dictionary<string, ContactEvaluation>() : null;
         private Customer _customer;
         private EndpointInfo _customerEndpoint;
         private string _customerId;
         private CustomerVoiceActivity _customerVoiceActivity;
         private string _description;
         private DisconnectDetails _disconnectDetails;
+        private string _disconnectReason;
         private DateTime? _disconnectTimestamp;
         private string _id;
         private string _initialContactId;
@@ -62,6 +66,7 @@ namespace Amazon.Connect.Model
         private QueueInfo _queueInfo;
         private long? _queuePriority;
         private int? _queueTimeAdjustmentSeconds;
+        private List<RecordingInfo> _recordings = AWSConfigs.InitializeCollections ? new List<RecordingInfo>() : null;
         private string _relatedContactId;
         private RoutingCriteria _routingCriteria;
         private DateTime? _scheduledTimestamp;
@@ -146,6 +151,24 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Attributes. 
+        /// <para>
+        /// The attributes of the contact.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Attributes
+        {
+            get { return this._attributes; }
+            set { this._attributes = value; }
+        }
+
+        // Check to see if Attributes property is set
+        internal bool IsSetAttributes()
+        {
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Campaign.
         /// </summary>
         public Campaign Campaign
@@ -214,6 +237,44 @@ namespace Amazon.Connect.Model
         internal bool IsSetContactAssociationId()
         {
             return this._contactAssociationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContactDetails. 
+        /// <para>
+        /// A map of string key/value pairs that contain user-defined attributes which are lightly
+        /// typed within the contact. This object is used only for task contacts.
+        /// </para>
+        /// </summary>
+        public ContactDetails ContactDetails
+        {
+            get { return this._contactDetails; }
+            set { this._contactDetails = value; }
+        }
+
+        // Check to see if ContactDetails property is set
+        internal bool IsSetContactDetails()
+        {
+            return this._contactDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContactEvaluations. 
+        /// <para>
+        /// Information about the contact evaluations where the key is the FormId, which is a
+        /// unique identifier for the form.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, ContactEvaluation> ContactEvaluations
+        {
+            get { return this._contactEvaluations; }
+            set { this._contactEvaluations = value; }
+        }
+
+        // Check to see if ContactEvaluations property is set
+        internal bool IsSetContactEvaluations()
+        {
+            return this._contactEvaluations != null && (this._contactEvaluations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -328,6 +389,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetDisconnectDetails()
         {
             return this._disconnectDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisconnectReason. 
+        /// <para>
+        /// The disconnect reason for the contact.
+        /// </para>
+        /// </summary>
+        public string DisconnectReason
+        {
+            get { return this._disconnectReason; }
+            set { this._disconnectReason = value; }
+        }
+
+        // Check to see if DisconnectReason property is set
+        internal bool IsSetDisconnectReason()
+        {
+            return this._disconnectReason != null;
         }
 
         /// <summary>
@@ -599,6 +678,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetQueueTimeAdjustmentSeconds()
         {
             return this._queueTimeAdjustmentSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Recordings. 
+        /// <para>
+        /// If recording was enabled, this is information about the recordings.
+        /// </para>
+        /// </summary>
+        public List<RecordingInfo> Recordings
+        {
+            get { return this._recordings; }
+            set { this._recordings = value; }
+        }
+
+        // Check to see if Recordings property is set
+        internal bool IsSetRecordings()
+        {
+            return this._recordings != null && (this._recordings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -3343,6 +3343,56 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type MediaStreamType.
+    /// </summary>
+    public class MediaStreamType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUDIO for MediaStreamType
+        /// </summary>
+        public static readonly MediaStreamType AUDIO = new MediaStreamType("AUDIO");
+        /// <summary>
+        /// Constant VIDEO for MediaStreamType
+        /// </summary>
+        public static readonly MediaStreamType VIDEO = new MediaStreamType("VIDEO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MediaStreamType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaStreamType FindValue(string value)
+        {
+            return FindValue<MediaStreamType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaStreamType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MeetingFeatureStatus.
     /// </summary>
     public class MeetingFeatureStatus : ConstantClass
@@ -3861,6 +3911,64 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type ParticipantState.
+    /// </summary>
+    public class ParticipantState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECTED for ParticipantState
+        /// </summary>
+        public static readonly ParticipantState CONNECTED = new ParticipantState("CONNECTED");
+        /// <summary>
+        /// Constant DISCONNECTED for ParticipantState
+        /// </summary>
+        public static readonly ParticipantState DISCONNECTED = new ParticipantState("DISCONNECTED");
+        /// <summary>
+        /// Constant INITIAL for ParticipantState
+        /// </summary>
+        public static readonly ParticipantState INITIAL = new ParticipantState("INITIAL");
+        /// <summary>
+        /// Constant MISSED for ParticipantState
+        /// </summary>
+        public static readonly ParticipantState MISSED = new ParticipantState("MISSED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParticipantState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParticipantState FindValue(string value)
+        {
+            return FindValue<ParticipantState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParticipantState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ParticipantTimerAction.
     /// </summary>
     public class ParticipantTimerAction : ConstantClass
@@ -3950,6 +4058,68 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ParticipantTimerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ParticipantType.
+    /// </summary>
+    public class ParticipantType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGENT for ParticipantType
+        /// </summary>
+        public static readonly ParticipantType AGENT = new ParticipantType("AGENT");
+        /// <summary>
+        /// Constant ALL for ParticipantType
+        /// </summary>
+        public static readonly ParticipantType ALL = new ParticipantType("ALL");
+        /// <summary>
+        /// Constant CUSTOMER for ParticipantType
+        /// </summary>
+        public static readonly ParticipantType CUSTOMER = new ParticipantType("CUSTOMER");
+        /// <summary>
+        /// Constant MANAGER for ParticipantType
+        /// </summary>
+        public static readonly ParticipantType MANAGER = new ParticipantType("MANAGER");
+        /// <summary>
+        /// Constant THIRDPARTY for ParticipantType
+        /// </summary>
+        public static readonly ParticipantType THIRDPARTY = new ParticipantType("THIRDPARTY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParticipantType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParticipantType FindValue(string value)
+        {
+            return FindValue<ParticipantType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParticipantType(string value)
         {
             return FindValue(value);
         }
@@ -5727,6 +5897,56 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type RecordingStatus.
+    /// </summary>
+    public class RecordingStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for RecordingStatus
+        /// </summary>
+        public static readonly RecordingStatus AVAILABLE = new RecordingStatus("AVAILABLE");
+        /// <summary>
+        /// Constant DELETED for RecordingStatus
+        /// </summary>
+        public static readonly RecordingStatus DELETED = new RecordingStatus("DELETED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecordingStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecordingStatus FindValue(string value)
+        {
+            return FindValue<RecordingStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecordingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReferenceStatus.
     /// </summary>
     public class ReferenceStatus : ConstantClass
@@ -6658,6 +6878,60 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Statistic(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Status.
+    /// </summary>
+    public class Status : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for Status
+        /// </summary>
+        public static readonly Status COMPLETE = new Status("COMPLETE");
+        /// <summary>
+        /// Constant DELETED for Status
+        /// </summary>
+        public static readonly Status DELETED = new Status("DELETED");
+        /// <summary>
+        /// Constant IN_PROGRESS for Status
+        /// </summary>
+        public static readonly Status IN_PROGRESS = new Status("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Status(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Status FindValue(string value)
+        {
+            return FindValue<Status>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Status(string value)
         {
             return FindValue(value);
         }

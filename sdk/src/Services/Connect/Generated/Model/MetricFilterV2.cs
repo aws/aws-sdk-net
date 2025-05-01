@@ -110,7 +110,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// For valid values of the metric-level filter <c>FLOWS_OUTCOME_TYPE</c>, see the description
-        /// for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-outcome-historical">Flow
+        /// for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#flows-outcome">Flow
         /// outcome</a> metric in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         ///  

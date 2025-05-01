@@ -6549,8 +6549,8 @@ namespace Amazon.Connect
         /// </para>
         ///  <important> <ul> <li> 
         /// <para>
-        ///  <c>CustomerEndpoint</c> and <c>SystemEndpoint</c> are only populated for EMAIL contacts.
-        /// 
+        ///  <c>SystemEndpoint</c> is not populated for contacts with initiation method of MONITOR,
+        /// QUEUE_TRANSFER, or CALLBACK
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9562,8 +9562,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time
-        /// Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
+        /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCurrentMetricData service method.</param>
@@ -9939,8 +9939,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// For a description of each historical metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
-        /// Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// For a description of each historical metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
+        /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -10034,8 +10034,8 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For a description of the historical metrics that are supported by <c>GetMetricDataV2</c>
-        /// and <c>GetMetricData</c>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
-        /// metrics definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// and <c>GetMetricData</c>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
+        /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetricDataV2 service method.</param>

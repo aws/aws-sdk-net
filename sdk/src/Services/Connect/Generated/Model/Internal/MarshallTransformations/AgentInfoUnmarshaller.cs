@@ -66,6 +66,30 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AfterContactWorkDuration", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.AfterContactWorkDuration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AfterContactWorkEndTimestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.AfterContactWorkEndTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AfterContactWorkStartTimestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.AfterContactWorkStartTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AgentInitiatedHoldDuration", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.AgentInitiatedHoldDuration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AgentPauseDurationInSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -100,6 +124,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StateTransitions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StateTransition, StateTransitionUnmarshaller>(StateTransitionUnmarshaller.Instance);
+                    unmarshalledObject.StateTransitions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
