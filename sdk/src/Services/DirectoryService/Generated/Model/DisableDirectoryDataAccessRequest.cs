@@ -32,7 +32,8 @@ namespace Amazon.DirectoryService.Model
     /// <summary>
     /// Container for the parameters to the DisableDirectoryDataAccess operation.
     /// Deactivates access to directory data via the Directory Service Data API for the specified
-    /// directory.
+    /// directory. For more information, see <a href="https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/Welcome.html">Directory
+    /// Service Data API Reference</a>.
     /// </summary>
     public partial class DisableDirectoryDataAccessRequest : AmazonDirectoryServiceRequest
     {

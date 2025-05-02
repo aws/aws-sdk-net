@@ -2325,7 +2325,8 @@ namespace Amazon.DirectoryService
 
         /// <summary>
         /// Deactivates access to directory data via the Directory Service Data API for the specified
-        /// directory.
+        /// directory. For more information, see <a href="https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/Welcome.html">Directory
+        /// Service Data API Reference</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableDirectoryDataAccess service method.</param>
         /// <param name="cancellationToken">
@@ -2585,7 +2586,8 @@ namespace Amazon.DirectoryService
 
         /// <summary>
         /// Enables access to directory data via the Directory Service Data API for the specified
-        /// directory.
+        /// directory. For more information, see <a href="https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/Welcome.html">Directory
+        /// Service Data API Reference</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableDirectoryDataAccess service method.</param>
         /// <param name="cancellationToken">
