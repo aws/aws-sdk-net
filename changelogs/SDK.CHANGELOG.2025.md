@@ -1,3 +1,11 @@
+### 4.0.4.0 (2025-05-02 18:16 UTC)
+* BedrockDataAutomation (4.0.1.0)
+	* Added support for Custom output and blueprints for AUDIO data types.
+* DirectoryService (4.0.0.2)
+	* Doc only update - fixed typos.
+* Kinesis (4.0.2.0)
+	* Marking ResourceARN as required for Amazon Kinesis Data Streams APIs TagResource, UntagResource, and ListTagsForResource.
+
 ### 4.0.3.0 (2025-05-01 19:35 UTC)
 * AppConfig (4.0.1.0)
 	* Adding waiter support for deployments and environments; documentation updates
