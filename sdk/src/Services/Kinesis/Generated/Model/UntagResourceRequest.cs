@@ -45,7 +45,7 @@ namespace Amazon.Kinesis.Model
         /// The Amazon Resource Name (ARN) of the Kinesis resource from which to remove tags.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
