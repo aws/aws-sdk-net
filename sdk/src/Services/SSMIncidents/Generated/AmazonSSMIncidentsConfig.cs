@@ -32,7 +32,7 @@ namespace Amazon.SSMIncidents
     public partial class AmazonSSMIncidentsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SSM Incidents", "3.7.400.144");
+            InternalSDKUtils.BuildUserAgentString("SSM Incidents", "3.7.400.145");
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -1,3 +1,14 @@
+### 3.7.1036.0 (2025-05-02 18:16 UTC)
+* BedrockDataAutomation (3.7.403.0)
+	* Added support for Custom output and blueprints for AUDIO data types.
+* DirectoryService (3.7.401.124)
+	* Doc only update - fixed typos.
+* Kinesis (3.7.404.0)
+	* Marking ResourceARN as required for Amazon Kinesis Data Streams APIs TagResource, UntagResource, and ListTagsForResource.
+* Core 3.7.402.51
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1035.0 (2025-05-01 18:14 UTC)
 * AppConfig (3.7.404.0)
 	* Adding waiter support for deployments and environments; documentation updates
