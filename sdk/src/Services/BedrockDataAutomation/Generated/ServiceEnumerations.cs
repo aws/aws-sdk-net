@@ -783,6 +783,10 @@ namespace Amazon.BedrockDataAutomation
     {
 
         /// <summary>
+        /// Constant AUDIO for Type
+        /// </summary>
+        public static readonly Type AUDIO = new Type("AUDIO");
+        /// <summary>
         /// Constant DOCUMENT for Type
         /// </summary>
         public static readonly Type DOCUMENT = new Type("DOCUMENT");
