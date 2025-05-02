@@ -40,7 +40,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DirectoryDescriptions. 
         /// <para>
-        /// The list of <a>DirectoryDescription</a> objects that were retrieved.
+        /// The list of available <a>DirectoryDescription</a> objects that were retrieved.
         /// </para>
         ///  
         /// <para>

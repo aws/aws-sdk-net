@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.AddIpRoutes(Amazon.DirectoryService.Model.AddIpRoutesRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.AddIpRoutes(Amazon.DirectoryService.Model.AddIpRoutesRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.AddIpRoutesRequest" />
+            <member name="T:Amazon.DirectoryService.Model.AddIpRoutesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example adds a CIDR address block to correctly route traffic to and from your Microsoft AD on AWS.
+                </para>
+                <code
+                    title="To add a CIDR address block that routes traffic for Microsoft AD"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-add-a-cidr-address-block-that-routes-traffic-for-microsoft-ad-1481580074651" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.AddTagsToResource(Amazon.DirectoryService.Model.AddTagsToResourceRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.AddTagsToResource(Amazon.DirectoryService.Model.AddTagsToResourceRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.AddTagsToResourceRequest" />
+            <member name="T:Amazon.DirectoryService.Model.AddTagsToResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example adds or overwrites one or more tags for the specified directory.
+                </para>
+                <code
+                    title="To add tags to a directory"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-add-tags-to-a-directory-1481582596354" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.CancelSchemaExtension(Amazon.DirectoryService.Model.CancelSchemaExtensionRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.CancelSchemaExtension(Amazon.DirectoryService.Model.CancelSchemaExtensionRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.CancelSchemaExtensionRequest" />
+            <member name="T:Amazon.DirectoryService.Model.CancelSchemaExtensionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example cancels an in-progress schema extension to a Microsoft AD directory.
+                </para>
+                <code
+                    title="To cancel a Microsoft AD schema extension that is in progress"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-cancel-a-microsoft-ad-schema-extension-that-is-in-progress-1481583276240" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.ConnectDirectory(Amazon.DirectoryService.Model.ConnectDirectoryRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.ConnectDirectory(Amazon.DirectoryService.Model.ConnectDirectoryRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.ConnectDirectoryRequest" />
+            <member name="T:Amazon.DirectoryService.Model.ConnectDirectoryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an AD Connector to connect to an on-premises directory.
+                </para>
+                <code
+                    title="To connect to an on-premises directory"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-connect-to-an-on-premises-directory-1481586749640" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.CreateAlias(Amazon.DirectoryService.Model.CreateAliasRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.CreateAlias(Amazon.DirectoryService.Model.CreateAliasRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.CreateAliasRequest" />
+            <member name="T:Amazon.DirectoryService.Model.CreateAliasResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an alias for a directory.
+                </para>
+                <code
+                    title="To create an alias for a directory"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-create-an-alias-for-a-directory-1481147295279" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.CreateComputer(Amazon.DirectoryService.Model.CreateComputerRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.CreateComputer(Amazon.DirectoryService.Model.CreateComputerRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.CreateComputerRequest" />
+            <member name="T:Amazon.DirectoryService.Model.CreateComputerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a computer account in the specified directory, and joins the computer to the directory.
+                </para>
+                <code
+                    title="To create a computer account"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-create-a-computer-account-1481676943652" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.CreateConditionalForwarder(Amazon.DirectoryService.Model.CreateConditionalForwarderRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.CreateConditionalForwarder(Amazon.DirectoryService.Model.CreateConditionalForwarderRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.CreateConditionalForwarderRequest" />
+            <member name="T:Amazon.DirectoryService.Model.CreateConditionalForwarderResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a conditional forwarder associated with your AWS directory.
+                </para>
+                <code
+                    title="To create a conditional forwarder"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-create-a-conditional-forwarder-1481667053089" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.CreateDirectory(Amazon.DirectoryService.Model.CreateDirectoryRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.CreateDirectory(Amazon.DirectoryService.Model.CreateDirectoryRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.CreateDirectoryRequest" />
+            <member name="T:Amazon.DirectoryService.Model.CreateDirectoryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a Simple AD directory.
+                </para>
+                <code
+                    title="To create a Simple AD directory"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-create-a-simple-ad-directory-1481669101098" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.CreateMicrosoftAD(Amazon.DirectoryService.Model.CreateMicrosoftADRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.CreateMicrosoftAD(Amazon.DirectoryService.Model.CreateMicrosoftADRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.CreateMicrosoftADRequest" />
+            <member name="T:Amazon.DirectoryService.Model.CreateMicrosoftADResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a Microsoft AD directory in the AWS cloud.
+                </para>
+                <code
+                    title="To create a Microsoft AD directory"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-create-a-microsoft-ad-directory-1481670169383" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.CreateSnapshot(Amazon.DirectoryService.Model.CreateSnapshotRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.CreateSnapshot(Amazon.DirectoryService.Model.CreateSnapshotRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.CreateSnapshotRequest" />
+            <member name="T:Amazon.DirectoryService.Model.CreateSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a snapshot of a Simple AD or Microsoft AD directory in the AWS cloud.
+                </para>
+                <code
+                    title="To create a snapshot of a directory"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-create-a-snapshot-of-a-directory-1481671628145" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.CreateTrust(Amazon.DirectoryService.Model.CreateTrustRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.CreateTrust(Amazon.DirectoryService.Model.CreateTrustRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.CreateTrustRequest" />
+            <member name="T:Amazon.DirectoryService.Model.CreateTrustResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a trust between Microsoft AD in the AWS cloud and an external domain.
+                </para>
+                <code
+                    title="To create a trust"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-create-a-trust-1481673599473" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.DeleteConditionalForwarder(Amazon.DirectoryService.Model.DeleteConditionalForwarderRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.DeleteConditionalForwarder(Amazon.DirectoryService.Model.DeleteConditionalForwarderRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.DeleteConditionalForwarderRequest" />
+            <member name="T:Amazon.DirectoryService.Model.DeleteConditionalForwarderResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a conditional forwarder. 
+                </para>
+                <code
+                    title="To delete a conditional forwarder"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-delete-a-conditional-forwarder-1481673924488" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.DeleteDirectory(Amazon.DirectoryService.Model.DeleteDirectoryRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.DeleteDirectory(Amazon.DirectoryService.Model.DeleteDirectoryRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.DeleteDirectoryRequest" />
+            <member name="T:Amazon.DirectoryService.Model.DeleteDirectoryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a directory from your AWS account.
+                </para>
+                <code
+                    title="To delete a directory"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-delete-a-directory-1481674940318" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.DeleteSnapshot(Amazon.DirectoryService.Model.DeleteSnapshotRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.DeleteSnapshot(Amazon.DirectoryService.Model.DeleteSnapshotRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.DeleteSnapshotRequest" />
+            <member name="T:Amazon.DirectoryService.Model.DeleteSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a directory snapshot.
+                </para>
+                <code
+                    title="To delete a snapshot"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-delete-a-snapshot-1481678726239" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.DeleteTrust(Amazon.DirectoryService.Model.DeleteTrustRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.DeleteTrust(Amazon.DirectoryService.Model.DeleteTrustRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.DeleteTrustRequest" />
+            <member name="T:Amazon.DirectoryService.Model.DeleteTrustResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes an existing trust between your Microsoft AD in the AWS cloud and an external domain.
+                </para>
+                <code
+                    title="To delete a trust"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-delete-a-trust-1481678937261" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.DeregisterEventTopic(Amazon.DirectoryService.Model.DeregisterEventTopicRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.DeregisterEventTopic(Amazon.DirectoryService.Model.DeregisterEventTopicRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.DeregisterEventTopicRequest" />
+            <member name="T:Amazon.DirectoryService.Model.DeregisterEventTopicResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example removes the specified directory as a publisher to the specified SNS topic.
+                </para>
+                <code
+                    title="To remove an event topic"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-remove-an-event-topic-1481679683016" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.DescribeConditionalForwarders(Amazon.DirectoryService.Model.DescribeConditionalForwardersRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.DescribeConditionalForwarders(Amazon.DirectoryService.Model.DescribeConditionalForwardersRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.DescribeConditionalForwardersRequest" />
+            <member name="T:Amazon.DirectoryService.Model.DescribeConditionalForwardersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example obtains information about the conditional forwarders for a specified directory.
+                </para>
+                <code
+                    title="To describe conditional forwarders"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-describe-conditional-forwarders-1481681337122" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.DescribeDirectories(Amazon.DirectoryService.Model.DescribeDirectoriesRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.DescribeDirectories(Amazon.DirectoryService.Model.DescribeDirectoriesRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.DescribeDirectoriesRequest" />
+            <member name="T:Amazon.DirectoryService.Model.DescribeDirectoriesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example obtains information about a specified directory.
+                </para>
+                <code
+                    title="To describe one or more directories"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-describe-one-or-more-directories-1481681592059" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.DescribeEventTopics(Amazon.DirectoryService.Model.DescribeEventTopicsRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.DescribeEventTopics(Amazon.DirectoryService.Model.DescribeEventTopicsRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.DescribeEventTopicsRequest" />
+            <member name="T:Amazon.DirectoryService.Model.DescribeEventTopicsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example obtains information about which SNS topics receive status messages from the specified directory.
+                </para>
+                <code
+                    title="To describe event topics"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-describe-event-topics-1481683733380" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.DescribeSnapshots(Amazon.DirectoryService.Model.DescribeSnapshotsRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.DescribeSnapshots(Amazon.DirectoryService.Model.DescribeSnapshotsRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.DescribeSnapshotsRequest" />
+            <member name="T:Amazon.DirectoryService.Model.DescribeSnapshotsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example obtains information about a specified directory snapshot.
+                </para>
+                <code
+                    title="To describe snapshots"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-describe-snapshots-1481742829912" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.DescribeTrusts(Amazon.DirectoryService.Model.DescribeTrustsRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.DescribeTrusts(Amazon.DirectoryService.Model.DescribeTrustsRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.DescribeTrustsRequest" />
+            <member name="T:Amazon.DirectoryService.Model.DescribeTrustsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example obtains information about the trust relationship for a specified directory.
+                </para>
+                <code
+                    title="To describe a trust "
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-describe-a-trust--1481749974009" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.DisableRadius(Amazon.DirectoryService.Model.DisableRadiusRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.DisableRadius(Amazon.DirectoryService.Model.DisableRadiusRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.DisableRadiusRequest" />
+            <member name="T:Amazon.DirectoryService.Model.DisableRadiusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example disables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for an AD Connector directory.
+                </para>
+                <code
+                    title="To disable radius"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-disable-radius-1481752373128" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.DisableSso(Amazon.DirectoryService.Model.DisableSsoRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.DisableSso(Amazon.DirectoryService.Model.DisableSsoRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.DisableSsoRequest" />
+            <member name="T:Amazon.DirectoryService.Model.DisableSsoResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example disables single sign-on for a specified directory.
+                </para>
+                <code
+                    title="To disable SSO"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-disable-sso-1481753731802" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.EnableRadius(Amazon.DirectoryService.Model.EnableRadiusRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.EnableRadius(Amazon.DirectoryService.Model.EnableRadiusRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.EnableRadiusRequest" />
+            <member name="T:Amazon.DirectoryService.Model.EnableRadiusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example enables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for an AD Connector directory.
+                </para>
+                <code
+                    title="To enable radius"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-enable-radius-1481751944293" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.EnableSso(Amazon.DirectoryService.Model.EnableSsoRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.EnableSso(Amazon.DirectoryService.Model.EnableSsoRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.EnableSsoRequest" />
+            <member name="T:Amazon.DirectoryService.Model.EnableSsoResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    To enable single sign-on for a specified directory.
+                </para>
+                <code
+                    title="To enable SSO"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-enable-sso-1481753527694" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.GetDirectoryLimits(Amazon.DirectoryService.Model.GetDirectoryLimitsRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.GetDirectoryLimits(Amazon.DirectoryService.Model.GetDirectoryLimitsRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.GetDirectoryLimitsRequest" />
+            <member name="T:Amazon.DirectoryService.Model.GetDirectoryLimitsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example obtains directory limit information for the current region.
+                </para>
+                <code
+                    title="To get directory limits"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-get-directory-limits-1481754781592" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.GetSnapshotLimits(Amazon.DirectoryService.Model.GetSnapshotLimitsRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.GetSnapshotLimits(Amazon.DirectoryService.Model.GetSnapshotLimitsRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.GetSnapshotLimitsRequest" />
+            <member name="T:Amazon.DirectoryService.Model.GetSnapshotLimitsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example obtains the manual snapshot limits for a specified directory.
+                </para>
+                <code
+                    title="To get snapshot limits"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-get-snapshot-limits-1481755393694" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.ListIpRoutes(Amazon.DirectoryService.Model.ListIpRoutesRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.ListIpRoutes(Amazon.DirectoryService.Model.ListIpRoutesRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.ListIpRoutesRequest" />
+            <member name="T:Amazon.DirectoryService.Model.ListIpRoutesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the address blocks that have been added to a specified directory.
+                </para>
+                <code
+                    title="To list IP routes"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-list-ip-routes-1481755837685" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.ListSchemaExtensions(Amazon.DirectoryService.Model.ListSchemaExtensionsRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.ListSchemaExtensions(Amazon.DirectoryService.Model.ListSchemaExtensionsRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.ListSchemaExtensionsRequest" />
+            <member name="T:Amazon.DirectoryService.Model.ListSchemaExtensionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists all schema extensions applied to a specified Microsoft AD Directory.
+                </para>
+                <code
+                    title="To list schema extensions"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-list-schema-extensions-1481756433064" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.ListTagsForResource(Amazon.DirectoryService.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.ListTagsForResource(Amazon.DirectoryService.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.DirectoryService.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists all tags associated with a specified directory.
+                </para>
+                <code
+                    title="To list tags for a directory"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-list-tags-for-a-directory-1481757084225" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.RegisterEventTopic(Amazon.DirectoryService.Model.RegisterEventTopicRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.RegisterEventTopic(Amazon.DirectoryService.Model.RegisterEventTopicRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.RegisterEventTopicRequest" />
+            <member name="T:Amazon.DirectoryService.Model.RegisterEventTopicResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example associates a directory with an SNS topic.
+                </para>
+                <code
+                    title="To register an event topic"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-register-an-event-topic-1481757657323" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.RemoveIpRoutes(Amazon.DirectoryService.Model.RemoveIpRoutesRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.RemoveIpRoutes(Amazon.DirectoryService.Model.RemoveIpRoutesRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.RemoveIpRoutesRequest" />
+            <member name="T:Amazon.DirectoryService.Model.RemoveIpRoutesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example removes IP address blocks from a specified directory.
+                </para>
+                <code
+                    title="To remove IP routes"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-remove-ip-routes-1481758003547" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.RemoveTagsFromResource(Amazon.DirectoryService.Model.RemoveTagsFromResourceRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.RemoveTagsFromResource(Amazon.DirectoryService.Model.RemoveTagsFromResourceRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.RemoveTagsFromResourceRequest" />
+            <member name="T:Amazon.DirectoryService.Model.RemoveTagsFromResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example removes a tag from a specified directory.
+                </para>
+                <code
+                    title="To remove tags from a directory"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-remove-tags-from-a-directory-1481759009957" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.RestoreFromSnapshot(Amazon.DirectoryService.Model.RestoreFromSnapshotRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.RestoreFromSnapshot(Amazon.DirectoryService.Model.RestoreFromSnapshotRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.RestoreFromSnapshotRequest" />
+            <member name="T:Amazon.DirectoryService.Model.RestoreFromSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example restores a directory using an existing directory snapshot.
+                </para>
+                <code
+                    title="To restore a snapshot"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-restore-a-snapshot-1481759429095" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.StartSchemaExtension(Amazon.DirectoryService.Model.StartSchemaExtensionRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.StartSchemaExtension(Amazon.DirectoryService.Model.StartSchemaExtensionRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.StartSchemaExtensionRequest" />
+            <member name="T:Amazon.DirectoryService.Model.StartSchemaExtensionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example applies a schema extension to a specified Microsoft AD directory.
+                </para>
+                <code
+                    title="To start a schema extension"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-start-a-schema-extension-1481830079414" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.UpdateConditionalForwarder(Amazon.DirectoryService.Model.UpdateConditionalForwarderRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.UpdateConditionalForwarder(Amazon.DirectoryService.Model.UpdateConditionalForwarderRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.UpdateConditionalForwarderRequest" />
+            <member name="T:Amazon.DirectoryService.Model.UpdateConditionalForwarderResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates a conditional forwarder for a specified directory.
+                </para>
+                <code
+                    title="To update a conditional forwarder"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-update-a-conditional-forwarder-1481826693698" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.UpdateRadius(Amazon.DirectoryService.Model.UpdateRadiusRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.UpdateRadius(Amazon.DirectoryService.Model.UpdateRadiusRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.UpdateRadiusRequest" />
+            <member name="T:Amazon.DirectoryService.Model.UpdateRadiusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates the Remote Authentication Dial In User Service (RADIUS) server settings for an AD Connector directory.
+                </para>
+                <code
+                    title="To update Radius"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-update-radius-1481827441016" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DirectoryService.IAmazonDirectoryService.VerifyTrust(Amazon.DirectoryService.Model.VerifyTrustRequest)" />
+            <member name="M:Amazon.DirectoryService.AmazonDirectoryServiceClient.VerifyTrust(Amazon.DirectoryService.Model.VerifyTrustRequest)" />
+            <member name="T:Amazon.DirectoryService.Model.VerifyTrustRequest" />
+            <member name="T:Amazon.DirectoryService.Model.VerifyTrustResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example verifies a trust relationship between your Microsoft AD in the AWS cloud and an external domain.
+                </para>
+                <code
+                    title="To verify a trust"
+                    source=".\AWSSDKDocSamples\DirectoryService\DirectoryService.GeneratedSamples.cs"
+                    region="to-verify-a-trust-1481828755113" />
+            </example>
+        </value>
+    </doc>
+</docs>
