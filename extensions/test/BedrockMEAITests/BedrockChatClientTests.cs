@@ -8,19 +8,19 @@ public class BedrockChatClientTests
 {
     [Fact]
     [Trait("UnitTest", "BedrockRuntime")]
-    public void AsChatClient_InvalidArguments_Throws()
+    public void AsIChatClient_InvalidArguments_Throws()
     {
-        Assert.Throws<ArgumentNullException>("runtime", () => AmazonBedrockRuntimeExtensions.AsChatClient(null));
+        Assert.Throws<ArgumentNullException>("runtime", () => AmazonBedrockRuntimeExtensions.AsIChatClient(null));
     }
 
     [Theory]
     [Trait("UnitTest", "BedrockRuntime")]
     [InlineData(null)]
     [InlineData("claude")]
-    public void AsChatClient_ReturnsInstance(string modelId)
+    public void AsIChatClient_ReturnsInstance(string modelId)
     {
         IAmazonBedrockRuntime runtime = new AmazonBedrockRuntimeClient("awsAccessKeyId", "awsSecretAccessKey", RegionEndpoint.USEast1);
-        IChatClient client = runtime.AsChatClient(modelId);
+        IChatClient client = runtime.AsIChatClient(modelId);
 
         Assert.NotNull(client);
         Assert.Equal("aws.bedrock", client.GetService<ChatClientMetadata>()?.ProviderName);
@@ -29,10 +29,10 @@ public class BedrockChatClientTests
 
     [Fact]
     [Trait("UnitTest", "BedrockRuntime")]
-    public void AsChatClient_GetService()
+    public void AsIChatClient_GetService()
     {
         IAmazonBedrockRuntime runtime = new AmazonBedrockRuntimeClient("awsAccessKeyId", "awsSecretAccessKey", RegionEndpoint.USEast1);
-        IChatClient client = runtime.AsChatClient();
+        IChatClient client = runtime.AsIChatClient();
 
         Assert.Same(runtime, client.GetService<AmazonBedrockRuntimeClient>());
         Assert.Same(runtime, client.GetService<IAmazonBedrockRuntime>());
