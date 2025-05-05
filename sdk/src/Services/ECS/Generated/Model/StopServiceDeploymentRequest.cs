@@ -33,11 +33,26 @@ namespace Amazon.ECS.Model
     /// Container for the parameters to the StopServiceDeployment operation.
     /// Stops an ongoing service deployment.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
-    /// StopServiceDeployment isn't currently supported.
+    /// The following stop types are avaiable:
     /// </para>
-    ///  </note>
+    ///  <ul> <li> 
+    /// <para>
+    /// ROLLBACK - This option rolls back the service deployment to the previous service revision.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use this option even if you didn't configure the service deployment for the
+    /// rollback option. 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/stop-service-deployment.html">Stopping
+    /// Amazon ECS service deployments</a> in the <i>Amazon Elastic Container Service Developer
+    /// Guide</i>.
+    /// </para>
     /// </summary>
     public partial class StopServiceDeploymentRequest : AmazonECSRequest
     {
@@ -70,7 +85,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// The ROLLBACK and ABORT stopType aren't supported.
+        /// The valid values are <c>ROLLBACK</c>.
         /// </para>
         /// </summary>
         public StopServiceDeploymentStopType StopType
