@@ -113,6 +113,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.NumberBFramesBetweenReferenceFrames.Value);
             }
 
+            if(requestObject.IsSetPerFrameMetrics())
+            {
+                context.Writer.WritePropertyName("perFrameMetrics");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectPerFrameMetricsListValue in requestObject.PerFrameMetrics)
+                {
+                        context.Writer.WriteStringValue(requestObjectPerFrameMetricsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetQvbrSettings())
             {
                 context.Writer.WritePropertyName("qvbrSettings");

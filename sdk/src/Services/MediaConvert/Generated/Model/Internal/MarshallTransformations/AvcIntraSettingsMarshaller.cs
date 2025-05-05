@@ -93,6 +93,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.InterlaceMode);
             }
 
+            if(requestObject.IsSetPerFrameMetrics())
+            {
+                context.Writer.WritePropertyName("perFrameMetrics");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectPerFrameMetricsListValue in requestObject.PerFrameMetrics)
+                {
+                        context.Writer.WriteStringValue(requestObjectPerFrameMetricsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetScanTypeConversionMode())
             {
                 context.Writer.WritePropertyName("scanTypeConversionMode");
