@@ -74,7 +74,7 @@ namespace Amazon.DataZone.Model
         /// Gets and sets the property AuthorizedPrincipals. 
         /// <para>
         /// The authorized principals to be updated as part of the <c>UpdateSubscriptionTarget</c>
-        /// action.
+        /// action. Updates are supported in batches of 5 at a time.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]

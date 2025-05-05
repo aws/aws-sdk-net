@@ -189,6 +189,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetUseAssetType())
+            {
+                context.Writer.WritePropertyName("useAssetType");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UseAssetTypePolicyGrantDetailMarshaller.Instance;
+                marshaller.Marshall(requestObject.UseAssetType, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>
