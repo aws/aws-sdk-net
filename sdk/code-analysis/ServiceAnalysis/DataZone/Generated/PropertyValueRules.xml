@@ -6070,6 +6070,12 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.UseAssetTypePolicyGrantDetail.DomainUnitId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-z0-9_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.UsernamePassword.Password</property>
     <min>0</min>
     <max>64</max>
