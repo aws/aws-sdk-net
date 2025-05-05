@@ -92,6 +92,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DevicePoolArn);
                 }
 
+                if(publicRequest.IsSetProjectArn())
+                {
+                    context.Writer.WritePropertyName("projectArn");
+                    context.Writer.Write(publicRequest.ProjectArn);
+                }
+
                 if(publicRequest.IsSetTest())
                 {
                     context.Writer.WritePropertyName("test");
