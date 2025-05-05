@@ -38,6 +38,7 @@ namespace Amazon.DeviceFarm.Model
         private string _appArn;
         private ScheduleRunConfiguration _configuration;
         private string _devicePoolArn;
+        private string _projectArn;
         private ScheduleRunTest _test;
         private TestType _testType;
 
@@ -95,6 +96,25 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetDevicePoolArn()
         {
             return this._devicePoolArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProjectArn. 
+        /// <para>
+        /// The ARN of the project for which you want to check device pool compatibility.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=32, Max=1011)]
+        public string ProjectArn
+        {
+            get { return this._projectArn; }
+            set { this._projectArn = value; }
+        }
+
+        // Check to see if ProjectArn property is set
+        internal bool IsSetProjectArn()
+        {
+            return this._projectArn != null;
         }
 
         /// <summary>
