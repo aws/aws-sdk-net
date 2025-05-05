@@ -35,7 +35,7 @@ namespace Amazon.MediaConvert.Model
     public partial class AudioProperties
     {
         private int? _bitDepth;
-        private int? _bitRate;
+        private long? _bitRate;
         private int? _channels;
         private FrameRate _frameRate;
         private string _languageCode;
@@ -59,7 +59,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property BitRate. The bit rate of the audio track, in bits per second.
         /// </summary>
-        public int BitRate
+        public long BitRate
         {
             get { return this._bitRate.GetValueOrDefault(); }
             set { this._bitRate = value; }

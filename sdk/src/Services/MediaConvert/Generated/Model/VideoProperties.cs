@@ -35,7 +35,7 @@ namespace Amazon.MediaConvert.Model
     public partial class VideoProperties
     {
         private int? _bitDepth;
-        private int? _bitRate;
+        private long? _bitRate;
         private ColorPrimaries _colorPrimaries;
         private FrameRate _frameRate;
         private int? _height;
@@ -61,7 +61,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property BitRate. The bit rate of the video track, in bits per second.
         /// </summary>
-        public int BitRate
+        public long BitRate
         {
             get { return this._bitRate.GetValueOrDefault(); }
             set { this._bitRate = value; }

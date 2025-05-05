@@ -102,6 +102,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.FramerateNumerator = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("perFrameMetrics", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PerFrameMetrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("profile", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -240,6 +240,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.ParNumerator = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("perFrameMetrics", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PerFrameMetrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("qualityTuningLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
