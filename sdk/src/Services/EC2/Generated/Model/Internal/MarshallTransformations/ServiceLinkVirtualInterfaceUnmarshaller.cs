@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LocalGatewayVirtualInterface Object
+    /// Response Unmarshaller for ServiceLinkVirtualInterface Object
     /// </summary>  
-    public class LocalGatewayVirtualInterfaceUnmarshaller : IXmlUnmarshaller<LocalGatewayVirtualInterface, XmlUnmarshallerContext>
+    public class ServiceLinkVirtualInterfaceUnmarshaller : IXmlUnmarshaller<ServiceLinkVirtualInterface, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LocalGatewayVirtualInterface Unmarshall(XmlUnmarshallerContext context)
+        public ServiceLinkVirtualInterface Unmarshall(XmlUnmarshallerContext context)
         {
-            LocalGatewayVirtualInterface unmarshalledObject = new LocalGatewayVirtualInterface();
+            ServiceLinkVirtualInterface unmarshalledObject = new ServiceLinkVirtualInterface();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -67,34 +67,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.LocalAddress = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("localBgpAsn", targetDepth))
-                    {
-                        var unmarshaller = NullableIntUnmarshaller.Instance;
-                        unmarshalledObject.LocalBgpAsn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("localGatewayId", targetDepth))
+                    if (context.TestExpression("outpostArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.LocalGatewayId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.OutpostArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("localGatewayVirtualInterfaceArn", targetDepth))
+                    if (context.TestExpression("outpostId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.LocalGatewayVirtualInterfaceArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("localGatewayVirtualInterfaceGroupId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.LocalGatewayVirtualInterfaceGroupId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("localGatewayVirtualInterfaceId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.LocalGatewayVirtualInterfaceId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.OutpostId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("outpostLagId", targetDepth))
@@ -117,14 +99,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("peerBgpAsn", targetDepth))
                     {
-                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.PeerBgpAsn = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("peerBgpAsnExtended", targetDepth))
+                    if (context.TestExpression("serviceLinkVirtualInterfaceArn", targetDepth))
                     {
-                        var unmarshaller = NullableLongUnmarshaller.Instance;
-                        unmarshalledObject.PeerBgpAsnExtended = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ServiceLinkVirtualInterfaceArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("serviceLinkVirtualInterfaceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ServiceLinkVirtualInterfaceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("tagSet/item", targetDepth))
@@ -154,12 +142,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static LocalGatewayVirtualInterfaceUnmarshaller _instance = new LocalGatewayVirtualInterfaceUnmarshaller();        
+        private static ServiceLinkVirtualInterfaceUnmarshaller _instance = new ServiceLinkVirtualInterfaceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LocalGatewayVirtualInterfaceUnmarshaller Instance
+        public static ServiceLinkVirtualInterfaceUnmarshaller Instance
         {
             get
             {

@@ -55,10 +55,34 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("configurationState", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ConfigurationState = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("localBgpAsn", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.LocalBgpAsn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("localBgpAsnExtended", targetDepth))
+                    {
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
+                        unmarshalledObject.LocalBgpAsnExtended = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("localGatewayId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.LocalGatewayId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("localGatewayVirtualInterfaceGroupArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LocalGatewayVirtualInterfaceGroupArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("localGatewayVirtualInterfaceGroupId", targetDepth))

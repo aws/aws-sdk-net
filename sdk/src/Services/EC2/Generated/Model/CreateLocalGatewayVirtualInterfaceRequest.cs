@@ -30,49 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a local gateway virtual interface.
+    /// Container for the parameters to the CreateLocalGatewayVirtualInterface operation.
+    /// Create a virtual interface for a local gateway.
     /// </summary>
-    public partial class LocalGatewayVirtualInterface
+    public partial class CreateLocalGatewayVirtualInterfaceRequest : AmazonEC2Request
     {
-        private LocalGatewayVirtualInterfaceConfigurationState _configurationState;
+        private bool? _dryRun;
         private string _localAddress;
-        private int? _localBgpAsn;
-        private string _localGatewayId;
-        private string _localGatewayVirtualInterfaceArn;
         private string _localGatewayVirtualInterfaceGroupId;
-        private string _localGatewayVirtualInterfaceId;
         private string _outpostLagId;
-        private string _ownerId;
         private string _peerAddress;
         private int? _peerBgpAsn;
         private long? _peerBgpAsnExtended;
-        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private int? _vlan;
 
         /// <summary>
-        /// Gets and sets the property ConfigurationState. 
+        /// Gets and sets the property DryRun. 
         /// <para>
-        /// The current state of the local gateway virtual interface.
+        /// Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required permissions,
+        /// the error response is <c>DryRunOperation</c>. Otherwise, it is <c>UnauthorizedOperation</c>.
         /// </para>
         /// </summary>
-        public LocalGatewayVirtualInterfaceConfigurationState ConfigurationState
+        public bool? DryRun
         {
-            get { return this._configurationState; }
-            set { this._configurationState = value; }
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
         }
 
-        // Check to see if ConfigurationState property is set
-        internal bool IsSetConfigurationState()
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
         {
-            return this._configurationState != null;
+            return this._dryRun.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property LocalAddress. 
         /// <para>
-        /// The local address.
+        /// The IP address assigned to the local gateway virtual interface on the Outpost side.
+        /// Only IPv4 is supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LocalAddress
         {
             get { return this._localAddress; }
@@ -86,66 +86,12 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LocalBgpAsn. 
-        /// <para>
-        /// The Border Gateway Protocol (BGP) Autonomous System Number (ASN) of the local gateway.
-        /// </para>
-        /// </summary>
-        public int? LocalBgpAsn
-        {
-            get { return this._localBgpAsn; }
-            set { this._localBgpAsn = value; }
-        }
-
-        // Check to see if LocalBgpAsn property is set
-        internal bool IsSetLocalBgpAsn()
-        {
-            return this._localBgpAsn.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property LocalGatewayId. 
-        /// <para>
-        /// The ID of the local gateway.
-        /// </para>
-        /// </summary>
-        public string LocalGatewayId
-        {
-            get { return this._localGatewayId; }
-            set { this._localGatewayId = value; }
-        }
-
-        // Check to see if LocalGatewayId property is set
-        internal bool IsSetLocalGatewayId()
-        {
-            return this._localGatewayId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property LocalGatewayVirtualInterfaceArn. 
-        /// <para>
-        /// The Amazon Resource Number (ARN) of the local gateway virtual interface.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=1283)]
-        public string LocalGatewayVirtualInterfaceArn
-        {
-            get { return this._localGatewayVirtualInterfaceArn; }
-            set { this._localGatewayVirtualInterfaceArn = value; }
-        }
-
-        // Check to see if LocalGatewayVirtualInterfaceArn property is set
-        internal bool IsSetLocalGatewayVirtualInterfaceArn()
-        {
-            return this._localGatewayVirtualInterfaceArn != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property LocalGatewayVirtualInterfaceGroupId. 
         /// <para>
         /// The ID of the local gateway virtual interface group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LocalGatewayVirtualInterfaceGroupId
         {
             get { return this._localGatewayVirtualInterfaceGroupId; }
@@ -159,29 +105,13 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LocalGatewayVirtualInterfaceId. 
-        /// <para>
-        /// The ID of the virtual interface.
-        /// </para>
-        /// </summary>
-        public string LocalGatewayVirtualInterfaceId
-        {
-            get { return this._localGatewayVirtualInterfaceId; }
-            set { this._localGatewayVirtualInterfaceId = value; }
-        }
-
-        // Check to see if LocalGatewayVirtualInterfaceId property is set
-        internal bool IsSetLocalGatewayVirtualInterfaceId()
-        {
-            return this._localGatewayVirtualInterfaceId != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property OutpostLagId. 
         /// <para>
-        /// The Outpost LAG ID.
+        /// References the Link Aggregation Group (LAG) that connects the Outpost to on-premises
+        /// network devices.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OutpostLagId
         {
             get { return this._outpostLagId; }
@@ -195,29 +125,12 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OwnerId. 
-        /// <para>
-        /// The ID of the Amazon Web Services account that owns the local gateway virtual interface.
-        /// </para>
-        /// </summary>
-        public string OwnerId
-        {
-            get { return this._ownerId; }
-            set { this._ownerId = value; }
-        }
-
-        // Check to see if OwnerId property is set
-        internal bool IsSetOwnerId()
-        {
-            return this._ownerId != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property PeerAddress. 
         /// <para>
-        /// The peer address.
+        /// The peer IP address for the local gateway virtual interface. Only IPv4 is supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PeerAddress
         {
             get { return this._peerAddress; }
@@ -233,7 +146,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PeerBgpAsn. 
         /// <para>
-        /// The peer BGP ASN.
+        /// The Autonomous System Number (ASN) of the Border Gateway Protocol (BGP) peer.
         /// </para>
         /// </summary>
         public int? PeerBgpAsn
@@ -267,29 +180,31 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. 
+        /// Gets and sets the property TagSpecifications. 
         /// <para>
-        /// The tags assigned to the virtual interface.
+        /// The tags to apply to a resource when the local gateway virtual interface is being
+        /// created. 
         /// </para>
         /// </summary>
-        public List<Tag> Tags
+        public List<TagSpecification> TagSpecifications
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
         {
-            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Vlan. 
         /// <para>
-        /// The ID of the VLAN.
+        /// The virtual local area network (VLAN) used for the local gateway virtual interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int? Vlan
         {
             get { return this._vlan; }

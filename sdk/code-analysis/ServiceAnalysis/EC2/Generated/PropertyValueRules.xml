@@ -422,6 +422,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeOutpostLagsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribePrincipalIdFormatRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -473,6 +478,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeSecurityGroupVpcAssociationsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeServiceLinkVirtualInterfacesRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
@@ -1140,6 +1150,16 @@
     <max>1283</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.LocalGatewayVirtualInterface.LocalGatewayVirtualInterfaceArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.LocalGatewayVirtualInterfaceGroup.LocalGatewayVirtualInterfaceGroupArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.ManagedPrefixList.PrefixListArn</property>
     <min>1</min>
     <max>1283</max>
@@ -1256,6 +1276,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.RuleGroupTypePair.RuleGroupArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ServiceLinkVirtualInterface.ServiceLinkVirtualInterfaceArn</property>
     <min>1</min>
     <max>1283</max>
   </property-value-rule>

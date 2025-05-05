@@ -4804,6 +4804,62 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateLocalGatewayVirtualInterface
+
+
+        /// <summary>
+        /// Create a virtual interface for a local gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayVirtualInterface service method.</param>
+        /// 
+        /// <returns>The response from the CreateLocalGatewayVirtualInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterface">REST API Reference for CreateLocalGatewayVirtualInterface Operation</seealso>
+        CreateLocalGatewayVirtualInterfaceResponse CreateLocalGatewayVirtualInterface(CreateLocalGatewayVirtualInterfaceRequest request);
+
+
+
+        /// <summary>
+        /// Create a virtual interface for a local gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayVirtualInterface service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLocalGatewayVirtualInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterface">REST API Reference for CreateLocalGatewayVirtualInterface Operation</seealso>
+        Task<CreateLocalGatewayVirtualInterfaceResponse> CreateLocalGatewayVirtualInterfaceAsync(CreateLocalGatewayVirtualInterfaceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateLocalGatewayVirtualInterfaceGroup
+
+
+        /// <summary>
+        /// Create a local gateway virtual interface group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayVirtualInterfaceGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateLocalGatewayVirtualInterfaceGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterfaceGroup">REST API Reference for CreateLocalGatewayVirtualInterfaceGroup Operation</seealso>
+        CreateLocalGatewayVirtualInterfaceGroupResponse CreateLocalGatewayVirtualInterfaceGroup(CreateLocalGatewayVirtualInterfaceGroupRequest request);
+
+
+
+        /// <summary>
+        /// Create a local gateway virtual interface group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayVirtualInterfaceGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLocalGatewayVirtualInterfaceGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterfaceGroup">REST API Reference for CreateLocalGatewayVirtualInterfaceGroup Operation</seealso>
+        Task<CreateLocalGatewayVirtualInterfaceGroupResponse> CreateLocalGatewayVirtualInterfaceGroupAsync(CreateLocalGatewayVirtualInterfaceGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateManagedPrefixList
 
 
@@ -8811,6 +8867,62 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteLocalGatewayRouteTableVpcAssociation service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVpcAssociation">REST API Reference for DeleteLocalGatewayRouteTableVpcAssociation Operation</seealso>
         Task<DeleteLocalGatewayRouteTableVpcAssociationResponse> DeleteLocalGatewayRouteTableVpcAssociationAsync(DeleteLocalGatewayRouteTableVpcAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteLocalGatewayVirtualInterface
+
+
+        /// <summary>
+        /// Deletes the specified local gateway virtual interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayVirtualInterface service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLocalGatewayVirtualInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterface">REST API Reference for DeleteLocalGatewayVirtualInterface Operation</seealso>
+        DeleteLocalGatewayVirtualInterfaceResponse DeleteLocalGatewayVirtualInterface(DeleteLocalGatewayVirtualInterfaceRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified local gateway virtual interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayVirtualInterface service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLocalGatewayVirtualInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterface">REST API Reference for DeleteLocalGatewayVirtualInterface Operation</seealso>
+        Task<DeleteLocalGatewayVirtualInterfaceResponse> DeleteLocalGatewayVirtualInterfaceAsync(DeleteLocalGatewayVirtualInterfaceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteLocalGatewayVirtualInterfaceGroup
+
+
+        /// <summary>
+        /// Delete the specified local gateway interface group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayVirtualInterfaceGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLocalGatewayVirtualInterfaceGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterfaceGroup">REST API Reference for DeleteLocalGatewayVirtualInterfaceGroup Operation</seealso>
+        DeleteLocalGatewayVirtualInterfaceGroupResponse DeleteLocalGatewayVirtualInterfaceGroup(DeleteLocalGatewayVirtualInterfaceGroupRequest request);
+
+
+
+        /// <summary>
+        /// Delete the specified local gateway interface group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayVirtualInterfaceGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLocalGatewayVirtualInterfaceGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterfaceGroup">REST API Reference for DeleteLocalGatewayVirtualInterfaceGroup Operation</seealso>
+        Task<DeleteLocalGatewayVirtualInterfaceGroupResponse> DeleteLocalGatewayVirtualInterfaceGroupAsync(DeleteLocalGatewayVirtualInterfaceGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -15536,6 +15648,34 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeOutpostLags
+
+
+        /// <summary>
+        /// Describes the Outposts link aggregation groups (LAGs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOutpostLags service method.</param>
+        /// 
+        /// <returns>The response from the DescribeOutpostLags service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeOutpostLags">REST API Reference for DescribeOutpostLags Operation</seealso>
+        DescribeOutpostLagsResponse DescribeOutpostLags(DescribeOutpostLagsRequest request);
+
+
+
+        /// <summary>
+        /// Describes the Outposts link aggregation groups (LAGs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOutpostLags service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeOutpostLags service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeOutpostLags">REST API Reference for DescribeOutpostLags Operation</seealso>
+        Task<DescribeOutpostLagsResponse> DescribeOutpostLagsAsync(DescribeOutpostLagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribePlacementGroups
 
 
@@ -16995,6 +17135,34 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeSecurityGroupVpcAssociations service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupVpcAssociations">REST API Reference for DescribeSecurityGroupVpcAssociations Operation</seealso>
         Task<DescribeSecurityGroupVpcAssociationsResponse> DescribeSecurityGroupVpcAssociationsAsync(DescribeSecurityGroupVpcAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeServiceLinkVirtualInterfaces
+
+
+        /// <summary>
+        /// Describes the Outpost service link virtual interfaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceLinkVirtualInterfaces service method.</param>
+        /// 
+        /// <returns>The response from the DescribeServiceLinkVirtualInterfaces service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeServiceLinkVirtualInterfaces">REST API Reference for DescribeServiceLinkVirtualInterfaces Operation</seealso>
+        DescribeServiceLinkVirtualInterfacesResponse DescribeServiceLinkVirtualInterfaces(DescribeServiceLinkVirtualInterfacesRequest request);
+
+
+
+        /// <summary>
+        /// Describes the Outpost service link virtual interfaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceLinkVirtualInterfaces service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeServiceLinkVirtualInterfaces service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeServiceLinkVirtualInterfaces">REST API Reference for DescribeServiceLinkVirtualInterfaces Operation</seealso>
+        Task<DescribeServiceLinkVirtualInterfacesResponse> DescribeServiceLinkVirtualInterfacesAsync(DescribeServiceLinkVirtualInterfacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
