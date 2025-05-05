@@ -6259,6 +6259,88 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateLocalGatewayVirtualInterface
+
+
+        /// <summary>
+        /// Create a virtual interface for a local gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayVirtualInterface service method.</param>
+        /// 
+        /// <returns>The response from the CreateLocalGatewayVirtualInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterface">REST API Reference for CreateLocalGatewayVirtualInterface Operation</seealso>
+        public virtual CreateLocalGatewayVirtualInterfaceResponse CreateLocalGatewayVirtualInterface(CreateLocalGatewayVirtualInterfaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocalGatewayVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocalGatewayVirtualInterfaceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLocalGatewayVirtualInterfaceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Create a virtual interface for a local gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayVirtualInterface service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLocalGatewayVirtualInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterface">REST API Reference for CreateLocalGatewayVirtualInterface Operation</seealso>
+        public virtual Task<CreateLocalGatewayVirtualInterfaceResponse> CreateLocalGatewayVirtualInterfaceAsync(CreateLocalGatewayVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocalGatewayVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocalGatewayVirtualInterfaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateLocalGatewayVirtualInterfaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateLocalGatewayVirtualInterfaceGroup
+
+
+        /// <summary>
+        /// Create a local gateway virtual interface group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayVirtualInterfaceGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateLocalGatewayVirtualInterfaceGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterfaceGroup">REST API Reference for CreateLocalGatewayVirtualInterfaceGroup Operation</seealso>
+        public virtual CreateLocalGatewayVirtualInterfaceGroupResponse CreateLocalGatewayVirtualInterfaceGroup(CreateLocalGatewayVirtualInterfaceGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocalGatewayVirtualInterfaceGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocalGatewayVirtualInterfaceGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLocalGatewayVirtualInterfaceGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Create a local gateway virtual interface group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayVirtualInterfaceGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLocalGatewayVirtualInterfaceGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterfaceGroup">REST API Reference for CreateLocalGatewayVirtualInterfaceGroup Operation</seealso>
+        public virtual Task<CreateLocalGatewayVirtualInterfaceGroupResponse> CreateLocalGatewayVirtualInterfaceGroupAsync(CreateLocalGatewayVirtualInterfaceGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocalGatewayVirtualInterfaceGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocalGatewayVirtualInterfaceGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateLocalGatewayVirtualInterfaceGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateManagedPrefixList
 
 
@@ -11318,6 +11400,88 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableVpcAssociationResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteLocalGatewayRouteTableVpcAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteLocalGatewayVirtualInterface
+
+
+        /// <summary>
+        /// Deletes the specified local gateway virtual interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayVirtualInterface service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLocalGatewayVirtualInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterface">REST API Reference for DeleteLocalGatewayVirtualInterface Operation</seealso>
+        public virtual DeleteLocalGatewayVirtualInterfaceResponse DeleteLocalGatewayVirtualInterface(DeleteLocalGatewayVirtualInterfaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocalGatewayVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocalGatewayVirtualInterfaceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLocalGatewayVirtualInterfaceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified local gateway virtual interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayVirtualInterface service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLocalGatewayVirtualInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterface">REST API Reference for DeleteLocalGatewayVirtualInterface Operation</seealso>
+        public virtual Task<DeleteLocalGatewayVirtualInterfaceResponse> DeleteLocalGatewayVirtualInterfaceAsync(DeleteLocalGatewayVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocalGatewayVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocalGatewayVirtualInterfaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteLocalGatewayVirtualInterfaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteLocalGatewayVirtualInterfaceGroup
+
+
+        /// <summary>
+        /// Delete the specified local gateway interface group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayVirtualInterfaceGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLocalGatewayVirtualInterfaceGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterfaceGroup">REST API Reference for DeleteLocalGatewayVirtualInterfaceGroup Operation</seealso>
+        public virtual DeleteLocalGatewayVirtualInterfaceGroupResponse DeleteLocalGatewayVirtualInterfaceGroup(DeleteLocalGatewayVirtualInterfaceGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocalGatewayVirtualInterfaceGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocalGatewayVirtualInterfaceGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLocalGatewayVirtualInterfaceGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Delete the specified local gateway interface group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayVirtualInterfaceGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLocalGatewayVirtualInterfaceGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterfaceGroup">REST API Reference for DeleteLocalGatewayVirtualInterfaceGroup Operation</seealso>
+        public virtual Task<DeleteLocalGatewayVirtualInterfaceGroupResponse> DeleteLocalGatewayVirtualInterfaceGroupAsync(DeleteLocalGatewayVirtualInterfaceGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocalGatewayVirtualInterfaceGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocalGatewayVirtualInterfaceGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteLocalGatewayVirtualInterfaceGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -20100,6 +20264,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeOutpostLags
+
+
+        /// <summary>
+        /// Describes the Outposts link aggregation groups (LAGs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOutpostLags service method.</param>
+        /// 
+        /// <returns>The response from the DescribeOutpostLags service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeOutpostLags">REST API Reference for DescribeOutpostLags Operation</seealso>
+        public virtual DescribeOutpostLagsResponse DescribeOutpostLags(DescribeOutpostLagsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOutpostLagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOutpostLagsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeOutpostLagsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the Outposts link aggregation groups (LAGs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOutpostLags service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeOutpostLags service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeOutpostLags">REST API Reference for DescribeOutpostLags Operation</seealso>
+        public virtual Task<DescribeOutpostLagsResponse> DescribeOutpostLagsAsync(DescribeOutpostLagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOutpostLagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOutpostLagsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeOutpostLagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribePlacementGroups
 
 
@@ -21858,6 +22063,47 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DescribeSecurityGroupVpcAssociationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeSecurityGroupVpcAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeServiceLinkVirtualInterfaces
+
+
+        /// <summary>
+        /// Describes the Outpost service link virtual interfaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceLinkVirtualInterfaces service method.</param>
+        /// 
+        /// <returns>The response from the DescribeServiceLinkVirtualInterfaces service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeServiceLinkVirtualInterfaces">REST API Reference for DescribeServiceLinkVirtualInterfaces Operation</seealso>
+        public virtual DescribeServiceLinkVirtualInterfacesResponse DescribeServiceLinkVirtualInterfaces(DescribeServiceLinkVirtualInterfacesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServiceLinkVirtualInterfacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceLinkVirtualInterfacesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeServiceLinkVirtualInterfacesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the Outpost service link virtual interfaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceLinkVirtualInterfaces service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeServiceLinkVirtualInterfaces service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeServiceLinkVirtualInterfaces">REST API Reference for DescribeServiceLinkVirtualInterfaces Operation</seealso>
+        public virtual Task<DescribeServiceLinkVirtualInterfacesResponse> DescribeServiceLinkVirtualInterfacesAsync(DescribeServiceLinkVirtualInterfacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServiceLinkVirtualInterfacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceLinkVirtualInterfacesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeServiceLinkVirtualInterfacesResponse>(request, options, cancellationToken);
         }
 
         #endregion

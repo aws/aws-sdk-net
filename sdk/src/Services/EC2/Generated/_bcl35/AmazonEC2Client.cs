@@ -6383,6 +6383,114 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateLocalGatewayVirtualInterface
+
+        /// <summary>
+        /// Create a virtual interface for a local gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayVirtualInterface service method.</param>
+        /// 
+        /// <returns>The response from the CreateLocalGatewayVirtualInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterface">REST API Reference for CreateLocalGatewayVirtualInterface Operation</seealso>
+        public virtual CreateLocalGatewayVirtualInterfaceResponse CreateLocalGatewayVirtualInterface(CreateLocalGatewayVirtualInterfaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocalGatewayVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocalGatewayVirtualInterfaceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLocalGatewayVirtualInterfaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLocalGatewayVirtualInterface operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayVirtualInterface operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLocalGatewayVirtualInterface
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterface">REST API Reference for CreateLocalGatewayVirtualInterface Operation</seealso>
+        public virtual IAsyncResult BeginCreateLocalGatewayVirtualInterface(CreateLocalGatewayVirtualInterfaceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocalGatewayVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocalGatewayVirtualInterfaceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLocalGatewayVirtualInterface operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLocalGatewayVirtualInterface.</param>
+        /// 
+        /// <returns>Returns a  CreateLocalGatewayVirtualInterfaceResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterface">REST API Reference for CreateLocalGatewayVirtualInterface Operation</seealso>
+        public virtual CreateLocalGatewayVirtualInterfaceResponse EndCreateLocalGatewayVirtualInterface(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateLocalGatewayVirtualInterfaceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateLocalGatewayVirtualInterfaceGroup
+
+        /// <summary>
+        /// Create a local gateway virtual interface group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayVirtualInterfaceGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateLocalGatewayVirtualInterfaceGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterfaceGroup">REST API Reference for CreateLocalGatewayVirtualInterfaceGroup Operation</seealso>
+        public virtual CreateLocalGatewayVirtualInterfaceGroupResponse CreateLocalGatewayVirtualInterfaceGroup(CreateLocalGatewayVirtualInterfaceGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocalGatewayVirtualInterfaceGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocalGatewayVirtualInterfaceGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLocalGatewayVirtualInterfaceGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLocalGatewayVirtualInterfaceGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayVirtualInterfaceGroup operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLocalGatewayVirtualInterfaceGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterfaceGroup">REST API Reference for CreateLocalGatewayVirtualInterfaceGroup Operation</seealso>
+        public virtual IAsyncResult BeginCreateLocalGatewayVirtualInterfaceGroup(CreateLocalGatewayVirtualInterfaceGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocalGatewayVirtualInterfaceGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocalGatewayVirtualInterfaceGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLocalGatewayVirtualInterfaceGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLocalGatewayVirtualInterfaceGroup.</param>
+        /// 
+        /// <returns>Returns a  CreateLocalGatewayVirtualInterfaceGroupResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterfaceGroup">REST API Reference for CreateLocalGatewayVirtualInterfaceGroup Operation</seealso>
+        public virtual CreateLocalGatewayVirtualInterfaceGroupResponse EndCreateLocalGatewayVirtualInterfaceGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateLocalGatewayVirtualInterfaceGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateManagedPrefixList
 
         /// <summary>
@@ -11624,6 +11732,114 @@ namespace Amazon.EC2
         public virtual DeleteLocalGatewayRouteTableVpcAssociationResponse EndDeleteLocalGatewayRouteTableVpcAssociation(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLocalGatewayRouteTableVpcAssociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteLocalGatewayVirtualInterface
+
+        /// <summary>
+        /// Deletes the specified local gateway virtual interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayVirtualInterface service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLocalGatewayVirtualInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterface">REST API Reference for DeleteLocalGatewayVirtualInterface Operation</seealso>
+        public virtual DeleteLocalGatewayVirtualInterfaceResponse DeleteLocalGatewayVirtualInterface(DeleteLocalGatewayVirtualInterfaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocalGatewayVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocalGatewayVirtualInterfaceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLocalGatewayVirtualInterfaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLocalGatewayVirtualInterface operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayVirtualInterface operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLocalGatewayVirtualInterface
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterface">REST API Reference for DeleteLocalGatewayVirtualInterface Operation</seealso>
+        public virtual IAsyncResult BeginDeleteLocalGatewayVirtualInterface(DeleteLocalGatewayVirtualInterfaceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocalGatewayVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocalGatewayVirtualInterfaceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLocalGatewayVirtualInterface operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLocalGatewayVirtualInterface.</param>
+        /// 
+        /// <returns>Returns a  DeleteLocalGatewayVirtualInterfaceResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterface">REST API Reference for DeleteLocalGatewayVirtualInterface Operation</seealso>
+        public virtual DeleteLocalGatewayVirtualInterfaceResponse EndDeleteLocalGatewayVirtualInterface(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteLocalGatewayVirtualInterfaceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteLocalGatewayVirtualInterfaceGroup
+
+        /// <summary>
+        /// Delete the specified local gateway interface group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayVirtualInterfaceGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLocalGatewayVirtualInterfaceGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterfaceGroup">REST API Reference for DeleteLocalGatewayVirtualInterfaceGroup Operation</seealso>
+        public virtual DeleteLocalGatewayVirtualInterfaceGroupResponse DeleteLocalGatewayVirtualInterfaceGroup(DeleteLocalGatewayVirtualInterfaceGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocalGatewayVirtualInterfaceGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocalGatewayVirtualInterfaceGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLocalGatewayVirtualInterfaceGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLocalGatewayVirtualInterfaceGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayVirtualInterfaceGroup operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLocalGatewayVirtualInterfaceGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterfaceGroup">REST API Reference for DeleteLocalGatewayVirtualInterfaceGroup Operation</seealso>
+        public virtual IAsyncResult BeginDeleteLocalGatewayVirtualInterfaceGroup(DeleteLocalGatewayVirtualInterfaceGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocalGatewayVirtualInterfaceGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocalGatewayVirtualInterfaceGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLocalGatewayVirtualInterfaceGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLocalGatewayVirtualInterfaceGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteLocalGatewayVirtualInterfaceGroupResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterfaceGroup">REST API Reference for DeleteLocalGatewayVirtualInterfaceGroup Operation</seealso>
+        public virtual DeleteLocalGatewayVirtualInterfaceGroupResponse EndDeleteLocalGatewayVirtualInterfaceGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteLocalGatewayVirtualInterfaceGroupResponse>(asyncResult);
         }
 
         #endregion
@@ -21077,6 +21293,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeOutpostLags
+
+        /// <summary>
+        /// Describes the Outposts link aggregation groups (LAGs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOutpostLags service method.</param>
+        /// 
+        /// <returns>The response from the DescribeOutpostLags service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeOutpostLags">REST API Reference for DescribeOutpostLags Operation</seealso>
+        public virtual DescribeOutpostLagsResponse DescribeOutpostLags(DescribeOutpostLagsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOutpostLagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOutpostLagsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeOutpostLagsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeOutpostLags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOutpostLags operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeOutpostLags
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeOutpostLags">REST API Reference for DescribeOutpostLags Operation</seealso>
+        public virtual IAsyncResult BeginDescribeOutpostLags(DescribeOutpostLagsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOutpostLagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOutpostLagsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeOutpostLags operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeOutpostLags.</param>
+        /// 
+        /// <returns>Returns a  DescribeOutpostLagsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeOutpostLags">REST API Reference for DescribeOutpostLags Operation</seealso>
+        public virtual DescribeOutpostLagsResponse EndDescribeOutpostLags(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeOutpostLagsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribePlacementGroups
 
         /// <summary>
@@ -22608,6 +22878,60 @@ namespace Amazon.EC2
         public virtual DescribeSecurityGroupVpcAssociationsResponse EndDescribeSecurityGroupVpcAssociations(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSecurityGroupVpcAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeServiceLinkVirtualInterfaces
+
+        /// <summary>
+        /// Describes the Outpost service link virtual interfaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceLinkVirtualInterfaces service method.</param>
+        /// 
+        /// <returns>The response from the DescribeServiceLinkVirtualInterfaces service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeServiceLinkVirtualInterfaces">REST API Reference for DescribeServiceLinkVirtualInterfaces Operation</seealso>
+        public virtual DescribeServiceLinkVirtualInterfacesResponse DescribeServiceLinkVirtualInterfaces(DescribeServiceLinkVirtualInterfacesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServiceLinkVirtualInterfacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceLinkVirtualInterfacesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeServiceLinkVirtualInterfacesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeServiceLinkVirtualInterfaces operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceLinkVirtualInterfaces operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeServiceLinkVirtualInterfaces
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeServiceLinkVirtualInterfaces">REST API Reference for DescribeServiceLinkVirtualInterfaces Operation</seealso>
+        public virtual IAsyncResult BeginDescribeServiceLinkVirtualInterfaces(DescribeServiceLinkVirtualInterfacesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServiceLinkVirtualInterfacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceLinkVirtualInterfacesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeServiceLinkVirtualInterfaces operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeServiceLinkVirtualInterfaces.</param>
+        /// 
+        /// <returns>Returns a  DescribeServiceLinkVirtualInterfacesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeServiceLinkVirtualInterfaces">REST API Reference for DescribeServiceLinkVirtualInterfaces Operation</seealso>
+        public virtual DescribeServiceLinkVirtualInterfacesResponse EndDescribeServiceLinkVirtualInterfaces(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeServiceLinkVirtualInterfacesResponse>(asyncResult);
         }
 
         #endregion

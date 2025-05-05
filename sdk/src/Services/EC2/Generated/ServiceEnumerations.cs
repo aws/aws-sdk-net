@@ -14947,6 +14947,126 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type LocalGatewayVirtualInterfaceConfigurationState.
+    /// </summary>
+    public class LocalGatewayVirtualInterfaceConfigurationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for LocalGatewayVirtualInterfaceConfigurationState
+        /// </summary>
+        public static readonly LocalGatewayVirtualInterfaceConfigurationState Available = new LocalGatewayVirtualInterfaceConfigurationState("available");
+        /// <summary>
+        /// Constant Deleted for LocalGatewayVirtualInterfaceConfigurationState
+        /// </summary>
+        public static readonly LocalGatewayVirtualInterfaceConfigurationState Deleted = new LocalGatewayVirtualInterfaceConfigurationState("deleted");
+        /// <summary>
+        /// Constant Deleting for LocalGatewayVirtualInterfaceConfigurationState
+        /// </summary>
+        public static readonly LocalGatewayVirtualInterfaceConfigurationState Deleting = new LocalGatewayVirtualInterfaceConfigurationState("deleting");
+        /// <summary>
+        /// Constant Pending for LocalGatewayVirtualInterfaceConfigurationState
+        /// </summary>
+        public static readonly LocalGatewayVirtualInterfaceConfigurationState Pending = new LocalGatewayVirtualInterfaceConfigurationState("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LocalGatewayVirtualInterfaceConfigurationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LocalGatewayVirtualInterfaceConfigurationState FindValue(string value)
+        {
+            return FindValue<LocalGatewayVirtualInterfaceConfigurationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LocalGatewayVirtualInterfaceConfigurationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LocalGatewayVirtualInterfaceGroupConfigurationState.
+    /// </summary>
+    public class LocalGatewayVirtualInterfaceGroupConfigurationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for LocalGatewayVirtualInterfaceGroupConfigurationState
+        /// </summary>
+        public static readonly LocalGatewayVirtualInterfaceGroupConfigurationState Available = new LocalGatewayVirtualInterfaceGroupConfigurationState("available");
+        /// <summary>
+        /// Constant Deleted for LocalGatewayVirtualInterfaceGroupConfigurationState
+        /// </summary>
+        public static readonly LocalGatewayVirtualInterfaceGroupConfigurationState Deleted = new LocalGatewayVirtualInterfaceGroupConfigurationState("deleted");
+        /// <summary>
+        /// Constant Deleting for LocalGatewayVirtualInterfaceGroupConfigurationState
+        /// </summary>
+        public static readonly LocalGatewayVirtualInterfaceGroupConfigurationState Deleting = new LocalGatewayVirtualInterfaceGroupConfigurationState("deleting");
+        /// <summary>
+        /// Constant Incomplete for LocalGatewayVirtualInterfaceGroupConfigurationState
+        /// </summary>
+        public static readonly LocalGatewayVirtualInterfaceGroupConfigurationState Incomplete = new LocalGatewayVirtualInterfaceGroupConfigurationState("incomplete");
+        /// <summary>
+        /// Constant Pending for LocalGatewayVirtualInterfaceGroupConfigurationState
+        /// </summary>
+        public static readonly LocalGatewayVirtualInterfaceGroupConfigurationState Pending = new LocalGatewayVirtualInterfaceGroupConfigurationState("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LocalGatewayVirtualInterfaceGroupConfigurationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LocalGatewayVirtualInterfaceGroupConfigurationState FindValue(string value)
+        {
+            return FindValue<LocalGatewayVirtualInterfaceGroupConfigurationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LocalGatewayVirtualInterfaceGroupConfigurationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LocalStorage.
     /// </summary>
     public class LocalStorage : ConstantClass
@@ -18119,6 +18239,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType NetworkInterface = new ResourceType("network-interface");
         /// <summary>
+        /// Constant OutpostLag for ResourceType
+        /// </summary>
+        public static readonly ResourceType OutpostLag = new ResourceType("outpost-lag");
+        /// <summary>
         /// Constant PlacementGroup for ResourceType
         /// </summary>
         public static readonly ResourceType PlacementGroup = new ResourceType("placement-group");
@@ -18158,6 +18282,10 @@ namespace Amazon.EC2
         /// Constant SecurityGroupRule for ResourceType
         /// </summary>
         public static readonly ResourceType SecurityGroupRule = new ResourceType("security-group-rule");
+        /// <summary>
+        /// Constant ServiceLinkVirtualInterface for ResourceType
+        /// </summary>
+        public static readonly ResourceType ServiceLinkVirtualInterface = new ResourceType("service-link-virtual-interface");
         /// <summary>
         /// Constant Snapshot for ResourceType
         /// </summary>
@@ -19594,6 +19722,64 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ServiceConnectivityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceLinkVirtualInterfaceConfigurationState.
+    /// </summary>
+    public class ServiceLinkVirtualInterfaceConfigurationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for ServiceLinkVirtualInterfaceConfigurationState
+        /// </summary>
+        public static readonly ServiceLinkVirtualInterfaceConfigurationState Available = new ServiceLinkVirtualInterfaceConfigurationState("available");
+        /// <summary>
+        /// Constant Deleted for ServiceLinkVirtualInterfaceConfigurationState
+        /// </summary>
+        public static readonly ServiceLinkVirtualInterfaceConfigurationState Deleted = new ServiceLinkVirtualInterfaceConfigurationState("deleted");
+        /// <summary>
+        /// Constant Deleting for ServiceLinkVirtualInterfaceConfigurationState
+        /// </summary>
+        public static readonly ServiceLinkVirtualInterfaceConfigurationState Deleting = new ServiceLinkVirtualInterfaceConfigurationState("deleting");
+        /// <summary>
+        /// Constant Pending for ServiceLinkVirtualInterfaceConfigurationState
+        /// </summary>
+        public static readonly ServiceLinkVirtualInterfaceConfigurationState Pending = new ServiceLinkVirtualInterfaceConfigurationState("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceLinkVirtualInterfaceConfigurationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceLinkVirtualInterfaceConfigurationState FindValue(string value)
+        {
+            return FindValue<ServiceLinkVirtualInterfaceConfigurationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceLinkVirtualInterfaceConfigurationState(string value)
         {
             return FindValue(value);
         }

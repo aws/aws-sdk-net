@@ -34,11 +34,69 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class LocalGatewayVirtualInterfaceGroup
     {
+        private LocalGatewayVirtualInterfaceGroupConfigurationState _configurationState;
+        private int? _localBgpAsn;
+        private long? _localBgpAsnExtended;
         private string _localGatewayId;
+        private string _localGatewayVirtualInterfaceGroupArn;
         private string _localGatewayVirtualInterfaceGroupId;
         private List<string> _localGatewayVirtualInterfaceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ownerId;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationState. 
+        /// <para>
+        /// The current state of the local gateway virtual interface group.
+        /// </para>
+        /// </summary>
+        public LocalGatewayVirtualInterfaceGroupConfigurationState ConfigurationState
+        {
+            get { return this._configurationState; }
+            set { this._configurationState = value; }
+        }
+
+        // Check to see if ConfigurationState property is set
+        internal bool IsSetConfigurationState()
+        {
+            return this._configurationState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocalBgpAsn. 
+        /// <para>
+        /// The Autonomous System Number(ASN) for the local Border Gateway Protocol (BGP).
+        /// </para>
+        /// </summary>
+        public int LocalBgpAsn
+        {
+            get { return this._localBgpAsn.GetValueOrDefault(); }
+            set { this._localBgpAsn = value; }
+        }
+
+        // Check to see if LocalBgpAsn property is set
+        internal bool IsSetLocalBgpAsn()
+        {
+            return this._localBgpAsn.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocalBgpAsnExtended. 
+        /// <para>
+        /// The extended 32-bit ASN for the local BGP configuration.
+        /// </para>
+        /// </summary>
+        public long LocalBgpAsnExtended
+        {
+            get { return this._localBgpAsnExtended.GetValueOrDefault(); }
+            set { this._localBgpAsnExtended = value; }
+        }
+
+        // Check to see if LocalBgpAsnExtended property is set
+        internal bool IsSetLocalBgpAsnExtended()
+        {
+            return this._localBgpAsnExtended.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property LocalGatewayId. 
@@ -56,6 +114,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetLocalGatewayId()
         {
             return this._localGatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocalGatewayVirtualInterfaceGroupArn. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the local gateway virtual interface group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1283)]
+        public string LocalGatewayVirtualInterfaceGroupArn
+        {
+            get { return this._localGatewayVirtualInterfaceGroupArn; }
+            set { this._localGatewayVirtualInterfaceGroupArn = value; }
+        }
+
+        // Check to see if LocalGatewayVirtualInterfaceGroupArn property is set
+        internal bool IsSetLocalGatewayVirtualInterfaceGroupArn()
+        {
+            return this._localGatewayVirtualInterfaceGroupArn != null;
         }
 
         /// <summary>

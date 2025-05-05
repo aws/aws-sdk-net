@@ -30,32 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a local gateway virtual interface.
+    /// Describes the service link virtual interfaces that establish connectivity between
+    /// Amazon Web Services Outpost and on-premises networks.
     /// </summary>
-    public partial class LocalGatewayVirtualInterface
+    public partial class ServiceLinkVirtualInterface
     {
-        private LocalGatewayVirtualInterfaceConfigurationState _configurationState;
+        private ServiceLinkVirtualInterfaceConfigurationState _configurationState;
         private string _localAddress;
-        private int? _localBgpAsn;
-        private string _localGatewayId;
-        private string _localGatewayVirtualInterfaceArn;
-        private string _localGatewayVirtualInterfaceGroupId;
-        private string _localGatewayVirtualInterfaceId;
+        private string _outpostArn;
+        private string _outpostId;
         private string _outpostLagId;
         private string _ownerId;
         private string _peerAddress;
-        private int? _peerBgpAsn;
-        private long? _peerBgpAsnExtended;
+        private long? _peerBgpAsn;
+        private string _serviceLinkVirtualInterfaceArn;
+        private string _serviceLinkVirtualInterfaceId;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private int? _vlan;
 
         /// <summary>
         /// Gets and sets the property ConfigurationState. 
         /// <para>
-        /// The current state of the local gateway virtual interface.
+        /// The current state of the service link virtual interface.
         /// </para>
         /// </summary>
-        public LocalGatewayVirtualInterfaceConfigurationState ConfigurationState
+        public ServiceLinkVirtualInterfaceConfigurationState ConfigurationState
         {
             get { return this._configurationState; }
             set { this._configurationState = value; }
@@ -70,7 +69,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LocalAddress. 
         /// <para>
-        /// The local address.
+        /// The IPv4 address assigned to the local gateway virtual interface on the Outpost side.
         /// </para>
         /// </summary>
         public string LocalAddress
@@ -86,100 +85,45 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LocalBgpAsn. 
+        /// Gets and sets the property OutpostArn. 
         /// <para>
-        /// The Border Gateway Protocol (BGP) Autonomous System Number (ASN) of the local gateway.
+        /// The Outpost Amazon Resource Number (ARN) for the service link virtual interface.
         /// </para>
         /// </summary>
-        public int LocalBgpAsn
+        public string OutpostArn
         {
-            get { return this._localBgpAsn.GetValueOrDefault(); }
-            set { this._localBgpAsn = value; }
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
         }
 
-        // Check to see if LocalBgpAsn property is set
-        internal bool IsSetLocalBgpAsn()
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
         {
-            return this._localBgpAsn.HasValue; 
+            return this._outpostArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property LocalGatewayId. 
+        /// Gets and sets the property OutpostId. 
         /// <para>
-        /// The ID of the local gateway.
+        /// The Outpost ID for the service link virtual interface.
         /// </para>
         /// </summary>
-        public string LocalGatewayId
+        public string OutpostId
         {
-            get { return this._localGatewayId; }
-            set { this._localGatewayId = value; }
+            get { return this._outpostId; }
+            set { this._outpostId = value; }
         }
 
-        // Check to see if LocalGatewayId property is set
-        internal bool IsSetLocalGatewayId()
+        // Check to see if OutpostId property is set
+        internal bool IsSetOutpostId()
         {
-            return this._localGatewayId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property LocalGatewayVirtualInterfaceArn. 
-        /// <para>
-        /// The Amazon Resource Number (ARN) of the local gateway virtual interface.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=1283)]
-        public string LocalGatewayVirtualInterfaceArn
-        {
-            get { return this._localGatewayVirtualInterfaceArn; }
-            set { this._localGatewayVirtualInterfaceArn = value; }
-        }
-
-        // Check to see if LocalGatewayVirtualInterfaceArn property is set
-        internal bool IsSetLocalGatewayVirtualInterfaceArn()
-        {
-            return this._localGatewayVirtualInterfaceArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property LocalGatewayVirtualInterfaceGroupId. 
-        /// <para>
-        /// The ID of the local gateway virtual interface group.
-        /// </para>
-        /// </summary>
-        public string LocalGatewayVirtualInterfaceGroupId
-        {
-            get { return this._localGatewayVirtualInterfaceGroupId; }
-            set { this._localGatewayVirtualInterfaceGroupId = value; }
-        }
-
-        // Check to see if LocalGatewayVirtualInterfaceGroupId property is set
-        internal bool IsSetLocalGatewayVirtualInterfaceGroupId()
-        {
-            return this._localGatewayVirtualInterfaceGroupId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property LocalGatewayVirtualInterfaceId. 
-        /// <para>
-        /// The ID of the virtual interface.
-        /// </para>
-        /// </summary>
-        public string LocalGatewayVirtualInterfaceId
-        {
-            get { return this._localGatewayVirtualInterfaceId; }
-            set { this._localGatewayVirtualInterfaceId = value; }
-        }
-
-        // Check to see if LocalGatewayVirtualInterfaceId property is set
-        internal bool IsSetLocalGatewayVirtualInterfaceId()
-        {
-            return this._localGatewayVirtualInterfaceId != null;
+            return this._outpostId != null;
         }
 
         /// <summary>
         /// Gets and sets the property OutpostLagId. 
         /// <para>
-        /// The Outpost LAG ID.
+        /// The link aggregation group (LAG) ID for the service link virtual interface.
         /// </para>
         /// </summary>
         public string OutpostLagId
@@ -197,7 +141,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The ID of the Amazon Web Services account that owns the local gateway virtual interface.
+        /// The ID of the Amazon Web Services account that owns the service link virtual interface..
         /// </para>
         /// </summary>
         public string OwnerId
@@ -215,7 +159,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PeerAddress. 
         /// <para>
-        /// The peer address.
+        /// The IPv4 peer address for the service link virtual interface.
         /// </para>
         /// </summary>
         public string PeerAddress
@@ -233,10 +177,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PeerBgpAsn. 
         /// <para>
-        /// The peer BGP ASN.
+        /// The ASN for the Border Gateway Protocol (BGP) associated with the service link virtual
+        /// interface.
         /// </para>
         /// </summary>
-        public int PeerBgpAsn
+        public long PeerBgpAsn
         {
             get { return this._peerBgpAsn.GetValueOrDefault(); }
             set { this._peerBgpAsn = value; }
@@ -249,27 +194,46 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PeerBgpAsnExtended. 
+        /// Gets and sets the property ServiceLinkVirtualInterfaceArn. 
         /// <para>
-        /// The extended 32-bit ASN of the BGP peer for use with larger ASN values.
+        /// The Amazon Resource Number (ARN) for the service link virtual interface. 
         /// </para>
         /// </summary>
-        public long PeerBgpAsnExtended
+        [AWSProperty(Min=1, Max=1283)]
+        public string ServiceLinkVirtualInterfaceArn
         {
-            get { return this._peerBgpAsnExtended.GetValueOrDefault(); }
-            set { this._peerBgpAsnExtended = value; }
+            get { return this._serviceLinkVirtualInterfaceArn; }
+            set { this._serviceLinkVirtualInterfaceArn = value; }
         }
 
-        // Check to see if PeerBgpAsnExtended property is set
-        internal bool IsSetPeerBgpAsnExtended()
+        // Check to see if ServiceLinkVirtualInterfaceArn property is set
+        internal bool IsSetServiceLinkVirtualInterfaceArn()
         {
-            return this._peerBgpAsnExtended.HasValue; 
+            return this._serviceLinkVirtualInterfaceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceLinkVirtualInterfaceId. 
+        /// <para>
+        /// The ID of the service link virtual interface.
+        /// </para>
+        /// </summary>
+        public string ServiceLinkVirtualInterfaceId
+        {
+            get { return this._serviceLinkVirtualInterfaceId; }
+            set { this._serviceLinkVirtualInterfaceId = value; }
+        }
+
+        // Check to see if ServiceLinkVirtualInterfaceId property is set
+        internal bool IsSetServiceLinkVirtualInterfaceId()
+        {
+            return this._serviceLinkVirtualInterfaceId != null;
         }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags assigned to the virtual interface.
+        /// The tags associated with the service link virtual interface.
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -287,7 +251,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Vlan. 
         /// <para>
-        /// The ID of the VLAN.
+        /// The virtual local area network for the service link virtual interface.
         /// </para>
         /// </summary>
         public int Vlan

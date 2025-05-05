@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LocalGatewayVirtualInterfaceGroup Object
+    /// Response Unmarshaller for OutpostLag Object
     /// </summary>  
-    public class LocalGatewayVirtualInterfaceGroupUnmarshaller : IUnmarshaller<LocalGatewayVirtualInterfaceGroup, XmlUnmarshallerContext>, IUnmarshaller<LocalGatewayVirtualInterfaceGroup, JsonUnmarshallerContext>
+    public class OutpostLagUnmarshaller : IUnmarshaller<OutpostLag, XmlUnmarshallerContext>, IUnmarshaller<OutpostLag, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LocalGatewayVirtualInterfaceGroup Unmarshall(XmlUnmarshallerContext context)
+        public OutpostLag Unmarshall(XmlUnmarshallerContext context)
         {
-            LocalGatewayVirtualInterfaceGroup unmarshalledObject = new LocalGatewayVirtualInterfaceGroup();
+            OutpostLag unmarshalledObject = new OutpostLag();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,42 +55,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("configurationState", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ConfigurationState = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("localBgpAsn", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.LocalBgpAsn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("localBgpAsnExtended", targetDepth))
-                    {
-                        var unmarshaller = LongUnmarshaller.Instance;
-                        unmarshalledObject.LocalBgpAsnExtended = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("localGatewayId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.LocalGatewayId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("localGatewayVirtualInterfaceGroupArn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.LocalGatewayVirtualInterfaceGroupArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("localGatewayVirtualInterfaceGroupId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.LocalGatewayVirtualInterfaceGroupId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("localGatewayVirtualInterfaceIdSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -102,10 +66,39 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.LocalGatewayVirtualInterfaceIds.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("outpostArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OutpostArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("outpostLagId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OutpostLagId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ownerId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("serviceLinkVirtualInterfaceIdSet/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.ServiceLinkVirtualInterfaceIds == null)
+                        {
+                            unmarshalledObject.ServiceLinkVirtualInterfaceIds = new List<string>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ServiceLinkVirtualInterfaceIds.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("state", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("tagSet/item", targetDepth))
@@ -134,18 +127,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LocalGatewayVirtualInterfaceGroup Unmarshall(JsonUnmarshallerContext context)
+        public OutpostLag Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static LocalGatewayVirtualInterfaceGroupUnmarshaller _instance = new LocalGatewayVirtualInterfaceGroupUnmarshaller();        
+        private static OutpostLagUnmarshaller _instance = new OutpostLagUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LocalGatewayVirtualInterfaceGroupUnmarshaller Instance
+        public static OutpostLagUnmarshaller Instance
         {
             get
             {

@@ -55,6 +55,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("configurationState", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ConfigurationState = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("localAddress", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -73,10 +79,28 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.LocalGatewayId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("localGatewayVirtualInterfaceArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LocalGatewayVirtualInterfaceArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("localGatewayVirtualInterfaceGroupId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LocalGatewayVirtualInterfaceGroupId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("localGatewayVirtualInterfaceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.LocalGatewayVirtualInterfaceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("outpostLagId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OutpostLagId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ownerId", targetDepth))
@@ -95,6 +119,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
                         unmarshalledObject.PeerBgpAsn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("peerBgpAsnExtended", targetDepth))
+                    {
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.PeerBgpAsnExtended = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("tagSet/item", targetDepth))
