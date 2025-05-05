@@ -1,3 +1,18 @@
+### 3.7.1037.0 (2025-05-05 18:19 UTC)
+* DataZone (3.7.413.0)
+	* This release adds a new authorization policy to control the usage of custom AssetType when creating an Asset. Customer can now add new grant(s) of policyType USE_ASSET_TYPE for custom AssetTypes to apply authorization policy to projects members and domain unit owners.
+* DeviceFarm (3.7.403.0)
+	* Add an optional parameter to the GetDevicePoolCompatibility API to pass in project information to check device pool compatibility.
+* EC2 (3.7.440.0)
+	* This update introduces API operations to manage and create local gateway VIF and VIF groups. It also includes API operations to describe Outpost LAGs and service link VIFs.
+* ECS (3.7.410.8)
+	* Add support to roll back an In_Progress ECS Service Deployment
+* MediaConvert (3.7.412.0)
+	* This release adds an optional sidecar per-frame video quality metrics report and an ALL_PCM option for audio selectors. It also changes the data type for Probe API response fields related to video and audio bitrate from integer to double.
+* Core 3.7.402.52
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1036.0 (2025-05-02 18:16 UTC)
 * BedrockDataAutomation (3.7.403.0)
 	* Added support for Custom output and blueprints for AUDIO data types.
