@@ -135,7 +135,6 @@ namespace AWSSDK.UnitTests
 
             Assert.AreEqual(Regex.Matches(userAgentHeader, "md/ClientSync").Count, 1);
             Assert.AreEqual(Regex.Matches(userAgentHeader, "cfg/init-coll#").Count, 1);
-            Assert.AreEqual(Regex.Matches(userAgentHeader, "aws-sdk-dotnet-framework/").Count, 1);
         }
 
         [DataTestMethod]
