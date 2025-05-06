@@ -32,45 +32,150 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("TimestreamWrite")]
-        [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region ap-northeast-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TimestreamWriteEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://ingest.timestream-fips.us-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("TimestreamWrite")]
-        [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new TimestreamWriteEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = true;
+            parameters["Region"] = "ap-northeast-1";
+            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://ingest.timestream-fips.us-east-1.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://ingest.timestream.ap-northeast-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("TimestreamWrite")]
-        [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        [Description("For region ap-northeast-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TimestreamWriteEndpointParameters();
-            parameters["Region"] = "us-east-1";
+            parameters["Region"] = "ap-northeast-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://ingest.timestream.us-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://timestream-ingest.ap-northeast-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("TimestreamWrite")]
+        [Description("For region ap-south-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new TimestreamWriteEndpointParameters();
+            parameters["Region"] = "ap-south-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://ingest.timestream.ap-south-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("TimestreamWrite")]
+        [Description("For region ap-south-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new TimestreamWriteEndpointParameters();
+            parameters["Region"] = "ap-south-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://timestream-ingest.ap-south-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("TimestreamWrite")]
+        [Description("For region ap-southeast-2 with FIPS disabled and DualStack disabled")]
+        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new TimestreamWriteEndpointParameters();
+            parameters["Region"] = "ap-southeast-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://ingest.timestream.ap-southeast-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("TimestreamWrite")]
+        [Description("For region ap-southeast-2 with FIPS disabled and DualStack enabled")]
+        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new TimestreamWriteEndpointParameters();
+            parameters["Region"] = "ap-southeast-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://timestream-ingest.ap-southeast-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("TimestreamWrite")]
+        [Description("For region eu-central-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new TimestreamWriteEndpointParameters();
+            parameters["Region"] = "eu-central-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://ingest.timestream.eu-central-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("TimestreamWrite")]
+        [Description("For region eu-central-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new TimestreamWriteEndpointParameters();
+            parameters["Region"] = "eu-central-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://timestream-ingest.eu-central-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("TimestreamWrite")]
+        [Description("For region eu-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new TimestreamWriteEndpointParameters();
+            parameters["Region"] = "eu-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://ingest.timestream.eu-west-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("TimestreamWrite")]
+        [Description("For region eu-west-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new TimestreamWriteEndpointParameters();
+            parameters["Region"] = "eu-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://timestream-ingest.eu-west-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -86,6 +191,141 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://ingest.timestream.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("TimestreamWrite")]
+        [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new TimestreamWriteEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://timestream-ingest.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("TimestreamWrite")]
+        [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new TimestreamWriteEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://timestream-ingest-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("TimestreamWrite")]
+        [Description("For region us-east-2 with FIPS disabled and DualStack disabled")]
+        public void For_region_useast2_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new TimestreamWriteEndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://ingest.timestream.us-east-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("TimestreamWrite")]
+        [Description("For region us-east-2 with FIPS disabled and DualStack enabled")]
+        public void For_region_useast2_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new TimestreamWriteEndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://timestream-ingest.us-east-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("TimestreamWrite")]
+        [Description("For region us-east-2 with FIPS enabled and DualStack enabled")]
+        public void For_region_useast2_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new TimestreamWriteEndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://timestream-ingest-fips.us-east-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("TimestreamWrite")]
+        [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new TimestreamWriteEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://ingest.timestream.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("TimestreamWrite")]
+        [Description("For region us-west-2 with FIPS disabled and DualStack enabled")]
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new TimestreamWriteEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://timestream-ingest.us-west-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("TimestreamWrite")]
+        [Description("For region us-west-2 with FIPS enabled and DualStack enabled")]
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new TimestreamWriteEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://timestream-ingest-fips.us-west-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("TimestreamWrite")]
+        [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new TimestreamWriteEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://ingest.timestream-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -182,6 +422,36 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("TimestreamWrite")]
+        [Description("For region us-gov-west-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new TimestreamWriteEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://timestream-ingest.us-gov-west-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("TimestreamWrite")]
+        [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new TimestreamWriteEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://timestream-ingest.us-gov-west-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("TimestreamWrite")]
         [Description("For region us-gov-east-1 with FIPS enabled and DualStack enabled")]
         public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
@@ -190,7 +460,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://ingest.timestream-fips.us-gov-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://timestream-ingest.us-gov-east-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -220,7 +490,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://ingest.timestream.us-gov-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://timestream-ingest.us-gov-east-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
