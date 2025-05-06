@@ -97,24 +97,19 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
                 {
                     if (jPrincipal.Value.ValueKind == JsonValueKind.String)
                     {
-                        if (jPrincipal.Value.GetString().Equals("*"))
-                        {
-                            statement.Principals.Add(Principal.Anonymous);
-                        }
-                        else
-                        {
-                            // Don't strip '-' and assume the policy being deserialized is already valid.
-                            Principal principal = new Principal(jPrincipal.Name, jPrincipal.Value.GetString());
-                        }
+                        // Don't strip '-' and assume the policy being deserialized is already valid.
+                        Principal principal = new Principal(jPrincipal.Name, jPrincipal.Value.GetString());
+                        statement.Principals.Add(principal);
                     }
                     else if (jPrincipal.Value.ValueKind == JsonValueKind.Array)
                     {
-                        foreach (JsonElement arrayElement in jPrincipals.EnumerateArray())
+                        foreach (JsonElement arrayElement in jPrincipal.Value.EnumerateArray())
                         {
                             if (arrayElement.ValueKind == JsonValueKind.String)
                             {
                                 // Don't strip '-' and assume the policy being deserialized is already valid.
                                 Principal principal = new Principal(jPrincipal.Name, arrayElement.GetString(), false);
+                                statement.Principals.Add(principal);
                             }
                         }
                     }

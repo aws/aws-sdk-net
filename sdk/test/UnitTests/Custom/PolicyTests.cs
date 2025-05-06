@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Amazon.Auth.AccessControlPolicy;
+﻿using Amazon.Auth.AccessControlPolicy;
 using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Linq;
 using static Amazon.Auth.AccessControlPolicy.ConditionFactory;
 
 namespace AWSSDK_DotNet.UnitTests
 {
     [TestClass]
+    [TestCategory("Runtime")]
     public class PolicyTests
     {
         [TestMethod]
-        [TestCategory("Runtime")]
         public void TestIfStatementAlreadyExists()
         {
             var policy = new Policy();
@@ -153,6 +149,105 @@ namespace AWSSDK_DotNet.UnitTests
                 typeof(StringComparisonType),
                 expectedHash,
                 "The Amazon.Auth.AccessControlPolicy.ConditionFactory.ToString(DateComparisonType) method implementation may need to be updated.");
+        }
+
+        [TestMethod]
+        public void HandleObjectsWhenConvertingPrincipals()
+        {
+            string testPolicy = @"{
+              ""Version"": ""2012-10-17"",
+              ""Statement"": [
+                {
+                  ""Effect"": ""Deny"",
+                  ""Action"": ""s3:*"",
+                  ""Principal"": {
+                    ""AWS"": [
+                        ""arn:aws:iam::123456789012:root"",
+                        ""999999999999""
+                    ],
+                    ""CanonicalUser"": ""79a59df900b949e55d96a1e698fbacedfd6e09d98eacf8f8d5218e7cd47ef2be""
+                  },
+                  ""Resource"": [
+                    ""arn:aws:s3:::amzn-s3-demo-bucket/*"",
+                    ""arn:aws:s3:::amzn-s3-demo-bucket""
+                  ],
+                  ""Condition"": {
+                    ""ArnNotEquals"": {
+                      ""aws:PrincipalArn"": ""arn:aws:iam::444455556666:user/user-name""
+                    }
+                  }
+                }
+              ]
+            }";
+
+            var policy = Policy.FromJson(testPolicy);
+            Assert.IsNotNull(policy);
+            Assert.AreEqual(1, policy.Statements.Count);
+
+            var statement = policy.Statements.First();
+            Assert.AreEqual(statement.Actions.Count, 1);
+            Assert.AreEqual(statement.Principals.Count, 3);
+            Assert.AreEqual(statement.Conditions.Count, 1);
+        }
+
+        [TestMethod]
+        public void HandleSingleValueWhenConvertingPrincipals()
+        {
+            string testPolicy = @"{
+              ""Version"": ""2012-10-17"",
+              ""Statement"": [
+                {
+                  ""Effect"": ""Allow"",
+                  ""Action"": ""s3:ListBucket"",
+                  ""Principal"": {
+                    ""AWS"": ""123456789012""
+                  }
+                }
+              ]
+            }";
+
+            var policy = Policy.FromJson(testPolicy);
+            Assert.IsNotNull(policy);
+            Assert.AreEqual(1, policy.Statements.Count);
+
+            var statement = policy.Statements.First();
+            Assert.AreEqual(1, statement.Principals.Count);
+
+            var principal = statement.Principals.First();
+            Assert.AreEqual(Principal.AWS_PROVIDER, principal.Provider);
+            Assert.AreEqual("123456789012", principal.Id);
+        }
+
+        [TestMethod]
+        public void HandleAnonymousWhenConvertingPrincipals()
+        {
+            string testPolicy = @"{
+              ""Version"": ""2012-10-17"",
+              ""Statement"": [
+                {
+                  ""Effect"": ""Deny"",
+                  ""Action"": ""s3:*"",
+                  ""Principal"": ""*"",
+                  ""Resource"": [
+                    ""arn:aws:s3:::amzn-s3-demo-bucket/*"",
+                    ""arn:aws:s3:::amzn-s3-demo-bucket""
+                  ],
+                  ""Condition"": {
+                    ""ArnNotEquals"": {
+                      ""aws:PrincipalArn"": ""arn:aws:iam::444455556666:user/user-name""
+                    }
+                  }
+                }
+              ]
+            }";
+
+            var policy = Policy.FromJson(testPolicy);
+            Assert.IsNotNull(policy);
+            Assert.AreEqual(1, policy.Statements.Count);
+
+            var statement = policy.Statements.First();
+            Assert.AreEqual(1, statement.Principals.Count);
+            Assert.AreEqual(Principal.Anonymous, statement.Principals.First());
         }
     }
 }
