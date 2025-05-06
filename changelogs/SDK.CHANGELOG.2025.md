@@ -1,3 +1,16 @@
+### 4.0.6.0 (2025-05-06 18:20 UTC)
+* EC2 (4.0.3.0)
+	* This release adds support for Amazon EBS Provisioned Rate for Volume Initialization, which lets you specify a volume initialization rate to ensure that your EBS volumes are initialized in a predictable amount of time.
+* ServiceCatalog (4.0.1.0)
+	* ServiceCatalog's APIs (DeleteServiceAction, DisassociateServiceActionFromProvisioningArtifact, AssociateServiceActionWithProvisioningArtifact) now throw InvalidParametersException when IdempotencyToken is invalid.
+* TimestreamQuery (4.0.1.0)
+	* Add dualstack endpoints support and correct us-gov-west-1 FIPS endpoint.
+* TimestreamWrite (4.0.1.0)
+	* Add dualstack endpoints support.
+* Core 4.0.0.3
+	* Fix regression where `Amazon.Auth.AccessControlPolicy.Policy.FromJson` was not correctly handling objects in the `Principal` property (https://github.com/aws/aws-sdk-net/issues/3791)
+	* All services packages updated to require new Core
+
 ### 4.0.5.0 (2025-05-05 18:22 UTC)
 * DataZone (4.0.1.0)
 	* This release adds a new authorization policy to control the usage of custom AssetType when creating an Asset. Customer can now add new grant(s) of policyType USE_ASSET_TYPE for custom AssetTypes to apply authorization policy to projects members and domain unit owners.

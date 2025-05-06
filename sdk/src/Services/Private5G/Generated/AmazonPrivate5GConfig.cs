@@ -33,7 +33,7 @@ namespace Amazon.Private5G
     public partial class AmazonPrivate5GConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("PrivateNetworks", "4.0.0.1");
+            InternalSDKUtils.BuildUserAgentString("PrivateNetworks", "4.0.0.2");
 
         private static readonly AmazonPrivate5GEndpointResolver EndpointResolver =
             new AmazonPrivate5GEndpointResolver();
