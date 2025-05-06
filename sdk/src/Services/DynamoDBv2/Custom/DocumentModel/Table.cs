@@ -344,7 +344,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 case DynamoDBEntryType.Binary:
                     return ScalarAttributeType.B;
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(primitiveEntryType), $"{primitiveEntryType} is not a known DynamoDB {nameof(ScalarAttributeType)}"); ;
+                    throw new ArgumentOutOfRangeException(nameof(primitiveEntryType), $"{primitiveEntryType} is not a known DynamoDB {nameof(ScalarAttributeType)}");
             }
         }
 
@@ -1345,10 +1345,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
 #if AWS_ASYNC_API
-        internal Task<Document> UpdateHelperAsync(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config, CancellationToken cancellationToken)
+        internal Task<Document> UpdateHelperAsync(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config, Expression expression, CancellationToken cancellationToken)
         {
             Key key = (hashKey != null || rangeKey != null) ? MakeKey(hashKey, rangeKey) : MakeKey(doc);
-            return UpdateHelperAsync(doc, key, config, cancellationToken);
+            return UpdateHelperAsync(doc, key, config, expression, cancellationToken);
         }
 #endif
 
@@ -1443,7 +1443,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
 #if AWS_ASYNC_API
-        internal async Task<Document> UpdateHelperAsync(Document doc, Key key, UpdateItemOperationConfig config, CancellationToken cancellationToken)
+        internal async Task<Document> UpdateHelperAsync(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression, CancellationToken cancellationToken)
         {
             var currentConfig = config ?? new UpdateItemOperationConfig();
 
@@ -1467,6 +1467,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             this.UpdateRequestUserAgentDetails(req, isAsync: true);
 
+            //todo: add support for updateExpression
             ValidateConditional(currentConfig);
 
             if (currentConfig.Expected != null)
@@ -1481,14 +1482,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (req.Expected.Count > 1)
                     req.ConditionalOperator = EnumMapper.Convert(currentConfig.ExpectedState.ConditionalOperator);
             }
-            else if (currentConfig.ConditionalExpression != null && currentConfig.ConditionalExpression.IsSet)
+            else if (currentConfig.ConditionalExpression is { IsSet: true } || updateExpression is { IsSet: true })
             {
-                currentConfig.ConditionalExpression.ApplyExpression(req, this);
+                currentConfig.ConditionalExpression?.ApplyExpression(req, this);
 
                 string statement;
                 Dictionary<string, AttributeValue> expressionAttributeValues;
                 Dictionary<string, string> expressionAttributeNames;
-                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, out statement, out expressionAttributeValues, out expressionAttributeNames);
+
+                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, updateExpression,this, out statement, out expressionAttributeValues, out expressionAttributeNames);
 
                 req.AttributeUpdates = null;
                 req.UpdateExpression = statement;

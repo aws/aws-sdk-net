@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 using Amazon.DynamoDBv2.Model;
@@ -388,6 +389,80 @@ namespace Amazon.DynamoDBv2.DocumentModel
             statement = statementBuilder.ToString();
         }
 
+
+        public static void ConvertAttributeUpdatesToUpdateExpression(
+            Dictionary<string, AttributeValueUpdate> attributesToUpdates, Expression updateExpression,
+            Table table,
+            out string statement,
+            out Dictionary<string, AttributeValue> expressionAttributeValues,
+            out Dictionary<string, string> expressionAttributes)
+        {
+            expressionAttributeValues = new Dictionary<string, AttributeValue>(StringComparer.Ordinal);
+            expressionAttributes = new Dictionary<string, string>(StringComparer.Ordinal);
+
+            if (updateExpression != null)
+            {
+                expressionAttributeValues = Expression.ConvertToAttributeValues(updateExpression.ExpressionAttributeValues,table);
+                expressionAttributes=updateExpression.ExpressionAttributeNames;
+            }
+
+            var attributeNames = expressionAttributes.Select(pair => pair.Value).ToList();
+
+            // Build an expression string with a SET clause for the added/modified attributes and 
+            // REMOVE clause for the attributes set to null.
+            int attributeCount = 0;
+            StringBuilder sets = new StringBuilder();
+            StringBuilder removes = new StringBuilder();
+            foreach (var kvp in attributesToUpdates)
+            {
+                var attribute = kvp.Key;
+                if (!attributeNames.Contains(attribute))
+                {
+                    var update = kvp.Value;
+
+                    string variableName = GetVariableName(ref attributeCount);
+                    var attributeReference = GetAttributeReference(variableName);
+                    var attributeValueReference = GetAttributeValueReference(variableName);
+
+                    if (update.Action == AttributeAction.DELETE)
+                    {
+                        if (removes.Length > 0)
+                            removes.Append(", ");
+                        removes.Append(attributeReference);
+                    }
+                    else
+                    {
+                        if (sets.Length > 0)
+                            sets.Append(", ");
+                        sets.AppendFormat("{0} = {1}", attributeReference, attributeValueReference);
+
+                        // Add the attribute value for the variable in the added in the expression
+                        expressionAttributeValues.Add(attributeValueReference, update.Value);
+                    }
+
+                    // Add the attribute name for the variable in the added in the expression
+                    expressionAttributes.Add(attributeReference, attribute);
+                }
+            }
+
+            // Combine the SET and REMOVE clause
+            StringBuilder statementBuilder = new StringBuilder();
+            if (sets.Length > 0)
+            {
+                var setStatement= updateExpression!=null ? updateExpression.ExpressionStatement + "," : "SET";
+                statementBuilder.AppendFormat(CultureInfo.InvariantCulture, "{0} {1}", setStatement, sets.ToString());
+            }
+            if (removes.Length > 0)
+            {
+                if (sets.Length > 0)
+                    statementBuilder.Append(" ");
+
+                statementBuilder.AppendFormat(CultureInfo.InvariantCulture, "REMOVE {0}", removes.ToString());
+            }
+
+            statement = statementBuilder.ToString();
+        }
+
         public static void ConvertAttributesToGetToProjectionExpression(QueryRequest request)
         {
             if (request.IsSetAttributesToGet() &&
@@ -568,3 +643,4 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
     }
  }
+    

@@ -225,6 +225,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             ItemStorage storage = _context.ObjectToItemStorageHelper(item, _storageConfig, _config, keysOnly: false, _config.IgnoreNullValues ?? false);
             if (storage == null) return;
+
             Expression conditionExpression = CreateConditionExpressionForVersion(storage);
             SetNewVersion(storage);
 
@@ -408,6 +409,11 @@ namespace Amazon.DynamoDBv2.DataModel
             return !skipVersionCheck && _storageConfig.HasVersion;
         }
 
+        private bool ShouldUseCounter()
+        {
+            return false; //_storageConfig.;
+        }
+
         private void CheckUseVersioning()
         {
             if (_config.SkipVersionCheck == true)
@@ -432,7 +438,6 @@ namespace Amazon.DynamoDBv2.DataModel
                 DocumentTransaction.TargetTable.IsEmptyStringValueEnabled);
             return DynamoDBContext.CreateConditionExpressionForVersion(storage, conversionConfig);
         }
-        
 
         private void AddDocumentTransaction(ItemStorage storage, Expression conditionExpression)
         {
@@ -476,6 +481,11 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (!ShouldUseVersioning()) return;
             DynamoDBContext.SetNewVersion(storage);
+        }
+
+        private void SetAtomicCounters(ItemStorage storage)
+        {
+            DynamoDBContext.SetAtomicCounters(storage);
         }
     }
 

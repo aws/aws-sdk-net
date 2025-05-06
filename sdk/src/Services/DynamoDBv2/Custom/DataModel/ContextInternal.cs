@@ -70,6 +70,7 @@ namespace Amazon.DynamoDBv2.DataModel
             else if (memberType.IsAssignableFrom(typeof(short))) version = version.AsShort() + 1;
             else if (memberType.IsAssignableFrom(typeof(ushort))) version = version.AsUShort() + 1;
         }
+
         private static Document CreateExpectedDocumentForVersion(ItemStorage storage)
         {
             Document document = new Document();
@@ -115,6 +116,84 @@ namespace Amazon.DynamoDBv2.DataModel
             };
         }
 
+        #endregion
+
+        #region Atomic counters
+
+
+        internal static void SetAtomicCounters(ItemStorage storage)
+        {
+
+            var counterProperties = storage.Config.BaseTypeStorageConfig.Properties.
+                Where(propertyStorage => propertyStorage.IsCounter).ToList();
+
+            if (counterProperties.Count==0) return;
+            // Set the initial value of the counter properties
+            foreach (var propertyStorage in counterProperties)
+            {
+                Primitive counter;
+                string versionAttributeName = propertyStorage.AttributeName;
+
+                if (storage.Document.TryGetValue(versionAttributeName, out var counterEntry))
+                    counter = counterEntry as Primitive;
+                else
+                    counter = null;
+
+                if (counter != null && counter.Value != null)
+                {
+                    if (counter.Type != DynamoDBEntryType.Numeric) throw new InvalidOperationException("Atomic Counter property must be numeric");
+                    IncrementCounter(propertyStorage.MemberType, ref counter, propertyStorage.CounterDelta);
+                }
+                else
+                {
+                    counter = new Primitive(propertyStorage.CounterStartValue.ToString(), true);
+                }
+                storage.Document[versionAttributeName] = counter;
+            }
+
+        }
+
+
+        private static void IncrementCounter(Type memberType, ref Primitive counter,long delta)
+        {
+            if (memberType.IsAssignableFrom(typeof(Byte))) counter = counter.AsByte() + delta;
+            else if (memberType.IsAssignableFrom(typeof(SByte))) counter = counter.AsSByte() + delta;
+            else if (memberType.IsAssignableFrom(typeof(int))) counter = counter.AsInt() + delta;
+            else if (memberType.IsAssignableFrom(typeof(uint))) counter = counter.AsUInt() + delta;
+            else if (memberType.IsAssignableFrom(typeof(long))) counter = counter.AsLong() + delta;
+            //else if (memberType.IsAssignableFrom(typeof(ulong))) counter = counter.AsULong() + delta;
+            else if (memberType.IsAssignableFrom(typeof(short))) counter = counter.AsShort() + delta;
+            else if (memberType.IsAssignableFrom(typeof(ushort))) counter = counter.AsUShort() + delta;
+        }
+
+        internal static Expression CreateUpdateExpressionForCounterProperties(ItemStorage storage)
+        {
+            Expression updateExpression = null;
+            var counterProperties = storage.Config.BaseTypeStorageConfig.Properties.
+                Where(propertyStorage => propertyStorage.IsCounter).ToList();
+
+            if (counterProperties.Count != 0)
+            {
+                updateExpression = new Expression();
+                var asserts = string.Empty;
+                foreach (var propertyStorage in counterProperties)
+                {
+                    string startValueName = $":s_{propertyStorage.AttributeName}";
+                    string deltaValueName = $":d_{propertyStorage.AttributeName}";
+                    string counterAttributeName = Common.GetAttributeReference(propertyStorage.AttributeName);
+                    asserts += $"{counterAttributeName} = " +
+                               $"if_not_exists({counterAttributeName},{startValueName}) + {deltaValueName} ,";
+                    updateExpression.ExpressionAttributeNames[counterAttributeName] = propertyStorage.AttributeName;
+                    updateExpression.ExpressionAttributeValues[deltaValueName] = propertyStorage.CounterDelta;
+                    updateExpression.ExpressionAttributeValues[startValueName] =
+                        propertyStorage.CounterStartValue - propertyStorage.CounterDelta;
+                }
+                updateExpression.ExpressionStatement = $"SET {asserts.Substring(0, asserts.Length - 2)}";
+            }
+
+            return updateExpression;
+        }
+        
         #endregion
 
         #region Table methods
@@ -392,7 +471,6 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 foreach (PropertyStorage propertyStorage in storageConfig.AllPropertyStorage)
                 {
-                    string propertyName = propertyStorage.PropertyName;
                     string attributeName = propertyStorage.AttributeName;
 
                     DynamoDBEntry entry;
@@ -466,8 +544,9 @@ namespace Amazon.DynamoDBv2.DataModel
                 {
                     // if only keys are being serialized, skip non-key properties
                     // still include version, however, to populate the storage.CurrentVersion field
+                    // and include counter, to populate the storage.CurrentCount field
                     if (keysOnly && !propertyStorage.IsHashKey && !propertyStorage.IsRangeKey &&
-                        !propertyStorage.IsVersion) continue;
+                        !propertyStorage.IsVersion && !propertyStorage.IsCounter) continue;
 
                     string propertyName = propertyStorage.PropertyName;
                     string attributeName = propertyStorage.AttributeName;
@@ -481,11 +560,12 @@ namespace Amazon.DynamoDBv2.DataModel
                         {
                             Primitive dbePrimitive = dbe as Primitive;
                             if (propertyStorage.IsHashKey || propertyStorage.IsRangeKey ||
-                                propertyStorage.IsVersion || propertyStorage.IsLSIRangeKey)
+                                propertyStorage.IsVersion || propertyStorage.IsLSIRangeKey || 
+                                propertyStorage.IsCounter)
                             {
                                 if (dbe != null && dbePrimitive == null)
                                     throw new InvalidOperationException("Property " + propertyName +
-                                                                        " is a hash key, range key or version property and must be Primitive");
+                                                                        " is a hash key, range key, atomic counter or version property and must be Primitive");
                             }
 
                             document[attributeName] = dbe;
