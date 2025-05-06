@@ -26,31 +26,31 @@ public static class AmazonBedrockRuntimeExtensions
 
     /// <summary>Gets an <see cref="IChatClient"/> for the specified <see cref="IAmazonBedrockRuntime"/> instance.</summary>
     /// <param name="runtime">The runtime instance to be represented as an <see cref="IChatClient"/>.</param>
-    /// <param name="modelId">
+    /// <param name="defaultModelId">
     /// The default model ID to use when no model is specified in a request. If not specified,
     /// a model must be provided in the <see cref="ChatOptions.ModelId"/> passed to <see cref="IChatClient.GetResponseAsync"/>
     /// or <see cref="IChatClient.GetStreamingResponseAsync"/>.
     /// </param>
     /// <returns>A <see cref="IChatClient"/> instance representing the <see cref="IAmazonBedrockRuntime"/> instance.</returns>
     /// <exception cref="ArgumentNullException"><paramref name="runtime"/> is <see langword="null"/>.</exception>
-    public static IChatClient AsChatClient(this IAmazonBedrockRuntime runtime, string? modelId = null) =>
-        runtime is not null ? new BedrockChatClient(runtime, modelId) :
+    public static IChatClient AsIChatClient(this IAmazonBedrockRuntime runtime, string? defaultModelId = null) =>
+        runtime is not null ? new BedrockChatClient(runtime, defaultModelId) :
         throw new ArgumentNullException(nameof(runtime));
 
     /// <summary>Gets an <see cref="IEmbeddingGenerator{TInput, TEmbedding}"/> for the specified <see cref="IAmazonBedrockRuntime"/> instance.</summary>
     /// <param name="runtime">The runtime instance to be represented as an <see cref="IEmbeddingGenerator{TInput, TEmbedding}"/>.</param>
-    /// <param name="modelId">
+    /// <param name="defaultModelId">
     /// The default model ID to use when no model is specified in a request. If not specified,
     /// a model must be provided in the <see cref="EmbeddingGenerationOptions.ModelId"/> passed to <see cref="IEmbeddingGenerator{TInput, TEmbedding}.GenerateAsync"/>.
     /// </param>
-    /// <param name="dimensions">
+    /// <param name="defaultModelDimensions">
     /// The default number of dimensions to request be generated. This will be overridden by a <see cref="EmbeddingGenerationOptions.Dimensions"/>
     /// if that is specified to a request. If neither is specified, the default for the model will be used.
     /// </param>
     /// <returns>An <see cref="IEmbeddingGenerator{TInput, TEmbedding}"/> instance representing the <see cref="IAmazonBedrockRuntime"/> instance.</returns>
     /// <exception cref="ArgumentNullException"><paramref name="runtime"/> is <see langword="null"/>.</exception>
-    public static IEmbeddingGenerator<string, Embedding<float>> AsEmbeddingGenerator(
-        this IAmazonBedrockRuntime runtime, string? modelId = null, int? dimensions = null) =>
-        runtime is not null ? new BedrockEmbeddingGenerator(runtime, modelId, dimensions) :
+    public static IEmbeddingGenerator<string, Embedding<float>> AsIEmbeddingGenerator(
+        this IAmazonBedrockRuntime runtime, string? defaultModelId = null, int? defaultModelDimensions = null) =>
+        runtime is not null ? new BedrockEmbeddingGenerator(runtime, defaultModelId, defaultModelDimensions) :
         throw new ArgumentNullException(nameof(runtime));
 }

@@ -8,9 +8,9 @@ public class BedrockEmbeddingGeneratorTests
 {
     [Fact]
     [Trait("UnitTest", "BedrockRuntime")]
-    public void AsEmbeddingGenerator_InvalidArguments_Throws()
+    public void AsIEmbeddingGenerator_InvalidArguments_Throws()
     {
-        Assert.Throws<ArgumentNullException>("runtime", () => AmazonBedrockRuntimeExtensions.AsEmbeddingGenerator(null));
+        Assert.Throws<ArgumentNullException>("runtime", () => AmazonBedrockRuntimeExtensions.AsIEmbeddingGenerator(null));
     }
 
     [Theory]
@@ -19,10 +19,10 @@ public class BedrockEmbeddingGeneratorTests
     [InlineData("titan", null)]
     [InlineData(null, 42)]
     [InlineData("titan", 42)]
-    public void AsEmbeddingGenerator_ReturnsInstance(string modelId, int? dimensions)
+    public void AsIEmbeddingGenerator_ReturnsInstance(string modelId, int? dimensions)
     {
         IAmazonBedrockRuntime runtime = new AmazonBedrockRuntimeClient("awsAccessKeyId", "awsSecretAccessKey", RegionEndpoint.USEast1);
-        IEmbeddingGenerator<string, Embedding<float>> generator = runtime.AsEmbeddingGenerator(modelId, dimensions);
+        IEmbeddingGenerator<string, Embedding<float>> generator = runtime.AsIEmbeddingGenerator(modelId, dimensions);
 
         Assert.NotNull(generator);
         Assert.Equal("aws.bedrock", generator.GetService<EmbeddingGeneratorMetadata>()?.ProviderName);
@@ -32,10 +32,10 @@ public class BedrockEmbeddingGeneratorTests
 
     [Fact]
     [Trait("UnitTest", "BedrockRuntime")]
-    public void AsEmbeddingGenerator_GetService()
+    public void AsIEmbeddingGenerator_GetService()
     {
         IAmazonBedrockRuntime runtime = new AmazonBedrockRuntimeClient("awsAccessKeyId", "awsSecretAccessKey", RegionEndpoint.USEast1);
-        IEmbeddingGenerator<string, Embedding<float>> generator = runtime.AsEmbeddingGenerator();
+        IEmbeddingGenerator<string, Embedding<float>> generator = runtime.AsIEmbeddingGenerator();
 
         Assert.Same(runtime, generator.GetService<AmazonBedrockRuntimeClient>());
         Assert.Same(runtime, generator.GetService<IAmazonBedrockRuntime>());
