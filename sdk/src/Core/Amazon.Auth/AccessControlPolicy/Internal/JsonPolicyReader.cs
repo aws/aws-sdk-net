@@ -103,7 +103,7 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
                     }
                     else if (jPrincipal.Value.ValueKind == JsonValueKind.Array)
                     {
-                        foreach (JsonElement arrayElement in jPrincipals.EnumerateArray())
+                        foreach (JsonElement arrayElement in jPrincipal.Value.EnumerateArray())
                         {
                             if (arrayElement.ValueKind == JsonValueKind.String)
                             {
