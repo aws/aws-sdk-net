@@ -141,7 +141,7 @@ namespace Amazon.DynamoDBv2.DataModel
             ValidatePrimitiveType(typeof(T));
         }
 
-        internal static void ValidateVersionType(Type memberType)
+        internal static void ValidateNumericType(Type memberType)
         {
             if (memberType.IsGenericType && memberType.GetGenericTypeDefinition() == typeof(Nullable<>) &&
                 (memberType.IsAssignableFrom(typeof(Byte)) ||

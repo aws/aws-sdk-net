@@ -392,7 +392,6 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 foreach (PropertyStorage propertyStorage in storageConfig.AllPropertyStorage)
                 {
-                    string propertyName = propertyStorage.PropertyName;
                     string attributeName = propertyStorage.AttributeName;
 
                     DynamoDBEntry entry;
@@ -410,6 +409,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
                         if (propertyStorage.IsVersion)
                             storage.CurrentVersion = entry as Primitive;
+
+                        if (propertyStorage.IsCounter)
+                            storage.CurrentCount = entry as Primitive;
                     }
                 }
             }
@@ -466,8 +468,9 @@ namespace Amazon.DynamoDBv2.DataModel
                 {
                     // if only keys are being serialized, skip non-key properties
                     // still include version, however, to populate the storage.CurrentVersion field
+                    // and include counter, to populate the storage.CurrentCount field
                     if (keysOnly && !propertyStorage.IsHashKey && !propertyStorage.IsRangeKey &&
-                        !propertyStorage.IsVersion) continue;
+                        !propertyStorage.IsVersion && !propertyStorage.IsCounter) continue;
 
                     string propertyName = propertyStorage.PropertyName;
                     string attributeName = propertyStorage.AttributeName;
@@ -481,17 +484,21 @@ namespace Amazon.DynamoDBv2.DataModel
                         {
                             Primitive dbePrimitive = dbe as Primitive;
                             if (propertyStorage.IsHashKey || propertyStorage.IsRangeKey ||
-                                propertyStorage.IsVersion || propertyStorage.IsLSIRangeKey)
+                                propertyStorage.IsVersion || propertyStorage.IsLSIRangeKey || 
+                                propertyStorage.IsCounter)
                             {
                                 if (dbe != null && dbePrimitive == null)
                                     throw new InvalidOperationException("Property " + propertyName +
-                                                                        " is a hash key, range key or version property and must be Primitive");
+                                                                        " is a hash key, range key, atomic counter or version property and must be Primitive");
                             }
 
                             document[attributeName] = dbe;
 
                             if (propertyStorage.IsVersion)
                                 storage.CurrentVersion = dbePrimitive;
+
+                            if (propertyStorage.IsCounter)
+                                storage.CurrentCount = dbePrimitive;
                         }
                     }
                     else
