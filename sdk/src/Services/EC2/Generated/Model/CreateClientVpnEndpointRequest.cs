@@ -250,7 +250,7 @@ namespace Amazon.EC2.Model
         /// Indicates whether the client VPN session is disconnected after the maximum timeout
         /// specified in <c>SessionTimeoutHours</c> is reached. If <c>true</c>, users are prompted
         /// to reconnect client VPN. If <c>false</c>, client VPN attempts to reconnect automatically.
-        /// The default value is <c>false</c>.
+        /// The default value is <c>true</c>.
         /// </para>
         /// </summary>
         public bool? DisconnectOnSessionTimeout

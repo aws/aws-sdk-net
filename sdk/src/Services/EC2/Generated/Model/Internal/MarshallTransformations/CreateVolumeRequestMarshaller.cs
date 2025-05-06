@@ -152,6 +152,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Throughput", StringUtils.FromInt(publicRequest.Throughput));
                 }
+                if(publicRequest.IsSetVolumeInitializationRate())
+                {
+                    request.Parameters.Add("VolumeInitializationRate", StringUtils.FromInt(publicRequest.VolumeInitializationRate));
+                }
                 if(publicRequest.IsSetVolumeType())
                 {
                     request.Parameters.Add("VolumeType", StringUtils.FromString(publicRequest.VolumeType));
