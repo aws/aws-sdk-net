@@ -167,6 +167,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.VolumeId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("volumeInitializationRate", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.VolumeInitializationRate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("volumeType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

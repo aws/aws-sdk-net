@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         private string _instanceId;
         private string _snapshotId;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
+        private long? _volumeInitializationRate;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -177,6 +178,57 @@ namespace Amazon.EC2.Model
         internal bool IsSetTagSpecifications()
         {
             return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeInitializationRate. 
+        /// <para>
+        /// Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume initialization
+        /// rate), in MiB/s, at which to download the snapshot blocks from Amazon S3 to the replacement
+        /// root volume. This is also known as <i>volume initialization</i>. Specifying a volume
+        /// initialization rate ensures that the volume is initialized at a predictable and consistent
+        /// rate after creation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Omit this parameter if:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You want to create the volume using fast snapshot restore. You must specify a snapshot
+        /// that is enabled for fast snapshot restore. In this case, the volume is fully initialized
+        /// at creation.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you specify a snapshot that is enabled for fast snapshot restore and a volume initialization
+        /// rate, the volume will be initialized at the specified rate instead of fast snapshot
+        /// restore.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// You want to create a volume that is initialized at the default rate.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html">
+        /// Initialize Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid range: 100 - 300 MiB/s
+        /// </para>
+        /// </summary>
+        public long VolumeInitializationRate
+        {
+            get { return this._volumeInitializationRate.GetValueOrDefault(); }
+            set { this._volumeInitializationRate = value; }
+        }
+
+        // Check to see if VolumeInitializationRate property is set
+        internal bool IsSetVolumeInitializationRate()
+        {
+            return this._volumeInitializationRate.HasValue; 
         }
 
     }

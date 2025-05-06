@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         private string _kmsKeyId;
         private string _snapshotId;
         private int? _throughput;
+        private int? _volumeInitializationRate;
         private int? _volumeSize;
         private VolumeType _volumeType;
 
@@ -150,6 +151,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetThroughput()
         {
             return this._throughput.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeInitializationRate. 
+        /// <para>
+        /// The Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate)
+        /// specified for the volume, in MiB/s. If no volume initialization rate was specified,
+        /// the value is <c>null</c>.
+        /// </para>
+        /// </summary>
+        public int VolumeInitializationRate
+        {
+            get { return this._volumeInitializationRate.GetValueOrDefault(); }
+            set { this._volumeInitializationRate = value; }
+        }
+
+        // Check to see if VolumeInitializationRate property is set
+        internal bool IsSetVolumeInitializationRate()
+        {
+            return this._volumeInitializationRate.HasValue; 
         }
 
         /// <summary>

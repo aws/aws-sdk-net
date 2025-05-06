@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private int? _throughput;
         private string _volumeId;
+        private int? _volumeInitializationRate;
         private VolumeType _volumeType;
 
         /// <summary>
@@ -373,6 +374,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetVolumeId()
         {
             return this._volumeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeInitializationRate. 
+        /// <para>
+        /// The Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate)
+        /// specified for the volume during creation, in MiB/s. If no volume initialization rate
+        /// was specified, the value is <c>null</c>.
+        /// </para>
+        /// </summary>
+        public int VolumeInitializationRate
+        {
+            get { return this._volumeInitializationRate.GetValueOrDefault(); }
+            set { this._volumeInitializationRate = value; }
+        }
+
+        // Check to see if VolumeInitializationRate property is set
+        internal bool IsSetVolumeInitializationRate()
+        {
+            return this._volumeInitializationRate.HasValue; 
         }
 
         /// <summary>

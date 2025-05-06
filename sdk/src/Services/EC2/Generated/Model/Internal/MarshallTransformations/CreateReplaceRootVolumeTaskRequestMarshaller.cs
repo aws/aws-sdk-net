@@ -111,6 +111,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetVolumeInitializationRate())
+                {
+                    request.Parameters.Add("VolumeInitializationRate", StringUtils.FromLong(publicRequest.VolumeInitializationRate));
+                }
             }
             return request;
         }
