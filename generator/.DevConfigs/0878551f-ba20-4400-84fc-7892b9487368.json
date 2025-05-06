@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "CloudFront",
+            "type": "patch",
+            "changeLogMessages": [
+                "Add note about OpenSSL 3 limitation for `AmazonCloudFrontUrlSigner` and `AmazonCloudFrontCookieSigner` utility classes."
+            ]
+        }
+    ]
+}
