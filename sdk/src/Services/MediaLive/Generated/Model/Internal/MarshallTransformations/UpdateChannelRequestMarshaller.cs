@@ -70,6 +70,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAnywhereSettings())
+                {
+                    context.Writer.WritePropertyName("anywhereSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AnywhereSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AnywhereSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCdiInputSpecification())
                 {
                     context.Writer.WritePropertyName("cdiInputSpecification");
