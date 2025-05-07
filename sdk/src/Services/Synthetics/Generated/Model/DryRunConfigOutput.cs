@@ -30,14 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Synthetics.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetCanary operation.
-    /// Retrieves complete information about one canary. You must specify the name of the
-    /// canary that you want. To get a list of canaries and their names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.
+    /// Returns the dry run configurations set for a canary.
     /// </summary>
-    public partial class GetCanaryRequest : AmazonSyntheticsRequest
+    public partial class DryRunConfigOutput
     {
         private string _dryRunId;
-        private string _name;
+        private string _lastDryRunExecutionStatus;
 
         /// <summary>
         /// Gets and sets the property DryRunId. 
@@ -59,22 +57,22 @@ namespace Amazon.Synthetics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property LastDryRunExecutionStatus. 
         /// <para>
-        /// The name of the canary that you want details for.
+        /// Returns the last execution status for a canary's dry run.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string Name
+        [AWSProperty(Min=1, Max=1024)]
+        public string LastDryRunExecutionStatus
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._lastDryRunExecutionStatus; }
+            set { this._lastDryRunExecutionStatus = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if LastDryRunExecutionStatus property is set
+        internal bool IsSetLastDryRunExecutionStatus()
         {
-            return this._name != null;
+            return this._lastDryRunExecutionStatus != null;
         }
 
     }

@@ -74,6 +74,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                     unmarshalledObject.Code = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("DryRunConfig", targetDepth))
+                {
+                    var unmarshaller = DryRunConfigOutputUnmarshaller.Instance;
+                    unmarshalledObject.DryRunConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("EngineArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateCanary Request Marshaller
+    /// StartCanaryDryRun Request Marshaller
     /// </summary>       
-    public class UpdateCanaryRequestMarshaller : IMarshaller<IRequest, UpdateCanaryRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class StartCanaryDryRunRequestMarshaller : IMarshaller<IRequest, StartCanaryDryRunRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateCanaryRequest)input);
+            return this.Marshall((StartCanaryDryRunRequest)input);
         }
 
         /// <summary>
@@ -56,17 +56,17 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateCanaryRequest publicRequest)
+        public IRequest Marshall(StartCanaryDryRunRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Synthetics");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-11";
-            request.HttpMethod = "PATCH";
+            request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetName())
                 throw new AmazonSyntheticsException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
-            request.ResourcePath = "/canary/{name}";
+            request.ResourcePath = "/canary/{name}/dry-run/start";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -104,12 +104,6 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
-            if(publicRequest.IsSetDryRunId())
-            {
-                context.Writer.WritePropertyName("DryRunId");
-                context.Writer.WriteStringValue(publicRequest.DryRunId);
-            }
-
             if(publicRequest.IsSetExecutionRoleArn())
             {
                 context.Writer.WritePropertyName("ExecutionRoleArn");
@@ -143,17 +137,6 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("RuntimeVersion");
                 context.Writer.WriteStringValue(publicRequest.RuntimeVersion);
-            }
-
-            if(publicRequest.IsSetSchedule())
-            {
-                context.Writer.WritePropertyName("Schedule");
-                context.Writer.WriteStartObject();
-
-                var marshaller = CanaryScheduleInputMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Schedule, context);
-
-                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetSuccessRetentionPeriodInDays())
@@ -197,9 +180,9 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateCanaryRequestMarshaller _instance = new UpdateCanaryRequestMarshaller();        
+        private static StartCanaryDryRunRequestMarshaller _instance = new StartCanaryDryRunRequestMarshaller();        
 
-        internal static UpdateCanaryRequestMarshaller GetInstance()
+        internal static StartCanaryDryRunRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -207,7 +190,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateCanaryRequestMarshaller Instance
+        public static StartCanaryDryRunRequestMarshaller Instance
         {
             get
             {

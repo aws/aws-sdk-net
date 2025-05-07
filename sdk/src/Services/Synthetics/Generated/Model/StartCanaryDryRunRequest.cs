@@ -30,38 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Synthetics.Model
 {
     /// <summary>
-    /// This structure contains all information about one canary in your account.
+    /// Container for the parameters to the StartCanaryDryRun operation.
+    /// Use this operation to start a dry run for a canary that has already been created
     /// </summary>
-    public partial class Canary
+    public partial class StartCanaryDryRunRequest : AmazonSyntheticsRequest
     {
-        private ArtifactConfigOutput _artifactConfig;
+        private ArtifactConfigInput _artifactConfig;
         private string _artifactS3Location;
-        private CanaryCodeOutput _code;
-        private DryRunConfigOutput _dryRunConfig;
-        private string _engineArn;
+        private CanaryCodeInput _code;
         private string _executionRoleArn;
         private int? _failureRetentionPeriodInDays;
-        private string _id;
         private string _name;
         private ProvisionedResourceCleanupSetting _provisionedResourceCleanup;
-        private CanaryRunConfigOutput _runConfig;
+        private CanaryRunConfigInput _runConfig;
         private string _runtimeVersion;
-        private CanaryScheduleOutput _schedule;
-        private CanaryStatus _status;
         private int? _successRetentionPeriodInDays;
-        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
-        private CanaryTimeline _timeline;
-        private VisualReferenceOutput _visualReference;
-        private VpcConfigOutput _vpcConfig;
+        private VisualReferenceInput _visualReference;
+        private VpcConfigInput _vpcConfig;
 
         /// <summary>
-        /// Gets and sets the property ArtifactConfig. 
-        /// <para>
-        /// A structure that contains the configuration for canary artifacts, including the encryption-at-rest
-        /// settings for artifacts that the canary uploads to Amazon S3.
-        /// </para>
+        /// Gets and sets the property ArtifactConfig.
         /// </summary>
-        public ArtifactConfigOutput ArtifactConfig
+        public ArtifactConfigInput ArtifactConfig
         {
             get { return this._artifactConfig; }
             set { this._artifactConfig = value; }
@@ -76,8 +66,9 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property ArtifactS3Location. 
         /// <para>
-        /// The location in Amazon S3 where Synthetics stores artifacts from the runs of this
-        /// canary. Artifacts include the log file, screenshots, and HAR files.
+        /// The location in Amazon S3 where Synthetics stores artifacts from the test runs of
+        /// this canary. Artifacts include the log file, screenshots, and HAR files. The name
+        /// of the Amazon S3 bucket can't include a period (.).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -96,7 +87,7 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property Code.
         /// </summary>
-        public CanaryCodeOutput Code
+        public CanaryCodeInput Code
         {
             get { return this._code; }
             set { this._code = value; }
@@ -109,49 +100,11 @@ namespace Amazon.Synthetics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DryRunConfig. 
-        /// <para>
-        /// Returns the dry run configurations for a canary.
-        /// </para>
-        /// </summary>
-        public DryRunConfigOutput DryRunConfig
-        {
-            get { return this._dryRunConfig; }
-            set { this._dryRunConfig = value; }
-        }
-
-        // Check to see if DryRunConfig property is set
-        internal bool IsSetDryRunConfig()
-        {
-            return this._dryRunConfig != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property EngineArn. 
-        /// <para>
-        /// The ARN of the Lambda function that is used as your canary's engine. For more information
-        /// about Lambda ARN format, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html">Resources
-        /// and Conditions for Lambda Actions</a>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
-        public string EngineArn
-        {
-            get { return this._engineArn; }
-            set { this._engineArn = value; }
-        }
-
-        // Check to see if EngineArn property is set
-        internal bool IsSetEngineArn()
-        {
-            return this._engineArn != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
-        /// The ARN of the IAM role used to run the canary. This role must include <c>lambda.amazonaws.com</c>
-        /// as a principal in the trust policy.
+        /// The ARN of the IAM role to be used to run the canary. This role must already exist,
+        /// and must include <c>lambda.amazonaws.com</c> as a principal in the trust policy. The
+        /// role must also have the following permissions:
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -170,7 +123,8 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property FailureRetentionPeriodInDays. 
         /// <para>
-        /// The number of days to retain data about failed runs of this canary.
+        /// The number of days to retain data on the failed runs for this canary. The valid range
+        /// is 1 to 455 days.
         /// </para>
         ///  
         /// <para>
@@ -192,30 +146,12 @@ namespace Amazon.Synthetics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. 
-        /// <para>
-        /// The unique ID of this canary.
-        /// </para>
-        /// </summary>
-        public string Id
-        {
-            get { return this._id; }
-            set { this._id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this._id != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the canary.
+        /// The name of the canary that you want to dry run. To find canary names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -232,8 +168,8 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property ProvisionedResourceCleanup. 
         /// <para>
         /// Specifies whether to also delete the Lambda functions and layers used by this canary
-        /// when the canary is deleted. If it is <c>AUTOMATIC</c>, the Lambda functions and layers
-        /// will be deleted when the canary is deleted.
+        /// when the canary is deleted. If the value of this parameter is <c>AUTOMATIC</c>, it
+        /// means that the Lambda functions and layers will be deleted when the canary is deleted.
         /// </para>
         ///  
         /// <para>
@@ -257,7 +193,7 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property RunConfig.
         /// </summary>
-        public CanaryRunConfigOutput RunConfig
+        public CanaryRunConfigInput RunConfig
         {
             get { return this._runConfig; }
             set { this._runConfig = value; }
@@ -272,8 +208,8 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property RuntimeVersion. 
         /// <para>
-        /// Specifies the runtime version to use for the canary. For more information about runtime
-        /// versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
+        /// Specifies the runtime version to use for the canary. For a list of valid runtime versions
+        /// and for more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
         /// Canary Runtime Versions</a>.
         /// </para>
         /// </summary>
@@ -291,46 +227,10 @@ namespace Amazon.Synthetics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Schedule. 
-        /// <para>
-        /// A structure that contains information about how often the canary is to run, and when
-        /// these runs are to stop.
-        /// </para>
-        /// </summary>
-        public CanaryScheduleOutput Schedule
-        {
-            get { return this._schedule; }
-            set { this._schedule = value; }
-        }
-
-        // Check to see if Schedule property is set
-        internal bool IsSetSchedule()
-        {
-            return this._schedule != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// A structure that contains information about the canary's status.
-        /// </para>
-        /// </summary>
-        public CanaryStatus Status
-        {
-            get { return this._status; }
-            set { this._status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this._status != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property SuccessRetentionPeriodInDays. 
         /// <para>
-        /// The number of days to retain data about successful runs of this canary.
+        /// The number of days to retain data on the failed runs for this canary. The valid range
+        /// is 1 to 455 days.
         /// </para>
         ///  
         /// <para>
@@ -352,52 +252,9 @@ namespace Amazon.Synthetics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The list of key-value pairs that are associated with the canary.
-        /// </para>
+        /// Gets and sets the property VisualReference.
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Timeline. 
-        /// <para>
-        /// A structure that contains information about when the canary was created, modified,
-        /// and most recently run.
-        /// </para>
-        /// </summary>
-        public CanaryTimeline Timeline
-        {
-            get { return this._timeline; }
-            set { this._timeline = value; }
-        }
-
-        // Check to see if Timeline property is set
-        internal bool IsSetTimeline()
-        {
-            return this._timeline != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VisualReference. 
-        /// <para>
-        /// If this canary performs visual monitoring by comparing screenshots, this structure
-        /// contains the ID of the canary run to use as the baseline for screenshots, and the
-        /// coordinates of any parts of the screen to ignore during the visual monitoring comparison.
-        /// </para>
-        /// </summary>
-        public VisualReferenceOutput VisualReference
+        public VisualReferenceInput VisualReference
         {
             get { return this._visualReference; }
             set { this._visualReference = value; }
@@ -412,7 +269,7 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property VpcConfig.
         /// </summary>
-        public VpcConfigOutput VpcConfig
+        public VpcConfigInput VpcConfig
         {
             get { return this._vpcConfig; }
             set { this._vpcConfig = value; }

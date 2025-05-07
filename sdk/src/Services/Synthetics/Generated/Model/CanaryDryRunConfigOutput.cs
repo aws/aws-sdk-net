@@ -30,14 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Synthetics.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetCanary operation.
-    /// Retrieves complete information about one canary. You must specify the name of the
-    /// canary that you want. To get a list of canaries and their names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.
+    /// Returns the dry run configurations set for a canary.
     /// </summary>
-    public partial class GetCanaryRequest : AmazonSyntheticsRequest
+    public partial class CanaryDryRunConfigOutput
     {
         private string _dryRunId;
-        private string _name;
 
         /// <summary>
         /// Gets and sets the property DryRunId. 
@@ -56,25 +53,6 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetDryRunId()
         {
             return this._dryRunId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the canary that you want details for.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
         }
 
     }

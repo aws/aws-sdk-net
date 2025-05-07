@@ -76,6 +76,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDryRunId())
+            {
+                context.Writer.WritePropertyName("DryRunId");
+                context.Writer.WriteStringValue(publicRequest.DryRunId);
+            }
+
             if(publicRequest.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("MaxResults");
@@ -86,6 +92,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("NextToken");
                 context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetRunType())
+            {
+                context.Writer.WritePropertyName("RunType");
+                context.Writer.WriteStringValue(publicRequest.RunType);
             }
 
             writer.WriteEndObject();

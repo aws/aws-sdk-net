@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateCanary operation
+    /// Response Unmarshaller for StartCanaryDryRun operation
     /// </summary>  
-    public class UpdateCanaryResponseUnmarshaller : JsonResponseUnmarshaller
+    public class StartCanaryDryRunResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,19 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateCanaryResponse response = new UpdateCanaryResponse();
+            StartCanaryDryRunResponse response = new StartCanaryDryRunResponse();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("DryRunConfig", targetDepth))
+                {
+                    var unmarshaller = DryRunConfigOutputUnmarshaller.Instance;
+                    response.DryRunConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -83,10 +95,6 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("RequestEntityTooLargeException"))
-                {
-                    return RequestEntityTooLargeExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -99,9 +107,9 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             return new AmazonSyntheticsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateCanaryResponseUnmarshaller _instance = new UpdateCanaryResponseUnmarshaller();        
+        private static StartCanaryDryRunResponseUnmarshaller _instance = new StartCanaryDryRunResponseUnmarshaller();        
 
-        internal static UpdateCanaryResponseUnmarshaller GetInstance()
+        internal static StartCanaryDryRunResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -109,7 +117,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateCanaryResponseUnmarshaller Instance
+        public static StartCanaryDryRunResponseUnmarshaller Instance
         {
             get
             {

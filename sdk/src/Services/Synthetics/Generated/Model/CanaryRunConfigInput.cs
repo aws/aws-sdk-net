@@ -86,8 +86,9 @@ namespace Amazon.Synthetics.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// The environment variables keys and values are not encrypted. Do not store sensitive
-        /// information in this field.
+        /// Environment variable keys and values are encrypted at rest using Amazon Web Services
+        /// owned KMS keys. However, the environment variables are not encrypted on the client
+        /// side. Do not store sensitive information in them.
         /// </para>
         ///  </important>
         /// </summary>

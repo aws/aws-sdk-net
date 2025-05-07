@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CanaryRun Object
+    /// Response Unmarshaller for CanaryDryRunConfigOutput Object
     /// </summary>  
-    public class CanaryRunUnmarshaller : IJsonUnmarshaller<CanaryRun, JsonUnmarshallerContext>
+    public class CanaryDryRunConfigOutputUnmarshaller : IJsonUnmarshaller<CanaryDryRunConfigOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CanaryRun Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CanaryDryRunConfigOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            CanaryRun unmarshalledObject = new CanaryRun();
+            CanaryDryRunConfigOutput unmarshalledObject = new CanaryDryRunConfigOutput();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,10 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ArtifactS3Location", targetDepth))
+                if (context.TestExpression("DryRunId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ArtifactS3Location = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DryRunConfig", targetDepth))
-                {
-                    var unmarshaller = CanaryDryRunConfigOutputUnmarshaller.Instance;
-                    unmarshalledObject.DryRunConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = CanaryRunStatusUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Timeline", targetDepth))
-                {
-                    var unmarshaller = CanaryRunTimelineUnmarshaller.Instance;
-                    unmarshalledObject.Timeline = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.DryRunId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +67,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         }
 
 
-        private static CanaryRunUnmarshaller _instance = new CanaryRunUnmarshaller();        
+        private static CanaryDryRunConfigOutputUnmarshaller _instance = new CanaryDryRunConfigOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CanaryRunUnmarshaller Instance
+        public static CanaryDryRunConfigOutputUnmarshaller Instance
         {
             get
             {
