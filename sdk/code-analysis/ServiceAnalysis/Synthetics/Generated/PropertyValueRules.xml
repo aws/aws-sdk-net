@@ -116,10 +116,18 @@
     <pattern>arn:(aws[a-zA-Z-]*)?:synthetics:[a-z]{2,4}(-[a-z]{2,4})?-[a-z]+-\d{1}:\d{12}:canary:[0-9a-z_\-]{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Synthetics.Model.GetCanaryRequest.DryRunId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Synthetics.Model.GetCanaryRequest.Name</property>
     <min>1</min>
     <max>255</max>
     <pattern>^[0-9a-z_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.GetCanaryRunsRequest.DryRunId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.GetCanaryRunsRequest.MaxResults</property>
@@ -221,6 +229,38 @@
     <pattern>^[0-9a-z_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Synthetics.Model.StartCanaryDryRunRequest.ArtifactS3Location</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.StartCanaryDryRunRequest.ExecutionRoleArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.StartCanaryDryRunRequest.FailureRetentionPeriodInDays</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.StartCanaryDryRunRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[0-9a-z_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.StartCanaryDryRunRequest.RuntimeVersion</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.StartCanaryDryRunRequest.SuccessRetentionPeriodInDays</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Synthetics.Model.StopCanaryRequest.Name</property>
     <min>1</min>
     <max>255</max>
@@ -242,6 +282,10 @@
     <property>Amazon.Synthetics.Model.UpdateCanaryRequest.ArtifactS3Location</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.UpdateCanaryRequest.DryRunId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.UpdateCanaryRequest.ExecutionRoleArn</property>
@@ -354,6 +398,10 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Synthetics.Model.CanaryDryRunConfigOutput.DryRunId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Synthetics.Model.CanaryLastRun.CanaryName</property>
     <min>1</min>
     <max>255</max>
@@ -421,6 +469,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.CanaryStatus.StateReason</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.DryRunConfigOutput.DryRunId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.DryRunConfigOutput.LastDryRunExecutionStatus</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>

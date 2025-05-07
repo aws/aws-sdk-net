@@ -35,6 +35,7 @@ namespace Amazon.Synthetics.Model
     public partial class CanaryRun
     {
         private string _artifactS3Location;
+        private CanaryDryRunConfigOutput _dryRunConfig;
         private string _id;
         private string _name;
         private CanaryRunStatus _status;
@@ -58,6 +59,24 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetArtifactS3Location()
         {
             return this._artifactS3Location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DryRunConfig. 
+        /// <para>
+        /// Returns the dry run configurations for a canary.
+        /// </para>
+        /// </summary>
+        public CanaryDryRunConfigOutput DryRunConfig
+        {
+            get { return this._dryRunConfig; }
+            set { this._dryRunConfig = value; }
+        }
+
+        // Check to see if DryRunConfig property is set
+        internal bool IsSetDryRunConfig()
+        {
+            return this._dryRunConfig != null;
         }
 
         /// <summary>

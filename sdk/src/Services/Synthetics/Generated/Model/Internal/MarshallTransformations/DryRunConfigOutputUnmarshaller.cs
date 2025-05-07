@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CanaryRun Object
+    /// Response Unmarshaller for DryRunConfigOutput Object
     /// </summary>  
-    public class CanaryRunUnmarshaller : IUnmarshaller<CanaryRun, XmlUnmarshallerContext>, IUnmarshaller<CanaryRun, JsonUnmarshallerContext>
+    public class DryRunConfigOutputUnmarshaller : IUnmarshaller<DryRunConfigOutput, XmlUnmarshallerContext>, IUnmarshaller<DryRunConfigOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CanaryRun IUnmarshaller<CanaryRun, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DryRunConfigOutput IUnmarshaller<DryRunConfigOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public CanaryRun Unmarshall(JsonUnmarshallerContext context)
+        public DryRunConfigOutput Unmarshall(JsonUnmarshallerContext context)
         {
-            CanaryRun unmarshalledObject = new CanaryRun();
+            DryRunConfigOutput unmarshalledObject = new DryRunConfigOutput();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,16 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ArtifactS3Location", targetDepth))
+                if (context.TestExpression("DryRunId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ArtifactS3Location = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DryRunId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DryRunConfig", targetDepth))
-                {
-                    var unmarshaller = CanaryDryRunConfigOutputUnmarshaller.Instance;
-                    unmarshalledObject.DryRunConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("LastDryRunExecutionStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = CanaryRunStatusUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Timeline", targetDepth))
-                {
-                    var unmarshaller = CanaryRunTimelineUnmarshaller.Instance;
-                    unmarshalledObject.Timeline = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastDryRunExecutionStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +83,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         }
 
 
-        private static CanaryRunUnmarshaller _instance = new CanaryRunUnmarshaller();        
+        private static DryRunConfigOutputUnmarshaller _instance = new DryRunConfigOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CanaryRunUnmarshaller Instance
+        public static DryRunConfigOutputUnmarshaller Instance
         {
             get
             {

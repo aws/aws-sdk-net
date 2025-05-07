@@ -1516,6 +1516,75 @@ namespace Amazon.Synthetics
 
         #endregion
         
+        #region  StartCanaryDryRun
+
+        /// <summary>
+        /// Use this operation to start a dry run for a canary that has already been created
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCanaryDryRun service method.</param>
+        /// 
+        /// <returns>The response from the StartCanaryDryRun service method, as returned by Synthetics.</returns>
+        /// <exception cref="Amazon.Synthetics.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.ConflictException">
+        /// A conflicting operation is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.InternalServerException">
+        /// An unknown internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.ResourceNotFoundException">
+        /// One of the specified resources was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.ValidationException">
+        /// A parameter could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/StartCanaryDryRun">REST API Reference for StartCanaryDryRun Operation</seealso>
+        public virtual StartCanaryDryRunResponse StartCanaryDryRun(StartCanaryDryRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCanaryDryRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCanaryDryRunResponseUnmarshaller.Instance;
+
+            return Invoke<StartCanaryDryRunResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartCanaryDryRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartCanaryDryRun operation on AmazonSyntheticsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartCanaryDryRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/StartCanaryDryRun">REST API Reference for StartCanaryDryRun Operation</seealso>
+        public virtual IAsyncResult BeginStartCanaryDryRun(StartCanaryDryRunRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCanaryDryRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCanaryDryRunResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartCanaryDryRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartCanaryDryRun.</param>
+        /// 
+        /// <returns>Returns a  StartCanaryDryRunResult from Synthetics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/StartCanaryDryRun">REST API Reference for StartCanaryDryRun Operation</seealso>
+        public virtual StartCanaryDryRunResponse EndStartCanaryDryRun(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartCanaryDryRunResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StopCanary
 
         /// <summary>
@@ -1762,10 +1831,19 @@ namespace Amazon.Synthetics
         /// You can't use this operation to update the tags of an existing canary. To change the
         /// tags of an existing canary, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_TagResource.html">TagResource</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you use the <c>dryRunId</c> field when updating a canary, the only other field
+        /// you can provide is the <c>Schedule</c>. Adding any other field will thrown an exception.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCanary service method.</param>
         /// 
         /// <returns>The response from the UpdateCanary service method, as returned by Synthetics.</returns>
+        /// <exception cref="Amazon.Synthetics.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation on this resource.
+        /// </exception>
         /// <exception cref="Amazon.Synthetics.Model.ConflictException">
         /// A conflicting operation is already in progress.
         /// </exception>

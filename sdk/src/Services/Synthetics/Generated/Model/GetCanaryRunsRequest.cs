@@ -35,9 +35,30 @@ namespace Amazon.Synthetics.Model
     /// </summary>
     public partial class GetCanaryRunsRequest : AmazonSyntheticsRequest
     {
+        private string _dryRunId;
         private int? _maxResults;
         private string _name;
         private string _nextToken;
+        private RunType _runType;
+
+        /// <summary>
+        /// Gets and sets the property DryRunId. 
+        /// <para>
+        /// The DryRunId associated with an existing canary’s dry run. You can use this DryRunId
+        /// to retrieve information about the dry run.
+        /// </para>
+        /// </summary>
+        public string DryRunId
+        {
+            get { return this._dryRunId; }
+            set { this._dryRunId = value; }
+        }
+
+        // Check to see if DryRunId property is set
+        internal bool IsSetDryRunId()
+        {
+            return this._dryRunId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -96,6 +117,39 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RunType. <ul> <li> 
+        /// <para>
+        /// When you provide <c>RunType=CANARY_RUN</c> and <c>dryRunId</c>, you will get an exception
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When a value is not provided for <c>RunType</c>, the default value is <c>CANARY_RUN</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When <c>CANARY_RUN</c> is provided, all canary runs excluding dry runs are returned
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When <c>DRY_RUN</c> is provided, all dry runs excluding canary runs are returned
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public RunType RunType
+        {
+            get { return this._runType; }
+            set { this._runType = value; }
+        }
+
+        // Check to see if RunType property is set
+        internal bool IsSetRunType()
+        {
+            return this._runType != null;
         }
 
     }
