@@ -146,7 +146,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LastSoftwareUpdateTime. 
         /// <para>
-        /// The time of when the cluster was last updated.
+        /// The time when the cluster was last updated.
         /// </para>
         /// </summary>
         public DateTime? LastSoftwareUpdateTime
