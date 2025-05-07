@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fix regression where presigned URLs could not be created when using a custom `ServiceURL`."
+      ]
+    }
+  ]
+}
