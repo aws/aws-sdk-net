@@ -99,6 +99,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                          }
                     }
                 }
+                if(publicRequest.IsSetFilterOutArns())
+                {
+                    if (publicRequest.FilterOutArns.Count == 0)
+                        request.Parameters.Add("FilterOutArn", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.FilterOutArns)
+                         {
+                             request.Parameters.Add("FilterOutArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
+                    }
+                }
                 if(publicRequest.IsSetNetworkInsightsPathId())
                 {
                     request.Parameters.Add("NetworkInsightsPathId", StringUtils.FromString(publicRequest.NetworkInsightsPathId));
