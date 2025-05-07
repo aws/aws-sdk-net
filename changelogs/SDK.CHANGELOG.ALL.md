@@ -1,3 +1,17 @@
+### 4.0.7.0 (2025-05-07 18:23 UTC)
+* EC2 (4.0.4.0)
+	* This release adds API support for Path Component Exclusion (Filter Out ARN) for Reachability Analyzer
+* Imagebuilder (4.0.0.3)
+	* Updated the CreateImageRecipeRequest ParentImage description to include all valid values as updated with the SSM Parameters project.
+* MediaLive (4.0.1.0)
+	* Enables Updating Anywhere Settings on a MediaLive Anywhere Channel.
+* S3 (4.0.0.3)
+	* Fix regression where presigned URLs could not be created when using a custom `ServiceURL`.
+* SageMaker (4.0.3.0)
+	* SageMaker AI Studio users can now migrate to SageMaker Unified Studio, which offers a unified web-based development experience that integrates AWS data, analytics, artificial intelligence (AI), and machine learning (ML) services, as well as additional tools and resource
+* Synthetics (4.0.1.0)
+	* Add support to test a canary update by invoking a dry run of a canary. This behavior can be used via the new StartCanaryDryRun API along with new fields in UpdateCanary to apply dry run changes. Also includes changes in GetCanary and GetCanaryRuns to support retrieving dry run configurations.
+
 ### 4.0.6.0 (2025-05-06 18:20 UTC)
 * EC2 (4.0.3.0)
 	* This release adds support for Amazon EBS Provisioned Rate for Volume Initialization, which lets you specify a volume initialization rate to ensure that your EBS volumes are initialized in a predictable amount of time.
