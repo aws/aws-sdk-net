@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
         private List<string> _additionalAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _clientToken;
         private List<string> _filterInArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _filterOutArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _networkInsightsPathId;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
 
@@ -96,6 +97,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetFilterInArns()
         {
             return this._filterInArns != null && (this._filterInArns.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterOutArns. 
+        /// <para>
+        /// The Amazon Resource Names (ARN) of the resources that the path will ignore.
+        /// </para>
+        /// </summary>
+        public List<string> FilterOutArns
+        {
+            get { return this._filterOutArns; }
+            set { this._filterOutArns = value; }
+        }
+
+        // Check to see if FilterOutArns property is set
+        internal bool IsSetFilterOutArns()
+        {
+            return this._filterOutArns != null && (this._filterOutArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

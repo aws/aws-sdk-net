@@ -85,6 +85,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetFilterOutArns())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.FilterOutArns)
+                    {
+                        request.Parameters.Add("FilterOutArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetNetworkInsightsPathId())
                 {
                     request.Parameters.Add("NetworkInsightsPathId", StringUtils.FromString(publicRequest.NetworkInsightsPathId));
