@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DomainSettings Object
+    /// Response Unmarshaller for UnifiedStudioSettings Object
     /// </summary>  
-    public class DomainSettingsUnmarshaller : IUnmarshaller<DomainSettings, XmlUnmarshallerContext>, IUnmarshaller<DomainSettings, JsonUnmarshallerContext>
+    public class UnifiedStudioSettingsUnmarshaller : IUnmarshaller<UnifiedStudioSettings, XmlUnmarshallerContext>, IUnmarshaller<UnifiedStudioSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DomainSettings IUnmarshaller<DomainSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        UnifiedStudioSettings IUnmarshaller<UnifiedStudioSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public DomainSettings Unmarshall(JsonUnmarshallerContext context)
+        public UnifiedStudioSettings Unmarshall(JsonUnmarshallerContext context)
         {
-            DomainSettings unmarshalledObject = new DomainSettings();
+            UnifiedStudioSettings unmarshalledObject = new UnifiedStudioSettings();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,46 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AmazonQSettings", targetDepth))
-                {
-                    var unmarshaller = AmazonQSettingsUnmarshaller.Instance;
-                    unmarshalledObject.AmazonQSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DockerSettings", targetDepth))
-                {
-                    var unmarshaller = DockerSettingsUnmarshaller.Instance;
-                    unmarshalledObject.DockerSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExecutionRoleIdentityConfig", targetDepth))
+                if (context.TestExpression("DomainAccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionRoleIdentityConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DomainAccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("RStudioServerProDomainSettings", targetDepth))
+                if (context.TestExpression("DomainId", targetDepth))
                 {
-                    var unmarshaller = RStudioServerProDomainSettingsUnmarshaller.Instance;
-                    unmarshalledObject.RStudioServerProDomainSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DomainId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SecurityGroupIds", targetDepth))
+                if (context.TestExpression("DomainRegion", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DomainRegion = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("UnifiedStudioSettings", targetDepth))
+                if (context.TestExpression("EnvironmentId", targetDepth))
                 {
-                    var unmarshaller = UnifiedStudioSettingsUnmarshaller.Instance;
-                    unmarshalledObject.UnifiedStudioSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EnvironmentId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProjectId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProjectId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProjectS3Path", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProjectS3Path = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StudioWebPortalAccess", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StudioWebPortalAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +113,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static DomainSettingsUnmarshaller _instance = new DomainSettingsUnmarshaller();        
+        private static UnifiedStudioSettingsUnmarshaller _instance = new UnifiedStudioSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DomainSettingsUnmarshaller Instance
+        public static UnifiedStudioSettingsUnmarshaller Instance
         {
             get
             {

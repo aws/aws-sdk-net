@@ -107,7 +107,7 @@ namespace Amazon.SageMaker.Model
         /// that match your requirements.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=256)]
         public int InstanceCount
         {
             get { return this._instanceCount.GetValueOrDefault(); }
@@ -130,7 +130,6 @@ namespace Amazon.SageMaker.Model
         /// Reserved Instances that match your computational needs.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ReservedCapacityInstanceType InstanceType
         {
             get { return this._instanceType; }

@@ -102,6 +102,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.KernelGatewayAppSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SpaceManagedResources", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SpaceManagedResources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SpaceStorageSettings", targetDepth))
                 {
                     var unmarshaller = SpaceStorageSettingsUnmarshaller.Instance;

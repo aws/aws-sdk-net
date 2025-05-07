@@ -114,6 +114,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSpaceManagedResources())
+            {
+                context.Writer.WritePropertyName("SpaceManagedResources");
+                context.Writer.Write(requestObject.SpaceManagedResources);
+            }
+
             if(requestObject.IsSetSpaceStorageSettings())
             {
                 context.Writer.WritePropertyName("SpaceStorageSettings");

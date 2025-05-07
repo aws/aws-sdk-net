@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private SpaceJupyterLabAppSettings _jupyterLabAppSettings;
         private JupyterServerAppSettings _jupyterServerAppSettings;
         private KernelGatewayAppSettings _kernelGatewayAppSettings;
+        private FeatureStatus _spaceManagedResources;
         private SpaceStorageSettings _spaceStorageSettings;
 
         /// <summary>
@@ -150,6 +151,34 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetKernelGatewayAppSettings()
         {
             return this._kernelGatewayAppSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpaceManagedResources. 
+        /// <para>
+        /// If you enable this option, SageMaker AI creates the following resources on your behalf
+        /// when you create the space:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The user profile that possesses the space.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The app that the space contains.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public FeatureStatus SpaceManagedResources
+        {
+            get { return this._spaceManagedResources; }
+            set { this._spaceManagedResources = value; }
+        }
+
+        // Check to see if SpaceManagedResources property is set
+        internal bool IsSetSpaceManagedResources()
+        {
+            return this._spaceManagedResources != null;
         }
 
         /// <summary>

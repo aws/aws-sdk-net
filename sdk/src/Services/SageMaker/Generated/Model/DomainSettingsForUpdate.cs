@@ -39,6 +39,7 @@ namespace Amazon.SageMaker.Model
         private ExecutionRoleIdentityConfig _executionRoleIdentityConfig;
         private RStudioServerProDomainSettingsForUpdate _rStudioServerProDomainSettingsForUpdate;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private UnifiedStudioSettings _unifiedStudioSettings;
 
         /// <summary>
         /// Gets and sets the property AmazonQSettings. 
@@ -134,6 +135,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSecurityGroupIds()
         {
             return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnifiedStudioSettings. 
+        /// <para>
+        /// The settings that apply to an SageMaker AI domain when you use it in Amazon SageMaker
+        /// Unified Studio.
+        /// </para>
+        /// </summary>
+        public UnifiedStudioSettings UnifiedStudioSettings
+        {
+            get { return this._unifiedStudioSettings; }
+            set { this._unifiedStudioSettings = value; }
+        }
+
+        // Check to see if UnifiedStudioSettings property is set
+        internal bool IsSetUnifiedStudioSettings()
+        {
+            return this._unifiedStudioSettings != null;
         }
 
     }
