@@ -32,7 +32,7 @@ namespace Amazon.ElasticFileSystem
     public partial class AmazonElasticFileSystemConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EFS", "3.7.401.93");
+            InternalSDKUtils.BuildUserAgentString("EFS", "3.7.401.94");
 
         private string _userAgent = UserAgentString;
         ///<summary>

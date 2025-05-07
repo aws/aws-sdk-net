@@ -32,7 +32,7 @@ namespace Amazon.ServiceDiscovery
     public partial class AmazonServiceDiscoveryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ServiceDiscovery", "3.7.401.83");
+            InternalSDKUtils.BuildUserAgentString("ServiceDiscovery", "3.7.401.84");
 
         private string _userAgent = UserAgentString;
         ///<summary>
