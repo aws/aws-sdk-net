@@ -37,6 +37,7 @@ namespace Amazon.Glue.Model
         private DateTime? _createTime;
         private List<IntegrationError> _errors = AWSConfigs.InitializeCollections ? new List<IntegrationError>() : null;
         private string _integrationArn;
+        private IntegrationConfig _integrationConfig;
         private string _sourceArn;
         private IntegrationStatus _status;
         private string _targetArn;
@@ -95,6 +96,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetIntegrationArn()
         {
             return this._integrationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntegrationConfig. 
+        /// <para>
+        /// Properties associated with the integration.
+        /// </para>
+        /// </summary>
+        public IntegrationConfig IntegrationConfig
+        {
+            get { return this._integrationConfig; }
+            set { this._integrationConfig = value; }
+        }
+
+        // Check to see if IntegrationConfig property is set
+        internal bool IsSetIntegrationConfig()
+        {
+            return this._integrationConfig != null;
         }
 
         /// <summary>

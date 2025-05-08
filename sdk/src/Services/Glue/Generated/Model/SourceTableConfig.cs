@@ -42,7 +42,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Fields. 
         /// <para>
-        /// A list of fields used for column-level filtering.
+        /// A list of fields used for column-level filtering. Currently unsupported.
         /// </para>
         /// </summary>
         public List<string> Fields
@@ -60,7 +60,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property FilterPredicate. 
         /// <para>
-        /// A condition clause used for row-level filtering.
+        /// A condition clause used for row-level filtering. Currently unsupported.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -79,7 +79,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PrimaryKey. 
         /// <para>
-        /// Unique identifier of a record.
+        /// Provide the primary key set for this table. Currently supported specifically for SAP
+        /// <c>EntityOf</c> entities upon request. Contact Amazon Web Services Support to make
+        /// this feature available.
         /// </para>
         /// </summary>
         public List<string> PrimaryKey
@@ -97,7 +99,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property RecordUpdateField. 
         /// <para>
-        /// Incremental pull timestamp-based field.
+        /// Incremental pull timestamp-based field. Currently unsupported.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
