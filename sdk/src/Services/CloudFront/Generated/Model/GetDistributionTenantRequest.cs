@@ -40,8 +40,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The ID of the distribution tenant. You can specify the ARN ID, or name of the distribution
-        /// tenant.
+        /// The identifier of the distribution tenant. You can specify the ARN, ID, or name of
+        /// the distribution tenant.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

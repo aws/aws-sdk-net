@@ -544,7 +544,9 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrustedSigners. <important> 
+        /// Gets and sets the property TrustedSigners. 
+        /// <para>
+        /// <important> 
         /// <para>
         /// We recommend using <c>TrustedKeyGroups</c> instead of <c>TrustedSigners</c>.
         /// </para>
@@ -562,6 +564,8 @@ namespace Amazon.CloudFront.Model
         /// public key CloudFront should use to verify the signature. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
         /// private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         public TrustedSigners TrustedSigners
