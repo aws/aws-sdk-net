@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private bool? _enaSrdSupported;
         private EnaSupport _enaSupport;
         private bool? _encryptionInTransitSupported;
+        private FlexibleEnaQueuesSupport _flexibleEnaQueuesSupport;
         private int? _ipv4AddressesPerInterface;
         private int? _ipv6AddressesPerInterface;
         private bool? _ipv6Supported;
@@ -177,6 +178,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetEncryptionInTransitSupported()
         {
             return this._encryptionInTransitSupported.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FlexibleEnaQueuesSupport. 
+        /// <para>
+        /// Indicates whether changing the number of ENA queues is supported.
+        /// </para>
+        /// </summary>
+        public FlexibleEnaQueuesSupport FlexibleEnaQueuesSupport
+        {
+            get { return this._flexibleEnaQueuesSupport; }
+            set { this._flexibleEnaQueuesSupport = value; }
+        }
+
+        // Check to see if FlexibleEnaQueuesSupport property is set
+        internal bool IsSetFlexibleEnaQueuesSupport()
+        {
+            return this._flexibleEnaQueuesSupport != null;
         }
 
         /// <summary>

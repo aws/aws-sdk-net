@@ -525,6 +525,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                             {
                                                 request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "DeviceIndex", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.DeviceIndex));
                                             }
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetEnaQueueCount())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "EnaQueueCount", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.EnaQueueCount));
+                                            }
                                             if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetEnaSrdSpecification())
                                             {
                                                 if(publicRequestSpotFleetRequestConfiglistValuelistValue.EnaSrdSpecification.IsSetEnaSrdEnabled())

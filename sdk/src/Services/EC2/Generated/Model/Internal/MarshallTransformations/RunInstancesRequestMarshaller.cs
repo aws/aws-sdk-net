@@ -455,6 +455,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "DeviceIndex", StringUtils.FromInt(publicRequestlistValue.DeviceIndex));
                             }
+                            if(publicRequestlistValue.IsSetEnaQueueCount())
+                            {
+                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "EnaQueueCount", StringUtils.FromInt(publicRequestlistValue.EnaQueueCount));
+                            }
                             if(publicRequestlistValue.IsSetEnaSrdSpecification())
                             {
                                 if(publicRequestlistValue.EnaSrdSpecification.IsSetEnaSrdEnabled())

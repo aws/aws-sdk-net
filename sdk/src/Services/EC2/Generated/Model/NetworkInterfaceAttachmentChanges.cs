@@ -35,7 +35,9 @@ namespace Amazon.EC2.Model
     public partial class NetworkInterfaceAttachmentChanges
     {
         private string _attachmentId;
+        private bool? _defaultEnaQueueCount;
         private bool? _deleteOnTermination;
+        private int? _enaQueueCount;
 
         /// <summary>
         /// Gets and sets the property AttachmentId. 
@@ -56,6 +58,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DefaultEnaQueueCount. 
+        /// <para>
+        /// The default number of the ENA queues.
+        /// </para>
+        /// </summary>
+        public bool? DefaultEnaQueueCount
+        {
+            get { return this._defaultEnaQueueCount; }
+            set { this._defaultEnaQueueCount = value; }
+        }
+
+        // Check to see if DefaultEnaQueueCount property is set
+        internal bool IsSetDefaultEnaQueueCount()
+        {
+            return this._defaultEnaQueueCount.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DeleteOnTermination. 
         /// <para>
         /// Indicates whether the network interface is deleted when the instance is terminated.
@@ -71,6 +91,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDeleteOnTermination()
         {
             return this._deleteOnTermination.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnaQueueCount. 
+        /// <para>
+        /// The number of ENA queues to be created with the instance.
+        /// </para>
+        /// </summary>
+        public int? EnaQueueCount
+        {
+            get { return this._enaQueueCount; }
+            set { this._enaQueueCount = value; }
+        }
+
+        // Check to see if EnaQueueCount property is set
+        internal bool IsSetEnaQueueCount()
+        {
+            return this._enaQueueCount.HasValue; 
         }
 
     }

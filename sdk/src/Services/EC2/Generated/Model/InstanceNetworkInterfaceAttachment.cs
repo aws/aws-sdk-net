@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private DateTime? _attachTime;
         private bool? _deleteOnTermination;
         private int? _deviceIndex;
+        private int? _enaQueueCount;
         private InstanceAttachmentEnaSrdSpecification _enaSrdSpecification;
         private int? _networkCardIndex;
         private AttachmentStatus _status;
@@ -112,6 +113,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDeviceIndex()
         {
             return this._deviceIndex.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnaQueueCount. 
+        /// <para>
+        /// The number of ENA queues created with the instance.
+        /// </para>
+        /// </summary>
+        public int? EnaQueueCount
+        {
+            get { return this._enaQueueCount; }
+            set { this._enaQueueCount = value; }
+        }
+
+        // Check to see if EnaQueueCount property is set
+        internal bool IsSetEnaQueueCount()
+        {
+            return this._enaQueueCount.HasValue; 
         }
 
         /// <summary>
