@@ -84,7 +84,9 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ActiveTrustedSigners. <important> 
+        /// Gets and sets the property ActiveTrustedSigners. 
+        /// <para>
+        /// <important> 
         /// <para>
         /// We recommend using <c>TrustedKeyGroups</c> instead of <c>TrustedSigners</c>.
         /// </para>
@@ -93,6 +95,8 @@ namespace Amazon.CloudFront.Model
         /// This field contains a list of Amazon Web Services account IDs and the active CloudFront
         /// key pairs in each account that CloudFront can use to verify the signatures of signed
         /// URLs or signed cookies.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         public ActiveTrustedSigners ActiveTrustedSigners
