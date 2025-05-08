@@ -1,3 +1,17 @@
+### 4.0.8.0 (2025-05-08 18:24 UTC)
+* CloudFront (4.0.0.3)
+	* Doc-only update for CloudFront. These changes include customer-reported issues.
+* CodePipeline (4.0.1.0)
+	* Add support for Secrets Manager and Plaintext environment variable types in Commands action
+* EC2 (4.0.5.0)
+	* Launching the feature to support ENA queues offering flexibility to support multiple queues per Enhanced Network Interface (ENI)
+* Glue (4.0.1.0)
+	* This new release supports customizable RefreshInterval for all Saas ZETL integrations from 15 minutes to 6 days.
+* GuardDuty (4.0.0.3)
+	* Updated description of a data structure.
+* SSOAdmin (4.0.1.0)
+	* Update PutPermissionBoundaryToPermissionSet API's managedPolicyArn pattern to allow valid ARN only. Update ApplicationName to allow white spaces.
+
 ### 4.0.7.0 (2025-05-07 18:23 UTC)
 * EC2 (4.0.4.0)
 	* This release adds API support for Path Component Exclusion (Filter Out ARN) for Reachability Analyzer
