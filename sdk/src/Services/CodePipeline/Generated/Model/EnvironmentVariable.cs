@@ -35,6 +35,7 @@ namespace Amazon.CodePipeline.Model
     public partial class EnvironmentVariable
     {
         private string _name;
+        private EnvironmentVariableType _type;
         private string _value;
 
         /// <summary>
@@ -54,6 +55,26 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Specifies the type of use for the environment variable value. The value can be either
+        /// <c>PLAINTEXT</c> or <c>SECRETS_MANAGER</c>. If the value is <c>SECRETS_MANAGER</c>,
+        /// provide the Secrets reference in the EnvironmentVariable value.
+        /// </para>
+        /// </summary>
+        public EnvironmentVariableType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
         /// <summary>
