@@ -101,6 +101,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetIntegrationConfig())
+            {
+                context.Writer.WritePropertyName("IntegrationConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IntegrationConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IntegrationConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetIntegrationName())
             {
                 context.Writer.WritePropertyName("IntegrationName");

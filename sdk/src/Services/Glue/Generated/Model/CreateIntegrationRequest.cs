@@ -39,6 +39,7 @@ namespace Amazon.Glue.Model
         private Dictionary<string, string> _additionalEncryptionContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _dataFilter;
         private string _description;
+        private IntegrationConfig _integrationConfig;
         private string _integrationName;
         private string _kmsKeyId;
         private string _sourceArn;
@@ -100,6 +101,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntegrationConfig. 
+        /// <para>
+        /// The configuration settings.
+        /// </para>
+        /// </summary>
+        public IntegrationConfig IntegrationConfig
+        {
+            get { return this._integrationConfig; }
+            set { this._integrationConfig = value; }
+        }
+
+        // Check to see if IntegrationConfig property is set
+        internal bool IsSetIntegrationConfig()
+        {
+            return this._integrationConfig != null;
         }
 
         /// <summary>

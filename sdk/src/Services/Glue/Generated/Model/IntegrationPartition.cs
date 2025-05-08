@@ -40,7 +40,10 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property FieldName. 
         /// <para>
-        /// The field name used to partition data on the target.
+        /// The field name used to partition data on the target. Avoid using columns that have
+        /// unique values for each row (for example, `LastModifiedTimestamp`, `SystemModTimeStamp`)
+        /// as the partition column. These columns are not suitable for partitioning because they
+        /// create a large number of small partitions, which can lead to performance issues.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -59,7 +62,10 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property FunctionSpec. 
         /// <para>
-        /// Specifies a function used to partition data on the target.
+        /// Specifies the function used to partition data on the target. The only accepted value
+        /// for this parameter is `'identity'` (string). The `'identity'` function ensures that
+        /// the data partitioning on the target follows the same scheme as the source. In other
+        /// words, the partitioning structure of the source data is preserved in the target destination.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

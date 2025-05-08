@@ -4981,6 +4981,11 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.IntegrationConfig.RefreshInterval</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.IntegrationError.ErrorCode</property>
     <min>1</min>
     <max>128</max>

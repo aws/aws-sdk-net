@@ -74,6 +74,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.IntegrationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("IntegrationConfig", targetDepth))
+                {
+                    var unmarshaller = IntegrationConfigUnmarshaller.Instance;
+                    unmarshalledObject.IntegrationConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("SourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
