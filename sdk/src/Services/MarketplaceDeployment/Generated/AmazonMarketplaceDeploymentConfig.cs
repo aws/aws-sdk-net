@@ -32,7 +32,7 @@ namespace Amazon.MarketplaceDeployment
     public partial class AmazonMarketplaceDeploymentConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Marketplace Deployment", "3.7.400.148");
+            InternalSDKUtils.BuildUserAgentString("Marketplace Deployment", "3.7.400.149");
 
         private string _userAgent = UserAgentString;
         ///<summary>

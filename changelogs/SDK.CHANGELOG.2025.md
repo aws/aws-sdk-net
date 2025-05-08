@@ -1,3 +1,21 @@
+### 3.7.1040.0 (2025-05-08 18:22 UTC)
+* CloudFront (3.7.405.8)
+	* Doc-only update for CloudFront. These changes include customer-reported issues.
+	* Add note about OpenSSL 3 limitation for `AmazonCloudFrontUrlSigner` and `AmazonCloudFrontCookieSigner` utility classes.
+* CodePipeline (3.7.408.0)
+	* Add support for Secrets Manager and Plaintext environment variable types in Commands action
+* EC2 (3.7.443.0)
+	* Launching the feature to support ENA queues offering flexibility to support multiple queues per Enhanced Network Interface (ENI)
+* Glue (3.7.417.0)
+	* This new release supports customizable RefreshInterval for all Saas ZETL integrations from 15 minutes to 6 days.
+* GuardDuty (3.7.406.51)
+	* Updated description of a data structure.
+* SSOAdmin (3.7.401.0)
+	* Update PutPermissionBoundaryToPermissionSet API's managedPolicyArn pattern to allow valid ARN only. Update ApplicationName to allow white spaces.
+* Core 3.7.402.55
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1039.0 (2025-05-07 18:24 UTC)
 * EC2 (3.7.442.0)
 	* This release adds API support for Path Component Exclusion (Filter Out ARN) for Reachability Analyzer
