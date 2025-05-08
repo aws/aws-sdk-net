@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the location of the remote IP address.
+    /// Contains information about the location of the remote IP address. By default, GuardDuty
+    /// returns <c>Geolocation</c> with <c>Lat</c> and <c>Lon</c> as <c>0.0</c>.
     /// </summary>
     public partial class GeoLocation
     {
