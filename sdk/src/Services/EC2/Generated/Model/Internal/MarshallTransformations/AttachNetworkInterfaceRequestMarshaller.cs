@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DeviceIndex", StringUtils.FromInt(publicRequest.DeviceIndex));
                 }
+                if(publicRequest.IsSetEnaQueueCount())
+                {
+                    request.Parameters.Add("EnaQueueCount", StringUtils.FromInt(publicRequest.EnaQueueCount));
+                }
                 if(publicRequest.IsSetEnaSrdSpecification())
                 {
                     if(publicRequest.EnaSrdSpecification.IsSetEnaSrdEnabled())

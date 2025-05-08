@@ -35,6 +35,9 @@ namespace Amazon.EC2.Model
     public partial class NetworkCardInfo
     {
         private double? _baselineBandwidthInGbps;
+        private int? _defaultEnaQueueCountPerInterface;
+        private int? _maximumEnaQueueCount;
+        private int? _maximumEnaQueueCountPerInterface;
         private int? _maximumNetworkInterfaces;
         private int? _networkCardIndex;
         private string _networkPerformance;
@@ -56,6 +59,60 @@ namespace Amazon.EC2.Model
         internal bool IsSetBaselineBandwidthInGbps()
         {
             return this._baselineBandwidthInGbps.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultEnaQueueCountPerInterface. 
+        /// <para>
+        /// The default number of the ENA queues for each interface.
+        /// </para>
+        /// </summary>
+        public int DefaultEnaQueueCountPerInterface
+        {
+            get { return this._defaultEnaQueueCountPerInterface.GetValueOrDefault(); }
+            set { this._defaultEnaQueueCountPerInterface = value; }
+        }
+
+        // Check to see if DefaultEnaQueueCountPerInterface property is set
+        internal bool IsSetDefaultEnaQueueCountPerInterface()
+        {
+            return this._defaultEnaQueueCountPerInterface.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaximumEnaQueueCount. 
+        /// <para>
+        /// The maximum number of the ENA queues.
+        /// </para>
+        /// </summary>
+        public int MaximumEnaQueueCount
+        {
+            get { return this._maximumEnaQueueCount.GetValueOrDefault(); }
+            set { this._maximumEnaQueueCount = value; }
+        }
+
+        // Check to see if MaximumEnaQueueCount property is set
+        internal bool IsSetMaximumEnaQueueCount()
+        {
+            return this._maximumEnaQueueCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaximumEnaQueueCountPerInterface. 
+        /// <para>
+        /// The maximum number of the ENA queues for each interface.
+        /// </para>
+        /// </summary>
+        public int MaximumEnaQueueCountPerInterface
+        {
+            get { return this._maximumEnaQueueCountPerInterface.GetValueOrDefault(); }
+            set { this._maximumEnaQueueCountPerInterface = value; }
+        }
+
+        // Check to see if MaximumEnaQueueCountPerInterface property is set
+        internal bool IsSetMaximumEnaQueueCountPerInterface()
+        {
+            return this._maximumEnaQueueCountPerInterface.HasValue; 
         }
 
         /// <summary>

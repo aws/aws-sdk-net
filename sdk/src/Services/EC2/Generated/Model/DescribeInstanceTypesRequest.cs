@@ -195,6 +195,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>network-info.flexible-ena-queues-support</c> - Indicates whether an instance supports
+        /// flexible ENA queues (<c>supported</c> | <c>unsupported</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>network-info.encryption-in-transit-supported</c> - Indicates whether the instance
         /// type automatically encrypts in-transit traffic between instances (<c>true</c> | <c>false</c>).
         /// </para>

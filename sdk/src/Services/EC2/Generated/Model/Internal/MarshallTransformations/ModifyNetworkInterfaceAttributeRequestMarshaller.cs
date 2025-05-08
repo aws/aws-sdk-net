@@ -69,9 +69,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Attachment" + "." + "AttachmentId", StringUtils.FromString(publicRequest.Attachment.AttachmentId));
                     }
+                    if(publicRequest.Attachment.IsSetDefaultEnaQueueCount())
+                    {
+                        request.Parameters.Add("Attachment" + "." + "DefaultEnaQueueCount", StringUtils.FromBool(publicRequest.Attachment.DefaultEnaQueueCount));
+                    }
                     if(publicRequest.Attachment.IsSetDeleteOnTermination())
                     {
                         request.Parameters.Add("Attachment" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequest.Attachment.DeleteOnTermination));
+                    }
+                    if(publicRequest.Attachment.IsSetEnaQueueCount())
+                    {
+                        request.Parameters.Add("Attachment" + "." + "EnaQueueCount", StringUtils.FromInt(publicRequest.Attachment.EnaQueueCount));
                     }
                 }
                 if(publicRequest.IsSetConnectionTrackingSpecification())

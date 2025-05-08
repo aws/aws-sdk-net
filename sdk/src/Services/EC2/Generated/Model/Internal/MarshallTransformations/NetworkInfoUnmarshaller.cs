@@ -102,6 +102,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.EncryptionInTransitSupported = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("flexibleEnaQueuesSupport", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.FlexibleEnaQueuesSupport = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ipv4AddressesPerInterface", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

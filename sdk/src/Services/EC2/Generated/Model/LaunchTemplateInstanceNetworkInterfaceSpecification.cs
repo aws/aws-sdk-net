@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         private bool? _deleteOnTermination;
         private string _description;
         private int? _deviceIndex;
+        private int? _enaQueueCount;
         private LaunchTemplateEnaSrdSpecification _enaSrdSpecification;
         private List<string> _groups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _interfaceType;
@@ -180,6 +181,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDeviceIndex()
         {
             return this._deviceIndex.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnaQueueCount. 
+        /// <para>
+        /// The number of ENA queues created with the instance.
+        /// </para>
+        /// </summary>
+        public int EnaQueueCount
+        {
+            get { return this._enaQueueCount.GetValueOrDefault(); }
+            set { this._enaQueueCount = value; }
+        }
+
+        // Check to see if EnaQueueCount property is set
+        internal bool IsSetEnaQueueCount()
+        {
+            return this._enaQueueCount.HasValue; 
         }
 
         /// <summary>

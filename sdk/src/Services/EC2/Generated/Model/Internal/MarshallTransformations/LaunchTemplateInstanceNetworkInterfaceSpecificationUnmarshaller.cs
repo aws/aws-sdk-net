@@ -91,6 +91,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DeviceIndex = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("enaQueueCount", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.EnaQueueCount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("enaSrdSpecification", targetDepth))
                     {
                         var unmarshaller = LaunchTemplateEnaSrdSpecificationUnmarshaller.Instance;
