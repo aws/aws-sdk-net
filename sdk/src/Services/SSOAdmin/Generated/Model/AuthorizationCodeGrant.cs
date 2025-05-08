@@ -43,6 +43,11 @@ namespace Amazon.SSOAdmin.Model
         /// A list of URIs that are valid locations to redirect a user's browser after the user
         /// is authorized.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// RedirectUris is required when the grant type is <c>authorization_code</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<string> RedirectUris

@@ -31,7 +31,20 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApplication operation.
-    /// Creates an application in IAM Identity Center for the given application provider.
+    /// Creates an OAuth 2.0 customer managed application in IAM Identity Center for the given
+    /// application provider.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This API does not support creating SAML 2.0 customer managed applications or Amazon
+    /// Web Services managed applications. To learn how to create an Amazon Web Services managed
+    /// application, see the application user guide. You can create a SAML 2.0 customer managed
+    /// application in the Amazon Web Services Management Console only. See <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/customermanagedapps-saml2-setup.html">Setting
+    /// up customer managed SAML 2.0 applications</a>. For more information on these application
+    /// types, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/awsapps.html">Amazon
+    /// Web Services managed applications</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateApplicationRequest : AmazonSSOAdminRequest
     {
@@ -144,7 +157,7 @@ namespace Amazon.SSOAdmin.Model
         /// The name of the .
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
