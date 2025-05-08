@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
-    /// A structure that stores the details of the Amazon Web Services managed policy.
+    /// A structure that stores a list of managed policy ARNs that describe the associated
+    /// Amazon Web Services managed policy.
     /// </summary>
     public partial class AttachedManagedPolicy
     {

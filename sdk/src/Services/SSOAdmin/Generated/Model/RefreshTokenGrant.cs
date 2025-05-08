@@ -31,7 +31,8 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// A structure that defines configuration settings for an application that supports the
-    /// OAuth 2.0 Refresh Token Grant.
+    /// OAuth 2.0 Refresh Token Grant. For more, see <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-1.5">RFC
+    /// 6749</a>.
     /// </summary>
     public partial class RefreshTokenGrant
     {
