@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CanaryScheduleInput Marshaller
+    /// RetryConfigInput Marshaller
     /// </summary>
-    public class CanaryScheduleInputMarshaller : IRequestMarshaller<CanaryScheduleInput, JsonMarshallerContext> 
+    public class RetryConfigInputMarshaller : IRequestMarshaller<RetryConfigInput, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,31 +42,14 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CanaryScheduleInput requestObject, JsonMarshallerContext context)
+        public void Marshall(RetryConfigInput requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDurationInSeconds())
+            if(requestObject.IsSetMaxRetries())
             {
-                context.Writer.WritePropertyName("DurationInSeconds");
-                context.Writer.WriteNumberValue(requestObject.DurationInSeconds.Value);
-            }
-
-            if(requestObject.IsSetExpression())
-            {
-                context.Writer.WritePropertyName("Expression");
-                context.Writer.WriteStringValue(requestObject.Expression);
-            }
-
-            if(requestObject.IsSetRetryConfig())
-            {
-                context.Writer.WritePropertyName("RetryConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = RetryConfigInputMarshaller.Instance;
-                marshaller.Marshall(requestObject.RetryConfig, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("MaxRetries");
+                context.Writer.WriteNumberValue(requestObject.MaxRetries.Value);
             }
 
         }
@@ -74,7 +57,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CanaryScheduleInputMarshaller Instance = new CanaryScheduleInputMarshaller();
+        public readonly static RetryConfigInputMarshaller Instance = new RetryConfigInputMarshaller();
 
     }
 }

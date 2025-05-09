@@ -423,6 +423,15 @@
     <pattern>^[0-9a-z_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Synthetics.Model.CanaryRun.RetryAttempt</property>
+    <min>1</min>
+    <max>2</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.CanaryRun.ScheduledRunId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Synthetics.Model.CanaryRunConfigInput.MemoryInMB</property>
     <min>960</min>
     <max>3008</max>
@@ -512,6 +521,16 @@
     <property>Amazon.Synthetics.Model.GroupSummary.Name</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.RetryConfigInput.MaxRetries</property>
+    <min>0</min>
+    <max>2</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.RetryConfigOutput.MaxRetries</property>
+    <min>0</min>
+    <max>2</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.RuntimeVersion.Description</property>
