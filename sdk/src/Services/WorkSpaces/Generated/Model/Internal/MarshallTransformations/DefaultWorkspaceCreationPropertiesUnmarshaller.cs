@@ -90,12 +90,6 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnableMaintenanceMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EnableWorkDocs", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableWorkDocs = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("InstanceIamRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
