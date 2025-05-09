@@ -36,7 +36,7 @@ namespace Amazon.Athena.Model
     /// 
     ///  
     /// <para>
-    /// This API operation creates the following resources.
+    /// For a <c>FEDERATED</c> catalog, this API operation creates the following resources.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -248,6 +248,10 @@ namespace Amazon.Athena.Model
         /// for an Glue Data Catalog, and <c>HIVE</c> for an external Apache Hive metastore. <c>FEDERATED</c>
         /// is a federated catalog for which Athena creates the connection and the Lambda function
         /// for you based on the parameters that you pass.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <c>FEDERATED</c> type, we do not support IAM identity center.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
