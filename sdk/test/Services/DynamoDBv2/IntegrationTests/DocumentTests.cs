@@ -58,6 +58,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Test expressions for put
                 TestExpressionPut(hashTable);
+                TestExpressionPutWithoutValues(hashTable);
 
                 // Test expressions for delete
                 TestExpressionsOnDelete(hashTable);
@@ -137,6 +138,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Test expressions for put
                 TestExpressionPut(hashTable);
+                TestExpressionPutWithoutValues(hashTable);
 
                 // Test expressions for delete
                 TestExpressionsOnDelete(hashTable);
@@ -1752,6 +1754,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             doc["update-test"] = 3;
             Assert.IsFalse(hashTable.TryPutItem(doc, config));
 
+            hashTable.DeleteItem(doc);
+        }
+
+        private void TestExpressionPutWithoutValues(ITable hashTable)
+        {
+            var doc = new Document
+            {
+                ["Id"] = DateTime.UtcNow.Ticks
+            };
+
+            var expression = new Expression
+            {
+                ExpressionStatement = "attribute_not_exists(Id)"
+            };
+
+            var config = new PutItemOperationConfig
+            {
+                ConditionalExpression = expression
+            };
+
+            Assert.IsTrue(hashTable.TryPutItem(doc, config));
             hashTable.DeleteItem(doc);
         }
 

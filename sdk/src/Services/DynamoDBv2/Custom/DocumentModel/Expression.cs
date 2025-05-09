@@ -218,27 +218,29 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal static Dictionary<string, AttributeValue> ConvertToAttributeValues(
             Dictionary<string, DynamoDBEntry> valueMap, Table table)
         {
-            var convertedValues = new Dictionary<string, AttributeValue>();
-            if (valueMap != null)
+            if (valueMap == null || valueMap.Count == 0)
             {
-                foreach (var kvp in valueMap)
+                return null;
+            }
+
+            var convertedValues = new Dictionary<string, AttributeValue>();
+            foreach (var kvp in valueMap)
+            {
+                var attributeName = kvp.Key;
+                var entry = kvp.Value;
+
+                if (entry == null)
+                    convertedValues[attributeName] = new AttributeValue { NULL = true };
+                else
                 {
-                    var attributeName = kvp.Key;
-                    var entry = kvp.Value;
+                    if (table.StoreAsEpoch.Contains(attributeName))
+                        entry = Document.DateTimeToEpochSeconds(entry, attributeName);
 
-                    if (entry == null)
-                        convertedValues[attributeName] = new AttributeValue { NULL = true };
-                    else
-                    {
-                        if (table.StoreAsEpoch.Contains(attributeName))
-                            entry = Document.DateTimeToEpochSeconds(entry, attributeName);
+                    if (table.StoreAsEpochLong.Contains(attributeName))
+                        entry = Document.DateTimeToEpochSecondsLong(entry, attributeName);
 
-                        if (table.StoreAsEpochLong.Contains(attributeName))
-                            entry = Document.DateTimeToEpochSecondsLong(entry, attributeName);
-
-                        var attributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(table.Conversion, table.IsEmptyStringValueEnabled);
-                        convertedValues[attributeName] = entry.ConvertToAttributeValue(attributeConversionConfig);
-                    }
+                    var attributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(table.Conversion, table.IsEmptyStringValueEnabled);
+                    convertedValues[attributeName] = entry.ConvertToAttributeValue(attributeConversionConfig);
                 }
             }
 
