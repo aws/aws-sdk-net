@@ -44,7 +44,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The separator characters to split the string entry on.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Delimiter
         {
             get { return this._delimiter; }

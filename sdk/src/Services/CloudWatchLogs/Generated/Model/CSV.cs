@@ -77,7 +77,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// delimiter.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Min=1, Max=2)]
         public string Delimiter
         {
             get { return this._delimiter; }
