@@ -1250,7 +1250,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.CSV.Delimiter</property>
     <min>1</min>
-    <max>1</max>
+    <max>2</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.CSV.QuoteCharacter</property>
@@ -1438,7 +1438,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.Grok.Match</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.Grok.Source</property>
@@ -1877,7 +1877,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.SplitStringEntry.Delimiter</property>
     <min>1</min>
-    <max>1</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.SplitStringEntry.Source</property>

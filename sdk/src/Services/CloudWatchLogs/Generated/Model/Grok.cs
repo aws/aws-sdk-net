@@ -48,11 +48,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property Match. 
         /// <para>
         /// The grok pattern to match against the log event. For a list of supported grok patterns,
-        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#Grok-Patterns">Supported
+        /// see <a href="https://docs.aws.amazon.com/mazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation-Processors.html#Grok-Patterns">Supported
         /// grok patterns</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string Match
         {
             get { return this._match; }
