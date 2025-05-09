@@ -1,3 +1,13 @@
+### 4.0.9.0 (2025-05-09 18:19 UTC)
+* Athena (4.0.0.3)
+	* Minor API documentation updates
+* CloudWatchLogs (4.0.2.0)
+	* We are pleased to announce limit increases to our grok processor logs transformation feature. Now you can define 20 Grok patterns in their configurations, with an expanded total pattern matching limit of 512 characters.
+* Synthetics (4.0.2.0)
+	* Add support to retry a canary automatically after schedule run failures. Users can enable this feature by configuring the RetryConfig field when calling the CreateCanary or UpdateCanary API. Also includes changes in GetCanary and GetCanaryRuns to support retrieving retry configurations.
+* WorkSpaces (4.0.1.0)
+	* Remove parameter EnableWorkDocs from WorkSpacesServiceModel due to end of support of Amazon WorkDocs service.
+
 ### 4.0.8.0 (2025-05-08 18:24 UTC)
 * CloudFront (4.0.0.3)
 	* Doc-only update for CloudFront. These changes include customer-reported issues.
