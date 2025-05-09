@@ -593,7 +593,7 @@ namespace Amazon.Athena
         /// 
         ///  
         /// <para>
-        /// This API operation creates the following resources.
+        /// For a <c>FEDERATED</c> catalog, this API operation creates the following resources.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -639,7 +639,7 @@ namespace Amazon.Athena
         /// 
         ///  
         /// <para>
-        /// This API operation creates the following resources.
+        /// For a <c>FEDERATED</c> catalog, this API operation creates the following resources.
         /// </para>
         ///  <ul> <li> 
         /// <para>
