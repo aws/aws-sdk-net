@@ -40,7 +40,6 @@ namespace Amazon.WorkSpaces.Model
         private string _defaultOu;
         private bool? _enableInternetAccess;
         private bool? _enableMaintenanceMode;
-        private bool? _enableWorkDocs;
         private string _instanceIamRoleArn;
         private bool? _userEnabledAsLocalAdministrator;
 
@@ -127,24 +126,6 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetEnableMaintenanceMode()
         {
             return this._enableMaintenanceMode.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property EnableWorkDocs. 
-        /// <para>
-        /// Specifies whether the directory is enabled for Amazon WorkDocs.
-        /// </para>
-        /// </summary>
-        public bool? EnableWorkDocs
-        {
-            get { return this._enableWorkDocs; }
-            set { this._enableWorkDocs = value; }
-        }
-
-        // Check to see if EnableWorkDocs property is set
-        internal bool IsSetEnableWorkDocs()
-        {
-            return this._enableWorkDocs.HasValue; 
         }
 
         /// <summary>

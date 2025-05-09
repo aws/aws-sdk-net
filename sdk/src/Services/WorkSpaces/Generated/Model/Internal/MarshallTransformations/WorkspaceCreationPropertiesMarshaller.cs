@@ -70,12 +70,6 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.EnableMaintenanceMode.Value);
             }
 
-            if(requestObject.IsSetEnableWorkDocs())
-            {
-                context.Writer.WritePropertyName("EnableWorkDocs");
-                context.Writer.WriteBooleanValue(requestObject.EnableWorkDocs.Value);
-            }
-
             if(requestObject.IsSetInstanceIamRoleArn())
             {
                 context.Writer.WritePropertyName("InstanceIamRoleArn");
