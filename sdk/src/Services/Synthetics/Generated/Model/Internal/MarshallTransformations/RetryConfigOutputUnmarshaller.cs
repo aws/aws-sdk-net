@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CanaryRunTimeline Object
+    /// Response Unmarshaller for RetryConfigOutput Object
     /// </summary>  
-    public class CanaryRunTimelineUnmarshaller : IUnmarshaller<CanaryRunTimeline, XmlUnmarshallerContext>, IUnmarshaller<CanaryRunTimeline, JsonUnmarshallerContext>
+    public class RetryConfigOutputUnmarshaller : IUnmarshaller<RetryConfigOutput, XmlUnmarshallerContext>, IUnmarshaller<RetryConfigOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CanaryRunTimeline IUnmarshaller<CanaryRunTimeline, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RetryConfigOutput IUnmarshaller<RetryConfigOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public CanaryRunTimeline Unmarshall(JsonUnmarshallerContext context)
+        public RetryConfigOutput Unmarshall(JsonUnmarshallerContext context)
         {
-            CanaryRunTimeline unmarshalledObject = new CanaryRunTimeline();
+            RetryConfigOutput unmarshalledObject = new RetryConfigOutput();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Completed", targetDepth))
+                if (context.TestExpression("MaxRetries", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Completed = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MetricTimestampForRunAndRetries", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.MetricTimestampForRunAndRetries = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Started", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Started = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxRetries = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         }
 
 
-        private static CanaryRunTimelineUnmarshaller _instance = new CanaryRunTimelineUnmarshaller();        
+        private static RetryConfigOutputUnmarshaller _instance = new RetryConfigOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CanaryRunTimelineUnmarshaller Instance
+        public static RetryConfigOutputUnmarshaller Instance
         {
             get
             {

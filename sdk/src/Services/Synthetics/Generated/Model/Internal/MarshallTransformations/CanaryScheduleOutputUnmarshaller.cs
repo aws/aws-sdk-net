@@ -78,6 +78,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                     unmarshalledObject.Expression = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RetryConfig", targetDepth))
+                {
+                    var unmarshaller = RetryConfigOutputUnmarshaller.Instance;
+                    unmarshalledObject.RetryConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

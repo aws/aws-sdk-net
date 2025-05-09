@@ -38,6 +38,8 @@ namespace Amazon.Synthetics.Model
         private CanaryDryRunConfigOutput _dryRunConfig;
         private string _id;
         private string _name;
+        private int? _retryAttempt;
+        private string _scheduledRunId;
         private CanaryRunStatus _status;
         private CanaryRunTimeline _timeline;
 
@@ -114,6 +116,43 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryAttempt. 
+        /// <para>
+        /// The count in number of the retry attempt.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public int RetryAttempt
+        {
+            get { return this._retryAttempt.GetValueOrDefault(); }
+            set { this._retryAttempt = value; }
+        }
+
+        // Check to see if RetryAttempt property is set
+        internal bool IsSetRetryAttempt()
+        {
+            return this._retryAttempt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduledRunId. 
+        /// <para>
+        /// The ID of the scheduled canary run.
+        /// </para>
+        /// </summary>
+        public string ScheduledRunId
+        {
+            get { return this._scheduledRunId; }
+            set { this._scheduledRunId = value; }
+        }
+
+        // Check to see if ScheduledRunId property is set
+        internal bool IsSetScheduledRunId()
+        {
+            return this._scheduledRunId != null;
         }
 
         /// <summary>
