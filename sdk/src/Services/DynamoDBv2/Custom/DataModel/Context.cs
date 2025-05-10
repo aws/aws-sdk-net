@@ -16,6 +16,8 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Threading;
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
@@ -23,6 +25,7 @@ using System.Threading.Tasks;
 #endif
 using Amazon.DynamoDBv2.DocumentModel;
 using ThirdParty.RuntimeBackports;
+using Expression = Amazon.DynamoDBv2.DocumentModel.Expression;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -369,18 +372,26 @@ namespace Amazon.DynamoDBv2.DataModel
             if (storage == null) return;
 
             Table table = GetTargetTable(storage.Config, flatConfig);
+            var updateExpression = CreateUpdateExpressionForCounterProperties(storage);
+            SetAtomicCounters(storage);
             if ((flatConfig.SkipVersionCheck.HasValue && flatConfig.SkipVersionCheck.Value) || !storage.Config.HasVersion)
             {
-                table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), null);
+                table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), new UpdateItemOperationConfig
+                {
+                    ReturnValues = ReturnValues.None,
+                    UpdateExpression = updateExpression
+                });
             }
             else
             {
-                Document expectedDocument = CreateExpectedDocumentForVersion(storage);
+                var conversionConfig = new DynamoDBEntry.AttributeConversionConfig(table.Conversion, table.IsEmptyStringValueEnabled);
+                var versionExpression = CreateConditionExpressionForVersion(storage, conversionConfig);
                 SetNewVersion(storage);
                 var updateItemOperationConfig = new UpdateItemOperationConfig
                 {
-                    Expected = expectedDocument,
                     ReturnValues = ReturnValues.None,
+                    ConditionalExpression = versionExpression,
+                    UpdateExpression = updateExpression
                 };
                 table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), updateItemOperationConfig);
                 PopulateInstance(storage, value, flatConfig);
@@ -401,21 +412,51 @@ namespace Amazon.DynamoDBv2.DataModel
             if (storage == null) return;
 
             Table table = GetTargetTable(storage.Config, flatConfig);
+
+            var counterConditionExpression = CreateUpdateExpressionForCounterProperties(storage);
+            SetAtomicCounters(storage);
             if (
                 (flatConfig.SkipVersionCheck.HasValue && flatConfig.SkipVersionCheck.Value)
                 || !storage.Config.HasVersion)
             {
-                await table.UpdateHelperAsync(storage.Document, table.MakeKey(storage.Document), null, cancellationToken).ConfigureAwait(false);
+                await table.UpdateHelperAsync(storage.Document, table.MakeKey(storage.Document), new UpdateItemOperationConfig
+                {
+                    ReturnValues = ReturnValues.None,
+                    UpdateExpression = counterConditionExpression
+                }, cancellationToken).ConfigureAwait(false);
             }
             else
             {
-                Document expectedDocument = CreateExpectedDocumentForVersion(storage);
+                var conversionConfig = new DynamoDBEntry.AttributeConversionConfig(table.Conversion, table.IsEmptyStringValueEnabled);
+                var versionExpression = CreateConditionExpressionForVersion(storage, conversionConfig);
                 SetNewVersion(storage);
+
+                //if (counterConditionExpression != null)
+                //{
+                //    versionExpression.ExpressionStatement += " \n" + counterConditionExpression.ExpressionStatement;
+                //    versionExpression.ExpressionAttributeNames =
+                //        versionExpression.ExpressionAttributeNames.Union(counterConditionExpression.ExpressionAttributeNames).
+                //            ToDictionary(keyValue => keyValue.Key, keyValue => keyValue.Value);
+
+                //    if (versionExpression.ExpressionAttributeValues != null)
+                //    {
+                //        versionExpression.ExpressionAttributeValues =
+                //            versionExpression.ExpressionAttributeValues.Union(counterConditionExpression.ExpressionAttributeValues).
+                //                ToDictionary(keyValue => keyValue.Key, keyValue => keyValue.Value);
+                //    }
+                //}
+
                 await table.UpdateHelperAsync(
                     storage.Document,
                     table.MakeKey(storage.Document),
-                    new UpdateItemOperationConfig { Expected = expectedDocument, ReturnValues = ReturnValues.None },
-                    cancellationToken).ConfigureAwait(false);
+                    new UpdateItemOperationConfig
+                    {
+                        ReturnValues = ReturnValues.None,
+                        ConditionalExpression = versionExpression,
+                        UpdateExpression = counterConditionExpression
+                    },
+                    cancellationToken)
+                    .ConfigureAwait(false);
                 PopulateInstance(storage, value, flatConfig);
             }
         }

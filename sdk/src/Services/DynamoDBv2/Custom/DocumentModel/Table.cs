@@ -1491,6 +1491,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, out statement, out expressionAttributeValues, out expressionAttributeNames);
 
                 req.AttributeUpdates = null;
+               // req.ConditionExpression = statement
                 req.UpdateExpression = statement;
 
                 if (req.ExpressionAttributeValues == null)
@@ -1508,6 +1509,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     foreach (var kvp in expressionAttributeNames)
                         req.ExpressionAttributeNames.Add(kvp.Key, kvp.Value);
                 }
+            }
+
+            if (currentConfig.UpdateExpression is { IsSet: true })
+            {
+                currentConfig.UpdateExpression.ApplyUpdateExpression(req, this);
             }
 
             var resp = await DDBClient.UpdateItemAsync(req, cancellationToken).ConfigureAwait(false);

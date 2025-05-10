@@ -269,7 +269,6 @@ namespace Amazon.DynamoDBv2.DataModel
         public Document Document { get; set; }
         public ItemStorageConfig Config { get; set; }
         public Primitive CurrentVersion { get; set; }
-        public Primitive CurrentCount { get; set; }
         public HashSet<object> ConvertedObjects { get; private set; }
 
         public ItemStorage(ItemStorageConfig storageConfig)

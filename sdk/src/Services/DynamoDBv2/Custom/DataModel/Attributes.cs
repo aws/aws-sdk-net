@@ -319,6 +319,18 @@ namespace Amazon.DynamoDBv2.DataModel
             Delta = delta;
             StartValue = startValue;
         }
+
+        /// <summary>
+        /// Constructor that specifies an alternate attribute name
+        /// </summary>  
+        /// <param name="delta">The value to increment (positive) or decrement (negative) the counter with for each update.</param>
+        /// <param name="startValue">The starting value of the counter.</param>
+        public DynamoDBAtomicCounterAttribute(long delta, long startValue)
+            : base()
+        {
+            Delta = delta;
+            StartValue = startValue;
+        }
     }
 
 
