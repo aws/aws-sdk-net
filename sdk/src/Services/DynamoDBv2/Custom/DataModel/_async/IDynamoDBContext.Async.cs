@@ -320,8 +320,10 @@ namespace Amazon.DynamoDBv2.DataModel
         /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
         /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
         /// </remarks>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKey">Hash key element of the object to delete.</param>
+        /// <typeparam name="T">The type representing the item stored in DynamoDB. This must be a modeled type
+        /// decorated with <see cref="DynamoDBTableAttribute" />, and have a hash key field or property.
+        /// </typeparam>
+        /// <param name="hashKey">The value of the hash (partition) key identifying the item to delete.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         Task DeleteAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(object hashKey, CancellationToken cancellationToken = default);
@@ -334,8 +336,10 @@ namespace Amazon.DynamoDBv2.DataModel
         /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
         /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
         /// </remarks>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKey">Hash key element of the object to delete.</param>
+        /// <typeparam name="T">The type representing the item stored in DynamoDB. This must be a modeled type
+        /// decorated with <see cref="DynamoDBTableAttribute" />, and have a hash key field or property.
+        /// </typeparam>
+        /// <param name="hashKey">The value of the hash (partition) key identifying the item to delete.</param>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
@@ -350,8 +354,10 @@ namespace Amazon.DynamoDBv2.DataModel
         /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
         /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
         /// </remarks>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKey">Hash key element of the object to delete.</param>
+        /// <typeparam name="T">The type representing the item stored in DynamoDB. This must be a modeled type
+        /// decorated with <see cref="DynamoDBTableAttribute" />, and have a hash key field or property.
+        /// </typeparam>
+        /// <param name="hashKey">The value of the hash (partition) key identifying the item to delete.</param>
         /// <param name="deleteConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
@@ -365,8 +371,10 @@ namespace Amazon.DynamoDBv2.DataModel
         /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
         /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
         /// </remarks>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKey">Hash key element of the object to delete.</param>
+        /// <typeparam name="T">The type representing the item stored in DynamoDB. This must be a modeled type
+        /// decorated with <see cref="DynamoDBTableAttribute" />, and have a hash key field or property.
+        /// </typeparam>
+        /// <param name="hashKey">The value of the hash (partition) key identifying the item to delete.</param>
         /// <param name="rangeKey">Range key element of the object to delete.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
@@ -380,8 +388,10 @@ namespace Amazon.DynamoDBv2.DataModel
         /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
         /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
         /// </remarks>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKey">Hash key element of the object to delete.</param>
+        /// <typeparam name="T">The type representing the item stored in DynamoDB. This must be a modeled type
+        /// decorated with <see cref="DynamoDBTableAttribute" />, and have a hash key field or property.
+        /// </typeparam>
+        /// <param name="hashKey">The value of the hash (partition) key identifying the item to delete.</param>
         /// <param name="rangeKey">Range key element of the object to delete.</param>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
@@ -397,8 +407,10 @@ namespace Amazon.DynamoDBv2.DataModel
         /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
         /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
         /// </remarks>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKey">Hash key element of the object to delete.</param>
+        /// <typeparam name="T">The type representing the item stored in DynamoDB. This must be a modeled type
+        /// decorated with <see cref="DynamoDBTableAttribute" />, and have a hash key field or property.
+        /// </typeparam>
+        /// <param name="hashKey">The value of the hash (partition) key identifying the item to delete.</param>
         /// <param name="rangeKey">Range key element of the object to delete.</param>
         /// <param name="deleteConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
