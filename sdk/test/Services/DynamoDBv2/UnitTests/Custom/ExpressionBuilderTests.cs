@@ -145,6 +145,10 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual("attribute_exists (#C0.#C1[0].#C2)", node.ExpressionStatement);
             Assert.AreEqual(0, node.ExpressionAttributeValues.Count);
             Assert.AreEqual(3, node.ExpressionAttributeNames.Count);
+            Assert.AreEqual("parent", node.ExpressionAttributeNames["#C0"]);
+            Assert.AreEqual("child", node.ExpressionAttributeNames["#C1"]);
+            Assert.AreEqual("attribute", node.ExpressionAttributeNames["#C2"]);
+
         }
 
         [TestMethod]
@@ -158,6 +162,9 @@ namespace AWSSDK_DotNet.UnitTests
 
             Assert.IsNotNull(result);
             Assert.AreEqual("attribute_exists (#C0.#C1)", result.ExpressionStatement);
+            Assert.AreEqual(2, result.ExpressionAttributeNames.Count);
+            Assert.AreEqual("Test#Attribute-Name", result.ExpressionAttributeNames["#C0"]);
+            Assert.AreEqual("123", result.ExpressionAttributeNames["#C1"]);
         }
 
         [TestMethod]
@@ -249,6 +256,11 @@ namespace AWSSDK_DotNet.UnitTests
 
             Assert.IsNotNull(result);
             Assert.AreEqual("#C0 BETWEEN :C0 AND :C1", resultNode.ExpressionStatement);
+            Assert.AreEqual(1, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual(2, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual(10, resultNode.ExpressionAttributeValues[":C0"]);
+            Assert.AreEqual(20, resultNode.ExpressionAttributeValues[":C1"]);
+            
         }
 
         [TestMethod]
@@ -262,6 +274,17 @@ namespace AWSSDK_DotNet.UnitTests
 
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("#C0 IN (:C0, :C1, :C2)", resultNode.ExpressionStatement);
+
+            // Assert ExpressionAttributeNames
+            Assert.AreEqual(1, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("TestAttribute", resultNode.ExpressionAttributeNames["#C0"]);
+
+            // Assert ExpressionAttributeValues
+            Assert.AreEqual(3, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual(10, resultNode.ExpressionAttributeValues[":C0"]);
+            Assert.AreEqual(20, resultNode.ExpressionAttributeValues[":C1"]);
+            Assert.AreEqual(30, resultNode.ExpressionAttributeValues[":C2"]);
+
         }
 
         [TestMethod]
@@ -275,6 +298,14 @@ namespace AWSSDK_DotNet.UnitTests
 
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("begins_with (#C0, :C0)", resultNode.ExpressionStatement);
+
+            // Assert ExpressionAttributeNames
+            Assert.AreEqual(1, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("TestAttribute", resultNode.ExpressionAttributeNames["#C0"]);
+
+            // Assert ExpressionAttributeValues
+            Assert.AreEqual(1, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual("test", resultNode.ExpressionAttributeValues[":C0"].AsString());
         }
 
         [TestMethod]
@@ -288,6 +319,14 @@ namespace AWSSDK_DotNet.UnitTests
 
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("contains (#C0, :C0)", resultNode.ExpressionStatement);
+
+            // Assert ExpressionAttributeNames
+            Assert.AreEqual(1, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("TestAttribute", resultNode.ExpressionAttributeNames["#C0"]);
+
+            // Assert ExpressionAttributeValues
+            Assert.AreEqual(1, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual("test", resultNode.ExpressionAttributeValues[":C0"].AsString());
         }
 
         [TestMethod]
@@ -301,6 +340,12 @@ namespace AWSSDK_DotNet.UnitTests
             
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("attribute_exists (#C0)", resultNode.ExpressionStatement);
+            // Assert ExpressionAttributeNames
+            Assert.AreEqual(1, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("TestAttribute", resultNode.ExpressionAttributeNames["#C0"]);
+
+            // Assert ExpressionAttributeValues
+            Assert.AreEqual(0, resultNode.ExpressionAttributeValues.Count);
         }
 
         [TestMethod]
@@ -314,6 +359,12 @@ namespace AWSSDK_DotNet.UnitTests
             
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("attribute_not_exists (#C0)", resultNode.ExpressionStatement);
+            // Assert ExpressionAttributeNames
+            Assert.AreEqual(1, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("TestAttribute", resultNode.ExpressionAttributeNames["#C0"]);
+
+            // Assert ExpressionAttributeValues
+            Assert.AreEqual(0, resultNode.ExpressionAttributeValues.Count);
         }
 
         [TestMethod]
@@ -327,6 +378,13 @@ namespace AWSSDK_DotNet.UnitTests
             
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("attribute_type (#C0, :C0)", resultNode.ExpressionStatement);
+            // Assert ExpressionAttributeNames
+            Assert.AreEqual(1, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("TestAttribute", resultNode.ExpressionAttributeNames["#C0"]);
+
+            // Assert ExpressionAttributeValues
+            Assert.AreEqual(1, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual(DynamoDBAttributeType.B.Value, resultNode.ExpressionAttributeValues[":C0"].AsString());
         }
 
         [TestMethod]
@@ -341,6 +399,15 @@ namespace AWSSDK_DotNet.UnitTests
             
             Assert.IsNotNull(result);
             Assert.AreEqual("(#C0 = :C0) AND (#C1 = :C1)", resultNode.ExpressionStatement);
+            // Assert ExpressionAttributeNames
+            Assert.AreEqual(2, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("Attribute1", resultNode.ExpressionAttributeNames["#C0"]);
+            Assert.AreEqual("Attribute2", resultNode.ExpressionAttributeNames["#C1"]);
+
+            // Assert ExpressionAttributeValues
+            Assert.AreEqual(2, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual(10, resultNode.ExpressionAttributeValues[":C0"]);
+            Assert.AreEqual(10, resultNode.ExpressionAttributeValues[":C1"]);
         }
 
         [TestMethod]
@@ -357,6 +424,20 @@ namespace AWSSDK_DotNet.UnitTests
             
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("(#C0 = :C0) AND (#C1 = :C1) AND (#C2 = :C2) AND (#C3 = :C3)", resultNode.ExpressionStatement);
+
+            // Assert ExpressionAttributeNames
+            Assert.AreEqual(4, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("Attribute1", resultNode.ExpressionAttributeNames["#C0"]);
+            Assert.AreEqual("Attribute2", resultNode.ExpressionAttributeNames["#C1"]);
+            Assert.AreEqual("Attribute3", resultNode.ExpressionAttributeNames["#C2"]);
+            Assert.AreEqual("Attribute4", resultNode.ExpressionAttributeNames["#C3"]);
+
+            // Assert ExpressionAttributeValues
+            Assert.AreEqual(4, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual(10, resultNode.ExpressionAttributeValues[":C0"]);
+            Assert.AreEqual(10, resultNode.ExpressionAttributeValues[":C1"]);
+            Assert.AreEqual(10, resultNode.ExpressionAttributeValues[":C2"]);
+            Assert.AreEqual(10, resultNode.ExpressionAttributeValues[":C3"]);
         }
 
         [TestMethod]
@@ -370,6 +451,16 @@ namespace AWSSDK_DotNet.UnitTests
             
             Assert.IsNotNull(result);
             Assert.AreEqual("(#C0 = :C0) OR (#C1 = :C1)", resultNode.ExpressionStatement);
+
+            // Assert ExpressionAttributeNames
+            Assert.AreEqual(2, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("Attribute1", resultNode.ExpressionAttributeNames["#C0"]);
+            Assert.AreEqual("Attribute2", resultNode.ExpressionAttributeNames["#C1"]);
+
+            // Assert ExpressionAttributeValues
+            Assert.AreEqual(2, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual(10, resultNode.ExpressionAttributeValues[":C0"]);
+            Assert.AreEqual(20, resultNode.ExpressionAttributeValues[":C1"]);
         }
 
         [TestMethod]
@@ -385,6 +476,20 @@ namespace AWSSDK_DotNet.UnitTests
             
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("(#C0 = :C0) OR (#C1 = :C1) OR (#C2 = :C2) OR (#C3 = :C3)", resultNode.ExpressionStatement);
+
+            // Assert ExpressionAttributeNames
+            Assert.AreEqual(4, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("Attribute1", resultNode.ExpressionAttributeNames["#C0"]);
+            Assert.AreEqual("Attribute2", resultNode.ExpressionAttributeNames["#C1"]);
+            Assert.AreEqual("Attribute3", resultNode.ExpressionAttributeNames["#C2"]);
+            Assert.AreEqual("Attribute4", resultNode.ExpressionAttributeNames["#C3"]);
+
+            // Assert ExpressionAttributeValues
+            Assert.AreEqual(4, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual(10, resultNode.ExpressionAttributeValues[":C0"]);
+            Assert.AreEqual(20, resultNode.ExpressionAttributeValues[":C1"]);
+            Assert.AreEqual(30, resultNode.ExpressionAttributeValues[":C2"]);
+            Assert.AreEqual(40, resultNode.ExpressionAttributeValues[":C3"]);
         }
 
         [TestMethod]
@@ -400,6 +505,18 @@ namespace AWSSDK_DotNet.UnitTests
             
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("(#C0 = :C0) AND ((#C1 = :C1) OR (#C2 = :C2))", resultNode.ExpressionStatement);
+
+            // Assert ExpressionAttributeNames
+            Assert.AreEqual(3, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("Attribute1", resultNode.ExpressionAttributeNames["#C0"]);
+            Assert.AreEqual("Attribute2", resultNode.ExpressionAttributeNames["#C1"]);
+            Assert.AreEqual("Attribute3", resultNode.ExpressionAttributeNames["#C2"]);
+
+            // Assert ExpressionAttributeValues
+            Assert.AreEqual(3, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual(10, resultNode.ExpressionAttributeValues[":C0"]);
+            Assert.AreEqual(20, resultNode.ExpressionAttributeValues[":C1"]);
+            Assert.AreEqual(30, resultNode.ExpressionAttributeValues[":C2"]);
         }
 
         [TestMethod]
@@ -415,6 +532,18 @@ namespace AWSSDK_DotNet.UnitTests
             
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("((#C0 = :C0) AND (#C1 = :C1)) OR (#C2 = :C2)", resultNode.ExpressionStatement);
+
+            // Assert ExpressionAttributeNames
+            Assert.AreEqual(3, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("Attribute1", resultNode.ExpressionAttributeNames["#C0"]);
+            Assert.AreEqual("Attribute2", resultNode.ExpressionAttributeNames["#C1"]);
+            Assert.AreEqual("Attribute3", resultNode.ExpressionAttributeNames["#C2"]);
+
+            // Assert ExpressionAttributeValues
+            Assert.AreEqual(3, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual(10, resultNode.ExpressionAttributeValues[":C0"]);
+            Assert.AreEqual(20, resultNode.ExpressionAttributeValues[":C1"]);
+            Assert.AreEqual(30, resultNode.ExpressionAttributeValues[":C2"]);
         }
 
         [TestMethod]
@@ -428,6 +557,13 @@ namespace AWSSDK_DotNet.UnitTests
             
             Assert.IsNotNull(resultNode);
             Assert.AreEqual("NOT (#C0 = :C0)", resultNode.ExpressionStatement);
+            // Assert ExpressionAttributeNames
+            Assert.AreEqual(1, resultNode.ExpressionAttributeNames.Count);
+            Assert.AreEqual("Attribute1", resultNode.ExpressionAttributeNames["#C0"]);
+
+            // Assert ExpressionAttributeValues
+            Assert.AreEqual(1, resultNode.ExpressionAttributeValues.Count);
+            Assert.AreEqual(10, resultNode.ExpressionAttributeValues[":C0"]);
         }
     }
 

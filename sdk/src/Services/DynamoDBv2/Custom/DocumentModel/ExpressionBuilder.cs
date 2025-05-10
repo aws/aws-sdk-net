@@ -478,7 +478,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return condition;
         }
 
-        internal static ConditionExpressionBuilder LesThan(OperandBuilder left, OperandBuilder right)
+        internal static ConditionExpressionBuilder LessThan(OperandBuilder left, OperandBuilder right)
         {
             var condition = new ConditionExpressionBuilder(new List<OperandBuilder> { left, right }, ConditionMode.LessThan);
             return condition;
@@ -831,7 +831,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public ConditionExpressionBuilder LessThan(DynamoDBEntry right)
         {
             var rightOperand = new ValueBuilder(right);
-            return ConditionExpressionBuilder.LesThan(this, rightOperand);
+            return ConditionExpressionBuilder.LessThan(this, rightOperand);
         }
 
         /// <summary>
@@ -1007,7 +1007,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             var node = new ExpressionNode
             {
-                Names = new Stack<string>()
+                Names = new Queue<string>()
             };
 
             var fmtNames = new List<string>(_names.Count());
@@ -1050,7 +1050,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (string.IsNullOrEmpty(word))
                     throw new InvalidOperationException("Invalid parameter Name");
 
-                node.Names.Push(word);
+                node.Names.Enqueue(word);
                 fmtNames.Add($"$n{substr}");
             }
 
@@ -1088,10 +1088,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         /// <summary>
-        /// Creates a "Plus" operation which adds the specified value to the current value.
+        /// Creates a "Plus" operation which adds the specified operand to the current value.
         /// </summary>
-        /// <param name="rightOperand"></param>
-        /// <returns></returns>
+        /// <param name="rightOperand">The <see cref="OperandBuilder"/> representing the operand to add.</param>
+        /// <returns>A <see cref="SetValueBuilder"/> representing the "Plus" operation.</returns>
         public SetValueBuilder Plus(OperandBuilder rightOperand)
         {
             return SetValueBuilder.Plus(this, rightOperand);
@@ -1100,8 +1100,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <summary>
         /// Creates a "Plus" operation which adds the specified value to the current value.
         /// </summary>
-        /// <param name="right"></param>
-        /// <returns></returns>
+        /// <param name="right">The <see cref="DynamoDBEntry"/> representing the value to add.</param>
+        /// <returns>A <see cref="SetValueBuilder"/> representing the "Plus" operation.</returns>
         public SetValueBuilder Plus(DynamoDBEntry right)
         {
             var rightOperand = new ValueBuilder(right);
@@ -1109,10 +1109,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         /// <summary>
-        /// Creates a "Minus" operation which subtracts the specified value from the current value. 
+        /// Creates a "Minus" operation which subtracts the specified value from the current value.
         /// </summary>
-        /// <param name="right"></param>
-        /// <returns></returns>
+        /// <param name="right">The <see cref="DynamoDBEntry"/> representing the value to subtract.</param>
+        /// <returns>A <see cref="SetValueBuilder"/> representing the "Minus" operation.</returns>
         public SetValueBuilder Minus(DynamoDBEntry right)
         {
             var rightOperand=new ValueBuilder(right);
@@ -1120,20 +1120,24 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         /// <summary>
-        /// Creates a "Minus" operation which subtracts the specified value from the current value. 
+        /// Creates a "Minus" operation which subtracts the specified operand from the current value.
         /// </summary>
-        /// <param name="rightOperand"></param>
-        /// <returns></returns>
+        /// <param name="rightOperand">The <see cref="OperandBuilder"/> representing the operand to subtract.</param>
+        /// <returns>A <see cref="SetValueBuilder"/> representing the "Minus" operation.</returns>
         public SetValueBuilder Minus(OperandBuilder rightOperand)
         {
             return SetValueBuilder.Minus(this, rightOperand);
         }
 
         /// <summary>
-        /// 
+        /// Creates a "ListAppend" operation for the current value, which appends the specified DynamoDB entry to a list attribute.
         /// </summary>
-        /// <param name="right"></param>
-        /// <returns></returns>
+        /// <param name="right">The <see cref="DynamoDBEntry"/> to append to the list attribute.</param>
+        /// <returns>A <see cref="SetValueBuilder"/> representing the "ListAppend" operation.</returns>
+        /// <remarks>
+        /// This operation is used to append a value to an existing list attribute in DynamoDB.
+        /// If the attribute does not exist, it will be created as a list with the specified value.
+        /// </remarks>
         public SetValueBuilder ListAppend(DynamoDBEntry right)
         {
             var rightOperand=new ValueBuilder(right);
@@ -1141,10 +1145,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         /// <summary>
-        /// 
+        /// Creates a "ListAppend" operation for the current value, which appends the specified operand to a list attribute.
         /// </summary>
-        /// <param name="rightOperand"></param>
-        /// <returns></returns>
+        /// <param name="rightOperand">The <see cref="OperandBuilder"/> representing the operand to append to the list attribute.</param>
+        /// <returns>A <see cref="SetValueBuilder"/> representing the "ListAppend" operation.</returns>
+        /// <remarks>
+        /// This operation is used to append an operand to an existing list attribute in DynamoDB.
+        /// If the attribute does not exist, it will be created as a list with the specified operand.
+        /// </remarks>
         public SetValueBuilder ListAppend(OperandBuilder rightOperand)
         {
             return SetValueBuilder.ListAppend(this, rightOperand);
@@ -1152,13 +1160,18 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
 
         /// <summary>
-        ///
+        /// Builds the current value into an <see cref="ExpressionNode"/> for use in a DynamoDB expression.
         /// </summary>
-        /// <returns></returns>
-        internal override ExpressionNode Build()
+        /// <returns>An <see cref="ExpressionNode"/> representing the current value in the expression.</returns>
+        /// <remarks>
+        /// This method converts the internal value of the `ValueBuilder` into an expression node
+        /// that can be used in DynamoDB operations. The resulting node includes the value and its
+        /// formatted representation for inclusion in the final expression.
+        /// </remarks>
+         internal override ExpressionNode Build()
         {
-            var values = new Stack<DynamoDBEntry>();
-            values.Push(_value);
+            var values = new Queue<DynamoDBEntry>();
+            values.Enqueue(_value);
             return new ExpressionNode
             {
                 Values = values,
@@ -1493,12 +1506,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <summary>
         /// Stack of attribute names used in the expression.
         /// </summary>
-        public Stack<string> Names { get; set; } = new();
+        public Queue<string> Names { get; set; } = new();
 
         /// <summary>
         /// Stack of attribute values used in the expression.
         /// </summary>
-        public Stack<DynamoDBEntry> Values { get; set; } = new();
+        public Queue<DynamoDBEntry> Values { get; set; } = new();
 
         /// <summary>
         /// The formatted expression string for this node.
@@ -1533,7 +1546,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                                 if (Names.Count == 0)
                                     throw new InvalidOperationException("Missing name for $n");
 
-                                string name = Names.Pop();
+                                string name = Names.Dequeue();
                                 string alias = $"#{expressionType}{aliasList.NamesList.Count}";
                                 aliasList.NamesList.Add(name);
                                 result.Append(alias);
@@ -1544,7 +1557,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                                 if (Values.Count == 0)
                                     throw new InvalidOperationException("Missing value for $v");
 
-                                var val = Values.Pop();
+                                var val = Values.Dequeue();
                                 string alias = $":{expressionType}{aliasList.ValuesList.Count}";
                                 aliasList.ValuesList.Add(val);
                                 result.Append(alias);
