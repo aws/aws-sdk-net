@@ -239,28 +239,28 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 var childNode = BuildChildNodes(setOps);
                 resultNode.Children.Enqueue(childNode);
-                resultNode.FormatedExpression += $"{OperationModeSet} $c\n";
+                resultNode.FormatedExpression += $"{OperationModeSet} #c\n";
             }
 
             if (OperationBuilders.TryGetValue(OperationModeRemove, out var removeOps))
             {
                 var childNode = BuildChildNodes(removeOps);
                 resultNode.Children.Enqueue(childNode);
-                resultNode.FormatedExpression += $"{OperationModeRemove} $c\n";
+                resultNode.FormatedExpression += $"{OperationModeRemove} #c\n";
             }
 
             if (OperationBuilders.TryGetValue(OperationModeAdd, out var addOps))
             {
                 var childNode = BuildChildNodes(addOps);
                 resultNode.Children.Enqueue(childNode);
-                resultNode.FormatedExpression += $"{OperationModeAdd} $c\n";
+                resultNode.FormatedExpression += $"{OperationModeAdd} #c\n";
             }
 
             if (OperationBuilders.TryGetValue(OperationModeDelete, out var deleteOps))
             {
                 var childNode = BuildChildNodes(deleteOps);
                 resultNode.Children.Enqueue(childNode);
-                resultNode.FormatedExpression += $"{OperationModeDelete} $c\n";
+                resultNode.FormatedExpression += $"{OperationModeDelete} #c\n";
             }
 
             if (resultNode.Children.Count == 0)
@@ -288,7 +288,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 var expr = builder.Build();
 
                 node.Children.Enqueue(expr);
-                node.FormatedExpression += "$c, ";
+                node.FormatedExpression += "#c, ";
             }
 
             // Remove trailing comma and space, if any
@@ -646,7 +646,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private ExpressionNode NotBuildCondition(ExpressionNode node)
         {
-            node.FormatedExpression = "NOT ($c)";
+            node.FormatedExpression = "NOT (#c)";
             return node;
         }
 
@@ -660,7 +660,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     $"Unsupported condition operator: {conditionBuilder._conditionMode}")
             };
             node.FormatedExpression = string.Join($" {mode} ",
-                node.Children.Select(c => "($c)"));
+                node.Children.Select(c => "(#c)"));
             return node;
         }
 
@@ -670,27 +670,27 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 case ConditionMode.Equal:
                     node.FormatedExpression =
-                        $"$c = $c";
+                        $"#c = #c";
                     break;
                 case ConditionMode.NotEqual:
                     node.FormatedExpression =
-                        $"$c <> $c";
+                        $"#c <> #c";
                     break;
                 case ConditionMode.LessThan:
                     node.FormatedExpression =
-                        $"$c < $c";
+                        $"#c < #c";
                     break;
                 case ConditionMode.LessThanOrEqual:
                     node.FormatedExpression =
-                        $"$c <= $c";
+                        $"#c <= #c";
                     break;
                 case ConditionMode.GreaterThan:
                     node.FormatedExpression =
-                        $"$c > $c";
+                        $"#c > #c";
                     break;
                 case ConditionMode.GreaterThanOrEqual:
                     node.FormatedExpression =
-                        $"$c >= $c";
+                        $"#c >= #c";
                     break;
                 default:
                     throw new InvalidOperationException($"Unsupported mode: {conditionMode}");
@@ -701,40 +701,40 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private ExpressionNode ContainsBuildCondition(ExpressionNode node)
         {
-            node.FormatedExpression = "contains ($c, $c)";
+            node.FormatedExpression = "contains (#c, #c)";
             return node;
         }
 
         private ExpressionNode BeginsWithBuildCondition(ExpressionNode node)
         {
-            node.FormatedExpression = "begins_with ($c, $c)";
+            node.FormatedExpression = "begins_with (#c, #c)";
             return node;
         }
 
         private ExpressionNode AttributeTypeBuildCondition(ExpressionNode node)
         {
-            node.FormatedExpression = "attribute_type ($c, $c)";
+            node.FormatedExpression = "attribute_type (#c, #c)";
             return node;
         }
 
         private ExpressionNode AttributeNotExistsBuildCondition(ExpressionNode node)
         {
-            node.FormatedExpression = "attribute_not_exists ($c)";
+            node.FormatedExpression = "attribute_not_exists (#c)";
             return node;
         }
 
         private ExpressionNode AttributeExistsBuildCondition(ExpressionNode node)
         {
-            node.FormatedExpression = "attribute_exists ($c)";
+            node.FormatedExpression = "attribute_exists (#c)";
             return node;
         }
 
         private ExpressionNode InBuildCondition(ConditionExpressionBuilder conditionBuilder, ExpressionNode node)
         {
-            node.FormatedExpression = "$c IN (";
+            node.FormatedExpression = "#c IN (";
 
             for(int i = 1; i < node.Children.Count; i++){
-                node.FormatedExpression += "$c, ";
+                node.FormatedExpression += "#c, ";
             }
             // Remove trailing comma and space, if any
             if (node.FormatedExpression.EndsWith(", "))
@@ -747,7 +747,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private ExpressionNode BetweenBuildCondition(ExpressionNode node)
         {
-            node.FormatedExpression = "$c BETWEEN $c AND $c";
+            node.FormatedExpression = "#c BETWEEN #c AND #c";
             return node;
         }
 
@@ -1060,7 +1060,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     throw new InvalidOperationException("Invalid parameter Name");
 
                 node.Names.Enqueue(word);
-                fmtNames.Add($"$n{substr}");
+                fmtNames.Add($"#n{substr}");
             }
 
             node.FormatedExpression = string.Join(".", fmtNames);
@@ -1184,7 +1184,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return new ExpressionNode
             {
                 Values = values,
-                FormatedExpression = "$v"
+                FormatedExpression = "#v"
             };
         }
     }
@@ -1346,7 +1346,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var node = new ExpressionNode
             {
                 Children = new Queue<ExpressionNode>(),
-                FormatedExpression = "$c"
+                FormatedExpression = "#c"
             };
 
             node.Children.Enqueue(pathChild);
@@ -1362,8 +1362,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             node.FormatedExpression += Mode switch
             {
-                OperationMode.Set => " = $c",
-                OperationMode.Add or OperationMode.Delete => " $c",
+                OperationMode.Set => " = #c",
+                OperationMode.Add or OperationMode.Delete => " #c",
                 _ => throw new InvalidOperationException(
                     $"Update expression construction failed: unsupported update operation mode: {Mode}")
             };
@@ -1487,10 +1487,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             node.FormatedExpression = _mode switch
             {
-                SetValueMode.Plus => "$c + $c",
-                SetValueMode.Minus => "$c - $c",
-                SetValueMode.ListAppend=> "list_append($c, $c)",
-                SetValueMode.IfNotExists => "if_not_exists($c, $c)",
+                SetValueMode.Plus => "#c + #c",
+                SetValueMode.Minus => "#c - #c",
+                SetValueMode.ListAppend=> "list_append(#c, #c)",
+                SetValueMode.IfNotExists => "if_not_exists(#c, #c)",
                 _ => throw new InvalidOperationException($"Unsupported SetValueMode: '{_mode}'.")
             };
 
@@ -1545,7 +1545,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             while (i < FormatedExpression.Length)
             {
-                if (FormatedExpression[i] == '$' && i + 1 < FormatedExpression.Length)
+                if (FormatedExpression[i] == '#' && i + 1 < FormatedExpression.Length)
                 {
                     var next = FormatedExpression[i + 1];
                     switch (next)
@@ -1553,7 +1553,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         case 'n':
                             {
                                 if (Names.Count == 0)
-                                    throw new InvalidOperationException("Missing name for $n");
+                                    throw new InvalidOperationException("Missing name for #n");
 
                                 string name = Names.Dequeue();
                                 string alias = $"#{expressionType}{aliasList.NamesList.Count}";
@@ -1564,7 +1564,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         case 'v':
                             {
                                 if (Values.Count == 0)
-                                    throw new InvalidOperationException("Missing value for $v");
+                                    throw new InvalidOperationException("Missing value for #v");
 
                                 var val = Values.Dequeue();
                                 string alias = $":{expressionType}{aliasList.ValuesList.Count}";
@@ -1575,7 +1575,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         case 'c':
                             {
                                 if (Children.Count == 0)
-                                    throw new InvalidOperationException("Missing child for $c");
+                                    throw new InvalidOperationException("Missing child for #c");
 
                                 var child = Children.Dequeue();
                                 string subExpr = child.BuildExpressionString(aliasList, expressionType);

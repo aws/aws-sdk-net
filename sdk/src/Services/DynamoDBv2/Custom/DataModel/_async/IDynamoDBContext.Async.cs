@@ -315,12 +315,6 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Deletes an item in DynamoDB corresponding to the given hash key.
         /// </summary>
-        /// <remarks>
-        /// If <paramref name="SkipVersionCheck"/> is false, the method will check the version of the object before deleting.
-        /// The type must include enough schema metadata to resolve the target table and key.
-        /// This can be done through attributes (e.g., <see cref="DynamoDBTableAttribute" />, <see cref="DynamoDBHashKeyAttribute" />),
-        /// or through explicit configuration via <c>TableBuilder</c> or <c>DynamoDBContextConfig</c>.
-        /// </remarks>
         /// <typeparam name="T">
         /// The type representing the item stored in DynamoDB. It must be resolvable via table metadata, 
         /// either from attributes or via configuration.
