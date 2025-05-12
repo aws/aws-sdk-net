@@ -164,14 +164,17 @@ namespace Amazon.DynamoDBv2.DocumentModel
         int Count { get; }
 
         /// <summary>
-        /// Gets the total number of items evaluated, before any ScanFilter is applied.
+        /// Gets the total number of items evaluated, before any ScanFilter is applied, for the current call.
         /// <para>
         /// The number of items evaluated, before any <c>ScanFilter</c> is applied. A high <c>ScannedCount</c>
         /// value with few, or no, <c>Count</c> results indicates an inefficient <c>Scan</c> operation.
         /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
         /// and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
-        ///  
+        /// <para>
+        /// This value is specific to each call of <c>GetNextSetAsync</c> or <c>GetRemainingAsync</c>.
+        /// It is not an accumulated value across multiple calls.
+        /// </para>
         /// <para>
         /// If you did not use a filter in the request, then <c>ScannedCount</c> is the same as
         /// <c>Count</c>.

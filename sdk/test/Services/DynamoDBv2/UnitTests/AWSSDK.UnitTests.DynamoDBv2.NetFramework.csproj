@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
    <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
     <TargetFramework>net472</TargetFramework>
@@ -35,22 +35,23 @@
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
   <Choose>
-	  <When Condition=" '$(AWSKeyFile)' == '' ">
-		  <PropertyGroup>
-			  <AssemblyOriginatorKeyFile>..\..\..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
-		  </PropertyGroup>
-	  </When>
-	  <Otherwise>
-		  <PropertyGroup>
-			  <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
-		  </PropertyGroup>
-	  </Otherwise>
+    <When Condition=" '$(AWSKeyFile)' == '' ">
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>../../../../awssdk.dll.snk</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </Otherwise>
   </Choose>
+
   <ItemGroup>
     <Compile Remove="**/obj/**"/>
     <None Remove="**/obj/**" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetFramework.csproj"/>
     <ProjectReference Include="../../../Common/AWSSDK.CommonTest.csproj"/>

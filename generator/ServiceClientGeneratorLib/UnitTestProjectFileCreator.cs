@@ -96,6 +96,11 @@ namespace ServiceClientGenerator
                     }
                     projectProperties.FxcopAnalyzerRuleSetFilePath = Utils.PathCombineAlt("..", "..", "..", "..", "AWSDotNetSDK.ruleset");
                     projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = Utils.PathCombineAlt("..", "..", "..", "..", "AWSDotNetSDKForBuild.ruleset");
+                    
+                    if (_serviceName == "DynamoDBv2")
+                    {
+                        projectProperties.SignBinaries = true;
+                    }
                 }
 
                 if (serviceProjectReferences != null)
