@@ -482,6 +482,11 @@ namespace Amazon.DynamoDBv2.DataModel
             if (!ShouldUseVersioning()) return;
             DynamoDBContext.SetNewVersion(storage);
         }
+
+        private void SetAtomicCounters(ItemStorage storage)
+        {
+            DynamoDBContext.SetAtomicCounters(storage);
+        }
     }
 
     /// <summary>
