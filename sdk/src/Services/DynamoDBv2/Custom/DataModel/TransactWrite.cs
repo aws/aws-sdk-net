@@ -468,7 +468,6 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             else
             {
-
                 DocumentTransaction.AddDocumentToPut(storage.Document, new TransactWriteItemOperationConfig
                 {
                     ConditionalExpression = conditionExpression,
@@ -481,11 +480,6 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (!ShouldUseVersioning()) return;
             DynamoDBContext.SetNewVersion(storage);
-        }
-
-        private void SetAtomicCounters(ItemStorage storage)
-        {
-            DynamoDBContext.SetAtomicCounters(storage);
         }
     }
 

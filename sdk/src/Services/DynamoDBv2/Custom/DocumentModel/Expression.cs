@@ -127,53 +127,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-        internal void ApplyUpdateExpression(UpdateItemRequest request, Table table)
-        {
-            request.UpdateExpression += $" {this.ExpressionStatement}";
-            //todo make this work properly
-            //if (request.UpdateExpression!=null)
-            //{
-            //    int removeIndex = request.UpdateExpression.IndexOf(" REMOVE", StringComparison.OrdinalIgnoreCase);
-            //    int setIndex = request.UpdateExpression.IndexOf("SET", StringComparison.OrdinalIgnoreCase);
-            //    if (removeIndex >= 0)
-            //    {
-            //        string setPart = request.UpdateExpression.Substring(setIndex, removeIndex);
-            //        setPart += $" ,{this.ExpressionStatement}";
-            //        string removePart = request.UpdateExpression.Substring(removeIndex);
-            //        request.UpdateExpression = $"{setPart}{removePart}";
-            //    }
-            //}
-
-            if (request.ExpressionAttributeNames == null)
-            {
-                if (this.ExpressionAttributeNames?.Count > 0)
-                {
-                    request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
-                }
-            }
-            else
-            {
-                foreach (var kvp in this.ExpressionAttributeNames)
-                    request.ExpressionAttributeNames.Add(kvp.Key, kvp.Value);
-            }
-
-            var attributeValues = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
-            if (!(attributeValues?.Count > 0)) return;
-
-            if (request.ExpressionAttributeValues == null)
-            {
-                if (this.ExpressionAttributeValues?.Count > 0)
-                {
-                    request.ExpressionAttributeValues = attributeValues;
-                }
-            }
-            else
-            {
-                foreach (var kvp in attributeValues)
-                    request.ExpressionAttributeValues.Add(kvp.Key, kvp.Value);
-            }
-        }
-
         internal void ApplyExpression(Get request, Table table)
         {
             request.ProjectionExpression = ExpressionStatement;
