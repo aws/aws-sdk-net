@@ -106,6 +106,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                     response.FleetId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("hostConfiguration", targetDepth))
+                {
+                    var unmarshaller = HostConfigurationUnmarshaller.Instance;
+                    response.HostConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("maxWorkerCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

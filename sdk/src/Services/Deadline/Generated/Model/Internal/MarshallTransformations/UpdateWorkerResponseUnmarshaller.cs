@@ -52,6 +52,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("hostConfiguration", targetDepth))
+                {
+                    var unmarshaller = HostConfigurationUnmarshaller.Instance;
+                    response.HostConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("log", targetDepth))
                 {
                     var unmarshaller = LogConfigurationUnmarshaller.Instance;

@@ -43,6 +43,7 @@ namespace Amazon.Deadline.Model
         private string _displayName;
         private string _farmId;
         private string _fleetId;
+        private HostConfiguration _hostConfiguration;
         private int? _maxWorkerCount;
         private int? _minWorkerCount;
         private string _roleArn;
@@ -232,6 +233,25 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetId()
         {
             return this._fleetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostConfiguration. 
+        /// <para>
+        /// The script that runs as a worker is starting up that you can use to provide additional
+        /// configuration for workers in your fleet.
+        /// </para>
+        /// </summary>
+        public HostConfiguration HostConfiguration
+        {
+            get { return this._hostConfiguration; }
+            set { this._hostConfiguration = value; }
+        }
+
+        // Check to see if HostConfiguration property is set
+        internal bool IsSetHostConfiguration()
+        {
+            return this._hostConfiguration != null;
         }
 
         /// <summary>

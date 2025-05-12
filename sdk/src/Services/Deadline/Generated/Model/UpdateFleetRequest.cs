@@ -41,6 +41,7 @@ namespace Amazon.Deadline.Model
         private string _displayName;
         private string _farmId;
         private string _fleetId;
+        private HostConfiguration _hostConfiguration;
         private int? _maxWorkerCount;
         private int? _minWorkerCount;
         private string _roleArn;
@@ -171,9 +172,37 @@ namespace Amazon.Deadline.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HostConfiguration. 
+        /// <para>
+        /// Provides a script that runs as a worker is starting up that you can use to provide
+        /// additional configuration for workers in your fleet.
+        /// </para>
+        /// </summary>
+        public HostConfiguration HostConfiguration
+        {
+            get { return this._hostConfiguration; }
+            set { this._hostConfiguration = value; }
+        }
+
+        // Check to see if HostConfiguration property is set
+        internal bool IsSetHostConfiguration()
+        {
+            return this._hostConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxWorkerCount. 
         /// <para>
         /// The maximum number of workers in the fleet.
+        /// </para>
+        ///  
+        /// <para>
+        /// Deadline Cloud limits the number of workers to less than or equal to the fleet's maximum
+        /// worker count. The service maintains eventual consistency for the worker count. If
+        /// you make multiple rapid calls to <c>CreateWorker</c> before the field updates, you
+        /// might exceed your fleet's maximum worker count. For example, if your <c>maxWorkerCount</c>
+        /// is 10 and you currently have 9 workers, making two quick <c>CreateWorker</c> calls
+        /// might successfully create 2 workers instead of 1, resulting in 11 total workers.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
