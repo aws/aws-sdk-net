@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private List<VolumeStatusAction> _actions = AWSConfigs.InitializeCollections ? new List<VolumeStatusAction>() : null;
         private List<VolumeStatusAttachmentStatus> _attachmentStatuses = AWSConfigs.InitializeCollections ? new List<VolumeStatusAttachmentStatus>() : null;
         private string _availabilityZone;
+        private string _availabilityZoneId;
         private List<VolumeStatusEvent> _events = AWSConfigs.InitializeCollections ? new List<VolumeStatusEvent>() : null;
         private string _outpostArn;
         private string _volumeId;
@@ -94,6 +95,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The ID of the Availability Zone.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
         }
 
         /// <summary>

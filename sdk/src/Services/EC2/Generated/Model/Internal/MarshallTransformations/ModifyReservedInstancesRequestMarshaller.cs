@@ -90,6 +90,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "AvailabilityZone", StringUtils.FromString(publicRequestlistValue.AvailabilityZone));
                             }
+                            if(publicRequestlistValue.IsSetAvailabilityZoneId())
+                            {
+                                request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "AvailabilityZoneId", StringUtils.FromString(publicRequestlistValue.AvailabilityZoneId));
+                            }
                             if(publicRequestlistValue.IsSetInstanceCount())
                             {
                                 request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "InstanceCount", StringUtils.FromInt(publicRequestlistValue.InstanceCount));
