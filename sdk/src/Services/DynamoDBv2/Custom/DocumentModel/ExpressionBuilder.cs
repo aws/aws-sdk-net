@@ -760,9 +760,20 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// for DynamoDB expressions. It allows the creation of conditions based on attribute names
     /// and supports various comparison, logical, and function-based operations.
     /// </summary>
-    public class NameBuilder : OperandBuilder
+    public partial class NameBuilder : OperandBuilder
     {
         private readonly IEnumerable<string> _names;
+
+        private const string BracketPattern = @"\[(\d+)\]";
+
+#if NET8_0_OR_GREATER
+
+        [GeneratedRegex(BracketPattern)]
+        private static partial Regex BracketPatternRegex();
+#else
+        private static Regex BracketPatternRegex() => _bracketPatternRegex;
+        private static readonly Regex _bracketPatternRegex = new Regex(BracketPattern, RegexOptions.Compiled);
+#endif
 
         /// <summary>
         /// Initializes a new instance of the <see cref="NameBuilder"/> class with the specified attribute name.
@@ -1020,9 +1031,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 var word = originalWord;
                 var substr = string.Empty;
 
-                // Ensure brackets are matched and contain only digits
-                var bracketPattern = new Regex(@"\[(\d+)\]");
-                var bracketMatches = bracketPattern.Matches(word);
+                var bracketMatches = BracketPatternRegex().Matches(word);
 
                 if (word.Count(c => c == '[') != word.Count(c => c == ']'))
                     throw new InvalidOperationException("Invalid parameter Name");
