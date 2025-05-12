@@ -89,7 +89,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the hub content.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string HubContentName
         {
             get { return this._hubContentName; }
@@ -205,7 +205,7 @@ namespace Amazon.SageMaker.Model
         /// versions, use the token in the next request.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

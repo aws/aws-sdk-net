@@ -70,7 +70,7 @@ namespace Amazon.SageMaker.Model
         /// The ID of the domain that contains the profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string DomainId
         {
             get { return this._domainId; }
@@ -89,7 +89,7 @@ namespace Amazon.SageMaker.Model
         /// The failure reason.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -108,7 +108,7 @@ namespace Amazon.SageMaker.Model
         /// The ID of the user's profile in the Amazon Elastic File System volume.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10)]
+        [AWSProperty(Min=0, Max=10)]
         public string HomeEfsFileSystemUid
         {
             get { return this._homeEfsFileSystemUid; }
@@ -163,7 +163,7 @@ namespace Amazon.SageMaker.Model
         /// The IAM Identity Center user value.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string SingleSignOnUserValue
         {
             get { return this._singleSignOnUserValue; }
@@ -200,7 +200,7 @@ namespace Amazon.SageMaker.Model
         /// The user profile Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string UserProfileArn
         {
             get { return this._userProfileArn; }
@@ -219,7 +219,7 @@ namespace Amazon.SageMaker.Model
         /// The user profile name.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string UserProfileName
         {
             get { return this._userProfileName; }

@@ -65,7 +65,7 @@ namespace Amazon.SageMaker.Model
         /// create an input manifest file.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string ManifestS3Uri
         {
             get { return this._manifestS3Uri; }

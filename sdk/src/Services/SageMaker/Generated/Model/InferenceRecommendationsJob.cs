@@ -91,7 +91,7 @@ namespace Amazon.SageMaker.Model
         /// If the job fails, provides information why the job failed.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -110,7 +110,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the recommendation job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string JobArn
         {
             get { return this._jobArn; }
@@ -129,7 +129,7 @@ namespace Amazon.SageMaker.Model
         /// The job description.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=128)]
+        [AWSProperty(Required=true, Min=0, Max=128)]
         public string JobDescription
         {
             get { return this._jobDescription; }
@@ -205,7 +205,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the created model.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string ModelName
         {
             get { return this._modelName; }
@@ -264,7 +264,7 @@ namespace Amazon.SageMaker.Model
         /// This path must point to a single gzip compressed tar archive (.tar.gz suffix).
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string SamplePayloadUrl
         {
             get { return this._samplePayloadUrl; }

@@ -65,7 +65,7 @@ namespace Amazon.SageMaker.Model
         /// this token. To retrieve the next set of tags, use it in the subsequent request. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -84,7 +84,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

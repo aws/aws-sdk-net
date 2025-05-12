@@ -91,7 +91,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the endpoint that hosts the inference component.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string EndpointName
         {
             get { return this._endpointName; }
@@ -110,7 +110,7 @@ namespace Amazon.SageMaker.Model
         /// If the inference component status is <c>Failed</c>, the reason for the failure.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -148,7 +148,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the inference component.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string InferenceComponentName
         {
             get { return this._inferenceComponentName; }
@@ -259,7 +259,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the production variant that hosts the inference component.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string VariantName
         {
             get { return this._variantName; }

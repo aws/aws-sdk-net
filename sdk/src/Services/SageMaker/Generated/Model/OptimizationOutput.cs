@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// you created with an optimization job.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string RecommendedInferenceImage
         {
             get { return this._recommendedInferenceImage; }

@@ -108,7 +108,7 @@ namespace Amazon.SageMaker.Model
         /// its execution.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -220,7 +220,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the step that is executed.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string StepName
         {
             get { return this._stepName; }

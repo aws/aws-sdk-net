@@ -103,7 +103,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the destination.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string DestinationArn
         {
             get { return this._destinationArn; }
@@ -141,7 +141,7 @@ namespace Amazon.SageMaker.Model
         /// The destination type.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string DestinationType
         {
             get { return this._destinationType; }
@@ -160,7 +160,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of the source.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string SourceArn
         {
             get { return this._sourceArn; }
@@ -198,7 +198,7 @@ namespace Amazon.SageMaker.Model
         /// The source type.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string SourceType
         {
             get { return this._sourceType; }

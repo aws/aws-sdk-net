@@ -143,7 +143,7 @@ namespace Amazon.SageMaker.Model
         /// Request a list of jobs, using a search filter for name.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string NameContains
         {
             get { return this._nameContains; }
@@ -163,7 +163,7 @@ namespace Amazon.SageMaker.Model
         /// request to receive the next set of results.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -381,7 +381,7 @@ namespace Amazon.SageMaker.Model
         /// This path must point to a single gzip compressed tar archive (.tar.gz suffix).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string S3Uri
         {
             get { return this._s3Uri; }

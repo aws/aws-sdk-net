@@ -86,7 +86,7 @@ namespace Amazon.SageMaker.Model
         /// The endpoint which is monitored.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string EndpointName
         {
             get { return this._endpointName; }
@@ -105,7 +105,7 @@ namespace Amazon.SageMaker.Model
         /// If a monitoring job failed, provides the reason.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -176,7 +176,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of a monitoring schedule.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string MonitoringScheduleArn
         {
             get { return this._monitoringScheduleArn; }

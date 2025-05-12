@@ -74,7 +74,7 @@ namespace Amazon.SageMaker.Model
         /// A free-form description of a <c>FeatureGroup</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=128)]
+        [AWSProperty(Min=0, Max=128)]
         public string Description
         {
             get { return this._description; }

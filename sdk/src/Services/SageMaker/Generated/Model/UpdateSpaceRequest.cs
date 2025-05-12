@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         /// The ID of the associated domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string DomainId
         {
             get { return this._domainId; }
@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the space that appears in the Amazon SageMaker Studio UI.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string SpaceDisplayName
         {
             get { return this._spaceDisplayName; }
@@ -90,7 +90,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the space.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string SpaceName
         {
             get { return this._spaceName; }

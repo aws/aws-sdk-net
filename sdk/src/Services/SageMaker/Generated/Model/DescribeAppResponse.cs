@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the app.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string AppArn
         {
             get { return this._appArn; }
@@ -74,7 +74,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the app.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string AppName
         {
             get { return this._appName; }
@@ -111,7 +111,7 @@ namespace Amazon.SageMaker.Model
         /// The lifecycle configuration that runs before the default lifecycle configuration
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string BuiltInLifecycleConfigArn
         {
             get { return this._builtInLifecycleConfigArn; }
@@ -157,7 +157,7 @@ namespace Amazon.SageMaker.Model
         /// The domain ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string DomainId
         {
             get { return this._domainId; }
@@ -176,7 +176,7 @@ namespace Amazon.SageMaker.Model
         /// The failure reason.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -271,7 +271,7 @@ namespace Amazon.SageMaker.Model
         /// be set.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string SpaceName
         {
             get { return this._spaceName; }
@@ -308,7 +308,7 @@ namespace Amazon.SageMaker.Model
         /// The user profile name.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string UserProfileName
         {
             get { return this._userProfileName; }

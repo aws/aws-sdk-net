@@ -50,7 +50,7 @@ namespace Amazon.SageMaker.Model
         /// A filter that returns only contexts of the specified type.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ContextType
         {
             get { return this._contextType; }
@@ -125,7 +125,7 @@ namespace Amazon.SageMaker.Model
         /// the call returns a token for getting the next set of contexts.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

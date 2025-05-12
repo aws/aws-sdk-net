@@ -84,7 +84,7 @@ namespace Amazon.SageMaker.Model
         /// A description of the model group.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ModelPackageGroupDescription
         {
             get { return this._modelPackageGroupDescription; }

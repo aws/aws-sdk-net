@@ -143,7 +143,7 @@ namespace Amazon.SageMaker.Model
         /// the call returns a token for getting the next set of components.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -200,7 +200,7 @@ namespace Amazon.SageMaker.Model
         /// or <c>TrialName</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string SourceArn
         {
             get { return this._sourceArn; }

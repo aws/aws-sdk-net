@@ -166,7 +166,7 @@ namespace Amazon.SageMaker.Model
         /// The failure reason.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -203,7 +203,7 @@ namespace Amazon.SageMaker.Model
         /// text classification problem types only.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2)]
+        [AWSProperty(Min=0, Max=2)]
         public Dictionary<string, List<AutoMLContainerDefinition>> InferenceContainerDefinitions
         {
             get { return this._inferenceContainerDefinitions; }
@@ -222,7 +222,7 @@ namespace Amazon.SageMaker.Model
         /// Information about the recommended inference container definitions.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5)]
+        [AWSProperty(Min=0, Max=5)]
         public List<AutoMLContainerDefinition> InferenceContainers
         {
             get { return this._inferenceContainers; }

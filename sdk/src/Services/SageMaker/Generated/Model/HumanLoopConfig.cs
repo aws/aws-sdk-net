@@ -66,7 +66,7 @@ namespace Amazon.SageMaker.Model
         /// and Delete a Worker Task Templates</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string HumanTaskUiArn
         {
             get { return this._humanTaskUiArn; }
@@ -220,7 +220,7 @@ namespace Amazon.SageMaker.Model
         /// and Manage Workforces</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string WorkteamArn
         {
             get { return this._workteamArn; }

@@ -79,7 +79,7 @@ namespace Amazon.SageMaker.Model
         /// The domain ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string DomainId
         {
             get { return this._domainId; }
@@ -149,7 +149,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Max=1023)]
+        [AWSProperty(Min=0, Max=1023)]
         public string LandingUri
         {
             get { return this._landingUri; }
@@ -187,7 +187,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the space.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string SpaceName
         {
             get { return this._spaceName; }
@@ -206,7 +206,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the UserProfile to sign-in as.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string UserProfileName
         {
             get { return this._userProfileName; }

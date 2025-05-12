@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the categorical hyperparameter to tune.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }

@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model
         /// Defaults to <c>'text/csv'</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string MimeType
         {
             get { return this._mimeType; }
@@ -116,7 +116,7 @@ namespace Amazon.SageMaker.Model
         /// SageMaker access to Resources in your Amazon Virtual Private Cloud</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ShapBaselineUri
         {
             get { return this._shapBaselineUri; }

@@ -85,7 +85,7 @@ namespace Amazon.SageMaker.Model
         ///  The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string LifecycleConfigArn
         {
             get { return this._lifecycleConfigArn; }
@@ -104,7 +104,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of the SageMaker AI image that the image version belongs to.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string SageMakerImageArn
         {
             get { return this._sageMakerImageArn; }
@@ -144,7 +144,7 @@ namespace Amazon.SageMaker.Model
         /// pass <c>None</c> as the value.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string SageMakerImageVersionArn
         {
             get { return this._sageMakerImageVersionArn; }

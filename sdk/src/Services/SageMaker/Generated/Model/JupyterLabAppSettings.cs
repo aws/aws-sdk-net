@@ -67,7 +67,7 @@ namespace Amazon.SageMaker.Model
         /// It can override changes made in the default lifecycle configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string BuiltInLifecycleConfigArn
         {
             get { return this._builtInLifecycleConfigArn; }
@@ -87,7 +87,7 @@ namespace Amazon.SageMaker.Model
         /// in the JupyterLab application.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10)]
+        [AWSProperty(Min=0, Max=10)]
         public List<CodeRepository> CodeRepositories
         {
             get { return this._codeRepositories; }
@@ -106,7 +106,7 @@ namespace Amazon.SageMaker.Model
         /// A list of custom SageMaker images that are configured to run as a JupyterLab app.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=200)]
+        [AWSProperty(Min=0, Max=200)]
         public List<CustomImage> CustomImages
         {
             get { return this._customImages; }

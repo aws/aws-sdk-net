@@ -134,7 +134,7 @@ namespace Amazon.SageMaker.Model
         /// A brief description of the model package.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ModelPackageDescription
         {
             get { return this._modelPackageDescription; }

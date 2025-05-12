@@ -67,7 +67,7 @@ namespace Amazon.SageMaker.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4096)]
+        [AWSProperty(Min=0, Max=4096)]
         public string LocalPath
         {
             get { return this._localPath; }
@@ -106,7 +106,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Elastic Container Registry Image for the managed rule evaluation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Required=true, Min=0, Max=255)]
         public string RuleEvaluatorImage
         {
             get { return this._ruleEvaluatorImage; }
@@ -144,7 +144,7 @@ namespace Amazon.SageMaker.Model
         /// Path to Amazon S3 storage location for rules.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string S3OutputPath
         {
             get { return this._s3OutputPath; }

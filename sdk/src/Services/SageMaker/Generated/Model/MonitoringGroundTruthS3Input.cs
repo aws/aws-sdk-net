@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The address of the Amazon S3 location of the ground truth labels.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=512)]
+        [AWSProperty(Min=0, Max=512)]
         public string S3Uri
         {
             get { return this._s3Uri; }

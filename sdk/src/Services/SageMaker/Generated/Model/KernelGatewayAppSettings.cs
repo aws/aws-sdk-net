@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Max=200)]
+        [AWSProperty(Min=0, Max=200)]
         public List<CustomImage> CustomImages
         {
             get { return this._customImages; }

@@ -64,7 +64,7 @@ namespace Amazon.SageMaker.Model
         /// in the JupyterLab application.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10)]
+        [AWSProperty(Min=0, Max=10)]
         public List<CodeRepository> CodeRepositories
         {
             get { return this._codeRepositories; }

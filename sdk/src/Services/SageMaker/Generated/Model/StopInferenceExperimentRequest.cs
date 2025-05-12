@@ -149,7 +149,7 @@ namespace Amazon.SageMaker.Model
         /// The reason for stopping the experiment.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string Reason
         {
             get { return this._reason; }

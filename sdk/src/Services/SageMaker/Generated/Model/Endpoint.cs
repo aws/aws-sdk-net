@@ -106,7 +106,7 @@ namespace Amazon.SageMaker.Model
         /// The endpoint configuration associated with the endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string EndpointConfigName
         {
             get { return this._endpointConfigName; }
@@ -125,7 +125,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string EndpointName
         {
             get { return this._endpointName; }
@@ -163,7 +163,7 @@ namespace Amazon.SageMaker.Model
         /// If the endpoint failed, the reason it failed.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }

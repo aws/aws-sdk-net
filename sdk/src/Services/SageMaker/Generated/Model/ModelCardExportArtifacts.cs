@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 URI of the exported model artifacts.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string S3ExportArtifacts
         {
             get { return this._s3ExportArtifacts; }

@@ -148,7 +148,7 @@ namespace Amazon.SageMaker.Model
         /// the device.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=128)]
+        [AWSProperty(Min=0, Max=128)]
         public string IotThingName
         {
             get { return this._iotThingName; }
@@ -221,7 +221,7 @@ namespace Amazon.SageMaker.Model
         /// The response from the last list when returning a list large enough to need tokening.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

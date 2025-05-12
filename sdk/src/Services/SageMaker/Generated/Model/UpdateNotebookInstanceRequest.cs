@@ -87,7 +87,7 @@ namespace Amazon.SageMaker.Model
         /// Git Repositories with SageMaker AI Notebook Instances</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=3)]
+        [AWSProperty(Min=0, Max=3)]
         public List<string> AdditionalCodeRepositories
         {
             get { return this._additionalCodeRepositories; }
@@ -254,7 +254,7 @@ namespace Amazon.SageMaker.Model
         /// 2.1: (Optional) Customize a Notebook Instance</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string LifecycleConfigName
         {
             get { return this._lifecycleConfigName; }
@@ -273,7 +273,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the notebook instance to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string NotebookInstanceName
         {
             get { return this._notebookInstanceName; }

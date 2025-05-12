@@ -150,7 +150,7 @@ namespace Amazon.SageMaker.Model
         /// specified string.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string NameContains
         {
             get { return this._nameContains; }
@@ -171,7 +171,7 @@ namespace Amazon.SageMaker.Model
         /// value for this token.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -191,7 +191,7 @@ namespace Amazon.SageMaker.Model
         /// techniques. You can specify either <c>Quantization</c> or <c>Compilation</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string OptimizationContains
         {
             get { return this._optimizationContains; }

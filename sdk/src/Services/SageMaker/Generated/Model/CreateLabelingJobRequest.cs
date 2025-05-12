@@ -306,7 +306,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string LabelCategoryConfigS3Uri
         {
             get { return this._labelCategoryConfigS3Uri; }

@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the pipeline step.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string StepName
         {
             get { return this._stepName; }

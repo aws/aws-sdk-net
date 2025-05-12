@@ -69,7 +69,7 @@ namespace Amazon.SageMaker.Model
         /// container when the processing job exits.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ExitMessage
         {
             get { return this._exitMessage; }
@@ -89,7 +89,7 @@ namespace Amazon.SageMaker.Model
         /// if it failed.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -144,7 +144,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the processing job..
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string ProcessingJobArn
         {
             get { return this._processingJobArn; }

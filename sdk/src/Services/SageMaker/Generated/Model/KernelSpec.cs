@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The display name of the kernel.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the Jupyter kernel in the image. This value is case sensitive.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string Name
         {
             get { return this._name; }

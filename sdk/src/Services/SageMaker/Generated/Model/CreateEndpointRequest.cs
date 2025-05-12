@@ -163,7 +163,7 @@ namespace Amazon.SageMaker.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string EndpointConfigName
         {
             get { return this._endpointConfigName; }
@@ -184,7 +184,7 @@ namespace Amazon.SageMaker.Model
         /// but the case is preserved and must be matched in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">InvokeEndpoint</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string EndpointName
         {
             get { return this._endpointName; }

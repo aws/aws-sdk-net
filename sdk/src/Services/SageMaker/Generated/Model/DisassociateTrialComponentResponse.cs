@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the trial.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string TrialArn
         {
             get { return this._trialArn; }
@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the trial component.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string TrialComponentArn
         {
             get { return this._trialComponentArn; }

@@ -46,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the Amazon SageMaker AI Studio Lifecycle Configuration to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string StudioLifecycleConfigName
         {
             get { return this._studioLifecycleConfigName; }

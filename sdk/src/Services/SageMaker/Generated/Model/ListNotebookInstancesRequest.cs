@@ -116,7 +116,7 @@ namespace Amazon.SageMaker.Model
         /// a name that contains the specified string.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string DefaultCodeRepositoryContains
         {
             get { return this._defaultCodeRepositoryContains; }
@@ -193,7 +193,7 @@ namespace Amazon.SageMaker.Model
         /// whose name contains the specified string.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string NameContains
         {
             get { return this._nameContains; }
@@ -220,7 +220,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -241,7 +241,7 @@ namespace Amazon.SageMaker.Model
         /// a lifecycle configuration with a name that contains the specified string.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string NotebookInstanceLifecycleConfigNameContains
         {
             get { return this._notebookInstanceLifecycleConfigNameContains; }

@@ -105,7 +105,7 @@ namespace Amazon.SageMaker.Model
         /// data. This is a required parameter when <c>AppManaged</c> is <c>False</c> (default).
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string LocalPath
         {
             get { return this._localPath; }

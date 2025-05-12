@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// For custom load tests, specify the value as <c>P95</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string Percentile
         {
             get { return this._percentile; }

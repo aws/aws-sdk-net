@@ -146,7 +146,7 @@ namespace Amazon.SageMaker.Model
         /// A token to resume pagination of <c>ListFeatureGroups</c> results.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

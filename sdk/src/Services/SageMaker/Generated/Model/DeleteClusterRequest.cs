@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string ClusterName
         {
             get { return this._clusterName; }

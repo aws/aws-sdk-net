@@ -83,7 +83,7 @@ namespace Amazon.SageMaker.Model
         /// be empty. If not specified, defaults to <i>/home/sagemaker-user</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string MountPath
         {
             get { return this._mountPath; }

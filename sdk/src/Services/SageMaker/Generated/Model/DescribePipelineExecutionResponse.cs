@@ -87,7 +87,7 @@ namespace Amazon.SageMaker.Model
         /// If the execution failed, a message describing why.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1300)]
+        [AWSProperty(Min=0, Max=1300)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -157,7 +157,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the pipeline.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string PipelineArn
         {
             get { return this._pipelineArn; }
@@ -176,7 +176,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the pipeline execution.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string PipelineExecutionArn
         {
             get { return this._pipelineExecutionArn; }

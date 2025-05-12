@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the AppImageConfig to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string AppImageConfigName
         {
             get { return this._appImageConfigName; }

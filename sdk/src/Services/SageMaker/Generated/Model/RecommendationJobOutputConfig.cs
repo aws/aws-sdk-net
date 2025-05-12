@@ -107,7 +107,7 @@ namespace Amazon.SageMaker.Model
         /// Web Services KMS) documentation.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }

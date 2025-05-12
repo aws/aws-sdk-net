@@ -64,7 +64,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the endpoint that the job monitors.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string EndpointName
         {
             get { return this._endpointName; }
@@ -83,7 +83,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the monitoring job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string MonitoringJobDefinitionArn
         {
             get { return this._monitoringJobDefinitionArn; }

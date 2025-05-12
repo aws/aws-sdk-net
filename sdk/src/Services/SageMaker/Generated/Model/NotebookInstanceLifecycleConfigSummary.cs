@@ -81,7 +81,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the lifecycle configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string NotebookInstanceLifecycleConfigArn
         {
             get { return this._notebookInstanceLifecycleConfigArn; }
@@ -100,7 +100,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the lifecycle configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string NotebookInstanceLifecycleConfigName
         {
             get { return this._notebookInstanceLifecycleConfigName; }

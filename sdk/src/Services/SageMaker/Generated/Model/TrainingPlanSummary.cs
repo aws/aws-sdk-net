@@ -348,7 +348,7 @@ namespace Amazon.SageMaker.Model
         /// The upfront fee for the training plan.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string UpfrontFee
         {
             get { return this._upfrontFee; }

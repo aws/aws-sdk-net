@@ -104,7 +104,7 @@ namespace Amazon.SageMaker.Model
         /// A message that describes the status of the production variant.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string StatusMessage
         {
             get { return this._statusMessage; }

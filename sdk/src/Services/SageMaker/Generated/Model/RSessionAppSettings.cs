@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// A list of custom SageMaker AI images that are configured to run as a RSession app.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=200)]
+        [AWSProperty(Min=0, Max=200)]
         public List<CustomImage> CustomImages
         {
             get { return this._customImages; }

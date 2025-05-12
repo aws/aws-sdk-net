@@ -92,7 +92,7 @@ namespace Amazon.SageMaker.Model
         /// Git Repositories with SageMaker AI Notebook Instances</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=3)]
+        [AWSProperty(Min=0, Max=3)]
         public List<string> AdditionalCodeRepositories
         {
             get { return this._additionalCodeRepositories; }
@@ -180,7 +180,7 @@ namespace Amazon.SageMaker.Model
         /// If status is <c>Failed</c>, the reason it failed.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -236,7 +236,7 @@ namespace Amazon.SageMaker.Model
         /// it on the ML storage volume attached to the instance. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -293,7 +293,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the notebook instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string NotebookInstanceArn
         {
             get { return this._notebookInstanceArn; }
@@ -317,7 +317,7 @@ namespace Amazon.SageMaker.Model
         /// 2.1: (Optional) Customize a Notebook Instance</a> 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string NotebookInstanceLifecycleConfigName
         {
             get { return this._notebookInstanceLifecycleConfigName; }
@@ -336,7 +336,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the SageMaker AI notebook instance. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string NotebookInstanceName
         {
             get { return this._notebookInstanceName; }
@@ -373,7 +373,7 @@ namespace Amazon.SageMaker.Model
         /// The platform identifier of the notebook instance runtime environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=15)]
+        [AWSProperty(Min=0, Max=15)]
         public string PlatformIdentifier
         {
             get { return this._platformIdentifier; }
@@ -436,7 +436,7 @@ namespace Amazon.SageMaker.Model
         /// The IDs of the VPC security groups.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5)]
+        [AWSProperty(Min=0, Max=5)]
         public List<string> SecurityGroups
         {
             get { return this._securityGroups; }
@@ -455,7 +455,7 @@ namespace Amazon.SageMaker.Model
         /// The ID of the VPC subnet.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=32)]
+        [AWSProperty(Min=0, Max=32)]
         public string SubnetId
         {
             get { return this._subnetId; }

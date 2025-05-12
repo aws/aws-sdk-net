@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The user profile Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string UserProfileArn
         {
             get { return this._userProfileArn; }

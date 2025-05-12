@@ -47,7 +47,7 @@ namespace Amazon.SageMaker.Model
         /// ContainerDefinition</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }
@@ -68,7 +68,7 @@ namespace Amazon.SageMaker.Model
         /// ContainerDefinition</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Required=true, Min=0, Max=255)]
         public string Image
         {
             get { return this._image; }
@@ -88,7 +88,7 @@ namespace Amazon.SageMaker.Model
         /// ContainerDefinition</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string ModelDataUrl
         {
             get { return this._modelDataUrl; }

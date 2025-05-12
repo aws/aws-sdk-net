@@ -49,7 +49,7 @@ namespace Amazon.SageMaker.Model
         /// SageMaker Developer Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=10240)]
+        [AWSProperty(Required=true, Min=0, Max=10240)]
         public string HumanLoopActivationConditions
         {
             get { return this._humanLoopActivationConditions; }

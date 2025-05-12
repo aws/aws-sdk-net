@@ -53,7 +53,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 location being used to capture the data.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=512)]
+        [AWSProperty(Required=true, Min=0, Max=512)]
         public string DataCapturedDestinationS3Uri
         {
             get { return this._dataCapturedDestinationS3Uri; }
@@ -112,7 +112,7 @@ namespace Amazon.SageMaker.Model
         /// The attributes of the input data to exclude from the analysis.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public string ExcludeFeaturesAttribute
         {
             get { return this._excludeFeaturesAttribute; }
@@ -167,7 +167,7 @@ namespace Amazon.SageMaker.Model
         /// Path to the filesystem where the batch transform data is available to the container.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string LocalPath
         {
             get { return this._localPath; }

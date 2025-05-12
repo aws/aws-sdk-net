@@ -46,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// with each http call to transfer data from the transform job.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string Accept
         {
             get { return this._accept; }
@@ -119,7 +119,7 @@ namespace Amazon.SageMaker.Model
         /// Service Developer Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -152,7 +152,7 @@ namespace Amazon.SageMaker.Model
         /// marks the job as failed to prompt investigation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string S3OutputPath
         {
             get { return this._s3OutputPath; }

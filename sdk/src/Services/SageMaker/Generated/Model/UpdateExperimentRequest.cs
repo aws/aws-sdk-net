@@ -46,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// The description of the experiment.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=3072)]
+        [AWSProperty(Min=0, Max=3072)]
         public string Description
         {
             get { return this._description; }

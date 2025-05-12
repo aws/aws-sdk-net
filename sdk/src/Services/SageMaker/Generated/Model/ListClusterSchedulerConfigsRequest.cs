@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model
         /// Filter for ARN of the cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ClusterArn
         {
             get { return this._clusterArn; }
@@ -147,7 +147,7 @@ namespace Amazon.SageMaker.Model
         /// next request to receive the next set of results.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

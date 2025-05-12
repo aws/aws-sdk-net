@@ -105,7 +105,7 @@ namespace Amazon.SageMaker.Model
         /// the call returns a token for retrieving the next set of aliases.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

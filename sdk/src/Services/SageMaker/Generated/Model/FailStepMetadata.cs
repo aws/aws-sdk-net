@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// the error occurs.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=3072)]
+        [AWSProperty(Min=0, Max=3072)]
         public string ErrorMessage
         {
             get { return this._errorMessage; }

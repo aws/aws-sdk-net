@@ -83,7 +83,7 @@ namespace Amazon.SageMaker.Model
         /// The ID of the VPC that the workforce uses for communication.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=32)]
+        [AWSProperty(Min=0, Max=32)]
         public string VpcId
         {
             get { return this._vpcId; }

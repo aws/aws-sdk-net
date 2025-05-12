@@ -68,7 +68,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the hub.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Required=true, Min=0, Max=255)]
         public string HubArn
         {
             get { return this._hubArn; }
@@ -87,7 +87,7 @@ namespace Amazon.SageMaker.Model
         /// A description of the hub.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1023)]
+        [AWSProperty(Min=0, Max=1023)]
         public string HubDescription
         {
             get { return this._hubDescription; }
@@ -106,7 +106,7 @@ namespace Amazon.SageMaker.Model
         /// The display name of the hub.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string HubDisplayName
         {
             get { return this._hubDisplayName; }
@@ -125,7 +125,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the hub.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string HubName
         {
             get { return this._hubName; }
@@ -144,7 +144,7 @@ namespace Amazon.SageMaker.Model
         /// The searchable keywords for the hub.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=50)]
+        [AWSProperty(Min=0, Max=50)]
         public List<string> HubSearchKeywords
         {
             get { return this._hubSearchKeywords; }

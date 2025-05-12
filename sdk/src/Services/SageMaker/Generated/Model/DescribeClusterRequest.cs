@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string ClusterName
         {
             get { return this._clusterName; }

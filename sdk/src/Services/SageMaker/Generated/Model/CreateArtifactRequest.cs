@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model
         /// The artifact type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string ArtifactType
         {
             get { return this._artifactType; }
@@ -105,7 +105,7 @@ namespace Amazon.SageMaker.Model
         /// A list of properties to add to the artifact.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=30)]
+        [AWSProperty(Min=0, Max=30)]
         public Dictionary<string, string> Properties
         {
             get { return this._properties; }

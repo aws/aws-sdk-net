@@ -103,7 +103,7 @@ namespace Amazon.SageMaker.Model
         /// The settings for connecting to an external data source with OAuth.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20)]
+        [AWSProperty(Min=0, Max=20)]
         public List<IdentityProviderOAuthSetting> IdentityProviderOAuthSettings
         {
             get { return this._identityProviderOAuthSettings; }

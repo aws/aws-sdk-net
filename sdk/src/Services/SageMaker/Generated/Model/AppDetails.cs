@@ -49,7 +49,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the app.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string AppName
         {
             get { return this._appName; }
@@ -104,7 +104,7 @@ namespace Amazon.SageMaker.Model
         /// The domain ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string DomainId
         {
             get { return this._domainId; }
@@ -138,7 +138,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the space.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string SpaceName
         {
             get { return this._spaceName; }
@@ -175,7 +175,7 @@ namespace Amazon.SageMaker.Model
         /// The user profile name.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string UserProfileName
         {
             get { return this._userProfileName; }

@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         /// being used.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10)]
+        [AWSProperty(Min=0, Max=10)]
         public Dictionary<string, string> AuthenticationRequestExtraParams
         {
             get { return this._authenticationRequestExtraParams; }
@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model
         /// The OIDC IdP authorization endpoint used to configure your private workforce.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=500)]
+        [AWSProperty(Required=true, Min=0, Max=500)]
         public string AuthorizationEndpoint
         {
             get { return this._authorizationEndpoint; }
@@ -128,7 +128,7 @@ namespace Amazon.SageMaker.Model
         /// The OIDC IdP issuer used to configure your private workforce.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=500)]
+        [AWSProperty(Required=true, Min=0, Max=500)]
         public string Issuer
         {
             get { return this._issuer; }
@@ -147,7 +147,7 @@ namespace Amazon.SageMaker.Model
         /// The OIDC IdP JSON Web Key Set (Jwks) URI used to configure your private workforce.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=500)]
+        [AWSProperty(Required=true, Min=0, Max=500)]
         public string JwksUri
         {
             get { return this._jwksUri; }
@@ -166,7 +166,7 @@ namespace Amazon.SageMaker.Model
         /// The OIDC IdP logout endpoint used to configure your private workforce.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=500)]
+        [AWSProperty(Required=true, Min=0, Max=500)]
         public string LogoutEndpoint
         {
             get { return this._logoutEndpoint; }
@@ -186,7 +186,7 @@ namespace Amazon.SageMaker.Model
         /// claims that the client application wants to access.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string Scope
         {
             get { return this._scope; }
@@ -205,7 +205,7 @@ namespace Amazon.SageMaker.Model
         /// The OIDC IdP token endpoint used to configure your private workforce.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=500)]
+        [AWSProperty(Required=true, Min=0, Max=500)]
         public string TokenEndpoint
         {
             get { return this._tokenEndpoint; }
@@ -224,7 +224,7 @@ namespace Amazon.SageMaker.Model
         /// The OIDC IdP user information endpoint used to configure your private workforce.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=500)]
+        [AWSProperty(Required=true, Min=0, Max=500)]
         public string UserInfoEndpoint
         {
             get { return this._userInfoEndpoint; }

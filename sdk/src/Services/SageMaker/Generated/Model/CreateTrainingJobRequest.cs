@@ -316,7 +316,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </important>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }

@@ -70,7 +70,7 @@ namespace Amazon.SageMaker.Model
         /// parameter, you can't specify the <c>NumberValue</c> parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2500)]
+        [AWSProperty(Min=0, Max=2500)]
         public string StringValue
         {
             get { return this._stringValue; }

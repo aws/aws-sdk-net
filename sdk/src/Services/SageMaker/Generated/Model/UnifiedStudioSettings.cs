@@ -147,7 +147,7 @@ namespace Amazon.SageMaker.Model
         /// the project that corresponds to the domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ProjectS3Path
         {
             get { return this._projectS3Path; }

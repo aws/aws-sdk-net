@@ -86,7 +86,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 location used to capture the data.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=512)]
+        [AWSProperty(Required=true, Min=0, Max=512)]
         public string DestinationS3Uri
         {
             get { return this._destinationS3Uri; }
@@ -166,7 +166,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }

@@ -74,7 +74,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the lifecycle configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string NotebookInstanceLifecycleConfigName
         {
             get { return this._notebookInstanceLifecycleConfigName; }
@@ -94,7 +94,7 @@ namespace Amazon.SageMaker.Model
         /// script must be a base64-encoded string.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<NotebookInstanceLifecycleHook> OnCreate
         {
             get { return this._onCreate; }
@@ -114,7 +114,7 @@ namespace Amazon.SageMaker.Model
         /// you create the notebook instance. The shell script must be a base64-encoded string.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<NotebookInstanceLifecycleHook> OnStart
         {
             get { return this._onStart; }

@@ -53,7 +53,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 URI of the baseline constraints file used for the drift check.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string BaselineUsedForDriftCheckConstraints
         {
             get { return this._baselineUsedForDriftCheckConstraints; }
@@ -72,7 +72,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 URI of the baseline statistics file used for the drift check.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string BaselineUsedForDriftCheckStatistics
         {
             get { return this._baselineUsedForDriftCheckStatistics; }
@@ -91,7 +91,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 URI of the newly calculated baseline constraints file.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string CalculatedBaselineConstraints
         {
             get { return this._calculatedBaselineConstraints; }
@@ -110,7 +110,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 URI of the newly calculated baseline statistics file.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string CalculatedBaselineStatistics
         {
             get { return this._calculatedBaselineStatistics; }
@@ -130,7 +130,7 @@ namespace Amazon.SageMaker.Model
         /// this step execution.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string CheckJobArn
         {
             get { return this._checkJobArn; }
@@ -149,7 +149,7 @@ namespace Amazon.SageMaker.Model
         /// The type of the Quality check step.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string CheckType
         {
             get { return this._checkType; }
@@ -168,7 +168,7 @@ namespace Amazon.SageMaker.Model
         /// The model package group name.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ModelPackageGroupName
         {
             get { return this._modelPackageGroupName; }
@@ -229,7 +229,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 URI of violation report if violations are detected.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ViolationReport
         {
             get { return this._violationReport; }

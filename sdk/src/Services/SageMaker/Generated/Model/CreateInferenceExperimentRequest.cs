@@ -98,7 +98,7 @@ namespace Amazon.SageMaker.Model
         /// A description for the inference experiment.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -118,7 +118,7 @@ namespace Amazon.SageMaker.Model
         /// experiment. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string EndpointName
         {
             get { return this._endpointName; }
@@ -193,7 +193,7 @@ namespace Amazon.SageMaker.Model
         /// Service Developer Guide</i>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKey
         {
             get { return this._kmsKey; }

@@ -135,7 +135,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string HumanTaskUiArn
         {
             get { return this._humanTaskUiArn; }
@@ -157,7 +157,7 @@ namespace Amazon.SageMaker.Model
         /// Creating Your Custom Labeling Task Template</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string UiTemplateS3Uri
         {
             get { return this._uiTemplateS3Uri; }

@@ -66,7 +66,7 @@ namespace Amazon.SageMaker.Model
         /// The new description for the action.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=3072)]
+        [AWSProperty(Min=0, Max=3072)]
         public string Description
         {
             get { return this._description; }
@@ -85,7 +85,7 @@ namespace Amazon.SageMaker.Model
         /// The new list of properties. Overwrites the current property list.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=30)]
+        [AWSProperty(Min=0, Max=30)]
         public Dictionary<string, string> Properties
         {
             get { return this._properties; }

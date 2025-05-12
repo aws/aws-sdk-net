@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 path where the model artifacts are stored.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ArtifactUrl
         {
             get { return this._artifactUrl; }
@@ -78,7 +78,7 @@ namespace Amazon.SageMaker.Model
         /// The environment variables to set in the Docker container.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }

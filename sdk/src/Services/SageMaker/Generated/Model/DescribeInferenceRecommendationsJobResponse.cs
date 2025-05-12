@@ -92,7 +92,7 @@ namespace Amazon.SageMaker.Model
         /// The performance results from running an Inference Recommender job on an existing endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<EndpointPerformance> EndpointPerformances
         {
             get { return this._endpointPerformances; }
@@ -111,7 +111,7 @@ namespace Amazon.SageMaker.Model
         /// If the job fails, provides information why the job failed.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -170,7 +170,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string JobArn
         {
             get { return this._jobArn; }
@@ -189,7 +189,7 @@ namespace Amazon.SageMaker.Model
         /// The job description that you provided when you initiated the job.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=128)]
+        [AWSProperty(Min=0, Max=128)]
         public string JobDescription
         {
             get { return this._jobDescription; }

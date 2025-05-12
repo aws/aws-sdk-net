@@ -148,7 +148,7 @@ namespace Amazon.SageMaker.Model
         /// the specified string.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string NameContains
         {
             get { return this._nameContains; }
@@ -169,7 +169,7 @@ namespace Amazon.SageMaker.Model
         /// request.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

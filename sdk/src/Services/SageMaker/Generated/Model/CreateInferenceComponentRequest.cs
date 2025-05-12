@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model
         /// The name of an existing endpoint where you host the inference component.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string EndpointName
         {
             get { return this._endpointName; }
@@ -74,7 +74,7 @@ namespace Amazon.SageMaker.Model
         /// A unique name to assign to the inference component.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string InferenceComponentName
         {
             get { return this._inferenceComponentName; }
@@ -152,7 +152,7 @@ namespace Amazon.SageMaker.Model
         /// The name of an existing production variant where you host the inference component.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string VariantName
         {
             get { return this._variantName; }

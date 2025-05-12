@@ -69,7 +69,7 @@ namespace Amazon.SageMaker.Model
         /// If the transform job failed, the reason it failed.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -126,7 +126,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the transform job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string TransformJobArn
         {
             get { return this._transformJobArn; }

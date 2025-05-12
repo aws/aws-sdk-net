@@ -146,7 +146,7 @@ namespace Amazon.SageMaker.Model
         /// the device..
         /// </para>
         /// </summary>
-        [AWSProperty(Max=128)]
+        [AWSProperty(Min=0, Max=128)]
         public string IotThingName
         {
             get { return this._iotThingName; }

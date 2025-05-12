@@ -314,7 +314,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </important>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }
@@ -348,7 +348,7 @@ namespace Amazon.SageMaker.Model
         /// If the training job failed, the reason it failed. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -445,7 +445,7 @@ namespace Amazon.SageMaker.Model
         /// the transform or training job.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string LabelingJobArn
         {
             get { return this._labelingJobArn; }
@@ -849,7 +849,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the training job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string TrainingJobArn
         {
             get { return this._trainingJobArn; }
@@ -978,7 +978,7 @@ namespace Amazon.SageMaker.Model
         /// training job was launched by a hyperparameter tuning job.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string TuningJobArn
         {
             get { return this._tuningJobArn; }

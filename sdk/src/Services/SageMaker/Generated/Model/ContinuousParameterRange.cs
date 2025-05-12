@@ -46,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// between <c>MinValue</c> value and this value for tuning.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string MaxValue
         {
             get { return this._maxValue; }
@@ -66,7 +66,7 @@ namespace Amazon.SageMaker.Model
         /// between this value and <c>MaxValue</c>for tuning.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string MinValue
         {
             get { return this._minValue; }
@@ -85,7 +85,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the continuous hyperparameter to tune.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }

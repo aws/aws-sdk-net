@@ -53,7 +53,7 @@ namespace Amazon.SageMaker.Model
         /// account than the SageMaker domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5)]
+        [AWSProperty(Min=0, Max=5)]
         public List<string> AssumableRoleArns
         {
             get { return this._assumableRoleArns; }
@@ -76,7 +76,7 @@ namespace Amazon.SageMaker.Model
         /// Amazon Web Services services based on the particular workload requirements.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5)]
+        [AWSProperty(Min=0, Max=5)]
         public List<string> ExecutionRoleArns
         {
             get { return this._executionRoleArns; }

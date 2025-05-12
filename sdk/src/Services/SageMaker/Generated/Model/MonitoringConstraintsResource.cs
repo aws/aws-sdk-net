@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 URI for the constraints resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string S3Uri
         {
             get { return this._s3Uri; }

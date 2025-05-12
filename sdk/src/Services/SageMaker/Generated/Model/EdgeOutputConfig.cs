@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model
         /// S3 for your role's account.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -145,7 +145,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Simple Storage (S3) bucker URI.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string S3OutputLocation
         {
             get { return this._s3OutputLocation; }

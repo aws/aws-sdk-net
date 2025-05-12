@@ -186,7 +186,7 @@ namespace Amazon.SageMaker.Model
         /// The domain's Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string DomainArn
         {
             get { return this._domainArn; }
@@ -205,7 +205,7 @@ namespace Amazon.SageMaker.Model
         /// The domain ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string DomainId
         {
             get { return this._domainId; }
@@ -224,7 +224,7 @@ namespace Amazon.SageMaker.Model
         /// The domain name.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -261,7 +261,7 @@ namespace Amazon.SageMaker.Model
         /// The failure reason.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -280,7 +280,7 @@ namespace Amazon.SageMaker.Model
         /// The ID of the Amazon Elastic File System managed by this Domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=32)]
+        [AWSProperty(Min=0, Max=32)]
         public string HomeEfsFileSystemId
         {
             get { return this._homeEfsFileSystemId; }
@@ -300,7 +300,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated, use KmsKeyId instead.")]
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string HomeEfsFileSystemKmsKeyId
         {
             get { return this._homeEfsFileSystemKmsKeyId; }
@@ -320,7 +320,7 @@ namespace Amazon.SageMaker.Model
         /// to the domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -358,7 +358,7 @@ namespace Amazon.SageMaker.Model
         /// apps and the <c>RStudioServerPro</c> app.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=32)]
+        [AWSProperty(Min=0, Max=32)]
         public string SecurityGroupIdForDomainBoundary
         {
             get { return this._securityGroupIdForDomainBoundary; }
@@ -396,7 +396,7 @@ namespace Amazon.SageMaker.Model
         /// The IAM Identity Center managed application instance ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string SingleSignOnManagedApplicationInstanceId
         {
             get { return this._singleSignOnManagedApplicationInstanceId; }
@@ -470,7 +470,7 @@ namespace Amazon.SageMaker.Model
         /// The domain's URL.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string Url
         {
             get { return this._url; }
@@ -489,7 +489,7 @@ namespace Amazon.SageMaker.Model
         /// The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=32)]
+        [AWSProperty(Min=0, Max=32)]
         public string VpcId
         {
             get { return this._vpcId; }

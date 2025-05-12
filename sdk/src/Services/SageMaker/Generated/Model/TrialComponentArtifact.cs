@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model
         /// the category of the media. The subtype specifies the kind of data.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string MediaType
         {
             get { return this._mediaType; }
@@ -75,7 +75,7 @@ namespace Amazon.SageMaker.Model
         /// The location of the artifact.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2048)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string Value
         {
             get { return this._value; }

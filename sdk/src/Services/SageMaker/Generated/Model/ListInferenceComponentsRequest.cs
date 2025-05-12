@@ -93,7 +93,7 @@ namespace Amazon.SageMaker.Model
         /// only those inference components that are hosted at the specified endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string EndpointNameEquals
         {
             get { return this._endpointNameEquals; }
@@ -171,7 +171,7 @@ namespace Amazon.SageMaker.Model
         /// specified string.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string NameContains
         {
             get { return this._nameContains; }
@@ -192,7 +192,7 @@ namespace Amazon.SageMaker.Model
         /// value for this token.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -267,7 +267,7 @@ namespace Amazon.SageMaker.Model
         /// includes only those inference components that are hosted at the specified variant.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string VariantNameEquals
         {
             get { return this._variantNameEquals; }

@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The Name of the environment variable.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=64)]
+        [AWSProperty(Required=true, Min=0, Max=64)]
         public string Name
         {
             get { return this._name; }

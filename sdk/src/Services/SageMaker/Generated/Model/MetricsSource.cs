@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The hash key used for the metrics source.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=72)]
+        [AWSProperty(Min=0, Max=72)]
         public string ContentDigest
         {
             get { return this._contentDigest; }
@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         /// The metric source content type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string ContentType
         {
             get { return this._contentType; }
@@ -82,7 +82,7 @@ namespace Amazon.SageMaker.Model
         /// The S3 URI for the metrics source.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string S3Uri
         {
             get { return this._s3Uri; }

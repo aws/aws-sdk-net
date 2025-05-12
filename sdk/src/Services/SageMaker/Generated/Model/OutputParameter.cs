@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the output parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// The value of the output parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string Value
         {
             get { return this._value; }

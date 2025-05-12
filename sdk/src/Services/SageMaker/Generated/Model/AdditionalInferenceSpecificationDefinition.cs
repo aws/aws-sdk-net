@@ -69,7 +69,7 @@ namespace Amazon.SageMaker.Model
         /// A description of the additional Inference specification
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }

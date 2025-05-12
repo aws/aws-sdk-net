@@ -83,7 +83,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the rule evaluation job.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string RuleEvaluationJobArn
         {
             get { return this._ruleEvaluationJobArn; }
@@ -120,7 +120,7 @@ namespace Amazon.SageMaker.Model
         /// Details from the rule evaluation.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string StatusDetails
         {
             get { return this._statusDetails; }

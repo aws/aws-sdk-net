@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the artifact to describe.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string ArtifactArn
         {
             get { return this._artifactArn; }

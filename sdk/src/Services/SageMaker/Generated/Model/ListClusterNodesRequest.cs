@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         /// in which you want to retrieve the list of nodes.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string ClusterName
         {
             get { return this._clusterName; }
@@ -180,7 +180,7 @@ namespace Amazon.SageMaker.Model
         /// in the next request.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

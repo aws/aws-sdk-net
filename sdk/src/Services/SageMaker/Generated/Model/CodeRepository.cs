@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The URL of the Git repository.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string RepositoryUrl
         {
             get { return this._repositoryUrl; }

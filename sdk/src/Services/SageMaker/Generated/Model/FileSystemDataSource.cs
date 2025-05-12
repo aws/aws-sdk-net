@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// The full path to the directory to associate with the channel.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=4096)]
+        [AWSProperty(Required=true, Min=0, Max=4096)]
         public string DirectoryPath
         {
             get { return this._directoryPath; }

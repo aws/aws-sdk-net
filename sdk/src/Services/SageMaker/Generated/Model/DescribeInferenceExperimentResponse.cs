@@ -57,7 +57,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of the inference experiment being described.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Arn
         {
             get { return this._arn; }
@@ -131,7 +131,7 @@ namespace Amazon.SageMaker.Model
         /// The description of the inference experiment.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -172,7 +172,7 @@ namespace Amazon.SageMaker.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKey
         {
             get { return this._kmsKey; }
@@ -368,7 +368,7 @@ namespace Amazon.SageMaker.Model
         /// API, that explains the status of the inference experiment. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string StatusReason
         {
             get { return this._statusReason; }

@@ -49,7 +49,7 @@ namespace Amazon.SageMaker.Model
         /// cannot be required.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2500)]
+        [AWSProperty(Min=0, Max=2500)]
         public string DefaultValue
         {
             get { return this._defaultValue; }
@@ -68,7 +68,7 @@ namespace Amazon.SageMaker.Model
         /// A brief description of the hyperparameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -123,7 +123,7 @@ namespace Amazon.SageMaker.Model
         /// The name of this hyperparameter. The name must be unique.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }
