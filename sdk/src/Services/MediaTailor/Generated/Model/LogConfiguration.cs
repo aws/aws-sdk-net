@@ -68,6 +68,7 @@ namespace Amazon.MediaTailor.Model
         /// Amazon S3 bucket, and Amazon Data Firehose stream. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> EnabledLoggingStrategies
         {
             get { return this._enabledLoggingStrategies; }
