@@ -1,3 +1,23 @@
+### 4.0.10.0 (2025-05-12 18:28 UTC)
+* Deadline (4.0.2.0)
+	* AWS Deadline Cloud service-managed fleets now support configuration scripts. Configuration scripts make it easy to install additional software, like plugins and packages, onto a worker.
+* DynamoDBv2 (4.0.0.4)
+	* Fix regression where an `Expression` could not be used without `ExpressionAttributeValues` (https://github.com/aws/aws-sdk-net/issues/3802)
+* EC2 (4.0.6.0)
+	* EC2 - Adding support for AvailabilityZoneId
+* IdentityManagement (4.0.1.0)
+	* Updating the endpoint list for the Identity and access management (IAM) service
+* MediaLive (4.0.2.0)
+	* Add support to the AV1 rate control mode
+* MediaTailor (4.0.1.0)
+	* Documenting that EnabledLoggingStrategies is always present in responses of PlaybackConfiguration read operations.
+* S3Control (4.0.1.0)
+	* Updates to support S3 Express zonal endpoints for directory buckets in AWS CLI
+* SageMaker (4.0.4.0)
+	* No API changes from previous release. This release migrated the model to Smithy keeping all features unchanged.
+* SupplyChain (4.0.1.0)
+	* Launch new AWS Supply Chain public APIs for DataIntegrationEvent, DataIntegrationFlowExecution and DatasetNamespace. Also add more capabilities to existing public APIs to support direct dataset event publish, data deduplication in DataIntegrationFlow, partition specification of custom datasets.
+
 ### 4.0.9.0 (2025-05-09 18:19 UTC)
 * Athena (4.0.0.3)
 	* Minor API documentation updates
