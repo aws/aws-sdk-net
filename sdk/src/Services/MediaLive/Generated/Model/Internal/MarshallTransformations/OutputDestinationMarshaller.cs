@@ -52,6 +52,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Id);
             }
 
+            if(requestObject.IsSetLogicalInterfaceNames())
+            {
+                context.Writer.WritePropertyName("logicalInterfaceNames");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectLogicalInterfaceNamesListValue in requestObject.LogicalInterfaceNames)
+                {
+                        context.Writer.WriteStringValue(requestObjectLogicalInterfaceNamesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetMediaPackageSettings())
             {
                 context.Writer.WritePropertyName("mediaPackageSettings");

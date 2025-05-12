@@ -52,6 +52,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.AfdSignaling);
             }
 
+            if(requestObject.IsSetBitrate())
+            {
+                context.Writer.WritePropertyName("bitrate");
+                context.Writer.WriteNumberValue(requestObject.Bitrate.Value);
+            }
+
             if(requestObject.IsSetBufSize())
             {
                 context.Writer.WritePropertyName("bufSize");
@@ -146,6 +152,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("qvbrQualityLevel");
                 context.Writer.WriteNumberValue(requestObject.QvbrQualityLevel.Value);
+            }
+
+            if(requestObject.IsSetRateControlMode())
+            {
+                context.Writer.WritePropertyName("rateControlMode");
+                context.Writer.WriteStringValue(requestObject.RateControlMode);
             }
 
             if(requestObject.IsSetSceneChangeDetect())

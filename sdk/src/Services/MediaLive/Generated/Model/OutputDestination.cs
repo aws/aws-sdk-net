@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
     public partial class OutputDestination
     {
         private string _id;
+        private List<string> _logicalInterfaceNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<MediaPackageOutputDestinationSettings> _mediaPackageSettings = AWSConfigs.InitializeCollections ? new List<MediaPackageOutputDestinationSettings>() : null;
         private MultiplexProgramChannelDestinationSettings _multiplexSettings;
         private List<OutputDestinationSettings> _settings = AWSConfigs.InitializeCollections ? new List<OutputDestinationSettings>() : null;
@@ -54,6 +55,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogicalInterfaceNames. Optional assignment of an output
+        /// to a logical interface on the Node. Only applies to on premises channels.
+        /// </summary>
+        public List<string> LogicalInterfaceNames
+        {
+            get { return this._logicalInterfaceNames; }
+            set { this._logicalInterfaceNames = value; }
+        }
+
+        // Check to see if LogicalInterfaceNames property is set
+        internal bool IsSetLogicalInterfaceNames()
+        {
+            return this._logicalInterfaceNames != null && (this._logicalInterfaceNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

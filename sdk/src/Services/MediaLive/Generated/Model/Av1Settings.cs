@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
     public partial class Av1Settings
     {
         private AfdSignaling _afdSignaling;
+        private int? _bitrate;
         private int? _bufSize;
         private Av1ColorSpaceSettings _colorSpaceSettings;
         private FixedAfd _fixedAfd;
@@ -49,6 +50,7 @@ namespace Amazon.MediaLive.Model
         private int? _parDenominator;
         private int? _parNumerator;
         private int? _qvbrQualityLevel;
+        private Av1RateControlMode _rateControlMode;
         private Av1SceneChangeDetect _sceneChangeDetect;
         private TimecodeBurninSettings _timecodeBurninSettings;
 
@@ -68,6 +70,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetAfdSignaling()
         {
             return this._afdSignaling != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Bitrate. Average bitrate in bits/second. Required when
+        /// the rate control mode is CBR. Not used for QVBR.
+        /// </summary>
+        [AWSProperty(Min=50000, Max=8000000)]
+        public int? Bitrate
+        {
+            get { return this._bitrate; }
+            set { this._bitrate = value; }
+        }
+
+        // Check to see if Bitrate property is set
+        internal bool IsSetBitrate()
+        {
+            return this._bitrate.HasValue; 
         }
 
         /// <summary>
@@ -318,6 +337,25 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetQvbrQualityLevel()
         {
             return this._qvbrQualityLevel.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RateControlMode. Rate control mode.QVBR: Quality will match
+        /// the specified quality level except when it is constrained by themaximum bitrate. 
+        /// Recommended if you or your viewers pay for bandwidth.CBR: Quality varies, depending
+        /// on the video complexity. Recommended only if you distributeyour assets to devices
+        /// that cannot handle variable bitrates.
+        /// </summary>
+        public Av1RateControlMode RateControlMode
+        {
+            get { return this._rateControlMode; }
+            set { this._rateControlMode = value; }
+        }
+
+        // Check to see if RateControlMode property is set
+        internal bool IsSetRateControlMode()
+        {
+            return this._rateControlMode != null;
         }
 
         /// <summary>
