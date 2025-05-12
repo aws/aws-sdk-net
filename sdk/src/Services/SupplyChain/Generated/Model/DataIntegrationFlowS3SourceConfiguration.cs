@@ -78,7 +78,8 @@ namespace Amazon.SupplyChain.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// The prefix of the S3 source objects.
+        /// The prefix of the S3 source objects. To trigger data ingestion, S3 files need to be
+        /// put under <c>s3://<i>bucketName</i>/<i>prefix</i>/</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=700)]

@@ -28,6 +28,26 @@ namespace Amazon.SupplyChain.Model
     {
 
         /// <summary>
+        /// Paginator for ListDataIntegrationEvents operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDataIntegrationEventsPaginator ListDataIntegrationEvents(ListDataIntegrationEventsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDataIntegrationFlowExecutions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDataIntegrationFlowExecutionsPaginator ListDataIntegrationFlowExecutions(ListDataIntegrationFlowExecutionsRequest request);
+
+        /// <summary>
         /// Paginator for ListDataIntegrationFlows operation
         ///</summary>
         [AWSPaginator(
@@ -46,6 +66,16 @@ namespace Amazon.SupplyChain.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListDataLakeDatasetsPaginator ListDataLakeDatasets(ListDataLakeDatasetsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDataLakeNamespaces operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDataLakeNamespacesPaginator ListDataLakeNamespaces(ListDataLakeNamespacesRequest request);
 
         /// <summary>
         /// Paginator for ListInstances operation

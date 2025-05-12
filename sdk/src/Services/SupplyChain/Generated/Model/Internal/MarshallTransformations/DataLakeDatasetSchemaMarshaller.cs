@@ -70,6 +70,22 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetPrimaryKeys())
+            {
+                context.Writer.WritePropertyName("primaryKeys");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectPrimaryKeysListValue in requestObject.PrimaryKeys)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataLakeDatasetPrimaryKeyFieldMarshaller.Instance;
+                    marshaller.Marshall(requestObjectPrimaryKeysListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

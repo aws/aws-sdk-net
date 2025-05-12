@@ -63,7 +63,7 @@ namespace Amazon.SupplyChain.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the dataset. For <b>asc</b> name space, the name must be one of the supported
+        /// The name of the dataset. For <b>asc</b> namespace, the name must be one of the supported
         /// data entities under <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.
         /// </para>
         /// </summary>
@@ -83,7 +83,8 @@ namespace Amazon.SupplyChain.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The name space of the dataset. The available values are:
+        /// The namespace of the dataset, besides the custom defined namespace, every instance
+        /// comes with below pre-defined namespaces:
         /// </para>
         ///  <ul> <li> 
         /// <para>

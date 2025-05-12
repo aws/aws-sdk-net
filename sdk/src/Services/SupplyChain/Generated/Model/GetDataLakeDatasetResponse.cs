@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SupplyChain.Model
 {
     /// <summary>
-    /// The response parameters for UpdateDataLakeDataset.
+    /// The response parameters for GetDataLakeDataset.
     /// </summary>
     public partial class GetDataLakeDatasetResponse : AmazonWebServiceResponse
     {

@@ -41,7 +41,9 @@ namespace Amazon.SupplyChain.Model
         /// <summary>
         /// Gets and sets the property DatasetTarget. 
         /// <para>
-        /// The dataset DataIntegrationFlow target.
+        /// The dataset DataIntegrationFlow target. Note that for AWS Supply Chain dataset under
+        /// <b>asc</b> namespace, it has a connection_id internal field that is not allowed to
+        /// be provided by client directly, they will be auto populated.
         /// </para>
         /// </summary>
         public DataIntegrationFlowDatasetTargetConfiguration DatasetTarget

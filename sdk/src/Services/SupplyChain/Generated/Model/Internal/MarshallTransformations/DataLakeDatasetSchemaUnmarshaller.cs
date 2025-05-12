@@ -78,6 +78,12 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("primaryKeys", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DataLakeDatasetPrimaryKeyField, DataLakeDatasetPrimaryKeyFieldUnmarshaller>(DataLakeDatasetPrimaryKeyFieldUnmarshaller.Instance);
+                    unmarshalledObject.PrimaryKeys = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

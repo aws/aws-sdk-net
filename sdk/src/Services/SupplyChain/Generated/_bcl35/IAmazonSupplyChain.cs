@@ -257,6 +257,68 @@ namespace Amazon.SupplyChain
 
         #endregion
         
+        #region  CreateDataLakeNamespace
+
+
+        /// <summary>
+        /// Enables you to programmatically create an Amazon Web Services Supply Chain data lake
+        /// namespace. Developers can create the namespaces for a given instance ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataLakeNamespace service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataLakeNamespace service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateDataLakeNamespace">REST API Reference for CreateDataLakeNamespace Operation</seealso>
+        CreateDataLakeNamespaceResponse CreateDataLakeNamespace(CreateDataLakeNamespaceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDataLakeNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataLakeNamespace operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDataLakeNamespace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateDataLakeNamespace">REST API Reference for CreateDataLakeNamespace Operation</seealso>
+        IAsyncResult BeginCreateDataLakeNamespace(CreateDataLakeNamespaceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDataLakeNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDataLakeNamespace.</param>
+        /// 
+        /// <returns>Returns a  CreateDataLakeNamespaceResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateDataLakeNamespace">REST API Reference for CreateDataLakeNamespace Operation</seealso>
+        CreateDataLakeNamespaceResponse EndCreateDataLakeNamespace(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateInstance
 
 
@@ -456,6 +518,69 @@ namespace Amazon.SupplyChain
 
         #endregion
         
+        #region  DeleteDataLakeNamespace
+
+
+        /// <summary>
+        /// Enables you to programmatically delete an Amazon Web Services Supply Chain data lake
+        /// namespace and its underling datasets. Developers can delete the existing namespaces
+        /// for a given instance ID and namespace name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataLakeNamespace service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDataLakeNamespace service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataLakeNamespace">REST API Reference for DeleteDataLakeNamespace Operation</seealso>
+        DeleteDataLakeNamespaceResponse DeleteDataLakeNamespace(DeleteDataLakeNamespaceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDataLakeNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataLakeNamespace operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDataLakeNamespace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataLakeNamespace">REST API Reference for DeleteDataLakeNamespace Operation</seealso>
+        IAsyncResult BeginDeleteDataLakeNamespace(DeleteDataLakeNamespaceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDataLakeNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDataLakeNamespace.</param>
+        /// 
+        /// <returns>Returns a  DeleteDataLakeNamespaceResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataLakeNamespace">REST API Reference for DeleteDataLakeNamespace Operation</seealso>
+        DeleteDataLakeNamespaceResponse EndDeleteDataLakeNamespace(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteInstance
 
 
@@ -589,6 +714,69 @@ namespace Amazon.SupplyChain
 
         #endregion
         
+        #region  GetDataIntegrationEvent
+
+
+        /// <summary>
+        /// Enables you to programmatically view an Amazon Web Services Supply Chain Data Integration
+        /// Event. Developers can view the eventType, eventGroupId, eventTimestamp, datasetTarget,
+        /// datasetLoadExecution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataIntegrationEvent service method.</param>
+        /// 
+        /// <returns>The response from the GetDataIntegrationEvent service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataIntegrationEvent">REST API Reference for GetDataIntegrationEvent Operation</seealso>
+        GetDataIntegrationEventResponse GetDataIntegrationEvent(GetDataIntegrationEventRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataIntegrationEvent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataIntegrationEvent operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataIntegrationEvent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataIntegrationEvent">REST API Reference for GetDataIntegrationEvent Operation</seealso>
+        IAsyncResult BeginGetDataIntegrationEvent(GetDataIntegrationEventRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDataIntegrationEvent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataIntegrationEvent.</param>
+        /// 
+        /// <returns>Returns a  GetDataIntegrationEventResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataIntegrationEvent">REST API Reference for GetDataIntegrationEvent Operation</seealso>
+        GetDataIntegrationEventResponse EndGetDataIntegrationEvent(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetDataIntegrationFlow
 
 
@@ -648,6 +836,67 @@ namespace Amazon.SupplyChain
         /// <returns>Returns a  GetDataIntegrationFlowResult from SupplyChain.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataIntegrationFlow">REST API Reference for GetDataIntegrationFlow Operation</seealso>
         GetDataIntegrationFlowResponse EndGetDataIntegrationFlow(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetDataIntegrationFlowExecution
+
+
+        /// <summary>
+        /// Get the flow execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataIntegrationFlowExecution service method.</param>
+        /// 
+        /// <returns>The response from the GetDataIntegrationFlowExecution service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataIntegrationFlowExecution">REST API Reference for GetDataIntegrationFlowExecution Operation</seealso>
+        GetDataIntegrationFlowExecutionResponse GetDataIntegrationFlowExecution(GetDataIntegrationFlowExecutionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataIntegrationFlowExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataIntegrationFlowExecution operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataIntegrationFlowExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataIntegrationFlowExecution">REST API Reference for GetDataIntegrationFlowExecution Operation</seealso>
+        IAsyncResult BeginGetDataIntegrationFlowExecution(GetDataIntegrationFlowExecutionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDataIntegrationFlowExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataIntegrationFlowExecution.</param>
+        /// 
+        /// <returns>Returns a  GetDataIntegrationFlowExecutionResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataIntegrationFlowExecution">REST API Reference for GetDataIntegrationFlowExecution Operation</seealso>
+        GetDataIntegrationFlowExecutionResponse EndGetDataIntegrationFlowExecution(IAsyncResult asyncResult);
 
         #endregion
         
@@ -714,6 +963,69 @@ namespace Amazon.SupplyChain
 
         #endregion
         
+        #region  GetDataLakeNamespace
+
+
+        /// <summary>
+        /// Enables you to programmatically view an Amazon Web Services Supply Chain data lake
+        /// namespace. Developers can view the data lake namespace information such as description
+        /// for a given instance ID and namespace name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataLakeNamespace service method.</param>
+        /// 
+        /// <returns>The response from the GetDataLakeNamespace service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataLakeNamespace">REST API Reference for GetDataLakeNamespace Operation</seealso>
+        GetDataLakeNamespaceResponse GetDataLakeNamespace(GetDataLakeNamespaceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataLakeNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataLakeNamespace operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataLakeNamespace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataLakeNamespace">REST API Reference for GetDataLakeNamespace Operation</seealso>
+        IAsyncResult BeginGetDataLakeNamespace(GetDataLakeNamespaceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDataLakeNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataLakeNamespace.</param>
+        /// 
+        /// <returns>Returns a  GetDataLakeNamespaceResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataLakeNamespace">REST API Reference for GetDataLakeNamespace Operation</seealso>
+        GetDataLakeNamespaceResponse EndGetDataLakeNamespace(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetInstance
 
 
@@ -773,6 +1085,129 @@ namespace Amazon.SupplyChain
         /// <returns>Returns a  GetInstanceResult from SupplyChain.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetInstance">REST API Reference for GetInstance Operation</seealso>
         GetInstanceResponse EndGetInstance(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListDataIntegrationEvents
+
+
+        /// <summary>
+        /// Enables you to programmatically list all data integration events for the provided
+        /// Amazon Web Services Supply Chain instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataIntegrationEvents service method.</param>
+        /// 
+        /// <returns>The response from the ListDataIntegrationEvents service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataIntegrationEvents">REST API Reference for ListDataIntegrationEvents Operation</seealso>
+        ListDataIntegrationEventsResponse ListDataIntegrationEvents(ListDataIntegrationEventsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDataIntegrationEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDataIntegrationEvents operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDataIntegrationEvents
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataIntegrationEvents">REST API Reference for ListDataIntegrationEvents Operation</seealso>
+        IAsyncResult BeginListDataIntegrationEvents(ListDataIntegrationEventsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDataIntegrationEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDataIntegrationEvents.</param>
+        /// 
+        /// <returns>Returns a  ListDataIntegrationEventsResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataIntegrationEvents">REST API Reference for ListDataIntegrationEvents Operation</seealso>
+        ListDataIntegrationEventsResponse EndListDataIntegrationEvents(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListDataIntegrationFlowExecutions
+
+
+        /// <summary>
+        /// List flow executions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataIntegrationFlowExecutions service method.</param>
+        /// 
+        /// <returns>The response from the ListDataIntegrationFlowExecutions service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataIntegrationFlowExecutions">REST API Reference for ListDataIntegrationFlowExecutions Operation</seealso>
+        ListDataIntegrationFlowExecutionsResponse ListDataIntegrationFlowExecutions(ListDataIntegrationFlowExecutionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDataIntegrationFlowExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDataIntegrationFlowExecutions operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDataIntegrationFlowExecutions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataIntegrationFlowExecutions">REST API Reference for ListDataIntegrationFlowExecutions Operation</seealso>
+        IAsyncResult BeginListDataIntegrationFlowExecutions(ListDataIntegrationFlowExecutionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDataIntegrationFlowExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDataIntegrationFlowExecutions.</param>
+        /// 
+        /// <returns>Returns a  ListDataIntegrationFlowExecutionsResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataIntegrationFlowExecutions">REST API Reference for ListDataIntegrationFlowExecutions Operation</seealso>
+        ListDataIntegrationFlowExecutionsResponse EndListDataIntegrationFlowExecutions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -898,6 +1333,70 @@ namespace Amazon.SupplyChain
         /// <returns>Returns a  ListDataLakeDatasetsResult from SupplyChain.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataLakeDatasets">REST API Reference for ListDataLakeDatasets Operation</seealso>
         ListDataLakeDatasetsResponse EndListDataLakeDatasets(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListDataLakeNamespaces
+
+
+        /// <summary>
+        /// Enables you to programmatically view the list of Amazon Web Services Supply Chain
+        /// data lake namespaces. Developers can view the namespaces and the corresponding information
+        /// such as description for a given instance ID. Note that this API only return custom
+        /// namespaces, instance pre-defined namespaces are not included.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataLakeNamespaces service method.</param>
+        /// 
+        /// <returns>The response from the ListDataLakeNamespaces service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataLakeNamespaces">REST API Reference for ListDataLakeNamespaces Operation</seealso>
+        ListDataLakeNamespacesResponse ListDataLakeNamespaces(ListDataLakeNamespacesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDataLakeNamespaces operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDataLakeNamespaces operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDataLakeNamespaces
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataLakeNamespaces">REST API Reference for ListDataLakeNamespaces Operation</seealso>
+        IAsyncResult BeginListDataLakeNamespaces(ListDataLakeNamespacesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDataLakeNamespaces operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDataLakeNamespaces.</param>
+        /// 
+        /// <returns>Returns a  ListDataLakeNamespacesResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataLakeNamespaces">REST API Reference for ListDataLakeNamespaces Operation</seealso>
+        ListDataLakeNamespacesResponse EndListDataLakeNamespaces(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1032,11 +1531,9 @@ namespace Amazon.SupplyChain
 
 
         /// <summary>
-        /// Send the transactional data payload for the event with real-time data for analysis
-        /// or monitoring. The real-time data events are stored in an Amazon Web Services service
-        /// before being processed and stored in data lake. New data events are synced with data
-        /// lake at 5 PM GMT everyday. The updated transactional data is available in data lake
-        /// after ingestion.
+        /// Send the data payload for the event with real-time data for analysis or monitoring.
+        /// The real-time data events are stored in an Amazon Web Services service before being
+        /// processed and stored in data lake.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendDataIntegrationEvent service method.</param>
         /// 
@@ -1346,6 +1843,69 @@ namespace Amazon.SupplyChain
         /// <returns>Returns a  UpdateDataLakeDatasetResult from SupplyChain.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataLakeDataset">REST API Reference for UpdateDataLakeDataset Operation</seealso>
         UpdateDataLakeDatasetResponse EndUpdateDataLakeDataset(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateDataLakeNamespace
+
+
+        /// <summary>
+        /// Enables you to programmatically update an Amazon Web Services Supply Chain data lake
+        /// namespace. Developers can update the description of a data lake namespace for a given
+        /// instance ID and namespace name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataLakeNamespace service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDataLakeNamespace service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataLakeNamespace">REST API Reference for UpdateDataLakeNamespace Operation</seealso>
+        UpdateDataLakeNamespaceResponse UpdateDataLakeNamespace(UpdateDataLakeNamespaceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDataLakeNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataLakeNamespace operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDataLakeNamespace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataLakeNamespace">REST API Reference for UpdateDataLakeNamespace Operation</seealso>
+        IAsyncResult BeginUpdateDataLakeNamespace(UpdateDataLakeNamespaceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDataLakeNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDataLakeNamespace.</param>
+        /// 
+        /// <returns>Returns a  UpdateDataLakeNamespaceResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataLakeNamespace">REST API Reference for UpdateDataLakeNamespace Operation</seealso>
+        UpdateDataLakeNamespaceResponse EndUpdateDataLakeNamespace(IAsyncResult asyncResult);
 
         #endregion
         

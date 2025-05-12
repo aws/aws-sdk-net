@@ -462,6 +462,62 @@ namespace Amazon.SupplyChain
 
         #endregion
         
+        #region  CreateDataLakeNamespace
+
+        internal virtual CreateDataLakeNamespaceResponse CreateDataLakeNamespace(CreateDataLakeNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataLakeNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataLakeNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataLakeNamespaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables you to programmatically create an Amazon Web Services Supply Chain data lake
+        /// namespace. Developers can create the namespaces for a given instance ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataLakeNamespace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataLakeNamespace service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateDataLakeNamespace">REST API Reference for CreateDataLakeNamespace Operation</seealso>
+        public virtual Task<CreateDataLakeNamespaceResponse> CreateDataLakeNamespaceAsync(CreateDataLakeNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataLakeNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataLakeNamespaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDataLakeNamespaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateInstance
 
         internal virtual CreateInstanceResponse CreateInstance(CreateInstanceRequest request)
@@ -643,6 +699,63 @@ namespace Amazon.SupplyChain
 
         #endregion
         
+        #region  DeleteDataLakeNamespace
+
+        internal virtual DeleteDataLakeNamespaceResponse DeleteDataLakeNamespace(DeleteDataLakeNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataLakeNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataLakeNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataLakeNamespaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables you to programmatically delete an Amazon Web Services Supply Chain data lake
+        /// namespace and its underling datasets. Developers can delete the existing namespaces
+        /// for a given instance ID and namespace name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataLakeNamespace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataLakeNamespace service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataLakeNamespace">REST API Reference for DeleteDataLakeNamespace Operation</seealso>
+        public virtual Task<DeleteDataLakeNamespaceResponse> DeleteDataLakeNamespaceAsync(DeleteDataLakeNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataLakeNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataLakeNamespaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDataLakeNamespaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteInstance
 
         internal virtual DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request)
@@ -764,6 +877,63 @@ namespace Amazon.SupplyChain
 
         #endregion
         
+        #region  GetDataIntegrationEvent
+
+        internal virtual GetDataIntegrationEventResponse GetDataIntegrationEvent(GetDataIntegrationEventRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataIntegrationEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataIntegrationEventResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataIntegrationEventResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables you to programmatically view an Amazon Web Services Supply Chain Data Integration
+        /// Event. Developers can view the eventType, eventGroupId, eventTimestamp, datasetTarget,
+        /// datasetLoadExecution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataIntegrationEvent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataIntegrationEvent service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataIntegrationEvent">REST API Reference for GetDataIntegrationEvent Operation</seealso>
+        public virtual Task<GetDataIntegrationEventResponse> GetDataIntegrationEventAsync(GetDataIntegrationEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataIntegrationEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataIntegrationEventResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDataIntegrationEventResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDataIntegrationFlow
 
         internal virtual GetDataIntegrationFlowResponse GetDataIntegrationFlow(GetDataIntegrationFlowRequest request)
@@ -816,6 +986,61 @@ namespace Amazon.SupplyChain
             options.ResponseUnmarshaller = GetDataIntegrationFlowResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDataIntegrationFlowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDataIntegrationFlowExecution
+
+        internal virtual GetDataIntegrationFlowExecutionResponse GetDataIntegrationFlowExecution(GetDataIntegrationFlowExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataIntegrationFlowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataIntegrationFlowExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataIntegrationFlowExecutionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get the flow execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataIntegrationFlowExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataIntegrationFlowExecution service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataIntegrationFlowExecution">REST API Reference for GetDataIntegrationFlowExecution Operation</seealso>
+        public virtual Task<GetDataIntegrationFlowExecutionResponse> GetDataIntegrationFlowExecutionAsync(GetDataIntegrationFlowExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataIntegrationFlowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataIntegrationFlowExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDataIntegrationFlowExecutionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -877,6 +1102,63 @@ namespace Amazon.SupplyChain
 
         #endregion
         
+        #region  GetDataLakeNamespace
+
+        internal virtual GetDataLakeNamespaceResponse GetDataLakeNamespace(GetDataLakeNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataLakeNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataLakeNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataLakeNamespaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables you to programmatically view an Amazon Web Services Supply Chain data lake
+        /// namespace. Developers can view the data lake namespace information such as description
+        /// for a given instance ID and namespace name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataLakeNamespace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataLakeNamespace service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataLakeNamespace">REST API Reference for GetDataLakeNamespace Operation</seealso>
+        public virtual Task<GetDataLakeNamespaceResponse> GetDataLakeNamespaceAsync(GetDataLakeNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataLakeNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataLakeNamespaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDataLakeNamespaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetInstance
 
         internal virtual GetInstanceResponse GetInstance(GetInstanceRequest request)
@@ -929,6 +1211,117 @@ namespace Amazon.SupplyChain
             options.ResponseUnmarshaller = GetInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDataIntegrationEvents
+
+        internal virtual ListDataIntegrationEventsResponse ListDataIntegrationEvents(ListDataIntegrationEventsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataIntegrationEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataIntegrationEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataIntegrationEventsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables you to programmatically list all data integration events for the provided
+        /// Amazon Web Services Supply Chain instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataIntegrationEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataIntegrationEvents service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataIntegrationEvents">REST API Reference for ListDataIntegrationEvents Operation</seealso>
+        public virtual Task<ListDataIntegrationEventsResponse> ListDataIntegrationEventsAsync(ListDataIntegrationEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataIntegrationEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataIntegrationEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDataIntegrationEventsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDataIntegrationFlowExecutions
+
+        internal virtual ListDataIntegrationFlowExecutionsResponse ListDataIntegrationFlowExecutions(ListDataIntegrationFlowExecutionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataIntegrationFlowExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataIntegrationFlowExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataIntegrationFlowExecutionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List flow executions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataIntegrationFlowExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataIntegrationFlowExecutions service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataIntegrationFlowExecutions">REST API Reference for ListDataIntegrationFlowExecutions Operation</seealso>
+        public virtual Task<ListDataIntegrationFlowExecutionsResponse> ListDataIntegrationFlowExecutionsAsync(ListDataIntegrationFlowExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataIntegrationFlowExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataIntegrationFlowExecutionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDataIntegrationFlowExecutionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1042,6 +1435,64 @@ namespace Amazon.SupplyChain
             options.ResponseUnmarshaller = ListDataLakeDatasetsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDataLakeDatasetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDataLakeNamespaces
+
+        internal virtual ListDataLakeNamespacesResponse ListDataLakeNamespaces(ListDataLakeNamespacesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataLakeNamespacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataLakeNamespacesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataLakeNamespacesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables you to programmatically view the list of Amazon Web Services Supply Chain
+        /// data lake namespaces. Developers can view the namespaces and the corresponding information
+        /// such as description for a given instance ID. Note that this API only return custom
+        /// namespaces, instance pre-defined namespaces are not included.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataLakeNamespaces service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataLakeNamespaces service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataLakeNamespaces">REST API Reference for ListDataLakeNamespaces Operation</seealso>
+        public virtual Task<ListDataLakeNamespacesResponse> ListDataLakeNamespacesAsync(ListDataLakeNamespacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataLakeNamespacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataLakeNamespacesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDataLakeNamespacesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1175,11 +1626,9 @@ namespace Amazon.SupplyChain
 
 
         /// <summary>
-        /// Send the transactional data payload for the event with real-time data for analysis
-        /// or monitoring. The real-time data events are stored in an Amazon Web Services service
-        /// before being processed and stored in data lake. New data events are synced with data
-        /// lake at 5 PM GMT everyday. The updated transactional data is available in data lake
-        /// after ingestion.
+        /// Send the data payload for the event with real-time data for analysis or monitoring.
+        /// The real-time data events are stored in an Amazon Web Services service before being
+        /// processed and stored in data lake.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendDataIntegrationEvent service method.</param>
         /// <param name="cancellationToken">
@@ -1448,6 +1897,63 @@ namespace Amazon.SupplyChain
             options.ResponseUnmarshaller = UpdateDataLakeDatasetResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDataLakeDatasetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDataLakeNamespace
+
+        internal virtual UpdateDataLakeNamespaceResponse UpdateDataLakeNamespace(UpdateDataLakeNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataLakeNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataLakeNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDataLakeNamespaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables you to programmatically update an Amazon Web Services Supply Chain data lake
+        /// namespace. Developers can update the description of a data lake namespace for a given
+        /// instance ID and namespace name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataLakeNamespace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDataLakeNamespace service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataLakeNamespace">REST API Reference for UpdateDataLakeNamespace Operation</seealso>
+        public virtual Task<UpdateDataLakeNamespaceResponse> UpdateDataLakeNamespaceAsync(UpdateDataLakeNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataLakeNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataLakeNamespaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDataLakeNamespaceResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -108,6 +108,12 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
                     unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("partitionSpec", targetDepth))
+                {
+                    var unmarshaller = DataLakeDatasetPartitionSpecUnmarshaller.Instance;
+                    unmarshalledObject.PartitionSpec = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("schema", targetDepth))
                 {
                     var unmarshaller = DataLakeDatasetSchemaUnmarshaller.Instance;

@@ -82,6 +82,17 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetPartitionSpec())
+                {
+                    context.Writer.WritePropertyName("partitionSpec");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataLakeDatasetPartitionSpecMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PartitionSpec, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSchema())
                 {
                     context.Writer.WritePropertyName("schema");

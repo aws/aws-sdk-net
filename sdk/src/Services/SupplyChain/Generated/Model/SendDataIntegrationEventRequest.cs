@@ -31,16 +31,15 @@ namespace Amazon.SupplyChain.Model
 {
     /// <summary>
     /// Container for the parameters to the SendDataIntegrationEvent operation.
-    /// Send the transactional data payload for the event with real-time data for analysis
-    /// or monitoring. The real-time data events are stored in an Amazon Web Services service
-    /// before being processed and stored in data lake. New data events are synced with data
-    /// lake at 5 PM GMT everyday. The updated transactional data is available in data lake
-    /// after ingestion.
+    /// Send the data payload for the event with real-time data for analysis or monitoring.
+    /// The real-time data events are stored in an Amazon Web Services service before being
+    /// processed and stored in data lake.
     /// </summary>
     public partial class SendDataIntegrationEventRequest : AmazonSupplyChainRequest
     {
         private string _clientToken;
         private string _data;
+        private DataIntegrationEventDatasetTargetConfiguration _datasetTarget;
         private string _eventGroupId;
         private DateTime? _eventTimestamp;
         private DataIntegrationEventType _eventType;
@@ -49,7 +48,10 @@ namespace Amazon.SupplyChain.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The idempotent client token.
+        /// The idempotent client token. The token is active for 8 hours, and within its lifetime,
+        /// it ensures the request completes only once upon retry with same client token. If omitted,
+        /// the AWS SDK generates a unique value so that AWS SDK can safely retry the request
+        /// upon network errors.
         /// </para>
         /// </summary>
         [AWSProperty(Min=33, Max=126)]
@@ -68,9 +70,16 @@ namespace Amazon.SupplyChain.Model
         /// <summary>
         /// Gets and sets the property Data. 
         /// <para>
-        /// The data payload of the event. For more information on the data schema to use, see
-        /// <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data
-        /// entities supported in AWS Supply Chain</a>.
+        /// The data payload of the event, should follow the data schema of the target dataset,
+        /// or see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data
+        /// entities supported in AWS Supply Chain</a>. To send single data record, use JsonObject
+        /// format; to send multiple data records, use JsonArray format.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that for AWS Supply Chain dataset under <b>asc</b> namespace, it has a connection_id
+        /// internal field that is not allowed to be provided by client directly, they will be
+        /// auto populated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1048576)]
@@ -87,10 +96,29 @@ namespace Amazon.SupplyChain.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DatasetTarget. 
+        /// <para>
+        /// The target dataset configuration for <b>scn.data.dataset</b> event type.
+        /// </para>
+        /// </summary>
+        public DataIntegrationEventDatasetTargetConfiguration DatasetTarget
+        {
+            get { return this._datasetTarget; }
+            set { this._datasetTarget = value; }
+        }
+
+        // Check to see if DatasetTarget property is set
+        internal bool IsSetDatasetTarget()
+        {
+            return this._datasetTarget != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EventGroupId. 
         /// <para>
-        /// Event identifier (for example, orderId for InboundOrder) used for data sharing or
-        /// partitioning.
+        /// Event identifier (for example, orderId for InboundOrder) used for data sharding or
+        /// partitioning. Noted under one eventGroupId of same eventType and instanceId, events
+        /// are processed sequentially in the order they are received by the server.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -109,7 +137,8 @@ namespace Amazon.SupplyChain.Model
         /// <summary>
         /// Gets and sets the property EventTimestamp. 
         /// <para>
-        /// The event timestamp (in epoch seconds).
+        /// The timestamp (in epoch seconds) associated with the event. If not provided, it will
+        /// be assigned with current timestamp.
         /// </para>
         /// </summary>
         public DateTime EventTimestamp
@@ -129,6 +158,86 @@ namespace Amazon.SupplyChain.Model
         /// <para>
         /// The data event type.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>scn.data.dataset</b> - Send data directly to any specified dataset.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>scn.data.supplyplan</b> - Send data to <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/supply-plan-entity.html">supply_plan</a>
+        /// dataset.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>scn.data.shipmentstoporder</b> - Send data to <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/replenishment-shipment-stop-order-entity.html">shipment_stop_order</a>
+        /// dataset.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>scn.data.shipmentstop</b> - Send data to <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/replenishment-shipment-stop-entity.html">shipment_stop</a>
+        /// dataset.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>scn.data.shipment</b> - Send data to <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/replenishment-shipment-entity.html">shipment</a>
+        /// dataset.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>scn.data.reservation</b> - Send data to <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/planning-reservation-entity.html">reservation</a>
+        /// dataset.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>scn.data.processproduct</b> - Send data to <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/operation-process-product-entity.html">process_product</a>
+        /// dataset.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>scn.data.processoperation</b> - Send data to <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/operation-process-operation-entity.html">process_operation</a>
+        /// dataset.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>scn.data.processheader</b> - Send data to <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/operation-process-header-entity.html">process_header</a>
+        /// dataset.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>scn.data.forecast</b> - Send data to <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/forecast-forecast-entity.html">forecast</a>
+        /// dataset.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>scn.data.inventorylevel</b> - Send data to <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/inventory_mgmnt-inv-level-entity.html">inv_level</a>
+        /// dataset.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>scn.data.inboundorder</b> - Send data to <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/replenishment-inbound-order-entity.html">inbound_order</a>
+        /// dataset.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>scn.data.inboundorderline</b> - Send data to <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/replenishment-inbound-order-line-entity.html">inbound_order_line</a>
+        /// dataset.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>scn.data.inboundorderlineschedule</b> - Send data to <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/replenishment-inbound-order-line-schedule-entity.html">inbound_order_line_schedule</a>
+        /// dataset.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>scn.data.outboundorderline</b> - Send data to <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/outbound-fulfillment-order-line-entity.html">outbound_order_line</a>
+        /// dataset.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>scn.data.outboundshipment</b> - Send data to <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/outbound-fulfillment-shipment-entity.html">outbound_shipment</a>
+        /// dataset.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public DataIntegrationEventType EventType

@@ -42,7 +42,7 @@ namespace Amazon.SupplyChain.Model
         /// The transformation SQL query body based on SparkSQL.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=65535)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=65535)]
         public string Query
         {
             get { return this._query; }

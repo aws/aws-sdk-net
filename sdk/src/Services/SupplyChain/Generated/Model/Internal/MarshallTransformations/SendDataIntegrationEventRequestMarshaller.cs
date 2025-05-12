@@ -87,6 +87,17 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Data);
                 }
 
+                if(publicRequest.IsSetDatasetTarget())
+                {
+                    context.Writer.WritePropertyName("datasetTarget");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataIntegrationEventDatasetTargetConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DatasetTarget, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEventGroupId())
                 {
                     context.Writer.WritePropertyName("eventGroupId");
