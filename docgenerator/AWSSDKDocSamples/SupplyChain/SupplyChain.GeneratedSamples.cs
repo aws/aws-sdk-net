@@ -91,7 +91,22 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
                     { "tagKey1", "tagValue1" }
                 },
                 Target = new DataIntegrationFlowTarget {
-                    DatasetTarget = new DataIntegrationFlowDatasetTargetConfiguration { DatasetIdentifier = "arn:aws:scn:us-east-1:123456789012:instance/8850c54e-e187-4fa7-89d4-6370f165174d/namespaces/asc/datasets/trading_partner" },
+                    DatasetTarget = new DataIntegrationFlowDatasetTargetConfiguration {
+                        DatasetIdentifier = "arn:aws:scn:us-east-1:123456789012:instance/8850c54e-e187-4fa7-89d4-6370f165174d/namespaces/asc/datasets/trading_partner",
+                        Options = new DataIntegrationFlowDatasetOptions {
+                            DedupeRecords = true,
+                            DedupeStrategy = new DataIntegrationFlowDedupeStrategy {
+                                Type = "FIELD_PRIORITY",
+                                FieldPriority = new DataIntegrationFlowFieldPriorityDedupeStrategyConfiguration { Fields = new List<DataIntegrationFlowFieldPriorityDedupeField> {
+                                    new DataIntegrationFlowFieldPriorityDedupeField {
+                                        Name = "eff_start_date",
+                                        SortOrder = "DESC"
+                                    }
+                                } }
+                            },
+                            LoadType = "REPLACE"
+                        }
+                    },
                     TargetType = "DATASET"
                 },
                 Transformation = new DataIntegrationFlowTransformation {
@@ -139,6 +154,16 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
                 Description = "This is a custom dataset",
                 InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5",
                 Namespace = "default",
+                PartitionSpec = new DataLakeDatasetPartitionSpec { Fields = new List<DataLakeDatasetPartitionField> {
+                    new DataLakeDatasetPartitionField {
+                        Name = "creation_time",
+                        Transform = new DataLakeDatasetPartitionFieldTransform { Type = "DAY" }
+                    },
+                    new DataLakeDatasetPartitionField {
+                        Name = "description",
+                        Transform = new DataLakeDatasetPartitionFieldTransform { Type = "IDENTITY" }
+                    }
+                } },
                 Schema = new DataLakeDatasetSchema {
                     Name = "MyDataset",
                     Fields = new List<DataLakeDatasetSchemaField> {
@@ -161,7 +186,15 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
                             Name = "creation_time",
                             Type = "TIMESTAMP",
                             IsRequired = false
+                        },
+                        new DataLakeDatasetSchemaField {
+                            Name = "quantity",
+                            Type = "LONG",
+                            IsRequired = false
                         }
+                    },
+                    PrimaryKeys = new List<DataLakeDatasetPrimaryKeyField> {
+                        new DataLakeDatasetPrimaryKeyField { Name = "id" }
                     }
                 },
                 Tags = new Dictionary<string, string> {
@@ -171,6 +204,27 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
             });
 
             DataLakeDataset dataset = response.Dataset;
+
+            #endregion
+        }
+
+        public void SupplyChainCreateDataLakeNamespace()
+        {
+            #region example-1
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.CreateDataLakeNamespace(new CreateDataLakeNamespaceRequest 
+            {
+                Name = "my_namespace",
+                Description = "This is my AWS Supply Chain namespace",
+                InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5",
+                Tags = new Dictionary<string, string> {
+                    { "tagKey1", "tagValue1" },
+                    { "tagKey2", "tagValue2" }
+                }
+            });
+
+            DataLakeNamespace awsNamespace = response.Namespace;
 
             #endregion
         }
@@ -264,6 +318,23 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
             #endregion
         }
 
+        public void SupplyChainDeleteDataLakeNamespace()
+        {
+            #region example-1
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.DeleteDataLakeNamespace(new DeleteDataLakeNamespaceRequest 
+            {
+                Name = "my_namespace",
+                InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5"
+            });
+
+            string name = response.Name;
+            string instanceId = response.InstanceId;
+
+            #endregion
+        }
+
         public void SupplyChainDeleteInstance()
         {
             #region example-1
@@ -311,6 +382,22 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
             #endregion
         }
 
+        public void SupplyChainGetDataIntegrationEvent()
+        {
+            #region example-1
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.GetDataIntegrationEvent(new GetDataIntegrationEventRequest 
+            {
+                EventId = "19739c8e-cd2e-4cbc-a2f7-0dc43239f042",
+                InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
+            });
+
+            DataIntegrationEvent event = response.Event;
+
+            #endregion
+        }
+
         public void SupplyChainGetDataIntegrationFlow()
         {
             #region example-1
@@ -323,6 +410,40 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
             });
 
             DataIntegrationFlow flow = response.Flow;
+
+            #endregion
+        }
+
+        public void SupplyChainGetDataIntegrationFlowExecution()
+        {
+            #region example-1
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.GetDataIntegrationFlowExecution(new GetDataIntegrationFlowExecutionRequest 
+            {
+                ExecutionId = "edbbdd3f-c0f9-49d9-ab01-f64542f803b7",
+                FlowName = "source-product",
+                InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
+            });
+
+            DataIntegrationFlowExecution flowExecution = response.FlowExecution;
+
+            #endregion
+        }
+
+        public void SupplyChainGetDataIntegrationFlowExecution()
+        {
+            #region example-2
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.GetDataIntegrationFlowExecution(new GetDataIntegrationFlowExecutionRequest 
+            {
+                ExecutionId = "9daf6071-d12c-4eef-864c-73cea2557825",
+                FlowName = "target-product",
+                InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
+            });
+
+            DataIntegrationFlowExecution flowExecution = response.FlowExecution;
 
             #endregion
         }
@@ -361,6 +482,38 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
             #endregion
         }
 
+        public void SupplyChainGetDataLakeNamespace()
+        {
+            #region example-1
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.GetDataLakeNamespace(new GetDataLakeNamespaceRequest 
+            {
+                Name = "my_namespace",
+                InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5"
+            });
+
+            DataLakeNamespace awsNamespace = response.Namespace;
+
+            #endregion
+        }
+
+        public void SupplyChainGetDataLakeNamespace()
+        {
+            #region example-2
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.GetDataLakeNamespace(new GetDataLakeNamespaceRequest 
+            {
+                Name = "asc",
+                InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5"
+            });
+
+            DataLakeNamespace awsNamespace = response.Namespace;
+
+            #endregion
+        }
+
         public void SupplyChainGetInstance()
         {
             #region example-1
@@ -387,6 +540,37 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
             });
 
             Instance instance = response.Instance;
+
+            #endregion
+        }
+
+        public void SupplyChainListDataIntegrationEvents()
+        {
+            #region example-1
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.ListDataIntegrationEvents(new ListDataIntegrationEventsRequest 
+            {
+                InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
+            });
+
+            List<DataIntegrationEvent> events = response.Events;
+
+            #endregion
+        }
+
+        public void SupplyChainListDataIntegrationFlowExecutions()
+        {
+            #region example-1
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.ListDataIntegrationFlowExecutions(new ListDataIntegrationFlowExecutionsRequest 
+            {
+                FlowName = "source-product",
+                InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
+            });
+
+            List<DataIntegrationFlowExecution> flowExecutions = response.FlowExecutions;
 
             #endregion
         }
@@ -436,6 +620,39 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
             });
 
             List<DataLakeDataset> datasets = response.Datasets;
+            string nextToken = response.NextToken;
+
+            #endregion
+        }
+
+        public void SupplyChainListDataLakeNamespaces()
+        {
+            #region example-1
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.ListDataLakeNamespaces(new ListDataLakeNamespacesRequest 
+            {
+                InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5"
+            });
+
+            List<DataLakeNamespace> namespaces = response.Namespaces;
+
+            #endregion
+        }
+
+        public void SupplyChainListDataLakeNamespaces()
+        {
+            #region example-2
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.ListDataLakeNamespaces(new ListDataLakeNamespacesRequest 
+            {
+                InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5",
+                MaxResults = 1,
+                NextToken = "next_token_returned_from_previous_list_request"
+            });
+
+            List<DataLakeNamespace> namespaces = response.Namespaces;
             string nextToken = response.NextToken;
 
             #endregion
@@ -807,6 +1024,29 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
             #endregion
         }
 
+        public void SupplyChainSendDataIntegrationEvent()
+        {
+            #region example-16
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest 
+            {
+                Data = "{\"dataset_id\": \"datset-id-test-123\" }",
+                DatasetTarget = new DataIntegrationEventDatasetTargetConfiguration {
+                    DatasetIdentifier = "arn:aws:scn:us-west-2:135808960812:instance/8928ae12-15e5-4441-825d-ec2184f0a43a/namespaces/asc/datasets/product",
+                    OperationType = "APPEND"
+                },
+                EventGroupId = "datasetId",
+                EventTimestamp = DateTime.UtcNow,
+                EventType = "scn.data.dataset",
+                InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
+            });
+
+            string eventId = response.EventId;
+
+            #endregion
+        }
+
         public void SupplyChainTagResource()
         {
             #region example-1
@@ -897,7 +1137,22 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
                     }
                 },
                 Target = new DataIntegrationFlowTarget {
-                    DatasetTarget = new DataIntegrationFlowDatasetTargetConfiguration { DatasetIdentifier = "arn:aws:scn:us-east-1:123456789012:instance/8850c54e-e187-4fa7-89d4-6370f165174d/namespaces/asc/datasets/trading_partner" },
+                    DatasetTarget = new DataIntegrationFlowDatasetTargetConfiguration {
+                        DatasetIdentifier = "arn:aws:scn:us-east-1:123456789012:instance/8850c54e-e187-4fa7-89d4-6370f165174d/namespaces/asc/datasets/trading_partner",
+                        Options = new DataIntegrationFlowDatasetOptions {
+                            DedupeRecords = true,
+                            DedupeStrategy = new DataIntegrationFlowDedupeStrategy {
+                                Type = "FIELD_PRIORITY",
+                                FieldPriority = new DataIntegrationFlowFieldPriorityDedupeStrategyConfiguration { Fields = new List<DataIntegrationFlowFieldPriorityDedupeField> {
+                                    new DataIntegrationFlowFieldPriorityDedupeField {
+                                        Name = "eff_start_date",
+                                        SortOrder = "ASC"
+                                    }
+                                } }
+                            },
+                            LoadType = "REPLACE"
+                        }
+                    },
                     TargetType = "DATASET"
                 },
                 Transformation = new DataIntegrationFlowTransformation {
@@ -943,6 +1198,23 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
             });
 
             DataLakeDataset dataset = response.Dataset;
+
+            #endregion
+        }
+
+        public void SupplyChainUpdateDataLakeNamespace()
+        {
+            #region example-1
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.UpdateDataLakeNamespace(new UpdateDataLakeNamespaceRequest 
+            {
+                Name = "my_namespace",
+                Description = "This is an updated AWS Supply Chain namespace",
+                InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5"
+            });
+
+            DataLakeNamespace awsNamespace = response.Namespace;
 
             #endregion
         }

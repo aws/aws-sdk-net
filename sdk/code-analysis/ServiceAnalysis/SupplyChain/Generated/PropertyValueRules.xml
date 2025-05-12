@@ -67,7 +67,24 @@
     <property>Amazon.SupplyChain.Model.CreateDataLakeDatasetRequest.Namespace</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-z]+</pattern>
+    <pattern>[a-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.CreateDataLakeNamespaceRequest.Description</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.CreateDataLakeNamespaceRequest.InstanceId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.CreateDataLakeNamespaceRequest.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[a-z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SupplyChain.Model.CreateInstanceRequest.ClientToken</property>
@@ -136,7 +153,7 @@
     <property>Amazon.SupplyChain.Model.DeleteDataLakeDatasetRequest.Namespace</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-z]+</pattern>
+    <pattern>[a-z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SupplyChain.Model.DeleteDataLakeDatasetResponse.InstanceId</property>
@@ -154,7 +171,31 @@
     <property>Amazon.SupplyChain.Model.DeleteDataLakeDatasetResponse.Namespace</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-z]+</pattern>
+    <pattern>[a-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DeleteDataLakeNamespaceRequest.InstanceId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DeleteDataLakeNamespaceRequest.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[a-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DeleteDataLakeNamespaceResponse.InstanceId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DeleteDataLakeNamespaceResponse.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[a-z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SupplyChain.Model.DeleteInstanceRequest.InstanceId</property>
@@ -175,6 +216,18 @@
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SupplyChain.Model.GetDataIntegrationEventRequest.EventId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.GetDataIntegrationEventRequest.InstanceId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SupplyChain.Model.GetDataIntegrationFlowRequest.InstanceId</property>
     <min>36</min>
     <max>36</max>
@@ -185,6 +238,24 @@
     <min>1</min>
     <max>256</max>
     <pattern>[A-Za-z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.GetDataIntegrationFlowExecutionRequest.ExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.GetDataIntegrationFlowExecutionRequest.FlowName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.GetDataIntegrationFlowExecutionRequest.InstanceId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SupplyChain.Model.GetDataLakeDatasetRequest.InstanceId</property>
@@ -202,13 +273,73 @@
     <property>Amazon.SupplyChain.Model.GetDataLakeDatasetRequest.Namespace</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-z]+</pattern>
+    <pattern>[a-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.GetDataLakeNamespaceRequest.InstanceId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.GetDataLakeNamespaceRequest.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[a-z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SupplyChain.Model.GetInstanceRequest.InstanceId</property>
     <min>36</min>
     <max>36</max>
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.ListDataIntegrationEventsRequest.InstanceId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.ListDataIntegrationEventsRequest.MaxResults</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.ListDataIntegrationEventsRequest.NextToken</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.ListDataIntegrationEventsResponse.NextToken</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.ListDataIntegrationFlowExecutionsRequest.FlowName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.ListDataIntegrationFlowExecutionsRequest.InstanceId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.ListDataIntegrationFlowExecutionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.ListDataIntegrationFlowExecutionsRequest.NextToken</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.ListDataIntegrationFlowExecutionsResponse.NextToken</property>
+    <min>1</min>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SupplyChain.Model.ListDataIntegrationFlowsRequest.InstanceId</property>
@@ -246,7 +377,7 @@
     <property>Amazon.SupplyChain.Model.ListDataLakeDatasetsRequest.Namespace</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-z]+</pattern>
+    <pattern>[a-z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SupplyChain.Model.ListDataLakeDatasetsRequest.NextToken</property>
@@ -255,6 +386,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SupplyChain.Model.ListDataLakeDatasetsResponse.NextToken</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.ListDataLakeNamespacesRequest.InstanceId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.ListDataLakeNamespacesRequest.MaxResults</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.ListDataLakeNamespacesRequest.NextToken</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.ListDataLakeNamespacesResponse.NextToken</property>
     <min>1</min>
     <max>65535</max>
   </property-value-rule>
@@ -351,7 +503,24 @@
     <property>Amazon.SupplyChain.Model.UpdateDataLakeDatasetRequest.Namespace</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-z]+</pattern>
+    <pattern>[a-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.UpdateDataLakeNamespaceRequest.Description</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.UpdateDataLakeNamespaceRequest.InstanceId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.UpdateDataLakeNamespaceRequest.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[a-z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SupplyChain.Model.UpdateInstanceRequest.InstanceDescription</property>
@@ -389,6 +558,35 @@
     <pattern>[sS]3://[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]/.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DataIntegrationEvent.EventGroupId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DataIntegrationEvent.EventId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DataIntegrationEvent.InstanceId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DataIntegrationEventDatasetTargetConfiguration.DatasetIdentifier</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:aws:scn:([a-z0-9-]+):([0-9]+):instance/([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/namespaces/[^/]+/datasets/[^/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DataIntegrationEventDatasetTargetDetails.DatasetIdentifier</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:aws:scn:([a-z0-9-]+):([0-9]+):instance/([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/namespaces/[^/]+/datasets/[^/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SupplyChain.Model.DataIntegrationFlow.InstanceId</property>
     <min>36</min>
     <max>36</max>
@@ -401,6 +599,12 @@
     <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DataIntegrationFlowDatasetSource.DatasetIdentifier</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:aws:scn:([a-z0-9-]+):([0-9]+):instance/([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/namespaces/[^/]+/datasets/[^/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SupplyChain.Model.DataIntegrationFlowDatasetSourceConfiguration.DatasetIdentifier</property>
     <min>1</min>
     <max>1011</max>
@@ -411,6 +615,46 @@
     <min>1</min>
     <max>1011</max>
     <pattern>[-_/A-Za-z0-9:]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DataIntegrationFlowExecution.ExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DataIntegrationFlowExecution.FlowName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DataIntegrationFlowExecution.InstanceId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DataIntegrationFlowExecutionOutputMetadata.DiagnosticReportsRootS3URI</property>
+    <pattern>s3://[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]/.{1,1024}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DataIntegrationFlowFieldPriorityDedupeField.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DataIntegrationFlowS3Source.BucketName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-z0-9][a-z0-9.-]*[a-z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DataIntegrationFlowS3Source.Key</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[/A-Za-z0-9._:*()'!=?&amp;+;@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SupplyChain.Model.DataIntegrationFlowS3SourceConfiguration.BucketName</property>
@@ -474,7 +718,19 @@
     <property>Amazon.SupplyChain.Model.DataLakeDataset.Namespace</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-z]+</pattern>
+    <pattern>[a-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DataLakeDatasetPartitionField.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DataLakeDatasetPrimaryKeyField.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SupplyChain.Model.DataLakeDatasetSchema.Name</property>
@@ -486,6 +742,29 @@
     <property>Amazon.SupplyChain.Model.DataLakeDatasetSchemaField.Name</property>
     <min>1</min>
     <max>100</max>
+    <pattern>[a-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DataLakeNamespace.Arn</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:aws:scn(?::([a-z0-9-]+):([0-9]+):instance)?/([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})[-_./A-Za-z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DataLakeNamespace.Description</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DataLakeNamespace.InstanceId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DataLakeNamespace.Name</property>
+    <min>1</min>
+    <max>50</max>
     <pattern>[a-z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>

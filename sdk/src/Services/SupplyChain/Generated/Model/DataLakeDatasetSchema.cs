@@ -30,12 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SupplyChain.Model
 {
     /// <summary>
-    /// The schema details of the dataset.
+    /// The schema details of the dataset. Note that for AWS Supply Chain dataset under <b>asc</b>
+    /// namespace, it may have internal fields like connection_id that will be auto populated
+    /// by data ingestion methods.
     /// </summary>
     public partial class DataLakeDatasetSchema
     {
         private List<DataLakeDatasetSchemaField> _fields = AWSConfigs.InitializeCollections ? new List<DataLakeDatasetSchemaField>() : null;
         private string _name;
+        private List<DataLakeDatasetPrimaryKeyField> _primaryKeys = AWSConfigs.InitializeCollections ? new List<DataLakeDatasetPrimaryKeyField>() : null;
 
         /// <summary>
         /// Gets and sets the property Fields. 
@@ -73,6 +76,35 @@ namespace Amazon.SupplyChain.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrimaryKeys. 
+        /// <para>
+        /// The list of primary key fields for the dataset. Primary keys defined can help data
+        /// ingestion methods to ensure data uniqueness: CreateDataIntegrationFlow's dedupe strategy
+        /// will leverage primary keys to perform records deduplication before write to dataset;
+        /// SendDataIntegrationEvent's UPSERT and DELETE can only work with dataset with primary
+        /// keys. For more details, refer to those data ingestion documentations.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that defining primary keys does not necessarily mean the dataset cannot have
+        /// duplicate records, duplicate records can still be ingested if CreateDataIntegrationFlow's
+        /// dedupe disabled or through SendDataIntegrationEvent's APPEND operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public List<DataLakeDatasetPrimaryKeyField> PrimaryKeys
+        {
+            get { return this._primaryKeys; }
+            set { this._primaryKeys = value; }
+        }
+
+        // Check to see if PrimaryKeys property is set
+        internal bool IsSetPrimaryKeys()
+        {
+            return this._primaryKeys != null && (this._primaryKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -37,6 +37,22 @@ namespace Amazon.SupplyChain.Model
         }
 
         /// <summary>
+        /// Paginator for ListDataIntegrationEvents operation
+        ///</summary>
+        public IListDataIntegrationEventsPaginator ListDataIntegrationEvents(ListDataIntegrationEventsRequest request) 
+        {
+            return new ListDataIntegrationEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataIntegrationFlowExecutions operation
+        ///</summary>
+        public IListDataIntegrationFlowExecutionsPaginator ListDataIntegrationFlowExecutions(ListDataIntegrationFlowExecutionsRequest request) 
+        {
+            return new ListDataIntegrationFlowExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDataIntegrationFlows operation
         ///</summary>
         public IListDataIntegrationFlowsPaginator ListDataIntegrationFlows(ListDataIntegrationFlowsRequest request) 
@@ -50,6 +66,14 @@ namespace Amazon.SupplyChain.Model
         public IListDataLakeDatasetsPaginator ListDataLakeDatasets(ListDataLakeDatasetsRequest request) 
         {
             return new ListDataLakeDatasetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataLakeNamespaces operation
+        ///</summary>
+        public IListDataLakeNamespacesPaginator ListDataLakeNamespaces(ListDataLakeNamespacesRequest request) 
+        {
+            return new ListDataLakeNamespacesPaginator(this.client, request);
         }
 
         /// <summary>

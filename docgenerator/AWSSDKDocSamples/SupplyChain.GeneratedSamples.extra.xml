@@ -97,6 +97,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.CreateDataLakeNamespace(Amazon.SupplyChain.Model.CreateDataLakeNamespaceRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.CreateDataLakeNamespace(Amazon.SupplyChain.Model.CreateDataLakeNamespaceRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.CreateDataLakeNamespaceRequest" />
+            <member name="T:Amazon.SupplyChain.Model.CreateDataLakeNamespaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create a data lake namespace"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.CreateInstance(Amazon.SupplyChain.Model.CreateInstanceRequest)" />
             <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.CreateInstance(Amazon.SupplyChain.Model.CreateInstanceRequest)" />
             <member name="T:Amazon.SupplyChain.Model.CreateInstanceRequest" />
@@ -192,6 +211,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.DeleteDataLakeNamespace(Amazon.SupplyChain.Model.DeleteDataLakeNamespaceRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.DeleteDataLakeNamespace(Amazon.SupplyChain.Model.DeleteDataLakeNamespaceRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.DeleteDataLakeNamespaceRequest" />
+            <member name="T:Amazon.SupplyChain.Model.DeleteDataLakeNamespaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete an AWS Supply Chain namespace"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.DeleteInstance(Amazon.SupplyChain.Model.DeleteInstanceRequest)" />
             <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.DeleteInstance(Amazon.SupplyChain.Model.DeleteInstanceRequest)" />
             <member name="T:Amazon.SupplyChain.Model.DeleteInstanceRequest" />
@@ -249,6 +287,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.GetDataIntegrationEvent(Amazon.SupplyChain.Model.GetDataIntegrationEventRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.GetDataIntegrationEvent(Amazon.SupplyChain.Model.GetDataIntegrationEventRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.GetDataIntegrationEventRequest" />
+            <member name="T:Amazon.SupplyChain.Model.GetDataIntegrationEventResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful GetDataIntegrationEvent"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.GetDataIntegrationFlow(Amazon.SupplyChain.Model.GetDataIntegrationFlowRequest)" />
             <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.GetDataIntegrationFlow(Amazon.SupplyChain.Model.GetDataIntegrationFlowRequest)" />
             <member name="T:Amazon.SupplyChain.Model.GetDataIntegrationFlowRequest" />
@@ -263,6 +320,44 @@
                     title="Successful GetDataIntegrationFlow"
                     source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
                     region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.GetDataIntegrationFlowExecution(Amazon.SupplyChain.Model.GetDataIntegrationFlowExecutionRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.GetDataIntegrationFlowExecution(Amazon.SupplyChain.Model.GetDataIntegrationFlowExecutionRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.GetDataIntegrationFlowExecutionRequest" />
+            <member name="T:Amazon.SupplyChain.Model.GetDataIntegrationFlowExecutionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful GetDataIntegrationFlowExecution for S3 source"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.GetDataIntegrationFlowExecution(Amazon.SupplyChain.Model.GetDataIntegrationFlowExecutionRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.GetDataIntegrationFlowExecution(Amazon.SupplyChain.Model.GetDataIntegrationFlowExecutionRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.GetDataIntegrationFlowExecutionRequest" />
+            <member name="T:Amazon.SupplyChain.Model.GetDataIntegrationFlowExecutionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful GetDataIntegrationFlowExecution for DATASET source"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-2" />
             </example>
         </value>
     </doc>
@@ -306,6 +401,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.GetDataLakeNamespace(Amazon.SupplyChain.Model.GetDataLakeNamespaceRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.GetDataLakeNamespace(Amazon.SupplyChain.Model.GetDataLakeNamespaceRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.GetDataLakeNamespaceRequest" />
+            <member name="T:Amazon.SupplyChain.Model.GetDataLakeNamespaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get properties of an existing AWS Supply Chain namespace"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.GetDataLakeNamespace(Amazon.SupplyChain.Model.GetDataLakeNamespaceRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.GetDataLakeNamespace(Amazon.SupplyChain.Model.GetDataLakeNamespaceRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.GetDataLakeNamespaceRequest" />
+            <member name="T:Amazon.SupplyChain.Model.GetDataLakeNamespaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get proporties of an existing pre-defined AWS Supply Chain namespace"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.GetInstance(Amazon.SupplyChain.Model.GetInstanceRequest)" />
             <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.GetInstance(Amazon.SupplyChain.Model.GetInstanceRequest)" />
             <member name="T:Amazon.SupplyChain.Model.GetInstanceRequest" />
@@ -339,6 +472,44 @@
                     title="Successful GetInstance request with error message"
                     source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
                     region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.ListDataIntegrationEvents(Amazon.SupplyChain.Model.ListDataIntegrationEventsRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.ListDataIntegrationEvents(Amazon.SupplyChain.Model.ListDataIntegrationEventsRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.ListDataIntegrationEventsRequest" />
+            <member name="T:Amazon.SupplyChain.Model.ListDataIntegrationEventsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful ListDataIntegrationEvents"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.ListDataIntegrationFlowExecutions(Amazon.SupplyChain.Model.ListDataIntegrationFlowExecutionsRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.ListDataIntegrationFlowExecutions(Amazon.SupplyChain.Model.ListDataIntegrationFlowExecutionsRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.ListDataIntegrationFlowExecutionsRequest" />
+            <member name="T:Amazon.SupplyChain.Model.ListDataIntegrationFlowExecutionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful ListDataIntegrationFlowExecutions"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-1" />
             </example>
         </value>
     </doc>
@@ -394,6 +565,44 @@
                 </para>
                 <code
                     title="List custom datasets using pagination"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.ListDataLakeNamespaces(Amazon.SupplyChain.Model.ListDataLakeNamespacesRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.ListDataLakeNamespaces(Amazon.SupplyChain.Model.ListDataLakeNamespacesRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.ListDataLakeNamespacesRequest" />
+            <member name="T:Amazon.SupplyChain.Model.ListDataLakeNamespacesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List AWS Supply Chain namespaces"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.ListDataLakeNamespaces(Amazon.SupplyChain.Model.ListDataLakeNamespacesRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.ListDataLakeNamespaces(Amazon.SupplyChain.Model.ListDataLakeNamespacesRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.ListDataLakeNamespacesRequest" />
+            <member name="T:Amazon.SupplyChain.Model.ListDataLakeNamespacesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List AWS Supply Chain namespaces using pagination"
                     source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
                     region="example-2" />
             </example>
@@ -781,6 +990,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventRequest" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful SendDataIntegrationEvent for dataset event type"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-16" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.TagResource(Amazon.SupplyChain.Model.TagResourceRequest)" />
             <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.TagResource(Amazon.SupplyChain.Model.TagResourceRequest)" />
             <member name="T:Amazon.SupplyChain.Model.TagResourceRequest" />
@@ -890,6 +1118,25 @@
                     title="Update description of an existing custom dataset"
                     source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
                     region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.UpdateDataLakeNamespace(Amazon.SupplyChain.Model.UpdateDataLakeNamespaceRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.UpdateDataLakeNamespace(Amazon.SupplyChain.Model.UpdateDataLakeNamespaceRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.UpdateDataLakeNamespaceRequest" />
+            <member name="T:Amazon.SupplyChain.Model.UpdateDataLakeNamespaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update description of an existing AWS Supply Chain namespace"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-1" />
             </example>
         </value>
     </doc>
