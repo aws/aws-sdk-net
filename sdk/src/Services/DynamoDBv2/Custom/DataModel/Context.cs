@@ -378,8 +378,7 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), new UpdateItemOperationConfig
                 {
-                    ReturnValues = ReturnValues.None,
-                    UpdateExpression = updateExpression
+                    ReturnValues = ReturnValues.None
                 });
             }
             else
@@ -390,8 +389,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 var updateItemOperationConfig = new UpdateItemOperationConfig
                 {
                     ReturnValues = ReturnValues.None,
-                    ConditionalExpression = versionExpression,
-                    UpdateExpression = updateExpression
+                    ConditionalExpression = versionExpression
                 };
                 table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), updateItemOperationConfig);
                 PopulateInstance(storage, value, flatConfig);
@@ -419,11 +417,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 (flatConfig.SkipVersionCheck.HasValue && flatConfig.SkipVersionCheck.Value)
                 || !storage.Config.HasVersion)
             {
-                await table.UpdateHelperAsync(storage.Document, table.MakeKey(storage.Document), new UpdateItemOperationConfig
-                {
-                    ReturnValues = ReturnValues.None,
-                    UpdateExpression = counterConditionExpression
-                }, cancellationToken).ConfigureAwait(false);
+                await table.UpdateHelperAsync(storage.Document, table.MakeKey(storage.Document), null, counterConditionExpression, cancellationToken).ConfigureAwait(false);
             }
             else
             {
@@ -431,30 +425,14 @@ namespace Amazon.DynamoDBv2.DataModel
                 var versionExpression = CreateConditionExpressionForVersion(storage, conversionConfig);
                 SetNewVersion(storage);
 
-                //if (counterConditionExpression != null)
-                //{
-                //    versionExpression.ExpressionStatement += " \n" + counterConditionExpression.ExpressionStatement;
-                //    versionExpression.ExpressionAttributeNames =
-                //        versionExpression.ExpressionAttributeNames.Union(counterConditionExpression.ExpressionAttributeNames).
-                //            ToDictionary(keyValue => keyValue.Key, keyValue => keyValue.Value);
-
-                //    if (versionExpression.ExpressionAttributeValues != null)
-                //    {
-                //        versionExpression.ExpressionAttributeValues =
-                //            versionExpression.ExpressionAttributeValues.Union(counterConditionExpression.ExpressionAttributeValues).
-                //                ToDictionary(keyValue => keyValue.Key, keyValue => keyValue.Value);
-                //    }
-                //}
-
                 await table.UpdateHelperAsync(
                     storage.Document,
                     table.MakeKey(storage.Document),
                     new UpdateItemOperationConfig
                     {
                         ReturnValues = ReturnValues.None,
-                        ConditionalExpression = versionExpression,
-                        UpdateExpression = counterConditionExpression
-                    },
+                        ConditionalExpression = versionExpression
+                    }, counterConditionExpression,
                     cancellationToken)
                     .ConfigureAwait(false);
                 PopulateInstance(storage, value, flatConfig);

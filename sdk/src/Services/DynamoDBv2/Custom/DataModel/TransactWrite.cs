@@ -228,25 +228,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
             Expression conditionExpression = CreateConditionExpressionForVersion(storage);
             SetNewVersion(storage);
-            
-            Expression counterConditionExpression = CreateConditionExpressionForCounter(storage);
-
-            if (counterConditionExpression != null)
-            {
-                conditionExpression.ExpressionStatement += " \n" + counterConditionExpression.ExpressionStatement;
-                conditionExpression.ExpressionAttributeNames =
-                    conditionExpression.ExpressionAttributeNames.Union(counterConditionExpression.ExpressionAttributeNames).
-                    ToDictionary(keyValue => keyValue.Key, keyValue => keyValue.Value);
-                
-                if (conditionExpression.ExpressionAttributeValues != null)
-                {
-                    conditionExpression.ExpressionAttributeValues =
-                        conditionExpression.ExpressionAttributeValues.Union(counterConditionExpression.ExpressionAttributeValues).
-                            ToDictionary(keyValue => keyValue.Key, keyValue => keyValue.Value);
-                }
-            }
-
-            SetAtomicCounters(storage);
 
             AddDocumentTransaction(storage, conditionExpression);
             
@@ -457,12 +438,6 @@ namespace Amazon.DynamoDBv2.DataModel
                 DocumentTransaction.TargetTable.IsEmptyStringValueEnabled);
             return DynamoDBContext.CreateConditionExpressionForVersion(storage, conversionConfig);
         }
-
-        private Expression CreateConditionExpressionForCounter(ItemStorage storage)
-        {
-            return DynamoDBContext.CreateUpdateExpressionForCounterProperties(storage);
-        }
-        
 
         private void AddDocumentTransaction(ItemStorage storage, Expression conditionExpression)
         {

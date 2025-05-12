@@ -188,7 +188,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     updateExpression.ExpressionAttributeValues[startValueName] =
                         propertyStorage.CounterStartValue - propertyStorage.CounterDelta;
                 }
-                updateExpression.ExpressionStatement = $" {asserts.Substring(0, asserts.Length - 2)}";
+                updateExpression.ExpressionStatement = $"SET {asserts.Substring(0, asserts.Length - 2)}";
             }
 
             return updateExpression;

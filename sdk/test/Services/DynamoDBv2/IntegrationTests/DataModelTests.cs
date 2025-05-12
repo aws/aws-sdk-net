@@ -665,7 +665,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             CleanupTables();
             TableCache.Clear();
 
-            CounterAnnotatedEmployee employee = new CounterAnnotatedEmployee
+            VersionedAnnotatedEmployee employee = new VersionedAnnotatedEmployee
             {
                 Name = "Mark",
                 Age = 31,
@@ -674,55 +674,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             };
 
             await Context.SaveAsync(employee);
-            var storedEmployee = await Context.LoadAsync<CounterAnnotatedEmployee>(employee.Name, 31);
+            var storedEmployee = await Context.LoadAsync<VersionedAnnotatedEmployee>(employee.Name, 31);
             Assert.IsNotNull(storedEmployee);
             Assert.AreEqual(employee.Name, storedEmployee.Name);
            // Assert.AreEqual(0, storedEmployee.Version);
             Assert.AreEqual(0, storedEmployee.CountDefault);
             Assert.AreEqual(10, storedEmployee.CountAtomic);
 
-            //// Update the employee
-            //storedEmployee.ManagerName = "Helena";
+            // Update the employee
+            storedEmployee.ManagerName = "Helena";
 
-            //await Context.SaveAsync(storedEmployee);
-            //var storedUpdatedEmployee = await Context.LoadAsync<VersionedAnnotatedEmployee>(storedEmployee.Name, 31);
-            //Assert.IsNotNull(storedUpdatedEmployee);
-            //Assert.AreEqual(employee.Name, storedUpdatedEmployee.Name);
-            //Assert.AreEqual(1, storedUpdatedEmployee.Version);
-            //Assert.AreEqual(1, storedUpdatedEmployee.CountDefault);
-            //Assert.AreEqual(12, storedUpdatedEmployee.CountAtomic);
-
-
-            //var batchWrite = Context.CreateBatchWrite<CounterAnnotatedEmployee>();
-            //batchWrite.AddPutItem(new CounterAnnotatedEmployee
-            //{
-            //    Name = "Helena",
-            //    Age = 25,
-            //    Score = 140
-            //});
-
-            //await batchWrite.ExecuteAsync();
-            //var storedEmployee2 = await Context.LoadAsync<CounterAnnotatedEmployee>("Helena");
-            //Assert.IsNotNull(storedEmployee2);
-            //Assert.AreEqual("Helena", storedEmployee2.Name);
-            //Assert.IsNull(storedEmployee2.CountDefault);
-            //Assert.IsNull(storedEmployee2.CountAtomic);
-
-
-
-            VersionedAnnotatedEmployee model = new VersionedAnnotatedEmployee
-            {
-                Name = "Mark",
-                Age = 31,
-                Score = 120,
-                ManagerName = "Harmony"
-            };
-
-            var transactWrite = Context.CreateTransactWrite<VersionedAnnotatedEmployee>();
-            transactWrite.AddSaveItems(new[] { model });
-            await transactWrite.ExecuteAsync();
-            var storedEmployee2 = await Context.LoadAsync<CounterAnnotatedEmployee>("Mark",31);
-
+            await Context.SaveAsync(storedEmployee);
+            var storedUpdatedEmployee = await Context.LoadAsync<VersionedAnnotatedEmployee>(storedEmployee.Name, 31);
+            Assert.IsNotNull(storedUpdatedEmployee);
+            Assert.AreEqual(employee.Name, storedUpdatedEmployee.Name);
+            Assert.AreEqual(1, storedUpdatedEmployee.Version);
+            Assert.AreEqual(1, storedUpdatedEmployee.CountDefault);
+            Assert.AreEqual(12, storedUpdatedEmployee.CountAtomic);
         }
 
         [TestMethod]
@@ -964,7 +932,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Clear existing SDK-wide cache
                 TableCache.Clear();
-
+                
                 Context = new DynamoDBContextBuilder()
                     .ConfigureContext(x =>
                     {
