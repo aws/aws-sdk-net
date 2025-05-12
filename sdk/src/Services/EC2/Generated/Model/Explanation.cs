@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private string _address;
         private List<string> _addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AnalysisComponent _attachedTo;
+        private List<string> _availabilityZoneIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _cidrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AnalysisLoadBalancerListener _classicLoadBalancerListener;
@@ -179,6 +180,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAttachedTo()
         {
             return this._attachedTo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneIds. 
+        /// <para>
+        /// The IDs of the Availability Zones.
+        /// </para>
+        /// </summary>
+        public List<string> AvailabilityZoneIds
+        {
+            get { return this._availabilityZoneIds; }
+            set { this._availabilityZoneIds = value; }
+        }
+
+        // Check to see if AvailabilityZoneIds property is set
+        internal bool IsSetAvailabilityZoneIds()
+        {
+            return this._availabilityZoneIds != null && (this._availabilityZoneIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

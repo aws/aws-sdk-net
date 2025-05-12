@@ -59,7 +59,15 @@ namespace Amazon.EC2.Model
     /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
     /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
-    ///  </li> </ul> <note> 
+    ///  </li> </ul> 
+    /// <para>
+    /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+    /// of an API command you run that creates or modifies resources might not be immediately
+    /// available to all subsequent commands you run. For guidance on how to manage eventual
+    /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+    /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
+    /// </para>
+    ///  <note> 
     /// <para>
     /// The order of the elements in the response, including those within nested structures,
     /// might vary. Applications should not assume the elements appear in a particular order.

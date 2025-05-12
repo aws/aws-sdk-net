@@ -18100,6 +18100,14 @@ namespace Amazon.EC2
         /// do not specify any instance IDs at all, the call fails. If you describe instances
         /// and specify only instance IDs that are in an unaffected zone, the call works normally.
         /// </para>
+        ///  
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
+        /// </para>
         ///  <important> 
         /// <para>
         /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
@@ -18149,6 +18157,14 @@ namespace Amazon.EC2
         /// a service disruption and you specify instance IDs that are in the affected zone, or
         /// do not specify any instance IDs at all, the call fails. If you describe instances
         /// and specify only instance IDs that are in an unaffected zone, the call works normally.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -18205,6 +18221,14 @@ namespace Amazon.EC2
         /// do not specify any instance IDs at all, the call fails. If you describe instances
         /// and specify only instance IDs that are in an unaffected zone, the call works normally.
         /// </para>
+        ///  
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
+        /// </para>
         ///  <important> 
         /// <para>
         /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
@@ -18256,6 +18280,14 @@ namespace Amazon.EC2
         /// a service disruption and you specify instance IDs that are in the affected zone, or
         /// do not specify any instance IDs at all, the call fails. If you describe instances
         /// and specify only instance IDs that are in an unaffected zone, the call works normally.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -18319,7 +18351,15 @@ namespace Amazon.EC2
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> </ul> 
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
+        /// </para>
+        ///  <note> 
         /// <para>
         /// The order of the elements in the response, including those within nested structures,
         /// might vary. Applications should not assume the elements appear in a particular order.
@@ -18364,7 +18404,15 @@ namespace Amazon.EC2
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> </ul> 
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
+        /// </para>
+        ///  <note> 
         /// <para>
         /// The order of the elements in the response, including those within nested structures,
         /// might vary. Applications should not assume the elements appear in a particular order.
@@ -18414,7 +18462,15 @@ namespace Amazon.EC2
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> </ul> 
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
+        /// </para>
+        ///  <note> 
         /// <para>
         /// The order of the elements in the response, including those within nested structures,
         /// might vary. Applications should not assume the elements appear in a particular order.
@@ -18461,7 +18517,15 @@ namespace Amazon.EC2
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> </ul> 
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
+        /// </para>
+        ///  <note> 
         /// <para>
         /// The order of the elements in the response, including those within nested structures,
         /// might vary. Applications should not assume the elements appear in a particular order.

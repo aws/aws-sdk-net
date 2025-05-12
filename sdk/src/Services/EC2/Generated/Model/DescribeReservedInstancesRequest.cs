@@ -64,6 +64,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>availability-zone-id</c> - The ID of the Availability Zone where the Reserved
+        /// Instance can be used.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>duration</c> - The duration of the Reserved Instance (one year or three years),
         /// in seconds (<c>31536000</c> | <c>94608000</c>).
         /// </para>

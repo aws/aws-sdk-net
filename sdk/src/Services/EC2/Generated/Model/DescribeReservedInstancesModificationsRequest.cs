@@ -84,6 +84,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>modification-result.target-configuration.availability-zone-id</c> - The ID of
+        /// the Availability Zone for the new Reserved Instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>modification-result.target-configuration.instance-count </c> - The number of new
         /// Reserved Instances.
         /// </para>

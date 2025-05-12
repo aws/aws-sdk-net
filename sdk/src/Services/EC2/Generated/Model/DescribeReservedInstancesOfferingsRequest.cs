@@ -57,6 +57,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeReservedInstancesOfferingsRequest : AmazonEC2Request
     {
         private string _availabilityZone;
+        private string _availabilityZoneId;
         private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private bool? _includeMarketplace;
         private Tenancy _instanceTenancy;
@@ -76,6 +77,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The Availability Zone in which the Reserved Instance can be used.
         /// </para>
+        ///  
+        /// <para>
+        /// Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> can be specified, but
+        /// not both.
+        /// </para>
         /// </summary>
         public string AvailabilityZone
         {
@@ -90,6 +96,29 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The ID of the Availability Zone.
+        /// </para>
+        ///  
+        /// <para>
+        /// Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> can be specified, but
+        /// not both.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
         /// One or more filters.
@@ -98,6 +127,11 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <c>availability-zone</c> - The Availability Zone where the Reserved Instance can
         /// be used.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>availability-zone-id</c> - The ID of the Availability Zone where the Reserved
+        /// Instance can be used.
         /// </para>
         ///  </li> <li> 
         /// <para>
