@@ -137,7 +137,7 @@ namespace Amazon.SageMaker.Model
         /// The input artifacts of the component.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=60)]
+        [AWSProperty(Min=0, Max=60)]
         public Dictionary<string, TrialComponentArtifact> InputArtifacts
         {
             get { return this._inputArtifacts; }
@@ -189,7 +189,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the lineage group resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string LineageGroupArn
         {
             get { return this._lineageGroupArn; }
@@ -241,7 +241,7 @@ namespace Amazon.SageMaker.Model
         /// The output artifacts of the component.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=60)]
+        [AWSProperty(Min=0, Max=60)]
         public Dictionary<string, TrialComponentArtifact> OutputArtifacts
         {
             get { return this._outputArtifacts; }
@@ -260,7 +260,7 @@ namespace Amazon.SageMaker.Model
         /// The hyperparameters of the component.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=300)]
+        [AWSProperty(Min=0, Max=300)]
         public Dictionary<string, TrialComponentParameterValue> Parameters
         {
             get { return this._parameters; }
@@ -406,7 +406,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the trial component.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string TrialComponentArn
         {
             get { return this._trialComponentArn; }

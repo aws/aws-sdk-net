@@ -86,7 +86,7 @@ namespace Amazon.SageMaker.Model
         /// lineage entity.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4)]
+        [AWSProperty(Min=0, Max=4)]
         public List<string> LineageTypes
         {
             get { return this._lineageTypes; }
@@ -145,7 +145,7 @@ namespace Amazon.SageMaker.Model
         /// if it matches any of the provided pairs.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5)]
+        [AWSProperty(Min=0, Max=5)]
         public Dictionary<string, string> Properties
         {
             get { return this._properties; }
@@ -165,7 +165,7 @@ namespace Amazon.SageMaker.Model
         /// <c>DataSet</c>, <c>Model</c>, <c>Endpoint</c>, or <c>ModelDeployment</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5)]
+        [AWSProperty(Min=0, Max=5)]
         public List<string> Types
         {
             get { return this._types; }

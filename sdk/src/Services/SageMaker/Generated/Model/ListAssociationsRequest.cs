@@ -108,7 +108,7 @@ namespace Amazon.SageMaker.Model
         /// Name (ARN).
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string DestinationArn
         {
             get { return this._destinationArn; }
@@ -127,7 +127,7 @@ namespace Amazon.SageMaker.Model
         /// A filter that returns only associations with the specified destination type.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string DestinationType
         {
             get { return this._destinationType; }
@@ -167,7 +167,7 @@ namespace Amazon.SageMaker.Model
         /// the call returns a token for getting the next set of associations.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -222,7 +222,7 @@ namespace Amazon.SageMaker.Model
         /// A filter that returns only associations with the specified source ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string SourceArn
         {
             get { return this._sourceArn; }
@@ -241,7 +241,7 @@ namespace Amazon.SageMaker.Model
         /// A filter that returns only associations with the specified source type.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string SourceType
         {
             get { return this._sourceType; }

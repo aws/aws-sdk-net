@@ -187,7 +187,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Simple Storage (S3) URI where model artifacts ares stored.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ModelArtifact
         {
             get { return this._modelArtifact; }
@@ -299,7 +299,7 @@ namespace Amazon.SageMaker.Model
         /// on.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string ResourceKey
         {
             get { return this._resourceKey; }

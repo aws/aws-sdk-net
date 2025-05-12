@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of the AppImageConfig.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string AppImageConfigArn
         {
             get { return this._appImageConfigArn; }
@@ -67,7 +67,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the AppImageConfig. Must be unique to your account.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string AppImageConfigName
         {
             get { return this._appImageConfigName; }

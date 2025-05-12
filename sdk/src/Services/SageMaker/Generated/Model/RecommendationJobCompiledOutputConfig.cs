@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// artifacts.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string S3OutputUri
         {
             get { return this._s3OutputUri; }

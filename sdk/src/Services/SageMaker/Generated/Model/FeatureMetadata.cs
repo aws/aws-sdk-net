@@ -87,7 +87,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Number (ARN) of the feature group.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string FeatureGroupArn
         {
             get { return this._featureGroupArn; }

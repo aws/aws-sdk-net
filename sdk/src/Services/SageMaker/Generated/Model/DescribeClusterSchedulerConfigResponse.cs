@@ -54,7 +54,7 @@ namespace Amazon.SageMaker.Model
         /// ARN of the cluster where the cluster policy is applied.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ClusterArn
         {
             get { return this._clusterArn; }
@@ -73,7 +73,7 @@ namespace Amazon.SageMaker.Model
         /// ARN of the cluster policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string ClusterSchedulerConfigArn
         {
             get { return this._clusterSchedulerConfigArn; }
@@ -92,7 +92,7 @@ namespace Amazon.SageMaker.Model
         /// ID of the cluster policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=12)]
+        [AWSProperty(Required=true, Min=0, Max=12)]
         public string ClusterSchedulerConfigId
         {
             get { return this._clusterSchedulerConfigId; }
@@ -164,7 +164,7 @@ namespace Amazon.SageMaker.Model
         /// Description of the cluster policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -183,7 +183,7 @@ namespace Amazon.SageMaker.Model
         /// Failure reason of the cluster policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }

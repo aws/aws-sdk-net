@@ -88,7 +88,7 @@ namespace Amazon.SageMaker.Model
         /// The description of the hub content.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1023)]
+        [AWSProperty(Min=0, Max=1023)]
         public string HubContentDescription
         {
             get { return this._hubContentDescription; }
@@ -107,7 +107,7 @@ namespace Amazon.SageMaker.Model
         /// The display name of the hub content.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string HubContentDisplayName
         {
             get { return this._hubContentDisplayName; }
@@ -127,7 +127,7 @@ namespace Amazon.SageMaker.Model
         /// tables, and standard markdown formatting.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=65535)]
+        [AWSProperty(Min=0, Max=65535)]
         public string HubContentMarkdown
         {
             get { return this._hubContentMarkdown; }
@@ -146,7 +146,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the hub content resource that you want to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string HubContentName
         {
             get { return this._hubContentName; }
@@ -165,7 +165,7 @@ namespace Amazon.SageMaker.Model
         /// The searchable keywords of the hub content.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=50)]
+        [AWSProperty(Min=0, Max=50)]
         public List<string> HubContentSearchKeywords
         {
             get { return this._hubContentSearchKeywords; }

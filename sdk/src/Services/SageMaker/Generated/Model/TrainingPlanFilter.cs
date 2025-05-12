@@ -69,7 +69,7 @@ namespace Amazon.SageMaker.Model
         /// The value to filter by for the specified field.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=64)]
+        [AWSProperty(Required=true, Min=0, Max=64)]
         public string Value
         {
             get { return this._value; }

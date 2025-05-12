@@ -96,7 +96,7 @@ namespace Amazon.SageMaker.Model
         /// or <c>x-application/vnd.amazon+parquet</c>. The default value is <c>text/csv;header=present</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ContentType
         {
             get { return this._contentType; }

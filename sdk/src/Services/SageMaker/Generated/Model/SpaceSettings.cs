@@ -92,7 +92,7 @@ namespace Amazon.SageMaker.Model
         /// AI Domain. Permitted users can access this file system in Amazon SageMaker AI Studio.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5)]
+        [AWSProperty(Min=0, Max=5)]
         public List<CustomFileSystem> CustomFileSystems
         {
             get { return this._customFileSystems; }

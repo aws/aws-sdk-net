@@ -67,7 +67,7 @@ namespace Amazon.SageMaker.Model
         ///  A free form description of the <c>ResourceCatalog</c>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -86,7 +86,7 @@ namespace Amazon.SageMaker.Model
         ///  The Amazon Resource Name (ARN) of the <c>ResourceCatalog</c>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string ResourceCatalogArn
         {
             get { return this._resourceCatalogArn; }

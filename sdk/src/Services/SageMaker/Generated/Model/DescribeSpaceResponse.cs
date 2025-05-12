@@ -72,7 +72,7 @@ namespace Amazon.SageMaker.Model
         /// The ID of the associated domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string DomainId
         {
             get { return this._domainId; }
@@ -91,7 +91,7 @@ namespace Amazon.SageMaker.Model
         /// The failure reason.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -110,7 +110,7 @@ namespace Amazon.SageMaker.Model
         /// The ID of the space's profile in the Amazon EFS volume.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10)]
+        [AWSProperty(Min=0, Max=10)]
         public string HomeEfsFileSystemUid
         {
             get { return this._homeEfsFileSystemUid; }
@@ -165,7 +165,7 @@ namespace Amazon.SageMaker.Model
         /// The space's Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string SpaceArn
         {
             get { return this._spaceArn; }
@@ -184,7 +184,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the space that appears in the Amazon SageMaker Studio UI.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string SpaceDisplayName
         {
             get { return this._spaceDisplayName; }
@@ -203,7 +203,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the space.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string SpaceName
         {
             get { return this._spaceName; }
@@ -297,7 +297,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string Url
         {
             get { return this._url; }

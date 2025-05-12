@@ -72,7 +72,7 @@ namespace Amazon.SageMaker.Model
         /// The action type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string ActionType
         {
             get { return this._actionType; }
@@ -91,7 +91,7 @@ namespace Amazon.SageMaker.Model
         /// The description of the action.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=3072)]
+        [AWSProperty(Min=0, Max=3072)]
         public string Description
         {
             get { return this._description; }
@@ -125,7 +125,7 @@ namespace Amazon.SageMaker.Model
         /// A list of properties to add to the action.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=30)]
+        [AWSProperty(Min=0, Max=30)]
         public Dictionary<string, string> Properties
         {
             get { return this._properties; }

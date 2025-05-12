@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The hub content dependency copy path.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1023)]
+        [AWSProperty(Min=0, Max=1023)]
         public string DependencyCopyPath
         {
             get { return this._dependencyCopyPath; }
@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         /// The hub content dependency origin path.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1023)]
+        [AWSProperty(Min=0, Max=1023)]
         public string DependencyOriginPath
         {
             get { return this._dependencyOriginPath; }

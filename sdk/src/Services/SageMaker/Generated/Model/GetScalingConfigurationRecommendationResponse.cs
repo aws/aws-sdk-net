@@ -68,7 +68,7 @@ namespace Amazon.SageMaker.Model
         /// job.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string EndpointName
         {
             get { return this._endpointName; }

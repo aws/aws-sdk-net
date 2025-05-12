@@ -86,7 +86,7 @@ namespace Amazon.SageMaker.Model
         /// A message describing why the step failed.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string FailureReason
         {
             get { return this._failureReason; }

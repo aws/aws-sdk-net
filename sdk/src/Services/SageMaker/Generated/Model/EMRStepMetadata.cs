@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// The identifier of the EMR cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ClusterId
         {
             get { return this._clusterId; }
@@ -64,7 +64,7 @@ namespace Amazon.SageMaker.Model
         /// The path to the log file where the cluster step's failure root cause is recorded.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string LogFilePath
         {
             get { return this._logFilePath; }
@@ -83,7 +83,7 @@ namespace Amazon.SageMaker.Model
         /// The identifier of the EMR cluster step.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string StepId
         {
             get { return this._stepId; }
@@ -102,7 +102,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the EMR cluster step.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string StepName
         {
             get { return this._stepName; }

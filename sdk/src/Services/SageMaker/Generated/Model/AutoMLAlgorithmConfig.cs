@@ -140,7 +140,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> </li> </ul> </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Max=11)]
+        [AWSProperty(Required=true, Min=0, Max=11)]
         public List<string> AutoMLAlgorithms
         {
             get { return this._autoMLAlgorithms; }

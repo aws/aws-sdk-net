@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         /// An endpoint in customer's account which has enabled <c>DataCaptureConfig</c> enabled.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string EndpointName
         {
             get { return this._endpointName; }
@@ -92,7 +92,7 @@ namespace Amazon.SageMaker.Model
         /// The attributes of the input data to exclude from the analysis.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public string ExcludeFeaturesAttribute
         {
             get { return this._excludeFeaturesAttribute; }
@@ -147,7 +147,7 @@ namespace Amazon.SageMaker.Model
         /// Path to the filesystem where the endpoint data is available to the container.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string LocalPath
         {
             get { return this._localPath; }

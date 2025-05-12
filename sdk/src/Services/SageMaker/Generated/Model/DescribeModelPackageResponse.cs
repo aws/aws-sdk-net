@@ -92,7 +92,7 @@ namespace Amazon.SageMaker.Model
         /// A description provided for the model approval.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ApprovalDescription
         {
             get { return this._approvalDescription; }
@@ -387,7 +387,7 @@ namespace Amazon.SageMaker.Model
         /// A brief summary of the model package.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ModelPackageDescription
         {
             get { return this._modelPackageDescription; }

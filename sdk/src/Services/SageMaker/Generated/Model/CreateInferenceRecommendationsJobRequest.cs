@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model
         /// Description of the recommendation job.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=128)]
+        [AWSProperty(Min=0, Max=128)]
         public string JobDescription
         {
             get { return this._jobDescription; }

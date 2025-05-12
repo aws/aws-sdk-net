@@ -101,7 +101,7 @@ namespace Amazon.SageMaker.Model
         ///  The Amazon Resource Name (ARN) of the Lifecycle Configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string StudioLifecycleConfigArn
         {
             get { return this._studioLifecycleConfigArn; }
@@ -120,7 +120,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the Amazon SageMaker AI Studio Lifecycle Configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string StudioLifecycleConfigName
         {
             get { return this._studioLifecycleConfigName; }

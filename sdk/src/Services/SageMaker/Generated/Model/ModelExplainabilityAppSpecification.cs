@@ -46,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// model explainability parameters</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string ConfigUri
         {
             get { return this._configUri; }
@@ -65,7 +65,7 @@ namespace Amazon.SageMaker.Model
         /// Sets the environment variables in the Docker container.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=50)]
+        [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }
@@ -84,7 +84,7 @@ namespace Amazon.SageMaker.Model
         /// The container image to be run by the model explainability job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Required=true, Min=0, Max=255)]
         public string ImageUri
         {
             get { return this._imageUri; }

@@ -67,7 +67,7 @@ namespace Amazon.SageMaker.Model
         /// 2,500 <c>Features</c> are returned by default.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

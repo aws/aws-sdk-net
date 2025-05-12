@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// A presigned URL with an authorization token.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string AuthorizedUrl
         {
             get { return this._authorizedUrl; }

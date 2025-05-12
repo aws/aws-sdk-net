@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model
         /// properties can be deleted.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2)]
+        [AWSProperty(Min=0, Max=2)]
         public List<string> DeleteProperties
         {
             get { return this._deleteProperties; }

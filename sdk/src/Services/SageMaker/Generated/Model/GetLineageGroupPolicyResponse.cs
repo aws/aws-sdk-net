@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the lineage group.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string LineageGroupArn
         {
             get { return this._lineageGroupArn; }
@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// The resource policy that gives access to the lineage group in another account.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20480)]
+        [AWSProperty(Min=0, Max=20480)]
         public string ResourcePolicy
         {
             get { return this._resourcePolicy; }

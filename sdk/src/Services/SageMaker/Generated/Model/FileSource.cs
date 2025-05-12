@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The digest of the file source.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=72)]
+        [AWSProperty(Min=0, Max=72)]
         public string ContentDigest
         {
             get { return this._contentDigest; }
@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         /// The type of content stored in the file source.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ContentType
         {
             get { return this._contentType; }
@@ -82,7 +82,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 URI for the file source.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string S3Uri
         {
             get { return this._s3Uri; }

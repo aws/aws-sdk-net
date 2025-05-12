@@ -89,7 +89,7 @@ namespace Amazon.SageMaker.Model
         /// Existing customer endpoints on which to run an Inference Recommender job.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<EndpointInfo> Endpoints
         {
             get { return this._endpoints; }
@@ -128,7 +128,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the created model.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string ModelName
         {
             get { return this._modelName; }
@@ -255,7 +255,7 @@ namespace Amazon.SageMaker.Model
         /// Web Services KMS) documentation.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string VolumeKmsKeyId
         {
             get { return this._volumeKmsKeyId; }

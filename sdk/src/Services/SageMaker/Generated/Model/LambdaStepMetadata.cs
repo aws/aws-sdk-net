@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the Lambda function that was run by this step execution.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string Arn
         {
             get { return this._arn; }

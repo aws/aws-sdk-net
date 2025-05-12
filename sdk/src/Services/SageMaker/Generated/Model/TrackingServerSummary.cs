@@ -102,7 +102,7 @@ namespace Amazon.SageMaker.Model
         /// The MLflow version used for a listed tracking server.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=16)]
+        [AWSProperty(Min=0, Max=16)]
         public string MlflowVersion
         {
             get { return this._mlflowVersion; }
@@ -121,7 +121,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of a listed tracking server.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string TrackingServerArn
         {
             get { return this._trackingServerArn; }

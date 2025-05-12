@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model
         /// See a list of available Human Ui Amazon Resource Names (ARNs) in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string HumanTaskUiArn
         {
             get { return this._humanTaskUiArn; }

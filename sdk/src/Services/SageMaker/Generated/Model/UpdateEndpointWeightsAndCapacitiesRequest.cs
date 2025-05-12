@@ -68,7 +68,7 @@ namespace Amazon.SageMaker.Model
         /// The name of an existing SageMaker endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string EndpointName
         {
             get { return this._endpointName; }

@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The justification for why the OfflineStoreStatus is Blocked (if applicable).
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string BlockedReason
         {
             get { return this._blockedReason; }

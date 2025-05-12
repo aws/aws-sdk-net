@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model
         /// manifest file.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=16)]
+        [AWSProperty(Min=0, Max=16)]
         public List<string> AttributeNames
         {
             get { return this._attributeNames; }
@@ -93,7 +93,7 @@ namespace Amazon.SageMaker.Model
         /// A list of names of instance groups that get data from the S3 data source.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5)]
+        [AWSProperty(Min=0, Max=5)]
         public List<string> InstanceGroupNames
         {
             get { return this._instanceGroupNames; }
@@ -277,7 +277,7 @@ namespace Amazon.SageMaker.Model
         /// job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string S3Uri
         {
             get { return this._s3Uri; }

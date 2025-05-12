@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of the image version.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ImageVersionArn
         {
             get { return this._imageVersionArn; }

@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The message containing the reason for a partial failure of an AutoML job.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string PartialFailureMessage
         {
             get { return this._partialFailureMessage; }

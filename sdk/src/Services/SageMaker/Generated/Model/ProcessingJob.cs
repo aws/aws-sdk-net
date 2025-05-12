@@ -117,7 +117,7 @@ namespace Amazon.SageMaker.Model
         /// Sets the environment variables in the Docker container.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }
@@ -137,7 +137,7 @@ namespace Amazon.SageMaker.Model
         /// when the processing job exits.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ExitMessage
         {
             get { return this._exitMessage; }
@@ -172,7 +172,7 @@ namespace Amazon.SageMaker.Model
         /// if it failed.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -209,7 +209,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of a monitoring schedule for an endpoint associated with this processing job.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string MonitoringScheduleArn
         {
             get { return this._monitoringScheduleArn; }
@@ -280,7 +280,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of the processing job.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ProcessingJobArn
         {
             get { return this._processingJobArn; }
@@ -439,7 +439,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of the training job associated with this processing job.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string TrainingJobArn
         {
             get { return this._trainingJobArn; }

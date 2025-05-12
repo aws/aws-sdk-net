@@ -46,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// SageMaker uses to encrypt the asynchronous inference output in Amazon S3.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -84,7 +84,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 location to upload failure inference responses to.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=512)]
+        [AWSProperty(Min=0, Max=512)]
         public string S3FailurePath
         {
             get { return this._s3FailurePath; }
@@ -103,7 +103,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 location to upload inference responses to.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=512)]
+        [AWSProperty(Min=0, Max=512)]
         public string S3OutputPath
         {
             get { return this._s3OutputPath; }

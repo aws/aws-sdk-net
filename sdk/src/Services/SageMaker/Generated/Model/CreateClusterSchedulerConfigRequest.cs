@@ -49,7 +49,7 @@ namespace Amazon.SageMaker.Model
         /// ARN of the cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string ClusterArn
         {
             get { return this._clusterArn; }
@@ -68,7 +68,7 @@ namespace Amazon.SageMaker.Model
         /// Description of the cluster policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }

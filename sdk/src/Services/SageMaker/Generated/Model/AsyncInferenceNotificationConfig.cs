@@ -46,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// no notification is sent on failure.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string ErrorTopic
         {
             get { return this._errorTopic; }
@@ -91,7 +91,7 @@ namespace Amazon.SageMaker.Model
         /// If no topic is provided, no notification is sent on success.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string SuccessTopic
         {
             get { return this._successTopic; }

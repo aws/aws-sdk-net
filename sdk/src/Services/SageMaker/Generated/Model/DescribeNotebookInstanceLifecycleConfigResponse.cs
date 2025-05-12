@@ -83,7 +83,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the lifecycle configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string NotebookInstanceLifecycleConfigArn
         {
             get { return this._notebookInstanceLifecycleConfigArn; }
@@ -102,7 +102,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the lifecycle configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string NotebookInstanceLifecycleConfigName
         {
             get { return this._notebookInstanceLifecycleConfigName; }
@@ -121,7 +121,7 @@ namespace Amazon.SageMaker.Model
         /// The shell script that runs only once, when you create a notebook instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<NotebookInstanceLifecycleHook> OnCreate
         {
             get { return this._onCreate; }
@@ -141,7 +141,7 @@ namespace Amazon.SageMaker.Model
         /// you create the notebook instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<NotebookInstanceLifecycleHook> OnStart
         {
             get { return this._onStart; }

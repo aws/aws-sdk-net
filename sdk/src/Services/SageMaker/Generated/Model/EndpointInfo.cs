@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The name of a customer's endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string EndpointName
         {
             get { return this._endpointName; }

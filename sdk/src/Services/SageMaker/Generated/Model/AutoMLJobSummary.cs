@@ -163,7 +163,7 @@ namespace Amazon.SageMaker.Model
         /// The failure reason of an AutoML job.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }

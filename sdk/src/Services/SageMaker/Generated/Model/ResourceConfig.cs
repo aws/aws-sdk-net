@@ -69,7 +69,7 @@ namespace Amazon.SageMaker.Model
         /// The configuration of a heterogeneous cluster in JSON format.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5)]
+        [AWSProperty(Min=0, Max=5)]
         public List<InstanceGroup> InstanceGroups
         {
             get { return this._instanceGroups; }
@@ -213,7 +213,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string VolumeKmsKeyId
         {
             get { return this._volumeKmsKeyId; }

@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of the private model hub that contains the updated hub content.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Required=true, Min=0, Max=255)]
         public string HubArn
         {
             get { return this._hubArn; }
@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of the hub content resource that was updated.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Required=true, Min=0, Max=255)]
         public string HubContentArn
         {
             get { return this._hubContentArn; }

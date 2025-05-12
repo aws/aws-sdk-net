@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of your created Lifecycle Configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string StudioLifecycleConfigArn
         {
             get { return this._studioLifecycleConfigArn; }

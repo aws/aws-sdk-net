@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// ID</a> to use for encrypting a model card.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }

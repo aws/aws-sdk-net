@@ -104,7 +104,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Max=2048)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string LabelingJobAlgorithmSpecificationArn
         {
             get { return this._labelingJobAlgorithmSpecificationArn; }

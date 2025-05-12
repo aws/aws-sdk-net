@@ -46,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the endpoint configuration used in the deployment. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string EndpointConfigName
         {
             get { return this._endpointConfigName; }

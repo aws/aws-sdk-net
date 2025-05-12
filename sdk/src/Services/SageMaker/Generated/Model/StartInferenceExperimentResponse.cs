@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of the started inference experiment to start.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string InferenceExperimentArn
         {
             get { return this._inferenceExperimentArn; }

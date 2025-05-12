@@ -143,7 +143,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the data quality monitoring job definition.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string JobDefinitionArn
         {
             get { return this._jobDefinitionArn; }

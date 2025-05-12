@@ -54,7 +54,7 @@ namespace Amazon.SageMaker.Model
         /// The ID of the associated Domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string DomainId
         {
             get { return this._domainId; }
@@ -97,7 +97,7 @@ namespace Amazon.SageMaker.Model
         /// IAM Identity Center, this field cannot be specified. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string SingleSignOnUserValue
         {
             get { return this._singleSignOnUserValue; }
@@ -140,7 +140,7 @@ namespace Amazon.SageMaker.Model
         /// A name for the UserProfile. This value is not case sensitive.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string UserProfileName
         {
             get { return this._userProfileName; }

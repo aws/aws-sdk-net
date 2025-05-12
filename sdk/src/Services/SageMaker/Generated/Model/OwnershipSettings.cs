@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The user profile who is the owner of the space.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string OwnerUserProfileName
         {
             get { return this._ownerUserProfileName; }

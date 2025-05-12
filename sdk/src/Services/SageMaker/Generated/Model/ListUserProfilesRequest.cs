@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model
         /// A parameter by which to filter the results.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string DomainIdEquals
         {
             get { return this._domainIdEquals; }
@@ -92,7 +92,7 @@ namespace Amazon.SageMaker.Model
         /// next request to receive the next set of results.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -147,7 +147,7 @@ namespace Amazon.SageMaker.Model
         /// A parameter by which to filter the results.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string UserProfileNameContains
         {
             get { return this._userProfileNameContains; }

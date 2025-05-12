@@ -124,7 +124,7 @@ namespace Amazon.SageMaker.Model
         /// provided must not include the target column.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FeatureSpecificationS3Uri
         {
             get { return this._featureSpecificationS3Uri; }

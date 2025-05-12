@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// is <c>/opt/ml/checkpoints/</c>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4096)]
+        [AWSProperty(Min=0, Max=4096)]
         public string LocalPath
         {
             get { return this._localPath; }
@@ -65,7 +65,7 @@ namespace Amazon.SageMaker.Model
         /// <c>s3://bucket-name/key-name-prefix</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string S3Uri
         {
             get { return this._s3Uri; }

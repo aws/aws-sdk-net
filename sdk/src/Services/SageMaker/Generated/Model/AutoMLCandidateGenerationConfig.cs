@@ -80,7 +80,7 @@ namespace Amazon.SageMaker.Model
         /// support</a> section in Autopilot developer guide.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<AutoMLAlgorithmConfig> AlgorithmsConfig
         {
             get { return this._algorithmsConfig; }
@@ -141,7 +141,7 @@ namespace Amazon.SageMaker.Model
         /// provided must not include the target column.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FeatureSpecificationS3Uri
         {
             get { return this._featureSpecificationS3Uri; }

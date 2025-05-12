@@ -54,7 +54,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the action.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ActionArn
         {
             get { return this._actionArn; }
@@ -92,7 +92,7 @@ namespace Amazon.SageMaker.Model
         /// The type of the action.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ActionType
         {
             get { return this._actionType; }
@@ -144,7 +144,7 @@ namespace Amazon.SageMaker.Model
         /// The description of the action.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=3072)]
+        [AWSProperty(Min=0, Max=3072)]
         public string Description
         {
             get { return this._description; }
@@ -196,7 +196,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the lineage group.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string LineageGroupArn
         {
             get { return this._lineageGroupArn; }
@@ -230,7 +230,7 @@ namespace Amazon.SageMaker.Model
         /// A list of the action's properties.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=30)]
+        [AWSProperty(Min=0, Max=30)]
         public Dictionary<string, string> Properties
         {
             get { return this._properties; }

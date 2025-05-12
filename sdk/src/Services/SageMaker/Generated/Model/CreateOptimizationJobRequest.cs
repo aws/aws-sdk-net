@@ -101,7 +101,7 @@ namespace Amazon.SageMaker.Model
         /// Settings for each of the optimization techniques that the job applies.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=10)]
+        [AWSProperty(Required=true, Min=0, Max=10)]
         public List<OptimizationConfig> OptimizationConfigs
         {
             get { return this._optimizationConfigs; }
@@ -120,7 +120,7 @@ namespace Amazon.SageMaker.Model
         /// The environment variables to set in the model container.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=25)]
+        [AWSProperty(Min=0, Max=25)]
         public Dictionary<string, string> OptimizationEnvironment
         {
             get { return this._optimizationEnvironment; }

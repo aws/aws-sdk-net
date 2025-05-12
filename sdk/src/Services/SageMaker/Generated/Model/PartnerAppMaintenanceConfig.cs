@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// format: <c>3-letter-day:24-h-hour:minute</c>. For example: <c>TUE:03:30</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=9)]
+        [AWSProperty(Min=0, Max=9)]
         public string MaintenanceWindowStart
         {
             get { return this._maintenanceWindowStart; }

@@ -105,7 +105,7 @@ namespace Amazon.SageMaker.Model
         /// A list of key-value pairs that you can add to better describe the feature.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=25)]
+        [AWSProperty(Min=0, Max=25)]
         public List<FeatureParameter> ParameterAdditions
         {
             get { return this._parameterAdditions; }
@@ -125,7 +125,7 @@ namespace Amazon.SageMaker.Model
         /// feature.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=25)]
+        [AWSProperty(Min=0, Max=25)]
         public List<string> ParameterRemovals
         {
             get { return this._parameterRemovals; }

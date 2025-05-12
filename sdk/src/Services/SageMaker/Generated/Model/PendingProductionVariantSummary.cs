@@ -273,7 +273,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the variant.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string VariantName
         {
             get { return this._variantName; }

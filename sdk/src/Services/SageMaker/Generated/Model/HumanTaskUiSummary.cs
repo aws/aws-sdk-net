@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the human task user interface.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string HumanTaskUiArn
         {
             get { return this._humanTaskUiArn; }

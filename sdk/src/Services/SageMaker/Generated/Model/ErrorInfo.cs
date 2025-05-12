@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The error code for an invalid or failed operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string Code
         {
             get { return this._code; }
@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         /// The failure reason for the operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string Reason
         {
             get { return this._reason; }

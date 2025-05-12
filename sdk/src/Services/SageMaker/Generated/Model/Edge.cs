@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the destination lineage entity of the directed edge.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string DestinationArn
         {
             get { return this._destinationArn; }
@@ -82,7 +82,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the source lineage entity of the directed edge.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string SourceArn
         {
             get { return this._sourceArn; }

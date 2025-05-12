@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// The ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

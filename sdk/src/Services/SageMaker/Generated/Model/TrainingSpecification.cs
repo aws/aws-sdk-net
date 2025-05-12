@@ -185,7 +185,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon ECR registry path of the Docker image that contains the training algorithm.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Required=true, Min=0, Max=255)]
         public string TrainingImage
         {
             get { return this._trainingImage; }
@@ -204,7 +204,7 @@ namespace Amazon.SageMaker.Model
         /// An MD5 hash of the training algorithm that identifies the Docker image used for training.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=72)]
+        [AWSProperty(Min=0, Max=72)]
         public string TrainingImageDigest
         {
             get { return this._trainingImageDigest; }

@@ -74,7 +74,7 @@ namespace Amazon.SageMaker.Model
         /// and values entries in the map.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=16)]
+        [AWSProperty(Min=0, Max=16)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }

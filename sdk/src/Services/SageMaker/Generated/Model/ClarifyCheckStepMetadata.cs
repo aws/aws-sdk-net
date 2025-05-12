@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 URI of baseline constraints file to be used for the drift check.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string BaselineUsedForDriftCheckConstraints
         {
             get { return this._baselineUsedForDriftCheckConstraints; }
@@ -70,7 +70,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 URI of the newly calculated baseline constraints file.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string CalculatedBaselineConstraints
         {
             get { return this._calculatedBaselineConstraints; }
@@ -90,7 +90,7 @@ namespace Amazon.SageMaker.Model
         /// execution.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string CheckJobArn
         {
             get { return this._checkJobArn; }
@@ -109,7 +109,7 @@ namespace Amazon.SageMaker.Model
         /// The type of the Clarify Check step
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string CheckType
         {
             get { return this._checkType; }
@@ -128,7 +128,7 @@ namespace Amazon.SageMaker.Model
         /// The model package group name.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ModelPackageGroupName
         {
             get { return this._modelPackageGroupName; }
@@ -189,7 +189,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 URI of the violation report if violations are detected.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ViolationReport
         {
             get { return this._violationReport; }

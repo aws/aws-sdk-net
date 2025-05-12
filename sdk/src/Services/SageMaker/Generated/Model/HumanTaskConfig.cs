@@ -1519,7 +1519,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string PreHumanTaskLambdaArn
         {
             get { return this._preHumanTaskLambdaArn; }
@@ -1708,7 +1708,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the work team assigned to complete the tasks.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string WorkteamArn
         {
             get { return this._workteamArn; }

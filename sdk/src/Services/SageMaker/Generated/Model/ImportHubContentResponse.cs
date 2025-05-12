@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of the hub that the content was imported into.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Required=true, Min=0, Max=255)]
         public string HubArn
         {
             get { return this._hubArn; }
@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of the hub content that was imported.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Required=true, Min=0, Max=255)]
         public string HubContentArn
         {
             get { return this._hubContentArn; }

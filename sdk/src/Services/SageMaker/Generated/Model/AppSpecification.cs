@@ -82,7 +82,7 @@ namespace Amazon.SageMaker.Model
         /// The container image to be run by the processing job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Required=true, Min=0, Max=255)]
         public string ImageUri
         {
             get { return this._imageUri; }

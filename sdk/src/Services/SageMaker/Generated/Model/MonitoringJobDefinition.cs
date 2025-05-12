@@ -69,7 +69,7 @@ namespace Amazon.SageMaker.Model
         /// Sets the environment variables in the Docker container.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=50)]
+        [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }

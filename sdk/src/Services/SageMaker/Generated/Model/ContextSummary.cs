@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the context.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ContextArn
         {
             get { return this._contextArn; }
@@ -86,7 +86,7 @@ namespace Amazon.SageMaker.Model
         /// The type of the context.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ContextType
         {
             get { return this._contextType; }

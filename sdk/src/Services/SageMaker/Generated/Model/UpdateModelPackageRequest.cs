@@ -76,7 +76,7 @@ namespace Amazon.SageMaker.Model
         /// A description for the approval status of the model.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ApprovalDescription
         {
             get { return this._approvalDescription; }

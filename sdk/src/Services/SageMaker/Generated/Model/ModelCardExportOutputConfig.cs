@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 output path to export your model card PDF.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string S3OutputPath
         {
             get { return this._s3OutputPath; }

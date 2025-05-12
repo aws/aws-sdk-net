@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The maximum floating-point value allowed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string MaxValue
         {
             get { return this._maxValue; }
@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// The minimum floating-point value allowed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string MinValue
         {
             get { return this._minValue; }

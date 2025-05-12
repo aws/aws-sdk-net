@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -74,7 +74,7 @@ namespace Amazon.SageMaker.Model
         /// The S3 path where offline records are written.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ResolvedOutputS3Uri
         {
             get { return this._resolvedOutputS3Uri; }
@@ -97,7 +97,7 @@ namespace Amazon.SageMaker.Model
         /// S3 URIs have a format similar to the following: <c>s3://example-bucket/prefix/</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string S3Uri
         {
             get { return this._s3Uri; }

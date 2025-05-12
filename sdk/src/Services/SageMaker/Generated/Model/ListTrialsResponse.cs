@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// A token for getting the next set of trials, if there are any.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

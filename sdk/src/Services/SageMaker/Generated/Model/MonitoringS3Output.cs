@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// results of a monitoring job. LocalPath is an absolute path for the output data.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string LocalPath
         {
             get { return this._localPath; }
@@ -84,7 +84,7 @@ namespace Amazon.SageMaker.Model
         /// the results of a monitoring job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=512)]
+        [AWSProperty(Required=true, Min=0, Max=512)]
         public string S3Uri
         {
             get { return this._s3Uri; }

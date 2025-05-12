@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the created domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string DomainArn
         {
             get { return this._domainArn; }
@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         /// The ID of the created domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string DomainId
         {
             get { return this._domainId; }
@@ -82,7 +82,7 @@ namespace Amazon.SageMaker.Model
         /// The URL to the created domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string Url
         {
             get { return this._url; }

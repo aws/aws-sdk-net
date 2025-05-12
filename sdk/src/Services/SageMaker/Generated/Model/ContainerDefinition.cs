@@ -84,7 +84,7 @@ namespace Amazon.SageMaker.Model
         /// parameter of every <c>ContainerDefinition</c> in that pipeline.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string ContainerHostname
         {
             get { return this._containerHostname; }
@@ -111,7 +111,7 @@ namespace Amazon.SageMaker.Model
         /// of their maps, combined, is also 32 KB.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }
@@ -143,7 +143,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string Image
         {
             get { return this._image; }
@@ -277,7 +277,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </important>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ModelDataUrl
         {
             get { return this._modelDataUrl; }

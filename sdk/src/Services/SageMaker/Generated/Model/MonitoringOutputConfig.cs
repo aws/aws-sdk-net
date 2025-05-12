@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// model artifacts at rest using Amazon S3 server-side encryption.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
