@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
-    /// The endpoint being called is in a AWS Region different from your EC2 instance, ECS
-    /// task, or EKS pod. The Region of the Metering Service endpoint and the AWS Region of
-    /// the resource must match.
+    /// The endpoint being called is in a Amazon Web Services Region different from your EC2
+    /// instance, ECS task, or EKS pod. The Region of the Metering Service endpoint and the
+    /// Amazon Web Services Region of the resource must match.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

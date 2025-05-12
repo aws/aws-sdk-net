@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the batch-2016-08-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model
@@ -29,36 +30,71 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Paginator for DescribeComputeEnvironments operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeComputeEnvironmentsPaginator DescribeComputeEnvironments(DescribeComputeEnvironmentsRequest request);
 
         /// <summary>
         /// Paginator for DescribeJobDefinitions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeJobDefinitionsPaginator DescribeJobDefinitions(DescribeJobDefinitionsRequest request);
 
         /// <summary>
         /// Paginator for DescribeJobQueues operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeJobQueuesPaginator DescribeJobQueues(DescribeJobQueuesRequest request);
 
         /// <summary>
         /// Paginator for ListConsumableResources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListConsumableResourcesPaginator ListConsumableResources(ListConsumableResourcesRequest request);
 
         /// <summary>
         /// Paginator for ListJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListJobsPaginator ListJobs(ListJobsRequest request);
 
         /// <summary>
         /// Paginator for ListJobsByConsumableResource operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListJobsByConsumableResourcePaginator ListJobsByConsumableResource(ListJobsByConsumableResourceRequest request);
 
         /// <summary>
         /// Paginator for ListSchedulingPolicies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSchedulingPoliciesPaginator ListSchedulingPolicies(ListSchedulingPoliciesRequest request);
     }
 }

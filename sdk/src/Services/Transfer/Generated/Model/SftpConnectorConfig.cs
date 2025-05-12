@@ -32,21 +32,38 @@ namespace Amazon.Transfer.Model
     /// <summary>
     /// Contains the details for an SFTP connector object. The connector object is used for
     /// transferring files to and from a partner's SFTP server.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Because the <c>SftpConnectorConfig</c> data type is used for both creating and updating
-    /// SFTP connectors, its parameters, <c>TrustedHostKeys</c> and <c>UserSecretId</c> are
-    /// marked as not required. This is a bit misleading, as they are not required when you
-    /// are updating an existing SFTP connector, but <i>are required</i> when you are creating
-    /// a new SFTP connector.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class SftpConnectorConfig
     {
+        private int? _maxConcurrentConnections;
         private List<string> _trustedHostKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _userSecretId;
+
+        /// <summary>
+        /// Gets and sets the property MaxConcurrentConnections. 
+        /// <para>
+        /// Specify the number of concurrent connections that your connector creates to the remote
+        /// server. The default value is <c>5</c> (this is also the maximum value allowed).
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter specifies the number of active connections that your connector can
+        /// establish with the remote server at the same time. Increasing this value can enhance
+        /// connector performance when transferring large file batches by enabling parallel operations.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int? MaxConcurrentConnections
+        {
+            get { return this._maxConcurrentConnections; }
+            set { this._maxConcurrentConnections = value; }
+        }
+
+        // Check to see if MaxConcurrentConnections property is set
+        internal bool IsSetMaxConcurrentConnections()
+        {
+            return this._maxConcurrentConnections.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property TrustedHostKeys. 
@@ -55,7 +72,13 @@ namespace Amazon.Transfer.Model
         /// server to which you are connecting. You can use the <c>ssh-keyscan</c> command against
         /// the SFTP server to retrieve the necessary key.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  <c>TrustedHostKeys</c> is optional for <c>CreateConnector</c>. If not provided, you
+        /// can use <c>TestConnection</c> to retrieve the server host key during the initial connection
+        /// attempt, and subsequently update the connector with the observed host key.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The three standard SSH public key format elements are <c>&lt;key type&gt;</c>, <c>&lt;body
         /// base64&gt;</c>, and an optional <c>&lt;comment&gt;</c>, with spaces between each element.
@@ -99,7 +122,7 @@ namespace Amazon.Transfer.Model
         /// command or into the <b>Trusted host keys</b> field in the console.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
+        [AWSProperty(Min=0, Max=10)]
         public List<string> TrustedHostKeys
         {
             get { return this._trustedHostKeys; }
@@ -119,6 +142,15 @@ namespace Amazon.Transfer.Model
         /// the SFTP user's private key, password, or both. The identifier must be the Amazon
         /// Resource Name (ARN) of the secret.
         /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Required when creating an SFTP connector
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Optional when updating an existing SFTP connector
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string UserSecretId

@@ -99,6 +99,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.FilterInArns.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("filterOutArnSet/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.FilterOutArns == null)
+                        {
+                            unmarshalledObject.FilterOutArns = new List<string>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.FilterOutArns.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("forwardPathComponentSet/item", targetDepth))
                     {
                         var unmarshaller = PathComponentUnmarshaller.Instance;

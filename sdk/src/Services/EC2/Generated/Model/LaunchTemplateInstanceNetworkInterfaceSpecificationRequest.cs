@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         private bool? _deleteOnTermination;
         private string _description;
         private int? _deviceIndex;
+        private int? _enaQueueCount;
         private EnaSrdSpecificationRequest _enaSrdSpecification;
         private List<string> _groups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _interfaceType;
@@ -167,10 +168,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeviceIndex. 
         /// <para>
-        /// The device index for the network interface attachment. Each network interface requires
-        /// a device index. If you create a launch template that includes secondary network interfaces
-        /// but not a primary network interface, then you must add a primary network interface
-        /// as a launch parameter when you launch an instance from the template.
+        /// The device index for the network interface attachment. The primary network interface
+        /// has a device index of 0. Each network interface is of type <c>interface</c>, you must
+        /// specify a device index. If you create a launch template that includes secondary network
+        /// interfaces but not a primary network interface, then you must add a primary network
+        /// interface as a launch parameter when you launch an instance from the template.
         /// </para>
         /// </summary>
         public int? DeviceIndex
@@ -183,6 +185,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDeviceIndex()
         {
             return this._deviceIndex.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnaQueueCount. 
+        /// <para>
+        /// The number of ENA queues to be created with the instance.
+        /// </para>
+        /// </summary>
+        public int? EnaQueueCount
+        {
+            get { return this._enaQueueCount; }
+            set { this._enaQueueCount = value; }
+        }
+
+        // Check to see if EnaQueueCount property is set
+        internal bool IsSetEnaQueueCount()
+        {
+            return this._enaQueueCount.HasValue; 
         }
 
         /// <summary>

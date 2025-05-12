@@ -63,6 +63,7 @@ namespace Amazon.MediaConvert.Model
         private H264ParControl _parControl;
         private int? _parDenominator;
         private int? _parNumerator;
+        private List<string> _perFrameMetrics = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private H264QualityTuningLevel _qualityTuningLevel;
         private H264QvbrSettings _qvbrSettings;
         private H264RateControlMode _rateControlMode;
@@ -672,6 +673,36 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetParNumerator()
         {
             return this._parNumerator.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerFrameMetrics. Optionally choose one or more per frame
+        /// metric reports to generate along with your output. You can use these metrics to analyze
+        /// your video output according to one or more commonly used image quality metrics. You
+        /// can specify per frame metrics for output groups or for individual outputs. When you
+        /// do, MediaConvert writes a CSV (Comma-Separated Values) file to your S3 output destination,
+        /// named after the video, video codec, and metric type. For example: video_h264_PSNR.csv
+        /// Jobs that generate per frame metrics will take longer to complete, depending on the
+        /// resolution and complexity of your output. For example, some 4K jobs might take up
+        /// to twice as long to complete. Note that when analyzing the video quality of your output,
+        /// or when comparing the video quality of multiple different outputs, we generally also
+        /// recommend a detailed visual review in a controlled environment. You can choose from
+        /// the following per frame metrics: * PSNR: Peak Signal-to-Noise Ratio * SSIM: Structural
+        /// Similarity Index Measure * MS_SSIM: Multi-Scale Similarity Index Measure * PSNR_HVS:
+        /// Peak Signal-to-Noise Ratio, Human Visual System * VMAF: Video Multi-Method Assessment
+        /// Fusion * QVBR: Quality-Defined Variable Bitrate. This option is only available when
+        /// your output uses the QVBR rate control mode.
+        /// </summary>
+        public List<string> PerFrameMetrics
+        {
+            get { return this._perFrameMetrics; }
+            set { this._perFrameMetrics = value; }
+        }
+
+        // Check to see if PerFrameMetrics property is set
+        internal bool IsSetPerFrameMetrics()
+        {
+            return this._perFrameMetrics != null && (this._perFrameMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

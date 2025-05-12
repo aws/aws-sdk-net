@@ -72,6 +72,12 @@ namespace Amazon.Account.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
+                    if (context.TestExpression("x-amzn-ErrorType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RequestErrorType = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
                 }
             }
           

@@ -52,7 +52,7 @@
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileRequest.RetrievalRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):(iam)::\d{12}:role[/].*)$</pattern>
+    <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov|aws-eusc):(iam)::\d{12}:role[/].*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileRequest.Type</property>
@@ -75,7 +75,7 @@
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileResponse.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileResponse.KmsKeyIdentifier</property>
@@ -96,7 +96,7 @@
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileResponse.RetrievalRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):(iam)::\d{12}:role[/].*)$</pattern>
+    <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov|aws-eusc):(iam)::\d{12}:role[/].*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileResponse.Type</property>
@@ -201,7 +201,7 @@
     <property>Amazon.AppConfig.Model.CreateExtensionResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateExtensionResponse.Description</property>
@@ -231,13 +231,13 @@
     <property>Amazon.AppConfig.Model.CreateExtensionAssociationResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateExtensionAssociationResponse.ExtensionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateExtensionAssociationResponse.Id</property>
@@ -248,7 +248,7 @@
     <property>Amazon.AppConfig.Model.CreateExtensionAssociationResponse.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionRequest.ApplicationId</property>
@@ -296,7 +296,7 @@
     <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionResponse.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionResponse.VersionLabel</property>
@@ -418,7 +418,7 @@
     <property>Amazon.AppConfig.Model.GetConfigurationProfileResponse.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetConfigurationProfileResponse.KmsKeyIdentifier</property>
@@ -439,7 +439,7 @@
     <property>Amazon.AppConfig.Model.GetConfigurationProfileResponse.RetrievalRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):(iam)::\d{12}:role[/].*)$</pattern>
+    <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov|aws-eusc):(iam)::\d{12}:role[/].*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetConfigurationProfileResponse.Type</property>
@@ -508,7 +508,7 @@
     <property>Amazon.AppConfig.Model.GetDeploymentResponse.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentResponse.KmsKeyIdentifier</property>
@@ -594,7 +594,7 @@
     <property>Amazon.AppConfig.Model.GetExtensionResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExtensionResponse.Description</property>
@@ -618,13 +618,13 @@
     <property>Amazon.AppConfig.Model.GetExtensionAssociationResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExtensionAssociationResponse.ExtensionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExtensionAssociationResponse.Id</property>
@@ -635,7 +635,7 @@
     <property>Amazon.AppConfig.Model.GetExtensionAssociationResponse.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionRequest.ApplicationId</property>
@@ -667,7 +667,7 @@
     <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionResponse.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionResponse.VersionLabel</property>
@@ -789,7 +789,7 @@
     <property>Amazon.AppConfig.Model.ListExtensionAssociationsRequest.ResourceIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ListExtensionAssociationsResponse.NextToken</property>
@@ -848,7 +848,7 @@
     <property>Amazon.AppConfig.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentRequest.ApplicationId</property>
@@ -936,7 +936,7 @@
     <property>Amazon.AppConfig.Model.StartDeploymentResponse.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentResponse.KmsKeyIdentifier</property>
@@ -1017,7 +1017,7 @@
     <property>Amazon.AppConfig.Model.StopDeploymentResponse.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StopDeploymentResponse.KmsKeyIdentifier</property>
@@ -1039,13 +1039,13 @@
     <property>Amazon.AppConfig.Model.TagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UntagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateApplicationRequest.ApplicationId</property>
@@ -1102,7 +1102,7 @@
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileRequest.RetrievalRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):(iam)::\d{12}:role[/].*)$</pattern>
+    <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov|aws-eusc):(iam)::\d{12}:role[/].*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileResponse.ApplicationId</property>
@@ -1121,7 +1121,7 @@
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileResponse.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileResponse.KmsKeyIdentifier</property>
@@ -1142,7 +1142,7 @@
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileResponse.RetrievalRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):(iam)::\d{12}:role[/].*)$</pattern>
+    <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov|aws-eusc):(iam)::\d{12}:role[/].*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileResponse.Type</property>
@@ -1251,7 +1251,7 @@
     <property>Amazon.AppConfig.Model.UpdateExtensionResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExtensionResponse.Description</property>
@@ -1275,13 +1275,13 @@
     <property>Amazon.AppConfig.Model.UpdateExtensionAssociationResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExtensionAssociationResponse.ExtensionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExtensionAssociationResponse.Id</property>
@@ -1292,7 +1292,7 @@
     <property>Amazon.AppConfig.Model.UpdateExtensionAssociationResponse.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ValidateConfigurationRequest.ApplicationId</property>
@@ -1321,7 +1321,7 @@
     <property>Amazon.AppConfig.Model.Action.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.Action.Uri</property>
@@ -1346,7 +1346,7 @@
     <property>Amazon.AppConfig.Model.ActionInvocation.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ActionInvocation.Uri</property>
@@ -1433,7 +1433,7 @@
     <property>Amazon.AppConfig.Model.ExtensionAssociationSummary.ExtensionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExtensionAssociationSummary.Id</property>
@@ -1444,13 +1444,13 @@
     <property>Amazon.AppConfig.Model.ExtensionAssociationSummary.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExtensionSummary.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExtensionSummary.Description</property>
@@ -1488,7 +1488,7 @@
     <property>Amazon.AppConfig.Model.HostedConfigurationVersionSummary.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.HostedConfigurationVersionSummary.VersionLabel</property>
@@ -1505,7 +1505,7 @@
     <property>Amazon.AppConfig.Model.Monitor.AlarmRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):(iam)::\d{12}:role[/].*)$</pattern>
+    <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov|aws-eusc):(iam)::\d{12}:role[/].*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.Parameter.Description</property>

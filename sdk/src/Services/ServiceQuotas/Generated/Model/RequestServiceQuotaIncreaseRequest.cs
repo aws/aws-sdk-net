@@ -31,7 +31,8 @@ namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
     /// Container for the parameters to the RequestServiceQuotaIncrease operation.
-    /// Submits a quota increase request for the specified quota.
+    /// Submits a quota increase request for the specified quota at the account or resource
+    /// level.
     /// </summary>
     public partial class RequestServiceQuotaIncreaseRequest : AmazonServiceQuotasRequest
     {
@@ -39,13 +40,12 @@ namespace Amazon.ServiceQuotas.Model
         private double? _desiredValue;
         private string _quotaCode;
         private string _serviceCode;
+        private bool? _supportCaseAllowed;
 
         /// <summary>
         /// Gets and sets the property ContextId. 
         /// <para>
-        /// Specifies the Amazon Web Services account or resource to which the quota applies.
-        /// The value in this field depends on the context scope associated with the specified
-        /// service quota.
+        /// Specifies the resource with an Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         public string ContextId
@@ -118,6 +118,33 @@ namespace Amazon.ServiceQuotas.Model
         internal bool IsSetServiceCode()
         {
             return this._serviceCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportCaseAllowed. 
+        /// <para>
+        /// Specifies if an Amazon Web Services Support case can be opened for the quota increase
+        /// request. This parameter is optional. 
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, this flag is set to <c>True</c> and Amazon Web Services may create a support
+        /// case for some quota increase requests. You can set this flag to <c>False</c> if you
+        /// do not want a support case created when you request a quota increase. If you set the
+        /// flag to <c>False</c>, Amazon Web Services does not open a support case and updates
+        /// the request status to <c>Not approved</c>. 
+        /// </para>
+        /// </summary>
+        public bool? SupportCaseAllowed
+        {
+            get { return this._supportCaseAllowed; }
+            set { this._supportCaseAllowed = value; }
+        }
+
+        // Check to see if SupportCaseAllowed property is set
+        internal bool IsSetSupportCaseAllowed()
+        {
+            return this._supportCaseAllowed.HasValue; 
         }
 
     }

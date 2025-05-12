@@ -35,11 +35,10 @@ namespace Amazon.EventBridge.Model
     /// 
     ///  
     /// <para>
-    /// The maximum size for a PutEvents event entry is 256 KB. Entry size is calculated including
-    /// the event and any necessary characters and keys of the JSON representation of the
-    /// event. To learn more, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevent-size.html">Calculating
-    /// PutEvents event entry size</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>
-    /// 
+    /// You can batch multiple event entries into one request for efficiency. However, the
+    /// total entry size must be less than 256KB. You can calculate the entry size before
+    /// you send the events. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevents.html#eb-putevent-size">Calculating
+    /// PutEvents event entry size</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
     /// </para>
     ///  
     /// <para>

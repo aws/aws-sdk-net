@@ -102,6 +102,7 @@ namespace Amazon.GroundStation.Model
         /// ARN of a satellite.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=82, Max=132)]
         public string SatelliteArn
         {
             get { return this._satelliteArn; }
@@ -120,7 +121,7 @@ namespace Amazon.GroundStation.Model
         /// UUID of a satellite.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=36, Max=36)]
         public string SatelliteId
         {
             get { return this._satelliteId; }

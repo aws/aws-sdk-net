@@ -54,6 +54,7 @@ namespace Amazon.TaxSettings.Model
         private EstoniaAdditionalInfo _estoniaAdditionalInfo;
         private GeorgiaAdditionalInfo _georgiaAdditionalInfo;
         private GreeceAdditionalInfo _greeceAdditionalInfo;
+        private IndonesiaAdditionalInfo _indonesiaAdditionalInfo;
         private IsraelAdditionalInfo _israelAdditionalInfo;
         private ItalyAdditionalInfo _italyAdditionalInfo;
         private KenyaAdditionalInfo _kenyaAdditionalInfo;
@@ -65,6 +66,7 @@ namespace Amazon.TaxSettings.Model
         private SpainAdditionalInfo _spainAdditionalInfo;
         private TurkeyAdditionalInfo _turkeyAdditionalInfo;
         private UkraineAdditionalInfo _ukraineAdditionalInfo;
+        private UzbekistanAdditionalInfo _uzbekistanAdditionalInfo;
         private VietnamAdditionalInfo _vietnamAdditionalInfo;
 
         /// <summary>
@@ -155,6 +157,24 @@ namespace Amazon.TaxSettings.Model
         internal bool IsSetGreeceAdditionalInfo()
         {
             return this._greeceAdditionalInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IndonesiaAdditionalInfo. 
+        /// <para>
+        ///  
+        /// </para>
+        /// </summary>
+        public IndonesiaAdditionalInfo IndonesiaAdditionalInfo
+        {
+            get { return this._indonesiaAdditionalInfo; }
+            set { this._indonesiaAdditionalInfo = value; }
+        }
+
+        // Check to see if IndonesiaAdditionalInfo property is set
+        internal bool IsSetIndonesiaAdditionalInfo()
+        {
+            return this._indonesiaAdditionalInfo != null;
         }
 
         /// <summary>
@@ -353,6 +373,24 @@ namespace Amazon.TaxSettings.Model
         internal bool IsSetUkraineAdditionalInfo()
         {
             return this._ukraineAdditionalInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UzbekistanAdditionalInfo. 
+        /// <para>
+        ///  Additional tax information to specify for a TRN in Uzbekistan. 
+        /// </para>
+        /// </summary>
+        public UzbekistanAdditionalInfo UzbekistanAdditionalInfo
+        {
+            get { return this._uzbekistanAdditionalInfo; }
+            set { this._uzbekistanAdditionalInfo = value; }
+        }
+
+        // Check to see if UzbekistanAdditionalInfo property is set
+        internal bool IsSetUzbekistanAdditionalInfo()
+        {
+            return this._uzbekistanAdditionalInfo != null;
         }
 
         /// <summary>

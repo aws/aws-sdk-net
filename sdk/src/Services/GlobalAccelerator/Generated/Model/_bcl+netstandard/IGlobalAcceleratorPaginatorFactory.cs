@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the globalaccelerator-2018-08-08.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlobalAccelerator.Model
@@ -29,56 +30,111 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Paginator for ListAccelerators operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAcceleratorsPaginator ListAccelerators(ListAcceleratorsRequest request);
 
         /// <summary>
         /// Paginator for ListByoipCidrs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListByoipCidrsPaginator ListByoipCidrs(ListByoipCidrsRequest request);
 
         /// <summary>
         /// Paginator for ListCrossAccountAttachments operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCrossAccountAttachmentsPaginator ListCrossAccountAttachments(ListCrossAccountAttachmentsRequest request);
 
         /// <summary>
         /// Paginator for ListCrossAccountResources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCrossAccountResourcesPaginator ListCrossAccountResources(ListCrossAccountResourcesRequest request);
 
         /// <summary>
         /// Paginator for ListCustomRoutingAccelerators operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCustomRoutingAcceleratorsPaginator ListCustomRoutingAccelerators(ListCustomRoutingAcceleratorsRequest request);
 
         /// <summary>
         /// Paginator for ListCustomRoutingEndpointGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCustomRoutingEndpointGroupsPaginator ListCustomRoutingEndpointGroups(ListCustomRoutingEndpointGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListCustomRoutingListeners operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCustomRoutingListenersPaginator ListCustomRoutingListeners(ListCustomRoutingListenersRequest request);
 
         /// <summary>
         /// Paginator for ListCustomRoutingPortMappings operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCustomRoutingPortMappingsPaginator ListCustomRoutingPortMappings(ListCustomRoutingPortMappingsRequest request);
 
         /// <summary>
         /// Paginator for ListCustomRoutingPortMappingsByDestination operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCustomRoutingPortMappingsByDestinationPaginator ListCustomRoutingPortMappingsByDestination(ListCustomRoutingPortMappingsByDestinationRequest request);
 
         /// <summary>
         /// Paginator for ListEndpointGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEndpointGroupsPaginator ListEndpointGroups(ListEndpointGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListListeners operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListListenersPaginator ListListeners(ListListenersRequest request);
     }
 }

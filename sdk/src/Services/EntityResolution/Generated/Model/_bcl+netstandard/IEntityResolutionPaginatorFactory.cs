@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the entityresolution-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model
@@ -29,36 +30,71 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Paginator for ListIdMappingJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListIdMappingJobsPaginator ListIdMappingJobs(ListIdMappingJobsRequest request);
 
         /// <summary>
         /// Paginator for ListIdMappingWorkflows operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListIdMappingWorkflowsPaginator ListIdMappingWorkflows(ListIdMappingWorkflowsRequest request);
 
         /// <summary>
         /// Paginator for ListIdNamespaces operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListIdNamespacesPaginator ListIdNamespaces(ListIdNamespacesRequest request);
 
         /// <summary>
         /// Paginator for ListMatchingJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMatchingJobsPaginator ListMatchingJobs(ListMatchingJobsRequest request);
 
         /// <summary>
         /// Paginator for ListMatchingWorkflows operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMatchingWorkflowsPaginator ListMatchingWorkflows(ListMatchingWorkflowsRequest request);
 
         /// <summary>
         /// Paginator for ListProviderServices operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProviderServicesPaginator ListProviderServices(ListProviderServicesRequest request);
 
         /// <summary>
         /// Paginator for ListSchemaMappings operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSchemaMappingsPaginator ListSchemaMappings(ListSchemaMappingsRequest request);
     }
 }

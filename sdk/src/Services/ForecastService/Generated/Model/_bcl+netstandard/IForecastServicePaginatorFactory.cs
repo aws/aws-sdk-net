@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the forecast-2018-06-26.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ForecastService.Model
@@ -29,71 +30,141 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Paginator for ListDatasetGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDatasetGroupsPaginator ListDatasetGroups(ListDatasetGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListDatasetImportJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDatasetImportJobsPaginator ListDatasetImportJobs(ListDatasetImportJobsRequest request);
 
         /// <summary>
         /// Paginator for ListDatasets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDatasetsPaginator ListDatasets(ListDatasetsRequest request);
 
         /// <summary>
         /// Paginator for ListExplainabilities operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListExplainabilitiesPaginator ListExplainabilities(ListExplainabilitiesRequest request);
 
         /// <summary>
         /// Paginator for ListExplainabilityExports operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListExplainabilityExportsPaginator ListExplainabilityExports(ListExplainabilityExportsRequest request);
 
         /// <summary>
         /// Paginator for ListForecastExportJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListForecastExportJobsPaginator ListForecastExportJobs(ListForecastExportJobsRequest request);
 
         /// <summary>
         /// Paginator for ListForecasts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListForecastsPaginator ListForecasts(ListForecastsRequest request);
 
         /// <summary>
         /// Paginator for ListMonitorEvaluations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMonitorEvaluationsPaginator ListMonitorEvaluations(ListMonitorEvaluationsRequest request);
 
         /// <summary>
         /// Paginator for ListMonitors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMonitorsPaginator ListMonitors(ListMonitorsRequest request);
 
         /// <summary>
         /// Paginator for ListPredictorBacktestExportJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPredictorBacktestExportJobsPaginator ListPredictorBacktestExportJobs(ListPredictorBacktestExportJobsRequest request);
 
         /// <summary>
         /// Paginator for ListPredictors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPredictorsPaginator ListPredictors(ListPredictorsRequest request);
 
         /// <summary>
         /// Paginator for ListWhatIfAnalyses operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWhatIfAnalysesPaginator ListWhatIfAnalyses(ListWhatIfAnalysesRequest request);
 
         /// <summary>
         /// Paginator for ListWhatIfForecastExports operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWhatIfForecastExportsPaginator ListWhatIfForecastExports(ListWhatIfForecastExportsRequest request);
 
         /// <summary>
         /// Paginator for ListWhatIfForecasts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWhatIfForecastsPaginator ListWhatIfForecasts(ListWhatIfForecastsRequest request);
     }
 }

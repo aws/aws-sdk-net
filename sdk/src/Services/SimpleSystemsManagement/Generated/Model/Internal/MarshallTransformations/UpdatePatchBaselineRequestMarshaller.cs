@@ -109,6 +109,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.ApprovedPatchesEnableNonSecurity.Value);
             }
 
+            if(publicRequest.IsSetAvailableSecurityUpdatesComplianceStatus())
+            {
+                context.Writer.WritePropertyName("AvailableSecurityUpdatesComplianceStatus");
+                context.Writer.WriteStringValue(publicRequest.AvailableSecurityUpdatesComplianceStatus);
+            }
+
             if(publicRequest.IsSetBaselineId())
             {
                 context.Writer.WritePropertyName("BaselineId");

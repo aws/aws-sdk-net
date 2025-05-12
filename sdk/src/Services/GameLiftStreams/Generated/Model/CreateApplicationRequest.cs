@@ -52,7 +52,8 @@ namespace Amazon.GameLiftStreams.Model
     ///  If the request is successful, Amazon GameLift Streams begins to create an application
     /// and sets the status to <c>INITIALIZED</c>. When an application reaches <c>READY</c>
     /// status, you can use the application to set up stream groups and start streams. To
-    /// track application status, call <a>GetApplication</a>. 
+    /// track application status, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetApplication.html">GetApplication</a>.
+    /// 
     /// </para>
     /// </summary>
     public partial class CreateApplicationRequest : AmazonGameLiftStreamsRequest
@@ -70,8 +71,7 @@ namespace Amazon.GameLiftStreams.Model
         /// Gets and sets the property ApplicationLogOutputUri. 
         /// <para>
         /// An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save
-        /// application logs. Use the following format for the URI: <c>s3://[bucket name]/[prefix]</c>.
-        /// Required if you specify one or more <c>LogPaths</c>.
+        /// application logs. Required if you specify one or more <c>ApplicationLogPaths</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -99,9 +99,9 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         /// Locations of log files that your content generates during a stream session. Enter
         /// path values that are relative to the <c>ApplicationSourceUri</c> location. You can
-        /// specify up to 10 log locations. Amazon GameLift Streams uploads designated log files
-        /// to the Amazon S3 bucket that you specify in <c>ApplicationLogOutputUri</c> at the
-        /// end of a stream session. To retrieve stored log files, call <a>GetStreamSession</a>
+        /// specify up to 10 log paths. Amazon GameLift Streams uploads designated log files to
+        /// the Amazon S3 bucket that you specify in <c>ApplicationLogOutputUri</c> at the end
+        /// of a stream session. To retrieve stored log files, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a>
         /// and get the <c>LogFileLocationUri</c>.
         /// </para>
         /// </summary>
@@ -121,9 +121,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property ApplicationSourceUri. 
         /// <para>
-        /// The location of the content that you want to stream. Enter the URI of an Amazon S3
-        /// location (bucket name and prefixes) that contains your content. Use the following
-        /// format for the URI: <c>s3://[bucket name]/[prefix]</c>. The location can have a multi-level
+        /// The location of the content that you want to stream. Enter an Amazon S3 URI to a bucket
+        /// that contains your game or other application. The location can have a multi-level
         /// prefix structure, but it must include all the files needed to run the content. Amazon
         /// GameLift Streams copies everything under the specified location.
         /// </para>
@@ -133,8 +132,8 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The S3 bucket and the Amazon GameLift Streams application must be in the same Amazon
-        /// Web Services Region.
+        /// The Amazon S3 bucket and the Amazon GameLift Streams application must be in the same
+        /// Amazon Web Services Region.
         /// </para>
         ///  </note>
         /// </summary>
@@ -214,8 +213,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property RuntimeEnvironment. 
         /// <para>
-        /// A set of configuration settings to run the application on a stream group. This configures
-        /// the operating system, and can include compatibility layers and other drivers.
+        /// Configuration settings that identify the operating system for an application resource.
+        /// This can also include a compatibility layer and other drivers.
         /// </para>
         ///  
         /// <para>
@@ -227,7 +226,7 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Ubuntu 22.04 LTS(<c>Type=UBUNTU, Version=22_04_LTS</c>) 
+        ///  Ubuntu 22.04 LTS (<c>Type=UBUNTU, Version=22_04_LTS</c>) 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -267,10 +266,10 @@ namespace Amazon.GameLiftStreams.Model
         /// key-value pairs. Tagging Amazon Web Services resources is useful for resource management,
         /// access management and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
         /// Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
-        /// You can use <a>TagResource</a> to add tags, <a>UntagResource</a> to remove tags, and
-        /// <a>ListTagsForResource</a> to view tags on existing resources. The maximum tag limit
-        /// might be lower than stated. See the <i>Amazon Web Services General Reference</i> for
-        /// actual tagging limits.
+        /// You can use <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TagResource.html">TagResource</a>
+        /// to add tags, <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UntagResource.html">UntagResource</a>
+        /// to remove tags, and <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a>
+        /// to view tags on existing resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

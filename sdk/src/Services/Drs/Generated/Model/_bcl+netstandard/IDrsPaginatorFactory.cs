@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the drs-2020-02-26.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Drs.Model
@@ -29,56 +30,111 @@ namespace Amazon.Drs.Model
         /// <summary>
         /// Paginator for DescribeJobLogItems operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeJobLogItemsPaginator DescribeJobLogItems(DescribeJobLogItemsRequest request);
 
         /// <summary>
         /// Paginator for DescribeJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeJobsPaginator DescribeJobs(DescribeJobsRequest request);
 
         /// <summary>
         /// Paginator for DescribeLaunchConfigurationTemplates operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeLaunchConfigurationTemplatesPaginator DescribeLaunchConfigurationTemplates(DescribeLaunchConfigurationTemplatesRequest request);
 
         /// <summary>
         /// Paginator for DescribeRecoveryInstances operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeRecoveryInstancesPaginator DescribeRecoveryInstances(DescribeRecoveryInstancesRequest request);
 
         /// <summary>
         /// Paginator for DescribeRecoverySnapshots operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeRecoverySnapshotsPaginator DescribeRecoverySnapshots(DescribeRecoverySnapshotsRequest request);
 
         /// <summary>
         /// Paginator for DescribeReplicationConfigurationTemplates operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeReplicationConfigurationTemplatesPaginator DescribeReplicationConfigurationTemplates(DescribeReplicationConfigurationTemplatesRequest request);
 
         /// <summary>
         /// Paginator for DescribeSourceNetworks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeSourceNetworksPaginator DescribeSourceNetworks(DescribeSourceNetworksRequest request);
 
         /// <summary>
         /// Paginator for DescribeSourceServers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeSourceServersPaginator DescribeSourceServers(DescribeSourceServersRequest request);
 
         /// <summary>
         /// Paginator for ListExtensibleSourceServers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListExtensibleSourceServersPaginator ListExtensibleSourceServers(ListExtensibleSourceServersRequest request);
 
         /// <summary>
         /// Paginator for ListLaunchActions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLaunchActionsPaginator ListLaunchActions(ListLaunchActionsRequest request);
 
         /// <summary>
         /// Paginator for ListStagingAccounts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListStagingAccountsPaginator ListStagingAccounts(ListStagingAccountsRequest request);
     }
 }

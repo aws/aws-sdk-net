@@ -781,6 +781,10 @@ namespace Amazon.AppRunner
         /// </summary>
         public static readonly Runtime NODEJS_18 = new Runtime("NODEJS_18");
         /// <summary>
+        /// Constant NODEJS_22 for Runtime
+        /// </summary>
+        public static readonly Runtime NODEJS_22 = new Runtime("NODEJS_22");
+        /// <summary>
         /// Constant PHP_81 for Runtime
         /// </summary>
         public static readonly Runtime PHP_81 = new Runtime("PHP_81");

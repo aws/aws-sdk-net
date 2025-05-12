@@ -87,7 +87,7 @@ namespace Amazon.SSOAdmin.Model
         /// Specifies the updated name for the application.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
+        [AWSProperty(Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

@@ -10,6 +10,7 @@ using AWSSDK_DotNet.UnitTests;
 using Amazon.Runtime.Internal.Util;
 using System.Net;
 using System.Reflection;
+using System.Net.Http;
 
 using Amazon.S3;
 using Amazon.S3.Model;
@@ -161,36 +162,18 @@ namespace AWSSDK.UnitTests
             return executionContext;
         }
 
-        private AsyncExecutionContext CreateAsyncExecutionContextForListBuckets()
-        {
-            var listBucketsRequest = new ListBucketsRequest();
-            var executionContext = new AsyncExecutionContext(            
-                new AsyncRequestContext(true, new NullSigner())
-                {
-                    ClientConfig = new AmazonS3Config(),
-                    Marshaller = new ListBucketsRequestMarshaller(),
-                    OriginalRequest = listBucketsRequest,
-                    Request = new ListBucketsRequestMarshaller().Marshall(listBucketsRequest),
-                    Unmarshaller = new ListBucketsResponseUnmarshaller()
-                },
-                new AsyncResponseContext()
-            );
-
-            // Create and set the internal ServiceMetadata via reflection
-            var serviceMetaData = Assembly.GetAssembly(executionContext.GetType()).CreateInstance("Amazon.Runtime.Internal.ServiceMetadata");
-            executionContext.RequestContext.GetType().GetProperty("ServiceMetaData").SetValue(executionContext.RequestContext, serviceMetaData);
-
-            executionContext.RequestContext.Request.Endpoint = new Uri(@"http://ListBuckets");
-            return executionContext;
-        }
-
         /// <summary>
         /// Not thread safe, initialize once for each test.
         /// </summary>
         public class MockHttpRequestFactory : IHttpRequestFactory<Stream>
         {    
             public Action GetResponseAction { get; set; }
+
+#if BCL
             public Func<MockHttpRequest, HttpWebResponse> ResponseCreator { get; set; }
+#else
+            public Func<MockHttpRequest, HttpResponseMessage> ResponseCreator { get; set; }
+#endif
 
             public MockHttpRequest LastCreatedRequest { get; private set; }
 
@@ -224,23 +207,29 @@ namespace AWSSDK.UnitTests
             public Uri RequestUri { get; set; }
 
             public Action GetResponseAction { get; set; }
-            public Func<MockHttpRequest, HttpWebResponse> ResponseCreator { get; set; }
 
             public Version HttpProtocolVersion { get; set; }
 
+#if BCL
+            public Func<MockHttpRequest, HttpWebResponse> ResponseCreator { get; set; }
+
             public MockHttpRequest(Uri requestUri, Action action, Func<MockHttpRequest, HttpWebResponse> responseCreator = null)
+#else
+            public Func<MockHttpRequest, HttpResponseMessage> ResponseCreator { get; set; }
+
+            public MockHttpRequest(Uri requestUri, Action action, Func<MockHttpRequest, HttpResponseMessage> responseCreator = null)
+#endif
             {
                 this.RequestUri = requestUri;
                 this.GetResponseAction = action;
-#if BCL
                 this.ResponseCreator = responseCreator ?? CreateResponse;
-#else
-                throw new NotImplementedException();
-#endif
             }
 
 #if BCL
             private HttpWebResponse CreateResponse(MockHttpRequest request)
+#else
+            private HttpResponseMessage CreateResponse(MockHttpRequest request)
+#endif
             {
                 // Extract the last segment of the URI, this is the custom URI 
                 // sent by the unit tests.
@@ -250,10 +239,22 @@ namespace AWSSDK.UnitTests
                 if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode <= (HttpStatusCode)299)
                     return response;
                 else                
-                    throw new HttpErrorResponseException(new HttpWebRequestResponseData(response));    
-            }
+#if BCL
+                    throw new HttpErrorResponseException(new HttpWebRequestResponseData(response));
+#else
+                {
+                    var instance = Activator.CreateInstance(
+                               typeof(HttpClientResponseData),
+                               BindingFlags.Instance | BindingFlags.NonPublic,
+                               binder: null,
+                               args: new[] { response },
+                               culture: null
+                           );
+                    throw new HttpErrorResponseException(instance as HttpClientResponseData);
+                }
 #endif
-            
+            }
+
             public void ConfigureRequest(IRequestContext requestContext)
             {
                 this.IsConfigureRequestCalled = true;
@@ -273,14 +274,21 @@ namespace AWSSDK.UnitTests
 
             public Amazon.Runtime.Internal.Transform.IWebResponseData GetResponse()
             {
-#if BCL
                 if (this.GetResponseAction!=null)                
                     this.GetResponseAction();
 
                 var response = ResponseCreator(this);
+#if BCL
                 return new HttpWebRequestResponseData(response);
 #else
-                throw new NotImplementedException();
+                var instance = Activator.CreateInstance(
+                               typeof(HttpClientResponseData),
+                               BindingFlags.Instance | BindingFlags.NonPublic,
+                               binder: null,
+                               args: new[] { response },
+                               culture: null
+                           );
+                return instance as HttpClientResponseData;
 #endif
             }
 

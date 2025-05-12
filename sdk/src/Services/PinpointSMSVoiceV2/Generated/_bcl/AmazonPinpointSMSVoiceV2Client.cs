@@ -635,7 +635,14 @@ namespace Amazon.PinpointSMSVoiceV2
         /// An event destination is a location where you send message events. The event options
         /// are Amazon CloudWatch, Amazon Data Firehose, or Amazon SNS. For example, when a message
         /// is delivered successfully, you can send information about that event to an event destination,
-        /// or send notifications to endpoints that are subscribed to an Amazon SNS topic.
+        /// or send notifications to endpoints that are subscribed to an Amazon SNS topic. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only create one event destination at a time. You must provide a value for
+        /// a single event destination using either <c>CloudWatchLogsDestination</c>, <c>KinesisFirehoseDestination</c>
+        /// or <c>SnsDestination</c>. If an event destination isn't provided then an exception
+        /// is returned.
         /// </para>
         ///  
         /// <para>
@@ -692,7 +699,14 @@ namespace Amazon.PinpointSMSVoiceV2
         /// An event destination is a location where you send message events. The event options
         /// are Amazon CloudWatch, Amazon Data Firehose, or Amazon SNS. For example, when a message
         /// is delivered successfully, you can send information about that event to an event destination,
-        /// or send notifications to endpoints that are subscribed to an Amazon SNS topic.
+        /// or send notifications to endpoints that are subscribed to an Amazon SNS topic. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only create one event destination at a time. You must provide a value for
+        /// a single event destination using either <c>CloudWatchLogsDestination</c>, <c>KinesisFirehoseDestination</c>
+        /// or <c>SnsDestination</c>. If an event destination isn't provided then an exception
+        /// is returned.
         /// </para>
         ///  
         /// <para>
@@ -999,6 +1013,11 @@ namespace Amazon.PinpointSMSVoiceV2
         /// The request was denied because you don't have sufficient permissions to access the
         /// resource.
         /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time or it could be that
+        /// the requested action isn't valid for the current state or configuration of the resource.
+        /// </exception>
         /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
         /// The API encountered an unexpected error and couldn't complete the request. You might
         /// be able to successfully issue the request again in the future.
@@ -1039,6 +1058,11 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
         /// The request was denied because you don't have sufficient permissions to access the
         /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time or it could be that
+        /// the requested action isn't valid for the current state or configuration of the resource.
         /// </exception>
         /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
         /// The API encountered an unexpected error and couldn't complete the request. You might
@@ -6003,7 +6027,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
         /// <summary>
-        /// Create or update a RuleSetNumberOverride and associate it with a protect configuration.
+        /// Create or update a phone number rule override and associate it with a protect configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutProtectConfigurationRuleSetNumberOverride service method.</param>
         /// 
@@ -6043,7 +6067,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
         /// <summary>
-        /// Create or update a RuleSetNumberOverride and associate it with a protect configuration.
+        /// Create or update a phone number rule override and associate it with a protect configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutProtectConfigurationRuleSetNumberOverride service method.</param>
         /// <param name="cancellationToken">
@@ -7693,9 +7717,9 @@ namespace Amazon.PinpointSMSVoiceV2
 
         /// <summary>
         /// Adds or overwrites only the specified tags for the specified resource. When you specify
-        /// an existing tag key, the value is overwritten with the new value. Each resource can
-        /// have a maximum of 50 tags. Each tag consists of a key and an optional value. Tag keys
-        /// must be unique per resource. For more information about tags, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-tags.html">Tags
+        /// an existing tag key, the value is overwritten with the new value. Each tag consists
+        /// of a key and an optional value. Tag keys must be unique per resource. For more information
+        /// about tags, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-tags.html">Tags
         /// </a> in the <i>AWS End User Messaging SMS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -7735,9 +7759,9 @@ namespace Amazon.PinpointSMSVoiceV2
 
         /// <summary>
         /// Adds or overwrites only the specified tags for the specified resource. When you specify
-        /// an existing tag key, the value is overwritten with the new value. Each resource can
-        /// have a maximum of 50 tags. Each tag consists of a key and an optional value. Tag keys
-        /// must be unique per resource. For more information about tags, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-tags.html">Tags
+        /// an existing tag key, the value is overwritten with the new value. Each tag consists
+        /// of a key and an optional value. Tag keys must be unique per resource. For more information
+        /// about tags, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-tags.html">Tags
         /// </a> in the <i>AWS End User Messaging SMS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -8240,9 +8264,10 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
         /// <summary>
-        /// Update a country rule set to <c>ALLOW</c> or <c>BLOCK</c> messages to be sent to the
-        /// specified destination counties. You can update one or multiple countries at a time.
-        /// The updates are only applied to the specified NumberCapability type.
+        /// Update a country rule set to <c>ALLOW</c>, <c>BLOCK</c>, <c>MONITOR</c>, or <c>FILTER</c>
+        /// messages to be sent to the specified destination counties. You can update one or multiple
+        /// countries at a time. The updates are only applied to the specified NumberCapability
+        /// type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProtectConfigurationCountryRuleSet service method.</param>
         /// 
@@ -8277,9 +8302,10 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
         /// <summary>
-        /// Update a country rule set to <c>ALLOW</c> or <c>BLOCK</c> messages to be sent to the
-        /// specified destination counties. You can update one or multiple countries at a time.
-        /// The updates are only applied to the specified NumberCapability type.
+        /// Update a country rule set to <c>ALLOW</c>, <c>BLOCK</c>, <c>MONITOR</c>, or <c>FILTER</c>
+        /// messages to be sent to the specified destination counties. You can update one or multiple
+        /// countries at a time. The updates are only applied to the specified NumberCapability
+        /// type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProtectConfigurationCountryRuleSet service method.</param>
         /// <param name="cancellationToken">

@@ -35,7 +35,7 @@ namespace Amazon.KinesisFirehose.Model
     /// 
     ///  
     /// <para>
-    /// By default, you can create up to 50 Firehose streams per Amazon Web Services Region.
+    /// By default, you can create up to 5,000 Firehose streams per Amazon Web Services Region.
     /// </para>
     ///  
     /// <para>

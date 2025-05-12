@@ -39,6 +39,14 @@ namespace Amazon.Kinesis.Model
     /// 
     ///  
     /// <para>
+    /// You can add tags to the registered consumer when making a <c>RegisterStreamConsumer</c>
+    /// request by setting the <c>Tags</c> parameter. If you pass the <c>Tags</c> parameter,
+    /// in addition to having the <c>kinesis:RegisterStreamConsumer</c> permission, you must
+    /// also have the <c>kinesis:TagResource</c> permission for the consumer that will be
+    /// registered. Tags will take effect from the <c>CREATING</c> status of the consumer.
+    /// </para>
+    ///  
+    /// <para>
     /// You can register up to 20 consumers per stream. A given consumer can only be registered
     /// with one stream at a time.
     /// </para>
@@ -59,6 +67,7 @@ namespace Amazon.Kinesis.Model
     {
         private string _consumerName;
         private string _streamARN;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ConsumerName. 
@@ -99,6 +108,26 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetStreamARN()
         {
             return this._streamARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A set of up to 50 key-value pairs. A tag consists of a required key and an optional
+        /// value.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

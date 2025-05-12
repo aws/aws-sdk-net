@@ -37,6 +37,30 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
+        /// Paginator for GetAnomalies operation
+        ///</summary>
+        public IGetAnomaliesPaginator GetAnomalies(GetAnomaliesRequest request) 
+        {
+            return new GetAnomaliesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetAnomalyMonitors operation
+        ///</summary>
+        public IGetAnomalyMonitorsPaginator GetAnomalyMonitors(GetAnomalyMonitorsRequest request) 
+        {
+            return new GetAnomalyMonitorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetAnomalySubscriptions operation
+        ///</summary>
+        public IGetAnomalySubscriptionsPaginator GetAnomalySubscriptions(GetAnomalySubscriptionsRequest request) 
+        {
+            return new GetAnomalySubscriptionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetSavingsPlansCoverage operation
         ///</summary>
         public IGetSavingsPlansCoveragePaginator GetSavingsPlansCoverage(GetSavingsPlansCoverageRequest request) 

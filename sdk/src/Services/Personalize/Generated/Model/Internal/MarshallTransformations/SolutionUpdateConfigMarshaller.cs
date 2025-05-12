@@ -57,6 +57,17 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetEventsConfig())
+            {
+                context.Writer.WritePropertyName("eventsConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EventsConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.EventsConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

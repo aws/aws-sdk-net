@@ -92,6 +92,20 @@ namespace AWSSDKDocSamples.Amazon.DSQL.Generated
             #endregion
         }
 
+        public void DSQLGetVpcEndpointServiceName()
+        {
+            #region example-1
+
+            var client = new AmazonDSQLClient();
+            var response = client.GetVpcEndpointServiceName(new GetVpcEndpointServiceNameRequest 
+            {
+                Identifier = "kiqenqglxyl2snyvkvnj2c3s2e"
+            });
+
+
+            #endregion
+        }
+
         public void DSQLListClusters()
         {
             #region example-1

@@ -37,6 +37,7 @@ namespace Amazon.QuickSight.Model
         private List<string> _order = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TablePinnedFieldOptions _pinnedFieldOptions;
         private List<TableFieldOption> _selectedFieldOptions = AWSConfigs.InitializeCollections ? new List<TableFieldOption>() : null;
+        private List<TransposedTableOption> _transposedTableOptions = AWSConfigs.InitializeCollections ? new List<TransposedTableOption>() : null;
 
         /// <summary>
         /// Gets and sets the property Order. 
@@ -92,6 +93,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSelectedFieldOptions()
         {
             return this._selectedFieldOptions != null && (this._selectedFieldOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransposedTableOptions. 
+        /// <para>
+        /// The <c>TableOptions</c> of a transposed table.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=10001)]
+        public List<TransposedTableOption> TransposedTableOptions
+        {
+            get { return this._transposedTableOptions; }
+            set { this._transposedTableOptions = value; }
+        }
+
+        // Check to see if TransposedTableOptions property is set
+        internal bool IsSetTransposedTableOptions()
+        {
+            return this._transposedTableOptions != null && (this._transposedTableOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

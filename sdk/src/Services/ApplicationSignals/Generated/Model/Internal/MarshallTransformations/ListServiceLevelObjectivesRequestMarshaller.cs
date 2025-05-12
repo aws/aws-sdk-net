@@ -88,6 +88,17 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDependencyConfig())
+            {
+                context.Writer.WritePropertyName("DependencyConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DependencyConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DependencyConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetKeyAttributes())
             {
                 context.Writer.WritePropertyName("KeyAttributes");
@@ -100,6 +111,17 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(publicRequestKeyAttributesValue);
                 }
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMetricSourceTypes())
+            {
+                context.Writer.WritePropertyName("MetricSourceTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestMetricSourceTypesListValue in publicRequest.MetricSourceTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestMetricSourceTypesListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
             writer.WriteEndObject();

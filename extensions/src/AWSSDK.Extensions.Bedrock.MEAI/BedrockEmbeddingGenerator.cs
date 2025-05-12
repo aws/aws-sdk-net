@@ -39,17 +39,17 @@ internal sealed partial class BedrockEmbeddingGenerator : IEmbeddingGenerator<st
     /// Initializes a new instance of the <see cref="BedrockEmbeddingGenerator"/> class.
     /// </summary>
     /// <param name="runtime">The <see cref="IAmazonBedrockRuntime"/> instance to wrap.</param>
-    /// <param name="modelId">Model ID to use as the default when no model ID is specified in a request.</param>
-    /// <param name="dimensions">Number of dimensions to use when no number of dimensions is specified in a request.</param>
-    public BedrockEmbeddingGenerator(IAmazonBedrockRuntime runtime, string? modelId, int? dimensions)
+    /// <param name="defaultModelId">Model ID to use as the default when no model ID is specified in a request.</param>
+    /// <param name="defaultModelDimensions">Number of dimensions to use when no number of dimensions is specified in a request.</param>
+    public BedrockEmbeddingGenerator(IAmazonBedrockRuntime runtime, string? defaultModelId, int? defaultModelDimensions)
     {
         Debug.Assert(runtime is not null);
 
         _runtime = runtime!;
-        _modelId = modelId;
-        _dimensions = dimensions;
+        _modelId = defaultModelId;
+        _dimensions = defaultModelDimensions;
 
-        _metadata = new(AmazonBedrockRuntimeExtensions.ProviderName, modelId: modelId, dimensions: dimensions);
+        _metadata = new(AmazonBedrockRuntimeExtensions.ProviderName, defaultModelId: defaultModelId, defaultModelDimensions: defaultModelDimensions);
     }
 
     public void Dispose()
@@ -116,7 +116,11 @@ internal sealed partial class BedrockEmbeddingGenerator : IEmbeddingGenerator<st
 
         if (totaltokens is not null)
         {
-            embeddings.Usage = new() { InputTokenCount = totaltokens.Value };
+            embeddings.Usage = new() 
+            {
+                InputTokenCount = totaltokens.Value,
+                TotalTokenCount = totaltokens.Value,
+            };
         }
 
         return embeddings;

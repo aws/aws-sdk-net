@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the auditmanager-2017-07-25.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AuditManager.Model
@@ -29,81 +30,161 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Paginator for GetChangeLogs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetChangeLogsPaginator GetChangeLogs(GetChangeLogsRequest request);
 
         /// <summary>
         /// Paginator for GetDelegations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetDelegationsPaginator GetDelegations(GetDelegationsRequest request);
 
         /// <summary>
         /// Paginator for GetEvidenceByEvidenceFolder operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetEvidenceByEvidenceFolderPaginator GetEvidenceByEvidenceFolder(GetEvidenceByEvidenceFolderRequest request);
 
         /// <summary>
         /// Paginator for GetEvidenceFoldersByAssessment operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetEvidenceFoldersByAssessmentPaginator GetEvidenceFoldersByAssessment(GetEvidenceFoldersByAssessmentRequest request);
 
         /// <summary>
         /// Paginator for GetEvidenceFoldersByAssessmentControl operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetEvidenceFoldersByAssessmentControlPaginator GetEvidenceFoldersByAssessmentControl(GetEvidenceFoldersByAssessmentControlRequest request);
 
         /// <summary>
         /// Paginator for ListAssessmentControlInsightsByControlDomain operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAssessmentControlInsightsByControlDomainPaginator ListAssessmentControlInsightsByControlDomain(ListAssessmentControlInsightsByControlDomainRequest request);
 
         /// <summary>
         /// Paginator for ListAssessmentFrameworks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAssessmentFrameworksPaginator ListAssessmentFrameworks(ListAssessmentFrameworksRequest request);
 
         /// <summary>
         /// Paginator for ListAssessmentFrameworkShareRequests operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAssessmentFrameworkShareRequestsPaginator ListAssessmentFrameworkShareRequests(ListAssessmentFrameworkShareRequestsRequest request);
 
         /// <summary>
         /// Paginator for ListAssessmentReports operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAssessmentReportsPaginator ListAssessmentReports(ListAssessmentReportsRequest request);
 
         /// <summary>
         /// Paginator for ListAssessments operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAssessmentsPaginator ListAssessments(ListAssessmentsRequest request);
 
         /// <summary>
         /// Paginator for ListControlDomainInsights operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListControlDomainInsightsPaginator ListControlDomainInsights(ListControlDomainInsightsRequest request);
 
         /// <summary>
         /// Paginator for ListControlDomainInsightsByAssessment operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListControlDomainInsightsByAssessmentPaginator ListControlDomainInsightsByAssessment(ListControlDomainInsightsByAssessmentRequest request);
 
         /// <summary>
         /// Paginator for ListControlInsightsByControlDomain operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListControlInsightsByControlDomainPaginator ListControlInsightsByControlDomain(ListControlInsightsByControlDomainRequest request);
 
         /// <summary>
         /// Paginator for ListControls operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListControlsPaginator ListControls(ListControlsRequest request);
 
         /// <summary>
         /// Paginator for ListKeywordsForDataSource operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListKeywordsForDataSourcePaginator ListKeywordsForDataSource(ListKeywordsForDataSourceRequest request);
 
         /// <summary>
         /// Paginator for ListNotifications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListNotificationsPaginator ListNotifications(ListNotificationsRequest request);
     }
 }

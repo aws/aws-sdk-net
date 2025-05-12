@@ -64,7 +64,7 @@ namespace Amazon.GroundStation.Model
         /// UUID of a <c>Config</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=36, Max=36)]
         public string ConfigId
         {
             get { return this._configId; }

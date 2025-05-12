@@ -320,6 +320,7 @@
         "estoniaAdditionalInfo":{"shape":"EstoniaAdditionalInfo"},
         "georgiaAdditionalInfo":{"shape":"GeorgiaAdditionalInfo"},
         "greeceAdditionalInfo":{"shape":"GreeceAdditionalInfo"},
+        "indonesiaAdditionalInfo":{"shape":"IndonesiaAdditionalInfo"},
         "israelAdditionalInfo":{"shape":"IsraelAdditionalInfo"},
         "italyAdditionalInfo":{"shape":"ItalyAdditionalInfo"},
         "kenyaAdditionalInfo":{"shape":"KenyaAdditionalInfo"},
@@ -331,6 +332,7 @@
         "spainAdditionalInfo":{"shape":"SpainAdditionalInfo"},
         "turkeyAdditionalInfo":{"shape":"TurkeyAdditionalInfo"},
         "ukraineAdditionalInfo":{"shape":"UkraineAdditionalInfo"},
+        "uzbekistanAdditionalInfo":{"shape":"UzbekistanAdditionalInfo"},
         "vietnamAdditionalInfo":{"shape":"VietnamAdditionalInfo"}
       }
     },
@@ -344,6 +346,7 @@
         "georgiaAdditionalInfo":{"shape":"GeorgiaAdditionalInfo"},
         "greeceAdditionalInfo":{"shape":"GreeceAdditionalInfo"},
         "indiaAdditionalInfo":{"shape":"IndiaAdditionalInfo"},
+        "indonesiaAdditionalInfo":{"shape":"IndonesiaAdditionalInfo"},
         "israelAdditionalInfo":{"shape":"IsraelAdditionalInfo"},
         "italyAdditionalInfo":{"shape":"ItalyAdditionalInfo"},
         "kenyaAdditionalInfo":{"shape":"KenyaAdditionalInfo"},
@@ -355,6 +358,7 @@
         "spainAdditionalInfo":{"shape":"SpainAdditionalInfo"},
         "turkeyAdditionalInfo":{"shape":"TurkeyAdditionalInfo"},
         "ukraineAdditionalInfo":{"shape":"UkraineAdditionalInfo"},
+        "uzbekistanAdditionalInfo":{"shape":"UzbekistanAdditionalInfo"},
         "vietnamAdditionalInfo":{"shape":"VietnamAdditionalInfo"}
       }
     },
@@ -645,6 +649,10 @@
       "type":"string",
       "pattern":"^(\\d{4}-(0[0-9]|1[0-2])-([0-2][0-9]|3[0-1]))$"
     },
+    "DecisionNumber":{
+      "type":"string",
+      "pattern":"^([a-zA-Z0-9/.\\-]{0,200})$"
+    },
     "DeleteSupplementalTaxRegistrationRequest":{
       "type":"structure",
       "required":["authorityId"],
@@ -851,6 +859,23 @@
     "IndividualRegistrationNumber":{
       "type":"string",
       "pattern":"^([0-9]{10})$"
+    },
+    "IndonesiaAdditionalInfo":{
+      "type":"structure",
+      "members":{
+        "decisionNumber":{"shape":"DecisionNumber"},
+        "ppnExceptionDesignationCode":{"shape":"PpnExceptionDesignationCode"},
+        "taxRegistrationNumberType":{"shape":"IndonesiaTaxRegistrationNumberType"}
+      }
+    },
+    "IndonesiaTaxRegistrationNumberType":{
+      "type":"string",
+      "enum":[
+        "NIK",
+        "PassportNumber",
+        "NPWP",
+        "NITKU"
+      ]
     },
     "Industries":{
       "type":"string",
@@ -1065,6 +1090,10 @@
       "max":20,
       "min":1,
       "pattern":"^(?!\\s*$)[\\s\\S]+$"
+    },
+    "PpnExceptionDesignationCode":{
+      "type":"string",
+      "pattern":"^(01|02|03|07|08)$"
     },
     "PutSupplementalTaxRegistrationRequest":{
       "type":"structure",
@@ -1548,6 +1577,20 @@
       "min":1,
       "pattern":"^https.*\\S.*$"
     },
+    "UzbekistanAdditionalInfo":{
+      "type":"structure",
+      "members":{
+        "taxRegistrationNumberType":{"shape":"UzbekistanTaxRegistrationNumberType"},
+        "vatRegistrationNumber":{"shape":"VatRegistrationNumber"}
+      }
+    },
+    "UzbekistanTaxRegistrationNumberType":{
+      "type":"string",
+      "enum":[
+        "Business",
+        "Individual"
+      ]
+    },
     "ValidationException":{
       "type":"structure",
       "required":[
@@ -1585,6 +1628,10 @@
     "ValidationExceptionFieldList":{
       "type":"list",
       "member":{"shape":"ValidationExceptionField"}
+    },
+    "VatRegistrationNumber":{
+      "type":"string",
+      "pattern":"^[0-9]{12}$"
     },
     "VerificationDetails":{
       "type":"structure",

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the codecommit-2015-04-13.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeCommit.Model
@@ -29,71 +30,141 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Paginator for DescribeMergeConflicts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxMergeHunks",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeMergeConflictsPaginator DescribeMergeConflicts(DescribeMergeConflictsRequest request);
 
         /// <summary>
         /// Paginator for DescribePullRequestEvents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribePullRequestEventsPaginator DescribePullRequestEvents(DescribePullRequestEventsRequest request);
 
         /// <summary>
         /// Paginator for GetCommentReactions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetCommentReactionsPaginator GetCommentReactions(GetCommentReactionsRequest request);
 
         /// <summary>
         /// Paginator for GetCommentsForComparedCommit operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetCommentsForComparedCommitPaginator GetCommentsForComparedCommit(GetCommentsForComparedCommitRequest request);
 
         /// <summary>
         /// Paginator for GetCommentsForPullRequest operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetCommentsForPullRequestPaginator GetCommentsForPullRequest(GetCommentsForPullRequestRequest request);
 
         /// <summary>
         /// Paginator for GetDifferences operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetDifferencesPaginator GetDifferences(GetDifferencesRequest request);
 
         /// <summary>
         /// Paginator for GetMergeConflicts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxConflictFiles",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetMergeConflictsPaginator GetMergeConflicts(GetMergeConflictsRequest request);
 
         /// <summary>
         /// Paginator for ListApprovalRuleTemplates operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApprovalRuleTemplatesPaginator ListApprovalRuleTemplates(ListApprovalRuleTemplatesRequest request);
 
         /// <summary>
         /// Paginator for ListAssociatedApprovalRuleTemplatesForRepository operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAssociatedApprovalRuleTemplatesForRepositoryPaginator ListAssociatedApprovalRuleTemplatesForRepository(ListAssociatedApprovalRuleTemplatesForRepositoryRequest request);
 
         /// <summary>
         /// Paginator for ListBranches operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListBranchesPaginator ListBranches(ListBranchesRequest request);
 
         /// <summary>
         /// Paginator for ListFileCommitHistory operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFileCommitHistoryPaginator ListFileCommitHistory(ListFileCommitHistoryRequest request);
 
         /// <summary>
         /// Paginator for ListPullRequests operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPullRequestsPaginator ListPullRequests(ListPullRequestsRequest request);
 
         /// <summary>
         /// Paginator for ListRepositories operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRepositoriesPaginator ListRepositories(ListRepositoriesRequest request);
 
         /// <summary>
         /// Paginator for ListRepositoriesForApprovalRuleTemplate operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRepositoriesForApprovalRuleTemplatePaginator ListRepositoriesForApprovalRuleTemplate(ListRepositoriesForApprovalRuleTemplateRequest request);
     }
 }

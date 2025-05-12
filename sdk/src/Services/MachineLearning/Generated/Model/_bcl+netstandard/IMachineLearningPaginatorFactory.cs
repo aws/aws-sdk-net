@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the machinelearning-2014-12-12.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MachineLearning.Model
@@ -29,21 +30,41 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Paginator for DescribeBatchPredictions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeBatchPredictionsPaginator DescribeBatchPredictions(DescribeBatchPredictionsRequest request);
 
         /// <summary>
         /// Paginator for DescribeDataSources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeDataSourcesPaginator DescribeDataSources(DescribeDataSourcesRequest request);
 
         /// <summary>
         /// Paginator for DescribeEvaluations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeEvaluationsPaginator DescribeEvaluations(DescribeEvaluationsRequest request);
 
         /// <summary>
         /// Paginator for DescribeMLModels operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeMLModelsPaginator DescribeMLModels(DescribeMLModelsRequest request);
     }
 }

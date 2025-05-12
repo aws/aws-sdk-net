@@ -136,6 +136,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ebs" + "." + "Throughput", StringUtils.FromInt(publicRequestLaunchSpecificationlistValue.Ebs.Throughput));
                                     }
+                                    if(publicRequestLaunchSpecificationlistValue.Ebs.IsSetVolumeInitializationRate())
+                                    {
+                                        request.Parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ebs" + "." + "VolumeInitializationRate", StringUtils.FromInt(publicRequestLaunchSpecificationlistValue.Ebs.VolumeInitializationRate));
+                                    }
                                     if(publicRequestLaunchSpecificationlistValue.Ebs.IsSetVolumeSize())
                                     {
                                         request.Parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ebs" + "." + "VolumeSize", StringUtils.FromInt(publicRequestLaunchSpecificationlistValue.Ebs.VolumeSize));
@@ -235,6 +239,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 if(publicRequestLaunchSpecificationlistValue.IsSetDeviceIndex())
                                 {
                                     request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "DeviceIndex", StringUtils.FromInt(publicRequestLaunchSpecificationlistValue.DeviceIndex));
+                                }
+                                if(publicRequestLaunchSpecificationlistValue.IsSetEnaQueueCount())
+                                {
+                                    request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "EnaQueueCount", StringUtils.FromInt(publicRequestLaunchSpecificationlistValue.EnaQueueCount));
                                 }
                                 if(publicRequestLaunchSpecificationlistValue.IsSetEnaSrdSpecification())
                                 {

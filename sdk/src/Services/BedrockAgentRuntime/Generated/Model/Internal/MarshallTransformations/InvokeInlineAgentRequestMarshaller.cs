@@ -98,6 +98,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.AgentCollaboration);
             }
 
+            if(publicRequest.IsSetAgentName())
+            {
+                context.Writer.WritePropertyName("agentName");
+                context.Writer.WriteStringValue(publicRequest.AgentName);
+            }
+
             if(publicRequest.IsSetBedrockModelConfigurations())
             {
                 context.Writer.WritePropertyName("bedrockModelConfigurations");
@@ -145,6 +151,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("customerEncryptionKeyArn");
                 context.Writer.WriteStringValue(publicRequest.CustomerEncryptionKeyArn);
+            }
+
+            if(publicRequest.IsSetCustomOrchestration())
+            {
+                context.Writer.WritePropertyName("customOrchestration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomOrchestrationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CustomOrchestration, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetEnableTrace())
@@ -219,6 +236,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     context.Writer.WriteEndObject();
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetOrchestrationType())
+            {
+                context.Writer.WritePropertyName("orchestrationType");
+                context.Writer.WriteStringValue(publicRequest.OrchestrationType);
             }
 
             if(publicRequest.IsSetPromptOverrideConfiguration())

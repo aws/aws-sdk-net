@@ -30,29 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
-    /// A parameter to configure deletion protection. If enabled, deletion protection prevents
-    /// a user from deleting a configuration profile or an environment if AppConfig has called
-    /// either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a>
+    /// A parameter to configure deletion protection. Deletion protection prevents a user
+    /// from deleting a configuration profile or an environment if AppConfig has called either
+    /// <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a>
     /// or for the configuration profile or from the environment during the specified interval.
     /// 
     ///  
     /// <para>
-    /// This setting uses the following default values:
+    /// The default interval specified by <c>ProtectionPeriodInMinutes</c> is 60. <c>DeletionProtectionCheck</c>
+    /// skips configuration profiles and environments that were created in the past hour.
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Deletion protection is disabled by default. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The default interval specified by <c>ProtectionPeriodInMinutes</c> is 60.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>DeletionProtectionCheck</c> skips configuration profiles and environments that
-    /// were created in the past hour.
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class DeletionProtectionSettings
     {

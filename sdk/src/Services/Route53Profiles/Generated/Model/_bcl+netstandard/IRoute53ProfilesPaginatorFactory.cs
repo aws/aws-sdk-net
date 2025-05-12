@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the route53profiles-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Route53Profiles.Model
@@ -29,16 +30,31 @@ namespace Amazon.Route53Profiles.Model
         /// <summary>
         /// Paginator for ListProfileAssociations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProfileAssociationsPaginator ListProfileAssociations(ListProfileAssociationsRequest request);
 
         /// <summary>
         /// Paginator for ListProfileResourceAssociations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProfileResourceAssociationsPaginator ListProfileResourceAssociations(ListProfileResourceAssociationsRequest request);
 
         /// <summary>
         /// Paginator for ListProfiles operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProfilesPaginator ListProfiles(ListProfilesRequest request);
     }
 }

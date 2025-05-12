@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the codepipeline-2015-07-09.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodePipeline.Model
@@ -29,36 +30,71 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Paginator for ListActionExecutions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListActionExecutionsPaginator ListActionExecutions(ListActionExecutionsRequest request);
 
         /// <summary>
         /// Paginator for ListActionTypes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListActionTypesPaginator ListActionTypes(ListActionTypesRequest request);
 
         /// <summary>
         /// Paginator for ListPipelineExecutions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPipelineExecutionsPaginator ListPipelineExecutions(ListPipelineExecutionsRequest request);
 
         /// <summary>
         /// Paginator for ListPipelines operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPipelinesPaginator ListPipelines(ListPipelinesRequest request);
 
         /// <summary>
         /// Paginator for ListRuleExecutions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRuleExecutionsPaginator ListRuleExecutions(ListRuleExecutionsRequest request);
 
         /// <summary>
         /// Paginator for ListTagsForResource operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request);
 
         /// <summary>
         /// Paginator for ListWebhooks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWebhooksPaginator ListWebhooks(ListWebhooksRequest request);
     }
 }

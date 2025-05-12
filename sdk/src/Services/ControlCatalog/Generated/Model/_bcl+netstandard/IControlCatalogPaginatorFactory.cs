@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the controlcatalog-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ControlCatalog.Model
@@ -29,21 +30,41 @@ namespace Amazon.ControlCatalog.Model
         /// <summary>
         /// Paginator for ListCommonControls operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCommonControlsPaginator ListCommonControls(ListCommonControlsRequest request);
 
         /// <summary>
         /// Paginator for ListControls operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListControlsPaginator ListControls(ListControlsRequest request);
 
         /// <summary>
         /// Paginator for ListDomains operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDomainsPaginator ListDomains(ListDomainsRequest request);
 
         /// <summary>
         /// Paginator for ListObjectives operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListObjectivesPaginator ListObjectives(ListObjectivesRequest request);
     }
 }

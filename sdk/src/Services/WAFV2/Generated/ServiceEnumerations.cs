@@ -2649,6 +2649,10 @@ namespace Amazon.WAFV2
     {
 
         /// <summary>
+        /// Constant AMPLIFY for ResourceType
+        /// </summary>
+        public static readonly ResourceType AMPLIFY = new ResourceType("AMPLIFY");
+        /// <summary>
         /// Constant API_GATEWAY for ResourceType
         /// </summary>
         public static readonly ResourceType API_GATEWAY = new ResourceType("API_GATEWAY");

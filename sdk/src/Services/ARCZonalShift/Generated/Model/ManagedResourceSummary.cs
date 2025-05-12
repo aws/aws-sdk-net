@@ -35,11 +35,10 @@ namespace Amazon.ARCZonalShift.Model
     /// 
     ///  
     /// <para>
-    /// A managed resource is a load balancer that has been registered with Route 53 ARC by
-    /// Elastic Load Balancing. You can start a zonal shift in Route 53 ARC for a managed
-    /// resource to temporarily move traffic for the resource away from an Availability Zone
-    /// in an Amazon Web Services Region. You can also configure zonal autoshift for a managed
-    /// resource.
+    /// A managed resource is a load balancer that has been registered with ARC by Elastic
+    /// Load Balancing. You can start a zonal shift in ARC for a managed resource to temporarily
+    /// move traffic for the resource away from an Availability Zone in an Amazon Web Services
+    /// Region. You can also configure zonal autoshift for a managed resource.
     /// </para>
     ///  <note> 
     /// <para>
@@ -159,14 +158,13 @@ namespace Amazon.ARCZonalShift.Model
         /// <para>
         /// This status tracks whether a practice run configuration exists for a resource. When
         /// you configure a practice run for a resource so that a practice run configuration exists,
-        /// Route 53 ARC sets this value to <c>ENABLED</c>. If a you have not configured a practice
-        /// run for the resource, or delete a practice run configuration, Route 53 ARC sets the
-        /// value to <c>DISABLED</c>.
+        /// ARC sets this value to <c>ENABLED</c>. If a you have not configured a practice run
+        /// for the resource, or delete a practice run configuration, ARC sets the value to <c>DISABLED</c>.
         /// </para>
         ///  
         /// <para>
-        /// Route 53 ARC updates this status; you can't set a practice run status to <c>ENABLED</c>
-        /// or <c>DISABLED</c>.
+        /// ARC updates this status; you can't set a practice run status to <c>ENABLED</c> or
+        /// <c>DISABLED</c>.
         /// </para>
         /// </summary>
         public ZonalAutoshiftStatus PracticeRunStatus

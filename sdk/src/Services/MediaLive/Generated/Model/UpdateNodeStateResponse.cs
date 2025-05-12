@@ -43,6 +43,7 @@ namespace Amazon.MediaLive.Model
         private string _name;
         private List<NodeInterfaceMapping> _nodeInterfaceMappings = AWSConfigs.InitializeCollections ? new List<NodeInterfaceMapping>() : null;
         private NodeRole _role;
+        private List<SdiSourceMapping> _sdiSourceMappings = AWSConfigs.InitializeCollections ? new List<SdiSourceMapping>() : null;
         private NodeState _state;
 
         /// <summary>
@@ -185,6 +186,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetRole()
         {
             return this._role != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SdiSourceMappings. An array of SDI source mappings. Each
+        /// mapping connects one logical SdiSource to the physical SDI card and port that the
+        /// physical SDI source uses.
+        /// </summary>
+        public List<SdiSourceMapping> SdiSourceMappings
+        {
+            get { return this._sdiSourceMappings; }
+            set { this._sdiSourceMappings = value; }
+        }
+
+        // Check to see if SdiSourceMappings property is set
+        internal bool IsSetSdiSourceMappings()
+        {
+            return this._sdiSourceMappings != null && (this._sdiSourceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

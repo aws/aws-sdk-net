@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the lambda-2015-03-31.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lambda.Model
@@ -29,56 +30,111 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Paginator for ListAliases operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
         IListAliasesPaginator ListAliases(ListAliasesRequest request);
 
         /// <summary>
         /// Paginator for ListCodeSigningConfigs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
         IListCodeSigningConfigsPaginator ListCodeSigningConfigs(ListCodeSigningConfigsRequest request);
 
         /// <summary>
         /// Paginator for ListEventSourceMappings operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
         IListEventSourceMappingsPaginator ListEventSourceMappings(ListEventSourceMappingsRequest request);
 
         /// <summary>
         /// Paginator for ListFunctionEventInvokeConfigs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
         IListFunctionEventInvokeConfigsPaginator ListFunctionEventInvokeConfigs(ListFunctionEventInvokeConfigsRequest request);
 
         /// <summary>
         /// Paginator for ListFunctions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
         IListFunctionsPaginator ListFunctions(ListFunctionsRequest request);
 
         /// <summary>
         /// Paginator for ListFunctionsByCodeSigningConfig operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
         IListFunctionsByCodeSigningConfigPaginator ListFunctionsByCodeSigningConfig(ListFunctionsByCodeSigningConfigRequest request);
 
         /// <summary>
         /// Paginator for ListFunctionUrlConfigs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
         IListFunctionUrlConfigsPaginator ListFunctionUrlConfigs(ListFunctionUrlConfigsRequest request);
 
         /// <summary>
         /// Paginator for ListLayers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
         IListLayersPaginator ListLayers(ListLayersRequest request);
 
         /// <summary>
         /// Paginator for ListLayerVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
         IListLayerVersionsPaginator ListLayerVersions(ListLayerVersionsRequest request);
 
         /// <summary>
         /// Paginator for ListProvisionedConcurrencyConfigs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
         IListProvisionedConcurrencyConfigsPaginator ListProvisionedConcurrencyConfigs(ListProvisionedConcurrencyConfigsRequest request);
 
         /// <summary>
         /// Paginator for ListVersionsByFunction operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
         IListVersionsByFunctionPaginator ListVersionsByFunction(ListVersionsByFunctionRequest request);
     }
 }

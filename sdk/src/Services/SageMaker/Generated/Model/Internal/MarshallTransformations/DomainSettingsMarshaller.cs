@@ -96,6 +96,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetUnifiedStudioSettings())
+            {
+                context.Writer.WritePropertyName("UnifiedStudioSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UnifiedStudioSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.UnifiedStudioSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

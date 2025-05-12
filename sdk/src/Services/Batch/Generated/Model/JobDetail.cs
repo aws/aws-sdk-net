@@ -487,7 +487,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property SchedulingPriority. 
         /// <para>
         /// The scheduling policy of the job definition. This only affects jobs in job queues
-        /// with a fair share policy. Jobs with a higher scheduling priority are scheduled before
+        /// with a fair-share policy. Jobs with a higher scheduling priority are scheduled before
         /// jobs with a lower scheduling priority.
         /// </para>
         /// </summary>

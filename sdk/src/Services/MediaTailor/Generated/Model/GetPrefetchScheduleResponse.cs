@@ -38,7 +38,9 @@ namespace Amazon.MediaTailor.Model
         private PrefetchConsumption _consumption;
         private string _name;
         private string _playbackConfigurationName;
+        private RecurringPrefetchConfiguration _recurringPrefetchConfiguration;
         private PrefetchRetrieval _retrieval;
+        private PrefetchScheduleType _scheduleType;
         private string _streamId;
 
         /// <summary>
@@ -62,10 +64,10 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Consumption. 
         /// <para>
-        /// Consumption settings determine how, and when, MediaTailor places the prefetched ads
-        /// into ad breaks. Ad consumption occurs within a span of time that you define, called
-        /// a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills
-        /// with prefetch ads by setting avail matching criteria.
+        /// The configuration settings for how and when MediaTailor consumes prefetched ads from
+        /// the ad decision server for single prefetch schedules. Each consumption configuration
+        /// contains an end time and an optional start time that define the <i>consumption window</i>.
+        /// Prefetch schedules automatically expire no earlier than seven days after the end time.
         /// </para>
         /// </summary>
         public PrefetchConsumption Consumption
@@ -118,6 +120,25 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RecurringPrefetchConfiguration. 
+        /// <para>
+        /// The configuration that defines how and when MediaTailor performs ad prefetching in
+        /// a live event.
+        /// </para>
+        /// </summary>
+        public RecurringPrefetchConfiguration RecurringPrefetchConfiguration
+        {
+            get { return this._recurringPrefetchConfiguration; }
+            set { this._recurringPrefetchConfiguration = value; }
+        }
+
+        // Check to see if RecurringPrefetchConfiguration property is set
+        internal bool IsSetRecurringPrefetchConfiguration()
+        {
+            return this._recurringPrefetchConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Retrieval. 
         /// <para>
         /// A complex type that contains settings for prefetch retrieval from the ad decision
@@ -134,6 +155,26 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetRetrieval()
         {
             return this._retrieval != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduleType. 
+        /// <para>
+        /// The frequency that MediaTailor creates prefetch schedules. <c>SINGLE</c> indicates
+        /// that this schedule applies to one ad break. <c>RECURRING</c> indicates that MediaTailor
+        /// automatically creates a schedule for each ad avail in a live event.
+        /// </para>
+        /// </summary>
+        public PrefetchScheduleType ScheduleType
+        {
+            get { return this._scheduleType; }
+            set { this._scheduleType = value; }
+        }
+
+        // Check to see if ScheduleType property is set
+        internal bool IsSetScheduleType()
+        {
+            return this._scheduleType != null;
         }
 
         /// <summary>

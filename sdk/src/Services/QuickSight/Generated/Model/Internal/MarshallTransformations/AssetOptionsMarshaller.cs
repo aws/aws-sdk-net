@@ -46,6 +46,34 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCustomActionDefaults())
+            {
+                context.Writer.WritePropertyName("CustomActionDefaults");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VisualCustomActionDefaultsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomActionDefaults, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetExcludedDataSetArns())
+            {
+                context.Writer.WritePropertyName("ExcludedDataSetArns");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectExcludedDataSetArnsListValue in requestObject.ExcludedDataSetArns)
+                {
+                        context.Writer.WriteStringValue(requestObjectExcludedDataSetArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetQBusinessInsightsStatus())
+            {
+                context.Writer.WritePropertyName("QBusinessInsightsStatus");
+                context.Writer.WriteStringValue(requestObject.QBusinessInsightsStatus);
+            }
+
             if(requestObject.IsSetTimezone())
             {
                 context.Writer.WritePropertyName("Timezone");

@@ -64,6 +64,7 @@ namespace Amazon.CertificateManager.Model
         private List<DomainValidationOption> _domainValidationOptions = AWSConfigs.InitializeCollections ? new List<DomainValidationOption>() : null;
         private string _idempotencyToken;
         private KeyAlgorithm _keyAlgorithm;
+        private CertificateManagedBy _managedBy;
         private CertificateOptions _options;
         private List<string> _subjectAlternativeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -226,6 +227,25 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetKeyAlgorithm()
         {
             return this._keyAlgorithm != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedBy. 
+        /// <para>
+        /// Identifies the Amazon Web Services service that manages the certificate issued by
+        /// ACM.
+        /// </para>
+        /// </summary>
+        public CertificateManagedBy ManagedBy
+        {
+            get { return this._managedBy; }
+            set { this._managedBy = value; }
+        }
+
+        // Check to see if ManagedBy property is set
+        internal bool IsSetManagedBy()
+        {
+            return this._managedBy != null;
         }
 
         /// <summary>

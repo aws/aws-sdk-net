@@ -54,6 +54,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.CreateReservationRequest.OfferingId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.CreateScheduledActionRequest.NamespaceName</property>
     <min>3</min>
     <max>64</max>
@@ -172,6 +177,16 @@
     <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.GetReservationRequest.ReservationId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.GetReservationOfferingRequest.OfferingId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.GetScheduledActionRequest.ScheduledActionName</property>
     <min>3</min>
     <max>60</max>
@@ -261,6 +276,36 @@
     <min>3</min>
     <max>64</max>
     <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListReservationOfferingsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListReservationOfferingsRequest.NextToken</property>
+    <min>8</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListReservationOfferingsResponse.NextToken</property>
+    <min>8</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListReservationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListReservationsRequest.NextToken</property>
+    <min>8</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListReservationsResponse.NextToken</property>
+    <min>8</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.ListScheduledActionsRequest.MaxResults</property>
@@ -529,6 +574,26 @@
     <min>3</min>
     <max>64</max>
     <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.Reservation.ReservationArn</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.Reservation.ReservationId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.Reservation.Status</property>
+    <min>1</min>
+    <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ReservationOffering.OfferingId</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.ResourceNotFoundException.ResourceName</property>

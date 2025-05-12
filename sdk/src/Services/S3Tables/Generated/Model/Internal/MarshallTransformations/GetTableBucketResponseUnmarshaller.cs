@@ -76,6 +76,12 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
                     response.OwnerAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("tableBucketId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TableBucketId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

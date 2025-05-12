@@ -240,8 +240,8 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property QuotaRequestedAtLevel. 
         /// <para>
-        /// Specifies at which level within the Amazon Web Services account the quota request
-        /// applies to.
+        /// Filters the response to return quota requests for the <c>ACCOUNT</c>, <c>RESOURCE</c>,
+        /// or <c>ALL</c> levels. <c>ACCOUNT</c> is the default.
         /// </para>
         /// </summary>
         public AppliedLevelEnum QuotaRequestedAtLevel
@@ -317,6 +317,42 @@ namespace Amazon.ServiceQuotas.Model
         /// <para>
         /// The state of the quota increase request.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PENDING</c>: The quota increase request is under review by Amazon Web Services.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CASE_OPENED</c>: Service Quotas opened a support case to process the quota increase
+        /// request. Follow-up on the support case for more information.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>APPROVED</c>: The quota increase request is approved. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DENIED</c>: The quota increase request can't be approved by Service Quotas. Contact
+        /// Amazon Web Services Support for more details.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NOT APPROVED</c>: The quota increase request can't be approved by Service Quotas.
+        /// Contact Amazon Web Services Support for more details.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CASE_CLOSED</c>: The support case associated with this quota increase request
+        /// was closed. Check the support case correspondence for the outcome of your quota request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>INVALID_REQUEST</c>: Service Quotas couldn't process your resource-level quota
+        /// increase request because the Amazon Resource Name (ARN) specified as part of the <c>ContextId</c>
+        /// is invalid.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public RequestStatus Status
         {

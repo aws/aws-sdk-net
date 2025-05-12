@@ -374,8 +374,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property UnmanagedvCpus. 
         /// <para>
         /// The maximum number of vCPUs for an unmanaged compute environment. This parameter is
-        /// only used for fair share scheduling to reserve vCPU capacity for new share identifiers.
-        /// If this parameter isn't provided for a fair share job queue, no vCPU capacity is reserved.
+        /// only used for fair-share scheduling to reserve vCPU capacity for new share identifiers.
+        /// If this parameter isn't provided for a fair-share job queue, no vCPU capacity is reserved.
         /// </para>
         ///  <note> 
         /// <para>

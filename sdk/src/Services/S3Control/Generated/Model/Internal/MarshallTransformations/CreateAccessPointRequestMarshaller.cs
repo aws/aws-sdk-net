@@ -90,6 +90,35 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("RestrictPublicBuckets", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.RestrictPublicBuckets.Value));
                     xmlWriter.WriteEndElement();
                 }
+                if (publicRequest.Scope != null)
+                {
+                    xmlWriter.WriteStartElement("Scope");
+                    var publicRequestScopePermissions = publicRequest.Scope.Permissions;
+                    if (publicRequestScopePermissions != null && (publicRequestScopePermissions.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    {
+                        xmlWriter.WriteStartElement("Permissions");
+                        foreach (var publicRequestScopePermissionsValue in publicRequestScopePermissions) 
+                        {
+                            xmlWriter.WriteStartElement("Permission");
+                            xmlWriter.WriteValue(publicRequestScopePermissionsValue);
+                            xmlWriter.WriteEndElement();
+                        }            
+                        xmlWriter.WriteEndElement();            
+                    }
+                    var publicRequestScopePrefixes = publicRequest.Scope.Prefixes;
+                    if (publicRequestScopePrefixes != null && (publicRequestScopePrefixes.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    {
+                        xmlWriter.WriteStartElement("Prefixes");
+                        foreach (var publicRequestScopePrefixesValue in publicRequestScopePrefixes) 
+                        {
+                            xmlWriter.WriteStartElement("Prefix");
+                            xmlWriter.WriteValue(publicRequestScopePrefixesValue);
+                            xmlWriter.WriteEndElement();
+                        }            
+                        xmlWriter.WriteEndElement();            
+                    }
+                    xmlWriter.WriteEndElement();
+                }
                 if (publicRequest.VpcConfiguration != null)
                 {
                     xmlWriter.WriteStartElement("VpcConfiguration");

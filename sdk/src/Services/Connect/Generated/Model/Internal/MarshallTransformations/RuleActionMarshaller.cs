@@ -63,6 +63,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetAssignSlaAction())
+            {
+                context.Writer.WritePropertyName("AssignSlaAction");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AssignSlaActionDefinitionMarshaller.Instance;
+                marshaller.Marshall(requestObject.AssignSlaAction, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetCreateCaseAction())
             {
                 context.Writer.WritePropertyName("CreateCaseAction");

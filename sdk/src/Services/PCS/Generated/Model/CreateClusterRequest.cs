@@ -86,7 +86,7 @@ namespace Amazon.PCS.Model
         /// A name to identify the cluster. Example: <c>MyCluster</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=40)]
+        [AWSProperty(Required=true, Min=3, Max=40)]
         public string ClusterName
         {
             get { return this._clusterName; }

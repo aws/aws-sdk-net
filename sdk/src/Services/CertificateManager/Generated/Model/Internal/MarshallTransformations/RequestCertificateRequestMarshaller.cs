@@ -115,6 +115,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.KeyAlgorithm);
             }
 
+            if(publicRequest.IsSetManagedBy())
+            {
+                context.Writer.WritePropertyName("ManagedBy");
+                context.Writer.WriteStringValue(publicRequest.ManagedBy);
+            }
+
             if(publicRequest.IsSetOptions())
             {
                 context.Writer.WritePropertyName("Options");

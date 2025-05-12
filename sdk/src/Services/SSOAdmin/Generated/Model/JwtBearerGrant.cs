@@ -31,7 +31,9 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// A structure that defines configuration settings for an application that supports the
-    /// JWT Bearer Token Authorization Grant.
+    /// JWT Bearer Token Authorization Grant. The <c>AuthorizedAudience</c> field is the aud
+    /// claim. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc7523">RFC
+    /// 7523</a>.
     /// </summary>
     public partial class JwtBearerGrant
     {
@@ -43,6 +45,11 @@ namespace Amazon.SSOAdmin.Model
         /// A list of allowed token issuers trusted by the Identity Center instances for this
         /// application.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <c>AuthorizedTokenIssuers</c> is required when the grant type is <c>JwtBearerGrant</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<AuthorizedTokenIssuer> AuthorizedTokenIssuers

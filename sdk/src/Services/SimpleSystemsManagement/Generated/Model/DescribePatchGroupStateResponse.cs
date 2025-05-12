@@ -35,6 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DescribePatchGroupStateResponse : AmazonWebServiceResponse
     {
         private int? _instances;
+        private int? _instancesWithAvailableSecurityUpdates;
         private int? _instancesWithCriticalNonCompliantPatches;
         private int? _instancesWithFailedPatches;
         private int? _instancesWithInstalledOtherPatches;
@@ -63,6 +64,31 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetInstances()
         {
             return this._instances.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstancesWithAvailableSecurityUpdates. 
+        /// <para>
+        /// The number of managed nodes for which security-related patches are available but not
+        /// approved because because they didn't meet the patch baseline requirements. For example,
+        /// an updated version of a patch might have been released before the specified auto-approval
+        /// period was over.
+        /// </para>
+        ///  
+        /// <para>
+        /// Applies to Windows Server managed nodes only.
+        /// </para>
+        /// </summary>
+        public int? InstancesWithAvailableSecurityUpdates
+        {
+            get { return this._instancesWithAvailableSecurityUpdates; }
+            set { this._instancesWithAvailableSecurityUpdates = value; }
+        }
+
+        // Check to see if InstancesWithAvailableSecurityUpdates property is set
+        internal bool IsSetInstancesWithAvailableSecurityUpdates()
+        {
+            return this._instancesWithAvailableSecurityUpdates.HasValue; 
         }
 
         /// <summary>

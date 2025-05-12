@@ -103,7 +103,7 @@ namespace Amazon.Runtime.Internal
                     }
 
                     var identityResolver = scheme.GetIdentityResolver(clientConfig.IdentityResolverConfiguration);
-                    executionContext.RequestContext.Identity = identityResolver.ResolveIdentity();
+                    executionContext.RequestContext.Identity = identityResolver.ResolveIdentity(clientConfig);
 
                     if (executionContext.RequestContext.Identity != null)
                     {
@@ -162,7 +162,7 @@ namespace Amazon.Runtime.Internal
                     {
                         // We can use DefaultAWSCredentials if it was set by the user for these schemes.
                         executionContext.RequestContext.Identity = clientConfig.DefaultAWSCredentials;
-                        return;
+                        break;
                     }
 
                     if (scheme is BearerAuthScheme && clientConfig.AWSTokenProvider != null)
@@ -178,17 +178,17 @@ namespace Amazon.Runtime.Internal
                         }
 
                         executionContext.RequestContext.Identity = resolvedToken.Value;
-                        return;
+                        break;
                     }
 
                     var identityResolver = scheme.GetIdentityResolver(clientConfig.IdentityResolverConfiguration);
                     executionContext.RequestContext.Identity = await identityResolver
-                        .ResolveIdentityAsync(cancellationToken)
+                        .ResolveIdentityAsync(clientConfig, cancellationToken)
                         .ConfigureAwait(false);
 
                     if (executionContext.RequestContext.Identity != null)
                     {
-                        return;
+                        break;
                     }
                 }
                 catch (Exception ex)

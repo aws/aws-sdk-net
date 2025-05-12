@@ -47,6 +47,7 @@ namespace Amazon.DataZone.Model
         private Unit _delegateCreateEnvironmentProfile;
         private OverrideDomainUnitOwnersPolicyGrantDetail _overrideDomainUnitOwners;
         private OverrideProjectOwnersPolicyGrantDetail _overrideProjectOwners;
+        private UseAssetTypePolicyGrantDetail _useAssetType;
 
         /// <summary>
         /// Gets and sets the property AddToProjectMemberPool. 
@@ -277,6 +278,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetOverrideProjectOwners()
         {
             return this._overrideProjectOwners != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseAssetType. 
+        /// <para>
+        ///  Specifies the domain unit(s) whose projects can use this asset type while creating
+        /// asset or asset revisions.
+        /// </para>
+        /// </summary>
+        public UseAssetTypePolicyGrantDetail UseAssetType
+        {
+            get { return this._useAssetType; }
+            set { this._useAssetType = value; }
+        }
+
+        // Check to see if UseAssetType property is set
+        internal bool IsSetUseAssetType()
+        {
+            return this._useAssetType != null;
         }
 
     }

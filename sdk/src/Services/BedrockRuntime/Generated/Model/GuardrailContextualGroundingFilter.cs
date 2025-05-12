@@ -35,6 +35,7 @@ namespace Amazon.BedrockRuntime.Model
     public partial class GuardrailContextualGroundingFilter
     {
         private GuardrailContextualGroundingPolicyAction _action;
+        private bool? _detected;
         private double? _score;
         private double? _threshold;
         private GuardrailContextualGroundingFilterType _type;
@@ -56,6 +57,25 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Detected. 
+        /// <para>
+        /// Indicates whether content that fails the contextual grounding evaluation (grounding
+        /// or relevance score less than the corresponding threshold) was detected.
+        /// </para>
+        /// </summary>
+        public bool? Detected
+        {
+            get { return this._detected; }
+            set { this._detected = value; }
+        }
+
+        // Check to see if Detected property is set
+        internal bool IsSetDetected()
+        {
+            return this._detected.HasValue; 
         }
 
         /// <summary>

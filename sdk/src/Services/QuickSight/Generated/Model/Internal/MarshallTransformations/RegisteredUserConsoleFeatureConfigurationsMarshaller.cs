@@ -46,6 +46,39 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAmazonQInQuickSight())
+            {
+                context.Writer.WritePropertyName("AmazonQInQuickSight");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AmazonQInQuickSightConsoleConfigurationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AmazonQInQuickSight, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetRecentSnapshots())
+            {
+                context.Writer.WritePropertyName("RecentSnapshots");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RecentSnapshotsConfigurationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.RecentSnapshots, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetSchedules())
+            {
+                context.Writer.WritePropertyName("Schedules");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SchedulesConfigurationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Schedules, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSharedView())
             {
                 context.Writer.WritePropertyName("SharedView");
@@ -64,6 +97,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                 var marshaller = StatePersistenceConfigurationsMarshaller.Instance;
                 marshaller.Marshall(requestObject.StatePersistence, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetThresholdAlerts())
+            {
+                context.Writer.WritePropertyName("ThresholdAlerts");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ThresholdAlertsConfigurationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ThresholdAlerts, context);
 
                 context.Writer.WriteEndObject();
             }

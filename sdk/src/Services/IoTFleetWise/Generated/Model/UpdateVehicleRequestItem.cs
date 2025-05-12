@@ -31,6 +31,15 @@ namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
     /// Information about the vehicle to update.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Access to certain Amazon Web Services IoT FleetWise features is currently gated. For
+    /// more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon
+    /// Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT
+    /// FleetWise Developer Guide</i>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class UpdateVehicleRequestItem
     {
@@ -40,6 +49,7 @@ namespace Amazon.IoTFleetWise.Model
         private string _modelManifestArn;
         private List<StateTemplateAssociation> _stateTemplatesToAdd = AWSConfigs.InitializeCollections ? new List<StateTemplateAssociation>() : null;
         private List<string> _stateTemplatesToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<StateTemplateAssociation> _stateTemplatesToUpdate = AWSConfigs.InitializeCollections ? new List<StateTemplateAssociation>() : null;
         private string _vehicleName;
 
         /// <summary>
@@ -161,6 +171,26 @@ namespace Amazon.IoTFleetWise.Model
         internal bool IsSetStateTemplatesToRemove()
         {
             return this._stateTemplatesToRemove != null && (this._stateTemplatesToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateTemplatesToUpdate. 
+        /// <para>
+        /// Change the <c>stateTemplateUpdateStrategy</c> of state templates already associated
+        /// with the vehicle.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public List<StateTemplateAssociation> StateTemplatesToUpdate
+        {
+            get { return this._stateTemplatesToUpdate; }
+            set { this._stateTemplatesToUpdate = value; }
+        }
+
+        // Check to see if StateTemplatesToUpdate property is set
+        internal bool IsSetStateTemplatesToUpdate()
+        {
+            return this._stateTemplatesToUpdate != null && (this._stateTemplatesToUpdate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

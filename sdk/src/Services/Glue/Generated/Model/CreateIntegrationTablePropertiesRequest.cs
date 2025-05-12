@@ -66,7 +66,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SourceTableConfig. 
         /// <para>
-        /// A structure for the source table configuration.
+        /// A structure for the source table configuration. See the <c>SourceTableConfig</c> structure
+        /// to see list of supported source properties.
         /// </para>
         /// </summary>
         public SourceTableConfig SourceTableConfig

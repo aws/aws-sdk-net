@@ -746,6 +746,10 @@ namespace Amazon.QuickSight
         /// Constant Name for AssetBundleExportJobDataSetPropertyToOverride
         /// </summary>
         public static readonly AssetBundleExportJobDataSetPropertyToOverride Name = new AssetBundleExportJobDataSetPropertyToOverride("Name");
+        /// <summary>
+        /// Constant RefreshFailureEmailAlertStatus for AssetBundleExportJobDataSetPropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobDataSetPropertyToOverride RefreshFailureEmailAlertStatus = new AssetBundleExportJobDataSetPropertyToOverride("RefreshFailureEmailAlertStatus");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3852,6 +3856,52 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DatasetParameterValueType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataSetUseAs.
+    /// </summary>
+    public class DataSetUseAs : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RLS_RULES for DataSetUseAs
+        /// </summary>
+        public static readonly DataSetUseAs RLS_RULES = new DataSetUseAs("RLS_RULES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataSetUseAs(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataSetUseAs FindValue(string value)
+        {
+            return FindValue<DataSetUseAs>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataSetUseAs(string value)
         {
             return FindValue(value);
         }
@@ -9493,6 +9543,56 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type QBusinessInsightsStatus.
+    /// </summary>
+    public class QBusinessInsightsStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for QBusinessInsightsStatus
+        /// </summary>
+        public static readonly QBusinessInsightsStatus DISABLED = new QBusinessInsightsStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for QBusinessInsightsStatus
+        /// </summary>
+        public static readonly QBusinessInsightsStatus ENABLED = new QBusinessInsightsStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QBusinessInsightsStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QBusinessInsightsStatus FindValue(string value)
+        {
+            return FindValue<QBusinessInsightsStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QBusinessInsightsStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type QSearchStatus.
     /// </summary>
     public class QSearchStatus : ConstantClass
@@ -9948,6 +10048,56 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReferenceLineValueLabelRelativePosition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RefreshFailureAlertStatus.
+    /// </summary>
+    public class RefreshFailureAlertStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for RefreshFailureAlertStatus
+        /// </summary>
+        public static readonly RefreshFailureAlertStatus DISABLED = new RefreshFailureAlertStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for RefreshFailureAlertStatus
+        /// </summary>
+        public static readonly RefreshFailureAlertStatus ENABLED = new RefreshFailureAlertStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RefreshFailureAlertStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RefreshFailureAlertStatus FindValue(string value)
+        {
+            return FindValue<RefreshFailureAlertStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RefreshFailureAlertStatus(string value)
         {
             return FindValue(value);
         }
@@ -13391,6 +13541,56 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type TransposedColumnType.
+    /// </summary>
+    public class TransposedColumnType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ROW_HEADER_COLUMN for TransposedColumnType
+        /// </summary>
+        public static readonly TransposedColumnType ROW_HEADER_COLUMN = new TransposedColumnType("ROW_HEADER_COLUMN");
+        /// <summary>
+        /// Constant VALUE_COLUMN for TransposedColumnType
+        /// </summary>
+        public static readonly TransposedColumnType VALUE_COLUMN = new TransposedColumnType("VALUE_COLUMN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransposedColumnType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransposedColumnType FindValue(string value)
+        {
+            return FindValue<TransposedColumnType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransposedColumnType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type UndefinedSpecifiedValueType.
     /// </summary>
     public class UndefinedSpecifiedValueType : ConstantClass
@@ -13820,6 +14020,60 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VisualCustomActionTrigger(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VisualHighlightTrigger.
+    /// </summary>
+    public class VisualHighlightTrigger : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DATA_POINT_CLICK for VisualHighlightTrigger
+        /// </summary>
+        public static readonly VisualHighlightTrigger DATA_POINT_CLICK = new VisualHighlightTrigger("DATA_POINT_CLICK");
+        /// <summary>
+        /// Constant DATA_POINT_HOVER for VisualHighlightTrigger
+        /// </summary>
+        public static readonly VisualHighlightTrigger DATA_POINT_HOVER = new VisualHighlightTrigger("DATA_POINT_HOVER");
+        /// <summary>
+        /// Constant NONE for VisualHighlightTrigger
+        /// </summary>
+        public static readonly VisualHighlightTrigger NONE = new VisualHighlightTrigger("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VisualHighlightTrigger(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VisualHighlightTrigger FindValue(string value)
+        {
+            return FindValue<VisualHighlightTrigger>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VisualHighlightTrigger(string value)
         {
             return FindValue(value);
         }

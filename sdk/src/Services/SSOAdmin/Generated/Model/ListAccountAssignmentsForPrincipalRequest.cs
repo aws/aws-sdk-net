@@ -32,7 +32,9 @@ namespace Amazon.SSOAdmin.Model
     /// <summary>
     /// Container for the parameters to the ListAccountAssignmentsForPrincipal operation.
     /// Retrieves a list of the IAM Identity Center associated Amazon Web Services accounts
-    /// that the principal has access to.
+    /// that the principal has access to. This action must be called from the management account
+    /// containing your organization instance of IAM Identity Center. This action is not valid
+    /// for account instances of IAM Identity Center.
     /// </summary>
     public partial class ListAccountAssignmentsForPrincipalRequest : AmazonSSOAdminRequest
     {

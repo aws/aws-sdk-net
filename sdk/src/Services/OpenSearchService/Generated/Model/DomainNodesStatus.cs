@@ -120,7 +120,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NodeType. 
         /// <para>
-        /// Indicates whether the nodes is a data, master, or ultrawarm node.
+        /// Indicates whether the nodes is a data, master, or UltraWarm node.
         /// </para>
         /// </summary>
         public NodeType NodeType
@@ -174,7 +174,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property StorageVolumeType. 
         /// <para>
-        /// If the nodes has EBS storage, indicates if the volume type is GP2 or GP3. Only applicable
+        /// If the nodes has EBS storage, indicates if the volume type is gp2 or gp3. Only applicable
         /// for data nodes. 
         /// </para>
         /// </summary>

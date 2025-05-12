@@ -53,7 +53,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property CacheHit. 
         /// <para>
-        /// Set to true if AWS HealthOmics found a matching entry in the run cache for this task.
+        /// Set to true if Amazon Web Services HealthOmics found a matching entry in the run cache
+        /// for this task.
         /// </para>
         /// </summary>
         public bool? CacheHit

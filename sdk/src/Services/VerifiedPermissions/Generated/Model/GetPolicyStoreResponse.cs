@@ -35,10 +35,13 @@ namespace Amazon.VerifiedPermissions.Model
     public partial class GetPolicyStoreResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private CedarVersion _cedarVersion;
         private DateTime? _createdDate;
+        private DeletionProtection _deletionProtection;
         private string _description;
         private DateTime? _lastUpdatedDate;
         private string _policyStoreId;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ValidationSettings _validationSettings;
 
         /// <summary>
@@ -61,6 +64,26 @@ namespace Amazon.VerifiedPermissions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CedarVersion. 
+        /// <para>
+        /// The version of the Cedar language used with policies, policy templates, and schemas
+        /// in this policy store. For more information, see <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/cedar4-faq.html">Amazon
+        /// Verified Permissions upgrade to Cedar v4 FAQ</a>.
+        /// </para>
+        /// </summary>
+        public CedarVersion CedarVersion
+        {
+            get { return this._cedarVersion; }
+            set { this._cedarVersion = value; }
+        }
+
+        // Check to see if CedarVersion property is set
+        internal bool IsSetCedarVersion()
+        {
+            return this._cedarVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreatedDate. 
         /// <para>
         /// The date and time that the policy store was originally created.
@@ -77,6 +100,29 @@ namespace Amazon.VerifiedPermissions.Model
         internal bool IsSetCreatedDate()
         {
             return this._createdDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// Specifies whether the policy store can be deleted. If enabled, the policy store can't
+        /// be deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default state is <c>DISABLED</c>.
+        /// </para>
+        /// </summary>
+        public DeletionProtection DeletionProtection
+        {
+            get { return this._deletionProtection; }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection != null;
         }
 
         /// <summary>
@@ -135,6 +181,25 @@ namespace Amazon.VerifiedPermissions.Model
         internal bool IsSetPolicyStoreId()
         {
             return this._policyStoreId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The list of tags associated with the policy store.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

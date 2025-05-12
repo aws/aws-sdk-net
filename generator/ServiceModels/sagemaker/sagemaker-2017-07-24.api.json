@@ -4264,6 +4264,13 @@
         "AlarmName":{"shape":"AlarmName"}
       }
     },
+    "AlarmDetails":{
+      "type":"structure",
+      "required":["AlarmName"],
+      "members":{
+        "AlarmName":{"shape":"AlarmName"}
+      }
+    },
     "AlarmList":{
       "type":"list",
       "member":{"shape":"Alarm"},
@@ -4539,6 +4546,7 @@
         "ml.trn1.32xlarge",
         "ml.trn1n.32xlarge",
         "ml.p5.48xlarge",
+        "ml.p5en.48xlarge",
         "ml.m6i.large",
         "ml.m6i.xlarge",
         "ml.m6i.2xlarge",
@@ -5467,6 +5475,12 @@
       "max":100,
       "min":0
     },
+    "AutoRollbackAlarms":{
+      "type":"list",
+      "member":{"shape":"AlarmDetails"},
+      "max":10,
+      "min":1
+    },
     "AutoRollbackConfig":{
       "type":"structure",
       "members":{
@@ -5814,6 +5828,17 @@
       "members":{
         "Type":{"shape":"CapacitySizeType"},
         "Value":{"shape":"CapacitySizeValue"}
+      }
+    },
+    "CapacitySizeConfig":{
+      "type":"structure",
+      "required":[
+        "Type",
+        "Value"
+      ],
+      "members":{
+        "Type":{"shape":"NodeUnavailabilityType"},
+        "Value":{"shape":"NodeUnavailabilityValue"}
       }
     },
     "CapacitySizeType":{
@@ -6289,7 +6314,8 @@
         "Status":{"shape":"InstanceGroupStatus"},
         "TrainingPlanArn":{"shape":"TrainingPlanArn"},
         "TrainingPlanStatus":{"shape":"InstanceGroupTrainingPlanStatus"},
-        "OverrideVpcConfig":{"shape":"VpcConfig"}
+        "OverrideVpcConfig":{"shape":"VpcConfig"},
+        "ScheduledUpdateConfig":{"shape":"ScheduledUpdateConfig"}
       }
     },
     "ClusterInstanceGroupDetailsList":{
@@ -6321,7 +6347,8 @@
         "InstanceStorageConfigs":{"shape":"ClusterInstanceStorageConfigs"},
         "OnStartDeepHealthChecks":{"shape":"OnStartDeepHealthChecks"},
         "TrainingPlanArn":{"shape":"TrainingPlanArn"},
-        "OverrideVpcConfig":{"shape":"VpcConfig"}
+        "OverrideVpcConfig":{"shape":"VpcConfig"},
+        "ScheduledUpdateConfig":{"shape":"ScheduledUpdateConfig"}
       }
     },
     "ClusterInstanceGroupSpecifications":{
@@ -6462,7 +6489,32 @@
         "ml.r6i.12xlarge",
         "ml.r6i.16xlarge",
         "ml.r6i.24xlarge",
-        "ml.r6i.32xlarge"
+        "ml.r6i.32xlarge",
+        "ml.i3en.large",
+        "ml.i3en.xlarge",
+        "ml.i3en.2xlarge",
+        "ml.i3en.3xlarge",
+        "ml.i3en.6xlarge",
+        "ml.i3en.12xlarge",
+        "ml.i3en.24xlarge",
+        "ml.m7i.large",
+        "ml.m7i.xlarge",
+        "ml.m7i.2xlarge",
+        "ml.m7i.4xlarge",
+        "ml.m7i.8xlarge",
+        "ml.m7i.12xlarge",
+        "ml.m7i.16xlarge",
+        "ml.m7i.24xlarge",
+        "ml.m7i.48xlarge",
+        "ml.r7i.large",
+        "ml.r7i.xlarge",
+        "ml.r7i.2xlarge",
+        "ml.r7i.4xlarge",
+        "ml.r7i.8xlarge",
+        "ml.r7i.12xlarge",
+        "ml.r7i.16xlarge",
+        "ml.r7i.24xlarge",
+        "ml.r7i.48xlarge"
       ]
     },
     "ClusterLifeCycleConfig":{
@@ -6501,6 +6553,7 @@
         "InstanceStatus":{"shape":"ClusterInstanceStatusDetails"},
         "InstanceType":{"shape":"ClusterInstanceType"},
         "LaunchTime":{"shape":"Timestamp"},
+        "LastSoftwareUpdateTime":{"shape":"Timestamp"},
         "LifeCycleConfig":{"shape":"ClusterLifeCycleConfig"},
         "OverrideVpcConfig":{"shape":"VpcConfig"},
         "ThreadsPerCore":{"shape":"ClusterThreadsPerCore"},
@@ -6548,6 +6601,7 @@
         "InstanceId":{"shape":"String"},
         "InstanceType":{"shape":"ClusterInstanceType"},
         "LaunchTime":{"shape":"Timestamp"},
+        "LastSoftwareUpdateTime":{"shape":"Timestamp"},
         "InstanceStatus":{"shape":"ClusterInstanceStatusDetails"}
       }
     },
@@ -7259,7 +7313,8 @@
         "AppType":{"shape":"AppType"},
         "AppName":{"shape":"AppName"},
         "Tags":{"shape":"TagList"},
-        "ResourceSpec":{"shape":"ResourceSpec"}
+        "ResourceSpec":{"shape":"ResourceSpec"},
+        "RecoveryMode":{"shape":"Boolean"}
       }
     },
     "CreateAppResponse":{
@@ -8274,7 +8329,8 @@
       "members":{
         "NotebookInstanceLifecycleConfigName":{"shape":"NotebookInstanceLifecycleConfigName"},
         "OnCreate":{"shape":"NotebookInstanceLifecycleConfigList"},
-        "OnStart":{"shape":"NotebookInstanceLifecycleConfigList"}
+        "OnStart":{"shape":"NotebookInstanceLifecycleConfigList"},
+        "Tags":{"shape":"TagList"}
       }
     },
     "CreateNotebookInstanceLifecycleConfigOutput":{
@@ -8348,6 +8404,7 @@
         "Name":{"shape":"PartnerAppName"},
         "Type":{"shape":"PartnerAppType"},
         "ExecutionRoleArn":{"shape":"RoleArn"},
+        "KmsKeyId":{"shape":"KmsKeyId"},
         "MaintenanceConfig":{"shape":"PartnerAppMaintenanceConfig"},
         "Tier":{"shape":"NonEmptyString64"},
         "ApplicationConfig":{"shape":"PartnerAppConfig"},
@@ -8475,10 +8532,7 @@
     },
     "CreateProjectInput":{
       "type":"structure",
-      "required":[
-        "ProjectName",
-        "ServiceCatalogProvisioningDetails"
-      ],
+      "required":["ProjectName"],
       "members":{
         "ProjectName":{"shape":"ProjectEntityName"},
         "ProjectDescription":{"shape":"EntityDescription"},
@@ -8742,6 +8796,11 @@
       }
     },
     "CreationTime":{"type":"timestamp"},
+    "CronScheduleExpression":{
+      "type":"string",
+      "max":256,
+      "min":1
+    },
     "CrossAccountFilterOption":{
       "type":"string",
       "enum":[
@@ -9300,8 +9359,7 @@
     },
     "DeleteFlowDefinitionResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteHubContentReferenceRequest":{
       "type":"structure",
@@ -9347,8 +9405,7 @@
     },
     "DeleteHumanTaskUiResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteHyperParameterTuningJobRequest":{
       "type":"structure",
@@ -9366,8 +9423,7 @@
     },
     "DeleteImageResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteImageVersionRequest":{
       "type":"structure",
@@ -9380,8 +9436,7 @@
     },
     "DeleteImageVersionResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteInferenceComponentInput":{
       "type":"structure",
@@ -9576,8 +9631,7 @@
     },
     "DeleteTagsOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteTrialComponentRequest":{
       "type":"structure",
@@ -9625,8 +9679,7 @@
     },
     "DeleteWorkforceResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteWorkteamRequest":{
       "type":"structure",
@@ -9670,6 +9723,14 @@
         "BlueGreenUpdatePolicy":{"shape":"BlueGreenUpdatePolicy"},
         "RollingUpdatePolicy":{"shape":"RollingUpdatePolicy"},
         "AutoRollbackConfiguration":{"shape":"AutoRollbackConfig"}
+      }
+    },
+    "DeploymentConfiguration":{
+      "type":"structure",
+      "members":{
+        "RollingUpdatePolicy":{"shape":"RollingDeploymentPolicy"},
+        "WaitIntervalInSeconds":{"shape":"WaitTimeIntervalInSeconds"},
+        "AutoRollbackConfiguration":{"shape":"AutoRollbackAlarms"}
       }
     },
     "DeploymentRecommendation":{
@@ -9836,6 +9897,7 @@
         "UserProfileName":{"shape":"UserProfileName"},
         "SpaceName":{"shape":"SpaceName"},
         "Status":{"shape":"AppStatus"},
+        "RecoveryMode":{"shape":"Boolean"},
         "LastHealthCheckTimestamp":{"shape":"Timestamp"},
         "LastUserActivityTimestamp":{"shape":"Timestamp"},
         "CreationTime":{"shape":"Timestamp"},
@@ -11334,7 +11396,9 @@
         "Type":{"shape":"PartnerAppType"},
         "Status":{"shape":"PartnerAppStatus"},
         "CreationTime":{"shape":"Timestamp"},
+        "LastModifiedTime":{"shape":"Timestamp"},
         "ExecutionRoleArn":{"shape":"RoleArn"},
+        "KmsKeyId":{"shape":"KmsKeyId"},
         "BaseUrl":{"shape":"String2048"},
         "MaintenanceConfig":{"shape":"PartnerAppMaintenanceConfig"},
         "Tier":{"shape":"NonEmptyString64"},
@@ -11463,7 +11527,6 @@
         "ProjectArn",
         "ProjectName",
         "ProjectId",
-        "ServiceCatalogProvisioningDetails",
         "ProjectStatus",
         "CreationTime"
       ],
@@ -12016,13 +12079,11 @@
     "DisableProfiler":{"type":"boolean"},
     "DisableSagemakerServicecatalogPortfolioInput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DisableSagemakerServicecatalogPortfolioOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DisassociateAdditionalCodeRepositories":{"type":"boolean"},
     "DisassociateDefaultCodeRepository":{"type":"boolean"},
@@ -12107,7 +12168,8 @@
         "RStudioServerProDomainSettings":{"shape":"RStudioServerProDomainSettings"},
         "ExecutionRoleIdentityConfig":{"shape":"ExecutionRoleIdentityConfig"},
         "DockerSettings":{"shape":"DockerSettings"},
-        "AmazonQSettings":{"shape":"AmazonQSettings"}
+        "AmazonQSettings":{"shape":"AmazonQSettings"},
+        "UnifiedStudioSettings":{"shape":"UnifiedStudioSettings"}
       }
     },
     "DomainSettingsForUpdate":{
@@ -12117,7 +12179,8 @@
         "ExecutionRoleIdentityConfig":{"shape":"ExecutionRoleIdentityConfig"},
         "SecurityGroupIds":{"shape":"DomainSecurityGroupIds"},
         "DockerSettings":{"shape":"DockerSettings"},
-        "AmazonQSettings":{"shape":"AmazonQSettings"}
+        "AmazonQSettings":{"shape":"AmazonQSettings"},
+        "UnifiedStudioSettings":{"shape":"UnifiedStudioSettings"}
       }
     },
     "DomainStatus":{
@@ -12469,13 +12532,11 @@
     "EnableRemoteDebug":{"type":"boolean"},
     "EnableSagemakerServicecatalogPortfolioInput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "EnableSagemakerServicecatalogPortfolioOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "EnableSessionTagChaining":{"type":"boolean"},
     "EnabledOrDisabled":{
@@ -13476,8 +13537,7 @@
     },
     "GetSagemakerServicecatalogPortfolioStatusInput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "GetSagemakerServicecatalogPortfolioStatusOutput":{
       "type":"structure",
@@ -18565,7 +18625,8 @@
         "ModelPackageDescription":{"shape":"EntityDescription"},
         "CreationTime":{"shape":"CreationTime"},
         "ModelPackageStatus":{"shape":"ModelPackageStatus"},
-        "ModelApprovalStatus":{"shape":"ModelApprovalStatus"}
+        "ModelApprovalStatus":{"shape":"ModelApprovalStatus"},
+        "ModelLifeCycle":{"shape":"ModelLifeCycle"}
       }
     },
     "ModelPackageSummaryList":{
@@ -19071,8 +19132,7 @@
     },
     "MonitoringParquetDatasetFormat":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "MonitoringProblemType":{
       "type":"string",
@@ -19285,6 +19345,17 @@
       "type":"string",
       "max":8192,
       "pattern":".*"
+    },
+    "NodeUnavailabilityType":{
+      "type":"string",
+      "enum":[
+        "INSTANCE_COUNT",
+        "CAPACITY_PERCENTAGE"
+      ]
+    },
+    "NodeUnavailabilityValue":{
+      "type":"integer",
+      "min":1
     },
     "NonEmptyString256":{
       "type":"string",
@@ -20772,7 +20843,8 @@
       "enum":[
         "al2-ami-sagemaker-inference-gpu-2",
         "al2-ami-sagemaker-inference-gpu-2-1",
-        "al2-ami-sagemaker-inference-gpu-3-1"
+        "al2-ami-sagemaker-inference-gpu-3-1",
+        "al2-ami-sagemaker-inference-neuron-2"
       ]
     },
     "ProductionVariantInstanceType":{
@@ -21790,6 +21862,11 @@
       "min":5,
       "pattern":"^\\d{1,4}.\\d{1,4}.\\d{1,4}$"
     },
+    "RegionName":{
+      "type":"string",
+      "max":24,
+      "min":1
+    },
     "RegisterDevicesRequest":{
       "type":"structure",
       "required":[
@@ -21807,6 +21884,13 @@
       "members":{
         "Arn":{"shape":"String256"}
       }
+    },
+    "Relation":{
+      "type":"string",
+      "enum":[
+        "EqualTo",
+        "GreaterThanOrEqualTo"
+      ]
     },
     "ReleaseNotes":{
       "type":"string",
@@ -22217,6 +22301,14 @@
       "min":20,
       "pattern":"^arn:aws[a-z\\-]*:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+$"
     },
+    "RollingDeploymentPolicy":{
+      "type":"structure",
+      "required":["MaximumBatchSize"],
+      "members":{
+        "MaximumBatchSize":{"shape":"CapacitySizeConfig"},
+        "RollbackMaximumBatchSize":{"shape":"CapacitySizeConfig"}
+      }
+    },
     "RollingUpdatePolicy":{
       "type":"structure",
       "required":[
@@ -22451,6 +22543,14 @@
         "Stopped"
       ]
     },
+    "ScheduledUpdateConfig":{
+      "type":"structure",
+      "required":["ScheduleExpression"],
+      "members":{
+        "ScheduleExpression":{"shape":"CronScheduleExpression"},
+        "DeploymentConfig":{"shape":"DeploymentConfiguration"}
+      }
+    },
     "SchedulerConfig":{
       "type":"structure",
       "members":{
@@ -22536,7 +22636,8 @@
       "type":"structure",
       "members":{
         "Results":{"shape":"SearchResultsList"},
-        "NextToken":{"shape":"NextToken"}
+        "NextToken":{"shape":"NextToken"},
+        "TotalHits":{"shape":"TotalHits"}
       }
     },
     "SearchResultsList":{
@@ -22553,8 +22654,6 @@
     "SearchTrainingPlanOfferingsRequest":{
       "type":"structure",
       "required":[
-        "InstanceType",
-        "InstanceCount",
         "DurationHours",
         "TargetResources"
       ],
@@ -23046,6 +23145,7 @@
         "JupyterLabAppSettings":{"shape":"SpaceJupyterLabAppSettings"},
         "AppType":{"shape":"AppType"},
         "SpaceStorageSettings":{"shape":"SpaceStorageSettings"},
+        "SpaceManagedResources":{"shape":"FeatureStatus"},
         "CustomFileSystems":{"shape":"CustomFileSystems"}
       }
     },
@@ -23949,6 +24049,13 @@
       "max":256,
       "min":1
     },
+    "TotalHits":{
+      "type":"structure",
+      "members":{
+        "Value":{"shape":"Long"},
+        "Relation":{"shape":"Relation"}
+      }
+    },
     "TotalInstanceCount":{
       "type":"integer",
       "min":0
@@ -24556,6 +24663,12 @@
       "type":"integer",
       "min":1
     },
+    "TransformAmiVersion":{
+      "type":"string",
+      "max":63,
+      "min":1,
+      "pattern":"^[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*$"
+    },
     "TransformDataSource":{
       "type":"structure",
       "required":["S3DataSource"],
@@ -24815,7 +24928,8 @@
       "members":{
         "InstanceType":{"shape":"TransformInstanceType"},
         "InstanceCount":{"shape":"TransformInstanceCount"},
-        "VolumeKmsKeyId":{"shape":"KmsKeyId"}
+        "VolumeKmsKeyId":{"shape":"KmsKeyId"},
+        "TransformAmiVersion":{"shape":"TransformAmiVersion"}
       }
     },
     "TransformS3DataSource":{
@@ -25131,6 +25245,30 @@
       "max":4000000,
       "min":10000
     },
+    "UnifiedStudioDomainId":{
+      "type":"string",
+      "pattern":"^dzd[-_][a-zA-Z0-9_-]{1,36}$"
+    },
+    "UnifiedStudioEnvironmentId":{
+      "type":"string",
+      "pattern":"^[a-zA-Z0-9_-]{1,36}$"
+    },
+    "UnifiedStudioProjectId":{
+      "type":"string",
+      "pattern":"^[a-zA-Z0-9_-]{1,36}$"
+    },
+    "UnifiedStudioSettings":{
+      "type":"structure",
+      "members":{
+        "StudioWebPortalAccess":{"shape":"FeatureStatus"},
+        "DomainAccountId":{"shape":"AccountId"},
+        "DomainRegion":{"shape":"RegionName"},
+        "DomainId":{"shape":"UnifiedStudioDomainId"},
+        "ProjectId":{"shape":"UnifiedStudioProjectId"},
+        "EnvironmentId":{"shape":"UnifiedStudioEnvironmentId"},
+        "ProjectS3Path":{"shape":"S3Uri"}
+      }
+    },
     "UpdateActionRequest":{
       "type":"structure",
       "required":["ActionName"],
@@ -25224,11 +25362,26 @@
         "ClusterSchedulerConfigVersion":{"shape":"Integer"}
       }
     },
+    "UpdateClusterSoftwareInstanceGroupSpecification":{
+      "type":"structure",
+      "required":["InstanceGroupName"],
+      "members":{
+        "InstanceGroupName":{"shape":"ClusterInstanceGroupName"}
+      }
+    },
+    "UpdateClusterSoftwareInstanceGroups":{
+      "type":"list",
+      "member":{"shape":"UpdateClusterSoftwareInstanceGroupSpecification"},
+      "max":100,
+      "min":1
+    },
     "UpdateClusterSoftwareRequest":{
       "type":"structure",
       "required":["ClusterName"],
       "members":{
-        "ClusterName":{"shape":"ClusterNameOrArn"}
+        "ClusterName":{"shape":"ClusterNameOrArn"},
+        "InstanceGroups":{"shape":"UpdateClusterSoftwareInstanceGroups"},
+        "DeploymentConfig":{"shape":"DeploymentConfiguration"}
       }
     },
     "UpdateClusterSoftwareResponse":{
@@ -25723,13 +25876,11 @@
     },
     "UpdateNotebookInstanceLifecycleConfigOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateNotebookInstanceOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdatePartnerAppRequest":{
       "type":"structure",
@@ -26180,6 +26331,11 @@
       "min":1
     },
     "WaitIntervalInSeconds":{
+      "type":"integer",
+      "max":3600,
+      "min":0
+    },
+    "WaitTimeIntervalInSeconds":{
       "type":"integer",
       "max":3600,
       "min":0

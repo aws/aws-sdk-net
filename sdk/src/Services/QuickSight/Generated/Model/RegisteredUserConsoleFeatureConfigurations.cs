@@ -34,8 +34,66 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class RegisteredUserConsoleFeatureConfigurations
     {
+        private AmazonQInQuickSightConsoleConfigurations _amazonQInQuickSight;
+        private RecentSnapshotsConfigurations _recentSnapshots;
+        private SchedulesConfigurations _schedules;
         private SharedViewConfigurations _sharedView;
         private StatePersistenceConfigurations _statePersistence;
+        private ThresholdAlertsConfigurations _thresholdAlerts;
+
+        /// <summary>
+        /// Gets and sets the property AmazonQInQuickSight. 
+        /// <para>
+        /// The Amazon Q configurations of an embedded Amazon QuickSight console.
+        /// </para>
+        /// </summary>
+        public AmazonQInQuickSightConsoleConfigurations AmazonQInQuickSight
+        {
+            get { return this._amazonQInQuickSight; }
+            set { this._amazonQInQuickSight = value; }
+        }
+
+        // Check to see if AmazonQInQuickSight property is set
+        internal bool IsSetAmazonQInQuickSight()
+        {
+            return this._amazonQInQuickSight != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecentSnapshots. 
+        /// <para>
+        /// The recent snapshots configuration for an embedded Amazon QuickSight dashboard.
+        /// </para>
+        /// </summary>
+        public RecentSnapshotsConfigurations RecentSnapshots
+        {
+            get { return this._recentSnapshots; }
+            set { this._recentSnapshots = value; }
+        }
+
+        // Check to see if RecentSnapshots property is set
+        internal bool IsSetRecentSnapshots()
+        {
+            return this._recentSnapshots != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Schedules. 
+        /// <para>
+        /// The schedules configuration for an embedded Amazon QuickSight dashboard.
+        /// </para>
+        /// </summary>
+        public SchedulesConfigurations Schedules
+        {
+            get { return this._schedules; }
+            set { this._schedules = value; }
+        }
+
+        // Check to see if Schedules property is set
+        internal bool IsSetSchedules()
+        {
+            return this._schedules != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SharedView. 
@@ -71,6 +129,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetStatePersistence()
         {
             return this._statePersistence != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThresholdAlerts. 
+        /// <para>
+        /// The threshold alerts configuration for an embedded Amazon QuickSight dashboard.
+        /// </para>
+        /// </summary>
+        public ThresholdAlertsConfigurations ThresholdAlerts
+        {
+            get { return this._thresholdAlerts; }
+            set { this._thresholdAlerts = value; }
+        }
+
+        // Check to see if ThresholdAlerts property is set
+        internal bool IsSetThresholdAlerts()
+        {
+            return this._thresholdAlerts != null;
         }
 
     }

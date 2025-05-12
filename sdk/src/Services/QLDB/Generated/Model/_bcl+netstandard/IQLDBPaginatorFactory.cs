@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the qldb-2019-01-02.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QLDB.Model
@@ -29,21 +30,41 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Paginator for ListJournalKinesisStreamsForLedger operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListJournalKinesisStreamsForLedgerPaginator ListJournalKinesisStreamsForLedger(ListJournalKinesisStreamsForLedgerRequest request);
 
         /// <summary>
         /// Paginator for ListJournalS3Exports operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListJournalS3ExportsPaginator ListJournalS3Exports(ListJournalS3ExportsRequest request);
 
         /// <summary>
         /// Paginator for ListJournalS3ExportsForLedger operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListJournalS3ExportsForLedgerPaginator ListJournalS3ExportsForLedger(ListJournalS3ExportsForLedgerRequest request);
 
         /// <summary>
         /// Paginator for ListLedgers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLedgersPaginator ListLedgers(ListLedgersRequest request);
     }
 }

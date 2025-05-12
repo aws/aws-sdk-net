@@ -60,8 +60,12 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Specify an IAM role only if you are using customized administrator roles to control
         /// which users or groups can manage specific stack sets within the same administrator
-        /// account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites
-        /// for using StackSets</a> in the <i>CloudFormation User Guide</i>.
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+        /// self-managed permissions</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid only if the permissions model is <c>SELF_MANAGED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -81,8 +85,15 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property AutoDeployment. 
         /// <para>
         /// Describes whether StackSets automatically deploys to Organizations accounts that are
-        /// added to the target organization or organizational unit (OU). Specify only if <c>PermissionModel</c>
-        /// is <c>SERVICE_MANAGED</c>.
+        /// added to the target organization or organizational unit (OU). For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-manage-auto-deployment.html">Manage
+        /// automatic deployments for CloudFormation StackSets that use service-managed permissions</a>
+        /// in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Required if the permissions model is <c>SERVICE_MANAGED</c>. (Not used with self-managed
+        /// permissions.)
         /// </para>
         /// </summary>
         public AutoDeployment AutoDeployment
@@ -100,9 +111,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property CallAs. 
         /// <para>
-        /// [Service-managed permissions] Specifies whether you are acting as an account administrator
-        /// in the organization's management account or as a delegated administrator in a member
-        /// account.
+        /// Specifies whether you are acting as an account administrator in the organization's
+        /// management account or as a delegated administrator in a member account.
         /// </para>
         ///  
         /// <para>
@@ -129,6 +139,10 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Stack sets with service-managed permissions are created in the management account,
         /// including stack sets that are created by delegated administrators.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid only if the permissions model is <c>SERVICE_MANAGED</c>.
         /// </para>
         /// </summary>
         public CallAs CallAs
@@ -315,6 +329,10 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Specify an IAM role only if you are using customized execution roles to control which
         /// stack resources users and groups can include in their stack sets.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid only if the permissions model is <c>SELF_MANAGED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -511,7 +529,7 @@ namespace Amazon.CloudFormation.Model
         /// but not both.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=5120)]
         public string TemplateURL
         {
             get { return this._templateURL; }

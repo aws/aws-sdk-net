@@ -31,7 +31,7 @@ namespace Amazon.GameLiftStreams.Model
 {
     /// <summary>
     /// Describes a Amazon GameLift Streams stream group resource for hosting content streams.
-    /// To retrieve additional stream group details, call <a>GetStreamGroup</a>.
+    /// To retrieve additional stream group details, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamGroup.html">GetStreamGroup</a>.
     /// </summary>
     public partial class StreamGroupSummary
     {
@@ -49,8 +49,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         /// An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
         /// Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource.
-        /// Format example: ARN-<c>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</c>
-        /// or ID-<c>1AB2C3De4</c>. 
+        /// Format example: ARN-<c>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</c>
+        /// or ID-<c>sg-1AB2C3De4</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -128,8 +128,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         /// An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
         /// Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource.
-        /// Format example: ARN-<c>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</c>
-        /// or ID-<c>1AB2C3De4</c>. 
+        /// Format example: ARN-<c>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</c>
+        /// or ID-<c>sg-1AB2C3De4</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -226,8 +226,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         ///  <b> <c>gen5n_win2022</c> (NVIDIA, ultra)</b> Supports applications with extremely
         /// high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base
-        /// and supports DirectX 12. Compatible with most Unreal Engine 5.x builds, 32-bit applications,
-        /// and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.
+        /// and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32
+        /// and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -291,8 +291,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         ///  <b> <c>gen4n_win2022</c> (NVIDIA, ultra)</b> Supports applications with extremely
         /// high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base
-        /// and supports DirectX 12. Compatible with most Unreal Engine 5.2 and 5.3 builds, 32-bit
-        /// applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.
+        /// and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32
+        /// and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.
         /// </para>
         ///  <ul> <li> 
         /// <para>

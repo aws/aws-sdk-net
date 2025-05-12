@@ -46,15 +46,15 @@ internal sealed partial class BedrockChatClient : IChatClient
     /// Initializes a new instance of the <see cref="BedrockChatClient"/> class.
     /// </summary>
     /// <param name="runtime">The <see cref="IAmazonBedrockRuntime"/> instance to wrap.</param>
-    /// <param name="modelId">Model ID to use as the default when no model ID is specified in a request.</param>
-    public BedrockChatClient(IAmazonBedrockRuntime runtime, string? modelId)
+    /// <param name="defaultModelId">Model ID to use as the default when no model ID is specified in a request.</param>
+    public BedrockChatClient(IAmazonBedrockRuntime runtime, string? defaultModelId)
     {
         Debug.Assert(runtime is not null);
 
         _runtime = runtime!;
-        _modelId = modelId;
+        _modelId = defaultModelId;
 
-        _metadata = new(AmazonBedrockRuntimeExtensions.ProviderName, modelId: modelId);
+        _metadata = new(AmazonBedrockRuntimeExtensions.ProviderName, defaultModelId: defaultModelId);
     }
 
     public void Dispose()
@@ -85,7 +85,9 @@ internal sealed partial class BedrockChatClient : IChatClient
 
         ChatMessage result = new()
         {
+            RawRepresentation = response.Output?.Message,
             Role = ChatRole.Assistant,
+            MessageId = Guid.NewGuid().ToString("N"),
         };
 
         if (response.Output?.Message?.Content is { } contents)
@@ -94,27 +96,44 @@ internal sealed partial class BedrockChatClient : IChatClient
             {
                 if (content.Text is string text)
                 {
-                    result.Contents.Add(new TextContent(text));
+                    result.Contents.Add(new TextContent(text) { RawRepresentation = content });
+                }
+
+                if (content.ReasoningContent is { ReasoningText.Text: not null } reasoningContent)
+                {
+                    TextReasoningContent trc = new(reasoningContent.ReasoningText.Text) { RawRepresentation = content };
+
+                    if (reasoningContent.ReasoningText.Signature is string signature)
+                    {
+                        (trc.AdditionalProperties ??= [])[nameof(reasoningContent.ReasoningText.Signature)] = signature;
+                    }
+
+                    if (reasoningContent.RedactedContent is { } redactedContent)
+                    {
+                        (trc.AdditionalProperties ??= [])[nameof(reasoningContent.RedactedContent)] = redactedContent.ToArray();
+                    }
+
+                    result.Contents.Add(trc);
                 }
 
                 if (content.Image is { Source.Bytes: { } imageBytes, Format: { } imageFormat })
                 {
-                    result.Contents.Add(new DataContent(imageBytes.ToArray(), GetMimeType(imageFormat)));
+                    result.Contents.Add(new DataContent(imageBytes.ToArray(), GetMimeType(imageFormat)) { RawRepresentation = content });
                 }
 
                 if (content.Video is { Source.Bytes: { } videoBytes, Format: { } videoFormat })
                 {
-                    result.Contents.Add(new DataContent(videoBytes.ToArray(), GetMimeType(videoFormat)));
+                    result.Contents.Add(new DataContent(videoBytes.ToArray(), GetMimeType(videoFormat)) { RawRepresentation = content });
                 }
 
                 if (content.Document is { Source.Bytes: { } documentBytes, Format: { } documentFormat })
                 {
-                    result.Contents.Add(new DataContent(documentBytes.ToArray(), GetMimeType(documentFormat)));
+                    result.Contents.Add(new DataContent(documentBytes.ToArray(), GetMimeType(documentFormat)) { RawRepresentation = content });
                 }
 
                 if (content.ToolUse is { } toolUse)
                 {
-                    result.Contents.Add(new FunctionCallContent(toolUse.ToolUseId, toolUse.Name, DocumentToDictionary(toolUse.Input)));
+                    result.Contents.Add(new FunctionCallContent(toolUse.ToolUseId, toolUse.Name, DocumentToDictionary(toolUse.Input)) { RawRepresentation = content });
                 }
             }
         }
@@ -126,13 +145,11 @@ internal sealed partial class BedrockChatClient : IChatClient
 
         return new(result)
         {
+            CreatedAt = DateTimeOffset.UtcNow,
             FinishReason = response.StopReason is not null ? GetChatFinishReason(response.StopReason) : null,
-            Usage = response.Usage is TokenUsage usage ? new()
-            {
-                InputTokenCount = usage.InputTokens,
-                OutputTokenCount = usage.OutputTokens,
-                TotalTokenCount = usage.TotalTokens,
-            } : null,
+            RawRepresentation = response,
+            ResponseId = Guid.NewGuid().ToString("N"),
+            Usage = response.Usage is TokenUsage usage ? CreateUsageDetails(usage) : null,
         };
     }
 
@@ -161,6 +178,8 @@ internal sealed partial class BedrockChatClient : IChatClient
         string? toolId = null;
         StringBuilder? toolInput = null;
         ChatFinishReason? finishReason = null;
+        string messageId = Guid.NewGuid().ToString("N");
+        string responseId = Guid.NewGuid().ToString("N");
         await foreach (var update in result.Stream.ConfigureAwait(false))
         {
             switch (update)
@@ -168,6 +187,10 @@ internal sealed partial class BedrockChatClient : IChatClient
                 case MessageStartEvent messageStart:
                     yield return new()
                     {
+                        CreatedAt = DateTimeOffset.UtcNow,
+                        MessageId = messageId,
+                        RawRepresentation = update,
+                        ResponseId = responseId,
                         Role = ChatRole.Assistant,
                         FinishReason = finishReason,
                     };
@@ -188,7 +211,35 @@ internal sealed partial class BedrockChatClient : IChatClient
                     {
                         yield return new(ChatRole.Assistant, text)
                         {
+                            CreatedAt = DateTimeOffset.UtcNow,
+                            MessageId = messageId,
+                            RawRepresentation = update,
                             FinishReason = finishReason,
+                            ResponseId = responseId,
+                        };
+                    }
+
+                    if (contentBlockDelta.Delta.ReasoningContent is { Text: not null } reasoningContent)
+                    {
+                        TextReasoningContent trc = new(reasoningContent.Text);
+
+                        if (reasoningContent.Signature is not null)
+                        {
+                            (trc.AdditionalProperties ??= [])[nameof(reasoningContent.Signature)] = reasoningContent.Signature;
+                        }
+
+                        if (reasoningContent.RedactedContent is { } redactedContent)
+                        {
+                            (trc.AdditionalProperties ??= [])[nameof(reasoningContent.RedactedContent)] = redactedContent.ToArray();
+                        }
+
+                        yield return new(ChatRole.Assistant, [trc])
+                        {
+                            CreatedAt = DateTimeOffset.UtcNow,
+                            MessageId = messageId,
+                            FinishReason = finishReason,
+                            RawRepresentation = update,
+                            ResponseId = responseId,
                         };
                     }
                     break;
@@ -199,9 +250,13 @@ internal sealed partial class BedrockChatClient : IChatClient
                         Dictionary<string, object?>? inputs = ParseToolInputs(toolInput?.ToString(), out Exception? parseError);
                         yield return new()
                         {
-                            Role = ChatRole.Assistant,
-                            FinishReason = finishReason,
                             Contents = [new FunctionCallContent(toolId, toolName, inputs) { Exception = parseError }],
+                            CreatedAt = DateTimeOffset.UtcNow,
+                            MessageId = messageId,
+                            FinishReason = finishReason,
+                            RawRepresentation = update,
+                            ResponseId = responseId,
+                            Role = ChatRole.Assistant,
                         };
                     }
 
@@ -224,26 +279,24 @@ internal sealed partial class BedrockChatClient : IChatClient
 
                     yield return new()
                     {
-                        Role = ChatRole.Assistant,
-                        FinishReason = finishReason,
                         AdditionalProperties = additionalProps,
+                        CreatedAt = DateTimeOffset.UtcNow,
+                        MessageId = messageId,
+                        FinishReason = finishReason,
+                        RawRepresentation = update,
+                        ResponseId = responseId,
+                        Role = ChatRole.Assistant,
                     };
                     break;
 
                 case ConverseStreamMetadataEvent metadata when metadata.Usage is TokenUsage usage:
-                    yield return new()
+                    yield return new(ChatRole.Assistant, [new UsageContent(CreateUsageDetails(usage))])
                     {
-                        Role = ChatRole.Assistant,
+                        CreatedAt = DateTimeOffset.UtcNow,
                         FinishReason = finishReason,
-                        Contents =
-                        [
-                            new UsageContent(new()
-                            {
-                                InputTokenCount = usage.InputTokens,
-                                OutputTokenCount = usage.OutputTokens,
-                                TotalTokenCount = usage.TotalTokens,
-                            })
-                        ],
+                        MessageId = messageId,
+                        RawRepresentation = update,
+                        ResponseId = responseId,
                     };
                     break;
             }
@@ -264,6 +317,29 @@ internal sealed partial class BedrockChatClient : IChatClient
             serviceType.IsInstanceOfType(_runtime) ? _runtime :
             serviceType.IsInstanceOfType(this) ? this :
             null;
+    }
+
+    /// <summary>Creates a <see cref="UsageDetails"/> from a <see cref="TokenUsage"/>.</summary>
+    private static UsageDetails CreateUsageDetails(TokenUsage usage)
+    {
+        UsageDetails ud = new()
+        {
+            InputTokenCount = usage.InputTokens,
+            OutputTokenCount = usage.OutputTokens,
+            TotalTokenCount = usage.TotalTokens,
+        };
+
+        if (usage.CacheReadInputTokens is int cacheReadTokens)
+        {
+            (ud.AdditionalCounts ??= []).Add(nameof(usage.CacheReadInputTokens), cacheReadTokens);
+        }
+
+        if (usage.CacheWriteInputTokens is int cacheWriteTokens)
+        {
+            (ud.AdditionalCounts ??= []).Add(nameof(usage.CacheWriteInputTokens), cacheWriteTokens);
+        }
+
+        return ud;
     }
 
     /// <summary>Converts a <see cref="StopReason"/> into a <see cref="ChatFinishReason"/>.</summary>
@@ -338,6 +414,21 @@ internal sealed partial class BedrockChatClient : IChatClient
             {
                 case TextContent tc:
                     contents.Add(new() { Text = tc.Text });
+                    break;
+
+                case TextReasoningContent trc:
+                    contents.Add(new()
+                    {
+                        ReasoningContent = new()
+                        {
+                            ReasoningText = new()
+                            {
+                                Text = trc.Text,
+                                Signature = trc.AdditionalProperties?[nameof(ReasoningContentBlock.ReasoningText.Signature)] as string,
+                            },
+                            RedactedContent = trc.AdditionalProperties?[nameof(ReasoningContentBlock.RedactedContent)] is byte[] array ? new(array) : null,
+                        }
+                    });
                     break;
 
                 case DataContent dc:

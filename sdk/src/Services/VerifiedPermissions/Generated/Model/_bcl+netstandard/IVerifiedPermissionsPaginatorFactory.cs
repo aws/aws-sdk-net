@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the verifiedpermissions-2021-12-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VerifiedPermissions.Model
@@ -29,21 +30,41 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Paginator for ListIdentitySources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListIdentitySourcesPaginator ListIdentitySources(ListIdentitySourcesRequest request);
 
         /// <summary>
         /// Paginator for ListPolicies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPoliciesPaginator ListPolicies(ListPoliciesRequest request);
 
         /// <summary>
         /// Paginator for ListPolicyStores operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPolicyStoresPaginator ListPolicyStores(ListPolicyStoresRequest request);
 
         /// <summary>
         /// Paginator for ListPolicyTemplates operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPolicyTemplatesPaginator ListPolicyTemplates(ListPolicyTemplatesRequest request);
     }
 }

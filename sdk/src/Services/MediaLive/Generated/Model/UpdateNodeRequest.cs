@@ -39,6 +39,7 @@ namespace Amazon.MediaLive.Model
         private string _name;
         private string _nodeId;
         private NodeRole _role;
+        private List<SdiSourceMappingUpdateRequest> _sdiSourceMappings = AWSConfigs.InitializeCollections ? new List<SdiSourceMappingUpdateRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property ClusterId. The ID of the cluster
@@ -104,6 +105,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetRole()
         {
             return this._role != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SdiSourceMappings. The mappings of a SDI capture card port
+        /// to a logical SDI data stream
+        /// </summary>
+        public List<SdiSourceMappingUpdateRequest> SdiSourceMappings
+        {
+            get { return this._sdiSourceMappings; }
+            set { this._sdiSourceMappings = value; }
+        }
+
+        // Check to see if SdiSourceMappings property is set
+        internal bool IsSetSdiSourceMappings()
+        {
+            return this._sdiSourceMappings != null && (this._sdiSourceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

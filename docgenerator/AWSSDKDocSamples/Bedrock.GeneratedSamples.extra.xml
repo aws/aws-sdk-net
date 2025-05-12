@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Bedrock.IAmazonBedrock.BatchDeleteEvaluationJob(Amazon.Bedrock.Model.BatchDeleteEvaluationJobRequest)" />
+            <member name="M:Amazon.Bedrock.AmazonBedrockClient.BatchDeleteEvaluationJob(Amazon.Bedrock.Model.BatchDeleteEvaluationJobRequest)" />
+            <member name="T:Amazon.Bedrock.Model.BatchDeleteEvaluationJobRequest" />
+            <member name="T:Amazon.Bedrock.Model.BatchDeleteEvaluationJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows a request to delete two model evaluation jobs, where one of the jobs is not found.
+                </para>
+                <code
+                    title="Delete evaluation jobs"
+                    source=".\AWSSDKDocSamples\Bedrock\Bedrock.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

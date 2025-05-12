@@ -2568,6 +2568,10 @@ namespace Amazon.DataZone
         /// Constant OVERRIDE_PROJECT_OWNERS for ManagedPolicyType
         /// </summary>
         public static readonly ManagedPolicyType OVERRIDE_PROJECT_OWNERS = new ManagedPolicyType("OVERRIDE_PROJECT_OWNERS");
+        /// <summary>
+        /// Constant USE_ASSET_TYPE for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType USE_ASSET_TYPE = new ManagedPolicyType("USE_ASSET_TYPE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3340,6 +3344,10 @@ namespace Amazon.DataZone
     public class RuleAction : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CREATE_LISTING_CHANGE_SET for RuleAction
+        /// </summary>
+        public static readonly RuleAction CREATE_LISTING_CHANGE_SET = new RuleAction("CREATE_LISTING_CHANGE_SET");
         /// <summary>
         /// Constant CREATE_SUBSCRIPTION_REQUEST for RuleAction
         /// </summary>
@@ -4142,6 +4150,10 @@ namespace Amazon.DataZone
     public class TargetEntityType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ASSET_TYPE for TargetEntityType
+        /// </summary>
+        public static readonly TargetEntityType ASSET_TYPE = new TargetEntityType("ASSET_TYPE");
         /// <summary>
         /// Constant DOMAIN_UNIT for TargetEntityType
         /// </summary>

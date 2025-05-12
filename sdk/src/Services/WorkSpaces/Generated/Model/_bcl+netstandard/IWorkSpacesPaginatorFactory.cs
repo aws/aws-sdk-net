@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the workspaces-2015-04-08.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpaces.Model
@@ -29,31 +30,61 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Paginator for DescribeApplicationAssociations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeApplicationAssociationsPaginator DescribeApplicationAssociations(DescribeApplicationAssociationsRequest request);
 
         /// <summary>
         /// Paginator for DescribeApplications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeApplicationsPaginator DescribeApplications(DescribeApplicationsRequest request);
 
         /// <summary>
         /// Paginator for DescribeWorkspaceBundles operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeWorkspaceBundlesPaginator DescribeWorkspaceBundles(DescribeWorkspaceBundlesRequest request);
 
         /// <summary>
         /// Paginator for DescribeWorkspaceDirectories operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeWorkspaceDirectoriesPaginator DescribeWorkspaceDirectories(DescribeWorkspaceDirectoriesRequest request);
 
         /// <summary>
         /// Paginator for DescribeWorkspaces operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeWorkspacesPaginator DescribeWorkspaces(DescribeWorkspacesRequest request);
 
         /// <summary>
         /// Paginator for ListAccountLinks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAccountLinksPaginator ListAccountLinks(ListAccountLinksRequest request);
     }
 }

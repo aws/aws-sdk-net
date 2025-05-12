@@ -30,12 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Properties specific to video tracks.
+    /// Details about the media file's video track.
     /// </summary>
     public partial class VideoProperties
     {
         private int? _bitDepth;
-        private int? _bitRate;
+        private long? _bitRate;
         private ColorPrimaries _colorPrimaries;
         private FrameRate _frameRate;
         private int? _height;
@@ -59,9 +59,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BitRate. The bit rate of the video track in bits per second.
+        /// Gets and sets the property BitRate. The bit rate of the video track, in bits per second.
         /// </summary>
-        public int? BitRate
+        public long? BitRate
         {
             get { return this._bitRate; }
             set { this._bitRate = value; }
@@ -74,7 +74,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ColorPrimaries. the color primaries.
+        /// Gets and sets the property ColorPrimaries. The color space color primaries of the
+        /// video track.
         /// </summary>
         public ColorPrimaries ColorPrimaries
         {
@@ -89,7 +90,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FrameRate. the calculated frame rate of the asset.
+        /// Gets and sets the property FrameRate. The frame rate of the video or audio track.
         /// </summary>
         public FrameRate FrameRate
         {
@@ -104,7 +105,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Height. The height of the video track in pixels.
+        /// Gets and sets the property Height. The height of the video track, in pixels.
         /// </summary>
         public int? Height
         {
@@ -119,7 +120,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MatrixCoefficients. the matrix coefficients.
+        /// Gets and sets the property MatrixCoefficients. The color space matrix coefficients
+        /// of the video track.
         /// </summary>
         public MatrixCoefficients MatrixCoefficients
         {
@@ -134,7 +136,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TransferCharacteristics. the transfer characteristics.
+        /// Gets and sets the property TransferCharacteristics. The color space transfer characteristics
+        /// of the video track.
         /// </summary>
         public TransferCharacteristics TransferCharacteristics
         {
@@ -149,7 +152,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Width. The width of the video track in pixels.
+        /// Gets and sets the property Width. The width of the video track, in pixels.
         /// </summary>
         public int? Width
         {

@@ -446,6 +446,7 @@ namespace ServiceClientGenerator
                     {
                         operation = new Operation(this, kvp.Key, kvp.Value);
                     }
+
                     if (operation.IsExcluded)
                     {
                         ExcludedOperations.Add(operation.Name);

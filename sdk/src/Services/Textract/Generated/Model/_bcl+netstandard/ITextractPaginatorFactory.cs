@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the textract-2018-06-27.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Textract.Model
@@ -29,11 +30,21 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Paginator for ListAdapters operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAdaptersPaginator ListAdapters(ListAdaptersRequest request);
 
         /// <summary>
         /// Paginator for ListAdapterVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAdapterVersionsPaginator ListAdapterVersions(ListAdapterVersionsRequest request);
     }
 }

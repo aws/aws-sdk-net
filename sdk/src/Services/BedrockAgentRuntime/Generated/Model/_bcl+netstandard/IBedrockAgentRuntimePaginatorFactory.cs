@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the bedrock-agent-runtime-2023-07-26.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model
@@ -29,31 +30,61 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Paginator for GetAgentMemory operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetAgentMemoryPaginator GetAgentMemory(GetAgentMemoryRequest request);
 
         /// <summary>
         /// Paginator for ListInvocations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListInvocationsPaginator ListInvocations(ListInvocationsRequest request);
 
         /// <summary>
         /// Paginator for ListInvocationSteps operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListInvocationStepsPaginator ListInvocationSteps(ListInvocationStepsRequest request);
 
         /// <summary>
         /// Paginator for ListSessions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSessionsPaginator ListSessions(ListSessionsRequest request);
 
         /// <summary>
         /// Paginator for Rerank operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IRerankPaginator Rerank(RerankRequest request);
 
         /// <summary>
         /// Paginator for Retrieve operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IRetrievePaginator Retrieve(RetrieveRequest request);
     }
 }

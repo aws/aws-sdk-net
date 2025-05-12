@@ -44,7 +44,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsArn. 
         /// <para>
-        /// The ARN of a standard.
+        /// The ARN of the standard.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -117,32 +117,31 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsStatus. 
         /// <para>
-        /// The status of the standard subscription.
-        /// </para>
-        ///  
-        /// <para>
-        /// The status values are as follows:
+        /// The status of your subscription to the standard. Possible values are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>PENDING</c> - Standard is in the process of being enabled.
+        ///  <c>PENDING</c> - The standard is in the process of being enabled. Or the standard
+        /// is already enabled and Security Hub is adding new controls to the standard.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>READY</c> - Standard is enabled.
+        ///  <c>READY</c> - The standard is enabled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>INCOMPLETE</c> - Standard could not be enabled completely. Some controls may not
-        /// be available.
+        ///  <c>INCOMPLETE</c> - The standard could not be enabled completely. One or more errors
+        /// (<c>StandardsStatusReason</c>) occurred when Security Hub attempted to enable the
+        /// standard.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>DELETING</c> - Standard is in the process of being disabled.
+        ///  <c>DELETING</c> - The standard is in the process of being disabled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>FAILED</c> - Standard could not be disabled.
+        ///  <c>FAILED</c> - The standard could not be disabled. One or more errors (<c>StandardsStatusReason</c>)
+        /// occurred when Security Hub attempted to disable the standard.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -180,7 +179,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsSubscriptionArn. 
         /// <para>
-        /// The ARN of a resource that represents your subscription to a supported standard.
+        /// The ARN of the resource that represents your subscription to the standard.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

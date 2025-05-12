@@ -165,7 +165,7 @@ if (this.Operation.Paginators.MoreResults != null)
 else if (this.Operation.Paginators.InputTokens[0].IsListOrDict)
 {
 #>
-            while (<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#>.Count > 0);
+            while (<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#>?.Count > 0);
 <#
 }
 else if (this.Operation.StopPaginationOnSameToken)

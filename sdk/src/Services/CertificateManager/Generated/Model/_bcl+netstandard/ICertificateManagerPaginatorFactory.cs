@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the acm-2015-12-08.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CertificateManager.Model
@@ -29,6 +30,11 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Paginator for ListCertificates operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCertificatesPaginator ListCertificates(ListCertificatesRequest request);
     }
 }

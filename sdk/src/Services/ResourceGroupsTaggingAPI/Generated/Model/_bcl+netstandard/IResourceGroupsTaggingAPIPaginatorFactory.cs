@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the resourcegroupstaggingapi-2017-01-26.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ResourceGroupsTaggingAPI.Model
@@ -29,21 +30,41 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Paginator for GetComplianceSummary operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "PaginationToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "PaginationToken" }
+        )]
         IGetComplianceSummaryPaginator GetComplianceSummary(GetComplianceSummaryRequest request);
 
         /// <summary>
         /// Paginator for GetResources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "PaginationToken" },
+            LimitKey = "ResourcesPerPage",
+            OutputToken = new[] { "PaginationToken" }
+        )]
         IGetResourcesPaginator GetResources(GetResourcesRequest request);
 
         /// <summary>
         /// Paginator for GetTagKeys operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "PaginationToken" },
+            
+            OutputToken = new[] { "PaginationToken" }
+        )]
         IGetTagKeysPaginator GetTagKeys(GetTagKeysRequest request);
 
         /// <summary>
         /// Paginator for GetTagValues operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "PaginationToken" },
+            
+            OutputToken = new[] { "PaginationToken" }
+        )]
         IGetTagValuesPaginator GetTagValues(GetTagValuesRequest request);
     }
 }

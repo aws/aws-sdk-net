@@ -39,12 +39,11 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// A parameter to configure deletion protection. If enabled, deletion protection prevents
-        /// a user from deleting a configuration profile or an environment if AppConfig has called
-        /// either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a>
+        /// A parameter to configure deletion protection. Deletion protection prevents a user
+        /// from deleting a configuration profile or an environment if AppConfig has called either
+        /// <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a>
         /// or for the configuration profile or from the environment during the specified interval.
-        /// Deletion protection is disabled by default. The default interval for <c>ProtectionPeriodInMinutes</c>
-        /// is 60.
+        /// The default interval for <c>ProtectionPeriodInMinutes</c> is 60.
         /// </para>
         /// </summary>
         public DeletionProtectionSettings DeletionProtection

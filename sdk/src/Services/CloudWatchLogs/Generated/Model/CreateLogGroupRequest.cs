@@ -127,7 +127,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupClass. 
         /// <para>
-        /// Use this parameter to specify the log group class for this log group. There are two
+        /// Use this parameter to specify the log group class for this log group. There are three
         /// classes:
         /// </para>
         ///  <ul> <li> 
@@ -138,6 +138,13 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// The <c>Infrequent Access</c> log class supports a subset of CloudWatch Logs features
         /// and incurs lower costs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the <c>Delivery</c> log class only for delivering Lambda logs to store in Amazon
+        /// S3 or Amazon Data Firehose. Log events in log groups in the Delivery class are kept
+        /// in CloudWatch Logs for only one day. This log class doesn't offer rich CloudWatch
+        /// Logs capabilities such as CloudWatch Logs Insights queries.
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class UpdateChannelRequest : AmazonMediaLiveRequest
     {
+        private AnywhereSettings _anywhereSettings;
         private CdiInputSpecification _cdiInputSpecification;
         private ChannelEngineVersionRequest _channelEngineVersion;
         private string _channelId;
@@ -47,6 +48,22 @@ namespace Amazon.MediaLive.Model
         private MaintenanceUpdateSettings _maintenance;
         private string _name;
         private string _roleArn;
+
+        /// <summary>
+        /// Gets and sets the property AnywhereSettings. The Elemental Anywhere settings for this
+        /// channel.
+        /// </summary>
+        public AnywhereSettings AnywhereSettings
+        {
+            get { return this._anywhereSettings; }
+            set { this._anywhereSettings = value; }
+        }
+
+        // Check to see if AnywhereSettings property is set
+        internal bool IsSetAnywhereSettings()
+        {
+            return this._anywhereSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CdiInputSpecification. Specification of CDI inputs for

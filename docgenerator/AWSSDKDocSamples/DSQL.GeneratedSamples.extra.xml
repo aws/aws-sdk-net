@@ -97,6 +97,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.DSQL.IAmazonDSQL.GetVpcEndpointServiceName(Amazon.DSQL.Model.GetVpcEndpointServiceNameRequest)" />
+            <member name="M:Amazon.DSQL.AmazonDSQLClient.GetVpcEndpointServiceName(Amazon.DSQL.Model.GetVpcEndpointServiceNameRequest)" />
+            <member name="T:Amazon.DSQL.Model.GetVpcEndpointServiceNameRequest" />
+            <member name="T:Amazon.DSQL.Model.GetVpcEndpointServiceNameResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get VPC Endpoint Service Name"
+                    source=".\AWSSDKDocSamples\DSQL\DSQL.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.DSQL.IAmazonDSQL.ListClusters(Amazon.DSQL.Model.ListClustersRequest)" />
             <member name="M:Amazon.DSQL.AmazonDSQLClient.ListClusters(Amazon.DSQL.Model.ListClustersRequest)" />
             <member name="T:Amazon.DSQL.Model.ListClustersRequest" />

@@ -61,6 +61,24 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.BaselineBandwidthInGbps = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("defaultEnaQueueCountPerInterface", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.DefaultEnaQueueCountPerInterface = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("maximumEnaQueueCount", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.MaximumEnaQueueCount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("maximumEnaQueueCountPerInterface", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.MaximumEnaQueueCountPerInterface = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("maximumNetworkInterfaces", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;

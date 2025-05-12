@@ -43,7 +43,7 @@ namespace Amazon.IoTWireless
     /// AWS IoT Wireless provides bi-directional communication between internet-connected
     /// wireless devices and the AWS Cloud. To onboard both LoRaWAN and Sidewalk devices to
     /// AWS IoT, use the IoT Wireless API. These wireless devices use the Low Power Wide Area
-    /// Networking (LPWAN) communication protocol to communicate with AWS IoT.
+    /// Networking (LPWAN) communication protocol to communicate with AWS IoT. 
     /// 
     ///  
     /// <para>
@@ -63,7 +63,10 @@ namespace Amazon.IoTWireless
     /// <para>
     /// To connect to the AWS IoT Wireless Service, use the Service endpoints as described
     /// in <a href="https://docs.aws.amazon.com/general/latest/gr/iot-lorawan.html#iot-wireless_region">IoT
-    /// Wireless Service endpoints</a> in the <i>AWS General Reference</i>.
+    /// Wireless Service endpoints</a>. You can use both IPv4 and IPv6 protocols to connect
+    /// to the endpoints and send requests to the AWS IoT Wireless service. For more information,
+    /// see <a href="https://docs.aws.amazon.com/iot-wireless/latest/developerguide/wireless-ipv6-access.html">Using
+    /// IPv6 with AWS IoT Wireless</a>.
     /// </para>
     /// </summary>
     public partial class AmazonIoTWirelessClient : AmazonServiceClient, IAmazonIoTWireless
@@ -1381,7 +1384,7 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Deletes a multicast group if it is not in use by a fuota task.
+        /// Deletes a multicast group if it is not in use by a FUOTA task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMulticastGroup service method.</param>
         /// <param name="cancellationToken">
@@ -1939,7 +1942,7 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Disassociates a multicast group from a fuota task.
+        /// Disassociates a multicast group from a FUOTA task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMulticastGroupFromFuotaTask service method.</param>
         /// <param name="cancellationToken">
@@ -2422,8 +2425,9 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Returns current default log levels or log levels by resource types. Based on resource
-        /// types, log levels can be for wireless device log options or wireless gateway log options.
+        /// Returns current default log levels or log levels by resource types. Based on the resource
+        /// type, log levels can be returned for wireless device, wireless gateway, or FUOTA task
+        /// log options.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLogLevelsByResourceTypes service method.</param>
         /// <param name="cancellationToken">
@@ -2976,8 +2980,7 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Fetches the log-level override, if any, for a given resource-ID and resource-type.
-        /// It can be used for a wireless device, wireless gateway or fuota task.
+        /// Fetches the log-level override, if any, for a given resource ID and resource type..
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceLogLevel service method.</param>
         /// <param name="cancellationToken">
@@ -3881,7 +3884,7 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// List all multicast groups associated with a fuota task.
+        /// List all multicast groups associated with a FUOTA task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMulticastGroupsByFuotaTask service method.</param>
         /// <param name="cancellationToken">
@@ -4459,9 +4462,8 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Sets the log-level override for a resource-ID and resource-type. This option can be
-        /// specified for a wireless gateway or a wireless device. A limit of 200 log level override
-        /// can be set per account.
+        /// Sets the log-level override for a resource ID and resource type. A limit of 200 log
+        /// level override can be set per account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourceLogLevel service method.</param>
         /// <param name="cancellationToken">
@@ -4510,7 +4512,7 @@ namespace Amazon.IoTWireless
 
         /// <summary>
         /// Removes the log-level overrides for all resources; wireless devices, wireless gateways,
-        /// and fuota tasks.
+        /// and FUOTA tasks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetAllResourceLogLevels service method.</param>
         /// <param name="cancellationToken">
@@ -4558,8 +4560,8 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Removes the log-level override, if any, for a specific resource-ID and resource-type.
-        /// It can be used for a wireless device, a wireless gateway, or a fuota task.
+        /// Removes the log-level override, if any, for a specific resource ID and resource type.
+        /// It can be used for a wireless device, a wireless gateway, or a FUOTA task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetResourceLogLevel service method.</param>
         /// <param name="cancellationToken">
@@ -5291,8 +5293,8 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Set default log level, or log levels by resource types. This can be for wireless device
-        /// log options or wireless gateways log options and is used to control the log messages
+        /// Set default log level, or log levels by resource types. This can be for wireless device,
+        /// wireless gateway, or FUOTA task log options, and is used to control the log messages
         /// that'll be displayed in CloudWatch.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLogLevelsByResourceTypes service method.</param>

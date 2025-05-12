@@ -46,7 +46,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AppConfigs. 
         /// <para>
-        /// Configurations for the updated OpenSearch Application.
+        /// The configuration settings for the updated OpenSearch application.
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]
@@ -81,7 +81,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Timestamp at which the OpenSearch Application was created.
+        /// The timestamp when the OpenSearch application was originally created.
         /// </para>
         /// </summary>
         public DateTime? CreatedAt
@@ -99,7 +99,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DataSources. 
         /// <para>
-        /// Data sources associated with the updated OpenSearch Application.
+        /// The data sources associated with the updated OpenSearch application.
         /// </para>
         /// </summary>
         public List<DataSource> DataSources
@@ -117,7 +117,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property IamIdentityCenterOptions. 
         /// <para>
-        /// IAM Identity Center settings for the updated OpenSearch Application.
+        /// The IAM Identity Center configuration for the updated OpenSearch application.
         /// </para>
         /// </summary>
         public IamIdentityCenterOptions IamIdentityCenterOptions
@@ -135,7 +135,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Unique identifier of the updated OpenSearch Application.
+        /// The unique identifier of the updated OpenSearch application.
         /// </para>
         /// </summary>
         public string Id
@@ -153,7 +153,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// Timestamp at which the OpenSearch Application was last updated.
+        /// The timestamp when the OpenSearch application was last updated.
         /// </para>
         /// </summary>
         public DateTime? LastUpdatedAt
@@ -171,7 +171,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the updated OpenSearch Application.
+        /// The name of the updated OpenSearch application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=30)]

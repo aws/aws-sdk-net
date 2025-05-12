@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the athena-2017-05-18.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Athena.Model
@@ -29,76 +30,151 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Paginator for GetQueryResults operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetQueryResultsPaginator GetQueryResults(GetQueryResultsRequest request);
 
         /// <summary>
         /// Paginator for ListApplicationDPUSizes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationDPUSizesPaginator ListApplicationDPUSizes(ListApplicationDPUSizesRequest request);
 
         /// <summary>
         /// Paginator for ListCalculationExecutions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCalculationExecutionsPaginator ListCalculationExecutions(ListCalculationExecutionsRequest request);
 
         /// <summary>
         /// Paginator for ListCapacityReservations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCapacityReservationsPaginator ListCapacityReservations(ListCapacityReservationsRequest request);
 
         /// <summary>
         /// Paginator for ListDatabases operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDatabasesPaginator ListDatabases(ListDatabasesRequest request);
 
         /// <summary>
         /// Paginator for ListDataCatalogs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDataCatalogsPaginator ListDataCatalogs(ListDataCatalogsRequest request);
 
         /// <summary>
         /// Paginator for ListEngineVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEngineVersionsPaginator ListEngineVersions(ListEngineVersionsRequest request);
 
         /// <summary>
         /// Paginator for ListExecutors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListExecutorsPaginator ListExecutors(ListExecutorsRequest request);
 
         /// <summary>
         /// Paginator for ListNamedQueries operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListNamedQueriesPaginator ListNamedQueries(ListNamedQueriesRequest request);
 
         /// <summary>
         /// Paginator for ListPreparedStatements operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPreparedStatementsPaginator ListPreparedStatements(ListPreparedStatementsRequest request);
 
         /// <summary>
         /// Paginator for ListQueryExecutions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListQueryExecutionsPaginator ListQueryExecutions(ListQueryExecutionsRequest request);
 
         /// <summary>
         /// Paginator for ListSessions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSessionsPaginator ListSessions(ListSessionsRequest request);
 
         /// <summary>
         /// Paginator for ListTableMetadata operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTableMetadataPaginator ListTableMetadata(ListTableMetadataRequest request);
 
         /// <summary>
         /// Paginator for ListTagsForResource operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request);
 
         /// <summary>
         /// Paginator for ListWorkGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWorkGroupsPaginator ListWorkGroups(ListWorkGroupsRequest request);
     }
 }

@@ -840,6 +840,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully managed message queuing service. SQS makes it simple and cost-effective to decouple the components of a cloud application.
 * [AWSSDK.SSMContacts](https://www.nuget.org/packages/AWSSDK.SSMContacts/)
 	* AWS Systems Manager Incident Manager enables faster resolution of critical application availability and performance issues, management of contacts and post incident analysis
+* [AWSSDK.SSMGuiConnect](https://www.nuget.org/packages/AWSSDK.SSMGuiConnect/)
+	* This release adds API support for the connection recording GUI Connect feature of AWS Systems Manager
 * [AWSSDK.SSMIncidents](https://www.nuget.org/packages/AWSSDK.SSMIncidents/)
 	* AWS Systems Manager Incident Manager enables faster resolution of critical application availability and performance issues, management of contacts and post-incident analysis
 * [AWSSDK.SSMQuickSetup](https://www.nuget.org/packages/AWSSDK.SSMQuickSetup/)

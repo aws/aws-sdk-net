@@ -88,6 +88,18 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetStorageCapacity())
+            {
+                context.Writer.WritePropertyName("storageCapacity");
+                context.Writer.WriteNumberValue(publicRequest.StorageCapacity.Value);
+            }
+
+            if(publicRequest.IsSetStorageType())
+            {
+                context.Writer.WritePropertyName("storageType");
+                context.Writer.WriteStringValue(publicRequest.StorageType);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

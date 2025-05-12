@@ -1059,6 +1059,11 @@
     <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreatePartnerAppRequest.KmsKeyId</property>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CreatePartnerAppRequest.Name</property>
     <min>1</min>
     <max>256</max>
@@ -3537,6 +3542,11 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribePartnerAppResponse.KmsKeyId</property>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribePartnerAppResponse.Name</property>
@@ -7199,6 +7209,12 @@
     <pattern>^(?!\s*$).+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.AlarmDetails.AlarmName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.AlgorithmSpecification.AlgorithmName</property>
     <min>1</min>
     <max>170</max>
@@ -7649,6 +7665,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CapacitySize.Value</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacitySizeConfig.Value</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -8300,6 +8320,11 @@
     <property>Amazon.SageMaker.Model.DeployedImage.SpecifiedImage</property>
     <max>255</max>
     <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DeploymentConfiguration.WaitIntervalInSeconds</property>
+    <min>0</min>
+    <max>3600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeploymentStage.StageName</property>
@@ -11747,6 +11772,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ScheduledUpdateConfig.ScheduleExpression</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.SelectedStep.StepName</property>
     <max>256</max>
   </property-value-rule>
@@ -12308,6 +12338,12 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.TransformResources.TransformAmiVersion</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.TransformResources.VolumeKmsKeyId</property>
     <max>2048</max>
     <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
@@ -12501,6 +12537,40 @@
     <property>Amazon.SageMaker.Model.UiTemplateInfo.Url</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UnifiedStudioSettings.DomainAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UnifiedStudioSettings.DomainId</property>
+    <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UnifiedStudioSettings.DomainRegion</property>
+    <min>1</min>
+    <max>24</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UnifiedStudioSettings.EnvironmentId</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UnifiedStudioSettings.ProjectId</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UnifiedStudioSettings.ProjectS3Path</property>
+    <max>1024</max>
+    <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateClusterSoftwareInstanceGroupSpecification.InstanceGroupName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.USD.Cents</property>

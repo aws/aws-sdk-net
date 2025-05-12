@@ -61,7 +61,9 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property S3Location. 
         /// <para>
-        /// The location of a video object in an S3 bucket.
+        /// The location of a video object in an Amazon S3 bucket. To see which models support
+        /// S3 uploads, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html">Supported
+        /// models and features for Converse</a>.
         /// </para>
         /// </summary>
         public S3Location S3Location

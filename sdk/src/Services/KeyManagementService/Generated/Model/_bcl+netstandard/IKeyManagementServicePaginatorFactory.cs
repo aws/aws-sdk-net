@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the kms-2014-11-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KeyManagementService.Model
@@ -29,41 +30,81 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Paginator for DescribeCustomKeyStores operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextMarker" }
+        )]
         IDescribeCustomKeyStoresPaginator DescribeCustomKeyStores(DescribeCustomKeyStoresRequest request);
 
         /// <summary>
         /// Paginator for ListAliases operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextMarker" }
+        )]
         IListAliasesPaginator ListAliases(ListAliasesRequest request);
 
         /// <summary>
         /// Paginator for ListGrants operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextMarker" }
+        )]
         IListGrantsPaginator ListGrants(ListGrantsRequest request);
 
         /// <summary>
         /// Paginator for ListKeyPolicies operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextMarker" }
+        )]
         IListKeyPoliciesPaginator ListKeyPolicies(ListKeyPoliciesRequest request);
 
         /// <summary>
         /// Paginator for ListKeyRotations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextMarker" }
+        )]
         IListKeyRotationsPaginator ListKeyRotations(ListKeyRotationsRequest request);
 
         /// <summary>
         /// Paginator for ListKeys operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextMarker" }
+        )]
         IListKeysPaginator ListKeys(ListKeysRequest request);
 
         /// <summary>
         /// Paginator for ListResourceTags operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextMarker" }
+        )]
         IListResourceTagsPaginator ListResourceTags(ListResourceTagsRequest request);
 
         /// <summary>
         /// Paginator for ListRetirableGrants operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextMarker" }
+        )]
         IListRetirableGrantsPaginator ListRetirableGrants(ListRetirableGrantsRequest request);
     }
 }

@@ -37,6 +37,7 @@ namespace Amazon.Synthetics.Model
         private ArtifactConfigOutput _artifactConfig;
         private string _artifactS3Location;
         private CanaryCodeOutput _code;
+        private DryRunConfigOutput _dryRunConfig;
         private string _engineArn;
         private string _executionRoleArn;
         private int? _failureRetentionPeriodInDays;
@@ -108,6 +109,24 @@ namespace Amazon.Synthetics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DryRunConfig. 
+        /// <para>
+        /// Returns the dry run configurations for a canary.
+        /// </para>
+        /// </summary>
+        public DryRunConfigOutput DryRunConfig
+        {
+            get { return this._dryRunConfig; }
+            set { this._dryRunConfig = value; }
+        }
+
+        // Check to see if DryRunConfig property is set
+        internal bool IsSetDryRunConfig()
+        {
+            return this._dryRunConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EngineArn. 
         /// <para>
         /// The ARN of the Lambda function that is used as your canary's engine. For more information
@@ -152,6 +171,11 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property FailureRetentionPeriodInDays. 
         /// <para>
         /// The number of days to retain data about failed runs of this canary.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>,
+        /// as well as the range of information displayed in the Synthetics console. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -307,6 +331,11 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property SuccessRetentionPeriodInDays. 
         /// <para>
         /// The number of days to retain data about successful runs of this canary.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>,
+        /// as well as the range of information displayed in the Synthetics console. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

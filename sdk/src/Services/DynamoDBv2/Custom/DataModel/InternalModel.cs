@@ -57,17 +57,39 @@ namespace Amazon.DynamoDBv2.DataModel
         // Converter, if one is present
         public IPropertyConverter Converter { get; protected set; }
 
-        public void AddDerivedType(string typeDiscriminator, Type type)
+        public void AddDerivedType(string typeDiscriminator, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type)
         {
-            DerivedTypesDictionary[type] = typeDiscriminator;
-            DerivedTypeKeysDictionary[typeDiscriminator] = type;
+            _derivedTypesDictionary[type] = typeDiscriminator;
+            _derivedTypeKeysDictionary[typeDiscriminator] = type;
         }
 
         // derived type information used for polymorphic serialization
-        public Dictionary<Type, string> DerivedTypesDictionary { get; private set; }
+        private Dictionary<Type, string> _derivedTypesDictionary;
 
         // derived type information used for polymorphic deserialization
-        public Dictionary<string, Type> DerivedTypeKeysDictionary { get; private set; }
+        private Dictionary<string, Type> _derivedTypeKeysDictionary;
+
+        public bool TryGetDerivedTypeDiscriminator([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type, out string typeDiscriminator)
+        {
+            if (_derivedTypesDictionary.TryGetValue(type, out typeDiscriminator))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2067",
+            Justification = "The user's type has been annotated with InternalConstants.DataModelModeledType with the public API into the library. At this point the type will not be trimmed.")]
+        public bool TryGetDerivedType(string typeDiscriminator, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] out Type deriviedType)
+        {
+            if (_derivedTypeKeysDictionary.TryGetValue(typeDiscriminator, out deriviedType))
+            {
+                return true;
+            }
+
+            return false;
+        }
 
         [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2072",
             Justification = "The user's type has been annotated with DynamicallyAccessedMemberTypes.All with the public API into the library. At this point the type will not be trimmed.")]
@@ -81,18 +103,15 @@ namespace Amazon.DynamoDBv2.DataModel
         internal SimplePropertyStorage([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type memberType)
         {
             MemberType = memberType;
-            DerivedTypesDictionary = new Dictionary<Type, string>();
-            DerivedTypeKeysDictionary = new Dictionary<string,Type>();
+            _derivedTypesDictionary = new Dictionary<Type, string>();
+            _derivedTypeKeysDictionary = new Dictionary<string,Type>();
         }
-        internal SimplePropertyStorage([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type memberType, Dictionary<Type, string> derivedTypesDictionary)
+
+        internal SimplePropertyStorage([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type memberType, SimplePropertyStorage parentProeprtyStorage)
         {
             MemberType = memberType;
-            DerivedTypesDictionary = derivedTypesDictionary;
-        }
-        internal SimplePropertyStorage([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type memberType, Dictionary<string, Type> derivedTypeKeysDictionary)
-        {
-            MemberType = memberType;
-            DerivedTypeKeysDictionary = derivedTypeKeysDictionary;
+            _derivedTypesDictionary = parentProeprtyStorage._derivedTypesDictionary;
+            _derivedTypeKeysDictionary = parentProeprtyStorage._derivedTypeKeysDictionary;
         }
 
         public override string ToString()
@@ -428,6 +447,9 @@ namespace Amazon.DynamoDBv2.DataModel
         // indexName to GSIConfig mapping
         public Dictionary<string, GSIConfig> IndexNameToGSIMapping { get; set; }
 
+        // entity conversion
+        public DynamoDBEntryConversion Conversion { get; set; }
+
 
         public bool StorePolymorphicTypes => this.PolymorphicTypesStorageConfig.Any();
 
@@ -735,6 +757,10 @@ namespace Amazon.DynamoDBv2.DataModel
 
                     if (tableCache.Cache.TryGetValue(actualTableName, out config))
                     {
+                        if (flatConfig == null)
+                            throw new ArgumentNullException("flatConfig");
+
+                        flatConfig.ItemConversion = config.Conversion;
                         return config;
                     }
                 }
@@ -759,6 +785,8 @@ namespace Amazon.DynamoDBv2.DataModel
                     if (tableCache == null)
                     {
                         var baseStorageConfig = CreateStorageConfig(type, actualTableName: null, flatConfig);
+                        flatConfig.ItemConversion = baseStorageConfig.Conversion;
+
                         tableCache = new ConfigTableCache(baseStorageConfig);
                         Cache[type] = tableCache;
                     }
@@ -780,6 +808,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 }
 
                 config = CreateStorageConfig(type, actualTableName, flatConfig);
+                flatConfig.ItemConversion = config.Conversion;
                 tableCache.Cache[actualTableName] = config;
 
                 return config;
@@ -858,6 +887,13 @@ namespace Amazon.DynamoDBv2.DataModel
                 if (string.IsNullOrEmpty(tableAttribute.TableName)) throw new InvalidOperationException("DynamoDBTableAttribute.Table is empty or null");
                 config.TableName = tableAttribute.TableName;
                 config.LowerCamelCaseProperties = tableAttribute.LowerCamelCaseProperties;
+
+                config.Conversion = tableAttribute.Conversion switch
+                {
+                    ConversionSchema.V1 => DynamoDBEntryConversion.V1,
+                    ConversionSchema.V2 => DynamoDBEntryConversion.V2,
+                    _ => config.Conversion
+                };
             }
 
             string tableAlias;

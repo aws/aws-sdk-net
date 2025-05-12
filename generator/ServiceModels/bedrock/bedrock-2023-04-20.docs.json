@@ -131,6 +131,24 @@
         "EvaluationConfig$automated": "<p>Contains the configuration details of an automated evaluation job that computes metrics.</p>"
       }
     },
+    "AutomatedEvaluationCustomMetricConfig": {
+      "base": "<p>Defines the configuration of custom metrics to be used in an evaluation job. To learn more about using custom metrics in Amazon Bedrock evaluation jobs, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-custom-metrics-prompt-formats.html\">Create a prompt for a custom metrics (LLM-as-a-judge model evaluations)</a> and <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/kb-evaluation-custom-metrics-prompt-formats.html\">Create a prompt for a custom metrics (RAG evaluations)</a>.</p>",
+      "refs": {
+        "AutomatedEvaluationConfig$customMetricConfig": "<p>Defines the configuration of custom metrics to be used in an evaluation job.</p>"
+      }
+    },
+    "AutomatedEvaluationCustomMetricSource": {
+      "base": "<p>An array item definining a single custom metric for use in an Amazon Bedrock evaluation job.</p>",
+      "refs": {
+        "AutomatedEvaluationCustomMetrics$member": null
+      }
+    },
+    "AutomatedEvaluationCustomMetrics": {
+      "base": null,
+      "refs": {
+        "AutomatedEvaluationCustomMetricConfig$customMetrics": "<p>Defines a list of custom metrics to be used in an Amazon Bedrock evaluation job.</p>"
+      }
+    },
     "BaseModelIdentifier": {
       "base": null,
       "refs": {
@@ -202,6 +220,32 @@
       "refs": {
         "FoundationModelDetails$responseStreamingSupported": "<p>Indicates whether the model supports streaming.</p>",
         "FoundationModelSummary$responseStreamingSupported": "<p>Indicates whether the model supports streaming.</p>",
+        "GuardrailContentFilter$inputEnabled": "<p>Indicates whether guardrail evaluation is enabled on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailContentFilter$outputEnabled": "<p>Indicates whether guardrail evaluation is enabled on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailContentFilterConfig$inputEnabled": "<p>Specifies whether to enable guardrail evaluation on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailContentFilterConfig$outputEnabled": "<p>Specifies whether to enable guardrail evaluation on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailContextualGroundingFilter$enabled": "<p>Indicates whether contextual grounding is enabled for evaluation. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailContextualGroundingFilterConfig$enabled": "<p>Specifies whether to enable contextual grounding evaluation. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailManagedWords$inputEnabled": "<p>Indicates whether guardrail evaluation is enabled on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailManagedWords$outputEnabled": "<p>Indicates whether guardrail evaluation is enabled on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailManagedWordsConfig$inputEnabled": "<p>Specifies whether to enable guardrail evaluation on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailManagedWordsConfig$outputEnabled": "<p>Specifies whether to enable guardrail evaluation on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailPiiEntity$inputEnabled": "<p>Indicates whether guardrail evaluation is enabled on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailPiiEntity$outputEnabled": "<p>Indicates whether guardrail evaluation is enabled on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailPiiEntityConfig$inputEnabled": "<p>Specifies whether to enable guardrail evaluation on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailPiiEntityConfig$outputEnabled": "<p>Specifies whether to enable guardrail evaluation on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailRegex$inputEnabled": "<p>Indicates whether guardrail evaluation is enabled on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailRegex$outputEnabled": "<p>Indicates whether guardrail evaluation is enabled on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailRegexConfig$inputEnabled": "<p>Specifies whether to enable guardrail evaluation on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailRegexConfig$outputEnabled": "<p>Specifies whether to enable guardrail evaluation on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailTopic$inputEnabled": "<p>Indicates whether guardrail evaluation is enabled on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailTopic$outputEnabled": "<p>Indicates whether guardrail evaluation is enabled on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailTopicConfig$inputEnabled": "<p>Specifies whether to enable guardrail evaluation on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailTopicConfig$outputEnabled": "<p>Specifies whether to enable guardrail evaluation on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailWord$inputEnabled": "<p>Indicates whether guardrail evaluation is enabled on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailWord$outputEnabled": "<p>Indicates whether guardrail evaluation is enabled on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailWordConfig$inputEnabled": "<p>Specifies whether to enable guardrail evaluation on the intput. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
+        "GuardrailWordConfig$outputEnabled": "<p>Specifies whether to enable guardrail evaluation on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>",
         "ListCustomModelsRequest$isOwned": "<p>Return custom models depending on if the current account owns them (<code>true</code>) or if they were shared with the current account (<code>false</code>).</p>",
         "LoggingConfig$textDataDeliveryEnabled": "<p>Set to include text data in the log delivery.</p>",
         "LoggingConfig$imageDataDeliveryEnabled": "<p>Set to include image data in the log delivery.</p>",
@@ -371,6 +415,36 @@
       "refs": {
       }
     },
+    "CustomMetricBedrockEvaluatorModel": {
+      "base": "<p>Defines the model you want to evaluate custom metrics in an Amazon Bedrock evaluation job.</p>",
+      "refs": {
+        "CustomMetricBedrockEvaluatorModels$member": null
+      }
+    },
+    "CustomMetricBedrockEvaluatorModels": {
+      "base": null,
+      "refs": {
+        "CustomMetricEvaluatorModelConfig$bedrockEvaluatorModels": "<p>Defines the model you want to evaluate custom metrics in an Amazon Bedrock evaluation job.</p>"
+      }
+    },
+    "CustomMetricDefinition": {
+      "base": "<p>The definition of a custom metric for use in an Amazon Bedrock evaluation job. A custom metric definition includes a metric name, prompt (instructions) and optionally, a rating scale. Your prompt must include a task description and input variables. The required input variables are different for model-as-a-judge and RAG evaluations.</p> <p>For more information about how to define a custom metric in Amazon Bedrock, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-custom-metrics-prompt-formats.html\">Create a prompt for a custom metrics (LLM-as-a-judge model evaluations)</a> and <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/kb-evaluation-custom-metrics-prompt-formats.html\">Create a prompt for a custom metrics (RAG evaluations)</a>.</p>",
+      "refs": {
+        "AutomatedEvaluationCustomMetricSource$customMetricDefinition": "<p>The definition of a custom metric for use in an Amazon Bedrock evaluation job.</p>"
+      }
+    },
+    "CustomMetricEvaluatorModelConfig": {
+      "base": "<p>Configuration of the evaluator model you want to use to evaluate custom metrics in an Amazon Bedrock evaluation job.</p>",
+      "refs": {
+        "AutomatedEvaluationCustomMetricConfig$evaluatorModelConfig": "<p>Configuration of the evaluator model you want to use to evaluate custom metrics in an Amazon Bedrock evaluation job.</p>"
+      }
+    },
+    "CustomMetricInstructions": {
+      "base": null,
+      "refs": {
+        "CustomMetricDefinition$instructions": "<p>The prompt for a custom metric that instructs the evaluator model how to rate the model or RAG source under evaluation.</p>"
+      }
+    },
     "CustomModelArn": {
       "base": null,
       "refs": {
@@ -438,6 +512,12 @@
         "GetCustomModelResponse$customizationType": "<p>The type of model customization.</p>",
         "GetModelCustomizationJobResponse$customizationType": "<p>The type of model customization.</p>",
         "ModelCustomizationJobSummary$customizationType": "<p>Specifies whether to carry out continued pre-training of a model or whether to fine-tune it. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html\">Custom models</a>.</p>"
+      }
+    },
+    "DataProcessingDetails": {
+      "base": "<p>For a Distillation job, the status details for the data processing sub-task of the job.</p>",
+      "refs": {
+        "StatusDetails$dataProcessingDetails": "<p>The status details for the data processing sub-task of the job.</p>"
       }
     },
     "DeleteCustomModelRequest": {
@@ -533,7 +613,7 @@
     "DistillationConfig": {
       "base": "<p>Settings for distilling a foundation model into a smaller and more efficient model.</p>",
       "refs": {
-        "CustomizationConfig$distillationConfig": "<p>The distillation configuration for the custom model.</p>"
+        "CustomizationConfig$distillationConfig": "<p>The Distillation configuration for the custom model.</p>"
       }
     },
     "EndpointConfig": {
@@ -717,7 +797,7 @@
     "EvaluationMetricNames": {
       "base": null,
       "refs": {
-        "EvaluationDatasetMetricConfig$metricNames": "<p>The names of the metrics you want to use for your evaluation job.</p> <p>For knowledge base evaluation jobs that evaluate retrieval only, valid values are \"<code>Builtin.ContextRelevance</code>\", \"<code>Builtin.ContextConverage</code>\".</p> <p>For knowledge base evaluation jobs that evaluate retrieval with response generation, valid values are \"<code>Builtin.Correctness</code>\", \"<code>Builtin.Completeness</code>\", \"<code>Builtin.Helpfulness</code>\", \"<code>Builtin.LogicalCoherence</code>\", \"<code>Builtin.Faithfulness</code>\", \"<code>Builtin.Harmfulness</code>\", \"<code>Builtin.Stereotyping</code>\", \"<code>Builtin.Refusal</code>\".</p> <p>For automated model evaluation jobs, valid values are \"<code>Builtin.Accuracy</code>\", \"<code>Builtin.Robustness</code>\", and \"<code>Builtin.Toxicity</code>\". In model evaluation jobs that use a LLM as judge you can specify \"<code>Builtin.Correctness</code>\", \"<code>Builtin.Completeness\"</code>, \"<code>Builtin.Faithfulness\"</code>, \"<code>Builtin.Helpfulness</code>\", \"<code>Builtin.Coherence</code>\", \"<code>Builtin.Relevance</code>\", \"<code>Builtin.FollowingInstructions</code>\", \"<code>Builtin.ProfessionalStyleAndTone</code>\", You can also specify the following responsible AI related metrics only for model evaluation job that use a LLM as judge \"<code>Builtin.Harmfulness</code>\", \"<code>Builtin.Stereotyping</code>\", and \"<code>Builtin.Refusal</code>\".</p> <p>For human-based model evaluation jobs, the list of strings must match the <code>name</code> parameter specified in <code>HumanEvaluationCustomMetric</code>.</p>"
+        "EvaluationDatasetMetricConfig$metricNames": "<p>The names of the metrics you want to use for your evaluation job.</p> <p>For knowledge base evaluation jobs that evaluate retrieval only, valid values are \"<code>Builtin.ContextRelevance</code>\", \"<code>Builtin.ContextCoverage</code>\".</p> <p>For knowledge base evaluation jobs that evaluate retrieval with response generation, valid values are \"<code>Builtin.Correctness</code>\", \"<code>Builtin.Completeness</code>\", \"<code>Builtin.Helpfulness</code>\", \"<code>Builtin.LogicalCoherence</code>\", \"<code>Builtin.Faithfulness</code>\", \"<code>Builtin.Harmfulness</code>\", \"<code>Builtin.Stereotyping</code>\", \"<code>Builtin.Refusal</code>\".</p> <p>For automated model evaluation jobs, valid values are \"<code>Builtin.Accuracy</code>\", \"<code>Builtin.Robustness</code>\", and \"<code>Builtin.Toxicity</code>\". In model evaluation jobs that use a LLM as judge you can specify \"<code>Builtin.Correctness</code>\", \"<code>Builtin.Completeness\"</code>, \"<code>Builtin.Faithfulness\"</code>, \"<code>Builtin.Helpfulness</code>\", \"<code>Builtin.Coherence</code>\", \"<code>Builtin.Relevance</code>\", \"<code>Builtin.FollowingInstructions</code>\", \"<code>Builtin.ProfessionalStyleAndTone</code>\", You can also specify the following responsible AI related metrics only for model evaluation job that use a LLM as judge \"<code>Builtin.Harmfulness</code>\", \"<code>Builtin.Stereotyping</code>\", and \"<code>Builtin.Refusal</code>\".</p> <p>For human-based model evaluation jobs, the list of strings must match the <code>name</code> parameter specified in <code>HumanEvaluationCustomMetric</code>.</p>"
       }
     },
     "EvaluationModelConfig": {
@@ -849,13 +929,15 @@
       "base": null,
       "refs": {
         "BedrockEvaluatorModel$modelIdentifier": "<p>The Amazon Resource Name (ARN) of the evaluator model used used in knowledge base evaluation job or in model evaluation job that use a model as judge.</p>",
+        "CustomMetricBedrockEvaluatorModel$modelIdentifier": "<p>The Amazon Resource Name (ARN) of the evaluator model for custom metrics. For a list of supported evaluator models, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/evaluation-judge.html\">Evaluate model performance using another LLM as a judge</a> and <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/evaluation-kb.html\">Evaluate the performance of RAG sources using Amazon Bedrock evaluations</a>.</p>",
         "EvaluatorModelIdentifiers$member": null
       }
     },
     "EvaluatorModelIdentifiers": {
       "base": null,
       "refs": {
-        "EvaluationSummary$evaluatorModelIdentifiers": "<p>The Amazon Resource Names (ARNs) of the models used to compute the metrics for a knowledge base evaluation job.</p>"
+        "EvaluationSummary$evaluatorModelIdentifiers": "<p>The Amazon Resource Names (ARNs) of the models used to compute the metrics for a knowledge base evaluation job.</p>",
+        "EvaluationSummary$customMetricsEvaluatorModelIdentifiers": "<p>The Amazon Resource Names (ARNs) of the models used to compute custom metrics in an Amazon Bedrock evaluation job.</p>"
       }
     },
     "ExternalSource": {
@@ -920,6 +1002,12 @@
       "base": null,
       "refs": {
         "ListModelCustomizationJobsRequest$statusEquals": "<p>Return customization jobs with the specified status. </p>"
+      }
+    },
+    "Float": {
+      "base": null,
+      "refs": {
+        "RatingScaleItemValue$floatValue": "<p>A floating point number representing the value for a rating in a custom metric rating scale.</p>"
       }
     },
     "FoundationModelArn": {
@@ -1156,6 +1244,15 @@
         "GuardrailContentFilters$member": null
       }
     },
+    "GuardrailContentFilterAction": {
+      "base": null,
+      "refs": {
+        "GuardrailContentFilter$inputAction": "<p>The action to take when harmful content is detected in the input. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>",
+        "GuardrailContentFilter$outputAction": "<p>The action to take when harmful content is detected in the output. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>",
+        "GuardrailContentFilterConfig$inputAction": "<p>Specifies the action to take when harmful content is detected. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>",
+        "GuardrailContentFilterConfig$outputAction": "<p>Specifies the action to take when harmful content is detected in the output. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>"
+      }
+    },
     "GuardrailContentFilterConfig": {
       "base": "<p>Contains filter strengths for harmful content. Guardrails support the following content filters to detect and filter harmful user inputs and FM-generated outputs.</p> <ul> <li> <p> <b>Hate</b> – Describes language or a statement that discriminates, criticizes, insults, denounces, or dehumanizes a person or group on the basis of an identity (such as race, ethnicity, gender, religion, sexual orientation, ability, and national origin).</p> </li> <li> <p> <b>Insults</b> – Describes language or a statement that includes demeaning, humiliating, mocking, insulting, or belittling language. This type of language is also labeled as bullying.</p> </li> <li> <p> <b>Sexual</b> – Describes language or a statement that indicates sexual interest, activity, or arousal using direct or indirect references to body parts, physical traits, or sex.</p> </li> <li> <p> <b>Violence</b> – Describes language or a statement that includes glorification of or threats to inflict physical pain, hurt, or injury toward a person, group or thing.</p> </li> </ul> <p>Content filtering depends on the confidence classification of user inputs and FM responses across each of the four harmful categories. All input and output statements are classified into one of four confidence levels (NONE, LOW, MEDIUM, HIGH) for each harmful category. For example, if a statement is classified as <i>Hate</i> with HIGH confidence, the likelihood of the statement representing hateful content is high. A single statement can be classified across multiple categories with varying confidence levels. For example, a single statement can be classified as <i>Hate</i> with HIGH confidence, <i>Insults</i> with LOW confidence, <i>Sexual</i> with NONE confidence, and <i>Violence</i> with MEDIUM confidence.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-filters.html\">Guardrails content filters</a>.</p>",
       "refs": {
@@ -1192,6 +1289,13 @@
       "refs": {
         "CreateGuardrailRequest$contentPolicyConfig": "<p>The content filter policies to configure for the guardrail.</p>",
         "UpdateGuardrailRequest$contentPolicyConfig": "<p>The content policy to configure for the guardrail.</p>"
+      }
+    },
+    "GuardrailContextualGroundingAction": {
+      "base": null,
+      "refs": {
+        "GuardrailContextualGroundingFilter$action": "<p>The action to take when content fails the contextual grounding evaluation. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>",
+        "GuardrailContextualGroundingFilterConfig$action": "<p>Specifies the action to take when content fails the contextual grounding evaluation. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>"
       }
     },
     "GuardrailContextualGroundingFilter": {
@@ -1465,9 +1569,17 @@
       "base": null,
       "refs": {
         "GuardrailPiiEntity$action": "<p>The configured guardrail action when PII entity is detected.</p>",
+        "GuardrailPiiEntity$inputAction": "<p>The action to take when harmful content is detected in the input. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>ANONYMIZE</code> – Mask the content and replace it with identifier tags.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>",
+        "GuardrailPiiEntity$outputAction": "<p>The action to take when harmful content is detected in the output. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>ANONYMIZE</code> – Mask the content and replace it with identifier tags.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>",
         "GuardrailPiiEntityConfig$action": "<p>Configure guardrail action when the PII entity is detected.</p>",
+        "GuardrailPiiEntityConfig$inputAction": "<p>Specifies the action to take when harmful content is detected in the input. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>ANONYMIZE</code> – Mask the content and replace it with identifier tags.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>",
+        "GuardrailPiiEntityConfig$outputAction": "<p>Specifies the action to take when harmful content is detected in the output. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>ANONYMIZE</code> – Mask the content and replace it with identifier tags.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>",
         "GuardrailRegex$action": "<p>The action taken when a match to the regular expression is detected.</p>",
-        "GuardrailRegexConfig$action": "<p>The guardrail action to configure when matching regular expression is detected.</p>"
+        "GuardrailRegex$inputAction": "<p>The action to take when harmful content is detected in the input. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>",
+        "GuardrailRegex$outputAction": "<p>The action to take when harmful content is detected in the output. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>",
+        "GuardrailRegexConfig$action": "<p>The guardrail action to configure when matching regular expression is detected.</p>",
+        "GuardrailRegexConfig$inputAction": "<p>Specifies the action to take when harmful content is detected in the input. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>",
+        "GuardrailRegexConfig$outputAction": "<p>Specifies the action to take when harmful content is detected in the output. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>"
       }
     },
     "GuardrailSensitiveInformationPolicy": {
@@ -1518,6 +1630,15 @@
       "base": "<p>Details about topics for the guardrail to identify and deny.</p> <p>This data type is used in the following API operations:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetGuardrail.html#API_GetGuardrail_ResponseSyntax\">GetGuardrail response body</a> </p> </li> </ul>",
       "refs": {
         "GuardrailTopics$member": null
+      }
+    },
+    "GuardrailTopicAction": {
+      "base": null,
+      "refs": {
+        "GuardrailTopic$inputAction": "<p>The action to take when harmful content is detected in the input. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>",
+        "GuardrailTopic$outputAction": "<p>The action to take when harmful content is detected in the output. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>",
+        "GuardrailTopicConfig$inputAction": "<p>Specifies the action to take when harmful content is detected in the input. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>",
+        "GuardrailTopicConfig$outputAction": "<p>Specifies the action to take when harmful content is detected in the output. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>"
       }
     },
     "GuardrailTopicConfig": {
@@ -1597,6 +1718,19 @@
       "base": "<p>A word configured for the guardrail.</p>",
       "refs": {
         "GuardrailWords$member": null
+      }
+    },
+    "GuardrailWordAction": {
+      "base": null,
+      "refs": {
+        "GuardrailManagedWords$inputAction": "<p>The action to take when harmful content is detected in the input. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>",
+        "GuardrailManagedWords$outputAction": "<p>The action to take when harmful content is detected in the output. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>",
+        "GuardrailManagedWordsConfig$inputAction": "<p>Specifies the action to take when harmful content is detected in the input. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>",
+        "GuardrailManagedWordsConfig$outputAction": "<p>Specifies the action to take when harmful content is detected in the output. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>",
+        "GuardrailWord$inputAction": "<p>The action to take when harmful content is detected in the input. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>",
+        "GuardrailWord$outputAction": "<p>The action to take when harmful content is detected in the output. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>",
+        "GuardrailWordConfig$inputAction": "<p>Specifies the action to take when harmful content is detected in the input. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>",
+        "GuardrailWordConfig$outputAction": "<p>Specifies the action to take when harmful content is detected in the output. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take no action but return detection information in the trace response.</p> </li> </ul>"
       }
     },
     "GuardrailWordConfig": {
@@ -1897,6 +2031,14 @@
         "ModelImportJobSummary$jobName": "<p>The name of the import job.</p>"
       }
     },
+    "JobStatusDetails": {
+      "base": null,
+      "refs": {
+        "DataProcessingDetails$status": "<p>The status of the data processing sub-task of the job.</p>",
+        "TrainingDetails$status": "<p>The status of the training sub-task of the job.</p>",
+        "ValidationDetails$status": "<p>The status of the validation sub-task of the job.</p>"
+      }
+    },
     "KbInferenceConfig": {
       "base": "<p>Contains configuration details of the inference for knowledge base retrieval and response generation.</p>",
       "refs": {
@@ -2186,6 +2328,12 @@
         "ValidatorMetric$validationLoss": "<p>The validation loss associated with this validator.</p>"
       }
     },
+    "MetricName": {
+      "base": null,
+      "refs": {
+        "CustomMetricDefinition$name": "<p>The name for a custom metric. Names must be unique in your Amazon Web Services region.</p>"
+      }
+    },
     "ModelArchitecture": {
       "base": null,
       "refs": {
@@ -2421,9 +2569,9 @@
     "ModelInvocationJobStatus": {
       "base": null,
       "refs": {
-        "GetModelInvocationJobResponse$status": "<p>The status of the batch inference job.</p> <p>The following statuses are possible:</p> <ul> <li> <p>Submitted – This job has been submitted to a queue for validation.</p> </li> <li> <p>Validating – This job is being validated for the requirements described in <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data.html\">Format and upload your batch inference data</a>. The criteria include the following:</p> <ul> <li> <p>Your IAM service role has access to the Amazon S3 buckets containing your files.</p> </li> <li> <p>Your files are .jsonl files and each individual record is a JSON object in the correct format. Note that validation doesn't check if the <code>modelInput</code> value matches the request body for the model.</p> </li> <li> <p>Your files fulfill the requirements for file size and number of records. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html\">Quotas for Amazon Bedrock</a>.</p> </li> </ul> </li> <li> <p>Scheduled – This job has been validated and is now in a queue. The job will automatically start when it reaches its turn.</p> </li> <li> <p>Expired – This job timed out because it was scheduled but didn't begin before the set timeout duration. Submit a new job request.</p> </li> <li> <p>InProgress – This job has begun. You can start viewing the results in the output S3 location.</p> </li> <li> <p>Completed – This job has successfully completed. View the output files in the output S3 location.</p> </li> <li> <p>PartiallyCompleted – This job has partially completed. Not all of your records could be processed in time. View the output files in the output S3 location.</p> </li> <li> <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href=\"https://console.aws.amazon.com/support/home/\">Amazon Web Services Support Center</a>.</p> </li> <li> <p>Stopped – This job was stopped by a user.</p> </li> <li> <p>Stopping – This job is being stopped by a user.</p> </li> </ul>",
-        "ListModelInvocationJobsRequest$statusEquals": "<p>Specify a status to filter for batch inference jobs whose statuses match the string you specify.</p> <p>The following statuses are possible:</p> <ul> <li> <p>Submitted – This job has been submitted to a queue for validation.</p> </li> <li> <p>Validating – This job is being validated for the requirements described in <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data.html\">Format and upload your batch inference data</a>. The criteria include the following:</p> <ul> <li> <p>Your IAM service role has access to the Amazon S3 buckets containing your files.</p> </li> <li> <p>Your files are .jsonl files and each individual record is a JSON object in the correct format. Note that validation doesn't check if the <code>modelInput</code> value matches the request body for the model.</p> </li> <li> <p>Your files fulfill the requirements for file size and number of records. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html\">Quotas for Amazon Bedrock</a>.</p> </li> </ul> </li> <li> <p>Scheduled – This job has been validated and is now in a queue. The job will automatically start when it reaches its turn.</p> </li> <li> <p>Expired – This job timed out because it was scheduled but didn't begin before the set timeout duration. Submit a new job request.</p> </li> <li> <p>InProgress – This job has begun. You can start viewing the results in the output S3 location.</p> </li> <li> <p>Completed – This job has successfully completed. View the output files in the output S3 location.</p> </li> <li> <p>PartiallyCompleted – This job has partially completed. Not all of your records could be processed in time. View the output files in the output S3 location.</p> </li> <li> <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href=\"https://console.aws.amazon.com/support/home/\">Amazon Web Services Support Center</a>.</p> </li> <li> <p>Stopped – This job was stopped by a user.</p> </li> <li> <p>Stopping – This job is being stopped by a user.</p> </li> </ul>",
-        "ModelInvocationJobSummary$status": "<p>The status of the batch inference job.</p> <p>The following statuses are possible:</p> <ul> <li> <p>Submitted – This job has been submitted to a queue for validation.</p> </li> <li> <p>Validating – This job is being validated for the requirements described in <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data.html\">Format and upload your batch inference data</a>. The criteria include the following:</p> <ul> <li> <p>Your IAM service role has access to the Amazon S3 buckets containing your files.</p> </li> <li> <p>Your files are .jsonl files and each individual record is a JSON object in the correct format. Note that validation doesn't check if the <code>modelInput</code> value matches the request body for the model.</p> </li> <li> <p>Your files fulfill the requirements for file size and number of records. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html\">Quotas for Amazon Bedrock</a>.</p> </li> </ul> </li> <li> <p>Scheduled – This job has been validated and is now in a queue. The job will automatically start when it reaches its turn.</p> </li> <li> <p>Expired – This job timed out because it was scheduled but didn't begin before the set timeout duration. Submit a new job request.</p> </li> <li> <p>InProgress – This job has begun. You can start viewing the results in the output S3 location.</p> </li> <li> <p>Completed – This job has successfully completed. View the output files in the output S3 location.</p> </li> <li> <p>PartiallyCompleted – This job has partially completed. Not all of your records could be processed in time. View the output files in the output S3 location.</p> </li> <li> <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href=\"https://console.aws.amazon.com/support/home/\">Amazon Web Services Support Center</a>.</p> </li> <li> <p>Stopped – This job was stopped by a user.</p> </li> <li> <p>Stopping – This job is being stopped by a user.</p> </li> </ul>"
+        "GetModelInvocationJobResponse$status": "<p>The status of the batch inference job.</p> <p>The following statuses are possible:</p> <ul> <li> <p>Submitted – This job has been submitted to a queue for validation.</p> </li> <li> <p>Validating – This job is being validated for the requirements described in <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data.html\">Format and upload your batch inference data</a>. The criteria include the following:</p> <ul> <li> <p>Your IAM service role has access to the Amazon S3 buckets containing your files.</p> </li> <li> <p>Your files are .jsonl files and each individual record is a JSON object in the correct format. Note that validation doesn't check if the <code>modelInput</code> value matches the request body for the model.</p> </li> <li> <p>Your files fulfill the requirements for file size and number of records. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html\">Quotas for Amazon Bedrock</a>.</p> </li> </ul> </li> <li> <p>Scheduled – This job has been validated and is now in a queue. The job will automatically start when it reaches its turn.</p> </li> <li> <p>Expired – This job timed out because it was scheduled but didn't begin before the set timeout duration. Submit a new job request.</p> </li> <li> <p>InProgress – This job has begun. You can start viewing the results in the output S3 location.</p> </li> <li> <p>Completed – This job has successfully completed. View the output files in the output S3 location.</p> </li> <li> <p>PartiallyCompleted – This job has partially completed. Not all of your records could be processed in time. View the output files in the output S3 location.</p> </li> <li> <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href=\"https://console.aws.amazon.com/support/home/\">Amazon Web ServicesSupport Center</a>.</p> </li> <li> <p>Stopped – This job was stopped by a user.</p> </li> <li> <p>Stopping – This job is being stopped by a user.</p> </li> </ul>",
+        "ListModelInvocationJobsRequest$statusEquals": "<p>Specify a status to filter for batch inference jobs whose statuses match the string you specify.</p> <p>The following statuses are possible:</p> <ul> <li> <p>Submitted – This job has been submitted to a queue for validation.</p> </li> <li> <p>Validating – This job is being validated for the requirements described in <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data.html\">Format and upload your batch inference data</a>. The criteria include the following:</p> <ul> <li> <p>Your IAM service role has access to the Amazon S3 buckets containing your files.</p> </li> <li> <p>Your files are .jsonl files and each individual record is a JSON object in the correct format. Note that validation doesn't check if the <code>modelInput</code> value matches the request body for the model.</p> </li> <li> <p>Your files fulfill the requirements for file size and number of records. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html\">Quotas for Amazon Bedrock</a>.</p> </li> </ul> </li> <li> <p>Scheduled – This job has been validated and is now in a queue. The job will automatically start when it reaches its turn.</p> </li> <li> <p>Expired – This job timed out because it was scheduled but didn't begin before the set timeout duration. Submit a new job request.</p> </li> <li> <p>InProgress – This job has begun. You can start viewing the results in the output S3 location.</p> </li> <li> <p>Completed – This job has successfully completed. View the output files in the output S3 location.</p> </li> <li> <p>PartiallyCompleted – This job has partially completed. Not all of your records could be processed in time. View the output files in the output S3 location.</p> </li> <li> <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href=\"https://console.aws.amazon.com/support/home/\">Amazon Web ServicesSupport Center</a>.</p> </li> <li> <p>Stopped – This job was stopped by a user.</p> </li> <li> <p>Stopping – This job is being stopped by a user.</p> </li> </ul>",
+        "ModelInvocationJobSummary$status": "<p>The status of the batch inference job.</p> <p>The following statuses are possible:</p> <ul> <li> <p>Submitted – This job has been submitted to a queue for validation.</p> </li> <li> <p>Validating – This job is being validated for the requirements described in <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data.html\">Format and upload your batch inference data</a>. The criteria include the following:</p> <ul> <li> <p>Your IAM service role has access to the Amazon S3 buckets containing your files.</p> </li> <li> <p>Your files are .jsonl files and each individual record is a JSON object in the correct format. Note that validation doesn't check if the <code>modelInput</code> value matches the request body for the model.</p> </li> <li> <p>Your files fulfill the requirements for file size and number of records. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html\">Quotas for Amazon Bedrock</a>.</p> </li> </ul> </li> <li> <p>Scheduled – This job has been validated and is now in a queue. The job will automatically start when it reaches its turn.</p> </li> <li> <p>Expired – This job timed out because it was scheduled but didn't begin before the set timeout duration. Submit a new job request.</p> </li> <li> <p>InProgress – This job has begun. You can start viewing the results in the output S3 location.</p> </li> <li> <p>Completed – This job has successfully completed. View the output files in the output S3 location.</p> </li> <li> <p>PartiallyCompleted – This job has partially completed. Not all of your records could be processed in time. View the output files in the output S3 location.</p> </li> <li> <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href=\"https://console.aws.amazon.com/support/home/\">Amazon Web ServicesSupport Center</a>.</p> </li> <li> <p>Stopped – This job was stopped by a user.</p> </li> <li> <p>Stopping – This job is being stopped by a user.</p> </li> </ul>"
       }
     },
     "ModelInvocationJobSummaries": {
@@ -2738,6 +2886,36 @@
         "EvaluationInferenceConfig$ragConfigs": "<p>Contains the configuration details of the inference for a knowledge base evaluation job, including either the retrieval only configuration or the retrieval with response generation configuration.</p>"
       }
     },
+    "RatingScale": {
+      "base": null,
+      "refs": {
+        "CustomMetricDefinition$ratingScale": "<p>Defines the rating scale to be used for a custom metric. We recommend that you always define a ratings scale when creating a custom metric. If you don't define a scale, Amazon Bedrock won't be able to visually display the results of the evaluation in the console or calculate average values of numerical scores. For more information on specifying a rating scale, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-custom-metrics-prompt-formats.html#model-evaluation-custom-metrics-prompt-formats-schema\">Specifying an output schema (rating scale)</a>.</p>"
+      }
+    },
+    "RatingScaleItem": {
+      "base": "<p>Defines the value and corresponding definition for one rating in a custom metric rating scale.</p>",
+      "refs": {
+        "RatingScale$member": null
+      }
+    },
+    "RatingScaleItemDefinition": {
+      "base": null,
+      "refs": {
+        "RatingScaleItem$definition": "<p>Defines the definition for one rating in a custom metric rating scale.</p>"
+      }
+    },
+    "RatingScaleItemValue": {
+      "base": "<p>Defines the value for one rating in a custom metric rating scale.</p>",
+      "refs": {
+        "RatingScaleItem$value": "<p>Defines the value for one rating in a custom metric rating scale.</p>"
+      }
+    },
+    "RatingScaleItemValueStringValueString": {
+      "base": null,
+      "refs": {
+        "RatingScaleItemValue$stringValue": "<p>A string representing the value for a rating in a custom metric rating scale.</p>"
+      }
+    },
     "RegisterMarketplaceModelEndpointRequest": {
       "base": null,
       "refs": {
@@ -2977,6 +3155,13 @@
         "MarketplaceModelEndpointSummary$status": "<p>The overall status of the endpoint in Amazon Bedrock Marketplace.</p>"
       }
     },
+    "StatusDetails": {
+      "base": "<p>For a Distillation job, the status details for sub-tasks of the job. Possible statuses for each sub-task include the following:</p> <ul> <li> <p>NotStarted</p> </li> <li> <p>InProgress</p> </li> <li> <p>Completed</p> </li> <li> <p>Stopping</p> </li> <li> <p>Stopped</p> </li> <li> <p>Failed</p> </li> </ul>",
+      "refs": {
+        "GetModelCustomizationJobResponse$statusDetails": "<p>For a Distillation job, the details about the statuses of the sub-tasks of the customization job. </p>",
+        "ModelCustomizationJobSummary$statusDetails": "<p>Details about the status of the data processing sub-task of the job.</p>"
+      }
+    },
     "StopEvaluationJobRequest": {
       "base": null,
       "refs": {
@@ -3138,6 +3323,8 @@
       "refs": {
         "CreateGuardrailResponse$createdAt": "<p>The time at which the guardrail was created.</p>",
         "CustomModelSummary$creationTime": "<p>Creation time of the model.</p>",
+        "DataProcessingDetails$creationTime": "<p>The start time of the data processing sub-task of the job.</p>",
+        "DataProcessingDetails$lastModifiedTime": "<p>The latest update to the data processing sub-task of the job.</p>",
         "EvaluationSummary$creationTime": "<p>The time the evaluation job was created.</p>",
         "GetCustomModelResponse$creationTime": "<p>Creation time of the model.</p>",
         "GetEvaluationJobResponse$creationTime": "<p>The time the evaluation job was created.</p>",
@@ -3204,7 +3391,11 @@
         "ProvisionedModelSummary$commitmentExpirationTime": "<p>The timestamp for when the commitment term of the Provisioned Throughput expires.</p>",
         "ProvisionedModelSummary$creationTime": "<p>The time that the Provisioned Throughput was created. </p>",
         "ProvisionedModelSummary$lastModifiedTime": "<p>The time that the Provisioned Throughput was last modified. </p>",
-        "UpdateGuardrailResponse$updatedAt": "<p>The date and time at which the guardrail was updated.</p>"
+        "TrainingDetails$creationTime": "<p>The start time of the training sub-task of the job.</p>",
+        "TrainingDetails$lastModifiedTime": "<p>The latest update to the training sub-task of the job.</p>",
+        "UpdateGuardrailResponse$updatedAt": "<p>The date and time at which the guardrail was updated.</p>",
+        "ValidationDetails$creationTime": "<p>The start time of the validation sub-task of the job.</p>",
+        "ValidationDetails$lastModifiedTime": "<p>The latest update to the validation sub-task of the job.</p>"
       }
     },
     "TooManyTagsException": {
@@ -3224,6 +3415,12 @@
         "CreateModelCustomizationJobRequest$trainingDataConfig": "<p>Information about the training dataset.</p>",
         "GetCustomModelResponse$trainingDataConfig": "<p>Contains information about the training dataset.</p>",
         "GetModelCustomizationJobResponse$trainingDataConfig": "<p>Contains information about the training dataset.</p>"
+      }
+    },
+    "TrainingDetails": {
+      "base": "<p>For a Distillation job, the status details for the training sub-task of the job.</p>",
+      "refs": {
+        "StatusDetails$trainingDetails": "<p>The status details for the training sub-task of the job.</p>"
       }
     },
     "TrainingMetrics": {
@@ -3285,6 +3482,12 @@
         "CreateModelCustomizationJobRequest$validationDataConfig": "<p>Information about the validation dataset. </p>",
         "GetCustomModelResponse$validationDataConfig": "<p>Contains information about the validation dataset.</p>",
         "GetModelCustomizationJobResponse$validationDataConfig": "<p>Contains information about the validation dataset.</p>"
+      }
+    },
+    "ValidationDetails": {
+      "base": "<p>For a Distillation job, the status details for the validation sub-task of the job.</p>",
+      "refs": {
+        "StatusDetails$validationDetails": "<p>The status details for the validation sub-task of the job.</p>"
       }
     },
     "ValidationException": {

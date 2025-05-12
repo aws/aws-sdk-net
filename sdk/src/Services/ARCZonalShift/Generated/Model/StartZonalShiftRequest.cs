@@ -35,9 +35,9 @@ namespace Amazon.ARCZonalShift.Model
     /// Zone in an Amazon Web Services Region, to help your application recover immediately,
     /// for example, from a developer's bad code deployment or from an Amazon Web Services
     /// infrastructure failure in a single Availability Zone. You can start a zonal shift
-    /// in Route 53 ARC only for managed resources in your Amazon Web Services account in
-    /// an Amazon Web Services Region. Resources are automatically registered with Route 53
-    /// ARC by Amazon Web Services services.
+    /// in ARC only for managed resources in your Amazon Web Services account in an Amazon
+    /// Web Services Region. Resources are automatically registered with ARC by Amazon Web
+    /// Services services.
     /// 
     ///  
     /// <para>
@@ -47,9 +47,9 @@ namespace Amazon.ARCZonalShift.Model
     ///  
     /// <para>
     /// When you start a zonal shift, traffic for the resource is no longer routed to the
-    /// Availability Zone. The zonal shift is created immediately in Route 53 ARC. However,
-    /// it can take a short time, typically up to a few minutes, for existing, in-progress
-    /// connections in the Availability Zone to complete.
+    /// Availability Zone. The zonal shift is created immediately in ARC. However, it can
+    /// take a short time, typically up to a few minutes, for existing, in-progress connections
+    /// in the Availability Zone to complete.
     /// </para>
     ///  
     /// <para>
@@ -109,8 +109,8 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property ExpiresIn. 
         /// <para>
-        /// The length of time that you want a zonal shift to be active, which Route 53 ARC converts
-        /// to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal
+        /// The length of time that you want a zonal shift to be active, which ARC converts to
+        /// an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal
         /// shift to be active initially for up to three days (72 hours).
         /// </para>
         ///  

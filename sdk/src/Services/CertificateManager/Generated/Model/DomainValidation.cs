@@ -35,6 +35,7 @@ namespace Amazon.CertificateManager.Model
     public partial class DomainValidation
     {
         private string _domainName;
+        private HttpRedirect _httpRedirect;
         private ResourceRecord _resourceRecord;
         private string _validationDomain;
         private List<string> _validationEmails = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -62,6 +63,26 @@ namespace Amazon.CertificateManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HttpRedirect. 
+        /// <para>
+        /// Contains information for HTTP-based domain validation of certificates requested through
+        /// CloudFront and issued by ACM. This field exists only when the certificate type is
+        /// <c>AMAZON_ISSUED</c> and the validation method is <c>HTTP</c>.
+        /// </para>
+        /// </summary>
+        public HttpRedirect HttpRedirect
+        {
+            get { return this._httpRedirect; }
+            set { this._httpRedirect = value; }
+        }
+
+        // Check to see if HttpRedirect property is set
+        internal bool IsSetHttpRedirect()
+        {
+            return this._httpRedirect != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceRecord. 
         /// <para>
         /// Contains the CNAME record that you add to your DNS database for domain validation.
@@ -71,9 +92,9 @@ namespace Amazon.CertificateManager.Model
         ///  
         /// <para>
         /// Note: The CNAME information that you need does not include the name of your domain.
-        /// If you include&#x2028; your domain name in the DNS database CNAME record, validation
-        /// fails.&#x2028; For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com",
-        /// only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.
+        /// If you include your domain name in the DNS database CNAME record, validation fails.
+        /// For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only
+        /// "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.
         /// </para>
         /// </summary>
         public ResourceRecord ResourceRecord
@@ -154,11 +175,11 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SUCCESS</c> 
+        ///  <code/>SUCCESS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>FAILED</c> 
+        ///  <code/>FAILED
         /// </para>
         ///  </li> </ul>
         /// </summary>

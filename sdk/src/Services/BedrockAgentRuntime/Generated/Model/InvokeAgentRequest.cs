@@ -35,7 +35,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// <para>
     /// Sends a prompt for the agent to process and respond to. Note the following fields
     /// for the request:
-    /// </para>
+    /// 
     ///  <ul> <li> 
     /// <para>
     /// To continue the same conversation with an agent, use the same <c>sessionId</c> value
@@ -50,23 +50,6 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// enablement</a>.
     /// </para>
     ///  </li> <li> 
-    /// <para>
-    /// To stream agent responses, make sure that only orchestration prompt is enabled. Agent
-    /// streaming is not supported for the following steps: 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <c>Pre-processing</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>Post-processing</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Agent with 1 Knowledge base and <c>User Input</c> not enabled
-    /// </para>
-    ///  </li> </ul> </li> <li> 
     /// <para>
     /// End a conversation by setting <c>endSession</c> to <c>true</c>.
     /// </para>
@@ -104,6 +87,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// Errors are also surfaced in the response.
     /// </para>
     ///  </li> </ul>
+    /// </para>
     /// </summary>
     public partial class InvokeAgentRequest : AmazonBedrockAgentRuntimeRequest
     {

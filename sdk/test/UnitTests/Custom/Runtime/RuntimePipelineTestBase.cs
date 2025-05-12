@@ -84,46 +84,6 @@ namespace AWSSDK.UnitTests
                     HttpResponse = new HttpWebRequestResponseData(putObjectResponse)
                 });
         }
-
-        protected IAsyncExecutionContext CreateAsyncTestContext()
-        {
-            return CreateAsyncTestContext(null);
-        }
-
-        protected IAsyncExecutionContext CreateAsyncTestContext(AbstractAWSSigner signer)
-        {
-            var putObjectRequest = new PutObjectRequest
-            {
-                Key = "Test",
-                BucketName = "Test",
-                ContentBody = "Test Content"
-            };
-            var requestContext = new AsyncRequestContext(true, signer == null ? new NullSigner() : signer)
-            {
-                OriginalRequest = putObjectRequest,
-                Request = new PutObjectRequestMarshaller().Marshall(putObjectRequest),
-                Unmarshaller = PutObjectResponseUnmarshaller.Instance,
-                ClientConfig = new AmazonS3Config{
-                    RegionEndpoint = RegionEndpoint.USEast1
-                }
-            };
-
-            // Create and set the internal ServiceMetadata via reflection
-            var serviceMetaData = Assembly.GetAssembly(requestContext.GetType()).CreateInstance("Amazon.Runtime.Internal.ServiceMetadata");
-            requestContext.GetType().GetProperty("ServiceMetaData").SetValue(requestContext, serviceMetaData);
-
-            requestContext.Request.Endpoint = new Uri("https://s3.amazonaws.com");
-
-            var putObjectResponse = MockWebResponse.CreateFromResource("PutObjectResponse.txt")
-                as HttpWebResponse;
-            return new Amazon.Runtime.Internal.AsyncExecutionContext(
-                requestContext,
-                new AsyncResponseContext
-                {
-                    HttpResponse = new HttpWebRequestResponseData(putObjectResponse)
-                }
-            );
-        }
     }
 
     public abstract class RuntimePipelineTestBase<T> : RuntimePipelineTestBase where T : IPipelineHandler

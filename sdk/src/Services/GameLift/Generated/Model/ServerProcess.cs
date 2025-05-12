@@ -31,8 +31,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// A set of instructions for launching server processes on fleet computes. Server processes
-    /// run either an executable in a custom game build or a Realtime Servers script. Server
-    /// process configurations are part of a fleet's runtime configuration.
+    /// run either an executable in a custom game build or a Amazon GameLift Realtime script.
+    /// Server process configurations are part of a fleet's runtime configuration.
     /// </summary>
     public partial class ServerProcess
     {

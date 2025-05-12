@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the migrationhubstrategy-2020-02-19.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubStrategyRecommendations.Model
@@ -29,31 +30,61 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// <summary>
         /// Paginator for GetServerDetails operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetServerDetailsPaginator GetServerDetails(GetServerDetailsRequest request);
 
         /// <summary>
         /// Paginator for ListAnalyzableServers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAnalyzableServersPaginator ListAnalyzableServers(ListAnalyzableServersRequest request);
 
         /// <summary>
         /// Paginator for ListApplicationComponents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationComponentsPaginator ListApplicationComponents(ListApplicationComponentsRequest request);
 
         /// <summary>
         /// Paginator for ListCollectors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCollectorsPaginator ListCollectors(ListCollectorsRequest request);
 
         /// <summary>
         /// Paginator for ListImportFileTask operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListImportFileTaskPaginator ListImportFileTask(ListImportFileTaskRequest request);
 
         /// <summary>
         /// Paginator for ListServers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListServersPaginator ListServers(ListServersRequest request);
     }
 }

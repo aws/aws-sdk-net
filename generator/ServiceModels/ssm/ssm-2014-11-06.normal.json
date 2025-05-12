@@ -987,6 +987,23 @@
       ],
       "documentation":"<p>Deletes the association between an OpsItem and a related item. For example, this API operation can delete an Incident Manager incident from an OpsItem. Incident Manager is a tool in Amazon Web Services Systems Manager.</p>"
     },
+    "GetAccessToken":{
+      "name":"GetAccessToken",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetAccessTokenRequest"},
+      "output":{"shape":"GetAccessTokenResponse"},
+      "errors":[
+        {"shape":"InternalServerError"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"}
+      ],
+      "documentation":"<p>Returns a credentials set to be used with just-in-time node access.</p>"
+    },
     "GetAutomationExecution":{
       "name":"GetAutomationExecution",
       "http":{
@@ -1931,6 +1948,24 @@
       ],
       "documentation":"<p>Runs commands on one or more managed nodes.</p>"
     },
+    "StartAccessRequest":{
+      "name":"StartAccessRequest",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StartAccessRequestRequest"},
+      "output":{"shape":"StartAccessRequestResponse"},
+      "errors":[
+        {"shape":"InternalServerError"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"}
+      ],
+      "documentation":"<p>Starts the workflow for just-in-time node access sessions.</p>"
+    },
     "StartAssociationsOnce":{
       "name":"StartAssociationsOnce",
       "http":{
@@ -2292,6 +2327,37 @@
     }
   },
   "shapes":{
+    "AccessDeniedException":{
+      "type":"structure",
+      "required":["Message"],
+      "members":{
+        "Message":{"shape":"String"}
+      },
+      "documentation":"<p>The requester doesn't have permissions to perform the requested operation.</p>",
+      "exception":true
+    },
+    "AccessKeyIdType":{
+      "type":"string",
+      "pattern":"\\w{16,128}"
+    },
+    "AccessKeySecretType":{
+      "type":"string",
+      "sensitive":true
+    },
+    "AccessRequestId":{
+      "type":"string",
+      "pattern":"^(oi)-[0-9a-f]{12}$"
+    },
+    "AccessRequestStatus":{
+      "type":"string",
+      "enum":[
+        "Approved",
+        "Rejected",
+        "Revoked",
+        "Expired",
+        "Pending"
+      ]
+    },
     "Account":{"type":"string"},
     "AccountId":{
       "type":"string",
@@ -3811,7 +3877,10 @@
     },
     "AutomationSubtype":{
       "type":"string",
-      "enum":["ChangeRequest"]
+      "enum":[
+        "ChangeRequest",
+        "AccessRequest"
+      ]
     },
     "AutomationTargetParameterName":{
       "type":"string",
@@ -3874,6 +3943,10 @@
         "Sources":{
           "shape":"PatchSourceList",
           "documentation":"<p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>"
+        },
+        "AvailableSecurityUpdatesComplianceStatus":{
+          "shape":"PatchComplianceStatus",
+          "documentation":"<p>Indicates whether managed nodes for which there are available security-related patches that have not been approved by the baseline are being defined as <code>COMPLIANT</code> or <code>NON_COMPLIANT</code>. This option is specified when the <code>CreatePatchBaseline</code> or <code>UpdatePatchBaseline</code> commands are run.</p> <p>Applies to Windows Server managed nodes only.</p>"
         }
       },
       "documentation":"<p>Defines the basic information about a patch baseline override.</p>"
@@ -5158,6 +5231,10 @@
           "shape":"PatchSourceList",
           "documentation":"<p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>"
         },
+        "AvailableSecurityUpdatesComplianceStatus":{
+          "shape":"PatchComplianceStatus",
+          "documentation":"<p>Indicates the status you want to assign to security patches that are available but not approved because they don't meet the installation criteria specified in the patch baseline.</p> <p>Example scenario: Security patches that you might want installed can be skipped if you have specified a long period to wait after a patch is released before installation. If an update to the patch is released during your specified waiting period, the waiting period for installing the patch starts over. If the waiting period is too long, multiple versions of the patch could be released but never installed.</p> <p>Supported for Windows Server managed nodes only.</p>"
+        },
         "ClientToken":{
           "shape":"ClientToken",
           "documentation":"<p>User-provided idempotency token.</p>",
@@ -5206,6 +5283,34 @@
       }
     },
     "CreatedDate":{"type":"timestamp"},
+    "Credentials":{
+      "type":"structure",
+      "required":[
+        "AccessKeyId",
+        "SecretAccessKey",
+        "SessionToken",
+        "ExpirationTime"
+      ],
+      "members":{
+        "AccessKeyId":{
+          "shape":"AccessKeyIdType",
+          "documentation":"<p>The access key ID that identifies the temporary security credentials.</p>"
+        },
+        "SecretAccessKey":{
+          "shape":"AccessKeySecretType",
+          "documentation":"<p>The secret access key that can be used to sign requests.</p>"
+        },
+        "SessionToken":{
+          "shape":"SessionTokenType",
+          "documentation":"<p>The token that users must pass to the service API to use the temporary credentials.</p>"
+        },
+        "ExpirationTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The datetime on which the current credentials expire.</p>"
+        }
+      },
+      "documentation":"<p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p>"
+    },
     "CustomSchemaCountLimitExceededException":{
       "type":"structure",
       "members":{
@@ -6702,6 +6807,11 @@
           "shape":"InstancesCount",
           "documentation":"<p>The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>",
           "box":true
+        },
+        "InstancesWithAvailableSecurityUpdates":{
+          "shape":"Integer",
+          "documentation":"<p>The number of managed nodes for which security-related patches are available but not approved because because they didn't meet the patch baseline requirements. For example, an updated version of a patch might have been released before the specified auto-approval period was over.</p> <p>Applies to Windows Server managed nodes only.</p>",
+          "box":true
         }
       }
     },
@@ -7389,7 +7499,9 @@
         "ProblemAnalysisTemplate",
         "CloudFormation",
         "ConformancePackTemplate",
-        "QuickSetup"
+        "QuickSetup",
+        "ManualApprovalPolicy",
+        "AutoApprovalPolicy"
       ]
     },
     "DocumentVersion":{
@@ -7650,6 +7762,29 @@
       },
       "documentation":"<p>You attempted to register a <code>LAMBDA</code> or <code>STEP_FUNCTIONS</code> task in a region where the corresponding service isn't available. </p>",
       "exception":true
+    },
+    "GetAccessTokenRequest":{
+      "type":"structure",
+      "required":["AccessRequestId"],
+      "members":{
+        "AccessRequestId":{
+          "shape":"AccessRequestId",
+          "documentation":"<p>The ID of a just-in-time node access request.</p>"
+        }
+      }
+    },
+    "GetAccessTokenResponse":{
+      "type":"structure",
+      "members":{
+        "Credentials":{
+          "shape":"Credentials",
+          "documentation":"<p>The temporary security credentials which can be used to start just-in-time node access sessions.</p>"
+        },
+        "AccessRequestStatus":{
+          "shape":"AccessRequestStatus",
+          "documentation":"<p>The status of the access request.</p>"
+        }
+      }
     },
     "GetAutomationExecutionRequest":{
       "type":"structure",
@@ -8787,6 +8922,10 @@
         "Sources":{
           "shape":"PatchSourceList",
           "documentation":"<p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>"
+        },
+        "AvailableSecurityUpdatesComplianceStatus":{
+          "shape":"PatchComplianceStatus",
+          "documentation":"<p>Indicates the compliance status of managed nodes for which security-related patches are available but were not approved. This preference is specified when the <code>CreatePatchBaseline</code> or <code>UpdatePatchBaseline</code> commands are run.</p> <p>Applies to Windows Server managed nodes only.</p>"
         }
       }
     },
@@ -9361,6 +9500,11 @@
         "NotApplicableCount":{
           "shape":"PatchNotApplicableCount",
           "documentation":"<p>The number of patches from the patch baseline that aren't applicable for the managed node and therefore aren't installed on the node. This number may be truncated if the list of patch names is very large. The number of patches beyond this limit are reported in <code>UnreportedNotApplicableCount</code>.</p>"
+        },
+        "AvailableSecurityUpdateCount":{
+          "shape":"PatchAvailableSecurityUpdateCount",
+          "documentation":"<p>The number of security-related patches that are available but not approved because they didn't meet the patch baseline requirements. For example, an updated version of a patch might have been released before the specified auto-approval period was over.</p> <p>Applies to Windows Server managed nodes only.</p>",
+          "box":true
         },
         "OperationStartTime":{
           "shape":"DateTime",
@@ -12076,11 +12220,11 @@
         },
         "AccountIdsToAdd":{
           "shape":"AccountIdList",
-          "documentation":"<p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>. </p>"
+          "documentation":"<p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>. You must specify a value for this parameter or the <code>AccountIdsToRemove</code> parameter.</p>"
         },
         "AccountIdsToRemove":{
           "shape":"AccountIdList",
-          "documentation":"<p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <code>AccountIdsToAdd</code>. If you specify an ID to add and the same ID to remove, the system removes access to the document. </p>"
+          "documentation":"<p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <code>AccountIdsToAdd</code>. If you specify an ID to add and the same ID to remove, the system removes access to the document. You must specify a value for this parameter or the <code>AccountIdsToAdd</code> parameter.</p>"
         },
         "SharedDocumentVersion":{
           "shape":"SharedDocumentVersion",
@@ -12880,6 +13024,15 @@
         "Category",
         "Severity",
         "OpsItemType",
+        "AccessRequestByRequesterArn",
+        "AccessRequestByRequesterId",
+        "AccessRequestByApproverArn",
+        "AccessRequestByApproverId",
+        "AccessRequestBySourceAccountId",
+        "AccessRequestBySourceOpsItemId",
+        "AccessRequestBySourceRegion",
+        "AccessRequestByIsReplica",
+        "AccessRequestByTargetResourceId",
         "ChangeRequestByRequesterArn",
         "ChangeRequestByRequesterName",
         "ChangeRequestByApproverArn",
@@ -13130,6 +13283,7 @@
         "ChangeCalendarOverrideRejected",
         "PendingApproval",
         "Approved",
+        "Revoked",
         "Rejected",
         "Closed"
       ]
@@ -13946,6 +14100,7 @@
       "member":{"shape":"PatchAdvisoryId"}
     },
     "PatchArch":{"type":"string"},
+    "PatchAvailableSecurityUpdateCount":{"type":"integer"},
     "PatchBaselineIdentity":{
       "type":"structure",
       "members":{
@@ -14048,7 +14203,8 @@
         "INSTALLED_REJECTED",
         "MISSING",
         "NOT_APPLICABLE",
-        "FAILED"
+        "FAILED",
+        "AVAILABLE_SECURITY_UPDATE"
       ]
     },
     "PatchComplianceLevel":{
@@ -14066,6 +14222,13 @@
       "type":"integer",
       "max":100,
       "min":10
+    },
+    "PatchComplianceStatus":{
+      "type":"string",
+      "enum":[
+        "COMPLIANT",
+        "NON_COMPLIANT"
+      ]
     },
     "PatchContentUrl":{"type":"string"},
     "PatchCriticalNonCompliantCount":{"type":"integer"},
@@ -14555,7 +14718,7 @@
       "members":{
         "Name":{
           "shape":"PSParameterName",
-          "documentation":"<p>The fully qualified name of the parameter that you want to create or update.</p> <note> <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p> </note> <p>The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p> <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter name must be unique within an Amazon Web Services Region</p> </li> <li> <p>A parameter name can't be prefixed with \"<code>aws</code>\" or \"<code>ssm</code>\" (case-insensitive).</p> </li> <li> <p>Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li> <li> <p>A parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional information about valid values for parameter names, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html\">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note> <p>The maximum length constraint of 2048 characters listed below includes 1037 characters reserved for internal use by Systems Manager. The maximum length for a parameter name that you create is 1011 characters. This includes the characters in the ARN that precede the name you specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p> </note>"
+          "documentation":"<p>The fully qualified name of the parameter that you want to create or update.</p> <note> <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p> </note> <p>The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p> <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter name must be unique within an Amazon Web Services Region</p> </li> <li> <p>A parameter name can't be prefixed with \"<code>aws</code>\" or \"<code>ssm</code>\" (case-insensitive).</p> </li> <li> <p>Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li> <li> <p>A parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional information about valid values for parameter names, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html\">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note> <p>The reported maximum length of 2048 characters for a parameter name includes 1037 characters that are reserved for internal use by Systems Manager. The maximum length for a parameter name that you specify is 1011 characters.</p> <p>This count of 1011 characters includes the characters in the ARN that precede the name you specify. This ARN length will vary depending on your partition and Region. For example, the following 45 characters count toward the 1011 character maximum for a parameter created in the US East (Ohio) Region: <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p> </note>"
         },
         "Description":{
           "shape":"ParameterDescription",
@@ -15746,6 +15909,35 @@
         }
       }
     },
+    "ServiceQuotaExceededException":{
+      "type":"structure",
+      "required":[
+        "Message",
+        "QuotaCode",
+        "ServiceCode"
+      ],
+      "members":{
+        "Message":{"shape":"String"},
+        "ResourceId":{
+          "shape":"String",
+          "documentation":"<p>The unique ID of the resource referenced in the failed request.</p>"
+        },
+        "ResourceType":{
+          "shape":"String",
+          "documentation":"<p>The resource type of the resource referenced in the failed request.</p>"
+        },
+        "QuotaCode":{
+          "shape":"String",
+          "documentation":"<p>The quota code recognized by the Amazon Web Services Service Quotas service.</p>"
+        },
+        "ServiceCode":{
+          "shape":"String",
+          "documentation":"<p>The code for the Amazon Web Services service that owns the quota.</p>"
+        }
+      },
+      "documentation":"<p>The request exceeds the service quota. Service quotas, also referred to as limits, are the maximum number of service resources or operations for your Amazon Web Services account.</p>",
+      "exception":true
+    },
     "ServiceRole":{"type":"string"},
     "ServiceSetting":{
       "type":"structure",
@@ -15981,6 +16173,10 @@
       "max":400,
       "min":1
     },
+    "SessionTokenType":{
+      "type":"string",
+      "sensitive":true
+    },
     "SeveritySummary":{
       "type":"structure",
       "members":{
@@ -16024,7 +16220,8 @@
         "Reject",
         "StartStep",
         "StopStep",
-        "Resume"
+        "Resume",
+        "Revoke"
       ]
     },
     "SnapshotDownloadUrl":{"type":"string"},
@@ -16055,6 +16252,36 @@
     "StandardOutputContent":{
       "type":"string",
       "max":24000
+    },
+    "StartAccessRequestRequest":{
+      "type":"structure",
+      "required":[
+        "Reason",
+        "Targets"
+      ],
+      "members":{
+        "Reason":{
+          "shape":"String1to256",
+          "documentation":"<p>A brief description explaining why you are requesting access to the node.</p>"
+        },
+        "Targets":{
+          "shape":"Targets",
+          "documentation":"<p>The node you are requesting access to.</p>"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>Key-value pairs of metadata you want to assign to the access request.</p>"
+        }
+      }
+    },
+    "StartAccessRequestResponse":{
+      "type":"structure",
+      "members":{
+        "AccessRequestId":{
+          "shape":"AccessRequestId",
+          "documentation":"<p>The ID of the access request.</p>"
+        }
+      }
     },
     "StartAssociationsOnceRequest":{
       "type":"structure",
@@ -16490,6 +16717,11 @@
     },
     "StreamUrl":{"type":"string"},
     "String":{"type":"string"},
+    "String1to256":{
+      "type":"string",
+      "max":256,
+      "min":1
+    },
     "StringDateTime":{
       "type":"string",
       "pattern":"^([\\-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d(?!:))?)?(\\17[0-5]\\d([\\.,]\\d)?)?([zZ]|([\\-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
@@ -16730,6 +16962,23 @@
           "documentation":"<p>The ID of the session that has been terminated.</p>"
         }
       }
+    },
+    "ThrottlingException":{
+      "type":"structure",
+      "required":["Message"],
+      "members":{
+        "Message":{"shape":"String"},
+        "QuotaCode":{
+          "shape":"String",
+          "documentation":"<p>The quota code recognized by the Amazon Web Services Service Quotas service.</p>"
+        },
+        "ServiceCode":{
+          "shape":"String",
+          "documentation":"<p>The code for the Amazon Web Services service that owns the quota.</p>"
+        }
+      },
+      "documentation":"<p>The request or operation couldn't be performed because the service is throttling requests.</p>",
+      "exception":true
     },
     "TimeoutSeconds":{
       "type":"integer",
@@ -17602,6 +17851,10 @@
           "shape":"PatchSourceList",
           "documentation":"<p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>"
         },
+        "AvailableSecurityUpdatesComplianceStatus":{
+          "shape":"PatchComplianceStatus",
+          "documentation":"<p>Indicates the status to be assigned to security patches that are available but not approved because they don't meet the installation criteria specified in the patch baseline.</p> <p>Example scenario: Security patches that you might want installed can be skipped if you have specified a long period to wait after a patch is released before installation. If an update to the patch is released during your specified waiting period, the waiting period for installing the patch starts over. If the waiting period is too long, multiple versions of the patch could be released but never installed.</p> <p>Supported for Windows Server managed nodes only.</p>"
+        },
         "Replace":{
           "shape":"Boolean",
           "documentation":"<p>If True, then all fields that are required by the <a>CreatePatchBaseline</a> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>",
@@ -17668,6 +17921,10 @@
         "Sources":{
           "shape":"PatchSourceList",
           "documentation":"<p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>"
+        },
+        "AvailableSecurityUpdatesComplianceStatus":{
+          "shape":"PatchComplianceStatus",
+          "documentation":"<p>Indicates the compliance status of managed nodes for which security-related patches are available but were not approved. This preference is specified when the <code>CreatePatchBaseline</code> or <code>UpdatePatchBaseline</code> commands are run.</p> <p>Applies to Windows Server managed nodes only.</p>"
         }
       }
     },

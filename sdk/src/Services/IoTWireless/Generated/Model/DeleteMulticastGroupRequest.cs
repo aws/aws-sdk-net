@@ -31,7 +31,7 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMulticastGroup operation.
-    /// Deletes a multicast group if it is not in use by a fuota task.
+    /// Deletes a multicast group if it is not in use by a FUOTA task.
     /// </summary>
     public partial class DeleteMulticastGroupRequest : AmazonIoTWirelessRequest
     {

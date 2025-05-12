@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the iot-data-2015-05-28.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IotData.Model
@@ -29,6 +30,11 @@ namespace Amazon.IotData.Model
         /// <summary>
         /// Paginator for ListRetainedMessages operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRetainedMessagesPaginator ListRetainedMessages(ListRetainedMessagesRequest request);
     }
 }

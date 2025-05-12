@@ -36,6 +36,9 @@ namespace Amazon.MainframeModernization.Model
     {
         private string _procStepName;
         private int? _procStepNumber;
+        private int? _stepCheckpoint;
+        private string _stepCheckpointStatus;
+        private DateTime? _stepCheckpointTime;
         private string _stepCondCode;
         private string _stepName;
         private int? _stepNumber;
@@ -75,6 +78,63 @@ namespace Amazon.MainframeModernization.Model
         internal bool IsSetProcStepNumber()
         {
             return this._procStepNumber.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StepCheckpoint. 
+        /// <para>
+        /// A registered step-level checkpoint identifier that can be used for restarting an Amazon
+        /// Web Services Blu Age application batch job.
+        /// </para>
+        /// </summary>
+        public int? StepCheckpoint
+        {
+            get { return this._stepCheckpoint; }
+            set { this._stepCheckpoint = value; }
+        }
+
+        // Check to see if StepCheckpoint property is set
+        internal bool IsSetStepCheckpoint()
+        {
+            return this._stepCheckpoint.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StepCheckpointStatus. 
+        /// <para>
+        /// The step-level checkpoint status for an Amazon Web Services Blu Age application batch
+        /// job.
+        /// </para>
+        /// </summary>
+        public string StepCheckpointStatus
+        {
+            get { return this._stepCheckpointStatus; }
+            set { this._stepCheckpointStatus = value; }
+        }
+
+        // Check to see if StepCheckpointStatus property is set
+        internal bool IsSetStepCheckpointStatus()
+        {
+            return this._stepCheckpointStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StepCheckpointTime. 
+        /// <para>
+        /// The step-level checkpoint status for an Amazon Web Services Blu Age application batch
+        /// job.
+        /// </para>
+        /// </summary>
+        public DateTime? StepCheckpointTime
+        {
+            get { return this._stepCheckpointTime; }
+            set { this._stepCheckpointTime = value; }
+        }
+
+        // Check to see if StepCheckpointTime property is set
+        internal bool IsSetStepCheckpointTime()
+        {
+            return this._stepCheckpointTime.HasValue; 
         }
 
         /// <summary>

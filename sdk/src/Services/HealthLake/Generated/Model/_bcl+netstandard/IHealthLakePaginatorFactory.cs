@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the healthlake-2017-07-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.HealthLake.Model
@@ -29,16 +30,31 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Paginator for ListFHIRDatastores operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFHIRDatastoresPaginator ListFHIRDatastores(ListFHIRDatastoresRequest request);
 
         /// <summary>
         /// Paginator for ListFHIRExportJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFHIRExportJobsPaginator ListFHIRExportJobs(ListFHIRExportJobsRequest request);
 
         /// <summary>
         /// Paginator for ListFHIRImportJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFHIRImportJobsPaginator ListFHIRImportJobs(ListFHIRImportJobsRequest request);
     }
 }

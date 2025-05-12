@@ -67,6 +67,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
+                if(publicRequest.IsSetScanTypeFilter())
+                {
+                    request.Parameters.Add("ScanTypeFilter", StringUtils.FromString(publicRequest.ScanTypeFilter));
+                }
             }
             return request;
         }

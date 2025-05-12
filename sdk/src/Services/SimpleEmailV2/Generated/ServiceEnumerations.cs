@@ -25,6 +25,110 @@ namespace Amazon.SimpleEmailV2
 {
 
     /// <summary>
+    /// Constants used for properties of type AttachmentContentDisposition.
+    /// </summary>
+    public class AttachmentContentDisposition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ATTACHMENT for AttachmentContentDisposition
+        /// </summary>
+        public static readonly AttachmentContentDisposition ATTACHMENT = new AttachmentContentDisposition("ATTACHMENT");
+        /// <summary>
+        /// Constant INLINE for AttachmentContentDisposition
+        /// </summary>
+        public static readonly AttachmentContentDisposition INLINE = new AttachmentContentDisposition("INLINE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AttachmentContentDisposition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttachmentContentDisposition FindValue(string value)
+        {
+            return FindValue<AttachmentContentDisposition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttachmentContentDisposition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AttachmentContentTransferEncoding.
+    /// </summary>
+    public class AttachmentContentTransferEncoding : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BASE64 for AttachmentContentTransferEncoding
+        /// </summary>
+        public static readonly AttachmentContentTransferEncoding BASE64 = new AttachmentContentTransferEncoding("BASE64");
+        /// <summary>
+        /// Constant QUOTED_PRINTABLE for AttachmentContentTransferEncoding
+        /// </summary>
+        public static readonly AttachmentContentTransferEncoding QUOTED_PRINTABLE = new AttachmentContentTransferEncoding("QUOTED_PRINTABLE");
+        /// <summary>
+        /// Constant SEVEN_BIT for AttachmentContentTransferEncoding
+        /// </summary>
+        public static readonly AttachmentContentTransferEncoding SEVEN_BIT = new AttachmentContentTransferEncoding("SEVEN_BIT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AttachmentContentTransferEncoding(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttachmentContentTransferEncoding FindValue(string value)
+        {
+            return FindValue<AttachmentContentTransferEncoding>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttachmentContentTransferEncoding(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BehaviorOnMxFailure.
     /// </summary>
     public class BehaviorOnMxFailure : ConstantClass

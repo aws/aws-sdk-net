@@ -74,7 +74,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The result of the <a>ExportStreamSessionFiles</a> operation.
+        /// The result of the <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ExportStreamSessionFiles.html">ExportStreamSessionFiles</a>
+        /// operation.
         /// </para>
         /// </summary>
         public ExportFilesStatus Status

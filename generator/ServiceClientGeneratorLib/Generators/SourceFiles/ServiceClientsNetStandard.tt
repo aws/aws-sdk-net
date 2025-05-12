@@ -385,7 +385,7 @@ namespace <#=this.Config.Namespace#>
         #region  <#=operation.Name#>
 
 <#
-        if (operation.IsEventStreamBidi || (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && operation.IsEventStreamOutput) || this.Config.ServiceModel.H2Support == H2SupportDegree.Required)
+        if ((this.Config.ServiceModel.H2Support == H2SupportDegree.Optional && operation.IsEventStreamBidi) || (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && operation.IsEventStreamOutput) || this.Config.ServiceModel.H2Support == H2SupportDegree.Required)
         {
 #>
 #if NET8_0_OR_GREATER
@@ -483,7 +483,7 @@ namespace <#=this.Config.Namespace#>
             return InvokeAsync<<#=operation.Name#>Response>(request, options, cancellationToken);
         }
 <#
-        if (operation.IsEventStreamBidi || (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && operation.IsEventStreamOutput) || this.Config.ServiceModel.H2Support == H2SupportDegree.Required)
+        if ((this.Config.ServiceModel.H2Support == H2SupportDegree.Optional && operation.IsEventStreamBidi) || (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && operation.IsEventStreamOutput) || this.Config.ServiceModel.H2Support == H2SupportDegree.Required)
         {
 #>
 #endif

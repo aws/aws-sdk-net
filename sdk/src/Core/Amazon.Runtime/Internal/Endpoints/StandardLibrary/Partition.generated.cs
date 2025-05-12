@@ -137,6 +137,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 implicitGlobalRegion = "eu-isoe-west-1"
             };
             _partitionsByRegex.Add(@"^eu\-isoe\-\w+\-\d+$", aws_iso_e);
+            _partitionsByRegionName.Add("aws-iso-e-global", aws_iso_e);
             _partitionsByRegionName.Add("eu-isoe-west-1", aws_iso_e);
 
             var aws_iso_f = new PartitionAttributesShape
@@ -152,6 +153,18 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             _partitionsByRegionName.Add("aws-iso-f-global", aws_iso_f);
             _partitionsByRegionName.Add("us-isof-east-1", aws_iso_f);
             _partitionsByRegionName.Add("us-isof-south-1", aws_iso_f);
+
+            var aws_eusc = new PartitionAttributesShape
+            {
+                name = "aws-eusc",
+                dnsSuffix = "amazonaws.eu",
+                dualStackDnsSuffix = "amazonaws.eu",
+                supportsFIPS = true,
+                supportsDualStack = false,
+                implicitGlobalRegion = "eusc-de-east-1"
+            };
+            _partitionsByRegex.Add(@"^eusc\-(de)\-\w+\-\d+$", aws_eusc);
+            _partitionsByRegionName.Add("eusc-de-east-1", aws_eusc);
 
             _defaultPartition = aws;
         }

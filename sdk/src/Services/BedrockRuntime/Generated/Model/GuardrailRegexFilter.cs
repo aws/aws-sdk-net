@@ -35,6 +35,7 @@ namespace Amazon.BedrockRuntime.Model
     public partial class GuardrailRegexFilter
     {
         private GuardrailSensitiveInformationPolicyAction _action;
+        private bool? _detected;
         private string _match;
         private string _name;
         private string _regex;
@@ -56,6 +57,25 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Detected. 
+        /// <para>
+        /// Indicates whether custom regex entities that breach the guardrail configuration are
+        /// detected.
+        /// </para>
+        /// </summary>
+        public bool? Detected
+        {
+            get { return this._detected; }
+            set { this._detected = value; }
+        }
+
+        // Check to see if Detected property is set
+        internal bool IsSetDetected()
+        {
+            return this._detected.HasValue; 
         }
 
         /// <summary>

@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Configurations of the OpenSearch Application.
+    /// Configuration settings for an OpenSearch application. For more information, see see
+    /// <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/application.html">Using
+    /// the OpenSearch user interface in Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class AppConfig
     {
@@ -40,7 +42,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// Specify the item to configure, such as admin role for the OpenSearch Application.
+        /// The configuration item to set, such as the admin role for the OpenSearch application.
         /// </para>
         /// </summary>
         public AppConfigType Key
@@ -58,7 +60,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Specifies the value to configure for the key, such as an IAM user ARN.
+        /// The value assigned to the configuration key, such as an IAM user ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the appstream-2016-12-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model
@@ -29,21 +30,41 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Paginator for DescribeAppBlockBuilderAppBlockAssociations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeAppBlockBuilderAppBlockAssociationsPaginator DescribeAppBlockBuilderAppBlockAssociations(DescribeAppBlockBuilderAppBlockAssociationsRequest request);
 
         /// <summary>
         /// Paginator for DescribeAppBlockBuilders operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeAppBlockBuildersPaginator DescribeAppBlockBuilders(DescribeAppBlockBuildersRequest request);
 
         /// <summary>
         /// Paginator for DescribeImagePermissions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeImagePermissionsPaginator DescribeImagePermissions(DescribeImagePermissionsRequest request);
 
         /// <summary>
         /// Paginator for DescribeImages operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeImagesPaginator DescribeImages(DescribeImagesRequest request);
     }
 }

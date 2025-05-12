@@ -31,7 +31,7 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMulticastGroupsByFuotaTask operation.
-    /// List all multicast groups associated with a fuota task.
+    /// List all multicast groups associated with a FUOTA task.
     /// </summary>
     public partial class ListMulticastGroupsByFuotaTaskRequest : AmazonIoTWirelessRequest
     {

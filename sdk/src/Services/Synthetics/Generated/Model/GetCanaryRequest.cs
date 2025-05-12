@@ -36,7 +36,27 @@ namespace Amazon.Synthetics.Model
     /// </summary>
     public partial class GetCanaryRequest : AmazonSyntheticsRequest
     {
+        private string _dryRunId;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property DryRunId. 
+        /// <para>
+        /// The DryRunId associated with an existing canary’s dry run. You can use this DryRunId
+        /// to retrieve information about the dry run.
+        /// </para>
+        /// </summary>
+        public string DryRunId
+        {
+            get { return this._dryRunId; }
+            set { this._dryRunId = value; }
+        }
+
+        // Check to see if DryRunId property is set
+        internal bool IsSetDryRunId()
+        {
+            return this._dryRunId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the shield-2016-06-02.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Shield.Model
@@ -29,21 +30,41 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Paginator for ListAttacks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAttacksPaginator ListAttacks(ListAttacksRequest request);
 
         /// <summary>
         /// Paginator for ListProtectionGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProtectionGroupsPaginator ListProtectionGroups(ListProtectionGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListProtections operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProtectionsPaginator ListProtections(ListProtectionsRequest request);
 
         /// <summary>
         /// Paginator for ListResourcesInProtectionGroup operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListResourcesInProtectionGroupPaginator ListResourcesInProtectionGroup(ListResourcesInProtectionGroupRequest request);
     }
 }

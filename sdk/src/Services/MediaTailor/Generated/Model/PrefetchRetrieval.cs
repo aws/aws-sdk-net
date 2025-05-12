@@ -39,6 +39,8 @@ namespace Amazon.MediaTailor.Model
         private Dictionary<string, string> _dynamicVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _endTime;
         private DateTime? _startTime;
+        private TrafficShapingRetrievalWindow _trafficShapingRetrievalWindow;
+        private TrafficShapingType _trafficShapingType;
 
         /// <summary>
         /// Gets and sets the property DynamicVariables. 
@@ -104,6 +106,44 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetStartTime()
         {
             return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrafficShapingRetrievalWindow. 
+        /// <para>
+        /// Configuration for spreading ADS traffic across a set window instead of sending ADS
+        /// requests for all sessions at the same time.
+        /// </para>
+        /// </summary>
+        public TrafficShapingRetrievalWindow TrafficShapingRetrievalWindow
+        {
+            get { return this._trafficShapingRetrievalWindow; }
+            set { this._trafficShapingRetrievalWindow = value; }
+        }
+
+        // Check to see if TrafficShapingRetrievalWindow property is set
+        internal bool IsSetTrafficShapingRetrievalWindow()
+        {
+            return this._trafficShapingRetrievalWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrafficShapingType. 
+        /// <para>
+        /// Indicates if this configuration uses a retrieval window for traffic shaping and limiting
+        /// the number of requests to the ADS at one time.
+        /// </para>
+        /// </summary>
+        public TrafficShapingType TrafficShapingType
+        {
+            get { return this._trafficShapingType; }
+            set { this._trafficShapingType = value; }
+        }
+
+        // Check to see if TrafficShapingType property is set
+        internal bool IsSetTrafficShapingType()
+        {
+            return this._trafficShapingType != null;
         }
 
     }

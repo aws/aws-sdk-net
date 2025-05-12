@@ -87,9 +87,9 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property LambdaArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a role with permission to run a Lambda function
-        /// during ingestion. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/iam-roles.html#cde-iam-role">IAM
-        /// roles for Custom Document Enrichment (CDE)</a>.
+        /// The Amazon Resource Name (ARN) of the Lambda function sduring ingestion. For more
+        /// information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cde-lambda-operations.html">Using
+        /// Lambda functions for Amazon Q Business document enrichment</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

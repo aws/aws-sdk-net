@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the ssm-quicksetup-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMQuickSetup.Model
@@ -29,11 +30,21 @@ namespace Amazon.SSMQuickSetup.Model
         /// <summary>
         /// Paginator for ListConfigurationManagers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "StartingToken" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListConfigurationManagersPaginator ListConfigurationManagers(ListConfigurationManagersRequest request);
 
         /// <summary>
         /// Paginator for ListConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "StartingToken" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListConfigurationsPaginator ListConfigurations(ListConfigurationsRequest request);
     }
 }

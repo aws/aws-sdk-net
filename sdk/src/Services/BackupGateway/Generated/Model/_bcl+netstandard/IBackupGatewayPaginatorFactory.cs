@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the backup-gateway-2021-01-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BackupGateway.Model
@@ -29,16 +30,31 @@ namespace Amazon.BackupGateway.Model
         /// <summary>
         /// Paginator for ListGateways operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListGatewaysPaginator ListGateways(ListGatewaysRequest request);
 
         /// <summary>
         /// Paginator for ListHypervisors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListHypervisorsPaginator ListHypervisors(ListHypervisorsRequest request);
 
         /// <summary>
         /// Paginator for ListVirtualMachines operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListVirtualMachinesPaginator ListVirtualMachines(ListVirtualMachinesRequest request);
     }
 }

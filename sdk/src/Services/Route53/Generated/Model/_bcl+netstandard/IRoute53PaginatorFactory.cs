@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the route53-2013-04-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Route53.Model
@@ -29,36 +30,71 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Paginator for ListCidrBlocks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCidrBlocksPaginator ListCidrBlocks(ListCidrBlocksRequest request);
 
         /// <summary>
         /// Paginator for ListCidrCollections operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCidrCollectionsPaginator ListCidrCollections(ListCidrCollectionsRequest request);
 
         /// <summary>
         /// Paginator for ListCidrLocations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCidrLocationsPaginator ListCidrLocations(ListCidrLocationsRequest request);
 
         /// <summary>
         /// Paginator for ListHealthChecks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
         IListHealthChecksPaginator ListHealthChecks(ListHealthChecksRequest request);
 
         /// <summary>
         /// Paginator for ListHostedZones operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
         IListHostedZonesPaginator ListHostedZones(ListHostedZonesRequest request);
 
         /// <summary>
         /// Paginator for ListQueryLoggingConfigs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListQueryLoggingConfigsPaginator ListQueryLoggingConfigs(ListQueryLoggingConfigsRequest request);
 
         /// <summary>
         /// Paginator for ListResourceRecordSets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "StartRecordName","StartRecordType","StartRecordIdentifier" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextRecordName","NextRecordType","NextRecordIdentifier" }
+        )]
         IListResourceRecordSetsPaginator ListResourceRecordSets(ListResourceRecordSetsRequest request);
     }
 }

@@ -34,13 +34,22 @@ namespace Amazon.Runtime.Identity
         /// Loads the customer's identity for this resolver. 
         /// If the identity cannot be resolved an <c>AmazonClientException</c> will be thrown.
         /// </summary>
-        BaseIdentity ResolveIdentity();
+        /// <param name="clientConfig">
+        /// Optional config object that can be used to specify a different profile programatically (via the <see cref="Profile"/> property).
+        /// </param>
+        BaseIdentity ResolveIdentity(IClientConfig clientConfig);
 
         /// <summary>
         /// Loads the customer's identity for this resolver. 
         /// If the identity cannot be resolved an <c>AmazonClientException</c> will be thrown.
         /// </summary>
-        Task<BaseIdentity> ResolveIdentityAsync(CancellationToken cancellationToken = default);
+        /// <param name="clientConfig">
+        /// Optional config object that can be used to specify a different profile programatically (via the <see cref="Profile"/> property).
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        Task<BaseIdentity> ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -59,12 +68,21 @@ namespace Amazon.Runtime.Identity
         /// Loads the customer's identity for this resolver. 
         /// If the identity cannot be resolved an <c>AmazonClientException</c> will be thrown.
         /// </summary>
-        new T ResolveIdentity();
+        /// <param name="clientConfig">
+        /// Optional config object that can be used to specify a different profile programatically (via the <see cref="Profile"/> property).
+        /// </param>
+        new T ResolveIdentity(IClientConfig clientConfig);
 
         /// <summary>
         /// Loads the customer's identity for this resolver. 
         /// If the identity cannot be resolved an <c>AmazonClientException</c> will be thrown.
         /// </summary>
-        new Task<T> ResolveIdentityAsync(CancellationToken cancellationToken = default);
+        /// <param name="clientConfig">
+        /// Optional config object that can be used to specify a different profile programatically (via the <see cref="Profile"/> property).
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        new Task<T> ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken = default);
     }
 }

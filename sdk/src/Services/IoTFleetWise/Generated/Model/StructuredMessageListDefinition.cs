@@ -46,7 +46,7 @@ namespace Amazon.IoTFleetWise.Model
         /// or <c>DYNAMIC_BOUNDED_CAPACITY</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Min=0, Max=2147483647)]
         public int? Capacity
         {
             get { return this._capacity; }

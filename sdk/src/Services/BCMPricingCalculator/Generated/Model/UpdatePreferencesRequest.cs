@@ -31,12 +31,13 @@ namespace Amazon.BCMPricingCalculator.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePreferences operation.
-    /// Updates the preferences for the Amazon Web Services Cost Explorer service.
+    /// Updates the preferences for Pricing Calculator.
     /// </summary>
     public partial class UpdatePreferencesRequest : AmazonBCMPricingCalculatorRequest
     {
         private List<string> _managementAccountRateTypeSelections = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _memberAccountRateTypeSelections = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _standaloneAccountRateTypeSelections = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ManagementAccountRateTypeSelections. 
@@ -74,6 +75,25 @@ namespace Amazon.BCMPricingCalculator.Model
         internal bool IsSetMemberAccountRateTypeSelections()
         {
             return this._memberAccountRateTypeSelections != null && (this._memberAccountRateTypeSelections.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StandaloneAccountRateTypeSelections. 
+        /// <para>
+        ///  The updated preferred rate types for a standalone account. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> StandaloneAccountRateTypeSelections
+        {
+            get { return this._standaloneAccountRateTypeSelections; }
+            set { this._standaloneAccountRateTypeSelections = value; }
+        }
+
+        // Check to see if StandaloneAccountRateTypeSelections property is set
+        internal bool IsSetStandaloneAccountRateTypeSelections()
+        {
+            return this._standaloneAccountRateTypeSelections != null && (this._standaloneAccountRateTypeSelections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

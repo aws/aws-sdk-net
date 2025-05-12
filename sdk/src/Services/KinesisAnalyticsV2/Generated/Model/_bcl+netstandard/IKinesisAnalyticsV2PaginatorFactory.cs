@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the kinesisanalyticsv2-2018-05-23.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalyticsV2.Model
@@ -29,21 +30,41 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Paginator for ListApplicationOperations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationOperationsPaginator ListApplicationOperations(ListApplicationOperationsRequest request);
 
         /// <summary>
         /// Paginator for ListApplications operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
 
         /// <summary>
         /// Paginator for ListApplicationSnapshots operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationSnapshotsPaginator ListApplicationSnapshots(ListApplicationSnapshotsRequest request);
 
         /// <summary>
         /// Paginator for ListApplicationVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListApplicationVersionsPaginator ListApplicationVersions(ListApplicationVersionsRequest request);
     }
 }

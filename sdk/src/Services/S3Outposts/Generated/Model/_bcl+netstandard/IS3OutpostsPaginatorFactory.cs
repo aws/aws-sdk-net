@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the s3outposts-2017-07-25.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.S3Outposts.Model
@@ -29,16 +30,31 @@ namespace Amazon.S3Outposts.Model
         /// <summary>
         /// Paginator for ListEndpoints operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEndpointsPaginator ListEndpoints(ListEndpointsRequest request);
 
         /// <summary>
         /// Paginator for ListOutpostsWithS3 operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListOutpostsWithS3Paginator ListOutpostsWithS3(ListOutpostsWithS3Request request);
 
         /// <summary>
         /// Paginator for ListSharedEndpoints operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSharedEndpointsPaginator ListSharedEndpoints(ListSharedEndpointsRequest request);
     }
 }

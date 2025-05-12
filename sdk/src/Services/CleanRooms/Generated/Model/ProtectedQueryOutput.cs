@@ -34,8 +34,35 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class ProtectedQueryOutput
     {
+        private ProtectedQueryDistributeOutput _distribute;
         private List<ProtectedQuerySingleMemberOutput> _memberList = AWSConfigs.InitializeCollections ? new List<ProtectedQuerySingleMemberOutput>() : null;
         private ProtectedQueryS3Output _s3;
+
+        /// <summary>
+        /// Gets and sets the property Distribute. 
+        /// <para>
+        /// Contains output information for protected queries that use a <c>distribute</c> output
+        /// type. This output type lets you send query results to multiple locations - either
+        /// to S3 or to collaboration members. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  You can only use the <c>distribute</c> output type with the Spark analytics engine.
+        /// 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ProtectedQueryDistributeOutput Distribute
+        {
+            get { return this._distribute; }
+            set { this._distribute = value; }
+        }
+
+        // Check to see if Distribute property is set
+        internal bool IsSetDistribute()
+        {
+            return this._distribute != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MemberList. 
@@ -59,7 +86,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property S3. 
         /// <para>
-        /// If present, the output for a protected query with an `S3` output type.
+        /// If present, the output for a protected query with an <c>S3</c> output type.
         /// </para>
         /// </summary>
         public ProtectedQueryS3Output S3

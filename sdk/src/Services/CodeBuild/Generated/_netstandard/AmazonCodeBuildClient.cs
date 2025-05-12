@@ -382,6 +382,42 @@ namespace Amazon.CodeBuild
         }
         #endregion
         
+        #region  BatchGetCommandExecutions
+
+        internal virtual BatchGetCommandExecutionsResponse BatchGetCommandExecutions(BatchGetCommandExecutionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetCommandExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCommandExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetCommandExecutionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets information about the command executions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCommandExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetCommandExecutions service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetCommandExecutions">REST API Reference for BatchGetCommandExecutions Operation</seealso>
+        public virtual Task<BatchGetCommandExecutionsResponse> BatchGetCommandExecutionsAsync(BatchGetCommandExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetCommandExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCommandExecutionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetCommandExecutionsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  BatchGetFleets
 
         internal virtual BatchGetFleetsResponse BatchGetFleets(BatchGetFleetsRequest request)
@@ -523,6 +559,42 @@ namespace Amazon.CodeBuild
             options.ResponseUnmarshaller = BatchGetReportsResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetReportsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  BatchGetSandboxes
+
+        internal virtual BatchGetSandboxesResponse BatchGetSandboxes(BatchGetSandboxesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetSandboxesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetSandboxesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetSandboxesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets information about the sandbox status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSandboxes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetSandboxes service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetSandboxes">REST API Reference for BatchGetSandboxes Operation</seealso>
+        public virtual Task<BatchGetSandboxesResponse> BatchGetSandboxesAsync(BatchGetSandboxesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetSandboxesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetSandboxesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetSandboxesResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -1406,6 +1478,45 @@ namespace Amazon.CodeBuild
         }
         #endregion
         
+        #region  ListCommandExecutionsForSandbox
+
+        internal virtual ListCommandExecutionsForSandboxResponse ListCommandExecutionsForSandbox(ListCommandExecutionsForSandboxRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCommandExecutionsForSandboxRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCommandExecutionsForSandboxResponseUnmarshaller.Instance;
+
+            return Invoke<ListCommandExecutionsForSandboxResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a list of command executions for a sandbox.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCommandExecutionsForSandbox service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCommandExecutionsForSandbox service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCommandExecutionsForSandbox">REST API Reference for ListCommandExecutionsForSandbox Operation</seealso>
+        public virtual Task<ListCommandExecutionsForSandboxResponse> ListCommandExecutionsForSandboxAsync(ListCommandExecutionsForSandboxRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCommandExecutionsForSandboxRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCommandExecutionsForSandboxResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCommandExecutionsForSandboxResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListCuratedEnvironmentImages
 
         internal virtual ListCuratedEnvironmentImagesResponse ListCuratedEnvironmentImages(ListCuratedEnvironmentImagesRequest request)
@@ -1621,6 +1732,81 @@ namespace Amazon.CodeBuild
             options.ResponseUnmarshaller = ListReportsForReportGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListReportsForReportGroupResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListSandboxes
+
+        internal virtual ListSandboxesResponse ListSandboxes(ListSandboxesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSandboxesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSandboxesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSandboxesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a list of sandboxes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSandboxes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSandboxes service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSandboxes">REST API Reference for ListSandboxes Operation</seealso>
+        public virtual Task<ListSandboxesResponse> ListSandboxesAsync(ListSandboxesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSandboxesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSandboxesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSandboxesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListSandboxesForProject
+
+        internal virtual ListSandboxesForProjectResponse ListSandboxesForProject(ListSandboxesForProjectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSandboxesForProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSandboxesForProjectResponseUnmarshaller.Instance;
+
+            return Invoke<ListSandboxesForProjectResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a list of sandboxes for a given project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSandboxesForProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSandboxesForProject service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSandboxesForProject">REST API Reference for ListSandboxesForProject Operation</seealso>
+        public virtual Task<ListSandboxesForProjectResponse> ListSandboxesForProjectAsync(ListSandboxesForProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSandboxesForProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSandboxesForProjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSandboxesForProjectResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -1946,6 +2132,126 @@ namespace Amazon.CodeBuild
         }
         #endregion
         
+        #region  StartCommandExecution
+
+        internal virtual StartCommandExecutionResponse StartCommandExecution(StartCommandExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCommandExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCommandExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StartCommandExecutionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a command execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCommandExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartCommandExecution service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartCommandExecution">REST API Reference for StartCommandExecution Operation</seealso>
+        public virtual Task<StartCommandExecutionResponse> StartCommandExecutionAsync(StartCommandExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCommandExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCommandExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartCommandExecutionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  StartSandbox
+
+        internal virtual StartSandboxResponse StartSandbox(StartSandboxRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSandboxRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSandboxResponseUnmarshaller.Instance;
+
+            return Invoke<StartSandboxResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a sandbox.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSandbox service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartSandbox service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.AccountSuspendedException">
+        /// The CodeBuild access has been suspended for the calling Amazon Web Services account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartSandbox">REST API Reference for StartSandbox Operation</seealso>
+        public virtual Task<StartSandboxResponse> StartSandboxAsync(StartSandboxRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSandboxRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSandboxResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartSandboxResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  StartSandboxConnection
+
+        internal virtual StartSandboxConnectionResponse StartSandboxConnection(StartSandboxConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSandboxConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSandboxConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<StartSandboxConnectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a sandbox connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSandboxConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartSandboxConnection service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartSandboxConnection">REST API Reference for StartSandboxConnection Operation</seealso>
+        public virtual Task<StartSandboxConnectionResponse> StartSandboxConnectionAsync(StartSandboxConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSandboxConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSandboxConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartSandboxConnectionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  StopBuild
 
         internal virtual StopBuildResponse StopBuild(StopBuildRequest request)
@@ -2021,6 +2327,45 @@ namespace Amazon.CodeBuild
             options.ResponseUnmarshaller = StopBuildBatchResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopBuildBatchResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  StopSandbox
+
+        internal virtual StopSandboxResponse StopSandbox(StopSandboxRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSandboxRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSandboxResponseUnmarshaller.Instance;
+
+            return Invoke<StopSandboxResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops a sandbox.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopSandbox service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopSandbox service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopSandbox">REST API Reference for StopSandbox Operation</seealso>
+        public virtual Task<StopSandboxResponse> StopSandboxAsync(StopSandboxRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSandboxRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSandboxResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopSandboxResponse>(request, options, cancellationToken);
         }
         #endregion
         

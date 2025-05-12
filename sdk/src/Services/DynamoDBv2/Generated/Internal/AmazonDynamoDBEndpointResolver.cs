@@ -54,7 +54,7 @@ namespace Amazon.DynamoDBv2.Internal
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
-            result.AccountId = requestContext.Identity is AWSCredentials credentials ? credentials.GetCredentials().AccountId : null;
+            result.AccountId = requestContext.Identity is AWSCredentials credentials ? credentials.GetCredentials()?.AccountId : null;
             result.AccountIdEndpointMode = config.AccountIdEndpointMode.ToString().ToLower();
 
 
@@ -90,12 +90,12 @@ namespace Amazon.DynamoDBv2.Internal
             // Assign staticContextParams and contextParam per operation
             if (requestContext.RequestName == "BatchGetItemRequest") {
                 var request = (BatchGetItemRequest)requestContext.OriginalRequest;
-                result.ResourceArnList = request.RequestItems.Keys.ToList();
+                result.ResourceArnList = request.RequestItems?.Keys.ToList();
                 return result;
             }
             if (requestContext.RequestName == "BatchWriteItemRequest") {
                 var request = (BatchWriteItemRequest)requestContext.OriginalRequest;
-                result.ResourceArnList = request.RequestItems.Keys.ToList();
+                result.ResourceArnList = request.RequestItems?.Keys.ToList();
                 return result;
             }
             if (requestContext.RequestName == "CreateBackupRequest") {
@@ -215,7 +215,7 @@ namespace Amazon.DynamoDBv2.Internal
             }
             if (requestContext.RequestName == "ImportTableRequest") {
                 var request = (ImportTableRequest)requestContext.OriginalRequest;
-                result.ResourceArn = request.TableCreationParameters.TableName;
+                result.ResourceArn = request.TableCreationParameters?.TableName;
                 return result;
             }
             if (requestContext.RequestName == "ListBackupsRequest") {
@@ -280,7 +280,12 @@ namespace Amazon.DynamoDBv2.Internal
             }
             if (requestContext.RequestName == "TransactGetItemsRequest") {
                 var request = (TransactGetItemsRequest)requestContext.OriginalRequest;
-                result.ResourceArnList = request.TransactItems.Select(element => element.Get.TableName);
+                result.ResourceArnList = request.TransactItems?.Select(element => element?.Get?.TableName);
+                return result;
+            }
+            if (requestContext.RequestName == "TransactWriteItemsRequest") {
+                var request = (TransactWriteItemsRequest)requestContext.OriginalRequest;
+                result.ResourceArnList = request.TransactItems?.Select(element => new [] { element?.ConditionCheck?.TableName, element?.Put?.TableName, element?.Delete?.TableName, element?.Update?.TableName })?.SelectMany(element => element).Where(element => element != null);
                 return result;
             }
             if (requestContext.RequestName == "UntagResourceRequest") {

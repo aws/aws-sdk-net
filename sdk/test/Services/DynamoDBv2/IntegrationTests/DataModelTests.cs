@@ -1114,6 +1114,45 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 #pragma warning restore CS0618 // Re-enable the warning
             }
 
+            {
+
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
+                ProductV2 productV2 = new ProductV2
+                {
+                    Id = 1,
+                    Name = "CloudSpotter",
+                    CompanyName = "CloudsAreGrate",
+                    Price = 1200,
+                    TagSet = new HashSet<string> { "Prod", "1.0" },
+                    CurrentStatus = Status.Active,
+                    FormerStatus = Status.Upcoming,
+                    Supports = Support.Unix | Support.Windows,
+                    PreviousSupport = null,
+                    InternalId = "T1000",
+                    IsPublic = true,
+                    AlwaysN = true,
+                    Rating = 4,
+                    Components = new List<string> { "Code", "Coffee" },
+                    KeySizes = new List<byte> { 16, 64, 128 },
+                    CompanyInfo = new CompanyInfo
+                    {
+                        Name = "MyCloud",
+                        Founded = new DateTime(1994, 7, 6),
+                        Revenue = 9001
+                    }
+                };
+              
+                using (var contextV1 = new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = conversionV1 }))
+                {
+                    var docV1 = contextV1.ToDocument(productV2, new ToDocumentConfig { Conversion = conversionV1 });
+                    var docV2 = contextV1.ToDocument(productV2, new ToDocumentConfig { });
+                    VerifyConversions(docV1, docV2);
+                }
+
+#pragma warning restore CS0618 // Re-enable the warning
+
+            }
+
             // Introduce a circular reference and try to serialize
             {
                 product.CompanyInfo = new CompanyInfo
@@ -2630,6 +2669,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Status status = (Status)Enum.Parse(typeof(Status), text);
                 return status;
             }
+        }
+
+        [DynamoDBTable("HashTable", false, ConversionSchema.V2)]
+        public class ProductV2 : Product
+        {
         }
 
         /// <summary>

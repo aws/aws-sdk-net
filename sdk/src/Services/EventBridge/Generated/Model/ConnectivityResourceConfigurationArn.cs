@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// The Amazon Resource Name (ARN) of the resource configuration for the resource endpoint.
+    /// The Amazon Resource Name (ARN) of the Amazon VPC Lattice resource configuration for
+    /// the resource endpoint.
     /// </summary>
     public partial class ConnectivityResourceConfigurationArn
     {
@@ -39,7 +40,8 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property ResourceConfigurationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource configuration for the resource endpoint.
+        /// The Amazon Resource Name (ARN) of the Amazon VPC Lattice resource configuration for
+        /// the resource endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]

@@ -33,8 +33,8 @@ namespace Amazon.GameLiftStreams.Model
     /// Configuration settings that define a stream group's stream capacity for a location.
     /// When configuring a location for the first time, you must specify a numeric value for
     /// at least one of the two capacity types. To update the capacity for an existing stream
-    /// group, call <a>UpdateStreamGroup</a>. To add a new location and specify its capacity,
-    /// call <a>AddStreamGroupLocations</a>.
+    /// group, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html">UpdateStreamGroup</a>.
+    /// To add a new location and specify its capacity, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_AddStreamGroupLocations.html">AddStreamGroupLocations</a>.
     /// </summary>
     public partial class LocationConfiguration
     {
@@ -67,8 +67,8 @@ namespace Amazon.GameLiftStreams.Model
         /// Gets and sets the property LocationName. 
         /// <para>
         ///  A location's name. For example, <c>us-east-1</c>. For a complete list of locations
-        /// that Amazon GameLift Streams supports, see the Regions and quotas section in the Amazon
-        /// GameLift Streams Developer Guide . 
+        /// that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions
+        /// and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]

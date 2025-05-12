@@ -101,6 +101,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.NumCacheNodes = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ScaleConfig", targetDepth))
+                    {
+                        var unmarshaller = ScaleConfigUnmarshaller.Instance;
+                        unmarshalledObject.ScaleConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("TransitEncryptionEnabled", targetDepth))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;

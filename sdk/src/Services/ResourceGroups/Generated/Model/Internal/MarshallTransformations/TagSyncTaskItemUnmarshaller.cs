@@ -80,6 +80,12 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                     unmarshalledObject.GroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ResourceQuery", targetDepth))
+                {
+                    var unmarshaller = ResourceQueryUnmarshaller.Instance;
+                    unmarshalledObject.ResourceQuery = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("RoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

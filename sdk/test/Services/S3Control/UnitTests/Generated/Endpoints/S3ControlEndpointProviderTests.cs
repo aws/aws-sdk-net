@@ -177,6 +177,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("gov cloud with fips@cn-north-1")]
+        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
         public void Gov_cloud_with_fipscnnorth1_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -187,7 +188,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://s3-outposts-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
 
         [TestMethod]
@@ -1629,7 +1629,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         public void ListRegionalBuckets_OutpostId_with_fips_in_CN_Test()
         {
             var parameters = new S3ControlEndpointParameters();
-            parameters["AccountId"] = "0123456789012";
+            parameters["AccountId"] = "012345678912";
             parameters["OutpostId"] = "op-123";
             parameters["Region"] = "cn-north-1";
             parameters["RequiresAccountId"] = true;
@@ -1647,7 +1647,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         public void ListRegionalBuckets_invalid_OutpostId_Test()
         {
             var parameters = new S3ControlEndpointParameters();
-            parameters["AccountId"] = "0123456789012";
+            parameters["AccountId"] = "012345678912";
             parameters["OutpostId"] = "?outpost/invalid+";
             parameters["Region"] = "us-west-1";
             parameters["RequiresAccountId"] = true;
@@ -1661,12 +1661,12 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("bucket ARN with mismatched accountId")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: the accountId specified in the ARN (`999999`) does not match the parameter (`0123456789012`)")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: the accountId specified in the ARN (`999999`) does not match the parameter (`012345678912`)")]
         public void Bucket_ARN_with_mismatched_accountId_Test()
         {
             var parameters = new S3ControlEndpointParameters();
             parameters["Bucket"] = "arn:aws:s3-outposts:us-west-2:999999:outpost:op-01234567890123456:bucket:mybucket";
-            parameters["AccountId"] = "0123456789012";
+            parameters["AccountId"] = "012345678912";
             parameters["Region"] = "us-west-2";
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
@@ -1952,6 +1952,149 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Endpoint"] = "https://10.0.1.12:433";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("Access Point APIs on express bucket routed to s3express-control")]
+        public void Access_Point_APIs_on_express_bucket_routed_to_s3expresscontrol_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["AccountId"] = "871317572157";
+            parameters["AccessPointName"] = "myaccesspoint--abcd-ab1--xa-s3";
+            parameters["Region"] = "us-east-1";
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3express-control.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("Access Point APIs on express bucket routed to s3express-control for List")]
+        public void Access_Point_APIs_on_express_bucket_routed_to_s3expresscontrol_for_List_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["AccountId"] = "871317572157";
+            parameters["Region"] = "us-east-1";
+            parameters["UseS3ExpressControlEndpoint"] = true;
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3express-control.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("Access Point APIs on express bucket routed to s3express-control for FIPS")]
+        public void Access_Point_APIs_on_express_bucket_routed_to_s3expresscontrol_for_FIPS_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["AccountId"] = "871317572157";
+            parameters["AccessPointName"] = "myaccesspoint--abcd-ab1--xa-s3";
+            parameters["Region"] = "us-east-1";
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3express-control-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("Access Point APIs on express bucket routed to s3express-control for FIPS for List")]
+        public void Access_Point_APIs_on_express_bucket_routed_to_s3expresscontrol_for_FIPS_for_List_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["AccountId"] = "871317572157";
+            parameters["Region"] = "us-east-1";
+            parameters["UseS3ExpressControlEndpoint"] = true;
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3express-control-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("Access Point APIs on express bucket routed to s3express-control for china region")]
+        public void Access_Point_APIs_on_express_bucket_routed_to_s3expresscontrol_for_china_region_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["AccessPointName"] = "myaccesspoint--abcd-ab1--xa-s3";
+            parameters["AccountId"] = "871317572157";
+            parameters["Region"] = "cn-north-1";
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3express-control.cn-north-1.amazonaws.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("Access Point APIs on express bucket routed to s3express-control for china region for List")]
+        public void Access_Point_APIs_on_express_bucket_routed_to_s3expresscontrol_for_china_region_for_List_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["AccountId"] = "871317572157";
+            parameters["Region"] = "cn-north-1";
+            parameters["UseS3ExpressControlEndpoint"] = true;
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3express-control.cn-north-1.amazonaws.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS")]
+        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
+        public void Error_when_Access_Point_APIs_on_express_bucket_routed_to_s3expresscontrol_for_china_and_FIPS_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["AccountId"] = "871317572157";
+            parameters["Region"] = "cn-north-1";
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("Error Access Point APIs on express bucket routed to s3express-control invalid zone")]
+        [ExpectedException(typeof(AmazonClientException), @"Unrecognized S3Express Access Point name format.")]
+        public void Error_Access_Point_APIs_on_express_bucket_routed_to_s3expresscontrol_invalid_zone_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["AccessPointName"] = "myaccesspoint-garbage-zone--xa-s3";
+            parameters["AccountId"] = "871317572157";
+            parameters["Region"] = "us-east-1";
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
         }
 

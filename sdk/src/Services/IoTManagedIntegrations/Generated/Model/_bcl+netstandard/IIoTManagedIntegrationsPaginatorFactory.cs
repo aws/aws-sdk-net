@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the iot-managed-integrations-2025-03-03.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTManagedIntegrations.Model
@@ -29,56 +30,111 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// <summary>
         /// Paginator for ListCredentialLockers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListCredentialLockersPaginator ListCredentialLockers(ListCredentialLockersRequest request);
 
         /// <summary>
         /// Paginator for ListDestinations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDestinationsPaginator ListDestinations(ListDestinationsRequest request);
 
         /// <summary>
         /// Paginator for ListEventLogConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEventLogConfigurationsPaginator ListEventLogConfigurations(ListEventLogConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListManagedThings operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListManagedThingsPaginator ListManagedThings(ListManagedThingsRequest request);
 
         /// <summary>
         /// Paginator for ListManagedThingSchemas operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListManagedThingSchemasPaginator ListManagedThingSchemas(ListManagedThingSchemasRequest request);
 
         /// <summary>
         /// Paginator for ListNotificationConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListNotificationConfigurationsPaginator ListNotificationConfigurations(ListNotificationConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListOtaTaskConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListOtaTaskConfigurationsPaginator ListOtaTaskConfigurations(ListOtaTaskConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListOtaTaskExecutions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListOtaTaskExecutionsPaginator ListOtaTaskExecutions(ListOtaTaskExecutionsRequest request);
 
         /// <summary>
         /// Paginator for ListOtaTasks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListOtaTasksPaginator ListOtaTasks(ListOtaTasksRequest request);
 
         /// <summary>
         /// Paginator for ListProvisioningProfiles operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListProvisioningProfilesPaginator ListProvisioningProfiles(ListProvisioningProfilesRequest request);
 
         /// <summary>
         /// Paginator for ListSchemaVersions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSchemaVersionsPaginator ListSchemaVersions(ListSchemaVersionsRequest request);
     }
 }

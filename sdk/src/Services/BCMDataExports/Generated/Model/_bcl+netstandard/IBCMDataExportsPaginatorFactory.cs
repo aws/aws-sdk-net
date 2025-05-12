@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the bcm-data-exports-2023-11-26.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMDataExports.Model
@@ -29,16 +30,31 @@ namespace Amazon.BCMDataExports.Model
         /// <summary>
         /// Paginator for ListExecutions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListExecutionsPaginator ListExecutions(ListExecutionsRequest request);
 
         /// <summary>
         /// Paginator for ListExports operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListExportsPaginator ListExports(ListExportsRequest request);
 
         /// <summary>
         /// Paginator for ListTables operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTablesPaginator ListTables(ListTablesRequest request);
     }
 }

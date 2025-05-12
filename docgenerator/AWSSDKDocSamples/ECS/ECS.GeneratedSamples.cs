@@ -928,6 +928,22 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             #endregion
         }
 
+        public void ECSStopServiceDeployment()
+        {
+            #region to-stop-service-deployment-1734638754369
+
+            var client = new AmazonECSClient();
+            var response = client.StopServiceDeployment(new StopServiceDeploymentRequest 
+            {
+                ServiceDeploymentArn = "arn:aws:ecs:us-east-1:123456789012:service-deployment/MyCluster/MyService/r9i43YFjvgF_xlg7m2eJ1r",
+                StopType = "ROLLBACK"
+            });
+
+            string serviceDeploymentArn = response.ServiceDeploymentArn;
+
+            #endregion
+        }
+
         public void ECSStopTask()
         {
             #region to-stop-a-task-1734457210346

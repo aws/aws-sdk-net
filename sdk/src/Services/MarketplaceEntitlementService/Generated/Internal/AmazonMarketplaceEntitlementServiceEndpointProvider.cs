@@ -47,10 +47,10 @@ namespace Amazon.MarketplaceEntitlementService.Internal
 
             var refs = new Dictionary<string, object>()
             {
-                ["Region"] = parameters["Region"],
                 ["UseDualStack"] = parameters["UseDualStack"],
                 ["UseFIPS"] = parameters["UseFIPS"],
                 ["Endpoint"] = parameters["Endpoint"],
+                ["Region"] = parameters["Region"],
             };
             if (IsSet(refs["Endpoint"]))
             {
@@ -68,6 +68,18 @@ namespace Amazon.MarketplaceEntitlementService.Internal
             {
                 if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
                 {
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                    {
+                        return new Endpoint(Interpolate(@"https://entitlement-marketplace.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-cn") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                    {
+                        return new Endpoint(Interpolate(@"https://entitlement-marketplace.{Region}.amazonaws.com.cn", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-cn") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                    {
+                        return new Endpoint(Interpolate(@"https://entitlement-marketplace.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
                     if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
@@ -76,7 +88,7 @@ namespace Amazon.MarketplaceEntitlementService.Internal
                         }
                         throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
                     }
-                    if (Equals(refs["UseFIPS"], true))
+                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                     {
                         if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                         {
@@ -84,21 +96,13 @@ namespace Amazon.MarketplaceEntitlementService.Internal
                         }
                         throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
                     }
-                    if (Equals(refs["UseDualStack"], true))
+                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                         {
                             return new Endpoint(Interpolate(@"https://entitlement.marketplace.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
-                    }
-                    if (Equals(refs["Region"], "cn-northwest-1"))
-                    {
-                        return new Endpoint("https://entitlement-marketplace.cn-northwest-1.amazonaws.com.cn", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals("aws", GetAttr(refs["PartitionResult"], "name")))
-                    {
-                        return new Endpoint(Interpolate(@"https://entitlement.marketplace.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     return new Endpoint(Interpolate(@"https://entitlement.marketplace.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                 }

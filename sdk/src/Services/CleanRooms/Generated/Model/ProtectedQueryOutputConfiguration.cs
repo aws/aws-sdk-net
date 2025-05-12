@@ -34,8 +34,27 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class ProtectedQueryOutputConfiguration
     {
+        private ProtectedQueryDistributeOutputConfiguration _distribute;
         private ProtectedQueryMemberOutputConfiguration _member;
         private ProtectedQueryS3OutputConfiguration _s3;
+
+        /// <summary>
+        /// Gets and sets the property Distribute. 
+        /// <para>
+        ///  Required configuration for a protected query with a <c>distribute</c> output type.
+        /// </para>
+        /// </summary>
+        public ProtectedQueryDistributeOutputConfiguration Distribute
+        {
+            get { return this._distribute; }
+            set { this._distribute = value; }
+        }
+
+        // Check to see if Distribute property is set
+        internal bool IsSetDistribute()
+        {
+            return this._distribute != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Member. 

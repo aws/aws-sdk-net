@@ -55,7 +55,7 @@ namespace Amazon.StorageGateway.Model
         /// are no more tapes to list, this element does not appear in the response body.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=2000)]
         public string Marker
         {
             get { return this._marker; }

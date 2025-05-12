@@ -187,6 +187,64 @@ namespace Amazon.TaxSettings
 
 
     /// <summary>
+    /// Constants used for properties of type IndonesiaTaxRegistrationNumberType.
+    /// </summary>
+    public class IndonesiaTaxRegistrationNumberType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NIK for IndonesiaTaxRegistrationNumberType
+        /// </summary>
+        public static readonly IndonesiaTaxRegistrationNumberType NIK = new IndonesiaTaxRegistrationNumberType("NIK");
+        /// <summary>
+        /// Constant NITKU for IndonesiaTaxRegistrationNumberType
+        /// </summary>
+        public static readonly IndonesiaTaxRegistrationNumberType NITKU = new IndonesiaTaxRegistrationNumberType("NITKU");
+        /// <summary>
+        /// Constant NPWP for IndonesiaTaxRegistrationNumberType
+        /// </summary>
+        public static readonly IndonesiaTaxRegistrationNumberType NPWP = new IndonesiaTaxRegistrationNumberType("NPWP");
+        /// <summary>
+        /// Constant PassportNumber for IndonesiaTaxRegistrationNumberType
+        /// </summary>
+        public static readonly IndonesiaTaxRegistrationNumberType PassportNumber = new IndonesiaTaxRegistrationNumberType("PassportNumber");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IndonesiaTaxRegistrationNumberType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IndonesiaTaxRegistrationNumberType FindValue(string value)
+        {
+            return FindValue<IndonesiaTaxRegistrationNumberType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IndonesiaTaxRegistrationNumberType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Industries.
     /// </summary>
     public class Industries : ConstantClass
@@ -890,6 +948,56 @@ namespace Amazon.TaxSettings
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UkraineTrnType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UzbekistanTaxRegistrationNumberType.
+    /// </summary>
+    public class UzbekistanTaxRegistrationNumberType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Business for UzbekistanTaxRegistrationNumberType
+        /// </summary>
+        public static readonly UzbekistanTaxRegistrationNumberType Business = new UzbekistanTaxRegistrationNumberType("Business");
+        /// <summary>
+        /// Constant Individual for UzbekistanTaxRegistrationNumberType
+        /// </summary>
+        public static readonly UzbekistanTaxRegistrationNumberType Individual = new UzbekistanTaxRegistrationNumberType("Individual");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UzbekistanTaxRegistrationNumberType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UzbekistanTaxRegistrationNumberType FindValue(string value)
+        {
+            return FindValue<UzbekistanTaxRegistrationNumberType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UzbekistanTaxRegistrationNumberType(string value)
         {
             return FindValue(value);
         }

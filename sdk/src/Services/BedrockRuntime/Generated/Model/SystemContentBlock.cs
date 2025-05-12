@@ -34,8 +34,27 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class SystemContentBlock
     {
+        private CachePointBlock _cachePoint;
         private GuardrailConverseContentBlock _guardContent;
         private string _text;
+
+        /// <summary>
+        /// Gets and sets the property CachePoint. 
+        /// <para>
+        /// CachePoint to include in the system prompt.
+        /// </para>
+        /// </summary>
+        public CachePointBlock CachePoint
+        {
+            get { return this._cachePoint; }
+            set { this._cachePoint = value; }
+        }
+
+        // Check to see if CachePoint property is set
+        internal bool IsSetCachePoint()
+        {
+            return this._cachePoint != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GuardContent. 

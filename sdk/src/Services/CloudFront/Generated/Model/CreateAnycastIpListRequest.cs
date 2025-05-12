@@ -43,6 +43,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property IpCount. 
         /// <para>
         /// The number of static IP addresses that are allocated to the Anycast static IP list.
+        /// Valid values: 21 or 3.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

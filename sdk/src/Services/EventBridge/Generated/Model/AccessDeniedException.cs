@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// You do not have the necessary permissons for this action.
+    /// You do not have the necessary permissions for this action.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

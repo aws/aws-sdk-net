@@ -56,6 +56,12 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("modalityProcessing", targetDepth))
+                {
+                    var unmarshaller = ModalityProcessingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ModalityProcessing = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("splitter", targetDepth))
                 {
                     var unmarshaller = SplitterConfigurationUnmarshaller.Instance;

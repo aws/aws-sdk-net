@@ -100,6 +100,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("errorLogSettings", targetDepth))
+                {
+                    var unmarshaller = ErrorLogSettingsUnmarshaller.Instance;
+                    response.ErrorLogSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("failureReasons", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

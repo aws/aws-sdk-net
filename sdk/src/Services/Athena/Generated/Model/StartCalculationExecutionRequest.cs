@@ -57,7 +57,7 @@ namespace Amazon.Athena.Model
         /// Contains configuration information for the calculation.
         /// </para>
         /// </summary>
-        [Obsolete("Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
+        [Obsolete("Structure is deprecated.")]
         public CalculationConfiguration CalculationConfiguration
         {
             get { return this._calculationConfiguration; }

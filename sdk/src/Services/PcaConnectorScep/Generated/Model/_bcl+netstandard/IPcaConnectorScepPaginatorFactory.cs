@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the pca-connector-scep-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PcaConnectorScep.Model
@@ -29,11 +30,21 @@ namespace Amazon.PcaConnectorScep.Model
         /// <summary>
         /// Paginator for ListChallengeMetadata operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListChallengeMetadataPaginator ListChallengeMetadata(ListChallengeMetadataRequest request);
 
         /// <summary>
         /// Paginator for ListConnectors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListConnectorsPaginator ListConnectors(ListConnectorsRequest request);
     }
 }

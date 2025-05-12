@@ -72,10 +72,6 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The logical name of the resource as specified in the template.
         /// </para>
-        ///  
-        /// <para>
-        /// Default: There is no default value.
-        /// </para>
         /// </summary>
         public string LogicalResourceId
         {
@@ -107,10 +103,6 @@ namespace Amazon.CloudFormation.Model
         /// Required: Conditional. If you don't specify <c>PhysicalResourceId</c>, you must specify
         /// <c>StackName</c>.
         /// </para>
-        ///  
-        /// <para>
-        /// Default: There is no default value.
-        /// </para>
         /// </summary>
         public string PhysicalResourceId
         {
@@ -139,10 +131,6 @@ namespace Amazon.CloudFormation.Model
         /// Deleted stacks: You must specify the unique stack ID.
         /// </para>
         ///  </li> </ul> 
-        /// <para>
-        /// Default: There is no default value.
-        /// </para>
-        ///  
         /// <para>
         /// Required: Conditional. If you don't specify <c>StackName</c>, you must specify <c>PhysicalResourceId</c>.
         /// </para>

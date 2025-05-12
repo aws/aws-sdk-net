@@ -103,8 +103,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameSessionId. 
         /// <para>
         /// A unique identifier for the game session to be terminated. A game session ARN has
-        /// the following format: <c>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom
-        /// ID string or idempotency token&gt;</c>.
+        /// the following format: <c>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet
+        /// ID&gt;/&lt;custom ID string or idempotency token&gt;</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]

@@ -46,6 +46,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCaptionLanguageMappings())
+            {
+                context.Writer.WritePropertyName("captionLanguageMappings");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCaptionLanguageMappingsListValue in requestObject.CaptionLanguageMappings)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CmafIngestCaptionLanguageMappingMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCaptionLanguageMappingsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("destination");
@@ -121,6 +137,24 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("sendDelayMs");
                 context.Writer.WriteNumberValue(requestObject.SendDelayMs.Value);
+            }
+
+            if(requestObject.IsSetTimedMetadataId3Frame())
+            {
+                context.Writer.WritePropertyName("timedMetadataId3Frame");
+                context.Writer.WriteStringValue(requestObject.TimedMetadataId3Frame);
+            }
+
+            if(requestObject.IsSetTimedMetadataId3Period())
+            {
+                context.Writer.WritePropertyName("timedMetadataId3Period");
+                context.Writer.WriteNumberValue(requestObject.TimedMetadataId3Period.Value);
+            }
+
+            if(requestObject.IsSetTimedMetadataPassthrough())
+            {
+                context.Writer.WritePropertyName("timedMetadataPassthrough");
+                context.Writer.WriteStringValue(requestObject.TimedMetadataPassthrough);
             }
 
         }

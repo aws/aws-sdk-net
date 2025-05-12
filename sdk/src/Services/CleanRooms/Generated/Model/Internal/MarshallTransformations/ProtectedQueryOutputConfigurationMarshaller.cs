@@ -46,6 +46,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDistribute())
+            {
+                context.Writer.WritePropertyName("distribute");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProtectedQueryDistributeOutputConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Distribute, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetMember())
             {
                 context.Writer.WritePropertyName("member");

@@ -185,7 +185,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property MdnResponse. 
         /// <para>
-        /// Used for outbound requests (from an Transfer Family server to a partner AS2 server)
+        /// Used for outbound requests (from an Transfer Family connector to a partner AS2 server)
         /// to determine whether the partner response for transfers is synchronous or asynchronous.
         /// Specify either of the following values:
         /// </para>

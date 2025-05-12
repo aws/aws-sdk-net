@@ -2312,10 +2312,11 @@ namespace Amazon.SageMaker
         /// </para>
         ///  <important> 
         /// <para>
-        /// Do not include any security-sensitive information including account access IDs, secrets
-        /// or tokens in any hyperparameter field. If the use of security-sensitive credentials
-        /// are detected, SageMaker will reject your training job request and return an exception
-        /// error.
+        /// Do not include any security-sensitive information including account access IDs, secrets,
+        /// or tokens in any hyperparameter fields. As part of the shared responsibility model,
+        /// you are responsible for any potential exposure, unauthorized access, or compromise
+        /// of your sensitive data if caused by any security-sensitive information included in
+        /// the request hyperparameter variable or plain text fields..
         /// </para>
         ///  </important>
         /// </summary>
@@ -2350,10 +2351,11 @@ namespace Amazon.SageMaker
         /// </para>
         ///  <important> 
         /// <para>
-        /// Do not include any security-sensitive information including account access IDs, secrets
-        /// or tokens in any hyperparameter field. If the use of security-sensitive credentials
-        /// are detected, SageMaker will reject your training job request and return an exception
-        /// error.
+        /// Do not include any security-sensitive information including account access IDs, secrets,
+        /// or tokens in any hyperparameter fields. As part of the shared responsibility model,
+        /// you are responsible for any potential exposure, unauthorized access, or compromise
+        /// of your sensitive data if caused by any security-sensitive information included in
+        /// the request hyperparameter variable or plain text fields..
         /// </para>
         ///  </important>
         /// </summary>
@@ -4181,10 +4183,11 @@ namespace Amazon.SageMaker
         /// </para>
         ///  <important> 
         /// <para>
-        /// Do not include any security-sensitive information including account access IDs, secrets
-        /// or tokens in any hyperparameter field. If the use of security-sensitive credentials
-        /// are detected, SageMaker will reject your training job request and return an exception
-        /// error.
+        /// Do not include any security-sensitive information including account access IDs, secrets,
+        /// or tokens in any hyperparameter fields. As part of the shared responsibility model,
+        /// you are responsible for any potential exposure, unauthorized access, or compromise
+        /// of your sensitive data if caused by security-sensitive information included in the
+        /// request hyperparameter variable or plain text fields.
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
@@ -4225,7 +4228,15 @@ namespace Amazon.SageMaker
         /// <para>
         ///  <c>Environment</c> - The environment variables to set in the Docker container.
         /// </para>
-        ///  </li> <li> 
+        ///  <important> 
+        /// <para>
+        /// Do not include any security-sensitive information including account access IDs, secrets,
+        /// or tokens in any environment fields. As part of the shared responsibility model, you
+        /// are responsible for any potential exposure, unauthorized access, or compromise of
+        /// your sensitive data if caused by security-sensitive information included in the request
+        /// environment variable or plain text fields.
+        /// </para>
+        ///  </important> </li> <li> 
         /// <para>
         ///  <c>RetryStrategy</c> - The number of times to retry the job when the job fails due
         /// to an <c>InternalServerError</c>.
@@ -4283,10 +4294,11 @@ namespace Amazon.SageMaker
         /// </para>
         ///  <important> 
         /// <para>
-        /// Do not include any security-sensitive information including account access IDs, secrets
-        /// or tokens in any hyperparameter field. If the use of security-sensitive credentials
-        /// are detected, SageMaker will reject your training job request and return an exception
-        /// error.
+        /// Do not include any security-sensitive information including account access IDs, secrets,
+        /// or tokens in any hyperparameter fields. As part of the shared responsibility model,
+        /// you are responsible for any potential exposure, unauthorized access, or compromise
+        /// of your sensitive data if caused by security-sensitive information included in the
+        /// request hyperparameter variable or plain text fields.
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
@@ -4327,7 +4339,15 @@ namespace Amazon.SageMaker
         /// <para>
         ///  <c>Environment</c> - The environment variables to set in the Docker container.
         /// </para>
-        ///  </li> <li> 
+        ///  <important> 
+        /// <para>
+        /// Do not include any security-sensitive information including account access IDs, secrets,
+        /// or tokens in any environment fields. As part of the shared responsibility model, you
+        /// are responsible for any potential exposure, unauthorized access, or compromise of
+        /// your sensitive data if caused by security-sensitive information included in the request
+        /// environment variable or plain text fields.
+        /// </para>
+        ///  </important> </li> <li> 
         /// <para>
         ///  <c>RetryStrategy</c> - The number of times to retry the job when the job fails due
         /// to an <c>InternalServerError</c>.
@@ -4592,8 +4612,8 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>TransformResources</c> - Identifies the ML compute instances for the transform
-        /// job.
+        ///  <c>TransformResources</c> - Identifies the ML compute instances and AMI image versions
+        /// for the transform job.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -4655,8 +4675,8 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>TransformResources</c> - Identifies the ML compute instances for the transform
-        /// job.
+        ///  <c>TransformResources</c> - Identifies the ML compute instances and AMI image versions
+        /// for the transform job.
         /// </para>
         ///  </li> </ul> 
         /// <para>

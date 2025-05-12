@@ -134,6 +134,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.OverrideProjectOwners = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("useAssetType", targetDepth))
+                {
+                    var unmarshaller = UseAssetTypePolicyGrantDetailUnmarshaller.Instance;
+                    unmarshalledObject.UseAssetType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

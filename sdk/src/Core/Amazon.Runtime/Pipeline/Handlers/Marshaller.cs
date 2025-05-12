@@ -21,6 +21,8 @@ using System.Text;
 using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Telemetry;
 using Amazon.Runtime.Telemetry.Metrics;
+using Amazon.Runtime.Telemetry.Metrics.NoOp;
+using Amazon.Runtime.Telemetry.Tracing.NoOp;
 using Amazon.Util;
 using Amazon.Util.Internal;
 
@@ -143,6 +145,35 @@ namespace Amazon.Runtime.Internal
             requestContext.UserAgentDetails.AddUserAgentComponent($"md/{(requestContext.IsAsync ? "ClientAsync" : "ClientSync")}");
 
             requestContext.UserAgentDetails.AddUserAgentComponent($"cfg/init-coll#{(AWSConfigs.InitializeCollections ? '1' : '0')}");
+
+            SetObservabilityFeatureIds(requestContext);
+        }
+
+        private static void SetObservabilityFeatureIds(IRequestContext requestContext)
+        {
+            var config = requestContext.ClientConfig;
+
+            if (!(config.TelemetryProvider.TracerProvider is NoOpTracerProvider))
+            {
+                requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.OBSERVABILITY_TRACING);
+
+                var tracerType = config.TelemetryProvider.TracerProvider.GetType();
+                if (tracerType.Namespace.StartsWith("OpenTelemetry.Instrumentation.AWS"))
+                {
+                    requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.OBSERVABILITY_OTEL_TRACING);
+                }
+            }
+
+            if (!(config.TelemetryProvider.MeterProvider is NoOpMeterProvider))
+            {
+                requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.OBSERVABILITY_METRICS);
+
+                var meterType = config.TelemetryProvider.MeterProvider.GetType();
+                if (meterType.Namespace.StartsWith("OpenTelemetry.Instrumentation.AWS"))
+                {
+                    requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.OBSERVABILITY_OTEL_METRICS);
+                }
+            }
         }
     }
 }

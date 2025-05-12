@@ -52,7 +52,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>LINK_ACCOUNT_NAME</c> and <c>SERVICE_CODE</c> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.
+        ///  <c>LINKED_ACCOUNT_NAME</c> and <c>SERVICE_CODE</c> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.
         /// </para>
         ///  
         /// <para>

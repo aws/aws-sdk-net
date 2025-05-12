@@ -1496,6 +1496,10 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when Amazon Cognito encounters an unexpected exception with
         /// Lambda.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnsupportedOperationException">
+        /// Exception that is thrown when you attempt to perform an operation that isn't enabled
+        /// for the user pool client.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
         /// exception with the Lambda service.
@@ -4073,6 +4077,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the CreateUserPoolClient service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
+        /// This exception is thrown when a feature you attempted to configure isn't available
+        /// in your current feature plan.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -4170,6 +4178,9 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the CreateUserPoolDomain service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
         /// This exception is thrown when a feature you attempted to configure isn't available
         /// in your current feature plan.
@@ -4815,6 +4826,9 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the DeleteUserPoolDomain service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -6078,6 +6092,81 @@ namespace Amazon.CognitoIdentityProvider
         }
         #endregion
         
+        #region  GetTokensFromRefreshToken
+
+        internal virtual GetTokensFromRefreshTokenResponse GetTokensFromRefreshToken(GetTokensFromRefreshTokenRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTokensFromRefreshTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTokensFromRefreshTokenResponseUnmarshaller.Instance;
+
+            return Invoke<GetTokensFromRefreshTokenResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Given a refresh token, issues new ID, access, and optionally refresh tokens for the
+        /// user who owns the submitted token. This operation issues a new refresh token and invalidates
+        /// the original refresh token after an optional grace period when refresh token rotation
+        /// is enabled. If refresh token rotation is disabled, issues new ID and access tokens
+        /// only.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTokensFromRefreshToken service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTokensFromRefreshToken service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
+        /// This exception is thrown when Amazon Cognito encounters an invalid Lambda response.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.RefreshTokenReuseException">
+        /// This exception is throw when your application requests token refresh with a refresh
+        /// token that has been invalidated by refresh-token rotation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
+        /// This exception is thrown when Amazon Cognito encounters an unexpected exception with
+        /// Lambda.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
+        /// This exception is thrown when the Amazon Cognito service encounters a user validation
+        /// exception with the Lambda service.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user isn't found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetTokensFromRefreshToken">REST API Reference for GetTokensFromRefreshToken Operation</seealso>
+        public virtual Task<GetTokensFromRefreshTokenResponse> GetTokensFromRefreshTokenAsync(GetTokensFromRefreshTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTokensFromRefreshTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTokensFromRefreshTokenResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTokensFromRefreshTokenResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetUICustomization
 
         internal virtual GetUICustomizationResponse GetUICustomization(GetUICustomizationRequest request)
@@ -6721,6 +6810,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
         /// This exception is thrown when Amazon Cognito encounters an unexpected exception with
         /// Lambda.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnsupportedOperationException">
+        /// Exception that is thrown when you attempt to perform an operation that isn't enabled
+        /// for the user pool client.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception is thrown when the Amazon Cognito service encounters a user validation
@@ -9585,6 +9678,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
         /// This exception is thrown if two or more modifications are happening concurrently.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
+        /// This exception is thrown when a feature you attempted to configure isn't available
+        /// in your current feature plan.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -9693,6 +9790,9 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the UpdateUserPoolDomain service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
         /// This exception is thrown when a feature you attempted to configure isn't available
         /// in your current feature plan.

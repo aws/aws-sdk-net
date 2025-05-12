@@ -36,11 +36,13 @@ namespace Amazon.ControlCatalog.Model
     {
         private string _arn;
         private ControlBehavior _behavior;
+        private DateTime? _createTime;
         private string _description;
         private ImplementationDetails _implementation;
         private string _name;
         private List<ControlParameter> _parameters = AWSConfigs.InitializeCollections ? new List<ControlParameter>() : null;
         private RegionConfiguration _regionConfiguration;
+        private ControlSeverity _severity;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -79,6 +81,25 @@ namespace Amazon.ControlCatalog.Model
         internal bool IsSetBehavior()
         {
             return this._behavior != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateTime. 
+        /// <para>
+        /// A timestamp that notes the time when the control was released (start of its life)
+        /// as a governance capability in Amazon Web Services.
+        /// </para>
+        /// </summary>
+        public DateTime? CreateTime
+        {
+            get { return this._createTime; }
+            set { this._createTime = value; }
+        }
+
+        // Check to see if CreateTime property is set
+        internal bool IsSetCreateTime()
+        {
+            return this._createTime.HasValue; 
         }
 
         /// <summary>
@@ -172,6 +193,24 @@ namespace Amazon.ControlCatalog.Model
         internal bool IsSetRegionConfiguration()
         {
             return this._regionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Severity. 
+        /// <para>
+        /// An enumerated type, with the following possible values:
+        /// </para>
+        /// </summary>
+        public ControlSeverity Severity
+        {
+            get { return this._severity; }
+            set { this._severity = value; }
+        }
+
+        // Check to see if Severity property is set
+        internal bool IsSetSeverity()
+        {
+            return this._severity != null;
         }
 
     }

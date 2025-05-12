@@ -490,6 +490,10 @@ namespace Amazon.BCMPricingCalculator
         /// Constant READY for BillScenarioStatus
         /// </summary>
         public static readonly BillScenarioStatus READY = new BillScenarioStatus("READY");
+        /// <summary>
+        /// Constant STALE for BillScenarioStatus
+        /// </summary>
+        public static readonly BillScenarioStatus STALE = new BillScenarioStatus("STALE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

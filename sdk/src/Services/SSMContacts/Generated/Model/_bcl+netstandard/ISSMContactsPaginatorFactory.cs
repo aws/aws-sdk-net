@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the ssm-contacts-2021-05-03.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMContacts.Model
@@ -29,56 +30,111 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Paginator for ListContactChannels operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListContactChannelsPaginator ListContactChannels(ListContactChannelsRequest request);
 
         /// <summary>
         /// Paginator for ListContacts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListContactsPaginator ListContacts(ListContactsRequest request);
 
         /// <summary>
         /// Paginator for ListEngagements operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEngagementsPaginator ListEngagements(ListEngagementsRequest request);
 
         /// <summary>
         /// Paginator for ListPageReceipts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPageReceiptsPaginator ListPageReceipts(ListPageReceiptsRequest request);
 
         /// <summary>
         /// Paginator for ListPageResolutions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPageResolutionsPaginator ListPageResolutions(ListPageResolutionsRequest request);
 
         /// <summary>
         /// Paginator for ListPagesByContact operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPagesByContactPaginator ListPagesByContact(ListPagesByContactRequest request);
 
         /// <summary>
         /// Paginator for ListPagesByEngagement operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPagesByEngagementPaginator ListPagesByEngagement(ListPagesByEngagementRequest request);
 
         /// <summary>
         /// Paginator for ListPreviewRotationShifts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPreviewRotationShiftsPaginator ListPreviewRotationShifts(ListPreviewRotationShiftsRequest request);
 
         /// <summary>
         /// Paginator for ListRotationOverrides operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRotationOverridesPaginator ListRotationOverrides(ListRotationOverridesRequest request);
 
         /// <summary>
         /// Paginator for ListRotations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRotationsPaginator ListRotations(ListRotationsRequest request);
 
         /// <summary>
         /// Paginator for ListRotationShifts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRotationShiftsPaginator ListRotationShifts(ListRotationShiftsRequest request);
     }
 }

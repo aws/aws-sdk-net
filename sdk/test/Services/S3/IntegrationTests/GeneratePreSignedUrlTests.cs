@@ -176,6 +176,34 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             });
         }
 
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestGetPreSignedURL_WithCustomServiceURL()
+        {
+            var serviceUrl = "https://s3-external-1.amazonaws.com";
+            var config = new AmazonS3Config
+            {
+                ServiceURL = serviceUrl,
+                ForcePathStyle = true,
+                AuthenticationRegion = "us-west-2"
+            };
+
+            var credentials = new BasicAWSCredentials("accessKey", "secretKey");
+
+            var s3Client = new AmazonS3Client(credentials, config);
+
+            var request = new GetPreSignedUrlRequest
+            {
+                BucketName = "my-bucket",
+                Key = "my-object-key",
+                Expires = DateTime.UtcNow.AddMinutes(5)
+            };
+
+            var url = s3Client.GetPreSignedURL(request);
+
+            Assert.IsTrue(url.StartsWith(serviceUrl));
+        }
+
         private void TestPreSignedUrlPut(PresignedUrlTestParameters testParams)
         {
             var client = new AmazonS3Client(testParams.Region);

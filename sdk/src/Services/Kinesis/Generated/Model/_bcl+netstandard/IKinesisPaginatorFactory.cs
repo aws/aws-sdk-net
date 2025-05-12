@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kinesis.Model
@@ -29,11 +30,21 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Paginator for ListStreamConsumers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListStreamConsumersPaginator ListStreamConsumers(ListStreamConsumersRequest request);
 
         /// <summary>
         /// Paginator for ListStreams operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListStreamsPaginator ListStreams(ListStreamsRequest request);
     }
 }

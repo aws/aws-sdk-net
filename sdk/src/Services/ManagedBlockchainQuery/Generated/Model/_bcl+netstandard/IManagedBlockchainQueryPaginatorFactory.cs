@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the managedblockchain-query-2023-05-04.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedBlockchainQuery.Model
@@ -29,26 +30,51 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Paginator for ListAssetContracts operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAssetContractsPaginator ListAssetContracts(ListAssetContractsRequest request);
 
         /// <summary>
         /// Paginator for ListFilteredTransactionEvents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListFilteredTransactionEventsPaginator ListFilteredTransactionEvents(ListFilteredTransactionEventsRequest request);
 
         /// <summary>
         /// Paginator for ListTokenBalances operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTokenBalancesPaginator ListTokenBalances(ListTokenBalancesRequest request);
 
         /// <summary>
         /// Paginator for ListTransactionEvents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTransactionEventsPaginator ListTransactionEvents(ListTransactionEventsRequest request);
 
         /// <summary>
         /// Paginator for ListTransactions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTransactionsPaginator ListTransactions(ListTransactionsRequest request);
     }
 }

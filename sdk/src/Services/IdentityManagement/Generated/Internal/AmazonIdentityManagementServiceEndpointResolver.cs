@@ -50,10 +50,10 @@ namespace Amazon.IdentityManagement.Internal
         {
             var config = (AmazonIdentityManagementServiceConfig)requestContext.ClientConfig;
             var result = new IdentityManagementServiceEndpointParameters();
-            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
 
 
             // The region needs to be determined from the ServiceURL if not set.

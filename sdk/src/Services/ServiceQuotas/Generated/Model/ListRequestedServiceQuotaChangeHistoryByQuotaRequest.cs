@@ -31,7 +31,8 @@ namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRequestedServiceQuotaChangeHistoryByQuota operation.
-    /// Retrieves the quota increase requests for the specified quota.
+    /// Retrieves the quota increase requests for the specified quota. Filter responses to
+    /// return quota requests at either the account level, resource level, or all levels.
     /// </summary>
     public partial class ListRequestedServiceQuotaChangeHistoryByQuotaRequest : AmazonServiceQuotasRequest
     {
@@ -119,8 +120,8 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property QuotaRequestedAtLevel. 
         /// <para>
-        /// Specifies at which level within the Amazon Web Services account the quota request
-        /// applies to.
+        /// Filters the response to return quota requests for the <c>ACCOUNT</c>, <c>RESOURCE</c>,
+        /// or <c>ALL</c> levels. <c>ACCOUNT</c> is the default.
         /// </para>
         /// </summary>
         public AppliedLevelEnum QuotaRequestedAtLevel

@@ -31,8 +31,8 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetResourceLogLevel operation.
-    /// Removes the log-level override, if any, for a specific resource-ID and resource-type.
-    /// It can be used for a wireless device, a wireless gateway, or a fuota task.
+    /// Removes the log-level override, if any, for a specific resource ID and resource type.
+    /// It can be used for a wireless device, a wireless gateway, or a FUOTA task.
     /// </summary>
     public partial class ResetResourceLogLevelRequest : AmazonIoTWirelessRequest
     {
@@ -58,7 +58,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of the resource, which can be <c>WirelessDevice</c>, <c>WirelessGateway</c>,
+        /// The type of resource, which can be <c>WirelessDevice</c>, <c>WirelessGateway</c>,
         /// or <c>FuotaTask</c>.
         /// </para>
         /// </summary>

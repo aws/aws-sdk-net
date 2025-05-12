@@ -200,8 +200,8 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// The priority of the job on a scale of 0 to 100. The highest priority (first scheduled)
-        /// is 100. When two jobs have the same priority, the oldest job is scheduled first.
+        /// The priority of the job. The highest priority (first scheduled) is 100. When two jobs
+        /// have the same priority, the oldest job is scheduled first.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
@@ -297,7 +297,7 @@ namespace Amazon.Deadline.Model
         /// The job template to use for this job.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=300000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1000000)]
         public string Template
         {
             get { return this._template; }

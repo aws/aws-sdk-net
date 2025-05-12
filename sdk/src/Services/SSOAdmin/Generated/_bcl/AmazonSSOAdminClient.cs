@@ -40,28 +40,36 @@ namespace Amazon.SSOAdmin
     /// <summary>
     /// <para>Implementation for accessing SSOAdmin</para>
     ///
-    /// IAM Identity Center (successor to Single Sign-On) helps you securely create, or connect,
-    /// your workforce identities and manage their access centrally across Amazon Web Services
-    /// accounts and applications. IAM Identity Center is the recommended approach for workforce
-    /// authentication and authorization in Amazon Web Services, for organizations of any
-    /// size and type.
+    /// IAM Identity Center is the Amazon Web Services solution for connecting your workforce
+    /// users to Amazon Web Services managed applications and other Amazon Web Services resources.
+    /// You can connect your existing identity provider and synchronize users and groups from
+    /// your directory, or create and manage your users directly in IAM Identity Center. You
+    /// can then use IAM Identity Center for either or both of the following:
     /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// User access to applications
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// User access to Amazon Web Services accounts
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// This guide provides information about single sign-on operations that you can use for
+    /// access to applications and Amazon Web Services accounts. For information about IAM
+    /// Identity Center features, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM
+    /// Identity Center User Guide</a>.
+    /// </para>
     ///  <note> 
     /// <para>
     /// IAM Identity Center uses the <c>sso</c> and <c>identitystore</c> API namespaces.
     /// </para>
     ///  </note> 
     /// <para>
-    /// This reference guide provides information on single sign-on operations which could
-    /// be used for access management of Amazon Web Services accounts. For information about
-    /// IAM Identity Center features, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM
-    /// Identity Center User Guide</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// Many operations in the IAM Identity Center APIs rely on identifiers for users and
-    /// groups, known as principals. For more information about how to work with principals
-    /// and principal IDs in IAM Identity Center, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Identity
+    /// Many API operations for IAM Identity Center rely on identifiers for users and groups,
+    /// known as principals. For more information about how to work with principals and principal
+    /// IDs in IAM Identity Center, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Identity
     /// Store API Reference</a>.
     /// </para>
     ///  <note> 
@@ -637,7 +645,20 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Creates an application in IAM Identity Center for the given application provider.
+        /// Creates an OAuth 2.0 customer managed application in IAM Identity Center for the given
+        /// application provider.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API does not support creating SAML 2.0 customer managed applications or Amazon
+        /// Web Services managed applications. To learn how to create an Amazon Web Services managed
+        /// application, see the application user guide. You can create a SAML 2.0 customer managed
+        /// application in the Amazon Web Services Management Console only. See <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/customermanagedapps-saml2-setup.html">Setting
+        /// up customer managed SAML 2.0 applications</a>. For more information on these application
+        /// types, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/awsapps.html">Amazon
+        /// Web Services managed applications</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// 
@@ -680,7 +701,20 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Creates an application in IAM Identity Center for the given application provider.
+        /// Creates an OAuth 2.0 customer managed application in IAM Identity Center for the given
+        /// application provider.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API does not support creating SAML 2.0 customer managed applications or Amazon
+        /// Web Services managed applications. To learn how to create an Amazon Web Services managed
+        /// application, see the application user guide. You can create a SAML 2.0 customer managed
+        /// application in the Amazon Web Services Management Console only. See <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/customermanagedapps-saml2-setup.html">Setting
+        /// up customer managed SAML 2.0 applications</a>. For more information on these application
+        /// types, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/awsapps.html">Amazon
+        /// Web Services managed applications</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// <param name="cancellationToken">
@@ -3945,7 +3979,9 @@ namespace Amazon.SSOAdmin
 
         /// <summary>
         /// Retrieves a list of the IAM Identity Center associated Amazon Web Services accounts
-        /// that the principal has access to.
+        /// that the principal has access to. This action must be called from the management account
+        /// containing your organization instance of IAM Identity Center. This action is not valid
+        /// for account instances of IAM Identity Center.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAssignmentsForPrincipal service method.</param>
         /// 
@@ -3979,7 +4015,9 @@ namespace Amazon.SSOAdmin
 
         /// <summary>
         /// Retrieves a list of the IAM Identity Center associated Amazon Web Services accounts
-        /// that the principal has access to.
+        /// that the principal has access to. This action must be called from the management account
+        /// containing your organization instance of IAM Identity Center. This action is not valid
+        /// for account instances of IAM Identity Center.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAssignmentsForPrincipal service method.</param>
         /// <param name="cancellationToken">
@@ -4238,7 +4276,11 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists the applications to which a specified principal is assigned.
+        /// Lists the applications to which a specified principal is assigned. You must provide
+        /// a filter when calling this action from a member account against your organization
+        /// instance of IAM Identity Center. A filter is not required when called from the management
+        /// account against an organization instance of IAM Identity Center, or from a member
+        /// account against an account instance of IAM Identity Center in the same account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApplicationAssignmentsForPrincipal service method.</param>
         /// 
@@ -4271,7 +4313,11 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists the applications to which a specified principal is assigned.
+        /// Lists the applications to which a specified principal is assigned. You must provide
+        /// a filter when calling this action from a member account against your organization
+        /// instance of IAM Identity Center. A filter is not required when called from the management
+        /// account against an organization instance of IAM Identity Center, or from a member
+        /// account against an account instance of IAM Identity Center in the same account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApplicationAssignmentsForPrincipal service method.</param>
         /// <param name="cancellationToken">
@@ -4525,9 +4571,10 @@ namespace Amazon.SSOAdmin
 
         /// <summary>
         /// Lists all applications associated with the instance of IAM Identity Center. When listing
-        /// applications for an instance in the management account, member accounts must use the
-        /// <c>applicationAccount</c> parameter to filter the list to only applications created
-        /// from that account.
+        /// applications for an organization instance in the management account, member accounts
+        /// must use the <c>applicationAccount</c> parameter to filter the list to only applications
+        /// created from that account. When listing applications for an account instance in the
+        /// same member account, a filter is not required.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApplications service method.</param>
         /// 
@@ -4558,9 +4605,10 @@ namespace Amazon.SSOAdmin
 
         /// <summary>
         /// Lists all applications associated with the instance of IAM Identity Center. When listing
-        /// applications for an instance in the management account, member accounts must use the
-        /// <c>applicationAccount</c> parameter to filter the list to only applications created
-        /// from that account.
+        /// applications for an organization instance in the management account, member accounts
+        /// must use the <c>applicationAccount</c> parameter to filter the list to only applications
+        /// created from that account. When listing applications for an account instance in the
+        /// same member account, a filter is not required.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApplications service method.</param>
         /// <param name="cancellationToken">
@@ -5529,7 +5577,83 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Adds a grant to an application.
+        /// Creates a configuration for an application to use grants. Conceptually grants are
+        /// authorization to request actions related to tokens. This configuration will be used
+        /// when parties are requesting and receiving tokens during the trusted identity propagation
+        /// process. For more information on the IAM Identity Center supported grant workflows,
+        /// see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/customermanagedapps-saml2-oauth2.html">SAML
+        /// 2.0 and OAuth 2.0</a>.
+        /// 
+        ///  
+        /// <para>
+        /// A grant is created between your applications and Identity Center instance which enables
+        /// an application to use specified mechanisms to obtain tokens. These tokens are used
+        /// by your applications to gain access to Amazon Web Services resources on behalf of
+        /// users. The following elements are within these exchanges:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Requester</b> - The application requesting access to Amazon Web Services resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Subject</b> - Typically the user that is requesting access to Amazon Web Services
+        /// resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Grant</b> - Conceptually, a grant is authorization to access Amazon Web Services
+        /// resources. These grants authorize token generation for authenticating access to the
+        /// requester and for the request to make requests on behalf of the subjects. There are
+        /// four types of grants:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>AuthorizationCode</b> - Allows an application to request authorization through
+        /// a series of user-agent redirects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>JWT bearer </b> - Authorizes an application to exchange a JSON Web Token that
+        /// came from an external identity provider. To learn more, see <a href="https://datatracker.ietf.org/doc/html/rfc6749">RFC
+        /// 6479</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Refresh token</b> - Enables application to request new access tokens to replace
+        /// expiring or expired access tokens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Exchange token</b> - A grant that requests tokens from the authorization server
+        /// by providing a ‘subject’ token with access scope authorizing trusted identity propagation
+        /// to this application. To learn more, see <a href="https://datatracker.ietf.org/doc/html/rfc8693">RFC
+        /// 8693</a>.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <b>Authorization server</b> - IAM Identity Center requests tokens.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// User credentials are never shared directly within these exchanges. Instead, applications
+        /// use grants to request access tokens from IAM Identity Center. For more information,
+        /// see <a href="https://datatracker.ietf.org/doc/html/rfc6749">RFC 6479</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Connecting to custom applications.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Configuring an Amazon Web Services service to make calls to another Amazon Web Services
+        /// services using JWT tokens.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutApplicationGrant service method.</param>
         /// 
@@ -5568,7 +5692,83 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Adds a grant to an application.
+        /// Creates a configuration for an application to use grants. Conceptually grants are
+        /// authorization to request actions related to tokens. This configuration will be used
+        /// when parties are requesting and receiving tokens during the trusted identity propagation
+        /// process. For more information on the IAM Identity Center supported grant workflows,
+        /// see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/customermanagedapps-saml2-oauth2.html">SAML
+        /// 2.0 and OAuth 2.0</a>.
+        /// 
+        ///  
+        /// <para>
+        /// A grant is created between your applications and Identity Center instance which enables
+        /// an application to use specified mechanisms to obtain tokens. These tokens are used
+        /// by your applications to gain access to Amazon Web Services resources on behalf of
+        /// users. The following elements are within these exchanges:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Requester</b> - The application requesting access to Amazon Web Services resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Subject</b> - Typically the user that is requesting access to Amazon Web Services
+        /// resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Grant</b> - Conceptually, a grant is authorization to access Amazon Web Services
+        /// resources. These grants authorize token generation for authenticating access to the
+        /// requester and for the request to make requests on behalf of the subjects. There are
+        /// four types of grants:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>AuthorizationCode</b> - Allows an application to request authorization through
+        /// a series of user-agent redirects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>JWT bearer </b> - Authorizes an application to exchange a JSON Web Token that
+        /// came from an external identity provider. To learn more, see <a href="https://datatracker.ietf.org/doc/html/rfc6749">RFC
+        /// 6479</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Refresh token</b> - Enables application to request new access tokens to replace
+        /// expiring or expired access tokens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Exchange token</b> - A grant that requests tokens from the authorization server
+        /// by providing a ‘subject’ token with access scope authorizing trusted identity propagation
+        /// to this application. To learn more, see <a href="https://datatracker.ietf.org/doc/html/rfc8693">RFC
+        /// 8693</a>.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <b>Authorization server</b> - IAM Identity Center requests tokens.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// User credentials are never shared directly within these exchanges. Instead, applications
+        /// use grants to request access tokens from IAM Identity Center. For more information,
+        /// see <a href="https://datatracker.ietf.org/doc/html/rfc6749">RFC 6479</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Connecting to custom applications.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Configuring an Amazon Web Services service to make calls to another Amazon Web Services
+        /// services using JWT tokens.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutApplicationGrant service method.</param>
         /// <param name="cancellationToken">

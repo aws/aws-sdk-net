@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the account-2021-02-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Account.Model
@@ -29,6 +30,11 @@ namespace Amazon.Account.Model
         /// <summary>
         /// Paginator for ListRegions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRegionsPaginator ListRegions(ListRegionsRequest request);
     }
 }

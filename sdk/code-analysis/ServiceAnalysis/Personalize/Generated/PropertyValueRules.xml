@@ -1354,6 +1354,15 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Personalize.Model.EventParameters.EventType</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.EventParameters.Weight</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Personalize.Model.EventTracker.AccountId</property>
     <max>256</max>
   </property-value-rule>
@@ -1414,6 +1423,7 @@
   <property-value-rule>
     <property>Amazon.Personalize.Model.FieldsForThemeGeneration.ItemName</property>
     <max>150</max>
+    <pattern>[A-Za-z_][A-Za-z\d_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.Filter.DatasetGroupArn</property>

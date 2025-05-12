@@ -204,8 +204,27 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ParentImage. 
         /// <para>
-        /// The base image of the image recipe.
+        /// The base image for customizations specified in the image recipe. You can specify the
+        /// parent image using one of the following options:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// AMI ID
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Image Builder image Amazon Resource Name (ARN)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <c>ssm:</c>,
+        /// followed by the parameter name or ARN.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Web Services Marketplace product ID
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
         public string ParentImage

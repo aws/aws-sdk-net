@@ -56,10 +56,22 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AdsInteractionLog", targetDepth))
+                {
+                    var unmarshaller = AdsInteractionLogUnmarshaller.Instance;
+                    unmarshalledObject.AdsInteractionLog = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("EnabledLoggingStrategies", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.EnabledLoggingStrategies = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ManifestServiceInteractionLog", targetDepth))
+                {
+                    var unmarshaller = ManifestServiceInteractionLogUnmarshaller.Instance;
+                    unmarshalledObject.ManifestServiceInteractionLog = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PercentEnabled", targetDepth))

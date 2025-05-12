@@ -25,6 +25,68 @@ namespace Amazon.SimpleSystemsManagement
 {
 
     /// <summary>
+    /// Constants used for properties of type AccessRequestStatus.
+    /// </summary>
+    public class AccessRequestStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Approved for AccessRequestStatus
+        /// </summary>
+        public static readonly AccessRequestStatus Approved = new AccessRequestStatus("Approved");
+        /// <summary>
+        /// Constant Expired for AccessRequestStatus
+        /// </summary>
+        public static readonly AccessRequestStatus Expired = new AccessRequestStatus("Expired");
+        /// <summary>
+        /// Constant Pending for AccessRequestStatus
+        /// </summary>
+        public static readonly AccessRequestStatus Pending = new AccessRequestStatus("Pending");
+        /// <summary>
+        /// Constant Rejected for AccessRequestStatus
+        /// </summary>
+        public static readonly AccessRequestStatus Rejected = new AccessRequestStatus("Rejected");
+        /// <summary>
+        /// Constant Revoked for AccessRequestStatus
+        /// </summary>
+        public static readonly AccessRequestStatus Revoked = new AccessRequestStatus("Revoked");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessRequestStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessRequestStatus FindValue(string value)
+        {
+            return FindValue<AccessRequestStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessRequestStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AssociationComplianceSeverity.
     /// </summary>
     public class AssociationComplianceSeverity : ConstantClass
@@ -740,6 +802,10 @@ namespace Amazon.SimpleSystemsManagement
     public class AutomationSubtype : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AccessRequest for AutomationSubtype
+        /// </summary>
+        public static readonly AutomationSubtype AccessRequest = new AutomationSubtype("AccessRequest");
         /// <summary>
         /// Constant ChangeRequest for AutomationSubtype
         /// </summary>
@@ -1969,6 +2035,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly DocumentType ApplicationConfigurationSchema = new DocumentType("ApplicationConfigurationSchema");
         /// <summary>
+        /// Constant AutoApprovalPolicy for DocumentType
+        /// </summary>
+        public static readonly DocumentType AutoApprovalPolicy = new DocumentType("AutoApprovalPolicy");
+        /// <summary>
         /// Constant Automation for DocumentType
         /// </summary>
         public static readonly DocumentType Automation = new DocumentType("Automation");
@@ -1996,6 +2066,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant DeploymentStrategy for DocumentType
         /// </summary>
         public static readonly DocumentType DeploymentStrategy = new DocumentType("DeploymentStrategy");
+        /// <summary>
+        /// Constant ManualApprovalPolicy for DocumentType
+        /// </summary>
+        public static readonly DocumentType ManualApprovalPolicy = new DocumentType("ManualApprovalPolicy");
         /// <summary>
         /// Constant Package for DocumentType
         /// </summary>
@@ -3897,6 +3971,42 @@ namespace Amazon.SimpleSystemsManagement
     {
 
         /// <summary>
+        /// Constant AccessRequestByApproverArn for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey AccessRequestByApproverArn = new OpsItemFilterKey("AccessRequestByApproverArn");
+        /// <summary>
+        /// Constant AccessRequestByApproverId for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey AccessRequestByApproverId = new OpsItemFilterKey("AccessRequestByApproverId");
+        /// <summary>
+        /// Constant AccessRequestByIsReplica for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey AccessRequestByIsReplica = new OpsItemFilterKey("AccessRequestByIsReplica");
+        /// <summary>
+        /// Constant AccessRequestByRequesterArn for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey AccessRequestByRequesterArn = new OpsItemFilterKey("AccessRequestByRequesterArn");
+        /// <summary>
+        /// Constant AccessRequestByRequesterId for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey AccessRequestByRequesterId = new OpsItemFilterKey("AccessRequestByRequesterId");
+        /// <summary>
+        /// Constant AccessRequestBySourceAccountId for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey AccessRequestBySourceAccountId = new OpsItemFilterKey("AccessRequestBySourceAccountId");
+        /// <summary>
+        /// Constant AccessRequestBySourceOpsItemId for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey AccessRequestBySourceOpsItemId = new OpsItemFilterKey("AccessRequestBySourceOpsItemId");
+        /// <summary>
+        /// Constant AccessRequestBySourceRegion for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey AccessRequestBySourceRegion = new OpsItemFilterKey("AccessRequestBySourceRegion");
+        /// <summary>
+        /// Constant AccessRequestByTargetResourceId for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey AccessRequestByTargetResourceId = new OpsItemFilterKey("AccessRequestByTargetResourceId");
+        /// <summary>
         /// Constant AccountId for OpsItemFilterKey
         /// </summary>
         public static readonly OpsItemFilterKey AccountId = new OpsItemFilterKey("AccountId");
@@ -4273,6 +4383,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly OpsItemStatus Resolved = new OpsItemStatus("Resolved");
         /// <summary>
+        /// Constant Revoked for OpsItemStatus
+        /// </summary>
+        public static readonly OpsItemStatus Revoked = new OpsItemStatus("Revoked");
+        /// <summary>
         /// Constant RunbookInProgress for OpsItemStatus
         /// </summary>
         public static readonly OpsItemStatus RunbookInProgress = new OpsItemStatus("RunbookInProgress");
@@ -4539,6 +4653,10 @@ namespace Amazon.SimpleSystemsManagement
     {
 
         /// <summary>
+        /// Constant AVAILABLE_SECURITY_UPDATE for PatchComplianceDataState
+        /// </summary>
+        public static readonly PatchComplianceDataState AVAILABLE_SECURITY_UPDATE = new PatchComplianceDataState("AVAILABLE_SECURITY_UPDATE");
+        /// <summary>
         /// Constant FAILED for PatchComplianceDataState
         /// </summary>
         public static readonly PatchComplianceDataState FAILED = new PatchComplianceDataState("FAILED");
@@ -4662,6 +4780,56 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PatchComplianceLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PatchComplianceStatus.
+    /// </summary>
+    public class PatchComplianceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLIANT for PatchComplianceStatus
+        /// </summary>
+        public static readonly PatchComplianceStatus COMPLIANT = new PatchComplianceStatus("COMPLIANT");
+        /// <summary>
+        /// Constant NON_COMPLIANT for PatchComplianceStatus
+        /// </summary>
+        public static readonly PatchComplianceStatus NON_COMPLIANT = new PatchComplianceStatus("NON_COMPLIANT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PatchComplianceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PatchComplianceStatus FindValue(string value)
+        {
+            return FindValue<PatchComplianceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PatchComplianceStatus(string value)
         {
             return FindValue(value);
         }
@@ -5600,6 +5768,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant Resume for SignalType
         /// </summary>
         public static readonly SignalType Resume = new SignalType("Resume");
+        /// <summary>
+        /// Constant Revoke for SignalType
+        /// </summary>
+        public static readonly SignalType Revoke = new SignalType("Revoke");
         /// <summary>
         /// Constant StartStep for SignalType
         /// </summary>

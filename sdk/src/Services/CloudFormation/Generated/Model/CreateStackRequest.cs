@@ -522,7 +522,7 @@ namespace Amazon.CloudFormation.Model
         /// <c>StackPolicyBody</c> or the <c>StackPolicyURL</c> parameter, but not both.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1350)]
+        [AWSProperty(Min=1, Max=5120)]
         public string StackPolicyURL
         {
             get { return this._stackPolicyURL; }
@@ -593,7 +593,7 @@ namespace Amazon.CloudFormation.Model
         /// parameter, but not both.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=5120)]
         public string TemplateURL
         {
             get { return this._templateURL; }

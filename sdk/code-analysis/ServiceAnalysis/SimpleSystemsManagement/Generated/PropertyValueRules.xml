@@ -709,6 +709,10 @@
     <pattern>^(oi)-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetAccessTokenRequest.AccessRequestId</property>
+    <pattern>^(oi)-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetAutomationExecutionRequest.AutomationExecutionId</property>
     <min>36</min>
     <max>36</max>
@@ -1647,6 +1651,15 @@
     <property>Amazon.SimpleSystemsManagement.Model.SendCommandRequest.TimeoutSeconds</property>
     <min>30</min>
     <max>2592000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.StartAccessRequestRequest.Reason</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.StartAccessRequestResponse.AccessRequestId</property>
+    <pattern>^(oi)-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.StartAutomationExecutionRequest.ClientToken</property>
@@ -2785,6 +2798,10 @@
     <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationBatchRequestEntry.ScheduleOffset</property>
     <min>1</min>
     <max>6</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Credentials.AccessKeyId</property>
+    <pattern>\w{16,128}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DocumentDefaultVersionDescription.DefaultVersion</property>

@@ -233,7 +233,6 @@ namespace Amazon.SageMaker.Model
         /// is Amazon Web Services Service Catalog</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ServiceCatalogProvisioningDetails ServiceCatalogProvisioningDetails
         {
             get { return this._serviceCatalogProvisioningDetails; }

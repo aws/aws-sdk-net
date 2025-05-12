@@ -35,8 +35,8 @@ namespace Amazon.Connect.Model
     /// 
     ///  
     /// <para>
-    /// For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time
-    /// Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
+    /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetCurrentMetricDataRequest : AmazonConnectRequest
@@ -53,8 +53,8 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property CurrentMetrics. 
         /// <para>
         /// The metrics to retrieve. Specify the name and unit for each metric. The following
-        /// metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time
-        /// Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
+        /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         ///  <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> 
         /// <para>
@@ -62,7 +62,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a>
+        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#aftercallwork-real-time">ACW</a>
         /// 
         /// </para>
         ///  </dd> <dt>AGENTS_AVAILABLE</dt> <dd> 
@@ -71,7 +71,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a>
+        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#available-real-time">Available</a>
         /// 
         /// </para>
         ///  </dd> <dt>AGENTS_ERROR</dt> <dd> 
@@ -80,7 +80,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a>
+        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#error-real-time">Error</a>
         /// 
         /// </para>
         ///  </dd> <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> 
@@ -89,7 +89,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT
+        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#non-productive-time-real-time">NPT
         /// (Non-Productive Time)</a> 
         /// </para>
         ///  </dd> <dt>AGENTS_ON_CALL</dt> <dd> 
@@ -98,7 +98,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
+        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#on-call-real-time">On
         /// contact</a> 
         /// </para>
         ///  </dd> <dt>AGENTS_ON_CONTACT</dt> <dd> 
@@ -107,7 +107,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
+        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#on-call-real-time">On
         /// contact</a> 
         /// </para>
         ///  </dd> <dt>AGENTS_ONLINE</dt> <dd> 
@@ -116,7 +116,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a>
+        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#online-real-time">Online</a>
         /// 
         /// </para>
         ///  </dd> <dt>AGENTS_STAFFED</dt> <dd> 
@@ -125,7 +125,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a>
+        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#staffed-real-time">Staffed</a>
         /// 
         /// </para>
         ///  </dd> <dt>CONTACTS_IN_QUEUE</dt> <dd> 
@@ -134,7 +134,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In
+        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#in-queue-real-time">In
         /// queue</a> 
         /// </para>
         ///  </dd> <dt>CONTACTS_SCHEDULED</dt> <dd> 
@@ -143,7 +143,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
+        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#scheduled-real-time">Scheduled</a>
         /// 
         /// </para>
         ///  </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> 
@@ -178,7 +178,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
+        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#oldest-real-time">Oldest</a>
         /// 
         /// </para>
         ///  </dd> <dt>SLOTS_ACTIVE</dt> <dd> 
@@ -187,7 +187,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a>
+        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#active-real-time">Active</a>
         /// 
         /// </para>
         ///  </dd> <dt>SLOTS_AVAILABLE</dt> <dd> 
@@ -196,7 +196,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a>
+        /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#availability-real-time">Availability</a>
         /// 
         /// </para>
         ///  </dd> </dl>

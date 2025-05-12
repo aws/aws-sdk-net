@@ -609,6 +609,52 @@ namespace Amazon.CodeBuild
 
 
     /// <summary>
+    /// Constants used for properties of type CommandType.
+    /// </summary>
+    public class CommandType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SHELL for CommandType
+        /// </summary>
+        public static readonly CommandType SHELL = new CommandType("SHELL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CommandType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CommandType FindValue(string value)
+        {
+            return FindValue<CommandType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CommandType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ComputeType.
     /// </summary>
     public class ComputeType : ConstantClass
@@ -658,6 +704,10 @@ namespace Amazon.CodeBuild
         /// Constant BUILD_LAMBDA_8GB for ComputeType
         /// </summary>
         public static readonly ComputeType BUILD_LAMBDA_8GB = new ComputeType("BUILD_LAMBDA_8GB");
+        /// <summary>
+        /// Constant CUSTOM_INSTANCE_TYPE for ComputeType
+        /// </summary>
+        public static readonly ComputeType CUSTOM_INSTANCE_TYPE = new ComputeType("CUSTOM_INSTANCE_TYPE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -790,6 +840,10 @@ namespace Amazon.CodeBuild
         /// Constant WINDOWS_SERVER_2019_CONTAINER for EnvironmentType
         /// </summary>
         public static readonly EnvironmentType WINDOWS_SERVER_2019_CONTAINER = new EnvironmentType("WINDOWS_SERVER_2019_CONTAINER");
+        /// <summary>
+        /// Constant WINDOWS_SERVER_2022_CONTAINER for EnvironmentType
+        /// </summary>
+        public static readonly EnvironmentType WINDOWS_SERVER_2022_CONTAINER = new EnvironmentType("WINDOWS_SERVER_2022_CONTAINER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

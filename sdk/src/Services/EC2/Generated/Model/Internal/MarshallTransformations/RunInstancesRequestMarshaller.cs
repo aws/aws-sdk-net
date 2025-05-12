@@ -106,6 +106,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Throughput", StringUtils.FromInt(publicRequestlistValue.Ebs.Throughput));
                                 }
+                                if(publicRequestlistValue.Ebs.IsSetVolumeInitializationRate())
+                                {
+                                    request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "VolumeInitializationRate", StringUtils.FromInt(publicRequestlistValue.Ebs.VolumeInitializationRate));
+                                }
                                 if(publicRequestlistValue.Ebs.IsSetVolumeSize())
                                 {
                                     request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "VolumeSize", StringUtils.FromInt(publicRequestlistValue.Ebs.VolumeSize));
@@ -450,6 +454,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             if(publicRequestlistValue.IsSetDeviceIndex())
                             {
                                 request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "DeviceIndex", StringUtils.FromInt(publicRequestlistValue.DeviceIndex));
+                            }
+                            if(publicRequestlistValue.IsSetEnaQueueCount())
+                            {
+                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "EnaQueueCount", StringUtils.FromInt(publicRequestlistValue.EnaQueueCount));
                             }
                             if(publicRequestlistValue.IsSetEnaSrdSpecification())
                             {

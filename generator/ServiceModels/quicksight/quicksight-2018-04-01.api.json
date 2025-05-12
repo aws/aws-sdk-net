@@ -134,8 +134,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"InvalidRequestException"},
         {"shape":"LimitExceededException"},
-        {"shape":"AccessDeniedException"},
         {"shape":"ConflictException"},
+        {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
       ]
     },
@@ -592,8 +592,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
         {"shape":"ConflictException"},
+        {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
       ],
       "idempotent":true
@@ -611,8 +611,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
         {"shape":"ConflictException"},
+        {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
       ],
       "idempotent":true
@@ -1219,8 +1219,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
         {"shape":"ConflictException"},
+        {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
       ]
     },
@@ -1237,8 +1237,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
         {"shape":"ConflictException"},
+        {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
       ]
     },
@@ -1255,8 +1255,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
         {"shape":"ConflictException"},
+        {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
       ]
     },
@@ -3037,8 +3037,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
         {"shape":"ConflictException"},
+        {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
       ],
       "idempotent":true
@@ -3056,8 +3056,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
         {"shape":"ConflictException"},
+        {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
       ],
       "idempotent":true
@@ -3075,8 +3075,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
         {"shape":"ConflictException"},
+        {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
       ],
       "idempotent":true
@@ -3920,6 +3920,21 @@
         "Domain":{"shape":"Domain"}
       }
     },
+    "AmazonQInQuickSightConsoleConfigurations":{
+      "type":"structure",
+      "members":{
+        "DataQnA":{"shape":"DataQnAConfigurations"},
+        "GenerativeAuthoring":{"shape":"GenerativeAuthoringConfigurations"},
+        "ExecutiveSummary":{"shape":"ExecutiveSummaryConfigurations"},
+        "DataStories":{"shape":"DataStoriesConfigurations"}
+      }
+    },
+    "AmazonQInQuickSightDashboardConfigurations":{
+      "type":"structure",
+      "members":{
+        "ExecutiveSummary":{"shape":"ExecutiveSummaryConfigurations"}
+      }
+    },
     "Analysis":{
       "type":"structure",
       "members":{
@@ -4313,7 +4328,10 @@
     },
     "AssetBundleExportJobDataSetPropertyToOverride":{
       "type":"string",
-      "enum":["Name"]
+      "enum":[
+        "Name",
+        "RefreshFailureEmailAlertStatus"
+      ]
     },
     "AssetBundleExportJobDataSetPropertyToOverrideList":{
       "type":"list",
@@ -4655,7 +4673,8 @@
       "required":["DataSetId"],
       "members":{
         "DataSetId":{"shape":"ResourceId"},
-        "Name":{"shape":"ResourceName"}
+        "Name":{"shape":"ResourceName"},
+        "DataSetRefreshProperties":{"shape":"DataSetRefreshProperties"}
       }
     },
     "AssetBundleImportJobDataSetOverrideParametersList":{
@@ -5071,7 +5090,10 @@
       "type":"structure",
       "members":{
         "Timezone":{"shape":"String"},
-        "WeekStart":{"shape":"DayOfTheWeek"}
+        "WeekStart":{"shape":"DayOfTheWeek"},
+        "QBusinessInsightsStatus":{"shape":"QBusinessInsightsStatus"},
+        "ExcludedDataSetArns":{"shape":"DataSetArnsList"},
+        "CustomActionDefaults":{"shape":"VisualCustomActionDefaults"}
       }
     },
     "AssignmentStatus":{
@@ -6923,7 +6945,8 @@
         "DataSetUsageConfiguration":{"shape":"DataSetUsageConfiguration"},
         "DatasetParameters":{"shape":"DatasetParameterList"},
         "FolderArns":{"shape":"FolderArnList"},
-        "PerformanceConfiguration":{"shape":"PerformanceConfiguration"}
+        "PerformanceConfiguration":{"shape":"PerformanceConfiguration"},
+        "UseAs":{"shape":"DataSetUseAs"}
       }
     },
     "CreateDataSetResponse":{
@@ -7919,7 +7942,8 @@
         "ExportWithHiddenFieldsOption":{"shape":"ExportWithHiddenFieldsOption"},
         "DataPointDrillUpDownOption":{"shape":"DataPointDrillUpDownOption"},
         "DataPointMenuLabelOption":{"shape":"DataPointMenuLabelOption"},
-        "DataPointTooltipOption":{"shape":"DataPointTooltipOption"}
+        "DataPointTooltipOption":{"shape":"DataPointTooltipOption"},
+        "DataQAEnabledOption":{"shape":"DataQAEnabledOption"}
       }
     },
     "DashboardSearchFilter":{
@@ -8239,6 +8263,19 @@
         "AvailabilityStatus":{"shape":"DashboardBehavior"}
       }
     },
+    "DataQAEnabledOption":{
+      "type":"structure",
+      "members":{
+        "AvailabilityStatus":{"shape":"DashboardBehavior"}
+      }
+    },
+    "DataQnAConfigurations":{
+      "type":"structure",
+      "required":["Enabled"],
+      "members":{
+        "Enabled":{"shape":"Boolean"}
+      }
+    },
     "DataSet":{
       "type":"structure",
       "members":{
@@ -8259,7 +8296,8 @@
         "ColumnLevelPermissionRules":{"shape":"ColumnLevelPermissionRuleList"},
         "DataSetUsageConfiguration":{"shape":"DataSetUsageConfiguration"},
         "DatasetParameters":{"shape":"DatasetParameterList"},
-        "PerformanceConfiguration":{"shape":"PerformanceConfiguration"}
+        "PerformanceConfiguration":{"shape":"PerformanceConfiguration"},
+        "UseAs":{"shape":"DataSetUseAs"}
       }
     },
     "DataSetArnsList":{
@@ -8349,9 +8387,9 @@
     },
     "DataSetRefreshProperties":{
       "type":"structure",
-      "required":["RefreshConfiguration"],
       "members":{
-        "RefreshConfiguration":{"shape":"RefreshConfiguration"}
+        "RefreshConfiguration":{"shape":"RefreshConfiguration"},
+        "FailureConfiguration":{"shape":"RefreshFailureConfiguration"}
       }
     },
     "DataSetRegion":{
@@ -8395,7 +8433,8 @@
         "ImportMode":{"shape":"DataSetImportMode"},
         "RowLevelPermissionDataSet":{"shape":"RowLevelPermissionDataSet"},
         "RowLevelPermissionTagConfigurationApplied":{"shape":"Boolean"},
-        "ColumnLevelPermissionRulesApplied":{"shape":"Boolean"}
+        "ColumnLevelPermissionRulesApplied":{"shape":"Boolean"},
+        "UseAs":{"shape":"DataSetUseAs"}
       }
     },
     "DataSetSummaryList":{
@@ -8408,6 +8447,10 @@
         "DisableUseAsDirectQuerySource":{"shape":"Boolean"},
         "DisableUseAsImportedSource":{"shape":"Boolean"}
       }
+    },
+    "DataSetUseAs":{
+      "type":"string",
+      "enum":["RLS_RULES"]
     },
     "DataSource":{
       "type":"structure",
@@ -8573,6 +8616,13 @@
         "TRINO",
         "BIGQUERY"
       ]
+    },
+    "DataStoriesConfigurations":{
+      "type":"structure",
+      "required":["Enabled"],
+      "members":{
+        "Enabled":{"shape":"Boolean"}
+      }
     },
     "Database":{
       "type":"string",
@@ -12047,6 +12097,13 @@
         "Status":{"shape":"WidgetStatus"}
       }
     },
+    "ExecutiveSummaryConfigurations":{
+      "type":"structure",
+      "required":["Enabled"],
+      "members":{
+        "Enabled":{"shape":"Boolean"}
+      }
+    },
     "ExplicitHierarchy":{
       "type":"structure",
       "required":[
@@ -13149,6 +13206,13 @@
         "ANSWER_RETRIEVED",
         "ANSWER_DOWNGRADE"
       ]
+    },
+    "GenerativeAuthoringConfigurations":{
+      "type":"structure",
+      "required":["Enabled"],
+      "members":{
+        "Enabled":{"shape":"Boolean"}
+      }
     },
     "GeoSpatialColumnGroup":{
       "type":"structure",
@@ -17201,7 +17265,8 @@
       "members":{
         "Host":{"shape":"Host"},
         "Port":{"shape":"Port"},
-        "Database":{"shape":"Database"}
+        "Database":{"shape":"Database"},
+        "UseServiceName":{"shape":"Boolean"}
       }
     },
     "OtherCategories":{
@@ -18243,6 +18308,13 @@
       "member":{"shape":"QAResult"}
     },
     "QAUrl":{"type":"string"},
+    "QBusinessInsightsStatus":{
+      "type":"string",
+      "enum":[
+        "ENABLED",
+        "DISABLED"
+      ]
+    },
     "QSearchStatus":{
       "type":"string",
       "enum":[
@@ -18421,6 +18493,13 @@
         "Database":{"shape":"Database"}
       }
     },
+    "RecentSnapshotsConfigurations":{
+      "type":"structure",
+      "required":["Enabled"],
+      "members":{
+        "Enabled":{"shape":"Boolean"}
+      }
+    },
     "RecoveryWindowInDays":{
       "type":"long",
       "max":30,
@@ -18567,6 +18646,25 @@
         "IncrementalRefresh":{"shape":"IncrementalRefresh"}
       }
     },
+    "RefreshFailureAlertStatus":{
+      "type":"string",
+      "enum":[
+        "ENABLED",
+        "DISABLED"
+      ]
+    },
+    "RefreshFailureConfiguration":{
+      "type":"structure",
+      "members":{
+        "EmailAlert":{"shape":"RefreshFailureEmailAlert"}
+      }
+    },
+    "RefreshFailureEmailAlert":{
+      "type":"structure",
+      "members":{
+        "AlertStatus":{"shape":"RefreshFailureAlertStatus"}
+      }
+    },
     "RefreshFrequency":{
       "type":"structure",
       "required":["Interval"],
@@ -18663,7 +18761,11 @@
       "type":"structure",
       "members":{
         "StatePersistence":{"shape":"StatePersistenceConfigurations"},
-        "SharedView":{"shape":"SharedViewConfigurations"}
+        "SharedView":{"shape":"SharedViewConfigurations"},
+        "AmazonQInQuickSight":{"shape":"AmazonQInQuickSightConsoleConfigurations"},
+        "Schedules":{"shape":"SchedulesConfigurations"},
+        "RecentSnapshots":{"shape":"RecentSnapshotsConfigurations"},
+        "ThresholdAlerts":{"shape":"ThresholdAlertsConfigurations"}
       }
     },
     "RegisteredUserDashboardEmbeddingConfiguration":{
@@ -18679,7 +18781,11 @@
       "members":{
         "StatePersistence":{"shape":"StatePersistenceConfigurations"},
         "SharedView":{"shape":"SharedViewConfigurations"},
-        "Bookmarks":{"shape":"BookmarksConfigurations"}
+        "Bookmarks":{"shape":"BookmarksConfigurations"},
+        "AmazonQInQuickSight":{"shape":"AmazonQInQuickSightDashboardConfigurations"},
+        "Schedules":{"shape":"SchedulesConfigurations"},
+        "RecentSnapshots":{"shape":"RecentSnapshotsConfigurations"},
+        "ThresholdAlerts":{"shape":"ThresholdAlertsConfigurations"}
       }
     },
     "RegisteredUserDashboardVisualEmbeddingConfiguration":{
@@ -19246,6 +19352,13 @@
       "members":{
         "DayOfWeek":{"shape":"DayOfWeek"},
         "DayOfMonth":{"shape":"DayOfMonth"}
+      }
+    },
+    "SchedulesConfigurations":{
+      "type":"structure",
+      "required":["Enabled"],
+      "members":{
+        "Enabled":{"shape":"Boolean"}
       }
     },
     "ScrollBarOptions":{
@@ -19883,7 +19996,8 @@
         "Images":{"shape":"SheetImageList"},
         "Layouts":{"shape":"LayoutList"},
         "SheetControlLayouts":{"shape":"SheetControlLayoutList"},
-        "ContentType":{"shape":"SheetContentType"}
+        "ContentType":{"shape":"SheetContentType"},
+        "CustomActionDefaults":{"shape":"VisualCustomActionDefaults"}
       }
     },
     "SheetDefinitionList":{
@@ -21002,7 +21116,8 @@
       "members":{
         "SelectedFieldOptions":{"shape":"TableFieldOptionList"},
         "Order":{"shape":"FieldOrderList"},
-        "PinnedFieldOptions":{"shape":"TablePinnedFieldOptions"}
+        "PinnedFieldOptions":{"shape":"TablePinnedFieldOptions"},
+        "TransposedTableOptions":{"shape":"TransposedTableOptionList"}
       }
     },
     "TableFieldOrderList":{
@@ -21531,6 +21646,13 @@
         "Symbol":{"shape":"NumericSeparatorSymbol"},
         "Visibility":{"shape":"Visibility"},
         "GroupingStyle":{"shape":"DigitGroupingStyle"}
+      }
+    },
+    "ThresholdAlertsConfigurations":{
+      "type":"structure",
+      "required":["Enabled"],
+      "members":{
+        "Enabled":{"shape":"Boolean"}
       }
     },
     "ThrottlingException":{
@@ -22354,6 +22476,32 @@
       "member":{"shape":"TransformOperation"},
       "max":2048,
       "min":1
+    },
+    "TransposedColumnIndex":{
+      "type":"integer",
+      "max":9999,
+      "min":0
+    },
+    "TransposedColumnType":{
+      "type":"string",
+      "enum":[
+        "ROW_HEADER_COLUMN",
+        "VALUE_COLUMN"
+      ]
+    },
+    "TransposedTableOption":{
+      "type":"structure",
+      "required":["ColumnType"],
+      "members":{
+        "ColumnIndex":{"shape":"TransposedColumnIndex"},
+        "ColumnWidth":{"shape":"PixelLength"},
+        "ColumnType":{"shape":"TransposedColumnType"}
+      }
+    },
+    "TransposedTableOptionList":{
+      "type":"list",
+      "member":{"shape":"TransposedTableOption"},
+      "max":10001
     },
     "TreeMapAggregatedFieldWells":{
       "type":"structure",
@@ -24321,6 +24469,12 @@
         "ActionOperations":{"shape":"VisualCustomActionOperationList"}
       }
     },
+    "VisualCustomActionDefaults":{
+      "type":"structure",
+      "members":{
+        "highlightOperation":{"shape":"VisualHighlightOperation"}
+      }
+    },
     "VisualCustomActionList":{
       "type":"list",
       "member":{"shape":"VisualCustomAction"},
@@ -24351,6 +24505,21 @@
       "enum":[
         "DATA_POINT_CLICK",
         "DATA_POINT_MENU"
+      ]
+    },
+    "VisualHighlightOperation":{
+      "type":"structure",
+      "required":["Trigger"],
+      "members":{
+        "Trigger":{"shape":"VisualHighlightTrigger"}
+      }
+    },
+    "VisualHighlightTrigger":{
+      "type":"string",
+      "enum":[
+        "DATA_POINT_CLICK",
+        "DATA_POINT_HOVER",
+        "NONE"
       ]
     },
     "VisualInteractionOptions":{

@@ -85,7 +85,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The customer's AWS account was suspended.
+        /// The customer's Amazon Web Services account was suspended.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>

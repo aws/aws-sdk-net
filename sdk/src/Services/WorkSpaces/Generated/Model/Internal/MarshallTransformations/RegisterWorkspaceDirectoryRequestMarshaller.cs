@@ -98,12 +98,6 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.EnableSelfService.Value);
             }
 
-            if(publicRequest.IsSetEnableWorkDocs())
-            {
-                context.Writer.WritePropertyName("EnableWorkDocs");
-                context.Writer.WriteBooleanValue(publicRequest.EnableWorkDocs.Value);
-            }
-
             if(publicRequest.IsSetIdcInstanceArn())
             {
                 context.Writer.WritePropertyName("IdcInstanceArn");

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the support-app-2021-08-20.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SupportApp.Model
@@ -29,11 +30,21 @@ namespace Amazon.SupportApp.Model
         /// <summary>
         /// Paginator for ListSlackChannelConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSlackChannelConfigurationsPaginator ListSlackChannelConfigurations(ListSlackChannelConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListSlackWorkspaceConfigurations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSlackWorkspaceConfigurationsPaginator ListSlackWorkspaceConfigurations(ListSlackWorkspaceConfigurationsRequest request);
     }
 }

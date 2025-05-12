@@ -431,6 +431,180 @@ namespace Amazon.Budgets
 
 
     /// <summary>
+    /// Constants used for properties of type Dimension.
+    /// </summary>
+    public class Dimension : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AZ for Dimension
+        /// </summary>
+        public static readonly Dimension AZ = new Dimension("AZ");
+        /// <summary>
+        /// Constant BILLING_ENTITY for Dimension
+        /// </summary>
+        public static readonly Dimension BILLING_ENTITY = new Dimension("BILLING_ENTITY");
+        /// <summary>
+        /// Constant CACHE_ENGINE for Dimension
+        /// </summary>
+        public static readonly Dimension CACHE_ENGINE = new Dimension("CACHE_ENGINE");
+        /// <summary>
+        /// Constant COST_CATEGORY_NAME for Dimension
+        /// </summary>
+        public static readonly Dimension COST_CATEGORY_NAME = new Dimension("COST_CATEGORY_NAME");
+        /// <summary>
+        /// Constant DATABASE_ENGINE for Dimension
+        /// </summary>
+        public static readonly Dimension DATABASE_ENGINE = new Dimension("DATABASE_ENGINE");
+        /// <summary>
+        /// Constant DEPLOYMENT_OPTION for Dimension
+        /// </summary>
+        public static readonly Dimension DEPLOYMENT_OPTION = new Dimension("DEPLOYMENT_OPTION");
+        /// <summary>
+        /// Constant INSTANCE_TYPE for Dimension
+        /// </summary>
+        public static readonly Dimension INSTANCE_TYPE = new Dimension("INSTANCE_TYPE");
+        /// <summary>
+        /// Constant INSTANCE_TYPE_FAMILY for Dimension
+        /// </summary>
+        public static readonly Dimension INSTANCE_TYPE_FAMILY = new Dimension("INSTANCE_TYPE_FAMILY");
+        /// <summary>
+        /// Constant INVOICING_ENTITY for Dimension
+        /// </summary>
+        public static readonly Dimension INVOICING_ENTITY = new Dimension("INVOICING_ENTITY");
+        /// <summary>
+        /// Constant LEGAL_ENTITY_NAME for Dimension
+        /// </summary>
+        public static readonly Dimension LEGAL_ENTITY_NAME = new Dimension("LEGAL_ENTITY_NAME");
+        /// <summary>
+        /// Constant LINKED_ACCOUNT for Dimension
+        /// </summary>
+        public static readonly Dimension LINKED_ACCOUNT = new Dimension("LINKED_ACCOUNT");
+        /// <summary>
+        /// Constant LINKED_ACCOUNT_NAME for Dimension
+        /// </summary>
+        public static readonly Dimension LINKED_ACCOUNT_NAME = new Dimension("LINKED_ACCOUNT_NAME");
+        /// <summary>
+        /// Constant OPERATING_SYSTEM for Dimension
+        /// </summary>
+        public static readonly Dimension OPERATING_SYSTEM = new Dimension("OPERATING_SYSTEM");
+        /// <summary>
+        /// Constant OPERATION for Dimension
+        /// </summary>
+        public static readonly Dimension OPERATION = new Dimension("OPERATION");
+        /// <summary>
+        /// Constant PAYMENT_OPTION for Dimension
+        /// </summary>
+        public static readonly Dimension PAYMENT_OPTION = new Dimension("PAYMENT_OPTION");
+        /// <summary>
+        /// Constant PLATFORM for Dimension
+        /// </summary>
+        public static readonly Dimension PLATFORM = new Dimension("PLATFORM");
+        /// <summary>
+        /// Constant PURCHASE_TYPE for Dimension
+        /// </summary>
+        public static readonly Dimension PURCHASE_TYPE = new Dimension("PURCHASE_TYPE");
+        /// <summary>
+        /// Constant RECORD_TYPE for Dimension
+        /// </summary>
+        public static readonly Dimension RECORD_TYPE = new Dimension("RECORD_TYPE");
+        /// <summary>
+        /// Constant REGION for Dimension
+        /// </summary>
+        public static readonly Dimension REGION = new Dimension("REGION");
+        /// <summary>
+        /// Constant RESERVATION_ID for Dimension
+        /// </summary>
+        public static readonly Dimension RESERVATION_ID = new Dimension("RESERVATION_ID");
+        /// <summary>
+        /// Constant RESERVATION_MODIFIED for Dimension
+        /// </summary>
+        public static readonly Dimension RESERVATION_MODIFIED = new Dimension("RESERVATION_MODIFIED");
+        /// <summary>
+        /// Constant RESOURCE_ID for Dimension
+        /// </summary>
+        public static readonly Dimension RESOURCE_ID = new Dimension("RESOURCE_ID");
+        /// <summary>
+        /// Constant RIGHTSIZING_TYPE for Dimension
+        /// </summary>
+        public static readonly Dimension RIGHTSIZING_TYPE = new Dimension("RIGHTSIZING_TYPE");
+        /// <summary>
+        /// Constant SAVINGS_PLAN_ARN for Dimension
+        /// </summary>
+        public static readonly Dimension SAVINGS_PLAN_ARN = new Dimension("SAVINGS_PLAN_ARN");
+        /// <summary>
+        /// Constant SAVINGS_PLANS_TYPE for Dimension
+        /// </summary>
+        public static readonly Dimension SAVINGS_PLANS_TYPE = new Dimension("SAVINGS_PLANS_TYPE");
+        /// <summary>
+        /// Constant SCOPE for Dimension
+        /// </summary>
+        public static readonly Dimension SCOPE = new Dimension("SCOPE");
+        /// <summary>
+        /// Constant SERVICE for Dimension
+        /// </summary>
+        public static readonly Dimension SERVICE = new Dimension("SERVICE");
+        /// <summary>
+        /// Constant SERVICE_CODE for Dimension
+        /// </summary>
+        public static readonly Dimension SERVICE_CODE = new Dimension("SERVICE_CODE");
+        /// <summary>
+        /// Constant SUBSCRIPTION_ID for Dimension
+        /// </summary>
+        public static readonly Dimension SUBSCRIPTION_ID = new Dimension("SUBSCRIPTION_ID");
+        /// <summary>
+        /// Constant TAG_KEY for Dimension
+        /// </summary>
+        public static readonly Dimension TAG_KEY = new Dimension("TAG_KEY");
+        /// <summary>
+        /// Constant TENANCY for Dimension
+        /// </summary>
+        public static readonly Dimension TENANCY = new Dimension("TENANCY");
+        /// <summary>
+        /// Constant USAGE_TYPE for Dimension
+        /// </summary>
+        public static readonly Dimension USAGE_TYPE = new Dimension("USAGE_TYPE");
+        /// <summary>
+        /// Constant USAGE_TYPE_GROUP for Dimension
+        /// </summary>
+        public static readonly Dimension USAGE_TYPE_GROUP = new Dimension("USAGE_TYPE_GROUP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Dimension(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Dimension FindValue(string value)
+        {
+            return FindValue<Dimension>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Dimension(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventType.
     /// </summary>
     public class EventType : ConstantClass
@@ -544,6 +718,154 @@ namespace Amazon.Budgets
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExecutionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MatchOption.
+    /// </summary>
+    public class MatchOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ABSENT for MatchOption
+        /// </summary>
+        public static readonly MatchOption ABSENT = new MatchOption("ABSENT");
+        /// <summary>
+        /// Constant CASE_INSENSITIVE for MatchOption
+        /// </summary>
+        public static readonly MatchOption CASE_INSENSITIVE = new MatchOption("CASE_INSENSITIVE");
+        /// <summary>
+        /// Constant CASE_SENSITIVE for MatchOption
+        /// </summary>
+        public static readonly MatchOption CASE_SENSITIVE = new MatchOption("CASE_SENSITIVE");
+        /// <summary>
+        /// Constant CONTAINS for MatchOption
+        /// </summary>
+        public static readonly MatchOption CONTAINS = new MatchOption("CONTAINS");
+        /// <summary>
+        /// Constant ENDS_WITH for MatchOption
+        /// </summary>
+        public static readonly MatchOption ENDS_WITH = new MatchOption("ENDS_WITH");
+        /// <summary>
+        /// Constant EQUALS for MatchOption
+        /// </summary>
+        public static readonly MatchOption EQUALS = new MatchOption("EQUALS");
+        /// <summary>
+        /// Constant GREATER_THAN_OR_EQUAL for MatchOption
+        /// </summary>
+        public static readonly MatchOption GREATER_THAN_OR_EQUAL = new MatchOption("GREATER_THAN_OR_EQUAL");
+        /// <summary>
+        /// Constant STARTS_WITH for MatchOption
+        /// </summary>
+        public static readonly MatchOption STARTS_WITH = new MatchOption("STARTS_WITH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MatchOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MatchOption FindValue(string value)
+        {
+            return FindValue<MatchOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MatchOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Metric.
+    /// </summary>
+    public class Metric : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AmortizedCost for Metric
+        /// </summary>
+        public static readonly Metric AmortizedCost = new Metric("AmortizedCost");
+        /// <summary>
+        /// Constant BlendedCost for Metric
+        /// </summary>
+        public static readonly Metric BlendedCost = new Metric("BlendedCost");
+        /// <summary>
+        /// Constant Hours for Metric
+        /// </summary>
+        public static readonly Metric Hours = new Metric("Hours");
+        /// <summary>
+        /// Constant NetAmortizedCost for Metric
+        /// </summary>
+        public static readonly Metric NetAmortizedCost = new Metric("NetAmortizedCost");
+        /// <summary>
+        /// Constant NetUnblendedCost for Metric
+        /// </summary>
+        public static readonly Metric NetUnblendedCost = new Metric("NetUnblendedCost");
+        /// <summary>
+        /// Constant NormalizedUsageAmount for Metric
+        /// </summary>
+        public static readonly Metric NormalizedUsageAmount = new Metric("NormalizedUsageAmount");
+        /// <summary>
+        /// Constant UnblendedCost for Metric
+        /// </summary>
+        public static readonly Metric UnblendedCost = new Metric("UnblendedCost");
+        /// <summary>
+        /// Constant UsageQuantity for Metric
+        /// </summary>
+        public static readonly Metric UsageQuantity = new Metric("UsageQuantity");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Metric(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Metric FindValue(string value)
+        {
+            return FindValue<Metric>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Metric(string value)
         {
             return FindValue(value);
         }

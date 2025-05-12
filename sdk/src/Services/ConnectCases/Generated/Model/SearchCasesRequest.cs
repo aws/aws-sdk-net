@@ -115,7 +115,7 @@ namespace Amazon.ConnectCases.Model
         /// This is also the default value when no other value is provided.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25)]
+        [AWSProperty(Min=1, Max=100)]
         public int? MaxResults
         {
             get { return this._maxResults; }

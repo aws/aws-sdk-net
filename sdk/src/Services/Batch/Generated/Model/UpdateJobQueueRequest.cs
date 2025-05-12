@@ -139,8 +139,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property SchedulingPolicyArn. 
         /// <para>
-        /// Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is
-        /// created, the fair share scheduling policy can be replaced but not removed. The format
+        /// Amazon Resource Name (ARN) of the fair-share scheduling policy. Once a job queue is
+        /// created, the fair-share scheduling policy can be replaced but not removed. The format
         /// is <c>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
         /// </c>. For example, <c>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</c>.
         /// </para>

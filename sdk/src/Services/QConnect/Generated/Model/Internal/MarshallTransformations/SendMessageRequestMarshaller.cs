@@ -90,6 +90,17 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetConfiguration())
+            {
+                context.Writer.WritePropertyName("configuration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MessageConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Configuration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetConversationContext())
             {
                 context.Writer.WritePropertyName("conversationContext");

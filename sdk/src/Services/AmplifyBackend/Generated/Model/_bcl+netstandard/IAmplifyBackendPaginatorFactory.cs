@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the amplifybackend-2020-08-11.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyBackend.Model
@@ -29,6 +30,11 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Paginator for ListBackendJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListBackendJobsPaginator ListBackendJobs(ListBackendJobsRequest request);
     }
 }

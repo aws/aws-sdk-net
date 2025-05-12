@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the privatenetworks-2021-12-03.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Private5G.Model
@@ -29,26 +30,51 @@ namespace Amazon.Private5G.Model
         /// <summary>
         /// Paginator for ListDeviceIdentifiers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "StartToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDeviceIdentifiersPaginator ListDeviceIdentifiers(ListDeviceIdentifiersRequest request);
 
         /// <summary>
         /// Paginator for ListNetworkResources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "StartToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListNetworkResourcesPaginator ListNetworkResources(ListNetworkResourcesRequest request);
 
         /// <summary>
         /// Paginator for ListNetworks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "StartToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListNetworksPaginator ListNetworks(ListNetworksRequest request);
 
         /// <summary>
         /// Paginator for ListNetworkSites operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "StartToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListNetworkSitesPaginator ListNetworkSites(ListNetworkSitesRequest request);
 
         /// <summary>
         /// Paginator for ListOrders operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "StartToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListOrdersPaginator ListOrders(ListOrdersRequest request);
     }
 }

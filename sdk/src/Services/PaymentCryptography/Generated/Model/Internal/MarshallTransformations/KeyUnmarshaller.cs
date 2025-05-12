@@ -74,6 +74,12 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeleteTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("DeriveKeyUsage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeriveKeyUsage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Enabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;

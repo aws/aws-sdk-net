@@ -43,7 +43,7 @@ namespace Amazon.QConnect.Model
         /// The YAML text for the AI Prompt template.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=200000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1000000)]
         public string Text
         {
             get { return this._text; }

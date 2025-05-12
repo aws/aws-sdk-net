@@ -34,6 +34,7 @@ namespace Amazon.Outposts.Model
     /// </summary>
     public partial class GetCapacityTaskResponse : AmazonWebServiceResponse
     {
+        private string _assetId;
         private string _capacityTaskId;
         private CapacityTaskStatus _capacityTaskStatus;
         private DateTime? _completionDate;
@@ -46,6 +47,26 @@ namespace Amazon.Outposts.Model
         private string _outpostId;
         private List<InstanceTypeCapacity> _requestedInstancePools = AWSConfigs.InitializeCollections ? new List<InstanceTypeCapacity>() : null;
         private TaskActionOnBlockingInstances _taskActionOnBlockingInstances;
+
+        /// <summary>
+        /// Gets and sets the property AssetId. 
+        /// <para>
+        /// The ID of the Outpost asset. An Outpost asset can be a single server within an Outposts
+        /// rack or an Outposts server configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string AssetId
+        {
+            get { return this._assetId; }
+            set { this._assetId = value; }
+        }
+
+        // Check to see if AssetId property is set
+        internal bool IsSetAssetId()
+        {
+            return this._assetId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CapacityTaskId. 
@@ -86,8 +107,25 @@ namespace Amazon.Outposts.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>FAILED</c> - The capacity task could not be completed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>COMPLETED</c> - The capacity task has completed successfully.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>WAITING_FOR_EVACUATION</c> - The capacity task requires capacity to run. You must
         /// stop the recommended EC2 running instances to free up capacity for the task to run.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CANCELLATION_IN_PROGRESS</c> - The capacity task has been cancelled and is in
+        /// the process of cleaning up resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CANCELLED</c> - The capacity task is cancelled.
         /// </para>
         ///  </li> </ul>
         /// </summary>

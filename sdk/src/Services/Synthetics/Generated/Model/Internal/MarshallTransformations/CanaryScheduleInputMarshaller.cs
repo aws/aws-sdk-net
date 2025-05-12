@@ -58,6 +58,17 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Expression);
             }
 
+            if(requestObject.IsSetRetryConfig())
+            {
+                context.Writer.WritePropertyName("RetryConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RetryConfigInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.RetryConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

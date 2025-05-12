@@ -140,6 +140,7 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// The tag keys and optional values for the resource.
         /// </para>
         /// </summary>
+        [Obsolete("This field will be removed in future releases. Use ListTagsForResource API instead.")]
         [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags
         {

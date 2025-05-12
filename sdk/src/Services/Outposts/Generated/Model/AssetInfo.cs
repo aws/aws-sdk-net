@@ -43,7 +43,8 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property AssetId. 
         /// <para>
-        ///  The ID of the asset. 
+        ///  The ID of the asset. An Outpost asset can be a single server within an Outposts rack
+        /// or an Outposts server configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

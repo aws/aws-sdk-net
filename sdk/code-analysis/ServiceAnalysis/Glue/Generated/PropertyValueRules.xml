@@ -722,6 +722,10 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CreateWorkflowRequest.Description</property>
+    <max>120000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CreateWorkflowRequest.Name</property>
     <min>1</min>
     <max>255</max>
@@ -3458,6 +3462,10 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateWorkflowRequest.Description</property>
+    <max>120000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.UpdateWorkflowRequest.Name</property>
     <min>1</min>
     <max>255</max>
@@ -4969,6 +4977,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Integration.TargetArn</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.IntegrationConfig.RefreshInterval</property>
     <min>1</min>
     <max>128</max>
   </property-value-rule>

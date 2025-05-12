@@ -35,6 +35,7 @@ namespace Amazon.Synthetics.Model
     public partial class CanaryRunTimeline
     {
         private DateTime? _completed;
+        private DateTime? _metricTimestampForRunAndRetries;
         private DateTime? _started;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetCompleted()
         {
             return this._completed.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricTimestampForRunAndRetries. 
+        /// <para>
+        /// The time at which the metrics will be generated for this run or retries.
+        /// </para>
+        /// </summary>
+        public DateTime? MetricTimestampForRunAndRetries
+        {
+            get { return this._metricTimestampForRunAndRetries; }
+            set { this._metricTimestampForRunAndRetries = value; }
+        }
+
+        // Check to see if MetricTimestampForRunAndRetries property is set
+        internal bool IsSetMetricTimestampForRunAndRetries()
+        {
+            return this._metricTimestampForRunAndRetries.HasValue; 
         }
 
         /// <summary>

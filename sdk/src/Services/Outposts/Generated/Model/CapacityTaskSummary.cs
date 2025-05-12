@@ -34,6 +34,7 @@ namespace Amazon.Outposts.Model
     /// </summary>
     public partial class CapacityTaskSummary
     {
+        private string _assetId;
         private string _capacityTaskId;
         private CapacityTaskStatus _capacityTaskStatus;
         private DateTime? _completionDate;
@@ -41,6 +42,26 @@ namespace Amazon.Outposts.Model
         private DateTime? _lastModifiedDate;
         private string _orderId;
         private string _outpostId;
+
+        /// <summary>
+        /// Gets and sets the property AssetId. 
+        /// <para>
+        /// The ID of the asset. An Outpost asset can be a single server within an Outposts rack
+        /// or an Outposts server configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string AssetId
+        {
+            get { return this._assetId; }
+            set { this._assetId = value; }
+        }
+
+        // Check to see if AssetId property is set
+        internal bool IsSetAssetId()
+        {
+            return this._assetId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CapacityTaskId. 

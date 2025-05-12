@@ -113,8 +113,15 @@ namespace Amazon.S3
             var immutableCredentials = credentials.GetCredentials();
             var irequest = Marshall(this.Config, request, immutableCredentials.AccessKey, immutableCredentials.Token, signatureVersionToUse);
 
-            var context = new Amazon.Runtime.Internal.ExecutionContext(new Amazon.Runtime.Internal.RequestContext(true, new NullSigner()) { Request = irequest, ClientConfig = this.Config }, null);
-            
+            var context = new Amazon.Runtime.Internal.ExecutionContext(
+                new RequestContext(true, new NullSigner())
+                {
+                    Request = irequest,
+                    ClientConfig = this.Config,
+                    OriginalRequest = request,
+                },
+                null
+            );
             new AmazonS3EndpointResolver().ProcessRequestHandlers(context);
             var expressConfig = this.Config as AmazonS3Config;
             if (context.RequestContext.Request.IsDirectoryBucket() && !expressConfig.DisableS3ExpressSessionAuth)
@@ -176,8 +183,15 @@ namespace Amazon.S3
             var immutableCredentials = await credentials.GetCredentialsAsync().ConfigureAwait(false);
             var irequest = Marshall(this.Config, request, immutableCredentials.AccessKey, immutableCredentials.Token, signatureVersionToUse);
 
-
-            var context = new Amazon.Runtime.Internal.ExecutionContext(new Amazon.Runtime.Internal.RequestContext(true, new NullSigner()) { Request = irequest, ClientConfig = this.Config }, null);
+            var context = new Amazon.Runtime.Internal.ExecutionContext(
+                new RequestContext(true, new NullSigner())
+                {
+                    Request = irequest,
+                    ClientConfig = this.Config,
+                    OriginalRequest = request,
+                },
+                null
+            );
             new AmazonS3EndpointResolver().ProcessRequestHandlers(context);
             var expressConfig = this.Config as AmazonS3Config;
             if (context.RequestContext.Request.IsDirectoryBucket() && !expressConfig.DisableS3ExpressSessionAuth)

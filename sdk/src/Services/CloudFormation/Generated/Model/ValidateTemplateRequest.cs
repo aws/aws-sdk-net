@@ -78,7 +78,7 @@ namespace Amazon.CloudFormation.Model
         /// passed, only <c>TemplateBody</c> is used.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=5120)]
         public string TemplateURL
         {
             get { return this._templateURL; }

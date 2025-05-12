@@ -183,6 +183,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("LicenseModel", StringUtils.FromString(publicRequest.LicenseModel));
                 }
+                if(publicRequest.IsSetManageMasterUserPassword())
+                {
+                    request.Parameters.Add("ManageMasterUserPassword", StringUtils.FromBool(publicRequest.ManageMasterUserPassword));
+                }
+                if(publicRequest.IsSetMasterUserSecretKmsKeyId())
+                {
+                    request.Parameters.Add("MasterUserSecretKmsKeyId", StringUtils.FromString(publicRequest.MasterUserSecretKmsKeyId));
+                }
                 if(publicRequest.IsSetMaxAllocatedStorage())
                 {
                     request.Parameters.Add("MaxAllocatedStorage", StringUtils.FromInt(publicRequest.MaxAllocatedStorage));

@@ -215,7 +215,7 @@
     <property>Amazon.ARCZonalShift.Model.ControlCondition.AlarmIdentifier</property>
     <min>8</min>
     <max>1024</max>
-    <pattern>^arn:.*$</pattern>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCZonalShift.Model.ManagedResourceSummary.Arn</property>

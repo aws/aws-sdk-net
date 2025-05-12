@@ -101,7 +101,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement">REST API Reference for BatchExecuteStatement Operation</seealso>
@@ -182,6 +182,12 @@ namespace Amazon.DynamoDBv2
         /// read. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations">Working
         /// with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <c>BatchGetItem</c> will result in a <c>ValidationException</c> if the same key is
+        /// specified multiple times.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="requestItems">A map of one or more table names or table ARNs and, for each table, a map that describes one or more items to retrieve from that table. Each table name or ARN can be used only once per <c>BatchGetItem</c> request. Each element in the map of items to retrieve consists of the following: <ul> <li>  <c>ConsistentRead</c> - If <c>true</c>, a strongly consistent read is used; if <c>false</c> (the default), an eventually consistent read is used. </li> <li>  <c>ExpressionAttributeNames</c> - One or more substitution tokens for attribute names in the <c>ProjectionExpression</c> parameter. The following are some use cases for using <c>ExpressionAttributeNames</c>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul> <li>  <c>Percentile</c>  </li> </ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <c>ExpressionAttributeNames</c>: <ul> <li>  <c>{"#P":"Percentile"}</c>  </li> </ul> You could then use this substitution in an expression, as in this example: <ul> <li>  <c>#P = :val</c>  </li> </ul> <note> Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime. </note> For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <c>Keys</c> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value. </li> <li>  <c>ProjectionExpression</c> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <c>AttributesToGet</c> - This is a legacy parameter. Use <c>ProjectionExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.  </li> </ul></param>
         /// <param name="returnConsumedCapacity">A property of BatchGetItemRequest used to execute the BatchGetItem service method.</param>
@@ -202,7 +208,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -282,6 +288,12 @@ namespace Amazon.DynamoDBv2
         /// read. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations">Working
         /// with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <c>BatchGetItem</c> will result in a <c>ValidationException</c> if the same key is
+        /// specified multiple times.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="requestItems">A map of one or more table names or table ARNs and, for each table, a map that describes one or more items to retrieve from that table. Each table name or ARN can be used only once per <c>BatchGetItem</c> request. Each element in the map of items to retrieve consists of the following: <ul> <li>  <c>ConsistentRead</c> - If <c>true</c>, a strongly consistent read is used; if <c>false</c> (the default), an eventually consistent read is used. </li> <li>  <c>ExpressionAttributeNames</c> - One or more substitution tokens for attribute names in the <c>ProjectionExpression</c> parameter. The following are some use cases for using <c>ExpressionAttributeNames</c>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul> <li>  <c>Percentile</c>  </li> </ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <c>ExpressionAttributeNames</c>: <ul> <li>  <c>{"#P":"Percentile"}</c>  </li> </ul> You could then use this substitution in an expression, as in this example: <ul> <li>  <c>#P = :val</c>  </li> </ul> <note> Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime. </note> For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <c>Keys</c> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value. </li> <li>  <c>ProjectionExpression</c> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <c>AttributesToGet</c> - This is a legacy parameter. Use <c>ProjectionExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.  </li> </ul></param>
         /// <param name="cancellationToken">
@@ -301,7 +313,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -382,6 +394,12 @@ namespace Amazon.DynamoDBv2
         /// read. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations">Working
         /// with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <c>BatchGetItem</c> will result in a <c>ValidationException</c> if the same key is
+        /// specified multiple times.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetItem service method.</param>
         /// <param name="cancellationToken">
@@ -401,7 +419,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -555,7 +573,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -705,7 +723,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -1271,7 +1289,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>The response from the DeleteItem service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
-        /// A condition specified in the operation could not be evaluated.
+        /// A condition specified in the operation failed to be evaluated.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
@@ -1293,7 +1311,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -1337,7 +1355,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>The response from the DeleteItem service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
-        /// A condition specified in the operation could not be evaluated.
+        /// A condition specified in the operation failed to be evaluated.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
@@ -1359,7 +1377,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -1402,7 +1420,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>The response from the DeleteItem service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
-        /// A condition specified in the operation could not be evaluated.
+        /// A condition specified in the operation failed to be evaluated.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
@@ -1424,7 +1442,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -2528,7 +2546,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>The response from the ExecuteStatement service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
-        /// A condition specified in the operation could not be evaluated.
+        /// A condition specified in the operation failed to be evaluated.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.DuplicateItemException">
         /// There was an attempt to insert an item with the same primary key as an item that
@@ -2550,7 +2568,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -2605,7 +2623,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -3041,7 +3059,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -3084,7 +3102,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -3126,7 +3144,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -3674,7 +3692,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>The response from the PutItem service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
-        /// A condition specified in the operation could not be evaluated.
+        /// A condition specified in the operation failed to be evaluated.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
@@ -3696,7 +3714,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -3756,7 +3774,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>The response from the PutItem service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
-        /// A condition specified in the operation could not be evaluated.
+        /// A condition specified in the operation failed to be evaluated.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
@@ -3778,7 +3796,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -3837,7 +3855,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>The response from the PutItem service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
-        /// A condition specified in the operation could not be evaluated.
+        /// A condition specified in the operation failed to be evaluated.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
@@ -3859,7 +3877,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -4074,7 +4092,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -4411,7 +4429,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -4497,7 +4515,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -4584,7 +4602,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -4670,7 +4688,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -4840,7 +4858,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -5198,7 +5216,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -5651,8 +5669,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         ///  <c>LatestRestorableDateTime</c> is typically 5 minutes before the current time. You
-        /// can restore your table to any point in time in the last 35 days. You can set the recovery
-        /// period to any value between 1 and 35 days.
+        /// can restore your table to any point in time in the last 35 days. You can set the <c>RecoveryPeriodInDays</c>
+        /// to any value between 1 and 35 days.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContinuousBackups service method.</param>
@@ -5920,7 +5938,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>The response from the UpdateItem service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
-        /// A condition specified in the operation could not be evaluated.
+        /// A condition specified in the operation failed to be evaluated.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
@@ -5942,7 +5960,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -5978,7 +5996,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>The response from the UpdateItem service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
-        /// A condition specified in the operation could not be evaluated.
+        /// A condition specified in the operation failed to be evaluated.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
@@ -6000,7 +6018,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -6034,7 +6052,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>The response from the UpdateItem service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
-        /// A condition specified in the operation could not be evaluated.
+        /// A condition specified in the operation failed to be evaluated.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
@@ -6056,7 +6074,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
         /// quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">

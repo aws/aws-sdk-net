@@ -42,7 +42,7 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The unique ID value of the stream group resource to retrieve. Format example: <c>1AB2C3De4</c>.
+        /// The unique ID value of the stream group resource to retrieve. Format example: <c>sg-1AB2C3De4</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

@@ -97,6 +97,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.IpamRegion = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("meteredAccount", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MeteredAccount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("operatingRegionSet/item", targetDepth))
                     {
                         var unmarshaller = IpamOperatingRegionUnmarshaller.Instance;

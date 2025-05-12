@@ -31,7 +31,14 @@ namespace Amazon.EntityResolution.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMatchId operation.
-    /// Returns the corresponding Match ID of a customer record if the record has been processed.
+    /// Returns the corresponding Match ID of a customer record if the record has been processed
+    /// in a rule-based matching workflow or ML matching workflow.
+    /// 
+    ///  
+    /// <para>
+    /// You can call this API as a dry run of an incremental load on the rule-based matching
+    /// workflow.
+    /// </para>
     /// </summary>
     public partial class GetMatchIdRequest : AmazonEntityResolutionRequest
     {

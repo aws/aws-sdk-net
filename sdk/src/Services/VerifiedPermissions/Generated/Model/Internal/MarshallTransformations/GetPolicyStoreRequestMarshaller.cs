@@ -81,6 +81,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.PolicyStoreId);
             }
 
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteBooleanValue(publicRequest.Tags.Value);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

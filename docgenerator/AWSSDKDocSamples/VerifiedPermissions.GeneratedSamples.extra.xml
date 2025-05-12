@@ -528,6 +528,25 @@ permit(
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.ListTagsForResource(Amazon.VerifiedPermissions.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.ListTagsForResource(Amazon.VerifiedPermissions.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists all the tags for the resource named in the API call.
+                </para>
+                <code
+                    title="ListTagsForResource"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.PutSchema(Amazon.VerifiedPermissions.Model.PutSchemaRequest)" />
             <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.PutSchema(Amazon.VerifiedPermissions.Model.PutSchemaRequest)" />
             <member name="T:Amazon.VerifiedPermissions.Model.PutSchemaRequest" />
@@ -545,6 +564,44 @@ Example strings might be displayed wrapped across multiple lines here for readab
                 </para>
                 <code
                     title="PutSchema"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.TagResource(Amazon.VerifiedPermissions.Model.TagResourceRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.TagResource(Amazon.VerifiedPermissions.Model.TagResourceRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.TagResourceRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example tags the resource.
+                </para>
+                <code
+                    title="TagResource"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.UntagResource(Amazon.VerifiedPermissions.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.UntagResource(Amazon.VerifiedPermissions.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.UntagResourceRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example removes the listed tags from the resource.
+                </para>
+                <code
+                    title="UntagResource"
                     source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
                     region="example-1" />
             </example>

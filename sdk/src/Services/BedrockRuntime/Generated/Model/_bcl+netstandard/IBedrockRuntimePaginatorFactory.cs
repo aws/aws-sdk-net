@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the bedrock-runtime-2023-09-30.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockRuntime.Model
@@ -29,6 +30,11 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Paginator for ListAsyncInvokes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAsyncInvokesPaginator ListAsyncInvokes(ListAsyncInvokesRequest request);
     }
 }

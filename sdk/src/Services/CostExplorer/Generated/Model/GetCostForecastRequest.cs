@@ -86,10 +86,6 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>LINKED_ACCOUNT_NAME</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>OPERATION</c> 
         /// </para>
         ///  </li> <li> 

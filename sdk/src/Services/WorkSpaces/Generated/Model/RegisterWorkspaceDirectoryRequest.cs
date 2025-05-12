@@ -42,7 +42,6 @@ namespace Amazon.WorkSpaces.Model
         private ActiveDirectoryConfig _activeDirectoryConfig;
         private string _directoryId;
         private bool? _enableSelfService;
-        private bool? _enableWorkDocs;
         private string _idcInstanceArn;
         private MicrosoftEntraConfig _microsoftEntraConfig;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -111,26 +110,6 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetEnableSelfService()
         {
             return this._enableSelfService.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property EnableWorkDocs. 
-        /// <para>
-        /// Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this
-        /// parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException
-        /// error. Set <c>EnableWorkDocs</c> to disabled, and try again.
-        /// </para>
-        /// </summary>
-        public bool? EnableWorkDocs
-        {
-            get { return this._enableWorkDocs; }
-            set { this._enableWorkDocs = value; }
-        }
-
-        // Check to see if EnableWorkDocs property is set
-        internal bool IsSetEnableWorkDocs()
-        {
-            return this._enableWorkDocs.HasValue; 
         }
 
         /// <summary>

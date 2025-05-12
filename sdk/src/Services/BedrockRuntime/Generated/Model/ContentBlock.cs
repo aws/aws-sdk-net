@@ -37,6 +37,7 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class ContentBlock
     {
+        private CachePointBlock _cachePoint;
         private DocumentBlock _document;
         private GuardrailConverseContentBlock _guardContent;
         private ImageBlock _image;
@@ -45,6 +46,24 @@ namespace Amazon.BedrockRuntime.Model
         private ToolResultBlock _toolResult;
         private ToolUseBlock _toolUse;
         private VideoBlock _video;
+
+        /// <summary>
+        /// Gets and sets the property CachePoint. 
+        /// <para>
+        /// CachePoint to include in the message.
+        /// </para>
+        /// </summary>
+        public CachePointBlock CachePoint
+        {
+            get { return this._cachePoint; }
+            set { this._cachePoint = value; }
+        }
+
+        // Check to see if CachePoint property is set
+        internal bool IsSetCachePoint()
+        {
+            return this._cachePoint != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Document. 

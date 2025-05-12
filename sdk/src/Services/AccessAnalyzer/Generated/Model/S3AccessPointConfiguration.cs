@@ -70,7 +70,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// access point. <c>VpcConfiguration</c> does not apply to multi-region access points.
         /// If the access preview is for a new resource and neither is specified, the access preview
         /// uses <c>Internet</c> for the network origin. If the access preview is for an existing
-        /// resource and neither is specified, the access preview uses the exiting network origin.
+        /// resource and neither is specified, the access preview uses the existing network origin.
         /// </para>
         /// </summary>
         public NetworkOriginConfiguration NetworkOrigin

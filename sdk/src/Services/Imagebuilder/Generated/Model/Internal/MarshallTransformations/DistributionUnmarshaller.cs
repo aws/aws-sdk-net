@@ -98,6 +98,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3ExportConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ssmParameterConfigurations", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<SsmParameterConfiguration, SsmParameterConfigurationUnmarshaller>(SsmParameterConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.SsmParameterConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

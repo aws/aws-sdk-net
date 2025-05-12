@@ -35,8 +35,27 @@ namespace Amazon.Bedrock.Model
     /// </summary>
     public partial class AutomatedEvaluationConfig
     {
+        private AutomatedEvaluationCustomMetricConfig _customMetricConfig;
         private List<EvaluationDatasetMetricConfig> _datasetMetricConfigs = AWSConfigs.InitializeCollections ? new List<EvaluationDatasetMetricConfig>() : null;
         private EvaluatorModelConfig _evaluatorModelConfig;
+
+        /// <summary>
+        /// Gets and sets the property CustomMetricConfig. 
+        /// <para>
+        /// Defines the configuration of custom metrics to be used in an evaluation job.
+        /// </para>
+        /// </summary>
+        public AutomatedEvaluationCustomMetricConfig CustomMetricConfig
+        {
+            get { return this._customMetricConfig; }
+            set { this._customMetricConfig = value; }
+        }
+
+        // Check to see if CustomMetricConfig property is set
+        internal bool IsSetCustomMetricConfig()
+        {
+            return this._customMetricConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DatasetMetricConfigs. 

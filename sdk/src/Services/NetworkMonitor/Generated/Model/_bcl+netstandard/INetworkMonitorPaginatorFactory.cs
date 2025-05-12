@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the networkmonitor-2023-08-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkMonitor.Model
@@ -29,6 +30,11 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Paginator for ListMonitors operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListMonitorsPaginator ListMonitors(ListMonitorsRequest request);
     }
 }

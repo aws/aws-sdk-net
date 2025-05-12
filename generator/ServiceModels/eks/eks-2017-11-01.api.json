@@ -44,7 +44,8 @@
         {"shape":"ServerException"},
         {"shape":"ResourceInUseException"},
         {"shape":"ResourceNotFoundException"},
-        {"shape":"InvalidRequestException"}
+        {"shape":"InvalidRequestException"},
+        {"shape":"ThrottlingException"}
       ]
     },
     "AssociateIdentityProviderConfig":{
@@ -61,7 +62,8 @@
         {"shape":"ServerException"},
         {"shape":"ResourceInUseException"},
         {"shape":"ResourceNotFoundException"},
-        {"shape":"InvalidRequestException"}
+        {"shape":"InvalidRequestException"},
+        {"shape":"ThrottlingException"}
       ]
     },
     "CreateAccessEntry":{
@@ -531,7 +533,8 @@
         {"shape":"ServerException"},
         {"shape":"ResourceInUseException"},
         {"shape":"ResourceNotFoundException"},
-        {"shape":"InvalidRequestException"}
+        {"shape":"InvalidRequestException"},
+        {"shape":"ThrottlingException"}
       ]
     },
     "ListAccessEntries":{
@@ -817,7 +820,8 @@
         {"shape":"ServerException"},
         {"shape":"ResourceInUseException"},
         {"shape":"ResourceNotFoundException"},
-        {"shape":"InvalidRequestException"}
+        {"shape":"InvalidRequestException"},
+        {"shape":"ThrottlingException"}
       ]
     },
     "UpdateClusterVersion":{
@@ -834,7 +838,9 @@
         {"shape":"ServerException"},
         {"shape":"ResourceInUseException"},
         {"shape":"ResourceNotFoundException"},
-        {"shape":"InvalidRequestException"}
+        {"shape":"InvalidRequestException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InvalidStateException"}
       ]
     },
     "UpdateEksAnywhereSubscription":{
@@ -913,6 +919,8 @@
         "CUSTOM",
         "BOTTLEROCKET_ARM_64",
         "BOTTLEROCKET_x86_64",
+        "BOTTLEROCKET_ARM_64_FIPS",
+        "BOTTLEROCKET_x86_64_FIPS",
         "BOTTLEROCKET_ARM_64_NVIDIA",
         "BOTTLEROCKET_x86_64_NVIDIA",
         "WINDOWS_CORE_2019_x86_64",
@@ -922,7 +930,8 @@
         "AL2023_x86_64_STANDARD",
         "AL2023_ARM_64_STANDARD",
         "AL2023_x86_64_NEURON",
-        "AL2023_x86_64_NVIDIA"
+        "AL2023_x86_64_NVIDIA",
+        "AL2023_ARM_64_NVIDIA"
       ]
     },
     "AccessConfigResponse":{
@@ -2681,6 +2690,15 @@
       "error":{"httpStatusCode":400},
       "exception":true
     },
+    "InvalidStateException":{
+      "type":"structure",
+      "members":{
+        "clusterName":{"shape":"String"},
+        "message":{"shape":"String"}
+      },
+      "error":{"httpStatusCode":400},
+      "exception":true
+    },
     "IpFamily":{
       "type":"string",
       "enum":[
@@ -3682,6 +3700,15 @@
         "PREFER_NO_SCHEDULE"
       ]
     },
+    "ThrottlingException":{
+      "type":"structure",
+      "members":{
+        "clusterName":{"shape":"String"},
+        "message":{"shape":"String"}
+      },
+      "error":{"httpStatusCode":429},
+      "exception":true
+    },
     "Timestamp":{"type":"timestamp"},
     "UnsupportedAvailabilityZoneException":{
       "type":"structure",
@@ -3820,7 +3847,8 @@
         "zonalShiftConfig":{"shape":"ZonalShiftConfigRequest"},
         "computeConfig":{"shape":"ComputeConfigRequest"},
         "kubernetesNetworkConfig":{"shape":"KubernetesNetworkConfigRequest"},
-        "storageConfig":{"shape":"StorageConfigRequest"}
+        "storageConfig":{"shape":"StorageConfigRequest"},
+        "remoteNetworkConfig":{"shape":"RemoteNetworkConfigRequest"}
       }
     },
     "UpdateClusterConfigResponse":{
@@ -3845,7 +3873,8 @@
         "clientRequestToken":{
           "shape":"String",
           "idempotencyToken":true
-        }
+        },
+        "force":{"shape":"Boolean"}
       }
     },
     "UpdateClusterVersionResponse":{
@@ -3997,7 +4026,8 @@
         "ZonalShiftConfig",
         "ComputeConfig",
         "StorageConfig",
-        "KubernetesNetworkConfig"
+        "KubernetesNetworkConfig",
+        "RemoteNetworkConfig"
       ]
     },
     "UpdateParams":{
@@ -4065,7 +4095,8 @@
         "AccessConfigUpdate",
         "UpgradePolicyUpdate",
         "ZonalShiftConfigUpdate",
-        "AutoModeUpdate"
+        "AutoModeUpdate",
+        "RemoteNetworkConfigUpdate"
       ]
     },
     "UpgradePolicyRequest":{

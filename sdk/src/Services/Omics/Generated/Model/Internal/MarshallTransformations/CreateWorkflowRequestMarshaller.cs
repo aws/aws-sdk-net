@@ -151,6 +151,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.StorageCapacity.Value);
             }
 
+            if(publicRequest.IsSetStorageType())
+            {
+                context.Writer.WritePropertyName("storageType");
+                context.Writer.WriteStringValue(publicRequest.StorageType);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

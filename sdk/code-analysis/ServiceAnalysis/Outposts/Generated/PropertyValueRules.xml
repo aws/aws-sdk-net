@@ -97,6 +97,12 @@
     <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Outposts.Model.GetCapacityTaskResponse.AssetId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^(\w+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Outposts.Model.GetCapacityTaskResponse.CapacityTaskId</property>
     <min>21</min>
     <max>21</max>
@@ -178,6 +184,12 @@
     <min>1</min>
     <max>180</max>
     <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.GetOutpostSupportedInstanceTypesRequest.AssetId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>\d{10}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.GetOutpostSupportedInstanceTypesRequest.MaxResults</property>
@@ -404,6 +416,12 @@
     <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:([a-z\d-]+)/)[a-z]{2,8}-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Outposts.Model.StartCapacityTaskRequest.AssetId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>\d{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Outposts.Model.StartCapacityTaskRequest.OrderId</property>
     <min>1</min>
     <max>20</max>
@@ -414,6 +432,12 @@
     <min>1</min>
     <max>180</max>
     <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.StartCapacityTaskResponse.AssetId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^(\w+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.StartCapacityTaskResponse.CapacityTaskId</property>
@@ -665,6 +689,12 @@
   <property-value-rule>
     <property>Amazon.Outposts.Model.CapacityTaskFailure.Reason</property>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.CapacityTaskSummary.AssetId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^(\w+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.CapacityTaskSummary.CapacityTaskId</property>

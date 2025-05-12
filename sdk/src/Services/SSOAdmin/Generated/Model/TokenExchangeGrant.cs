@@ -31,7 +31,8 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// A structure that defines configuration settings for an application that supports the
-    /// OAuth 2.0 Token Exchange Grant.
+    /// OAuth 2.0 Token Exchange Grant. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc8693">RFC
+    /// 8693</a>.
     /// </summary>
     public partial class TokenExchangeGrant
     {

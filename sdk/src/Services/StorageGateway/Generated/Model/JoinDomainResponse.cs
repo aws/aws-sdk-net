@@ -67,6 +67,11 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>INSUFFICIENT_PERMISSIONS</c>: Indicates that the <c>JoinDomain</c> operation failed
+        /// because the specified user lacks the necessary permissions to join the domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>NETWORK_ERROR</c>: Indicates that <c>JoinDomain</c> operation failed due to a
         /// network or connectivity error.
         /// </para>

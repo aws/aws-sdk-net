@@ -98,6 +98,12 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                     unmarshalledObject.IndiaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("indonesiaAdditionalInfo", targetDepth))
+                {
+                    var unmarshaller = IndonesiaAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.IndonesiaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("israelAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = IsraelAdditionalInfoUnmarshaller.Instance;
@@ -162,6 +168,12 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = UkraineAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.UkraineAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("uzbekistanAdditionalInfo", targetDepth))
+                {
+                    var unmarshaller = UzbekistanAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.UzbekistanAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vietnamAdditionalInfo", targetDepth))

@@ -30,42 +30,54 @@ using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.DynamoDBv2
 {
+
     /// <summary>
-    /// Available conversion schemas.
+    /// Specifies the conversion schema used to map the types to DynamoDB types.
+    /// This schema influences how items are serialized and deserialized when interacting with DynamoDB.
     /// </summary>
-    internal enum ConversionSchema
+    public enum ConversionSchema
     {
         /// <summary>
-        /// Default schema before 2014 L, M, BOOL, NULL support
-        /// 
-        /// The following .NET types are converted into the following DynamoDB types:
-        /// Number types (byte, int, float, decimal, etc.) are converted to N
-        /// String and char are converted to S
-        /// Bool is converted to N (0=false, 1=true)
-        /// DateTime and Guid are converto to S
-        /// MemoryStream and byte[] are converted to B
-        /// List, HashSet, and array of numerics types are converted to NS
-        /// List, HashSet, and array of string-based types are converted to SS
-        /// List, HashSet, and array of binary-based types are converted to BS
-        /// Dictionary{string,object} are converted to M
+        /// Indicates that no schema has been explicitly set.
+        /// </summary>
+        Unset = -1,
+
+        /// <summary>
+        /// Legacy conversion schema (and current default for context-level configurations).
+        ///
+        /// This schema pre-dates support for native DynamoDB types such as L (list), M (map), BOOL, and NULL.
+        /// Common .NET type mappings:
+        /// <ul>
+        /// <li><para>Number types (byte, int, float, decimal, etc.) → DynamoDB N (number)</para></li>
+        /// <li><para>string, char → S (string)</para></li>
+        /// <li><para>bool → N ("0" for false, "1" for true)</para></li>
+        /// <li><para>DateTime, Guid → S (string)</para></li>
+        /// <li><para>MemoryStream, byte[] → B (binary)</para></li>
+        /// <li><para>List, HashSet, array of numeric types → NS (number set)</para></li>
+        /// <li><para>List, HashSet, array of string types → SS (string set)</para></li>
+        /// <li><para>List, HashSet, array of binary types → BS (binary set)</para></li>
+        /// <li><para>Dictionary{string, object} → M (map)</para></li>
+        /// </ul>
         /// </summary>
         V1 = 0,
 
         /// <summary>
-        /// Schema fully supporting 2014 L, M, BOOL, NULL additions
+        /// Enhanced conversion schema that supports native DynamoDB types including L (list), M (map), BOOL, and NULL.
         /// 
-        /// The following .NET types are converted into the following DynamoDB types:
-        /// Number types (byte, int, float, decimal, etc.) are converted to N
-        /// String and char are converted to S
-        /// Bool is converted to BOOL
-        /// DateTime and Guid are converto to S
-        /// MemoryStream and byte[] are converted to B
-        /// HashSet of numerics types are converted to NS
-        /// HashSet of string-based types are converted to SS
-        /// HashSet of binary-based types are converted to BS
-        /// List and array of numerics, string-based types, and binary-based types
-        /// are converted to L type.
-        /// Dictionary{string,object} are converted to M
+        /// Common .NET type mappings:
+        /// <ul>
+        /// <li><para>Number types (byte, int, float, decimal, etc.) → DynamoDB N (number)</para></li>
+        /// <li><para>string, char → S (string)</para></li>
+        /// <li><para>bool → BOOL</para></li>
+        /// <li><para>DateTime, Guid → S (string)</para></li>
+        /// <li><para>MemoryStream, byte[] → B (binary)</para></li>
+        /// <li><para>HashSet of numeric types → NS (number set)</para></li>
+        /// <li><para>HashSet of string types → SS (string set)</para></li>
+        /// <li><para>HashSet of binary types → BS (binary set)</para></li>
+        /// <li><para>List, array (numeric, string, binary types) → L (list)</para></li>
+        /// <li><para>Dictionary{string, object} → M (map)</para></li>
+        /// </ul>
+        /// Recommended for applications that need full fidelity with native DynamoDB types.
         /// </summary>
         V2 = 1,
     }

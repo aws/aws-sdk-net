@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the billing-2023-09-07.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Billing.Model
@@ -29,11 +30,21 @@ namespace Amazon.Billing.Model
         /// <summary>
         /// Paginator for ListBillingViews operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListBillingViewsPaginator ListBillingViews(ListBillingViewsRequest request);
 
         /// <summary>
         /// Paginator for ListSourceViewsForBillingView operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSourceViewsForBillingViewPaginator ListSourceViewsForBillingView(ListSourceViewsForBillingViewRequest request);
     }
 }

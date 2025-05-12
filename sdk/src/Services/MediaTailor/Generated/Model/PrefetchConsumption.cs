@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// A complex type that contains settings that determine how and when that MediaTailor
-    /// places prefetched ads into upcoming ad breaks.
+    /// For single prefetch, describes how and when that MediaTailor places prefetched ads
+    /// into upcoming ad breaks.
     /// </summary>
     public partial class PrefetchConsumption
     {

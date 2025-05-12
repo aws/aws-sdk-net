@@ -43,7 +43,7 @@ namespace Amazon.GroundStation.Model
         /// UUID of a mission profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string MissionProfileId
         {
             get { return this._missionProfileId; }

@@ -98,6 +98,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.DevicePoolArn);
             }
 
+            if(publicRequest.IsSetProjectArn())
+            {
+                context.Writer.WritePropertyName("projectArn");
+                context.Writer.WriteStringValue(publicRequest.ProjectArn);
+            }
+
             if(publicRequest.IsSetTest())
             {
                 context.Writer.WritePropertyName("test");

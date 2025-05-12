@@ -153,6 +153,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                                 {
                                                     request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ebs" + "." + "Throughput", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.Throughput));
                                                 }
+                                                if(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.IsSetVolumeInitializationRate())
+                                                {
+                                                    request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ebs" + "." + "VolumeInitializationRate", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.VolumeInitializationRate));
+                                                }
                                                 if(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.IsSetVolumeSize())
                                                 {
                                                     request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ebs" + "." + "VolumeSize", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.VolumeSize));
@@ -520,6 +524,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                             if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetDeviceIndex())
                                             {
                                                 request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "DeviceIndex", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.DeviceIndex));
+                                            }
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetEnaQueueCount())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "EnaQueueCount", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.EnaQueueCount));
                                             }
                                             if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetEnaSrdSpecification())
                                             {

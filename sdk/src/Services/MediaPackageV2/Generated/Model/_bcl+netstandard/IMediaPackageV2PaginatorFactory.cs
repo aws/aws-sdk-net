@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the mediapackagev2-2022-12-25.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageV2.Model
@@ -29,21 +30,41 @@ namespace Amazon.MediaPackageV2.Model
         /// <summary>
         /// Paginator for ListChannelGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListChannelGroupsPaginator ListChannelGroups(ListChannelGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListChannels operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListChannelsPaginator ListChannels(ListChannelsRequest request);
 
         /// <summary>
         /// Paginator for ListHarvestJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListHarvestJobsPaginator ListHarvestJobs(ListHarvestJobsRequest request);
 
         /// <summary>
         /// Paginator for ListOriginEndpoints operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListOriginEndpointsPaginator ListOriginEndpoints(ListOriginEndpointsRequest request);
     }
 }

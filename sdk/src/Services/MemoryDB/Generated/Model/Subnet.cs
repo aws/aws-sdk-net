@@ -37,6 +37,7 @@ namespace Amazon.MemoryDB.Model
     {
         private AvailabilityZone _availabilityZone;
         private string _identifier;
+        private List<string> _supportedNetworkTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -72,6 +73,26 @@ namespace Amazon.MemoryDB.Model
         internal bool IsSetIdentifier()
         {
             return this._identifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedNetworkTypes. 
+        /// <para>
+        /// The network types supported by this subnet. Returns an array of strings that can include
+        /// 'ipv4', 'ipv6', or both, indicating whether the subnet supports IPv4 only, IPv6 only,
+        /// or dual-stack deployments.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedNetworkTypes
+        {
+            get { return this._supportedNetworkTypes; }
+            set { this._supportedNetworkTypes = value; }
+        }
+
+        // Check to see if SupportedNetworkTypes property is set
+        internal bool IsSetSupportedNetworkTypes()
+        {
+            return this._supportedNetworkTypes != null && (this._supportedNetworkTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

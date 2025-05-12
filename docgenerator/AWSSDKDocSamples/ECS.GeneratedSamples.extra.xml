@@ -971,6 +971,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ECS.IAmazonECS.StopServiceDeployment(Amazon.ECS.Model.StopServiceDeploymentRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.StopServiceDeployment(Amazon.ECS.Model.StopServiceDeploymentRequest)" />
+            <member name="T:Amazon.ECS.Model.StopServiceDeploymentRequest" />
+            <member name="T:Amazon.ECS.Model.StopServiceDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example stops the service deployment using the ROLLBACK option.
+                </para>
+                <code
+                    title="To stop a service deployment"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-stop-service-deployment-1734638754369" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ECS.IAmazonECS.StopTask(Amazon.ECS.Model.StopTaskRequest)" />
             <member name="M:Amazon.ECS.AmazonECSClient.StopTask(Amazon.ECS.Model.StopTaskRequest)" />
             <member name="T:Amazon.ECS.Model.StopTaskRequest" />

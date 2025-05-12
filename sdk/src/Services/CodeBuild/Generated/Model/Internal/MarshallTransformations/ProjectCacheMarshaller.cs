@@ -46,6 +46,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCacheNamespace())
+            {
+                context.Writer.WritePropertyName("cacheNamespace");
+                context.Writer.WriteStringValue(requestObject.CacheNamespace);
+            }
+
             if(requestObject.IsSetLocation())
             {
                 context.Writer.WritePropertyName("location");

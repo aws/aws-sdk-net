@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the cloudfront-2020-05-31.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFront.Model
@@ -29,31 +30,121 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Paginator for ListCloudFrontOriginAccessIdentities operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "CloudFrontOriginAccessIdentityList.NextMarker" }
+        )]
         IListCloudFrontOriginAccessIdentitiesPaginator ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request);
+
+        /// <summary>
+        /// Paginator for ListConnectionGroups operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
+        IListConnectionGroupsPaginator ListConnectionGroups(ListConnectionGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListDistributions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "DistributionList.NextMarker" }
+        )]
         IListDistributionsPaginator ListDistributions(ListDistributionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDistributionsByConnectionMode operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "DistributionList.NextMarker" }
+        )]
+        IListDistributionsByConnectionModePaginator ListDistributionsByConnectionMode(ListDistributionsByConnectionModeRequest request);
+
+        /// <summary>
+        /// Paginator for ListDistributionTenants operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
+        IListDistributionTenantsPaginator ListDistributionTenants(ListDistributionTenantsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDistributionTenantsByCustomization operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
+        IListDistributionTenantsByCustomizationPaginator ListDistributionTenantsByCustomization(ListDistributionTenantsByCustomizationRequest request);
+
+        /// <summary>
+        /// Paginator for ListDomainConflicts operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
+        IListDomainConflictsPaginator ListDomainConflicts(ListDomainConflictsRequest request);
 
         /// <summary>
         /// Paginator for ListInvalidations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "InvalidationList.NextMarker" }
+        )]
         IListInvalidationsPaginator ListInvalidations(ListInvalidationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListInvalidationsForDistributionTenant operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "InvalidationList.NextMarker" }
+        )]
+        IListInvalidationsForDistributionTenantPaginator ListInvalidationsForDistributionTenant(ListInvalidationsForDistributionTenantRequest request);
 
         /// <summary>
         /// Paginator for ListKeyValueStores operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "KeyValueStoreList.NextMarker" }
+        )]
         IListKeyValueStoresPaginator ListKeyValueStores(ListKeyValueStoresRequest request);
 
         /// <summary>
         /// Paginator for ListPublicKeys operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "PublicKeyList.NextMarker" }
+        )]
         IListPublicKeysPaginator ListPublicKeys(ListPublicKeysRequest request);
 
         /// <summary>
         /// Paginator for ListStreamingDistributions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "StreamingDistributionList.NextMarker" }
+        )]
         IListStreamingDistributionsPaginator ListStreamingDistributions(ListStreamingDistributionsRequest request);
     }
 }

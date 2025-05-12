@@ -836,6 +836,180 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  CheckDocumentAccess
+
+
+        /// <summary>
+        /// Verifies if a user has access permissions for a specified document and returns the
+        /// actual ACL attached to the document. Resolves user access on the document via user
+        /// aliases and groups when verifying user access.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckDocumentAccess service method.</param>
+        /// 
+        /// <returns>The response from the CheckDocumentAccess service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CheckDocumentAccess">REST API Reference for CheckDocumentAccess Operation</seealso>
+        public virtual CheckDocumentAccessResponse CheckDocumentAccess(CheckDocumentAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CheckDocumentAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckDocumentAccessResponseUnmarshaller.Instance;
+
+            return Invoke<CheckDocumentAccessResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Verifies if a user has access permissions for a specified document and returns the
+        /// actual ACL attached to the document. Resolves user access on the document via user
+        /// aliases and groups when verifying user access.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckDocumentAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CheckDocumentAccess service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CheckDocumentAccess">REST API Reference for CheckDocumentAccess Operation</seealso>
+        public virtual Task<CheckDocumentAccessResponse> CheckDocumentAccessAsync(CheckDocumentAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CheckDocumentAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckDocumentAccessResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CheckDocumentAccessResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAnonymousWebExperienceUrl
+
+
+        /// <summary>
+        /// Creates a unique URL for anonymous Amazon Q Business web experience. This URL can
+        /// only be used once and must be used within 5 minutes after it's generated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnonymousWebExperienceUrl service method.</param>
+        /// 
+        /// <returns>The response from the CreateAnonymousWebExperienceUrl service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
+        /// You have exceeded the set limits for your Amazon Q Business service.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateAnonymousWebExperienceUrl">REST API Reference for CreateAnonymousWebExperienceUrl Operation</seealso>
+        public virtual CreateAnonymousWebExperienceUrlResponse CreateAnonymousWebExperienceUrl(CreateAnonymousWebExperienceUrlRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAnonymousWebExperienceUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAnonymousWebExperienceUrlResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAnonymousWebExperienceUrlResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a unique URL for anonymous Amazon Q Business web experience. This URL can
+        /// only be used once and must be used within 5 minutes after it's generated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnonymousWebExperienceUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAnonymousWebExperienceUrl service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
+        /// You have exceeded the set limits for your Amazon Q Business service.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateAnonymousWebExperienceUrl">REST API Reference for CreateAnonymousWebExperienceUrl Operation</seealso>
+        public virtual Task<CreateAnonymousWebExperienceUrlResponse> CreateAnonymousWebExperienceUrlAsync(CreateAnonymousWebExperienceUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAnonymousWebExperienceUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAnonymousWebExperienceUrlResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAnonymousWebExperienceUrlResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateApplication
 
 
@@ -6990,6 +7164,10 @@ namespace Amazon.QBusiness
         /// You don't have access to perform this action. Make sure you have the required permission
         /// policies and user accounts and try again.
         /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
         /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
@@ -7032,6 +7210,10 @@ namespace Amazon.QBusiness
         /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
         /// You don't have access to perform this action. Make sure you have the required permission
         /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.

@@ -3490,6 +3490,7 @@
         "agent":{"shape":"AgentFlowNodeConfiguration"},
         "collector":{"shape":"CollectorFlowNodeConfiguration"},
         "condition":{"shape":"ConditionFlowNodeConfiguration"},
+        "inlineCode":{"shape":"InlineCodeFlowNodeConfiguration"},
         "input":{"shape":"InputFlowNodeConfiguration"},
         "iterator":{"shape":"IteratorFlowNodeConfiguration"},
         "knowledgeBase":{"shape":"KnowledgeBaseFlowNodeConfiguration"},
@@ -3580,7 +3581,8 @@
         "Agent",
         "Retrieval",
         "Iterator",
-        "Collector"
+        "Collector",
+        "InlineCode"
       ]
     },
     "FlowNodes":{
@@ -4445,6 +4447,23 @@
         "updatedAt":{"shape":"DateTimestamp"}
       }
     },
+    "InlineCode":{
+      "type":"string",
+      "max":5000000,
+      "min":1,
+      "sensitive":true
+    },
+    "InlineCodeFlowNodeConfiguration":{
+      "type":"structure",
+      "required":[
+        "code",
+        "language"
+      ],
+      "members":{
+        "code":{"shape":"InlineCode"},
+        "language":{"shape":"SupportedLanguages"}
+      }
+    },
     "InlineContent":{
       "type":"structure",
       "required":["type"],
@@ -4646,7 +4665,8 @@
         "REDIS_ENTERPRISE_CLOUD",
         "RDS",
         "MONGO_DB_ATLAS",
-        "NEPTUNE_ANALYTICS"
+        "NEPTUNE_ANALYTICS",
+        "OPENSEARCH_MANAGED_CLUSTER"
       ]
     },
     "KnowledgeBaseSummaries":{
@@ -5306,6 +5326,7 @@
         "endpoint":{"shape":"MongoDbAtlasEndpoint"},
         "endpointServiceName":{"shape":"MongoDbAtlasEndpointServiceName"},
         "fieldMapping":{"shape":"MongoDbAtlasFieldMapping"},
+        "textIndexName":{"shape":"MongoDbAtlasIndexName"},
         "vectorIndexName":{"shape":"MongoDbAtlasIndexName"}
       }
     },
@@ -5410,6 +5431,53 @@
     "NumericalVersion":{
       "type":"string",
       "pattern":"^[0-9]{1,5}$"
+    },
+    "OpenSearchManagedClusterConfiguration":{
+      "type":"structure",
+      "required":[
+        "domainArn",
+        "domainEndpoint",
+        "fieldMapping",
+        "vectorIndexName"
+      ],
+      "members":{
+        "domainArn":{"shape":"OpenSearchManagedClusterDomainArn"},
+        "domainEndpoint":{"shape":"OpenSearchManagedClusterDomainEndpoint"},
+        "fieldMapping":{"shape":"OpenSearchManagedClusterFieldMapping"},
+        "vectorIndexName":{"shape":"OpenSearchManagedClusterIndexName"}
+      }
+    },
+    "OpenSearchManagedClusterDomainArn":{
+      "type":"string",
+      "max":2048,
+      "min":0,
+      "pattern":"^arn:aws(|-cn|-us-gov|-iso):es:[a-z]{2}(-gov)?-[a-z]+-\\d{1}:\\d{12}:domain/[a-z][a-z0-9-]{3,28}$"
+    },
+    "OpenSearchManagedClusterDomainEndpoint":{
+      "type":"string",
+      "max":2048,
+      "min":0,
+      "pattern":"^https://.*$"
+    },
+    "OpenSearchManagedClusterFieldMapping":{
+      "type":"structure",
+      "required":[
+        "metadataField",
+        "textField",
+        "vectorField"
+      ],
+      "members":{
+        "metadataField":{"shape":"FieldName"},
+        "textField":{"shape":"FieldName"},
+        "vectorField":{"shape":"FieldName"}
+      }
+    },
+    "OpenSearchManagedClusterIndexName":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"^(?![\\-_+.])[a-z0-9][a-z0-9\\-_\\.]*$",
+      "sensitive":true
     },
     "OpenSearchServerlessCollectionArn":{
       "type":"string",
@@ -5999,6 +6067,7 @@
         "vectorField"
       ],
       "members":{
+        "customMetadataField":{"shape":"ColumnName"},
         "metadataField":{"shape":"ColumnName"},
         "primaryKeyField":{"shape":"ColumnName"},
         "textField":{"shape":"ColumnName"},
@@ -6411,7 +6480,7 @@
     "SessionTTL":{
       "type":"integer",
       "box":true,
-      "max":3600,
+      "max":5400,
       "min":60
     },
     "SharePointAuthType":{
@@ -6574,6 +6643,7 @@
       "members":{
         "mongoDbAtlasConfiguration":{"shape":"MongoDbAtlasConfiguration"},
         "neptuneAnalyticsConfiguration":{"shape":"NeptuneAnalyticsConfiguration"},
+        "opensearchManagedClusterConfiguration":{"shape":"OpenSearchManagedClusterConfiguration"},
         "opensearchServerlessConfiguration":{"shape":"OpenSearchServerlessConfiguration"},
         "pineconeConfiguration":{"shape":"PineconeConfiguration"},
         "rdsConfiguration":{"shape":"RdsConfiguration"},
@@ -6639,6 +6709,10 @@
       "member":{"shape":"SupplementalDataStorageLocation"},
       "max":1,
       "min":1
+    },
+    "SupportedLanguages":{
+      "type":"string",
+      "enum":["Python_3"]
     },
     "SystemContentBlock":{
       "type":"structure",

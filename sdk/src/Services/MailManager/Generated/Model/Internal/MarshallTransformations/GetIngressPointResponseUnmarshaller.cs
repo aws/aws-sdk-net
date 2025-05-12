@@ -94,6 +94,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                     response.LastUpdatedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("NetworkConfiguration", targetDepth))
+                {
+                    var unmarshaller = NetworkConfigurationUnmarshaller.Instance;
+                    response.NetworkConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("RuleSetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

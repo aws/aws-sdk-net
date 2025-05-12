@@ -75,6 +75,56 @@ namespace Amazon.VerifiedPermissions
 
 
     /// <summary>
+    /// Constants used for properties of type CedarVersion.
+    /// </summary>
+    public class CedarVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CEDAR_2 for CedarVersion
+        /// </summary>
+        public static readonly CedarVersion CEDAR_2 = new CedarVersion("CEDAR_2");
+        /// <summary>
+        /// Constant CEDAR_4 for CedarVersion
+        /// </summary>
+        public static readonly CedarVersion CEDAR_4 = new CedarVersion("CEDAR_4");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CedarVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CedarVersion FindValue(string value)
+        {
+            return FindValue<CedarVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CedarVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Decision.
     /// </summary>
     public class Decision : ConstantClass
@@ -118,6 +168,56 @@ namespace Amazon.VerifiedPermissions
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Decision(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeletionProtection.
+    /// </summary>
+    public class DeletionProtection : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for DeletionProtection
+        /// </summary>
+        public static readonly DeletionProtection DISABLED = new DeletionProtection("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for DeletionProtection
+        /// </summary>
+        public static readonly DeletionProtection ENABLED = new DeletionProtection("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeletionProtection(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeletionProtection FindValue(string value)
+        {
+            return FindValue<DeletionProtection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeletionProtection(string value)
         {
             return FindValue(value);
         }

@@ -153,7 +153,7 @@ namespace Amazon.IoTFleetWise.Model
         /// sensor might be <c>Vehicle.Body.Engine.Battery</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=150)]
         public string FullyQualifiedName
         {
             get { return this._fullyQualifiedName; }

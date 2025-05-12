@@ -41,11 +41,32 @@ namespace Amazon.AWSMarketplaceMetering.Model
     /// </summary>
     public partial class UsageRecord
     {
+        private string _customerAWSAccountId;
         private string _customerIdentifier;
         private string _dimension;
         private int? _quantity;
         private DateTime? _timestamp;
         private List<UsageAllocation> _usageAllocations = AWSConfigs.InitializeCollections ? new List<UsageAllocation>() : null;
+
+        /// <summary>
+        /// Gets and sets the property CustomerAWSAccountId. 
+        /// <para>
+        ///  The <c>CustomerAWSAccountID</c> parameter specifies the AWS account ID of the buyer.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string CustomerAWSAccountId
+        {
+            get { return this._customerAWSAccountId; }
+            set { this._customerAWSAccountId = value; }
+        }
+
+        // Check to see if CustomerAWSAccountId property is set
+        internal bool IsSetCustomerAWSAccountId()
+        {
+            return this._customerAWSAccountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CustomerIdentifier. 
@@ -54,7 +75,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// and represents an individual buyer in your application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string CustomerIdentifier
         {
             get { return this._customerIdentifier; }
@@ -70,8 +91,8 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <summary>
         /// Gets and sets the property Dimension. 
         /// <para>
-        /// During the process of registering a product on AWS Marketplace, dimensions are specified.
-        /// These represent different units of value in your application.
+        /// During the process of registering a product on Amazon Web Services Marketplace, dimensions
+        /// are specified. These represent different units of value in your application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

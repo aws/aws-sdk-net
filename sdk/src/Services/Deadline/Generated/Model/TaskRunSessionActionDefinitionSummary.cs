@@ -62,7 +62,6 @@ namespace Amazon.Deadline.Model
         /// The task ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string TaskId
         {
             get { return this._taskId; }

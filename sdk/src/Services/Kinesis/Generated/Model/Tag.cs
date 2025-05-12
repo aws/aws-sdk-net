@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// Metadata assigned to the stream, consisting of a key-value pair.
+    /// Metadata assigned to the stream or consumer, consisting of a key-value pair.
     /// </summary>
     public partial class Tag
     {

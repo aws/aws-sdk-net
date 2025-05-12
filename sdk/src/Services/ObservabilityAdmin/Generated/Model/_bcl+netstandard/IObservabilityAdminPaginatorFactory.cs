@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the observabilityadmin-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ObservabilityAdmin.Model
@@ -29,11 +30,21 @@ namespace Amazon.ObservabilityAdmin.Model
         /// <summary>
         /// Paginator for ListResourceTelemetry operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListResourceTelemetryPaginator ListResourceTelemetry(ListResourceTelemetryRequest request);
 
         /// <summary>
         /// Paginator for ListResourceTelemetryForOrganization operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListResourceTelemetryForOrganizationPaginator ListResourceTelemetryForOrganization(ListResourceTelemetryForOrganizationRequest request);
     }
 }

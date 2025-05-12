@@ -60,8 +60,13 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Image. 
         /// <para>
-        /// The AMI ID to use as the base image for a container build and test instance. If not
-        /// specified, Image Builder will use the appropriate ECS-optimized AMI as a base image.
+        /// The base image for a container build and test instance. This can contain an AMI ID
+        /// or it can specify an Amazon Web Services Systems Manager (SSM) Parameter Store Parameter,
+        /// prefixed by <c>ssm:</c>, followed by the parameter name or ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// If not specified, Image Builder uses the appropriate ECS-optimized AMI as a base image.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

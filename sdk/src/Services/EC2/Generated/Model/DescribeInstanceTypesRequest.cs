@@ -89,6 +89,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>dedicated-hosts-supported</c> - Indicates whether the instance type supports Dedicated
+        /// Hosts. (<c>true</c> | <c>false</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</c> - The baseline bandwidth
         /// performance for an EBS-optimized instance type, in Mbps.
         /// </para>
@@ -208,6 +213,11 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <c>network-info.ena-support</c> - Indicates whether Elastic Network Adapter (ENA)
         /// is supported or required (<c>required</c> | <c>supported</c> | <c>unsupported</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>network-info.flexible-ena-queues-support</c> - Indicates whether an instance supports
+        /// flexible ENA queues (<c>supported</c> | <c>unsupported</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>

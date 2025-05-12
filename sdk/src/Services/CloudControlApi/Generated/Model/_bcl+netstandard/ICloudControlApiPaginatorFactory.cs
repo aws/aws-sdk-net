@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the cloudcontrol-2021-09-30.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudControlApi.Model
@@ -29,11 +30,21 @@ namespace Amazon.CloudControlApi.Model
         /// <summary>
         /// Paginator for ListResourceRequests operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListResourceRequestsPaginator ListResourceRequests(ListResourceRequestsRequest request);
 
         /// <summary>
         /// Paginator for ListResources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListResourcesPaginator ListResources(ListResourcesRequest request);
     }
 }

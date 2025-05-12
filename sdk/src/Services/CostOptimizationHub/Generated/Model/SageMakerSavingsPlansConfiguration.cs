@@ -42,7 +42,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// <summary>
         /// Gets and sets the property AccountScope. 
         /// <para>
-        /// The account scope that you want your recommendations for.
+        /// The account scope for which you want recommendations.
         /// </para>
         /// </summary>
         public string AccountScope

@@ -101,6 +101,17 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetIndonesiaAdditionalInfo())
+            {
+                context.Writer.WritePropertyName("indonesiaAdditionalInfo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IndonesiaAdditionalInfoMarshaller.Instance;
+                marshaller.Marshall(requestObject.IndonesiaAdditionalInfo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetIsraelAdditionalInfo())
             {
                 context.Writer.WritePropertyName("israelAdditionalInfo");
@@ -218,6 +229,17 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 
                 var marshaller = UkraineAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.UkraineAdditionalInfo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetUzbekistanAdditionalInfo())
+            {
+                context.Writer.WritePropertyName("uzbekistanAdditionalInfo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UzbekistanAdditionalInfoMarshaller.Instance;
+                marshaller.Marshall(requestObject.UzbekistanAdditionalInfo, context);
 
                 context.Writer.WriteEndObject();
             }

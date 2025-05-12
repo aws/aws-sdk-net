@@ -36,8 +36,8 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// A service deployment happens when you release a software update for the service. For
-    /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployments.html">Amazon
-    /// ECS service deployments</a>.
+    /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployment.html">View
+    /// service history using Amazon ECS service deployments</a>.
     /// </para>
     /// </summary>
     public partial class DescribeServiceDeploymentsRequest : AmazonECSRequest

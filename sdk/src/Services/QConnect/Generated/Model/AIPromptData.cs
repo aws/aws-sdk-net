@@ -169,8 +169,77 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property ModelId. 
         /// <para>
-        /// The identifier of the model used for this AI Prompt. Model Ids supported are: <c>CLAUDE_3_HAIKU_20240307_V1</c>.
+        /// The identifier of the model used for this AI Prompt. The following model Ids are supported:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>anthropic.claude-3-haiku--v1:0</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>apac.amazon.nova-lite-v1:0</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>apac.amazon.nova-micro-v1:0</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>apac.amazon.nova-pro-v1:0</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>apac.anthropic.claude-3-5-sonnet--v2:0</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>apac.anthropic.claude-3-haiku-20240307-v1:0</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>eu.amazon.nova-lite-v1:0</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>eu.amazon.nova-micro-v1:0</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>eu.amazon.nova-pro-v1:0</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>eu.anthropic.claude-3-7-sonnet-20250219-v1:0</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>eu.anthropic.claude-3-haiku-20240307-v1:0</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>us.amazon.nova-lite-v1:0</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>us.amazon.nova-micro-v1:0</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>us.amazon.nova-pro-v1:0</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>us.anthropic.claude-3-5-haiku-20241022-v1:0</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>us.anthropic.claude-3-7-sonnet-20250219-v1:0</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>us.anthropic.claude-3-haiku-20240307-v1:0</c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ModelId

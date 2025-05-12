@@ -38,6 +38,7 @@ namespace Amazon.MailManager.Model
         private string _clientToken;
         private IngressPointConfiguration _ingressPointConfiguration;
         private string _ingressPointName;
+        private NetworkConfiguration _networkConfiguration;
         private string _ruleSetId;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _trafficPolicyId;
@@ -98,6 +99,26 @@ namespace Amazon.MailManager.Model
         internal bool IsSetIngressPointName()
         {
             return this._ingressPointName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkConfiguration. 
+        /// <para>
+        /// Specifies the network configuration for the ingress point. This allows you to create
+        /// an IPv4-only, Dual-Stack, or PrivateLink type of ingress point. If not specified,
+        /// the default network type is IPv4-only. 
+        /// </para>
+        /// </summary>
+        public NetworkConfiguration NetworkConfiguration
+        {
+            get { return this._networkConfiguration; }
+            set { this._networkConfiguration = value; }
+        }
+
+        // Check to see if NetworkConfiguration property is set
+        internal bool IsSetNetworkConfiguration()
+        {
+            return this._networkConfiguration != null;
         }
 
         /// <summary>

@@ -66,7 +66,7 @@ namespace Amazon.Keyspaces.Model
         /// and their status. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=6)]
+        [AWSProperty(Min=2)]
         public List<ReplicationGroupStatus> ReplicationGroupStatuses
         {
             get { return this._replicationGroupStatuses; }
@@ -86,7 +86,7 @@ namespace Amazon.Keyspaces.Model
         /// of replication Regions is returned. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=6)]
+        [AWSProperty(Min=2)]
         public List<string> ReplicationRegions
         {
             get { return this._replicationRegions; }

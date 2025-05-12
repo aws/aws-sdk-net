@@ -84,7 +84,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// The maximum number of read and write units for the global secondary index being created.
         /// If you use this parameter, you must specify <c>MaxReadRequestUnits</c>, <c>MaxWriteRequestUnits</c>,
-        /// or both.
+        /// or both. You must use either <c>OnDemand Throughput</c> or <c>ProvisionedThroughput</c>
+        /// based on your table's capacity mode.
         /// </para>
         /// </summary>
         public OnDemandThroughput OnDemandThroughput

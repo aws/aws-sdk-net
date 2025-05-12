@@ -109,6 +109,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetHallucinationReductionConfiguration())
+            {
+                context.Writer.WritePropertyName("hallucinationReductionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HallucinationReductionConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.HallucinationReductionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetOrchestrationConfiguration())
             {
                 context.Writer.WritePropertyName("orchestrationConfiguration");

@@ -366,6 +366,10 @@ namespace Amazon.ConnectCases
         /// Constant File for RelatedItemType
         /// </summary>
         public static readonly RelatedItemType File = new RelatedItemType("File");
+        /// <summary>
+        /// Constant Sla for RelatedItemType
+        /// </summary>
+        public static readonly RelatedItemType Sla = new RelatedItemType("Sla");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -442,6 +446,110 @@ namespace Amazon.ConnectCases
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RuleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SlaStatus.
+    /// </summary>
+    public class SlaStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for SlaStatus
+        /// </summary>
+        public static readonly SlaStatus Active = new SlaStatus("Active");
+        /// <summary>
+        /// Constant Met for SlaStatus
+        /// </summary>
+        public static readonly SlaStatus Met = new SlaStatus("Met");
+        /// <summary>
+        /// Constant NotMet for SlaStatus
+        /// </summary>
+        public static readonly SlaStatus NotMet = new SlaStatus("NotMet");
+        /// <summary>
+        /// Constant Overdue for SlaStatus
+        /// </summary>
+        public static readonly SlaStatus Overdue = new SlaStatus("Overdue");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SlaStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SlaStatus FindValue(string value)
+        {
+            return FindValue<SlaStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SlaStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SlaType.
+    /// </summary>
+    public class SlaType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CaseField for SlaType
+        /// </summary>
+        public static readonly SlaType CaseField = new SlaType("CaseField");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SlaType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SlaType FindValue(string value)
+        {
+            return FindValue<SlaType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SlaType(string value)
         {
             return FindValue(value);
         }

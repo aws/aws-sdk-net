@@ -87,7 +87,33 @@ namespace Amazon.ECS.Model
     /// an accurate response. Apply an exponential backoff algorithm starting with a couple
     /// of seconds of wait time, and increase gradually up to about five minutes of wait time.
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    /// If you get a <c>ConflictException</c> error, the <c>RunTask</c> request could not
+    /// be processed due to conflicts. The provided <c>clientToken</c> is already in use with
+    /// a different <c>RunTask</c> request. The <c>resourceIds</c> are the existing task ARNs
+    /// which are already associated with the <c>clientToken</c>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// To fix this issue:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Run <c>RunTask</c> with a unique <c>clientToken</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Run <c>RunTask</c> with the <c>clientToken</c> and the original set of parameters
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// If you get a <c>ClientException</c>error, the <c>RunTask</c> could not be processed
+    /// because you use managed scaling and there is a capacity error because the quota of
+    /// tasks in the <c>PROVISIONING</c> per cluster has been reached. For information about
+    /// the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+    /// ECS service quotas</a>.
+    /// </para>
     /// </summary>
     public partial class RunTaskRequest : AmazonECSRequest
     {
@@ -170,6 +196,11 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The short name or full Amazon Resource Name (ARN) of the cluster to run your task
         /// on. If you do not specify a cluster, the default cluster is assumed.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each account receives a default cluster the first time you use the service, but you
+        /// may also create other clusters.
         /// </para>
         /// </summary>
         public string Cluster

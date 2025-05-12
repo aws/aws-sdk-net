@@ -43,9 +43,34 @@ namespace Amazon.VerifiedPermissions.Model
     /// </summary>
     public partial class UpdatePolicyStoreRequest : AmazonVerifiedPermissionsRequest
     {
+        private DeletionProtection _deletionProtection;
         private string _description;
         private string _policyStoreId;
         private ValidationSettings _validationSettings;
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// Specifies whether the policy store can be deleted. If enabled, the policy store can't
+        /// be deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you call <c>UpdatePolicyStore</c>, this parameter is unchanged unless explicitly
+        /// included in the call.
+        /// </para>
+        /// </summary>
+        public DeletionProtection DeletionProtection
+        {
+            get { return this._deletionProtection; }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

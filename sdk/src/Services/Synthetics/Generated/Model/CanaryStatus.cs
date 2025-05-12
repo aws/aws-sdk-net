@@ -59,7 +59,7 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property StateReason. 
         /// <para>
-        /// If the canary has insufficient permissions to run, this field provides more details.
+        /// If the canary creation or update failed, this field provides details on the failure.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -78,7 +78,7 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property StateReasonCode. 
         /// <para>
-        /// If the canary cannot run or has failed, this field displays the reason.
+        /// If the canary creation or update failed, this field displays the reason code.
         /// </para>
         /// </summary>
         public CanaryStateReasonCode StateReasonCode

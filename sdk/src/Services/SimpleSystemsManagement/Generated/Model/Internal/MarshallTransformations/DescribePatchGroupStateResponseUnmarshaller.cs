@@ -58,6 +58,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     response.Instances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("InstancesWithAvailableSecurityUpdates", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    response.InstancesWithAvailableSecurityUpdates = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("InstancesWithCriticalNonCompliantPatches", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

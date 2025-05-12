@@ -30,7 +30,8 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             this.ContentType = "application/xml";
             this.StatusCode = HttpStatusCode.OK;
             this.IsSuccessStatusCode = true;
-            this.Headers = new Dictionary<string, string>();
+            // RFC 9110 states headers must be case insensitive
+            this.Headers = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         }
 
         public Dictionary<string,string> Headers { get; set; }

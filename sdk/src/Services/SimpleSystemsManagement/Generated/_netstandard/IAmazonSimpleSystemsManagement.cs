@@ -3062,6 +3062,40 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
                 
+        #region  GetAccessToken
+
+
+
+        /// <summary>
+        /// Returns a credentials set to be used with just-in-time node access.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessToken service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccessToken service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AccessDeniedException">
+        /// The requester doesn't have permissions to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because the service is throttling requests.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ValidationException">
+        /// The request isn't valid. Verify that you entered valid contents for the command and
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAccessToken">REST API Reference for GetAccessToken Operation</seealso>
+        Task<GetAccessTokenResponse> GetAccessTokenAsync(GetAccessTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetAutomationExecution
 
 
@@ -5893,6 +5927,45 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">REST API Reference for SendCommand Operation</seealso>
         Task<SendCommandResponse> SendCommandAsync(SendCommandRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartAccessRequest
+
+
+
+        /// <summary>
+        /// Starts the workflow for just-in-time node access sessions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAccessRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartAccessRequest service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AccessDeniedException">
+        /// The requester doesn't have permissions to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ServiceQuotaExceededException">
+        /// The request exceeds the service quota. Service quotas, also referred to as limits,
+        /// are the maximum number of service resources or operations for your Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because the service is throttling requests.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ValidationException">
+        /// The request isn't valid. Verify that you entered valid contents for the command and
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAccessRequest">REST API Reference for StartAccessRequest Operation</seealso>
+        Task<StartAccessRequestResponse> StartAccessRequestAsync(StartAccessRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

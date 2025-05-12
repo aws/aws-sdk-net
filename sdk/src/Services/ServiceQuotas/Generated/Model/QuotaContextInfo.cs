@@ -30,8 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
-    /// A structure that describes the context for a service quota. The context identifies
-    /// what the quota applies to.
+    /// A structure that describes the context for a resource-level quota. For resource-level
+    /// quotas, such as <c>Instances per OpenSearch Service Domain</c>, you can apply the
+    /// quota value at the resource-level for each OpenSearch Service Domain in your Amazon
+    /// Web Services account. Together the attributes of this structure help you understand
+    /// how the quota is implemented by Amazon Web Services and how you can manage it. For
+    /// quotas such as <c>Amazon OpenSearch Service Domains</c> which can be managed at the
+    /// account-level for each Amazon Web Services Region, the <c>QuotaContext</c> field is
+    /// absent. See the attribute descriptions below to further understand how to use them.
     /// </summary>
     public partial class QuotaContextInfo
     {
@@ -42,9 +48,12 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ContextId. 
         /// <para>
-        /// Specifies the Amazon Web Services account or resource to which the quota applies.
-        /// The value in this field depends on the context scope associated with the specified
-        /// service quota.
+        /// Specifies the resource, or resources, to which the quota applies. The value for this
+        /// field is either an Amazon Resource Name (ARN) or *. If the value is an ARN, the quota
+        /// value applies to that resource. If the value is *, then the quota value applies to
+        /// all resources listed in the <c>ContextScopeType</c> field. The quota value applies
+        /// to all resources for which you haven’t previously applied a quota value, and any new
+        /// resources you create in your Amazon Web Services account.
         /// </para>
         /// </summary>
         public string ContextId
@@ -62,7 +71,10 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ContextScope. 
         /// <para>
-        /// Specifies whether the quota applies to an Amazon Web Services account, or to a resource.
+        /// Specifies the scope to which the quota value is applied. If the scope is <c>RESOURCE</c>,
+        /// the quota value is applied to each resource in the Amazon Web Services account. If
+        /// the scope is <c>ACCOUNT</c>, the quota value is applied to the Amazon Web Services
+        /// account.
         /// </para>
         /// </summary>
         public QuotaContextScope ContextScope
@@ -80,8 +92,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ContextScopeType. 
         /// <para>
-        /// When the <c>ContextScope</c> is <c>RESOURCE</c>, then this specifies the resource
-        /// type of the specified resource.
+        /// Specifies the resource type to which the quota can be applied.
         /// </para>
         /// </summary>
         public string ContextScopeType

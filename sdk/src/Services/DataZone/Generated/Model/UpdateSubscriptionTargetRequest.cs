@@ -71,7 +71,7 @@ namespace Amazon.DataZone.Model
         /// action.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
+        [AWSProperty(Min=1, Max=20)]
         public List<string> AuthorizedPrincipals
         {
             get { return this._authorizedPrincipals; }

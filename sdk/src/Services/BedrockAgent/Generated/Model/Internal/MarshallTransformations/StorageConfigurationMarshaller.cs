@@ -68,6 +68,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetOpensearchManagedClusterConfiguration())
+            {
+                context.Writer.WritePropertyName("opensearchManagedClusterConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OpenSearchManagedClusterConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.OpensearchManagedClusterConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetOpensearchServerlessConfiguration())
             {
                 context.Writer.WritePropertyName("opensearchServerlessConfiguration");

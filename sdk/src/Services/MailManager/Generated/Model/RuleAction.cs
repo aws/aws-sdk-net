@@ -39,6 +39,7 @@ namespace Amazon.MailManager.Model
         private DeliverToMailboxAction _deliverToMailbox;
         private DeliverToQBusinessAction _deliverToQBusiness;
         private DropAction _drop;
+        private SnsAction _publishToSns;
         private RelayAction _relay;
         private ReplaceRecipientAction _replaceRecipient;
         private SendAction _send;
@@ -133,6 +134,24 @@ namespace Amazon.MailManager.Model
         internal bool IsSetDrop()
         {
             return this._drop != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublishToSns. 
+        /// <para>
+        /// This action publishes the email content to an Amazon SNS topic.
+        /// </para>
+        /// </summary>
+        public SnsAction PublishToSns
+        {
+            get { return this._publishToSns; }
+            set { this._publishToSns = value; }
+        }
+
+        // Check to see if PublishToSns property is set
+        internal bool IsSetPublishToSns()
+        {
+            return this._publishToSns != null;
         }
 
         /// <summary>

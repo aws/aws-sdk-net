@@ -57,32 +57,18 @@ namespace Amazon.S3Control.Internal
                 ["Bucket"] = parameters["Bucket"],
                 ["AccessPointName"] = parameters["AccessPointName"],
                 ["UseArnRegion"] = parameters["UseArnRegion"],
+                ["UseS3ExpressControlEndpoint"] = parameters["UseS3ExpressControlEndpoint"],
             };
             if (IsSet(refs["Region"]))
             {
-                if (Equals(refs["Region"], "snow") && IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
+                if (Equals(refs["UseFIPS"], true) && (refs["partitionResult"] = Partition((string)refs["Region"])) != null && Equals(GetAttr(refs["partitionResult"], "name"), "aws-cn"))
                 {
-                    if ((refs["partitionResult"] = Partition((string)refs["Region"])) != null)
-                    {
-                        if (Equals(refs["UseDualStack"], true))
-                        {
-                            throw new AmazonClientException("S3 Snow does not support DualStack");
-                        }
-                        if (Equals(refs["UseFIPS"], true))
-                        {
-                            throw new AmazonClientException("S3 Snow does not support FIPS");
-                        }
-                        return new Endpoint(Interpolate(@"{url#scheme}://{url#authority}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
-                    }
+                    throw new AmazonClientException("Partition does not support FIPS");
                 }
                 if (IsSet(refs["OutpostId"]))
                 {
                     if ((refs["partitionResult"] = Partition((string)refs["Region"])) != null)
                     {
-                        if (Equals(refs["UseFIPS"], true) && Equals(GetAttr(refs["partitionResult"], "name"), "aws-cn"))
-                        {
-                            throw new AmazonClientException("Partition does not support FIPS");
-                        }
                         if (IsSet(refs["RequiresAccountId"]) && Equals(refs["RequiresAccountId"], true) && !IsSet(refs["AccountId"]))
                         {
                             throw new AmazonClientException("AccountId is required but not set");
@@ -120,6 +106,83 @@ namespace Amazon.S3Control.Internal
                             return new Endpoint(Interpolate(@"https://s3-outposts.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3-outposts"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("Invalid region: region was not a valid DNS name.");
+                    }
+                }
+                if (IsSet(refs["AccessPointName"]) && (refs["accessPointSuffix"] = Substring((string)refs["AccessPointName"], 0, 7, true)) != null && Equals(refs["accessPointSuffix"], "--xa-s3"))
+                {
+                    if ((refs["partitionResult"] = Partition((string)refs["Region"])) != null)
+                    {
+                        if (Equals(refs["UseDualStack"], true))
+                        {
+                            throw new AmazonClientException("S3Express does not support Dual-stack.");
+                        }
+                        if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["AccessPointName"], 7, 15, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["AccessPointName"], 15, 17, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
+                        {
+                            if (Equals(refs["UseFIPS"], true))
+                            {
+                                return new Endpoint(Interpolate(@"https://s3express-control-fips.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                            }
+                            return new Endpoint(Interpolate(@"https://s3express-control.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                        }
+                        if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["AccessPointName"], 7, 16, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["AccessPointName"], 16, 18, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
+                        {
+                            if (Equals(refs["UseFIPS"], true))
+                            {
+                                return new Endpoint(Interpolate(@"https://s3express-control-fips.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                            }
+                            return new Endpoint(Interpolate(@"https://s3express-control.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                        }
+                        if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["AccessPointName"], 7, 20, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["AccessPointName"], 20, 22, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
+                        {
+                            if (Equals(refs["UseFIPS"], true))
+                            {
+                                return new Endpoint(Interpolate(@"https://s3express-control-fips.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                            }
+                            return new Endpoint(Interpolate(@"https://s3express-control.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                        }
+                        if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["AccessPointName"], 7, 21, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["AccessPointName"], 21, 23, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
+                        {
+                            if (Equals(refs["UseFIPS"], true))
+                            {
+                                return new Endpoint(Interpolate(@"https://s3express-control-fips.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                            }
+                            return new Endpoint(Interpolate(@"https://s3express-control.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                        }
+                        if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["AccessPointName"], 7, 27, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["AccessPointName"], 27, 29, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
+                        {
+                            if (Equals(refs["UseFIPS"], true))
+                            {
+                                return new Endpoint(Interpolate(@"https://s3express-control-fips.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                            }
+                            return new Endpoint(Interpolate(@"https://s3express-control.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("Unrecognized S3Express Access Point name format.");
+                    }
+                }
+                if (IsSet(refs["UseS3ExpressControlEndpoint"]) && Equals(refs["UseS3ExpressControlEndpoint"], true))
+                {
+                    if ((refs["partitionResult"] = Partition((string)refs["Region"])) != null)
+                    {
+                        if (Equals(refs["UseFIPS"], true))
+                        {
+                            return new Endpoint(Interpolate(@"https://s3express-control-fips.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                        }
+                        return new Endpoint(Interpolate(@"https://s3express-control.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                    }
+                }
+                if (Equals(refs["Region"], "snow") && IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
+                {
+                    if ((refs["partitionResult"] = Partition((string)refs["Region"])) != null)
+                    {
+                        if (Equals(refs["UseDualStack"], true))
+                        {
+                            throw new AmazonClientException("S3 Snow does not support DualStack");
+                        }
+                        if (Equals(refs["UseFIPS"], true))
+                        {
+                            throw new AmazonClientException("S3 Snow does not support FIPS");
+                        }
+                        return new Endpoint(Interpolate(@"{url#scheme}://{url#authority}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                     }
                 }
                 if (IsSet(refs["AccessPointName"]) && (refs["accessPointArn"] = ParseArn((string)refs["AccessPointName"])) != null)
@@ -288,10 +351,6 @@ namespace Amazon.S3Control.Internal
                 {
                     if (IsValidHostLabel((string)refs["Region"], true))
                     {
-                        if (Equals(refs["UseFIPS"], true) && Equals(GetAttr(refs["partitionResult"], "name"), "aws-cn"))
-                        {
-                            throw new AmazonClientException("Partition does not support FIPS");
-                        }
                         if (IsSet(refs["RequiresAccountId"]) && Equals(refs["RequiresAccountId"], true) && !IsSet(refs["AccountId"]))
                         {
                             throw new AmazonClientException("AccountId is required but not set");

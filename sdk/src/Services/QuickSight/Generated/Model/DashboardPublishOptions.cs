@@ -38,6 +38,7 @@ namespace Amazon.QuickSight.Model
         private DataPointDrillUpDownOption _dataPointDrillUpDownOption;
         private DataPointMenuLabelOption _dataPointMenuLabelOption;
         private DataPointTooltipOption _dataPointTooltipOption;
+        private DataQAEnabledOption _dataQAEnabledOption;
         private ExportToCSVOption _exportToCSVOption;
         private ExportWithHiddenFieldsOption _exportWithHiddenFieldsOption;
         private SheetControlsOption _sheetControlsOption;
@@ -116,6 +117,27 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDataPointTooltipOption()
         {
             return this._dataPointTooltipOption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataQAEnabledOption. 
+        /// <para>
+        /// Adds Q&amp;A capabilities to an Amazon QuickSight dashboard. If no topic is linked,
+        /// Dashboard Q&amp;A uses the data values that are rendered on the dashboard. End users
+        /// can use Dashboard Q&amp;A to ask for different slices of the data that they see on
+        /// the dashboard. If a topic is linked, Topic Q&amp;A is used.
+        /// </para>
+        /// </summary>
+        public DataQAEnabledOption DataQAEnabledOption
+        {
+            get { return this._dataQAEnabledOption; }
+            set { this._dataQAEnabledOption = value; }
+        }
+
+        // Check to see if DataQAEnabledOption property is set
+        internal bool IsSetDataQAEnabledOption()
+        {
+            return this._dataQAEnabledOption != null;
         }
 
         /// <summary>

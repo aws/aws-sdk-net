@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the oam-2022-06-10.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OAM.Model
@@ -29,16 +30,31 @@ namespace Amazon.OAM.Model
         /// <summary>
         /// Paginator for ListAttachedLinks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAttachedLinksPaginator ListAttachedLinks(ListAttachedLinksRequest request);
 
         /// <summary>
         /// Paginator for ListLinks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLinksPaginator ListLinks(ListLinksRequest request);
 
         /// <summary>
         /// Paginator for ListSinks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSinksPaginator ListSinks(ListSinksRequest request);
     }
 }

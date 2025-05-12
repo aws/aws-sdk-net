@@ -87,6 +87,12 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.BudgetName);
             }
 
+            if(publicRequest.IsSetShowFilterExpression())
+            {
+                context.Writer.WritePropertyName("ShowFilterExpression");
+                context.Writer.WriteBooleanValue(publicRequest.ShowFilterExpression.Value);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

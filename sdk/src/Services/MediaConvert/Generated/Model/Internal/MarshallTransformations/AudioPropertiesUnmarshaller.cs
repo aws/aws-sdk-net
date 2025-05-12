@@ -64,7 +64,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("bitRate", targetDepth))
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BitRate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }

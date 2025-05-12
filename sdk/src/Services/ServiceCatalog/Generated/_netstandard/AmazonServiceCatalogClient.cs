@@ -1470,6 +1470,9 @@ namespace Amazon.ServiceCatalog
         /// </param>
         /// 
         /// <returns>The response from the DeleteServiceAction service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
         /// A resource that is currently in use. Ensure that the resource is not in use and retry
         /// the operation.
@@ -2445,6 +2448,9 @@ namespace Amazon.ServiceCatalog
         /// </param>
         /// 
         /// <returns>The response from the DisassociateServiceActionFromProvisioningArtifact service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>

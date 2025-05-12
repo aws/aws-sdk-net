@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the pinpoint-email-2018-07-26.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointEmail.Model
@@ -29,31 +30,61 @@ namespace Amazon.PinpointEmail.Model
         /// <summary>
         /// Paginator for GetDedicatedIps operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetDedicatedIpsPaginator GetDedicatedIps(GetDedicatedIpsRequest request);
 
         /// <summary>
         /// Paginator for ListConfigurationSets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListConfigurationSetsPaginator ListConfigurationSets(ListConfigurationSetsRequest request);
 
         /// <summary>
         /// Paginator for ListDedicatedIpPools operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDedicatedIpPoolsPaginator ListDedicatedIpPools(ListDedicatedIpPoolsRequest request);
 
         /// <summary>
         /// Paginator for ListDeliverabilityTestReports operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDeliverabilityTestReportsPaginator ListDeliverabilityTestReports(ListDeliverabilityTestReportsRequest request);
 
         /// <summary>
         /// Paginator for ListDomainDeliverabilityCampaigns operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDomainDeliverabilityCampaignsPaginator ListDomainDeliverabilityCampaigns(ListDomainDeliverabilityCampaignsRequest request);
 
         /// <summary>
         /// Paginator for ListEmailIdentities operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEmailIdentitiesPaginator ListEmailIdentities(ListEmailIdentitiesRequest request);
     }
 }

@@ -34,15 +34,38 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class LocalGatewayVirtualInterface
     {
+        private LocalGatewayVirtualInterfaceConfigurationState _configurationState;
         private string _localAddress;
         private int? _localBgpAsn;
         private string _localGatewayId;
+        private string _localGatewayVirtualInterfaceArn;
+        private string _localGatewayVirtualInterfaceGroupId;
         private string _localGatewayVirtualInterfaceId;
+        private string _outpostLagId;
         private string _ownerId;
         private string _peerAddress;
         private int? _peerBgpAsn;
+        private long? _peerBgpAsnExtended;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private int? _vlan;
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationState. 
+        /// <para>
+        /// The current state of the local gateway virtual interface.
+        /// </para>
+        /// </summary>
+        public LocalGatewayVirtualInterfaceConfigurationState ConfigurationState
+        {
+            get { return this._configurationState; }
+            set { this._configurationState = value; }
+        }
+
+        // Check to see if ConfigurationState property is set
+        internal bool IsSetConfigurationState()
+        {
+            return this._configurationState != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LocalAddress. 
@@ -99,6 +122,43 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LocalGatewayVirtualInterfaceArn. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the local gateway virtual interface.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1283)]
+        public string LocalGatewayVirtualInterfaceArn
+        {
+            get { return this._localGatewayVirtualInterfaceArn; }
+            set { this._localGatewayVirtualInterfaceArn = value; }
+        }
+
+        // Check to see if LocalGatewayVirtualInterfaceArn property is set
+        internal bool IsSetLocalGatewayVirtualInterfaceArn()
+        {
+            return this._localGatewayVirtualInterfaceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocalGatewayVirtualInterfaceGroupId. 
+        /// <para>
+        /// The ID of the local gateway virtual interface group.
+        /// </para>
+        /// </summary>
+        public string LocalGatewayVirtualInterfaceGroupId
+        {
+            get { return this._localGatewayVirtualInterfaceGroupId; }
+            set { this._localGatewayVirtualInterfaceGroupId = value; }
+        }
+
+        // Check to see if LocalGatewayVirtualInterfaceGroupId property is set
+        internal bool IsSetLocalGatewayVirtualInterfaceGroupId()
+        {
+            return this._localGatewayVirtualInterfaceGroupId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LocalGatewayVirtualInterfaceId. 
         /// <para>
         /// The ID of the virtual interface.
@@ -114,6 +174,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLocalGatewayVirtualInterfaceId()
         {
             return this._localGatewayVirtualInterfaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostLagId. 
+        /// <para>
+        /// The Outpost LAG ID.
+        /// </para>
+        /// </summary>
+        public string OutpostLagId
+        {
+            get { return this._outpostLagId; }
+            set { this._outpostLagId = value; }
+        }
+
+        // Check to see if OutpostLagId property is set
+        internal bool IsSetOutpostLagId()
+        {
+            return this._outpostLagId != null;
         }
 
         /// <summary>
@@ -168,6 +246,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPeerBgpAsn()
         {
             return this._peerBgpAsn.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PeerBgpAsnExtended. 
+        /// <para>
+        /// The extended 32-bit ASN of the BGP peer for use with larger ASN values.
+        /// </para>
+        /// </summary>
+        public long? PeerBgpAsnExtended
+        {
+            get { return this._peerBgpAsnExtended; }
+            set { this._peerBgpAsnExtended = value; }
+        }
+
+        // Check to see if PeerBgpAsnExtended property is set
+        internal bool IsSetPeerBgpAsnExtended()
+        {
+            return this._peerBgpAsnExtended.HasValue; 
         }
 
         /// <summary>

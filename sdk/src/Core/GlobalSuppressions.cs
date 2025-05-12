@@ -197,6 +197,8 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.AWS4Signer.#CanonicalizeHeaders(System.Collections.Generic.IDictionary`2<System.String,System.String>)")]
 [module: SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.AWS4Signer.#CanonicalizeHeaderNames(System.Collections.Generic.IDictionary`2<System.String,System.String>)")]
 [module: SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase", Scope = "member", Target = "Amazon.Runtime.Internal.Marshaller.#ToUserAgentHeaderString(Amazon.Runtime.RequestRetryMode)")]
+[assembly: SuppressMessage("Globalization", "CA1308:Normalize strings to uppercase", Scope = "member", Target = "~M:Amazon.Runtime.Internal.Util.IniFile.SeekProperty(System.Int32@,System.String@,System.String@,Amazon.Runtime.Internal.Util.NestedProperty@)~System.Boolean")]
+[assembly: SuppressMessage("Globalization", "CA1308:Normalize strings to uppercase", Scope = "member", Target = "~M:Amazon.Runtime.Internal.Util.IniFile.TryParseSubproperties(System.Int32@,System.String,Amazon.Runtime.Internal.Util.NestedProperty@)~System.Boolean")]
 
 // Types names matching namespaces
 [module: SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces", Scope = "type", Target = "Amazon.Auth.AccessControlPolicy.Policy")]
@@ -455,7 +457,6 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.Internal.HttpHandler`1.GetRequestStreamCallbackHelper(System.Object)")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.Internal.HttpHandler`1.GetResponseCallbackHelper(System.Object)")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.AmazonServiceClient.UpdateSecurityProtocol")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.Internal.RuntimeAsyncResult.InvokeCallback")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.Internal.Util.GuidUtils.TryParseGuid(System.String,System.Guid@)~System.Boolean")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.MonitoringListener.BeginPostMessagesOverUDPInvoke(System.String)")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.MonitoringListener.EndSendMessagesOverUDPInvoke(System.IAsyncResult)")]

@@ -105,6 +105,12 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.EngineVersion);
             }
 
+            if(publicRequest.IsSetIpDiscovery())
+            {
+                context.Writer.WritePropertyName("IpDiscovery");
+                context.Writer.WriteStringValue(publicRequest.IpDiscovery);
+            }
+
             if(publicRequest.IsSetMaintenanceWindow())
             {
                 context.Writer.WritePropertyName("MaintenanceWindow");

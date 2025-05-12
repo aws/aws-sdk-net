@@ -35,6 +35,7 @@ namespace Amazon.QConnect.Model
     public partial class DataDetails
     {
         private ContentDataDetails _contentData;
+        private GenerativeChunkDataDetails _generativeChunkData;
         private GenerativeDataDetails _generativeData;
         private IntentDetectedDataDetails _intentDetectedData;
         private SourceContentDataDetails _sourceContentData;
@@ -55,6 +56,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetContentData()
         {
             return this._contentData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GenerativeChunkData. 
+        /// <para>
+        /// Details about the generative chunk data.
+        /// </para>
+        /// </summary>
+        public GenerativeChunkDataDetails GenerativeChunkData
+        {
+            get { return this._generativeChunkData; }
+            set { this._generativeChunkData = value; }
+        }
+
+        // Check to see if GenerativeChunkData property is set
+        internal bool IsSetGenerativeChunkData()
+        {
+            return this._generativeChunkData != null;
         }
 
         /// <summary>

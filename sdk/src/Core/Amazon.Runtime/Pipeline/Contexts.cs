@@ -63,28 +63,10 @@ namespace Amazon.Runtime
         IWebResponseData HttpResponse { get; set; }
     }
 
-    public interface IAsyncRequestContext : IRequestContext
-    {
-        AsyncCallback Callback { get; }
-        object State { get; }
-    }
-
-    public interface IAsyncResponseContext : IResponseContext
-    {
-    }
-
     public interface IExecutionContext
     {
         IResponseContext ResponseContext { get; }
         IRequestContext RequestContext { get; }
-    }
-
-    public interface IAsyncExecutionContext
-    {
-        IAsyncResponseContext ResponseContext { get; }
-        IAsyncRequestContext RequestContext { get; }
-
-        object RuntimeState { get; set; }
     }
 }
 
@@ -93,7 +75,8 @@ namespace Amazon.Runtime.Internal
     public class RequestContext : IRequestContext
     {
         private IServiceMetadata _serviceMetadata;
-        IDictionary<string, object> _contextAttributes;
+        private IDictionary<string, object> _contextAttributes;
+        private UserAgentDetails _userAgentDetails;
 
         public RequestContext(bool enableMetric)
             : this(enableMetric, null)
@@ -122,11 +105,26 @@ namespace Amazon.Runtime.Internal
         public InvokeOptionsBase Options { get; set; }
         public ISigner Signer { get; set; }
         public BaseIdentity Identity { get; set; }
-        public UserAgentDetails UserAgentDetails { get => ((IAmazonWebServiceRequest)OriginalRequest).UserAgentDetails; }
+        public UserAgentDetails UserAgentDetails
+        {
+            get
+            {
+                if (_userAgentDetails != null)
+                    return _userAgentDetails;
 
-#if AWS_ASYNC_API
+                _userAgentDetails = new UserAgentDetails();
+
+                _userAgentDetails.AddUserAgentComponent(((IAmazonWebServiceRequest)OriginalRequest).UserAgentDetails.GetCustomUserAgentComponents());
+                foreach (var featureId in ((IAmazonWebServiceRequest)OriginalRequest).UserAgentDetails.TrackedFeatureIds)
+                {
+                    _userAgentDetails.AddFeature(featureId);
+                }
+
+                return _userAgentDetails;
+            }
+        }
+
         public System.Threading.CancellationToken CancellationToken { get; set; }
-#endif
 
         public string RequestName
         {
@@ -177,25 +175,10 @@ namespace Amazon.Runtime.Internal
         public IHttpRequestStreamHandle RequestStreamHandle { get; set; }
     }
 
-    public class AsyncRequestContext : RequestContext, IAsyncRequestContext
-    {
-        public AsyncRequestContext(bool enableMetrics, ISigner clientSigner) :
-            base(enableMetrics, clientSigner)
-        {
-        }
-
-        public AsyncCallback Callback { get; set; }
-        public object State { get; set; }
-    }
-
     public class ResponseContext : IResponseContext
     {
         public AmazonWebServiceResponse Response { get; set; }
         public IWebResponseData HttpResponse { get; set; }
-    }
-
-    public class AsyncResponseContext : ResponseContext, IAsyncResponseContext
-    {
     }
 
     public class ExecutionContext : IExecutionContext
@@ -210,30 +193,6 @@ namespace Amazon.Runtime.Internal
         }
 
         public ExecutionContext(IRequestContext requestContext, IResponseContext responseContext)
-        {
-            this.RequestContext = requestContext;
-            this.ResponseContext = responseContext;
-        }
-        public static IExecutionContext CreateFromAsyncContext(IAsyncExecutionContext asyncContext)
-        {
-            return new ExecutionContext(asyncContext.RequestContext,
-                asyncContext.ResponseContext);
-        }
-    }
-
-    public class AsyncExecutionContext : IAsyncExecutionContext
-    {
-        public IAsyncResponseContext ResponseContext { get; private set; }
-        public IAsyncRequestContext RequestContext { get; private set; }
-        public object RuntimeState { get; set; }
-
-        public AsyncExecutionContext(bool enableMetrics, ISigner clientSigner)
-        {
-            this.RequestContext = new AsyncRequestContext(enableMetrics, clientSigner);
-            this.ResponseContext = new AsyncResponseContext();
-        }
-
-        public AsyncExecutionContext(IAsyncRequestContext requestContext, IAsyncResponseContext responseContext)
         {
             this.RequestContext = requestContext;
             this.ResponseContext = responseContext;

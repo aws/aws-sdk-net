@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the payment-cryptography-2021-09-14.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptography.Model
@@ -29,16 +30,31 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Paginator for ListAliases operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAliasesPaginator ListAliases(ListAliasesRequest request);
 
         /// <summary>
         /// Paginator for ListKeys operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListKeysPaginator ListKeys(ListKeysRequest request);
 
         /// <summary>
         /// Paginator for ListTagsForResource operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request);
     }
 }

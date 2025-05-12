@@ -247,6 +247,10 @@ namespace Amazon.ARCZonalShift
         /// </summary>
         public static readonly ConflictExceptionReason SimultaneousZonalShiftsConflict = new ConflictExceptionReason("SimultaneousZonalShiftsConflict");
         /// <summary>
+        /// Constant ZonalAutoshiftActive for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason ZonalAutoshiftActive = new ConflictExceptionReason("ZonalAutoshiftActive");
+        /// <summary>
         /// Constant ZonalShiftAlreadyExists for ConflictExceptionReason
         /// </summary>
         public static readonly ConflictExceptionReason ZonalShiftAlreadyExists = new ConflictExceptionReason("ZonalShiftAlreadyExists");
@@ -395,11 +399,77 @@ namespace Amazon.ARCZonalShift
 
 
     /// <summary>
+    /// Constants used for properties of type ShiftType.
+    /// </summary>
+    public class ShiftType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FIS_EXPERIMENT for ShiftType
+        /// </summary>
+        public static readonly ShiftType FIS_EXPERIMENT = new ShiftType("FIS_EXPERIMENT");
+        /// <summary>
+        /// Constant PRACTICE_RUN for ShiftType
+        /// </summary>
+        public static readonly ShiftType PRACTICE_RUN = new ShiftType("PRACTICE_RUN");
+        /// <summary>
+        /// Constant ZONAL_AUTOSHIFT for ShiftType
+        /// </summary>
+        public static readonly ShiftType ZONAL_AUTOSHIFT = new ShiftType("ZONAL_AUTOSHIFT");
+        /// <summary>
+        /// Constant ZONAL_SHIFT for ShiftType
+        /// </summary>
+        public static readonly ShiftType ZONAL_SHIFT = new ShiftType("ZONAL_SHIFT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ShiftType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ShiftType FindValue(string value)
+        {
+            return FindValue<ShiftType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ShiftType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ValidationExceptionReason.
     /// </summary>
     public class ValidationExceptionReason : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AutoshiftUpdateNotAllowed for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason AutoshiftUpdateNotAllowed = new ValidationExceptionReason("AutoshiftUpdateNotAllowed");
+        /// <summary>
+        /// Constant FISExperimentUpdateNotAllowed for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason FISExperimentUpdateNotAllowed = new ValidationExceptionReason("FISExperimentUpdateNotAllowed");
         /// <summary>
         /// Constant InvalidAlarmCondition for ValidationExceptionReason
         /// </summary>

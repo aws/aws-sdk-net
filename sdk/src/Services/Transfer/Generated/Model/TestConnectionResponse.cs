@@ -35,6 +35,7 @@ namespace Amazon.Transfer.Model
     public partial class TestConnectionResponse : AmazonWebServiceResponse
     {
         private string _connectorId;
+        private SftpConnectorConnectionDetails _sftpConnectionDetails;
         private string _status;
         private string _statusMessage;
 
@@ -55,6 +56,24 @@ namespace Amazon.Transfer.Model
         internal bool IsSetConnectorId()
         {
             return this._connectorId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SftpConnectionDetails. 
+        /// <para>
+        /// Structure that contains the SFTP connector host key.
+        /// </para>
+        /// </summary>
+        public SftpConnectorConnectionDetails SftpConnectionDetails
+        {
+            get { return this._sftpConnectionDetails; }
+            set { this._sftpConnectionDetails = value; }
+        }
+
+        // Check to see if SftpConnectionDetails property is set
+        internal bool IsSetSftpConnectionDetails()
+        {
+            return this._sftpConnectionDetails != null;
         }
 
         /// <summary>

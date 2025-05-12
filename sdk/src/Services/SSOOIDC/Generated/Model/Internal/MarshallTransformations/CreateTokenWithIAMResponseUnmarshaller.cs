@@ -58,6 +58,12 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
                     response.AccessToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("awsAdditionalDetails", targetDepth))
+                {
+                    var unmarshaller = AwsAdditionalDetailsUnmarshaller.Instance;
+                    response.AwsAdditionalDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("expiresIn", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

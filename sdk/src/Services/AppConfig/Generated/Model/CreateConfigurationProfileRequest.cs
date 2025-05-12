@@ -237,9 +237,9 @@ namespace Amazon.AppConfig.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// A retrieval role ARN is not required for configurations stored in the AppConfig hosted
-        /// configuration store. It is required for all other sources that store your configuration.
-        /// 
+        /// A retrieval role ARN is not required for configurations stored in CodePipeline or
+        /// the AppConfig hosted configuration store. It is required for all other sources that
+        /// store your configuration. 
         /// </para>
         ///  </important>
         /// </summary>

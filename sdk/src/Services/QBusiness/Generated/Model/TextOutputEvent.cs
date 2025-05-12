@@ -43,6 +43,7 @@ namespace Amazon.QBusiness.Model
         private string _conversationId;
         private string _systemMessage;
         private string _systemMessageId;
+        private SystemMessageType _systemMessageType;
         private string _userMessageId;
 
         /// <summary>
@@ -100,6 +101,36 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetSystemMessageId()
         {
             return this._systemMessageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SystemMessageType. 
+        /// <para>
+        /// The type of AI-generated message in a <c>TextOutputEvent</c>. Amazon Q Business currently
+        /// supports two types of messages:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>RESPONSE</c> - The Amazon Q Business system response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GROUNDED_RESPONSE</c> - The corrected, hallucination-reduced, response returned
+        /// by Amazon Q Business. Available only if hallucination reduction is supported and configured
+        /// for the application and detected in the end user chat query by Amazon Q Business.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public SystemMessageType SystemMessageType
+        {
+            get { return this._systemMessageType; }
+            set { this._systemMessageType = value; }
+        }
+
+        // Check to see if SystemMessageType property is set
+        internal bool IsSetSystemMessageType()
+        {
+            return this._systemMessageType != null;
         }
 
         /// <summary>

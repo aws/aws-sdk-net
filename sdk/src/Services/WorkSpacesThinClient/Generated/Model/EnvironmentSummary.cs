@@ -55,6 +55,7 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// The activation code to register a device to the environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ActivationCode
         {
             get { return this._activationCode; }

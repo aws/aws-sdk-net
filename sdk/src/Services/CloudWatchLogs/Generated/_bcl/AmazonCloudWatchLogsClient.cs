@@ -355,8 +355,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// CloudWatch Logs supports only symmetric KMS keys. Do not use an associate an asymmetric
-        /// KMS key with your log group or query results. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+        /// CloudWatch Logs supports only symmetric KMS keys. Do not associate an asymmetric KMS
+        /// key with your log group or query results. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
         /// Symmetric and Asymmetric Keys</a>.
         /// </para>
         ///  </note> 
@@ -452,8 +452,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// CloudWatch Logs supports only symmetric KMS keys. Do not use an associate an asymmetric
-        /// KMS key with your log group or query results. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+        /// CloudWatch Logs supports only symmetric KMS keys. Do not associate an asymmetric KMS
+        /// key with your log group or query results. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
         /// Symmetric and Asymmetric Keys</a>.
         /// </para>
         ///  </note> 
@@ -791,7 +791,7 @@ namespace Amazon.CloudWatchLogs
         ///  <note> 
         /// <para>
         /// We recommend that you don't regularly export to Amazon S3 as a way to continuously
-        /// archive your logs. For that use case, we instaed recommend that you use subscriptions.
+        /// archive your logs. For that use case, we instead recommend that you use subscriptions.
         /// For more information about subscriptions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html">Real-time
         /// processing of log data with subscriptions</a>.
         /// </para>
@@ -867,7 +867,7 @@ namespace Amazon.CloudWatchLogs
         ///  <note> 
         /// <para>
         /// We recommend that you don't regularly export to Amazon S3 as a way to continuously
-        /// archive your logs. For that use case, we instaed recommend that you use subscriptions.
+        /// archive your logs. For that use case, we instead recommend that you use subscriptions.
         /// For more information about subscriptions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html">Real-time
         /// processing of log data with subscriptions</a>.
         /// </para>
@@ -2801,7 +2801,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To see subscription filter policies, you must have the <c>logs:DescrubeSubscriptionFilters</c>
+        /// To see subscription filter policies, you must have the <c>logs:DescribeSubscriptionFilters</c>
         /// and <c>logs:DescribeAccountPolicies</c> permissions.
         /// </para>
         ///  </li> <li> 
@@ -2857,7 +2857,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To see subscription filter policies, you must have the <c>logs:DescrubeSubscriptionFilters</c>
+        /// To see subscription filter policies, you must have the <c>logs:DescribeSubscriptionFilters</c>
         /// and <c>logs:DescribeAccountPolicies</c> permissions.
         /// </para>
         ///  </li> <li> 
@@ -4221,16 +4221,13 @@ namespace Amazon.CloudWatchLogs
         /// <c>FilterLogEvents</c> operation. If the results don't include a <c>nextToken</c>,
         /// then pagination is finished. 
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// If you set <c>startFromHead</c> to <c>true</c> and you don’t include <c>endTime</c>
-        /// in your request, you can end up in a situation where the pagination doesn't terminate.
-        /// This can happen when the new log events are being added to the target log streams
-        /// faster than they are being read. This situation is a good use case for the CloudWatch
-        /// Logs <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs_LiveTail.html">Live
-        /// Tail</a> feature.
+        /// Specifying the <c>limit</c> parameter only guarantees that a single page doesn't return
+        /// more log events than the specified limit, but it might return fewer events than the
+        /// limit. This is the expected API behavior.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// The returned log events are sorted by event timestamp, the timestamp when the event
         /// was ingested by CloudWatch Logs, and the ID of the <c>PutLogEvents</c> request.
@@ -4317,16 +4314,13 @@ namespace Amazon.CloudWatchLogs
         /// <c>FilterLogEvents</c> operation. If the results don't include a <c>nextToken</c>,
         /// then pagination is finished. 
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// If you set <c>startFromHead</c> to <c>true</c> and you don’t include <c>endTime</c>
-        /// in your request, you can end up in a situation where the pagination doesn't terminate.
-        /// This can happen when the new log events are being added to the target log streams
-        /// faster than they are being read. This situation is a good use case for the CloudWatch
-        /// Logs <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs_LiveTail.html">Live
-        /// Tail</a> feature.
+        /// Specifying the <c>limit</c> parameter only guarantees that a single page doesn't return
+        /// more log events than the specified limit, but it might return fewer events than the
+        /// limit. This is the expected API behavior.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// The returned log events are sorted by event timestamp, the timestamp when the event
         /// was ingested by CloudWatch Logs, and the ID of the <c>PutLogEvents</c> request.
@@ -7504,7 +7498,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Each log event can be no larger than 256 KB.
+        /// Each log event can be no larger than 1 MB.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7613,7 +7607,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Each log event can be no larger than 256 KB.
+        /// Each log event can be no larger than 1 MB.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8524,7 +8518,12 @@ namespace Amazon.CloudWatchLogs
         /// object is returned when the session times out, after it has been kept open for three
         /// hours.
         /// </para>
-        ///  </li> </ul> <important> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The <c>StartLiveTail</c> API routes requests to <c>streaming-logs.<i>Region</i>.amazonaws.com</c>
+        /// using SDK host prefix injection. VPC endpoint support is not available for this API.
+        /// </para>
+        ///  </note> <important> 
         /// <para>
         /// You can end a session before it times out by closing the session stream or by closing
         /// the client that is receiving the stream. The session also ends if the established
@@ -8619,7 +8618,12 @@ namespace Amazon.CloudWatchLogs
         /// object is returned when the session times out, after it has been kept open for three
         /// hours.
         /// </para>
-        ///  </li> </ul> <important> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The <c>StartLiveTail</c> API routes requests to <c>streaming-logs.<i>Region</i>.amazonaws.com</c>
+        /// using SDK host prefix injection. VPC endpoint support is not available for this API.
+        /// </para>
+        ///  </note> <important> 
         /// <para>
         /// You can end a session before it times out by closing the session stream or by closing
         /// the client that is receiving the stream. The session also ends if the established

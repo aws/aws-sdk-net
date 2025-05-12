@@ -43,7 +43,7 @@ namespace Amazon.GameLiftStreams.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  Ubuntu 22.04 LTS(<c>Type=UBUNTU, Version=22_04_LTS</c>) 
+    ///  Ubuntu 22.04 LTS (<c>Type=UBUNTU, Version=22_04_LTS</c>) 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>

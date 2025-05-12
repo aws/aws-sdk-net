@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the finspace-2021-03-12.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model
@@ -29,31 +30,61 @@ namespace Amazon.Finspace.Model
         /// <summary>
         /// Paginator for ListKxChangesets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListKxChangesetsPaginator ListKxChangesets(ListKxChangesetsRequest request);
 
         /// <summary>
         /// Paginator for ListKxClusterNodes operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListKxClusterNodesPaginator ListKxClusterNodes(ListKxClusterNodesRequest request);
 
         /// <summary>
         /// Paginator for ListKxDatabases operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListKxDatabasesPaginator ListKxDatabases(ListKxDatabasesRequest request);
 
         /// <summary>
         /// Paginator for ListKxDataviews operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListKxDataviewsPaginator ListKxDataviews(ListKxDataviewsRequest request);
 
         /// <summary>
         /// Paginator for ListKxEnvironments operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListKxEnvironmentsPaginator ListKxEnvironments(ListKxEnvironmentsRequest request);
 
         /// <summary>
         /// Paginator for ListKxScalingGroups operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListKxScalingGroupsPaginator ListKxScalingGroups(ListKxScalingGroupsRequest request);
     }
 }

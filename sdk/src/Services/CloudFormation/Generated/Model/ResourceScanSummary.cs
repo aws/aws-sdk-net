@@ -38,6 +38,7 @@ namespace Amazon.CloudFormation.Model
         private DateTime? _endTime;
         private double? _percentageCompleted;
         private string _resourceScanId;
+        private ScanType _scanType;
         private DateTime? _startTime;
         private ResourceScanStatus _status;
         private string _statusReason;
@@ -97,6 +98,24 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ScanType. 
+        /// <para>
+        /// The scan type that has been completed.
+        /// </para>
+        /// </summary>
+        public ScanType ScanType
+        {
+            get { return this._scanType; }
+            set { this._scanType = value; }
+        }
+
+        // Check to see if ScanType property is set
+        internal bool IsSetScanType()
+        {
+            return this._scanType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
         /// The time that the resource scan was started.
@@ -119,7 +138,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Status of the resource scan.
         /// </para>
-        ///  <dl> <dt> INPROGRESS </dt> <dd> 
+        ///  <dl> <dt> IN_PROGRESS </dt> <dd> 
         /// <para>
         /// The resource scan is still in progress.
         /// </para>

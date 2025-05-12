@@ -66,14 +66,14 @@ namespace AWSSDK.UnitTests
             // By setting the environment variables to null, the identity resolver will use either basic credentials (from the default 
             // profile) or session credentials (when using an IAM role - for example, in CodeBuild).
             var identityResolver = new DefaultAWSCredentialsIdentityResolver();
-            var initialIdentity = identityResolver.ResolveIdentity();
+            var initialIdentity = identityResolver.ResolveIdentity(clientConfig: null);
             Assert.IsFalse(initialIdentity is EnvironmentVariablesAWSCredentials);
 
             Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCESSKEY, "updated_aws_access_key_id");
             Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY, "updated_aws_secret_access_key");
             Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SESSION_TOKEN, "updated_aws_session_token");
 
-            var updatedIdentity = identityResolver.ResolveIdentity();
+            var updatedIdentity = identityResolver.ResolveIdentity(clientConfig: null);
             Assert.IsTrue(updatedIdentity is EnvironmentVariablesAWSCredentials);
         }
 
@@ -81,12 +81,12 @@ namespace AWSSDK.UnitTests
         public void CredentialsAreReevaluatedWhenProfileChanges()
         {
             var identityResolver = new DefaultAWSCredentialsIdentityResolver();
-            var initialIdentity = identityResolver.ResolveIdentity();
+            var initialIdentity = identityResolver.ResolveIdentity(clientConfig: null);
             Assert.IsFalse(initialIdentity is DefaultInstanceProfileAWSCredentials);
 
             // Since the specified profile does not exist, the identity resolver will throw an exception.
             Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, "non-existent-profile");
-            Assert.ThrowsException<ProfileNotFoundException>(() => identityResolver.ResolveIdentity());
+            Assert.ThrowsException<ProfileNotFoundException>(() => identityResolver.ResolveIdentity(clientConfig: null));
         }
     }
 }

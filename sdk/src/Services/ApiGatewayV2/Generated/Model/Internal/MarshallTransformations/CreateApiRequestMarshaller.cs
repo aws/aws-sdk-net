@@ -114,6 +114,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.DisableSchemaValidation.Value);
             }
 
+            if(publicRequest.IsSetIpAddressType())
+            {
+                context.Writer.WritePropertyName("ipAddressType");
+                context.Writer.WriteStringValue(publicRequest.IpAddressType);
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

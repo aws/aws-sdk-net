@@ -34,16 +34,43 @@ namespace Amazon.S3Tables.Model
     /// Creates a table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets-create.html">Creating
     /// a table bucket</a> in the <i>Amazon Simple Storage Service User Guide</i>.
     /// 
-    ///  <dl> <dt>Permissions</dt> <dd> 
+    ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
     /// <para>
     /// You must have the <c>s3tables:CreateTableBucket</c> permission to use this operation.
     /// 
     /// </para>
-    ///  </dd> </dl>
+    ///  </li> <li> 
+    /// <para>
+    /// If you use this operation with the optional <c>encryptionConfiguration</c> parameter
+    /// you must have the <c>s3tables:PutTableBucketEncryption</c> permission.
+    /// </para>
+    ///  </li> </ul> </dd> </dl>
     /// </summary>
     public partial class CreateTableBucketRequest : AmazonS3TablesRequest
     {
+        private EncryptionConfiguration _encryptionConfiguration;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// The encryption configuration to use for the table bucket. This configuration specifies
+        /// the default encryption settings that will be applied to all tables created in this
+        /// bucket unless overridden at the table level. The configuration includes the encryption
+        /// algorithm and, if using SSE-KMS, the KMS key to use.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

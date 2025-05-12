@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudTrail.Model
@@ -29,56 +30,111 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Paginator for GetQueryResults operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IGetQueryResultsPaginator GetQueryResults(GetQueryResultsRequest request);
 
         /// <summary>
         /// Paginator for ListChannels operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListChannelsPaginator ListChannels(ListChannelsRequest request);
 
         /// <summary>
         /// Paginator for ListEventDataStores operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListEventDataStoresPaginator ListEventDataStores(ListEventDataStoresRequest request);
 
         /// <summary>
         /// Paginator for ListImportFailures operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListImportFailuresPaginator ListImportFailures(ListImportFailuresRequest request);
 
         /// <summary>
         /// Paginator for ListImports operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListImportsPaginator ListImports(ListImportsRequest request);
 
         /// <summary>
         /// Paginator for ListInsightsMetricData operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListInsightsMetricDataPaginator ListInsightsMetricData(ListInsightsMetricDataRequest request);
 
         /// <summary>
         /// Paginator for ListPublicKeys operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListPublicKeysPaginator ListPublicKeys(ListPublicKeysRequest request);
 
         /// <summary>
         /// Paginator for ListQueries operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListQueriesPaginator ListQueries(ListQueriesRequest request);
 
         /// <summary>
         /// Paginator for ListTags operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTagsPaginator ListTags(ListTagsRequest request);
 
         /// <summary>
         /// Paginator for ListTrails operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTrailsPaginator ListTrails(ListTrailsRequest request);
 
         /// <summary>
         /// Paginator for LookupEvents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         ILookupEventsPaginator LookupEvents(LookupEventsRequest request);
     }
 }

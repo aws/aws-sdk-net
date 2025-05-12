@@ -52,7 +52,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ActiveDate. 
         /// <para>
-        /// An optional date that specifies when the certificate becomes active.
+        /// An optional date that specifies when the certificate becomes active. If you do not
+        /// specify a value, <c>ActiveDate</c> takes the same value as <c>NotBeforeDate</c>, which
+        /// is specified by the CA. 
         /// </para>
         /// </summary>
         public DateTime? ActiveDate
@@ -166,7 +168,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property InactiveDate. 
         /// <para>
-        /// An optional date that specifies when the certificate becomes inactive.
+        /// An optional date that specifies when the certificate becomes inactive. If you do not
+        /// specify a value, <c>InactiveDate</c> takes the same value as <c>NotAfterDate</c>,
+        /// which is specified by the CA.
         /// </para>
         /// </summary>
         public DateTime? InactiveDate
@@ -239,8 +243,19 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Currently, the only available status is <c>ACTIVE</c>: all other values are reserved
-        /// for future use.
+        /// A certificate's status can be either <c>ACTIVE</c> or <c>INACTIVE</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can set <c>ActiveDate</c> and <c>InactiveDate</c> in the <c>UpdateCertificate</c>
+        /// call. If you set values for these parameters, those values are used to determine whether
+        /// the certificate has a status of <c>ACTIVE</c> or <c>INACTIVE</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't set values for <c>ActiveDate</c> and <c>InactiveDate</c>, we use the
+        /// <c>NotBefore</c> and <c>NotAfter</c> date as specified on the X509 certificate to
+        /// determine when a certificate is active and when it is inactive.
         /// </para>
         /// </summary>
         public CertificateStatusType Status

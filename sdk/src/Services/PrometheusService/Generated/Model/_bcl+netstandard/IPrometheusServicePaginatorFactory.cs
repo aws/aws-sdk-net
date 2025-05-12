@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the amp-2020-08-01.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PrometheusService.Model
@@ -29,16 +30,31 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Paginator for ListRuleGroupsNamespaces operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListRuleGroupsNamespacesPaginator ListRuleGroupsNamespaces(ListRuleGroupsNamespacesRequest request);
 
         /// <summary>
         /// Paginator for ListScrapers operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListScrapersPaginator ListScrapers(ListScrapersRequest request);
 
         /// <summary>
         /// Paginator for ListWorkspaces operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListWorkspacesPaginator ListWorkspaces(ListWorkspacesRequest request);
     }
 }

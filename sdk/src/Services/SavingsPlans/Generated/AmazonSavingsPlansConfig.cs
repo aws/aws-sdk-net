@@ -33,7 +33,7 @@ namespace Amazon.SavingsPlans
     public partial class AmazonSavingsPlansConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("savingsplans", "4.0.0.0");
+            InternalSDKUtils.BuildUserAgentString("savingsplans", "4.0.0.2");
 
         private static readonly AmazonSavingsPlansEndpointResolver EndpointResolver =
             new AmazonSavingsPlansEndpointResolver();

@@ -42,7 +42,7 @@ namespace Amazon.GameLiftStreams.Model
     /// To start a new stream session, specify a stream group and application ID, along with
     /// the transport protocol and signal request settings to use with the stream. You must
     /// have associated at least one application to the stream group before starting a stream
-    /// session, either when creating the stream group, or by using <a>AssociateApplications</a>.
+    /// session, either when creating the stream group, or by using <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_AssociateApplications.html">AssociateApplications</a>.
     /// </para>
     ///  
     /// <para>
@@ -158,8 +158,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         /// An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
         /// Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format
-        /// example: ARN-<c>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</c>
-        /// or ID-<c>9ZY8X7Wv6</c>. 
+        /// example: ARN-<c>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</c>
+        /// or ID-<c>a-9ZY8X7Wv6</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -246,8 +246,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         /// This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
         /// Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource.
-        /// Format example: ARN-<c>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</c>
-        /// or ID-<c>1AB2C3De4</c>. 
+        /// Format example: ARN-<c>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</c>
+        /// or ID-<c>sg-1AB2C3De4</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -274,8 +274,9 @@ namespace Amazon.GameLiftStreams.Model
         ///  
         /// <para>
         ///  This value is A set of location names. For example, <c>us-east-1</c>. For a complete
-        /// list of locations that Amazon GameLift Streams supports, see the Regions and quotas
-        /// section in the Amazon GameLift Streams Developer Guide . <pre><c> &lt;/p&gt; </c></pre>
+        /// list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions
+        /// and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> Locations

@@ -124,9 +124,9 @@ namespace Amazon.QConnect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Changing this locale to anything other than <c>en_US</c> will turn off recommendations
-        /// triggered by contact transcripts for agent assistance, as this feature is not supported
-        /// in multiple languages.
+        /// Changing this locale to anything other than <c>en_US</c>, <c>en_GB</c>, or <c>en_AU</c>
+        /// will turn off recommendations triggered by contact transcripts for agent assistance,
+        /// as this feature is not supported in multiple languages.
         /// </para>
         ///  </note>
         /// </summary>

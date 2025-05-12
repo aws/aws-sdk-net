@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the datasync-2018-11-09.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataSync.Model
@@ -29,46 +30,91 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Paginator for DescribeStorageSystemResourceMetrics operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeStorageSystemResourceMetricsPaginator DescribeStorageSystemResourceMetrics(DescribeStorageSystemResourceMetricsRequest request);
 
         /// <summary>
         /// Paginator for DescribeStorageSystemResources operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IDescribeStorageSystemResourcesPaginator DescribeStorageSystemResources(DescribeStorageSystemResourcesRequest request);
 
         /// <summary>
         /// Paginator for ListAgents operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListAgentsPaginator ListAgents(ListAgentsRequest request);
 
         /// <summary>
         /// Paginator for ListDiscoveryJobs operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListDiscoveryJobsPaginator ListDiscoveryJobs(ListDiscoveryJobsRequest request);
 
         /// <summary>
         /// Paginator for ListLocations operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListLocationsPaginator ListLocations(ListLocationsRequest request);
 
         /// <summary>
         /// Paginator for ListStorageSystems operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListStorageSystemsPaginator ListStorageSystems(ListStorageSystemsRequest request);
 
         /// <summary>
         /// Paginator for ListTagsForResource operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request);
 
         /// <summary>
         /// Paginator for ListTaskExecutions operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTaskExecutionsPaginator ListTaskExecutions(ListTaskExecutionsRequest request);
 
         /// <summary>
         /// Paginator for ListTasks operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListTasksPaginator ListTasks(ListTasksRequest request);
     }
 }

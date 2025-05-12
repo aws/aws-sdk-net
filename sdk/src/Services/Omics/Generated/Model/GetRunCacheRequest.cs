@@ -36,7 +36,8 @@ namespace Amazon.Omics.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-call-caching.html">Call
-    /// caching for HealthOmics runs</a> in the AWS HealthOmics User Guide.
+    /// caching for Amazon Web Services HealthOmics runs</a> in the Amazon Web Services HealthOmics
+    /// User Guide.
     /// </para>
     /// </summary>
     public partial class GetRunCacheRequest : AmazonOmicsRequest

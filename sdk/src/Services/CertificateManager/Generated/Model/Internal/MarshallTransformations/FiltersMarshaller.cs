@@ -79,6 +79,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetManagedBy())
+            {
+                context.Writer.WritePropertyName("managedBy");
+                context.Writer.WriteStringValue(requestObject.ManagedBy);
+            }
+
         }
 
         /// <summary>

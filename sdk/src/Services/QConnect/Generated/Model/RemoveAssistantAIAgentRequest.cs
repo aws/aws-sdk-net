@@ -31,7 +31,7 @@ namespace Amazon.QConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveAssistantAIAgent operation.
-    /// Removes the AI Agent that is set for use by defafult on an Amazon Q in Connect Assistant.
+    /// Removes the AI Agent that is set for use by default on an Amazon Q in Connect Assistant.
     /// </summary>
     public partial class RemoveAssistantAIAgentRequest : AmazonQConnectRequest
     {

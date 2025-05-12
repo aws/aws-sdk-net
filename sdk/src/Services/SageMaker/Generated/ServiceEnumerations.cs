@@ -889,6 +889,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AppInstanceType MlP548xlarge = new AppInstanceType("ml.p5.48xlarge");
         /// <summary>
+        /// Constant MlP5en48xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlP5en48xlarge = new AppInstanceType("ml.p5en.48xlarge");
+        /// <summary>
         /// Constant MlR512xlarge for AppInstanceType
         /// </summary>
         public static readonly AppInstanceType MlR512xlarge = new AppInstanceType("ml.r5.12xlarge");
@@ -4021,6 +4025,34 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ClusterInstanceType MlGr68xlarge = new ClusterInstanceType("ml.gr6.8xlarge");
         /// <summary>
+        /// Constant MlI3en12xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlI3en12xlarge = new ClusterInstanceType("ml.i3en.12xlarge");
+        /// <summary>
+        /// Constant MlI3en24xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlI3en24xlarge = new ClusterInstanceType("ml.i3en.24xlarge");
+        /// <summary>
+        /// Constant MlI3en2xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlI3en2xlarge = new ClusterInstanceType("ml.i3en.2xlarge");
+        /// <summary>
+        /// Constant MlI3en3xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlI3en3xlarge = new ClusterInstanceType("ml.i3en.3xlarge");
+        /// <summary>
+        /// Constant MlI3en6xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlI3en6xlarge = new ClusterInstanceType("ml.i3en.6xlarge");
+        /// <summary>
+        /// Constant MlI3enLarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlI3enLarge = new ClusterInstanceType("ml.i3en.large");
+        /// <summary>
+        /// Constant MlI3enXlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlI3enXlarge = new ClusterInstanceType("ml.i3en.xlarge");
+        /// <summary>
         /// Constant MlM512xlarge for ClusterInstanceType
         /// </summary>
         public static readonly ClusterInstanceType MlM512xlarge = new ClusterInstanceType("ml.m5.12xlarge");
@@ -4089,6 +4121,42 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ClusterInstanceType MlM6iXlarge = new ClusterInstanceType("ml.m6i.xlarge");
         /// <summary>
+        /// Constant MlM7i12xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlM7i12xlarge = new ClusterInstanceType("ml.m7i.12xlarge");
+        /// <summary>
+        /// Constant MlM7i16xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlM7i16xlarge = new ClusterInstanceType("ml.m7i.16xlarge");
+        /// <summary>
+        /// Constant MlM7i24xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlM7i24xlarge = new ClusterInstanceType("ml.m7i.24xlarge");
+        /// <summary>
+        /// Constant MlM7i2xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlM7i2xlarge = new ClusterInstanceType("ml.m7i.2xlarge");
+        /// <summary>
+        /// Constant MlM7i48xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlM7i48xlarge = new ClusterInstanceType("ml.m7i.48xlarge");
+        /// <summary>
+        /// Constant MlM7i4xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlM7i4xlarge = new ClusterInstanceType("ml.m7i.4xlarge");
+        /// <summary>
+        /// Constant MlM7i8xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlM7i8xlarge = new ClusterInstanceType("ml.m7i.8xlarge");
+        /// <summary>
+        /// Constant MlM7iLarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlM7iLarge = new ClusterInstanceType("ml.m7i.large");
+        /// <summary>
+        /// Constant MlM7iXlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlM7iXlarge = new ClusterInstanceType("ml.m7i.xlarge");
+        /// <summary>
         /// Constant MlP4d24xlarge for ClusterInstanceType
         /// </summary>
         public static readonly ClusterInstanceType MlP4d24xlarge = new ClusterInstanceType("ml.p4d.24xlarge");
@@ -4144,6 +4212,42 @@ namespace Amazon.SageMaker
         /// Constant MlR6iXlarge for ClusterInstanceType
         /// </summary>
         public static readonly ClusterInstanceType MlR6iXlarge = new ClusterInstanceType("ml.r6i.xlarge");
+        /// <summary>
+        /// Constant MlR7i12xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlR7i12xlarge = new ClusterInstanceType("ml.r7i.12xlarge");
+        /// <summary>
+        /// Constant MlR7i16xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlR7i16xlarge = new ClusterInstanceType("ml.r7i.16xlarge");
+        /// <summary>
+        /// Constant MlR7i24xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlR7i24xlarge = new ClusterInstanceType("ml.r7i.24xlarge");
+        /// <summary>
+        /// Constant MlR7i2xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlR7i2xlarge = new ClusterInstanceType("ml.r7i.2xlarge");
+        /// <summary>
+        /// Constant MlR7i48xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlR7i48xlarge = new ClusterInstanceType("ml.r7i.48xlarge");
+        /// <summary>
+        /// Constant MlR7i4xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlR7i4xlarge = new ClusterInstanceType("ml.r7i.4xlarge");
+        /// <summary>
+        /// Constant MlR7i8xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlR7i8xlarge = new ClusterInstanceType("ml.r7i.8xlarge");
+        /// <summary>
+        /// Constant MlR7iLarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlR7iLarge = new ClusterInstanceType("ml.r7i.large");
+        /// <summary>
+        /// Constant MlR7iXlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlR7iXlarge = new ClusterInstanceType("ml.r7i.xlarge");
         /// <summary>
         /// Constant MlT32xlarge for ClusterInstanceType
         /// </summary>
@@ -11669,6 +11773,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type NodeUnavailabilityType.
+    /// </summary>
+    public class NodeUnavailabilityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CAPACITY_PERCENTAGE for NodeUnavailabilityType
+        /// </summary>
+        public static readonly NodeUnavailabilityType CAPACITY_PERCENTAGE = new NodeUnavailabilityType("CAPACITY_PERCENTAGE");
+        /// <summary>
+        /// Constant INSTANCE_COUNT for NodeUnavailabilityType
+        /// </summary>
+        public static readonly NodeUnavailabilityType INSTANCE_COUNT = new NodeUnavailabilityType("INSTANCE_COUNT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodeUnavailabilityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodeUnavailabilityType FindValue(string value)
+        {
+            return FindValue<NodeUnavailabilityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodeUnavailabilityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NotebookInstanceAcceleratorType.
     /// </summary>
     public class NotebookInstanceAcceleratorType : ConstantClass
@@ -13904,6 +14058,10 @@ namespace Amazon.SageMaker
         /// Constant Al2AmiSagemakerInferenceGpu31 for ProductionVariantInferenceAmiVersion
         /// </summary>
         public static readonly ProductionVariantInferenceAmiVersion Al2AmiSagemakerInferenceGpu31 = new ProductionVariantInferenceAmiVersion("al2-ami-sagemaker-inference-gpu-3-1");
+        /// <summary>
+        /// Constant Al2AmiSagemakerInferenceNeuron2 for ProductionVariantInferenceAmiVersion
+        /// </summary>
+        public static readonly ProductionVariantInferenceAmiVersion Al2AmiSagemakerInferenceNeuron2 = new ProductionVariantInferenceAmiVersion("al2-ami-sagemaker-inference-neuron-2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -15544,6 +15702,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RedshiftResultFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Relation.
+    /// </summary>
+    public class Relation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EqualTo for Relation
+        /// </summary>
+        public static readonly Relation EqualTo = new Relation("EqualTo");
+        /// <summary>
+        /// Constant GreaterThanOrEqualTo for Relation
+        /// </summary>
+        public static readonly Relation GreaterThanOrEqualTo = new Relation("GreaterThanOrEqualTo");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Relation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Relation FindValue(string value)
+        {
+            return FindValue<Relation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Relation(string value)
         {
             return FindValue(value);
         }

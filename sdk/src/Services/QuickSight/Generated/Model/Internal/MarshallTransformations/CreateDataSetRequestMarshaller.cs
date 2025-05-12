@@ -286,6 +286,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetUseAs())
+            {
+                context.Writer.WritePropertyName("UseAs");
+                context.Writer.WriteStringValue(publicRequest.UseAs);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

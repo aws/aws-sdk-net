@@ -62,6 +62,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutoTrainingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("eventsConfig", targetDepth))
+                {
+                    var unmarshaller = EventsConfigUnmarshaller.Instance;
+                    unmarshalledObject.EventsConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

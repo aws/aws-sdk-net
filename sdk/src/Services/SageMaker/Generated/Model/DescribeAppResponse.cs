@@ -43,6 +43,7 @@ namespace Amazon.SageMaker.Model
         private string _failureReason;
         private DateTime? _lastHealthCheckTimestamp;
         private DateTime? _lastUserActivityTimestamp;
+        private bool? _recoveryMode;
         private ResourceSpec _resourceSpec;
         private string _spaceName;
         private AppStatus _status;
@@ -224,6 +225,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLastUserActivityTimestamp()
         {
             return this._lastUserActivityTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecoveryMode. 
+        /// <para>
+        ///  Indicates whether the application is launched in recovery mode. 
+        /// </para>
+        /// </summary>
+        public bool? RecoveryMode
+        {
+            get { return this._recoveryMode; }
+            set { this._recoveryMode = value; }
+        }
+
+        // Check to see if RecoveryMode property is set
+        internal bool IsSetRecoveryMode()
+        {
+            return this._recoveryMode.HasValue; 
         }
 
         /// <summary>

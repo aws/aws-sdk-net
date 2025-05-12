@@ -172,6 +172,28 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.RoleArn);
             }
 
+            if(publicRequest.IsSetSdiSources())
+            {
+                context.Writer.WritePropertyName("sdiSources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSdiSourcesListValue in publicRequest.SdiSources)
+                {
+                        context.Writer.WriteStringValue(publicRequestSdiSourcesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSmpte2110ReceiverGroupSettings())
+            {
+                context.Writer.WritePropertyName("smpte2110ReceiverGroupSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = Smpte2110ReceiverGroupSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Smpte2110ReceiverGroupSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetSources())
             {
                 context.Writer.WritePropertyName("sources");

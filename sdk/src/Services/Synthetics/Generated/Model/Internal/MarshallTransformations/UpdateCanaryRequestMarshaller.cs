@@ -104,6 +104,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetDryRunId())
+            {
+                context.Writer.WritePropertyName("DryRunId");
+                context.Writer.WriteStringValue(publicRequest.DryRunId);
+            }
+
             if(publicRequest.IsSetExecutionRoleArn())
             {
                 context.Writer.WritePropertyName("ExecutionRoleArn");

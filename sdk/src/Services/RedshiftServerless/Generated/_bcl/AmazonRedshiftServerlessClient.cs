@@ -281,7 +281,7 @@ namespace Amazon.RedshiftServerless
 
         /// <summary>
         /// Converts a recovery point to a snapshot. For more information about recovery points
-        /// and snapshots, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery.html">Working
+        /// and snapshots, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery-points.html">Working
         /// with snapshots and recovery points</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConvertRecoveryPointToSnapshot service method.</param>
@@ -318,7 +318,7 @@ namespace Amazon.RedshiftServerless
 
         /// <summary>
         /// Converts a recovery point to a snapshot. For more information about recovery points
-        /// and snapshots, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery.html">Working
+        /// and snapshots, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery-points.html">Working
         /// with snapshots and recovery points</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConvertRecoveryPointToSnapshot service method.</param>
@@ -576,6 +576,93 @@ namespace Amazon.RedshiftServerless
 
         #endregion
         
+        #region  CreateReservation
+
+
+        /// <summary>
+        /// Creates an Amazon Redshift Serverless reservation, which gives you the option to commit
+        /// to a specified number of Redshift Processing Units (RPUs) for a year at a discount
+        /// from Serverless on-demand (OD) rates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReservation service method.</param>
+        /// 
+        /// <returns>The response from the CreateReservation service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ServiceQuotaExceededException">
+        /// The service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.TooManyTagsException">
+        /// The request exceeded the number of tags allowed for a resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateReservation">REST API Reference for CreateReservation Operation</seealso>
+        public virtual CreateReservationResponse CreateReservation(CreateReservationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateReservationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateReservationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an Amazon Redshift Serverless reservation, which gives you the option to commit
+        /// to a specified number of Redshift Processing Units (RPUs) for a year at a discount
+        /// from Serverless on-demand (OD) rates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReservation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateReservation service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ServiceQuotaExceededException">
+        /// The service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.TooManyTagsException">
+        /// The request exceeded the number of tags allowed for a resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateReservation">REST API Reference for CreateReservation Operation</seealso>
+        public virtual Task<CreateReservationResponse> CreateReservationAsync(CreateReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateReservationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateReservationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateScheduledAction
 
 
@@ -650,7 +737,7 @@ namespace Amazon.RedshiftServerless
 
         /// <summary>
         /// Creates a snapshot of all databases in a namespace. For more information about snapshots,
-        /// see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery.html">
+        /// see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery-points.html">
         /// Working with snapshots and recovery points</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
@@ -687,7 +774,7 @@ namespace Amazon.RedshiftServerless
 
         /// <summary>
         /// Creates a snapshot of all databases in a namespace. For more information about snapshots,
-        /// see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery.html">
+        /// see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery-points.html">
         /// Working with snapshots and recovery points</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
@@ -1965,6 +2052,142 @@ namespace Amazon.RedshiftServerless
 
         #endregion
         
+        #region  GetReservation
+
+
+        /// <summary>
+        /// Gets an Amazon Redshift Serverless reservation. A reservation gives you the option
+        /// to commit to a specified number of Redshift Processing Units (RPUs) for a year at
+        /// a discount from Serverless on-demand (OD) rates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReservation service method.</param>
+        /// 
+        /// <returns>The response from the GetReservation service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetReservation">REST API Reference for GetReservation Operation</seealso>
+        public virtual GetReservationResponse GetReservation(GetReservationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReservationResponseUnmarshaller.Instance;
+
+            return Invoke<GetReservationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets an Amazon Redshift Serverless reservation. A reservation gives you the option
+        /// to commit to a specified number of Redshift Processing Units (RPUs) for a year at
+        /// a discount from Serverless on-demand (OD) rates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReservation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetReservation service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetReservation">REST API Reference for GetReservation Operation</seealso>
+        public virtual Task<GetReservationResponse> GetReservationAsync(GetReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReservationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetReservationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetReservationOffering
+
+
+        /// <summary>
+        /// Returns the reservation offering. The offering determines the payment schedule for
+        /// the reservation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReservationOffering service method.</param>
+        /// 
+        /// <returns>The response from the GetReservationOffering service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetReservationOffering">REST API Reference for GetReservationOffering Operation</seealso>
+        public virtual GetReservationOfferingResponse GetReservationOffering(GetReservationOfferingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReservationOfferingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReservationOfferingResponseUnmarshaller.Instance;
+
+            return Invoke<GetReservationOfferingResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the reservation offering. The offering determines the payment schedule for
+        /// the reservation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReservationOffering service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetReservationOffering service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetReservationOffering">REST API Reference for GetReservationOffering Operation</seealso>
+        public virtual Task<GetReservationOfferingResponse> GetReservationOfferingAsync(GetReservationOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReservationOfferingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReservationOfferingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetReservationOfferingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetResourcePolicy
 
 
@@ -2687,6 +2910,124 @@ namespace Amazon.RedshiftServerless
             options.ResponseUnmarshaller = ListRecoveryPointsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListRecoveryPointsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListReservationOfferings
+
+
+        /// <summary>
+        /// Returns the current reservation offerings in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReservationOfferings service method.</param>
+        /// 
+        /// <returns>The response from the ListReservationOfferings service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListReservationOfferings">REST API Reference for ListReservationOfferings Operation</seealso>
+        public virtual ListReservationOfferingsResponse ListReservationOfferings(ListReservationOfferingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReservationOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReservationOfferingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListReservationOfferingsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the current reservation offerings in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReservationOfferings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListReservationOfferings service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListReservationOfferings">REST API Reference for ListReservationOfferings Operation</seealso>
+        public virtual Task<ListReservationOfferingsResponse> ListReservationOfferingsAsync(ListReservationOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReservationOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReservationOfferingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListReservationOfferingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListReservations
+
+
+        /// <summary>
+        /// Returns a list of Reservation objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReservations service method.</param>
+        /// 
+        /// <returns>The response from the ListReservations service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListReservations">REST API Reference for ListReservations Operation</seealso>
+        public virtual ListReservationsResponse ListReservations(ListReservationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReservationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReservationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListReservationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of Reservation objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReservations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListReservations service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListReservations">REST API Reference for ListReservations Operation</seealso>
+        public virtual Task<ListReservationsResponse> ListReservationsAsync(ListReservationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReservationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReservationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListReservationsResponse>(request, options, cancellationToken);
         }
 
         #endregion

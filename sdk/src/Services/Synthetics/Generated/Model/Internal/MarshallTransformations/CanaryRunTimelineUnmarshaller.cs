@@ -62,6 +62,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                     unmarshalledObject.Completed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MetricTimestampForRunAndRetries", targetDepth))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.MetricTimestampForRunAndRetries = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Started", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

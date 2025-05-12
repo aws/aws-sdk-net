@@ -49,7 +49,7 @@ namespace Amazon.Synthetics.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For Python canaries, the folder structure must be <c>python/<i>myCanaryFilename.p</i>
+    /// For Python canaries, the folder structure must be <c>python/<i>myCanaryFilename.py</i>
     /// </c> or <c>python/<i>myFolder/myCanaryFilename.py</i> </c> For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_WritingCanary_Python.html#CloudWatch_Synthetics_Canaries_WritingCanary_Python_package">Packaging
     /// your Python canary files</a> 

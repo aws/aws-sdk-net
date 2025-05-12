@@ -19,6 +19,11 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.UserAgent;
+using Amazon.Runtime.Telemetry;
+using Amazon.Runtime.Telemetry.Metrics;
+using Amazon.Runtime.Telemetry.Tracing;
+using Amazon.Runtime.Telemetry.Metrics.NoOp;
+using Amazon.Runtime.Telemetry.Tracing.NoOp;
 using Amazon.S3;
 using Amazon.S3.Internal;
 using Amazon.S3.Model;
@@ -30,6 +35,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace AWSSDK.UnitTests
 {
@@ -112,6 +118,25 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(metricsSection.Contains(UserAgentFeatureId.PAGINATOR.Value));
         }
 
+        [TestMethod]
+        public void RunningMultipleRequestsUsingTheSameRequestObject_ShouldntDuplicateTheUserAgentDetails()
+        {
+            var listObjectsV2Request = new ListObjectsV2Request
+            {
+                BucketName = "test"
+            };
+
+            RunMockRequest(listObjectsV2Request, new AmazonS3Config(), ListObjectsV2RequestMarshaller.Instance, ListObjectsV2ResponseUnmarshaller.Instance);
+            RunMockRequest(listObjectsV2Request, new AmazonS3Config(), ListObjectsV2RequestMarshaller.Instance, ListObjectsV2ResponseUnmarshaller.Instance);
+            var request = RunMockRequest(listObjectsV2Request, new AmazonS3Config(), ListObjectsV2RequestMarshaller.Instance, ListObjectsV2ResponseUnmarshaller.Instance);
+
+            request.Headers.TryGetValue(HeaderKeys.UserAgentHeader, out string userAgentHeader);
+            Assert.IsNotNull(userAgentHeader);
+
+            Assert.AreEqual(Regex.Matches(userAgentHeader, "md/ClientSync").Count, 1);
+            Assert.AreEqual(Regex.Matches(userAgentHeader, "cfg/init-coll#").Count, 1);
+        }
+
         [DataTestMethod]
         [DataRow(RequestRetryMode.Standard, "E")]
         [DataRow(RequestRetryMode.Adaptive, "F")]
@@ -181,6 +206,51 @@ namespace AWSSDK.UnitTests
             var userAgentParts = userAgentHeader.Split(' ');
 
             Assert.IsTrue(userAgentParts.Contains(userAgentAddition));
+        }
+
+        [TestMethod]
+        public void ObservabilityFeatureIds_NoInUserAgentByDefault()
+        {
+            var config = new AmazonS3Config();
+            var request = RunMockRequest(new ListBucketsRequest(), config, new ListBucketsRequestMarshaller(), new ListBucketsResponseUnmarshaller());
+
+            request.Headers.TryGetValue(HeaderKeys.UserAgentHeader, out string userAgentHeader);
+            Assert.IsNotNull(userAgentHeader);
+            var metricsSection = userAgentHeader.Split(' ').First(part => part.StartsWith("m/")).Remove(0, 2);
+
+            Assert.IsFalse(metricsSection.Contains(UserAgentFeatureId.OBSERVABILITY_TRACING.Value));
+            Assert.IsFalse(metricsSection.Contains(UserAgentFeatureId.OBSERVABILITY_METRICS.Value));
+        }
+
+        [TestMethod]
+        public void WhenUsingCustomMeterProvider_MetricsFeatureIdAddedToUserAgent()
+        {
+            var config = new AmazonS3Config();
+
+            config.TelemetryProvider.RegisterMeterProvider(new TempMeterProvider());
+
+            var request = RunMockRequest(new ListBucketsRequest(), config, new ListBucketsRequestMarshaller(), new ListBucketsResponseUnmarshaller());
+
+            request.Headers.TryGetValue(HeaderKeys.UserAgentHeader, out string userAgentHeader);
+            Assert.IsNotNull(userAgentHeader);
+            var metricsSection = userAgentHeader.Split(' ').First(part => part.StartsWith("m/")).Remove(0, 2);
+
+            Assert.IsTrue(metricsSection.Contains(UserAgentFeatureId.OBSERVABILITY_METRICS.Value));
+        }
+
+        [TestMethod]
+        public void WhenUsingCustomTracerProvider_TracingFeatureIdAddedToUserAgent()
+        {
+            var config = new AmazonS3Config();
+            config.TelemetryProvider.RegisterTracerProvider(new TempTracerProvider());
+
+            var request = RunMockRequest(new ListBucketsRequest(), config, new ListBucketsRequestMarshaller(), new ListBucketsResponseUnmarshaller());
+
+            request.Headers.TryGetValue(HeaderKeys.UserAgentHeader, out string userAgentHeader);
+            Assert.IsNotNull(userAgentHeader);
+            var metricsSection = userAgentHeader.Split(' ').First(part => part.StartsWith("m/")).Remove(0, 2);
+
+            Assert.IsTrue(metricsSection.Contains(UserAgentFeatureId.OBSERVABILITY_TRACING.Value));
         }
 
         [DataTestMethod]
@@ -306,6 +376,22 @@ namespace AWSSDK.UnitTests
                 executionContext.RequestContext.Request.Endpoint = new Uri(@"http://PutObject");
                 base.InvokeSync(executionContext);
                 LastRequest = executionContext.RequestContext.Request;
+            }
+        }
+
+        public class TempMeterProvider : MeterProvider
+        {
+            public override Meter GetMeter(string scope, Attributes attributes = null)
+            {
+                return new NoOpMeter();
+            }
+        }
+
+        public class TempTracerProvider : TracerProvider
+        {
+            public override Tracer GetTracer(string scope)
+            {
+                return new NoOpTracer();
             }
         }
     }

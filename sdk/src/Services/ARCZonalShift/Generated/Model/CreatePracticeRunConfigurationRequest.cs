@@ -40,10 +40,10 @@ namespace Amazon.ARCZonalShift.Model
     /// 
     ///  
     /// <para>
-    /// When a resource has a practice run configuration, Route 53 ARC starts zonal shifts
-    /// for the resource weekly, to shift traffic for practice runs. Practice runs help you
-    /// to ensure that shifting away traffic from an Availability Zone during an autoshift
-    /// is safe for your application.
+    /// When a resource has a practice run configuration, ARC starts zonal shifts for the
+    /// resource weekly, to shift traffic for practice runs. Practice runs help you to ensure
+    /// that shifting away traffic from an Availability Zone during an autoshift is safe for
+    /// your application.
     /// </para>
     ///  
     /// <para>
@@ -63,8 +63,8 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property BlockedDates. 
         /// <para>
-        /// Optionally, you can block Route 53 ARC from starting practice runs for a resource
-        /// on specific calendar dates.
+        /// Optionally, you can block ARC from starting practice runs for a resource on specific
+        /// calendar dates.
         /// </para>
         ///  
         /// <para>
@@ -95,8 +95,8 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property BlockedWindows. 
         /// <para>
-        /// Optionally, you can block Route 53 ARC from starting practice runs for specific windows
-        /// of days and times. 
+        /// Optionally, you can block ARC from starting practice runs for specific windows of
+        /// days and times. 
         /// </para>
         ///  
         /// <para>
@@ -129,8 +129,8 @@ namespace Amazon.ARCZonalShift.Model
         /// Gets and sets the property BlockingAlarms. 
         /// <para>
         /// An Amazon CloudWatch alarm that you can specify for zonal autoshift practice runs.
-        /// This alarm blocks Route 53 ARC from starting practice run zonal shifts, and ends a
-        /// practice run that's in progress, when the alarm is in an <c>ALARM</c> state. 
+        /// This alarm blocks ARC from starting practice run zonal shifts, and ends a practice
+        /// run that's in progress, when the alarm is in an <c>ALARM</c> state. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -155,10 +155,10 @@ namespace Amazon.ARCZonalShift.Model
         ///  
         /// <para>
         /// Configure the alarm to monitor the health of your application when traffic is shifted
-        /// away from an Availability Zone during each weekly practice run. You should configure
-        /// the alarm to go into an <c>ALARM</c> state if your application is impacted by the
-        /// zonal shift, and you want to stop the zonal shift, to let traffic for the resource
-        /// return to the Availability Zone.
+        /// away from an Availability Zone during each practice run. You should configure the
+        /// alarm to go into an <c>ALARM</c> state if your application is impacted by the zonal
+        /// shift, and you want to stop the zonal shift, to let traffic for the resource return
+        /// to the Availability Zone.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]

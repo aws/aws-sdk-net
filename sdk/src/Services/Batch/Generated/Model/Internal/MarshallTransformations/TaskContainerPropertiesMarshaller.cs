@@ -95,6 +95,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.Essential.Value);
             }
 
+            if(requestObject.IsSetFirelensConfiguration())
+            {
+                context.Writer.WritePropertyName("firelensConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FirelensConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.FirelensConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetImage())
             {
                 context.Writer.WritePropertyName("image");

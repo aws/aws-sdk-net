@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class FlowTrace
     {
         private FlowTraceConditionNodeResultEvent _conditionNodeResultTrace;
+        private FlowTraceNodeActionEvent _nodeActionTrace;
         private FlowTraceNodeInputEvent _nodeInputTrace;
         private FlowTraceNodeOutputEvent _nodeOutputTrace;
 
@@ -57,6 +58,27 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetConditionNodeResultTrace()
         {
             return this._conditionNodeResultTrace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeActionTrace. 
+        /// <para>
+        /// Contains information about an action (operation) called by a node. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track
+        /// each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public FlowTraceNodeActionEvent NodeActionTrace
+        {
+            get { return this._nodeActionTrace; }
+            set { this._nodeActionTrace = value; }
+        }
+
+        // Check to see if NodeActionTrace property is set
+        internal bool IsSetNodeActionTrace()
+        {
+            return this._nodeActionTrace != null;
         }
 
         /// <summary>

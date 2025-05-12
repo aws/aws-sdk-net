@@ -46,10 +46,12 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// For local secondary indexes, the total count of <c>NonKeyAttributes</c> summed across
-        /// all of the local secondary indexes, must not exceed 100. If you project the same attribute
-        /// into two different indexes, this counts as two distinct attributes when determining
-        /// the total.
+        /// For global and local secondary indexes, the total count of <c>NonKeyAttributes</c>
+        /// summed across all of the secondary indexes, must not exceed 100. If you project the
+        /// same attribute into two different indexes, this counts as two distinct attributes
+        /// when determining the total. This limit only applies when you specify the ProjectionType
+        /// of <c>INCLUDE</c>. You still can specify the ProjectionType of <c>ALL</c> to project
+        /// all attributes from the source table, even if the table has more than 100 attributes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

@@ -16,6 +16,7 @@
 /*
  * Do not modify this file. This file is generated from the secretsmanager-2017-10-17.normal.json service model.
  */
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecretsManager.Model
@@ -29,16 +30,31 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Paginator for BatchGetSecretValue operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IBatchGetSecretValuePaginator BatchGetSecretValue(BatchGetSecretValueRequest request);
 
         /// <summary>
         /// Paginator for ListSecrets operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSecretsPaginator ListSecrets(ListSecretsRequest request);
 
         /// <summary>
         /// Paginator for ListSecretVersionIds operation
         ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
         IListSecretVersionIdsPaginator ListSecretVersionIds(ListSecretVersionIdsRequest request);
     }
 }

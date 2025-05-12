@@ -3199,6 +3199,110 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type CmafTimedMetadataId3Frame.
+    /// </summary>
+    public class CmafTimedMetadataId3Frame : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for CmafTimedMetadataId3Frame
+        /// </summary>
+        public static readonly CmafTimedMetadataId3Frame NONE = new CmafTimedMetadataId3Frame("NONE");
+        /// <summary>
+        /// Constant PRIV for CmafTimedMetadataId3Frame
+        /// </summary>
+        public static readonly CmafTimedMetadataId3Frame PRIV = new CmafTimedMetadataId3Frame("PRIV");
+        /// <summary>
+        /// Constant TDRL for CmafTimedMetadataId3Frame
+        /// </summary>
+        public static readonly CmafTimedMetadataId3Frame TDRL = new CmafTimedMetadataId3Frame("TDRL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafTimedMetadataId3Frame(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafTimedMetadataId3Frame FindValue(string value)
+        {
+            return FindValue<CmafTimedMetadataId3Frame>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafTimedMetadataId3Frame(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CmafTimedMetadataPassthrough.
+    /// </summary>
+    public class CmafTimedMetadataPassthrough : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CmafTimedMetadataPassthrough
+        /// </summary>
+        public static readonly CmafTimedMetadataPassthrough DISABLED = new CmafTimedMetadataPassthrough("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for CmafTimedMetadataPassthrough
+        /// </summary>
+        public static readonly CmafTimedMetadataPassthrough ENABLED = new CmafTimedMetadataPassthrough("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafTimedMetadataPassthrough(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafTimedMetadataPassthrough FindValue(string value)
+        {
+            return FindValue<CmafTimedMetadataPassthrough>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafTimedMetadataPassthrough(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ColorSpace.
     /// </summary>
     public class ColorSpace : ConstantClass
@@ -11463,6 +11567,14 @@ namespace Amazon.MediaLive
         /// </summary>
         public static readonly InputType RTP_PUSH = new InputType("RTP_PUSH");
         /// <summary>
+        /// Constant SDI for InputType
+        /// </summary>
+        public static readonly InputType SDI = new InputType("SDI");
+        /// <summary>
+        /// Constant SMPTE_2110_RECEIVER_GROUP for InputType
+        /// </summary>
+        public static readonly InputType SMPTE_2110_RECEIVER_GROUP = new InputType("SMPTE_2110_RECEIVER_GROUP");
+        /// <summary>
         /// Constant SRT_CALLER for InputType
         /// </summary>
         public static readonly InputType SRT_CALLER = new InputType("SRT_CALLER");
@@ -15884,6 +15996,160 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Scte35WebDeliveryAllowedFlag(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SdiSourceMode.
+    /// </summary>
+    public class SdiSourceMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERLEAVE for SdiSourceMode
+        /// </summary>
+        public static readonly SdiSourceMode INTERLEAVE = new SdiSourceMode("INTERLEAVE");
+        /// <summary>
+        /// Constant QUADRANT for SdiSourceMode
+        /// </summary>
+        public static readonly SdiSourceMode QUADRANT = new SdiSourceMode("QUADRANT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SdiSourceMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SdiSourceMode FindValue(string value)
+        {
+            return FindValue<SdiSourceMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SdiSourceMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SdiSourceState.
+    /// </summary>
+    public class SdiSourceState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETED for SdiSourceState
+        /// </summary>
+        public static readonly SdiSourceState DELETED = new SdiSourceState("DELETED");
+        /// <summary>
+        /// Constant IDLE for SdiSourceState
+        /// </summary>
+        public static readonly SdiSourceState IDLE = new SdiSourceState("IDLE");
+        /// <summary>
+        /// Constant IN_USE for SdiSourceState
+        /// </summary>
+        public static readonly SdiSourceState IN_USE = new SdiSourceState("IN_USE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SdiSourceState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SdiSourceState FindValue(string value)
+        {
+            return FindValue<SdiSourceState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SdiSourceState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SdiSourceType.
+    /// </summary>
+    public class SdiSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant QUAD for SdiSourceType
+        /// </summary>
+        public static readonly SdiSourceType QUAD = new SdiSourceType("QUAD");
+        /// <summary>
+        /// Constant SINGLE for SdiSourceType
+        /// </summary>
+        public static readonly SdiSourceType SINGLE = new SdiSourceType("SINGLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SdiSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SdiSourceType FindValue(string value)
+        {
+            return FindValue<SdiSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SdiSourceType(string value)
         {
             return FindValue(value);
         }

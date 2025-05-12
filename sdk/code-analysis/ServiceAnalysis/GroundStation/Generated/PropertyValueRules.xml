@@ -2,14 +2,14 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.CancelContactRequest.ContactId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.CancelContactResponse.ContactId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -17,6 +17,12 @@
     <min>1</min>
     <max>256</max>
     <pattern>^[ a-zA-Z0-9_:-]{1,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.CreateConfigResponse.ConfigArn</property>
+    <min>82</min>
+    <max>424</max>
+    <pattern>^arn:aws:groundstation:[-a-z0-9]{1,50}:[0-9]{12}:config/[a-z0-9]+(-[a-z0-9]+){0,4}/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(/.{1,256})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.CreateDataflowEndpointGroupRequest.ContactPostPassDurationSeconds</property>
@@ -30,8 +36,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.CreateDataflowEndpointGroupResponse.DataflowEndpointGroupId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -47,14 +53,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.CreateEphemerisRequest.SatelliteId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.CreateEphemerisResponse.EphemerisId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -79,75 +85,99 @@
     <pattern>^[ a-zA-Z0-9_:-]{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.CreateMissionProfileRequest.TrackingConfigArn</property>
+    <min>82</min>
+    <max>424</max>
+    <pattern>^arn:aws:groundstation:[-a-z0-9]{1,50}:[0-9]{12}:config/[a-z0-9]+(-[a-z0-9]+){0,4}/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(/.{1,256})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.CreateMissionProfileResponse.MissionProfileId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.DeleteConfigRequest.ConfigId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.DeleteConfigResponse.ConfigArn</property>
+    <min>82</min>
+    <max>424</max>
+    <pattern>^arn:aws:groundstation:[-a-z0-9]{1,50}:[0-9]{12}:config/[a-z0-9]+(-[a-z0-9]+){0,4}/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(/.{1,256})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.DeleteDataflowEndpointGroupRequest.DataflowEndpointGroupId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.DeleteDataflowEndpointGroupResponse.DataflowEndpointGroupId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.DeleteEphemerisRequest.EphemerisId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.DeleteEphemerisResponse.EphemerisId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.DeleteMissionProfileRequest.MissionProfileId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.DeleteMissionProfileResponse.MissionProfileId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.DescribeContactRequest.ContactId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.DescribeContactResponse.ContactId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.DescribeContactResponse.MissionProfileArn</property>
+    <min>89</min>
+    <max>138</max>
+    <pattern>^arn:aws:groundstation:[-a-z0-9]{1,50}:[0-9]{12}:mission-profile/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.DescribeContactResponse.SatelliteArn</property>
+    <min>82</min>
+    <max>132</max>
+    <pattern>^arn:aws:groundstation:([-a-z0-9]{1,50})?:[0-9]{12}:satellite/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.DescribeEphemerisRequest.EphemerisId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.DescribeEphemerisResponse.EphemerisId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -163,32 +193,38 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.DescribeEphemerisResponse.SatelliteId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.GetAgentConfigurationRequest.AgentId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.GetAgentConfigurationResponse.AgentId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.GetConfigRequest.ConfigId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.GetConfigResponse.ConfigArn</property>
+    <min>82</min>
+    <max>424</max>
+    <pattern>^arn:aws:groundstation:[-a-z0-9]{1,50}:[0-9]{12}:config/[a-z0-9]+(-[a-z0-9]+){0,4}/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(/.{1,256})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.GetDataflowEndpointGroupRequest.DataflowEndpointGroupId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -202,9 +238,15 @@
     <max>480</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.GetDataflowEndpointGroupResponse.DataflowEndpointGroupArn</property>
+    <min>97</min>
+    <max>146</max>
+    <pattern>^arn:aws:groundstation:[-a-z0-9]{1,50}:[0-9]{12}:dataflow-endpoint-group/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.GetDataflowEndpointGroupResponse.DataflowEndpointGroupId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -219,8 +261,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.GetMissionProfileRequest.MissionProfileId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -239,9 +281,15 @@
     <max>21600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.GetMissionProfileResponse.MissionProfileArn</property>
+    <min>89</min>
+    <max>138</max>
+    <pattern>^arn:aws:groundstation:[-a-z0-9]{1,50}:[0-9]{12}:mission-profile/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.GetMissionProfileResponse.MissionProfileId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -257,9 +305,15 @@
     <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.GetMissionProfileResponse.TrackingConfigArn</property>
+    <min>82</min>
+    <max>424</max>
+    <pattern>^arn:aws:groundstation:[-a-z0-9]{1,50}:[0-9]{12}:config/[a-z0-9]+(-[a-z0-9]+){0,4}/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(/.{1,256})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.GetSatelliteRequest.SatelliteId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -268,14 +322,20 @@
     <max>99999</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.GetSatelliteResponse.SatelliteArn</property>
+    <min>82</min>
+    <max>132</max>
+    <pattern>^arn:aws:groundstation:([-a-z0-9]{1,50})?:[0-9]{12}:satellite/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.GetSatelliteResponse.SatelliteId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.ListConfigsRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -298,14 +358,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.ListContactsRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.ListContactsRequest.MissionProfileArn</property>
+    <min>89</min>
+    <max>138</max>
+    <pattern>^arn:aws:groundstation:[-a-z0-9]{1,50}:[0-9]{12}:mission-profile/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.ListContactsRequest.NextToken</property>
     <min>3</min>
     <max>1000</max>
     <pattern>^[A-Za-z0-9-/+_.=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.ListContactsRequest.SatelliteArn</property>
+    <min>82</min>
+    <max>132</max>
+    <pattern>^arn:aws:groundstation:([-a-z0-9]{1,50})?:[0-9]{12}:satellite/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.ListContactsResponse.NextToken</property>
@@ -315,7 +387,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.ListDataflowEndpointGroupsRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -332,7 +404,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.ListEphemeridesRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -343,8 +415,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.ListEphemeridesRequest.SatelliteId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -355,7 +427,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.ListGroundStationsRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -366,8 +438,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.ListGroundStationsRequest.SatelliteId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -378,7 +450,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.ListMissionProfilesRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -395,7 +467,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.ListSatellitesRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -418,8 +490,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.RegisterAgentResponse.AgentId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -429,9 +501,21 @@
     <pattern>^[ a-zA-Z0-9-._:=]{4,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.ReserveContactRequest.MissionProfileArn</property>
+    <min>89</min>
+    <max>138</max>
+    <pattern>^arn:aws:groundstation:[-a-z0-9]{1,50}:[0-9]{12}:mission-profile/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.ReserveContactRequest.SatelliteArn</property>
+    <min>82</min>
+    <max>132</max>
+    <pattern>^arn:aws:groundstation:([-a-z0-9]{1,50})?:[0-9]{12}:satellite/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.ReserveContactResponse.ContactId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -448,26 +532,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.UpdateAgentStatusRequest.AgentId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.UpdateAgentStatusRequest.TaskId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.UpdateAgentStatusResponse.AgentId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.UpdateConfigRequest.ConfigId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -477,9 +561,15 @@
     <pattern>^[ a-zA-Z0-9_:-]{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.UpdateConfigResponse.ConfigArn</property>
+    <min>82</min>
+    <max>424</max>
+    <pattern>^arn:aws:groundstation:[-a-z0-9]{1,50}:[0-9]{12}:config/[a-z0-9]+(-[a-z0-9]+){0,4}/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(/.{1,256})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.UpdateEphemerisRequest.EphemerisId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -495,8 +585,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.UpdateEphemerisResponse.EphemerisId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -516,8 +606,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.UpdateMissionProfileRequest.MissionProfileId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -527,9 +617,15 @@
     <pattern>^[ a-zA-Z0-9_:-]{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.UpdateMissionProfileRequest.TrackingConfigArn</property>
+    <min>82</min>
+    <max>424</max>
+    <pattern>^arn:aws:groundstation:[-a-z0-9]{1,50}:[0-9]{12}:config/[a-z0-9]+(-[a-z0-9]+){0,4}/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(/.{1,256})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.UpdateMissionProfileResponse.MissionProfileId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -562,8 +658,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.ComponentStatusData.DataflowId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -571,10 +667,28 @@
     <pattern>^[a-zA-Z0-9_]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.ConfigListItem.ConfigArn</property>
+    <min>82</min>
+    <max>424</max>
+    <pattern>^arn:aws:groundstation:[-a-z0-9]{1,50}:[0-9]{12}:config/[a-z0-9]+(-[a-z0-9]+){0,4}/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(/.{1,256})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.ContactData.ContactId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.ContactData.MissionProfileArn</property>
+    <min>89</min>
+    <max>138</max>
+    <pattern>^arn:aws:groundstation:[-a-z0-9]{1,50}:[0-9]{12}:mission-profile/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.ContactData.SatelliteArn</property>
+    <min>82</min>
+    <max>132</max>
+    <pattern>^arn:aws:groundstation:([-a-z0-9]{1,50})?:[0-9]{12}:satellite/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.DataflowEndpoint.Mtu</property>
@@ -588,27 +702,33 @@
     <pattern>^[ a-zA-Z0-9_:-]{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.DataflowEndpointListItem.DataflowEndpointGroupArn</property>
+    <min>97</min>
+    <max>146</max>
+    <pattern>^arn:aws:groundstation:[-a-z0-9]{1,50}:[0-9]{12}:dataflow-endpoint-group/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.DataflowEndpointListItem.DataflowEndpointGroupId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.DecodeConfig.UnvalidatedJSON</property>
     <min>2</min>
     <max>8192</max>
-    <pattern>^[{}\[\]:.,"0-9A-z\-_\s]{2,8192}$</pattern>
+    <pattern>^[{}\[\]:.,"0-9A-Za-z\-_\s]{2,8192}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.DemodulationConfig.UnvalidatedJSON</property>
     <min>2</min>
     <max>8192</max>
-    <pattern>^[{}\[\]:.,"0-9A-z\-_\s]{2,8192}$</pattern>
+    <pattern>^[{}\[\]:.,"0-9A-Za-z\-_\s]{2,8192}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.Destination.ConfigId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -618,8 +738,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.EphemerisItem.EphemerisId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -635,8 +755,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.EphemerisMetaData.EphemerisId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -667,7 +787,7 @@
     <property>Amazon.GroundStation.Model.KmsKey.KmsAliasArn</property>
     <min>1</min>
     <max>512</max>
-    <pattern>^arn:aws[a-zA-Z-]{0,16}:kms:[a-z]{2}(-[a-z]{1,16}){1,3}-\d{1}:\d{12}:((alias/[a-zA-Z0-9:/_-]{1,256}))$</pattern>
+    <pattern>^arn:aws[a-zA-Z-]{0,16}:kms:[-a-z0-9]{1,50}:[0-9]{12}:((alias/[a-zA-Z0-9:/_-]{1,256}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.KmsKey.KmsAliasName</property>
@@ -676,9 +796,15 @@
     <pattern>^alias/[a-zA-Z0-9:/_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.MissionProfileListItem.MissionProfileArn</property>
+    <min>89</min>
+    <max>138</max>
+    <pattern>^arn:aws:groundstation:[-a-z0-9]{1,50}:[0-9]{12}:mission-profile/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.MissionProfileListItem.MissionProfileId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -739,9 +865,15 @@
     <max>99999</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.SatelliteListItem.SatelliteArn</property>
+    <min>82</min>
+    <max>132</max>
+    <pattern>^arn:aws:groundstation:([-a-z0-9]{1,50})?:[0-9]{12}:satellite/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.SatelliteListItem.SatelliteId</property>
-    <min>1</min>
-    <max>128</max>
+    <min>36</min>
+    <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -755,5 +887,11 @@
     <min>69</min>
     <max>69</max>
     <pattern>^2 [ 0-9]{5} [ 0-9]{3}[.][ 0-9]{4} [ 0-9]{3}[.][ 0-9]{4} [ 0-9]{7} [ 0-9]{3}[.][ 0-9]{4} [ 0-9]{3}[.][ 0-9]{4} [ 0-9]{2}[.][ 0-9]{13}[ 0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GroundStation.Model.UplinkEchoConfig.AntennaUplinkConfigArn</property>
+    <min>82</min>
+    <max>424</max>
+    <pattern>^arn:aws:groundstation:[-a-z0-9]{1,50}:[0-9]{12}:config/[a-z0-9]+(-[a-z0-9]+){0,4}/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(/.{1,256})?$</pattern>
   </property-value-rule>
 </property-value-rules>

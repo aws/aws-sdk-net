@@ -18,6 +18,7 @@ namespace Amazon.Runtime.Internal.UserAgent
     /// <summary>
     /// Represents the unique metric identifiers for SDK features tracked under User Agent 2.1 (UA2.1).
     /// </summary>
+    [ConstantClassComparer(ConstantClassComparerKind.Ordinal)]
     public class UserAgentFeatureId : ConstantClass
     {
         /// <summary>
@@ -239,6 +240,26 @@ namespace Amazon.Runtime.Internal.UserAgent
         /// Calling an SSO-OIDC operation as part of the SSO login flow, when using the OAuth2.0 authorization code grant.
         /// </summary>
         public static readonly UserAgentFeatureId SSO_LOGIN_AUTH = new UserAgentFeatureId("2");
+
+        /// <summary>
+        /// Indicates that an AWS SDK client has been configured with a non-null, non-NoOp tracing provider.
+        /// </summary>
+        public static readonly UserAgentFeatureId OBSERVABILITY_TRACING = new UserAgentFeatureId("4");
+
+        /// <summary>
+        /// Indicates that an AWS SDK client has been configured with a non-null, non-NoOp metrics provider.
+        /// </summary>
+        public static readonly UserAgentFeatureId OBSERVABILITY_METRICS = new UserAgentFeatureId("5");
+
+        /// <summary>
+        /// Indicates that an AWS SDK client has been configured with an OpenTelemetry tracing provider.
+        /// </summary>
+        public static readonly UserAgentFeatureId OBSERVABILITY_OTEL_TRACING = new UserAgentFeatureId("6");
+
+        /// <summary>
+        /// Indicates that an AWS SDK client has been configured with an OpenTelemetry metrics provider.
+        /// </summary>
+        public static readonly UserAgentFeatureId OBSERVABILITY_OTEL_METRICS = new UserAgentFeatureId("7");
 
         public UserAgentFeatureId(string value) : base(value) { }
 

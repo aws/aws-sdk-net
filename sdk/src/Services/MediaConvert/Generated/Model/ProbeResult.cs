@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// The metadata and analysis results for a media file.
+    /// Probe results for your media file.
     /// </summary>
     public partial class ProbeResult
     {
@@ -39,8 +39,9 @@ namespace Amazon.MediaConvert.Model
         private List<TrackMapping> _trackMappings = AWSConfigs.InitializeCollections ? new List<TrackMapping>() : null;
 
         /// <summary>
-        /// Gets and sets the property Container. Information about the container format of the
-        /// media file.
+        /// Gets and sets the property Container. The container of your media file. This information
+        /// helps you understand the overall structure and details of your media, including format,
+        /// duration, and track layout.
         /// </summary>
         public Container Container
         {
@@ -55,7 +56,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Metadata. Metadata about the file.
+        /// Gets and sets the property Metadata. Metadata and other file information.
         /// </summary>
         public Metadata Metadata
         {
@@ -70,7 +71,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrackMappings. List of Track mapping objects.
+        /// Gets and sets the property TrackMappings. An array containing track mapping information.
         /// </summary>
         public List<TrackMapping> TrackMappings
         {

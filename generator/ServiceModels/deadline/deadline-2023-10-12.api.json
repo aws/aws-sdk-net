@@ -2302,7 +2302,6 @@
     "AssignedTaskRunSessionActionDefinition":{
       "type":"structure",
       "required":[
-        "taskId",
         "stepId",
         "parameters"
       ],
@@ -3356,7 +3355,8 @@
           "idempotencyToken":true,
           "location":"header",
           "locationName":"X-Amz-Client-Token"
-        }
+        },
+        "tags":{"shape":"Tags"}
       }
     },
     "CreateWorkerResponse":{
@@ -3392,7 +3392,8 @@
       "members":{
         "mode":{"shape":"AutoScalingMode"},
         "workerCapabilities":{"shape":"CustomerManagedWorkerCapabilities"},
-        "storageProfileId":{"shape":"StorageProfileId"}
+        "storageProfileId":{"shape":"StorageProfileId"},
+        "tagPropagationMode":{"shape":"TagPropagationMode"}
       }
     },
     "CustomerManagedFleetOperatingSystemFamily":{
@@ -4135,8 +4136,7 @@
       "type":"string",
       "max":64,
       "min":1,
-      "pattern":"[0-9A-Za-z ]*",
-      "sensitive":true
+      "pattern":"[0-9A-Za-z ]*"
     },
     "FileSystemLocationType":{
       "type":"string",
@@ -5504,9 +5504,14 @@
     },
     "JobParameters":{
       "type":"map",
-      "key":{"shape":"String"},
+      "key":{"shape":"JobParametersKeyString"},
       "value":{"shape":"JobParameter"},
       "sensitive":true
+    },
+    "JobParametersKeyString":{
+      "type":"string",
+      "max":1024,
+      "min":1
     },
     "JobPriority":{
       "type":"integer",
@@ -5599,7 +5604,7 @@
     },
     "JobTemplate":{
       "type":"string",
-      "max":300000,
+      "max":1000000,
       "min":1,
       "sensitive":true
     },
@@ -7575,8 +7580,16 @@
       "type":"structure",
       "required":["searchTerm"],
       "members":{
-        "searchTerm":{"shape":"SearchTerm"}
+        "searchTerm":{"shape":"SearchTerm"},
+        "matchType":{"shape":"SearchTermMatchingType"}
       }
+    },
+    "SearchTermMatchingType":{
+      "type":"string",
+      "enum":[
+        "FUZZY_MATCH",
+        "CONTAINS"
+      ]
     },
     "SearchWorkersRequest":{
       "type":"structure",
@@ -8267,6 +8280,13 @@
       "type":"timestamp",
       "timestampFormat":"iso8601"
     },
+    "TagPropagationMode":{
+      "type":"string",
+      "enum":[
+        "NO_PROPAGATION",
+        "PROPAGATE_TAGS_TO_WORKERS_AT_LAUNCH"
+      ]
+    },
     "TagResourceRequest":{
       "type":"structure",
       "required":["resourceArn"],
@@ -8319,7 +8339,6 @@
     "TaskRunSessionActionDefinition":{
       "type":"structure",
       "required":[
-        "taskId",
         "stepId",
         "parameters"
       ],
@@ -8331,10 +8350,7 @@
     },
     "TaskRunSessionActionDefinitionSummary":{
       "type":"structure",
-      "required":[
-        "taskId",
-        "stepId"
-      ],
+      "required":["stepId"],
       "members":{
         "taskId":{"shape":"TaskId"},
         "stepId":{"shape":"StepId"}

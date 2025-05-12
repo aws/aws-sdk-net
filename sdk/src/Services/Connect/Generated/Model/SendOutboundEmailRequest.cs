@@ -193,6 +193,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Denotes the class of traffic.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Only the CAMPAIGN traffic type is supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public TrafficType TrafficType

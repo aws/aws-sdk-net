@@ -176,6 +176,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.ReadAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("RefreshTokenRotation", targetDepth))
+                {
+                    var unmarshaller = RefreshTokenRotationTypeUnmarshaller.Instance;
+                    unmarshalledObject.RefreshTokenRotation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("RefreshTokenValidity", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

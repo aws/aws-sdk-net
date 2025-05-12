@@ -42,7 +42,7 @@ namespace Amazon.GroundStation.Model
         /// UUID of a dataflow endpoint group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=36, Max=36)]
         public string DataflowEndpointGroupId
         {
             get { return this._dataflowEndpointGroupId; }

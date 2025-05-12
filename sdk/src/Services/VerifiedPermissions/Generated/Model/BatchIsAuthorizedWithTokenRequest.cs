@@ -96,8 +96,10 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property Entities. 
         /// <para>
-        /// Specifies the list of resources and their associated attributes that Verified Permissions
-        /// can examine when evaluating the policies. 
+        /// (Optional) Specifies the list of resources and their associated attributes that Verified
+        /// Permissions can examine when evaluating the policies. These additional entities and
+        /// their attributes can be referenced and checked by conditional elements in the policies
+        /// in the specified policy store.
         /// </para>
         ///  <important> 
         /// <para>

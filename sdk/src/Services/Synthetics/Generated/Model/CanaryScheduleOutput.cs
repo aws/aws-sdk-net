@@ -37,6 +37,7 @@ namespace Amazon.Synthetics.Model
     {
         private long? _durationInSeconds;
         private string _expression;
+        private RetryConfigOutput _retryConfig;
 
         /// <summary>
         /// Gets and sets the property DurationInSeconds. 
@@ -99,6 +100,24 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetExpression()
         {
             return this._expression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryConfig. 
+        /// <para>
+        /// A structure that contains the retry configuration for a canary
+        /// </para>
+        /// </summary>
+        public RetryConfigOutput RetryConfig
+        {
+            get { return this._retryConfig; }
+            set { this._retryConfig = value; }
+        }
+
+        // Check to see if RetryConfig property is set
+        internal bool IsSetRetryConfig()
+        {
+            return this._retryConfig != null;
         }
 
     }
