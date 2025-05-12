@@ -31,12 +31,8 @@ namespace Amazon.Deadline.Model
 {
     /// <summary>
     /// The filter expression, <c>AND</c> or <c>OR</c>, to use when searching among a group
-    /// of search strings in a resource. 
-    /// <para>
-    /// You can use two groupings per search each within parenthesis <c>()</c>.
-    /// 
-    /// 
-    /// </para>
+    /// of search strings in a resource. You can use two groupings per search each within
+    /// parenthesis <c>()</c>.
     /// </summary>
     public partial class SearchGroupedFilterExpressions
     {

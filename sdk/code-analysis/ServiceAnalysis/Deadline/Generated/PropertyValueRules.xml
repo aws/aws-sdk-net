@@ -2297,6 +2297,16 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.HostConfiguration.ScriptBody</property>
+    <min>0</min>
+    <max>15000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.HostConfiguration.ScriptTimeoutSeconds</property>
+    <min>300</min>
+    <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.HostPropertiesRequest.HostName</property>
     <pattern>[a-zA-Z0-9_\.\-]{0,255}</pattern>
   </property-value-rule>
