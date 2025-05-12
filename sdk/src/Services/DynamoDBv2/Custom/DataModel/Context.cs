@@ -373,7 +373,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
             Table table = GetTargetTable(storage.Config, flatConfig);
             var updateExpression = CreateUpdateExpressionForCounterProperties(storage);
-            SetAtomicCounters(storage);
             if ((flatConfig.SkipVersionCheck.HasValue && flatConfig.SkipVersionCheck.Value) || !storage.Config.HasVersion)
             {
                 table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), new UpdateItemOperationConfig
@@ -412,7 +411,7 @@ namespace Amazon.DynamoDBv2.DataModel
             Table table = GetTargetTable(storage.Config, flatConfig);
 
             var counterConditionExpression = CreateUpdateExpressionForCounterProperties(storage);
-            SetAtomicCounters(storage);
+
             if (
                 (flatConfig.SkipVersionCheck.HasValue && flatConfig.SkipVersionCheck.Value)
                 || !storage.Config.HasVersion)
