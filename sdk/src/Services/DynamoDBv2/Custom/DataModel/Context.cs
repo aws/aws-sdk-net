@@ -384,6 +384,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 var conversionConfig = new DynamoDBEntry.AttributeConversionConfig(table.Conversion, table.IsEmptyStringValueEnabled);
                 var versionExpression = CreateConditionExpressionForVersion(storage, conversionConfig);
                 SetNewVersion(storage);
+
                 var updateItemOperationConfig = new UpdateItemOperationConfig
                 {
                     ReturnValues = ReturnValues.None,

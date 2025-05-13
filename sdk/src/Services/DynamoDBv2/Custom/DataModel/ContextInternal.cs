@@ -119,7 +119,6 @@ namespace Amazon.DynamoDBv2.DataModel
         #endregion
 
         #region Atomic counters
-        
 
         internal static Expression BuildCounterConditionExpression(ItemStorage storage)
         {
@@ -139,6 +138,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             var counterProperties = storage.Config.BaseTypeStorageConfig.Properties.
                 Where(propertyStorage => propertyStorage.IsCounter).ToArray();
+
             return counterProperties;
         }
 
@@ -169,6 +169,7 @@ namespace Amazon.DynamoDBv2.DataModel
         private static void SetAtomicCounters(ItemStorage storage, PropertyStorage[] counterPropertyStorages)
         {
             if (counterPropertyStorages.Length == 0) return;
+
             // Set the initial value of the counter properties
             foreach (var propertyStorage in counterPropertyStorages)
             {

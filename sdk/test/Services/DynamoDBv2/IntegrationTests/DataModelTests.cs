@@ -3004,7 +3004,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             [DynamoDBAtomicCounter] 
             public int? CountDefault { get; set; }
 
-            [DynamoDBAtomicCounter(2, 10)] 
+            [DynamoDBAtomicCounter(delta:2, startValue:10)] 
             public int? CountAtomic { get; set; }
         }
 

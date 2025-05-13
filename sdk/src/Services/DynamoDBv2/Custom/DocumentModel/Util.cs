@@ -354,33 +354,32 @@ namespace Amazon.DynamoDBv2.DocumentModel
             foreach (var kvp in attributesToUpdates)
             {
                 var attribute = kvp.Key;
-                if (!attributeNames.Contains(attribute))
+                if (attributeNames.Contains(attribute)) continue;
+
+                var update = kvp.Value;
+
+                string variableName = GetVariableName(ref attributeCount);
+                var attributeReference = GetAttributeReference(variableName);
+                var attributeValueReference = GetAttributeValueReference(variableName);
+
+                if (update.Action == AttributeAction.DELETE)
                 {
-                    var update = kvp.Value;
-
-                    string variableName = GetVariableName(ref attributeCount);
-                    var attributeReference = GetAttributeReference(variableName);
-                    var attributeValueReference = GetAttributeValueReference(variableName);
-
-                    if (update.Action == AttributeAction.DELETE)
-                    {
-                        if (removes.Length > 0)
-                            removes.Append(", ");
-                        removes.Append(attributeReference);
-                    }
-                    else
-                    {
-                        if (sets.Length > 0)
-                            sets.Append(", ");
-                        sets.AppendFormat("{0} = {1}", attributeReference, attributeValueReference);
-
-                        // Add the attribute value for the variable in the added in the expression
-                        expressionAttributeValues.Add(attributeValueReference, update.Value);
-                    }
-
-                    // Add the attribute name for the variable in the added in the expression
-                    expressionAttributes.Add(attributeReference, attribute);
+                    if (removes.Length > 0)
+                        removes.Append(", ");
+                    removes.Append(attributeReference);
                 }
+                else
+                {
+                    if (sets.Length > 0)
+                        sets.Append(", ");
+                    sets.AppendFormat("{0} = {1}", attributeReference, attributeValueReference);
+
+                    // Add the attribute value for the variable in the added in the expression
+                    expressionAttributeValues.Add(attributeValueReference, update.Value);
+                }
+
+                // Add the attribute name for the variable in the added in the expression
+                expressionAttributes.Add(attributeReference, attribute);
             }
 
             // Combine the SET and REMOVE clause

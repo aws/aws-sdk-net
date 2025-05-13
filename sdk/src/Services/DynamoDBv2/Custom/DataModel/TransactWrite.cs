@@ -409,11 +409,6 @@ namespace Amazon.DynamoDBv2.DataModel
             return !skipVersionCheck && _storageConfig.HasVersion;
         }
 
-        private bool ShouldUseCounter()
-        {
-            return false; //_storageConfig.;
-        }
-
         private void CheckUseVersioning()
         {
             if (_config.SkipVersionCheck == true)
