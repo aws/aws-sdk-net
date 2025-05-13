@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// Details about a tag for a license configuration.
+    /// Details about the tags for a resource. For more information about tagging support
+    /// in License Manager, see the <a href="https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html">TagResource</a>
+    /// operation.
     /// </summary>
     public partial class Tag
     {
@@ -40,7 +42,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// Tag key.
+        /// The tag key.
         /// </para>
         /// </summary>
         public string Key
@@ -58,7 +60,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Tag value.
+        /// The tag value.
         /// </para>
         /// </summary>
         public string Value

@@ -31,7 +31,9 @@ namespace Amazon.LicenseManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists the tags for the specified license configuration.
+    /// Lists the tags for the specified resource. For more information about tagging support
+    /// in License Manager, see the <a href="https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html">TagResource</a>
+    /// operation.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonLicenseManagerRequest
     {
@@ -40,7 +42,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// Amazon Resource Name (ARN) of the license configuration.
+        /// Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

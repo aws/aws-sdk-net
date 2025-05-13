@@ -103,7 +103,8 @@ namespace Amazon.LicenseManager.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>Engine Edition</c> - The edition of the database engine. Logical operator is <c>EQUALS</c>.
-        /// Possible values are: <c>oracle-ee</c> | <c>oracle-se</c> | <c>oracle-se1</c> | <c>oracle-se2</c>.
+        /// Possible values are: <c>oracle-ee</c> | <c>oracle-se</c> | <c>oracle-se1</c> | <c>oracle-se2</c>
+        /// | <c>db2-se</c> | <c>db2-ae</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
