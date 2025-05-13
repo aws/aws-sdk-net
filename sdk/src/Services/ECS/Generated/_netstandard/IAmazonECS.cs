@@ -92,6 +92,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -152,6 +165,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -315,6 +341,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -385,6 +424,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -445,6 +497,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -535,6 +600,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -580,6 +658,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterContainsContainerInstancesException">
         /// You can't delete a cluster that has registered container instances. First, deregister
@@ -662,6 +753,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -742,6 +846,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -782,6 +899,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -858,6 +988,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -922,6 +1065,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -957,6 +1113,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -998,6 +1167,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -1034,6 +1216,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -1083,6 +1278,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -1144,6 +1352,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -1190,6 +1411,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -1238,6 +1472,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -1284,6 +1531,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -1329,6 +1589,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -1395,6 +1668,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -1460,6 +1746,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -1505,6 +1804,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -1576,6 +1888,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -1614,6 +1939,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -1667,6 +2005,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -1710,6 +2061,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -1754,6 +2118,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -1792,6 +2169,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -1840,6 +2230,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -1877,6 +2280,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -1919,6 +2335,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -1970,6 +2399,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -2006,6 +2448,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -2106,6 +2561,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -2176,6 +2644,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -2274,14 +2755,7 @@ namespace Amazon.ECS
         /// <para>
         /// Run <c>RunTask</c> with the <c>clientToken</c> and the original set of parameters
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If you get a <c>ClientException</c>error, the <c>RunTask</c> could not be processed
-        /// because you use managed scaling and there is a capacity error because the quota of
-        /// tasks in the <c>PROVISIONING</c> per cluster has been reached. For information about
-        /// the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
-        /// ECS service quotas</a>.
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RunTask service method.</param>
         /// <param name="cancellationToken">
@@ -2300,6 +2774,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -2377,6 +2864,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -2409,26 +2909,11 @@ namespace Amazon.ECS
         /// <summary>
         /// Stops an ongoing service deployment.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// The following stop types are avaiable:
+        /// StopServiceDeployment isn't currently supported.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// ROLLBACK - This option rolls back the service deployment to the previous service revision.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use this option even if you didn't configure the service deployment for the
-        /// rollback option. 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/stop-service-deployment.html">Stopping
-        /// Amazon ECS service deployments</a> in the <i>Amazon Elastic Container Service Developer
-        /// Guide</i>.
-        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopServiceDeployment service method.</param>
         /// <param name="cancellationToken">
@@ -2443,6 +2928,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
@@ -2515,6 +3013,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -2565,6 +3076,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -2603,6 +3127,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -2645,6 +3182,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -2687,6 +3237,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -2722,6 +3285,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -2764,6 +3340,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -2831,6 +3420,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -2952,6 +3554,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -3167,6 +3782,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -3234,6 +3862,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -3330,6 +3971,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -3380,6 +4034,19 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.

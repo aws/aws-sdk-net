@@ -276,7 +276,7 @@
         <value>
             <example>
                 <para>
-                    This example deregisters the first revision of the curler task definition
+                    This example deregisters the first revision of the fargate-task task definition
                 </para>
                 <code
                     title="To deregister a revision of a task definition"

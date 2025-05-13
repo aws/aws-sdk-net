@@ -138,10 +138,6 @@ namespace Amazon.ECS.Model
         /// The ARN of the principal, which can be a user, role, or the root user. If this field
         /// is omitted, the account settings are listed only for the authenticated user.
         /// </para>
-        ///  
-        /// <para>
-        /// In order to use this parameter, you must be the root user, or the principal.
-        /// </para>
         ///  <note> 
         /// <para>
         /// Federated users assume the account setting of the root user and can't have explicit

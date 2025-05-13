@@ -270,7 +270,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             var client = new AmazonECSClient();
             var response = client.DeregisterTaskDefinition(new DeregisterTaskDefinitionRequest 
             {
-                TaskDefinition = "curler:1"
+                TaskDefinition = "fargate-task:1"
             });
 
             TaskDefinition taskDefinition = response.TaskDefinition;
@@ -876,7 +876,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
                         },
                         Cpu = 10,
                         Essential = true,
-                        Image = "busybox",
+                        Image = "public.ecr.aws/docker/library/busybox:latest",
                         Memory = 10
                     }
                 },

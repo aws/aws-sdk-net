@@ -54,14 +54,16 @@ namespace Amazon.ECS.Model
         private string _snapshotId;
         private List<EBSTagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<EBSTagSpecification>() : null;
         private int? _throughput;
+        private int? _volumeInitializationRate;
         private string _volumeType;
 
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Indicates whether the volume should be encrypted. If no value is specified, encryption
-        /// is turned on by default. This parameter maps 1:1 with the <c>Encrypted</c> parameter
-        /// of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
+        /// Indicates whether the volume should be encrypted. If you turn on Region-level Amazon
+        /// EBS encryption by default but set this value as <c>false</c>, the setting is overridden
+        /// and the volume is encrypted with the KMS key specified for Amazon EBS encryption by
+        /// default. This parameter maps 1:1 with the <c>Encrypted</c> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
         /// API</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -82,7 +84,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The filesystem type for the volume. For volumes created from a snapshot, you must
         /// specify the same filesystem type that the volume was using when the snapshot was created.
-        /// If there is a filesystem type mismatch, the task will fail to start.
+        /// If there is a filesystem type mismatch, the tasks will fail to start.
         /// </para>
         ///  
         /// <para>
@@ -158,11 +160,13 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The Amazon Resource Name (ARN) identifier of the Amazon Web Services Key Management
-        /// Service key to use for Amazon EBS encryption. When encryption is turned on and no
-        /// Amazon Web Services Key Management Service key is specified, the default Amazon Web
-        /// Services managed key for Amazon EBS volumes is used. This parameter maps 1:1 with
-        /// the <c>KmsKeyId</c> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
-        /// API</a> in the <i>Amazon EC2 API Reference</i>.
+        /// Service key to use for Amazon EBS encryption. When a key is specified using this parameter,
+        /// it overrides Amazon EBS default encryption or any KMS key that you specified for cluster-level
+        /// managed storage encryption. This parameter maps 1:1 with the <c>KmsKeyId</c> parameter
+        /// of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
+        /// API</a> in the <i>Amazon EC2 API Reference</i>. For more information about encrypting
+        /// Amazon EBS volumes attached to tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-kms-encryption.html">Encrypt
+        /// data stored in Amazon EBS volumes attached to Amazon ECS tasks</a>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -253,8 +257,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property SnapshotId. 
         /// <para>
-        /// The snapshot that Amazon ECS uses to create the volume. You must specify either a
-        /// snapshot ID or a volume size. This parameter maps 1:1 with the <c>SnapshotId</c> parameter
+        /// The snapshot that Amazon ECS uses to create volumes for attachment to tasks maintained
+        /// by the service. You must specify either <c>snapshotId</c> or <c>sizeInGiB</c> in your
+        /// volume configuration. This parameter maps 1:1 with the <c>SnapshotId</c> parameter
         /// of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
         /// API</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
@@ -314,6 +319,28 @@ namespace Amazon.ECS.Model
         internal bool IsSetThroughput()
         {
             return this._throughput.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeInitializationRate. 
+        /// <para>
+        /// The rate, in MiB/s, at which data is fetched from a snapshot of an existing EBS volume
+        /// to create new volumes for attachment to the tasks maintained by the service. This
+        /// property can be specified only if you specify a <c>snapshotId</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html">Initialize
+        /// Amazon EBS volumes</a> in the <i>Amazon EBS User Guide</i>.
+        /// </para>
+        /// </summary>
+        public int? VolumeInitializationRate
+        {
+            get { return this._volumeInitializationRate; }
+            set { this._volumeInitializationRate = value; }
+        }
+
+        // Check to see if VolumeInitializationRate property is set
+        internal bool IsSetVolumeInitializationRate()
+        {
+            return this._volumeInitializationRate.HasValue; 
         }
 
         /// <summary>
