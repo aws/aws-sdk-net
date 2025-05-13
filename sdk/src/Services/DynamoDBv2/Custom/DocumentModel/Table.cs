@@ -535,7 +535,25 @@ namespace Amazon.DynamoDBv2.DocumentModel
             conditionsSet += config.ConditionalExpression != null && config.ConditionalExpression.ExpressionStatement != null ? 1 : 0;
 
             if (conditionsSet > 1)
-                throw new InvalidOperationException("Only one of the conditonal properties Expected, ExpectedState and ConditionalExpression can be set.");
+                throw new InvalidOperationException("Only one of the conditional properties Expected, ExpectedState and ConditionalExpression can be set.");
+        }
+
+
+        private void ValidateConditional(IConditionalOperationConfig config, Expression updateExpression)
+        {
+
+            if (config == null)
+                return;
+
+            int conditionsSet = 0;
+            conditionsSet += config.Expected != null ? 1 : 0;
+            conditionsSet += config.ExpectedState != null ? 1 : 0;
+            conditionsSet += 
+                (config.ConditionalExpression is { ExpressionStatement: not null } || updateExpression is { ExpressionStatement: not null }) ? 1 : 0;
+
+            if (conditionsSet > 1)
+                throw new InvalidOperationException("Only one of the conditional properties Expected, ExpectedState and ConditionalExpression or UpdateExpression can be set.");
+
         }
 
         internal void ClearTableData()
@@ -1341,7 +1359,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal Document UpdateHelper(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config)
         {
             Key key = (hashKey != null || rangeKey != null) ? MakeKey(hashKey, rangeKey) : MakeKey(doc);
-            return UpdateHelper(doc, key, config);
+            return UpdateHelper(doc, key, config,null);
         }
 
 #if AWS_ASYNC_API
@@ -1352,7 +1370,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 #endif
 
-        internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config)
+        internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression)
         {
             var currentConfig = config ?? new UpdateItemOperationConfig();
 
@@ -1376,7 +1394,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             this.UpdateRequestUserAgentDetails(req, isAsync: false);
 
-            ValidateConditional(currentConfig);
+            ValidateConditional(currentConfig, updateExpression);
 
             if (currentConfig.Expected != null)
             {
@@ -1390,14 +1408,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (req.Expected.Count > 1)
                     req.ConditionalOperator = EnumMapper.Convert(currentConfig.ExpectedState.ConditionalOperator);
             }
-            else if (currentConfig.ConditionalExpression != null && currentConfig.ConditionalExpression.IsSet)
+            else if (currentConfig.ConditionalExpression is { IsSet: true } || updateExpression is { IsSet: true })
             {
                 currentConfig.ConditionalExpression.ApplyExpression(req, this);
 
                 string statement;
                 Dictionary<string, AttributeValue> expressionAttributeValues;
                 Dictionary<string, string> expressionAttributeNames;
-                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, out statement, out expressionAttributeValues, out expressionAttributeNames);
+
+                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, updateExpression, this, out statement, out expressionAttributeValues, out expressionAttributeNames);
 
                 req.AttributeUpdates = null;
                 req.UpdateExpression = statement;
@@ -1467,8 +1486,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             this.UpdateRequestUserAgentDetails(req, isAsync: true);
 
-            //todo: add support for updateExpression
-            ValidateConditional(currentConfig);
+            ValidateConditional(currentConfig, updateExpression);
 
             if (currentConfig.Expected != null)
             {

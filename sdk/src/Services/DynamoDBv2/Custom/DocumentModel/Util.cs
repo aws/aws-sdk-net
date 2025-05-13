@@ -327,69 +327,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
     internal static class Common
     {
         private const string AwsVariablePrefix = "awsavar";
-
-        // Convert collection of AttributeValueUpdate to an update expression. This is needed when doing an update
-        // with a conditional expression.
-        public static void ConvertAttributeUpdatesToUpdateExpression(Dictionary<string, AttributeValueUpdate> attributesToUpdates,
-            out string statement,
-            out Dictionary<string, AttributeValue> expressionAttributeValues,
-            out Dictionary<string, string> expressionAttributes)
-        {
-            expressionAttributeValues = new Dictionary<string, AttributeValue>(StringComparer.Ordinal);
-            expressionAttributes = new Dictionary<string, string>(StringComparer.Ordinal);
-
-            // Build an expression string with a SET clause for the added/modified attributes and 
-            // REMOVE clause for the attributes set to null.
-            int attributeCount = 0;
-            StringBuilder sets = new StringBuilder();
-            StringBuilder removes = new StringBuilder();
-            foreach (var kvp in attributesToUpdates)
-            {
-                var attribute = kvp.Key;
-                var update = kvp.Value;
-
-                string variableName = GetVariableName(ref attributeCount);
-                var attributeReference = GetAttributeReference(variableName);
-                var attributeValueReference = GetAttributeValueReference(variableName);
-
-                if (update.Action == AttributeAction.DELETE)
-                {
-                    if (removes.Length > 0)
-                        removes.Append(", ");
-                    removes.Append(attributeReference);
-                }
-                else
-                {
-                    if (sets.Length > 0)
-                        sets.Append(", ");
-                    sets.AppendFormat("{0} = {1}", attributeReference, attributeValueReference);
-
-                    // Add the attribute value for the variable in the added in the expression
-                    expressionAttributeValues.Add(attributeValueReference, update.Value);
-                }
-
-                // Add the attribute name for the variable in the added in the expression
-                expressionAttributes.Add(attributeReference, attribute);
-            }
-
-            // Combine the SET and REMOVE clause
-            StringBuilder statementBuilder = new StringBuilder();
-            if (sets.Length > 0)
-            {
-                statementBuilder.AppendFormat(CultureInfo.InvariantCulture, "SET {0}", sets.ToString());
-            }
-            if (removes.Length > 0)
-            {
-                if (sets.Length > 0)
-                    statementBuilder.Append(" ");
-
-                statementBuilder.AppendFormat(CultureInfo.InvariantCulture, "REMOVE {0}", removes.ToString());
-            }
-
-            statement = statementBuilder.ToString();
-        }
-
-
+        
         public static void ConvertAttributeUpdatesToUpdateExpression(
             Dictionary<string, AttributeValueUpdate> attributesToUpdates, Expression updateExpression,
             Table table,

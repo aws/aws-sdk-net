@@ -372,13 +372,12 @@ namespace Amazon.DynamoDBv2.DataModel
             if (storage == null) return;
 
             Table table = GetTargetTable(storage.Config, flatConfig);
-            var updateExpression = CreateUpdateExpressionForCounterProperties(storage);
+
+            var counterConditionExpression = BuildCounterConditionExpression(storage);
+
             if ((flatConfig.SkipVersionCheck.HasValue && flatConfig.SkipVersionCheck.Value) || !storage.Config.HasVersion)
             {
-                table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), new UpdateItemOperationConfig
-                {
-                    ReturnValues = ReturnValues.None
-                });
+                table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), null, counterConditionExpression);
             }
             else
             {
@@ -390,7 +389,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     ReturnValues = ReturnValues.None,
                     ConditionalExpression = versionExpression
                 };
-                table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), updateItemOperationConfig);
+                table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), updateItemOperationConfig, counterConditionExpression);
                 PopulateInstance(storage, value, flatConfig);
             }
         }
@@ -410,7 +409,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             Table table = GetTargetTable(storage.Config, flatConfig);
 
-            var counterConditionExpression = CreateUpdateExpressionForCounterProperties(storage);
+            var counterConditionExpression = BuildCounterConditionExpression(storage);
 
             if (
                 (flatConfig.SkipVersionCheck.HasValue && flatConfig.SkipVersionCheck.Value)

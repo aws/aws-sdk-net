@@ -119,35 +119,98 @@ namespace Amazon.DynamoDBv2.DataModel
         #endregion
 
         #region Atomic counters
+        
 
-        internal static Expression CreateUpdateExpressionForCounterProperties(ItemStorage storage)
+        internal static Expression BuildCounterConditionExpression(ItemStorage storage)
         {
-            Expression updateExpression = null;
-            var counterProperties = storage.Config.BaseTypeStorageConfig.Properties.
-                Where(propertyStorage => propertyStorage.IsCounter).ToList();
+            var atomicCounters = GetCounterProperties(storage);
+            Expression counterConditionExpression = null;
 
-            if (counterProperties.Count != 0)
+            if (atomicCounters.Length != 0)
             {
-                updateExpression = new Expression();
-                var asserts = string.Empty;
-                foreach (var propertyStorage in counterProperties)
-                {
-                    string startValueName = $":{propertyStorage.AttributeName}StartValue";
-                    string deltaValueName = $":{propertyStorage.AttributeName}Delta";
-                    string counterAttributeName = Common.GetAttributeReference(propertyStorage.AttributeName);
-                    asserts += $"{counterAttributeName} = " +
-                               $"if_not_exists({counterAttributeName},{startValueName}) + {deltaValueName} ,";
-                    updateExpression.ExpressionAttributeNames[counterAttributeName] = propertyStorage.AttributeName;
-                    updateExpression.ExpressionAttributeValues[deltaValueName] = propertyStorage.CounterDelta;
-                    updateExpression.ExpressionAttributeValues[startValueName] =
-                        propertyStorage.CounterStartValue - propertyStorage.CounterDelta;
-                }
-                updateExpression.ExpressionStatement = $"SET {asserts.Substring(0, asserts.Length - 2)}";
+                counterConditionExpression = CreateUpdateExpressionForCounterProperties(atomicCounters);
+                SetAtomicCounters(storage, atomicCounters);
             }
+
+            return counterConditionExpression;
+        }
+
+        private static PropertyStorage[] GetCounterProperties(ItemStorage storage)
+        {
+            var counterProperties = storage.Config.BaseTypeStorageConfig.Properties.
+                Where(propertyStorage => propertyStorage.IsCounter).ToArray();
+            return counterProperties;
+        }
+
+        private static Expression CreateUpdateExpressionForCounterProperties(PropertyStorage[] counterPropertyStorages)
+        {
+            if (counterPropertyStorages.Length == 0) return null;
+
+            Expression updateExpression = new Expression();
+            var asserts = string.Empty;
+
+            foreach (var propertyStorage in counterPropertyStorages)
+            {
+                string startValueName = $":{propertyStorage.AttributeName}Start";
+                string deltaValueName = $":{propertyStorage.AttributeName}Delta";
+                string counterAttributeName = Common.GetAttributeReference(propertyStorage.AttributeName);
+                asserts += $"{counterAttributeName} = " +
+                           $"if_not_exists({counterAttributeName},{startValueName}) + {deltaValueName} ,";
+                updateExpression.ExpressionAttributeNames[counterAttributeName] = propertyStorage.AttributeName;
+                updateExpression.ExpressionAttributeValues[deltaValueName] = propertyStorage.CounterDelta;
+                updateExpression.ExpressionAttributeValues[startValueName] =
+                    propertyStorage.CounterStartValue - propertyStorage.CounterDelta;
+            }
+            updateExpression.ExpressionStatement = $"SET {asserts.Substring(0, asserts.Length - 2)}";
 
             return updateExpression;
         }
-        
+
+        private static void SetAtomicCounters(ItemStorage storage, PropertyStorage[] counterPropertyStorages)
+        {
+            if (counterPropertyStorages.Length == 0) return;
+            // Set the initial value of the counter properties
+            foreach (var propertyStorage in counterPropertyStorages)
+            {
+                Primitive counter;
+                string versionAttributeName = propertyStorage.AttributeName;
+
+                if (storage.Document.TryGetValue(versionAttributeName, out var counterEntry))
+                    counter = counterEntry as Primitive;
+                else
+                    counter = null;
+
+                if (counter != null && counter.Value != null)
+                {
+                    if (counter.Type != DynamoDBEntryType.Numeric) throw new InvalidOperationException("Atomic Counter property must be numeric.");
+                    IncrementCounter(propertyStorage.MemberType, ref counter, propertyStorage.CounterDelta);
+                }
+                else
+                {
+                    counter = new Primitive(propertyStorage.CounterStartValue.ToString(), true);
+                }
+                storage.Document[versionAttributeName] = counter;
+            }
+
+        }
+
+        private static void IncrementCounter(Type memberType, ref Primitive counter, long delta)
+        {
+            if (memberType.IsAssignableFrom(typeof(Byte))) counter = counter.AsByte() + delta;
+            else if (memberType.IsAssignableFrom(typeof(SByte))) counter = counter.AsSByte() + delta;
+            else if (memberType.IsAssignableFrom(typeof(int))) counter = counter.AsInt() + delta;
+            else if (memberType.IsAssignableFrom(typeof(long))) counter = counter.AsLong() + delta;
+            else if (memberType.IsAssignableFrom(typeof(short))) counter = counter.AsShort() + delta;
+            else
+            {
+                if (memberType.IsAssignableFrom(typeof(uint)) || memberType.IsAssignableFrom(typeof(ulong)) ||
+                    memberType.IsAssignableFrom(typeof(ushort)))
+                {
+                    throw new InvalidOperationException("AtomicCounter properties must be signed integral types.");
+                }
+            }
+        }
+
         #endregion
 
         #region Table methods

@@ -665,7 +665,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             CleanupTables();
             TableCache.Clear();
 
-            VersionedAnnotatedEmployee employee = new VersionedAnnotatedEmployee
+
+            CounterAnnotatedEmployee employee = new CounterAnnotatedEmployee
             {
                 Name = "Mark",
                 Age = 31,
@@ -674,23 +675,37 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             };
 
             await Context.SaveAsync(employee);
-            var storedEmployee = await Context.LoadAsync<VersionedAnnotatedEmployee>(employee.Name, 31);
+            var storedEmployee = await Context.LoadAsync<CounterAnnotatedEmployee>(employee.Name, 31);
             Assert.IsNotNull(storedEmployee);
             Assert.AreEqual(employee.Name, storedEmployee.Name);
-           // Assert.AreEqual(0, storedEmployee.Version);
             Assert.AreEqual(0, storedEmployee.CountDefault);
             Assert.AreEqual(10, storedEmployee.CountAtomic);
 
-            // Update the employee
-            storedEmployee.ManagerName = "Helena";
 
-            await Context.SaveAsync(storedEmployee);
-            var storedUpdatedEmployee = await Context.LoadAsync<VersionedAnnotatedEmployee>(storedEmployee.Name, 31);
+            VersionedAnnotatedEmployee versionedAnnotatedEmployee = new VersionedAnnotatedEmployee
+            {
+                Name = "Mark",
+                Age = 31,
+                Score = 120,
+                ManagerName = "Harmony"
+            };
+
+            await Context.SaveAsync(versionedAnnotatedEmployee);
+            var storedVersionEmployee = await Context.LoadAsync<VersionedAnnotatedEmployee>(versionedAnnotatedEmployee.Name, 31);
+            Assert.IsNotNull(storedVersionEmployee);
+            Assert.AreEqual(0, storedVersionEmployee.Version);
+            Assert.AreEqual(1, storedVersionEmployee.CountDefault);
+            Assert.AreEqual(12, storedVersionEmployee.CountAtomic);
+
+            // Update the employee
+            versionedAnnotatedEmployee.ManagerName = "Helena";
+
+            await Context.SaveAsync(versionedAnnotatedEmployee);
+            var storedUpdatedEmployee = await Context.LoadAsync<VersionedAnnotatedEmployee>(versionedAnnotatedEmployee.Name, 31);
             Assert.IsNotNull(storedUpdatedEmployee);
-            Assert.AreEqual(employee.Name, storedUpdatedEmployee.Name);
             Assert.AreEqual(1, storedUpdatedEmployee.Version);
-            Assert.AreEqual(1, storedUpdatedEmployee.CountDefault);
-            Assert.AreEqual(12, storedUpdatedEmployee.CountAtomic);
+            Assert.AreEqual(2, storedUpdatedEmployee.CountDefault);
+            Assert.AreEqual(14, storedUpdatedEmployee.CountAtomic);
         }
 
         [TestMethod]
