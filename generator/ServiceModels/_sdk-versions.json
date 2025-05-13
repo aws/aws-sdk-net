@@ -1,7 +1,7 @@
 
 {
     "NewServiceVersion" : "4.0.0.0",
-    "ProductVersion"    : "4.0.10.0",
+    "ProductVersion"    : "4.0.11.0",
     "CoreVersion"       : "4.0.0.3",
     "OverrideCoreVersion" : "4.0",
     "DefaultToPreview"    : false,
@@ -162,7 +162,7 @@
             "InPreview"               : false
         },
         "ECS"               : {
-            "Version" : "4.0.0.3",
+            "Version" : "4.0.1.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.0.3"
@@ -1276,7 +1276,7 @@
             "InPreview"               : false
         },
         "LicenseManager"                  : {
-            "Version" : "4.0.0.2",
+            "Version" : "4.0.1.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.0.3"
@@ -2436,7 +2436,7 @@
             "InPreview"               : false
         },
         "ControlTower"                        : {
-            "Version" : "4.0.0.2",
+            "Version" : "4.0.1.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.0.3"
@@ -2764,7 +2764,7 @@
             "InPreview"               : false
         },
         "Bedrock"                             : {
-            "Version" : "4.0.1.1",
+            "Version" : "4.0.2.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.0.3"
@@ -2868,7 +2868,7 @@
             "InPreview"               : false
         },
         "BedrockAgentRuntime"                 : {
-            "Version" : "4.0.1.1",
+            "Version" : "4.0.2.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.0.3"
@@ -3212,7 +3212,7 @@
             "InPreview"               : false
         },
         "DSQL"                                : {
-            "Version" : "4.0.0.2",
+            "Version" : "4.0.1.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.0.3"
