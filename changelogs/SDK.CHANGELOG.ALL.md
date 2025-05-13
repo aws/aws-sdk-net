@@ -1,3 +1,17 @@
+### 3.7.1043.0 (2025-05-13 18:25 UTC)
+* Bedrock (3.7.421.0)
+	* Enable cross-Region inference for Amazon Bedrock Guardrails by using the crossRegionConfig parameter when calling the CreateGuardrail or UpdateGuardrail operation.
+* BedrockAgentRuntime (3.7.426.0)
+	* Changes for enhanced metadata in trace
+* ControlTower (3.7.403.0)
+	* AWS Control Tower now reports the inheritance drift status for EnabledBaselines through the GetEnabledBaseline and ListEnabledBaselines APIs. You can now filter EnabledBaselines by their enablement and drift status using the ListEnabledBaselines API to view accounts and OUs that require attention.
+* DSQL (3.7.403.0)
+	* CreateMultiRegionClusters and DeleteMultiRegionClusters APIs marked as deprecated. Introduced new multi-Region clusters creation experience through multiRegionProperties parameter in CreateCluster API.
+* ECS (3.7.411.0)
+	* This release extends functionality for Amazon EBS volumes attached to Amazon ECS tasks by adding support for the new EBS volumeInitializationRate parameter in ECS RunTask/StartTask/CreateService/UpdateService APIs.
+* LicenseManager (3.7.401.0)
+	* Add Tagging feature to resources in the Managed Entitlements service. License and Grant resources can now be tagged.
+
 ### 3.7.1042.0 (2025-05-12 18:28 UTC)
 * Deadline (3.7.407.0)
 	* AWS Deadline Cloud service-managed fleets now support configuration scripts. Configuration scripts make it easy to install additional software, like plugins and packages, onto a worker.
