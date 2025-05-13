@@ -64,12 +64,22 @@ namespace Amazon.ControlTower
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetControlOperation.html">GetControlOperation</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListControlOperations.html">ListControlOperations</a>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListEnabledControls.html">ListEnabledControls</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_ResetEnabledControl.html">ResetEnabledControl</a>
     /// 
     /// </para>
     ///  </li> <li> 
@@ -861,7 +871,7 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
         /// operations.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
@@ -907,7 +917,7 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
         /// operations.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
@@ -954,7 +964,7 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
         /// operations.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
@@ -1000,7 +1010,7 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
         /// operations.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
@@ -1046,7 +1056,7 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
         /// operations.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
@@ -1091,7 +1101,7 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
         /// operations.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
@@ -1138,7 +1148,7 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
         /// operations.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
@@ -1184,7 +1194,7 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
         /// operations.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
@@ -2238,7 +2248,7 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
         /// operations.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
@@ -2283,7 +2293,7 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
         /// operations.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
@@ -2326,7 +2336,7 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
         /// operations.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
@@ -2368,7 +2378,7 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
         /// operations.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
@@ -2620,7 +2630,7 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
         /// operations.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
@@ -2664,7 +2674,7 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
         /// operations.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
@@ -2728,7 +2738,7 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
         /// operations.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
@@ -2791,7 +2801,7 @@ namespace Amazon.ControlTower
         /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// The request would cause a service quota to be exceeded. The limit is 100 concurrent
         /// operations.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">

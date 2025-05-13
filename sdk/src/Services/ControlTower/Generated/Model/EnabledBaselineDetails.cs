@@ -37,6 +37,7 @@ namespace Amazon.ControlTower.Model
         private string _arn;
         private string _baselineIdentifier;
         private string _baselineVersion;
+        private EnabledBaselineDriftStatusSummary _driftStatusSummary;
         private List<EnabledBaselineParameterSummary> _parameters = AWSConfigs.InitializeCollections ? new List<EnabledBaselineParameterSummary>() : null;
         private string _parentIdentifier;
         private EnablementStatusSummary _statusSummary;
@@ -96,6 +97,24 @@ namespace Amazon.ControlTower.Model
         internal bool IsSetBaselineVersion()
         {
             return this._baselineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DriftStatusSummary. 
+        /// <para>
+        /// The drift status of the enabled baseline.
+        /// </para>
+        /// </summary>
+        public EnabledBaselineDriftStatusSummary DriftStatusSummary
+        {
+            get { return this._driftStatusSummary; }
+            set { this._driftStatusSummary = value; }
+        }
+
+        // Check to see if DriftStatusSummary property is set
+        internal bool IsSetDriftStatusSummary()
+        {
+            return this._driftStatusSummary != null;
         }
 
         /// <summary>
