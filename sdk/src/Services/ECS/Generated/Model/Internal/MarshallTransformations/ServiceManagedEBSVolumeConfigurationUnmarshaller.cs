@@ -120,6 +120,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Throughput = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("volumeInitializationRate", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.VolumeInitializationRate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("volumeType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

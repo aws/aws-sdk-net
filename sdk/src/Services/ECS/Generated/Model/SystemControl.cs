@@ -118,7 +118,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid network namespace values: <c>Sysctls</c> that start with <c>"net.*"</c> 
+        /// Valid network namespace values: <c>Sysctls</c> that start with <c>"net.*"</c>. Only
+        /// namespaced <c>Sysctls</c> that exist within the container starting with "net.* are
+        /// accepted.
         /// </para>
         ///  
         /// <para>
