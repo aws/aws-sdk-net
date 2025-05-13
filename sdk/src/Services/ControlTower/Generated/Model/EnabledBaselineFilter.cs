@@ -37,7 +37,9 @@ namespace Amazon.ControlTower.Model
     public partial class EnabledBaselineFilter
     {
         private List<string> _baselineIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _inheritanceDriftStatuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _parentIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _statuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _targetIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -60,6 +62,25 @@ namespace Amazon.ControlTower.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InheritanceDriftStatuses. 
+        /// <para>
+        /// A list of <c>EnabledBaselineDriftStatus</c> items for enabled baselines.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> InheritanceDriftStatuses
+        {
+            get { return this._inheritanceDriftStatuses; }
+            set { this._inheritanceDriftStatuses = value; }
+        }
+
+        // Check to see if InheritanceDriftStatuses property is set
+        internal bool IsSetInheritanceDriftStatuses()
+        {
+            return this._inheritanceDriftStatuses != null && (this._inheritanceDriftStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property ParentIdentifiers. 
         /// <para>
         /// An optional filter that sets up a list of <c>parentIdentifiers</c> to filter the results
@@ -77,6 +98,25 @@ namespace Amazon.ControlTower.Model
         internal bool IsSetParentIdentifiers()
         {
             return this._parentIdentifiers != null && (this._parentIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Statuses. 
+        /// <para>
+        /// A list of <c>EnablementStatus</c> items.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> Statuses
+        {
+            get { return this._statuses; }
+            set { this._statuses = value; }
+        }
+
+        // Check to see if Statuses property is set
+        internal bool IsSetStatuses()
+        {
+            return this._statuses != null && (this._statuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
