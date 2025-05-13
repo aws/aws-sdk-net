@@ -1,0 +1,321 @@
+name: DevConfig Comment Handler
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  check-comment:
+    runs-on: ubuntu-latest
+    if: contains(github.event.comment.body, '/add-devconfig') || contains(github.event.comment.body, '/delete-devconfig') || contains(github.event.comment.body, '/amend-devconfig')
+    outputs:
+      should_process: ${{ steps.check.outputs.should_process }}
+      pr_number: ${{ github.event.issue.number }}
+      has_custom_json: ${{ steps.extract-json.outputs.has_custom_json }}
+      custom_json: ${{ steps.extract-json.outputs.custom_json }}
+      command: ${{ steps.determine-command.outputs.command }}
+    steps:
+      - name: Check if comment is on a PR
+        id: check
+        run: |
+          if [ "${{ github.event.issue.pull_request != '' }}" = "true" ]; then
+            echo "should_process=true" >> $GITHUB_OUTPUT
+            echo "Comment is on PR #${{ github.event.issue.number }}"
+          else
+            echo "should_process=false" >> $GITHUB_OUTPUT
+            echo "Comment is not on a PR"
+          fi
+          
+      - name: Determine command
+        id: determine-command
+        if: steps.check.outputs.should_process == 'true'
+        run: |
+          # Save the comment to a file to avoid shell interpretation issues
+          echo '${{ github.event.comment.body }}' > comment_raw.txt
+          
+          # Convert Windows line endings to Unix and extract first line
+          tr -d '\r' < comment_raw.txt | head -n 1 > first_line.txt
+          FIRST_LINE=$(cat first_line.txt)
+          
+          echo "First line of comment: $FIRST_LINE"
+          
+          if [[ "$FIRST_LINE" == "/add-devconfig"* ]]; then
+            echo "command=add" >> $GITHUB_OUTPUT
+            echo "Command: add-devconfig"
+          elif [[ "$FIRST_LINE" == "/delete-devconfig"* ]]; then
+            echo "command=delete" >> $GITHUB_OUTPUT
+            echo "Command: delete-devconfig"
+          elif [[ "$FIRST_LINE" == "/amend-devconfig"* ]]; then
+            echo "command=amend" >> $GITHUB_OUTPUT
+            echo "Command: amend-devconfig"
+          else
+            echo "No valid command found in first line"
+            exit 1
+          fi
+          
+      - name: Extract custom JSON
+        id: extract-json
+        if: steps.check.outputs.should_process == 'true' && (steps.determine-command.outputs.command == 'add' || steps.determine-command.outputs.command == 'amend')
+        run: |
+          # Save the comment to a file to avoid shell interpretation issues
+          echo '${{ github.event.comment.body }}' > comment.txt
+          
+          # Convert Windows line endings to Unix
+          tr -d '\r' < comment.txt > comment_unix.txt
+          
+          # Check if the comment contains JSON
+          if grep -q '```json' comment_unix.txt; then
+            echo "Found JSON block in comment"
+            
+            # Extract everything between ```json and ``` markers
+            # Use sed to extract the content between markers
+            sed -n '/```json/,/```/p' comment_unix.txt | sed '1d;$d' > extracted_json.txt
+            
+            if [ -s extracted_json.txt ]; then
+              echo "has_custom_json=true" >> $GITHUB_OUTPUT
+              echo "custom_json<<EOF" >> $GITHUB_OUTPUT
+              cat extracted_json.txt >> $GITHUB_OUTPUT
+              echo "EOF" >> $GITHUB_OUTPUT
+              echo "JSON content extracted successfully"
+            else
+              echo "has_custom_json=false" >> $GITHUB_OUTPUT
+              echo "No JSON content found between markers"
+            fi
+          else
+            echo "has_custom_json=false" >> $GITHUB_OUTPUT
+            echo "No JSON block found in comment"
+          fi
+          
+      - name: Add processing comment to PR
+        if: steps.check.outputs.should_process == 'true'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const command = '${{ steps.determine-command.outputs.command }}';
+            let message = '';
+            
+            if (command === 'add') {
+              message = '⏳ Processing `/add-devconfig` command... DevConfig file is being generated and will be added to this PR shortly.';
+            } else if (command === 'delete') {
+              message = '⏳ Processing `/delete-devconfig` command... DevConfig file will be removed from this PR shortly.';
+            } else if (command === 'amend') {
+              message = '⏳ Processing `/amend-devconfig` command... DevConfig file is being updated in this PR.';
+            }
+            
+            await github.rest.issues.createComment({
+              issue_number: ${{ github.event.issue.number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: message
+            });
+
+  process-comment:
+    needs: check-comment
+    if: needs.check-comment.outputs.should_process == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get PR details
+        id: pr-details
+        run: |
+          PR_NUMBER="${{ needs.check-comment.outputs.pr_number }}"
+          echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
+          
+          # Get PR head ref
+          PR_DATA=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/pulls/$PR_NUMBER")
+          HEAD_REF=$(echo "$PR_DATA" | jq -r .head.ref)
+          echo "pr_head_ref=$HEAD_REF" >> $GITHUB_OUTPUT
+          
+          echo "PR Number: $PR_NUMBER"
+          echo "PR Head Ref: $HEAD_REF"
+
+      - name: Checkout PR branch
+        run: |
+          git fetch origin
+          git checkout ${{ steps.pr-details.outputs.pr_head_ref }}
+
+      - name: Add DevConfig file
+        id: add-devconfig
+        if: needs.check-comment.outputs.command == 'add'
+        run: |
+          # Create DevConfig directory
+          mkdir -p ./generator/.DevConfigs
+          
+          # Use PR number for the filename
+          PR_NUMBER="${{ needs.check-comment.outputs.pr_number }}"
+          DEVCONFIG_FILE="./generator/.DevConfigs/pr-${PR_NUMBER}.json"
+          
+          # Check if custom content was provided
+          if [ "${{ needs.check-comment.outputs.has_custom_json }}" == "true" ]; then
+            # Use the provided content
+            echo '${{ needs.check-comment.outputs.custom_json }}' > $DEVCONFIG_FILE
+            echo "Using custom DevConfig content from comment"
+          else
+            # Generate content based on detected changes
+            echo "Generating DevConfig content based on detected changes"
+            
+            # Get PR title as the changelog message
+            PR_DATA=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+              "https://api.github.com/repos/${{ github.repository }}/pulls/$PR_NUMBER")
+            COMMIT_MSG=$(echo "$PR_DATA" | jq -r .title)
+            
+            # If PR title is empty, fall back to the latest commit message
+            if [ -z "$COMMIT_MSG" ]; then
+              COMMIT_MSG=$(git log -1 --pretty=%B)
+            fi
+            
+            # Start building the DevConfig JSON
+            echo "{" > $DEVCONFIG_FILE
+            
+            # Check for core changes
+            CORE_CHANGES=$(git diff --name-only origin/main... | grep -v "^sdk/src/Services/" | wc -l || echo 0)
+            if [ $CORE_CHANGES -gt 0 ]; then
+              echo '  "core": {' >> $DEVCONFIG_FILE
+              echo '    "changeLogMessages": [' >> $DEVCONFIG_FILE
+              echo "      \"$COMMIT_MSG\"" >> $DEVCONFIG_FILE
+              echo '    ],' >> $DEVCONFIG_FILE
+              echo '    "type": "patch",' >> $DEVCONFIG_FILE
+              echo '    "updateMinimum": true' >> $DEVCONFIG_FILE
+              echo '  }' >> $DEVCONFIG_FILE
+            fi
+            
+            # Check for service changes
+            SERVICE_CHANGES=$(git diff --name-only origin/main... | grep "^sdk/src/Services/" | wc -l || echo 0)
+            if [ $SERVICE_CHANGES -gt 0 ]; then
+              # If we added a core section, we need a comma
+              if [ $CORE_CHANGES -gt 0 ]; then
+                echo ',' >> $DEVCONFIG_FILE
+              fi
+              
+              echo '  "services": [' >> $DEVCONFIG_FILE
+              
+              # Extract service names
+              SERVICES=$(git diff --name-only origin/main... | grep "^sdk/src/Services/" | cut -d'/' -f4 | sort | uniq | jq -R -s -c 'split("\n") | map(select(length > 0))')
+              SERVICES_ARRAY=$(echo $SERVICES | jq -c '.')
+              
+              FIRST=true
+              echo $SERVICES_ARRAY | jq -c '.[]' | while read -r SERVICE; do
+                # Remove quotes from service name
+                SERVICE=$(echo $SERVICE | tr -d '"')
+                
+                if [ "$FIRST" == "true" ]; then
+                  FIRST=false
+                else
+                  echo ',' >> $DEVCONFIG_FILE
+                fi
+                
+                echo '    {' >> $DEVCONFIG_FILE
+                echo "      \"serviceName\": \"$SERVICE\"," >> $DEVCONFIG_FILE
+                echo '      "type": "patch",' >> $DEVCONFIG_FILE
+                echo '      "changeLogMessages": [' >> $DEVCONFIG_FILE
+                echo "        \"$COMMIT_MSG\"" >> $DEVCONFIG_FILE
+                echo '      ]' >> $DEVCONFIG_FILE
+                echo '    }' >> $DEVCONFIG_FILE
+              done
+              
+              echo '  ]' >> $DEVCONFIG_FILE
+            fi
+            
+            echo "}" >> $DEVCONFIG_FILE
+          fi
+          
+          # Format the JSON for better readability
+          cat $DEVCONFIG_FILE | jq . > ${DEVCONFIG_FILE}.formatted || cp $DEVCONFIG_FILE ${DEVCONFIG_FILE}.formatted
+          mv ${DEVCONFIG_FILE}.formatted $DEVCONFIG_FILE
+          
+          echo "Applied DevConfig file:"
+          cat $DEVCONFIG_FILE
+
+      - name: Amend DevConfig file
+        id: amend-devconfig
+        if: needs.check-comment.outputs.command == 'amend' && needs.check-comment.outputs.has_custom_json == 'true'
+        run: |
+          # Create DevConfig directory if it doesn't exist
+          mkdir -p ./generator/.DevConfigs
+          
+          # Use PR number for the filename
+          PR_NUMBER="${{ needs.check-comment.outputs.pr_number }}"
+          DEVCONFIG_FILE="./generator/.DevConfigs/pr-${PR_NUMBER}.json"
+          
+          # Use the provided content
+          echo '${{ needs.check-comment.outputs.custom_json }}' > $DEVCONFIG_FILE
+          echo "Using custom DevConfig content from comment"
+          
+          # Format the JSON for better readability
+          cat $DEVCONFIG_FILE | jq . > ${DEVCONFIG_FILE}.formatted || cp $DEVCONFIG_FILE ${DEVCONFIG_FILE}.formatted
+          mv ${DEVCONFIG_FILE}.formatted $DEVCONFIG_FILE
+          
+          echo "Updated DevConfig file:"
+          cat $DEVCONFIG_FILE
+
+      - name: Delete DevConfig file
+        id: delete-devconfig
+        if: needs.check-comment.outputs.command == 'delete'
+        run: |
+          # Use PR number for the filename
+          PR_NUMBER="${{ needs.check-comment.outputs.pr_number }}"
+          DEVCONFIG_FILE="./generator/.DevConfigs/pr-${PR_NUMBER}.json"
+          
+          if [ -f "$DEVCONFIG_FILE" ]; then
+            rm "$DEVCONFIG_FILE"
+            echo "DevConfig file deleted: $DEVCONFIG_FILE"
+          else
+            echo "DevConfig file not found: $DEVCONFIG_FILE"
+            exit 1
+          fi
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          
+          COMMAND="${{ needs.check-comment.outputs.command }}"
+          PR_NUMBER="${{ needs.check-comment.outputs.pr_number }}"
+          
+          if [ "$COMMAND" == "add" ]; then
+            git add ./generator/.DevConfigs/pr-${PR_NUMBER}.json
+            git commit -m "Add DevConfig file for PR #${PR_NUMBER}"
+          elif [ "$COMMAND" == "amend" ]; then
+            git add ./generator/.DevConfigs/pr-${PR_NUMBER}.json
+            git commit -m "Update DevConfig file for PR #${PR_NUMBER}"
+          elif [ "$COMMAND" == "delete" ]; then
+            git add -A ./generator/.DevConfigs/
+            git commit -m "Remove DevConfig file for PR #${PR_NUMBER}"
+          fi
+          
+          git push origin ${{ steps.pr-details.outputs.pr_head_ref }}
+
+      - name: Add confirmation comment to PR
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const command = '${{ needs.check-comment.outputs.command }}';
+            let message = '';
+            
+            if (command === 'add') {
+              message = '✅ DevConfig file has been added to this PR.';
+            } else if (command === 'delete') {
+              message = '✅ DevConfig file has been removed from this PR.';
+            } else if (command === 'amend') {
+              message = '✅ DevConfig file has been updated in this PR.';
+            }
+            
+            await github.rest.issues.createComment({
+              issue_number: ${{ needs.check-comment.outputs.pr_number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: message
+            });
