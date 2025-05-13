@@ -78,6 +78,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("crossRegionDetails", targetDepth))
+                {
+                    var unmarshaller = GuardrailCrossRegionDetailsUnmarshaller.Instance;
+                    unmarshalledObject.CrossRegionDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

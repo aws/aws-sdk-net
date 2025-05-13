@@ -1524,6 +1524,24 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailCrossRegionConfig.GuardrailProfileIdentifier</property>
+    <min>15</min>
+    <max>2048</max>
+    <pattern>[a-z0-9-]+[.]{1}guardrail[.]{1}v[0-9:]+|arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail-profile/[a-z0-9-]+[.]{1}guardrail[.]{1}v[0-9:]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailCrossRegionDetails.GuardrailProfileArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail-profile/[a-z0-9-]+[.]{1}guardrail[.]{1}v[0-9:]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailCrossRegionDetails.GuardrailProfileId</property>
+    <min>15</min>
+    <max>30</max>
+    <pattern>[a-z0-9-]+[.]{1}guardrail[.]{1}v[0-9:]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.GuardrailRegex.Description</property>
     <min>1</min>
     <max>1000</max>
