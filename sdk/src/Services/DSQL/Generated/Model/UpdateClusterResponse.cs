@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DSQL.Model
 {
     /// <summary>
-    /// Output Mixin
+    /// The details of the cluster after it has been updated.
     /// </summary>
     public partial class UpdateClusterResponse : AmazonWebServiceResponse
     {
@@ -86,6 +86,7 @@ namespace Amazon.DSQL.Model
         /// Whether deletion protection is enabled for the updated cluster.
         /// </para>
         /// </summary>
+        [Obsolete("The deletionProtectionEnabled field is deprecated in the UpdateCluster API. To check deletion protection status, use the GetCluster API instead.")]
         [AWSProperty(Required=true)]
         public bool DeletionProtectionEnabled
         {
@@ -125,6 +126,7 @@ namespace Amazon.DSQL.Model
         /// clusters.
         /// </para>
         /// </summary>
+        [Obsolete("The linkedClusterArns field is deprecated in the UpdateCluster API. To check peer cluster, use the GetCluster API instead.")]
         public List<string> LinkedClusterArns
         {
             get { return this._linkedClusterArns; }
@@ -162,7 +164,8 @@ namespace Amazon.DSQL.Model
         /// The Region that receives all data you write to linked clusters.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
+        [Obsolete("The witnessRegion field is deprecated in the UpdateCluster API. To check witnessRegion, use the GetCluster API instead.")]
+        [AWSProperty(Min=0, Max=50)]
         public string WitnessRegion
         {
             get { return this._witnessRegion; }

@@ -76,6 +76,12 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
                     response.Identifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("multiRegionProperties", targetDepth))
+                {
+                    var unmarshaller = MultiRegionPropertiesUnmarshaller.Instance;
+                    response.MultiRegionProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

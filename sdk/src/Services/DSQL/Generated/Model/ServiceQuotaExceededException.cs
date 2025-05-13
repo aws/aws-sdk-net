@@ -136,7 +136,7 @@ namespace Amazon.DSQL.Model
         /// <summary>
         /// Gets and sets the property QuotaCode. 
         /// <para>
-        /// Service Quotas requirement to identify originating quota
+        /// The service exceeds a quota.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -155,7 +155,7 @@ namespace Amazon.DSQL.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// Identifier of the resource affected
+        /// The resource ID exceeds a quota.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -174,7 +174,7 @@ namespace Amazon.DSQL.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Type of the resource affected
+        /// The resource type exceeds a quota.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -193,7 +193,7 @@ namespace Amazon.DSQL.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// Service Quotas requirement to identify originating service
+        /// The request exceeds a service quota.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

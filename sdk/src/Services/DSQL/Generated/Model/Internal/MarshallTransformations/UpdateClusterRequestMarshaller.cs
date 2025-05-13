@@ -87,6 +87,17 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DeletionProtectionEnabled);
                 }
 
+                if(publicRequest.IsSetMultiRegionProperties())
+                {
+                    context.Writer.WritePropertyName("multiRegionProperties");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MultiRegionPropertiesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MultiRegionProperties, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

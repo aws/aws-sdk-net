@@ -43,10 +43,10 @@ namespace Amazon.DSQL
     ///  
     /// <para>
     /// Amazon Aurora DSQL is a serverless, distributed SQL database suitable for workloads
-    /// of any size. Aurora DSQL is available in both single-Region and multi-Region configurations,
-    /// so your clusters and databases are always available even if an Availability Zone or
-    /// an Amazon Web Services Region are unavailable. Aurora DSQL lets you focus on using
-    /// your data to acquire new insights for your business and customers.
+    /// of any size. is available in both single-Region and multi-Region configurations, so
+    /// your clusters and databases are always available even if an Availability Zone or an
+    /// Amazon Web Services Region are unavailable. lets you focus on using your data to acquire
+    /// new insights for your business and customers.
     /// </para>
     /// </summary>
     public partial class AmazonDSQLClient : AmazonServiceClient, IAmazonDSQL
@@ -278,7 +278,88 @@ namespace Amazon.DSQL
         #region  CreateCluster
 
         /// <summary>
-        /// Creates a cluster in Amazon Aurora DSQL.
+        /// This operation creates a cluster in Amazon Aurora DSQL. You need the following permissions
+        /// to use this operation.
+        /// 
+        ///  
+        /// <para>
+        /// Permission to create a cluster.
+        /// </para>
+        ///  <dl> <dt>dsql:CreateCluster</dt> <dd> 
+        /// <para>
+        /// Resources: arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/*
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        ///  Permission to add tags to a resource.
+        /// </para>
+        ///  <dl> <dt>dsql:TagResource</dt> <dd> 
+        /// <para>
+        /// Resources: arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/*
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// Permission to configure multi-region properties for a cluster.
+        /// </para>
+        ///  <dl> <dt>dsql:PutMultiRegionProperties</dt> <dd> 
+        /// <para>
+        /// Resources: arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/*
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// When specifying multiRegionProperties.clusters.
+        /// </para>
+        ///  <dl> <dt>dsql:AddPeerCluster</dt> <dd> 
+        /// <para>
+        /// Permission to add peer clusters.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Local cluster: arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/*
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Each peer cluster: exact ARN of each specified peer cluster
+        /// </para>
+        ///  </li> </ul> </dd> </dl> 
+        /// <para>
+        /// When specifying multiRegionProperties.witnessRegion.
+        /// </para>
+        ///  <dl> <dt>dsql:PutWitnessRegion</dt> <dd> 
+        /// <para>
+        /// Permission to set a witness region.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/*
+        /// </para>
+        ///  
+        /// <para>
+        /// Condition Keys: <c>dsql:WitnessRegion</c> (matching the specified witness region)
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This permission is checked both in the cluster Region and in the witness Region.
+        /// </para>
+        ///  </note> </dd> </dl> <important> 
+        /// <para>
+        ///  <b>Important Notes for Multi-Region Operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The witness region specified in <c>multiRegionProperties.witnessRegion</c> cannot
+        /// be the same as the cluster's Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When updating clusters with peer relationships, permissions are checked for both adding
+        /// and removing peers.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
         /// 
@@ -377,6 +458,7 @@ namespace Amazon.DSQL
         /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/CreateMultiRegionClusters">REST API Reference for CreateMultiRegionClusters Operation</seealso>
+        [Obsolete("The CreateMultiRegionClusters API is deprecated. Use the CreateCluster API with multi-Region properties to create a multi-Region cluster.")]
         public virtual CreateMultiRegionClustersResponse CreateMultiRegionClusters(CreateMultiRegionClustersRequest request)
         {
             var options = new InvokeOptions();
@@ -398,6 +480,7 @@ namespace Amazon.DSQL
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMultiRegionClusters
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/CreateMultiRegionClusters">REST API Reference for CreateMultiRegionClusters Operation</seealso>
+        [Obsolete("The CreateMultiRegionClusters API is deprecated. Use the CreateCluster API with multi-Region properties to create a multi-Region cluster.")]
         public virtual IAsyncResult BeginCreateMultiRegionClusters(CreateMultiRegionClustersRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -415,6 +498,7 @@ namespace Amazon.DSQL
         /// 
         /// <returns>Returns a  CreateMultiRegionClustersResult from DSQL.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/CreateMultiRegionClusters">REST API Reference for CreateMultiRegionClusters Operation</seealso>
+        [Obsolete("The CreateMultiRegionClusters API is deprecated. Use the CreateCluster API with multi-Region properties to create a multi-Region cluster.")]
         public virtual CreateMultiRegionClustersResponse EndCreateMultiRegionClusters(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateMultiRegionClustersResponse>(asyncResult);
@@ -521,6 +605,7 @@ namespace Amazon.DSQL
         /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/DeleteMultiRegionClusters">REST API Reference for DeleteMultiRegionClusters Operation</seealso>
+        [Obsolete("The DeleteMultiRegionClusters API is deprecated. To delete a multi-Region cluster, use the DeleteCluster API instead.")]
         public virtual DeleteMultiRegionClustersResponse DeleteMultiRegionClusters(DeleteMultiRegionClustersRequest request)
         {
             var options = new InvokeOptions();
@@ -542,6 +627,7 @@ namespace Amazon.DSQL
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMultiRegionClusters
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/DeleteMultiRegionClusters">REST API Reference for DeleteMultiRegionClusters Operation</seealso>
+        [Obsolete("The DeleteMultiRegionClusters API is deprecated. To delete a multi-Region cluster, use the DeleteCluster API instead.")]
         public virtual IAsyncResult BeginDeleteMultiRegionClusters(DeleteMultiRegionClustersRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -559,6 +645,7 @@ namespace Amazon.DSQL
         /// 
         /// <returns>Returns a  DeleteMultiRegionClustersResult from DSQL.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/DeleteMultiRegionClusters">REST API Reference for DeleteMultiRegionClusters Operation</seealso>
+        [Obsolete("The DeleteMultiRegionClusters API is deprecated. To delete a multi-Region cluster, use the DeleteCluster API instead.")]
         public virtual DeleteMultiRegionClustersResponse EndDeleteMultiRegionClusters(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteMultiRegionClustersResponse>(asyncResult);
@@ -987,6 +1074,40 @@ namespace Amazon.DSQL
 
         /// <summary>
         /// Updates a cluster.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Example IAM Policy for Multi-Region Operations</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following IAM policy grants permissions for multi-Region operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>dsql:RemovePeerCluster</c> permission uses a wildcard ARN pattern to simplify
+        /// permission management during updates.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        ///  <b>Important Notes for Multi-Region Operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The witness region specified in <c>multiRegionProperties.witnessRegion</c> cannot
+        /// be the same as the cluster's Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When updating clusters with peer relationships, permissions are checked for both adding
+        /// and removing peers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>dsql:RemovePeerCluster</c> permission uses a wildcard ARN pattern to simplify
+        /// permission management during updates.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCluster service method.</param>
         /// 

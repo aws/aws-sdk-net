@@ -128,7 +128,10 @@ namespace Amazon.DSQL.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property FieldList.
+        /// Gets and sets the property FieldList. 
+        /// <para>
+        /// A list of fields that didn't validate.
+        /// </para>
         /// </summary>
         public List<ValidationExceptionField> FieldList
         {
@@ -143,7 +146,10 @@ namespace Amazon.DSQL.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Reason.
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// The reason for the validation exception.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ValidationExceptionReason Reason

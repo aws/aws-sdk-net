@@ -114,7 +114,7 @@ namespace Amazon.DSQL.Model
         /// The witness Region of multi-Region clusters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=20)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public string WitnessRegion
         {
             get { return this._witnessRegion; }

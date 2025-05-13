@@ -135,7 +135,7 @@ namespace Amazon.DSQL.Model
         /// <summary>
         /// Gets and sets the property QuotaCode. 
         /// <para>
-        /// Service Quotas requirement to identify originating quota
+        /// The request exceeds a request rate quota.
         /// </para>
         /// </summary>
         public string QuotaCode
@@ -153,7 +153,7 @@ namespace Amazon.DSQL.Model
         /// <summary>
         /// Gets and sets the property RetryAfterSeconds. 
         /// <para>
-        /// Advice to clients on when the call can be safely retried
+        /// The request exceeds a request rate quota. Retry after seconds.
         /// </para>
         /// </summary>
         public int RetryAfterSeconds
@@ -171,7 +171,7 @@ namespace Amazon.DSQL.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// Service Quotas requirement to identify originating service
+        /// The request exceeds a service quota.
         /// </para>
         /// </summary>
         public string ServiceCode
