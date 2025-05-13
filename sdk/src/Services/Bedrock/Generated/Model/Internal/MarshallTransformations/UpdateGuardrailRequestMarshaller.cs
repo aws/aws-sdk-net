@@ -110,6 +110,17 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetCrossRegionConfig())
+            {
+                context.Writer.WritePropertyName("crossRegionConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GuardrailCrossRegionConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CrossRegionConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");

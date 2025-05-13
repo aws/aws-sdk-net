@@ -47,6 +47,7 @@ namespace Amazon.Bedrock.Model
     {
         private string _arn;
         private DateTime? _createdAt;
+        private GuardrailCrossRegionDetails _crossRegionDetails;
         private string _description;
         private string _id;
         private string _name;
@@ -90,6 +91,25 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CrossRegionDetails. 
+        /// <para>
+        /// Details about the system-defined guardrail profile that you're using with your guardrail,
+        /// including the guardrail profile ID and Amazon Resource Name (ARN).
+        /// </para>
+        /// </summary>
+        public GuardrailCrossRegionDetails CrossRegionDetails
+        {
+            get { return this._crossRegionDetails; }
+            set { this._crossRegionDetails = value; }
+        }
+
+        // Check to see if CrossRegionDetails property is set
+        internal bool IsSetCrossRegionDetails()
+        {
+            return this._crossRegionDetails != null;
         }
 
         /// <summary>
