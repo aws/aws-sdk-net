@@ -90,6 +90,17 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.DeletionProtectionEnabled.Value);
             }
 
+            if(publicRequest.IsSetMultiRegionProperties())
+            {
+                context.Writer.WritePropertyName("multiRegionProperties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MultiRegionPropertiesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MultiRegionProperties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

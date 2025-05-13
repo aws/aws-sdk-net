@@ -69,8 +69,8 @@ namespace AWSSDKDocSamples.Amazon.DSQL.Generated
             var response = client.DeleteMultiRegionClusters(new DeleteMultiRegionClustersRequest 
             {
                 LinkedClusterArns = new List<string> {
-                    "arn:aws:dsql:us-east-1:111122223333:cluster/abcdefghijklmnopqrst12345",
-                    "arn:aws:dsql:us-east-2:111122223333:cluster/klmnopqrstuvwxyzabcd54321"
+                    "arn:aws:dsql:us-east-1:111122223333:cluster/abcdefghijklmnopqrstu12345",
+                    "arn:aws:dsql:us-east-2:111122223333:cluster/klmnopqrstuvwxyzabcde54321"
                 }
             });
 

@@ -51,6 +51,22 @@ namespace Amazon.DSQL
         /// </summary>
         public static readonly ClusterStatus FAILED = new ClusterStatus("FAILED");
         /// <summary>
+        /// Constant IDLE for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus IDLE = new ClusterStatus("IDLE");
+        /// <summary>
+        /// Constant INACTIVE for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus INACTIVE = new ClusterStatus("INACTIVE");
+        /// <summary>
+        /// Constant PENDING_DELETE for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus PENDING_DELETE = new ClusterStatus("PENDING_DELETE");
+        /// <summary>
+        /// Constant PENDING_SETUP for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus PENDING_SETUP = new ClusterStatus("PENDING_SETUP");
+        /// <summary>
         /// Constant UPDATING for ClusterStatus
         /// </summary>
         public static readonly ClusterStatus UPDATING = new ClusterStatus("UPDATING");

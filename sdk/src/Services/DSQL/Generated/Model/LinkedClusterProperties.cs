@@ -32,6 +32,7 @@ namespace Amazon.DSQL.Model
     /// <summary>
     /// Properties of linked clusters.
     /// </summary>
+    [Obsolete("The CreateMultiRegionClusters API is deprecated. To create a multi-Region cluster, use the CreateCluster API with multi-Region properties instead.")]
     public partial class LinkedClusterProperties
     {
         private bool? _deletionProtectionEnabled;

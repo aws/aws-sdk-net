@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DSQL.Model
 {
     /// <summary>
-    /// Output Mixin
+    /// The output from a deleted cluster.
     /// </summary>
     public partial class DeleteClusterResponse : AmazonWebServiceResponse
     {
@@ -84,6 +84,7 @@ namespace Amazon.DSQL.Model
         /// Specifies whether deletion protection was enabled on the cluster.
         /// </para>
         /// </summary>
+        [Obsolete("The deletionProtectionEnabled field is deprecated in the DeleteCluster API. To check deletion protection status, use the GetCluster API instead.")]
         [AWSProperty(Required=true)]
         public bool? DeletionProtectionEnabled
         {

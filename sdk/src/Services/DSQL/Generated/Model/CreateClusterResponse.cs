@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DSQL.Model
 {
     /// <summary>
-    /// Output Mixin
+    /// The output of a created cluster.
     /// </summary>
     public partial class CreateClusterResponse : AmazonWebServiceResponse
     {
@@ -38,6 +38,7 @@ namespace Amazon.DSQL.Model
         private DateTime? _creationTime;
         private bool? _deletionProtectionEnabled;
         private string _identifier;
+        private MultiRegionProperties _multiRegionProperties;
         private ClusterStatus _status;
 
         /// <summary>
@@ -114,6 +115,24 @@ namespace Amazon.DSQL.Model
         internal bool IsSetIdentifier()
         {
             return this._identifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiRegionProperties. 
+        /// <para>
+        /// The multi-Region cluster configuration details that were set during cluster creation
+        /// </para>
+        /// </summary>
+        public MultiRegionProperties MultiRegionProperties
+        {
+            get { return this._multiRegionProperties; }
+            set { this._multiRegionProperties = value; }
+        }
+
+        // Check to see if MultiRegionProperties property is set
+        internal bool IsSetMultiRegionProperties()
+        {
+            return this._multiRegionProperties != null;
         }
 
         /// <summary>

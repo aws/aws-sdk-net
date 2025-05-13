@@ -32,12 +32,47 @@ namespace Amazon.DSQL.Model
     /// <summary>
     /// Container for the parameters to the UpdateCluster operation.
     /// Updates a cluster.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Example IAM Policy for Multi-Region Operations</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The following IAM policy grants permissions for multi-Region operations.
+    /// </para>
+    ///  
+    /// <para>
+    /// The <c>dsql:RemovePeerCluster</c> permission uses a wildcard ARN pattern to simplify
+    /// permission management during updates.
+    /// </para>
+    ///  <important> 
+    /// <para>
+    ///  <b>Important Notes for Multi-Region Operations</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The witness region specified in <c>multiRegionProperties.witnessRegion</c> cannot
+    /// be the same as the cluster's Region.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// When updating clusters with peer relationships, permissions are checked for both adding
+    /// and removing peers.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The <c>dsql:RemovePeerCluster</c> permission uses a wildcard ARN pattern to simplify
+    /// permission management during updates.
+    /// </para>
+    ///  </li> </ul> </important>
     /// </summary>
     public partial class UpdateClusterRequest : AmazonDSQLRequest
     {
         private string _clientToken;
         private bool? _deletionProtectionEnabled;
         private string _identifier;
+        private MultiRegionProperties _multiRegionProperties;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -102,6 +137,25 @@ namespace Amazon.DSQL.Model
         internal bool IsSetIdentifier()
         {
             return this._identifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiRegionProperties. 
+        /// <para>
+        /// The new multi-Region cluster configuration settings to be applied during an update
+        /// operation.
+        /// </para>
+        /// </summary>
+        public MultiRegionProperties MultiRegionProperties
+        {
+            get { return this._multiRegionProperties; }
+            set { this._multiRegionProperties = value; }
+        }
+
+        // Check to see if MultiRegionProperties property is set
+        internal bool IsSetMultiRegionProperties()
+        {
+            return this._multiRegionProperties != null;
         }
 
     }
