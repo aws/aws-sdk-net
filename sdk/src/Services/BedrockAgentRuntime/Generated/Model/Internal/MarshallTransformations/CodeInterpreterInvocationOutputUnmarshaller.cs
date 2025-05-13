@@ -90,6 +90,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.Files = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("metadata", targetDepth))
+                {
+                    var unmarshaller = MetadataUnmarshaller.Instance;
+                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

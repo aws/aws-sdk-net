@@ -78,6 +78,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.InputAssessments = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("metadata", targetDepth))
+                {
+                    var unmarshaller = MetadataUnmarshaller.Instance;
+                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("outputAssessments", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<GuardrailAssessment, GuardrailAssessmentUnmarshaller>(GuardrailAssessmentUnmarshaller.Instance);

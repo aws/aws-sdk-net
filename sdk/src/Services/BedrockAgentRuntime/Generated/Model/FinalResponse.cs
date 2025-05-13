@@ -34,7 +34,27 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class FinalResponse
     {
+        private Metadata _metadata;
         private string _text;
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// Contains information about the invoke agent operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public Metadata Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Text. 

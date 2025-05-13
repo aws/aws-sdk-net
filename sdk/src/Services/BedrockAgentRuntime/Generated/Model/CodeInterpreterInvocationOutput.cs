@@ -38,6 +38,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _executionOutput;
         private bool? _executionTimeout;
         private List<string> _files = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Metadata _metadata;
 
         /// <summary>
         /// Gets and sets the property ExecutionError. 
@@ -109,6 +110,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetFiles()
         {
             return this._files != null && (this._files.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// Contains information about the output from the code interpreter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public Metadata Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null;
         }
 
     }

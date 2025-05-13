@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     {
         private string _agentCollaboratorAliasArn;
         private string _agentCollaboratorName;
+        private Metadata _metadata;
         private AgentCollaboratorOutputPayload _output;
 
         /// <summary>
@@ -73,6 +74,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetAgentCollaboratorName()
         {
             return this._agentCollaboratorName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// Contains information about the output from the agent collaborator.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public Metadata Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null;
         }
 
         /// <summary>

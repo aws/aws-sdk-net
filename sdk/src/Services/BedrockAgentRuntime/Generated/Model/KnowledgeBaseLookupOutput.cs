@@ -34,7 +34,27 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class KnowledgeBaseLookupOutput
     {
+        private Metadata _metadata;
         private List<RetrievedReference> _retrievedReferences = AWSConfigs.InitializeCollections ? new List<RetrievedReference>() : null;
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// Contains information about the knowledge base output.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public Metadata Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RetrievedReferences. 
