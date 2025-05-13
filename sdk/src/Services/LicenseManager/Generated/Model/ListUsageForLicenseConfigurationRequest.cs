@@ -49,19 +49,16 @@ namespace Amazon.LicenseManager.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>resourceArn</c> - The ARN of the license configuration resource. Logical operators
-        /// are <c>EQUALS</c> | <c>NOT_EQUALS</c>.
+        ///  <c>resourceArn</c> - The ARN of the license configuration resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>resourceType</c> - The resource type (<c>EC2_INSTANCE</c> | <c>EC2_HOST</c> |
-        /// <c>EC2_AMI</c> | <c>SYSTEMS_MANAGER_MANAGED_INSTANCE</c>). Logical operators are <c>EQUALS</c>
-        /// | <c>NOT_EQUALS</c>.
+        /// <c>EC2_AMI</c> | <c>SYSTEMS_MANAGER_MANAGED_INSTANCE</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>resourceAccount</c> - The ID of the account that owns the resource. Logical operators
-        /// are <c>EQUALS</c> | <c>NOT_EQUALS</c>.
+        ///  <c>resourceAccount</c> - The ID of the account that owns the resource.
         /// </para>
         ///  </li> </ul>
         /// </summary>

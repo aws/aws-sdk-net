@@ -2524,7 +2524,9 @@ namespace Amazon.LicenseManager
 
 
         /// <summary>
-        /// Lists the tags for the specified license configuration.
+        /// Lists the tags for the specified resource. For more information about tagging support
+        /// in License Manager, see the <a href="https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html">TagResource</a>
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -2735,7 +2737,26 @@ namespace Amazon.LicenseManager
 
 
         /// <summary>
-        /// Adds the specified tags to the specified license configuration.
+        /// Adds the specified tags to the specified resource. The following resources support
+        /// tagging in License Manager:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Licenses
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Grants
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// License configurations
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Report generators
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2785,7 +2806,7 @@ namespace Amazon.LicenseManager
 
 
         /// <summary>
-        /// Removes the specified tags from the specified license configuration.
+        /// Removes the specified tags from the specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2849,6 +2870,9 @@ namespace Amazon.LicenseManager
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
         /// The Amazon Web Services user account does not have permission to perform the action.
         /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ConflictException">
+        /// There was a conflict processing the request. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -2975,6 +2999,9 @@ namespace Amazon.LicenseManager
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
         /// The Amazon Web Services user account does not have permission to perform the action.
         /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ConflictException">
+        /// There was a conflict processing the request. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.

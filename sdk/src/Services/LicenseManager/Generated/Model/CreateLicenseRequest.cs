@@ -45,6 +45,7 @@ namespace Amazon.LicenseManager.Model
         private string _licenseName;
         private string _productName;
         private string _productSKU;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private DatetimeRange _validity;
 
         /// <summary>
@@ -237,6 +238,26 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetProductSKU()
         {
             return this._productSKU != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags to add to the license. For more information about tagging support in License
+        /// Manager, see the <a href="https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html">TagResource</a>
+        /// operation.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

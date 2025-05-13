@@ -44,6 +44,7 @@ namespace Amazon.LicenseManager.Model
         private string _homeRegion;
         private string _licenseArn;
         private List<string> _principals = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowedOperations. 
@@ -51,7 +52,7 @@ namespace Amazon.LicenseManager.Model
         /// Allowed operations for the grant.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=7)]
+        [AWSProperty(Required=true, Min=1, Max=8)]
         public List<string> AllowedOperations
         {
             get { return this._allowedOperations; }
@@ -172,6 +173,26 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetPrincipals()
         {
             return this._principals != null && (this._principals.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags to add to the grant. For more information about tagging support in License Manager,
+        /// see the <a href="https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html">TagResource</a>
+        /// operation.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

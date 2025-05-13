@@ -51,7 +51,7 @@ namespace Amazon.LicenseManager.Model
         /// Allowed operations for the grant.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=7)]
+        [AWSProperty(Min=1, Max=8)]
         public List<string> AllowedOperations
         {
             get { return this._allowedOperations; }
