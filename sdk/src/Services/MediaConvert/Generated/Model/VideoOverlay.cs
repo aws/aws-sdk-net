@@ -34,12 +34,30 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class VideoOverlay
     {
+        private VideoOverlayCrop _crop;
         private string _endTimecode;
         private VideoOverlayPosition _initialPosition;
         private VideoOverlayInput _input;
         private VideoOverlayPlayBackMode _playback;
         private string _startTimecode;
         private List<VideoOverlayTransition> _transitions = AWSConfigs.InitializeCollections ? new List<VideoOverlayTransition>() : null;
+
+        /// <summary>
+        /// Gets and sets the property Crop. Specify a rectangle of content to crop and use from
+        /// your video overlay's input video. When you do, MediaConvert uses the cropped dimensions
+        /// that you specify under X offset, Y offset, Width, and Height.
+        /// </summary>
+        public VideoOverlayCrop Crop
+        {
+            get { return this._crop; }
+            set { this._crop = value; }
+        }
+
+        // Check to see if Crop property is set
+        internal bool IsSetCrop()
+        {
+            return this._crop != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EndTimecode. Enter the end timecode in the base input video

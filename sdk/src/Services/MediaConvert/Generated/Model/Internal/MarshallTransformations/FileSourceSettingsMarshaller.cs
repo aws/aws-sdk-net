@@ -93,6 +93,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.TimeDeltaUnits);
             }
 
+            if(requestObject.IsSetUpconvertSTLToTeletext())
+            {
+                context.Writer.WritePropertyName("upconvertSTLToTeletext");
+                context.Writer.WriteStringValue(requestObject.UpconvertSTLToTeletext);
+            }
+
         }
 
         /// <summary>
