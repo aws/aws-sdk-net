@@ -69,7 +69,7 @@ void WriteDevConfigFile()
         AnsiConsole.Markup("[yellow]Skipped writing dev config since the config is empty[/]\n");
     }
 
-    var devConfigDirectory = Path.Combine(FindRepoRoot(), "generator", ".DevConfig");
+    var devConfigDirectory = Path.Combine(FindRepoRoot(), "generator", ".DevConfigs");
     if (!Directory.Exists(devConfigDirectory))
     {
         Directory.CreateDirectory(devConfigDirectory);
