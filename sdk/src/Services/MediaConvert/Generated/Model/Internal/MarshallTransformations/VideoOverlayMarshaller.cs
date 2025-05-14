@@ -48,6 +48,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCrop())
+            {
+                context.Writer.WritePropertyName("crop");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VideoOverlayCropMarshaller.Instance;
+                marshaller.Marshall(requestObject.Crop, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEndTimecode())
             {
                 context.Writer.WritePropertyName("endTimecode");

@@ -66,6 +66,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("crop", targetDepth))
+                {
+                    var unmarshaller = VideoOverlayCropUnmarshaller.Instance;
+                    unmarshalledObject.Crop = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("endTimecode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

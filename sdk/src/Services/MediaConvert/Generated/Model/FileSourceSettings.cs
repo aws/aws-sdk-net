@@ -43,6 +43,7 @@ namespace Amazon.MediaConvert.Model
         private string _sourceFile;
         private int? _timeDelta;
         private FileSourceTimeDeltaUnits _timeDeltaUnits;
+        private CaptionSourceUpconvertSTLToTeletext _upconvertSTLToTeletext;
 
         /// <summary>
         /// Gets and sets the property ByteRateLimit. Choose whether to limit the byte rate at
@@ -183,6 +184,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetTimeDeltaUnits()
         {
             return this._timeDeltaUnits != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpconvertSTLToTeletext. Specify whether this set of input
+        /// captions appears in your outputs in both STL and Teletext format. If you choose Upconvert,
+        /// MediaConvert includes the captions data in two ways: it passes the STL data through
+        /// using the Teletext compatibility bytes fields of the Teletext wrapper, and it also
+        /// translates the STL data into Teletext.
+        /// </summary>
+        public CaptionSourceUpconvertSTLToTeletext UpconvertSTLToTeletext
+        {
+            get { return this._upconvertSTLToTeletext; }
+            set { this._upconvertSTLToTeletext = value; }
+        }
+
+        // Check to see if UpconvertSTLToTeletext property is set
+        internal bool IsSetUpconvertSTLToTeletext()
+        {
+            return this._upconvertSTLToTeletext != null;
         }
 
     }
