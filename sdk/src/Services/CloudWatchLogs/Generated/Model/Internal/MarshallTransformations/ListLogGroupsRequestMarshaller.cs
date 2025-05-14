@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeLogGroups Request Marshaller
+    /// ListLogGroups Request Marshaller
     /// </summary>       
-    public class DescribeLogGroupsRequestMarshaller : IMarshaller<IRequest, DescribeLogGroupsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListLogGroupsRequestMarshaller : IMarshaller<IRequest, ListLogGroupsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeLogGroupsRequest)input);
+            return this.Marshall((ListLogGroupsRequest)input);
         }
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeLogGroupsRequest publicRequest)
+        public IRequest Marshall(ListLogGroupsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchLogs");
-            string target = "Logs_20140328.DescribeLogGroups";
+            string target = "Logs_20140328.ListLogGroups";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-03-28";
@@ -104,27 +104,10 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.LogGroupClass);
             }
 
-            if(publicRequest.IsSetLogGroupIdentifiers())
-            {
-                context.Writer.WritePropertyName("logGroupIdentifiers");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestLogGroupIdentifiersListValue in publicRequest.LogGroupIdentifiers)
-                {
-                        context.Writer.WriteStringValue(publicRequestLogGroupIdentifiersListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
             if(publicRequest.IsSetLogGroupNamePattern())
             {
                 context.Writer.WritePropertyName("logGroupNamePattern");
                 context.Writer.WriteStringValue(publicRequest.LogGroupNamePattern);
-            }
-
-            if(publicRequest.IsSetLogGroupNamePrefix())
-            {
-                context.Writer.WritePropertyName("logGroupNamePrefix");
-                context.Writer.WriteStringValue(publicRequest.LogGroupNamePrefix);
             }
 
             if(publicRequest.IsSetNextToken())
@@ -146,9 +129,9 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DescribeLogGroupsRequestMarshaller _instance = new DescribeLogGroupsRequestMarshaller();        
+        private static ListLogGroupsRequestMarshaller _instance = new ListLogGroupsRequestMarshaller();        
 
-        internal static DescribeLogGroupsRequestMarshaller GetInstance()
+        internal static ListLogGroupsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -156,7 +139,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeLogGroupsRequestMarshaller Instance
+        public static ListLogGroupsRequestMarshaller Instance
         {
             get
             {
