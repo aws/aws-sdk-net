@@ -3036,8 +3036,8 @@ namespace Amazon.CloudWatchLogs
         #region  DescribeLogGroups
 
         /// <summary>
-        /// Lists the specified log groups. You can list all your log groups or filter the results
-        /// by prefix. The results are ASCII-sorted by log group name.
+        /// Returns information about log groups. You can return all your log groups or filter
+        /// the results by prefix. The results are ASCII-sorted by log group name.
         /// 
         ///  
         /// <para>
@@ -3071,8 +3071,8 @@ namespace Amazon.CloudWatchLogs
         }
 
         /// <summary>
-        /// Lists the specified log groups. You can list all your log groups or filter the results
-        /// by prefix. The results are ASCII-sorted by log group name.
+        /// Returns information about log groups. You can return all your log groups or filter
+        /// the results by prefix. The results are ASCII-sorted by log group name.
         /// 
         ///  
         /// <para>
@@ -4896,6 +4896,82 @@ namespace Amazon.CloudWatchLogs
         public virtual ListLogAnomalyDetectorsResponse EndListLogAnomalyDetectors(IAsyncResult asyncResult)
         {
             return EndInvoke<ListLogAnomalyDetectorsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListLogGroups
+
+        /// <summary>
+        /// Returns a list of log groups in the Region in your account. If you are performing
+        /// this action in a monitoring account, you can choose to also return log groups from
+        /// source accounts that are linked to the monitoring account. For more information about
+        /// using cross-account observability to set up monitoring accounts and source accounts,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">
+        /// CloudWatch cross-account observability</a>.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally filter the list by log group class and by using regular expressions
+        /// in your request to match strings in the log group names.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is paginated. By default, your first use of this operation returns
+        /// 50 results, and includes a token to use in a subsequent operation to return more results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLogGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListLogGroups service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListLogGroups">REST API Reference for ListLogGroups Operation</seealso>
+        public virtual ListLogGroupsResponse ListLogGroups(ListLogGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLogGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLogGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLogGroupsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLogGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLogGroups operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLogGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListLogGroups">REST API Reference for ListLogGroups Operation</seealso>
+        public virtual IAsyncResult BeginListLogGroups(ListLogGroupsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLogGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLogGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLogGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLogGroups.</param>
+        /// 
+        /// <returns>Returns a  ListLogGroupsResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListLogGroups">REST API Reference for ListLogGroups Operation</seealso>
+        public virtual ListLogGroupsResponse EndListLogGroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListLogGroupsResponse>(asyncResult);
         }
 
         #endregion

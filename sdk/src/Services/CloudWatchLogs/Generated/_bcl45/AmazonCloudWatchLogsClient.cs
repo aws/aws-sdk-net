@@ -3491,8 +3491,8 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Lists the specified log groups. You can list all your log groups or filter the results
-        /// by prefix. The results are ASCII-sorted by log group name.
+        /// Returns information about log groups. You can return all your log groups or filter
+        /// the results by prefix. The results are ASCII-sorted by log group name.
         /// 
         ///  
         /// <para>
@@ -3527,8 +3527,8 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Lists the specified log groups. You can list all your log groups or filter the results
-        /// by prefix. The results are ASCII-sorted by log group name.
+        /// Returns information about log groups. You can return all your log groups or filter
+        /// the results by prefix. The results are ASCII-sorted by log group name.
         /// 
         ///  
         /// <para>
@@ -3568,8 +3568,8 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Lists the specified log groups. You can list all your log groups or filter the results
-        /// by prefix. The results are ASCII-sorted by log group name.
+        /// Returns information about log groups. You can return all your log groups or filter
+        /// the results by prefix. The results are ASCII-sorted by log group name.
         /// 
         ///  
         /// <para>
@@ -3606,8 +3606,8 @@ namespace Amazon.CloudWatchLogs
         }
 
         /// <summary>
-        /// Lists the specified log groups. You can list all your log groups or filter the results
-        /// by prefix. The results are ASCII-sorted by log group name.
+        /// Returns information about log groups. You can return all your log groups or filter
+        /// the results by prefix. The results are ASCII-sorted by log group name.
         /// 
         ///  
         /// <para>
@@ -5613,6 +5613,91 @@ namespace Amazon.CloudWatchLogs
             options.ResponseUnmarshaller = ListLogAnomalyDetectorsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListLogAnomalyDetectorsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListLogGroups
+
+
+        /// <summary>
+        /// Returns a list of log groups in the Region in your account. If you are performing
+        /// this action in a monitoring account, you can choose to also return log groups from
+        /// source accounts that are linked to the monitoring account. For more information about
+        /// using cross-account observability to set up monitoring accounts and source accounts,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">
+        /// CloudWatch cross-account observability</a>.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally filter the list by log group class and by using regular expressions
+        /// in your request to match strings in the log group names.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is paginated. By default, your first use of this operation returns
+        /// 50 results, and includes a token to use in a subsequent operation to return more results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLogGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListLogGroups service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListLogGroups">REST API Reference for ListLogGroups Operation</seealso>
+        public virtual ListLogGroupsResponse ListLogGroups(ListLogGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLogGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLogGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLogGroupsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of log groups in the Region in your account. If you are performing
+        /// this action in a monitoring account, you can choose to also return log groups from
+        /// source accounts that are linked to the monitoring account. For more information about
+        /// using cross-account observability to set up monitoring accounts and source accounts,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">
+        /// CloudWatch cross-account observability</a>.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally filter the list by log group class and by using regular expressions
+        /// in your request to match strings in the log group names.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is paginated. By default, your first use of this operation returns
+        /// 50 results, and includes a token to use in a subsequent operation to return more results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLogGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLogGroups service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListLogGroups">REST API Reference for ListLogGroups Operation</seealso>
+        public virtual Task<ListLogGroupsResponse> ListLogGroupsAsync(ListLogGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLogGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLogGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListLogGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion

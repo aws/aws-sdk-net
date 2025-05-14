@@ -30,11 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeLogGroups operation.
+    /// This is the response object from the ListLogGroups operation.
     /// </summary>
-    public partial class DescribeLogGroupsResponse : AmazonWebServiceResponse
+    public partial class ListLogGroupsResponse : AmazonWebServiceResponse
     {
-        private List<LogGroup> _logGroups = AWSConfigs.InitializeCollections ? new List<LogGroup>() : null;
+        private List<LogGroupSummary> _logGroups = AWSConfigs.InitializeCollections ? new List<LogGroupSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// group.
         /// </para>
         /// </summary>
-        public List<LogGroup> LogGroups
+        public List<LogGroupSummary> LogGroups
         {
             get { return this._logGroups; }
             set { this._logGroups = value; }
