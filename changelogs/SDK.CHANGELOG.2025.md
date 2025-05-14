@@ -1,3 +1,13 @@
+### 3.7.1044.0 (2025-05-14 18:25 UTC)
+* CloudWatchLogs (3.7.413.0)
+	* This release adds a new API "ListLogGroups" and an improvement in API "DescribeLogGroups"
+* CognitoIdentityProvider (3.7.409.0)
+	* Add exceptions to WebAuthn operations.
+* KinesisFirehose (3.7.403.0)
+	* This release adds catalogARN support for s3 tables multi-catalog catalogARNs.
+* MediaConvert (3.7.413.0)
+	* This update enables cropping for video overlays and adds a new STL to Teletext upconversion toggle to preserve styling.
+
 ### 3.7.1043.0 (2025-05-13 18:25 UTC)
 * Bedrock (3.7.421.0)
 	* Enable cross-Region inference for Amazon Bedrock Guardrails by using the crossRegionConfig parameter when calling the CreateGuardrail or UpdateGuardrail operation.
