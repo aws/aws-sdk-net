@@ -331,15 +331,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         SourceTable.UpdateRequestUserAgentDetails(scanReq, isAsync: false);
 
                         var scanResult = internalClient.Scan(scanReq);
-                        foreach (var item in scanResult.Items)
+                        if (scanResult.Items != null)
                         {
-                            Document doc = SourceTable.FromAttributeMap(item);
-                            ret.Add(doc);
-                            if (CollectResults)
+                            foreach (var item in scanResult.Items)
                             {
-                                Matches.Add(doc);
+                                Document doc = SourceTable.FromAttributeMap(item);
+                                ret.Add(doc);
+                                if (CollectResults)
+                                {
+                                    Matches.Add(doc);
+                                }
                             }
                         }
+
                         NextKey = scanResult.LastEvaluatedKey;
                         if (NextKey == null || NextKey.Count == 0)
                         {
@@ -381,15 +385,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         SourceTable.UpdateRequestUserAgentDetails(queryReq, isAsync: false);
 
                         var queryResult = internalClient.Query(queryReq);
-                        foreach (var item in queryResult.Items)
+                        if (queryResult.Items != null)
                         {
-                            Document doc = SourceTable.FromAttributeMap(item);
-                            ret.Add(doc);
-                            if (CollectResults)
+                            foreach (var item in queryResult.Items)
                             {
-                                Matches.Add(doc);
+                                Document doc = SourceTable.FromAttributeMap(item);
+                                ret.Add(doc);
+                                if (CollectResults)
+                                {
+                                    Matches.Add(doc);
+                                }
                             }
                         }
+
                         NextKey = queryResult.LastEvaluatedKey;
                         if (NextKey == null || NextKey.Count == 0)
                         {
@@ -445,15 +453,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         SourceTable.UpdateRequestUserAgentDetails(scanReq, isAsync: true);
 
                         var scanResult = await SourceTable.DDBClient.ScanAsync(scanReq, cancellationToken).ConfigureAwait(false);
-                        foreach (var item in scanResult.Items)
+                        if (scanResult.Items != null)
                         {
-                            Document doc = SourceTable.FromAttributeMap(item);
-                            ret.Add(doc);
-                            if (CollectResults)
+                            foreach (var item in scanResult.Items)
                             {
-                                Matches.Add(doc);
+                                Document doc = SourceTable.FromAttributeMap(item);
+                                ret.Add(doc);
+                                if (CollectResults)
+                                {
+                                    Matches.Add(doc);
+                                }
                             }
                         }
+
                         NextKey = scanResult.LastEvaluatedKey;
                         if (NextKey == null || NextKey.Count == 0)
                         {
@@ -487,13 +499,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         SourceTable.UpdateRequestUserAgentDetails(queryReq, isAsync: true);
 
                         var queryResult = await SourceTable.DDBClient.QueryAsync(queryReq, cancellationToken).ConfigureAwait(false);
-                        foreach (var item in queryResult.Items)
+                        if (queryResult.Items != null)
                         {
-                            Document doc = SourceTable.FromAttributeMap(item);
-                            ret.Add(doc);
-                            if (CollectResults)
+                            foreach (var item in queryResult.Items)
                             {
-                                Matches.Add(doc);
+                                Document doc = SourceTable.FromAttributeMap(item);
+                                ret.Add(doc);
+                                if (CollectResults)
+                                {
+                                    Matches.Add(doc);
+                                }
                             }
                         }
                         NextKey = queryResult.LastEvaluatedKey;
@@ -554,20 +569,25 @@ namespace Amazon.DynamoDBv2.DocumentModel
             QueryFilter queryFilter = filter as QueryFilter;
             if (queryFilter == null) throw new InvalidOperationException("Filter is not of type QueryFilter");
 
-            keyConditions = new Dictionary<string, Condition>();
-            filterConditions = new Dictionary<string, Condition>();
-
             var conditions = filter.ToConditions(targetTable);
-            foreach (var kvp in conditions)
-            {
-                string attributeName = kvp.Key;
-                Condition condition = kvp.Value;
+            keyConditions = null;
+            filterConditions = null;
 
-                // depending on whether the attribute is key, place either in keyConditions or filterConditions
-                if (IsKeyAttribute(targetTable, indexName, attributeName))
-                    keyConditions[attributeName] = condition;
-                else
-                    filterConditions[attributeName] = condition;
+            if (conditions.Count > 0)
+            {
+                keyConditions = new Dictionary<string, Condition>();
+                filterConditions = new Dictionary<string, Condition>();
+                foreach (var kvp in conditions)
+                {
+                    string attributeName = kvp.Key;
+                    Condition condition = kvp.Value;
+
+                    // depending on whether the attribute is key, place either in keyConditions or filterConditions
+                    if (IsKeyAttribute(targetTable, indexName, attributeName))
+                        keyConditions[attributeName] = condition;
+                    else
+                        filterConditions[attributeName] = condition;
+                }
             }
         }
 
