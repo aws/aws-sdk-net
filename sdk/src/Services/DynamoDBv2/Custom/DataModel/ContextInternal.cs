@@ -390,29 +390,53 @@ namespace Amazon.DynamoDBv2.DataModel
 
             using (flatConfig.State.Track(document))
             {
-                foreach (PropertyStorage propertyStorage in storageConfig.AllPropertyStorage)
+                foreach (PropertyStorage propertyStorage in storageConfig.Properties)
                 {
-                    string propertyName = propertyStorage.PropertyName;
                     string attributeName = propertyStorage.AttributeName;
-
-                    DynamoDBEntry entry;
-                    if (document.TryGetValue(attributeName, out entry))
+                    if (propertyStorage.FlattenProperty)
                     {
-                        if (ShouldSave(entry, true))
+                        //create instance of the flatten property
+                        var targetType = propertyStorage.MemberType;
+                        object flattenedPropertyInstance = Utils.InstantiateConverter(targetType, this);
+
+                        //populate the flatten properties
+                        foreach (var propertyStorageFlattenProperty in propertyStorage.FlattenProperties)
                         {
-                            object value = FromDynamoDBEntry(propertyStorage, entry, flatConfig);
+                            string flattenedAttributeName = propertyStorageFlattenProperty.AttributeName;
 
-                            if (!TrySetValue(instance, propertyStorage.Member, value))
-                            {
-                                throw new InvalidOperationException("Unable to retrieve value from " + attributeName);
-                            }
+                            PopulateProperty(storage, flatConfig, document, flattenedAttributeName, propertyStorageFlattenProperty, flattenedPropertyInstance);
                         }
-
-                        if (propertyStorage.IsVersion)
-                            storage.CurrentVersion = entry as Primitive;
+                        if (!TrySetValue(instance, propertyStorage.Member, flattenedPropertyInstance))
+                        {
+                            throw new InvalidOperationException("Unable to retrieve value from " + attributeName);
+                        }
+                    }
+                    else
+                    {
+                        PopulateProperty(storage, flatConfig, document, attributeName, propertyStorage, instance);
                     }
                 }
             }
+        }
+
+        private void PopulateProperty(ItemStorage storage, DynamoDBFlatConfig flatConfig, Document document,
+            string attributeName, PropertyStorage propertyStorageFlattenProperty, object instance)
+        {
+            DynamoDBEntry entry;
+            if (!document.TryGetValue(attributeName, out entry)) return;
+
+            if (ShouldSave(entry, true))
+            {
+                object value = FromDynamoDBEntry(propertyStorageFlattenProperty, entry, flatConfig);
+
+                if (!TrySetValue(instance, propertyStorageFlattenProperty.Member, value))
+                {
+                    throw new InvalidOperationException("Unable to retrieve value from " + attributeName);
+                }
+            }
+
+            if (propertyStorageFlattenProperty.IsVersion)
+                storage.CurrentVersion = entry as Primitive;
         }
 
         /// <summary>
@@ -469,29 +493,46 @@ namespace Amazon.DynamoDBv2.DataModel
                     if (keysOnly && !propertyStorage.IsHashKey && !propertyStorage.IsRangeKey &&
                         !propertyStorage.IsVersion) continue;
 
+                    if (propertyStorage.IsFlattened) continue;
+
                     string propertyName = propertyStorage.PropertyName;
                     string attributeName = propertyStorage.AttributeName;
 
                     object value;
                     if (TryGetValue(toStore, propertyStorage.Member, out value))
                     {
-                        DynamoDBEntry dbe = ToDynamoDBEntry(propertyStorage, value, flatConfig);
+                        DynamoDBEntry dbe = ToDynamoDBEntry(propertyStorage, value, flatConfig, propertyStorage.FlattenProperty);
 
                         if (ShouldSave(dbe, ignoreNullValues))
                         {
-                            Primitive dbePrimitive = dbe as Primitive;
-                            if (propertyStorage.IsHashKey || propertyStorage.IsRangeKey ||
-                                propertyStorage.IsVersion || propertyStorage.IsLSIRangeKey)
+
+                            if (propertyStorage.FlattenProperty)
                             {
-                                if (dbe != null && dbePrimitive == null)
-                                    throw new InvalidOperationException("Property " + propertyName +
-                                                                        " is a hash key, range key or version property and must be Primitive");
+                                if (dbe == null) continue;
+
+                                if (dbe is not Document innerDocument) continue;
+
+                                foreach (var pair in innerDocument)
+                                {
+                                    document[pair.Key] = pair.Value;
+                                }
                             }
+                            else
+                            {
+                                Primitive dbePrimitive = dbe as Primitive;
+                                if (propertyStorage.IsHashKey || propertyStorage.IsRangeKey ||
+                                    propertyStorage.IsVersion || propertyStorage.IsLSIRangeKey)
+                                {
+                                    if (dbe != null && dbePrimitive == null)
+                                        throw new InvalidOperationException("Property " + propertyName +
+                                                                            " is a hash key, range key or version property and must be Primitive");
+                                }
 
-                            document[attributeName] = dbe;
+                                document[attributeName] = dbe;
 
-                            if (propertyStorage.IsVersion)
-                                storage.CurrentVersion = dbePrimitive;
+                                if (propertyStorage.IsVersion)
+                                    storage.CurrentVersion = dbePrimitive;
+                            }
                         }
                     }
                     else
@@ -671,7 +712,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
         [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2072",
             Justification = "The user's type has been annotated with InternalConstants.DataModelModeledType with the public API into the library. At this point the type will not be trimmed.")]
-        private DynamoDBEntry ToDynamoDBEntry(SimplePropertyStorage propertyStorage, object value, DynamoDBFlatConfig flatConfig, bool canReturnScalarInsteadOfList)
+        private DynamoDBEntry ToDynamoDBEntry(SimplePropertyStorage propertyStorage, object value,
+            DynamoDBFlatConfig flatConfig, bool canReturnScalarInsteadOfList)
         {
             if (value == null)
                 return null;
@@ -750,7 +792,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 if (item == null)
                     entry = DynamoDBNull.Null;
                 else
-                    entry = ToDynamoDBEntry(propertyStorage, item, flatConfig);
+                    entry = ToDynamoDBEntry(propertyStorage, item, flatConfig, false);
 
                 output[key] = entry;
             }
@@ -786,7 +828,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     entry = DynamoDBNull.Null;
                 else
                 {
-                    entry = ToDynamoDBEntry(propertyStorage, item, flatConfig);
+                    entry = ToDynamoDBEntry(propertyStorage, item, flatConfig, false);
                 }
 
                 output.Add(entry);
@@ -1134,7 +1176,7 @@ namespace Amazon.DynamoDBv2.DataModel
         // Key creation
         private DynamoDBEntry ValueToDynamoDBEntry(PropertyStorage propertyStorage, object value, DynamoDBFlatConfig flatConfig)
         {
-            var entry = ToDynamoDBEntry(propertyStorage, value, flatConfig);
+            var entry = ToDynamoDBEntry(propertyStorage, value, flatConfig, false);
             return entry;
         }
         private static void ValidateKey(Key key, ItemStorageConfig storageConfig)

@@ -11,6 +11,7 @@ using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.DataModel;
 using System.Threading.Tasks;
+using static AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests;
 
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
@@ -23,7 +24,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             // It is a known bug that this test currently fails due to an AOT-compilation
             // issue, on iOS using mono2x.
-            foreach (var conversion in new DynamoDBEntryConversion[] { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })
+            foreach (var conversion in new DynamoDBEntryConversion[]
+                         { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })
             {
                 TableCache.Clear();
 
@@ -210,7 +212,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             TableCache.Clear();
 
             CreateContext(DynamoDBEntryConversion.V2, true, true);
-            
+
             {
 
                 var hashRangeOnly = new AnnotatedRangeTable
@@ -313,8 +315,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             //This is a valid use of .ToLocalTime
             var expectedCurrTime = retrieveDateTimeInUtc ? currTime.ToUniversalTime() : currTime.ToLocalTime();
-            var expectedLongEpochTime = retrieveDateTimeInUtc ? longEpochTime.ToUniversalTime() : longEpochTime.ToLocalTime();
-            var expectedLongEpochTimeBefore1970 = retrieveDateTimeInUtc ? longEpochTimeBefore1970.ToUniversalTime() : longEpochTimeBefore1970.ToLocalTime();
+            var expectedLongEpochTime =
+                retrieveDateTimeInUtc ? longEpochTime.ToUniversalTime() : longEpochTime.ToLocalTime();
+            var expectedLongEpochTimeBefore1970 = retrieveDateTimeInUtc
+                ? longEpochTimeBefore1970.ToUniversalTime()
+                : longEpochTimeBefore1970.ToLocalTime();
 
             // Load 
             var storedEmployee = Context.Load<AnnotatedNumericEpochEmployee>(employee.CreationTime, employee.Name);
@@ -335,7 +340,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Query
             QueryFilter filter = new QueryFilter();
             filter.AddCondition("CreationTime", QueryOperator.Equal, currTime);
-            storedEmployee = Context.FromQuery<AnnotatedNumericEpochEmployee>(new QueryOperationConfig { Filter = filter }).First();
+            storedEmployee = Context
+                .FromQuery<AnnotatedNumericEpochEmployee>(new QueryOperationConfig { Filter = filter }).First();
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
@@ -440,7 +446,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Query
             QueryFilter filter = new QueryFilter();
             filter.AddCondition("CreationTime", QueryOperator.Equal, currTime);
-            storedEmployee = Context.FromQuery<AnnotatedNumericEpochEmployee>(new QueryOperationConfig { Filter = filter }).First();
+            storedEmployee = Context
+                .FromQuery<AnnotatedNumericEpochEmployee>(new QueryOperationConfig { Filter = filter }).First();
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
@@ -486,7 +493,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             TableCache.Clear();
 
 #pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
-            Context = new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = DynamoDBEntryConversion.V2 });
+            Context = new DynamoDBContext(Client,
+                new DynamoDBContextConfig { Conversion = DynamoDBEntryConversion.V2 });
 #pragma warning restore CS0618 // Re-enable the warning
             var operationConfig = new DynamoDBOperationConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc };
 
@@ -510,11 +518,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             //This is a valid use of .ToLocalTime
             var expectedCurrTime = retrieveDateTimeInUtc ? currTime.ToUniversalTime() : currTime.ToLocalTime();
-            var expectedLongEpochTime = retrieveDateTimeInUtc ? longEpochTime.ToUniversalTime() : longEpochTime.ToLocalTime();
-            var expectedLongEpochTimeBefore1970 = retrieveDateTimeInUtc ? longEpochTimeBefore1970.ToUniversalTime() : longEpochTimeBefore1970.ToLocalTime();
+            var expectedLongEpochTime =
+                retrieveDateTimeInUtc ? longEpochTime.ToUniversalTime() : longEpochTime.ToLocalTime();
+            var expectedLongEpochTimeBefore1970 = retrieveDateTimeInUtc
+                ? longEpochTimeBefore1970.ToUniversalTime()
+                : longEpochTimeBefore1970.ToLocalTime();
 
             // Load 
-            var storedEmployee = Context.Load<AnnotatedNumericEpochEmployee>(employee.CreationTime, employee.Name, new LoadConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc});
+            var storedEmployee = Context.Load<AnnotatedNumericEpochEmployee>(employee.CreationTime, employee.Name,
+                new LoadConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc });
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
@@ -529,8 +541,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             QueryFilter filter = new QueryFilter();
             filter.AddCondition("CreationTime", QueryOperator.Equal, currTime);
             storedEmployee = Context.FromQuery<AnnotatedNumericEpochEmployee>(
-                new QueryOperationConfig { Filter = filter }, 
-                new FromQueryConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc}).First();
+                new QueryOperationConfig { Filter = filter },
+                new FromQueryConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc }).First();
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
@@ -543,7 +555,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             // Scan
             storedEmployee = Context.Scan<AnnotatedNumericEpochEmployee>(
-                new List<ScanCondition>(), 
+                new List<ScanCondition>(),
                 new ScanConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc }).First();
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
@@ -574,6 +586,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var storedModel = await Context.LoadAsync<ModelA>(id);
             Assert.AreEqual(model.Id, storedModel.Id);
             Assert.AreEqual(model.GetType(), storedModel.GetType());
+            Assert.IsNotNull(storedModel.FlatAddress);
 
             var myType = model as ModelA1;
             var myStoredModel = storedModel as ModelA1;
@@ -619,13 +632,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 },
                 DictionaryClasses = new Dictionary<string, A>()
                 {
-                    {"A", new A{ Name = "A1", MyPropA = 1 }},
-                    {"B", new B{ Name = "A1", MyPropA = 1, MyPropB = 2}}
+                    { "A", new A { Name = "A1", MyPropA = 1 } },
+                    { "B", new B { Name = "A1", MyPropA = 1, MyPropB = 2 } }
                 }
             };
 
             var transactWrite = Context.CreateTransactWrite<ModelA>();
-            transactWrite.AddSaveItems(new []{ model1 , model2});
+            transactWrite.AddSaveItems(new[] { model1, model2 });
             await transactWrite.ExecuteAsync();
 
             var storedModel1 = await Context.LoadAsync<ModelA>(id);
@@ -663,7 +676,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             };
 
             var transactWrite = Context.CreateTransactWrite<ModelA>();
-            transactWrite.AddSaveItems(new[] { model});
+            transactWrite.AddSaveItems(new[] { model });
             await transactWrite.ExecuteAsync();
 
             var storedModel = await Context.LoadAsync<ModelA>(model.Id);
@@ -674,7 +687,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(model.DictionaryClasses.Count, myStoredModel.DictionaryClasses.Count);
             Assert.AreEqual(model.DictionaryClasses["A"].GetType(), myStoredModel.DictionaryClasses["A"].GetType());
             Assert.AreEqual(model.DictionaryClasses["B"].GetType(), myStoredModel.DictionaryClasses["B"].GetType());
-            Assert.AreEqual(((B)model.DictionaryClasses["B"]).MyPropB, ((B)myStoredModel.DictionaryClasses["B"]).MyPropB);
+            Assert.AreEqual(((B)model.DictionaryClasses["B"]).MyPropB,
+                ((B)myStoredModel.DictionaryClasses["B"]).MyPropB);
             Assert.AreEqual(model.ManagerName, myStoredModel.ManagerName);
         }
 
@@ -754,7 +768,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var model1 = new ModelA2
             {
                 Id = Guid.NewGuid(),
-                MyType = new C { Name = "AType1", MyPropA = 5, MyPropC = "test"},
+                MyType = new C { Name = "AType1", MyPropA = 5, MyPropC = "test" },
                 DictionaryClasses = new Dictionary<string, A>
                 {
                     { "A", new A { Name = "A1", MyPropA = 1 } },
@@ -795,7 +809,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(model1.DictionaryClasses.Count, storedModel.DictionaryClasses.Count);
             Assert.AreEqual(model1.DictionaryClasses["A"].GetType(), storedModel.DictionaryClasses["A"].GetType());
             Assert.AreEqual(model1.DictionaryClasses["B"].GetType(), storedModel.DictionaryClasses["B"].GetType());
-            Assert.AreEqual(((B)model1.DictionaryClasses["B"]).MyPropB, ((B)storedModel.DictionaryClasses["B"]).MyPropB);
+            Assert.AreEqual(((B)model1.DictionaryClasses["B"]).MyPropB,
+                ((B)storedModel.DictionaryClasses["B"]).MyPropB);
             Assert.AreEqual(model1.ManagerName, storedModel.ManagerName);
         }
 
@@ -807,7 +822,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [TestCategory("DynamoDBv2")]
         public void TestWithBuilderTables()
         {
-            foreach (var conversion in new DynamoDBEntryConversion[] { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })
+            foreach (var conversion in new DynamoDBEntryConversion[]
+                         { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })
             {
                 // Cleanup existing data in the tables
                 CleanupTables();
@@ -825,21 +841,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 #pragma warning restore CS0618 // Re-enable the warning
 
                 Context.RegisterTableDefinition(new TableBuilder(Client, "DotNetTests-HashRangeTable")
-                                                    .AddHashKey("Name", DynamoDBEntryType.String)
-                                                    .AddRangeKey("Age", DynamoDBEntryType.Numeric)
-                                                    .AddGlobalSecondaryIndex("GlobalIndex", "Company", DynamoDBEntryType.String, "Score", DynamoDBEntryType.Numeric)
-                                                    .AddLocalSecondaryIndex("LocalIndex", "Manager", DynamoDBEntryType.String)
-                                                    .Build());
+                    .AddHashKey("Name", DynamoDBEntryType.String)
+                    .AddRangeKey("Age", DynamoDBEntryType.Numeric)
+                    .AddGlobalSecondaryIndex("GlobalIndex", "Company", DynamoDBEntryType.String, "Score",
+                        DynamoDBEntryType.Numeric)
+                    .AddLocalSecondaryIndex("LocalIndex", "Manager", DynamoDBEntryType.String)
+                    .Build());
 
                 Context.RegisterTableDefinition(new TableBuilder(Client, "DotNetTests-HashTable")
-                                                    .AddHashKey("Id", DynamoDBEntryType.Numeric)
-                                                    .AddGlobalSecondaryIndex("GlobalIndex", "Company", DynamoDBEntryType.String, "Price", DynamoDBEntryType.Numeric)
-                                                    .Build());
+                    .AddHashKey("Id", DynamoDBEntryType.Numeric)
+                    .AddGlobalSecondaryIndex("GlobalIndex", "Company", DynamoDBEntryType.String, "Price",
+                        DynamoDBEntryType.Numeric)
+                    .Build());
 
                 Context.RegisterTableDefinition(new TableBuilder(Client, "DotNetTests-NumericHashRangeTable")
-                                                    .AddHashKey("CreationTime", DynamoDBEntryType.Numeric)
-                                                    .AddRangeKey("Name", DynamoDBEntryType.String)
-                                                    .Build());
+                    .AddHashKey("CreationTime", DynamoDBEntryType.Numeric)
+                    .AddRangeKey("Name", DynamoDBEntryType.String)
+                    .Build());
 
                 TestEmptyStringsWithFeatureEnabled();
 
@@ -869,7 +887,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [TestCategory("DynamoDBv2")]
         public void TestWithBuilderContext()
         {
-            foreach (var conversion in new DynamoDBEntryConversion[] { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })
+            foreach (var conversion in new DynamoDBEntryConversion[]
+                         { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })
             {
                 // Cleanup existing data in the tables
                 CleanupTables();
@@ -905,6 +924,142 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
         }
 
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task Test_FlattenAttribute_With_Annotations()
+        {
+            CleanupTables();
+            TableCache.Clear();
+
+            // flatten with version
+            var product = new ProductFlat
+            {
+                Id = 1,
+                Details = new ProductDetails()
+                {
+                    Description = "Test"
+                }
+            };
+
+            await Context.SaveAsync(product);
+            var savedProductFlat = await Context.LoadAsync<ProductFlat>(product.Id);
+            Assert.IsNotNull(savedProductFlat);
+            Assert.AreEqual(product.Id, savedProductFlat.Id);
+            Assert.IsNotNull(savedProductFlat.Details);
+            Assert.AreEqual(product.Details.Description, savedProductFlat.Details.Description);
+            Assert.AreEqual(0, savedProductFlat.Details.Version);
+
+            // flattened property, which itself contains another flattened property.
+            var flatEmployee = new EmployeeNonFlat()
+            {
+                EmployeeId = 2,
+                Contact = new ContactInfo()
+                {
+                    Email = "test@email.com",
+                    Address = new Address()
+                    {
+                        City = "Seattle",
+                        Street = "N/A",
+                    }
+                }
+            };
+            await Context.SaveAsync(flatEmployee);
+            var savedFlatEmployee = await Context.LoadAsync<EmployeeFlatten>(flatEmployee.EmployeeId);
+            Assert.IsNotNull(savedFlatEmployee);
+            Assert.AreEqual(flatEmployee.EmployeeId, savedFlatEmployee.EmployeeId);
+            Assert.AreEqual(flatEmployee.Contact.Address.City, savedFlatEmployee.City);
+            Assert.AreEqual(flatEmployee.Contact.Address.Street, savedFlatEmployee.Street);
+            Assert.AreEqual(flatEmployee.Contact.Email, savedFlatEmployee.Email);
+
+            //flattened property contains a property with a custom converter.
+            var eventToSave = new Event()
+            {
+                Id = 5,
+                Details = new EventDetails()
+                {
+                    EventDate = DateTime.Today
+                }
+            };
+            await Context.SaveAsync(eventToSave);
+            var savedEvent = await Context.LoadAsync<Event>(eventToSave.Id);
+            Assert.IsNotNull(savedEvent);
+            Assert.AreEqual(eventToSave.Id, savedEvent.Id);
+            Assert.IsNotNull(savedEvent.Details);
+            Assert.AreEqual(eventToSave.Details.EventDate.ToUniversalTime(), savedEvent.Details.EventDate);
+
+            // Flattened Property with Global Secondary Index
+            var order = new Order()
+            {
+                Id = 6,
+                Payment = new PaymentInfo()
+                {
+                    CompanyName = "TestCompany",
+                    Price = 1000
+
+                }
+            };
+
+            await Context.SaveAsync(order);
+            var savedOrders = Context.Query<Order>(
+                order.Payment.CompanyName, // Hash-key for the index is Company
+                QueryOperator.Equal, // Range-key for the index is Price, so the
+                new object[] { 1000 }, // condition is against a numerical value
+                new QueryConfig // Configure the index to use
+                {
+                    IndexName = "GlobalIndex",
+                });
+            Assert.IsNotNull(savedOrders);
+            var savedOrder = savedOrders.FirstOrDefault();
+            Assert.IsNotNull(savedOrder);
+            Assert.AreEqual(order.Id, savedOrder.Id);
+            Assert.IsNotNull(savedOrder.Payment);
+            Assert.AreEqual(order.Payment.Price, savedOrder.Payment.Price);
+            Assert.AreEqual(order.Payment.CompanyName, savedOrder.Payment.CompanyName);
+
+            // flattened property is a polymorphic type
+            var vehicleCar = new VehicleRecord()
+            {
+                Id = 3,
+                Vehicle = new Car
+                {
+                    Make = "Toyota",
+                    NumberOfDoors = 4
+                }
+            };
+
+            var vehicleTruck = new VehicleRecord()
+            {
+                Id = 4,
+                Vehicle = new Truck()
+                {
+                    Make = "Toyota",
+                    PayloadCapacity = 200
+                }
+            };
+
+            var transactWrite = Context.CreateTransactWrite<VehicleRecord>();
+            transactWrite.AddSaveItems(new[] { vehicleCar, vehicleTruck });
+            await transactWrite.ExecuteAsync();
+
+            var savedVehicleCar = await Context.LoadAsync<VehicleRecord>(vehicleCar.Id);
+            Assert.IsNotNull(savedVehicleCar);
+            Assert.AreEqual(vehicleCar.Id, savedVehicleCar.Id);
+            Assert.IsNotNull(savedVehicleCar.Vehicle);
+            Assert.IsInstanceOfType(savedVehicleCar.Vehicle, typeof(Car));
+            Assert.AreEqual(vehicleCar.Vehicle.Make, ((Car)savedVehicleCar.Vehicle).Make);
+            Assert.AreEqual(((Car)vehicleCar.Vehicle).NumberOfDoors, ((Car)savedVehicleCar.Vehicle).NumberOfDoors);
+
+            var savedVehicleTruck = await Context.LoadAsync<VehicleRecord>(vehicleTruck.Id);
+            Assert.IsNotNull(savedVehicleTruck);
+            Assert.AreEqual(vehicleTruck.Id, savedVehicleTruck.Id);
+            Assert.IsNotNull(savedVehicleTruck.Vehicle);
+            Assert.IsInstanceOfType(savedVehicleTruck.Vehicle, typeof(Truck));
+            Assert.AreEqual(vehicleTruck.Vehicle.Make, ((Truck)savedVehicleTruck.Vehicle).Make);
+            Assert.AreEqual(((Truck)vehicleTruck.Vehicle).PayloadCapacity, ((Truck)savedVehicleTruck.Vehicle).PayloadCapacity);
+
+        }
+
+
         private static void TestEmptyStringsWithFeatureEnabled()
         {
             var product = new Product
@@ -922,7 +1077,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     Name = string.Empty,
                     AllProducts = new List<Product>
                     {
-                        new Product {Id = 12, Name = string.Empty}
+                        new Product { Id = 12, Name = string.Empty }
                     },
                 },
                 Components = new List<string> // SS
@@ -1057,7 +1212,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         }
 
         private void TestContextConversions()
-        {   
+        {
             var conversionV1 = DynamoDBEntryConversion.V1;
             var conversionV2 = DynamoDBEntryConversion.V2;
 
@@ -1094,8 +1249,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             {
 #pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
-                using (var contextV1 = new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = conversionV1 }))
-                using (var contextV2 = new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = conversionV2 }))
+                using (var contextV1 =
+                       new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = conversionV1 }))
+                using (var contextV2 =
+                       new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = conversionV2 }))
                 {
                     var docV1 = contextV1.ToDocument(product);
                     var docV2 = contextV2.ToDocument(product);
@@ -1106,7 +1263,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             {
 #pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
-                using (var contextV1 = new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = conversionV1 }))
+                using (var contextV1 =
+                       new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = conversionV1 }))
                 {
                     contextV1.Save(product);
                     contextV1.Save(product, new SaveConfig { Conversion = conversionV2 });
@@ -1141,8 +1299,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         Revenue = 9001
                     }
                 };
-              
-                using (var contextV1 = new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = conversionV1 }))
+
+                using (var contextV1 =
+                       new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = conversionV1 }))
                 {
                     var docV1 = contextV1.ToDocument(productV2, new ToDocumentConfig { Conversion = conversionV1 });
                     var docV2 = contextV1.ToDocument(productV2, new ToDocumentConfig { });
@@ -1163,8 +1322,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     MostPopularProduct = product
                 };
                 AssertExtensions.ExpectException(() => Context.ToDocument(product), typeof(InvalidOperationException));
-                AssertExtensions.ExpectException(() => Context.ToDocument(product, new ToDocumentConfig { Conversion = conversionV1 }), typeof(InvalidOperationException));
-                AssertExtensions.ExpectException(() => Context.ToDocument(product, new ToDocumentConfig { Conversion = conversionV2 }), typeof(InvalidOperationException));
+                AssertExtensions.ExpectException(
+                    () => Context.ToDocument(product, new ToDocumentConfig { Conversion = conversionV1 }),
+                    typeof(InvalidOperationException));
+                AssertExtensions.ExpectException(
+                    () => Context.ToDocument(product, new ToDocumentConfig { Conversion = conversionV2 }),
+                    typeof(InvalidOperationException));
 
                 // Remove circular dependence
                 product.CompanyInfo.MostPopularProduct = new Product
@@ -1191,8 +1354,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 // Add circular references
                 docV1["CompanyInfo"].AsDocument()["MostPopularProduct"] = docV1;
                 docV2["CompanyInfo"].AsDocument()["MostPopularProduct"] = docV2;
-                AssertExtensions.ExpectException(() => Context.FromDocument<Product>(docV1, new FromDocumentConfig { Conversion = conversionV1 }));
-                AssertExtensions.ExpectException(() => Context.FromDocument<Product>(docV2, new FromDocumentConfig { Conversion = conversionV2 }));
+                AssertExtensions.ExpectException(() =>
+                    Context.FromDocument<Product>(docV1, new FromDocumentConfig { Conversion = conversionV1 }));
+                AssertExtensions.ExpectException(() =>
+                    Context.FromDocument<Product>(docV2, new FromDocumentConfig { Conversion = conversionV2 }));
 
                 // Remove circular references
                 docV1["CompanyInfo"].AsDocument()["MostPopularProduct"] = null;
@@ -1282,9 +1447,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.IsNotNull(retrieved.Components);
                 Assert.AreEqual(0, retrieved.Components.Count);
             }
+
             Assert.IsNotNull(retrieved.Map);
             Assert.AreEqual(0, retrieved.Map.Count);
         }
+
         private void TestEnumHashKeyObjects()
         {
             // Create and save item
@@ -1312,6 +1479,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Context.Delete(product1);
             Context.Delete(product2);
         }
+
         private void TestHashObjects()
         {
             string bucketName = "aws-sdk-net-s3link-" + DateTime.UtcNow.Ticks;
@@ -1380,8 +1548,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     }
                 };
 
-                product.FullProductDescription = S3Link.Create(Context, bucketName, "my-product", Amazon.RegionEndpoint.USEast1);
-                product.FullProductDescription.UploadStream(new MemoryStream(UTF8Encoding.UTF8.GetBytes("Lots of data")));
+                product.FullProductDescription =
+                    S3Link.Create(Context, bucketName, "my-product", Amazon.RegionEndpoint.USEast1);
+                product.FullProductDescription.UploadStream(
+                    new MemoryStream(UTF8Encoding.UTF8.GetBytes("Lots of data")));
 
                 Context.Save(product);
 
@@ -1418,14 +1588,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(product.CompanyInfo.AllProducts.Count, retrieved.CompanyInfo.AllProducts.Count);
                 Assert.AreEqual(product.CompanyInfo.AllProducts[0].Id, retrieved.CompanyInfo.AllProducts[0].Id);
                 Assert.AreEqual(product.CompanyInfo.AllProducts[1].Id, retrieved.CompanyInfo.AllProducts[1].Id);
-                Assert.AreEqual(product.CompanyInfo.FeaturedProducts.Length, retrieved.CompanyInfo.FeaturedProducts.Length);
-                Assert.AreEqual(product.CompanyInfo.FeaturedProducts[0].Id, retrieved.CompanyInfo.FeaturedProducts[0].Id);
-                Assert.AreEqual(product.CompanyInfo.FeaturedProducts[1].Id, retrieved.CompanyInfo.FeaturedProducts[1].Id);
+                Assert.AreEqual(product.CompanyInfo.FeaturedProducts.Length,
+                    retrieved.CompanyInfo.FeaturedProducts.Length);
+                Assert.AreEqual(product.CompanyInfo.FeaturedProducts[0].Id,
+                    retrieved.CompanyInfo.FeaturedProducts[0].Id);
+                Assert.AreEqual(product.CompanyInfo.FeaturedProducts[1].Id,
+                    retrieved.CompanyInfo.FeaturedProducts[1].Id);
                 Assert.AreEqual(product.CompanyInfo.FeaturedBrands.Length, retrieved.CompanyInfo.FeaturedBrands.Length);
                 Assert.AreEqual(product.CompanyInfo.FeaturedBrands[0], retrieved.CompanyInfo.FeaturedBrands[0]);
                 Assert.AreEqual(product.CompanyInfo.FeaturedBrands[1], retrieved.CompanyInfo.FeaturedBrands[1]);
                 Assert.AreEqual(product.Map.Count, retrieved.Map.Count);
-                Assert.AreEqual(product.CompanyInfo.CompetitorProducts.Count, retrieved.CompanyInfo.CompetitorProducts.Count);
+                Assert.AreEqual(product.CompanyInfo.CompetitorProducts.Count,
+                    retrieved.CompanyInfo.CompetitorProducts.Count);
 
                 var productCloudsAreOkay = product.CompanyInfo.CompetitorProducts["CloudsAreOK"];
                 var retrievedCloudsAreOkay = retrieved.CompanyInfo.CompetitorProducts["CloudsAreOK"];
@@ -1483,6 +1657,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 {
                     productIds.Add(p.Id);
                 }
+
                 Assert.AreEqual(2, productIds.Count);
 
                 // Load first product
@@ -1493,10 +1668,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Query GlobalIndex
                 products = Context.Query<Product>(
-                    product.CompanyName,            // Hash-key for the index is Company
-                    QueryOperator.GreaterThan,      // Range-key for the index is Price, so the
-                    new object[] { 90 },            // condition is against a numerical value
-                    new QueryConfig     // Configure the index to use
+                    product.CompanyName, // Hash-key for the index is Company
+                    QueryOperator.GreaterThan, // Range-key for the index is Price, so the
+                    new object[] { 90 }, // condition is against a numerical value
+                    new QueryConfig // Configure the index to use
                     {
                         IndexName = "GlobalIndex",
                     });
@@ -1504,10 +1679,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Query GlobalIndex with an additional non-key condition
                 products = Context.Query<Product>(
-                    product.CompanyName,            // Hash-key for the index is Company
-                    QueryOperator.GreaterThan,      // Range-key for the index is Price, so the
-                    new object[] { 90 },            // condition is against a numerical value
-                    new QueryConfig     // Configure the index to use
+                    product.CompanyName, // Hash-key for the index is Company
+                    QueryOperator.GreaterThan, // Range-key for the index is Price, so the
+                    new object[] { 90 }, // condition is against a numerical value
+                    new QueryConfig // Configure the index to use
                     {
                         IndexName = "GlobalIndex",
                         QueryFilter = new List<ScanCondition>
@@ -1738,6 +1913,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     Name = productPrefix + i
                 });
             }
+
             batchWrite1.AddPutItems(allEmployees);
 
             // Write both batches at once
@@ -2629,7 +2805,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     S2 = 2,
                     S3 = 3
                 },
-                MyClasses = new List<A> { a1, b1 }
+                MyClasses = new List<A> { a1, b1 },
+                FlatAddress = new Address()
+                {
+                    City = "Seattle",
+                    Street = "Street"
+                }
             };
             return model;
         }
@@ -2682,11 +2863,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [DynamoDBTable("HashTable")]
         public class Product
         {
-            [DynamoDBHashKey]
-            public int Id { get; set; }
+            [DynamoDBHashKey] public int Id { get; set; }
 
-            [DynamoDBProperty("Product")]
-            public string Name { get; set; }
+            [DynamoDBProperty("Product")] public string Name { get; set; }
 
             [DynamoDBGlobalSecondaryIndexHashKey("GlobalIndex", AttributeName = "Company")]
             public string CompanyName { get; set; }
@@ -2696,8 +2875,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             [DynamoDBGlobalSecondaryIndexRangeKey("GlobalIndex")]
             public int Price { get; set; }
 
-            [DynamoDBProperty("Tags")]
-            public HashSet<string> TagSet { get; set; }
+            [DynamoDBProperty("Tags")] public HashSet<string> TagSet { get; set; }
 
             public MemoryStream Data { get; set; }
 
@@ -2710,8 +2888,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             public Support? PreviousSupport { get; set; }
 
-            [DynamoDBIgnore]
-            public string InternalId { get; set; }
+            [DynamoDBIgnore] public string InternalId { get; set; }
 
             public bool IsPublic { get; set; }
 
@@ -2741,8 +2918,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             public string[] FeaturedBrands { get; set; }
             public Dictionary<string, List<Product>> CompetitorProducts { get; set; }
 
-            [DynamoDBIgnore]
-            public decimal Revenue { get; set; }
+            [DynamoDBIgnore] public decimal Revenue { get; set; }
         }
 
         /// <summary>
@@ -2751,8 +2927,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         /// </summary>
         public class VersionedProduct : Product
         {
-            [DynamoDBVersion]
-            public int? Version { get; set; }
+            [DynamoDBVersion] public int? Version { get; set; }
         }
 
 
@@ -2763,8 +2938,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [DynamoDBTable("HashTable")]
         public class EnumProduct1
         {
-            [DynamoDBIgnore]
-            public Status Id { get; set; }
+            [DynamoDBIgnore] public Status Id { get; set; }
 
             [DynamoDBHashKey("Id")]
             public int IdAsInt
@@ -2773,8 +2947,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 set { Id = (Status)value; }
             }
 
-            [DynamoDBProperty("Product")]
-            public string Name { get; set; }
+            [DynamoDBProperty("Product")] public string Name { get; set; }
         }
 
         /// <summary>
@@ -2786,10 +2959,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             public Status Id { get; set; }
 
-            [DynamoDBProperty("Product")]
-            public string Name { get; set; }
+            [DynamoDBProperty("Product")] public string Name { get; set; }
         }
-
 
         /// <summary>
         /// Class representing items in the table [TableNamePrefix]HashRangeTable
@@ -2802,7 +2973,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             // Hash key
             public virtual string Name { get; set; }
+
             public string MiddleName { get; set; }
+
             // Range key
             internal virtual int Age { get; set; }
 
@@ -2823,12 +2996,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public class AnnotatedEmployee : Employee
         {
             // Hash key
-            [DynamoDBHashKey]
-            public override string Name { get; set; }
+            [DynamoDBHashKey] public override string Name { get; set; }
 
             // Range key
-            [DynamoDBRangeKey]
-            internal override int Age { get; set; }
+            [DynamoDBRangeKey] internal override int Age { get; set; }
 
             [DynamoDBGlobalSecondaryIndexHashKey("GlobalIndex", AttributeName = "Company")]
             public override string CompanyName { get; set; }
@@ -2846,12 +3017,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public class PartiallyAnnotatedEmployee : Employee
         {
             // Hash key
-            [DynamoDBHashKey]
-            public override string Name { get; set; }
+            [DynamoDBHashKey] public override string Name { get; set; }
 
             // Range key
-            [DynamoDBRangeKey]
-            internal override int Age { get; set; }
+            [DynamoDBRangeKey] internal override int Age { get; set; }
 
             [DynamoDBGlobalSecondaryIndexHashKey("GlobalIndex")]
             public override string CompanyName { get; set; }
@@ -2906,7 +3075,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         /// Empty type
         /// </summary>
         public class EmptyType
-        { }
+        {
+        }
 
         /// <summary>
         /// Class representing items in the table [TableNamePrefix]HashTable
@@ -2923,8 +3093,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         /// </summary>
         public class VersionedAnnotatedEmployee : AnnotatedEmployee
         {
-            [DynamoDBVersion]
-            public int? Version { get; set; }
+            [DynamoDBVersion] public int? Version { get; set; }
         }
 
         /// <summary>
@@ -2970,14 +3139,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [DynamoDBTable("NumericHashRangeTable")]
         public class AnnotatedEpochEmployee
         {
-            [DynamoDBRangeKey]
-            public string Name { get; set; }
+            [DynamoDBRangeKey] public string Name { get; set; }
 
             public int Age { get; set; }
 
             // Hash key
-            [DynamoDBHashKey(StoreAsEpoch = true)]
-            public virtual DateTime CreationTime { get; set; }
+            [DynamoDBHashKey(StoreAsEpoch = true)] public virtual DateTime CreationTime { get; set; }
 
             [DynamoDBProperty(StoreAsEpoch = true)]
             public DateTime EpochDate2 { get; set; }
@@ -3022,11 +3189,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [DynamoDBTable("NumericHashRangeTable")]
         public class AnnotatedNumericEpochEmployee : EpochEmployee
         {
-            [DynamoDBHashKey(StoreAsEpoch = true)]
-            public override DateTime CreationTime { get; set; }
+            [DynamoDBHashKey(StoreAsEpoch = true)] public override DateTime CreationTime { get; set; }
 
-            [DynamoDBRangeKey]
-            public override string Name { get; set; }
+            [DynamoDBRangeKey] public override string Name { get; set; }
         }
 
         /// <summary>
@@ -3035,8 +3200,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [DynamoDBTable("NumericHashRangeTable")]
         public class PropertyConverterEmployee
         {
-            [DynamoDBHashKey(StoreAsEpoch = true)]
-            public DateTime CreationTime { get; set; }
+            [DynamoDBHashKey(StoreAsEpoch = true)] public DateTime CreationTime { get; set; }
 
             [DynamoDBRangeKey]
             [DynamoDBProperty(Converter = typeof(EnumAsStringConverter<Status>))]
@@ -3047,19 +3211,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public class AnnotatedRangeTable
         {
             // Hash key
-            [DynamoDBHashKey]
-            public string Name { get; set; }
+            [DynamoDBHashKey] public string Name { get; set; }
 
             // Range key
-            [DynamoDBRangeKey]
-            internal int Age { get; set; }
+            [DynamoDBRangeKey] internal int Age { get; set; }
         }
 
         [DynamoDBTable("HashRangeTable")]
         public class IgnoreAnnotatedRangeTable : AnnotatedRangeTable
         {
-            [DynamoDBIgnore]
-            internal int IgnoreAttribute { get; set; }
+            [DynamoDBIgnore] internal int IgnoreAttribute { get; set; }
         }
 
 
@@ -3068,8 +3229,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             internal int NotAnnotatedAttribute { get; set; }
         }
-
-
 
         public class DateTimeUtcConverter : IPropertyConverter
         {
@@ -3095,6 +3254,137 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
         }
 
+        #region Flatten
+
+        /// <summary>
+        /// A class has a flattened property, and the version attribute is on the flattened child.
+        /// </summary>
+        [DynamoDBTable("HashTable")]
+        public class ProductFlat
+        {
+            [DynamoDBHashKey] public int Id { get; set; }
+
+            [DynamoDBFlatten]
+            public ProductDetails Details { get; set; }
+        }
+
+        public class ProductDetails
+        {
+            [DynamoDBVersion]
+            public int? Version { get; set; }
+
+            public string Description { get; set; }
+        }
+
+        /// <summary>
+        /// A class has a flattened property, which itself contains another flattened property.
+        /// </summary>
+        [DynamoDBTable("HashTable")]
+        public class EmployeeNonFlat
+        {
+            [DynamoDBHashKey("Id")]
+            public int EmployeeId { get; set; }
+
+            [DynamoDBFlatten]
+            public ContactInfo Contact { get; set; }
+        }
+
+        public class ContactInfo
+        {
+            public string Email { get; set; }
+
+            [DynamoDBFlatten]
+            public Address Address { get; set; }
+        }
+
+        /// <summary>
+        /// A class has a flattened structure
+        /// </summary>
+        [DynamoDBTable("HashTable")]
+        public class EmployeeFlatten
+        {
+            [DynamoDBHashKey("Id")]
+            public int EmployeeId { get; set; }
+
+            public string Email { get; set; }
+
+            public string Street { get; set; }
+
+            public string City { get; set; }
+        }
+
+        /// <summary>
+        /// A flattened property is a polymorphic type.
+        /// </summary>
+        [DynamoDBTable("HashTable")]
+        public class VehicleRecord
+        {
+            [DynamoDBHashKey]
+            public int Id { get; set; }
+
+            [DynamoDBFlatten]
+            [DynamoDBPolymorphicType("car", typeof(Car))]
+            [DynamoDBPolymorphicType("truck", typeof(Truck))]
+            public Vehicle Vehicle { get; set; }
+        }
+
+        public class Vehicle
+        {
+            public string Make { get; set; }
+        }
+
+        public class Car : Vehicle
+        {
+            public int NumberOfDoors { get; set; }
+        }
+
+        public class Truck : Vehicle
+        {
+            public double PayloadCapacity { get; set; }
+        }
+
+        [DynamoDBTable("HashTable")]
+        public class Order
+        {
+            [DynamoDBHashKey]
+            public int Id { get; set; }
+
+            [DynamoDBFlatten]
+            public PaymentInfo Payment { get; set; }
+        }
+
+        public class PaymentInfo
+        {
+            [DynamoDBGlobalSecondaryIndexHashKey("GlobalIndex", AttributeName = "Company")]
+            public string CompanyName { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexRangeKey("GlobalIndex")]
+            public int Price { get; set; }
+        }
+
+        /// <summary>
+        /// A flattened property contains a property with a custom converter.
+        /// </summary>
+        [DynamoDBTable("HashTable")]
+        public class Event
+        {
+            [DynamoDBHashKey]
+            public int Id { get; set; }
+
+            [DynamoDBFlatten]
+            public EventDetails Details { get; set; }
+        }
+
+        public class EventDetails
+        {
+            [DynamoDBProperty(typeof(DateTimeUtcConverter))]
+            public DateTime EventDate { get; set; }
+        }
+
+
+        #endregion
+
+        #region PolymorphicType
 
         [DynamoDBPolymorphicType("B1", typeof(B))]
         [DynamoDBPolymorphicType("C", typeof(C))]
@@ -3107,8 +3397,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         public interface IInterface
         {
-             string S1 { get; set; }
-             int S2 { get; set; }
+            string S1 { get; set; }
+            int S2 { get; set; }
         }
 
         public class InterfaceA : IInterface
@@ -3144,7 +3434,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             [DynamoDBHashKey] public Guid Id { get; set; }
 
             public A MyType { get; set; }
-            
+
             [DynamoDBPolymorphicType("I1", typeof(InterfaceA))]
             [DynamoDBPolymorphicType("I2", typeof(InterfaceB))]
             public IInterface MyInterface { get; set; }
@@ -3157,6 +3447,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             [DynamoDBLocalSecondaryIndexRangeKey("LocalIndex", AttributeName = "Manager")]
             public string ManagerName { get; set; }
+
+            [DynamoDBFlatten] public Address FlatAddress { get; set; }
+        }
+
+        public class Address
+        {
+            public string Street { get; set; }
+            public string City { get; set; }
         }
 
         public class ModelA1 : ModelA
@@ -3174,6 +3472,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             [DynamoDBPolymorphicType("B", typeof(B))]
             public Dictionary<string, A> DictionaryClasses { get; set; }
         }
+
+        #endregion
 
         #endregion
     }

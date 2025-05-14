@@ -182,6 +182,35 @@ namespace Amazon.DynamoDBv2.DataModel
     }
 
     /// <summary>
+    /// Indicates that the properties of the decorated field or property type should be "flattened"
+    /// into the top-level attributes of the DynamoDB item. When applied, all public properties
+    /// of the referenced type are serialized as individual top-level attributes in the DynamoDB record,
+    /// rather than as a nested object.
+    /// <para>
+    /// Example:
+    /// <code>
+    /// public class Address
+    /// {
+    ///     public string Street { get; set; }
+    ///     public string City { get; set; }
+    /// }
+    ///
+    /// public class Person
+    /// {
+    ///     public string Name { get; set; }
+    ///     [DynamoDBFlatten]
+    ///     public Address Address { get; set; }
+    /// }
+    /// </code>
+    /// In this example, the <c>Person</c> table will have top-level attributes for <c>Name</c>, <c>Street</c>, and <c>City</c>.
+    /// </para>
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
+    public sealed class DynamoDBFlattenAttribute : DynamoDBAttribute
+    {
+    }
+
+    /// <summary>
     /// DynamoDB attribute that directs the specified attribute not to
     /// be included when saving or loading objects.
     /// </summary>

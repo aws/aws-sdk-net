@@ -421,12 +421,13 @@ namespace Amazon.DynamoDBv2.DataModel
             return true;
         }
 
+        
         internal static Type GetType(MemberInfo member)
         {
             var pi = member as PropertyInfo;
             var fi = member as FieldInfo;
             if (pi == null && fi == null)
-                throw new ArgumentOutOfRangeException("member", "member must be of type PropertyInfo or FieldInfo");
+                throw new ArgumentOutOfRangeException(nameof(member), "member must be of type PropertyInfo or FieldInfo");
 
             return (pi != null ? pi.PropertyType : fi.FieldType);
         }
@@ -528,7 +529,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return members.Values.ToList();
         }
 
-#endregion
+        #endregion
 
     }
 }
