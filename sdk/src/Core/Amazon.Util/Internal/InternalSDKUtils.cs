@@ -402,7 +402,7 @@ namespace Amazon.Util.Internal
             if (field == null)
                 return false;
 
-            if (field.Count > 0)
+            if (field.Count > 0 || !AWSConfigs.InitializeCollections)
                 return true;
 
             var sl = field as AlwaysSendList<T>;
@@ -416,7 +416,7 @@ namespace Amazon.Util.Internal
             if (field == null)
                 return false;
 
-            if (field.Count > 0)
+            if (field.Count > 0 || !AWSConfigs.InitializeCollections)
                 return true;
 
             var sd = field as AlwaysSendDictionary<TKey, TVvalue>;
