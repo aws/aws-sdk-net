@@ -44,6 +44,7 @@ namespace Amazon.WorkSpaces.Model
         private string _poolArn;
         private string _poolId;
         private string _poolName;
+        private PoolsRunningMode _runningMode;
         private WorkspacesPoolState _state;
         private TimeoutSettings _timeoutSettings;
 
@@ -219,7 +220,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property PoolName. 
         /// <para>
-        /// The name of the pool,
+        /// The name of the pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -233,6 +234,25 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetPoolName()
         {
             return this._poolName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RunningMode. 
+        /// <para>
+        /// The running mode of the pool.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public PoolsRunningMode RunningMode
+        {
+            get { return this._runningMode; }
+            set { this._runningMode = value; }
+        }
+
+        // Check to see if RunningMode property is set
+        internal bool IsSetRunningMode()
+        {
+            return this._runningMode != null;
         }
 
         /// <summary>

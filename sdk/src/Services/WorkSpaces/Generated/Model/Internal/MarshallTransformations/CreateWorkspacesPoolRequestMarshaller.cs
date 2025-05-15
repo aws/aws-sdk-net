@@ -121,6 +121,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.PoolName);
             }
 
+            if(publicRequest.IsSetRunningMode())
+            {
+                context.Writer.WritePropertyName("RunningMode");
+                context.Writer.WriteStringValue(publicRequest.RunningMode);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");
