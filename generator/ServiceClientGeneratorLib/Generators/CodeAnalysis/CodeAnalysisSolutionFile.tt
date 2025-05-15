@@ -26,7 +26,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockAnalyzer", "code-analys
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnalyzerUnitTests", "code-analysis\AnalyzerUnitTests\AnalyzerUnitTests.csproj", "{FB4B26D0-2E81-4673-9001-D0C859D8CEA1}"
 EndProject
-
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedAnalysisCode.CodeFixes", "code-analysis\SharedAnalysisCode.CodeFixes\SharedAnalysisCode.CodeFixes.csproj", "{F0F1785E-CE8C-4CC3-A78C-7EF9D2FC688D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFixUnitTests", "code-analysis\CodeFixUnitTests\CodeFixUnitTests.csproj", "{35392647-3FB4-48BC-A24D-DCF15C084549}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +59,14 @@ Global
 		{FB4B26D0-2E81-4673-9001-D0C859D8CEA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB4B26D0-2E81-4673-9001-D0C859D8CEA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB4B26D0-2E81-4673-9001-D0C859D8CEA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0F1785E-CE8C-4CC3-A78C-7EF9D2FC688D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0F1785E-CE8C-4CC3-A78C-7EF9D2FC688D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0F1785E-CE8C-4CC3-A78C-7EF9D2FC688D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0F1785E-CE8C-4CC3-A78C-7EF9D2FC688D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35392647-3FB4-48BC-A24D-DCF15C084549}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35392647-3FB4-48BC-A24D-DCF15C084549}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35392647-3FB4-48BC-A24D-DCF15C084549}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35392647-3FB4-48BC-A24D-DCF15C084549}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

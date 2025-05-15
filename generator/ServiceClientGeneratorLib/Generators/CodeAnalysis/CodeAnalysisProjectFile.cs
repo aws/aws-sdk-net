@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators.CodeAnalysis
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+    #line 1 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class CodeAnalysisProjectFile : BaseGenerator
     {
@@ -36,21 +36,21 @@ namespace ServiceClientGenerator.Generators.CodeAnalysis
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <ProjectGuid>");
             
-            #line 12 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+            #line 12 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["ProjectGuid"]));
             
             #line default
             #line hidden
             this.Write("</ProjectGuid>\r\n    <RootNamespace>");
             
-            #line 13 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+            #line 13 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["RootNamespace"]));
             
             #line default
             #line hidden
             this.Write("</RootNamespace>\r\n    <AssemblyName>");
             
-            #line 14 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+            #line 14 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -78,7 +78,7 @@ namespace ServiceClientGenerator.Generators.CodeAnalysis
     </EmbeddedResource>
 ");
             
-            #line 35 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+            #line 35 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
 
     foreach(string resource in ((IList<string>)this.Session["EmbeddedResources"]))
     {
@@ -88,7 +88,7 @@ namespace ServiceClientGenerator.Generators.CodeAnalysis
             #line hidden
             this.Write("    <EmbeddedResource Include=\"");
             
-            #line 39 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+            #line 39 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resource));
             
             #line default
@@ -96,7 +96,7 @@ namespace ServiceClientGenerator.Generators.CodeAnalysis
             this.Write("\">\r\n      <CopyToOutputDirectory>Always</CopyToOutputDirectory>\r\n    </EmbeddedRe" +
                     "source>\r\n");
             
-            #line 42 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+            #line 42 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
 
     }
 
@@ -104,7 +104,9 @@ namespace ServiceClientGenerator.Generators.CodeAnalysis
             #line default
             #line hidden
             this.Write("  </ItemGroup>\r\n\r\n  <ItemGroup>\r\n    <ProjectReference Include=\"../../SharedAnaly" +
-                    "sisCode/SharedAnalysisCode.csproj\" />\r\n  </ItemGroup>\r\n</Project>");
+                    "sisCode/SharedAnalysisCode.csproj\" />\r\n    <ProjectReference Include=\"../../Shar" +
+                    "edAnalysisCode.CodeFixes/SharedAnalysisCode.CodeFixes.csproj\" />\r\n  </ItemGroup>" +
+                    "\r\n</Project>");
             return this.GenerationEnvironment.ToString();
         }
     }

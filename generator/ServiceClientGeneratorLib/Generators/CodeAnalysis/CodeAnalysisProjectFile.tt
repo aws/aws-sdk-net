@@ -46,5 +46,6 @@
 
   <ItemGroup>
     <ProjectReference Include="../../SharedAnalysisCode/SharedAnalysisCode.csproj" />
+    <ProjectReference Include="../../SharedAnalysisCode.CodeFixes/SharedAnalysisCode.CodeFixes.csproj" />
   </ItemGroup>
 </Project>
