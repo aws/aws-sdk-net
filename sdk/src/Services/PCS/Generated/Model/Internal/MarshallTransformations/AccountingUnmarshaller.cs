@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.PCS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClusterSlurmConfiguration Object
+    /// Response Unmarshaller for Accounting Object
     /// </summary>  
-    public class ClusterSlurmConfigurationUnmarshaller : IJsonUnmarshaller<ClusterSlurmConfiguration, JsonUnmarshallerContext>
+    public class AccountingUnmarshaller : IJsonUnmarshaller<Accounting, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClusterSlurmConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Accounting Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ClusterSlurmConfiguration unmarshalledObject = new ClusterSlurmConfiguration();
+            Accounting unmarshalledObject = new Accounting();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,16 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accounting", targetDepth))
-                {
-                    var unmarshaller = AccountingUnmarshaller.Instance;
-                    unmarshalledObject.Accounting = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("authKey", targetDepth))
-                {
-                    var unmarshaller = SlurmAuthKeyUnmarshaller.Instance;
-                    unmarshalledObject.AuthKey = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("scaleDownIdleTimeInSeconds", targetDepth))
+                if (context.TestExpression("defaultPurgeTimeInDays", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ScaleDownIdleTimeInSeconds = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.DefaultPurgeTimeInDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slurmCustomSettings", targetDepth))
+                if (context.TestExpression("mode", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<SlurmCustomSetting, SlurmCustomSettingUnmarshaller>(SlurmCustomSettingUnmarshaller.Instance);
-                    unmarshalledObject.SlurmCustomSettings = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +73,12 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
         }
 
 
-        private static ClusterSlurmConfigurationUnmarshaller _instance = new ClusterSlurmConfigurationUnmarshaller();        
+        private static AccountingUnmarshaller _instance = new AccountingUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClusterSlurmConfigurationUnmarshaller Instance
+        public static AccountingUnmarshaller Instance
         {
             get
             {
