@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgent.Model
     public partial class CreateFlowAliasRequest : AmazonBedrockAgentRequest
     {
         private string _clientToken;
+        private FlowAliasConcurrencyConfiguration _concurrencyConfiguration;
         private string _description;
         private string _flowIdentifier;
         private string _name;
@@ -63,6 +64,24 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConcurrencyConfiguration. 
+        /// <para>
+        /// The configuration that specifies how nodes in the flow are executed in parallel.
+        /// </para>
+        /// </summary>
+        public FlowAliasConcurrencyConfiguration ConcurrencyConfiguration
+        {
+            get { return this._concurrencyConfiguration; }
+            set { this._concurrencyConfiguration = value; }
+        }
+
+        // Check to see if ConcurrencyConfiguration property is set
+        internal bool IsSetConcurrencyConfiguration()
+        {
+            return this._concurrencyConfiguration != null;
         }
 
         /// <summary>

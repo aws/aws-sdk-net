@@ -32,7 +32,7 @@ namespace Amazon.BedrockAgent.Model
     /// <summary>
     /// Defines a condition node in your flow. You can specify conditions that determine which
     /// node comes next in the flow. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-nodes.html">Node
-    /// types in Amazon Bedrock works</a> in the Amazon Bedrock User Guide.
+    /// types in a flow</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class ConditionFlowNodeConfiguration
     {

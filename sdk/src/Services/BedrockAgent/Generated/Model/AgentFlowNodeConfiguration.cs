@@ -32,7 +32,7 @@ namespace Amazon.BedrockAgent.Model
     /// <summary>
     /// Defines an agent node in your flow. You specify the agent to invoke at this point
     /// in the flow. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-nodes.html">Node
-    /// types in Amazon Bedrock works</a> in the Amazon Bedrock User Guide.
+    /// types in a flow</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class AgentFlowNodeConfiguration
     {
