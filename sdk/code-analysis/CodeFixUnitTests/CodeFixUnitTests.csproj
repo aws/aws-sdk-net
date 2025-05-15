@@ -1,18 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <IsPackable>false</IsPackable>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <EnableMSTestRunner>true</EnableMSTestRunner>
     <OutputType>Exe</OutputType>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+	  <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
-    <!--
-      Displays error on console in addition to the log file. Note that this feature comes with a performance impact.
-      For more information, visit https://learn.microsoft.com/dotnet/core/testing/unit-testing-platform-integration-dotnet-test#show-failure-per-test
-      -->
-    <TestingPlatformShowTestsFailure>true</TestingPlatformShowTestsFailure>
   </PropertyGroup>
 
   <ItemGroup>
