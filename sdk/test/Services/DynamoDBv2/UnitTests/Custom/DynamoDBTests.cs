@@ -103,7 +103,7 @@ namespace AWSSDK_DotNet.UnitTests
                         {
                             new AttributeValue
                             {
-                                M = new Dictionary<string, AttributeValue>(),
+                                M = null,
                             }
                         }
                     }
@@ -112,6 +112,24 @@ namespace AWSSDK_DotNet.UnitTests
 
             var document = Document.FromAttributeMap(initialAttributeMap);
             Assert.AreEqual(document["Lists"].AsListOfDocument().Count, 0);
+
+            initialAttributeMap = new Dictionary<string, AttributeValue>
+            {
+                { "Lists", new AttributeValue
+                    {
+                        L = new List<AttributeValue>
+                        {
+                            new AttributeValue
+                            {
+                                M = new Dictionary<string, AttributeValue>(),
+                            }
+                        }
+                    }
+                }
+            };
+
+            document = Document.FromAttributeMap(initialAttributeMap);
+            Assert.AreEqual(document["Lists"].AsListOfDocument().Count, 1);
 
             var jsonString = document.ToJson();
             Assert.IsNotNull(jsonString);
