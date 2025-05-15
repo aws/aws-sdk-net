@@ -1163,6 +1163,56 @@ namespace Amazon.DatabaseMigrationService
 
 
     /// <summary>
+    /// Constants used for properties of type MySQLAuthenticationMethod.
+    /// </summary>
+    public class MySQLAuthenticationMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Iam for MySQLAuthenticationMethod
+        /// </summary>
+        public static readonly MySQLAuthenticationMethod Iam = new MySQLAuthenticationMethod("iam");
+        /// <summary>
+        /// Constant Password for MySQLAuthenticationMethod
+        /// </summary>
+        public static readonly MySQLAuthenticationMethod Password = new MySQLAuthenticationMethod("password");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MySQLAuthenticationMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MySQLAuthenticationMethod FindValue(string value)
+        {
+            return FindValue<MySQLAuthenticationMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MySQLAuthenticationMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NestingLevelValue.
     /// </summary>
     public class NestingLevelValue : ConstantClass
@@ -1410,6 +1460,56 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PluginNameValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PostgreSQLAuthenticationMethod.
+    /// </summary>
+    public class PostgreSQLAuthenticationMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Iam for PostgreSQLAuthenticationMethod
+        /// </summary>
+        public static readonly PostgreSQLAuthenticationMethod Iam = new PostgreSQLAuthenticationMethod("iam");
+        /// <summary>
+        /// Constant Password for PostgreSQLAuthenticationMethod
+        /// </summary>
+        public static readonly PostgreSQLAuthenticationMethod Password = new PostgreSQLAuthenticationMethod("password");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PostgreSQLAuthenticationMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PostgreSQLAuthenticationMethod FindValue(string value)
+        {
+            return FindValue<PostgreSQLAuthenticationMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PostgreSQLAuthenticationMethod(string value)
         {
             return FindValue(value);
         }

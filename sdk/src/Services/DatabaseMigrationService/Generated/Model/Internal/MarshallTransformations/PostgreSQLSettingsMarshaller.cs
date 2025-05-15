@@ -54,6 +54,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AfterConnectScript);
             }
 
+            if(requestObject.IsSetAuthenticationMethod())
+            {
+                context.Writer.WritePropertyName("AuthenticationMethod");
+                context.Writer.Write(requestObject.AuthenticationMethod);
+            }
+
             if(requestObject.IsSetBabelfishDatabaseName())
             {
                 context.Writer.WritePropertyName("BabelfishDatabaseName");
@@ -178,6 +184,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ServerName");
                 context.Writer.Write(requestObject.ServerName);
+            }
+
+            if(requestObject.IsSetServiceAccessRoleArn())
+            {
+                context.Writer.WritePropertyName("ServiceAccessRoleArn");
+                context.Writer.Write(requestObject.ServiceAccessRoleArn);
             }
 
             if(requestObject.IsSetSlotName())

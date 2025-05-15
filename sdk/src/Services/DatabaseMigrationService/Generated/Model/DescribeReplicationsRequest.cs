@@ -45,6 +45,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Filters applied to the replications.
         /// </para>
+        ///  
+        /// <para>
+        ///  Valid filter names: <c>replication-config-arn</c> | <c>replication-config-id</c>
+        /// 
+        /// </para>
         /// </summary>
         public List<Filter> Filters
         {

@@ -150,6 +150,36 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastUpdateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResyncProgress", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.ResyncProgress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResyncRowsAttempted", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ResyncRowsAttempted = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResyncRowsFailed", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ResyncRowsFailed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResyncRowsSucceeded", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ResyncRowsSucceeded = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResyncState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResyncState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SchemaName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -49,6 +49,11 @@ namespace Amazon.DatabaseMigrationService.Model
         private DateTime? _fullLoadStartTime;
         private long? _inserts;
         private DateTime? _lastUpdateTime;
+        private double? _resyncProgress;
+        private long? _resyncRowsAttempted;
+        private long? _resyncRowsFailed;
+        private long? _resyncRowsSucceeded;
+        private string _resyncState;
         private string _schemaName;
         private string _tableName;
         private string _tableState;
@@ -314,6 +319,126 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetLastUpdateTime()
         {
             return this._lastUpdateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResyncProgress. 
+        /// <para>
+        /// Calculates the percentage of failed validations that were successfully resynced to
+        /// the system.
+        /// </para>
+        /// </summary>
+        public double ResyncProgress
+        {
+            get { return this._resyncProgress.GetValueOrDefault(); }
+            set { this._resyncProgress = value; }
+        }
+
+        // Check to see if ResyncProgress property is set
+        internal bool IsSetResyncProgress()
+        {
+            return this._resyncProgress.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResyncRowsAttempted. 
+        /// <para>
+        /// Records the total number of mismatched data rows where the system attempted to apply
+        /// fixes in the target database.
+        /// </para>
+        /// </summary>
+        public long ResyncRowsAttempted
+        {
+            get { return this._resyncRowsAttempted.GetValueOrDefault(); }
+            set { this._resyncRowsAttempted = value; }
+        }
+
+        // Check to see if ResyncRowsAttempted property is set
+        internal bool IsSetResyncRowsAttempted()
+        {
+            return this._resyncRowsAttempted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResyncRowsFailed. 
+        /// <para>
+        /// Records the total number of mismatched data rows where fix attempts failed in the
+        /// target database.
+        /// </para>
+        /// </summary>
+        public long ResyncRowsFailed
+        {
+            get { return this._resyncRowsFailed.GetValueOrDefault(); }
+            set { this._resyncRowsFailed = value; }
+        }
+
+        // Check to see if ResyncRowsFailed property is set
+        internal bool IsSetResyncRowsFailed()
+        {
+            return this._resyncRowsFailed.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResyncRowsSucceeded. 
+        /// <para>
+        /// Records the total number of mismatched data rows where fixes were successfully applied
+        /// in the target database.
+        /// </para>
+        /// </summary>
+        public long ResyncRowsSucceeded
+        {
+            get { return this._resyncRowsSucceeded.GetValueOrDefault(); }
+            set { this._resyncRowsSucceeded = value; }
+        }
+
+        // Check to see if ResyncRowsSucceeded property is set
+        internal bool IsSetResyncRowsSucceeded()
+        {
+            return this._resyncRowsSucceeded.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResyncState. 
+        /// <para>
+        /// Records the current state of table resynchronization in the migration task.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter can have the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Not enabled – Resync is not enabled for the table in the migration task.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Pending – The tables are waiting for resync.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// In progress – Resync in progress for some records in the table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// No primary key – The table could not be resynced because it has no primary key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Last resync at: <c>date/time</c> – Resync session is finished at time. Time provided
+        /// in UTC format.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string ResyncState
+        {
+            get { return this._resyncState; }
+            set { this._resyncState = value; }
+        }
+
+        // Check to see if ResyncState property is set
+        internal bool IsSetResyncState()
+        {
+            return this._resyncState != null;
         }
 
         /// <summary>

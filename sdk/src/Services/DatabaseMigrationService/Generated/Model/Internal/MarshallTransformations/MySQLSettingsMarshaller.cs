@@ -54,6 +54,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AfterConnectScript);
             }
 
+            if(requestObject.IsSetAuthenticationMethod())
+            {
+                context.Writer.WritePropertyName("AuthenticationMethod");
+                context.Writer.Write(requestObject.AuthenticationMethod);
+            }
+
             if(requestObject.IsSetCleanSourceMetadataOnMismatch())
             {
                 context.Writer.WritePropertyName("CleanSourceMetadataOnMismatch");
@@ -124,6 +130,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ServerTimezone");
                 context.Writer.Write(requestObject.ServerTimezone);
+            }
+
+            if(requestObject.IsSetServiceAccessRoleArn())
+            {
+                context.Writer.WritePropertyName("ServiceAccessRoleArn");
+                context.Writer.Write(requestObject.ServiceAccessRoleArn);
             }
 
             if(requestObject.IsSetTargetDbType())

@@ -109,7 +109,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The migration project name or Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=255)]
         public string MigrationProjectIdentifier
         {
             get { return this._migrationProjectIdentifier; }
