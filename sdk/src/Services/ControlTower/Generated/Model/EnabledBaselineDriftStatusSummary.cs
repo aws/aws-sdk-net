@@ -38,11 +38,8 @@ namespace Amazon.ControlTower.Model
     /// 
     ///  
     /// <para>
-    /// For example, if an account is moved between OUs that share the same baseline but different
-    /// versions or parameters, the entity from the previous OU is unlinked; that (previous)
-    /// OU reports <i>inheritance drift</i>. Also, the parent enabled baseline on the destination
-    /// OU reports <i>inheritance drift</i>; it is missing the newly moved account. The configurations
-    /// do not match for either OU, so both are in a state of inheritance drift.
+    /// For example, you may see this type of drift if you move accounts between OUs, but
+    /// the accounts are not yet (re-)enrolled.
     /// </para>
     /// </summary>
     public partial class EnabledBaselineDriftStatusSummary
