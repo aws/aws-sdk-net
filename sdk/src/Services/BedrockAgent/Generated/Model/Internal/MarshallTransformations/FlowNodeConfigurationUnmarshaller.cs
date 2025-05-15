@@ -120,6 +120,24 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.Lex = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("loop", targetDepth))
+                {
+                    var unmarshaller = LoopFlowNodeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Loop = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("loopController", targetDepth))
+                {
+                    var unmarshaller = LoopControllerFlowNodeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LoopController = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("loopInput", targetDepth))
+                {
+                    var unmarshaller = LoopInputFlowNodeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LoopInput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("output", targetDepth))
                 {
                     var unmarshaller = OutputFlowNodeConfigurationUnmarshaller.Instance;

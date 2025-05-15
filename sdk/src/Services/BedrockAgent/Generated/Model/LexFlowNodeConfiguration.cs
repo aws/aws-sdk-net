@@ -33,7 +33,7 @@ namespace Amazon.BedrockAgent.Model
     /// Contains configurations for a Lex node in the flow. You specify a Amazon Lex bot to
     /// invoke. This node takes an utterance as the input and returns as the output the intent
     /// identified by the Amazon Lex bot. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-nodes.html">Node
-    /// types in Amazon Bedrock works</a> in the Amazon Bedrock User Guide.
+    /// types in a flow</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class LexFlowNodeConfiguration
     {

@@ -38,6 +38,8 @@ namespace Amazon.BedrockAgent.Model
         private DuplicateConditionExpressionFlowValidationDetails _duplicateConditionExpression;
         private DuplicateConnectionsFlowValidationDetails _duplicateConnections;
         private IncompatibleConnectionDataTypeFlowValidationDetails _incompatibleConnectionDataType;
+        private InvalidLoopBoundaryFlowValidationDetails _invalidLoopBoundary;
+        private LoopIncompatibleNodeTypeFlowValidationDetails _loopIncompatibleNodeType;
         private MalformedConditionExpressionFlowValidationDetails _malformedConditionExpression;
         private MalformedNodeInputExpressionFlowValidationDetails _malformedNodeInputExpression;
         private MismatchedNodeInputTypeFlowValidationDetails _mismatchedNodeInputType;
@@ -45,10 +47,14 @@ namespace Amazon.BedrockAgent.Model
         private MissingConnectionConfigurationFlowValidationDetails _missingConnectionConfiguration;
         private MissingDefaultConditionFlowValidationDetails _missingDefaultCondition;
         private MissingEndingNodesFlowValidationDetails _missingEndingNodes;
+        private MissingLoopControllerNodeFlowValidationDetails _missingLoopControllerNode;
+        private MissingLoopInputNodeFlowValidationDetails _missingLoopInputNode;
         private MissingNodeConfigurationFlowValidationDetails _missingNodeConfiguration;
         private MissingNodeInputFlowValidationDetails _missingNodeInput;
         private MissingNodeOutputFlowValidationDetails _missingNodeOutput;
         private MissingStartingNodesFlowValidationDetails _missingStartingNodes;
+        private MultipleLoopControllerNodesFlowValidationDetails _multipleLoopControllerNodes;
+        private MultipleLoopInputNodesFlowValidationDetails _multipleLoopInputNodes;
         private MultipleNodeInputConnectionsFlowValidationDetails _multipleNodeInputConnections;
         private UnfulfilledNodeInputFlowValidationDetails _unfulfilledNodeInput;
         private UnknownConnectionConditionFlowValidationDetails _unknownConnectionCondition;
@@ -132,6 +138,42 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetIncompatibleConnectionDataType()
         {
             return this._incompatibleConnectionDataType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvalidLoopBoundary. 
+        /// <para>
+        /// Details about a flow that includes connections that violate loop boundary rules.
+        /// </para>
+        /// </summary>
+        public InvalidLoopBoundaryFlowValidationDetails InvalidLoopBoundary
+        {
+            get { return this._invalidLoopBoundary; }
+            set { this._invalidLoopBoundary = value; }
+        }
+
+        // Check to see if InvalidLoopBoundary property is set
+        internal bool IsSetInvalidLoopBoundary()
+        {
+            return this._invalidLoopBoundary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoopIncompatibleNodeType. 
+        /// <para>
+        /// Details about a flow that includes incompatible node types in a DoWhile loop.
+        /// </para>
+        /// </summary>
+        public LoopIncompatibleNodeTypeFlowValidationDetails LoopIncompatibleNodeType
+        {
+            get { return this._loopIncompatibleNodeType; }
+            set { this._loopIncompatibleNodeType = value; }
+        }
+
+        // Check to see if LoopIncompatibleNodeType property is set
+        internal bool IsSetLoopIncompatibleNodeType()
+        {
+            return this._loopIncompatibleNodeType != null;
         }
 
         /// <summary>
@@ -261,6 +303,44 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MissingLoopControllerNode. 
+        /// <para>
+        /// Details about a flow that's missing a required <c>LoopController</c> node in a DoWhile
+        /// loop.
+        /// </para>
+        /// </summary>
+        public MissingLoopControllerNodeFlowValidationDetails MissingLoopControllerNode
+        {
+            get { return this._missingLoopControllerNode; }
+            set { this._missingLoopControllerNode = value; }
+        }
+
+        // Check to see if MissingLoopControllerNode property is set
+        internal bool IsSetMissingLoopControllerNode()
+        {
+            return this._missingLoopControllerNode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MissingLoopInputNode. 
+        /// <para>
+        /// Details about a flow that's missing a required <c>LoopInput</c> node in a DoWhile
+        /// loop.
+        /// </para>
+        /// </summary>
+        public MissingLoopInputNodeFlowValidationDetails MissingLoopInputNode
+        {
+            get { return this._missingLoopInputNode; }
+            set { this._missingLoopInputNode = value; }
+        }
+
+        // Check to see if MissingLoopInputNode property is set
+        internal bool IsSetMissingLoopInputNode()
+        {
+            return this._missingLoopInputNode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MissingNodeConfiguration. 
         /// <para>
         /// Details about missing configuration for a node.
@@ -330,6 +410,43 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetMissingStartingNodes()
         {
             return this._missingStartingNodes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultipleLoopControllerNodes. 
+        /// <para>
+        /// Details about a flow that contains multiple <c>LoopController</c> nodes in a DoWhile
+        /// loop.
+        /// </para>
+        /// </summary>
+        public MultipleLoopControllerNodesFlowValidationDetails MultipleLoopControllerNodes
+        {
+            get { return this._multipleLoopControllerNodes; }
+            set { this._multipleLoopControllerNodes = value; }
+        }
+
+        // Check to see if MultipleLoopControllerNodes property is set
+        internal bool IsSetMultipleLoopControllerNodes()
+        {
+            return this._multipleLoopControllerNodes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultipleLoopInputNodes. 
+        /// <para>
+        /// Details about a flow that contains multiple <c>LoopInput</c> nodes in a DoWhile loop.
+        /// </para>
+        /// </summary>
+        public MultipleLoopInputNodesFlowValidationDetails MultipleLoopInputNodes
+        {
+            get { return this._multipleLoopInputNodes; }
+            set { this._multipleLoopInputNodes = value; }
+        }
+
+        // Check to see if MultipleLoopInputNodes property is set
+        internal bool IsSetMultipleLoopInputNodes()
+        {
+            return this._multipleLoopInputNodes != null;
         }
 
         /// <summary>

@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Contains configurations for a node in your flow. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-nodes.html">Node
-    /// types in Amazon Bedrock works</a> in the Amazon Bedrock User Guide.
+    /// types in a flow</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class FlowNodeConfiguration
     {
@@ -44,6 +44,9 @@ namespace Amazon.BedrockAgent.Model
         private KnowledgeBaseFlowNodeConfiguration _knowledgeBase;
         private LambdaFunctionFlowNodeConfiguration _lambdaFunction;
         private LexFlowNodeConfiguration _lex;
+        private LoopFlowNodeConfiguration _loop;
+        private LoopControllerFlowNodeConfiguration _loopController;
+        private LoopInputFlowNodeConfiguration _loopInput;
         private OutputFlowNodeConfiguration _output;
         private PromptFlowNodeConfiguration _prompt;
         private RetrievalFlowNodeConfiguration _retrieval;
@@ -226,6 +229,60 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetLex()
         {
             return this._lex != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Loop. 
+        /// <para>
+        /// Contains configurations for a DoWhile loop in your flow.
+        /// </para>
+        /// </summary>
+        public LoopFlowNodeConfiguration Loop
+        {
+            get { return this._loop; }
+            set { this._loop = value; }
+        }
+
+        // Check to see if Loop property is set
+        internal bool IsSetLoop()
+        {
+            return this._loop != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoopController. 
+        /// <para>
+        /// Contains controller node configurations for a DoWhile loop in your flow.
+        /// </para>
+        /// </summary>
+        public LoopControllerFlowNodeConfiguration LoopController
+        {
+            get { return this._loopController; }
+            set { this._loopController = value; }
+        }
+
+        // Check to see if LoopController property is set
+        internal bool IsSetLoopController()
+        {
+            return this._loopController != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoopInput. 
+        /// <para>
+        /// Contains input node configurations for a DoWhile loop in your flow.
+        /// </para>
+        /// </summary>
+        public LoopInputFlowNodeConfiguration LoopInput
+        {
+            get { return this._loopInput; }
+            set { this._loopInput = value; }
+        }
+
+        // Check to see if LoopInput property is set
+        internal bool IsSetLoopInput()
+        {
+            return this._loopInput != null;
         }
 
         /// <summary>

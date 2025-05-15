@@ -2016,6 +2016,11 @@
     <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){1,50}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.FieldForReranking.FieldName</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.FixedSizeChunkingConfiguration.MaxTokens</property>
     <min>1</min>
   </property-value-rule>
@@ -2023,6 +2028,11 @@
     <property>Amazon.BedrockAgent.Model.FixedSizeChunkingConfiguration.OverlapPercentage</property>
     <min>1</min>
     <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.FlowAliasConcurrencyConfiguration.MaxConcurrency</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.FlowAliasRoutingConfigurationListItem.FlowVersion</property>
@@ -2231,6 +2241,18 @@
     <max>5000000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.InvalidLoopBoundaryFlowValidationDetails.Connection</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){1,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.InvalidLoopBoundaryFlowValidationDetails.Source</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.InvalidLoopBoundaryFlowValidationDetails.Target</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.KendraKnowledgeBaseConfiguration.KendraIndexArn</property>
     <pattern>^arn:aws(|-cn|-us-gov):kendra:[a-z0-9-]{1,20}:([0-9]{12}|):index/([a-zA-Z0-9][a-zA-Z0-9-]{35}|[a-zA-Z0-9][a-zA-Z0-9-]{35}-[a-zA-Z0-9][a-zA-Z0-9-]{35})$</pattern>
   </property-value-rule>
@@ -2280,6 +2302,16 @@
     <pattern>^(arn:aws(-[^:]{1,12})?:(bedrock|sagemaker):[a-z0-9-]{1,20}:([0-9]{12})?:([a-z-]+/)?)?([a-zA-Z0-9.-]{1,63}){0,2}(([:][a-z0-9-]{1,63}){0,2})?(/[a-z0-9]{1,12})?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.KnowledgeBaseFlowNodeConfiguration.NumberOfResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.KnowledgeBasePromptTemplate.TextPromptTemplate</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.KnowledgeBaseSummary.Description</property>
     <min>1</min>
     <max>200</max>
@@ -2308,6 +2340,19 @@
     <property>Amazon.BedrockAgent.Model.LexFlowNodeConfiguration.LocaleId</property>
     <min>1</min>
     <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.LoopControllerFlowNodeConfiguration.MaxIterations</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.LoopIncompatibleNodeTypeFlowValidationDetails.IncompatibleNodeName</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.LoopIncompatibleNodeTypeFlowValidationDetails.Node</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){1,50}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.MalformedConditionExpressionFlowValidationDetails.Cause</property>
@@ -2372,6 +2417,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.MissingDefaultConditionFlowValidationDetails.Node</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.MissingLoopControllerNodeFlowValidationDetails.LoopNode</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.MissingLoopInputNodeFlowValidationDetails.LoopNode</property>
     <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){1,50}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2451,6 +2504,14 @@
     <min>0</min>
     <max>2048</max>
     <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.MultipleLoopControllerNodesFlowValidationDetails.LoopNode</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.MultipleLoopInputNodesFlowValidationDetails.LoopNode</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){1,50}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.MultipleNodeInputConnectionsFlowValidationDetails.Input</property>
@@ -3011,6 +3072,17 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^(arn:aws(-[^:]{1,12})?:(bedrock|sagemaker):[a-z0-9-]{1,20}:([0-9]{12})?:([a-z-]+/)?)?([a-zA-Z0-9.-]{1,63}){0,2}(([:][a-z0-9-]{1,63}){0,2})?(/[a-z0-9]{1,12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.VectorSearchBedrockRerankingConfiguration.NumberOfRerankedResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.VectorSearchBedrockRerankingModelConfiguration.ModelArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}::foundation-model/(.*))?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.WebCrawlerConfiguration.UserAgent</property>

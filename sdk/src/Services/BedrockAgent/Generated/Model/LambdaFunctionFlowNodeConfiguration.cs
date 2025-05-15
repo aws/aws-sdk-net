@@ -33,7 +33,7 @@ namespace Amazon.BedrockAgent.Model
     /// Contains configurations for a Lambda function node in the flow. You specify the Lambda
     /// function to invoke and the inputs into the function. The output is the response that
     /// is defined in the Lambda function. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-nodes.html">Node
-    /// types in Amazon Bedrock works</a> in the Amazon Bedrock User Guide.
+    /// types in a flow</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class LambdaFunctionFlowNodeConfiguration
     {

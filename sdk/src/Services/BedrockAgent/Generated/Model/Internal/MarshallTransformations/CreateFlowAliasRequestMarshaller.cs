@@ -81,6 +81,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetConcurrencyConfiguration())
+                {
+                    context.Writer.WritePropertyName("concurrencyConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = FlowAliasConcurrencyConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ConcurrencyConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");

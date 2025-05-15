@@ -147,6 +147,39 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetLoop())
+            {
+                context.Writer.WritePropertyName("loop");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LoopFlowNodeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Loop, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetLoopController())
+            {
+                context.Writer.WritePropertyName("loopController");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LoopControllerFlowNodeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LoopController, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetLoopInput())
+            {
+                context.Writer.WritePropertyName("loopInput");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LoopInputFlowNodeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LoopInput, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetOutput())
             {
                 context.Writer.WritePropertyName("output");

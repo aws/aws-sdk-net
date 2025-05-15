@@ -72,6 +72,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.GuardrailConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inferenceConfiguration", targetDepth))
+                {
+                    var unmarshaller = PromptInferenceConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.InferenceConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("knowledgeBaseId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -82,6 +88,30 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("numberOfResults", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfResults = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("orchestrationConfiguration", targetDepth))
+                {
+                    var unmarshaller = KnowledgeBaseOrchestrationConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.OrchestrationConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("promptTemplate", targetDepth))
+                {
+                    var unmarshaller = KnowledgeBasePromptTemplateUnmarshaller.Instance;
+                    unmarshalledObject.PromptTemplate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rerankingConfiguration", targetDepth))
+                {
+                    var unmarshaller = VectorSearchRerankingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.RerankingConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

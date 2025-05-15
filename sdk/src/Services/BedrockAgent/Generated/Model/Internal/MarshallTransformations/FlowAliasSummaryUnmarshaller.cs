@@ -72,6 +72,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("concurrencyConfiguration", targetDepth))
+                {
+                    var unmarshaller = FlowAliasConcurrencyConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ConcurrencyConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

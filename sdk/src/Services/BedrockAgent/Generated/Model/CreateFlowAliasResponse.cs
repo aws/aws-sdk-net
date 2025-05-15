@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgent.Model
     public partial class CreateFlowAliasResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private FlowAliasConcurrencyConfiguration _concurrencyConfiguration;
         private DateTime? _createdAt;
         private string _description;
         private string _flowId;
@@ -60,6 +61,24 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConcurrencyConfiguration. 
+        /// <para>
+        /// The configuration that specifies how nodes in the flow are executed in parallel.
+        /// </para>
+        /// </summary>
+        public FlowAliasConcurrencyConfiguration ConcurrencyConfiguration
+        {
+            get { return this._concurrencyConfiguration; }
+            set { this._concurrencyConfiguration = value; }
+        }
+
+        // Check to see if ConcurrencyConfiguration property is set
+        internal bool IsSetConcurrencyConfiguration()
+        {
+            return this._concurrencyConfiguration != null;
         }
 
         /// <summary>

@@ -34,13 +34,18 @@ namespace Amazon.BedrockAgent.Model
     /// as the input and returns, as the output, the retrieved responses directly (as an array)
     /// or a response generated based on the retrieved responses. For more information, see
     /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-nodes.html">Node
-    /// types in Amazon Bedrock works</a> in the Amazon Bedrock User Guide.
+    /// types in a flow</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class KnowledgeBaseFlowNodeConfiguration
     {
         private GuardrailConfiguration _guardrailConfiguration;
+        private PromptInferenceConfiguration _inferenceConfiguration;
         private string _knowledgeBaseId;
         private string _modelId;
+        private int? _numberOfResults;
+        private KnowledgeBaseOrchestrationConfiguration _orchestrationConfiguration;
+        private KnowledgeBasePromptTemplate _promptTemplate;
+        private VectorSearchRerankingConfiguration _rerankingConfiguration;
 
         /// <summary>
         /// Gets and sets the property GuardrailConfiguration. 
@@ -59,6 +64,24 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetGuardrailConfiguration()
         {
             return this._guardrailConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceConfiguration. 
+        /// <para>
+        /// Contains inference configurations for the prompt.
+        /// </para>
+        /// </summary>
+        public PromptInferenceConfiguration InferenceConfiguration
+        {
+            get { return this._inferenceConfiguration; }
+            set { this._inferenceConfiguration = value; }
+        }
+
+        // Check to see if InferenceConfiguration property is set
+        internal bool IsSetInferenceConfiguration()
+        {
+            return this._inferenceConfiguration != null;
         }
 
         /// <summary>
@@ -99,6 +122,81 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetModelId()
         {
             return this._modelId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfResults. 
+        /// <para>
+        /// The number of results to retrieve from the knowledge base.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int NumberOfResults
+        {
+            get { return this._numberOfResults.GetValueOrDefault(); }
+            set { this._numberOfResults = value; }
+        }
+
+        // Check to see if NumberOfResults property is set
+        internal bool IsSetNumberOfResults()
+        {
+            return this._numberOfResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrchestrationConfiguration. 
+        /// <para>
+        /// The configuration for orchestrating the retrieval and generation process in the knowledge
+        /// base node.
+        /// </para>
+        /// </summary>
+        public KnowledgeBaseOrchestrationConfiguration OrchestrationConfiguration
+        {
+            get { return this._orchestrationConfiguration; }
+            set { this._orchestrationConfiguration = value; }
+        }
+
+        // Check to see if OrchestrationConfiguration property is set
+        internal bool IsSetOrchestrationConfiguration()
+        {
+            return this._orchestrationConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PromptTemplate. 
+        /// <para>
+        /// A custom prompt template to use with the knowledge base for generating responses.
+        /// </para>
+        /// </summary>
+        public KnowledgeBasePromptTemplate PromptTemplate
+        {
+            get { return this._promptTemplate; }
+            set { this._promptTemplate = value; }
+        }
+
+        // Check to see if PromptTemplate property is set
+        internal bool IsSetPromptTemplate()
+        {
+            return this._promptTemplate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RerankingConfiguration. 
+        /// <para>
+        /// The configuration for reranking the retrieved results from the knowledge base to improve
+        /// relevance.
+        /// </para>
+        /// </summary>
+        public VectorSearchRerankingConfiguration RerankingConfiguration
+        {
+            get { return this._rerankingConfiguration; }
+            set { this._rerankingConfiguration = value; }
+        }
+
+        // Check to see if RerankingConfiguration property is set
+        internal bool IsSetRerankingConfiguration()
+        {
+            return this._rerankingConfiguration != null;
         }
 
     }
