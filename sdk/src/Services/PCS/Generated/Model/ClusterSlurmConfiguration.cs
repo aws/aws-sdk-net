@@ -34,9 +34,28 @@ namespace Amazon.PCS.Model
     /// </summary>
     public partial class ClusterSlurmConfiguration
     {
+        private Accounting _accounting;
         private SlurmAuthKey _authKey;
         private int? _scaleDownIdleTimeInSeconds;
         private List<SlurmCustomSetting> _slurmCustomSettings = AWSConfigs.InitializeCollections ? new List<SlurmCustomSetting>() : null;
+
+        /// <summary>
+        /// Gets and sets the property Accounting. 
+        /// <para>
+        /// The accounting configuration includes configurable settings for Slurm accounting.
+        /// </para>
+        /// </summary>
+        public Accounting Accounting
+        {
+            get { return this._accounting; }
+            set { this._accounting = value; }
+        }
+
+        // Check to see if Accounting property is set
+        internal bool IsSetAccounting()
+        {
+            return this._accounting != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AuthKey. 

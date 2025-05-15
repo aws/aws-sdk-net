@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PCS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClusterSlurmConfiguration Object
+    /// Response Unmarshaller for Accounting Object
     /// </summary>  
-    public class ClusterSlurmConfigurationUnmarshaller : IUnmarshaller<ClusterSlurmConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ClusterSlurmConfiguration, JsonUnmarshallerContext>
+    public class AccountingUnmarshaller : IUnmarshaller<Accounting, XmlUnmarshallerContext>, IUnmarshaller<Accounting, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ClusterSlurmConfiguration IUnmarshaller<ClusterSlurmConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Accounting IUnmarshaller<Accounting, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClusterSlurmConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public Accounting Unmarshall(JsonUnmarshallerContext context)
         {
-            ClusterSlurmConfiguration unmarshalledObject = new ClusterSlurmConfiguration();
+            Accounting unmarshalledObject = new Accounting();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,16 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("accounting", targetDepth))
-                {
-                    var unmarshaller = AccountingUnmarshaller.Instance;
-                    unmarshalledObject.Accounting = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("authKey", targetDepth))
-                {
-                    var unmarshaller = SlurmAuthKeyUnmarshaller.Instance;
-                    unmarshalledObject.AuthKey = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("scaleDownIdleTimeInSeconds", targetDepth))
+                if (context.TestExpression("defaultPurgeTimeInDays", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ScaleDownIdleTimeInSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultPurgeTimeInDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("slurmCustomSettings", targetDepth))
+                if (context.TestExpression("mode", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SlurmCustomSetting, SlurmCustomSettingUnmarshaller>(SlurmCustomSettingUnmarshaller.Instance);
-                    unmarshalledObject.SlurmCustomSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +83,12 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
         }
 
 
-        private static ClusterSlurmConfigurationUnmarshaller _instance = new ClusterSlurmConfigurationUnmarshaller();        
+        private static AccountingUnmarshaller _instance = new AccountingUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClusterSlurmConfigurationUnmarshaller Instance
+        public static AccountingUnmarshaller Instance
         {
             get
             {
