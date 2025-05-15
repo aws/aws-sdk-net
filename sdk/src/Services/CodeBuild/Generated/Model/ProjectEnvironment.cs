@@ -37,6 +37,7 @@ namespace Amazon.CodeBuild.Model
         private string _certificate;
         private ComputeConfiguration _computeConfiguration;
         private ComputeType _computeType;
+        private DockerServer _dockerServer;
         private List<EnvironmentVariable> _environmentVariables = AWSConfigs.InitializeCollections ? new List<EnvironmentVariable>() : null;
         private ProjectFleet _fleet;
         private string _image;
@@ -204,6 +205,24 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetComputeType()
         {
             return this._computeType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DockerServer. 
+        /// <para>
+        /// A DockerServer object to use for this build project.
+        /// </para>
+        /// </summary>
+        public DockerServer DockerServer
+        {
+            get { return this._dockerServer; }
+            set { this._dockerServer = value; }
+        }
+
+        // Check to see if DockerServer property is set
+        internal bool IsSetDockerServer()
+        {
+            return this._dockerServer != null;
         }
 
         /// <summary>
