@@ -1,3 +1,17 @@
+### 3.7.1045.0 (2025-05-15 18:30 UTC)
+* BedrockAgent (3.7.426.0)
+	* Amazon Bedrock Flows introduces DoWhile loops nodes, parallel node executions, and enhancements to knowledge base nodes.
+* CodeBuild (3.7.419.0)
+	* AWS CodeBuild now supports Docker Server capability
+* ControlTower (3.7.403.1)
+	* Updated the descriptions for the AWS Control Tower Baseline APIs to make them more intuitive.
+* DatabaseMigrationService (3.7.409.0)
+	* Introduces Data Resync feature to describe-table-statistics and IAM database authentication for MariaDB, MySQL, and PostgreSQL.
+* PCS (3.7.403.0)
+	* This release adds support for Slurm accounting. For more information, see the Slurm accounting topic in the AWS PCS User Guide. Slurm accounting is supported for Slurm 24.11 and later. This release also adds 24.11 as a valid value for the version parameter of the Scheduler data type.
+* WorkSpaces (3.7.412.0)
+	* Added the new AlwaysOn running mode for WorkSpaces Pools. Customers can now choose between AlwaysOn (for instant access, with hourly usage billing regardless of connection status), or AutoStop (to optimize cost, with a brief startup delay) for their pools.
+
 ### 3.7.1044.0 (2025-05-14 18:25 UTC)
 * CloudWatchLogs (3.7.413.0)
 	* This release adds a new API "ListLogGroups" and an improvement in API "DescribeLogGroups"
