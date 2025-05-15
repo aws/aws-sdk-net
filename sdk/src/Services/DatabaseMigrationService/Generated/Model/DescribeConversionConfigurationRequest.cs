@@ -43,7 +43,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The name or Amazon Resource Name (ARN) for the schema conversion project to describe.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=255)]
         public string MigrationProjectIdentifier
         {
             get { return this._migrationProjectIdentifier; }

@@ -55,7 +55,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid filter names: event-subscription-arn | event-subscription-id 
+        /// Valid filter names: <c>event-subscription-arn</c> | <c>event-subscription-id</c> 
         /// </para>
         /// </summary>
         public List<Filter> Filters
