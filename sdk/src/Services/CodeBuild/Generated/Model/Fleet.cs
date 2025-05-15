@@ -94,7 +94,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property ComputeConfiguration. 
         /// <para>
         /// The compute configuration of the compute fleet. This is only required if <c>computeType</c>
-        /// is set to <c>ATTRIBUTE_BASED_COMPUTE</c>.
+        /// is set to <c>ATTRIBUTE_BASED_COMPUTE</c> or <c>CUSTOM_INSTANCE_TYPE</c>.
         /// </para>
         /// </summary>
         public ComputeConfiguration ComputeConfiguration
@@ -127,6 +127,12 @@ namespace Amazon.CodeBuild.Model
         /// capacity environment types</a> in the <i>CodeBuild User Guide</i>.
         /// </para>
         ///  </note> </li> <li> 
+        /// <para>
+        ///  <c>CUSTOM_INSTANCE_TYPE</c>: Specify the instance type for your compute fleet. For
+        /// a list of supported instance types, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.instance-types">Supported
+        /// instance families </a> in the <i>CodeBuild User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <c>BUILD_GENERAL1_SMALL</c>: Use up to 4 GiB memory and 2 vCPUs for builds.
         /// </para>

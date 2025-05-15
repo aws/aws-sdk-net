@@ -84,6 +84,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComputeType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dockerServer", targetDepth))
+                {
+                    var unmarshaller = DockerServerUnmarshaller.Instance;
+                    unmarshalledObject.DockerServer = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("environmentVariables", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<EnvironmentVariable, EnvironmentVariableUnmarshaller>(EnvironmentVariableUnmarshaller.Instance);
