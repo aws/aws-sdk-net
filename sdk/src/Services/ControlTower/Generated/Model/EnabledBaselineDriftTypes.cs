@@ -66,9 +66,9 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Inheritance. 
         /// <para>
-        /// One or more accounts within the target OU does not match the baseline configuration
+        /// At least one account within the target OU does not match the baseline configuration
         /// defined on that OU. An account is in inheritance drift when it does not match the
-        /// configuration of a parent OU, possibly a new parent OU if the account is moved. 
+        /// configuration of a parent OU, possibly a new parent OU, if the account is moved. 
         /// </para>
         /// </summary>
         public EnabledBaselineInheritanceDrift Inheritance
