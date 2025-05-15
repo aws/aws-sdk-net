@@ -115,6 +115,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PoolId);
                 }
 
+                if(publicRequest.IsSetRunningMode())
+                {
+                    context.Writer.WritePropertyName("RunningMode");
+                    context.Writer.Write(publicRequest.RunningMode);
+                }
+
                 if(publicRequest.IsSetTimeoutSettings())
                 {
                     context.Writer.WritePropertyName("TimeoutSettings");

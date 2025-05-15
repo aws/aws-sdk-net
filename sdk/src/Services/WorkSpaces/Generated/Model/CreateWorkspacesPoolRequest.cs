@@ -41,6 +41,7 @@ namespace Amazon.WorkSpaces.Model
         private string _description;
         private string _directoryId;
         private string _poolName;
+        private PoolsRunningMode _runningMode;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TimeoutSettings _timeoutSettings;
 
@@ -155,6 +156,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetPoolName()
         {
             return this._poolName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RunningMode. 
+        /// <para>
+        /// The running mode for the pool.
+        /// </para>
+        /// </summary>
+        public PoolsRunningMode RunningMode
+        {
+            get { return this._runningMode; }
+            set { this._runningMode = value; }
+        }
+
+        // Check to see if RunningMode property is set
+        internal bool IsSetRunningMode()
+        {
+            return this._runningMode != null;
         }
 
         /// <summary>
