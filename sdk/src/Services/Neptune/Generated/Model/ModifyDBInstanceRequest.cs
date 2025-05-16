@@ -902,7 +902,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// Not supported.
+        /// Not applicable. In Neptune the storage type is managed at the DB Cluster level.
         /// </para>
         /// </summary>
         public string StorageType
