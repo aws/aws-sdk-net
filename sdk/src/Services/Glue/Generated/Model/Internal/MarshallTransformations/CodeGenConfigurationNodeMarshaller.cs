@@ -653,6 +653,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetS3ExcelSource())
+            {
+                context.Writer.WritePropertyName("S3ExcelSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3ExcelSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3ExcelSource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetS3GlueParquetTarget())
             {
                 context.Writer.WritePropertyName("S3GlueParquetTarget");
@@ -693,6 +704,28 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
                 var marshaller = S3HudiSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3HudiSource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetS3HyperDirectTarget())
+            {
+                context.Writer.WritePropertyName("S3HyperDirectTarget");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3HyperDirectTargetMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3HyperDirectTarget, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetS3IcebergDirectTarget())
+            {
+                context.Writer.WritePropertyName("S3IcebergDirectTarget");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3IcebergDirectTargetMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3IcebergDirectTarget, context);
 
                 context.Writer.WriteObjectEnd();
             }

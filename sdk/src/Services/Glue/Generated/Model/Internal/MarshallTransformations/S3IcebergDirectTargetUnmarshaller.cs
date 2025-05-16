@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for S3DeltaDirectTarget Object
+    /// Response Unmarshaller for S3IcebergDirectTarget Object
     /// </summary>  
-    public class S3DeltaDirectTargetUnmarshaller : IUnmarshaller<S3DeltaDirectTarget, XmlUnmarshallerContext>, IUnmarshaller<S3DeltaDirectTarget, JsonUnmarshallerContext>
+    public class S3IcebergDirectTargetUnmarshaller : IUnmarshaller<S3IcebergDirectTarget, XmlUnmarshallerContext>, IUnmarshaller<S3IcebergDirectTarget, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        S3DeltaDirectTarget IUnmarshaller<S3DeltaDirectTarget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        S3IcebergDirectTarget IUnmarshaller<S3IcebergDirectTarget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public S3DeltaDirectTarget Unmarshall(JsonUnmarshallerContext context)
+        public S3IcebergDirectTarget Unmarshall(JsonUnmarshallerContext context)
         {
-            S3DeltaDirectTarget unmarshalledObject = new S3DeltaDirectTarget();
+            S3IcebergDirectTarget unmarshalledObject = new S3IcebergDirectTarget();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -125,12 +125,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static S3DeltaDirectTargetUnmarshaller _instance = new S3DeltaDirectTargetUnmarshaller();        
+        private static S3IcebergDirectTargetUnmarshaller _instance = new S3IcebergDirectTargetUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static S3DeltaDirectTargetUnmarshaller Instance
+        public static S3IcebergDirectTargetUnmarshaller Instance
         {
             get
             {

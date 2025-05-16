@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for S3DeltaDirectTarget Object
+    /// Response Unmarshaller for S3HyperDirectTarget Object
     /// </summary>  
-    public class S3DeltaDirectTargetUnmarshaller : IUnmarshaller<S3DeltaDirectTarget, XmlUnmarshallerContext>, IUnmarshaller<S3DeltaDirectTarget, JsonUnmarshallerContext>
+    public class S3HyperDirectTargetUnmarshaller : IUnmarshaller<S3HyperDirectTarget, XmlUnmarshallerContext>, IUnmarshaller<S3HyperDirectTarget, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        S3DeltaDirectTarget IUnmarshaller<S3DeltaDirectTarget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        S3HyperDirectTarget IUnmarshaller<S3HyperDirectTarget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public S3DeltaDirectTarget Unmarshall(JsonUnmarshallerContext context)
+        public S3HyperDirectTarget Unmarshall(JsonUnmarshallerContext context)
         {
-            S3DeltaDirectTarget unmarshalledObject = new S3DeltaDirectTarget();
+            S3HyperDirectTarget unmarshalledObject = new S3HyperDirectTarget();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AdditionalOptions", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.AdditionalOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Compression", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Compression = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Format", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Inputs", targetDepth))
@@ -94,12 +82,6 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NumberTargetPartitions", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NumberTargetPartitions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PartitionKeys", targetDepth))
@@ -125,12 +107,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static S3DeltaDirectTargetUnmarshaller _instance = new S3DeltaDirectTargetUnmarshaller();        
+        private static S3HyperDirectTargetUnmarshaller _instance = new S3HyperDirectTargetUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static S3DeltaDirectTargetUnmarshaller Instance
+        public static S3HyperDirectTargetUnmarshaller Instance
         {
             get
             {

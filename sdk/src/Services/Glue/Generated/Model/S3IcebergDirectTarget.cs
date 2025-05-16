@@ -30,12 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies a target that writes to a Hudi data source in Amazon S3.
+    /// Specifies a target that writes to an Iceberg data source in Amazon S3.
     /// </summary>
-    public partial class S3HudiDirectTarget
+    public partial class S3IcebergDirectTarget
     {
         private Dictionary<string, string> _additionalOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
-        private HudiTargetCompressionType _compression;
+        private IcebergTargetCompressionType _compression;
         private TargetFormat _format;
         private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
@@ -47,10 +47,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property AdditionalOptions. 
         /// <para>
-        /// Specifies additional connection options for the connector.
+        /// Provides additional configuration options for customizing the Iceberg table behavior.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public Dictionary<string, string> AdditionalOptions
         {
             get { return this._additionalOptions; }
@@ -66,12 +65,11 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Compression. 
         /// <para>
-        /// Specifies how the data is compressed. This is generally not necessary if the data
-        /// has a standard file extension. Possible values are <c>"gzip"</c> and <c>"bzip"</c>).
+        /// Specifies the compression codec used for Iceberg table files in S3.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public HudiTargetCompressionType Compression
+        public IcebergTargetCompressionType Compression
         {
             get { return this._compression; }
             set { this._compression = value; }
@@ -86,7 +84,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// Specifies the data output format for the target.
+        /// Specifies the file format used for storing Iceberg table data (e.g., Parquet, ORC).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -105,7 +103,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Inputs. 
         /// <para>
-        /// The nodes that are inputs to the data target.
+        /// Defines the single input source that provides data to this Iceberg target.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
@@ -124,7 +122,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the data target.
+        /// Specifies the unique identifier for the Iceberg target node in your data pipeline.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -143,8 +141,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberTargetPartitions. 
         /// <para>
-        /// Specifies the number of target partitions for distributing Hudi dataset files across
-        /// Amazon S3.
+        /// Sets the number of target partitions for distributing Iceberg table files across S3.
         /// </para>
         /// </summary>
         public string NumberTargetPartitions
@@ -162,7 +159,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PartitionKeys. 
         /// <para>
-        /// Specifies native partitioning using a sequence of keys.
+        /// Specifies the columns used to partition the Iceberg table data in S3.
         /// </para>
         /// </summary>
         public List<List<string>> PartitionKeys
@@ -180,7 +177,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// The Amazon S3 path of your Hudi data source to write to.
+        /// Defines the S3 location where the Iceberg table data will be stored.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -199,7 +196,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SchemaChangePolicy. 
         /// <para>
-        /// A policy that specifies update behavior for the crawler.
+        /// Defines how schema changes are handled when writing data to the Iceberg table.
         /// </para>
         /// </summary>
         public DirectSchemaChangePolicy SchemaChangePolicy

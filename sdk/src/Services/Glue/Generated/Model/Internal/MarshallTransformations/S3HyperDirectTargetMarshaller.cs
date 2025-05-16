@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// S3GlueParquetTarget Marshaller
+    /// S3HyperDirectTarget Marshaller
     /// </summary>
-    public class S3GlueParquetTargetMarshaller : IRequestMarshaller<S3GlueParquetTarget, JsonMarshallerContext> 
+    public class S3HyperDirectTargetMarshaller : IRequestMarshaller<S3HyperDirectTarget, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3GlueParquetTarget requestObject, JsonMarshallerContext context)
+        public void Marshall(S3HyperDirectTarget requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -69,12 +69,6 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Name");
                 context.Writer.Write(requestObject.Name);
-            }
-
-            if(requestObject.IsSetNumberTargetPartitions())
-            {
-                context.Writer.WritePropertyName("NumberTargetPartitions");
-                context.Writer.Write(requestObject.NumberTargetPartitions);
             }
 
             if(requestObject.IsSetPartitionKeys())
@@ -115,7 +109,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static S3GlueParquetTargetMarshaller Instance = new S3GlueParquetTargetMarshaller();
+        public readonly static S3HyperDirectTargetMarshaller Instance = new S3HyperDirectTargetMarshaller();
 
     }
 }

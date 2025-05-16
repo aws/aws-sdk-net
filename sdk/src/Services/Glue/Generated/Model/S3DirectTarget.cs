@@ -38,6 +38,7 @@ namespace Amazon.Glue.Model
         private TargetFormat _format;
         private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
+        private string _numberTargetPartitions;
         private List<List<string>> _partitionKeys = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
         private string _path;
         private DirectSchemaChangePolicy _schemaChangePolicy;
@@ -116,6 +117,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberTargetPartitions. 
+        /// <para>
+        /// Specifies the number of target partitions when writing data directly to Amazon S3.
+        /// </para>
+        /// </summary>
+        public string NumberTargetPartitions
+        {
+            get { return this._numberTargetPartitions; }
+            set { this._numberTargetPartitions = value; }
+        }
+
+        // Check to see if NumberTargetPartitions property is set
+        internal bool IsSetNumberTargetPartitions()
+        {
+            return this._numberTargetPartitions != null;
         }
 
         /// <summary>

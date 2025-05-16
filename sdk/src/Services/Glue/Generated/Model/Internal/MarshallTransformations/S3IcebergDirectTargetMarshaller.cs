@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// S3GlueParquetTarget Marshaller
+    /// S3IcebergDirectTarget Marshaller
     /// </summary>
-    public class S3GlueParquetTargetMarshaller : IRequestMarshaller<S3GlueParquetTarget, JsonMarshallerContext> 
+    public class S3IcebergDirectTargetMarshaller : IRequestMarshaller<S3IcebergDirectTarget, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,14 +44,34 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3GlueParquetTarget requestObject, JsonMarshallerContext context)
+        public void Marshall(S3IcebergDirectTarget requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdditionalOptions())
+            {
+                context.Writer.WritePropertyName("AdditionalOptions");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectAdditionalOptionsKvp in requestObject.AdditionalOptions)
+                {
+                    context.Writer.WritePropertyName(requestObjectAdditionalOptionsKvp.Key);
+                    var requestObjectAdditionalOptionsValue = requestObjectAdditionalOptionsKvp.Value;
+
+                        context.Writer.Write(requestObjectAdditionalOptionsValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCompression())
             {
                 context.Writer.WritePropertyName("Compression");
                 context.Writer.Write(requestObject.Compression);
+            }
+
+            if(requestObject.IsSetFormat())
+            {
+                context.Writer.WritePropertyName("Format");
+                context.Writer.Write(requestObject.Format);
             }
 
             if(requestObject.IsSetInputs())
@@ -115,7 +135,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static S3GlueParquetTargetMarshaller Instance = new S3GlueParquetTargetMarshaller();
+        public readonly static S3IcebergDirectTargetMarshaller Instance = new S3IcebergDirectTargetMarshaller();
 
     }
 }

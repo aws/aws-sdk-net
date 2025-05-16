@@ -91,6 +91,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetNumberTargetPartitions())
+            {
+                context.Writer.WritePropertyName("NumberTargetPartitions");
+                context.Writer.Write(requestObject.NumberTargetPartitions);
+            }
+
             if(requestObject.IsSetPartitionKeys())
             {
                 context.Writer.WritePropertyName("PartitionKeys");

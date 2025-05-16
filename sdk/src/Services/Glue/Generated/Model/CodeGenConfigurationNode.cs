@@ -90,10 +90,13 @@ namespace Amazon.Glue.Model
         private S3DeltaDirectTarget _s3DeltaDirectTarget;
         private S3DeltaSource _s3DeltaSource;
         private S3DirectTarget _s3DirectTarget;
+        private S3ExcelSource _s3ExcelSource;
         private S3GlueParquetTarget _s3GlueParquetTarget;
         private S3HudiCatalogTarget _s3HudiCatalogTarget;
         private S3HudiDirectTarget _s3HudiDirectTarget;
         private S3HudiSource _s3HudiSource;
+        private S3HyperDirectTarget _s3HyperDirectTarget;
+        private S3IcebergDirectTarget _s3IcebergDirectTarget;
         private S3JsonSource _s3JsonSource;
         private S3ParquetSource _s3ParquetSource;
         private SelectFields _selectFields;
@@ -1112,6 +1115,24 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property S3ExcelSource. 
+        /// <para>
+        /// Defines configuration parameters for reading Excel files from Amazon S3.
+        /// </para>
+        /// </summary>
+        public S3ExcelSource S3ExcelSource
+        {
+            get { return this._s3ExcelSource; }
+            set { this._s3ExcelSource = value; }
+        }
+
+        // Check to see if S3ExcelSource property is set
+        internal bool IsSetS3ExcelSource()
+        {
+            return this._s3ExcelSource != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property S3GlueParquetTarget. 
         /// <para>
         /// Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.
@@ -1181,6 +1202,43 @@ namespace Amazon.Glue.Model
         internal bool IsSetS3HudiSource()
         {
             return this._s3HudiSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3HyperDirectTarget. 
+        /// <para>
+        /// Defines configuration parameters for writing data to Amazon S3 using HyperDirect optimization.
+        /// </para>
+        /// </summary>
+        public S3HyperDirectTarget S3HyperDirectTarget
+        {
+            get { return this._s3HyperDirectTarget; }
+            set { this._s3HyperDirectTarget = value; }
+        }
+
+        // Check to see if S3HyperDirectTarget property is set
+        internal bool IsSetS3HyperDirectTarget()
+        {
+            return this._s3HyperDirectTarget != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3IcebergDirectTarget. 
+        /// <para>
+        /// Defines configuration parameters for writing data to Amazon S3 as an Apache Iceberg
+        /// table.
+        /// </para>
+        /// </summary>
+        public S3IcebergDirectTarget S3IcebergDirectTarget
+        {
+            get { return this._s3IcebergDirectTarget; }
+            set { this._s3IcebergDirectTarget = value; }
+        }
+
+        // Check to see if S3IcebergDirectTarget property is set
+        internal bool IsSetS3IcebergDirectTarget()
+        {
+            return this._s3IcebergDirectTarget != null;
         }
 
         /// <summary>

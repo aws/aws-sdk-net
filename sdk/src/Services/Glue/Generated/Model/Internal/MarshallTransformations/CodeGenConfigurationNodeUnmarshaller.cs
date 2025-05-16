@@ -396,6 +396,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3DirectTarget = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("S3ExcelSource", targetDepth))
+                {
+                    var unmarshaller = S3ExcelSourceUnmarshaller.Instance;
+                    unmarshalledObject.S3ExcelSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("S3GlueParquetTarget", targetDepth))
                 {
                     var unmarshaller = S3GlueParquetTargetUnmarshaller.Instance;
@@ -418,6 +424,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = S3HudiSourceUnmarshaller.Instance;
                     unmarshalledObject.S3HudiSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3HyperDirectTarget", targetDepth))
+                {
+                    var unmarshaller = S3HyperDirectTargetUnmarshaller.Instance;
+                    unmarshalledObject.S3HyperDirectTarget = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3IcebergDirectTarget", targetDepth))
+                {
+                    var unmarshaller = S3IcebergDirectTargetUnmarshaller.Instance;
+                    unmarshalledObject.S3IcebergDirectTarget = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("S3JsonSource", targetDepth))
