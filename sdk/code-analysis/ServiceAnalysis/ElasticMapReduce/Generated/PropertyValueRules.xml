@@ -46,6 +46,16 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.CreatePersistentAppUIRequest.TargetResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.CreatePersistentAppUIResponse.PersistentAppUIId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.CreateSecurityConfigurationRequest.Name</property>
     <min>0</min>
     <max>10280</max>
@@ -176,6 +186,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.DescribePersistentAppUIRequest.PersistentAppUIId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.DescribeReleaseLabelRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -204,6 +219,46 @@
     <property>Amazon.ElasticMapReduce.Model.GetClusterSessionCredentialsRequest.ExecutionRoleArn</property>
     <min>20</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.GetOnClusterAppUIPresignedURLRequest.ApplicationId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.GetOnClusterAppUIPresignedURLRequest.ClusterId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.GetOnClusterAppUIPresignedURLRequest.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.GetOnClusterAppUIPresignedURLResponse.PresignedURL</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.GetPersistentAppUIPresignedURLRequest.ApplicationId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.GetPersistentAppUIPresignedURLRequest.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.GetPersistentAppUIPresignedURLRequest.PersistentAppUIId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.GetPersistentAppUIPresignedURLResponse.PresignedURL</property>
+    <min>0</min>
+    <max>10280</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.GetStudioSessionMappingRequest.IdentityId</property>
@@ -448,6 +503,11 @@
     <property>Amazon.ElasticMapReduce.Model.ClusterSummary.OutpostArn</property>
     <min>0</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.EMRContainersConfig.JobRunId</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.ExecutionEngineConfig.ExecutionRoleArn</property>
@@ -933,6 +993,26 @@
     <min>1</min>
     <max>10280</max>
     <pattern>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\r\n\t]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.PersistentAppUI.AuthorId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.PersistentAppUI.LastStateChangeReason</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.PersistentAppUI.PersistentAppUIId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.PersistentAppUI.PersistentAppUIStatus</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.PlacementType.AvailabilityZone</property>
