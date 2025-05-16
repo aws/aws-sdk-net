@@ -30,48 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockDataAutomationRuntime.Model
 {
     /// <summary>
-    /// Input configuration.
+    /// Timestamp segment
     /// </summary>
-    public partial class InputConfiguration
+    public partial class TimestampSegment
     {
-        private AssetProcessingConfiguration _assetProcessingConfiguration;
-        private string _s3Uri;
+        private long? _endTimeMillis;
+        private long? _startTimeMillis;
 
         /// <summary>
-        /// Gets and sets the property AssetProcessingConfiguration. 
+        /// Gets and sets the property EndTimeMillis. 
         /// <para>
-        /// Asset processing configuration
+        /// End timestamp in milliseconds
         /// </para>
         /// </summary>
-        public AssetProcessingConfiguration AssetProcessingConfiguration
+        [AWSProperty(Required=true, Min=300000)]
+        public long? EndTimeMillis
         {
-            get { return this._assetProcessingConfiguration; }
-            set { this._assetProcessingConfiguration = value; }
+            get { return this._endTimeMillis; }
+            set { this._endTimeMillis = value; }
         }
 
-        // Check to see if AssetProcessingConfiguration property is set
-        internal bool IsSetAssetProcessingConfiguration()
+        // Check to see if EndTimeMillis property is set
+        internal bool IsSetEndTimeMillis()
         {
-            return this._assetProcessingConfiguration != null;
+            return this._endTimeMillis.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property S3Uri. 
+        /// Gets and sets the property StartTimeMillis. 
         /// <para>
-        /// S3 uri.
+        /// Start timestamp in milliseconds
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
-        public string S3Uri
+        [AWSProperty(Required=true, Min=0)]
+        public long? StartTimeMillis
         {
-            get { return this._s3Uri; }
-            set { this._s3Uri = value; }
+            get { return this._startTimeMillis; }
+            set { this._startTimeMillis = value; }
         }
 
-        // Check to see if S3Uri property is set
-        internal bool IsSetS3Uri()
+        // Check to see if StartTimeMillis property is set
+        internal bool IsSetStartTimeMillis()
         {
-            return this._s3Uri != null;
+            return this._startTimeMillis.HasValue; 
         }
 
     }

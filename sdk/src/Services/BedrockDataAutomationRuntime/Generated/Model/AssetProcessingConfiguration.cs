@@ -30,48 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockDataAutomationRuntime.Model
 {
     /// <summary>
-    /// Input configuration.
+    /// Config containing asset processing related knobs for all modalities
     /// </summary>
-    public partial class InputConfiguration
+    public partial class AssetProcessingConfiguration
     {
-        private AssetProcessingConfiguration _assetProcessingConfiguration;
-        private string _s3Uri;
+        private VideoAssetProcessingConfiguration _video;
 
         /// <summary>
-        /// Gets and sets the property AssetProcessingConfiguration. 
+        /// Gets and sets the property Video. 
         /// <para>
-        /// Asset processing configuration
+        /// Video asset processing configuration
         /// </para>
         /// </summary>
-        public AssetProcessingConfiguration AssetProcessingConfiguration
+        public VideoAssetProcessingConfiguration Video
         {
-            get { return this._assetProcessingConfiguration; }
-            set { this._assetProcessingConfiguration = value; }
+            get { return this._video; }
+            set { this._video = value; }
         }
 
-        // Check to see if AssetProcessingConfiguration property is set
-        internal bool IsSetAssetProcessingConfiguration()
+        // Check to see if Video property is set
+        internal bool IsSetVideo()
         {
-            return this._assetProcessingConfiguration != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property S3Uri. 
-        /// <para>
-        /// S3 uri.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
-        public string S3Uri
-        {
-            get { return this._s3Uri; }
-            set { this._s3Uri = value; }
-        }
-
-        // Check to see if S3Uri property is set
-        internal bool IsSetS3Uri()
-        {
-            return this._s3Uri != null;
+            return this._video != null;
         }
 
     }

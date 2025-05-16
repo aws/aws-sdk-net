@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// InputConfiguration Marshaller
+    /// VideoAssetProcessingConfiguration Marshaller
     /// </summary>
-    public class InputConfigurationMarshaller : IRequestMarshaller<InputConfiguration, JsonMarshallerContext> 
+    public class VideoAssetProcessingConfigurationMarshaller : IRequestMarshaller<VideoAssetProcessingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,25 +42,19 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InputConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(VideoAssetProcessingConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAssetProcessingConfiguration())
+            if(requestObject.IsSetSegmentConfiguration())
             {
-                context.Writer.WritePropertyName("assetProcessingConfiguration");
+                context.Writer.WritePropertyName("segmentConfiguration");
                 context.Writer.WriteStartObject();
 
-                var marshaller = AssetProcessingConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.AssetProcessingConfiguration, context);
+                var marshaller = VideoSegmentConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SegmentConfiguration, context);
 
                 context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetS3Uri())
-            {
-                context.Writer.WritePropertyName("s3Uri");
-                context.Writer.WriteStringValue(requestObject.S3Uri);
             }
 
         }
@@ -68,7 +62,7 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static InputConfigurationMarshaller Instance = new InputConfigurationMarshaller();
+        public readonly static VideoAssetProcessingConfigurationMarshaller Instance = new VideoAssetProcessingConfigurationMarshaller();
 
     }
 }

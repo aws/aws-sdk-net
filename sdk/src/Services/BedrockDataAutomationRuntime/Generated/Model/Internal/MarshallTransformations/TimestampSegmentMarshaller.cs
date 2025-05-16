@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// InputConfiguration Marshaller
+    /// TimestampSegment Marshaller
     /// </summary>
-    public class InputConfigurationMarshaller : IRequestMarshaller<InputConfiguration, JsonMarshallerContext> 
+    public class TimestampSegmentMarshaller : IRequestMarshaller<TimestampSegment, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,25 +42,20 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InputConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(TimestampSegment requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAssetProcessingConfiguration())
+            if(requestObject.IsSetEndTimeMillis())
             {
-                context.Writer.WritePropertyName("assetProcessingConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = AssetProcessingConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.AssetProcessingConfiguration, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("endTimeMillis");
+                context.Writer.WriteNumberValue(requestObject.EndTimeMillis.Value);
             }
 
-            if(requestObject.IsSetS3Uri())
+            if(requestObject.IsSetStartTimeMillis())
             {
-                context.Writer.WritePropertyName("s3Uri");
-                context.Writer.WriteStringValue(requestObject.S3Uri);
+                context.Writer.WritePropertyName("startTimeMillis");
+                context.Writer.WriteNumberValue(requestObject.StartTimeMillis.Value);
             }
 
         }
@@ -68,7 +63,7 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static InputConfigurationMarshaller Instance = new InputConfigurationMarshaller();
+        public readonly static TimestampSegmentMarshaller Instance = new TimestampSegmentMarshaller();
 
     }
 }
