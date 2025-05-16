@@ -19,7 +19,7 @@ Please use these community resources for getting help. We use the [GitHub issues
 
 ### Opening Issues
 
-If you encounter a bug with AWS SDK for .NET we would like to hear about it. Search the existing [issues](https://github.com/aws/aws-sdk-net/issues?q=is%3Aissue) and try to make sure your problem doesn’t already exist before opening a new issue. It’s helpful if you include the version of AWS SDK .NET and the OS you’re using. Please include a stack trace and reduced repro case when appropriate, too.
+If you encounter a bug with AWS SDK for .NET we would like to hear about it. Search the existing [issues](https://github.com/aws/aws-sdk-net/issues?q=is%3Aissue) and try to make sure your problem doesn't already exist before opening a new issue. It's helpful if you include the version of AWS SDK .NET and the OS you're using. Please include a stack trace and reduced repro case when appropriate, too.
 
 The [GitHub issues][sdk-issues] are intended for bug reports and feature requests. For help and questions with using AWS SDK for .NET please make use of the resources listed in the Getting Help section. There are limited resources available for handling issues and by keeping the list of open issues clean we can respond in a timely manner.
 
@@ -52,6 +52,125 @@ The SDK assemblies are strongly named which requires consumers of the SDK to rec
 ### Internal Namespace
 
 Classes and interfaces with `Internal` in the namespace name are logically internal to the SDK but are often marked with a `public` access modifier, generally to allow the service-specific packages to use shared functionality in the Core package. Classes and interfaces in these namespaces are subject to modification or removal outside of versioning scheme described above. If you find yourself relying on `Internal` functionality directly, consider [opening a Feature Request](https://github.com/aws/aws-sdk-net/issues/new/choose) for your use case if one does not already exist.
+
+## Making SDK Changes
+
+### DevConfig Files
+
+DevConfig files are required for all developer .NET SDK branches being merged into the system. These files control versioning for the change, changelog messages, which services are being updated, and other controls. The purpose of bringing developer configuration information into each developer's branch is so that any configuration and changelog messages the developer intends to release is reviewed by other developers reviewing their PR.
+
+DevConfig files are JSON files placed in the `./generator/.DevConfigs` folder. Each file must have a unique name to avoid merge conflicts. The file contains information about core and service changes, which helps the build system process and properly version bump the NuGet packages.
+
+#### DevConfig File Structure
+
+A DevConfig file can contain the following sections:
+
+**Core Section**:
+Required for any change to the Core component of the SDK.
+
+```json
+{
+  "core": {
+    "changeLogMessages": [
+      "Message 1",
+      "Message 2"
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
+```
+
+- `changeLogMessages`: (Required) An array of messages to include in the changelog under the core section.
+- `type`: (Required) The part of the version string to increment. Valid values are `minor` and `patch`.
+- `updateMinimum`: (Required) Whether to update the minimum core version for all services.
+- `backwardIncompatibilitiesToIgnore`: (Optional) An array of strings for the type of validation errors to ignore.
+
+**Service Section**:
+Required for any change to a specific service.
+
+```json
+{
+  "services": [
+    {
+      "serviceName": "S3Control",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fixed a bug causing a stack overflow when using the adaptive retry policy."
+      ]
+    },
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fixed a bug where the bucketName was being marshalled incorrectly in operation xyz."
+      ]
+    }
+  ]
+}
+```
+
+- `serviceName`: (Required) Name of the service without the "AWSSDK." prefix.
+- `type`: (Required) The part of the version string to increment. Valid values are `minor` and `patch`.
+- `changeLogMessages`: (Required) An array of messages to include in the changelog.
+
+**Other Special Sections**:
+
+- `overrideVersion`: Allows specifying a specific version to use for all services in the release.
+
+```json
+{
+  "services": [...],
+  "core": {...},
+  "overrideVersion": "3.7.300.0"
+}
+```
+
+#### Creating a DevConfig File
+
+You can use the provided script to generate a DevConfig file:
+
+```
+./buildtools/add-devconfig.bat
+```
+
+This will create a DevConfig file with a unique name in the correct location and populate it based on your changes.
+
+### DevConfig Validator
+
+The DevConfig Validator is a GitHub workflow that automatically checks if a DevConfig file is needed for your PR and helps you create one if necessary. The workflow detects changes to core and service files and determines if a DevConfig file is required.
+
+#### Workflow
+
+1. When you create or update a PR, the validator checks if a DevConfig file exists.
+2. If no DevConfig file is found but changes require one, the validator adds a comment to your PR with a preview of the suggested DevConfig.
+3. You can then add the DevConfig file using one of the provided commands.
+
+#### Commands
+
+The DevConfig Validator supports the following commands that you can use in PR comments:
+
+- `/add-devconfig`: Adds the preview DevConfig file to your PR. You can also provide your own JSON to customize the DevConfig.
+- `/delete-devconfig`: Removes the DevConfig file from your PR.
+- `/amend-devconfig`: Updates the existing DevConfig file with new JSON content.
+
+Example usage:
+
+````
+/add-devconfig
+
+```json
+{
+  "core": {
+    "changeLogMessages": [
+      "Your custom changelog message"
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
+```
+````
 
 ## Code Analyzers
 
@@ -98,7 +217,7 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 
 Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol tests ensure that each AWS protocol is working as expected. Each supported protocol is [listed here](https://smithy.io/2.0/aws/protocols/index.html). These tests are safe to run as they do not call real AWS services. You can run these tests by either opening the solution file and running the tests or via the `dotnet` cli by invoking `dotnet test AWSSDK.ProtocolTests.NetStandard.csproj`. The structure for the protocol test cases can be found [here in the smithy docs](https://smithy.io/2.0/additional-specs/http-protocol-compliance-tests.html).
 
-### NuGet Packages
+## NuGet Packages
 
 * [AWSSDK.AccessAnalyzer](https://www.nuget.org/packages/AWSSDK.AccessAnalyzer/)
 	* Introducing AWS IAM Access Analyzer, an IAM feature that makes it easy for AWS customers to ensure that their resource-based policies provide only the intended access to resources outside their AWS accounts.
