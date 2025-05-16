@@ -168,6 +168,11 @@ namespace Amazon.Runtime
             if (clientConfig.MaxConnectionsPerServer.HasValue)
                 uniqueString = string.Concat(uniqueString, "MaxConnectionsPerServer:", clientConfig.MaxConnectionsPerServer.Value.ToString());
 
+#if NET8_0_OR_GREATER
+            if (clientConfig.ConnectTimeout.HasValue)
+                uniqueString = string.Concat(uniqueString, "ConnectTimeout:", clientConfig.ConnectTimeout.Value.ToString());
+#endif
+
             return uniqueString;
         }
 

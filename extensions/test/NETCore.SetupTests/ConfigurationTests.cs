@@ -127,6 +127,11 @@ namespace NETCore.SetupTests
             var clientConfig = client.Config as AmazonS3Config;
             Assert.NotNull(clientConfig);
             Assert.True(clientConfig.ForcePathStyle);
+
+#if NET8_0_OR_GREATER
+            Assert.Equal(TimeSpan.FromMilliseconds(500), options.DefaultClientConfig.ConnectTimeout);
+            Assert.Equal(TimeSpan.FromMilliseconds(500), clientConfig.ConnectTimeout);
+#endif
         }
 
         [Fact]
