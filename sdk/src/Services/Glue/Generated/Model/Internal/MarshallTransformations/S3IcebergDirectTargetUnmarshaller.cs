@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for S3DirectTarget Object
+    /// Response Unmarshaller for S3IcebergDirectTarget Object
     /// </summary>  
-    public class S3DirectTargetUnmarshaller : IJsonUnmarshaller<S3DirectTarget, JsonUnmarshallerContext>
+    public class S3IcebergDirectTargetUnmarshaller : IJsonUnmarshaller<S3IcebergDirectTarget, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public S3DirectTarget Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public S3IcebergDirectTarget Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            S3DirectTarget unmarshalledObject = new S3DirectTarget();
+            S3IcebergDirectTarget unmarshalledObject = new S3IcebergDirectTarget();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,6 +56,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AdditionalOptions", targetDepth))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Compression", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -109,12 +115,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static S3DirectTargetUnmarshaller _instance = new S3DirectTargetUnmarshaller();        
+        private static S3IcebergDirectTargetUnmarshaller _instance = new S3IcebergDirectTargetUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static S3DirectTargetUnmarshaller Instance
+        public static S3IcebergDirectTargetUnmarshaller Instance
         {
             get
             {

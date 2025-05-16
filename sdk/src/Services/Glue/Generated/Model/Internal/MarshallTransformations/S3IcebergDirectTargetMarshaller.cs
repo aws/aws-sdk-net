@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// S3DeltaDirectTarget Marshaller
+    /// S3IcebergDirectTarget Marshaller
     /// </summary>
-    public class S3DeltaDirectTargetMarshaller : IRequestMarshaller<S3DeltaDirectTarget, JsonMarshallerContext> 
+    public class S3IcebergDirectTargetMarshaller : IRequestMarshaller<S3IcebergDirectTarget, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,7 +42,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3DeltaDirectTarget requestObject, JsonMarshallerContext context)
+        public void Marshall(S3IcebergDirectTarget requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -133,7 +133,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static S3DeltaDirectTargetMarshaller Instance = new S3DeltaDirectTargetMarshaller();
+        public readonly static S3IcebergDirectTargetMarshaller Instance = new S3IcebergDirectTargetMarshaller();
 
     }
 }

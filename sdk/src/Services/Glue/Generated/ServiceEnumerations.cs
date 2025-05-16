@@ -3245,6 +3245,110 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type HyperTargetCompressionType.
+    /// </summary>
+    public class HyperTargetCompressionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Uncompressed for HyperTargetCompressionType
+        /// </summary>
+        public static readonly HyperTargetCompressionType Uncompressed = new HyperTargetCompressionType("uncompressed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HyperTargetCompressionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HyperTargetCompressionType FindValue(string value)
+        {
+            return FindValue<HyperTargetCompressionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HyperTargetCompressionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IcebergTargetCompressionType.
+    /// </summary>
+    public class IcebergTargetCompressionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Gzip for IcebergTargetCompressionType
+        /// </summary>
+        public static readonly IcebergTargetCompressionType Gzip = new IcebergTargetCompressionType("gzip");
+        /// <summary>
+        /// Constant Lzo for IcebergTargetCompressionType
+        /// </summary>
+        public static readonly IcebergTargetCompressionType Lzo = new IcebergTargetCompressionType("lzo");
+        /// <summary>
+        /// Constant Snappy for IcebergTargetCompressionType
+        /// </summary>
+        public static readonly IcebergTargetCompressionType Snappy = new IcebergTargetCompressionType("snappy");
+        /// <summary>
+        /// Constant Uncompressed for IcebergTargetCompressionType
+        /// </summary>
+        public static readonly IcebergTargetCompressionType Uncompressed = new IcebergTargetCompressionType("uncompressed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IcebergTargetCompressionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IcebergTargetCompressionType FindValue(string value)
+        {
+            return FindValue<IcebergTargetCompressionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IcebergTargetCompressionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InclusionAnnotationValue.
     /// </summary>
     public class InclusionAnnotationValue : ConstantClass
@@ -4407,9 +4511,17 @@ namespace Amazon.Glue
     {
 
         /// <summary>
+        /// Constant Brotli for ParquetCompressionType
+        /// </summary>
+        public static readonly ParquetCompressionType Brotli = new ParquetCompressionType("brotli");
+        /// <summary>
         /// Constant Gzip for ParquetCompressionType
         /// </summary>
         public static readonly ParquetCompressionType Gzip = new ParquetCompressionType("gzip");
+        /// <summary>
+        /// Constant Lz4 for ParquetCompressionType
+        /// </summary>
+        public static readonly ParquetCompressionType Lz4 = new ParquetCompressionType("lz4");
         /// <summary>
         /// Constant Lzo for ParquetCompressionType
         /// </summary>
@@ -6277,6 +6389,14 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly TargetFormat Hudi = new TargetFormat("hudi");
         /// <summary>
+        /// Constant Hyper for TargetFormat
+        /// </summary>
+        public static readonly TargetFormat Hyper = new TargetFormat("hyper");
+        /// <summary>
+        /// Constant Iceberg for TargetFormat
+        /// </summary>
+        public static readonly TargetFormat Iceberg = new TargetFormat("iceberg");
+        /// <summary>
         /// Constant Json for TargetFormat
         /// </summary>
         public static readonly TargetFormat Json = new TargetFormat("json");
@@ -6288,6 +6408,10 @@ namespace Amazon.Glue
         /// Constant Parquet for TargetFormat
         /// </summary>
         public static readonly TargetFormat Parquet = new TargetFormat("parquet");
+        /// <summary>
+        /// Constant Xml for TargetFormat
+        /// </summary>
+        public static readonly TargetFormat Xml = new TargetFormat("xml");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

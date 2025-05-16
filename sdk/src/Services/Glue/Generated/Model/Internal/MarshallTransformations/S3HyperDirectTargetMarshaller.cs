@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// S3DeltaDirectTarget Marshaller
+    /// S3HyperDirectTarget Marshaller
     /// </summary>
-    public class S3DeltaDirectTargetMarshaller : IRequestMarshaller<S3DeltaDirectTarget, JsonMarshallerContext> 
+    public class S3HyperDirectTargetMarshaller : IRequestMarshaller<S3HyperDirectTarget, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,34 +42,14 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3DeltaDirectTarget requestObject, JsonMarshallerContext context)
+        public void Marshall(S3HyperDirectTarget requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAdditionalOptions())
-            {
-                context.Writer.WritePropertyName("AdditionalOptions");
-                context.Writer.WriteStartObject();
-                foreach (var requestObjectAdditionalOptionsKvp in requestObject.AdditionalOptions)
-                {
-                    context.Writer.WritePropertyName(requestObjectAdditionalOptionsKvp.Key);
-                    var requestObjectAdditionalOptionsValue = requestObjectAdditionalOptionsKvp.Value;
-
-                        context.Writer.WriteStringValue(requestObjectAdditionalOptionsValue);
-                }
-                context.Writer.WriteEndObject();
-            }
-
             if(requestObject.IsSetCompression())
             {
                 context.Writer.WritePropertyName("Compression");
                 context.Writer.WriteStringValue(requestObject.Compression);
-            }
-
-            if(requestObject.IsSetFormat())
-            {
-                context.Writer.WritePropertyName("Format");
-                context.Writer.WriteStringValue(requestObject.Format);
             }
 
             if(requestObject.IsSetInputs())
@@ -87,12 +67,6 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Name");
                 context.Writer.WriteStringValue(requestObject.Name);
-            }
-
-            if(requestObject.IsSetNumberTargetPartitions())
-            {
-                context.Writer.WritePropertyName("NumberTargetPartitions");
-                context.Writer.WriteStringValue(requestObject.NumberTargetPartitions);
             }
 
             if(requestObject.IsSetPartitionKeys())
@@ -133,7 +107,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static S3DeltaDirectTargetMarshaller Instance = new S3DeltaDirectTargetMarshaller();
+        public readonly static S3HyperDirectTargetMarshaller Instance = new S3HyperDirectTargetMarshaller();
 
     }
 }

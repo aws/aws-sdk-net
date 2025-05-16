@@ -30,48 +30,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies a target that writes to a Hudi data source in Amazon S3.
+    /// Specifies a HyperDirect data target that writes to Amazon S3.
     /// </summary>
-    public partial class S3HudiDirectTarget
+    public partial class S3HyperDirectTarget
     {
-        private Dictionary<string, string> _additionalOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
-        private HudiTargetCompressionType _compression;
-        private TargetFormat _format;
+        private HyperTargetCompressionType _compression;
         private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
-        private string _numberTargetPartitions;
         private List<List<string>> _partitionKeys = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
         private string _path;
         private DirectSchemaChangePolicy _schemaChangePolicy;
 
         /// <summary>
-        /// Gets and sets the property AdditionalOptions. 
-        /// <para>
-        /// Specifies additional connection options for the connector.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public Dictionary<string, string> AdditionalOptions
-        {
-            get { return this._additionalOptions; }
-            set { this._additionalOptions = value; }
-        }
-
-        // Check to see if AdditionalOptions property is set
-        internal bool IsSetAdditionalOptions()
-        {
-            return this._additionalOptions != null && (this._additionalOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
         /// Gets and sets the property Compression. 
         /// <para>
-        /// Specifies how the data is compressed. This is generally not necessary if the data
-        /// has a standard file extension. Possible values are <c>"gzip"</c> and <c>"bzip"</c>).
+        /// The compression type to apply to the output data.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public HudiTargetCompressionType Compression
+        public HyperTargetCompressionType Compression
         {
             get { return this._compression; }
             set { this._compression = value; }
@@ -84,28 +60,9 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Format. 
-        /// <para>
-        /// Specifies the data output format for the target.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public TargetFormat Format
-        {
-            get { return this._format; }
-            set { this._format = value; }
-        }
-
-        // Check to see if Format property is set
-        internal bool IsSetFormat()
-        {
-            return this._format != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Inputs. 
         /// <para>
-        /// The nodes that are inputs to the data target.
+        /// Specifies the input source for the HyperDirect target.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
@@ -124,7 +81,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the data target.
+        /// The unique identifier for the HyperDirect target node.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -141,28 +98,9 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NumberTargetPartitions. 
-        /// <para>
-        /// Specifies the number of target partitions for distributing Hudi dataset files across
-        /// Amazon S3.
-        /// </para>
-        /// </summary>
-        public string NumberTargetPartitions
-        {
-            get { return this._numberTargetPartitions; }
-            set { this._numberTargetPartitions = value; }
-        }
-
-        // Check to see if NumberTargetPartitions property is set
-        internal bool IsSetNumberTargetPartitions()
-        {
-            return this._numberTargetPartitions != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property PartitionKeys. 
         /// <para>
-        /// Specifies native partitioning using a sequence of keys.
+        /// Defines the partitioning strategy for the output data.
         /// </para>
         /// </summary>
         public List<List<string>> PartitionKeys
@@ -180,7 +118,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// The Amazon S3 path of your Hudi data source to write to.
+        /// The S3 location where the output data will be written.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -199,7 +137,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SchemaChangePolicy. 
         /// <para>
-        /// A policy that specifies update behavior for the crawler.
+        /// Defines how schema changes are handled during write operations.
         /// </para>
         /// </summary>
         public DirectSchemaChangePolicy SchemaChangePolicy
