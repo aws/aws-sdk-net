@@ -966,7 +966,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 return false;
             }
 
-            Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates,
+            Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates,null,null,
                 out statement, out expressionAttributeValues, out expressionAttributes);
 
             return true;
