@@ -1,9 +1,0 @@
-{
-    "core": {
-        "updateMinimum": true,
-        "type": "Patch",
-        "changeLogMessages": [
-            "Add the ConnectTimeout property on the service client config for the .NET 8 target of the SDK."
-        ]
-    }
-}
