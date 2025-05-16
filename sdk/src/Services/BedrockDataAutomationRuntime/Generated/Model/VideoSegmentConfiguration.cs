@@ -30,48 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockDataAutomationRuntime.Model
 {
     /// <summary>
-    /// Input configuration.
+    /// Delimits the segment of the input that will be processed
     /// </summary>
-    public partial class InputConfiguration
+    public partial class VideoSegmentConfiguration
     {
-        private AssetProcessingConfiguration _assetProcessingConfiguration;
-        private string _s3Uri;
+        private TimestampSegment _timestampSegment;
 
         /// <summary>
-        /// Gets and sets the property AssetProcessingConfiguration. 
+        /// Gets and sets the property TimestampSegment. 
         /// <para>
-        /// Asset processing configuration
+        /// Timestamp segment
         /// </para>
         /// </summary>
-        public AssetProcessingConfiguration AssetProcessingConfiguration
+        public TimestampSegment TimestampSegment
         {
-            get { return this._assetProcessingConfiguration; }
-            set { this._assetProcessingConfiguration = value; }
+            get { return this._timestampSegment; }
+            set { this._timestampSegment = value; }
         }
 
-        // Check to see if AssetProcessingConfiguration property is set
-        internal bool IsSetAssetProcessingConfiguration()
+        // Check to see if TimestampSegment property is set
+        internal bool IsSetTimestampSegment()
         {
-            return this._assetProcessingConfiguration != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property S3Uri. 
-        /// <para>
-        /// S3 uri.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
-        public string S3Uri
-        {
-            get { return this._s3Uri; }
-            set { this._s3Uri = value; }
-        }
-
-        // Check to see if S3Uri property is set
-        internal bool IsSetS3Uri()
-        {
-            return this._s3Uri != null;
+            return this._timestampSegment != null;
         }
 
     }

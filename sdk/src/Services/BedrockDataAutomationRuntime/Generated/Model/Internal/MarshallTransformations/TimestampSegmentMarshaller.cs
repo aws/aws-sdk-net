@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// InputConfiguration Marshaller
+    /// TimestampSegment Marshaller
     /// </summary>
-    public class InputConfigurationMarshaller : IRequestMarshaller<InputConfiguration, JsonMarshallerContext> 
+    public class TimestampSegmentMarshaller : IRequestMarshaller<TimestampSegment, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,25 +44,20 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InputConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(TimestampSegment requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAssetProcessingConfiguration())
+            if(requestObject.IsSetEndTimeMillis())
             {
-                context.Writer.WritePropertyName("assetProcessingConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AssetProcessingConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.AssetProcessingConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("endTimeMillis");
+                context.Writer.Write(requestObject.EndTimeMillis);
             }
 
-            if(requestObject.IsSetS3Uri())
+            if(requestObject.IsSetStartTimeMillis())
             {
-                context.Writer.WritePropertyName("s3Uri");
-                context.Writer.Write(requestObject.S3Uri);
+                context.Writer.WritePropertyName("startTimeMillis");
+                context.Writer.Write(requestObject.StartTimeMillis);
             }
 
         }
@@ -70,7 +65,7 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static InputConfigurationMarshaller Instance = new InputConfigurationMarshaller();
+        public readonly static TimestampSegmentMarshaller Instance = new TimestampSegmentMarshaller();
 
     }
 }

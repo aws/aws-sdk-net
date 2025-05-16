@@ -30,48 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockDataAutomationRuntime.Model
 {
     /// <summary>
-    /// Input configuration.
+    /// Video asset processing configuration
     /// </summary>
-    public partial class InputConfiguration
+    public partial class VideoAssetProcessingConfiguration
     {
-        private AssetProcessingConfiguration _assetProcessingConfiguration;
-        private string _s3Uri;
+        private VideoSegmentConfiguration _segmentConfiguration;
 
         /// <summary>
-        /// Gets and sets the property AssetProcessingConfiguration. 
+        /// Gets and sets the property SegmentConfiguration. 
         /// <para>
-        /// Asset processing configuration
+        /// Delimits the segment of the input that will be processed
         /// </para>
         /// </summary>
-        public AssetProcessingConfiguration AssetProcessingConfiguration
+        public VideoSegmentConfiguration SegmentConfiguration
         {
-            get { return this._assetProcessingConfiguration; }
-            set { this._assetProcessingConfiguration = value; }
+            get { return this._segmentConfiguration; }
+            set { this._segmentConfiguration = value; }
         }
 
-        // Check to see if AssetProcessingConfiguration property is set
-        internal bool IsSetAssetProcessingConfiguration()
+        // Check to see if SegmentConfiguration property is set
+        internal bool IsSetSegmentConfiguration()
         {
-            return this._assetProcessingConfiguration != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property S3Uri. 
-        /// <para>
-        /// S3 uri.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
-        public string S3Uri
-        {
-            get { return this._s3Uri; }
-            set { this._s3Uri = value; }
-        }
-
-        // Check to see if S3Uri property is set
-        internal bool IsSetS3Uri()
-        {
-            return this._s3Uri != null;
+            return this._segmentConfiguration != null;
         }
 
     }
