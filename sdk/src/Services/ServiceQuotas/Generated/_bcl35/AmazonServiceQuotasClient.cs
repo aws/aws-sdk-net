@@ -358,6 +358,86 @@ namespace Amazon.ServiceQuotas
 
         #endregion
         
+        #region  CreateSupportCase
+
+        /// <summary>
+        /// Creates a Support case for an existing quota increase request. This call only creates
+        /// a Support case if the request has a <c>Pending</c> status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSupportCase service method.</param>
+        /// 
+        /// <returns>The response from the CreateSupportCase service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.DependencyAccessDeniedException">
+        /// You can't perform this action because a dependency does not have access.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.InvalidResourceStateException">
+        /// The resource is in an invalid state.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/CreateSupportCase">REST API Reference for CreateSupportCase Operation</seealso>
+        public virtual CreateSupportCaseResponse CreateSupportCase(CreateSupportCaseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSupportCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSupportCaseResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSupportCaseResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSupportCase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSupportCase operation on AmazonServiceQuotasClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSupportCase
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/CreateSupportCase">REST API Reference for CreateSupportCase Operation</seealso>
+        public virtual IAsyncResult BeginCreateSupportCase(CreateSupportCaseRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSupportCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSupportCaseResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSupportCase operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSupportCase.</param>
+        /// 
+        /// <returns>Returns a  CreateSupportCaseResult from ServiceQuotas.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/CreateSupportCase">REST API Reference for CreateSupportCase Operation</seealso>
+        public virtual CreateSupportCaseResponse EndCreateSupportCase(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateSupportCaseResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteServiceQuotaIncreaseRequestFromTemplate
 
         /// <summary>
