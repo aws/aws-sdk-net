@@ -255,6 +255,11 @@ namespace Amazon.Runtime
                 // is going to be required.
                 EnableMultipleHttp2Connections = true
             };
+
+            if (clientConfig.ConnectTimeout.HasValue)
+            {
+                httpMessageHandler.ConnectTimeout = clientConfig.ConnectTimeout.Value;
+            }
 #else
             var httpMessageHandler = new HttpClientHandler();
 #endif
