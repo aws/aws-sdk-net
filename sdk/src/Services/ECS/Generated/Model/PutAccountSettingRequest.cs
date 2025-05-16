@@ -189,6 +189,10 @@ namespace Amazon.ECS.Model
         /// user of the account unless a user or role explicitly overrides these settings. If
         /// this field is omitted, the setting is changed only for the authenticated user.
         /// </para>
+        ///  
+        /// <para>
+        /// In order to use this parameter, you must be the root user, or the principal.
+        /// </para>
         ///  <note> 
         /// <para>
         /// You must use the root user when you set the Fargate wait time (<c>fargateTaskRetirementWaitPeriod</c>).
