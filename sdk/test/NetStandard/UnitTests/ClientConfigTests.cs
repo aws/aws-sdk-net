@@ -38,6 +38,9 @@ namespace UnitTests
             "DisableLogging",
             "ProxyCredentials",
             "Timeout",
+#if NET8_0_OR_GREATER
+            "ConnectTimeout",
+#endif
             "UseDualstackEndpoint",
             "UseFIPSEndpoint",
             "ProxyHost",
