@@ -1,3 +1,26 @@
+### 4.0.14.0 (2025-05-16 18:40 UTC)
+* BedrockDataAutomation (4.0.2.0)
+	* Add support for VIDEO modality to BlueprintType enum.
+* BedrockDataAutomationRuntime (4.0.1.0)
+	* Add AssetProcessingConfiguration for video segment to InputConfiguration
+* CodePipeline (4.0.2.0)
+	* CodePipeline now supports new API ListDeployActionExecutionTargets that lists the deployment target details for deploy action executions.
+* DynamoDBv2 (4.0.0.6)
+	* Fixed NullReferenceException in Query using SelectValues.Count
+* ECS (4.0.1.2)
+	* This is an Amazon ECs documentation only release to support the change of the container exit "reason" field from 255 characters to 1024 characters.
+* ElasticMapReduce (4.0.1.0)
+	* Added APIs for managing Application UIs: Access Persistent (serverless) UIs via CreatePersistentAppUI DescribePersistentAppUI & GetPersistentAppUIPresignedURL, and Cluster-based UIs through GetOnClusterAppUIPresignedURL. Supports Yarn, Spark History, and TEZ interfaces.
+* Glue (4.0.2.0)
+	* Changes include (1) Excel as S3 Source type and XML and Tableau's Hyper as S3 Sink types, (2) targeted number of partitions parameter in S3 sinks and (3) new compression types in CSV/JSON and Parquet S3 sinks.
+* Neptune (4.0.1.0)
+	* This release adds Global Cluster Switchover capability which enables you to change your global cluster's primary AWS Region, the region that serves writes, while preserving the replication between all regions in the global cluster.
+* ServiceQuotas (4.0.1.0)
+	* This release introduces CreateSupportCase operation to SDK.
+* Core 4.0.0.5
+	* Add the ConnectTimeout property on the service client config for the .NET 8 target of the SDK.
+	* All services packages updated to require new Core
+
 ### 4.0.13.0 (2025-05-15 18:27 UTC)
 * BedrockAgent (4.0.2.0)
 	* Amazon Bedrock Flows introduces DoWhile loops nodes, parallel node executions, and enhancements to knowledge base nodes.
