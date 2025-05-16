@@ -52,8 +52,38 @@ namespace Amazon.Neptune.Model
     /// </summary>
     public partial class FailoverGlobalClusterRequest : AmazonNeptuneRequest
     {
+        private bool? _allowDataLoss;
         private string _globalClusterIdentifier;
+        private bool? _switchover;
         private string _targetDbClusterIdentifier;
+
+        /// <summary>
+        /// Gets and sets the property AllowDataLoss. 
+        /// <para>
+        /// Specifies whether to allow data loss for this global database cluster operation. Allowing
+        /// data loss triggers a global failover operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify <c>AllowDataLoss</c>, the global database cluster operation defaults
+        /// to a switchover.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:Can't be specified together with the <c>Switchover</c> parameter.
+        /// </para>
+        /// </summary>
+        public bool AllowDataLoss
+        {
+            get { return this._allowDataLoss.GetValueOrDefault(); }
+            set { this._allowDataLoss = value; }
+        }
+
+        // Check to see if AllowDataLoss property is set
+        internal bool IsSetAllowDataLoss()
+        {
+            return this._allowDataLoss.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property GlobalClusterIdentifier. 
@@ -78,6 +108,28 @@ namespace Amazon.Neptune.Model
         internal bool IsSetGlobalClusterIdentifier()
         {
             return this._globalClusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Switchover. 
+        /// <para>
+        /// Specifies whether to switch over this global database cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:Can't be specified together with the <c>AllowDataLoss</c> parameter.
+        /// </para>
+        /// </summary>
+        public bool Switchover
+        {
+            get { return this._switchover.GetValueOrDefault(); }
+            set { this._switchover = value; }
+        }
+
+        // Check to see if Switchover property is set
+        internal bool IsSetSwitchover()
+        {
+            return this._switchover.HasValue; 
         }
 
         /// <summary>

@@ -5221,6 +5221,90 @@ namespace Amazon.Neptune
 
         #endregion
         
+        #region  SwitchoverGlobalCluster
+
+        /// <summary>
+        /// Switches over the specified secondary DB cluster to be the new primary DB cluster
+        /// in the global database cluster. Switchover operations were previously called "managed
+        /// planned failovers."
+        /// 
+        ///  
+        /// <para>
+        /// Promotes the specified secondary cluster to assume full read/write capabilities and
+        /// demotes the current primary cluster to a secondary (read-only) cluster, maintaining
+        /// the original replication topology. All secondary clusters are synchronized with the
+        /// primary at the beginning of the process so the new primary continues operations for
+        /// the global database without losing any data. Your database is unavailable for a short
+        /// time while the primary and selected secondary clusters are assuming their new roles.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is intended for controlled environments, for operations such as "regional
+        /// rotation" or to fall back to the original primary after a global database failover.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SwitchoverGlobalCluster service method.</param>
+        /// 
+        /// <returns>The response from the SwitchoverGlobalCluster service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
+        /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global database cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/SwitchoverGlobalCluster">REST API Reference for SwitchoverGlobalCluster Operation</seealso>
+        public virtual SwitchoverGlobalClusterResponse SwitchoverGlobalCluster(SwitchoverGlobalClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SwitchoverGlobalClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SwitchoverGlobalClusterResponseUnmarshaller.Instance;
+
+            return Invoke<SwitchoverGlobalClusterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SwitchoverGlobalCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SwitchoverGlobalCluster operation on AmazonNeptuneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSwitchoverGlobalCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/SwitchoverGlobalCluster">REST API Reference for SwitchoverGlobalCluster Operation</seealso>
+        public virtual IAsyncResult BeginSwitchoverGlobalCluster(SwitchoverGlobalClusterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SwitchoverGlobalClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SwitchoverGlobalClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SwitchoverGlobalCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSwitchoverGlobalCluster.</param>
+        /// 
+        /// <returns>Returns a  SwitchoverGlobalClusterResult from Neptune.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/SwitchoverGlobalCluster">REST API Reference for SwitchoverGlobalCluster Operation</seealso>
+        public virtual SwitchoverGlobalClusterResponse EndSwitchoverGlobalCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SwitchoverGlobalClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region DetermineServiceOperationEndpoint
 
         /// <summary>

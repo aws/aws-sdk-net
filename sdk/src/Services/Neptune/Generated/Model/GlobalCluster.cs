@@ -44,6 +44,7 @@ namespace Amazon.Neptune.Model
         private bool? _deletionProtection;
         private string _engine;
         private string _engineVersion;
+        private FailoverState _failoverState;
         private string _globalClusterArn;
         private string _globalClusterIdentifier;
         private List<GlobalClusterMember> _globalClusterMembers = AWSConfigs.InitializeCollections ? new List<GlobalClusterMember>() : null;
@@ -103,6 +104,27 @@ namespace Amazon.Neptune.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailoverState. 
+        /// <para>
+        /// A data object containing all properties for the current state of an in-process or
+        /// pending switchover or failover process for this global cluster (Neptune global database).
+        /// This object is empty unless the <c>SwitchoverGlobalCluster</c> or <c>FailoverGlobalCluster</c>
+        /// operation was called on this global cluster.
+        /// </para>
+        /// </summary>
+        public FailoverState FailoverState
+        {
+            get { return this._failoverState; }
+            set { this._failoverState = value; }
+        }
+
+        // Check to see if FailoverState property is set
+        internal bool IsSetFailoverState()
+        {
+            return this._failoverState != null;
         }
 
         /// <summary>
