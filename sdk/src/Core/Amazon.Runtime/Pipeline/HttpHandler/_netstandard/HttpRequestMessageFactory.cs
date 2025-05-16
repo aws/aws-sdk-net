@@ -245,7 +245,16 @@ namespace Amazon.Runtime
          /// <returns></returns>
         private static HttpClient CreateManagedHttpClient(IClientConfig clientConfig)
         {
+#if NET8_0_OR_GREATER
+            var httpMessageHandler = new SocketsHttpHandler();
+
+            if (clientConfig.ConnectTimeout.HasValue)
+            {
+                httpMessageHandler.ConnectTimeout = clientConfig.ConnectTimeout.Value;
+            }
+#else
             var httpMessageHandler = new HttpClientHandler();
+#endif
 
             if (clientConfig.MaxConnectionsPerServer.HasValue)
                 httpMessageHandler.MaxConnectionsPerServer = clientConfig.MaxConnectionsPerServer.Value;

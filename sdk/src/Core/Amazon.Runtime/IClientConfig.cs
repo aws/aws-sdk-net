@@ -245,6 +245,14 @@ namespace Amazon.Runtime
         /// </remarks>
         TimeSpan? Timeout { get; }
 
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// Gets the connection timeout that will be set on the HttpClient used by the service client to make requests.
+        /// The connection timeout is used control the wait time for the connection to be established to the service.
+        /// </summary>
+        TimeSpan? ConnectTimeout { get; }
+#endif
+
         /// <summary>
         /// Configures the endpoint calculation for a service to go to a dual stack (ipv6 enabled) endpoint
         /// for the configured region.
