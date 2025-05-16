@@ -370,6 +370,99 @@ namespace Amazon.ServiceQuotas
 
         #endregion
         
+        #region  CreateSupportCase
+
+
+        /// <summary>
+        /// Creates a Support case for an existing quota increase request. This call only creates
+        /// a Support case if the request has a <c>Pending</c> status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSupportCase service method.</param>
+        /// 
+        /// <returns>The response from the CreateSupportCase service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.DependencyAccessDeniedException">
+        /// You can't perform this action because a dependency does not have access.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.InvalidResourceStateException">
+        /// The resource is in an invalid state.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/CreateSupportCase">REST API Reference for CreateSupportCase Operation</seealso>
+        public virtual CreateSupportCaseResponse CreateSupportCase(CreateSupportCaseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSupportCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSupportCaseResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSupportCaseResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a Support case for an existing quota increase request. This call only creates
+        /// a Support case if the request has a <c>Pending</c> status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSupportCase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSupportCase service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.DependencyAccessDeniedException">
+        /// You can't perform this action because a dependency does not have access.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.InvalidResourceStateException">
+        /// The resource is in an invalid state.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/CreateSupportCase">REST API Reference for CreateSupportCase Operation</seealso>
+        public virtual Task<CreateSupportCaseResponse> CreateSupportCaseAsync(CreateSupportCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSupportCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSupportCaseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateSupportCaseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteServiceQuotaIncreaseRequestFromTemplate
 
 
