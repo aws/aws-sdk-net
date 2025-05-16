@@ -6,7 +6,8 @@
             "Add the ConnectTimeout property on the service client config for the .NET 8 target of the SDK."
         ],
 		"backwardIncompatibilitiesToIgnore": [
-			"Amazon.Runtime.ClientConfig/MethodAdded"
+			"Amazon.Runtime.ClientConfig/MethodAdded",
+			"Amazon.Runtime.IClientConfig/MethodAbstractMethodAdded"
 		]
     }
 }
