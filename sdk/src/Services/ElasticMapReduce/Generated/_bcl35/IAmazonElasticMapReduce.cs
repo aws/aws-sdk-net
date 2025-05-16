@@ -324,6 +324,52 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  CreatePersistentAppUI
+
+
+        /// <summary>
+        /// Creates a persistent application user interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePersistentAppUI service method.</param>
+        /// 
+        /// <returns>The response from the CreatePersistentAppUI service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreatePersistentAppUI">REST API Reference for CreatePersistentAppUI Operation</seealso>
+        CreatePersistentAppUIResponse CreatePersistentAppUI(CreatePersistentAppUIRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePersistentAppUI operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePersistentAppUI operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePersistentAppUI
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreatePersistentAppUI">REST API Reference for CreatePersistentAppUI Operation</seealso>
+        IAsyncResult BeginCreatePersistentAppUI(CreatePersistentAppUIRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePersistentAppUI operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePersistentAppUI.</param>
+        /// 
+        /// <returns>Returns a  CreatePersistentAppUIResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreatePersistentAppUI">REST API Reference for CreatePersistentAppUI Operation</seealso>
+        CreatePersistentAppUIResponse EndCreatePersistentAppUI(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateSecurityConfiguration
 
 
@@ -840,6 +886,52 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  DescribePersistentAppUI
+
+
+        /// <summary>
+        /// Describes a persistent application user interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePersistentAppUI service method.</param>
+        /// 
+        /// <returns>The response from the DescribePersistentAppUI service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribePersistentAppUI">REST API Reference for DescribePersistentAppUI Operation</seealso>
+        DescribePersistentAppUIResponse DescribePersistentAppUI(DescribePersistentAppUIRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePersistentAppUI operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePersistentAppUI operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePersistentAppUI
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribePersistentAppUI">REST API Reference for DescribePersistentAppUI Operation</seealso>
+        IAsyncResult BeginDescribePersistentAppUI(DescribePersistentAppUIRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribePersistentAppUI operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePersistentAppUI.</param>
+        /// 
+        /// <returns>Returns a  DescribePersistentAppUIResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribePersistentAppUI">REST API Reference for DescribePersistentAppUI Operation</seealso>
+        DescribePersistentAppUIResponse EndDescribePersistentAppUI(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeReleaseLabel
 
 
@@ -1217,6 +1309,100 @@ namespace Amazon.ElasticMapReduce
         /// <returns>Returns a  GetManagedScalingPolicyResult from ElasticMapReduce.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetManagedScalingPolicy">REST API Reference for GetManagedScalingPolicy Operation</seealso>
         GetManagedScalingPolicyResponse EndGetManagedScalingPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetOnClusterAppUIPresignedURL
+
+
+        /// <summary>
+        /// The presigned URL properties for the cluster's application user interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOnClusterAppUIPresignedURL service method.</param>
+        /// 
+        /// <returns>The response from the GetOnClusterAppUIPresignedURL service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetOnClusterAppUIPresignedURL">REST API Reference for GetOnClusterAppUIPresignedURL Operation</seealso>
+        GetOnClusterAppUIPresignedURLResponse GetOnClusterAppUIPresignedURL(GetOnClusterAppUIPresignedURLRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOnClusterAppUIPresignedURL operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOnClusterAppUIPresignedURL operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOnClusterAppUIPresignedURL
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetOnClusterAppUIPresignedURL">REST API Reference for GetOnClusterAppUIPresignedURL Operation</seealso>
+        IAsyncResult BeginGetOnClusterAppUIPresignedURL(GetOnClusterAppUIPresignedURLRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetOnClusterAppUIPresignedURL operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetOnClusterAppUIPresignedURL.</param>
+        /// 
+        /// <returns>Returns a  GetOnClusterAppUIPresignedURLResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetOnClusterAppUIPresignedURL">REST API Reference for GetOnClusterAppUIPresignedURL Operation</seealso>
+        GetOnClusterAppUIPresignedURLResponse EndGetOnClusterAppUIPresignedURL(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetPersistentAppUIPresignedURL
+
+
+        /// <summary>
+        /// The presigned URL properties for the cluster's application user interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPersistentAppUIPresignedURL service method.</param>
+        /// 
+        /// <returns>The response from the GetPersistentAppUIPresignedURL service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetPersistentAppUIPresignedURL">REST API Reference for GetPersistentAppUIPresignedURL Operation</seealso>
+        GetPersistentAppUIPresignedURLResponse GetPersistentAppUIPresignedURL(GetPersistentAppUIPresignedURLRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPersistentAppUIPresignedURL operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPersistentAppUIPresignedURL operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPersistentAppUIPresignedURL
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetPersistentAppUIPresignedURL">REST API Reference for GetPersistentAppUIPresignedURL Operation</seealso>
+        IAsyncResult BeginGetPersistentAppUIPresignedURL(GetPersistentAppUIPresignedURLRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPersistentAppUIPresignedURL operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPersistentAppUIPresignedURL.</param>
+        /// 
+        /// <returns>Returns a  GetPersistentAppUIPresignedURLResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetPersistentAppUIPresignedURL">REST API Reference for GetPersistentAppUIPresignedURL Operation</seealso>
+        GetPersistentAppUIPresignedURLResponse EndGetPersistentAppUIPresignedURL(IAsyncResult asyncResult);
 
         #endregion
         

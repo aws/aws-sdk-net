@@ -212,6 +212,30 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
                 
+        #region  CreatePersistentAppUI
+
+
+
+        /// <summary>
+        /// Creates a persistent application user interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePersistentAppUI service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePersistentAppUI service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreatePersistentAppUI">REST API Reference for CreatePersistentAppUI Operation</seealso>
+        Task<CreatePersistentAppUIResponse> CreatePersistentAppUIAsync(CreatePersistentAppUIRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateSecurityConfiguration
 
 
@@ -536,6 +560,30 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
                 
+        #region  DescribePersistentAppUI
+
+
+
+        /// <summary>
+        /// Describes a persistent application user interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePersistentAppUI service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePersistentAppUI service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribePersistentAppUI">REST API Reference for DescribePersistentAppUI Operation</seealso>
+        Task<DescribePersistentAppUIResponse> DescribePersistentAppUIAsync(DescribePersistentAppUIRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeReleaseLabel
 
 
@@ -741,6 +789,56 @@ namespace Amazon.ElasticMapReduce
         /// <returns>The response from the GetManagedScalingPolicy service method, as returned by ElasticMapReduce.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetManagedScalingPolicy">REST API Reference for GetManagedScalingPolicy Operation</seealso>
         Task<GetManagedScalingPolicyResponse> GetManagedScalingPolicyAsync(GetManagedScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetOnClusterAppUIPresignedURL
+
+
+
+        /// <summary>
+        /// The presigned URL properties for the cluster's application user interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOnClusterAppUIPresignedURL service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetOnClusterAppUIPresignedURL service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetOnClusterAppUIPresignedURL">REST API Reference for GetOnClusterAppUIPresignedURL Operation</seealso>
+        Task<GetOnClusterAppUIPresignedURLResponse> GetOnClusterAppUIPresignedURLAsync(GetOnClusterAppUIPresignedURLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetPersistentAppUIPresignedURL
+
+
+
+        /// <summary>
+        /// The presigned URL properties for the cluster's application user interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPersistentAppUIPresignedURL service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPersistentAppUIPresignedURL service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetPersistentAppUIPresignedURL">REST API Reference for GetPersistentAppUIPresignedURL Operation</seealso>
+        Task<GetPersistentAppUIPresignedURLResponse> GetPersistentAppUIPresignedURLAsync(GetPersistentAppUIPresignedURLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

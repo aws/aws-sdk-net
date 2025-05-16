@@ -517,6 +517,46 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  CreatePersistentAppUI
+
+        internal virtual CreatePersistentAppUIResponse CreatePersistentAppUI(CreatePersistentAppUIRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePersistentAppUIRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePersistentAppUIResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePersistentAppUIResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a persistent application user interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePersistentAppUI service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePersistentAppUI service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreatePersistentAppUI">REST API Reference for CreatePersistentAppUI Operation</seealso>
+        public virtual Task<CreatePersistentAppUIResponse> CreatePersistentAppUIAsync(CreatePersistentAppUIRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePersistentAppUIRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePersistentAppUIResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePersistentAppUIResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateSecurityConfiguration
 
         internal virtual CreateSecurityConfigurationResponse CreateSecurityConfiguration(CreateSecurityConfigurationRequest request)
@@ -1001,6 +1041,46 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  DescribePersistentAppUI
+
+        internal virtual DescribePersistentAppUIResponse DescribePersistentAppUI(DescribePersistentAppUIRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePersistentAppUIRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePersistentAppUIResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePersistentAppUIResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes a persistent application user interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePersistentAppUI service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePersistentAppUI service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribePersistentAppUI">REST API Reference for DescribePersistentAppUI Operation</seealso>
+        public virtual Task<DescribePersistentAppUIResponse> DescribePersistentAppUIAsync(DescribePersistentAppUIRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePersistentAppUIRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePersistentAppUIResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribePersistentAppUIResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeReleaseLabel
 
         internal virtual DescribeReleaseLabelResponse DescribeReleaseLabel(DescribeReleaseLabelRequest request)
@@ -1340,6 +1420,88 @@ namespace Amazon.ElasticMapReduce
             options.ResponseUnmarshaller = GetManagedScalingPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetManagedScalingPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetOnClusterAppUIPresignedURL
+
+        internal virtual GetOnClusterAppUIPresignedURLResponse GetOnClusterAppUIPresignedURL(GetOnClusterAppUIPresignedURLRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOnClusterAppUIPresignedURLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOnClusterAppUIPresignedURLResponseUnmarshaller.Instance;
+
+            return Invoke<GetOnClusterAppUIPresignedURLResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The presigned URL properties for the cluster's application user interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOnClusterAppUIPresignedURL service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetOnClusterAppUIPresignedURL service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetOnClusterAppUIPresignedURL">REST API Reference for GetOnClusterAppUIPresignedURL Operation</seealso>
+        public virtual Task<GetOnClusterAppUIPresignedURLResponse> GetOnClusterAppUIPresignedURLAsync(GetOnClusterAppUIPresignedURLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOnClusterAppUIPresignedURLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOnClusterAppUIPresignedURLResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetOnClusterAppUIPresignedURLResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPersistentAppUIPresignedURL
+
+        internal virtual GetPersistentAppUIPresignedURLResponse GetPersistentAppUIPresignedURL(GetPersistentAppUIPresignedURLRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPersistentAppUIPresignedURLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPersistentAppUIPresignedURLResponseUnmarshaller.Instance;
+
+            return Invoke<GetPersistentAppUIPresignedURLResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The presigned URL properties for the cluster's application user interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPersistentAppUIPresignedURL service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPersistentAppUIPresignedURL service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetPersistentAppUIPresignedURL">REST API Reference for GetPersistentAppUIPresignedURL Operation</seealso>
+        public virtual Task<GetPersistentAppUIPresignedURLResponse> GetPersistentAppUIPresignedURLAsync(GetPersistentAppUIPresignedURLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPersistentAppUIPresignedURLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPersistentAppUIPresignedURLResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPersistentAppUIPresignedURLResponse>(request, options, cancellationToken);
         }
 
         #endregion

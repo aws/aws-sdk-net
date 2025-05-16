@@ -1573,6 +1573,72 @@ namespace Amazon.ElasticMapReduce
 
 
     /// <summary>
+    /// Constants used for properties of type OnClusterAppUIType.
+    /// </summary>
+    public class OnClusterAppUIType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ApplicationMaster for OnClusterAppUIType
+        /// </summary>
+        public static readonly OnClusterAppUIType ApplicationMaster = new OnClusterAppUIType("ApplicationMaster");
+        /// <summary>
+        /// Constant JobHistoryServer for OnClusterAppUIType
+        /// </summary>
+        public static readonly OnClusterAppUIType JobHistoryServer = new OnClusterAppUIType("JobHistoryServer");
+        /// <summary>
+        /// Constant ResourceManager for OnClusterAppUIType
+        /// </summary>
+        public static readonly OnClusterAppUIType ResourceManager = new OnClusterAppUIType("ResourceManager");
+        /// <summary>
+        /// Constant SparkHistoryServer for OnClusterAppUIType
+        /// </summary>
+        public static readonly OnClusterAppUIType SparkHistoryServer = new OnClusterAppUIType("SparkHistoryServer");
+        /// <summary>
+        /// Constant TezUI for OnClusterAppUIType
+        /// </summary>
+        public static readonly OnClusterAppUIType TezUI = new OnClusterAppUIType("TezUI");
+        /// <summary>
+        /// Constant YarnTimelineService for OnClusterAppUIType
+        /// </summary>
+        public static readonly OnClusterAppUIType YarnTimelineService = new OnClusterAppUIType("YarnTimelineService");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OnClusterAppUIType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OnClusterAppUIType FindValue(string value)
+        {
+            return FindValue<OnClusterAppUIType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OnClusterAppUIType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OnDemandCapacityReservationPreference.
     /// </summary>
     public class OnDemandCapacityReservationPreference : ConstantClass
@@ -1765,6 +1831,60 @@ namespace Amazon.ElasticMapReduce
 
 
     /// <summary>
+    /// Constants used for properties of type PersistentAppUIType.
+    /// </summary>
+    public class PersistentAppUIType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SHS for PersistentAppUIType
+        /// </summary>
+        public static readonly PersistentAppUIType SHS = new PersistentAppUIType("SHS");
+        /// <summary>
+        /// Constant TEZ for PersistentAppUIType
+        /// </summary>
+        public static readonly PersistentAppUIType TEZ = new PersistentAppUIType("TEZ");
+        /// <summary>
+        /// Constant YTS for PersistentAppUIType
+        /// </summary>
+        public static readonly PersistentAppUIType YTS = new PersistentAppUIType("YTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PersistentAppUIType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PersistentAppUIType FindValue(string value)
+        {
+            return FindValue<PersistentAppUIType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PersistentAppUIType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PlacementGroupStrategy.
     /// </summary>
     public class PlacementGroupStrategy : ConstantClass
@@ -1816,6 +1936,60 @@ namespace Amazon.ElasticMapReduce
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PlacementGroupStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProfilerType.
+    /// </summary>
+    public class ProfilerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SHS for ProfilerType
+        /// </summary>
+        public static readonly ProfilerType SHS = new ProfilerType("SHS");
+        /// <summary>
+        /// Constant TEZUI for ProfilerType
+        /// </summary>
+        public static readonly ProfilerType TEZUI = new ProfilerType("TEZUI");
+        /// <summary>
+        /// Constant YTS for ProfilerType
+        /// </summary>
+        public static readonly ProfilerType YTS = new ProfilerType("YTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProfilerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProfilerType FindValue(string value)
+        {
+            return FindValue<ProfilerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProfilerType(string value)
         {
             return FindValue(value);
         }
