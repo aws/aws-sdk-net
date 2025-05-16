@@ -1781,6 +1781,60 @@ namespace Amazon.CodePipeline
 
         #endregion
         
+        #region  ListDeployActionExecutionTargets
+
+
+        /// <summary>
+        /// Lists the targets for the deploy action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDeployActionExecutionTargets service method.</param>
+        /// 
+        /// <returns>The response from the ListDeployActionExecutionTargets service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ActionExecutionNotFoundException">
+        /// The action execution was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format. Make sure that the next token you
+        /// provide is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListDeployActionExecutionTargets">REST API Reference for ListDeployActionExecutionTargets Operation</seealso>
+        ListDeployActionExecutionTargetsResponse ListDeployActionExecutionTargets(ListDeployActionExecutionTargetsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the targets for the deploy action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDeployActionExecutionTargets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDeployActionExecutionTargets service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ActionExecutionNotFoundException">
+        /// The action execution was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format. Make sure that the next token you
+        /// provide is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListDeployActionExecutionTargets">REST API Reference for ListDeployActionExecutionTargets Operation</seealso>
+        Task<ListDeployActionExecutionTargetsResponse> ListDeployActionExecutionTargetsAsync(ListDeployActionExecutionTargetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListPipelineExecutions
 
 
