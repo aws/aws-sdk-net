@@ -1,3 +1,14 @@
+### 3.7.1047.0 (2025-05-19 18:13 UTC)
+* DSQL (3.7.404.0)
+	* CreateMultiRegionCluster and DeleteMultiRegionCluster APIs removed
+* EC2 (3.7.445.0)
+	* This release includes new APIs for System Integrity Protection (SIP) configuration and automated root volume ownership delegation for EC2 Mac instances.
+* MediaPackageV2 (3.7.405.0)
+	* This release adds support for DVB-DASH, EBU-TT-D subtitle format, and non-compacted manifests for DASH in MediaPackage v2 Origin Endpoints.
+* Core 3.7.402.59
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1046.0 (2025-05-16 18:42 UTC)
 * BedrockDataAutomation (3.7.404.0)
 	* Add support for VIDEO modality to BlueprintType enum.
