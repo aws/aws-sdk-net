@@ -143,7 +143,11 @@ namespace Amazon.S3
 
         void ICoreAmazonS3.EnsureBucketExists(string bucketName)
         {
-            this.PutBucket(bucketName);
+            try
+            {
+                this.PutBucket(bucketName);
+            }
+            catch (BucketAlreadyOwnedByYouException) { }
         }
         #endregion
     }
