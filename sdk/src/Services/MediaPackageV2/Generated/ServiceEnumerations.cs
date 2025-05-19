@@ -279,6 +279,56 @@ namespace Amazon.MediaPackageV2
 
 
     /// <summary>
+    /// Constants used for properties of type DashCompactness.
+    /// </summary>
+    public class DashCompactness : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for DashCompactness
+        /// </summary>
+        public static readonly DashCompactness NONE = new DashCompactness("NONE");
+        /// <summary>
+        /// Constant STANDARD for DashCompactness
+        /// </summary>
+        public static readonly DashCompactness STANDARD = new DashCompactness("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DashCompactness(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashCompactness FindValue(string value)
+        {
+            return FindValue<DashCompactness>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashCompactness(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DashDrmSignaling.
     /// </summary>
     public class DashDrmSignaling : ConstantClass
@@ -391,6 +441,52 @@ namespace Amazon.MediaPackageV2
 
 
     /// <summary>
+    /// Constants used for properties of type DashProfile.
+    /// </summary>
+    public class DashProfile : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DVB_DASH for DashProfile
+        /// </summary>
+        public static readonly DashProfile DVB_DASH = new DashProfile("DVB_DASH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DashProfile(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashProfile FindValue(string value)
+        {
+            return FindValue<DashProfile>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashProfile(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DashSegmentTemplateFormat.
     /// </summary>
     public class DashSegmentTemplateFormat : ConstantClass
@@ -430,6 +526,56 @@ namespace Amazon.MediaPackageV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DashSegmentTemplateFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DashTtmlProfile.
+    /// </summary>
+    public class DashTtmlProfile : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EBU_TT_D_101 for DashTtmlProfile
+        /// </summary>
+        public static readonly DashTtmlProfile EBU_TT_D_101 = new DashTtmlProfile("EBU_TT_D_101");
+        /// <summary>
+        /// Constant IMSC_1 for DashTtmlProfile
+        /// </summary>
+        public static readonly DashTtmlProfile IMSC_1 = new DashTtmlProfile("IMSC_1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DashTtmlProfile(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashTtmlProfile FindValue(string value)
+        {
+            return FindValue<DashTtmlProfile>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashTtmlProfile(string value)
         {
             return FindValue(value);
         }
@@ -1075,6 +1221,10 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ValidationExceptionType CONTAINER_TYPE_IMMUTABLE = new ValidationExceptionType("CONTAINER_TYPE_IMMUTABLE");
         /// <summary>
+        /// Constant DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE = new ValidationExceptionType("DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE");
+        /// <summary>
         /// Constant DIRECT_MODE_WITH_TIMING_SOURCE for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType DIRECT_MODE_WITH_TIMING_SOURCE = new ValidationExceptionType("DIRECT_MODE_WITH_TIMING_SOURCE");
@@ -1130,6 +1280,18 @@ namespace Amazon.MediaPackageV2
         /// Constant HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT = new ValidationExceptionType("HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT");
+        /// <summary>
+        /// Constant INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION = new ValidationExceptionType("INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION");
+        /// <summary>
+        /// Constant INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION = new ValidationExceptionType("INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION");
+        /// <summary>
+        /// Constant INCOMPATIBLE_XML_ENCODING for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INCOMPATIBLE_XML_ENCODING = new ValidationExceptionType("INCOMPATIBLE_XML_ENCODING");
         /// <summary>
         /// Constant INVALID_HARVEST_JOB_DURATION for ValidationExceptionType
         /// </summary>

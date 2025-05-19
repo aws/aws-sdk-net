@@ -34,17 +34,66 @@ namespace Amazon.MediaPackageV2.Model
     /// </summary>
     public partial class CreateDashManifestConfiguration
     {
+        private List<DashBaseUrl> _baseUrls = AWSConfigs.InitializeCollections ? new List<DashBaseUrl>() : null;
+        private DashCompactness _compactness;
         private DashDrmSignaling _drmSignaling;
+        private DashDvbSettings _dvbSettings;
         private FilterConfiguration _filterConfiguration;
         private string _manifestName;
         private int? _manifestWindowSeconds;
         private int? _minBufferTimeSeconds;
         private int? _minUpdatePeriodSeconds;
         private List<string> _periodTriggers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _profiles = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private DashProgramInformation _programInformation;
         private ScteDash _scteDash;
         private DashSegmentTemplateFormat _segmentTemplateFormat;
+        private DashSubtitleConfiguration _subtitleConfiguration;
         private int? _suggestedPresentationDelaySeconds;
         private DashUtcTiming _utcTiming;
+
+        /// <summary>
+        /// Gets and sets the property BaseUrls. 
+        /// <para>
+        /// The base URLs to use for retrieving segments.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public List<DashBaseUrl> BaseUrls
+        {
+            get { return this._baseUrls; }
+            set { this._baseUrls = value; }
+        }
+
+        // Check to see if BaseUrls property is set
+        internal bool IsSetBaseUrls()
+        {
+            return this._baseUrls != null && (this._baseUrls.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Compactness. 
+        /// <para>
+        /// The layout of the DASH manifest that MediaPackage produces. <c>STANDARD</c> indicates
+        /// a default manifest, which is compacted. <c>NONE</c> indicates a full manifest.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about compactness, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/compacted.html">DASH
+        /// manifest compactness</a> in the <i>Elemental MediaPackage v2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public DashCompactness Compactness
+        {
+            get { return this._compactness; }
+            set { this._compactness = value; }
+        }
+
+        // Check to see if Compactness property is set
+        internal bool IsSetCompactness()
+        {
+            return this._compactness != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DrmSignaling. 
@@ -62,6 +111,25 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetDrmSignaling()
         {
             return this._drmSignaling != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DvbSettings. 
+        /// <para>
+        /// For endpoints that use the DVB-DASH profile only. The font download and error reporting
+        /// information that you want MediaPackage to pass through to the manifest.
+        /// </para>
+        /// </summary>
+        public DashDvbSettings DvbSettings
+        {
+            get { return this._dvbSettings; }
+            set { this._dvbSettings = value; }
+        }
+
+        // Check to see if DvbSettings property is set
+        internal bool IsSetDvbSettings()
+        {
+            return this._dvbSettings != null;
         }
 
         /// <summary>
@@ -183,6 +251,44 @@ namespace Amazon.MediaPackageV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Profiles. 
+        /// <para>
+        /// The profile that the output is compliant with.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<string> Profiles
+        {
+            get { return this._profiles; }
+            set { this._profiles = value; }
+        }
+
+        // Check to see if Profiles property is set
+        internal bool IsSetProfiles()
+        {
+            return this._profiles != null && (this._profiles.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProgramInformation. 
+        /// <para>
+        /// Details about the content that you want MediaPackage to pass through in the manifest
+        /// to the playback device.
+        /// </para>
+        /// </summary>
+        public DashProgramInformation ProgramInformation
+        {
+            get { return this._programInformation; }
+            set { this._programInformation = value; }
+        }
+
+        // Check to see if ProgramInformation property is set
+        internal bool IsSetProgramInformation()
+        {
+            return this._programInformation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ScteDash. 
         /// <para>
         /// The SCTE configuration.
@@ -229,6 +335,24 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetSegmentTemplateFormat()
         {
             return this._segmentTemplateFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubtitleConfiguration. 
+        /// <para>
+        /// The configuration for DASH subtitles.
+        /// </para>
+        /// </summary>
+        public DashSubtitleConfiguration SubtitleConfiguration
+        {
+            get { return this._subtitleConfiguration; }
+            set { this._subtitleConfiguration = value; }
+        }
+
+        // Check to see if SubtitleConfiguration property is set
+        internal bool IsSetSubtitleConfiguration()
+        {
+            return this._subtitleConfiguration != null;
         }
 
         /// <summary>
