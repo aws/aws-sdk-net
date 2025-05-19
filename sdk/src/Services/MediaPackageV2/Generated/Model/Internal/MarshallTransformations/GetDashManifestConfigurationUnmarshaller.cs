@@ -66,10 +66,28 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BaseUrls", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DashBaseUrl, DashBaseUrlUnmarshaller>(DashBaseUrlUnmarshaller.Instance);
+                    unmarshalledObject.BaseUrls = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Compactness", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Compactness = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DrmSignaling", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DrmSignaling = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DvbSettings", targetDepth))
+                {
+                    var unmarshaller = DashDvbSettingsUnmarshaller.Instance;
+                    unmarshalledObject.DvbSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FilterConfiguration", targetDepth))
@@ -108,6 +126,18 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.PeriodTriggers = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Profiles", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Profiles = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProgramInformation", targetDepth))
+                {
+                    var unmarshaller = DashProgramInformationUnmarshaller.Instance;
+                    unmarshalledObject.ProgramInformation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ScteDash", targetDepth))
                 {
                     var unmarshaller = ScteDashUnmarshaller.Instance;
@@ -118,6 +148,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SegmentTemplateFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SubtitleConfiguration", targetDepth))
+                {
+                    var unmarshaller = DashSubtitleConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SubtitleConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SuggestedPresentationDelaySeconds", targetDepth))

@@ -252,7 +252,29 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
                 ContainerType = "CMAF",
                 DashManifests = new List<CreateDashManifestConfiguration> {
                     new CreateDashManifestConfiguration {
+                        BaseUrls = new List<DashBaseUrl> {
+                            new DashBaseUrl {
+                                DvbPriority = 1,
+                                DvbWeight = 3,
+                                ServiceLocation = "A",
+                                Url = "http://example.com/"
+                            }
+                        },
+                        Compactness = "STANDARD",
                         DrmSignaling = "INDIVIDUAL",
+                        DvbSettings = new DashDvbSettings {
+                            ErrorMetrics = new List<DashDvbMetricsReporting> {
+                                new DashDvbMetricsReporting {
+                                    Probability = 500,
+                                    ReportingUrl = "https://example.com/dvb-errors/errors"
+                                }
+                            },
+                            FontDownload = new DashDvbFontDownload {
+                                FontFamily = "SubtitleDisplay",
+                                MimeType = "application/font",
+                                Url = "https://example.com/fonts/SubtitleDisplay.woff"
+                            }
+                        },
                         ManifestName = "exampleDashManifest1",
                         ManifestWindowSeconds = 300,
                         MinBufferTimeSeconds = 30,
@@ -260,12 +282,48 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
                         PeriodTriggers = new List<string> {
                             "AVAILS"
                         },
+                        Profiles = new List<string> {
+                            "DVB_DASH"
+                        },
+                        ProgramInformation = new DashProgramInformation {
+                            Copyright = "(c) Example. All rights reserved",
+                            LanguageCode = "en",
+                            MoreInformationUrl = "https://example.com/more-information",
+                            Source = "exampleSource",
+                            Title = "exampleTitle"
+                        },
                         ScteDash = new ScteDash { AdMarkerDash = "XML" },
                         SegmentTemplateFormat = "NUMBER_WITH_TIMELINE",
-                        SuggestedPresentationDelaySeconds = 2
+                        SuggestedPresentationDelaySeconds = 2,
+                        UtcTiming = new DashUtcTiming {
+                            TimingMode = "HTTP_HEAD",
+                            TimingSource = "example"
+                        }
                     },
                     new CreateDashManifestConfiguration {
+                        BaseUrls = new List<DashBaseUrl> {
+                            new DashBaseUrl {
+                                DvbPriority = 2,
+                                DvbWeight = 2,
+                                ServiceLocation = "B",
+                                Url = "http://example2.com/"
+                            }
+                        },
+                        Compactness = "STANDARD",
                         DrmSignaling = "INDIVIDUAL",
+                        DvbSettings = new DashDvbSettings {
+                            ErrorMetrics = new List<DashDvbMetricsReporting> {
+                                new DashDvbMetricsReporting {
+                                    Probability = 600,
+                                    ReportingUrl = "https://example2.com/dvb-errors/errors"
+                                }
+                            },
+                            FontDownload = new DashDvbFontDownload {
+                                FontFamily = "SubtitleDisplay",
+                                MimeType = "application/font",
+                                Url = "https://example.com/fonts/SubtitleDisplay.woff"
+                            }
+                        },
                         ManifestName = "exampleDashManifest2",
                         ManifestWindowSeconds = 60,
                         MinBufferTimeSeconds = 9,
@@ -276,9 +334,23 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
                             "SOURCE_CHANGES",
                             "SOURCE_DISRUPTIONS"
                         },
+                        Profiles = new List<string> {
+                            "DVB_DASH"
+                        },
+                        ProgramInformation = new DashProgramInformation {
+                            Copyright = "(c) Example. All rights reserved",
+                            LanguageCode = "en",
+                            MoreInformationUrl = "https://example2.com/more-information",
+                            Source = "exampleSource2",
+                            Title = "exampleTitle2"
+                        },
                         ScteDash = new ScteDash { AdMarkerDash = "XML" },
                         SegmentTemplateFormat = "NUMBER_WITH_TIMELINE",
-                        SuggestedPresentationDelaySeconds = 12
+                        SuggestedPresentationDelaySeconds = 12,
+                        UtcTiming = new DashUtcTiming {
+                            TimingMode = "HTTP_HEAD",
+                            TimingSource = "example"
+                        }
                     }
                 },
                 ForceEndpointErrorConfiguration = new ForceEndpointErrorConfiguration { EndpointErrorConditions = new List<string> {

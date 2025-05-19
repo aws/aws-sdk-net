@@ -48,10 +48,43 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBaseUrls())
+            {
+                context.Writer.WritePropertyName("BaseUrls");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectBaseUrlsListValue in requestObject.BaseUrls)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DashBaseUrlMarshaller.Instance;
+                    marshaller.Marshall(requestObjectBaseUrlsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetCompactness())
+            {
+                context.Writer.WritePropertyName("Compactness");
+                context.Writer.Write(requestObject.Compactness);
+            }
+
             if(requestObject.IsSetDrmSignaling())
             {
                 context.Writer.WritePropertyName("DrmSignaling");
                 context.Writer.Write(requestObject.DrmSignaling);
+            }
+
+            if(requestObject.IsSetDvbSettings())
+            {
+                context.Writer.WritePropertyName("DvbSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DashDvbSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DvbSettings, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetFilterConfiguration())
@@ -100,6 +133,28 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetProfiles())
+            {
+                context.Writer.WritePropertyName("Profiles");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectProfilesListValue in requestObject.Profiles)
+                {
+                        context.Writer.Write(requestObjectProfilesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetProgramInformation())
+            {
+                context.Writer.WritePropertyName("ProgramInformation");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DashProgramInformationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ProgramInformation, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetScteDash())
             {
                 context.Writer.WritePropertyName("ScteDash");
@@ -115,6 +170,17 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("SegmentTemplateFormat");
                 context.Writer.Write(requestObject.SegmentTemplateFormat);
+            }
+
+            if(requestObject.IsSetSubtitleConfiguration())
+            {
+                context.Writer.WritePropertyName("SubtitleConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DashSubtitleConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SubtitleConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetSuggestedPresentationDelaySeconds())
