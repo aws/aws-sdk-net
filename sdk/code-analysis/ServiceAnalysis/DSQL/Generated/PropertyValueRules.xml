@@ -15,17 +15,6 @@
     <pattern>[a-z0-9]{26}</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DSQL.Model.CreateMultiRegionClustersRequest.ClientToken</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[!-~]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DSQL.Model.CreateMultiRegionClustersRequest.WitnessRegion</property>
-    <min>0</min>
-    <max>50</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.DSQL.Model.DeleteClusterRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
@@ -44,12 +33,6 @@
     <pattern>[a-z0-9]{26}</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DSQL.Model.DeleteMultiRegionClustersRequest.ClientToken</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[!-~]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.DSQL.Model.GetClusterRequest.Identifier</property>
     <pattern>[a-z0-9]{26}</pattern>
   </property-value-rule>
@@ -60,11 +43,6 @@
   <property-value-rule>
     <property>Amazon.DSQL.Model.GetClusterResponse.Identifier</property>
     <pattern>[a-z0-9]{26}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DSQL.Model.GetClusterResponse.WitnessRegion</property>
-    <min>0</min>
-    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.GetVpcEndpointServiceNameRequest.Identifier</property>
@@ -116,11 +94,6 @@
   <property-value-rule>
     <property>Amazon.DSQL.Model.UpdateClusterResponse.Identifier</property>
     <pattern>[a-z0-9]{26}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DSQL.Model.UpdateClusterResponse.WitnessRegion</property>
-    <min>0</min>
-    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.ClusterSummary.Arn</property>

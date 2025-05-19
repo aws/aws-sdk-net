@@ -28,25 +28,6 @@ namespace AWSSDKDocSamples.Amazon.DSQL.Generated
             #endregion
         }
 
-        public void DSQLCreateMultiRegionClusters()
-        {
-            #region example-1
-
-            var client = new AmazonDSQLClient();
-            var response = client.CreateMultiRegionClusters(new CreateMultiRegionClustersRequest 
-            {
-                LinkedRegionList = new List<string> {
-                    "us-east-1",
-                    "us-east-2"
-                },
-                WitnessRegion = "us-west-2"
-            });
-
-            List<string> linkedClusterArns = response.LinkedClusterArns;
-
-            #endregion
-        }
-
         public void DSQLDeleteCluster()
         {
             #region example-1
@@ -55,23 +36,6 @@ namespace AWSSDKDocSamples.Amazon.DSQL.Generated
             var response = client.DeleteCluster(new DeleteClusterRequest 
             {
                 Identifier = "kiqenqglxyl2snyvkvnj2c3s2e"
-            });
-
-
-            #endregion
-        }
-
-        public void DSQLDeleteMultiRegionClusters()
-        {
-            #region example-1
-
-            var client = new AmazonDSQLClient();
-            var response = client.DeleteMultiRegionClusters(new DeleteMultiRegionClustersRequest 
-            {
-                LinkedClusterArns = new List<string> {
-                    "arn:aws:dsql:us-east-1:111122223333:cluster/abcdefghijklmnopqrstu12345",
-                    "arn:aws:dsql:us-east-2:111122223333:cluster/klmnopqrstuvwxyzabcde54321"
-                }
             });
 
 

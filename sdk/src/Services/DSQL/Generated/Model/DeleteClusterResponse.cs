@@ -36,7 +36,6 @@ namespace Amazon.DSQL.Model
     {
         private string _arn;
         private DateTime? _creationTime;
-        private bool? _deletionProtectionEnabled;
         private string _identifier;
         private ClusterStatus _status;
 
@@ -76,26 +75,6 @@ namespace Amazon.DSQL.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property DeletionProtectionEnabled. 
-        /// <para>
-        /// Specifies whether deletion protection was enabled on the cluster.
-        /// </para>
-        /// </summary>
-        [Obsolete("The deletionProtectionEnabled field is deprecated in the DeleteCluster API. To check deletion protection status, use the GetCluster API instead.")]
-        [AWSProperty(Required=true)]
-        public bool? DeletionProtectionEnabled
-        {
-            get { return this._deletionProtectionEnabled; }
-            set { this._deletionProtectionEnabled = value; }
-        }
-
-        // Check to see if DeletionProtectionEnabled property is set
-        internal bool IsSetDeletionProtectionEnabled()
-        {
-            return this._deletionProtectionEnabled.HasValue; 
         }
 
         /// <summary>
