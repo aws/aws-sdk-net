@@ -141,7 +141,11 @@ namespace Amazon.S3
 
         void ICoreAmazonS3.EnsureBucketExists(string bucketName)
         {
-            this.PutBucket(bucketName);
+            try
+            {
+                this.PutBucket(bucketName);
+            }
+            catch (BucketAlreadyOwnedByYouException) { }
         }
 
         [Obsolete("This method is obsolete: its behavior is inconsistent and always uses HTTP.")]

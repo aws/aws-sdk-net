@@ -143,9 +143,15 @@ namespace Amazon.S3
             return this.PutACLAsync(request);
         }
 
-        Task ICoreAmazonS3.EnsureBucketExistsAsync(string bucketName)
+        async Task ICoreAmazonS3.EnsureBucketExistsAsync(string bucketName)
         {
-            return this.PutBucketAsync(bucketName);
+            try
+            {
+                await this.PutBucketAsync(bucketName).ConfigureAwait(false);
+            }
+            catch (BucketAlreadyOwnedByYouException)
+            {
+            }
         }
 
         [Obsolete("This method is deprecated: its behavior is inconsistent and always uses HTTP. Please use Amazon.S3.Util.AmazonS3Util.DoesS3BucketExistV2Async instead.")]
