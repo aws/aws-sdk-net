@@ -64,12 +64,6 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("deletionProtectionEnabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.DeletionProtectionEnabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("identifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

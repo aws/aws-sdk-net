@@ -76,12 +76,6 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
                     response.Identifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("linkedClusterArns", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.LinkedClusterArns = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("multiRegionProperties", targetDepth))
                 {
                     var unmarshaller = MultiRegionPropertiesUnmarshaller.Instance;
@@ -98,12 +92,6 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("witnessRegion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.WitnessRegion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

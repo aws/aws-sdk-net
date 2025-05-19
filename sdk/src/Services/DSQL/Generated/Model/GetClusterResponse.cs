@@ -38,11 +38,9 @@ namespace Amazon.DSQL.Model
         private DateTime? _creationTime;
         private bool? _deletionProtectionEnabled;
         private string _identifier;
-        private List<string> _linkedClusterArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private MultiRegionProperties _multiRegionProperties;
         private ClusterStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
-        private string _witnessRegion;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -121,25 +119,6 @@ namespace Amazon.DSQL.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LinkedClusterArns. 
-        /// <para>
-        /// The ARNs of the clusters linked to the retrieved cluster.
-        /// </para>
-        /// </summary>
-        [Obsolete("The linkedClusterArns field is deprecated. To see the peered cluster Arns, use multiRegionProperties.cluster instead.")]
-        public List<string> LinkedClusterArns
-        {
-            get { return this._linkedClusterArns; }
-            set { this._linkedClusterArns = value; }
-        }
-
-        // Check to see if LinkedClusterArns property is set
-        internal bool IsSetLinkedClusterArns()
-        {
-            return this._linkedClusterArns != null && (this._linkedClusterArns.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
         /// Gets and sets the property MultiRegionProperties. 
         /// <para>
         /// Returns the current multi-Region cluster configuration, including witness region and
@@ -191,26 +170,6 @@ namespace Amazon.DSQL.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property WitnessRegion. 
-        /// <para>
-        /// The witness Region of the cluster. Applicable only for multi-Region clusters.
-        /// </para>
-        /// </summary>
-        [Obsolete("The witnessRegion field is deprecated. To see the witnessRegion, use multiRegionProperties.witnessRegion instead.")]
-        [AWSProperty(Min=0, Max=50)]
-        public string WitnessRegion
-        {
-            get { return this._witnessRegion; }
-            set { this._witnessRegion = value; }
-        }
-
-        // Check to see if WitnessRegion property is set
-        internal bool IsSetWitnessRegion()
-        {
-            return this._witnessRegion != null;
         }
 
     }

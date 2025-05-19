@@ -64,34 +64,16 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("deletionProtectionEnabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.DeletionProtectionEnabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("identifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Identifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("linkedClusterArns", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.LinkedClusterArns = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("witnessRegion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.WitnessRegion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -36,11 +36,8 @@ namespace Amazon.DSQL.Model
     {
         private string _arn;
         private DateTime? _creationTime;
-        private bool? _deletionProtectionEnabled;
         private string _identifier;
-        private List<string> _linkedClusterArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ClusterStatus _status;
-        private string _witnessRegion;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -81,26 +78,6 @@ namespace Amazon.DSQL.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeletionProtectionEnabled. 
-        /// <para>
-        /// Whether deletion protection is enabled for the updated cluster.
-        /// </para>
-        /// </summary>
-        [Obsolete("The deletionProtectionEnabled field is deprecated in the UpdateCluster API. To check deletion protection status, use the GetCluster API instead.")]
-        [AWSProperty(Required=true)]
-        public bool DeletionProtectionEnabled
-        {
-            get { return this._deletionProtectionEnabled.GetValueOrDefault(); }
-            set { this._deletionProtectionEnabled = value; }
-        }
-
-        // Check to see if DeletionProtectionEnabled property is set
-        internal bool IsSetDeletionProtectionEnabled()
-        {
-            return this._deletionProtectionEnabled.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
         /// The ID of the cluster to update.
@@ -120,26 +97,6 @@ namespace Amazon.DSQL.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LinkedClusterArns. 
-        /// <para>
-        /// The ARNs of the clusters linked to the updated cluster. Applicable only for multi-Region
-        /// clusters.
-        /// </para>
-        /// </summary>
-        [Obsolete("The linkedClusterArns field is deprecated in the UpdateCluster API. To check peer cluster, use the GetCluster API instead.")]
-        public List<string> LinkedClusterArns
-        {
-            get { return this._linkedClusterArns; }
-            set { this._linkedClusterArns = value; }
-        }
-
-        // Check to see if LinkedClusterArns property is set
-        internal bool IsSetLinkedClusterArns()
-        {
-            return this._linkedClusterArns != null && (this._linkedClusterArns.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the updated cluster.
@@ -156,26 +113,6 @@ namespace Amazon.DSQL.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property WitnessRegion. 
-        /// <para>
-        /// The Region that receives all data you write to linked clusters.
-        /// </para>
-        /// </summary>
-        [Obsolete("The witnessRegion field is deprecated in the UpdateCluster API. To check witnessRegion, use the GetCluster API instead.")]
-        [AWSProperty(Min=0, Max=50)]
-        public string WitnessRegion
-        {
-            get { return this._witnessRegion; }
-            set { this._witnessRegion = value; }
-        }
-
-        // Check to see if WitnessRegion property is set
-        internal bool IsSetWitnessRegion()
-        {
-            return this._witnessRegion != null;
         }
 
     }
