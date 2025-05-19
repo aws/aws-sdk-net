@@ -3486,6 +3486,41 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateDelegateMacVolumeOwnershipTask
+
+        internal virtual CreateDelegateMacVolumeOwnershipTaskResponse CreateDelegateMacVolumeOwnershipTask(CreateDelegateMacVolumeOwnershipTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDelegateMacVolumeOwnershipTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDelegateMacVolumeOwnershipTaskResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDelegateMacVolumeOwnershipTaskResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delegates ownership of the Amazon EBS root volume for an Apple silicon Mac instance
+        /// to an administrative user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDelegateMacVolumeOwnershipTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDelegateMacVolumeOwnershipTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDelegateMacVolumeOwnershipTask">REST API Reference for CreateDelegateMacVolumeOwnershipTask Operation</seealso>
+        public virtual Task<CreateDelegateMacVolumeOwnershipTaskResponse> CreateDelegateMacVolumeOwnershipTaskAsync(CreateDelegateMacVolumeOwnershipTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDelegateMacVolumeOwnershipTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDelegateMacVolumeOwnershipTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDelegateMacVolumeOwnershipTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDhcpOptions
 
         internal virtual CreateDhcpOptionsResponse CreateDhcpOptions(CreateDhcpOptionsRequest request)
@@ -4607,6 +4642,90 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = CreateLocalGatewayVirtualInterfaceGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateLocalGatewayVirtualInterfaceGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateMacSystemIntegrityProtectionModificationTask
+
+        internal virtual CreateMacSystemIntegrityProtectionModificationTaskResponse CreateMacSystemIntegrityProtectionModificationTask(CreateMacSystemIntegrityProtectionModificationTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMacSystemIntegrityProtectionModificationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMacSystemIntegrityProtectionModificationTaskResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMacSystemIntegrityProtectionModificationTaskResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a System Integrity Protection (SIP) modification task to configure the SIP
+        /// settings for an x86 Mac instance or Apple silicon Mac instance. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mac-sip-settings.html#mac-sip-configure">
+        /// Configure SIP for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// When you configure the SIP settings for your instance, you can either enable or disable
+        /// all SIP settings, or you can specify a custom SIP configuration that selectively enables
+        /// or disables specific SIP settings.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you implement a custom configuration, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mac-sip-settings.html#mac-sip-check-settings">
+        /// connect to the instance and verify the settings</a> to ensure that your requirements
+        /// are properly implemented and functioning as intended.
+        /// </para>
+        ///  
+        /// <para>
+        /// SIP configurations might change with macOS updates. We recommend that you review custom
+        /// SIP settings after any macOS version upgrade to ensure continued compatibility and
+        /// proper functionality of your security configurations.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// To enable or disable all SIP settings, use the <b>MacSystemIntegrityProtectionStatus</b>
+        /// parameter only. For example, to enable all SIP settings, specify the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>MacSystemIntegrityProtectionStatus=enabled</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To specify a custom configuration that selectively enables or disables specific SIP
+        /// settings, use the <b>MacSystemIntegrityProtectionStatus</b> parameter to enable or
+        /// disable all SIP settings, and then use the <b>MacSystemIntegrityProtectionConfiguration</b>
+        /// parameter to specify exceptions. In this case, the exceptions you specify for <b>MacSystemIntegrityProtectionConfiguration</b>
+        /// override the value you specify for <b>MacSystemIntegrityProtectionStatus</b>. For
+        /// example, to enable all SIP settings, except <c>NvramProtections</c>, specify the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>MacSystemIntegrityProtectionStatus=enabled</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MacSystemIntegrityProtectionConfigurationRequest "NvramProtections=disabled"</c>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMacSystemIntegrityProtectionModificationTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMacSystemIntegrityProtectionModificationTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateMacSystemIntegrityProtectionModificationTask">REST API Reference for CreateMacSystemIntegrityProtectionModificationTask Operation</seealso>
+        public virtual Task<CreateMacSystemIntegrityProtectionModificationTaskResponse> CreateMacSystemIntegrityProtectionModificationTaskAsync(CreateMacSystemIntegrityProtectionModificationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMacSystemIntegrityProtectionModificationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMacSystemIntegrityProtectionModificationTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateMacSystemIntegrityProtectionModificationTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -12784,6 +12903,14 @@ namespace Amazon.EC2
         /// that meet the account's Allowed AMIs criteria, and <c>false</c> for images that don't
         /// meet the criteria. For more information, see <a>EnableAllowedImagesSettings</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
+        /// </para>
         ///  <important> 
         /// <para>
         /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
@@ -12833,6 +12960,14 @@ namespace Amazon.EC2
         /// <c>audit-mode</c>, the <c>imageAllowed</c> field is set to <c>true</c> for images
         /// that meet the account's Allowed AMIs criteria, and <c>false</c> for images that don't
         /// meet the criteria. For more information, see <a>EnableAllowedImagesSettings</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -14403,6 +14538,42 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeMacModificationTasks
+
+        internal virtual DescribeMacModificationTasksResponse DescribeMacModificationTasks(DescribeMacModificationTasksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMacModificationTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMacModificationTasksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMacModificationTasksResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes a System Integrity Protection (SIP) modification task or volume ownership
+        /// delegation task for an Amazon EC2 Mac instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mac-sip-settings.html#mac-sip-configure">Configure
+        /// SIP for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMacModificationTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMacModificationTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMacModificationTasks">REST API Reference for DescribeMacModificationTasks Operation</seealso>
+        public virtual Task<DescribeMacModificationTasksResponse> DescribeMacModificationTasksAsync(DescribeMacModificationTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMacModificationTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMacModificationTasksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeMacModificationTasksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeManagedPrefixLists
 
         internal virtual DescribeManagedPrefixListsResponse DescribeManagedPrefixLists(DescribeManagedPrefixListsRequest request)
@@ -14888,6 +15059,12 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the Outposts link aggregation groups (LAGs).
+        /// 
+        ///  <note> 
+        /// <para>
+        /// LAGs are only available for second-generation Outposts racks at this time.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOutpostLags service method.</param>
         /// <param name="cancellationToken">

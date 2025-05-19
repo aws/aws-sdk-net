@@ -501,6 +501,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeMacModificationTasks operation
+        ///</summary>
+        public IDescribeMacModificationTasksPaginator DescribeMacModificationTasks(DescribeMacModificationTasksRequest request) 
+        {
+            return new DescribeMacModificationTasksPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeManagedPrefixLists operation
         ///</summary>
         public IDescribeManagedPrefixListsPaginator DescribeManagedPrefixLists(DescribeManagedPrefixListsRequest request) 
