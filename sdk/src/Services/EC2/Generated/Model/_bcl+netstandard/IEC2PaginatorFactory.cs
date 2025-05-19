@@ -608,6 +608,16 @@ namespace Amazon.EC2.Model
         IDescribeMacHostsPaginator DescribeMacHosts(DescribeMacHostsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeMacModificationTasks operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeMacModificationTasksPaginator DescribeMacModificationTasks(DescribeMacModificationTasksRequest request);
+
+        /// <summary>
         /// Paginator for DescribeManagedPrefixLists operation
         ///</summary>
         [AWSPaginator(

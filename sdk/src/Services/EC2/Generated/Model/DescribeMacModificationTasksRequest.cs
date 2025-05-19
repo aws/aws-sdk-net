@@ -30,22 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeOutpostLags operation.
-    /// Describes the Outposts link aggregation groups (LAGs).
-    /// 
-    ///  <note> 
-    /// <para>
-    /// LAGs are only available for second-generation Outposts racks at this time.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the DescribeMacModificationTasks operation.
+    /// Describes a System Integrity Protection (SIP) modification task or volume ownership
+    /// delegation task for an Amazon EC2 Mac instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mac-sip-settings.html#mac-sip-configure">Configure
+    /// SIP for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
     /// </summary>
-    public partial class DescribeOutpostLagsRequest : AmazonEC2Request
+    public partial class DescribeMacModificationTasksRequest : AmazonEC2Request
     {
         private bool? _dryRun;
         private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
+        private List<string> _macModificationTaskIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _outpostLagIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DryRun. 
@@ -70,53 +66,29 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filters to use for narrowing down the request. The following filters are supported:
+        /// Specifies one or more filters for the request:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>service-link-virtual-interface-id</c> - The ID of the service link virtual interface.
+        ///  <c>instance-id</c> - The ID of the instance for which the task was created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>service-link-virtual-interface-arn</c> - The ARN of the service link virtual interface.
+        ///  <c>task-state</c> - The state of the task (<c>successful</c> | <c>failed</c> | <c>in-progress</c>
+        /// | <c>pending</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>outpost-id</c> - The Outpost ID.
+        ///  <c>mac-system-integrity-protection-configuration.sip-status</c> - The overall SIP
+        /// state requested in the task (<c>enabled</c> | <c>disabled</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>outpost-arn</c> - The Outpost ARN.
+        ///  <c>start-time</c> - The date and time the task was created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>owner-id</c> - The ID of the Amazon Web Services account that owns the service
-        /// link virtual interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>vlan</c> - The ID of the address pool.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>local-address</c> - The local address.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>peer-address</c> - The peer address.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>peer-bgp-asn</c> - The peer BGP ASN.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>outpost-lag-id</c> - The Outpost LAG ID.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>configuration-state</c> - The configuration state of the service link virtual
-        /// interface.
+        ///  <c>task-type</c> - The type of task (<c>sip-modification</c> | <c>volume-ownership-delegation</c>).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -133,13 +105,33 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property MacModificationTaskIds. 
         /// <para>
-        /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <c>nextToken</c> value.
+        /// The ID of task.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=1000)]
+        public List<string> MacModificationTaskIds
+        {
+            get { return this._macModificationTaskIds; }
+            set { this._macModificationTaskIds = value; }
+        }
+
+        // Check to see if MacModificationTaskIds property is set
+        internal bool IsSetMacModificationTaskIds()
+        {
+            return this._macModificationTaskIds != null && (this._macModificationTaskIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return for the request in a single page. The remaining
+        /// results can be seen by sending another request with the returned <c>nextToken</c>
+        /// value. This value can be between 5 and 500. If <c>maxResults</c> is given a larger
+        /// value than 500, you receive an error.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=500)]
         public int? MaxResults
         {
             get { return this._maxResults; }
@@ -155,7 +147,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next page of results.
+        /// The token to use to retrieve the next page of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -168,24 +160,6 @@ namespace Amazon.EC2.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property OutpostLagIds. 
-        /// <para>
-        /// The IDs of the Outpost LAGs.
-        /// </para>
-        /// </summary>
-        public List<string> OutpostLagIds
-        {
-            get { return this._outpostLagIds; }
-            set { this._outpostLagIds = value; }
-        }
-
-        // Check to see if OutpostLagIds property is set
-        internal bool IsSetOutpostLagIds()
-        {
-            return this._outpostLagIds != null && (this._outpostLagIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
