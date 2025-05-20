@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -20,6 +20,7 @@ using System.IO;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.S3.Model
 {
@@ -30,13 +31,69 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class DeleteObjectsRequest : AmazonWebServiceRequest
     {
+        private List<DeleteError> validationErrors;
+
+        /// <summary>
+        /// Gets the list of keys that were skipped during client-side validation.
+        /// </summary>
+        public List<DeleteError> ValidationErrors
+        {
+            get
+            {
+                if (validationErrors == null)
+                {
+                    validationErrors = new List<DeleteError>();
+                }
+                return validationErrors;
+            }
+        }
+
+        private static Logger Logger
+        {
+            get
+            {
+                return Logger.GetLogger(typeof(DeleteObjectsRequest));
+            }
+        }
 
         /// <summary>
         /// Add a key to the set of keys of objects to be deleted.
         /// </summary>
         /// <param name="key">Object key</param>
+        /// <remarks>
+        /// Invalid keys (null, empty, or longer than 1024 characters) are skipped with an INFO-level log message.
+        /// These validation errors are also tracked in the ValidationErrors collection.
+        /// This allows the DeleteObjects operation to proceed with valid keys even when some keys are invalid.
+        /// </remarks>
         public void AddKey(string key)
         {
+            // Skip invalid keys instead of throwing exceptions
+            // This allows the DeleteObjects operation to proceed with valid keys
+            if (string.IsNullOrEmpty(key))
+            {
+                string message = "Skipping null or empty key in DeleteObjects request";
+                Logger.InfoFormat(message);
+                
+                ValidationErrors.Add(new DeleteError {
+                    Key = key ?? "(null)",
+                    Code = "InvalidKey",
+                    Message = "Key cannot be null or empty"
+                });
+                return;
+            }
+            if (key.Length > 1024)
+            {
+                string message = string.Format("Skipping key in DeleteObjects request: key length {0} exceeds maximum of 1024 characters", key.Length);
+                Logger.InfoFormat(message);
+                
+                ValidationErrors.Add(new DeleteError {
+                    Key = key.Substring(0, Math.Min(key.Length, 128)) + (key.Length > 128 ? "..." : ""),
+                    Code = "KeyTooLongError",
+                    Message = string.Format("Key length {0} exceeds maximum of 1024 characters", key.Length)
+                });
+                return;
+            }
+
             AddKey(new KeyVersion { Key = key });
         }
 
@@ -45,8 +102,40 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="key">Key of the object to be deleted.</param>
         /// <param name="version">Version of the object to be deleted.</param>
+        /// <remarks>
+        /// Invalid keys (null, empty, or longer than 1024 characters) are skipped with an INFO-level log message.
+        /// These validation errors are also tracked in the ValidationErrors collection.
+        /// This allows the DeleteObjects operation to proceed with valid keys even when some keys are invalid.
+        /// </remarks>
         public void AddKey(string key, string version)
         {
+            // Skip invalid keys instead of throwing exceptions
+            // This allows the DeleteObjects operation to proceed with valid keys
+            if (string.IsNullOrEmpty(key))
+            {
+                string message = "Skipping null or empty key in DeleteObjects request";
+                Logger.InfoFormat(message);
+                
+                ValidationErrors.Add(new DeleteError {
+                    Key = key ?? "(null)",
+                    Code = "InvalidKey",
+                    Message = "Key cannot be null or empty"
+                });
+                return;
+            }
+            if (key.Length > 1024)
+            {
+                string message = string.Format("Skipping key in DeleteObjects request: key length {0} exceeds maximum of 1024 characters", key.Length);
+                Logger.InfoFormat(message);
+                
+                ValidationErrors.Add(new DeleteError {
+                    Key = key.Substring(0, Math.Min(key.Length, 128)) + (key.Length > 128 ? "..." : ""),
+                    Code = "KeyTooLongError",
+                    Message = string.Format("Key length {0} exceeds maximum of 1024 characters", key.Length)
+                });
+                return;
+            }
+
             AddKey(new KeyVersion { Key = key, VersionId = version });
         }
 

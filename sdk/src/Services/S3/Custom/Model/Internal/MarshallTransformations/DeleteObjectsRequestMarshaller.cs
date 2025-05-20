@@ -68,36 +68,52 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 xmlWriter.WriteStartElement("Delete", S3Constants.S3RequestXmlNamespace);
 
                 var deleteDeleteobjectsList = deleteObjectsRequest.Objects;
-                if (deleteDeleteobjectsList != null && deleteDeleteobjectsList.Count > 0)
+                if (deleteDeleteobjectsList == null || deleteDeleteobjectsList.Count == 0)
                 {
-                    foreach (var deleteDeleteobjectsListValue in deleteDeleteobjectsList)
+                    if (deleteObjectsRequest.ValidationErrors?.Count > 0)
                     {
-                        xmlWriter.WriteStartElement("Object", "");
-                        if (deleteDeleteobjectsListValue.IsSetKey())
-                        {
-                            xmlWriter.WriteElementString("Key", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.Key));
-                        }
-                        if (deleteDeleteobjectsListValue.IsSetVersionId())
-                        {
-                            xmlWriter.WriteElementString("VersionId", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.VersionId));
-                        }
-
-                        if (deleteDeleteobjectsListValue.IsSetETag())
-                        {
-                            xmlWriter.WriteElementString("ETag", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.ETag));
-                        }
-                        if (deleteDeleteobjectsListValue.IsSetLastModifiedTime())
-                        {
-                            xmlWriter.WriteElementString("LastModifiedTime", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.LastModifiedTime.Value));
-                        }
-                        if (deleteDeleteobjectsListValue.IsSetSize())
-                        {
-                            xmlWriter.WriteElementString("Size", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.Size.Value));
-                        }
-
-                        xmlWriter.WriteEndElement();
+                        // All keys were invalid - provide clear error with validation details
+                        throw new AmazonS3Exception(
+                            $"DeleteObjects operation failed: All {deleteObjectsRequest.ValidationErrors.Count} keys were invalid. See ValidationErrors for details."
+                        );
+                    }
+                    else
+                    {
+                        // No keys were provided
+                        throw new AmazonS3Exception(
+                            "DeleteObjects operation requires at least one valid key, but none were provided."
+                        );
                     }
                 }
+                
+                foreach (var deleteDeleteobjectsListValue in deleteDeleteobjectsList)
+                {
+                    xmlWriter.WriteStartElement("Object", "");
+                    if (deleteDeleteobjectsListValue.IsSetKey())
+                    {
+                        xmlWriter.WriteElementString("Key", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.Key));
+                    }
+                    if (deleteDeleteobjectsListValue.IsSetVersionId())
+                    {
+                        xmlWriter.WriteElementString("VersionId", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.VersionId));
+                    }
+
+                    if (deleteDeleteobjectsListValue.IsSetETag())
+                    {
+                        xmlWriter.WriteElementString("ETag", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.ETag));
+                    }
+                    if (deleteDeleteobjectsListValue.IsSetLastModifiedTime())
+                    {
+                        xmlWriter.WriteElementString("LastModifiedTime", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.LastModifiedTime.Value));
+                    }
+                    if (deleteDeleteobjectsListValue.IsSetSize())
+                    {
+                        xmlWriter.WriteElementString("Size", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.Size.Value));
+                    }
+
+                    xmlWriter.WriteEndElement();
+                }
+                
                 if (deleteObjectsRequest.IsSetQuiet())
                 {
                     xmlWriter.WriteElementString("Quiet", "", S3Transforms.ToXmlStringValue(deleteObjectsRequest.Quiet.Value));

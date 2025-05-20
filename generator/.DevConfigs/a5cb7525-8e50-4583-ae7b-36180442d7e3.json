@@ -1,0 +1,11 @@
+{
+    "services": [
+      {
+        "serviceName": "S3",
+        "type": "patch",
+        "changeLogMessages": [
+          "Fixed a bug in DeleteObjects where valid objects would not be deleted when the request included invalid keys"
+        ]
+      }
+    ]
+  }
