@@ -975,13 +975,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon Aurora - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using
-        /// Amazon RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i> 
+        /// Amazon Aurora - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Amazon
+        /// RDS Extended Support with Amazon Aurora</a> in the <i>Amazon Aurora User Guide</i>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon RDS - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
-        /// Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i> 
+        /// Amazon RDS - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Amazon
+        /// RDS Extended Support with Amazon RDS</a> in the <i>Amazon RDS User Guide</i> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

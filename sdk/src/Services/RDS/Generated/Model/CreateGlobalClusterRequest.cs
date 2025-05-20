@@ -163,8 +163,8 @@ namespace Amazon.RDS.Model
         /// You can use this setting to enroll your global cluster into Amazon RDS Extended Support.
         /// With RDS Extended Support, you can run the selected major engine version on your global
         /// cluster past the end of standard support for that engine version. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using
-        /// Amazon RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Amazon
+        /// RDS Extended Support with Amazon Aurora</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>

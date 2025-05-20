@@ -273,6 +273,26 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RDS.Model.DescribeDBMajorEngineVersionsRequest.Engine</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.DescribeDBMajorEngineVersionsRequest.MajorEngineVersion</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.DescribeDBMajorEngineVersionsRequest.Marker</property>
+    <min>1</min>
+    <max>340</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.DescribeDBMajorEngineVersionsRequest.MaxRecords</property>
+    <min>20</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RDS.Model.DescribeDBProxiesRequest.MaxRecords</property>
     <min>20</min>
     <max>100</max>
