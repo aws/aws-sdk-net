@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConnectionTypeBrief Object
+    /// Response Unmarshaller for ConnectionTypeVariant Object
     /// </summary>  
-    public class ConnectionTypeBriefUnmarshaller : IUnmarshaller<ConnectionTypeBrief, XmlUnmarshallerContext>, IUnmarshaller<ConnectionTypeBrief, JsonUnmarshallerContext>
+    public class ConnectionTypeVariantUnmarshaller : IUnmarshaller<ConnectionTypeVariant, XmlUnmarshallerContext>, IUnmarshaller<ConnectionTypeVariant, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ConnectionTypeBrief IUnmarshaller<ConnectionTypeBrief, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ConnectionTypeVariant IUnmarshaller<ConnectionTypeVariant, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConnectionTypeBrief Unmarshall(JsonUnmarshallerContext context)
+        public ConnectionTypeVariant Unmarshall(JsonUnmarshallerContext context)
         {
-            ConnectionTypeBrief unmarshalledObject = new ConnectionTypeBrief();
+            ConnectionTypeVariant unmarshalledObject = new ConnectionTypeVariant();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Capabilities", targetDepth))
-                {
-                    var unmarshaller = CapabilitiesUnmarshaller.Instance;
-                    unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Categories", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Categories = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ConnectionType", targetDepth))
+                if (context.TestExpression("ConnectionTypeVariantName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ConnectionTypeVariants", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ConnectionTypeVariant, ConnectionTypeVariantUnmarshaller>(ConnectionTypeVariantUnmarshaller.Instance);
-                    unmarshalledObject.ConnectionTypeVariants = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectionTypeVariantName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Description", targetDepth))
@@ -108,23 +90,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.LogoUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Vendor", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Vendor = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
 
-        private static ConnectionTypeBriefUnmarshaller _instance = new ConnectionTypeBriefUnmarshaller();        
+        private static ConnectionTypeVariantUnmarshaller _instance = new ConnectionTypeVariantUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConnectionTypeBriefUnmarshaller Instance
+        public static ConnectionTypeVariantUnmarshaller Instance
         {
             get
             {
