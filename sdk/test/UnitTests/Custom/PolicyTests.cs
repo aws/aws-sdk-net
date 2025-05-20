@@ -249,5 +249,41 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(1, statement.Principals.Count);
             Assert.AreEqual(Principal.Anonymous, statement.Principals.First());
         }
+
+        [TestMethod]
+        public void TestPrettyPrintIndentationDisabled()
+        {
+            string testPolicy = @"{
+                ""Version"": ""2012-10-17"",
+                ""Statement"": [
+                {
+                    ""Sid"": ""AllowS3ListBucket"",
+                    ""Effect"": ""Allow"",
+                    ""Action"": [
+                    ""s3:ListBucket""
+                    ],
+                    ""Resource"": [
+                    ""arn:aws:s3:::your-bucket-name""
+                    ]
+                }
+                ]
+            }";
+
+            var policy = Policy.FromJson(testPolicy);
+            string policyString = policy.ToJson(false);
+
+            Assert.IsFalse(policyString.Contains("\n"));
+        }
+
+        [TestMethod]
+        public void TestPrettyPrintIndentationEnabled()
+        {
+            string testPolicy = @"{""Version"": ""2012-10-17"", ""Statement"": [{""Sid"": ""AllowS3ListBucket"", ""Effect"": ""Allow"", ""Action"": [ ""s3:ListBucket"" ], ""Resource"": [ ""arn:aws:s3:::your-bucket-name""]}]}";
+
+            var policy = Policy.FromJson(testPolicy);
+            string policyString = policy.ToJson(true);
+
+            Assert.IsTrue(policyString.Contains("\n"));
+        }
     }
 }
