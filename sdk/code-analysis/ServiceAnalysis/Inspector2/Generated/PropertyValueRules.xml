@@ -165,6 +165,21 @@
     <max>1000000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.GetClustersForImageRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.GetClustersForImageRequest.NextToken</property>
+    <min>1</min>
+    <max>3000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.GetClustersForImageResponse.NextToken</property>
+    <min>1</min>
+    <max>3000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.GetEc2DeepInspectionConfigurationResponse.ErrorMessage</property>
     <min>1</min>
   </property-value-rule>
@@ -584,6 +599,31 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.AwsEcsMetadataDetails.DetailsGroup</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.AwsEcsMetadataDetails.TaskDefinitionArn</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.AwsEksMetadataDetails.Namespace</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.AwsEksWorkloadInfo.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.AwsEksWorkloadInfo.Type</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.AwsLambdaFunctionDetails.CodeSha256</property>
     <min>1</min>
   </property-value-rule>
@@ -684,6 +724,16 @@
     <min>10</min>
     <max>341</max>
     <pattern>(^arn:.*:ecr:.*:\d{12}:repository\/(?:[a-z0-9]+(?:[._-][a-z0-9]+)*\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*(\/sha256:[a-z0-9]{64})?$)|(^i-([a-z0-9]{8}|[a-z0-9]{17}|\\*)$|(^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?$))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.ClusterForImageFilterCriteria.ResourceId</property>
+    <pattern>^arn:.*:ecr:.*:\d{12}:repository\/(?:[a-z0-9]+(?:[._-][a-z0-9]+)*\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*(\/sha256:[a-z0-9]{64})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.ClusterInformation.ClusterArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws(?:-[a-z0-9-]+)?:(?:ecs|eks):[a-z0-9-]+:[0-9]{12}:cluster/[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.CodeFilePath.FileName</property>

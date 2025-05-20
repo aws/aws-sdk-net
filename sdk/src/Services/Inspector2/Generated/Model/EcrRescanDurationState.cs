@@ -40,6 +40,7 @@ namespace Amazon.Inspector2.Model
     public partial class EcrRescanDurationState
     {
         private EcrPullDateRescanDuration _pullDateRescanDuration;
+        private EcrPullDateRescanMode _pullDateRescanMode;
         private EcrRescanDuration _rescanDuration;
         private EcrRescanDurationStatus _status;
         private DateTime? _updatedAt;
@@ -60,6 +61,24 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetPullDateRescanDuration()
         {
             return this._pullDateRescanDuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PullDateRescanMode. 
+        /// <para>
+        /// The pull date for the re-scan mode.
+        /// </para>
+        /// </summary>
+        public EcrPullDateRescanMode PullDateRescanMode
+        {
+            get { return this._pullDateRescanMode; }
+            set { this._pullDateRescanMode = value; }
+        }
+
+        // Check to see if PullDateRescanMode property is set
+        internal bool IsSetPullDateRescanMode()
+        {
+            return this._pullDateRescanMode != null;
         }
 
         /// <summary>

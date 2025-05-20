@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EcrRescanDurationState Object
+    /// Response Unmarshaller for ClusterDetails Object
     /// </summary>  
-    public class EcrRescanDurationStateUnmarshaller : IUnmarshaller<EcrRescanDurationState, XmlUnmarshallerContext>, IUnmarshaller<EcrRescanDurationState, JsonUnmarshallerContext>
+    public class ClusterDetailsUnmarshaller : IUnmarshaller<ClusterDetails, XmlUnmarshallerContext>, IUnmarshaller<ClusterDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EcrRescanDurationState IUnmarshaller<EcrRescanDurationState, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ClusterDetails IUnmarshaller<ClusterDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public EcrRescanDurationState Unmarshall(JsonUnmarshallerContext context)
+        public ClusterDetails Unmarshall(JsonUnmarshallerContext context)
         {
-            EcrRescanDurationState unmarshalledObject = new EcrRescanDurationState();
+            ClusterDetails unmarshalledObject = new ClusterDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,28 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("pullDateRescanDuration", targetDepth))
+                if (context.TestExpression("clusterMetadata", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PullDateRescanDuration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ClusterMetadataUnmarshaller.Instance;
+                    unmarshalledObject.ClusterMetadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("pullDateRescanMode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PullDateRescanMode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("rescanDuration", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RescanDuration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("updatedAt", targetDepth))
+                if (context.TestExpression("lastInUse", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastInUse = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("runningUnitCount", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.RunningUnitCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stoppedUnitCount", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.StoppedUnitCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +95,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         }
 
 
-        private static EcrRescanDurationStateUnmarshaller _instance = new EcrRescanDurationStateUnmarshaller();        
+        private static ClusterDetailsUnmarshaller _instance = new ClusterDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EcrRescanDurationStateUnmarshaller Instance
+        public static ClusterDetailsUnmarshaller Instance
         {
             get
             {

@@ -132,6 +132,18 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     unmarshalledObject.EcrImageHash = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ecrImageInUseCount", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<NumberFilter, NumberFilterUnmarshaller>(NumberFilterUnmarshaller.Instance);
+                    unmarshalledObject.EcrImageInUseCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ecrImageLastInUseAt", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DateFilter, DateFilterUnmarshaller>(DateFilterUnmarshaller.Instance);
+                    unmarshalledObject.EcrImageLastInUseAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ecrImagePushedAt", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<DateFilter, DateFilterUnmarshaller>(DateFilterUnmarshaller.Instance);

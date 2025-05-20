@@ -45,6 +45,8 @@ namespace Amazon.Inspector2.Model
         private List<StringFilter> _ec2InstanceVpcId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private List<StringFilter> _ecrImageArchitecture = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private List<StringFilter> _ecrImageHash = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<NumberFilter> _ecrImageInUseCount = AWSConfigs.InitializeCollections ? new List<NumberFilter>() : null;
+        private List<DateFilter> _ecrImageLastInUseAt = AWSConfigs.InitializeCollections ? new List<DateFilter>() : null;
         private List<DateFilter> _ecrImagePushedAt = AWSConfigs.InitializeCollections ? new List<DateFilter>() : null;
         private List<StringFilter> _ecrImageRegistry = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private List<StringFilter> _ecrImageRepositoryName = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
@@ -290,6 +292,46 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetEcrImageHash()
         {
             return this._ecrImageHash != null && (this._ecrImageHash.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EcrImageInUseCount. 
+        /// <para>
+        /// Filter criteria indicating when details for an Amazon ECR image include when an Amazon
+        /// ECR image is in use.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<NumberFilter> EcrImageInUseCount
+        {
+            get { return this._ecrImageInUseCount; }
+            set { this._ecrImageInUseCount = value; }
+        }
+
+        // Check to see if EcrImageInUseCount property is set
+        internal bool IsSetEcrImageInUseCount()
+        {
+            return this._ecrImageInUseCount != null && (this._ecrImageInUseCount.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EcrImageLastInUseAt. 
+        /// <para>
+        /// Filter criteria indicating when an Amazon ECR image was last used in an Amazon ECS
+        /// cluster task or Amazon EKS cluster pod.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<DateFilter> EcrImageLastInUseAt
+        {
+            get { return this._ecrImageLastInUseAt; }
+            set { this._ecrImageLastInUseAt = value; }
+        }
+
+        // Check to see if EcrImageLastInUseAt property is set
+        internal bool IsSetEcrImageLastInUseAt()
+        {
+            return this._ecrImageLastInUseAt != null && (this._ecrImageLastInUseAt.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

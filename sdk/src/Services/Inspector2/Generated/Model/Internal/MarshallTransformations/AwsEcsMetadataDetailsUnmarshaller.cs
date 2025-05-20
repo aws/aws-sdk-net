@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EcrRescanDurationState Object
+    /// Response Unmarshaller for AwsEcsMetadataDetails Object
     /// </summary>  
-    public class EcrRescanDurationStateUnmarshaller : IUnmarshaller<EcrRescanDurationState, XmlUnmarshallerContext>, IUnmarshaller<EcrRescanDurationState, JsonUnmarshallerContext>
+    public class AwsEcsMetadataDetailsUnmarshaller : IUnmarshaller<AwsEcsMetadataDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEcsMetadataDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EcrRescanDurationState IUnmarshaller<EcrRescanDurationState, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AwsEcsMetadataDetails IUnmarshaller<AwsEcsMetadataDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public EcrRescanDurationState Unmarshall(JsonUnmarshallerContext context)
+        public AwsEcsMetadataDetails Unmarshall(JsonUnmarshallerContext context)
         {
-            EcrRescanDurationState unmarshalledObject = new EcrRescanDurationState();
+            AwsEcsMetadataDetails unmarshalledObject = new AwsEcsMetadataDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("pullDateRescanDuration", targetDepth))
+                if (context.TestExpression("detailsGroup", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PullDateRescanDuration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DetailsGroup = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("pullDateRescanMode", targetDepth))
+                if (context.TestExpression("taskDefinitionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PullDateRescanMode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("rescanDuration", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RescanDuration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("updatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskDefinitionArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         }
 
 
-        private static EcrRescanDurationStateUnmarshaller _instance = new EcrRescanDurationStateUnmarshaller();        
+        private static AwsEcsMetadataDetailsUnmarshaller _instance = new AwsEcsMetadataDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EcrRescanDurationStateUnmarshaller Instance
+        public static AwsEcsMetadataDetailsUnmarshaller Instance
         {
             get
             {

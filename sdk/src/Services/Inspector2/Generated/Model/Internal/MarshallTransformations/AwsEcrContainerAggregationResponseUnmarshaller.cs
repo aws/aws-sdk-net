@@ -90,6 +90,18 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ImageTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inUseCount", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.InUseCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lastInUseAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastInUseAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("repository", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

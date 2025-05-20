@@ -96,6 +96,38 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetInUseCount())
+            {
+                context.Writer.WritePropertyName("inUseCount");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInUseCountListValue in requestObject.InUseCount)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NumberFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectInUseCountListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetLastInUseAt())
+            {
+                context.Writer.WritePropertyName("lastInUseAt");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLastInUseAtListValue in requestObject.LastInUseAt)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DateFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLastInUseAtListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetRepositories())
             {
                 context.Writer.WritePropertyName("repositories");

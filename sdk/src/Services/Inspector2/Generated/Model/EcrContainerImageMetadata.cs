@@ -35,6 +35,8 @@ namespace Amazon.Inspector2.Model
     public partial class EcrContainerImageMetadata
     {
         private DateTime? _imagePulledAt;
+        private long? _inUseCount;
+        private DateTime? _lastInUseAt;
         private List<string> _tags = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -53,6 +55,43 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetImagePulledAt()
         {
             return this._imagePulledAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InUseCount. 
+        /// <para>
+        /// The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR container image
+        /// is in use.
+        /// </para>
+        /// </summary>
+        public long InUseCount
+        {
+            get { return this._inUseCount.GetValueOrDefault(); }
+            set { this._inUseCount = value; }
+        }
+
+        // Check to see if InUseCount property is set
+        internal bool IsSetInUseCount()
+        {
+            return this._inUseCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastInUseAt. 
+        /// <para>
+        /// The last time an Amazon ECR image was used in an Amazon ECS task or Amazon EKS pod.
+        /// </para>
+        /// </summary>
+        public DateTime LastInUseAt
+        {
+            get { return this._lastInUseAt.GetValueOrDefault(); }
+            set { this._lastInUseAt = value; }
+        }
+
+        // Check to see if LastInUseAt property is set
+        internal bool IsSetLastInUseAt()
+        {
+            return this._lastInUseAt.HasValue; 
         }
 
         /// <summary>

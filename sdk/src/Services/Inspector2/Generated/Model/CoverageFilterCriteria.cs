@@ -36,6 +36,8 @@ namespace Amazon.Inspector2.Model
     {
         private List<CoverageStringFilter> _accountId = AWSConfigs.InitializeCollections ? new List<CoverageStringFilter>() : null;
         private List<CoverageMapFilter> _ec2InstanceTags = AWSConfigs.InitializeCollections ? new List<CoverageMapFilter>() : null;
+        private List<CoverageNumberFilter> _ecrImageInUseCount = AWSConfigs.InitializeCollections ? new List<CoverageNumberFilter>() : null;
+        private List<CoverageDateFilter> _ecrImageLastInUseAt = AWSConfigs.InitializeCollections ? new List<CoverageDateFilter>() : null;
         private List<CoverageStringFilter> _ecrImageTags = AWSConfigs.InitializeCollections ? new List<CoverageStringFilter>() : null;
         private List<CoverageStringFilter> _ecrRepositoryName = AWSConfigs.InitializeCollections ? new List<CoverageStringFilter>() : null;
         private List<CoverageDateFilter> _imagePulledAt = AWSConfigs.InitializeCollections ? new List<CoverageDateFilter>() : null;
@@ -86,6 +88,44 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetEc2InstanceTags()
         {
             return this._ec2InstanceTags != null && (this._ec2InstanceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EcrImageInUseCount. 
+        /// <para>
+        /// The number of Amazon ECR images in use.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<CoverageNumberFilter> EcrImageInUseCount
+        {
+            get { return this._ecrImageInUseCount; }
+            set { this._ecrImageInUseCount = value; }
+        }
+
+        // Check to see if EcrImageInUseCount property is set
+        internal bool IsSetEcrImageInUseCount()
+        {
+            return this._ecrImageInUseCount != null && (this._ecrImageInUseCount.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EcrImageLastInUseAt. 
+        /// <para>
+        /// The Amazon ECR image that was last in use.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<CoverageDateFilter> EcrImageLastInUseAt
+        {
+            get { return this._ecrImageLastInUseAt; }
+            set { this._ecrImageLastInUseAt = value; }
+        }
+
+        // Check to see if EcrImageLastInUseAt property is set
+        internal bool IsSetEcrImageLastInUseAt()
+        {
+            return this._ecrImageLastInUseAt != null && (this._ecrImageLastInUseAt.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
