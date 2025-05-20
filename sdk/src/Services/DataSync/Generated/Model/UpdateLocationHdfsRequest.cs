@@ -118,8 +118,7 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// The Kerberos key table (keytab) that contains mappings between the defined Kerberos
         /// principal and the encrypted keys. You can load the keytab from a file by providing
-        /// the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise,
-        /// provide the base64-encoded text.
+        /// the file's address.
         /// </para>
         /// </summary>
         [AWSProperty(Max=65536)]

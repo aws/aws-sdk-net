@@ -279,47 +279,6 @@ namespace Amazon.DataSync
         #endregion
 
 
-        #region  AddStorageSystem
-
-        internal virtual AddStorageSystemResponse AddStorageSystem(AddStorageSystemRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = AddStorageSystemRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = AddStorageSystemResponseUnmarshaller.Instance;
-
-            return Invoke<AddStorageSystemResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// Creates an Amazon Web Services resource for an on-premises storage system that you
-        /// want DataSync Discovery to collect information about.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the AddStorageSystem service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the AddStorageSystem service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/AddStorageSystem">REST API Reference for AddStorageSystem Operation</seealso>
-        public virtual Task<AddStorageSystemResponse> AddStorageSystemAsync(AddStorageSystemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = AddStorageSystemRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = AddStorageSystemResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AddStorageSystemResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  CancelTaskExecution
 
         internal virtual CancelTaskExecutionResponse CancelTaskExecution(CancelTaskExecutionRequest request)
@@ -1182,46 +1141,6 @@ namespace Amazon.DataSync
 
         #endregion
         
-        #region  DescribeDiscoveryJob
-
-        internal virtual DescribeDiscoveryJobResponse DescribeDiscoveryJob(DescribeDiscoveryJobRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DescribeDiscoveryJobRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DescribeDiscoveryJobResponseUnmarshaller.Instance;
-
-            return Invoke<DescribeDiscoveryJobResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// Returns information about a DataSync discovery job.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeDiscoveryJob service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DescribeDiscoveryJob service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeDiscoveryJob">REST API Reference for DescribeDiscoveryJob Operation</seealso>
-        public virtual Task<DescribeDiscoveryJobResponse> DescribeDiscoveryJobAsync(DescribeDiscoveryJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DescribeDiscoveryJobRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DescribeDiscoveryJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeDiscoveryJobResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  DescribeLocationAzureBlob
 
         internal virtual DescribeLocationAzureBlobResponse DescribeLocationAzureBlob(DescribeLocationAzureBlobRequest request)
@@ -1686,129 +1605,6 @@ namespace Amazon.DataSync
 
         #endregion
         
-        #region  DescribeStorageSystem
-
-        internal virtual DescribeStorageSystemResponse DescribeStorageSystem(DescribeStorageSystemRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DescribeStorageSystemRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DescribeStorageSystemResponseUnmarshaller.Instance;
-
-            return Invoke<DescribeStorageSystemResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// Returns information about an on-premises storage system that you're using with DataSync
-        /// Discovery.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeStorageSystem service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DescribeStorageSystem service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeStorageSystem">REST API Reference for DescribeStorageSystem Operation</seealso>
-        public virtual Task<DescribeStorageSystemResponse> DescribeStorageSystemAsync(DescribeStorageSystemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DescribeStorageSystemRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DescribeStorageSystemResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeStorageSystemResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  DescribeStorageSystemResourceMetrics
-
-        internal virtual DescribeStorageSystemResourceMetricsResponse DescribeStorageSystemResourceMetrics(DescribeStorageSystemResourceMetricsRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DescribeStorageSystemResourceMetricsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DescribeStorageSystemResourceMetricsResponseUnmarshaller.Instance;
-
-            return Invoke<DescribeStorageSystemResourceMetricsResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// Returns information, including performance data and capacity usage, which DataSync
-        /// Discovery collects about a specific resource in your-premises storage system.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeStorageSystemResourceMetrics service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DescribeStorageSystemResourceMetrics service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeStorageSystemResourceMetrics">REST API Reference for DescribeStorageSystemResourceMetrics Operation</seealso>
-        public virtual Task<DescribeStorageSystemResourceMetricsResponse> DescribeStorageSystemResourceMetricsAsync(DescribeStorageSystemResourceMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DescribeStorageSystemResourceMetricsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DescribeStorageSystemResourceMetricsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeStorageSystemResourceMetricsResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  DescribeStorageSystemResources
-
-        internal virtual DescribeStorageSystemResourcesResponse DescribeStorageSystemResources(DescribeStorageSystemResourcesRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DescribeStorageSystemResourcesRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DescribeStorageSystemResourcesResponseUnmarshaller.Instance;
-
-            return Invoke<DescribeStorageSystemResourcesResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// Returns information that DataSync Discovery collects about resources in your on-premises
-        /// storage system.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeStorageSystemResources service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DescribeStorageSystemResources service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeStorageSystemResources">REST API Reference for DescribeStorageSystemResources Operation</seealso>
-        public virtual Task<DescribeStorageSystemResourcesResponse> DescribeStorageSystemResourcesAsync(DescribeStorageSystemResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DescribeStorageSystemResourcesRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DescribeStorageSystemResourcesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeStorageSystemResourcesResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  DescribeTask
 
         internal virtual DescribeTaskResponse DescribeTask(DescribeTaskRequest request)
@@ -1901,55 +1697,6 @@ namespace Amazon.DataSync
 
         #endregion
         
-        #region  GenerateRecommendations
-
-        internal virtual GenerateRecommendationsResponse GenerateRecommendations(GenerateRecommendationsRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = GenerateRecommendationsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = GenerateRecommendationsResponseUnmarshaller.Instance;
-
-            return Invoke<GenerateRecommendationsResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// Creates recommendations about where to migrate your data to in Amazon Web Services.
-        /// Recommendations are generated based on information that DataSync Discovery collects
-        /// about your on-premises storage system's resources. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations
-        /// provided by DataSync Discovery</a>.
-        /// 
-        ///  
-        /// <para>
-        /// Once generated, you can view your recommendations by using the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeStorageSystemResources.html">DescribeStorageSystemResources</a>
-        /// operation.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GenerateRecommendations service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the GenerateRecommendations service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/GenerateRecommendations">REST API Reference for GenerateRecommendations Operation</seealso>
-        public virtual Task<GenerateRecommendationsResponse> GenerateRecommendationsAsync(GenerateRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = GenerateRecommendationsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = GenerateRecommendationsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GenerateRecommendationsResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  ListAgents
 
         internal virtual ListAgentsResponse ListAgents(ListAgentsRequest request)
@@ -2007,47 +1754,6 @@ namespace Amazon.DataSync
 
         #endregion
         
-        #region  ListDiscoveryJobs
-
-        internal virtual ListDiscoveryJobsResponse ListDiscoveryJobs(ListDiscoveryJobsRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = ListDiscoveryJobsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ListDiscoveryJobsResponseUnmarshaller.Instance;
-
-            return Invoke<ListDiscoveryJobsResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// Provides a list of the existing discovery jobs in the Amazon Web Services Region and
-        /// Amazon Web Services account where you're using DataSync Discovery.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListDiscoveryJobs service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ListDiscoveryJobs service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListDiscoveryJobs">REST API Reference for ListDiscoveryJobs Operation</seealso>
-        public virtual Task<ListDiscoveryJobsResponse> ListDiscoveryJobsAsync(ListDiscoveryJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = ListDiscoveryJobsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ListDiscoveryJobsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListDiscoveryJobsResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  ListLocations
 
         internal virtual ListLocationsResponse ListLocations(ListLocationsRequest request)
@@ -2091,46 +1797,6 @@ namespace Amazon.DataSync
             options.ResponseUnmarshaller = ListLocationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListLocationsResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  ListStorageSystems
-
-        internal virtual ListStorageSystemsResponse ListStorageSystems(ListStorageSystemsRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = ListStorageSystemsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ListStorageSystemsResponseUnmarshaller.Instance;
-
-            return Invoke<ListStorageSystemsResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// Lists the on-premises storage systems that you're using with DataSync Discovery.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListStorageSystems service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ListStorageSystems service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListStorageSystems">REST API Reference for ListStorageSystems Operation</seealso>
-        public virtual Task<ListStorageSystemsResponse> ListStorageSystemsAsync(ListStorageSystemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = ListStorageSystemsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ListStorageSystemsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListStorageSystemsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2255,89 +1921,6 @@ namespace Amazon.DataSync
 
         #endregion
         
-        #region  RemoveStorageSystem
-
-        internal virtual RemoveStorageSystemResponse RemoveStorageSystem(RemoveStorageSystemRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = RemoveStorageSystemRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = RemoveStorageSystemResponseUnmarshaller.Instance;
-
-            return Invoke<RemoveStorageSystemResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// Permanently removes a storage system resource from DataSync Discovery, including the
-        /// associated discovery jobs, collected data, and recommendations.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the RemoveStorageSystem service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the RemoveStorageSystem service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/RemoveStorageSystem">REST API Reference for RemoveStorageSystem Operation</seealso>
-        public virtual Task<RemoveStorageSystemResponse> RemoveStorageSystemAsync(RemoveStorageSystemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = RemoveStorageSystemRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = RemoveStorageSystemResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RemoveStorageSystemResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  StartDiscoveryJob
-
-        internal virtual StartDiscoveryJobResponse StartDiscoveryJob(StartDiscoveryJobRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = StartDiscoveryJobRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = StartDiscoveryJobResponseUnmarshaller.Instance;
-
-            return Invoke<StartDiscoveryJobResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// Runs a DataSync discovery job on your on-premises storage system. If you haven't added
-        /// the storage system to DataSync Discovery yet, do this first by using the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_AddStorageSystem.html">AddStorageSystem</a>
-        /// operation.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the StartDiscoveryJob service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the StartDiscoveryJob service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StartDiscoveryJob">REST API Reference for StartDiscoveryJob Operation</seealso>
-        public virtual Task<StartDiscoveryJobResponse> StartDiscoveryJobAsync(StartDiscoveryJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = StartDiscoveryJobRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = StartDiscoveryJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartDiscoveryJobResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  StartTaskExecution
 
         internal virtual StartTaskExecutionResponse StartTaskExecution(StartTaskExecutionRequest request)
@@ -2388,54 +1971,6 @@ namespace Amazon.DataSync
             options.ResponseUnmarshaller = StartTaskExecutionResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartTaskExecutionResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  StopDiscoveryJob
-
-        internal virtual StopDiscoveryJobResponse StopDiscoveryJob(StopDiscoveryJobRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = StopDiscoveryJobRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = StopDiscoveryJobResponseUnmarshaller.Instance;
-
-            return Invoke<StopDiscoveryJobResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// Stops a running DataSync discovery job.
-        /// 
-        ///  
-        /// <para>
-        /// You can stop a discovery job anytime. A job that's stopped before it's scheduled to
-        /// end likely will provide you some information about your on-premises storage system
-        /// resources. To get recommendations for a stopped job, you must use the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_GenerateRecommendations.html">GenerateRecommendations</a>
-        /// operation.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the StopDiscoveryJob service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the StopDiscoveryJob service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StopDiscoveryJob">REST API Reference for StopDiscoveryJob Operation</seealso>
-        public virtual Task<StopDiscoveryJobResponse> StopDiscoveryJobAsync(StopDiscoveryJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = StopDiscoveryJobRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = StopDiscoveryJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StopDiscoveryJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2562,46 +2097,6 @@ namespace Amazon.DataSync
             options.ResponseUnmarshaller = UpdateAgentResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateAgentResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  UpdateDiscoveryJob
-
-        internal virtual UpdateDiscoveryJobResponse UpdateDiscoveryJob(UpdateDiscoveryJobRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = UpdateDiscoveryJobRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = UpdateDiscoveryJobResponseUnmarshaller.Instance;
-
-            return Invoke<UpdateDiscoveryJobResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// Edits a DataSync discovery job configuration.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDiscoveryJob service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the UpdateDiscoveryJob service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateDiscoveryJob">REST API Reference for UpdateDiscoveryJob Operation</seealso>
-        public virtual Task<UpdateDiscoveryJobResponse> UpdateDiscoveryJobAsync(UpdateDiscoveryJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = UpdateDiscoveryJobRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = UpdateDiscoveryJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateDiscoveryJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3135,47 +2630,6 @@ namespace Amazon.DataSync
             options.ResponseUnmarshaller = UpdateLocationSmbResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateLocationSmbResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  UpdateStorageSystem
-
-        internal virtual UpdateStorageSystemResponse UpdateStorageSystem(UpdateStorageSystemRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = UpdateStorageSystemRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = UpdateStorageSystemResponseUnmarshaller.Instance;
-
-            return Invoke<UpdateStorageSystemResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// Modifies some configurations of an on-premises storage system resource that you're
-        /// using with DataSync Discovery.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateStorageSystem service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the UpdateStorageSystem service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateStorageSystem">REST API Reference for UpdateStorageSystem Operation</seealso>
-        public virtual Task<UpdateStorageSystemResponse> UpdateStorageSystemAsync(UpdateStorageSystemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = UpdateStorageSystemRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = UpdateStorageSystemResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateStorageSystemResponse>(request, options, cancellationToken);
         }
 
         #endregion
