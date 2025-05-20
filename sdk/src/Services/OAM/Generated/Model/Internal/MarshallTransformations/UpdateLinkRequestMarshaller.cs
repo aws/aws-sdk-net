@@ -79,6 +79,12 @@ namespace Amazon.OAM.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Identifier);
             }
 
+            if(publicRequest.IsSetIncludeTags())
+            {
+                context.Writer.WritePropertyName("IncludeTags");
+                context.Writer.WriteBooleanValue(publicRequest.IncludeTags.Value);
+            }
+
             if(publicRequest.IsSetLinkConfiguration())
             {
                 context.Writer.WritePropertyName("LinkConfiguration");
