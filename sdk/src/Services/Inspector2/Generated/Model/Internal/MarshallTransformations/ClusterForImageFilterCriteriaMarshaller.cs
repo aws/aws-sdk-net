@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EcrConfiguration Marshaller
+    /// ClusterForImageFilterCriteria Marshaller
     /// </summary>
-    public class EcrConfigurationMarshaller : IRequestMarshaller<EcrConfiguration, JsonMarshallerContext> 
+    public class ClusterForImageFilterCriteriaMarshaller : IRequestMarshaller<ClusterForImageFilterCriteria, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,26 +42,14 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EcrConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ClusterForImageFilterCriteria requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetPullDateRescanDuration())
+            if(requestObject.IsSetResourceId())
             {
-                context.Writer.WritePropertyName("pullDateRescanDuration");
-                context.Writer.WriteStringValue(requestObject.PullDateRescanDuration);
-            }
-
-            if(requestObject.IsSetPullDateRescanMode())
-            {
-                context.Writer.WritePropertyName("pullDateRescanMode");
-                context.Writer.WriteStringValue(requestObject.PullDateRescanMode);
-            }
-
-            if(requestObject.IsSetRescanDuration())
-            {
-                context.Writer.WritePropertyName("rescanDuration");
-                context.Writer.WriteStringValue(requestObject.RescanDuration);
+                context.Writer.WritePropertyName("resourceId");
+                context.Writer.WriteStringValue(requestObject.ResourceId);
             }
 
         }
@@ -69,7 +57,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EcrConfigurationMarshaller Instance = new EcrConfigurationMarshaller();
+        public readonly static ClusterForImageFilterCriteriaMarshaller Instance = new ClusterForImageFilterCriteriaMarshaller();
 
     }
 }

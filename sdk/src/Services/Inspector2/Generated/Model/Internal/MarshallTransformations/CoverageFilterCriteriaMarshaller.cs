@@ -78,6 +78,38 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetEcrImageInUseCount())
+            {
+                context.Writer.WritePropertyName("ecrImageInUseCount");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectEcrImageInUseCountListValue in requestObject.EcrImageInUseCount)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CoverageNumberFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectEcrImageInUseCountListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetEcrImageLastInUseAt())
+            {
+                context.Writer.WritePropertyName("ecrImageLastInUseAt");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectEcrImageLastInUseAtListValue in requestObject.EcrImageLastInUseAt)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CoverageDateFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectEcrImageLastInUseAtListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetEcrImageTags())
             {
                 context.Writer.WritePropertyName("ecrImageTags");

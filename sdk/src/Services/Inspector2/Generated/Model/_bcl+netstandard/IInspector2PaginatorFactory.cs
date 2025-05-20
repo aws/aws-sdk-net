@@ -38,6 +38,16 @@ namespace Amazon.Inspector2.Model
         IGetCisScanResultDetailsPaginator GetCisScanResultDetails(GetCisScanResultDetailsRequest request);
 
         /// <summary>
+        /// Paginator for GetClustersForImage operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetClustersForImagePaginator GetClustersForImage(GetClustersForImageRequest request);
+
+        /// <summary>
         /// Paginator for ListAccountPermissions operation
         ///</summary>
         [AWSPaginator(

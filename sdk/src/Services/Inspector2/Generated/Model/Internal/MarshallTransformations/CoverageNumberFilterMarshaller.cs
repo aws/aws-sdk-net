@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EcrConfiguration Marshaller
+    /// CoverageNumberFilter Marshaller
     /// </summary>
-    public class EcrConfigurationMarshaller : IRequestMarshaller<EcrConfiguration, JsonMarshallerContext> 
+    public class CoverageNumberFilterMarshaller : IRequestMarshaller<CoverageNumberFilter, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,26 +42,20 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EcrConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(CoverageNumberFilter requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetPullDateRescanDuration())
+            if(requestObject.IsSetLowerInclusive())
             {
-                context.Writer.WritePropertyName("pullDateRescanDuration");
-                context.Writer.WriteStringValue(requestObject.PullDateRescanDuration);
+                context.Writer.WritePropertyName("lowerInclusive");
+                context.Writer.WriteNumberValue(requestObject.LowerInclusive.Value);
             }
 
-            if(requestObject.IsSetPullDateRescanMode())
+            if(requestObject.IsSetUpperInclusive())
             {
-                context.Writer.WritePropertyName("pullDateRescanMode");
-                context.Writer.WriteStringValue(requestObject.PullDateRescanMode);
-            }
-
-            if(requestObject.IsSetRescanDuration())
-            {
-                context.Writer.WritePropertyName("rescanDuration");
-                context.Writer.WriteStringValue(requestObject.RescanDuration);
+                context.Writer.WritePropertyName("upperInclusive");
+                context.Writer.WriteNumberValue(requestObject.UpperInclusive.Value);
             }
 
         }
@@ -69,7 +63,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EcrConfigurationMarshaller Instance = new EcrConfigurationMarshaller();
+        public readonly static CoverageNumberFilterMarshaller Instance = new CoverageNumberFilterMarshaller();
 
     }
 }
