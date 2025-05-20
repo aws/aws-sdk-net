@@ -1048,10 +1048,6 @@
       <Project>{75A49D4B-F3B7-4185-81BC-4F1AA1974BBE}</Project>
       <Name>AWSSDK.Pricing.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/Private5G/AWSSDK.Private5G.CodeAnalysis.csproj">
-      <Project>{655CAB2F-41A8-45CC-A027-FB7E4D19F70C}</Project>
-      <Name>AWSSDK.Private5G.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/PrometheusService/AWSSDK.PrometheusService.CodeAnalysis.csproj">
       <Project>{45941DC4-E121-43D5-8A3D-B2A6D8429943}</Project>
       <Name>AWSSDK.PrometheusService.CodeAnalysis</Name>
