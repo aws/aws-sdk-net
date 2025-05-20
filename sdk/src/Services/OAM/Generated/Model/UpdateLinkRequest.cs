@@ -49,6 +49,7 @@ namespace Amazon.OAM.Model
     public partial class UpdateLinkRequest : AmazonOAMRequest
     {
         private string _identifier;
+        private bool? _includeTags;
         private LinkConfiguration _linkConfiguration;
         private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -69,6 +70,32 @@ namespace Amazon.OAM.Model
         internal bool IsSetIdentifier()
         {
             return this._identifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeTags. 
+        /// <para>
+        /// Specifies whether to include the tags associated with the link in the response after
+        /// the update operation. When <c>IncludeTags</c> is set to <c>true</c> and the caller
+        /// has the required permission, <c>oam:ListTagsForResource</c>, the API will return the
+        /// tags for the specified resource. If the caller doesn't have the required permission,
+        /// <c>oam:ListTagsForResource</c>, the API will raise an exception. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool IncludeTags
+        {
+            get { return this._includeTags.GetValueOrDefault(); }
+            set { this._includeTags = value; }
+        }
+
+        // Check to see if IncludeTags property is set
+        internal bool IsSetIncludeTags()
+        {
+            return this._includeTags.HasValue; 
         }
 
         /// <summary>

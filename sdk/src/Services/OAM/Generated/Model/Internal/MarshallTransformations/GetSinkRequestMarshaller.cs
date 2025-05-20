@@ -73,6 +73,12 @@ namespace Amazon.OAM.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Identifier);
                 }
 
+                if(publicRequest.IsSetIncludeTags())
+                {
+                    context.Writer.WritePropertyName("IncludeTags");
+                    context.Writer.Write(publicRequest.IncludeTags);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
