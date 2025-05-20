@@ -11,6 +11,7 @@ using Amazon.S3.Transfer;
 using Amazon.S3.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Amazon.Util;
+using System.Net.Mime;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -1011,6 +1012,32 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsTrue(File.Exists(filePath));
         }
 
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestMultipartUploadWithSetContentTypeNotOverwritten()
+        {
+            // 20 MB stream
+            var fileName = UtilityMethods.GenerateName(@"SetContentType");
+            var path = Path.Combine(BasePath, fileName);
+            var fileSize = 20 * MEG_SIZE;
+            UtilityMethods.GenerateFile(path, 20 * MEG_SIZE);
+            var transferUtilityRequest = new TransferUtilityUploadRequest
+            {
+                BucketName = bucketName,
+                FilePath = path,
+                Key = "test-content-type",
+                ContentType = MediaTypeNames.Text.Plain,
+                Headers =
+                {
+                    ContentEncoding = "gzip",
+                },
+            };
+            var tu = new TransferUtility(Client);
+            tu.Upload(transferUtilityRequest);
+            var downloadPath = path + ".download";
+            var metadata = Client.GetObjectMetadata(new GetObjectMetadataRequest { BucketName = bucketName, Key = "test-content-type" });
+            Assert.IsTrue(metadata.Headers.ContentType.Equals(MediaTypeNames.Text.Plain));
+        }
 #if ASYNC_AWAIT
 
         [TestMethod]
