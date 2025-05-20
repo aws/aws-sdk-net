@@ -8391,6 +8391,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type InstanceRebootMigrationState.
+    /// </summary>
+    public class InstanceRebootMigrationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for InstanceRebootMigrationState
+        /// </summary>
+        public static readonly InstanceRebootMigrationState Default = new InstanceRebootMigrationState("default");
+        /// <summary>
+        /// Constant Disabled for InstanceRebootMigrationState
+        /// </summary>
+        public static readonly InstanceRebootMigrationState Disabled = new InstanceRebootMigrationState("disabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceRebootMigrationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceRebootMigrationState FindValue(string value)
+        {
+            return FindValue<InstanceRebootMigrationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceRebootMigrationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceStateName.
     /// </summary>
     public class InstanceStateName : ConstantClass
@@ -17682,6 +17732,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProtocolValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RebootMigrationSupport.
+    /// </summary>
+    public class RebootMigrationSupport : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Supported for RebootMigrationSupport
+        /// </summary>
+        public static readonly RebootMigrationSupport Supported = new RebootMigrationSupport("supported");
+        /// <summary>
+        /// Constant Unsupported for RebootMigrationSupport
+        /// </summary>
+        public static readonly RebootMigrationSupport Unsupported = new RebootMigrationSupport("unsupported");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RebootMigrationSupport(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RebootMigrationSupport FindValue(string value)
+        {
+            return FindValue<RebootMigrationSupport>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RebootMigrationSupport(string value)
         {
             return FindValue(value);
         }

@@ -18788,6 +18788,10 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// Returns 3 network nodes in the response
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
         ///  <c>hpc6a.48xlarge</c> | <c>hpc6id.32xlarge</c> | <c>hpc7a.12xlarge</c> | <c>hpc7a.24xlarge</c>
         /// | <c>hpc7a.48xlarge</c> | <c>hpc7a.96xlarge</c> | <c>hpc7g.4xlarge</c> | <c>hpc7g.8xlarge</c>
         /// | <c>hpc7g.16xlarge</c> 
@@ -18802,7 +18806,15 @@ namespace Amazon.EC2
         ///  <c>trn1.2xlarge</c> | <c>trn1.32xlarge</c> | <c>trn1n.32xlarge</c> | <c>trn2.48xlarge</c>
         /// | <c>trn2u.48xlarge</c> 
         /// </para>
-        ///  </li> </ul> </li> </ul> 
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Returns 4 network nodes in the response
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>p6-b200.48xlarge</c> 
+        /// </para>
+        ///  </li> </ul> </li> </ul> </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
         /// EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.
@@ -18850,6 +18862,10 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// Returns 3 network nodes in the response
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
         ///  <c>hpc6a.48xlarge</c> | <c>hpc6id.32xlarge</c> | <c>hpc7a.12xlarge</c> | <c>hpc7a.24xlarge</c>
         /// | <c>hpc7a.48xlarge</c> | <c>hpc7a.96xlarge</c> | <c>hpc7g.4xlarge</c> | <c>hpc7g.8xlarge</c>
         /// | <c>hpc7g.16xlarge</c> 
@@ -18864,7 +18880,15 @@ namespace Amazon.EC2
         ///  <c>trn1.2xlarge</c> | <c>trn1.32xlarge</c> | <c>trn1n.32xlarge</c> | <c>trn2.48xlarge</c>
         /// | <c>trn2u.48xlarge</c> 
         /// </para>
-        ///  </li> </ul> </li> </ul> 
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Returns 4 network nodes in the response
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>p6-b200.48xlarge</c> 
+        /// </para>
+        ///  </li> </ul> </li> </ul> </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
         /// EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.
@@ -34786,6 +34810,13 @@ namespace Amazon.EC2
         /// simplified automatic recovery for an unsupported instance type. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified
         /// automatic recovery</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Modifies the reboot migration behavior during a user-initiated reboot of an instance
+        /// that has a pending <c>system-reboot</c> event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable
+        /// or disable reboot migration</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceMaintenanceOptions service method.</param>
         /// 
@@ -34807,6 +34838,13 @@ namespace Amazon.EC2
         /// simplified automatic recovery for an unsupported instance type. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified
         /// automatic recovery</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Modifies the reboot migration behavior during a user-initiated reboot of an instance
+        /// that has a pending <c>system-reboot</c> event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable
+        /// or disable reboot migration</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceMaintenanceOptions service method.</param>
         /// <param name="cancellationToken">

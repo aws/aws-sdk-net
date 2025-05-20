@@ -68,6 +68,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.InstanceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("rebootMigration", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.RebootMigration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
             }
 
