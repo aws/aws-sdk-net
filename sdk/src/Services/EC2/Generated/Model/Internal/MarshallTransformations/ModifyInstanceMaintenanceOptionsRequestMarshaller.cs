@@ -67,6 +67,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
                 }
+                if(publicRequest.IsSetRebootMigration())
+                {
+                    request.Parameters.Add("RebootMigration", StringUtils.FromString(publicRequest.RebootMigration));
+                }
             }
             return request;
         }

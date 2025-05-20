@@ -262,6 +262,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>reboot-migration-support</c> - Indicates whether enabling reboot migration is
+        /// supported (<c>supported</c> | <c>unsupported</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>supported-boot-mode</c> - The boot mode (<c>legacy-bios</c> | <c>uefi</c>).
         /// </para>
         ///  </li> <li> 

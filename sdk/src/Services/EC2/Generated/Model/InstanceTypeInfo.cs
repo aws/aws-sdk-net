@@ -59,6 +59,7 @@ namespace Amazon.EC2.Model
         private PhcSupport _phcSupport;
         private PlacementGroupInfo _placementGroupInfo;
         private ProcessorInfo _processorInfo;
+        private RebootMigrationSupport _rebootMigrationSupport;
         private List<string> _supportedBootModes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _supportedRootDeviceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _supportedUsageClasses = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -516,6 +517,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetProcessorInfo()
         {
             return this._processorInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RebootMigrationSupport. 
+        /// <para>
+        /// Indicates whether reboot migration during a user-initiated reboot is supported for
+        /// instances that have a scheduled <c>system-reboot</c> event. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable
+        /// or disable reboot migration</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public RebootMigrationSupport RebootMigrationSupport
+        {
+            get { return this._rebootMigrationSupport; }
+            set { this._rebootMigrationSupport = value; }
+        }
+
+        // Check to see if RebootMigrationSupport property is set
+        internal bool IsSetRebootMigrationSupport()
+        {
+            return this._rebootMigrationSupport != null;
         }
 
         /// <summary>
