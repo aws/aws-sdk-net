@@ -375,24 +375,34 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var counterConditionExpression = BuildCounterConditionExpression(storage);
 
+            Document updateDocument;
+            Expression versionExpression = null;
+            
             if ((flatConfig.SkipVersionCheck.HasValue && flatConfig.SkipVersionCheck.Value) || !storage.Config.HasVersion)
             {
-                table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), null, counterConditionExpression);
+                updateDocument = table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), new UpdateItemOperationConfig()
+                {
+                    ReturnValues = ReturnValues.AllNewAttributes
+                }, counterConditionExpression);
             }
             else
             {
-                var conversionConfig = new DynamoDBEntry.AttributeConversionConfig(table.Conversion, table.IsEmptyStringValueEnabled);
-                var versionExpression = CreateConditionExpressionForVersion(storage, conversionConfig);
+                var conversionConfig = new DynamoDBEntry.AttributeConversionConfig(table.Conversion, table.IsEmptyStringValueEnabled); 
+                versionExpression = CreateConditionExpressionForVersion(storage, conversionConfig);
                 SetNewVersion(storage);
 
                 var updateItemOperationConfig = new UpdateItemOperationConfig
                 {
-                    ReturnValues = ReturnValues.None,
-                    ConditionalExpression = versionExpression
+                    ReturnValues = ReturnValues.AllNewAttributes,
+                    ConditionalExpression = versionExpression,
                 };
-                table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), updateItemOperationConfig, counterConditionExpression);
-                PopulateInstance(storage, value, flatConfig);
+                updateDocument = table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), updateItemOperationConfig, counterConditionExpression);
             }
+
+            if (counterConditionExpression == null && versionExpression == null) return;
+
+            storage.Document = updateDocument;
+            PopulateInstance(storage, value, flatConfig);
         }
 
 #if AWS_ASYNC_API 
@@ -412,30 +422,40 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var counterConditionExpression = BuildCounterConditionExpression(storage);
 
+            Document updateDocument;
+            Expression versionExpression = null;
             if (
                 (flatConfig.SkipVersionCheck.HasValue && flatConfig.SkipVersionCheck.Value)
                 || !storage.Config.HasVersion)
             {
-                await table.UpdateHelperAsync(storage.Document, table.MakeKey(storage.Document), null, counterConditionExpression, cancellationToken).ConfigureAwait(false);
+                updateDocument = await table.UpdateHelperAsync(storage.Document, table.MakeKey(storage.Document), new UpdateItemOperationConfig
+                {
+                    ReturnValues = ReturnValues.AllNewAttributes
+                }, counterConditionExpression, cancellationToken).ConfigureAwait(false);
             }
             else
             {
-                var conversionConfig = new DynamoDBEntry.AttributeConversionConfig(table.Conversion, table.IsEmptyStringValueEnabled);
-                var versionExpression = CreateConditionExpressionForVersion(storage, conversionConfig);
+                var conversionConfig = new DynamoDBEntry.AttributeConversionConfig(table.Conversion, table.IsEmptyStringValueEnabled); 
+                versionExpression = CreateConditionExpressionForVersion(storage, conversionConfig);
                 SetNewVersion(storage);
 
-                await table.UpdateHelperAsync(
+                updateDocument = await table.UpdateHelperAsync(
                     storage.Document,
                     table.MakeKey(storage.Document),
                     new UpdateItemOperationConfig
                     {
-                        ReturnValues = ReturnValues.None,
+                        ReturnValues = ReturnValues.AllNewAttributes,
                         ConditionalExpression = versionExpression
                     }, counterConditionExpression,
                     cancellationToken)
                     .ConfigureAwait(false);
-                PopulateInstance(storage, value, flatConfig);
             }
+
+
+            if (counterConditionExpression == null && versionExpression == null) return;
+
+            storage.Document = updateDocument;
+            PopulateInstance(storage, value, flatConfig);
         }
 #endif
 

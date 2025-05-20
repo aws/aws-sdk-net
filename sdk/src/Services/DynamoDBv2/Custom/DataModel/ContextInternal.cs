@@ -128,7 +128,6 @@ namespace Amazon.DynamoDBv2.DataModel
             if (atomicCounters.Length != 0)
             {
                 counterConditionExpression = CreateUpdateExpressionForCounterProperties(atomicCounters);
-                SetAtomicCounters(storage, atomicCounters);
             }
 
             return counterConditionExpression;
@@ -164,52 +163,6 @@ namespace Amazon.DynamoDBv2.DataModel
             updateExpression.ExpressionStatement = $"SET {asserts.Substring(0, asserts.Length - 2)}";
 
             return updateExpression;
-        }
-
-        private static void SetAtomicCounters(ItemStorage storage, PropertyStorage[] counterPropertyStorages)
-        {
-            if (counterPropertyStorages.Length == 0) return;
-
-            // Set the initial value of the counter properties
-            foreach (var propertyStorage in counterPropertyStorages)
-            {
-                Primitive counter;
-                string versionAttributeName = propertyStorage.AttributeName;
-
-                if (storage.Document.TryGetValue(versionAttributeName, out var counterEntry))
-                    counter = counterEntry as Primitive;
-                else
-                    counter = null;
-
-                if (counter != null && counter.Value != null)
-                {
-                    if (counter.Type != DynamoDBEntryType.Numeric) throw new InvalidOperationException("Atomic Counter property must be numeric.");
-                    IncrementCounter(propertyStorage.MemberType, ref counter, propertyStorage.CounterDelta);
-                }
-                else
-                {
-                    counter = new Primitive(propertyStorage.CounterStartValue.ToString(), true);
-                }
-                storage.Document[versionAttributeName] = counter;
-            }
-
-        }
-
-        private static void IncrementCounter(Type memberType, ref Primitive counter, long delta)
-        {
-            if (memberType.IsAssignableFrom(typeof(Byte))) counter = counter.AsByte() + delta;
-            else if (memberType.IsAssignableFrom(typeof(SByte))) counter = counter.AsSByte() + delta;
-            else if (memberType.IsAssignableFrom(typeof(int))) counter = counter.AsInt() + delta;
-            else if (memberType.IsAssignableFrom(typeof(long))) counter = counter.AsLong() + delta;
-            else if (memberType.IsAssignableFrom(typeof(short))) counter = counter.AsShort() + delta;
-            else
-            {
-                if (memberType.IsAssignableFrom(typeof(uint)) || memberType.IsAssignableFrom(typeof(ulong)) ||
-                    memberType.IsAssignableFrom(typeof(ushort)))
-                {
-                    throw new InvalidOperationException("AtomicCounter properties must be signed integral types.");
-                }
-            }
         }
 
         #endregion
