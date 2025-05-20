@@ -1,3 +1,21 @@
+### 4.0.16.0 (2025-05-20 18:19 UTC)
+* DataSync (4.0.1.0)
+	* Remove Discovery APIs from the DataSync service
+* DynamoDBv2 (4.0.1.0)
+	* Introduce a fluent ExpressionBuilder to the Document Model that uses method chaining to construct type-safe, readable condition and update expressions.
+* EC2 (4.0.8.0)
+	* This release expands the ModifyInstanceMaintenanceOptions API to enable or disable instance migration during customer-initiated reboots for EC2 Scheduled Reboot Events.
+* Glue (4.0.3.0)
+	* Enhanced AWS Glue ListConnectionTypes API Model with additional metadata fields.
+* Inspector2 (4.0.1.0)
+	* This release adds GetClustersForImage API and filter updates as part of the mapping of container images to running containers feature.
+* OAM (4.0.1.0)
+	* Add IncludeTags field to GetLink, GetSink and UpdateLink API
+* Private5G (Removed)
+	* Removed Amazon Private5G from the SDK because the service has been shutdown.
+* RDS (4.0.1.0)
+	* This release introduces the new DescribeDBMajorEngineVersions API for describing the properties of specific major versions of database engines.
+
 ### 4.0.15.0 (2025-05-19 18:12 UTC)
 * DSQL (4.0.2.0)
 	* CreateMultiRegionCluster and DeleteMultiRegionCluster APIs removed
