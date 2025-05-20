@@ -5785,6 +5785,60 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeDBMajorEngineVersions
+
+        /// <summary>
+        /// Describes the properties of specific major versions of DB engines.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBMajorEngineVersions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBMajorEngineVersions service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBMajorEngineVersions">REST API Reference for DescribeDBMajorEngineVersions Operation</seealso>
+        public virtual DescribeDBMajorEngineVersionsResponse DescribeDBMajorEngineVersions(DescribeDBMajorEngineVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBMajorEngineVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBMajorEngineVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBMajorEngineVersionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDBMajorEngineVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBMajorEngineVersions operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDBMajorEngineVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBMajorEngineVersions">REST API Reference for DescribeDBMajorEngineVersions Operation</seealso>
+        public virtual IAsyncResult BeginDescribeDBMajorEngineVersions(DescribeDBMajorEngineVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBMajorEngineVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBMajorEngineVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDBMajorEngineVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBMajorEngineVersions.</param>
+        /// 
+        /// <returns>Returns a  DescribeDBMajorEngineVersionsResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBMajorEngineVersions">REST API Reference for DescribeDBMajorEngineVersions Operation</seealso>
+        public virtual DescribeDBMajorEngineVersionsResponse EndDescribeDBMajorEngineVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDBMajorEngineVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeDBParameterGroups
 
         /// <summary>

@@ -6560,6 +6560,47 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeDBMajorEngineVersions
+
+
+        /// <summary>
+        /// Describes the properties of specific major versions of DB engines.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBMajorEngineVersions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBMajorEngineVersions service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBMajorEngineVersions">REST API Reference for DescribeDBMajorEngineVersions Operation</seealso>
+        public virtual DescribeDBMajorEngineVersionsResponse DescribeDBMajorEngineVersions(DescribeDBMajorEngineVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBMajorEngineVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBMajorEngineVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBMajorEngineVersionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the properties of specific major versions of DB engines.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBMajorEngineVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDBMajorEngineVersions service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBMajorEngineVersions">REST API Reference for DescribeDBMajorEngineVersions Operation</seealso>
+        public virtual Task<DescribeDBMajorEngineVersionsResponse> DescribeDBMajorEngineVersionsAsync(DescribeDBMajorEngineVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBMajorEngineVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBMajorEngineVersionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDBMajorEngineVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDBParameterGroups
 
 
