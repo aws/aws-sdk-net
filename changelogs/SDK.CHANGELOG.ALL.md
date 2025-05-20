@@ -1,3 +1,22 @@
+### 3.7.1048.0 (2025-05-20 18:21 UTC)
+* DataSync (3.7.405.0)
+	* Remove Discovery APIs from the DataSync service
+* EC2 (3.7.446.0)
+	* This release expands the ModifyInstanceMaintenanceOptions API to enable or disable instance migration during customer-initiated reboots for EC2 Scheduled Reboot Events.
+* Glue (3.7.419.0)
+	* Enhanced AWS Glue ListConnectionTypes API Model with additional metadata fields.
+* Inspector2 (3.7.406.0)
+	* This release adds GetClustersForImage API and filter updates as part of the mapping of container images to running containers feature.
+* OAM (3.7.402.0)
+	* Add IncludeTags field to GetLink, GetSink and UpdateLink API
+* Private5G (Removed)
+	* Removed Amazon Private5G from the SDK because the service has been shutdown.
+* RDS (3.7.412.0)
+	* This release introduces the new DescribeDBMajorEngineVersions API for describing the properties of specific major versions of database engines.
+* Core 3.7.402.60
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1047.0 (2025-05-19 18:13 UTC)
 * DSQL (3.7.404.0)
 	* CreateMultiRegionCluster and DeleteMultiRegionCluster APIs removed
