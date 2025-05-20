@@ -2,7 +2,7 @@
     "services": [
         {
             "serviceName": "DynamoDBv2",
-            "type": "patch",
+            "type": "minor",
             "changeLogMessages": [
                 "Introduce a fluent ExpressionBuilder to the Document Model that uses method chaining to construct type-safe, readable condition and update expressions."
             ]
