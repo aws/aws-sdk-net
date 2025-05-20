@@ -2419,14 +2419,6 @@
             },
             "InPreview"               : false
         },
-        "Private5G"                           : {
-            "Version" : "4.0.0.4",
-            "AssemblyVersionOverride" : "4.0",
-            "Dependencies"            : {
-                "Core" : "4.0.0.5"
-            },
-            "InPreview"               : false
-        },
         "SupportApp"                          : {
             "Version" : "4.0.0.4",
             "AssemblyVersionOverride" : "4.0",
