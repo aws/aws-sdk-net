@@ -12575,6 +12575,23 @@ namespace Amazon.EC2
         /// This is an idempotent operation. If you perform the operation more than once, Amazon
         /// EC2 doesn't return an error.
         /// </para>
+        ///  
+        /// <para>
+        /// An address cannot be disassociated if the all of the following conditions are met:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Network interface has a <c>publicDualStackDnsName</c> publicDnsName
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Public IPv4 address is the primary public IPv4 address
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Network interface only has one remaining public IPv4 address
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAddress service method.</param>
         /// <param name="cancellationToken">
@@ -16240,6 +16257,26 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  ModifyPublicIpDnsNameOptions
+
+
+
+        /// <summary>
+        /// Modify public hostname options for a network interface. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2
+        /// instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyPublicIpDnsNameOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyPublicIpDnsNameOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyPublicIpDnsNameOptions">REST API Reference for ModifyPublicIpDnsNameOptions Operation</seealso>
+        Task<ModifyPublicIpDnsNameOptionsResponse> ModifyPublicIpDnsNameOptionsAsync(ModifyPublicIpDnsNameOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ModifyReservedInstances
 
 
@@ -19285,12 +19322,12 @@ namespace Amazon.EC2
         /// attached to the instance persist. When you terminate an instance, any attached EBS
         /// volumes with the <c>DeleteOnTermination</c> block device mapping parameter set to
         /// <c>true</c> are automatically deleted. For more information about the differences
-        /// between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Amazon
-        /// EC2 instance state changes</a> in the <i>Amazon EC2 User Guide</i>.
+        /// between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+        /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
+        /// For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
         /// terminating your instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>

@@ -33,78 +33,70 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NetworkInterfaceIpv6Address Object
+    /// Response Unmarshaller for ModifyPublicIpDnsNameOptions operation
     /// </summary>  
-    public class NetworkInterfaceIpv6AddressUnmarshaller : IUnmarshaller<NetworkInterfaceIpv6Address, XmlUnmarshallerContext>, IUnmarshaller<NetworkInterfaceIpv6Address, JsonUnmarshallerContext>
+    public class ModifyPublicIpDnsNameOptionsResponseUnmarshaller : EC2ResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
+        /// </summary>
         /// <param name="context"></param>
         /// <returns></returns>
-        public NetworkInterfaceIpv6Address Unmarshall(XmlUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            NetworkInterfaceIpv6Address unmarshalledObject = new NetworkInterfaceIpv6Address();
+            ModifyPublicIpDnsNameOptionsResponse response = new ModifyPublicIpDnsNameOptionsResponse();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
+               targetDepth = 2;
+
             while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ipv6Address", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Ipv6Address = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("isPrimaryIpv6", targetDepth))
+
+                    if (context.TestExpression("successful", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.IsPrimaryIpv6 = unmarshaller.Unmarshall(context);
+                        response.Successful = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("publicIpv6DnsName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.PublicIpv6DnsName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
+                } 
             }
 
-            return unmarshalledObject;
+            return response;
         }
 
         /// <summary>
         /// Unmarshaller error response to exception.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
         /// <returns></returns>
-        public NetworkInterfaceIpv6Address Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            return null;
+            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+        private static ModifyPublicIpDnsNameOptionsResponseUnmarshaller _instance = new ModifyPublicIpDnsNameOptionsResponseUnmarshaller();        
 
-
-        private static NetworkInterfaceIpv6AddressUnmarshaller _instance = new NetworkInterfaceIpv6AddressUnmarshaller();        
+        internal static ModifyPublicIpDnsNameOptionsResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NetworkInterfaceIpv6AddressUnmarshaller Instance
+        public static ModifyPublicIpDnsNameOptionsResponseUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
+
     }
 }

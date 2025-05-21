@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
     {
         private string _ipv6Address;
         private bool? _isPrimaryIpv6;
+        private string _publicIpv6DnsName;
 
         /// <summary>
         /// Gets and sets the property Ipv6Address. 
@@ -74,6 +75,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetIsPrimaryIpv6()
         {
             return this._isPrimaryIpv6.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicIpv6DnsName. 
+        /// <para>
+        /// An IPv6-enabled public hostname for a network interface. Requests from within the
+        /// VPC or from the internet resolve to the IPv6 GUA of the network interface. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2
+        /// instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string PublicIpv6DnsName
+        {
+            get { return this._publicIpv6DnsName; }
+            set { this._publicIpv6DnsName = value; }
+        }
+
+        // Check to see if PublicIpv6DnsName property is set
+        internal bool IsSetPublicIpv6DnsName()
+        {
+            return this._publicIpv6DnsName != null;
         }
 
     }

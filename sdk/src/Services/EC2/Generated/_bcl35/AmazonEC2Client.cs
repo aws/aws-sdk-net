@@ -28323,6 +28323,23 @@ namespace Amazon.EC2
         /// This is an idempotent operation. If you perform the operation more than once, Amazon
         /// EC2 doesn't return an error.
         /// </para>
+        ///  
+        /// <para>
+        /// An address cannot be disassociated if the all of the following conditions are met:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Network interface has a <c>publicDualStackDnsName</c> publicDnsName
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Public IPv4 address is the primary public IPv4 address
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Network interface only has one remaining public IPv4 address
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAddress service method.</param>
         /// 
@@ -37066,6 +37083,62 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyPublicIpDnsNameOptions
+
+        /// <summary>
+        /// Modify public hostname options for a network interface. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2
+        /// instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyPublicIpDnsNameOptions service method.</param>
+        /// 
+        /// <returns>The response from the ModifyPublicIpDnsNameOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyPublicIpDnsNameOptions">REST API Reference for ModifyPublicIpDnsNameOptions Operation</seealso>
+        public virtual ModifyPublicIpDnsNameOptionsResponse ModifyPublicIpDnsNameOptions(ModifyPublicIpDnsNameOptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyPublicIpDnsNameOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyPublicIpDnsNameOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyPublicIpDnsNameOptionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyPublicIpDnsNameOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyPublicIpDnsNameOptions operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyPublicIpDnsNameOptions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyPublicIpDnsNameOptions">REST API Reference for ModifyPublicIpDnsNameOptions Operation</seealso>
+        public virtual IAsyncResult BeginModifyPublicIpDnsNameOptions(ModifyPublicIpDnsNameOptionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyPublicIpDnsNameOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyPublicIpDnsNameOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyPublicIpDnsNameOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyPublicIpDnsNameOptions.</param>
+        /// 
+        /// <returns>Returns a  ModifyPublicIpDnsNameOptionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyPublicIpDnsNameOptions">REST API Reference for ModifyPublicIpDnsNameOptions Operation</seealso>
+        public virtual ModifyPublicIpDnsNameOptionsResponse EndModifyPublicIpDnsNameOptions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyPublicIpDnsNameOptionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ModifyReservedInstances
 
         /// <summary>
@@ -43781,12 +43854,12 @@ namespace Amazon.EC2
         /// attached to the instance persist. When you terminate an instance, any attached EBS
         /// volumes with the <c>DeleteOnTermination</c> block device mapping parameter set to
         /// <c>true</c> are automatically deleted. For more information about the differences
-        /// between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Amazon
-        /// EC2 instance state changes</a> in the <i>Amazon EC2 User Guide</i>.
+        /// between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+        /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
+        /// For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
         /// terminating your instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>

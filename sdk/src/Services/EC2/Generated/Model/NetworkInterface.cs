@@ -55,6 +55,8 @@ namespace Amazon.EC2.Model
         private string _privateDnsName;
         private string _privateIpAddress;
         private List<NetworkInterfacePrivateIpAddress> _privateIpAddresses = AWSConfigs.InitializeCollections ? new List<NetworkInterfacePrivateIpAddress>() : null;
+        private string _publicDnsName;
+        private PublicIpDnsNameOptions _publicIpDnsNameOptions;
         private string _requesterId;
         private bool? _requesterManaged;
         private bool? _sourceDestCheck;
@@ -398,7 +400,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateDnsName. 
         /// <para>
-        /// The private DNS name.
+        /// The private hostname. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2
+        /// instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public string PrivateDnsName
@@ -447,6 +450,44 @@ namespace Amazon.EC2.Model
         internal bool IsSetPrivateIpAddresses()
         {
             return this._privateIpAddresses != null && (this._privateIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicDnsName. 
+        /// <para>
+        /// A public hostname. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2
+        /// instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string PublicDnsName
+        {
+            get { return this._publicDnsName; }
+            set { this._publicDnsName = value; }
+        }
+
+        // Check to see if PublicDnsName property is set
+        internal bool IsSetPublicDnsName()
+        {
+            return this._publicDnsName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicIpDnsNameOptions. 
+        /// <para>
+        /// Public hostname type options. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2
+        /// instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public PublicIpDnsNameOptions PublicIpDnsNameOptions
+        {
+            get { return this._publicIpDnsNameOptions; }
+            set { this._publicIpDnsNameOptions = value; }
+        }
+
+        // Check to see if PublicIpDnsNameOptions property is set
+        internal bool IsSetPublicIpDnsNameOptions()
+        {
+            return this._publicIpDnsNameOptions != null;
         }
 
         /// <summary>

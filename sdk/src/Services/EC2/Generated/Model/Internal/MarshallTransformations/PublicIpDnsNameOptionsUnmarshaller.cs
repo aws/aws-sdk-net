@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NetworkInterfaceIpv6Address Object
+    /// Response Unmarshaller for PublicIpDnsNameOptions Object
     /// </summary>  
-    public class NetworkInterfaceIpv6AddressUnmarshaller : IUnmarshaller<NetworkInterfaceIpv6Address, XmlUnmarshallerContext>, IUnmarshaller<NetworkInterfaceIpv6Address, JsonUnmarshallerContext>
+    public class PublicIpDnsNameOptionsUnmarshaller : IUnmarshaller<PublicIpDnsNameOptions, XmlUnmarshallerContext>, IUnmarshaller<PublicIpDnsNameOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NetworkInterfaceIpv6Address Unmarshall(XmlUnmarshallerContext context)
+        public PublicIpDnsNameOptions Unmarshall(XmlUnmarshallerContext context)
         {
-            NetworkInterfaceIpv6Address unmarshalledObject = new NetworkInterfaceIpv6Address();
+            PublicIpDnsNameOptions unmarshalledObject = new PublicIpDnsNameOptions();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,16 +55,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ipv6Address", targetDepth))
+                    if (context.TestExpression("dnsHostnameType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Ipv6Address = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DnsHostnameType = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("isPrimaryIpv6", targetDepth))
+                    if (context.TestExpression("publicDualStackDnsName", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.IsPrimaryIpv6 = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PublicDualStackDnsName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("publicIpv4DnsName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PublicIpv4DnsName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("publicIpv6DnsName", targetDepth))
@@ -88,18 +94,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NetworkInterfaceIpv6Address Unmarshall(JsonUnmarshallerContext context)
+        public PublicIpDnsNameOptions Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static NetworkInterfaceIpv6AddressUnmarshaller _instance = new NetworkInterfaceIpv6AddressUnmarshaller();        
+        private static PublicIpDnsNameOptionsUnmarshaller _instance = new PublicIpDnsNameOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NetworkInterfaceIpv6AddressUnmarshaller Instance
+        public static PublicIpDnsNameOptionsUnmarshaller Instance
         {
             get
             {
