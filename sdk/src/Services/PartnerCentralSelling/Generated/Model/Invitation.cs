@@ -46,7 +46,7 @@ namespace Amazon.PartnerCentralSelling.Model
         ///  A message accompanying the invitation. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=255)]
         public string Message
         {
             get { return this._message; }
