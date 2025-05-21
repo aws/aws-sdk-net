@@ -254,7 +254,7 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>arn:aws:aiops:<i>region</i>:<i>account-id</i>:investigation-group:<i>ingestigation-group-id</i>
+        ///  <c>arn:aws:aiops:<i>region</i>:<i>account-id</i>:investigation-group:<i>investigation-group-id</i>
         /// </c> 
         /// </para>
         /// </summary>
@@ -415,11 +415,6 @@ namespace Amazon.CloudWatch.Model
         /// are setting an alarm that requires that a number of consecutive data points be breaching
         /// to trigger the alarm, this value specifies that number. If you are setting an "M out
         /// of N" alarm, this value is the N.
-        /// </para>
-        ///  
-        /// <para>
-        /// An alarm's total current evaluation period can be no longer than one day, so this
-        /// number multiplied by <c>Period</c> cannot be more than 86,400 seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -820,7 +815,7 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property Period. 
         /// <para>
         /// The length, in seconds, used each time the metric specified in <c>MetricName</c> is
-        /// evaluated. Valid values are 10, 30, and any multiple of 60.
+        /// evaluated. Valid values are 10, 20, 30, and any multiple of 60.
         /// </para>
         ///  
         /// <para>
@@ -830,20 +825,22 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// Be sure to specify 10 or 30 only for metrics that are stored by a <c>PutMetricData</c>
-        /// call with a <c>StorageResolution</c> of 1. If you specify a period of 10 or 30 for
-        /// a metric that does not have sub-minute resolution, the alarm still attempts to gather
-        /// data at the period rate that you specify. In this case, it does not receive data for
-        /// the attempts that do not correspond to a one-minute data resolution, and the alarm
-        /// might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this
-        /// alarm as a high-resolution alarm, which has a higher charge than other alarms. For
-        /// more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
+        /// Be sure to specify 10, 20, or 30 only for metrics that are stored by a <c>PutMetricData</c>
+        /// call with a <c>StorageResolution</c> of 1. If you specify a period of 10, 20, or 30
+        /// for a metric that does not have sub-minute resolution, the alarm still attempts to
+        /// gather data at the period rate that you specify. In this case, it does not receive
+        /// data for the attempts that do not correspond to a one-minute data resolution, and
+        /// the alarm might often lapse into INSUFFICENT_DATA status. Specifying 10, 20, or 30
+        /// also sets this alarm as a high-resolution alarm, which has a higher charge than other
+        /// alarms. For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
         /// CloudWatch Pricing</a>.
         /// </para>
         ///  
         /// <para>
-        /// An alarm's total current evaluation period can be no longer than one day, so <c>Period</c>
-        /// multiplied by <c>EvaluationPeriods</c> cannot be more than 86,400 seconds.
+        /// An alarm's total current evaluation period can be no longer than seven days, so <c>Period</c>
+        /// multiplied by <c>EvaluationPeriods</c> can't be more than 604,800 seconds. For alarms
+        /// with a period of less than one hour (3,600 seconds), the total evaluation period can't
+        /// be longer than one day (86,400 seconds).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

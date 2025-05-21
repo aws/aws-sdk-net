@@ -240,7 +240,7 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For details of the requirements for specifying an entity, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How
+        /// For details of the requirements for specifying an entity, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/adding-your-own-related-telemetry.html">How
         /// to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.
         /// </para>
         ///  </li> </ul> 

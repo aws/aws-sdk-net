@@ -112,6 +112,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     return ConcurrentModificationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceError"))
                 {
                     return InternalServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

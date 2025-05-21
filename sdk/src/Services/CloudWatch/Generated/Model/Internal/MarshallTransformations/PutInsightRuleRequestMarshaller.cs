@@ -59,6 +59,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetApplyOnTransformedLogs())
+                {
+                    request.Parameters.Add("ApplyOnTransformedLogs", StringUtils.FromBool(publicRequest.ApplyOnTransformedLogs));
+                }
                 if(publicRequest.IsSetRuleDefinition())
                 {
                     request.Parameters.Add("RuleDefinition", StringUtils.FromString(publicRequest.RuleDefinition));
