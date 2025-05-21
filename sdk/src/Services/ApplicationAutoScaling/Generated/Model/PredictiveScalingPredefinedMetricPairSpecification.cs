@@ -30,7 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
-    /// Represents a metric pair for a predictive scaling policy.
+    /// Represents a metric pair for a predictive scaling policy. 
+    /// 
+    ///  
+    /// <para>
+    /// The following predefined metrics are available for predictive scaling:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>ECSServiceAverageCPUUtilization</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ECSServiceAverageMemoryUtilization</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ECSServiceCPUUtilization</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ECSServiceMemoryUtilization</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ECSServiceTotalCPUUtilization</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ECSServiceTotalMemoryUtilization</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ALBRequestCount</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ALBRequestCountPerTarget</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>TotalALBRequestCount</c> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class PredictiveScalingPredefinedMetricPairSpecification
     {
