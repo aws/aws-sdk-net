@@ -1,3 +1,19 @@
+### 4.0.17.0 (2025-05-21 18:16 UTC)
+* ApplicationAutoScaling (4.0.0.5)
+	* Doc only update that addresses a customer reported issue.
+* BedrockAgentRuntime (4.0.3.0)
+	* Amazon Bedrock introduces asynchronous flows (in preview), which let you run flows for longer durations and yield control so that your application can perform other tasks and you don't have to actively monitor the flow's progress.
+* CloudWatch (4.0.1.0)
+	* Adds support for setting up Contributor Insight rules on logs transformed via Logs Transformation feature.
+* EC2 (4.0.9.0)
+	* Release of Dualstack and Ipv6-only EC2 Public DNS hostnames
+* PartnerCentralSelling (4.0.1.0)
+	* Modified validation to allow expectedCustomerSpend array with zero elements in Partner Opportunity operations.
+* S3 (4.0.0.6)
+	* Fixed an issue where IAmazonS3.EnsureBucketExists(Async) was throwing an exception if S3 bucket already exists in the executing account.
+* Core 4.0.0.6
+	* Fixed an issue in JsonPolicyWriter.WritePolicyToString() method where it was not using prettyPrint parameter for indentation.
+
 ### 4.0.16.0 (2025-05-20 18:19 UTC)
 * DataSync (4.0.1.0)
 	* Remove Discovery APIs from the DataSync service

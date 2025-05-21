@@ -1,9 +1,0 @@
-{
-  "services": [
-    {
-      "serviceName": "S3",
-      "type": "patch",
-      "changeLogMessages": [ "Fixed an issue where IAmazonS3.EnsureBucketExists(Async) was throwing an exception if S3 bucket already exists in the executing account." ]
-    }
-  ]
-}
