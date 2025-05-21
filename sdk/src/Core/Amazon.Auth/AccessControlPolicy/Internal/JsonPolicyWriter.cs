@@ -53,7 +53,7 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
                 // indentSize is only available in net8+ and net472
                 JsonWriterOptions options = new JsonWriterOptions
                 {
-                    Indented = true,
+                    Indented = prettyPrint
                 };
                 using (var stream = new MemoryStream())
                 using (var generator = new Utf8JsonWriter(stream, options))

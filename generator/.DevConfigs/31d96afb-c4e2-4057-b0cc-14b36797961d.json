@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Fixed an issue in JsonPolicyWriter.WritePolicyToString() method where it was not using prettyPrint parameter for indentation."
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}
