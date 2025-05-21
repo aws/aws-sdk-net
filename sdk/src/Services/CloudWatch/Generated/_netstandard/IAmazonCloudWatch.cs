@@ -73,9 +73,9 @@ namespace Amazon.CloudWatch
         /// 
         ///  
         /// <para>
-        ///  If you specify an incorrect alarm name or make any other error in the operation,
-        /// no alarms are deleted. To confirm that alarms were deleted successfully, you can use
-        /// the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a>
+        ///  If you specify any incorrect alarm names, the alarms you specify with correct names
+        /// are still deleted. Other syntax errors might result in no alarms being deleted. To
+        /// confirm that alarms were deleted successfully, you can use the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a>
         /// operation after using <c>DeleteAlarms</c>.
         /// </para>
         ///  <note> 
@@ -163,6 +163,9 @@ namespace Amazon.CloudWatch
         /// </param>
         /// 
         /// <returns>The response from the DeleteDashboards service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.DashboardNotFoundErrorException">
         /// The specified dashboard does not exist.
         /// </exception>
@@ -1327,6 +1330,9 @@ namespace Amazon.CloudWatch
         /// </param>
         /// 
         /// <returns>The response from the PutDashboard service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.DashboardInvalidInputErrorException">
         /// Some part of the dashboard data is invalid.
         /// </exception>
@@ -1831,6 +1837,9 @@ namespace Amazon.CloudWatch
         /// <exception cref="Amazon.CloudWatch.Model.ConcurrentModificationException">
         /// More than one process tried to modify a resource at the same time.
         /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
         /// Request processing has failed due to some unknown error, exception, or failure.
         /// </exception>
@@ -1860,6 +1869,9 @@ namespace Amazon.CloudWatch
         /// <returns>The response from the UntagResource service method, as returned by CloudWatch.</returns>
         /// <exception cref="Amazon.CloudWatch.Model.ConcurrentModificationException">
         /// More than one process tried to modify a resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
         /// Request processing has failed due to some unknown error, exception, or failure.
