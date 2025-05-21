@@ -1,3 +1,20 @@
+### 3.7.1049.0 (2025-05-21 18:18 UTC)
+* ApplicationAutoScaling (3.7.403.23)
+	* Doc only update that addresses a customer reported issue.
+* BedrockAgentRuntime (3.7.427.0)
+	* Amazon Bedrock introduces asynchronous flows (in preview), which let you run flows for longer durations and yield control so that your application can perform other tasks and you don't have to actively monitor the flow's progress.
+* CloudWatch (3.7.403.0)
+	* Adds support for setting up Contributor Insight rules on logs transformed via Logs Transformation feature.
+* EC2 (3.7.447.0)
+	* Release of Dualstack and Ipv6-only EC2 Public DNS hostnames
+* PartnerCentralSelling (3.7.404.0)
+	* Modified validation to allow expectedCustomerSpend array with zero elements in Partner Opportunity operations.
+* S3 (3.7.416.31)
+	* Fixed an issue where IAmazonS3.EnsureBucketExists(Async) was throwing an exception if S3 bucket already exists in the executing account.
+* Core 3.7.402.61
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1048.0 (2025-05-20 18:21 UTC)
 * DataSync (3.7.405.0)
 	* Remove Discovery APIs from the DataSync service
