@@ -240,7 +240,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// of the opportunity for AWS.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=0, Max=10)]
         public List<ExpectedCustomerSpend> ExpectedCustomerSpend
         {
             get { return this._expectedCustomerSpend; }

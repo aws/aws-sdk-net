@@ -239,7 +239,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// The message sent to the invited partner when the invitation was created.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Sensitive=true, Min=1, Max=255)]
         public string InvitationMessage
         {
             get { return this._invitationMessage; }

@@ -162,10 +162,7 @@ namespace Amazon.PartnerCentralSelling.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Sort. 
-        /// <para>
-        ///  An object that specifies the sort order of the results. 
-        /// </para>
+        /// Gets and sets the property Sort.
         /// </summary>
         public EngagementSort Sort
         {

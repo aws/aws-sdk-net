@@ -123,7 +123,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of objects specifying each tag name and value.
+        /// A map of the key-value pairs of the tag or tags to assign.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

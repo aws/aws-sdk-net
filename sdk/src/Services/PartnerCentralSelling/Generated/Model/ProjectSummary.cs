@@ -98,7 +98,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// view of the potential financial impact.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=0, Max=10)]
         public List<ExpectedCustomerSpend> ExpectedCustomerSpend
         {
             get { return this._expectedCustomerSpend; }

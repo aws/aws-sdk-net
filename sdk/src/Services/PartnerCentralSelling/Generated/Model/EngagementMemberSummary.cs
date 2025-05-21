@@ -46,7 +46,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// The official name of the member's company or organization.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=120)]
+        [AWSProperty(Sensitive=true, Min=1, Max=120)]
         public string CompanyName
         {
             get { return this._companyName; }

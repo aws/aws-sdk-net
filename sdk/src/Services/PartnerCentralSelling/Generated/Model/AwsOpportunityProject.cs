@@ -47,7 +47,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// distribute it across 12 months to provide an average monthly value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=0, Max=10)]
         public List<ExpectedCustomerSpend> ExpectedCustomerSpend
         {
             get { return this._expectedCustomerSpend; }
