@@ -17739,6 +17739,60 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type PublicIpDnsOption.
+    /// </summary>
+    public class PublicIpDnsOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PublicDualStackDnsName for PublicIpDnsOption
+        /// </summary>
+        public static readonly PublicIpDnsOption PublicDualStackDnsName = new PublicIpDnsOption("public-dual-stack-dns-name");
+        /// <summary>
+        /// Constant PublicIpv4DnsName for PublicIpDnsOption
+        /// </summary>
+        public static readonly PublicIpDnsOption PublicIpv4DnsName = new PublicIpDnsOption("public-ipv4-dns-name");
+        /// <summary>
+        /// Constant PublicIpv6DnsName for PublicIpDnsOption
+        /// </summary>
+        public static readonly PublicIpDnsOption PublicIpv6DnsName = new PublicIpDnsOption("public-ipv6-dns-name");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PublicIpDnsOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PublicIpDnsOption FindValue(string value)
+        {
+            return FindValue<PublicIpDnsOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PublicIpDnsOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RebootMigrationSupport.
     /// </summary>
     public class RebootMigrationSupport : ConstantClass

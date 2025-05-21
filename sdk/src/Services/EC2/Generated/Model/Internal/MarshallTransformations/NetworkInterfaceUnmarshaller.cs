@@ -206,6 +206,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.PrivateIpAddresses.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("publicDnsName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PublicDnsName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("publicIpDnsNameOptions", targetDepth))
+                    {
+                        var unmarshaller = PublicIpDnsNameOptionsUnmarshaller.Instance;
+                        unmarshalledObject.PublicIpDnsNameOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("requesterId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
