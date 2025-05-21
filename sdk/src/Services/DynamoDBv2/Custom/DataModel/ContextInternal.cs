@@ -157,6 +157,8 @@ namespace Amazon.DynamoDBv2.DataModel
                            $"if_not_exists({counterAttributeName},{startValueName}) + {deltaValueName} ,";
                 updateExpression.ExpressionAttributeNames[counterAttributeName] = propertyStorage.AttributeName;
                 updateExpression.ExpressionAttributeValues[deltaValueName] = propertyStorage.CounterDelta;
+
+                //CounterDelta is being subtracted from CounterStartValue to compensate it being added back to the starting value
                 updateExpression.ExpressionAttributeValues[startValueName] =
                     propertyStorage.CounterStartValue - propertyStorage.CounterDelta;
             }

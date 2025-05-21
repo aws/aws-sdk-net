@@ -378,11 +378,13 @@ namespace Amazon.DynamoDBv2.DataModel
             Document updateDocument;
             Expression versionExpression = null;
             
+            var returnValues=counterConditionExpression == null ? ReturnValues.None : ReturnValues.AllNewAttributes;
+
             if ((flatConfig.SkipVersionCheck.HasValue && flatConfig.SkipVersionCheck.Value) || !storage.Config.HasVersion)
             {
                 updateDocument = table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), new UpdateItemOperationConfig()
                 {
-                    ReturnValues = ReturnValues.AllNewAttributes
+                    ReturnValues = returnValues
                 }, counterConditionExpression);
             }
             else
@@ -393,15 +395,19 @@ namespace Amazon.DynamoDBv2.DataModel
 
                 var updateItemOperationConfig = new UpdateItemOperationConfig
                 {
-                    ReturnValues = ReturnValues.AllNewAttributes,
+                    ReturnValues = returnValues,
                     ConditionalExpression = versionExpression,
                 };
                 updateDocument = table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), updateItemOperationConfig, counterConditionExpression);
             }
 
+            if (returnValues==ReturnValues.AllNewAttributes)
+            {
+                storage.Document = updateDocument;
+            }
+
             if (counterConditionExpression == null && versionExpression == null) return;
 
-            storage.Document = updateDocument;
             PopulateInstance(storage, value, flatConfig);
         }
 
@@ -424,13 +430,16 @@ namespace Amazon.DynamoDBv2.DataModel
 
             Document updateDocument;
             Expression versionExpression = null;
+
+            var returnValues = counterConditionExpression == null ? ReturnValues.None : ReturnValues.AllNewAttributes;
+
             if (
                 (flatConfig.SkipVersionCheck.HasValue && flatConfig.SkipVersionCheck.Value)
                 || !storage.Config.HasVersion)
             {
                 updateDocument = await table.UpdateHelperAsync(storage.Document, table.MakeKey(storage.Document), new UpdateItemOperationConfig
                 {
-                    ReturnValues = ReturnValues.AllNewAttributes
+                    ReturnValues = returnValues
                 }, counterConditionExpression, cancellationToken).ConfigureAwait(false);
             }
             else
@@ -444,7 +453,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     table.MakeKey(storage.Document),
                     new UpdateItemOperationConfig
                     {
-                        ReturnValues = ReturnValues.AllNewAttributes,
+                        ReturnValues = returnValues,
                         ConditionalExpression = versionExpression
                     }, counterConditionExpression,
                     cancellationToken)
