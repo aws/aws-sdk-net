@@ -111,6 +111,96 @@
     <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.GetExecutionFlowSnapshotRequest.ExecutionIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9-]{1,36}$|^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10}/alias/[0-9a-zA-Z]{10}/execution/[a-zA-Z0-9-]{1,36})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.GetExecutionFlowSnapshotRequest.FlowAliasIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10}/alias/[0-9a-zA-Z]{10})|(\bTSTALIASID\b|[0-9a-zA-Z]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.GetExecutionFlowSnapshotRequest.FlowIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10})|([0-9a-zA-Z]{10})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.GetExecutionFlowSnapshotResponse.CustomerEncryptionKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.GetExecutionFlowSnapshotResponse.ExecutionRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/(service-role/)?.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.GetExecutionFlowSnapshotResponse.FlowAliasIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10}/alias/[0-9a-zA-Z]{10})|(\bTSTALIASID\b|[0-9a-zA-Z]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.GetExecutionFlowSnapshotResponse.FlowIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10})|([0-9a-zA-Z]{10})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.GetExecutionFlowSnapshotResponse.FlowVersion</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>^(DRAFT|[0-9]{0,4}[1-9][0-9]{0,4})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.GetFlowExecutionRequest.ExecutionIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9-]{1,36}$|^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10}/alias/[0-9a-zA-Z]{10}/execution/[a-zA-Z0-9-]{1,36})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.GetFlowExecutionRequest.FlowAliasIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10}/alias/[0-9a-zA-Z]{10})|(\bTSTALIASID\b|[0-9a-zA-Z]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.GetFlowExecutionRequest.FlowIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10})|([0-9a-zA-Z]{10})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.GetFlowExecutionResponse.ExecutionArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9-]{1,36}$|^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10}/alias/[0-9a-zA-Z]{10}/execution/[a-zA-Z0-9-]{1,36})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.GetFlowExecutionResponse.FlowAliasIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10}/alias/[0-9a-zA-Z]{10})|(\bTSTALIASID\b|[0-9a-zA-Z]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.GetFlowExecutionResponse.FlowIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10})|([0-9a-zA-Z]{10})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.GetFlowExecutionResponse.FlowVersion</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>^(DRAFT|[0-9]{0,4}[1-9][0-9]{0,4})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.GetInvocationStepRequest.InvocationIdentifier</property>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
@@ -252,6 +342,70 @@
     <min>2</min>
     <max>100</max>
     <pattern>^[0-9a-zA-Z._:-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.ListFlowExecutionEventsRequest.ExecutionIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9-]{1,36}$|^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10}/alias/[0-9a-zA-Z]{10}/execution/[a-zA-Z0-9-]{1,36})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.ListFlowExecutionEventsRequest.FlowAliasIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10}/alias/[0-9a-zA-Z]{10})|(\bTSTALIASID\b|[0-9a-zA-Z]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.ListFlowExecutionEventsRequest.FlowIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10})|([0-9a-zA-Z]{10})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.ListFlowExecutionEventsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.ListFlowExecutionEventsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\S*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.ListFlowExecutionEventsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\S*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.ListFlowExecutionsRequest.FlowAliasIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10}/alias/[0-9a-zA-Z]{10})|(\bTSTALIASID\b|[0-9a-zA-Z]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.ListFlowExecutionsRequest.FlowIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10})|([0-9a-zA-Z]{10})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.ListFlowExecutionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.ListFlowExecutionsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\S*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.ListFlowExecutionsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.ListInvocationsRequest.MaxResults</property>
@@ -399,6 +553,54 @@
     <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.StartFlowExecutionRequest.FlowAliasIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10}/alias/[0-9a-zA-Z]{10})|(\bTSTALIASID\b|[0-9a-zA-Z]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.StartFlowExecutionRequest.FlowExecutionName</property>
+    <min>0</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.StartFlowExecutionRequest.FlowIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10})|([0-9a-zA-Z]{10})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.StartFlowExecutionResponse.ExecutionArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9-]{1,36}$|^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10}/alias/[0-9a-zA-Z]{10}/execution/[a-zA-Z0-9-]{1,36})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.StopFlowExecutionRequest.ExecutionIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9-]{1,36}$|^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10}/alias/[0-9a-zA-Z]{10}/execution/[a-zA-Z0-9-]{1,36})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.StopFlowExecutionRequest.FlowAliasIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10}/alias/[0-9a-zA-Z]{10})|(\bTSTALIASID\b|[0-9a-zA-Z]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.StopFlowExecutionRequest.FlowIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10})|([0-9a-zA-Z]{10})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.StopFlowExecutionResponse.ExecutionArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9-]{1,36}$|^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10}/alias/[0-9a-zA-Z]{10}/execution/[a-zA-Z0-9-]{1,36})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.TagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>1011</max>
@@ -538,6 +740,10 @@
     <pattern>^([0-9a-zA-Z][_-]?){1,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.ConditionResultEvent.NodeName</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.CustomOrchestrationTrace.TraceId</property>
     <min>2</min>
     <max>16</max>
@@ -568,6 +774,42 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.FlowExecutionError.NodeName</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.FlowExecutionInputEvent.NodeName</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.FlowExecutionOutputEvent.NodeName</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.FlowExecutionSummary.ExecutionArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9-]{1,36}$|^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10}/alias/[0-9a-zA-Z]{10}/execution/[a-zA-Z0-9-]{1,36})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.FlowExecutionSummary.FlowAliasIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10}/alias/[0-9a-zA-Z]{10})|(\bTSTALIASID\b|[0-9a-zA-Z]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.FlowExecutionSummary.FlowIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10})|([0-9a-zA-Z]{10})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.FlowExecutionSummary.FlowVersion</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>^(DRAFT|[0-9]{0,4}[1-9][0-9]{0,4})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.FlowInput.NodeInputName</property>
     <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
   </property-value-rule>
@@ -580,11 +822,19 @@
     <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.FlowInputField.Name</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.FlowMultiTurnInputRequestEvent.NodeName</property>
     <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.FlowOutputEvent.NodeName</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.FlowOutputField.Name</property>
     <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -817,6 +1067,26 @@
     <property>Amazon.BedrockAgentRuntime.Model.ModelInvocationInput.TraceId</property>
     <min>2</min>
     <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.NodeFailureEvent.NodeName</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.NodeInputEvent.NodeName</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.NodeInputField.Name</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.NodeOutputEvent.NodeName</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.NodeOutputField.Name</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.Observation.TraceId</property>

@@ -699,6 +699,218 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type FlowErrorCode.
+    /// </summary>
+    public class FlowErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERNAL_SERVER for FlowErrorCode
+        /// </summary>
+        public static readonly FlowErrorCode INTERNAL_SERVER = new FlowErrorCode("INTERNAL_SERVER");
+        /// <summary>
+        /// Constant NODE_EXECUTION_FAILED for FlowErrorCode
+        /// </summary>
+        public static readonly FlowErrorCode NODE_EXECUTION_FAILED = new FlowErrorCode("NODE_EXECUTION_FAILED");
+        /// <summary>
+        /// Constant VALIDATION for FlowErrorCode
+        /// </summary>
+        public static readonly FlowErrorCode VALIDATION = new FlowErrorCode("VALIDATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlowErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowErrorCode FindValue(string value)
+        {
+            return FindValue<FlowErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FlowExecutionErrorType.
+    /// </summary>
+    public class FlowExecutionErrorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ExecutionTimedOut for FlowExecutionErrorType
+        /// </summary>
+        public static readonly FlowExecutionErrorType ExecutionTimedOut = new FlowExecutionErrorType("ExecutionTimedOut");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlowExecutionErrorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowExecutionErrorType FindValue(string value)
+        {
+            return FindValue<FlowExecutionErrorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowExecutionErrorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FlowExecutionEventType.
+    /// </summary>
+    public class FlowExecutionEventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Flow for FlowExecutionEventType
+        /// </summary>
+        public static readonly FlowExecutionEventType Flow = new FlowExecutionEventType("Flow");
+        /// <summary>
+        /// Constant Node for FlowExecutionEventType
+        /// </summary>
+        public static readonly FlowExecutionEventType Node = new FlowExecutionEventType("Node");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlowExecutionEventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowExecutionEventType FindValue(string value)
+        {
+            return FindValue<FlowExecutionEventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowExecutionEventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FlowExecutionStatus.
+    /// </summary>
+    public class FlowExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Aborted for FlowExecutionStatus
+        /// </summary>
+        public static readonly FlowExecutionStatus Aborted = new FlowExecutionStatus("Aborted");
+        /// <summary>
+        /// Constant Failed for FlowExecutionStatus
+        /// </summary>
+        public static readonly FlowExecutionStatus Failed = new FlowExecutionStatus("Failed");
+        /// <summary>
+        /// Constant Running for FlowExecutionStatus
+        /// </summary>
+        public static readonly FlowExecutionStatus Running = new FlowExecutionStatus("Running");
+        /// <summary>
+        /// Constant Succeeded for FlowExecutionStatus
+        /// </summary>
+        public static readonly FlowExecutionStatus Succeeded = new FlowExecutionStatus("Succeeded");
+        /// <summary>
+        /// Constant TimedOut for FlowExecutionStatus
+        /// </summary>
+        public static readonly FlowExecutionStatus TimedOut = new FlowExecutionStatus("TimedOut");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlowExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowExecutionStatus FindValue(string value)
+        {
+            return FindValue<FlowExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GeneratedQueryType.
     /// </summary>
     public class GeneratedQueryType : ConstantClass
@@ -1678,6 +1890,64 @@ namespace Amazon.BedrockAgentRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MemoryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NodeErrorCode.
+    /// </summary>
+    public class NodeErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BAD_GATEWAY for NodeErrorCode
+        /// </summary>
+        public static readonly NodeErrorCode BAD_GATEWAY = new NodeErrorCode("BAD_GATEWAY");
+        /// <summary>
+        /// Constant DEPENDENCY_FAILED for NodeErrorCode
+        /// </summary>
+        public static readonly NodeErrorCode DEPENDENCY_FAILED = new NodeErrorCode("DEPENDENCY_FAILED");
+        /// <summary>
+        /// Constant INTERNAL_SERVER for NodeErrorCode
+        /// </summary>
+        public static readonly NodeErrorCode INTERNAL_SERVER = new NodeErrorCode("INTERNAL_SERVER");
+        /// <summary>
+        /// Constant VALIDATION for NodeErrorCode
+        /// </summary>
+        public static readonly NodeErrorCode VALIDATION = new NodeErrorCode("VALIDATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodeErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodeErrorCode FindValue(string value)
+        {
+            return FindValue<NodeErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodeErrorCode(string value)
         {
             return FindValue(value);
         }
