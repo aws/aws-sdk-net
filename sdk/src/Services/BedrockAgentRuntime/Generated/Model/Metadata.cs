@@ -65,8 +65,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// In the final response, <c>endTime</c> is the end time time of the agent invocation
-        /// operation.
+        /// In the final response, <c>endTime</c> is the end time of the agent invocation operation.
         /// </para>
         /// </summary>
         public DateTime EndTime

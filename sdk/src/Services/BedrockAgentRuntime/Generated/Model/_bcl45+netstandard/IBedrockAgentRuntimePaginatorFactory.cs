@@ -38,6 +38,26 @@ namespace Amazon.BedrockAgentRuntime.Model
         IGetAgentMemoryPaginator GetAgentMemory(GetAgentMemoryRequest request);
 
         /// <summary>
+        /// Paginator for ListFlowExecutionEvents operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListFlowExecutionEventsPaginator ListFlowExecutionEvents(ListFlowExecutionEventsRequest request);
+
+        /// <summary>
+        /// Paginator for ListFlowExecutions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListFlowExecutionsPaginator ListFlowExecutions(ListFlowExecutionsRequest request);
+
+        /// <summary>
         /// Paginator for ListInvocations operation
         ///</summary>
         [AWSPaginator(

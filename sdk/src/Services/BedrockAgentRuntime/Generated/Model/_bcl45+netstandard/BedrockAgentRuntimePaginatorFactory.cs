@@ -45,6 +45,22 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
+        /// Paginator for ListFlowExecutionEvents operation
+        ///</summary>
+        public IListFlowExecutionEventsPaginator ListFlowExecutionEvents(ListFlowExecutionEventsRequest request) 
+        {
+            return new ListFlowExecutionEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFlowExecutions operation
+        ///</summary>
+        public IListFlowExecutionsPaginator ListFlowExecutions(ListFlowExecutionsRequest request) 
+        {
+            return new ListFlowExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListInvocations operation
         ///</summary>
         public IListInvocationsPaginator ListInvocations(ListInvocationsRequest request) 

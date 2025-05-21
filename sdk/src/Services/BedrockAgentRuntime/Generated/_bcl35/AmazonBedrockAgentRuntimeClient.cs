@@ -898,6 +898,158 @@ namespace Amazon.BedrockAgentRuntime
 
         #endregion
         
+        #region  GetExecutionFlowSnapshot
+
+        /// <summary>
+        /// Retrieves the flow definition snapshot used for an asynchronous execution. The snapshot
+        /// represents the flow metadata and definition as it existed at the time the asynchronous
+        /// execution was started. Note that even if the flow is edited after an execution starts,
+        /// the snapshot connected to the execution remains unchanged.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Asynchronous flows is in preview release for Amazon Bedrock and is subject to change.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExecutionFlowSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the GetExecutionFlowSnapshot service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetExecutionFlowSnapshot">REST API Reference for GetExecutionFlowSnapshot Operation</seealso>
+        public virtual GetExecutionFlowSnapshotResponse GetExecutionFlowSnapshot(GetExecutionFlowSnapshotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExecutionFlowSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExecutionFlowSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<GetExecutionFlowSnapshotResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetExecutionFlowSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetExecutionFlowSnapshot operation on AmazonBedrockAgentRuntimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetExecutionFlowSnapshot
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetExecutionFlowSnapshot">REST API Reference for GetExecutionFlowSnapshot Operation</seealso>
+        public virtual IAsyncResult BeginGetExecutionFlowSnapshot(GetExecutionFlowSnapshotRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExecutionFlowSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExecutionFlowSnapshotResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetExecutionFlowSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetExecutionFlowSnapshot.</param>
+        /// 
+        /// <returns>Returns a  GetExecutionFlowSnapshotResult from BedrockAgentRuntime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetExecutionFlowSnapshot">REST API Reference for GetExecutionFlowSnapshot Operation</seealso>
+        public virtual GetExecutionFlowSnapshotResponse EndGetExecutionFlowSnapshot(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetExecutionFlowSnapshotResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetFlowExecution
+
+        /// <summary>
+        /// Retrieves details about a specific asynchronous execution of a flow, including its
+        /// status, start and end times, and any errors that occurred during execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFlowExecution service method.</param>
+        /// 
+        /// <returns>The response from the GetFlowExecution service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetFlowExecution">REST API Reference for GetFlowExecution Operation</seealso>
+        public virtual GetFlowExecutionResponse GetFlowExecution(GetFlowExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFlowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFlowExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<GetFlowExecutionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFlowExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFlowExecution operation on AmazonBedrockAgentRuntimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFlowExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetFlowExecution">REST API Reference for GetFlowExecution Operation</seealso>
+        public virtual IAsyncResult BeginGetFlowExecution(GetFlowExecutionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFlowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFlowExecutionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFlowExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFlowExecution.</param>
+        /// 
+        /// <returns>Returns a  GetFlowExecutionResult from BedrockAgentRuntime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetFlowExecution">REST API Reference for GetFlowExecution Operation</seealso>
+        public virtual GetFlowExecutionResponse EndGetFlowExecution(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetFlowExecutionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetInvocationStep
 
         /// <summary>
@@ -1397,6 +1549,164 @@ namespace Amazon.BedrockAgentRuntime
         public virtual InvokeInlineAgentResponse EndInvokeInlineAgent(IAsyncResult asyncResult)
         {
             return EndInvoke<InvokeInlineAgentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListFlowExecutionEvents
+
+        /// <summary>
+        /// Lists events that occurred during an asynchronous execution of a flow. Events provide
+        /// detailed information about the execution progress, including node inputs and outputs,
+        /// flow inputs and outputs, condition results, and failure events.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Asynchronous flows is in preview release for Amazon Bedrock and is subject to change.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFlowExecutionEvents service method.</param>
+        /// 
+        /// <returns>The response from the ListFlowExecutionEvents service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListFlowExecutionEvents">REST API Reference for ListFlowExecutionEvents Operation</seealso>
+        public virtual ListFlowExecutionEventsResponse ListFlowExecutionEvents(ListFlowExecutionEventsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlowExecutionEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlowExecutionEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFlowExecutionEventsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFlowExecutionEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFlowExecutionEvents operation on AmazonBedrockAgentRuntimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFlowExecutionEvents
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListFlowExecutionEvents">REST API Reference for ListFlowExecutionEvents Operation</seealso>
+        public virtual IAsyncResult BeginListFlowExecutionEvents(ListFlowExecutionEventsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlowExecutionEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlowExecutionEventsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFlowExecutionEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFlowExecutionEvents.</param>
+        /// 
+        /// <returns>Returns a  ListFlowExecutionEventsResult from BedrockAgentRuntime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListFlowExecutionEvents">REST API Reference for ListFlowExecutionEvents Operation</seealso>
+        public virtual ListFlowExecutionEventsResponse EndListFlowExecutionEvents(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListFlowExecutionEventsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListFlowExecutions
+
+        /// <summary>
+        /// Lists all asynchronous executions for a flow. Results can be paginated and include
+        /// summary information about each execution, such as status, start and end times, and
+        /// the execution's Amazon Resource Name (ARN).
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Asynchronous flows is in preview release for Amazon Bedrock and is subject to change.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFlowExecutions service method.</param>
+        /// 
+        /// <returns>The response from the ListFlowExecutions service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListFlowExecutions">REST API Reference for ListFlowExecutions Operation</seealso>
+        public virtual ListFlowExecutionsResponse ListFlowExecutions(ListFlowExecutionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlowExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlowExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFlowExecutionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFlowExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFlowExecutions operation on AmazonBedrockAgentRuntimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFlowExecutions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListFlowExecutions">REST API Reference for ListFlowExecutions Operation</seealso>
+        public virtual IAsyncResult BeginListFlowExecutions(ListFlowExecutionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlowExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlowExecutionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFlowExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFlowExecutions.</param>
+        /// 
+        /// <returns>Returns a  ListFlowExecutionsResult from BedrockAgentRuntime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListFlowExecutions">REST API Reference for ListFlowExecutions Operation</seealso>
+        public virtual ListFlowExecutionsResponse EndListFlowExecutions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListFlowExecutionsResponse>(asyncResult);
         }
 
         #endregion
@@ -2219,6 +2529,188 @@ namespace Amazon.BedrockAgentRuntime
         public virtual RetrieveAndGenerateStreamResponse EndRetrieveAndGenerateStream(IAsyncResult asyncResult)
         {
             return EndInvoke<RetrieveAndGenerateStreamResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartFlowExecution
+
+        /// <summary>
+        /// Starts an asynchronous execution of an Amazon Bedrock flow. Unlike synchronous flows
+        /// that run until completion or time out after five minutes, you can run asynchronous
+        /// flows for longer durations. Asynchronous flows also yield control so that your application
+        /// can perform other tasks.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns an Amazon Resource Name (ARN) that you can use to track and
+        /// manage your flow's async execution.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Asynchronous flows is in preview release for Amazon Bedrock and is subject to change.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartFlowExecution service method.</param>
+        /// 
+        /// <returns>The response from the StartFlowExecution service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.BadGatewayException">
+        /// There was an issue with a dependency due to a server issue. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.DependencyFailedException">
+        /// There was an issue with a dependency. Check the resource configurations and retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/StartFlowExecution">REST API Reference for StartFlowExecution Operation</seealso>
+        public virtual StartFlowExecutionResponse StartFlowExecution(StartFlowExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartFlowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartFlowExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StartFlowExecutionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartFlowExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartFlowExecution operation on AmazonBedrockAgentRuntimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartFlowExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/StartFlowExecution">REST API Reference for StartFlowExecution Operation</seealso>
+        public virtual IAsyncResult BeginStartFlowExecution(StartFlowExecutionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartFlowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartFlowExecutionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartFlowExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartFlowExecution.</param>
+        /// 
+        /// <returns>Returns a  StartFlowExecutionResult from BedrockAgentRuntime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/StartFlowExecution">REST API Reference for StartFlowExecution Operation</seealso>
+        public virtual StartFlowExecutionResponse EndStartFlowExecution(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartFlowExecutionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopFlowExecution
+
+        /// <summary>
+        /// Stops an Amazon Bedrock flow's asynchronous execution. This operation prevents further
+        /// processing of the flow and changes the execution status to <c>Aborted</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopFlowExecution service method.</param>
+        /// 
+        /// <returns>The response from the StopFlowExecution service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.BadGatewayException">
+        /// There was an issue with a dependency due to a server issue. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.DependencyFailedException">
+        /// There was an issue with a dependency. Check the resource configurations and retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/StopFlowExecution">REST API Reference for StopFlowExecution Operation</seealso>
+        public virtual StopFlowExecutionResponse StopFlowExecution(StopFlowExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopFlowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopFlowExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StopFlowExecutionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopFlowExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopFlowExecution operation on AmazonBedrockAgentRuntimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopFlowExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/StopFlowExecution">REST API Reference for StopFlowExecution Operation</seealso>
+        public virtual IAsyncResult BeginStopFlowExecution(StopFlowExecutionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopFlowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopFlowExecutionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopFlowExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopFlowExecution.</param>
+        /// 
+        /// <returns>Returns a  StopFlowExecutionResult from BedrockAgentRuntime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/StopFlowExecution">REST API Reference for StopFlowExecution Operation</seealso>
+        public virtual StopFlowExecutionResponse EndStopFlowExecution(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopFlowExecutionResponse>(asyncResult);
         }
 
         #endregion
