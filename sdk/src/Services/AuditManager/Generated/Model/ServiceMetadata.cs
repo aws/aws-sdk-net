@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The metadata that's associated with the Amazon Web Service.
+    /// The metadata that's associated with the Amazon Web Services service.
     /// </summary>
     public partial class ServiceMetadata
     {
@@ -42,8 +42,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        ///  The category that the Amazon Web Service belongs to, such as compute, storage, or
-        /// database. 
+        ///  The category that the Amazon Web Services service belongs to, such as compute, storage,
+        /// or database. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -62,7 +62,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description of the Amazon Web Service. 
+        ///  The description of the Amazon Web Services service. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -81,7 +81,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        ///  The display name of the Amazon Web Service. 
+        ///  The display name of the Amazon Web Services service. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -100,7 +100,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the Amazon Web Service. 
+        ///  The name of the Amazon Web Services service. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=40)]

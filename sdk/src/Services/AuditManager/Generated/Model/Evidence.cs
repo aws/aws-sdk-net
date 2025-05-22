@@ -211,7 +211,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EventSource. 
         /// <para>
-        ///  The Amazon Web Service that the evidence is collected from. 
+        ///  The Amazon Web Services service that the evidence is collected from. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=40)]
