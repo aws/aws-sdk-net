@@ -46,6 +46,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetConversionSpec())
+            {
+                context.Writer.WritePropertyName("ConversionSpec");
+                context.Writer.WriteStringValue(requestObject.ConversionSpec);
+            }
+
             if(requestObject.IsSetFieldName())
             {
                 context.Writer.WritePropertyName("FieldName");
