@@ -30,26 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// The status of the logging configuration.
+    /// The status information for a query logging configuration.
     /// </summary>
-    public partial class LoggingConfigurationStatus
+    public partial class QueryLoggingConfigurationStatus
     {
-        private LoggingConfigurationStatusCode _statusCode;
+        private QueryLoggingConfigurationStatusCode _statusCode;
         private string _statusReason;
 
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// The current status of the current rules and alerting logging configuration.
+        /// The current status of the query logging configuration.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// These logging configurations are only for rules and alerting logs.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
-        public LoggingConfigurationStatusCode StatusCode
+        public QueryLoggingConfigurationStatusCode StatusCode
         {
             get { return this._statusCode; }
             set { this._statusCode = value; }
@@ -64,7 +59,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// If failed, the reason for the failure.
+        /// If there is a failure, the reason for the failure.
         /// </para>
         /// </summary>
         public string StatusReason

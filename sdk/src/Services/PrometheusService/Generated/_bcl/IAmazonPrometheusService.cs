@@ -147,9 +147,15 @@ namespace Amazon.PrometheusService
 
 
         /// <summary>
-        /// The <c>CreateLoggingConfiguration</c> operation creates a logging configuration for
-        /// the workspace. Use this operation to set the CloudWatch log group to which the logs
-        /// will be published to.
+        /// The <c>CreateLoggingConfiguration</c> operation creates rules and alerting logging
+        /// configuration for the workspace. Use this operation to set the CloudWatch log group
+        /// to which the logs will be published to.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// These logging configurations are only for rules and alerting logs.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoggingConfiguration service method.</param>
         /// 
@@ -172,9 +178,15 @@ namespace Amazon.PrometheusService
 
 
         /// <summary>
-        /// The <c>CreateLoggingConfiguration</c> operation creates a logging configuration for
-        /// the workspace. Use this operation to set the CloudWatch log group to which the logs
-        /// will be published to.
+        /// The <c>CreateLoggingConfiguration</c> operation creates rules and alerting logging
+        /// configuration for the workspace. Use this operation to set the CloudWatch log group
+        /// to which the logs will be published to.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// These logging configurations are only for rules and alerting logs.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoggingConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -196,6 +208,60 @@ namespace Amazon.PrometheusService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateLoggingConfiguration">REST API Reference for CreateLoggingConfiguration Operation</seealso>
         Task<CreateLoggingConfigurationResponse> CreateLoggingConfigurationAsync(CreateLoggingConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateQueryLoggingConfiguration
+
+
+        /// <summary>
+        /// Creates a query logging configuration for the specified workspace. This operation
+        /// enables logging of queries that exceed the specified QSP threshold.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQueryLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateQueryLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateQueryLoggingConfiguration">REST API Reference for CreateQueryLoggingConfiguration Operation</seealso>
+        CreateQueryLoggingConfigurationResponse CreateQueryLoggingConfiguration(CreateQueryLoggingConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Creates a query logging configuration for the specified workspace. This operation
+        /// enables logging of queries that exceed the specified QSP threshold.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQueryLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateQueryLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateQueryLoggingConfiguration">REST API Reference for CreateQueryLoggingConfiguration Operation</seealso>
+        Task<CreateQueryLoggingConfigurationResponse> CreateQueryLoggingConfigurationAsync(CreateQueryLoggingConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -307,6 +373,13 @@ namespace Amazon.PrometheusService
         /// The <c>scrapeConfiguration</c> parameter contains the base-64 encoded YAML configuration
         /// for the scraper.
         /// </para>
+        ///  
+        /// <para>
+        /// When creating a scraper, the service creates a <c>Network Interface</c> in each <b>Availability
+        /// Zone</b> that are passed into <c>CreateScraper</c> through subnets. These network
+        /// interfaces are used to connect to the Amazon EKS cluster within the VPC for scraping
+        /// metrics.
+        /// </para>
         ///  <note> 
         /// <para>
         /// For more information about collectors, including what metrics are collected, and how
@@ -363,6 +436,13 @@ namespace Amazon.PrometheusService
         /// <para>
         /// The <c>scrapeConfiguration</c> parameter contains the base-64 encoded YAML configuration
         /// for the scraper.
+        /// </para>
+        ///  
+        /// <para>
+        /// When creating a scraper, the service creates a <c>Network Interface</c> in each <b>Availability
+        /// Zone</b> that are passed into <c>CreateScraper</c> through subnets. These network
+        /// interfaces are used to connect to the Amazon EKS cluster within the VPC for scraping
+        /// metrics.
         /// </para>
         ///  <note> 
         /// <para>
@@ -541,7 +621,13 @@ namespace Amazon.PrometheusService
 
 
         /// <summary>
-        /// Deletes the logging configuration for a workspace.
+        /// Deletes the rules and alerting logging configuration for a workspace.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// These logging configurations are only for rules and alerting logs.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoggingConfiguration service method.</param>
         /// 
@@ -567,7 +653,13 @@ namespace Amazon.PrometheusService
 
 
         /// <summary>
-        /// Deletes the logging configuration for a workspace.
+        /// Deletes the rules and alerting logging configuration for a workspace.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// These logging configurations are only for rules and alerting logs.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoggingConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -592,6 +684,64 @@ namespace Amazon.PrometheusService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteLoggingConfiguration">REST API Reference for DeleteLoggingConfiguration Operation</seealso>
         Task<DeleteLoggingConfigurationResponse> DeleteLoggingConfigurationAsync(DeleteLoggingConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteQueryLoggingConfiguration
+
+
+        /// <summary>
+        /// Deletes the query logging configuration for the specified workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueryLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteQueryLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteQueryLoggingConfiguration">REST API Reference for DeleteQueryLoggingConfiguration Operation</seealso>
+        DeleteQueryLoggingConfigurationResponse DeleteQueryLoggingConfiguration(DeleteQueryLoggingConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the query logging configuration for the specified workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueryLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteQueryLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteQueryLoggingConfiguration">REST API Reference for DeleteQueryLoggingConfiguration Operation</seealso>
+        Task<DeleteQueryLoggingConfigurationResponse> DeleteQueryLoggingConfigurationAsync(DeleteQueryLoggingConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -865,7 +1015,14 @@ namespace Amazon.PrometheusService
 
 
         /// <summary>
-        /// Returns complete information about the current logging configuration of the workspace.
+        /// Returns complete information about the current rules and alerting logging configuration
+        /// of the workspace.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// These logging configurations are only for rules and alerting logs.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoggingConfiguration service method.</param>
         /// 
@@ -888,7 +1045,14 @@ namespace Amazon.PrometheusService
 
 
         /// <summary>
-        /// Returns complete information about the current logging configuration of the workspace.
+        /// Returns complete information about the current rules and alerting logging configuration
+        /// of the workspace.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// These logging configurations are only for rules and alerting logs.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoggingConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -910,6 +1074,58 @@ namespace Amazon.PrometheusService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeLoggingConfiguration">REST API Reference for DescribeLoggingConfiguration Operation</seealso>
         Task<DescribeLoggingConfigurationResponse> DescribeLoggingConfigurationAsync(DescribeLoggingConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeQueryLoggingConfiguration
+
+
+        /// <summary>
+        /// Retrieves the details of the query logging configuration for the specified workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQueryLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeQueryLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeQueryLoggingConfiguration">REST API Reference for DescribeQueryLoggingConfiguration Operation</seealso>
+        DescribeQueryLoggingConfigurationResponse DescribeQueryLoggingConfiguration(DescribeQueryLoggingConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the details of the query logging configuration for the specified workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQueryLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeQueryLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeQueryLoggingConfiguration">REST API Reference for DescribeQueryLoggingConfiguration Operation</seealso>
+        Task<DescribeQueryLoggingConfigurationResponse> DescribeQueryLoggingConfigurationAsync(DescribeQueryLoggingConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1741,7 +1957,14 @@ namespace Amazon.PrometheusService
 
 
         /// <summary>
-        /// Updates the log group ARN or the workspace ID of the current logging configuration.
+        /// Updates the log group ARN or the workspace ID of the current rules and alerting logging
+        /// configuration.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// These logging configurations are only for rules and alerting logs.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLoggingConfiguration service method.</param>
         /// 
@@ -1767,7 +1990,14 @@ namespace Amazon.PrometheusService
 
 
         /// <summary>
-        /// Updates the log group ARN or the workspace ID of the current logging configuration.
+        /// Updates the log group ARN or the workspace ID of the current rules and alerting logging
+        /// configuration.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// These logging configurations are only for rules and alerting logs.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLoggingConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1792,6 +2022,64 @@ namespace Amazon.PrometheusService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateLoggingConfiguration">REST API Reference for UpdateLoggingConfiguration Operation</seealso>
         Task<UpdateLoggingConfigurationResponse> UpdateLoggingConfigurationAsync(UpdateLoggingConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateQueryLoggingConfiguration
+
+
+        /// <summary>
+        /// Updates the query logging configuration for the specified workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueryLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateQueryLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateQueryLoggingConfiguration">REST API Reference for UpdateQueryLoggingConfiguration Operation</seealso>
+        UpdateQueryLoggingConfigurationResponse UpdateQueryLoggingConfiguration(UpdateQueryLoggingConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Updates the query logging configuration for the specified workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueryLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateQueryLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateQueryLoggingConfiguration">REST API Reference for UpdateQueryLoggingConfiguration Operation</seealso>
+        Task<UpdateQueryLoggingConfigurationResponse> UpdateQueryLoggingConfigurationAsync(UpdateQueryLoggingConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -28,6 +28,18 @@
     <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PrometheusService.Model.CreateQueryLoggingConfigurationRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.CreateQueryLoggingConfigurationRequest.WorkspaceId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PrometheusService.Model.CreateRuleGroupsNamespaceRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -127,6 +139,18 @@
     <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PrometheusService.Model.DeleteQueryLoggingConfigurationRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.DeleteQueryLoggingConfigurationRequest.WorkspaceId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PrometheusService.Model.DeleteRuleGroupsNamespaceRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -182,6 +206,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.DescribeLoggingConfigurationRequest.WorkspaceId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.DescribeQueryLoggingConfigurationRequest.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
     <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
@@ -330,6 +360,18 @@
     <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PrometheusService.Model.UpdateQueryLoggingConfigurationRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.UpdateQueryLoggingConfigurationRequest.WorkspaceId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PrometheusService.Model.UpdateScraperRequest.Alias</property>
     <min>1</min>
     <max>100</max>
@@ -391,6 +433,9 @@
     <pattern>^arn:aws[-a-z]*:aps:[-a-z0-9]+:[0-9]{12}:workspace/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PrometheusService.Model.CloudWatchLogDestination.LogGroupArn</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PrometheusService.Model.EksConfiguration.ClusterArn</property>
     <pattern>^arn:aws[-a-z]*:eks:[-a-z0-9]+:[0-9]{12}:cluster/.+$</pattern>
   </property-value-rule>
@@ -403,6 +448,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.LoggingConfigurationMetadata.Workspace</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.LoggingFilter.QspThreshold</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.QueryLoggingConfigurationMetadata.Workspace</property>
     <min>1</min>
     <max>64</max>
     <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>

@@ -30,37 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeLoggingConfiguration operation.
-    /// Returns complete information about the current rules and alerting logging configuration
-    /// of the workspace.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// These logging configurations are only for rules and alerting logs.
-    /// </para>
-    ///  </note>
+    /// This is the response object from the UpdateQueryLoggingConfiguration operation.
     /// </summary>
-    public partial class DescribeLoggingConfigurationRequest : AmazonPrometheusServiceRequest
+    public partial class UpdateQueryLoggingConfigurationResponse : AmazonWebServiceResponse
     {
-        private string _workspaceId;
+        private QueryLoggingConfigurationStatus _status;
 
         /// <summary>
-        /// Gets and sets the property WorkspaceId. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// The ID of the workspace to describe the logging configuration for.
+        /// The current status of the query logging configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
-        public string WorkspaceId
+        [AWSProperty(Required=true)]
+        public QueryLoggingConfigurationStatus Status
         {
-            get { return this._workspaceId; }
-            set { this._workspaceId = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if WorkspaceId property is set
-        internal bool IsSetWorkspaceId()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._workspaceId != null;
+            return this._status != null;
         }
 
     }
