@@ -1016,47 +1016,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(order.Payment.Price, savedOrder.Payment.Price);
             Assert.AreEqual(order.Payment.CompanyName, savedOrder.Payment.CompanyName);
 
-            // flattened property is a polymorphic type
-            var vehicleCar = new VehicleRecord()
-            {
-                Id = 3,
-                Vehicle = new Car
-                {
-                    Make = "Toyota",
-                    NumberOfDoors = 4
-                }
-            };
-
-            var vehicleTruck = new VehicleRecord()
-            {
-                Id = 4,
-                Vehicle = new Truck()
-                {
-                    Make = "Toyota",
-                    PayloadCapacity = 200
-                }
-            };
-
-            var transactWrite = Context.CreateTransactWrite<VehicleRecord>();
-            transactWrite.AddSaveItems(new[] { vehicleCar, vehicleTruck });
-            await transactWrite.ExecuteAsync();
-
-            var savedVehicleCar = await Context.LoadAsync<VehicleRecord>(vehicleCar.Id);
-            Assert.IsNotNull(savedVehicleCar);
-            Assert.AreEqual(vehicleCar.Id, savedVehicleCar.Id);
-            Assert.IsNotNull(savedVehicleCar.Vehicle);
-            Assert.IsInstanceOfType(savedVehicleCar.Vehicle, typeof(Car));
-            Assert.AreEqual(vehicleCar.Vehicle.Make, ((Car)savedVehicleCar.Vehicle).Make);
-            Assert.AreEqual(((Car)vehicleCar.Vehicle).NumberOfDoors, ((Car)savedVehicleCar.Vehicle).NumberOfDoors);
-
-            var savedVehicleTruck = await Context.LoadAsync<VehicleRecord>(vehicleTruck.Id);
-            Assert.IsNotNull(savedVehicleTruck);
-            Assert.AreEqual(vehicleTruck.Id, savedVehicleTruck.Id);
-            Assert.IsNotNull(savedVehicleTruck.Vehicle);
-            Assert.IsInstanceOfType(savedVehicleTruck.Vehicle, typeof(Truck));
-            Assert.AreEqual(vehicleTruck.Vehicle.Make, ((Truck)savedVehicleTruck.Vehicle).Make);
-            Assert.AreEqual(((Truck)vehicleTruck.Vehicle).PayloadCapacity, ((Truck)savedVehicleTruck.Vehicle).PayloadCapacity);
-
         }
 
 
@@ -3311,36 +3270,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             public string Street { get; set; }
 
             public string City { get; set; }
-        }
-
-        /// <summary>
-        /// A flattened property is a polymorphic type.
-        /// </summary>
-        [DynamoDBTable("HashTable")]
-        public class VehicleRecord
-        {
-            [DynamoDBHashKey]
-            public int Id { get; set; }
-
-            [DynamoDBFlatten]
-            [DynamoDBPolymorphicType("car", typeof(Car))]
-            [DynamoDBPolymorphicType("truck", typeof(Truck))]
-            public Vehicle Vehicle { get; set; }
-        }
-
-        public class Vehicle
-        {
-            public string Make { get; set; }
-        }
-
-        public class Car : Vehicle
-        {
-            public int NumberOfDoors { get; set; }
-        }
-
-        public class Truck : Vehicle
-        {
-            public double PayloadCapacity { get; set; }
         }
 
         [DynamoDBTable("HashTable")]

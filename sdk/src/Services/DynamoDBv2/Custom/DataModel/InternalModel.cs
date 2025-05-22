@@ -622,8 +622,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
             config.AddPropertyStorage(propertyName, value);
 
-            if (!AttributesToGet.Contains(attributeName))
-                AttributesToGet.Add(attributeName);
+                if (!AttributesToGet.Contains(attributeName))
+                    AttributesToGet.Add(attributeName);
             if (value.StoreAsEpoch)
                 AttributesToStoreAsEpoch.Add(attributeName);
             if (value.StoreAsEpochLong)
@@ -962,6 +962,13 @@ namespace Amazon.DynamoDBv2.DataModel
 
             // run through all DDB attributes
             List<DynamoDBAttribute> allAttributes = Utils.GetAttributes(member);
+
+            if(allAttributes.Count>1 &&
+                allAttributes.Any(a => a is DynamoDBFlattenAttribute))
+            {
+                throw new InvalidOperationException("DynamoDBFlatten cannot be combined with other annotations.");
+            }
+
             foreach (var attribute in allAttributes)
             {
                 // filter out ignored properties
@@ -977,6 +984,12 @@ namespace Amazon.DynamoDBv2.DataModel
                     propertyStorage.FlattenProperty = true;
 
                     var type = Utils.GetType(member);
+
+                    if (Utils.IsCollectionType(type) || Utils.IsPrimitive(type))
+                    {
+                        throw new InvalidOperationException("Cannot flatten primitive types or collections. Only complex objects are supported.");
+                    }
+
                     var members = Utils.GetMembersFromType(type);
 
                     foreach (var memberInfo in members)

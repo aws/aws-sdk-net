@@ -334,6 +334,17 @@ namespace Amazon.DynamoDBv2.DataModel
             new Type[] { typeof(DynamoDBContext) }
         };
 
+        internal static bool IsCollectionType([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type type)
+        {
+            if (type == typeof(string))
+                return false;
+
+            if (type.IsGenericType && typeof(IEnumerable).IsAssignableFrom(type))
+                return true;
+
+            return typeof(IEnumerable).IsAssignableFrom(type);
+        }
+
         internal static object InstantiateConverter([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type objectType, IDynamoDBContext context)
         {
             return InstantiateHelper(objectType, validConverterConstructorInputs, new object[] { context });
@@ -530,6 +541,5 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         #endregion
-
     }
 }
