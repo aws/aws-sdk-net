@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fixed DeleteObjects to throw DeleteObjectsException instead of AmazonS3Exception for consistent error handling"
+      ]
+    }
+  ]
+}

@@ -13,7 +13,9 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.IO;
 using System.Net;
+using System.Xml;
 using System.Collections.Generic;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
@@ -94,6 +96,77 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return;
+        }
+
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// For DeleteObjects operations, we always return DeleteObjectsException instead of AmazonS3Exception
+        /// to maintain consistency in exception types regardless of the specific error scenario.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
+        /// <returns></returns>
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+            var responseBodyBytes = context.GetResponseBodyBytes();
+
+            // First, try to parse as a standard DeleteObjects response (for cases where S3 returns mixed results)
+            if (responseBodyBytes != null && responseBodyBytes.Length > 0)
+            {
+                using (var streamCopy = new MemoryStream(responseBodyBytes))
+                using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
+                {
+                    try
+                    {
+                        var deleteResponse = this.Unmarshall(contextCopy) as DeleteObjectsResponse;
+                        
+                        // If we successfully parsed a DeleteObjects response, use it directly
+                        if (deleteResponse != null)
+                        {
+                            return new DeleteObjectsException(deleteResponse);
+                        }
+                    }
+                    catch (XmlException)
+                    {
+                        // Response is not a valid DeleteObjects XML, fall through to error handling
+                    }
+                    catch (InvalidOperationException)
+                    {
+                        // Response is not a valid DeleteObjects XML, fall through to error handling
+                    }
+                }
+            }
+
+            // For standard S3 error responses (like KeyTooLongError), create a DeleteObjectsException
+            // with the error information wrapped in a DeleteObjectsResponse
+            var errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
+            
+            // Create a DeleteObjectsResponse containing the error information
+            var deleteObjectsResponse = new DeleteObjectsResponse();
+            deleteObjectsResponse.DeleteErrors = new List<DeleteError>
+            {
+                new DeleteError
+                {
+                    Code = errorResponse?.Code ?? "UnknownError",
+                    Message = errorResponse?.Message ?? "An error occurred during the delete operation",
+                    Key = "" // We don't know which specific key caused the error in batch validation scenarios
+                }
+            };
+
+            // Create the DeleteObjectsException with our constructed response
+            var deleteException = new DeleteObjectsException(deleteObjectsResponse);
+            
+            // Set additional properties from the error response
+            if (errorResponse != null)
+            {
+                deleteException.ErrorCode = errorResponse.Code;
+                deleteException.RequestId = errorResponse.RequestId;
+                deleteException.StatusCode = statusCode;
+                // Note: ResponseBody will be set by the base exception handling if available
+            }
+            
+            return deleteException;
         }
 
         private static DeleteObjectsResponseUnmarshaller _instance;
