@@ -183,7 +183,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The execute command configuration for the cluster.
+        /// The execute command and managed storage configuration for the cluster.
         /// </para>
         /// </summary>
         public ClusterConfiguration Configuration

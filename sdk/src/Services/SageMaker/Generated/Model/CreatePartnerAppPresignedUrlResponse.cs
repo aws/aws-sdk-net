@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The presigned URL that you can use to access the SageMaker Partner AI App.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string Url
         {
             get { return this._url; }

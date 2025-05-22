@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The domain ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string DomainId
         {
             get { return this._domainId; }
@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         /// The user profile name. This value is not case sensitive.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string UserProfileName
         {
             get { return this._userProfileName; }

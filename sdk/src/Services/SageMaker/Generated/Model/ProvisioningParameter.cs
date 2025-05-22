@@ -64,7 +64,7 @@ namespace Amazon.SageMaker.Model
         /// The value of the provisioning parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4096)]
+        [AWSProperty(Min=0, Max=4096)]
         public string Value
         {
             get { return this._value; }

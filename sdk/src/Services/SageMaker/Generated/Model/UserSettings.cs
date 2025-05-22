@@ -145,7 +145,7 @@ namespace Amazon.SageMaker.Model
         /// domain. SageMaker doesn't apply these settings to shared spaces.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10)]
+        [AWSProperty(Min=0, Max=10)]
         public List<CustomFileSystemConfig> CustomFileSystemConfigs
         {
             get { return this._customFileSystemConfigs; }
@@ -198,7 +198,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Max=1023)]
+        [AWSProperty(Min=0, Max=1023)]
         public string DefaultLandingUri
         {
             get { return this._defaultLandingUri; }
@@ -358,7 +358,7 @@ namespace Amazon.SageMaker.Model
         /// domain. SageMaker doesn't apply these settings to shared spaces.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5)]
+        [AWSProperty(Min=0, Max=5)]
         public List<string> SecurityGroups
         {
             get { return this._securityGroups; }

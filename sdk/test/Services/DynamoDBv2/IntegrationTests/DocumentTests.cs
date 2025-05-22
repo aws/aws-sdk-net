@@ -58,6 +58,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Test expressions for put
                 TestExpressionPut(hashTable);
+                TestExpressionPutWithoutValues(hashTable);
 
                 // Test expressions for delete
                 TestExpressionsOnDelete(hashTable);
@@ -79,6 +80,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Test that attributes stored as Datetimes can be retrieved in UTC.
                 TestAsDateTimeUtc(numericHashRangeTable);
+
+                // Test Count on Query
+                TestSelectCountOnQuery(hashTable);
             }
         }
 
@@ -137,6 +141,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Test expressions for put
                 TestExpressionPut(hashTable);
+                TestExpressionPutWithoutValues(hashTable);
 
                 // Test expressions for delete
                 TestExpressionsOnDelete(hashTable);
@@ -1755,6 +1760,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             hashTable.DeleteItem(doc);
         }
 
+        private void TestExpressionPutWithoutValues(ITable hashTable)
+        {
+            var doc = new Document
+            {
+                ["Id"] = DateTime.UtcNow.Ticks
+            };
+
+            var expression = new Expression
+            {
+                ExpressionStatement = "attribute_not_exists(Id)"
+            };
+
+            var config = new PutItemOperationConfig
+            {
+                ConditionalExpression = expression
+            };
+
+            Assert.IsTrue(hashTable.TryPutItem(doc, config));
+            hashTable.DeleteItem(doc);
+        }
+
         private void TestExpressionUpdate(ITable hashTable)
         {
             Document doc = new Document();
@@ -1801,6 +1827,30 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             hashTable.DeleteItem(doc);
         }
 
+        private void TestSelectCountOnQuery(ITable hashTable)
+        {
+            Document doc = new Document();
+            doc["Id"] = 1;
+            doc["Data"] = Guid.NewGuid().ToString();
+
+            hashTable.PutItem(doc);
+            
+            var expression = new Expression
+            {
+                ExpressionStatement = "Id = :id",
+                ExpressionAttributeValues = { [":id"] = 1 }
+            };
+
+            var search = hashTable.Query(new QueryOperationConfig
+            {
+                KeyExpression = expression,
+                Select = SelectValues.Count
+            });
+
+            var docs = search.GetRemaining();
+            Assert.AreEqual(1, search.Count);
+            Assert.AreEqual(0, docs.Count);
+        }
 
         private bool AreValuesEqual(Document docA, Document docB, DynamoDBEntryConversion conversion = null)
         {

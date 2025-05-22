@@ -30,13 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains configurations for an input to a node.
+    /// Contains configurations for an input in an Amazon Bedrock Flows node.
     /// </summary>
     public partial class FlowNodeInput
     {
+        private FlowNodeInputCategory _category;
         private string _expression;
         private string _name;
         private FlowNodeIODataType _type;
+
+        /// <summary>
+        /// Gets and sets the property Category. 
+        /// <para>
+        /// Specifies how input data flows between iterations in a DoWhile loop.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>LoopCondition</c> - Controls whether the loop continues by evaluating condition
+        /// expressions against the input data. Use this category to define the condition that
+        /// determines if the loop should continue. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ReturnValueToLoopStart</c> - Defines data to pass back to the start of the loop's
+        /// next iteration. Use this category for variables that you want to update for each loop
+        /// iteration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ExitLoop</c> - Defines the value that's available once the loop ends. Use this
+        /// category to expose loop results to nodes outside the loop.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public FlowNodeInputCategory Category
+        {
+            get { return this._category; }
+            set { this._category = value; }
+        }
+
+        // Check to see if Category property is set
+        internal bool IsSetCategory()
+        {
+            return this._category != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Expression. 
@@ -62,7 +99,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A name for the input that you can reference.
+        /// Specifies a name for the input that you can reference.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,8 +118,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The data type of the input. If the input doesn't match this type at runtime, a validation
-        /// error will be thrown.
+        /// Specifies the data type of the input. If the input doesn't match this type at runtime,
+        /// a validation error will be thrown.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

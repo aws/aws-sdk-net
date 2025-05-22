@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model
         /// this file system in Amazon SageMaker AI Studio.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10)]
+        [AWSProperty(Min=0, Max=10)]
         public List<CustomFileSystemConfig> CustomFileSystemConfigs
         {
             get { return this._customFileSystemConfigs; }
@@ -154,7 +154,7 @@ namespace Amazon.SageMaker.Model
         /// The security group IDs for the Amazon VPC that the space uses for communication.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5)]
+        [AWSProperty(Min=0, Max=5)]
         public List<string> SecurityGroups
         {
             get { return this._securityGroups; }

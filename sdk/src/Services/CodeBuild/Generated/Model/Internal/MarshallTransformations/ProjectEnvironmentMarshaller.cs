@@ -69,6 +69,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ComputeType);
             }
 
+            if(requestObject.IsSetDockerServer())
+            {
+                context.Writer.WritePropertyName("dockerServer");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DockerServerMarshaller.Instance;
+                marshaller.Marshall(requestObject.DockerServer, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetEnvironmentVariables())
             {
                 context.Writer.WritePropertyName("environmentVariables");

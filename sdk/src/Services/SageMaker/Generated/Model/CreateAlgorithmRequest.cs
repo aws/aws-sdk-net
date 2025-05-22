@@ -50,7 +50,7 @@ namespace Amazon.SageMaker.Model
         /// A description of the algorithm.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string AlgorithmDescription
         {
             get { return this._algorithmDescription; }

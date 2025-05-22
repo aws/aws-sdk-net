@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 bucket where the inference request and response data is stored. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=512)]
+        [AWSProperty(Required=true, Min=0, Max=512)]
         public string Destination
         {
             get { return this._destination; }
@@ -80,7 +80,7 @@ namespace Amazon.SageMaker.Model
         /// encrypt captured data at rest using Amazon S3 server-side encryption. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKey
         {
             get { return this._kmsKey; }

@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// task based on this information.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public List<string> ContentClassifiers
         {
             get { return this._contentClassifiers; }

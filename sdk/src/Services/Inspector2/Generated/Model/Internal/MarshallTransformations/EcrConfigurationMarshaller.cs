@@ -52,6 +52,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.PullDateRescanDuration);
             }
 
+            if(requestObject.IsSetPullDateRescanMode())
+            {
+                context.Writer.WritePropertyName("pullDateRescanMode");
+                context.Writer.WriteStringValue(requestObject.PullDateRescanMode);
+            }
+
             if(requestObject.IsSetRescanDuration())
             {
                 context.Writer.WritePropertyName("rescanDuration");

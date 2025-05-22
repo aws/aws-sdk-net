@@ -47,7 +47,7 @@ namespace Amazon.SageMaker.Model
         /// A description for the project.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ProjectDescription
         {
             get { return this._projectDescription; }

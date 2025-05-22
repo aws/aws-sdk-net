@@ -67,7 +67,7 @@ namespace Amazon.SageMaker.Model
         /// steps, use the token in the next request.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -86,7 +86,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the pipeline execution.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string PipelineExecutionArn
         {
             get { return this._pipelineExecutionArn; }

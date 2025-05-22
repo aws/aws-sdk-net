@@ -125,7 +125,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineLifecycleSupport. 
         /// <para>
-        /// The life cycle type for the global cluster.
+        /// The lifecycle type for the global cluster.
         /// </para>
         ///  
         /// <para>

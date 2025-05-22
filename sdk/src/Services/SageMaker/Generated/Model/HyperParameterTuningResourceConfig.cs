@@ -177,7 +177,7 @@ namespace Amazon.SageMaker.Model
         /// encryption</a> for more information.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string VolumeKmsKeyId
         {
             get { return this._volumeKmsKeyId; }

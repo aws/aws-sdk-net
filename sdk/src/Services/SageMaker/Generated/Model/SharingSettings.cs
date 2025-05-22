@@ -68,7 +68,7 @@ namespace Amazon.SageMaker.Model
         /// S3 bucket.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string S3KmsKeyId
         {
             get { return this._s3KmsKeyId; }
@@ -88,7 +88,7 @@ namespace Amazon.SageMaker.Model
         /// the shared notebook snapshots.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string S3OutputPath
         {
             get { return this._s3OutputPath; }

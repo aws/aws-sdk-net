@@ -57,6 +57,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetInferenceConfiguration())
+            {
+                context.Writer.WritePropertyName("inferenceConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PromptInferenceConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.InferenceConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetKnowledgeBaseId())
             {
                 context.Writer.WritePropertyName("knowledgeBaseId");
@@ -67,6 +78,45 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("modelId");
                 context.Writer.WriteStringValue(requestObject.ModelId);
+            }
+
+            if(requestObject.IsSetNumberOfResults())
+            {
+                context.Writer.WritePropertyName("numberOfResults");
+                context.Writer.WriteNumberValue(requestObject.NumberOfResults.Value);
+            }
+
+            if(requestObject.IsSetOrchestrationConfiguration())
+            {
+                context.Writer.WritePropertyName("orchestrationConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = KnowledgeBaseOrchestrationConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.OrchestrationConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetPromptTemplate())
+            {
+                context.Writer.WritePropertyName("promptTemplate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = KnowledgeBasePromptTemplateMarshaller.Instance;
+                marshaller.Marshall(requestObject.PromptTemplate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetRerankingConfiguration())
+            {
+                context.Writer.WritePropertyName("rerankingConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VectorSearchRerankingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.RerankingConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
         }

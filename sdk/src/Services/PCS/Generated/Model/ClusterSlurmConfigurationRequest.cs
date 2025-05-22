@@ -34,8 +34,27 @@ namespace Amazon.PCS.Model
     /// </summary>
     public partial class ClusterSlurmConfigurationRequest
     {
+        private AccountingRequest _accounting;
         private int? _scaleDownIdleTimeInSeconds;
         private List<SlurmCustomSetting> _slurmCustomSettings = AWSConfigs.InitializeCollections ? new List<SlurmCustomSetting>() : null;
+
+        /// <summary>
+        /// Gets and sets the property Accounting. 
+        /// <para>
+        /// The accounting configuration includes configurable settings for Slurm accounting.
+        /// </para>
+        /// </summary>
+        public AccountingRequest Accounting
+        {
+            get { return this._accounting; }
+            set { this._accounting = value; }
+        }
+
+        // Check to see if Accounting property is set
+        internal bool IsSetAccounting()
+        {
+            return this._accounting != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ScaleDownIdleTimeInSeconds. 

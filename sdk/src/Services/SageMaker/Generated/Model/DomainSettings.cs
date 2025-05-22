@@ -124,7 +124,7 @@ namespace Amazon.SageMaker.Model
         /// for communication between Domain-level apps and user apps.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=3)]
+        [AWSProperty(Min=0, Max=3)]
         public List<string> SecurityGroupIds
         {
             get { return this._securityGroupIds; }

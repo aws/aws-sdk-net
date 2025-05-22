@@ -50,7 +50,7 @@ namespace Amazon.SageMaker.Model
         /// resource type that points to a SageMaker JumpStart public hub model.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Required=true, Min=0, Max=255)]
         public string HubContentArn
         {
             get { return this._hubContentArn; }

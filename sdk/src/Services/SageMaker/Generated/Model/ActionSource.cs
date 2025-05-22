@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The ID of the source.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string SourceId
         {
             get { return this._sourceId; }
@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         /// The type of the source.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string SourceType
         {
             get { return this._sourceType; }

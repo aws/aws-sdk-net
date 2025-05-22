@@ -160,8 +160,7 @@ namespace Amazon.LicenseManager.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Instances</c> dimension: <c>allowedTenancy</c> | <c>maximumCores</c> | <c>minimumCores</c>
-        /// | <c>maximumSockets</c> | <c>minimumSockets</c> | <c>maximumVcpus</c> | <c>minimumVcpus</c>
+        ///  <c>Instances</c> dimension: <c>allowedTenancy</c> | <c>maximumVcpus</c> | <c>minimumVcpus</c>
         /// 
         /// </para>
         ///  </li> <li> 

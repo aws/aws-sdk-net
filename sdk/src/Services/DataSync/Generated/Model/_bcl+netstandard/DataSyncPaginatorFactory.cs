@@ -37,22 +37,6 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Paginator for DescribeStorageSystemResourceMetrics operation
-        ///</summary>
-        public IDescribeStorageSystemResourceMetricsPaginator DescribeStorageSystemResourceMetrics(DescribeStorageSystemResourceMetricsRequest request) 
-        {
-            return new DescribeStorageSystemResourceMetricsPaginator(this.client, request);
-        }
-
-        /// <summary>
-        /// Paginator for DescribeStorageSystemResources operation
-        ///</summary>
-        public IDescribeStorageSystemResourcesPaginator DescribeStorageSystemResources(DescribeStorageSystemResourcesRequest request) 
-        {
-            return new DescribeStorageSystemResourcesPaginator(this.client, request);
-        }
-
-        /// <summary>
         /// Paginator for ListAgents operation
         ///</summary>
         public IListAgentsPaginator ListAgents(ListAgentsRequest request) 
@@ -61,27 +45,11 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Paginator for ListDiscoveryJobs operation
-        ///</summary>
-        public IListDiscoveryJobsPaginator ListDiscoveryJobs(ListDiscoveryJobsRequest request) 
-        {
-            return new ListDiscoveryJobsPaginator(this.client, request);
-        }
-
-        /// <summary>
         /// Paginator for ListLocations operation
         ///</summary>
         public IListLocationsPaginator ListLocations(ListLocationsRequest request) 
         {
             return new ListLocationsPaginator(this.client, request);
-        }
-
-        /// <summary>
-        /// Paginator for ListStorageSystems operation
-        ///</summary>
-        public IListStorageSystemsPaginator ListStorageSystems(ListStorageSystemsRequest request) 
-        {
-            return new ListStorageSystemsPaginator(this.client, request);
         }
 
         /// <summary>

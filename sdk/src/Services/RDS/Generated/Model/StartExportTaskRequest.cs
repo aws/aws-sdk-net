@@ -196,39 +196,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// kms:Encrypt
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// kms:Decrypt
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// kms:GenerateDataKey
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// kms:GenerateDataKeyWithoutPlaintext
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// kms:ReEncryptFrom
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// kms:ReEncryptTo
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// kms:CreateGrant
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// kms:DescribeKey
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// kms:RetireGrant
         /// </para>
         ///  </li> </ul>
         /// </summary>

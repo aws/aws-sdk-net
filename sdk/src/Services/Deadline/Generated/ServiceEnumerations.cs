@@ -2049,6 +2049,10 @@ namespace Amazon.Deadline
     {
 
         /// <summary>
+        /// Constant DEPENDENCY_LIMIT_EXCEEDED for ServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly ServiceQuotaExceededExceptionReason DEPENDENCY_LIMIT_EXCEEDED = new ServiceQuotaExceededExceptionReason("DEPENDENCY_LIMIT_EXCEEDED");
+        /// <summary>
         /// Constant KMS_KEY_LIMIT_EXCEEDED for ServiceQuotaExceededExceptionReason
         /// </summary>
         public static readonly ServiceQuotaExceededExceptionReason KMS_KEY_LIMIT_EXCEEDED = new ServiceQuotaExceededExceptionReason("KMS_KEY_LIMIT_EXCEEDED");

@@ -88,7 +88,7 @@ namespace Amazon.SageMaker.Model
         /// Selects edge deployment plans with a device fleet name containing this name.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string DeviceFleetNameContains
         {
             get { return this._deviceFleetNameContains; }
@@ -162,7 +162,7 @@ namespace Amazon.SageMaker.Model
         /// Selects edge deployment plans with names containing this name.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string NameContains
         {
             get { return this._nameContains; }
@@ -181,7 +181,7 @@ namespace Amazon.SageMaker.Model
         /// The response from the last list when returning a list large enough to need tokening.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

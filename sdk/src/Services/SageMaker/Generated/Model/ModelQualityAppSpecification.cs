@@ -86,7 +86,7 @@ namespace Amazon.SageMaker.Model
         /// Sets the environment variables in the container that the monitoring job runs.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=50)]
+        [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }
@@ -105,7 +105,7 @@ namespace Amazon.SageMaker.Model
         /// The address of the container image that the monitoring job runs.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Required=true, Min=0, Max=255)]
         public string ImageUri
         {
             get { return this._imageUri; }
@@ -125,7 +125,7 @@ namespace Amazon.SageMaker.Model
         /// only for the built-in (first party) containers.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string PostAnalyticsProcessorSourceUri
         {
             get { return this._postAnalyticsProcessorSourceUri; }
@@ -165,7 +165,7 @@ namespace Amazon.SageMaker.Model
         /// containers.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string RecordPreprocessorSourceUri
         {
             get { return this._recordPreprocessorSourceUri; }

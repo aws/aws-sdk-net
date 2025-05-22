@@ -34,10 +34,12 @@ namespace Amazon.SageMaker.Model
     /// <para>
     /// This data type is intended for use exclusively by SageMaker Canvas and cannot be used
     /// in other contexts at the moment.
-    /// </para>
+    /// 
     ///  </note> 
     /// <para>
     /// Specifies the compute configuration for the EMR Serverless job.
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial class EmrServerlessComputeConfig

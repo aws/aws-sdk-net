@@ -78,7 +78,7 @@ namespace Amazon.SageMaker.Model
         /// A free form description of a <c>FeatureGroup</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=128)]
+        [AWSProperty(Min=0, Max=128)]
         public string Description
         {
             get { return this._description; }
@@ -124,7 +124,7 @@ namespace Amazon.SageMaker.Model
         /// a <c>FeatureGroup</c> from the <c>OfflineStore</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -177,7 +177,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of a <c>FeatureGroup</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string FeatureGroupArn
         {
             get { return this._featureGroupArn; }

@@ -62,6 +62,12 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
                     unmarshalledObject.DedupeRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("dedupeStrategy", targetDepth))
+                {
+                    var unmarshaller = DataIntegrationFlowDedupeStrategyUnmarshaller.Instance;
+                    unmarshalledObject.DedupeStrategy = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("loadType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

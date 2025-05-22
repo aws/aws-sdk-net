@@ -163,7 +163,7 @@ namespace Amazon.SageMaker.Model
         /// AI App.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string Tier
         {
             get { return this._tier; }

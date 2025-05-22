@@ -150,7 +150,7 @@ namespace Amazon.SageMaker.Model
         /// job runs on.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string ResourceKey
         {
             get { return this._resourceKey; }

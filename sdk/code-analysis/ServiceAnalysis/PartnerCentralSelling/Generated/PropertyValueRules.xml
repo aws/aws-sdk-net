@@ -720,7 +720,6 @@
     <property>Amazon.PartnerCentralSelling.Model.AccountReceiver.Alias</property>
     <min>0</min>
     <max>80</max>
-    <pattern>^[\p{L}\p{N}\p{P}\p{Z}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.AccountReceiver.AwsAccountId</property>
@@ -843,7 +842,6 @@
     <property>Amazon.PartnerCentralSelling.Model.EngagementCustomer.CompanyName</property>
     <min>1</min>
     <max>120</max>
-    <pattern>^[\p{L}\p{N}\p{P}\p{Z}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementCustomer.WebsiteUrl</property>

@@ -45,6 +45,14 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
+        /// Paginator for GetClustersForImage operation
+        ///</summary>
+        public IGetClustersForImagePaginator GetClustersForImage(GetClustersForImageRequest request) 
+        {
+            return new GetClustersForImagePaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAccountPermissions operation
         ///</summary>
         public IListAccountPermissionsPaginator ListAccountPermissions(ListAccountPermissionsRequest request) 

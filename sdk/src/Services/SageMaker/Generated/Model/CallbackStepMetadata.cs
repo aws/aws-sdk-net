@@ -83,7 +83,7 @@ namespace Amazon.SageMaker.Model
         /// step.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string SqsQueueUrl
         {
             get { return this._sqsQueueUrl; }

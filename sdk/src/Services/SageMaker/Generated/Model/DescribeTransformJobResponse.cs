@@ -159,7 +159,7 @@ namespace Amazon.SageMaker.Model
         /// and values entries in the map.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=16)]
+        [AWSProperty(Min=0, Max=16)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }
@@ -196,7 +196,7 @@ namespace Amazon.SageMaker.Model
         /// Amazon SageMaker Events with Amazon CloudWatch</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -216,7 +216,7 @@ namespace Amazon.SageMaker.Model
         /// created the transform or training job.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string LabelingJobArn
         {
             get { return this._labelingJobArn; }
@@ -292,7 +292,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the model used in the transform job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string ModelName
         {
             get { return this._modelName; }
@@ -349,7 +349,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the transform job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string TransformJobArn
         {
             get { return this._transformJobArn; }

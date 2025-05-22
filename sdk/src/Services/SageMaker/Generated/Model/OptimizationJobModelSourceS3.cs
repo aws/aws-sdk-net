@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// An Amazon S3 URI that locates a source model to optimize with an optimization job.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string S3Uri
         {
             get { return this._s3Uri; }

@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of the updated MLflow Tracking Server.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string TrackingServerArn
         {
             get { return this._trackingServerArn; }

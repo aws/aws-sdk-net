@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the destination.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string DestinationArn
         {
             get { return this._destinationArn; }
@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of the source.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string SourceArn
         {
             get { return this._sourceArn; }

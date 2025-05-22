@@ -339,6 +339,12 @@ namespace Amazon.Extensions.NETCore.Setup
             {
                 config.Timeout = defaultConfig.Timeout.Value;
             }
+#if NET8_0_OR_GREATER
+            if (defaultConfig.ConnectTimeout.HasValue)
+            {
+                config.ConnectTimeout = defaultConfig.ConnectTimeout.Value;
+            }
+#endif
             if (defaultConfig.UseAlternateUserAgentHeader.HasValue)
             {
                 config.UseAlternateUserAgentHeader = defaultConfig.UseAlternateUserAgentHeader.Value;

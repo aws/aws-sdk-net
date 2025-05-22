@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the SageMaker HyperPod cluster from which to delete the specified nodes.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string ClusterName
         {
             get { return this._clusterName; }

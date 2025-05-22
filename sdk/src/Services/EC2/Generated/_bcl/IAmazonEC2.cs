@@ -3587,6 +3587,36 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateDelegateMacVolumeOwnershipTask
+
+
+        /// <summary>
+        /// Delegates ownership of the Amazon EBS root volume for an Apple silicon Mac instance
+        /// to an administrative user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDelegateMacVolumeOwnershipTask service method.</param>
+        /// 
+        /// <returns>The response from the CreateDelegateMacVolumeOwnershipTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDelegateMacVolumeOwnershipTask">REST API Reference for CreateDelegateMacVolumeOwnershipTask Operation</seealso>
+        CreateDelegateMacVolumeOwnershipTaskResponse CreateDelegateMacVolumeOwnershipTask(CreateDelegateMacVolumeOwnershipTaskRequest request);
+
+
+
+        /// <summary>
+        /// Delegates ownership of the Amazon EBS root volume for an Apple silicon Mac instance
+        /// to an administrative user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDelegateMacVolumeOwnershipTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDelegateMacVolumeOwnershipTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDelegateMacVolumeOwnershipTask">REST API Reference for CreateDelegateMacVolumeOwnershipTask Operation</seealso>
+        Task<CreateDelegateMacVolumeOwnershipTaskResponse> CreateDelegateMacVolumeOwnershipTaskAsync(CreateDelegateMacVolumeOwnershipTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateDhcpOptions
 
 
@@ -4857,6 +4887,134 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateLocalGatewayVirtualInterfaceGroup service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterfaceGroup">REST API Reference for CreateLocalGatewayVirtualInterfaceGroup Operation</seealso>
         Task<CreateLocalGatewayVirtualInterfaceGroupResponse> CreateLocalGatewayVirtualInterfaceGroupAsync(CreateLocalGatewayVirtualInterfaceGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateMacSystemIntegrityProtectionModificationTask
+
+
+        /// <summary>
+        /// Creates a System Integrity Protection (SIP) modification task to configure the SIP
+        /// settings for an x86 Mac instance or Apple silicon Mac instance. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mac-sip-settings.html#mac-sip-configure">
+        /// Configure SIP for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// When you configure the SIP settings for your instance, you can either enable or disable
+        /// all SIP settings, or you can specify a custom SIP configuration that selectively enables
+        /// or disables specific SIP settings.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you implement a custom configuration, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mac-sip-settings.html#mac-sip-check-settings">
+        /// connect to the instance and verify the settings</a> to ensure that your requirements
+        /// are properly implemented and functioning as intended.
+        /// </para>
+        ///  
+        /// <para>
+        /// SIP configurations might change with macOS updates. We recommend that you review custom
+        /// SIP settings after any macOS version upgrade to ensure continued compatibility and
+        /// proper functionality of your security configurations.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// To enable or disable all SIP settings, use the <b>MacSystemIntegrityProtectionStatus</b>
+        /// parameter only. For example, to enable all SIP settings, specify the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>MacSystemIntegrityProtectionStatus=enabled</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To specify a custom configuration that selectively enables or disables specific SIP
+        /// settings, use the <b>MacSystemIntegrityProtectionStatus</b> parameter to enable or
+        /// disable all SIP settings, and then use the <b>MacSystemIntegrityProtectionConfiguration</b>
+        /// parameter to specify exceptions. In this case, the exceptions you specify for <b>MacSystemIntegrityProtectionConfiguration</b>
+        /// override the value you specify for <b>MacSystemIntegrityProtectionStatus</b>. For
+        /// example, to enable all SIP settings, except <c>NvramProtections</c>, specify the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>MacSystemIntegrityProtectionStatus=enabled</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MacSystemIntegrityProtectionConfigurationRequest "NvramProtections=disabled"</c>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMacSystemIntegrityProtectionModificationTask service method.</param>
+        /// 
+        /// <returns>The response from the CreateMacSystemIntegrityProtectionModificationTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateMacSystemIntegrityProtectionModificationTask">REST API Reference for CreateMacSystemIntegrityProtectionModificationTask Operation</seealso>
+        CreateMacSystemIntegrityProtectionModificationTaskResponse CreateMacSystemIntegrityProtectionModificationTask(CreateMacSystemIntegrityProtectionModificationTaskRequest request);
+
+
+
+        /// <summary>
+        /// Creates a System Integrity Protection (SIP) modification task to configure the SIP
+        /// settings for an x86 Mac instance or Apple silicon Mac instance. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mac-sip-settings.html#mac-sip-configure">
+        /// Configure SIP for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// When you configure the SIP settings for your instance, you can either enable or disable
+        /// all SIP settings, or you can specify a custom SIP configuration that selectively enables
+        /// or disables specific SIP settings.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you implement a custom configuration, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mac-sip-settings.html#mac-sip-check-settings">
+        /// connect to the instance and verify the settings</a> to ensure that your requirements
+        /// are properly implemented and functioning as intended.
+        /// </para>
+        ///  
+        /// <para>
+        /// SIP configurations might change with macOS updates. We recommend that you review custom
+        /// SIP settings after any macOS version upgrade to ensure continued compatibility and
+        /// proper functionality of your security configurations.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// To enable or disable all SIP settings, use the <b>MacSystemIntegrityProtectionStatus</b>
+        /// parameter only. For example, to enable all SIP settings, specify the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>MacSystemIntegrityProtectionStatus=enabled</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To specify a custom configuration that selectively enables or disables specific SIP
+        /// settings, use the <b>MacSystemIntegrityProtectionStatus</b> parameter to enable or
+        /// disable all SIP settings, and then use the <b>MacSystemIntegrityProtectionConfiguration</b>
+        /// parameter to specify exceptions. In this case, the exceptions you specify for <b>MacSystemIntegrityProtectionConfiguration</b>
+        /// override the value you specify for <b>MacSystemIntegrityProtectionStatus</b>. For
+        /// example, to enable all SIP settings, except <c>NvramProtections</c>, specify the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>MacSystemIntegrityProtectionStatus=enabled</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MacSystemIntegrityProtectionConfigurationRequest "NvramProtections=disabled"</c>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMacSystemIntegrityProtectionModificationTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMacSystemIntegrityProtectionModificationTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateMacSystemIntegrityProtectionModificationTask">REST API Reference for CreateMacSystemIntegrityProtectionModificationTask Operation</seealso>
+        Task<CreateMacSystemIntegrityProtectionModificationTaskResponse> CreateMacSystemIntegrityProtectionModificationTaskAsync(CreateMacSystemIntegrityProtectionModificationTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -13399,6 +13557,14 @@ namespace Amazon.EC2
         /// that meet the account's Allowed AMIs criteria, and <c>false</c> for images that don't
         /// meet the criteria. For more information, see <a>EnableAllowedImagesSettings</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
+        /// </para>
         ///  <important> 
         /// <para>
         /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
@@ -13441,6 +13607,14 @@ namespace Amazon.EC2
         /// <c>audit-mode</c>, the <c>imageAllowed</c> field is set to <c>true</c> for images
         /// that meet the account's Allowed AMIs criteria, and <c>false</c> for images that don't
         /// meet the criteria. For more information, see <a>EnableAllowedImagesSettings</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -13485,6 +13659,14 @@ namespace Amazon.EC2
         /// <c>audit-mode</c>, the <c>imageAllowed</c> field is set to <c>true</c> for images
         /// that meet the account's Allowed AMIs criteria, and <c>false</c> for images that don't
         /// meet the criteria. For more information, see <a>EnableAllowedImagesSettings</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -13532,6 +13714,14 @@ namespace Amazon.EC2
         /// <c>audit-mode</c>, the <c>imageAllowed</c> field is set to <c>true</c> for images
         /// that meet the account's Allowed AMIs criteria, and <c>false</c> for images that don't
         /// meet the criteria. For more information, see <a>EnableAllowedImagesSettings</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -13982,6 +14172,14 @@ namespace Amazon.EC2
         /// do not specify any instance IDs at all, the call fails. If you describe instances
         /// and specify only instance IDs that are in an unaffected zone, the call works normally.
         /// </para>
+        ///  
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
+        /// </para>
         ///  <important> 
         /// <para>
         /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
@@ -14028,6 +14226,14 @@ namespace Amazon.EC2
         /// a service disruption and you specify instance IDs that are in the affected zone, or
         /// do not specify any instance IDs at all, the call fails. If you describe instances
         /// and specify only instance IDs that are in an unaffected zone, the call works normally.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -14076,6 +14282,14 @@ namespace Amazon.EC2
         /// a service disruption and you specify instance IDs that are in the affected zone, or
         /// do not specify any instance IDs at all, the call fails. If you describe instances
         /// and specify only instance IDs that are in an unaffected zone, the call works normally.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -14127,6 +14341,14 @@ namespace Amazon.EC2
         /// a service disruption and you specify instance IDs that are in the affected zone, or
         /// do not specify any instance IDs at all, the call fails. If you describe instances
         /// and specify only instance IDs that are in an unaffected zone, the call works normally.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -14183,7 +14405,15 @@ namespace Amazon.EC2
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> </ul> 
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
+        /// </para>
+        ///  <note> 
         /// <para>
         /// The order of the elements in the response, including those within nested structures,
         /// might vary. Applications should not assume the elements appear in a particular order.
@@ -14225,7 +14455,15 @@ namespace Amazon.EC2
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> </ul> 
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
+        /// </para>
+        ///  <note> 
         /// <para>
         /// The order of the elements in the response, including those within nested structures,
         /// might vary. Applications should not assume the elements appear in a particular order.
@@ -14268,7 +14506,15 @@ namespace Amazon.EC2
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> </ul> 
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
+        /// </para>
+        ///  <note> 
         /// <para>
         /// The order of the elements in the response, including those within nested structures,
         /// might vary. Applications should not assume the elements appear in a particular order.
@@ -14314,7 +14560,15 @@ namespace Amazon.EC2
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> </ul> 
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
+        /// </para>
+        ///  <note> 
         /// <para>
         /// The order of the elements in the response, including those within nested structures,
         /// might vary. Applications should not assume the elements appear in a particular order.
@@ -14363,6 +14617,10 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// Returns 3 network nodes in the response
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
         ///  <c>hpc6a.48xlarge</c> | <c>hpc6id.32xlarge</c> | <c>hpc7a.12xlarge</c> | <c>hpc7a.24xlarge</c>
         /// | <c>hpc7a.48xlarge</c> | <c>hpc7a.96xlarge</c> | <c>hpc7g.4xlarge</c> | <c>hpc7g.8xlarge</c>
         /// | <c>hpc7g.16xlarge</c> 
@@ -14377,7 +14635,15 @@ namespace Amazon.EC2
         ///  <c>trn1.2xlarge</c> | <c>trn1.32xlarge</c> | <c>trn1n.32xlarge</c> | <c>trn2.48xlarge</c>
         /// | <c>trn2u.48xlarge</c> 
         /// </para>
-        ///  </li> </ul> </li> </ul> 
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Returns 4 network nodes in the response
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>p6-b200.48xlarge</c> 
+        /// </para>
+        ///  </li> </ul> </li> </ul> </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
         /// EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.
@@ -14419,6 +14685,10 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// Returns 3 network nodes in the response
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
         ///  <c>hpc6a.48xlarge</c> | <c>hpc6id.32xlarge</c> | <c>hpc7a.12xlarge</c> | <c>hpc7a.24xlarge</c>
         /// | <c>hpc7a.48xlarge</c> | <c>hpc7a.96xlarge</c> | <c>hpc7g.4xlarge</c> | <c>hpc7g.8xlarge</c>
         /// | <c>hpc7g.16xlarge</c> 
@@ -14433,7 +14703,15 @@ namespace Amazon.EC2
         ///  <c>trn1.2xlarge</c> | <c>trn1.32xlarge</c> | <c>trn1n.32xlarge</c> | <c>trn2.48xlarge</c>
         /// | <c>trn2u.48xlarge</c> 
         /// </para>
-        ///  </li> </ul> </li> </ul> 
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Returns 4 network nodes in the response
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>p6-b200.48xlarge</c> 
+        /// </para>
+        ///  </li> </ul> </li> </ul> </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
         /// EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.
@@ -15182,6 +15460,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeMacModificationTasks
+
+
+        /// <summary>
+        /// Describes a System Integrity Protection (SIP) modification task or volume ownership
+        /// delegation task for an Amazon EC2 Mac instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mac-sip-settings.html#mac-sip-configure">Configure
+        /// SIP for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMacModificationTasks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMacModificationTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMacModificationTasks">REST API Reference for DescribeMacModificationTasks Operation</seealso>
+        DescribeMacModificationTasksResponse DescribeMacModificationTasks(DescribeMacModificationTasksRequest request);
+
+
+
+        /// <summary>
+        /// Describes a System Integrity Protection (SIP) modification task or volume ownership
+        /// delegation task for an Amazon EC2 Mac instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mac-sip-settings.html#mac-sip-configure">Configure
+        /// SIP for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMacModificationTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMacModificationTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMacModificationTasks">REST API Reference for DescribeMacModificationTasks Operation</seealso>
+        Task<DescribeMacModificationTasksResponse> DescribeMacModificationTasksAsync(DescribeMacModificationTasksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeManagedPrefixLists
 
 
@@ -15653,6 +15963,12 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the Outposts link aggregation groups (LAGs).
+        /// 
+        ///  <note> 
+        /// <para>
+        /// LAGs are only available for second-generation Outposts racks at this time.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOutpostLags service method.</param>
         /// 
@@ -15664,6 +15980,12 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the Outposts link aggregation groups (LAGs).
+        /// 
+        ///  <note> 
+        /// <para>
+        /// LAGs are only available for second-generation Outposts racks at this time.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOutpostLags service method.</param>
         /// <param name="cancellationToken">
@@ -21196,6 +21518,23 @@ namespace Amazon.EC2
         /// This is an idempotent operation. If you perform the operation more than once, Amazon
         /// EC2 doesn't return an error.
         /// </para>
+        ///  
+        /// <para>
+        /// An address cannot be disassociated if the all of the following conditions are met:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Network interface has a <c>publicDualStackDnsName</c> publicDnsName
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Public IPv4 address is the primary public IPv4 address
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Network interface only has one remaining public IPv4 address
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAddress service method.</param>
         /// 
@@ -21214,6 +21553,23 @@ namespace Amazon.EC2
         /// This is an idempotent operation. If you perform the operation more than once, Amazon
         /// EC2 doesn't return an error.
         /// </para>
+        ///  
+        /// <para>
+        /// An address cannot be disassociated if the all of the following conditions are met:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Network interface has a <c>publicDualStackDnsName</c> publicDnsName
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Public IPv4 address is the primary public IPv4 address
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Network interface only has one remaining public IPv4 address
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAddress service method.</param>
         /// <param name="cancellationToken">
@@ -26817,6 +27173,13 @@ namespace Amazon.EC2
         /// simplified automatic recovery for an unsupported instance type. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified
         /// automatic recovery</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Modifies the reboot migration behavior during a user-initiated reboot of an instance
+        /// that has a pending <c>system-reboot</c> event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable
+        /// or disable reboot migration</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceMaintenanceOptions service method.</param>
         /// 
@@ -26832,6 +27195,13 @@ namespace Amazon.EC2
         /// simplified automatic recovery for an unsupported instance type. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified
         /// automatic recovery</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Modifies the reboot migration behavior during a user-initiated reboot of an instance
+        /// that has a pending <c>system-reboot</c> event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable
+        /// or disable reboot migration</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceMaintenanceOptions service method.</param>
         /// <param name="cancellationToken">
@@ -27395,6 +27765,38 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyPrivateDnsNameOptions service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyPrivateDnsNameOptions">REST API Reference for ModifyPrivateDnsNameOptions Operation</seealso>
         Task<ModifyPrivateDnsNameOptionsResponse> ModifyPrivateDnsNameOptionsAsync(ModifyPrivateDnsNameOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyPublicIpDnsNameOptions
+
+
+        /// <summary>
+        /// Modify public hostname options for a network interface. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2
+        /// instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyPublicIpDnsNameOptions service method.</param>
+        /// 
+        /// <returns>The response from the ModifyPublicIpDnsNameOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyPublicIpDnsNameOptions">REST API Reference for ModifyPublicIpDnsNameOptions Operation</seealso>
+        ModifyPublicIpDnsNameOptionsResponse ModifyPublicIpDnsNameOptions(ModifyPublicIpDnsNameOptionsRequest request);
+
+
+
+        /// <summary>
+        /// Modify public hostname options for a network interface. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2
+        /// instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyPublicIpDnsNameOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyPublicIpDnsNameOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyPublicIpDnsNameOptions">REST API Reference for ModifyPublicIpDnsNameOptions Operation</seealso>
+        Task<ModifyPublicIpDnsNameOptionsResponse> ModifyPublicIpDnsNameOptionsAsync(ModifyPublicIpDnsNameOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -32590,12 +32992,12 @@ namespace Amazon.EC2
         /// attached to the instance persist. When you terminate an instance, any attached EBS
         /// volumes with the <c>DeleteOnTermination</c> block device mapping parameter set to
         /// <c>true</c> are automatically deleted. For more information about the differences
-        /// between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Amazon
-        /// EC2 instance state changes</a> in the <i>Amazon EC2 User Guide</i>.
+        /// between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+        /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
+        /// For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
         /// terminating your instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -32684,12 +33086,12 @@ namespace Amazon.EC2
         /// attached to the instance persist. When you terminate an instance, any attached EBS
         /// volumes with the <c>DeleteOnTermination</c> block device mapping parameter set to
         /// <c>true</c> are automatically deleted. For more information about the differences
-        /// between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Amazon
-        /// EC2 instance state changes</a> in the <i>Amazon EC2 User Guide</i>.
+        /// between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+        /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
+        /// For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
         /// terminating your instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>

@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </important>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string SourceS3Uri
         {
             get { return this._sourceS3Uri; }

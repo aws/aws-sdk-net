@@ -228,7 +228,7 @@ namespace Amazon.SageMaker.Model
         /// A name for the domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -266,7 +266,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated, use KmsKeyId instead.")]
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string HomeEfsFileSystemKmsKeyId
         {
             get { return this._homeEfsFileSystemKmsKeyId; }
@@ -287,7 +287,7 @@ namespace Amazon.SageMaker.Model
         /// specify a customer managed key.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -369,7 +369,7 @@ namespace Amazon.SageMaker.Model
         /// The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=32)]
+        [AWSProperty(Required=true, Min=0, Max=32)]
         public string VpcId
         {
             get { return this._vpcId; }

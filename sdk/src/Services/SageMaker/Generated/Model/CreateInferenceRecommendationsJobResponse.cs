@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the recommendation job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string JobArn
         {
             get { return this._jobArn; }

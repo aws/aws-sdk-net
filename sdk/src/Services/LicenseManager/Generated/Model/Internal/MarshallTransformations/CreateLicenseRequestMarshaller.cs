@@ -165,6 +165,22 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ProductSKU);
             }
 
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetValidity())
             {
                 context.Writer.WritePropertyName("Validity");

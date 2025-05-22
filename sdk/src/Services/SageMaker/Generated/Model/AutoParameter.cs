@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the hyperparameter to optimize using Autotune.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -64,7 +64,7 @@ namespace Amazon.SageMaker.Model
         /// An example value of the hyperparameter to optimize using Autotune.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string ValueHint
         {
             get { return this._valueHint; }

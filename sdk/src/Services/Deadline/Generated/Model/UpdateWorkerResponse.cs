@@ -34,7 +34,27 @@ namespace Amazon.Deadline.Model
     /// </summary>
     public partial class UpdateWorkerResponse : AmazonWebServiceResponse
     {
+        private HostConfiguration _hostConfiguration;
         private LogConfiguration _log;
+
+        /// <summary>
+        /// Gets and sets the property HostConfiguration. 
+        /// <para>
+        /// The script that runs as a worker is starting up that you can use to provide additional
+        /// configuration for workers in your fleet.
+        /// </para>
+        /// </summary>
+        public HostConfiguration HostConfiguration
+        {
+            get { return this._hostConfiguration; }
+            set { this._hostConfiguration = value; }
+        }
+
+        // Check to see if HostConfiguration property is set
+        internal bool IsSetHostConfiguration()
+        {
+            return this._hostConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Log. 

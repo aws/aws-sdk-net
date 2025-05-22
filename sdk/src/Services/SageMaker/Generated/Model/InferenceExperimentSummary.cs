@@ -88,7 +88,7 @@ namespace Amazon.SageMaker.Model
         /// The description of the inference experiment.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -207,7 +207,7 @@ namespace Amazon.SageMaker.Model
         /// The error message for the inference experiment status result.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string StatusReason
         {
             get { return this._statusReason; }

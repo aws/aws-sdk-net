@@ -56,6 +56,12 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("accounting", targetDepth))
+                {
+                    var unmarshaller = AccountingUnmarshaller.Instance;
+                    unmarshalledObject.Accounting = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("authKey", targetDepth))
                 {
                     var unmarshaller = SlurmAuthKeyUnmarshaller.Instance;

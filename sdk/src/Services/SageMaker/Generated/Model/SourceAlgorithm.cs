@@ -112,7 +112,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ModelDataUrl
         {
             get { return this._modelDataUrl; }

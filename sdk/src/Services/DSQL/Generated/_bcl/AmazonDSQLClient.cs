@@ -47,10 +47,10 @@ namespace Amazon.DSQL
     ///  
     /// <para>
     /// Amazon Aurora DSQL is a serverless, distributed SQL database suitable for workloads
-    /// of any size. Aurora DSQL is available in both single-Region and multi-Region configurations,
-    /// so your clusters and databases are always available even if an Availability Zone or
-    /// an Amazon Web Services Region are unavailable. Aurora DSQL lets you focus on using
-    /// your data to acquire new insights for your business and customers.
+    /// of any size. is available in both single-Region and multi-Region configurations, so
+    /// your clusters and databases are always available even if an Availability Zone or an
+    /// Amazon Web Services Region are unavailable. lets you focus on using your data to acquire
+    /// new insights for your business and customers.
     /// </para>
     /// </summary>
     public partial class AmazonDSQLClient : AmazonServiceClient, IAmazonDSQL
@@ -274,7 +274,80 @@ namespace Amazon.DSQL
 
 
         /// <summary>
-        /// Creates a cluster in Amazon Aurora DSQL.
+        /// The CreateCluster API allows you to create both single-region clusters and multi-Region
+        /// clusters. With the addition of the <i>multiRegionProperties</i> parameter, you can
+        /// create a cluster with witness Region support and establish peer relationships with
+        /// clusters in other Regions during creation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Creating multi-Region clusters requires additional IAM permissions beyond those needed
+        /// for single-Region clusters, as detailed in the <b>Required permissions</b> section
+        /// below.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Required permissions</b> 
+        /// </para>
+        ///  <dl> <dt>dsql:CreateCluster</dt> <dd> 
+        /// <para>
+        /// Required to create a cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: <c>arn:aws:dsql:region:account-id:cluster/*</c> 
+        /// </para>
+        ///  </dd> <dt>dsql:TagResource</dt> <dd> 
+        /// <para>
+        /// Permission to add tags to a resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: <c>arn:aws:dsql:region:account-id:cluster/*</c> 
+        /// </para>
+        ///  </dd> <dt>dsql:PutMultiRegionProperties</dt> <dd> 
+        /// <para>
+        /// Permission to configure multi-region properties for a cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: <c>arn:aws:dsql:region:account-id:cluster/*</c> 
+        /// </para>
+        ///  </dd> <dt>dsql:AddPeerCluster</dt> <dd> 
+        /// <para>
+        /// When specifying <c>multiRegionProperties.clusters</c>, permission to add peer clusters.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Local cluster: <c>arn:aws:dsql:region:account-id:cluster/*</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Each peer cluster: exact ARN of each specified peer cluster
+        /// </para>
+        ///  </li> </ul> </dd> <dt>dsql:PutWitnessRegion</dt> <dd> 
+        /// <para>
+        /// When specifying <c>multiRegionProperties.witnessRegion</c>, permission to set a witness
+        /// Region. This permission is checked both in the cluster Region and in the witness Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: <c>arn:aws:dsql:region:account-id:cluster/*</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Condition Keys: <c>dsql:WitnessRegion</c> (matching the specified witness region)
+        /// </para>
+        ///  </dd> </dl> <important> <ul> <li> 
+        /// <para>
+        /// The witness Region specified in <c>multiRegionProperties.witnessRegion</c> cannot
+        /// be the same as the cluster's Region.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
         /// 
@@ -309,7 +382,80 @@ namespace Amazon.DSQL
 
 
         /// <summary>
-        /// Creates a cluster in Amazon Aurora DSQL.
+        /// The CreateCluster API allows you to create both single-region clusters and multi-Region
+        /// clusters. With the addition of the <i>multiRegionProperties</i> parameter, you can
+        /// create a cluster with witness Region support and establish peer relationships with
+        /// clusters in other Regions during creation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Creating multi-Region clusters requires additional IAM permissions beyond those needed
+        /// for single-Region clusters, as detailed in the <b>Required permissions</b> section
+        /// below.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Required permissions</b> 
+        /// </para>
+        ///  <dl> <dt>dsql:CreateCluster</dt> <dd> 
+        /// <para>
+        /// Required to create a cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: <c>arn:aws:dsql:region:account-id:cluster/*</c> 
+        /// </para>
+        ///  </dd> <dt>dsql:TagResource</dt> <dd> 
+        /// <para>
+        /// Permission to add tags to a resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: <c>arn:aws:dsql:region:account-id:cluster/*</c> 
+        /// </para>
+        ///  </dd> <dt>dsql:PutMultiRegionProperties</dt> <dd> 
+        /// <para>
+        /// Permission to configure multi-region properties for a cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: <c>arn:aws:dsql:region:account-id:cluster/*</c> 
+        /// </para>
+        ///  </dd> <dt>dsql:AddPeerCluster</dt> <dd> 
+        /// <para>
+        /// When specifying <c>multiRegionProperties.clusters</c>, permission to add peer clusters.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Local cluster: <c>arn:aws:dsql:region:account-id:cluster/*</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Each peer cluster: exact ARN of each specified peer cluster
+        /// </para>
+        ///  </li> </ul> </dd> <dt>dsql:PutWitnessRegion</dt> <dd> 
+        /// <para>
+        /// When specifying <c>multiRegionProperties.witnessRegion</c>, permission to set a witness
+        /// Region. This permission is checked both in the cluster Region and in the witness Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: <c>arn:aws:dsql:region:account-id:cluster/*</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Condition Keys: <c>dsql:WitnessRegion</c> (matching the specified witness region)
+        /// </para>
+        ///  </dd> </dl> <important> <ul> <li> 
+        /// <para>
+        /// The witness Region specified in <c>multiRegionProperties.witnessRegion</c> cannot
+        /// be the same as the cluster's Region.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
         /// <param name="cancellationToken">
@@ -343,89 +489,6 @@ namespace Amazon.DSQL
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateClusterResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  CreateMultiRegionClusters
-
-
-        /// <summary>
-        /// Creates multi-Region clusters in Amazon Aurora DSQL. Multi-Region clusters require
-        /// a linked Region list, which is an array of the Regions in which you want to create
-        /// linked clusters. Multi-Region clusters require a witness Region, which participates
-        /// in quorum in failure scenarios.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateMultiRegionClusters service method.</param>
-        /// 
-        /// <returns>The response from the CreateMultiRegionClusters service method, as returned by DSQL.</returns>
-        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
-        /// </exception>
-        /// <exception cref="Amazon.DSQL.Model.ConflictException">
-        /// The submitted action has conflicts.
-        /// </exception>
-        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
-        /// The request processing has failed because of an unknown error, exception or failure.
-        /// </exception>
-        /// <exception cref="Amazon.DSQL.Model.ServiceQuotaExceededException">
-        /// The service limit was exceeded.
-        /// </exception>
-        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
-        /// </exception>
-        /// <exception cref="Amazon.DSQL.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/CreateMultiRegionClusters">REST API Reference for CreateMultiRegionClusters Operation</seealso>
-        public virtual CreateMultiRegionClustersResponse CreateMultiRegionClusters(CreateMultiRegionClustersRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = CreateMultiRegionClustersRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = CreateMultiRegionClustersResponseUnmarshaller.Instance;
-
-            return Invoke<CreateMultiRegionClustersResponse>(request, options);
-        }
-
-
-        /// <summary>
-        /// Creates multi-Region clusters in Amazon Aurora DSQL. Multi-Region clusters require
-        /// a linked Region list, which is an array of the Regions in which you want to create
-        /// linked clusters. Multi-Region clusters require a witness Region, which participates
-        /// in quorum in failure scenarios.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateMultiRegionClusters service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the CreateMultiRegionClusters service method, as returned by DSQL.</returns>
-        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
-        /// </exception>
-        /// <exception cref="Amazon.DSQL.Model.ConflictException">
-        /// The submitted action has conflicts.
-        /// </exception>
-        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
-        /// The request processing has failed because of an unknown error, exception or failure.
-        /// </exception>
-        /// <exception cref="Amazon.DSQL.Model.ServiceQuotaExceededException">
-        /// The service limit was exceeded.
-        /// </exception>
-        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
-        /// </exception>
-        /// <exception cref="Amazon.DSQL.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/CreateMultiRegionClusters">REST API Reference for CreateMultiRegionClusters Operation</seealso>
-        public virtual Task<CreateMultiRegionClustersResponse> CreateMultiRegionClustersAsync(CreateMultiRegionClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = CreateMultiRegionClustersRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = CreateMultiRegionClustersResponseUnmarshaller.Instance;
-            
-            return InvokeAsync<CreateMultiRegionClustersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -503,83 +566,6 @@ namespace Amazon.DSQL
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteClusterResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  DeleteMultiRegionClusters
-
-
-        /// <summary>
-        /// Deletes a multi-Region cluster in Amazon Aurora DSQL.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteMultiRegionClusters service method.</param>
-        /// 
-        /// <returns>The response from the DeleteMultiRegionClusters service method, as returned by DSQL.</returns>
-        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
-        /// </exception>
-        /// <exception cref="Amazon.DSQL.Model.ConflictException">
-        /// The submitted action has conflicts.
-        /// </exception>
-        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
-        /// The request processing has failed because of an unknown error, exception or failure.
-        /// </exception>
-        /// <exception cref="Amazon.DSQL.Model.ResourceNotFoundException">
-        /// The resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
-        /// </exception>
-        /// <exception cref="Amazon.DSQL.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/DeleteMultiRegionClusters">REST API Reference for DeleteMultiRegionClusters Operation</seealso>
-        public virtual DeleteMultiRegionClustersResponse DeleteMultiRegionClusters(DeleteMultiRegionClustersRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DeleteMultiRegionClustersRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DeleteMultiRegionClustersResponseUnmarshaller.Instance;
-
-            return Invoke<DeleteMultiRegionClustersResponse>(request, options);
-        }
-
-
-        /// <summary>
-        /// Deletes a multi-Region cluster in Amazon Aurora DSQL.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteMultiRegionClusters service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DeleteMultiRegionClusters service method, as returned by DSQL.</returns>
-        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
-        /// </exception>
-        /// <exception cref="Amazon.DSQL.Model.ConflictException">
-        /// The submitted action has conflicts.
-        /// </exception>
-        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
-        /// The request processing has failed because of an unknown error, exception or failure.
-        /// </exception>
-        /// <exception cref="Amazon.DSQL.Model.ResourceNotFoundException">
-        /// The resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
-        /// </exception>
-        /// <exception cref="Amazon.DSQL.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/DeleteMultiRegionClusters">REST API Reference for DeleteMultiRegionClusters Operation</seealso>
-        public virtual Task<DeleteMultiRegionClustersResponse> DeleteMultiRegionClustersAsync(DeleteMultiRegionClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DeleteMultiRegionClustersRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DeleteMultiRegionClustersResponseUnmarshaller.Instance;
-            
-            return InvokeAsync<DeleteMultiRegionClustersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1020,7 +1006,107 @@ namespace Amazon.DSQL
 
 
         /// <summary>
-        /// Updates a cluster.
+        /// The <i>UpdateCluster</i> API allows you to modify both single-Region and multi-Region
+        /// cluster configurations. With the <i>multiRegionProperties</i> parameter, you can add
+        /// or modify witness Region support and manage peer relationships with clusters in other
+        /// Regions.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Note that updating multi-region clusters requires additional IAM permissions beyond
+        /// those needed for standard cluster updates, as detailed in the Permissions section.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Required permissions</b> 
+        /// </para>
+        ///  <dl> <dt>dsql:UpdateCluster</dt> <dd> 
+        /// <para>
+        /// Permission to update a DSQL cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: <c>arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/<i>cluster-id</i>
+        /// </c> 
+        /// </para>
+        ///  </dd> </dl> <dl> <dt>dsql:PutMultiRegionProperties</dt> <dd> 
+        /// <para>
+        /// Permission to configure multi-Region properties for a cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: <c>arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/<i>cluster-id</i>
+        /// </c> 
+        /// </para>
+        ///  </dd> </dl> <dl> <dt>dsql:GetCluster</dt> <dd> 
+        /// <para>
+        /// Permission to retrieve cluster information.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: <c>arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/<i>cluster-id</i>
+        /// </c> 
+        /// </para>
+        ///  </dd> <dt>dsql:AddPeerCluster</dt> <dd> 
+        /// <para>
+        /// Permission to add peer clusters.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Local cluster: <c>arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/<i>cluster-id</i>
+        /// </c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Each peer cluster: exact ARN of each specified peer cluster
+        /// </para>
+        ///  </li> </ul> </dd> <dt>dsql:RemovePeerCluster</dt> <dd> 
+        /// <para>
+        /// Permission to remove peer clusters. The <i>dsql:RemovePeerCluster</i> permission uses
+        /// a wildcard ARN pattern to simplify permission management during updates.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: <c>arn:aws:dsql:*:<i>account-id</i>:cluster/*</c> 
+        /// </para>
+        ///  </dd> </dl> <dl> <dt>dsql:PutWitnessRegion</dt> <dd> 
+        /// <para>
+        /// Permission to set a witness Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: <c>arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/<i>cluster-id</i>
+        /// </c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Condition Keys: dsql:WitnessRegion (matching the specified witness Region)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This permission is checked both in the cluster Region and in the witness Region.</b>
+        /// 
+        /// </para>
+        ///  </dd> </dl> <important> <ul> <li> 
+        /// <para>
+        /// The witness region specified in <c>multiRegionProperties.witnessRegion</c> cannot
+        /// be the same as the cluster's Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When updating clusters with peer relationships, permissions are checked for both adding
+        /// and removing peers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>dsql:RemovePeerCluster</c> permission uses a wildcard ARN pattern to simplify
+        /// permission management during updates.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCluster service method.</param>
         /// 
@@ -1055,7 +1141,107 @@ namespace Amazon.DSQL
 
 
         /// <summary>
-        /// Updates a cluster.
+        /// The <i>UpdateCluster</i> API allows you to modify both single-Region and multi-Region
+        /// cluster configurations. With the <i>multiRegionProperties</i> parameter, you can add
+        /// or modify witness Region support and manage peer relationships with clusters in other
+        /// Regions.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Note that updating multi-region clusters requires additional IAM permissions beyond
+        /// those needed for standard cluster updates, as detailed in the Permissions section.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Required permissions</b> 
+        /// </para>
+        ///  <dl> <dt>dsql:UpdateCluster</dt> <dd> 
+        /// <para>
+        /// Permission to update a DSQL cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: <c>arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/<i>cluster-id</i>
+        /// </c> 
+        /// </para>
+        ///  </dd> </dl> <dl> <dt>dsql:PutMultiRegionProperties</dt> <dd> 
+        /// <para>
+        /// Permission to configure multi-Region properties for a cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: <c>arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/<i>cluster-id</i>
+        /// </c> 
+        /// </para>
+        ///  </dd> </dl> <dl> <dt>dsql:GetCluster</dt> <dd> 
+        /// <para>
+        /// Permission to retrieve cluster information.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: <c>arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/<i>cluster-id</i>
+        /// </c> 
+        /// </para>
+        ///  </dd> <dt>dsql:AddPeerCluster</dt> <dd> 
+        /// <para>
+        /// Permission to add peer clusters.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Local cluster: <c>arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/<i>cluster-id</i>
+        /// </c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Each peer cluster: exact ARN of each specified peer cluster
+        /// </para>
+        ///  </li> </ul> </dd> <dt>dsql:RemovePeerCluster</dt> <dd> 
+        /// <para>
+        /// Permission to remove peer clusters. The <i>dsql:RemovePeerCluster</i> permission uses
+        /// a wildcard ARN pattern to simplify permission management during updates.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: <c>arn:aws:dsql:*:<i>account-id</i>:cluster/*</c> 
+        /// </para>
+        ///  </dd> </dl> <dl> <dt>dsql:PutWitnessRegion</dt> <dd> 
+        /// <para>
+        /// Permission to set a witness Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: <c>arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/<i>cluster-id</i>
+        /// </c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Condition Keys: dsql:WitnessRegion (matching the specified witness Region)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This permission is checked both in the cluster Region and in the witness Region.</b>
+        /// 
+        /// </para>
+        ///  </dd> </dl> <important> <ul> <li> 
+        /// <para>
+        /// The witness region specified in <c>multiRegionProperties.witnessRegion</c> cannot
+        /// be the same as the cluster's Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When updating clusters with peer relationships, permissions are checked for both adding
+        /// and removing peers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>dsql:RemovePeerCluster</c> permission uses a wildcard ARN pattern to simplify
+        /// permission management during updates.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCluster service method.</param>
         /// <param name="cancellationToken">

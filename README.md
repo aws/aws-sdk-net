@@ -706,8 +706,6 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Amazon Polly is a service that turns text into lifelike speech, making it easy to develop applications that use high-quality speech to increase engagement and accessibility.
 * [AWSSDK.Pricing](https://www.nuget.org/packages/AWSSDK.Pricing/)
 	* We launched new service, Price List Service.
-* [AWSSDK.Private5G](https://www.nuget.org/packages/AWSSDK.Private5G/)
-	* This is the initial SDK release for AWS Private 5G. AWS Private 5G is a managed service that makes it easy to deploy, operate, and scale your own private mobile network at your on-premises location.
 * [AWSSDK.PrometheusService](https://www.nuget.org/packages/AWSSDK.PrometheusService/)
 	* (New Service) Amazon Managed Service for Prometheus is a fully managed Prometheus-compatible monitoring service that makes it easy to monitor containerized applications securely and at scale.
 * [AWSSDK.Proton](https://www.nuget.org/packages/AWSSDK.Proton/)

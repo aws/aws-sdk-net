@@ -177,7 +177,7 @@ namespace Amazon.SageMaker.Model
         /// the map.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=16)]
+        [AWSProperty(Min=0, Max=16)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }
@@ -294,7 +294,7 @@ namespace Amazon.SageMaker.Model
         /// Region in an Amazon Web Services account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string ModelName
         {
             get { return this._modelName; }

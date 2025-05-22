@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// for the feature group. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string FeatureGroupArn
         {
             get { return this._featureGroupArn; }

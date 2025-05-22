@@ -3,10 +3,11 @@
     "UseHttp": true,
     "MaxErrorRetry": 6,
     "Timeout": 1000,
+    "ConnectTimeout": 500,
     "AuthenticationRegion": "us-east-1",
     "Region": "us-west-2",
     "DefaultsMode": "Standard",
-    "ForcePathStyle":  true,
+    "ForcePathStyle": true,
     "RetryMode": "Standard"
   }
 }

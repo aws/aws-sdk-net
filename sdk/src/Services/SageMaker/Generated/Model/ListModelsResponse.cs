@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         /// set of models, use it in the subsequent request. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -206,7 +206,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the workforce.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string WorkforceArn
         {
             get { return this._workforceArn; }
@@ -225,7 +225,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) that identifies the work team.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string WorkteamArn
         {
             get { return this._workteamArn; }

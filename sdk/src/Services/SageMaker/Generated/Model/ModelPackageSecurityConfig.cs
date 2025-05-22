@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The KMS Key ID (<c>KMSKeyId</c>) used for encryption of model package information.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2048)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }

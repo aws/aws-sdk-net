@@ -45,6 +45,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Filters applied to the limitations described in the form of key-value pairs.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid filter names: <c>database-id</c> | <c>engine-name</c> 
+        /// </para>
         /// </summary>
         public List<Filter> Filters
         {

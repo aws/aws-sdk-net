@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The Key Management Service encryption key ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 output path. Must be 512 characters or less.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string S3OutputPath
         {
             get { return this._s3OutputPath; }

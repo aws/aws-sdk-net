@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DSQL.Model
 {
     /// <summary>
-    /// Output Mixin
+    /// The output of a cluster.
     /// </summary>
     public partial class GetClusterResponse : AmazonWebServiceResponse
     {
@@ -38,9 +38,9 @@ namespace Amazon.DSQL.Model
         private DateTime? _creationTime;
         private bool? _deletionProtectionEnabled;
         private string _identifier;
-        private List<string> _linkedClusterArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private MultiRegionProperties _multiRegionProperties;
         private ClusterStatus _status;
-        private string _witnessRegion;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -119,21 +119,22 @@ namespace Amazon.DSQL.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LinkedClusterArns. 
+        /// Gets and sets the property MultiRegionProperties. 
         /// <para>
-        /// The ARNs of the clusters linked to the retrieved cluster.
+        /// Returns the current multi-Region cluster configuration, including witness region and
+        /// linked cluster information.
         /// </para>
         /// </summary>
-        public List<string> LinkedClusterArns
+        public MultiRegionProperties MultiRegionProperties
         {
-            get { return this._linkedClusterArns; }
-            set { this._linkedClusterArns = value; }
+            get { return this._multiRegionProperties; }
+            set { this._multiRegionProperties = value; }
         }
 
-        // Check to see if LinkedClusterArns property is set
-        internal bool IsSetLinkedClusterArns()
+        // Check to see if MultiRegionProperties property is set
+        internal bool IsSetMultiRegionProperties()
         {
-            return this._linkedClusterArns != null && (this._linkedClusterArns.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._multiRegionProperties != null;
         }
 
         /// <summary>
@@ -156,22 +157,19 @@ namespace Amazon.DSQL.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WitnessRegion. 
-        /// <para>
-        /// The witness Region of the cluster. Applicable only for multi-Region clusters.
-        /// </para>
+        /// Gets and sets the property Tags.
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
-        public string WitnessRegion
+        [AWSProperty(Min=0, Max=200)]
+        public Dictionary<string, string> Tags
         {
-            get { return this._witnessRegion; }
-            set { this._witnessRegion = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if WitnessRegion property is set
-        internal bool IsSetWitnessRegion()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._witnessRegion != null;
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

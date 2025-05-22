@@ -48,6 +48,16 @@ namespace Amazon.CodePipeline.Model
         IListActionTypesPaginator ListActionTypes(ListActionTypesRequest request);
 
         /// <summary>
+        /// Paginator for ListDeployActionExecutionTargets operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDeployActionExecutionTargetsPaginator ListDeployActionExecutionTargets(ListDeployActionExecutionTargetsRequest request);
+
+        /// <summary>
         /// Paginator for ListPipelineExecutions operation
         ///</summary>
         [AWSPaginator(

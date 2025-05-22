@@ -28,26 +28,6 @@ namespace Amazon.DataSync.Model
     {
 
         /// <summary>
-        /// Paginator for DescribeStorageSystemResourceMetrics operation
-        ///</summary>
-        [AWSPaginator(
-            InputToken = new[] { "NextToken" },
-            LimitKey = "MaxResults",
-            OutputToken = new[] { "NextToken" }
-        )]
-        IDescribeStorageSystemResourceMetricsPaginator DescribeStorageSystemResourceMetrics(DescribeStorageSystemResourceMetricsRequest request);
-
-        /// <summary>
-        /// Paginator for DescribeStorageSystemResources operation
-        ///</summary>
-        [AWSPaginator(
-            InputToken = new[] { "NextToken" },
-            LimitKey = "MaxResults",
-            OutputToken = new[] { "NextToken" }
-        )]
-        IDescribeStorageSystemResourcesPaginator DescribeStorageSystemResources(DescribeStorageSystemResourcesRequest request);
-
-        /// <summary>
         /// Paginator for ListAgents operation
         ///</summary>
         [AWSPaginator(
@@ -58,16 +38,6 @@ namespace Amazon.DataSync.Model
         IListAgentsPaginator ListAgents(ListAgentsRequest request);
 
         /// <summary>
-        /// Paginator for ListDiscoveryJobs operation
-        ///</summary>
-        [AWSPaginator(
-            InputToken = new[] { "NextToken" },
-            LimitKey = "MaxResults",
-            OutputToken = new[] { "NextToken" }
-        )]
-        IListDiscoveryJobsPaginator ListDiscoveryJobs(ListDiscoveryJobsRequest request);
-
-        /// <summary>
         /// Paginator for ListLocations operation
         ///</summary>
         [AWSPaginator(
@@ -76,16 +46,6 @@ namespace Amazon.DataSync.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListLocationsPaginator ListLocations(ListLocationsRequest request);
-
-        /// <summary>
-        /// Paginator for ListStorageSystems operation
-        ///</summary>
-        [AWSPaginator(
-            InputToken = new[] { "NextToken" },
-            LimitKey = "MaxResults",
-            OutputToken = new[] { "NextToken" }
-        )]
-        IListStorageSystemsPaginator ListStorageSystems(ListStorageSystemsRequest request);
 
         /// <summary>
         /// Paginator for ListTagsForResource operation

@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the hub content to reference.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string HubContentName
         {
             get { return this._hubContentName; }
@@ -105,7 +105,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of the public hub content to reference.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Required=true, Min=0, Max=255)]
         public string SageMakerPublicHubContentArn
         {
             get { return this._sageMakerPublicHubContentArn; }

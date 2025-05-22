@@ -2097,6 +2097,56 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type PoolsRunningMode.
+    /// </summary>
+    public class PoolsRunningMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALWAYS_ON for PoolsRunningMode
+        /// </summary>
+        public static readonly PoolsRunningMode ALWAYS_ON = new PoolsRunningMode("ALWAYS_ON");
+        /// <summary>
+        /// Constant AUTO_STOP for PoolsRunningMode
+        /// </summary>
+        public static readonly PoolsRunningMode AUTO_STOP = new PoolsRunningMode("AUTO_STOP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PoolsRunningMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PoolsRunningMode FindValue(string value)
+        {
+            return FindValue<PoolsRunningMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PoolsRunningMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Protocol.
     /// </summary>
     public class Protocol : ConstantClass
@@ -3227,6 +3277,10 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode InvalidIp = new WorkspaceImageErrorDetailCode("InvalidIp");
         /// <summary>
+        /// Constant MemoryIntegrityIncompatibility for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode MemoryIntegrityIncompatibility = new WorkspaceImageErrorDetailCode("MemoryIntegrityIncompatibility");
+        /// <summary>
         /// Constant MultipleBootPartition for WorkspaceImageErrorDetailCode
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode MultipleBootPartition = new WorkspaceImageErrorDetailCode("MultipleBootPartition");
@@ -3255,6 +3309,10 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode PendingReboot = new WorkspaceImageErrorDetailCode("PendingReboot");
         /// <summary>
+        /// Constant ProtocolOSIncompatibility for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode ProtocolOSIncompatibility = new WorkspaceImageErrorDetailCode("ProtocolOSIncompatibility");
+        /// <summary>
         /// Constant RealTimeUniversalDisabled for WorkspaceImageErrorDetailCode
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode RealTimeUniversalDisabled = new WorkspaceImageErrorDetailCode("RealTimeUniversalDisabled");
@@ -3270,6 +3328,10 @@ namespace Amazon.WorkSpaces
         /// Constant ReservedStorageInUse for WorkspaceImageErrorDetailCode
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode ReservedStorageInUse = new WorkspaceImageErrorDetailCode("ReservedStorageInUse");
+        /// <summary>
+        /// Constant RestrictedDriveLetterInUse for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode RestrictedDriveLetterInUse = new WorkspaceImageErrorDetailCode("RestrictedDriveLetterInUse");
         /// <summary>
         /// Constant StagedAppxPackage for WorkspaceImageErrorDetailCode
         /// </summary>

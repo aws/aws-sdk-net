@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model
         /// A brief summary about the algorithm.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string AlgorithmDescription
         {
             get { return this._algorithmDescription; }
@@ -202,7 +202,7 @@ namespace Amazon.SageMaker.Model
         /// The product identifier of the algorithm.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ProductId
         {
             get { return this._productId; }

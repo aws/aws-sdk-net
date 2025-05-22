@@ -150,7 +150,7 @@ namespace Amazon.SageMaker.Model
         /// managed key.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -226,7 +226,7 @@ namespace Amazon.SageMaker.Model
         /// AI App.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=64)]
+        [AWSProperty(Required=true, Min=0, Max=64)]
         public string Tier
         {
             get { return this._tier; }

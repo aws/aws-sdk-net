@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// The key used to encrypt stored data.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string VolumeKmsKeyId
         {
             get { return this._volumeKmsKeyId; }

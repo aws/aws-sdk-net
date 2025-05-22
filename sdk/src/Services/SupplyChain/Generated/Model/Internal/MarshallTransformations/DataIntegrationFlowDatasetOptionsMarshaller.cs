@@ -52,6 +52,17 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.DedupeRecords.Value);
             }
 
+            if(requestObject.IsSetDedupeStrategy())
+            {
+                context.Writer.WritePropertyName("dedupeStrategy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataIntegrationFlowDedupeStrategyMarshaller.Instance;
+                marshaller.Marshall(requestObject.DedupeStrategy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetLoadType())
             {
                 context.Writer.WritePropertyName("loadType");

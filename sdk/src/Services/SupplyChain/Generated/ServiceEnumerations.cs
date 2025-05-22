@@ -87,11 +87,123 @@ namespace Amazon.SupplyChain
 
 
     /// <summary>
+    /// Constants used for properties of type DataIntegrationEventDatasetLoadStatus.
+    /// </summary>
+    public class DataIntegrationEventDatasetLoadStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for DataIntegrationEventDatasetLoadStatus
+        /// </summary>
+        public static readonly DataIntegrationEventDatasetLoadStatus FAILED = new DataIntegrationEventDatasetLoadStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for DataIntegrationEventDatasetLoadStatus
+        /// </summary>
+        public static readonly DataIntegrationEventDatasetLoadStatus IN_PROGRESS = new DataIntegrationEventDatasetLoadStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for DataIntegrationEventDatasetLoadStatus
+        /// </summary>
+        public static readonly DataIntegrationEventDatasetLoadStatus SUCCEEDED = new DataIntegrationEventDatasetLoadStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataIntegrationEventDatasetLoadStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataIntegrationEventDatasetLoadStatus FindValue(string value)
+        {
+            return FindValue<DataIntegrationEventDatasetLoadStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataIntegrationEventDatasetLoadStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataIntegrationEventDatasetOperationType.
+    /// </summary>
+    public class DataIntegrationEventDatasetOperationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPEND for DataIntegrationEventDatasetOperationType
+        /// </summary>
+        public static readonly DataIntegrationEventDatasetOperationType APPEND = new DataIntegrationEventDatasetOperationType("APPEND");
+        /// <summary>
+        /// Constant DELETE for DataIntegrationEventDatasetOperationType
+        /// </summary>
+        public static readonly DataIntegrationEventDatasetOperationType DELETE = new DataIntegrationEventDatasetOperationType("DELETE");
+        /// <summary>
+        /// Constant UPSERT for DataIntegrationEventDatasetOperationType
+        /// </summary>
+        public static readonly DataIntegrationEventDatasetOperationType UPSERT = new DataIntegrationEventDatasetOperationType("UPSERT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataIntegrationEventDatasetOperationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataIntegrationEventDatasetOperationType FindValue(string value)
+        {
+            return FindValue<DataIntegrationEventDatasetOperationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataIntegrationEventDatasetOperationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataIntegrationEventType.
     /// </summary>
     public class DataIntegrationEventType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ScnDataDataset for DataIntegrationEventType
+        /// </summary>
+        public static readonly DataIntegrationEventType ScnDataDataset = new DataIntegrationEventType("scn.data.dataset");
         /// <summary>
         /// Constant ScnDataForecast for DataIntegrationEventType
         /// </summary>
@@ -182,6 +294,156 @@ namespace Amazon.SupplyChain
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataIntegrationEventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataIntegrationFlowDedupeStrategyType.
+    /// </summary>
+    public class DataIntegrationFlowDedupeStrategyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FIELD_PRIORITY for DataIntegrationFlowDedupeStrategyType
+        /// </summary>
+        public static readonly DataIntegrationFlowDedupeStrategyType FIELD_PRIORITY = new DataIntegrationFlowDedupeStrategyType("FIELD_PRIORITY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataIntegrationFlowDedupeStrategyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataIntegrationFlowDedupeStrategyType FindValue(string value)
+        {
+            return FindValue<DataIntegrationFlowDedupeStrategyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataIntegrationFlowDedupeStrategyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataIntegrationFlowExecutionStatus.
+    /// </summary>
+    public class DataIntegrationFlowExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for DataIntegrationFlowExecutionStatus
+        /// </summary>
+        public static readonly DataIntegrationFlowExecutionStatus FAILED = new DataIntegrationFlowExecutionStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for DataIntegrationFlowExecutionStatus
+        /// </summary>
+        public static readonly DataIntegrationFlowExecutionStatus IN_PROGRESS = new DataIntegrationFlowExecutionStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for DataIntegrationFlowExecutionStatus
+        /// </summary>
+        public static readonly DataIntegrationFlowExecutionStatus SUCCEEDED = new DataIntegrationFlowExecutionStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataIntegrationFlowExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataIntegrationFlowExecutionStatus FindValue(string value)
+        {
+            return FindValue<DataIntegrationFlowExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataIntegrationFlowExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataIntegrationFlowFieldPriorityDedupeSortOrder.
+    /// </summary>
+    public class DataIntegrationFlowFieldPriorityDedupeSortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASC for DataIntegrationFlowFieldPriorityDedupeSortOrder
+        /// </summary>
+        public static readonly DataIntegrationFlowFieldPriorityDedupeSortOrder ASC = new DataIntegrationFlowFieldPriorityDedupeSortOrder("ASC");
+        /// <summary>
+        /// Constant DESC for DataIntegrationFlowFieldPriorityDedupeSortOrder
+        /// </summary>
+        public static readonly DataIntegrationFlowFieldPriorityDedupeSortOrder DESC = new DataIntegrationFlowFieldPriorityDedupeSortOrder("DESC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataIntegrationFlowFieldPriorityDedupeSortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataIntegrationFlowFieldPriorityDedupeSortOrder FindValue(string value)
+        {
+            return FindValue<DataIntegrationFlowFieldPriorityDedupeSortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataIntegrationFlowFieldPriorityDedupeSortOrder(string value)
         {
             return FindValue(value);
         }
@@ -443,6 +705,68 @@ namespace Amazon.SupplyChain
 
 
     /// <summary>
+    /// Constants used for properties of type DataLakeDatasetPartitionTransformType.
+    /// </summary>
+    public class DataLakeDatasetPartitionTransformType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAY for DataLakeDatasetPartitionTransformType
+        /// </summary>
+        public static readonly DataLakeDatasetPartitionTransformType DAY = new DataLakeDatasetPartitionTransformType("DAY");
+        /// <summary>
+        /// Constant HOUR for DataLakeDatasetPartitionTransformType
+        /// </summary>
+        public static readonly DataLakeDatasetPartitionTransformType HOUR = new DataLakeDatasetPartitionTransformType("HOUR");
+        /// <summary>
+        /// Constant IDENTITY for DataLakeDatasetPartitionTransformType
+        /// </summary>
+        public static readonly DataLakeDatasetPartitionTransformType IDENTITY = new DataLakeDatasetPartitionTransformType("IDENTITY");
+        /// <summary>
+        /// Constant MONTH for DataLakeDatasetPartitionTransformType
+        /// </summary>
+        public static readonly DataLakeDatasetPartitionTransformType MONTH = new DataLakeDatasetPartitionTransformType("MONTH");
+        /// <summary>
+        /// Constant YEAR for DataLakeDatasetPartitionTransformType
+        /// </summary>
+        public static readonly DataLakeDatasetPartitionTransformType YEAR = new DataLakeDatasetPartitionTransformType("YEAR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataLakeDatasetPartitionTransformType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataLakeDatasetPartitionTransformType FindValue(string value)
+        {
+            return FindValue<DataLakeDatasetPartitionTransformType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataLakeDatasetPartitionTransformType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataLakeDatasetSchemaFieldType.
     /// </summary>
     public class DataLakeDatasetSchemaFieldType : ConstantClass
@@ -456,6 +780,10 @@ namespace Amazon.SupplyChain
         /// Constant INT for DataLakeDatasetSchemaFieldType
         /// </summary>
         public static readonly DataLakeDatasetSchemaFieldType INT = new DataLakeDatasetSchemaFieldType("INT");
+        /// <summary>
+        /// Constant LONG for DataLakeDatasetSchemaFieldType
+        /// </summary>
+        public static readonly DataLakeDatasetSchemaFieldType LONG = new DataLakeDatasetSchemaFieldType("LONG");
         /// <summary>
         /// Constant STRING for DataLakeDatasetSchemaFieldType
         /// </summary>

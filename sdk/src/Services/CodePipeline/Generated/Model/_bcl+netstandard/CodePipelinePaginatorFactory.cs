@@ -53,6 +53,14 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
+        /// Paginator for ListDeployActionExecutionTargets operation
+        ///</summary>
+        public IListDeployActionExecutionTargetsPaginator ListDeployActionExecutionTargets(ListDeployActionExecutionTargetsRequest request) 
+        {
+            return new ListDeployActionExecutionTargetsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPipelineExecutions operation
         ///</summary>
         public IListPipelineExecutionsPaginator ListPipelineExecutions(ListPipelineExecutionsRequest request) 

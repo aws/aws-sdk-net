@@ -108,6 +108,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFound"))
                 {
                     return DashboardNotFoundErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

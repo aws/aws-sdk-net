@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// ARN of the cluster policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string ClusterSchedulerConfigArn
         {
             get { return this._clusterSchedulerConfigArn; }

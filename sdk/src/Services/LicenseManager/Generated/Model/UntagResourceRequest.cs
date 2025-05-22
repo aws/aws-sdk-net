@@ -31,7 +31,7 @@ namespace Amazon.LicenseManager.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes the specified tags from the specified license configuration.
+    /// Removes the specified tags from the specified resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonLicenseManagerRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// Amazon Resource Name (ARN) of the license configuration.
+        /// Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

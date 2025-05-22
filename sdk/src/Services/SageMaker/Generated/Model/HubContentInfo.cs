@@ -92,7 +92,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the hub content.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Required=true, Min=0, Max=255)]
         public string HubContentArn
         {
             get { return this._hubContentArn; }
@@ -111,7 +111,7 @@ namespace Amazon.SageMaker.Model
         /// A description of the hub content.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1023)]
+        [AWSProperty(Min=0, Max=1023)]
         public string HubContentDescription
         {
             get { return this._hubContentDescription; }
@@ -130,7 +130,7 @@ namespace Amazon.SageMaker.Model
         /// The display name of the hub content.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string HubContentDisplayName
         {
             get { return this._hubContentDisplayName; }
@@ -149,7 +149,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the hub content.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string HubContentName
         {
             get { return this._hubContentName; }
@@ -168,7 +168,7 @@ namespace Amazon.SageMaker.Model
         /// The searchable keywords for the hub content.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=50)]
+        [AWSProperty(Min=0, Max=50)]
         public List<string> HubContentSearchKeywords
         {
             get { return this._hubContentSearchKeywords; }
@@ -263,7 +263,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of the public hub content.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string SageMakerPublicHubContentArn
         {
             get { return this._sageMakerPublicHubContentArn; }

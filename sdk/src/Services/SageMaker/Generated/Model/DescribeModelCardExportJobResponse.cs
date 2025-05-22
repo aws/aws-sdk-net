@@ -88,7 +88,7 @@ namespace Amazon.SageMaker.Model
         /// The failure reason if the model export job fails.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -126,7 +126,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the model card export job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string ModelCardExportJobArn
         {
             get { return this._modelCardExportJobArn; }

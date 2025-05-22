@@ -307,6 +307,56 @@ namespace Amazon.ControlTower
 
 
     /// <summary>
+    /// Constants used for properties of type EnabledBaselineDriftStatus.
+    /// </summary>
+    public class EnabledBaselineDriftStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DRIFTED for EnabledBaselineDriftStatus
+        /// </summary>
+        public static readonly EnabledBaselineDriftStatus DRIFTED = new EnabledBaselineDriftStatus("DRIFTED");
+        /// <summary>
+        /// Constant IN_SYNC for EnabledBaselineDriftStatus
+        /// </summary>
+        public static readonly EnabledBaselineDriftStatus IN_SYNC = new EnabledBaselineDriftStatus("IN_SYNC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EnabledBaselineDriftStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EnabledBaselineDriftStatus FindValue(string value)
+        {
+            return FindValue<EnabledBaselineDriftStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EnabledBaselineDriftStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EnablementStatus.
     /// </summary>
     public class EnablementStatus : ConstantClass

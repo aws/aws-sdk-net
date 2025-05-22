@@ -83,7 +83,8 @@ namespace Amazon.SupplyChain.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The name space of the dataset. The available values are:
+        /// The namespace of the dataset, besides the custom defined namespace, every instance
+        /// comes with below pre-defined namespaces:
         /// </para>
         ///  <ul> <li> 
         /// <para>

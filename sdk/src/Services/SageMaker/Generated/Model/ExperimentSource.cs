@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the source.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string SourceArn
         {
             get { return this._sourceArn; }
@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// The source type.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=128)]
+        [AWSProperty(Min=0, Max=128)]
         public string SourceType
         {
             get { return this._sourceType; }

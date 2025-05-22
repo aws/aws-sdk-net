@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The arguments for the container when you're running the application.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=50)]
+        [AWSProperty(Min=0, Max=50)]
         public List<string> ContainerArguments
         {
             get { return this._containerArguments; }
@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         /// The entrypoint used to run the application in the container.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<string> ContainerEntrypoint
         {
             get { return this._containerEntrypoint; }
@@ -82,7 +82,7 @@ namespace Amazon.SageMaker.Model
         /// The environment variables to set in the container
         /// </para>
         /// </summary>
-        [AWSProperty(Max=25)]
+        [AWSProperty(Min=0, Max=25)]
         public Dictionary<string, string> ContainerEnvironmentVariables
         {
             get { return this._containerEnvironmentVariables; }

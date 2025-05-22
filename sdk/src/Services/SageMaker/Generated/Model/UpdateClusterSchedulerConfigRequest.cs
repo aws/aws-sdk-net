@@ -46,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// ID of the cluster policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=12)]
+        [AWSProperty(Required=true, Min=0, Max=12)]
         public string ClusterSchedulerConfigId
         {
             get { return this._clusterSchedulerConfigId; }
@@ -65,7 +65,7 @@ namespace Amazon.SageMaker.Model
         /// Description of the cluster policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }

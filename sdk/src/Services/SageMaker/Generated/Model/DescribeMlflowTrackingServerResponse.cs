@@ -57,7 +57,7 @@ namespace Amazon.SageMaker.Model
         /// store.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ArtifactStoreUri
         {
             get { return this._artifactStoreUri; }
@@ -179,7 +179,7 @@ namespace Amazon.SageMaker.Model
         /// The MLflow version used for the described tracking server.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=16)]
+        [AWSProperty(Min=0, Max=16)]
         public string MlflowVersion
         {
             get { return this._mlflowVersion; }
@@ -218,7 +218,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of the described tracking server.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string TrackingServerArn
         {
             get { return this._trackingServerArn; }
@@ -292,7 +292,7 @@ namespace Amazon.SageMaker.Model
         /// The URL to connect to the MLflow user interface for the described tracking server.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string TrackingServerUrl
         {
             get { return this._trackingServerUrl; }
@@ -312,7 +312,7 @@ namespace Amazon.SageMaker.Model
         /// server.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=9)]
+        [AWSProperty(Min=0, Max=9)]
         public string WeeklyMaintenanceWindowStart
         {
             get { return this._weeklyMaintenanceWindowStart; }

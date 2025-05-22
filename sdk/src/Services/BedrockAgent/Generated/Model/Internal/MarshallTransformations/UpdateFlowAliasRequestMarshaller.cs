@@ -79,6 +79,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConcurrencyConfiguration())
+            {
+                context.Writer.WritePropertyName("concurrencyConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FlowAliasConcurrencyConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ConcurrencyConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");

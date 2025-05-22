@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the hub.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Required=true, Min=0, Max=255)]
         public string HubArn
         {
             get { return this._hubArn; }

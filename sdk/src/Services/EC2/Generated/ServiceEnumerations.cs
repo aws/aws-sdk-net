@@ -8391,6 +8391,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type InstanceRebootMigrationState.
+    /// </summary>
+    public class InstanceRebootMigrationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for InstanceRebootMigrationState
+        /// </summary>
+        public static readonly InstanceRebootMigrationState Default = new InstanceRebootMigrationState("default");
+        /// <summary>
+        /// Constant Disabled for InstanceRebootMigrationState
+        /// </summary>
+        public static readonly InstanceRebootMigrationState Disabled = new InstanceRebootMigrationState("disabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceRebootMigrationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceRebootMigrationState FindValue(string value)
+        {
+            return FindValue<InstanceRebootMigrationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceRebootMigrationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceStateName.
     /// </summary>
     public class InstanceStateName : ConstantClass
@@ -15441,6 +15491,164 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type MacModificationTaskState.
+    /// </summary>
+    public class MacModificationTaskState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for MacModificationTaskState
+        /// </summary>
+        public static readonly MacModificationTaskState Failed = new MacModificationTaskState("failed");
+        /// <summary>
+        /// Constant InProgress for MacModificationTaskState
+        /// </summary>
+        public static readonly MacModificationTaskState InProgress = new MacModificationTaskState("in-progress");
+        /// <summary>
+        /// Constant Pending for MacModificationTaskState
+        /// </summary>
+        public static readonly MacModificationTaskState Pending = new MacModificationTaskState("pending");
+        /// <summary>
+        /// Constant Successful for MacModificationTaskState
+        /// </summary>
+        public static readonly MacModificationTaskState Successful = new MacModificationTaskState("successful");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MacModificationTaskState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MacModificationTaskState FindValue(string value)
+        {
+            return FindValue<MacModificationTaskState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MacModificationTaskState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MacModificationTaskType.
+    /// </summary>
+    public class MacModificationTaskType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SipModification for MacModificationTaskType
+        /// </summary>
+        public static readonly MacModificationTaskType SipModification = new MacModificationTaskType("sip-modification");
+        /// <summary>
+        /// Constant VolumeOwnershipDelegation for MacModificationTaskType
+        /// </summary>
+        public static readonly MacModificationTaskType VolumeOwnershipDelegation = new MacModificationTaskType("volume-ownership-delegation");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MacModificationTaskType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MacModificationTaskType FindValue(string value)
+        {
+            return FindValue<MacModificationTaskType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MacModificationTaskType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MacSystemIntegrityProtectionSettingStatus.
+    /// </summary>
+    public class MacSystemIntegrityProtectionSettingStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for MacSystemIntegrityProtectionSettingStatus
+        /// </summary>
+        public static readonly MacSystemIntegrityProtectionSettingStatus Disabled = new MacSystemIntegrityProtectionSettingStatus("disabled");
+        /// <summary>
+        /// Constant Enabled for MacSystemIntegrityProtectionSettingStatus
+        /// </summary>
+        public static readonly MacSystemIntegrityProtectionSettingStatus Enabled = new MacSystemIntegrityProtectionSettingStatus("enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MacSystemIntegrityProtectionSettingStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MacSystemIntegrityProtectionSettingStatus FindValue(string value)
+        {
+            return FindValue<MacSystemIntegrityProtectionSettingStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MacSystemIntegrityProtectionSettingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ManagedBy.
     /// </summary>
     public class ManagedBy : ConstantClass
@@ -17531,6 +17739,110 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type PublicIpDnsOption.
+    /// </summary>
+    public class PublicIpDnsOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PublicDualStackDnsName for PublicIpDnsOption
+        /// </summary>
+        public static readonly PublicIpDnsOption PublicDualStackDnsName = new PublicIpDnsOption("public-dual-stack-dns-name");
+        /// <summary>
+        /// Constant PublicIpv4DnsName for PublicIpDnsOption
+        /// </summary>
+        public static readonly PublicIpDnsOption PublicIpv4DnsName = new PublicIpDnsOption("public-ipv4-dns-name");
+        /// <summary>
+        /// Constant PublicIpv6DnsName for PublicIpDnsOption
+        /// </summary>
+        public static readonly PublicIpDnsOption PublicIpv6DnsName = new PublicIpDnsOption("public-ipv6-dns-name");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PublicIpDnsOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PublicIpDnsOption FindValue(string value)
+        {
+            return FindValue<PublicIpDnsOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PublicIpDnsOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RebootMigrationSupport.
+    /// </summary>
+    public class RebootMigrationSupport : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Supported for RebootMigrationSupport
+        /// </summary>
+        public static readonly RebootMigrationSupport Supported = new RebootMigrationSupport("supported");
+        /// <summary>
+        /// Constant Unsupported for RebootMigrationSupport
+        /// </summary>
+        public static readonly RebootMigrationSupport Unsupported = new RebootMigrationSupport("unsupported");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RebootMigrationSupport(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RebootMigrationSupport FindValue(string value)
+        {
+            return FindValue<RebootMigrationSupport>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RebootMigrationSupport(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RecurringChargeFrequency.
     /// </summary>
     public class RecurringChargeFrequency : ConstantClass
@@ -18260,6 +18572,10 @@ namespace Amazon.EC2
         /// Constant LocalGatewayVirtualInterfaceGroup for ResourceType
         /// </summary>
         public static readonly ResourceType LocalGatewayVirtualInterfaceGroup = new ResourceType("local-gateway-virtual-interface-group");
+        /// <summary>
+        /// Constant MacModificationTask for ResourceType
+        /// </summary>
+        public static readonly ResourceType MacModificationTask = new ResourceType("mac-modification-task");
         /// <summary>
         /// Constant Natgateway for ResourceType
         /// </summary>

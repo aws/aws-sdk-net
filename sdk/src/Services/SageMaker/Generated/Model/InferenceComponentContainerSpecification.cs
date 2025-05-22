@@ -46,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ArtifactUrl
         {
             get { return this._artifactUrl; }
@@ -67,7 +67,7 @@ namespace Amazon.SageMaker.Model
         /// entries in the map.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }
@@ -87,7 +87,7 @@ namespace Amazon.SageMaker.Model
         /// the model is stored.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string Image
         {
             get { return this._image; }

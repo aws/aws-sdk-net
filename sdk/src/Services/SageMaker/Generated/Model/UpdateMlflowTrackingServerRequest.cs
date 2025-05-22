@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model
         /// MLflow Tracking Server.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ArtifactStoreUri
         {
             get { return this._artifactStoreUri; }
@@ -127,7 +127,7 @@ namespace Amazon.SageMaker.Model
         /// For example: TUE:03:30.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=9)]
+        [AWSProperty(Min=0, Max=9)]
         public string WeeklyMaintenanceWindowStart
         {
             get { return this._weeklyMaintenanceWindowStart; }

@@ -114,7 +114,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
-        [AWSProperty(Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<AutoMLAlgorithmConfig> AlgorithmsConfig
         {
             get { return this._algorithmsConfig; }

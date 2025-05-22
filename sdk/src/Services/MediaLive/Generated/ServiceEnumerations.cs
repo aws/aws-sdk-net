@@ -1653,6 +1653,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type Av1RateControlMode.
+    /// </summary>
+    public class Av1RateControlMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CBR for Av1RateControlMode
+        /// </summary>
+        public static readonly Av1RateControlMode CBR = new Av1RateControlMode("CBR");
+        /// <summary>
+        /// Constant QVBR for Av1RateControlMode
+        /// </summary>
+        public static readonly Av1RateControlMode QVBR = new Av1RateControlMode("QVBR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Av1RateControlMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Av1RateControlMode FindValue(string value)
+        {
+            return FindValue<Av1RateControlMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Av1RateControlMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Av1SceneChangeDetect.
     /// </summary>
     public class Av1SceneChangeDetect : ConstantClass

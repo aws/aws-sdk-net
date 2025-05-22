@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// If the component failed, a message describing why.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string Message
         {
             get { return this._message; }

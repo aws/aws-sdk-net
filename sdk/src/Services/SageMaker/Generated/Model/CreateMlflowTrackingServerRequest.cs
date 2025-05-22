@@ -53,7 +53,7 @@ namespace Amazon.SageMaker.Model
         /// store.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string ArtifactStoreUri
         {
             get { return this._artifactStoreUri; }
@@ -95,7 +95,7 @@ namespace Amazon.SageMaker.Model
         /// it works</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=16)]
+        [AWSProperty(Min=0, Max=16)]
         public string MlflowVersion
         {
             get { return this._mlflowVersion; }
@@ -205,7 +205,7 @@ namespace Amazon.SageMaker.Model
         /// time that weekly maintenance updates are scheduled. For example: TUE:03:30.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=9)]
+        [AWSProperty(Min=0, Max=9)]
         public string WeeklyMaintenanceWindowStart
         {
             get { return this._weeklyMaintenanceWindowStart; }

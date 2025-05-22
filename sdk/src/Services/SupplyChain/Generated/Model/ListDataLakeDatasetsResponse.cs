@@ -43,7 +43,7 @@ namespace Amazon.SupplyChain.Model
         /// The list of fetched dataset details.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20)]
+        [AWSProperty(Required=true, Min=0, Max=20)]
         public List<DataLakeDataset> Datasets
         {
             get { return this._datasets; }

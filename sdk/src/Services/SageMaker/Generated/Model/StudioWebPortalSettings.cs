@@ -101,7 +101,7 @@ namespace Amazon.SageMaker.Model
         ///  The version aliases you are hiding from the Studio user interface. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5)]
+        [AWSProperty(Min=0, Max=5)]
         public List<HiddenSageMakerImage> HiddenSageMakerImageVersionAliases
         {
             get { return this._hiddenSageMakerImageVersionAliases; }

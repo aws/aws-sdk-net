@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         ///  The version aliases you are hiding from the Studio user interface. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20)]
+        [AWSProperty(Min=0, Max=20)]
         public List<string> VersionAliases
         {
             get { return this._versionAliases; }

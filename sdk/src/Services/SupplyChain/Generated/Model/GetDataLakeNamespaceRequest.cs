@@ -1,0 +1,94 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the supplychain-2024-01-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+namespace Amazon.SupplyChain.Model
+{
+    /// <summary>
+    /// Container for the parameters to the GetDataLakeNamespace operation.
+    /// Enables you to programmatically view an Amazon Web Services Supply Chain data lake
+    /// namespace. Developers can view the data lake namespace information such as description
+    /// for a given instance ID and namespace name.
+    /// </summary>
+    public partial class GetDataLakeNamespaceRequest : AmazonSupplyChainRequest
+    {
+        private string _instanceId;
+        private string _name;
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The Amazon Web Services Supply Chain instance identifier.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=36, Max=36)]
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the namespace. Besides the namespaces user created, you can also specify
+        /// the pre-defined namespaces:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>asc</b> - Pre-defined namespace containing Amazon Web Services Supply Chain supported
+        /// datasets, see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>default</b> - Pre-defined namespace containing datasets with custom user-defined
+        /// schemas.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+    }
+}

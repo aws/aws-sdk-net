@@ -205,7 +205,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -225,7 +225,7 @@ namespace Amazon.SageMaker.Model
         /// For example, <c>s3://bucket-name/key-name-prefix</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string S3OutputLocation
         {
             get { return this._s3OutputLocation; }

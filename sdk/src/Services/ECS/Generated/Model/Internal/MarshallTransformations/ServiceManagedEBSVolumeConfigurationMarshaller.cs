@@ -110,6 +110,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.Throughput.Value);
             }
 
+            if(requestObject.IsSetVolumeInitializationRate())
+            {
+                context.Writer.WritePropertyName("volumeInitializationRate");
+                context.Writer.WriteNumberValue(requestObject.VolumeInitializationRate.Value);
+            }
+
             if(requestObject.IsSetVolumeType())
             {
                 context.Writer.WritePropertyName("volumeType");

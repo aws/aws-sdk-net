@@ -104,7 +104,7 @@ namespace Amazon.SageMaker.Model
         /// in inference or training.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string S3Uri
         {
             get { return this._s3Uri; }

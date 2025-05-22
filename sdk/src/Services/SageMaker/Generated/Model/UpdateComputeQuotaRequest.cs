@@ -127,7 +127,7 @@ namespace Amazon.SageMaker.Model
         /// Description of the compute allocation definition.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }

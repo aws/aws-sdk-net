@@ -2098,5 +2098,117 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
         }
 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("Access Point APIs on express bucket routed to custom endpoint if provided")]
+        public void Access_Point_APIs_on_express_bucket_routed_to_custom_endpoint_if_provided_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["AccountId"] = "871317572157";
+            parameters["AccessPointName"] = "myaccesspoint--abcd-ab1--xa-s3";
+            parameters["Endpoint"] = "https://my-endpoint.express-control.s3.aws.dev";
+            parameters["Region"] = "us-east-1";
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://my-endpoint.express-control.s3.aws.dev", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("Access Point APIs on express bucket routed to custom endpoint if provided for List")]
+        public void Access_Point_APIs_on_express_bucket_routed_to_custom_endpoint_if_provided_for_List_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["AccountId"] = "871317572157";
+            parameters["Region"] = "us-east-1";
+            parameters["UseS3ExpressControlEndpoint"] = true;
+            parameters["Endpoint"] = "https://my-endpoint.express-control.s3.aws.dev";
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://my-endpoint.express-control.s3.aws.dev", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("Error on Access Point APIs on express bucket for dual stack")]
+        [ExpectedException(typeof(AmazonClientException), @"S3Express does not support Dual-stack.")]
+        public void Error_on_Access_Point_APIs_on_express_bucket_for_dual_stack_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["AccountId"] = "871317572157";
+            parameters["AccessPointName"] = "myaccesspoint--abcd-ab1--xa-s3";
+            parameters["Region"] = "us-east-1";
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("Error Access Point APIs on express bucket for dual stack for List")]
+        [ExpectedException(typeof(AmazonClientException), @"S3Express does not support Dual-stack.")]
+        public void Error_Access_Point_APIs_on_express_bucket_for_dual_stack_for_List_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["AccountId"] = "871317572157";
+            parameters["Region"] = "us-east-1";
+            parameters["UseS3ExpressControlEndpoint"] = true;
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("Error on Access Point APIs on express bucket for custom endpoint and dual stack")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: DualStack and custom endpoint are not supported")]
+        public void Error_on_Access_Point_APIs_on_express_bucket_for_custom_endpoint_and_dual_stack_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["AccountId"] = "871317572157";
+            parameters["AccessPointName"] = "myaccesspoint--abcd-ab1--xa-s3";
+            parameters["Endpoint"] = "https://my-endpoint.express-control.s3.aws.dev";
+            parameters["Region"] = "us-east-1";
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("Error Access Point APIs on express bucket for custom endpoint and dual stack for List")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: DualStack and custom endpoint are not supported")]
+        public void Error_Access_Point_APIs_on_express_bucket_for_custom_endpoint_and_dual_stack_for_List_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["AccountId"] = "871317572157";
+            parameters["Region"] = "us-east-1";
+            parameters["UseS3ExpressControlEndpoint"] = true;
+            parameters["Endpoint"] = "https://my-endpoint.express-control.s3.aws.dev";
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+        }
+
     }
 }

@@ -38,6 +38,47 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// scaling policy uses individually specified load and scaling metrics instead of a metric
     /// pair.
     /// </para>
+    ///  
+    /// <para>
+    /// The following predefined metrics are available for predictive scaling:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>ECSServiceAverageCPUUtilization</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ECSServiceAverageMemoryUtilization</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ECSServiceCPUUtilization</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ECSServiceMemoryUtilization</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ECSServiceTotalCPUUtilization</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ECSServiceTotalMemoryUtilization</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ALBRequestCount</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ALBRequestCountPerTarget</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>TotalALBRequestCount</c> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class PredictiveScalingPredefinedScalingMetricSpecification
     {

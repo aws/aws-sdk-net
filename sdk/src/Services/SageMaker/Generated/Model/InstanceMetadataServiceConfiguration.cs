@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// of <c>UpdateNotebookInstance</c>, there is no default.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1)]
+        [AWSProperty(Required=true, Min=0, Max=1)]
         public string MinimumInstanceMetadataServiceVersion
         {
             get { return this._minimumInstanceMetadataServiceVersion; }

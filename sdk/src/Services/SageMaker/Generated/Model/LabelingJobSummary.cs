@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model
         /// Consolidation</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string AnnotationConsolidationLambdaArn
         {
             get { return this._annotationConsolidationLambdaArn; }
@@ -95,7 +95,7 @@ namespace Amazon.SageMaker.Model
         /// of the error.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -151,7 +151,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) assigned to the labeling job when it was created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2048)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string LabelingJobArn
         {
             get { return this._labelingJobArn; }
@@ -246,7 +246,7 @@ namespace Amazon.SageMaker.Model
         /// data object is sent to a worker.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string PreHumanTaskLambdaArn
         {
             get { return this._preHumanTaskLambdaArn; }
@@ -265,7 +265,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the work team assigned to the job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string WorkteamArn
         {
             get { return this._workteamArn; }

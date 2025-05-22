@@ -202,7 +202,7 @@ namespace Amazon.SageMaker.Model
         /// the artifact locations.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ManifestS3Uri
         {
             get { return this._manifestS3Uri; }
@@ -273,7 +273,7 @@ namespace Amazon.SageMaker.Model
         /// Specifies the S3 path of ML model data to deploy.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string S3Uri
         {
             get { return this._s3Uri; }

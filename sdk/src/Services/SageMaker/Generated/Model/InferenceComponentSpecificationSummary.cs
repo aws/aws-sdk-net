@@ -46,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the base inference component that contains this inference component.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string BaseInferenceComponentName
         {
             get { return this._baseInferenceComponentName; }
@@ -103,7 +103,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the SageMaker AI model object that is deployed with the inference component.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string ModelName
         {
             get { return this._modelName; }

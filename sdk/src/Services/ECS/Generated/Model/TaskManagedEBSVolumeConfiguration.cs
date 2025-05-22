@@ -46,14 +46,16 @@ namespace Amazon.ECS.Model
         private List<EBSTagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<EBSTagSpecification>() : null;
         private TaskManagedEBSVolumeTerminationPolicy _terminationPolicy;
         private int? _throughput;
+        private int? _volumeInitializationRate;
         private string _volumeType;
 
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Indicates whether the volume should be encrypted. If no value is specified, encryption
-        /// is turned on by default. This parameter maps 1:1 with the <c>Encrypted</c> parameter
-        /// of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
+        /// Indicates whether the volume should be encrypted. If you turn on Region-level Amazon
+        /// EBS encryption by default but set this value as <c>false</c>, the setting is overridden
+        /// and the volume is encrypted with the KMS key specified for Amazon EBS encryption by
+        /// default. This parameter maps 1:1 with the <c>Encrypted</c> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
         /// API</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -146,11 +148,13 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The Amazon Resource Name (ARN) identifier of the Amazon Web Services Key Management
-        /// Service key to use for Amazon EBS encryption. When encryption is turned on and no
-        /// Amazon Web Services Key Management Service key is specified, the default Amazon Web
-        /// Services managed key for Amazon EBS volumes is used. This parameter maps 1:1 with
-        /// the <c>KmsKeyId</c> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
-        /// API</a> in the <i>Amazon EC2 API Reference</i>.
+        /// Service key to use for Amazon EBS encryption. When a key is specified using this parameter,
+        /// it overrides Amazon EBS default encryption or any KMS key that you specified for cluster-level
+        /// managed storage encryption. This parameter maps 1:1 with the <c>KmsKeyId</c> parameter
+        /// of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
+        /// API</a> in the <i>Amazon EC2 API Reference</i>. For more information about encrypting
+        /// Amazon EBS volumes attached to a task, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-kms-encryption.html">Encrypt
+        /// data stored in Amazon EBS volumes attached to Amazon ECS tasks</a>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -321,6 +325,27 @@ namespace Amazon.ECS.Model
         internal bool IsSetThroughput()
         {
             return this._throughput.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeInitializationRate. 
+        /// <para>
+        /// The rate, in MiB/s, at which data is fetched from a snapshot of an existing Amazon
+        /// EBS volume to create a new volume for attachment to the task. This property can be
+        /// specified only if you specify a <c>snapshotId</c>. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html">Initialize
+        /// Amazon EBS volumes</a> in the <i>Amazon EBS User Guide</i>.
+        /// </para>
+        /// </summary>
+        public int? VolumeInitializationRate
+        {
+            get { return this._volumeInitializationRate; }
+            set { this._volumeInitializationRate = value; }
+        }
+
+        // Check to see if VolumeInitializationRate property is set
+        internal bool IsSetVolumeInitializationRate()
+        {
+            return this._volumeInitializationRate.HasValue; 
         }
 
         /// <summary>

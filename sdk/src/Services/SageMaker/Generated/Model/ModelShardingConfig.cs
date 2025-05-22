@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The URI of an LMI DLC in Amazon ECR. SageMaker uses this image to run the optimization.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string Image
         {
             get { return this._image; }
@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// Environment variables that override the default ones in the model container.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=25)]
+        [AWSProperty(Min=0, Max=25)]
         public Dictionary<string, string> OverrideEnvironment
         {
             get { return this._overrideEnvironment; }

@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the artifact.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ArtifactArn
         {
             get { return this._artifactArn; }
@@ -90,7 +90,7 @@ namespace Amazon.SageMaker.Model
         /// The type of the artifact.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ArtifactType
         {
             get { return this._artifactType; }
@@ -175,7 +175,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the lineage group.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string LineageGroupArn
         {
             get { return this._lineageGroupArn; }
@@ -209,7 +209,7 @@ namespace Amazon.SageMaker.Model
         /// A list of the artifact's properties.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=30)]
+        [AWSProperty(Min=0, Max=30)]
         public Dictionary<string, string> Properties
         {
             get { return this._properties; }

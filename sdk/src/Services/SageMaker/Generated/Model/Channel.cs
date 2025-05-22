@@ -87,7 +87,7 @@ namespace Amazon.SageMaker.Model
         /// The MIME type of the data.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ContentType
         {
             get { return this._contentType; }

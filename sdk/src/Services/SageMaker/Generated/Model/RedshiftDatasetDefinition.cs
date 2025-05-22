@@ -119,7 +119,7 @@ namespace Amazon.SageMaker.Model
         /// Amazon SageMaker uses to encrypt data from a Redshift execution.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -169,7 +169,7 @@ namespace Amazon.SageMaker.Model
         /// The location in Amazon S3 where the Redshift query results are stored.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string OutputS3Uri
         {
             get { return this._outputS3Uri; }

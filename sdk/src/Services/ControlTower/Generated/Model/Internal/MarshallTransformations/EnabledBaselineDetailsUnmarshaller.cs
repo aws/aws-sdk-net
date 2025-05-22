@@ -74,6 +74,12 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
                     unmarshalledObject.BaselineVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("driftStatusSummary", targetDepth))
+                {
+                    var unmarshaller = EnabledBaselineDriftStatusSummaryUnmarshaller.Instance;
+                    unmarshalledObject.DriftStatusSummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("parameters", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EnabledBaselineParameterSummary, EnabledBaselineParameterSummaryUnmarshaller>(EnabledBaselineParameterSummaryUnmarshaller.Instance);

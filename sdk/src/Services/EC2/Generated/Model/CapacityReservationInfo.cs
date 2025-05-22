@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     public partial class CapacityReservationInfo
     {
         private string _availabilityZone;
+        private string _availabilityZoneId;
         private string _instanceType;
         private CapacityReservationTenancy _tenancy;
 
@@ -54,6 +55,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The ID of the Availability Zone.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
         }
 
         /// <summary>

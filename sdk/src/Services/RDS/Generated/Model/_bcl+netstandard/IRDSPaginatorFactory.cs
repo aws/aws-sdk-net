@@ -158,6 +158,16 @@ namespace Amazon.RDS.Model
         IDescribeDBLogFilesPaginator DescribeDBLogFiles(DescribeDBLogFilesRequest request);
 
         /// <summary>
+        /// Paginator for DescribeDBMajorEngineVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "Marker" }
+        )]
+        IDescribeDBMajorEngineVersionsPaginator DescribeDBMajorEngineVersions(DescribeDBMajorEngineVersionsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeDBParameterGroups operation
         ///</summary>
         [AWSPaginator(

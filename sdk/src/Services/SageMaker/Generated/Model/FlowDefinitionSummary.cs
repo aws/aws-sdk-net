@@ -66,7 +66,7 @@ namespace Amazon.SageMaker.Model
         /// when the flow definition status is <c>Failed</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -85,7 +85,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the flow definition.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string FlowDefinitionArn
         {
             get { return this._flowDefinitionArn; }

@@ -46,6 +46,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCategory())
+            {
+                context.Writer.WritePropertyName("category");
+                context.Writer.WriteStringValue(requestObject.Category);
+            }
+
             if(requestObject.IsSetExpression())
             {
                 context.Writer.WritePropertyName("expression");

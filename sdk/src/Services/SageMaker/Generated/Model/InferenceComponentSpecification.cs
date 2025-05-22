@@ -68,7 +68,7 @@ namespace Amazon.SageMaker.Model
         /// component that contains the foundation model that you want to adapt.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string BaseInferenceComponentName
         {
             get { return this._baseInferenceComponentName; }
@@ -132,7 +132,7 @@ namespace Amazon.SageMaker.Model
         /// deploy with the inference component.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string ModelName
         {
             get { return this._modelName; }

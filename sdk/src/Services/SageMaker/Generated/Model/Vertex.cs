@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the lineage entity resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string Arn
         {
             get { return this._arn; }
@@ -82,7 +82,7 @@ namespace Amazon.SageMaker.Model
         /// <c>Endpoint</c>, etc...
         /// </para>
         /// </summary>
-        [AWSProperty(Max=40)]
+        [AWSProperty(Min=0, Max=40)]
         public string Type
         {
             get { return this._type; }

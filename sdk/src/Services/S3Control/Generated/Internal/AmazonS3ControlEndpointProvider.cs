@@ -112,9 +112,17 @@ namespace Amazon.S3Control.Internal
                 {
                     if ((refs["partitionResult"] = Partition((string)refs["Region"])) != null)
                     {
+                        if (IsSet(refs["Endpoint"]) && Equals(refs["UseDualStack"], true))
+                        {
+                            throw new AmazonClientException("Invalid Configuration: DualStack and custom endpoint are not supported");
+                        }
                         if (Equals(refs["UseDualStack"], true))
                         {
                             throw new AmazonClientException("S3Express does not support Dual-stack.");
+                        }
+                        if (IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
+                        {
+                            return new Endpoint(Interpolate(@"{url#scheme}://{url#authority}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                         }
                         if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["AccessPointName"], 7, 15, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["AccessPointName"], 15, 17, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                         {
@@ -163,6 +171,18 @@ namespace Amazon.S3Control.Internal
                 {
                     if ((refs["partitionResult"] = Partition((string)refs["Region"])) != null)
                     {
+                        if (IsSet(refs["Endpoint"]) && Equals(refs["UseDualStack"], true))
+                        {
+                            throw new AmazonClientException("Invalid Configuration: DualStack and custom endpoint are not supported");
+                        }
+                        if (Equals(refs["UseDualStack"], true))
+                        {
+                            throw new AmazonClientException("S3Express does not support Dual-stack.");
+                        }
+                        if (IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
+                        {
+                            return new Endpoint(Interpolate(@"{url#scheme}://{url#authority}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                        }
                         if (Equals(refs["UseFIPS"], true))
                         {
                             return new Endpoint(Interpolate(@"https://s3express-control-fips.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));

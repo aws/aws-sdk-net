@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the optimization job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string OptimizationJobArn
         {
             get { return this._optimizationJobArn; }

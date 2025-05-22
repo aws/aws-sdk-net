@@ -80,7 +80,7 @@ namespace Amazon.SageMaker.Model
         /// Specifies the containers in the inference pipeline.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=15)]
+        [AWSProperty(Min=0, Max=15)]
         public List<ContainerDefinition> Containers
         {
             get { return this._containers; }
@@ -165,7 +165,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the new model.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string ModelName
         {
             get { return this._modelName; }

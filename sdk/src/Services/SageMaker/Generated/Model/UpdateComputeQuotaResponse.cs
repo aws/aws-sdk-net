@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// ARN of the compute allocation definition.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2048)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string ComputeQuotaArn
         {
             get { return this._computeQuotaArn; }

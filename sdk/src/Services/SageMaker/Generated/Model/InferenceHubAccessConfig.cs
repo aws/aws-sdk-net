@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of the hub content for which deployment access is allowed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Required=true, Min=0, Max=255)]
         public string HubContentArn
         {
             get { return this._hubContentArn; }

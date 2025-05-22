@@ -41,6 +41,7 @@ namespace Amazon.SupplyChain.Model
         private string _instanceId;
         private string _name;
         private string _awsNamespace;
+        private DataLakeDatasetPartitionSpec _partitionSpec;
         private DataLakeDatasetSchema _schema;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -105,7 +106,8 @@ namespace Amazon.SupplyChain.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The name space of the dataset.
+        /// The namespace of the dataset, besides the custom defined namespace, every instance
+        /// comes with below pre-defined namespaces:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -132,10 +134,33 @@ namespace Amazon.SupplyChain.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PartitionSpec. 
+        /// <para>
+        /// The partition specification of the dataset. Partitioning can effectively improve the
+        /// dataset query performance by reducing the amount of data scanned during query execution.
+        /// But partitioning or not will affect how data get ingested by data ingestion methods,
+        /// such as SendDataIntegrationEvent's dataset UPSERT will upsert records within partition
+        /// (instead of within whole dataset). For more details, refer to those data ingestion
+        /// documentations.
+        /// </para>
+        /// </summary>
+        public DataLakeDatasetPartitionSpec PartitionSpec
+        {
+            get { return this._partitionSpec; }
+            set { this._partitionSpec = value; }
+        }
+
+        // Check to see if PartitionSpec property is set
+        internal bool IsSetPartitionSpec()
+        {
+            return this._partitionSpec != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Schema. 
         /// <para>
-        /// The custom schema of the data lake dataset and is only required when the name space
-        /// is <b>default</b>.
+        /// The custom schema of the data lake dataset and required for dataset in <b>default</b>
+        /// and custom namespaces.
         /// </para>
         /// </summary>
         public DataLakeDatasetSchema Schema

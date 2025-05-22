@@ -37,11 +37,33 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class InsightRule
     {
+        private bool? _applyOnTransformedLogs;
         private string _definition;
         private bool? _managedRule;
         private string _name;
         private string _schema;
         private string _state;
+
+        /// <summary>
+        /// Gets and sets the property ApplyOnTransformedLogs. 
+        /// <para>
+        /// Displays whether the rule is evaluated on the transformed versions of logs, for log
+        /// groups that have <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">Log
+        /// transformation</a> enabled. If this is <c>false</c>, log events are evaluated before
+        /// they are transformed.
+        /// </para>
+        /// </summary>
+        public bool? ApplyOnTransformedLogs
+        {
+            get { return this._applyOnTransformedLogs; }
+            set { this._applyOnTransformedLogs = value; }
+        }
+
+        // Check to see if ApplyOnTransformedLogs property is set
+        internal bool IsSetApplyOnTransformedLogs()
+        {
+            return this._applyOnTransformedLogs.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Definition. 

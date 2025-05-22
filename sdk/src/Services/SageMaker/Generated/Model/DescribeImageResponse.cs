@@ -106,7 +106,7 @@ namespace Amazon.SageMaker.Model
         /// When a create, update, or delete operation fails, the reason for the failure.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -125,7 +125,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of the image.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ImageArn
         {
             get { return this._imageArn; }

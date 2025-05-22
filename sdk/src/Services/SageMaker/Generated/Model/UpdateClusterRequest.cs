@@ -46,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// Specify the name of the SageMaker HyperPod cluster you want to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string ClusterName
         {
             get { return this._clusterName; }

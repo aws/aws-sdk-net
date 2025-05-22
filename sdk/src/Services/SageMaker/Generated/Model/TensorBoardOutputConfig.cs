@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// Path to local storage location for tensorBoard output. Defaults to <c>/opt/ml/output/tensorboard</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4096)]
+        [AWSProperty(Min=0, Max=4096)]
         public string LocalPath
         {
             get { return this._localPath; }
@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         /// Path to Amazon S3 storage location for TensorBoard output.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string S3OutputPath
         {
             get { return this._s3OutputPath; }

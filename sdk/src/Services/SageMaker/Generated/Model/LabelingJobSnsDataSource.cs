@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// topic you will use to send new data objects to a streaming labeling job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2048)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string SnsTopicArn
         {
             get { return this._snsTopicArn; }

@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model
         /// It can override changes made in the default lifecycle configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string BuiltInLifecycleConfigArn
         {
             get { return this._builtInLifecycleConfigArn; }
@@ -90,7 +90,7 @@ namespace Amazon.SageMaker.Model
         /// A list of custom SageMaker images that are configured to run as a Code Editor app.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=200)]
+        [AWSProperty(Min=0, Max=200)]
         public List<CustomImage> CustomImages
         {
             get { return this._customImages; }

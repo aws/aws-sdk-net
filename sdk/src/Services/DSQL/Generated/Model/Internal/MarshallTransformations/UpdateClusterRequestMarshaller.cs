@@ -93,6 +93,17 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.DeletionProtectionEnabled.Value);
             }
 
+            if(publicRequest.IsSetMultiRegionProperties())
+            {
+                context.Writer.WritePropertyName("multiRegionProperties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MultiRegionPropertiesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MultiRegionProperties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

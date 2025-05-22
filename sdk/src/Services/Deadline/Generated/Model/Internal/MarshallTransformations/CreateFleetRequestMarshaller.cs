@@ -99,6 +99,17 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.DisplayName);
             }
 
+            if(publicRequest.IsSetHostConfiguration())
+            {
+                context.Writer.WritePropertyName("hostConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HostConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.HostConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetMaxWorkerCount())
             {
                 context.Writer.WritePropertyName("maxWorkerCount");

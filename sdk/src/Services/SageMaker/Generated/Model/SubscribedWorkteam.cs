@@ -120,7 +120,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the vendor that you have subscribed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string WorkteamArn
         {
             get { return this._workteamArn; }

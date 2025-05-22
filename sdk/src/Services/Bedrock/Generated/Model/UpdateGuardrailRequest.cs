@@ -91,6 +91,7 @@ namespace Amazon.Bedrock.Model
         private string _blockedOutputsMessaging;
         private GuardrailContentPolicyConfig _contentPolicyConfig;
         private GuardrailContextualGroundingPolicyConfig _contextualGroundingPolicyConfig;
+        private GuardrailCrossRegionConfig _crossRegionConfig;
         private string _description;
         private string _guardrailIdentifier;
         private string _kmsKeyId;
@@ -171,6 +172,31 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetContextualGroundingPolicyConfig()
         {
             return this._contextualGroundingPolicyConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CrossRegionConfig. 
+        /// <para>
+        /// The system-defined guardrail profile that you're using with your guardrail. Guardrail
+        /// profiles define the destination Amazon Web Services Regions where guardrail inference
+        /// requests can be automatically routed.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html">Amazon
+        /// Bedrock User Guide</a>.
+        /// </para>
+        /// </summary>
+        public GuardrailCrossRegionConfig CrossRegionConfig
+        {
+            get { return this._crossRegionConfig; }
+            set { this._crossRegionConfig = value; }
+        }
+
+        // Check to see if CrossRegionConfig property is set
+        internal bool IsSetCrossRegionConfig()
+        {
+            return this._crossRegionConfig != null;
         }
 
         /// <summary>

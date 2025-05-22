@@ -113,7 +113,7 @@ namespace Amazon.SageMaker.Model
         /// calls for the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string BaseUrl
         {
             get { return this._baseUrl; }
@@ -209,7 +209,7 @@ namespace Amazon.SageMaker.Model
         /// associated with SageMaker Partner AI Apps.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -301,7 +301,7 @@ namespace Amazon.SageMaker.Model
         /// The instance type and size of the cluster attached to the SageMaker Partner AI App.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string Tier
         {
             get { return this._tier; }
@@ -339,7 +339,7 @@ namespace Amazon.SageMaker.Model
         /// The version of the SageMaker Partner AI App.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string Version
         {
             get { return this._version; }

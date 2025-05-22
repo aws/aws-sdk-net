@@ -86,7 +86,7 @@ namespace Amazon.SageMaker.Model
         /// The description of the experiment.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=3072)]
+        [AWSProperty(Min=0, Max=3072)]
         public string Description
         {
             get { return this._description; }
@@ -125,7 +125,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the experiment.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ExperimentArn
         {
             get { return this._experimentArn; }

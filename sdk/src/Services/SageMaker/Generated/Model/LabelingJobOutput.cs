@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 bucket location of the manifest file for labeled data. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string OutputDatasetS3Uri
         {
             get { return this._outputDatasetS3Uri; }

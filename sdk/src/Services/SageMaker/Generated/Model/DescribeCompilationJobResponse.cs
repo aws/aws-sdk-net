@@ -79,7 +79,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the model compilation job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string CompilationJobArn
         {
             get { return this._compilationJobArn; }
@@ -199,7 +199,7 @@ namespace Amazon.SageMaker.Model
         /// If a model compilation job failed, the reason it failed. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -219,7 +219,7 @@ namespace Amazon.SageMaker.Model
         /// device is a cloud instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string InferenceImage
         {
             get { return this._inferenceImage; }

@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the action.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ActionArn
         {
             get { return this._actionArn; }

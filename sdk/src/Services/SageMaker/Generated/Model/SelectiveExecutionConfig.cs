@@ -72,7 +72,7 @@ namespace Amazon.SageMaker.Model
         /// Execution for Pipeline Steps</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string SourcePipelineExecutionArn
         {
             get { return this._sourcePipelineExecutionArn; }
