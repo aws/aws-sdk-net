@@ -285,7 +285,13 @@ namespace Amazon.Runtime.Documents
         #region Collection Initializers
         IEnumerator<Document> IEnumerable<Document>.GetEnumerator()
         {
-            return AsList().GetEnumerator();
+            if (Type == DocumentType.List)
+                return AsList().GetEnumerator();
+
+            if (Type == DocumentType.Dictionary)
+                return AsDictionary().Values.GetEnumerator();
+
+            return new[]{this}.AsEnumerable().GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
