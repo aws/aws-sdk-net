@@ -34,8 +34,69 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class IntegrationPartition
     {
+        private string _conversionSpec;
         private string _fieldName;
         private string _functionSpec;
+
+        /// <summary>
+        /// Gets and sets the property ConversionSpec. 
+        /// <para>
+        /// Specifies the timestamp format of the source data. Valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>epoch_sec</c> - Unix epoch timestamp in seconds
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>epoch_milli</c> - Unix epoch timestamp in milliseconds
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>iso</c> - ISO 8601 formatted timestamp
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        ///  Only specify <c>ConversionSpec</c> when using timestamp-based partition functions
+        /// (year, month, day, or hour). Glue Zero-ETL uses this parameter to correctly transform
+        /// source data into timestamp format before partitioning. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Do not use high-cardinality columns with the <c>identity</c> partition function.
+        /// High-cardinality columns include: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Primary keys
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Timestamp fields (such as <c>LastModifiedTimestamp</c>, <c>CreatedDate</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// System-generated timestamps
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  Using high-cardinality columns with identity partitioning creates many small partitions,
+        /// which can significantly degrade ingestion performance. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ConversionSpec
+        {
+            get { return this._conversionSpec; }
+            set { this._conversionSpec = value; }
+        }
+
+        // Check to see if ConversionSpec property is set
+        internal bool IsSetConversionSpec()
+        {
+            return this._conversionSpec != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FieldName. 

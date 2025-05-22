@@ -66,6 +66,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ConversionSpec", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConversionSpec = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FieldName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
