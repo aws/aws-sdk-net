@@ -110,6 +110,7 @@ namespace Amazon.DSQL.Model
     {
         private string _clientToken;
         private bool? _deletionProtectionEnabled;
+        private string _kmsEncryptionKey;
         private MultiRegionProperties _multiRegionProperties;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -158,6 +159,27 @@ namespace Amazon.DSQL.Model
         internal bool IsSetDeletionProtectionEnabled()
         {
             return this._deletionProtectionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsEncryptionKey. 
+        /// <para>
+        /// The KMS key that encrypts and protects the data on your cluster. You can specify the
+        /// ARN, ID, or alias of an existing key or have Amazon Web Services create a default
+        /// key for you.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsEncryptionKey
+        {
+            get { return this._kmsEncryptionKey; }
+            set { this._kmsEncryptionKey = value; }
+        }
+
+        // Check to see if KmsEncryptionKey property is set
+        internal bool IsSetKmsEncryptionKey()
+        {
+            return this._kmsEncryptionKey != null;
         }
 
         /// <summary>

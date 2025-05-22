@@ -84,6 +84,12 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DeletionProtectionEnabled);
                 }
 
+                if(publicRequest.IsSetKmsEncryptionKey())
+                {
+                    context.Writer.WritePropertyName("kmsEncryptionKey");
+                    context.Writer.Write(publicRequest.KmsEncryptionKey);
+                }
+
                 if(publicRequest.IsSetMultiRegionProperties())
                 {
                     context.Writer.WritePropertyName("multiRegionProperties");
