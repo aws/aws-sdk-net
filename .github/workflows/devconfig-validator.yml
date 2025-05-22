@@ -1,0 +1,219 @@
+name: DevConfig Validator
+
+on:
+  pull_request:
+    types: [synchronize, opened, reopened, edited]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  validate-devconfig:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    outputs:
+      needs_devconfig: ${{ steps.check-needs.outputs.needs_devconfig }}
+      has_devconfig: ${{ steps.check-files.outputs.has_devconfig }}
+      devconfig_content: ${{ steps.generate-preview.outputs.devconfig_content }}
+      pr_number: ${{ github.event.pull_request.number }}
+      pr_head_ref: ${{ github.event.pull_request.head.ref }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for existing DevConfig files
+        id: check-files
+        run: |
+          # Check if .DevConfigs directory exists and has files
+          if [ -d "./generator/.DevConfigs" ] && [ "$(ls -A ./generator/.DevConfigs 2>/dev/null)" ]; then
+            echo "has_devconfig=true" >> $GITHUB_OUTPUT
+            echo "DevConfig files already exist in this PR"
+          else
+            echo "has_devconfig=false" >> $GITHUB_OUTPUT
+            echo "No DevConfig files found in this PR"
+          fi
+
+      - name: Check if DevConfig is needed
+        id: check-needs
+        run: |
+          # Create .DevConfigs directory if it doesn't exist
+          mkdir -p ./generator/.DevConfigs
+
+          # Debug current branch
+          CURRENT_BRANCH="${{ github.head_ref || github.ref_name }}"
+          echo "Current branch: $CURRENT_BRANCH"
+          
+          # Skip validation for specific branches
+          if [[ "$CURRENT_BRANCH" == "main" || "$CURRENT_BRANCH" == "development" || "$CURRENT_BRANCH" == "aws-sdk-net-v3.7" || "$CURRENT_BRANCH" == "aws-sdk-net-v3.7-development" ]]; then
+            echo "Branch $CURRENT_BRANCH is excluded from DevConfig validation"
+            echo "needs_devconfig=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Check for changes
+          echo "Checking for changes..."
+          
+          # Check for core changes
+          CORE_CHANGES=$(git diff --name-only origin/main... | grep -v "^sdk/src/Services/" | wc -l || echo 0)
+          echo "Core changes: $CORE_CHANGES"
+          
+          # Check for service changes
+          SERVICE_CHANGES=$(git diff --name-only origin/main... | grep "^sdk/src/Services/" | wc -l || echo 0)
+          echo "Service changes: $SERVICE_CHANGES"
+          
+          # Determine if DevConfig is needed
+          if [ $CORE_CHANGES -gt 0 ] || [ $SERVICE_CHANGES -gt 0 ]; then
+            echo "needs_devconfig=true" >> $GITHUB_OUTPUT
+            echo "Changes detected, DevConfig is needed"
+          else
+            echo "needs_devconfig=false" >> $GITHUB_OUTPUT
+            echo "No changes detected, DevConfig is not needed"
+          fi
+
+      - name: Generate DevConfig preview
+        id: generate-preview
+        if: steps.check-needs.outputs.needs_devconfig == 'true' && steps.check-files.outputs.has_devconfig == 'false'
+        run: |
+          # Get PR title as the changelog message instead of merge commit message
+          COMMIT_MSG="${{ github.event.pull_request.title }}"
+          
+          # If PR title is empty, fall back to the latest commit message
+          if [ -z "$COMMIT_MSG" ]; then
+            COMMIT_MSG=$(git log -1 --pretty=%B)
+          fi
+          
+          # Start building the DevConfig JSON
+          echo "{" > devconfig-preview.json
+          
+          # Check for core changes
+          CORE_CHANGES=$(git diff --name-only origin/main... | grep -v "^sdk/src/Services/" | wc -l || echo 0)
+          if [ $CORE_CHANGES -gt 0 ]; then
+            echo '  "core": {' >> devconfig-preview.json
+            echo '    "changeLogMessages": [' >> devconfig-preview.json
+            echo "      \"$COMMIT_MSG\"" >> devconfig-preview.json
+            echo '    ],' >> devconfig-preview.json
+            echo '    "type": "patch",' >> devconfig-preview.json
+            echo '    "updateMinimum": true' >> devconfig-preview.json
+            echo '  }' >> devconfig-preview.json
+          fi
+          
+          # Check for service changes
+          SERVICE_CHANGES=$(git diff --name-only origin/main... | grep "^sdk/src/Services/" | wc -l || echo 0)
+          if [ $SERVICE_CHANGES -gt 0 ]; then
+            # If we added a core section, we need a comma
+            if [ $CORE_CHANGES -gt 0 ]; then
+              echo ',' >> devconfig-preview.json
+            fi
+            
+            echo '  "services": [' >> devconfig-preview.json
+            
+            # Extract service names
+            SERVICES=$(git diff --name-only origin/main... | grep "^sdk/src/Services/" | cut -d'/' -f4 | sort | uniq | jq -R -s -c 'split("\n") | map(select(length > 0))')
+            SERVICES_ARRAY=$(echo $SERVICES | jq -c '.')
+            
+            FIRST=true
+            echo $SERVICES_ARRAY | jq -c '.[]' | while read -r SERVICE; do
+              # Remove quotes from service name
+              SERVICE=$(echo $SERVICE | tr -d '"')
+              
+              if [ "$FIRST" == "true" ]; then
+                FIRST=false
+              else
+                echo ',' >> devconfig-preview.json
+              fi
+              
+              echo '    {' >> devconfig-preview.json
+              echo "      \"serviceName\": \"$SERVICE\"," >> devconfig-preview.json
+              echo '      "type": "patch",' >> devconfig-preview.json
+              echo '      "changeLogMessages": [' >> devconfig-preview.json
+              echo "        \"$COMMIT_MSG\"" >> devconfig-preview.json
+              echo '      ]' >> devconfig-preview.json
+              echo '    }' >> devconfig-preview.json
+            done
+            
+            echo '  ]' >> devconfig-preview.json
+          fi
+          
+          echo "}" >> devconfig-preview.json
+          
+          # Format the JSON for better readability
+          jq . devconfig-preview.json > devconfig-formatted.json
+          mv devconfig-formatted.json devconfig-preview.json
+          
+          # Save the content to output
+          DEVCONFIG_CONTENT=$(cat devconfig-preview.json)
+          echo "devconfig_content<<EOF" >> $GITHUB_OUTPUT
+          echo "$DEVCONFIG_CONTENT" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          
+          echo "DevConfig Preview:"
+          cat devconfig-preview.json
+
+      - name: Post comment with DevConfig preview
+        if: steps.check-needs.outputs.needs_devconfig == 'true' && steps.check-files.outputs.has_devconfig == 'false'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const devConfigContent = `${{ steps.generate-preview.outputs.devconfig_content }}`;
+            
+            const commentBody = `## DevConfig File Needed
+            
+            This PR requires a DevConfig file. Here's a preview of the suggested DevConfig:
+            
+            \`\`\`json
+            ${devConfigContent}
+            \`\`\`
+            
+            For more information about DevConfig files, see the [DevConfig Files](https://github.com/aws/aws-sdk-net/blob/main/README.md#devconfig-files) section in the README.md.
+            
+            ### Options:
+            
+            1. **Generate devconfig manually:** Use \`./buildtools/add-devconfig.bat\` to generate a devconfig file and commit it to your PR.
+            2. **Accept as is**: Comment with \`/add-devconfig\` to add this preview DevConfig file to your PR.
+            3. **Edit and accept**: Edit the JSON above, then comment with \`/add-devconfig\` followed by your edited JSON in a code block:
+            
+            \`\`\`\`
+            /add-devconfig
+
+            \`\`\`json
+            {
+              "your": "edited JSON here. Use the preview for reference."
+            }
+            \`\`\`
+            \`\`\`\`
+            
+            ### Additional Commands:
+            
+            - **Delete DevConfig**: Comment with \`/delete-devconfig\` to remove the DevConfig file from your PR
+            - **Amend DevConfig**: Comment with \`/amend-devconfig\` followed by your edited JSON to update the DevConfig file
+            
+            \`\`\`\`
+            /amend-devconfig
+
+            \`\`\`json
+            {
+              "your": "updated JSON here. Use the preview for reference."
+            }
+            \`\`\`
+            \`\`\`\`
+            `;
+            
+            github.rest.issues.createComment({
+              issue_number: ${{ github.event.pull_request.number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: commentBody
+            });
+
+      - name: Debug outputs
+        run: |
+          echo "PR Number: ${{ github.event.pull_request.number }}"
+          echo "PR Head Ref: ${{ github.event.pull_request.head.ref }}"
+          echo "Has DevConfig: ${{ steps.check-files.outputs.has_devconfig }}"
+          echo "Needs DevConfig: ${{ steps.check-needs.outputs.needs_devconfig }}"
+          echo "Current branch: ${{ github.head_ref || github.ref_name }}"
