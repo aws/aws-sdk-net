@@ -30,24 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeLoggingConfiguration operation.
-    /// Returns complete information about the current rules and alerting logging configuration
-    /// of the workspace.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// These logging configurations are only for rules and alerting logs.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the DescribeQueryLoggingConfiguration operation.
+    /// Retrieves the details of the query logging configuration for the specified workspace.
     /// </summary>
-    public partial class DescribeLoggingConfigurationRequest : AmazonPrometheusServiceRequest
+    public partial class DescribeQueryLoggingConfigurationRequest : AmazonPrometheusServiceRequest
     {
         private string _workspaceId;
 
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The ID of the workspace to describe the logging configuration for.
+        /// The ID of the workspace for which to retrieve the query logging configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

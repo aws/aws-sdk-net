@@ -30,37 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeLoggingConfiguration operation.
-    /// Returns complete information about the current rules and alerting logging configuration
-    /// of the workspace.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// These logging configurations are only for rules and alerting logs.
-    /// </para>
-    ///  </note>
+    /// This is the response object from the DescribeQueryLoggingConfiguration operation.
     /// </summary>
-    public partial class DescribeLoggingConfigurationRequest : AmazonPrometheusServiceRequest
+    public partial class DescribeQueryLoggingConfigurationResponse : AmazonWebServiceResponse
     {
-        private string _workspaceId;
+        private QueryLoggingConfigurationMetadata _queryLoggingConfiguration;
 
         /// <summary>
-        /// Gets and sets the property WorkspaceId. 
+        /// Gets and sets the property QueryLoggingConfiguration. 
         /// <para>
-        /// The ID of the workspace to describe the logging configuration for.
+        /// The detailed information about the query logging configuration for the specified workspace.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
-        public string WorkspaceId
+        [AWSProperty(Required=true)]
+        public QueryLoggingConfigurationMetadata QueryLoggingConfiguration
         {
-            get { return this._workspaceId; }
-            set { this._workspaceId = value; }
+            get { return this._queryLoggingConfiguration; }
+            set { this._queryLoggingConfiguration = value; }
         }
 
-        // Check to see if WorkspaceId property is set
-        internal bool IsSetWorkspaceId()
+        // Check to see if QueryLoggingConfiguration property is set
+        internal bool IsSetQueryLoggingConfiguration()
         {
-            return this._workspaceId != null;
+            return this._queryLoggingConfiguration != null;
         }
 
     }

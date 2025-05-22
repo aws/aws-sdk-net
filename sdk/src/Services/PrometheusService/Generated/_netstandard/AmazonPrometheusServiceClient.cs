@@ -365,9 +365,15 @@ namespace Amazon.PrometheusService
 
 
         /// <summary>
-        /// The <c>CreateLoggingConfiguration</c> operation creates a logging configuration for
-        /// the workspace. Use this operation to set the CloudWatch log group to which the logs
-        /// will be published to.
+        /// The <c>CreateLoggingConfiguration</c> operation creates rules and alerting logging
+        /// configuration for the workspace. Use this operation to set the CloudWatch log group
+        /// to which the logs will be published to.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// These logging configurations are only for rules and alerting logs.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoggingConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -395,6 +401,53 @@ namespace Amazon.PrometheusService
             options.ResponseUnmarshaller = CreateLoggingConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateLoggingConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateQueryLoggingConfiguration
+
+        internal virtual CreateQueryLoggingConfigurationResponse CreateQueryLoggingConfiguration(CreateQueryLoggingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateQueryLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateQueryLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateQueryLoggingConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a query logging configuration for the specified workspace. This operation
+        /// enables logging of queries that exceed the specified QSP threshold.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQueryLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateQueryLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateQueryLoggingConfiguration">REST API Reference for CreateQueryLoggingConfiguration Operation</seealso>
+        public virtual Task<CreateQueryLoggingConfigurationResponse> CreateQueryLoggingConfigurationAsync(CreateQueryLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateQueryLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateQueryLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateQueryLoggingConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -493,6 +546,13 @@ namespace Amazon.PrometheusService
         /// <para>
         /// The <c>scrapeConfiguration</c> parameter contains the base-64 encoded YAML configuration
         /// for the scraper.
+        /// </para>
+        ///  
+        /// <para>
+        /// When creating a scraper, the service creates a <c>Network Interface</c> in each <b>Availability
+        /// Zone</b> that are passed into <c>CreateScraper</c> through subnets. These network
+        /// interfaces are used to connect to the Amazon EKS cluster within the VPC for scraping
+        /// metrics.
         /// </para>
         ///  <note> 
         /// <para>
@@ -662,7 +722,13 @@ namespace Amazon.PrometheusService
 
 
         /// <summary>
-        /// Deletes the logging configuration for a workspace.
+        /// Deletes the rules and alerting logging configuration for a workspace.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// These logging configurations are only for rules and alerting logs.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoggingConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -693,6 +759,55 @@ namespace Amazon.PrometheusService
             options.ResponseUnmarshaller = DeleteLoggingConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteLoggingConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteQueryLoggingConfiguration
+
+        internal virtual DeleteQueryLoggingConfigurationResponse DeleteQueryLoggingConfiguration(DeleteQueryLoggingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteQueryLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQueryLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteQueryLoggingConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the query logging configuration for the specified workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueryLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteQueryLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteQueryLoggingConfiguration">REST API Reference for DeleteQueryLoggingConfiguration Operation</seealso>
+        public virtual Task<DeleteQueryLoggingConfigurationResponse> DeleteQueryLoggingConfigurationAsync(DeleteQueryLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteQueryLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQueryLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteQueryLoggingConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -924,7 +1039,14 @@ namespace Amazon.PrometheusService
 
 
         /// <summary>
-        /// Returns complete information about the current logging configuration of the workspace.
+        /// Returns complete information about the current rules and alerting logging configuration
+        /// of the workspace.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// These logging configurations are only for rules and alerting logs.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoggingConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -952,6 +1074,52 @@ namespace Amazon.PrometheusService
             options.ResponseUnmarshaller = DescribeLoggingConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeLoggingConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeQueryLoggingConfiguration
+
+        internal virtual DescribeQueryLoggingConfigurationResponse DescribeQueryLoggingConfiguration(DescribeQueryLoggingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeQueryLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeQueryLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeQueryLoggingConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the details of the query logging configuration for the specified workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQueryLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeQueryLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeQueryLoggingConfiguration">REST API Reference for DescribeQueryLoggingConfiguration Operation</seealso>
+        public virtual Task<DescribeQueryLoggingConfigurationResponse> DescribeQueryLoggingConfigurationAsync(DescribeQueryLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeQueryLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeQueryLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeQueryLoggingConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1642,7 +1810,14 @@ namespace Amazon.PrometheusService
 
 
         /// <summary>
-        /// Updates the log group ARN or the workspace ID of the current logging configuration.
+        /// Updates the log group ARN or the workspace ID of the current rules and alerting logging
+        /// configuration.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// These logging configurations are only for rules and alerting logs.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLoggingConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1673,6 +1848,55 @@ namespace Amazon.PrometheusService
             options.ResponseUnmarshaller = UpdateLoggingConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateLoggingConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateQueryLoggingConfiguration
+
+        internal virtual UpdateQueryLoggingConfigurationResponse UpdateQueryLoggingConfiguration(UpdateQueryLoggingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQueryLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQueryLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateQueryLoggingConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the query logging configuration for the specified workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueryLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateQueryLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateQueryLoggingConfiguration">REST API Reference for UpdateQueryLoggingConfiguration Operation</seealso>
+        public virtual Task<UpdateQueryLoggingConfigurationResponse> UpdateQueryLoggingConfigurationAsync(UpdateQueryLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQueryLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQueryLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateQueryLoggingConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -30,53 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// The status of the logging configuration.
+    /// Defines a destination and its associated filtering criteria for query logging.
     /// </summary>
-    public partial class LoggingConfigurationStatus
+    public partial class LoggingDestination
     {
-        private LoggingConfigurationStatusCode _statusCode;
-        private string _statusReason;
+        private CloudWatchLogDestination _cloudWatchLogs;
+        private LoggingFilter _filters;
 
         /// <summary>
-        /// Gets and sets the property StatusCode. 
+        /// Gets and sets the property CloudWatchLogs. 
         /// <para>
-        /// The current status of the current rules and alerting logging configuration.
+        /// Configuration details for logging to CloudWatch Logs.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// These logging configurations are only for rules and alerting logs.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
-        public LoggingConfigurationStatusCode StatusCode
+        public CloudWatchLogDestination CloudWatchLogs
         {
-            get { return this._statusCode; }
-            set { this._statusCode = value; }
+            get { return this._cloudWatchLogs; }
+            set { this._cloudWatchLogs = value; }
         }
 
-        // Check to see if StatusCode property is set
-        internal bool IsSetStatusCode()
+        // Check to see if CloudWatchLogs property is set
+        internal bool IsSetCloudWatchLogs()
         {
-            return this._statusCode != null;
+            return this._cloudWatchLogs != null;
         }
 
         /// <summary>
-        /// Gets and sets the property StatusReason. 
+        /// Gets and sets the property Filters. 
         /// <para>
-        /// If failed, the reason for the failure.
+        /// Filtering criteria that determine which queries are logged.
         /// </para>
         /// </summary>
-        public string StatusReason
+        [AWSProperty(Required=true)]
+        public LoggingFilter Filters
         {
-            get { return this._statusReason; }
-            set { this._statusReason = value; }
+            get { return this._filters; }
+            set { this._filters = value; }
         }
 
-        // Check to see if StatusReason property is set
-        internal bool IsSetStatusReason()
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
         {
-            return this._statusReason != null;
+            return this._filters != null;
         }
 
     }

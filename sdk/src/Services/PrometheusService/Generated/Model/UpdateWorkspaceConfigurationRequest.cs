@@ -70,8 +70,8 @@ namespace Amazon.PrometheusService.Model
         /// Gets and sets the property LimitsPerLabelSet. 
         /// <para>
         /// This is an array of structures, where each structure defines a label set for the workspace,
-        /// and defines the ingestion limit for active time series for each of those label sets.
-        /// Each label name in a label set must be unique.
+        /// and defines the active time series limit for each of those label sets. Each label
+        /// name in a label set must be unique.
         /// </para>
         /// </summary>
         public List<LimitsPerLabelSet> LimitsPerLabelSet

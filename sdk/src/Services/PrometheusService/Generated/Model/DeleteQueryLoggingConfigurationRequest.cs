@@ -30,28 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateLoggingConfiguration operation.
-    /// The <c>CreateLoggingConfiguration</c> operation creates rules and alerting logging
-    /// configuration for the workspace. Use this operation to set the CloudWatch log group
-    /// to which the logs will be published to.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// These logging configurations are only for rules and alerting logs.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the DeleteQueryLoggingConfiguration operation.
+    /// Deletes the query logging configuration for the specified workspace.
     /// </summary>
-    public partial class CreateLoggingConfigurationRequest : AmazonPrometheusServiceRequest
+    public partial class DeleteQueryLoggingConfigurationRequest : AmazonPrometheusServiceRequest
     {
         private string _clientToken;
-        private string _logGroupArn;
         private string _workspaceId;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique identifier that you can provide to ensure the idempotency of the request.
-        /// Case-sensitive.
+        /// (Optional) A unique, case-sensitive identifier that you can provide to ensure the
+        /// idempotency of the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -68,29 +59,9 @@ namespace Amazon.PrometheusService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogGroupArn. 
-        /// <para>
-        /// The ARN of the CloudWatch log group to which the vended log data will be published.
-        /// This log group must exist prior to calling this operation.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string LogGroupArn
-        {
-            get { return this._logGroupArn; }
-            set { this._logGroupArn = value; }
-        }
-
-        // Check to see if LogGroupArn property is set
-        internal bool IsSetLogGroupArn()
-        {
-            return this._logGroupArn != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The ID of the workspace to create the logging configuration for.
+        /// The ID of the workspace from which to delete the query logging configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

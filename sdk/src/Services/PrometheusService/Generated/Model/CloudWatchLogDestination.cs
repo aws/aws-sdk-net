@@ -30,37 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeLoggingConfiguration operation.
-    /// Returns complete information about the current rules and alerting logging configuration
-    /// of the workspace.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// These logging configurations are only for rules and alerting logs.
-    /// </para>
-    ///  </note>
+    /// Configuration details for logging to CloudWatch Logs.
     /// </summary>
-    public partial class DescribeLoggingConfigurationRequest : AmazonPrometheusServiceRequest
+    public partial class CloudWatchLogDestination
     {
-        private string _workspaceId;
+        private string _logGroupArn;
 
         /// <summary>
-        /// Gets and sets the property WorkspaceId. 
+        /// Gets and sets the property LogGroupArn. 
         /// <para>
-        /// The ID of the workspace to describe the logging configuration for.
+        /// The ARN of the CloudWatch log group to which the vended log data will be published.
+        /// This log group must exist prior to calling this operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
-        public string WorkspaceId
+        [AWSProperty(Required=true)]
+        public string LogGroupArn
         {
-            get { return this._workspaceId; }
-            set { this._workspaceId = value; }
+            get { return this._logGroupArn; }
+            set { this._logGroupArn = value; }
         }
 
-        // Check to see if WorkspaceId property is set
-        internal bool IsSetWorkspaceId()
+        // Check to see if LogGroupArn property is set
+        internal bool IsSetLogGroupArn()
         {
-            return this._workspaceId != null;
+            return this._logGroupArn != null;
         }
 
     }

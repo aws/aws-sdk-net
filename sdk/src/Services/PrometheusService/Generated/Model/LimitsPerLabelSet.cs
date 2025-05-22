@@ -30,14 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// This structure defines one label set used to enforce ingestion limits for the workspace,
-    /// and defines the limit for that label set.
+    /// This structure defines one label set used to enforce active time series limits for
+    /// the workspace, and defines the limit for that label set.
     /// 
     ///  
     /// <para>
     /// A label set is a unique combination of label-value pairs. Use them to control time
-    /// series ingestion limits and to monitor usage by specific label groups. Example label
-    /// sets might be <c>team:finance</c> or <c>env:prod</c> 
+    /// series limits and to monitor usage by specific label groups. Example label sets might
+    /// be <c>team:finance</c> or <c>env:prod</c> 
     /// </para>
     /// </summary>
     public partial class LimitsPerLabelSet
@@ -48,7 +48,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property LabelSet. 
         /// <para>
-        /// This defines one label set that will have an enforced ingestion limit. 
+        /// This defines one label set that will have an enforced active time series limit. 
         /// </para>
         ///  
         /// <para>

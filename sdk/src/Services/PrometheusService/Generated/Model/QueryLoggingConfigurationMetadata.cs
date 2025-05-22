@@ -30,27 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Contains information about the current rules and alerting logging configuration for
-    /// the workspace.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// These logging configurations are only for rules and alerting logs.
-    /// </para>
-    ///  </note>
+    /// The metadata for a query logging configuration.
     /// </summary>
-    public partial class LoggingConfigurationMetadata
+    public partial class QueryLoggingConfigurationMetadata
     {
         private DateTime? _createdAt;
-        private string _logGroupArn;
+        private List<LoggingDestination> _destinations = AWSConfigs.InitializeCollections ? new List<LoggingDestination>() : null;
         private DateTime? _modifiedAt;
-        private LoggingConfigurationStatus _status;
+        private QueryLoggingConfigurationStatus _status;
         private string _workspace;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The date and time that the logging configuration was created.
+        /// The date and time when the query logging configuration was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -67,28 +60,28 @@ namespace Amazon.PrometheusService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogGroupArn. 
+        /// Gets and sets the property Destinations. 
         /// <para>
-        /// The ARN of the CloudWatch log group to which the vended log data will be published.
+        /// The configured destinations for the query logging configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string LogGroupArn
+        [AWSProperty(Required=true, Min=1, Max=1)]
+        public List<LoggingDestination> Destinations
         {
-            get { return this._logGroupArn; }
-            set { this._logGroupArn = value; }
+            get { return this._destinations; }
+            set { this._destinations = value; }
         }
 
-        // Check to see if LogGroupArn property is set
-        internal bool IsSetLogGroupArn()
+        // Check to see if Destinations property is set
+        internal bool IsSetDestinations()
         {
-            return this._logGroupArn != null;
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property ModifiedAt. 
         /// <para>
-        /// The date and time that the logging configuration was most recently changed.
+        /// The date and time when the query logging configuration was last modified.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -107,11 +100,11 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the logging configuration.
+        /// The current status of the query logging configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public LoggingConfigurationStatus Status
+        public QueryLoggingConfigurationStatus Status
         {
             get { return this._status; }
             set { this._status = value; }
@@ -126,7 +119,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Workspace. 
         /// <para>
-        /// The ID of the workspace the logging configuration is for.
+        /// The ID of the workspace associated with this query logging configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

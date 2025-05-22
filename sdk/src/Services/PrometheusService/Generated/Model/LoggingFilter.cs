@@ -30,37 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeLoggingConfiguration operation.
-    /// Returns complete information about the current rules and alerting logging configuration
-    /// of the workspace.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// These logging configurations are only for rules and alerting logs.
-    /// </para>
-    ///  </note>
+    /// Filtering criteria that determine which queries are logged.
     /// </summary>
-    public partial class DescribeLoggingConfigurationRequest : AmazonPrometheusServiceRequest
+    public partial class LoggingFilter
     {
-        private string _workspaceId;
+        private long? _qspThreshold;
 
         /// <summary>
-        /// Gets and sets the property WorkspaceId. 
+        /// Gets and sets the property QspThreshold. 
         /// <para>
-        /// The ID of the workspace to describe the logging configuration for.
+        /// The Query Samples Processed (QSP) threshold above which queries will be logged. Queries
+        /// processing more samples than this threshold will be captured in logs.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
-        public string WorkspaceId
+        [AWSProperty(Required=true, Min=0)]
+        public long QspThreshold
         {
-            get { return this._workspaceId; }
-            set { this._workspaceId = value; }
+            get { return this._qspThreshold.GetValueOrDefault(); }
+            set { this._qspThreshold = value; }
         }
 
-        // Check to see if WorkspaceId property is set
-        internal bool IsSetWorkspaceId()
+        // Check to see if QspThreshold property is set
+        internal bool IsSetQspThreshold()
         {
-            return this._workspaceId != null;
+            return this._qspThreshold.HasValue; 
         }
 
     }

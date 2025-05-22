@@ -30,28 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateLoggingConfiguration operation.
-    /// The <c>CreateLoggingConfiguration</c> operation creates rules and alerting logging
-    /// configuration for the workspace. Use this operation to set the CloudWatch log group
-    /// to which the logs will be published to.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// These logging configurations are only for rules and alerting logs.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the CreateQueryLoggingConfiguration operation.
+    /// Creates a query logging configuration for the specified workspace. This operation
+    /// enables logging of queries that exceed the specified QSP threshold.
     /// </summary>
-    public partial class CreateLoggingConfigurationRequest : AmazonPrometheusServiceRequest
+    public partial class CreateQueryLoggingConfigurationRequest : AmazonPrometheusServiceRequest
     {
         private string _clientToken;
-        private string _logGroupArn;
+        private List<LoggingDestination> _destinations = AWSConfigs.InitializeCollections ? new List<LoggingDestination>() : null;
         private string _workspaceId;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique identifier that you can provide to ensure the idempotency of the request.
-        /// Case-sensitive.
+        /// (Optional) A unique, case-sensitive identifier that you can provide to ensure the
+        /// idempotency of the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -68,29 +61,29 @@ namespace Amazon.PrometheusService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogGroupArn. 
+        /// Gets and sets the property Destinations. 
         /// <para>
-        /// The ARN of the CloudWatch log group to which the vended log data will be published.
-        /// This log group must exist prior to calling this operation.
+        /// The destinations where query logs will be sent. Only CloudWatch Logs destination is
+        /// supported. The list must contain exactly one element.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string LogGroupArn
+        [AWSProperty(Required=true, Min=1, Max=1)]
+        public List<LoggingDestination> Destinations
         {
-            get { return this._logGroupArn; }
-            set { this._logGroupArn = value; }
+            get { return this._destinations; }
+            set { this._destinations = value; }
         }
 
-        // Check to see if LogGroupArn property is set
-        internal bool IsSetLogGroupArn()
+        // Check to see if Destinations property is set
+        internal bool IsSetDestinations()
         {
-            return this._logGroupArn != null;
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The ID of the workspace to create the logging configuration for.
+        /// The ID of the workspace for which to create the query logging configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

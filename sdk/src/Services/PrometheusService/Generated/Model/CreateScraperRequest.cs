@@ -49,6 +49,13 @@ namespace Amazon.PrometheusService.Model
     /// The <c>scrapeConfiguration</c> parameter contains the base-64 encoded YAML configuration
     /// for the scraper.
     /// </para>
+    ///  
+    /// <para>
+    /// When creating a scraper, the service creates a <c>Network Interface</c> in each <b>Availability
+    /// Zone</b> that are passed into <c>CreateScraper</c> through subnets. These network
+    /// interfaces are used to connect to the Amazon EKS cluster within the VPC for scraping
+    /// metrics.
+    /// </para>
     ///  <note> 
     /// <para>
     /// For more information about collectors, including what metrics are collected, and how
