@@ -1,3 +1,13 @@
+### 3.7.1050.0 (2025-05-22 18:16 UTC)
+* AuditManager (3.7.401.0)
+	* With this release, the AssessmentControl description field has been deprecated, as of May 19, 2025. Additionally, the UpdateAssessment API can now return a ServiceQuotaExceededException when applicable service quotas are exceeded.
+* DSQL (3.7.405.0)
+	* Features: support for customer managed encryption keys
+* Glue (3.7.420.0)
+	* This release supports additional ConversionSpec parameter as part of IntegrationPartition Structure in CreateIntegrationTableProperty API. This parameter is referred to apply appropriate column transformation for columns that are used for timestamp based partitioning
+* PrometheusService (3.7.404.0)
+	* Add QueryLoggingConfiguration APIs for Amazon Managed Prometheus
+
 ### 3.7.1049.0 (2025-05-21 18:18 UTC)
 * ApplicationAutoScaling (3.7.403.23)
 	* Doc only update that addresses a customer reported issue.
