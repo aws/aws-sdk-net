@@ -267,5 +267,140 @@ namespace AWSSDK.UnitTests
             else
                 Assert.IsFalse(doc.IsString());
         }
+
+        /// <summary>
+        /// Tests that enumerating a Dictionary type Document works correctly
+        /// This tests the fix for WebAuthn serialization errors
+        /// </summary>
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void EnumerateDictionaryDocument()
+        {
+            // Create a dictionary document
+            var doc = new Document
+            {
+                {"key1", "value1"},
+                {"key2", 42},
+                {"key3", true}
+            };
+
+            // Ensure we can enumerate the document as IEnumerable<Document>
+            var values = new List<Document>();
+            foreach (var item in (IEnumerable<Document>)doc)
+            {
+                values.Add(item);
+            }
+
+            // Should enumerate dictionary values
+            Assert.AreEqual(3, values.Count);
+            Assert.IsTrue(values.Any(v => v.IsString() && v.AsString() == "value1"));
+            Assert.IsTrue(values.Any(v => v.IsInt() && v.AsInt() == 42));
+            Assert.IsTrue(values.Any(v => v.IsBool() && v.AsBool() == true));
+        }
+
+        /// <summary>
+        /// Tests that enumerating a List type Document still works correctly
+        /// </summary>
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void EnumerateListDocument()
+        {
+            // Create a list document
+            var doc = new Document("value1", 42, true);
+
+            // Ensure we can enumerate the document
+            var values = new List<Document>();
+            foreach (var item in (IEnumerable<Document>)doc)
+            {
+                values.Add(item);
+            }
+
+            // Should enumerate list items in order
+            Assert.AreEqual(3, values.Count);
+            Assert.IsTrue(values[0].IsString() && values[0].AsString() == "value1");
+            Assert.IsTrue(values[1].IsInt() && values[1].AsInt() == 42);
+            Assert.IsTrue(values[2].IsBool() && values[2].AsBool() == true);
+        }
+
+        /// <summary>
+        /// Tests that enumerating non-collection type Documents returns the document itself
+        /// </summary>
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void EnumerateNonCollectionDocument()
+        {
+            // Test with various non-collection types
+            var stringDoc = new Document("test");
+            var intDoc = new Document(42);
+            var boolDoc = new Document(true);
+            var nullDoc = new Document();
+
+            // Each should enumerate to a single item - itself
+            var stringValues = ((IEnumerable<Document>)stringDoc).ToList();
+            Assert.AreEqual(1, stringValues.Count);
+            Assert.AreEqual(stringDoc, stringValues[0]);
+
+            var intValues = ((IEnumerable<Document>)intDoc).ToList();
+            Assert.AreEqual(1, intValues.Count);
+            Assert.AreEqual(intDoc, intValues[0]);
+
+            var boolValues = ((IEnumerable<Document>)boolDoc).ToList();
+            Assert.AreEqual(1, boolValues.Count);
+            Assert.AreEqual(boolDoc, boolValues[0]);
+
+            var nullValues = ((IEnumerable<Document>)nullDoc).ToList();
+            Assert.AreEqual(1, nullValues.Count);
+            Assert.AreEqual(nullDoc, nullValues[0]);
+        }
+
+        /// <summary>
+        /// Tests that LINQ operations work correctly on Dictionary documents
+        /// This specifically tests the WebAuthn scenario
+        /// </summary>
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void LinqOperationsOnDictionaryDocument()
+        {
+            // Create a complex dictionary document similar to WebAuthn responses
+            var doc = new Document
+            {
+                {"credentialId", "abc123"},
+                {"publicKey", "key-data"},
+                {"signCount", 5},
+                {"userVerified", true},
+                {"attestationObject", new Document
+                    {
+                        {"fmt", "packed"},
+                        {"authData", "auth-data-bytes"}
+                    }
+                }
+            };
+
+            // Cast to IEnumerable<Document> to use LINQ operations
+            var enumerable = (IEnumerable<Document>)doc;
+
+            // Test that we can use LINQ operations
+            var count = enumerable.Count();
+            Assert.AreEqual(5, count);
+
+            // Test FirstOrDefault
+            var first = enumerable.FirstOrDefault();
+            Assert.IsNotNull(first);
+
+            // Test Any
+            Assert.IsTrue(enumerable.Any());
+
+            // Test Where (filtering)
+            var stringValues = enumerable.Where(d => d.IsString()).ToList();
+            Assert.IsTrue(stringValues.Count >= 2); // At least credentialId and publicKey
+
+            // Test Select (projection)
+            var types = enumerable.Select(d => d.Type).ToList();
+            Assert.AreEqual(5, types.Count);
+        }
     }
 }
