@@ -2167,15 +2167,15 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Gets a list of the Amazon Web Services from which Audit Manager can collect evidence.
-        /// 
+        /// Gets a list of the Amazon Web Services services from which Audit Manager can collect
+        /// evidence. 
         /// 
         ///  
         /// <para>
-        /// Audit Manager defines which Amazon Web Services are in scope for an assessment. Audit
-        /// Manager infers this scope by examining the assessment’s controls and their data sources,
-        /// and then mapping this information to one or more of the corresponding Amazon Web Services
-        /// that are in this list.
+        /// Audit Manager defines which Amazon Web Services services are in scope for an assessment.
+        /// Audit Manager infers this scope by examining the assessment’s controls and their data
+        /// sources, and then mapping this information to one or more of the corresponding Amazon
+        /// Web Services services that are in this list.
         /// </para>
         ///  <note> 
         /// <para>
@@ -3186,6 +3186,13 @@ namespace Amazon.AuditManager
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
         /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ServiceQuotaExceededException">
+        /// You've reached your account quota for this resource type. To perform the requested
+        /// action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request
+        /// a quota increase</a> from the Service Quotas console. For a list of Audit Manager
+        /// service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
+        /// and restrictions for Audit Manager</a>.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ThrottlingException">
         /// The request was denied due to request throttling.

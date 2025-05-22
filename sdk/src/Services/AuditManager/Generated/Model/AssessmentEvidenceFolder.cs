@@ -169,7 +169,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
-        ///  The Amazon Web Service that the evidence was collected from. 
+        ///  The Amazon Web Services service that the evidence was collected from. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -264,8 +264,8 @@ namespace Amazon.AuditManager.Model
         /// Gets and sets the property EvidenceByTypeConfigurationDataCount. 
         /// <para>
         ///  The number of evidence that falls under the configuration data category. This evidence
-        /// is collected from configuration snapshots of other Amazon Web Services such as Amazon
-        /// EC2, Amazon S3, or IAM. 
+        /// is collected from configuration snapshots of other Amazon Web Services services such
+        /// as Amazon EC2, Amazon S3, or IAM. 
         /// </para>
         /// </summary>
         public int EvidenceByTypeConfigurationDataCount

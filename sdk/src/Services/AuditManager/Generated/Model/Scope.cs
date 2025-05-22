@@ -35,17 +35,17 @@ namespace Amazon.AuditManager.Model
     /// 
     ///  <note> 
     /// <para>
-    /// You no longer need to specify which Amazon Web Services are in scope when you create
-    /// or update an assessment. Audit Manager infers the services in scope by examining your
-    /// assessment controls and their data sources, and then mapping this information to the
-    /// relevant Amazon Web Services. 
+    /// You no longer need to specify which Amazon Web Services services are in scope when
+    /// you create or update an assessment. Audit Manager infers the services in scope by
+    /// examining your assessment controls and their data sources, and then mapping this information
+    /// to the relevant Amazon Web Services services. 
     /// </para>
     ///  
     /// <para>
     /// If an underlying data source changes for your assessment, we automatically update
-    /// the services scope as needed to reflect the correct Amazon Web Services. This ensures
-    /// that your assessment collects accurate and comprehensive evidence about all of the
-    /// relevant services in your AWS environment.
+    /// the services scope as needed to reflect the correct Amazon Web Services services.
+    /// This ensures that your assessment collects accurate and comprehensive evidence about
+    /// all of the relevant services in your AWS environment.
     /// </para>
     ///  </note>
     /// </summary>
@@ -83,8 +83,8 @@ namespace Amazon.AuditManager.Model
         ///  <important> 
         /// <para>
         /// This API parameter is no longer supported. If you use this parameter to specify one
-        /// or more Amazon Web Services, Audit Manager ignores this input. Instead, the value
-        /// for <c>awsServices</c> will show as empty.
+        /// or more Amazon Web Services services, Audit Manager ignores this input. Instead, the
+        /// value for <c>awsServices</c> will show as empty.
         /// </para>
         ///  </important>
         /// </summary>

@@ -87,6 +87,7 @@ namespace Amazon.AuditManager.Model
         ///  The description of the control. 
         /// </para>
         /// </summary>
+        [Obsolete("This data type will be deprecated on May 19, 2025. To view the assessment control description, use GetControl.")]
         [AWSProperty(Sensitive=true, Max=1000)]
         public string Description
         {
