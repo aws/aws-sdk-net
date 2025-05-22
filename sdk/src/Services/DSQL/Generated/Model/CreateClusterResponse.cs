@@ -37,6 +37,7 @@ namespace Amazon.DSQL.Model
         private string _arn;
         private DateTime? _creationTime;
         private bool? _deletionProtectionEnabled;
+        private EncryptionDetails _encryptionDetails;
         private string _identifier;
         private MultiRegionProperties _multiRegionProperties;
         private ClusterStatus _status;
@@ -96,6 +97,25 @@ namespace Amazon.DSQL.Model
         internal bool IsSetDeletionProtectionEnabled()
         {
             return this._deletionProtectionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionDetails. 
+        /// <para>
+        /// The encryption configuration for the cluster that was specified during the creation
+        /// process, including the KMS key identifier and encryption state.
+        /// </para>
+        /// </summary>
+        public EncryptionDetails EncryptionDetails
+        {
+            get { return this._encryptionDetails; }
+            set { this._encryptionDetails = value; }
+        }
+
+        // Check to see if EncryptionDetails property is set
+        internal bool IsSetEncryptionDetails()
+        {
+            return this._encryptionDetails != null;
         }
 
         /// <summary>

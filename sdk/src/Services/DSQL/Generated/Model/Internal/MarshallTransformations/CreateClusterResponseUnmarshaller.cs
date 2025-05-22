@@ -70,6 +70,12 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
                     response.DeletionProtectionEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("encryptionDetails", targetDepth))
+                {
+                    var unmarshaller = EncryptionDetailsUnmarshaller.Instance;
+                    response.EncryptionDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("identifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
