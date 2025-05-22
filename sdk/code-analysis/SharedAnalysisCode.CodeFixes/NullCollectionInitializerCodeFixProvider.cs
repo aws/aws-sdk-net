@@ -1,5 +1,4 @@
-﻿using Amazon.CodeAnalysis.Shared;
-using Microsoft.CodeAnalysis.CodeActions;
+﻿using Microsoft.CodeAnalysis.CodeActions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CodeFixes;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -17,7 +16,7 @@ namespace Amazon.CodeAnalysis.Shared.CodeFixes
     {
         public sealed override ImmutableArray<string> FixableDiagnosticIds
         {
-            get { return ImmutableArray.Create(AbstractNullCollectionInitializerAnalyzer.DiagnosticId); }
+            get { return ImmutableArray.Create("AWSSDK2000"); }
         }
 
         public sealed override FixAllProvider GetFixAllProvider()

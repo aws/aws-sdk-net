@@ -7,9 +7,4 @@
   <ItemGroup>
 	  <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="3.3.1" />
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\SharedAnalysisCode\SharedAnalysisCode.csproj" />
-  </ItemGroup>
-
 </Project>
