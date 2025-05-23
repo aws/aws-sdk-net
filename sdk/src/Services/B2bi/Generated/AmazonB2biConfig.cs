@@ -32,7 +32,7 @@ namespace Amazon.B2bi
     public partial class AmazonB2biConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("b2bi", "3.7.404.61");
+            InternalSDKUtils.BuildUserAgentString("b2bi", "3.7.404.62");
 
         private string _userAgent = UserAgentString;
         ///<summary>

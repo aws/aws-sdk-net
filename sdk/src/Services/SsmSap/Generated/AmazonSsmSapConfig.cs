@@ -32,7 +32,7 @@ namespace Amazon.SsmSap
     public partial class AmazonSsmSapConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Ssm Sap", "3.7.402.88");
+            InternalSDKUtils.BuildUserAgentString("Ssm Sap", "3.7.402.89");
 
         private string _userAgent = UserAgentString;
         ///<summary>
