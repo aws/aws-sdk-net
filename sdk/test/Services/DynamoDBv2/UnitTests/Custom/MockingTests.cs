@@ -132,12 +132,18 @@ namespace AWSSDK_DotNet.UnitTests
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
             mockClient.Setup(x => x.ScanAsync(It.IsAny<ScanRequest>(), It.IsAny<CancellationToken>()))
-                .ReturnsAsync(new ScanResponse { Items = new() });
+                .ReturnsAsync(new ScanResponse
+                {
+                    Items = new(),
+                    ScannedCount = 2
+                });
 
             var table = new TableBuilder(mockClient.Object, "TestTable").AddHashKey("Id", DynamoDBEntryType.String).Build();
 
+            var search = table.Scan(new ScanFilter());
             // This calls the low-level ScanAsync, which should be valid on the mocked client
-            await table.Scan(new ScanOperationConfig()).GetNextSetAsync();
+            await search.GetNextSetAsync();
+            Assert.AreEqual(2,search.ScannedCount);
         }
 
         [TestMethod]
