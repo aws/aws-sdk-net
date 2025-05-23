@@ -183,9 +183,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
     /// <summary>
     /// Indicates that the properties of the decorated field or property type should be "flattened"
-    /// into the top-level attributes of the DynamoDB item. When applied, all public properties
-    /// of the referenced type are serialized as individual top-level attributes in the DynamoDB record,
-    /// rather than as a nested object.
+    /// into the parent object's attribute structure in DynamoDB. When applied, all public properties
+    /// of the referenced type are serialized as individual top-level attributes of the parent item,
+    /// rather than as a nested object or map.
     /// <para>
     /// Example:
     /// <code>
