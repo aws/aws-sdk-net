@@ -401,12 +401,12 @@ namespace Amazon.DynamoDBv2.DataModel
                 updateDocument = table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), updateItemOperationConfig, counterConditionExpression);
             }
 
-            if (returnValues==ReturnValues.AllNewAttributes)
+            if (counterConditionExpression == null && versionExpression == null) return;
+
+            if (returnValues == ReturnValues.AllNewAttributes)
             {
                 storage.Document = updateDocument;
             }
-
-            if (counterConditionExpression == null && versionExpression == null) return;
 
             PopulateInstance(storage, value, flatConfig);
         }
@@ -460,10 +460,12 @@ namespace Amazon.DynamoDBv2.DataModel
                     .ConfigureAwait(false);
             }
 
-
             if (counterConditionExpression == null && versionExpression == null) return;
 
-            storage.Document = updateDocument;
+            if (returnValues == ReturnValues.AllNewAttributes)
+            {
+                storage.Document = updateDocument;
+            }
             PopulateInstance(storage, value, flatConfig);
         }
 #endif
