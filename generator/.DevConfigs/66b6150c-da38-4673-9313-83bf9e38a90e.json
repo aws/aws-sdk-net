@@ -1,0 +1,9 @@
+{
+  "services": [
+    {
+      "serviceName": "CloudFormation",
+      "type": "patch",
+      "changeLogMessages": [ "Fixed an issue where NullReferenceException was thrown while invoking AmazonCloudFormationClient.UpdateStackAsync()." ]
+    }
+  ]
+}
