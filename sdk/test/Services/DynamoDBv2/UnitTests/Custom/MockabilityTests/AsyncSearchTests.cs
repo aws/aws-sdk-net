@@ -20,7 +20,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
                 .Returns(CreateMockAsyncSearch(new List<string> { "item1", "item2" }));
 
             var ddbContext = mockContext.Object;
-            var asyncSearch = ddbContext.ScanAsync<string>(null);
+            var asyncSearch = ddbContext.ScanAsync<string>((IEnumerable<ScanCondition>)null);
 
             var results = await asyncSearch.GetNextSetAsync();
             Assert.AreEqual(2, results.Count);
