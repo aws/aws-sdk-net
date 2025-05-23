@@ -323,7 +323,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.CaseAttachmentAttributes.Creator</property>
-    <pattern>.*(^internal:midway:([a-z]{3,8}|svc-mw-[0-9]{12}[a-zA-Z0-9-]{5,20})$)|(^external:aws:\d{12}$).*</pattern>
+    <pattern>.*((^AWS Responder)|(^\d{12}$)|(^security-ir.amazonaws.com)).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.CaseAttachmentAttributes.FileName</property>
@@ -399,11 +399,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListCommentsItem.Creator</property>
-    <pattern>.*(^internal:midway:([a-z]{3,8}|svc-mw-[0-9]{12}[a-zA-Z0-9-]{5,20})$)|(^external:aws:\d{12}$).*</pattern>
+    <pattern>.*((^AWS Responder)|(^\d{12}$)|(^security-ir.amazonaws.com)).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListCommentsItem.LastUpdatedBy</property>
-    <pattern>.*(^internal:midway:([a-z]{3,8}|svc-mw-[0-9]{12}[a-zA-Z0-9-]{5,20})$)|(^external:aws:\d{12}$).*</pattern>
+    <pattern>.*((^AWS Responder)|(^\d{12}$)|(^security-ir.amazonaws.com)).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListMembershipItem.AccountId</property>
