@@ -1,3 +1,11 @@
+### 4.0.19.0 (2025-05-23 18:15 UTC)
+* EC2 (4.0.10.0)
+	* This release adds support for the C7i-flex, M7i-flex, I7i, I7ie, I8g, P6-b200, Trn2, C8gd, M8gd and R8gd instances
+* S3 (4.0.0.7)
+	* Fix: Fixed a bug where Content-Type header was being overwritten in multipart upload scenarios.
+* SecurityIR (4.0.1.0)
+	* Update PrincipalId pattern documentation to reflect what user should receive back from the API call
+
 ### 4.0.18.0 (2025-05-22 18:14 UTC)
 * AuditManager (4.0.1.0)
 	* With this release, the AssessmentControl description field has been deprecated, as of May 19, 2025. Additionally, the UpdateAssessment API can now return a ServiceQuotaExceededException when applicable service quotas are exceeded.
