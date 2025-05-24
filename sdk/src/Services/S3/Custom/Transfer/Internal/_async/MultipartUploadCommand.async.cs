@@ -187,6 +187,7 @@ namespace Amazon.S3.Transfer.Internal
         }
         private async Task UploadUnseekableStreamAsync(TransferUtilityUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
+            cancellationToken.ThrowIfCancellationRequested();
 
             int READ_BUFFER_SIZE = this._s3Client.Config.BufferSize;
 
@@ -201,7 +202,7 @@ namespace Amazon.S3.Transfer.Internal
             };
 
             var initiateRequest = ConstructInitiateMultipartUploadRequest(requestEventHandler);
-            var initiateResponse = await _s3Client.InitiateMultipartUploadAsync(initiateRequest).ConfigureAwait(false);
+            var initiateResponse = await _s3Client.InitiateMultipartUploadAsync(initiateRequest, cancellationToken).ConfigureAwait(false);
 
             try
             {
@@ -219,14 +220,14 @@ namespace Amazon.S3.Transfer.Internal
                         int partNumber = 1;
                         int readBytesCount, readAheadBytesCount = 0;
 
-                        readBytesCount = await stream.ReadAsync(readBuffer, 0, readBuffer.Length).ConfigureAwait(false);
+                        readBytesCount = await stream.ReadAsync(readBuffer, 0, readBuffer.Length, cancellationToken).ConfigureAwait(false);
 
                         do
                         {
                             await nextUploadBuffer.WriteAsync(readBuffer, 0, readBytesCount).ConfigureAwait(false);
                             // read the stream ahead and process it in the next iteration.
                             // this is used to set isLastPart when there is no data left in the stream.
-                            readAheadBytesCount = await stream.ReadAsync(readBuffer, 0, readBuffer.Length).ConfigureAwait(false);
+                            readAheadBytesCount = await stream.ReadAsync(readBuffer, 0, readBuffer.Length, cancellationToken).ConfigureAwait(false);
                             if ((nextUploadBuffer.Position > minPartSize || readAheadBytesCount == 0))
                             {
                                 if (nextUploadBuffer.Position == 0)
@@ -247,7 +248,7 @@ namespace Amazon.S3.Transfer.Internal
                                 nextUploadBuffer.Position = 0;
                                 UploadPartRequest uploadPartRequest = ConstructUploadPartRequestForNonSeekableStream(nextUploadBuffer, partNumber, partSize, isLastPart, initiateResponse);
 
-                                var partResponse = await _s3Client.UploadPartAsync(uploadPartRequest).ConfigureAwait(false);
+                                var partResponse = await _s3Client.UploadPartAsync(uploadPartRequest, cancellationToken).ConfigureAwait(false);
                                 Logger.DebugFormat("Uploaded part {0}. (Last part = {1}, Part size = {2}, Upload Id: {3})", partNumber, isLastPart, partSize, initiateResponse.UploadId);
                                 uploadPartResponses.Add(partResponse);
                                 partNumber++;
@@ -269,7 +270,7 @@ namespace Amazon.S3.Transfer.Internal
 
                     this._uploadResponses = uploadPartResponses;
                     CompleteMultipartUploadRequest compRequest = ConstructCompleteMultipartUploadRequest(initiateResponse, true, requestEventHandler);
-                    await _s3Client.CompleteMultipartUploadAsync(compRequest).ConfigureAwait(false);
+                    await _s3Client.CompleteMultipartUploadAsync(compRequest, cancellationToken).ConfigureAwait(false);
                     Logger.DebugFormat("Completed multi part upload. (Part count: {0}, Upload Id: {1})", uploadPartResponses.Count, initiateResponse.UploadId);
                 }
             }
