@@ -15,14 +15,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Security.Cryptography;
 using System.Text;
 
-using Amazon.CloudFront.Model;
-using Amazon.Runtime;
 using Amazon.Util;
-
-using System.Globalization;
 
 namespace Amazon.CloudFront
 {
@@ -159,12 +154,11 @@ namespace Amazon.CloudFront
             cookies.Expires = new KeyValuePair<string, string>(
                 ExpiresKey, epochSeconds);
 
-            RSAParameters rsaParameters = AmazonCloudFrontUrlSigner.ConvertPEMToRSAParameters(privateKey);
             string cannedPolicy = "{\"Statement\":[{\"Resource\":\"" + resourceUrlOrPath
                     + "\",\"Condition\":{\"DateLessThan\":{\"AWS:EpochTime\":" + epochSeconds
                     + "}}}]}";
             byte[] signatureBytes = AmazonCloudFrontUrlSigner.SignWithSha1RSA(
-                UTF8Encoding.UTF8.GetBytes(cannedPolicy), rsaParameters);
+                UTF8Encoding.UTF8.GetBytes(cannedPolicy), privateKey);
             string urlSafeSignature = AmazonCloudFrontUrlSigner.MakeBytesUrlSafe(signatureBytes);
             cookies.Signature = new KeyValuePair<string, string>(SignatureKey, urlSafeSignature);
 
@@ -252,9 +246,8 @@ namespace Amazon.CloudFront
             var base64EncodedPolicy = AmazonCloudFrontUrlSigner.MakeStringUrlSafe(policy);
             cookies.Policy = new KeyValuePair<string, string>(PolicyKey, base64EncodedPolicy);
 
-            RSAParameters rsaParameters = AmazonCloudFrontUrlSigner.ConvertPEMToRSAParameters(privateKey);
             byte[] signatureBytes = AmazonCloudFrontUrlSigner.SignWithSha1RSA(
-                UTF8Encoding.UTF8.GetBytes(policy), rsaParameters);
+                Encoding.UTF8.GetBytes(policy), privateKey);
             string urlSafeSignature = AmazonCloudFrontUrlSigner.MakeBytesUrlSafe(signatureBytes);
             cookies.Signature = new KeyValuePair<string, string>(SignatureKey, urlSafeSignature);
 

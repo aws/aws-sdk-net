@@ -30,7 +30,6 @@
       <group targetFramework="net8.0">
         <dependency id="AWSSDK.Core" version="4.0.0.0" />
         <dependency id="AWSSDK.CloudFront" version="4.0.0.0" />
-        <dependency id="BouncyCastle.Cryptography" version="2.4.0" />
       </group>
     </dependencies>
   </metadata> 
