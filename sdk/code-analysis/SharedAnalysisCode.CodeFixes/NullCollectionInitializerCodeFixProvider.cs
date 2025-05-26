@@ -9,9 +9,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis.CSharp;
+using System.Composition;
 
 namespace Amazon.CodeAnalysis.Shared.CodeFixes
 {
+    [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(NullCollectionInitializerCodeFixProvider))]
+    [Shared]
     public class NullCollectionInitializerCodeFixProvider : CodeFixProvider
     {
         public sealed override ImmutableArray<string> FixableDiagnosticIds
