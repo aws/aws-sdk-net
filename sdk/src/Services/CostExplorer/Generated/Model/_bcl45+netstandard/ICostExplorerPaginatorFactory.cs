@@ -58,6 +58,26 @@ namespace Amazon.CostExplorer.Model
         IGetAnomalySubscriptionsPaginator GetAnomalySubscriptions(GetAnomalySubscriptionsRequest request);
 
         /// <summary>
+        /// Paginator for GetCostAndUsageComparisons operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextPageToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextPageToken" }
+        )]
+        IGetCostAndUsageComparisonsPaginator GetCostAndUsageComparisons(GetCostAndUsageComparisonsRequest request);
+
+        /// <summary>
+        /// Paginator for GetCostComparisonDrivers operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextPageToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextPageToken" }
+        )]
+        IGetCostComparisonDriversPaginator GetCostComparisonDrivers(GetCostComparisonDriversRequest request);
+
+        /// <summary>
         /// Paginator for GetSavingsPlansCoverage operation
         ///</summary>
         [AWSPaginator(

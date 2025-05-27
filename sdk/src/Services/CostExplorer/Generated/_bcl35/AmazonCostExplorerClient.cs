@@ -1115,6 +1115,74 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  GetCostAndUsageComparisons
+
+        /// <summary>
+        /// Retrieves cost and usage comparisons for your account between two periods within the
+        /// last 13 months. If you have enabled multi-year data at monthly granularity, you can
+        /// go back up to 38 months.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCostAndUsageComparisons service method.</param>
+        /// 
+        /// <returns>The response from the GetCostAndUsageComparisons service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsageComparisons">REST API Reference for GetCostAndUsageComparisons Operation</seealso>
+        public virtual GetCostAndUsageComparisonsResponse GetCostAndUsageComparisons(GetCostAndUsageComparisonsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCostAndUsageComparisonsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCostAndUsageComparisonsResponseUnmarshaller.Instance;
+
+            return Invoke<GetCostAndUsageComparisonsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCostAndUsageComparisons operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCostAndUsageComparisons operation on AmazonCostExplorerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCostAndUsageComparisons
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsageComparisons">REST API Reference for GetCostAndUsageComparisons Operation</seealso>
+        public virtual IAsyncResult BeginGetCostAndUsageComparisons(GetCostAndUsageComparisonsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCostAndUsageComparisonsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCostAndUsageComparisonsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCostAndUsageComparisons operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCostAndUsageComparisons.</param>
+        /// 
+        /// <returns>Returns a  GetCostAndUsageComparisonsResult from CostExplorer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsageComparisons">REST API Reference for GetCostAndUsageComparisons Operation</seealso>
+        public virtual GetCostAndUsageComparisonsResponse EndGetCostAndUsageComparisons(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCostAndUsageComparisonsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetCostAndUsageWithResources
 
         /// <summary>
@@ -1283,6 +1351,75 @@ namespace Amazon.CostExplorer
         public virtual GetCostCategoriesResponse EndGetCostCategories(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCostCategoriesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetCostComparisonDrivers
+
+        /// <summary>
+        /// Retrieves key factors driving cost changes between two time periods within the last
+        /// 13 months, such as usage changes, discount changes, and commitment-based savings.
+        /// If you have enabled multi-year data at monthly granularity, you can go back up to
+        /// 38 months.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCostComparisonDrivers service method.</param>
+        /// 
+        /// <returns>The response from the GetCostComparisonDrivers service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostComparisonDrivers">REST API Reference for GetCostComparisonDrivers Operation</seealso>
+        public virtual GetCostComparisonDriversResponse GetCostComparisonDrivers(GetCostComparisonDriversRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCostComparisonDriversRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCostComparisonDriversResponseUnmarshaller.Instance;
+
+            return Invoke<GetCostComparisonDriversResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCostComparisonDrivers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCostComparisonDrivers operation on AmazonCostExplorerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCostComparisonDrivers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostComparisonDrivers">REST API Reference for GetCostComparisonDrivers Operation</seealso>
+        public virtual IAsyncResult BeginGetCostComparisonDrivers(GetCostComparisonDriversRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCostComparisonDriversRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCostComparisonDriversResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCostComparisonDrivers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCostComparisonDrivers.</param>
+        /// 
+        /// <returns>Returns a  GetCostComparisonDriversResult from CostExplorer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostComparisonDrivers">REST API Reference for GetCostComparisonDrivers Operation</seealso>
+        public virtual GetCostComparisonDriversResponse EndGetCostComparisonDrivers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCostComparisonDriversResponse>(asyncResult);
         }
 
         #endregion
