@@ -224,7 +224,7 @@ namespace Amazon.S3.Transfer.Internal
 
                         do
                         {
-                            await nextUploadBuffer.WriteAsync(readBuffer, 0, readBytesCount).ConfigureAwait(false);
+                            await nextUploadBuffer.WriteAsync(readBuffer, 0, readBytesCount, cancellationToken).ConfigureAwait(false);
                             // read the stream ahead and process it in the next iteration.
                             // this is used to set isLastPart when there is no data left in the stream.
                             readAheadBytesCount = await stream.ReadAsync(readBuffer, 0, readBuffer.Length, cancellationToken).ConfigureAwait(false);
