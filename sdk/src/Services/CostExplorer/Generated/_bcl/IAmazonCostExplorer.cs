@@ -683,6 +683,62 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  GetCostAndUsageComparisons
+
+
+        /// <summary>
+        /// Retrieves cost and usage comparisons for your account between two periods within the
+        /// last 13 months. If you have enabled multi-year data at monthly granularity, you can
+        /// go back up to 38 months.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCostAndUsageComparisons service method.</param>
+        /// 
+        /// <returns>The response from the GetCostAndUsageComparisons service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsageComparisons">REST API Reference for GetCostAndUsageComparisons Operation</seealso>
+        GetCostAndUsageComparisonsResponse GetCostAndUsageComparisons(GetCostAndUsageComparisonsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves cost and usage comparisons for your account between two periods within the
+        /// last 13 months. If you have enabled multi-year data at monthly granularity, you can
+        /// go back up to 38 months.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCostAndUsageComparisons service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCostAndUsageComparisons service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsageComparisons">REST API Reference for GetCostAndUsageComparisons Operation</seealso>
+        Task<GetCostAndUsageComparisonsResponse> GetCostAndUsageComparisonsAsync(GetCostAndUsageComparisonsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetCostAndUsageWithResources
 
 
@@ -864,6 +920,64 @@ namespace Amazon.CostExplorer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostCategories">REST API Reference for GetCostCategories Operation</seealso>
         Task<GetCostCategoriesResponse> GetCostCategoriesAsync(GetCostCategoriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetCostComparisonDrivers
+
+
+        /// <summary>
+        /// Retrieves key factors driving cost changes between two time periods within the last
+        /// 13 months, such as usage changes, discount changes, and commitment-based savings.
+        /// If you have enabled multi-year data at monthly granularity, you can go back up to
+        /// 38 months.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCostComparisonDrivers service method.</param>
+        /// 
+        /// <returns>The response from the GetCostComparisonDrivers service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostComparisonDrivers">REST API Reference for GetCostComparisonDrivers Operation</seealso>
+        GetCostComparisonDriversResponse GetCostComparisonDrivers(GetCostComparisonDriversRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves key factors driving cost changes between two time periods within the last
+        /// 13 months, such as usage changes, discount changes, and commitment-based savings.
+        /// If you have enabled multi-year data at monthly granularity, you can go back up to
+        /// 38 months.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCostComparisonDrivers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCostComparisonDrivers service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostComparisonDrivers">REST API Reference for GetCostComparisonDrivers Operation</seealso>
+        Task<GetCostComparisonDriversResponse> GetCostComparisonDriversAsync(GetCostComparisonDriversRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
