@@ -70,6 +70,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetStorageProfileId())
+            {
+                context.Writer.WritePropertyName("storageProfileId");
+                context.Writer.Write(requestObject.StorageProfileId);
+            }
+
         }
 
         /// <summary>
