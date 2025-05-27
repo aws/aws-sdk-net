@@ -1,3 +1,11 @@
+### 3.7.1052.0 (2025-05-27 18:21 UTC)
+* CostExplorer (3.7.407.0)
+	* This release introduces Cost Comparison feature (GetCostAndUsageComparisons, GetCostComparisonDrivers) allowing you find cost variations across multiple dimensions and identify key drivers of spending changes.
+* Deadline (3.7.408.0)
+	* AWS Deadline Cloud service-managed fleets now support storage profiles. With storage profiles, you can map file paths between a workstation and the worker hosts running the job.
+* EC2 (3.7.449.0)
+	* This release adds three features - option to store AWS Site-to-Site VPN pre-shared keys in AWS Secrets Manager, GetActiveVpnTunnelStatus API to check the in-use VPN algorithms, and SampleType option in GetVpnConnectionDeviceSampleConfiguration API to get recommended sample configs for VPN devices.
+
 ### 3.7.1051.0 (2025-05-23 18:19 UTC)
 * EC2 (3.7.448.0)
 	* This release adds support for the C7i-flex, M7i-flex, I7i, I7ie, I8g, P6-b200, Trn2, C8gd, M8gd and R8gd instances
