@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
     {
         private bool? _dryRun;
         private string _internetKeyExchangeVersion;
+        private string _sampleType;
         private string _vpnConnectionDeviceTypeId;
         private string _vpnConnectionId;
 
@@ -78,6 +79,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetInternetKeyExchangeVersion()
         {
             return this._internetKeyExchangeVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SampleType. 
+        /// <para>
+        /// The type of sample configuration to generate. Valid values are "compatibility" (includes
+        /// IKEv1) or "recommended" (throws UnsupportedOperationException for IKEv1).
+        /// </para>
+        /// </summary>
+        public string SampleType
+        {
+            get { return this._sampleType; }
+            set { this._sampleType = value; }
+        }
+
+        // Check to see if SampleType property is set
+        internal bool IsSetSampleType()
+        {
+            return this._sampleType != null;
         }
 
         /// <summary>

@@ -13673,6 +13673,25 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  GetActiveVpnTunnelStatus
+
+
+
+        /// <summary>
+        /// Returns the currently negotiated security parameters for an active VPN tunnel, including
+        /// IKE version, DH groups, encryption algorithms, and integrity algorithms.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetActiveVpnTunnelStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetActiveVpnTunnelStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetActiveVpnTunnelStatus">REST API Reference for GetActiveVpnTunnelStatus Operation</seealso>
+        Task<GetActiveVpnTunnelStatusResponse> GetActiveVpnTunnelStatusAsync(GetActiveVpnTunnelStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetAllowedImagesSettings
 
 
