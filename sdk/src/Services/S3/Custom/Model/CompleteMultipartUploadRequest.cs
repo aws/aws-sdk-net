@@ -529,6 +529,11 @@ namespace Amazon.S3.Model
         /// <param name="partETags">PartETags that will added to this request.</param>
         public void AddPartETags(params PartETag[] partETags)
         {
+            if (PartETags == null)
+            {
+                PartETags = new List<PartETag>();
+            }
+
             if (partETags != null)
             {
                 foreach (PartETag part in partETags)
@@ -544,13 +549,17 @@ namespace Amazon.S3.Model
         /// <param name="partETags">PartETags that will added to this request.</param>
         public void AddPartETags(IEnumerable<PartETag> partETags)
         {
-            if (partETags == null)
+            if (PartETags == null)
             {
-                partETags = new List<PartETag>();
+                PartETags = new List<PartETag>();
             }
-            foreach (PartETag part in partETags)
+
+            if (partETags != null)
             {
-                this.PartETags.Add(part);
+                foreach (PartETag part in partETags)
+                {
+                    this.PartETags.Add(part);
+                }
             }
         }
 
@@ -568,9 +577,12 @@ namespace Amazon.S3.Model
                 PartETags = new List<PartETag>();
             }
 
-            foreach (UploadPartResponse response in responses)
+            if (responses != null)
             {
-                this.PartETags.Add(new PartETag(response, copyChecksums: false));
+                foreach (UploadPartResponse response in responses)
+                {
+                    this.PartETags.Add(new PartETag(response, copyChecksums: false));
+                }
             }
         }
 
@@ -588,9 +600,12 @@ namespace Amazon.S3.Model
                 PartETags = new List<PartETag>();
             }
 
-            foreach (UploadPartResponse response in responses)
+            if (responses != null)
             {
-                this.PartETags.Add(new PartETag(response, copyChecksums: false));
+                foreach (UploadPartResponse response in responses)
+                {
+                    this.PartETags.Add(new PartETag(response, copyChecksums: false));
+                }
             }
         }
 
@@ -605,9 +620,12 @@ namespace Amazon.S3.Model
                 PartETags = new List<PartETag>();
             }
 
-            foreach (UploadPartResponse response in responses)
+            if (responses != null)
             {
-                this.PartETags.Add(new PartETag(response, copyChecksums: true));
+                foreach (UploadPartResponse response in responses)
+                {
+                    this.PartETags.Add(new PartETag(response, copyChecksums: true));
+                }
             }
         }
 
@@ -622,9 +640,12 @@ namespace Amazon.S3.Model
                 PartETags = new List<PartETag>();
             }
 
-            foreach (UploadPartResponse response in responses)
+            if (responses != null)
             {
-                this.PartETags.Add(new PartETag(response, copyChecksums: true));
+                foreach (UploadPartResponse response in responses)
+                {
+                    this.PartETags.Add(new PartETag(response, copyChecksums: true));
+                }
             }
         }
 
@@ -642,9 +663,12 @@ namespace Amazon.S3.Model
                 PartETags = new List<PartETag>();
             }
 
-            foreach (CopyPartResponse response in responses)
+            if (responses != null)
             {
-                this.PartETags.Add(new PartETag(response, copyChecksums: false));
+                foreach (CopyPartResponse response in responses)
+                {
+                    this.PartETags.Add(new PartETag(response, copyChecksums: false));
+                }
             }
         }
 
@@ -662,9 +686,12 @@ namespace Amazon.S3.Model
                 PartETags = new List<PartETag>();
             }
 
-            foreach (CopyPartResponse response in responses)
+            if (responses != null)
             {
-                this.PartETags.Add(new PartETag(response, copyChecksums: false));
+                foreach (CopyPartResponse response in responses)
+                {
+                    this.PartETags.Add(new PartETag(response, copyChecksums: false));
+                }
             }
         }
 
@@ -679,9 +706,12 @@ namespace Amazon.S3.Model
                 PartETags = new List<PartETag>();
             }
 
-            foreach (CopyPartResponse response in responses)
+            if (responses != null)
             {
-                this.PartETags.Add(new PartETag(response, copyChecksums: true));
+                foreach (CopyPartResponse response in responses)
+                {
+                    this.PartETags.Add(new PartETag(response, copyChecksums: true));
+                }
             }
         }
 
@@ -696,9 +726,12 @@ namespace Amazon.S3.Model
                 PartETags = new List<PartETag>();
             }
 
-            foreach (CopyPartResponse response in responses)
+            if (responses != null)
             {
-                this.PartETags.Add(new PartETag(response, copyChecksums: true));
+                foreach (CopyPartResponse response in responses)
+                {
+                    this.PartETags.Add(new PartETag(response, copyChecksums: true));
+                }
             }
         }
 
