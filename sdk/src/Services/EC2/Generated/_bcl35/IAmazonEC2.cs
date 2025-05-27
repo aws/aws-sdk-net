@@ -23973,6 +23973,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetActiveVpnTunnelStatus
+
+
+        /// <summary>
+        /// Returns the currently negotiated security parameters for an active VPN tunnel, including
+        /// IKE version, DH groups, encryption algorithms, and integrity algorithms.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetActiveVpnTunnelStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetActiveVpnTunnelStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetActiveVpnTunnelStatus">REST API Reference for GetActiveVpnTunnelStatus Operation</seealso>
+        GetActiveVpnTunnelStatusResponse GetActiveVpnTunnelStatus(GetActiveVpnTunnelStatusRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetActiveVpnTunnelStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetActiveVpnTunnelStatus operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetActiveVpnTunnelStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetActiveVpnTunnelStatus">REST API Reference for GetActiveVpnTunnelStatus Operation</seealso>
+        IAsyncResult BeginGetActiveVpnTunnelStatus(GetActiveVpnTunnelStatusRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetActiveVpnTunnelStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetActiveVpnTunnelStatus.</param>
+        /// 
+        /// <returns>Returns a  GetActiveVpnTunnelStatusResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetActiveVpnTunnelStatus">REST API Reference for GetActiveVpnTunnelStatus Operation</seealso>
+        GetActiveVpnTunnelStatusResponse EndGetActiveVpnTunnelStatus(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetAllowedImagesSettings
 
 

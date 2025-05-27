@@ -59,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetPreSharedKeyStorage())
+                {
+                    request.Parameters.Add("PreSharedKeyStorage", StringUtils.FromString(publicRequest.PreSharedKeyStorage));
+                }
                 if(publicRequest.IsSetSkipTunnelReplacement())
                 {
                     request.Parameters.Add("SkipTunnelReplacement", StringUtils.FromBool(publicRequest.SkipTunnelReplacement));

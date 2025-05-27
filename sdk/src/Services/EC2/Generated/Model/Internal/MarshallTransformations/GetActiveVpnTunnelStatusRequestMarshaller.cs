@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetVpnConnectionDeviceSampleConfiguration Request Marshaller
+    /// GetActiveVpnTunnelStatus Request Marshaller
     /// </summary>       
-    public class GetVpnConnectionDeviceSampleConfigurationRequestMarshaller : IMarshaller<IRequest, GetVpnConnectionDeviceSampleConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetActiveVpnTunnelStatusRequestMarshaller : IMarshaller<IRequest, GetActiveVpnTunnelStatusRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetVpnConnectionDeviceSampleConfigurationRequest)input);
+            return this.Marshall((GetActiveVpnTunnelStatusRequest)input);
         }
     
         /// <summary>
@@ -51,36 +51,28 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetVpnConnectionDeviceSampleConfigurationRequest publicRequest)
+        public IRequest Marshall(GetActiveVpnTunnelStatusRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
-            request.Parameters.Add("Action", "GetVpnConnectionDeviceSampleConfiguration");
+            request.Parameters.Add("Action", "GetActiveVpnTunnelStatus");
             request.Parameters.Add("Version", "2016-11-15");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetInternetKeyExchangeVersion())
-                {
-                    request.Parameters.Add("InternetKeyExchangeVersion", StringUtils.FromString(publicRequest.InternetKeyExchangeVersion));
-                }
-                if(publicRequest.IsSetSampleType())
-                {
-                    request.Parameters.Add("SampleType", StringUtils.FromString(publicRequest.SampleType));
-                }
-                if(publicRequest.IsSetVpnConnectionDeviceTypeId())
-                {
-                    request.Parameters.Add("VpnConnectionDeviceTypeId", StringUtils.FromString(publicRequest.VpnConnectionDeviceTypeId));
-                }
                 if(publicRequest.IsSetVpnConnectionId())
                 {
                     request.Parameters.Add("VpnConnectionId", StringUtils.FromString(publicRequest.VpnConnectionId));
                 }
+                if(publicRequest.IsSetVpnTunnelOutsideIpAddress())
+                {
+                    request.Parameters.Add("VpnTunnelOutsideIpAddress", StringUtils.FromString(publicRequest.VpnTunnelOutsideIpAddress));
+                }
             }
             return request;
         }
-                    private static GetVpnConnectionDeviceSampleConfigurationRequestMarshaller _instance = new GetVpnConnectionDeviceSampleConfigurationRequestMarshaller();        
+                    private static GetActiveVpnTunnelStatusRequestMarshaller _instance = new GetActiveVpnTunnelStatusRequestMarshaller();        
 
-        internal static GetVpnConnectionDeviceSampleConfigurationRequestMarshaller GetInstance()
+        internal static GetActiveVpnTunnelStatusRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -88,7 +80,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetVpnConnectionDeviceSampleConfigurationRequestMarshaller Instance
+        public static GetActiveVpnTunnelStatusRequestMarshaller Instance
         {
             get
             {

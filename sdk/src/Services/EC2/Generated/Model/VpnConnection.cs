@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private string _customerGatewayId;
         private GatewayAssociationState _gatewayAssociationState;
         private VpnConnectionOptions _options;
+        private string _preSharedKeyArn;
         private List<VpnStaticRoute> _routes = AWSConfigs.InitializeCollections ? new List<VpnStaticRoute>() : null;
         private VpnState _state;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -180,6 +181,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetOptions()
         {
             return this._options != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreSharedKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Secrets Manager secret storing the pre-shared
+        /// key(s) for the VPN connection.
+        /// </para>
+        /// </summary>
+        public string PreSharedKeyArn
+        {
+            get { return this._preSharedKeyArn; }
+            set { this._preSharedKeyArn = value; }
+        }
+
+        // Check to see if PreSharedKeyArn property is set
+        internal bool IsSetPreSharedKeyArn()
+        {
+            return this._preSharedKeyArn != null;
         }
 
         /// <summary>

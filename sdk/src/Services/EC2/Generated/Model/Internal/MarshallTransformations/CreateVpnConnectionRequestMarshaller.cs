@@ -260,6 +260,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                     }
                 }
+                if(publicRequest.IsSetPreSharedKeyStorage())
+                {
+                    request.Parameters.Add("PreSharedKeyStorage", StringUtils.FromString(publicRequest.PreSharedKeyStorage));
+                }
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;

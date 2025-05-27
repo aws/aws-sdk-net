@@ -67,6 +67,7 @@ namespace Amazon.EC2.Model
     {
         private string _customerGatewayId;
         private VpnConnectionOptionsSpecification _options;
+        private string _preSharedKeyStorage;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private string _transitGatewayId;
         private string _type;
@@ -125,6 +126,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetOptions()
         {
             return this._options != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreSharedKeyStorage. 
+        /// <para>
+        /// Specifies the storage mode for the pre-shared key (PSK). Valid values are <c>Standard</c>"
+        /// (stored in the Site-to-Site VPN service) or <c>SecretsManager</c> (stored in Amazon
+        /// Web Services Secrets Manager).
+        /// </para>
+        /// </summary>
+        public string PreSharedKeyStorage
+        {
+            get { return this._preSharedKeyStorage; }
+            set { this._preSharedKeyStorage = value; }
+        }
+
+        // Check to see if PreSharedKeyStorage property is set
+        internal bool IsSetPreSharedKeyStorage()
+        {
+            return this._preSharedKeyStorage != null;
         }
 
         /// <summary>
