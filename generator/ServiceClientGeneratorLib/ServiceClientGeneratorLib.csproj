@@ -229,11 +229,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Update="Generators/Marshallers/BaseMarshaller.cs">
-      <DependentUpon>BaseMarshaller.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Update="Generators/SourceFiles/BaseRequest.cs">
       <DependentUpon>BaseRequest.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -333,6 +328,11 @@
       <DependentUpon>NullCollectionInitializerAnalyzer.tt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Generators\Marshallers\BaseMarshaller.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BaseMarshaller.tt</DependentUpon>
     </Compile>
     <Compile Update="Generators\Marshallers\EventStreamPublisherMarshaller.cs">
       <DesignTime>True</DesignTime>

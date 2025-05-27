@@ -130,9 +130,10 @@ using Amazon.Runtime.Internal.Util;
 		{
             bool isGreedy = false;
             var marshallLocationName = operation.GetUriResourcePathTarget(member, out isGreedy);
-
             if (member.model.Customizations.SkipUriPropertyValidations.Contains(member.PropertyName))
             {
+            if (this.Config.ServiceId == "S3" && marshallLocationName == "{Bucket}")
+                continue;
 				if(isGreedy)
 				{
 #>
@@ -153,6 +154,8 @@ using Amazon.Runtime.Internal.Util;
             if (!<#=variableName#>.IsSet<#=member.PropertyName#>())
                 throw new <#=this.Config.BaseException#>("Request object does not have required field <#=member.PropertyName#> set");
 <#+
+            if (this.Config.ServiceId == "S3" && marshallLocationName == "{Bucket}")
+                continue;
 			if(isGreedy)
 				{
 #>

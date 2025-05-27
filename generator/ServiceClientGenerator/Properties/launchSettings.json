@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ServiceClientGenerator": {
+      "commandName": "Project",
+      "commandLineArgs": "-sm s3 -sro"
+    }
+  }
+}
