@@ -14,8 +14,21 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for <#=this.UnmarshallerBaseName #> operation
-    /// </summary>  
+    /// </summary>
+<#
+     if (this.Config.ServiceId == "S3")
+     {
+#>
+    public class <#=this.UnmarshallerBaseName#>ResponseUnmarshaller : S3ReponseUnmarshaller
+<#
+     }
+     else
+     {
+#>
     public class <#=this.UnmarshallerBaseName #>ResponseUnmarshaller : XmlResponseUnmarshaller
+<#
+     }
+#>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -246,7 +259,20 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
+<#
+    if (this.Config.ServiceId == "S3")
+    {
+#>
+            ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
+<#
+    }
+    else
+    {
+#>
             ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+<#
+    }
+#>
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
