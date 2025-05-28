@@ -74,6 +74,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CommonTest", "..\sdk
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.S3.NetFramework", "..\sdk\src\Services\S3\AWSSDK.S3.NetFramework.csproj", "{1A313326-988F-4FF2-992E-6D7E50DCF598}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDKExtensionsIntegrationTests", "C:\Users\rbarreto\source\repos\AWSSDKExtensionsIntegrationTests\AWSSDKExtensionsIntegrationTests.csproj", "{87312699-8C48-488B-80DC-0FF8FB4705E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -204,6 +206,10 @@ Global
 		{1A313326-988F-4FF2-992E-6D7E50DCF598}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A313326-988F-4FF2-992E-6D7E50DCF598}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A313326-988F-4FF2-992E-6D7E50DCF598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87312699-8C48-488B-80DC-0FF8FB4705E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87312699-8C48-488B-80DC-0FF8FB4705E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87312699-8C48-488B-80DC-0FF8FB4705E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87312699-8C48-488B-80DC-0FF8FB4705E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
