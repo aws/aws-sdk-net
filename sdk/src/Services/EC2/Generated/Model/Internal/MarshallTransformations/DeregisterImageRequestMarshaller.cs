@@ -59,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetDeleteAssociatedSnapshots())
+                {
+                    request.Parameters.Add("DeleteAssociatedSnapshots", StringUtils.FromBool(publicRequest.DeleteAssociatedSnapshots));
+                }
                 if(publicRequest.IsSetImageId())
                 {
                     request.Parameters.Add("ImageId", StringUtils.FromString(publicRequest.ImageId));

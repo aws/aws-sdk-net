@@ -33,81 +33,72 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeregisterImage operation
+    /// Response Unmarshaller for DeleteSnapshotReturnCode Object
     /// </summary>  
-    public class DeregisterImageResponseUnmarshaller : EC2ResponseUnmarshaller
+    public class DeleteSnapshotReturnCodeUnmarshaller : IUnmarshaller<DeleteSnapshotReturnCode, XmlUnmarshallerContext>, IUnmarshaller<DeleteSnapshotReturnCode, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>
+        /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        public DeleteSnapshotReturnCode Unmarshall(XmlUnmarshallerContext context)
         {
-            DeregisterImageResponse response = new DeregisterImageResponse();
-
+            DeleteSnapshotReturnCode unmarshalledObject = new DeleteSnapshotReturnCode();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
-               targetDepth = 2;
-
+               targetDepth += 2;
+            
             while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-
-                    if (context.TestExpression("deleteSnapshotResultSet/item", targetDepth))
+                    if (context.TestExpression("returnCode", targetDepth))
                     {
-                        var unmarshaller = DeleteSnapshotReturnCodeUnmarshaller.Instance;
-                        if (response.DeleteSnapshotResults == null)
-                        {
-                            response.DeleteSnapshotResults = new List<DeleteSnapshotReturnCode>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        response.DeleteSnapshotResults.Add(item);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReturnCode = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("return", targetDepth))
+                    if (context.TestExpression("snapshotId", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        response.Return = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                } 
+                }
+                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                {
+                    return unmarshalledObject;
+                }
             }
 
-            return response;
+            return unmarshalledObject;
         }
 
         /// <summary>
         /// Unmarshaller error response to exception.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="innerException"></param>
-        /// <param name="statusCode"></param>
         /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public DeleteSnapshotReturnCode Unmarshall(JsonUnmarshallerContext context)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            return null;
         }
-        private static DeregisterImageResponseUnmarshaller _instance = new DeregisterImageResponseUnmarshaller();        
 
-        internal static DeregisterImageResponseUnmarshaller GetInstance()
-        {
-            return _instance;
-        }
+
+        private static DeleteSnapshotReturnCodeUnmarshaller _instance = new DeleteSnapshotReturnCodeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeregisterImageResponseUnmarshaller Instance
+        public static DeleteSnapshotReturnCodeUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
-
     }
 }

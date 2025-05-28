@@ -110,8 +110,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BootMode. 
         /// <para>
-        /// The boot mode of the image. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
-        /// modes</a> in the <i>Amazon EC2 User Guide</i>.
+        /// The boot mode of the image. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Instance
+        /// launch behavior with Amazon EC2 boot modes</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public BootModeValues BootMode
@@ -580,7 +580,7 @@ namespace Amazon.EC2.Model
         /// or <a>CreateRestoreImageTask</a>. The ID does not appear if the AMI was created using
         /// any other API. For some older AMIs, the ID might not be available. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify-source-ami-used-to-create-new-ami.html">Identify
-        /// the source AMI used to create a new AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// the source AMI used to create a new Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public string SourceImageId
@@ -606,7 +606,7 @@ namespace Amazon.EC2.Model
         /// or <a>CreateRestoreImageTask</a>. The Region does not appear if the AMI was created
         /// using any other API. For some older AMIs, the Region might not be available. For more
         /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify-source-ami-used-to-create-new-ami.html">Identify
-        /// the source AMI used to create a new AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// the source AMI used to create a new Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public string SourceImageRegion

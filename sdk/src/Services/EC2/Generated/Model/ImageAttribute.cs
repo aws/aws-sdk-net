@@ -303,7 +303,7 @@ namespace Amazon.EC2.Model
         /// data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a>
         /// command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars
         /// tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-        /// Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.
+        /// Secure Boot for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public string UefiData
