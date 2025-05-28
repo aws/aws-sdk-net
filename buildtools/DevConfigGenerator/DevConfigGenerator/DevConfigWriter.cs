@@ -21,6 +21,7 @@ public class DevConfigWriter
             writer.WriteStartObject("core");
 
             writer.WriteBoolean("updateMinimum", config.Core.UpdateServiceMinimum);
+            ValidateType(config.Core.Type);
             writer.WriteString("type", config.Core.Type);
             writer.WriteStartArray("changeLogMessages");
             foreach (var message in config.Core.Messages)
@@ -39,6 +40,7 @@ public class DevConfigWriter
             {
                 writer.WriteStartObject();
                 writer.WriteString("serviceName", service.Name);
+                ValidateType(service.Type);
                 writer.WriteString("type", service.Type);
 
                 writer.WriteStartArray("changeLogMessages");
@@ -55,5 +57,11 @@ public class DevConfigWriter
         }
 
         writer.WriteEndObject();
+    }
+
+    private static void ValidateType(string type)
+    {
+        if (!string.Equals("minor", type, StringComparison.Ordinal) && !string.Equals("patch", type, StringComparison.Ordinal))
+            throw new InvalidDataException($"Change type of {type} is invalid. Valid types are 'minor' and 'patch'");
     }
 }

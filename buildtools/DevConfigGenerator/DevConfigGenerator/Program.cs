@@ -160,6 +160,9 @@ void ServiceChange()
 
 
     var service = devConfig.Services.FirstOrDefault(x => x.Name == serviceName);
+
+    // Check to see if this is the first change log entry for this service being added to the dev config.
+    // If so add the service to the list of services being changed.
     if (service == null)
     {
         service = new Service { Name = serviceName };
